@@ -1,0 +1,293 @@
+{
+  "schemaVersion": 1,
+  "source": "seed",
+  "license": "Hand-written seed content, GPL-3.0 with the app. Replaced by the JMdict-derived catalog in PLAN.md M1.3.",
+  "entries": [
+    {
+      "id": "vocab:watashi",
+      "level": "N5",
+      "kanji": "私",
+      "reading": "わたし",
+      "romaji": "watashi",
+      "pos": ["pronoun"],
+      "meanings": { "en": ["I", "me"], "zh": ["我"] },
+      "examples": [
+        { "ja": "私は学生です。", "reading": "わたしはがくせいです。", "en": "I am a student.", "zh": "我是学生。" }
+      ]
+    },
+    {
+      "id": "vocab:gakusei",
+      "level": "N5",
+      "kanji": "学生",
+      "reading": "がくせい",
+      "romaji": "gakusei",
+      "pos": ["noun"],
+      "meanings": { "en": ["student"], "zh": ["学生"] },
+      "examples": [
+        { "ja": "田中さんは学生ですか。", "reading": "たなかさんはがくせいですか。", "en": "Is Tanaka a student?", "zh": "田中是学生吗？" }
+      ]
+    },
+    {
+      "id": "vocab:sensei",
+      "level": "N5",
+      "kanji": "先生",
+      "reading": "せんせい",
+      "romaji": "sensei",
+      "pos": ["noun"],
+      "meanings": { "en": ["teacher"], "zh": ["老师"] },
+      "examples": [
+        { "ja": "山田先生は日本語の先生です。", "reading": "やまだせんせいはにほんごのせんせいです。", "en": "Mr. Yamada is a Japanese teacher.", "zh": "山田老师是日语老师。" }
+      ]
+    },
+    {
+      "id": "vocab:hon",
+      "level": "N5",
+      "kanji": "本",
+      "reading": "ほん",
+      "romaji": "hon",
+      "pos": ["noun"],
+      "meanings": { "en": ["book"], "zh": ["书"] },
+      "examples": [
+        { "ja": "これは本です。", "reading": "これはほんです。", "en": "This is a book.", "zh": "这是一本书。" }
+      ]
+    },
+    {
+      "id": "vocab:mizu",
+      "level": "N5",
+      "kanji": "水",
+      "reading": "みず",
+      "romaji": "mizu",
+      "pos": ["noun"],
+      "meanings": { "en": ["water"], "zh": ["水"] },
+      "examples": [
+        { "ja": "水を飲みます。", "reading": "みずをのみます。", "en": "I drink water.", "zh": "我喝水。" }
+      ]
+    },
+    {
+      "id": "vocab:taberu",
+      "level": "N5",
+      "kanji": "食べる",
+      "reading": "たべる",
+      "romaji": "taberu",
+      "pos": ["verb-ichidan", "transitive"],
+      "meanings": { "en": ["to eat"], "zh": ["吃"] },
+      "examples": [
+        { "ja": "朝ご飯を食べます。", "reading": "あさごはんをたべます。", "en": "I eat breakfast.", "zh": "我吃早饭。" }
+      ]
+    },
+    {
+      "id": "vocab:nomu",
+      "level": "N5",
+      "kanji": "飲む",
+      "reading": "のむ",
+      "romaji": "nomu",
+      "pos": ["verb-godan", "transitive"],
+      "meanings": { "en": ["to drink"], "zh": ["喝"] },
+      "examples": [
+        { "ja": "コーヒーを飲みます。", "reading": "コーヒーをのみます。", "en": "I drink coffee.", "zh": "我喝咖啡。" }
+      ]
+    },
+    {
+      "id": "vocab:iku",
+      "level": "N5",
+      "kanji": "行く",
+      "reading": "いく",
+      "romaji": "iku",
+      "pos": ["verb-godan", "intransitive"],
+      "meanings": { "en": ["to go"], "zh": ["去"] },
+      "examples": [
+        { "ja": "学校に行きます。", "reading": "がっこうにいきます。", "en": "I go to school.", "zh": "我去学校。" }
+      ]
+    },
+    {
+      "id": "vocab:kuru",
+      "level": "N5",
+      "kanji": "来る",
+      "reading": "くる",
+      "romaji": "kuru",
+      "pos": ["verb-irregular", "intransitive"],
+      "meanings": { "en": ["to come"], "zh": ["来"] },
+      "examples": [
+        { "ja": "友達が来ます。", "reading": "ともだちがきます。", "en": "A friend is coming.", "zh": "朋友要来。" }
+      ]
+    },
+    {
+      "id": "vocab:miru",
+      "level": "N5",
+      "kanji": "見る",
+      "reading": "みる",
+      "romaji": "miru",
+      "pos": ["verb-ichidan", "transitive"],
+      "meanings": { "en": ["to see", "to watch"], "zh": ["看"] },
+      "examples": [
+        { "ja": "テレビを見ます。", "reading": "テレビをみます。", "en": "I watch TV.", "zh": "我看电视。" }
+      ]
+    },
+    {
+      "id": "vocab:kau",
+      "level": "N5",
+      "kanji": "買う",
+      "reading": "かう",
+      "romaji": "kau",
+      "pos": ["verb-godan", "transitive"],
+      "meanings": { "en": ["to buy"], "zh": ["买"] },
+      "examples": [
+        { "ja": "パンを買います。", "reading": "パンをかいます。", "en": "I buy bread.", "zh": "我买面包。" }
+      ]
+    },
+    {
+      "id": "vocab:ookii",
+      "level": "N5",
+      "kanji": "大きい",
+      "reading": "おおきい",
+      "romaji": "ookii",
+      "pos": ["i-adjective"],
+      "meanings": { "en": ["big", "large"], "zh": ["大的"] },
+      "examples": [
+        { "ja": "大きい犬ですね。", "reading": "おおきいいぬですね。", "en": "That is a big dog, isn't it?", "zh": "好大的狗啊。" }
+      ]
+    },
+    {
+      "id": "vocab:chiisai",
+      "level": "N5",
+      "kanji": "小さい",
+      "reading": "ちいさい",
+      "romaji": "chiisai",
+      "pos": ["i-adjective"],
+      "meanings": { "en": ["small", "little"], "zh": ["小的"] },
+      "examples": [
+        { "ja": "小さい猫がいます。", "reading": "ちいさいねこがいます。", "en": "There is a small cat.", "zh": "有一只小猫。" }
+      ]
+    },
+    {
+      "id": "vocab:atarashii",
+      "level": "N5",
+      "kanji": "新しい",
+      "reading": "あたらしい",
+      "romaji": "atarashii",
+      "pos": ["i-adjective"],
+      "meanings": { "en": ["new"], "zh": ["新的"] },
+      "examples": [
+        { "ja": "新しい車を買いました。", "reading": "あたらしいくるまをかいました。", "en": "I bought a new car.", "zh": "我买了新车。" }
+      ]
+    },
+    {
+      "id": "vocab:genki",
+      "level": "N5",
+      "kanji": "元気",
+      "reading": "げんき",
+      "romaji": "genki",
+      "pos": ["na-adjective", "noun"],
+      "meanings": { "en": ["healthy", "energetic", "fine"], "zh": ["精神", "健康"] },
+      "examples": [
+        { "ja": "お元気ですか。", "reading": "おげんきですか。", "en": "How are you?", "zh": "你好吗？" }
+      ]
+    },
+    {
+      "id": "vocab:suki",
+      "level": "N5",
+      "kanji": "好き",
+      "reading": "すき",
+      "romaji": "suki",
+      "pos": ["na-adjective"],
+      "meanings": { "en": ["liked", "to like"], "zh": ["喜欢"] },
+      "examples": [
+        { "ja": "私は猫が好きです。", "reading": "わたしはねこがすきです。", "en": "I like cats.", "zh": "我喜欢猫。" }
+      ]
+    },
+    {
+      "id": "vocab:kyou",
+      "level": "N5",
+      "kanji": "今日",
+      "reading": "きょう",
+      "romaji": "kyou",
+      "pos": ["noun", "adverb"],
+      "meanings": { "en": ["today"], "zh": ["今天"] },
+      "examples": [
+        { "ja": "今日は暑いです。", "reading": "きょうはあついです。", "en": "It is hot today.", "zh": "今天很热。" }
+      ]
+    },
+    {
+      "id": "vocab:ashita",
+      "level": "N5",
+      "kanji": "明日",
+      "reading": "あした",
+      "romaji": "ashita",
+      "pos": ["noun", "adverb"],
+      "meanings": { "en": ["tomorrow"], "zh": ["明天"] },
+      "examples": [
+        { "ja": "明日、東京に行きます。", "reading": "あした、とうきょうにいきます。", "en": "Tomorrow I am going to Tokyo.", "zh": "明天去东京。" }
+      ]
+    },
+    {
+      "id": "vocab:jikan",
+      "level": "N5",
+      "kanji": "時間",
+      "reading": "じかん",
+      "romaji": "jikan",
+      "pos": ["noun"],
+      "meanings": { "en": ["time", "hour"], "zh": ["时间"] },
+      "examples": [
+        { "ja": "時間がありません。", "reading": "じかんがありません。", "en": "There is no time.", "zh": "没有时间。" }
+      ]
+    },
+    {
+      "id": "vocab:gakkou",
+      "level": "N5",
+      "kanji": "学校",
+      "reading": "がっこう",
+      "romaji": "gakkou",
+      "pos": ["noun"],
+      "meanings": { "en": ["school"], "zh": ["学校"] },
+      "examples": [
+        { "ja": "学校は九時に始まります。", "reading": "がっこうはくじにはじまります。", "en": "School starts at nine.", "zh": "学校九点开始。" }
+      ]
+    },
+    {
+      "id": "vocab:tomodachi",
+      "level": "N5",
+      "kanji": "友達",
+      "reading": "ともだち",
+      "romaji": "tomodachi",
+      "pos": ["noun"],
+      "meanings": { "en": ["friend"], "zh": ["朋友"] },
+      "examples": [
+        { "ja": "友達と映画を見ました。", "reading": "ともだちとえいがをみました。", "en": "I watched a movie with a friend.", "zh": "和朋友看了电影。" }
+      ]
+    },
+    {
+      "id": "vocab:nihongo",
+      "level": "N5",
+      "kanji": "日本語",
+      "reading": "にほんご",
+      "romaji": "nihongo",
+      "pos": ["noun"],
+      "meanings": { "en": ["Japanese language"], "zh": ["日语"] },
+      "examples": [
+        { "ja": "日本語を勉強しています。", "reading": "にほんごをべんきょうしています。", "en": "I am studying Japanese.", "zh": "我正在学日语。" }
+      ]
+    },
+    {
+      "id": "vocab:arigatou",
+      "level": "N5",
+      "reading": "ありがとう",
+      "romaji": "arigatou",
+      "pos": ["expression"],
+      "meanings": { "en": ["thank you"], "zh": ["谢谢"] },
+      "examples": [
+        { "ja": "どうもありがとうございます。", "en": "Thank you very much.", "zh": "非常感谢。" }
+      ]
+    },
+    {
+      "id": "vocab:sumimasen",
+      "level": "N5",
+      "reading": "すみません",
+      "romaji": "sumimasen",
+      "pos": ["expression"],
+      "meanings": { "en": ["excuse me", "sorry"], "zh": ["对不起", "不好意思"] },
+      "examples": [
+        { "ja": "すみません、駅はどこですか。", "reading": "すみません、えきはどこですか。", "en": "Excuse me, where is the station?", "zh": "请问，车站在哪里？" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+# 架构
+
+本页描述应用外壳、状态管理方式、导航、本地化和仓库布局，外加跨领域的架构规则。数据模型见 [`data-formats.md`](data-formats.md)，构建在此外壳之上的同步子系统见 [`sync.md`](sync.md)，布局规则见 [`adaptive-layout.md`](adaptive-layout.md)。
+
+## 应用外壳
+
+- `lib/main.dart` — 应用入口点：启动每日自动备份检查和自动同步生命周期观察者，然后在 `DevicePreview` 中运行应用（仅调试构建）。
+- `lib/app/app.dart` — 根 `MaterialApp.router` 接线：主题、语言、路由。
+- `lib/app/router.dart` — 基于 `go_router` 的导航。路由器使用一个 `ShellRoute` 包住五个导航标签——在窄窗口上渲染为底部 `NavigationBar`，从 600 逻辑像素起渲染为侧边 `NavigationRail`，见 [`adaptive-layout.md`](adaptive-layout.md)：
+  - 学习（`/learn`，`learn_page.dart`）——仪表盘，之后是学习路径
+  - 五十音（`/kana`，`kana_page.dart`）
+  - 单词（`/vocab`，`vocab_page.dart`）
+  - 语法（`/grammar`，`grammar_page.dart`）
+  - 设置（`/settings`，`settings_page.dart`）
+
+  目前没有非标签路由。二级设置页面（隐私政策、许可证）在窄窗口上压栈到根导航器，在宽窗口上承载在详情窗格（pane）中。
+- `lib/app/theme.dart` — 基于 `flex_color_scheme` 的 Material 3 视觉体系，以 `FlexScheme.sakura` 为种子，一眼就能与兄弟应用区分开。
+- `lib/app/flavor.dart` — 构建风味逻辑（见下文）。
+- `lib/app/data_modules.dart` — 与共享引擎的接缝（见下文）。
+
+## 构建风味
+
+风味逻辑位于 `lib/app/flavor.dart`：
+
+| 风味 | Dart define | 分发渠道 |
+| --- | --- | --- |
+| `full` | `--dart-define=FLAVOR=full` | GitHub Releases、直接 APK |
+| `store` | `--dart-define=FLAVOR=store` | Google Play（之后是 App Store）构建 |
+
+目前没有任何功能以风味为门控。这个常量存在是为了像兄弟应用一样区分面向商店的构建，并让未来的在线功能有现成的 `AppFlavor.isFull` 作为门控。
+
+## 状态管理
+
+状态管理全程使用 `flutter_riverpod`。不使用 Provider 和 Bloc，常规变更不应引入它们。现有三个 provider：
+
+- `appSettingsProvider`（`shared/providers/app_settings.dart`）——主题模式和语言，设备本地持久化。
+- `contentCatalogProvider`（`features/content/services/content_repository.dart`）——解析后的内置内容，每次运行加载一次的 `FutureProvider`。
+- `progressDataProvider`（`shared/providers/progress_provider.dart`）——进度文件，页面在保存或同步后刷新的 `FutureProvider`。
+
+## 本地化（l10n）
+
+- 支持语言：英语（模板）和简体中文。
+- ARB 模板是 `lib/l10n/app_en.arb`；`app_zh.arb` 逐键镜像它。
+- 生成的本地化文件位于 `lib/l10n/` 下并被跟踪；编辑 ARB 文件后运行 `flutter gen-l10n` 并提交结果。
+- JLPT 级别标签（`N5`…`N1`）和日语内容文本不本地化。
+
+## 仓库结构
+
+```text
+lib/
+  main.dart
+  app/
+    app.dart
+    data_modules.dart
+    flavor.dart
+    router.dart
+    theme.dart
+  features/
+    content/
+      models/
+        content_catalog.dart
+        grammar_point.dart
+        jlpt_level.dart
+        localized_strings.dart
+        vocab_entry.dart
+      services/content_repository.dart
+    grammar/views/grammar_page.dart
+    kana/
+      models/kana.dart
+      views/kana_page.dart
+    learn/views/learn_page.dart
+    progress/
+      models/study_record.dart
+      services/nihongo_storage.dart
+    settings/views/
+      license_page.dart
+      privacy_policy_page.dart
+      settings_page.dart
+    vocab/views/vocab_page.dart
+  shared/
+    providers/
+      app_settings.dart
+      progress_provider.dart
+    services/
+      auto_sync_service.dart
+      backup_service.dart
+      import_export_service.dart
+      sync_merge.dart
+      webdav_service.dart
+    utils/adaptive_layout.dart
+    widgets/
+      adaptive_tile_grid.dart
+      reference_widgets.dart
+      shell_scaffold.dart
+  l10n/
+assets/content/
+  grammar_seed.json
+  vocab_seed.json
+```
+
+主要测试：
+
+- `test/adaptive_layout_test.dart` — 每个布局阈值和钳制，在具名设备几何尺寸上。
+- `test/kana_layout_ui_test.dart` — 在这些几何尺寸上渲染的五十音页面：规则允许时两列，否则一列。
+- `test/shell_nav_ui_test.dart` — 底部导航栏与侧边导航栏、五个目标、导航。
+- `test/progress_json_test.dart` — 未知 JSON 保留、推导的类别与阶段、UTC 归一化，以及包含冲突的三方合并。
+- `test/data_modules_test.dart` — 模块注册表的名称、校验、美化输出的合并结果，以及应用中立的冲突解决。
+- `test/content_catalog_test.dart` — 内置内容可解析、id 唯一且带前缀、每个条目都有两种语言。
+- `test/widget_test.dart` — 真实页面在两种语言下渲染且不溢出。
+
+## 三类数据
+
+| 数据 | 位置 | 同步 |
+| --- | --- | --- |
+| 内容目录（假名、单词、语法） | 编译进应用：`features/kana/models/kana.dart` 与 `assets/content/*.json` | 否——随应用发布 |
+| 学习进度（每项一条 `StudyRecord`） | 应用目录下的 `nihongo_progress.json` | **是** |
+| 设备偏好 | `storage_config.json` | 否 |
+
+目录是只读的，随构建版本化。进度通过 id 引用目录条目，是同步、备份和 ZIP 引擎唯一会看到的用户数据。形状见 [`data-formats.md`](data-formats.md)，内容规则见 [`features/content-catalog.md`](features/content-catalog.md)。
+
+## 共享包（`myapps_data`）
+
+WebDAV 同步引擎、备份引擎、ZIP 传输引擎和自动同步调度器**不在此仓库**。它们位于共享的 `myapps_data` 包中，作为 git 子模块嵌入在 `packages/myapps_data`，并作为 pub 路径依赖消费。MyAnime、MyDay、MyDevice 和 MyNihongo 都使用它，这正是让它们的线路格式、备份格式和锁语义保持互操作的原因。
+
+- **留在这里的：** 所有模型、`NihongoStorage`、`mergeProgressData` 包装器、内容目录，以及每个页面。
+- **接缝：** [`functions/app/data_modules.md`](functions/app/data_modules.md) 声明了覆盖 `NihongoStorage` 的 `StorageAdapter`，以及描述 `nihongo_progress.json` 的 `DataModule`。它是数据文件名、备份模块键、默认远程路径和 ZIP 归档前缀的唯一事实来源。
+- **门面（facade）：** `WebDAVService`、`BackupService`、`ImportExportService` 和 `AutoSyncService` 保持与 MyAnime 门面相同的公开形状，因此它的设置页面可以在类型名不变的情况下移植。它们的形状是冻结的；行为变更属于包。
+- **没有再导出垫片。** MyAnime 为自己的历史保留了 `sync_progress.dart` 和 `sync_wake_lock.dart` 垫片。本应用没有；页面直接导入 `myapps_data` 类型，或通过再导出它们的门面导入。
+
+`.gitmodules` 使用相对 URL `../MyApps-DATA.git`，因此它按克隆所跟踪的远程仓库解析——Gitea 克隆从 Gitea 拉取，GitHub 克隆从 GitHub 拉取，且永远不会提交任何主机名。全新克隆需要 `git clone --recurse-submodules` 或 `git submodule update --init`。
+
+## 核心架构规则
+
+这些规则适用于整个代码库，在阅读任何单个功能区域之前值得内化：
+
+- **状态管理：** `flutter_riverpod`；常规变更不使用 Provider 或 Bloc。
+- **导航：** `go_router`，一个 `ShellRoute` 和上面列出的五个标签。
+- **视觉体系：** 通过 `flex_color_scheme` 的 Material 3。
+- **响应式布局：** 一条共享规则决定 UI 何时可以分成窗格或多列，以及列表得到几列；第二条仅看宽度的规则决定导航放在侧边还是底部。两者都位于 `shared/utils/adaptive_layout.dart`，推导见 [`adaptive-layout.md`](adaptive-layout.md)。**不要添加内联宽度断点。** 容量按 `shellContentWidth` 度量，绝不按原始屏幕宽度，因为导航栏不是页面可以花掉的。
+- **文件 I/O：** 经由 `NihongoStorage.getAppDir()`，使自定义存储路径生效；数据写入经由 `NihongoStorage.save()`，使自动同步得知。
+- **JSON 格式：** 凡是写入磁盘的数据都用 `JsonEncoder.withIndent('  ')` 美化输出——这对同步很重要，因为它让未改动的文件命中原始相等快速路径（见 [`sync.md`](sync.md)）。
+- **时间戳：** 进度记录上的每个时间戳都是 UTC（`DateTime.now().toUtc()`）。本地时间的 `modifiedAt` 会破坏同步冲突检测，因为三方合并跨不同时区的设备比较 `modifiedAt`。
+- **未知 JSON 字段：** 通过 `extraJson` 模式保留（见 [`data-formats.md`](data-formats.md)），使旧版应用在正常保存、导入或同步合并时不会删除新字段。
+- **内容 id 是稳定的。** 已发布的 `kana:`、`vocab:` 或 `grammar:` id 绝不重命名；进度以它为键。
+- **除了向用户自己的服务器做 WebDAV 同步，没有任何东西离开设备。** 计划中的语音与分析功能在设备上运行。

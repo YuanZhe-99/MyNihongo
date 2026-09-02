@@ -1,0 +1,95 @@
+name: Build Android
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  FLUTTER_VERSION: '3.44.2'
+
+jobs:
+  # ── Android APK (full) + AAB (store) ──
+  android:
+    runs-on: ubuntu-latest
+    env:
+      HAS_KEYSTORE: ${{ secrets.KEYSTORE_BASE64 != '' }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # myapps_data is a path dependency living in a submodule; without it
+          # `flutter pub get` fails. The relative URL resolves to the public
+          # GitHub copy here, so the default GITHUB_TOKEN suffices.
+          submodules: recursive
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+
+      - run: flutter pub get
+
+      - run: flutter gen-l10n
+
+      - run: flutter analyze
+
+      - run: flutter test
+
+      - name: Setup Android signing
+        if: ${{ env.HAS_KEYSTORE == 'true' }}
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          echo "$KEYSTORE_BASE64" | base64 -d > android/app/upload-keystore.jks
+          printf 'storeFile=upload-keystore.jks\nstorePassword=%s\nkeyAlias=%s\nkeyPassword=%s\n' \
+            "$STORE_PASSWORD" "$KEY_ALIAS" "$KEY_PASSWORD" > android/key.properties
+
+      - name: Build APK (full)
+        run: flutter build apk --release --dart-define=FLAVOR=full
+
+      - name: Build AAB (store)
+        run: flutter build appbundle --release --dart-define=FLAVOR=store
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: android-apk-full
+          path: build/app/outputs/flutter-apk/app-release.apk
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: android-aab-store
+          path: build/app/outputs/bundle/release/app-release.aab
+
+  # ── Create GitHub Release on tag push ──
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: [android]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          path: artifacts
+
+      - name: Flatten artifacts
+        run: |
+          mkdir -p release
+          find artifacts -type f \( -name "*.apk" -o -name "*.aab" \) -exec cp {} release/ \;
+
+      - uses: softprops/action-gh-release@v3
+        with:
+          files: release/*
+          generate_release_notes: true

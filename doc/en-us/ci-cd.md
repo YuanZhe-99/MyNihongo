@@ -1,0 +1,69 @@
+# CI/CD and build commands
+
+## Workflow
+
+`.github/workflows/build.yml` runs on every push to `main`, on `v*` tag pushes, on pull requests targeting `main`, and on `workflow_dispatch`. Only tag pushes create a GitHub Release; branch pushes stop at the uploaded artifacts.
+
+The checkout step passes `submodules: recursive`. Without it `flutter pub get` fails on the missing
+`packages/myapps_data` path dependency. The relative submodule URL resolves to the public GitHub copy
+in CI, so the default `GITHUB_TOKEN` is sufficient.
+
+## Jobs
+
+- `android` — `flutter pub get`, `flutter gen-l10n`, `flutter analyze`, `flutter test`, then the
+  APK (full flavor) and the AAB (store flavor). Signing is configured only when the
+  `KEYSTORE_BASE64` secret exists.
+- `release` — on a tag push, downloads the artifacts and creates a GitHub Release with generated
+  notes.
+
+Desktop, iOS and macOS jobs are added with their platforms (`PLAN.md`, Phase 5), copied from
+MyAnime's workflow.
+
+## Workflow caveats
+
+- Keep the workflow Flutter version (`3.44.2`) aligned with the Dart SDK constraint in
+  `pubspec.yaml`.
+- GitHub `secrets` cannot be used directly in step `if` expressions; they are routed through the
+  job-level `HAS_KEYSTORE` env.
+- Action versions: `actions/checkout@v7`, `actions/setup-java@v5`, `actions/upload-artifact@v7`,
+  `actions/download-artifact@v8`, `softprops/action-gh-release@v3`. Validate workflow changes with a
+  `workflow_dispatch` run before the next tag release.
+- The analyze and test steps run in CI on purpose: the sibling apps run them locally only, but this
+  app's content files are data that a wrong edit can break silently, and
+  `test/content_catalog_test.dart` is the guard.
+
+## Commands
+
+```powershell
+flutter pub get
+flutter gen-l10n
+flutter analyze
+flutter test
+flutter test test/content_catalog_test.dart
+flutter build apk --release --dart-define=FLAVOR=full
+flutter build appbundle --release --dart-define=FLAVOR=store
+```
+
+Use the narrowest relevant command set for verification. For model or sync changes, include
+`flutter test test/progress_json_test.dart test/data_modules_test.dart`; for content changes,
+`flutter test test/content_catalog_test.dart`; for layout changes, the three UI tests.
+
+`flutter analyze` reports zero issues on a clean tree. Keep it that way — a new info-level item is a
+regression here, not pre-existing noise.
+
+## Fresh clone
+
+The shared engine package is a git submodule, so a plain `git clone` leaves
+`packages/myapps_data` empty and `flutter pub get` fails:
+
+```bash
+git clone --recurse-submodules <app-url>
+# or, after a plain clone:
+git submodule update --init
+```
+
+## `tool/` scripts
+
+None yet. `PLAN.md` M1.2 adds `tool/import_vocab.dart`, the offline JMdict + JLPT-list import that
+regenerates the vocabulary asset; like the sibling apps' generators it will be deterministic, so a
+re-run with unchanged inputs produces no diff.

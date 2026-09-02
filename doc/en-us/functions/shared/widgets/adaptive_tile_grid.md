@@ -1,0 +1,14 @@
+# lib/shared/widgets/adaptive_tile_grid.dart
+
+Two helpers that lay a flat list of tiles out in `columns` columns as `Row`s of `Expanded` children
+— deliberately not a `GridView`, so a caller feeding them from `ListView.builder` over
+`listRowCount` rows keeps virtualization and left-to-right, top-to-bottom order. Short final rows
+are padded with empty cells so the remaining tiles keep their width. Used by the vocabulary and
+grammar pages. See [../../../adaptive-layout.md](../../../adaptive-layout.md).
+
+## Declarations
+
+| Declaration | Kind | Tier | Purpose |
+|---|---|---|---|
+| `adaptiveTileRow` | top-level function | B | Build one row of a multi-column list, filled left to right, padded at the end. |
+| `adaptiveTileRows` | top-level function | B | Build a list's children as rows; at one column returns the tiles untouched. |
