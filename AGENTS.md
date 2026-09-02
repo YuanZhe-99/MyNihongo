@@ -200,6 +200,13 @@ GitHub Actions builds run on every push to `main` (analyze, test, APK + AAB); re
 Documentation-only maintenance the user says needs no release: commit and push without changing
 versions or creating a tag.
 
+## App icon
+
+The icon pipeline is `assets/icon/app_icon.png` → `dart run tool/generate_ios_icons.dart` (iOS
+default / dark / tinted sources) → `dart run flutter_launcher_icons` (Android mipmaps, iOS
+`AppIcon.appiconset`). Never hand-edit generated icon files; change the source and rerun both
+commands. `doc/en-us/platform-notes.md` describes the outputs.
+
 ## Agent co-author attribution
 
 An agent that made a real, material contribution to a commit may add its own accurate

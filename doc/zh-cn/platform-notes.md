@@ -12,9 +12,22 @@ Android 是第一阶段唯一发布的平台。代码是平台中立的；其他
 - **折叠：** activity 的 `configChanges` 包含 `screenLayout|screenSize|smallestScreenSize|density`，因此展开时窗口调整大小而不重建 activity。见 [`adaptive-layout.md`](adaptive-layout.md)。
 - 允许**明文流量**（`usesCleartextTraffic="true"`），使家庭网络上走纯 HTTP 的 WebDAV 服务器可用，与兄弟应用相同。
 
+## 应用图标
+
+- 源图：`assets/icon/app_icon.png`（正方形，透明背景）。它不打包进应用；只有启动器资源会随应用发布。
+- `tool/generate_ios_icons.dart` 把源图缩放到 iOS 安全区，写出三个 iOS 源：`assets/icon/app_icon_ios.png`（不透明，白色背景）、`app_icon_ios_dark.png`（透明，略微提亮）和 `app_icon_ios_tinted.png`（透明灰度），以及 `build/icon_preview/` 下的审阅预览。
+- 随后 `flutter_launcher_icons.yaml` 生成 Android mipmap 和带默认、深色和着色条目的 iOS `AppIcon.appiconset`。更换源图后重新生成：
+
+```bash
+dart run tool/generate_ios_icons.dart
+dart run flutter_launcher_icons
+```
+
+- `ios/` 文件夹的存在是为了给图标集一个位置，且 `CFBundleDisplayName` 已是 `MyNihongo!!!!!`；除此之外 iOS 仍是计划中的平台，CI 不构建它。
+
 ## 计划中的平台
 
 - **Windows：** `flutter create --platforms=windows .`，然后是本系列的 `installer.iss`（通过 `#ifdef ARM64` 支持 x64 和 ARM64）、`pubspec.yaml` 中的 `msix_config`、`windows/runner/resources/app_icon.ico`，以及 `AGENTS.md` 中列出的版本位置。ARM64 CI 任务在 stable 发布 ARM64 引擎之前运行在 Flutter master 上，与 MyAnime 的一样。
-- **iOS / macOS：** `--platforms=ios,macos`；`CFBundleDisplayName` / `AppInfo.xcconfig` 名称为 `MyNihongo!!!!!`；两个 macOS entitlement 文件中都要有 `com.apple.security.network.client` 以支持 WebDAV；默认、深色和着色模式的带边距 iOS 图标源。
+- **iOS / macOS：** `ios/` 已存在（见*应用图标*）；用 `--platforms=macos` 添加 macOS；`AppInfo.xcconfig` 名称为 `MyNihongo!!!!!`；两个 macOS entitlement 文件中都要有 `com.apple.security.network.client` 以支持 WebDAV；带边距的 iOS 图标源已生成。
 - **语音（第二阶段）：** `flutter_tts` 和 `speech_to_text` 包装 Android 的 `TextToSpeech` / `SpeechRecognizer` 与 Apple 的 `AVSpeechSynthesizer` / `SFSpeechRecognizer`；Windows 通过同一插件有 TTS，但没有内置识别器，因此在选定方案之前，发音反馈仍是移动端功能。
 - **Web** 不是目标。

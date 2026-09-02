@@ -19,4 +19,6 @@ first release.
   progress model with unknown-field preservation, the `nihongo_progress.json` data module and the
   four facades over `myapps_data`, settings with theme/language/storage/about in two panes on wide
   windows, English and Simplified Chinese UI, tests for layout rules, pages, JSON compatibility,
-  the module contract and the content rules, bilingual documentation, and an Android CI workflow.
+  the module contract and the content rules, bilingual documentation, an Android CI workflow that runs on every push to `main`, and the app icon
+  with iOS default / dark / tinted variants (the `ios/` folder is scaffolded for the icon set only
+  and is not built by CI).

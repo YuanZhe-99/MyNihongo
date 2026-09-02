@@ -112,6 +112,8 @@ lib/
 assets/content/
   grammar_seed.json
   vocab_seed.json
+assets/icon/                    app_icon.png + generated iOS sources (not bundled)
+tool/generate_ios_icons.dart    iOS default / dark / tinted icon generator
 ```
 
 Primary tests:

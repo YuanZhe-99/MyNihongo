@@ -32,15 +32,34 @@ listed at the end with what adding each involves.
 - **Cleartext traffic** is allowed (`usesCleartextTraffic="true"`) so a WebDAV server on a home
   network over plain HTTP works, as in the sibling apps.
 
+## App icon
+
+- Source artwork: `assets/icon/app_icon.png` (square, transparent background). It is not bundled into the
+  app; only launcher assets ship.
+- `tool/generate_ios_icons.dart` scales the artwork into the iOS safe area and writes the three
+  iOS sources `assets/icon/app_icon_ios.png` (opaque, white background), `app_icon_ios_dark.png`
+  (transparent, slightly brightened) and `app_icon_ios_tinted.png` (transparent grayscale), plus
+  review previews under `build/icon_preview/`.
+- `flutter_launcher_icons.yaml` then generates the Android mipmaps and the iOS `AppIcon.appiconset`
+  with default, dark and tinted entries. Regenerate after changing the artwork:
+
+```bash
+dart run tool/generate_ios_icons.dart
+dart run flutter_launcher_icons
+```
+
+- The `ios/` folder exists so the icon set has a home and `CFBundleDisplayName` is already
+  `MyNihongo!!!!!`; iOS is otherwise still a planned platform and CI does not build it.
+
 ## Planned platforms
 
 - **Windows:** `flutter create --platforms=windows .`, then the series' `installer.iss` (x64 and
   ARM64 via `#ifdef ARM64`), `msix_config` in `pubspec.yaml`, `windows/runner/resources/app_icon.ico`,
   and the version locations listed in `AGENTS.md`. The ARM64 CI job runs on Flutter master until
   stable ships an ARM64 engine, as MyAnime's does.
-- **iOS / macOS:** `--platforms=ios,macos`; `CFBundleDisplayName` / `AppInfo.xcconfig` name
-  `MyNihongo!!!!!`; `com.apple.security.network.client` in both macOS entitlement files for WebDAV;
-  padded iOS icon sources for default, dark and tinted modes.
+- **iOS / macOS:** `ios/` already exists (see *App icon*); add macOS with `--platforms=macos`;
+  `AppInfo.xcconfig` name `MyNihongo!!!!!`; `com.apple.security.network.client` in both macOS
+  entitlement files for WebDAV; the padded iOS icon sources are already generated.
 - **Speech (Phase 2):** `flutter_tts` and `speech_to_text` wrap Android `TextToSpeech` /
   `SpeechRecognizer` and Apple `AVSpeechSynthesizer` / `SFSpeechRecognizer`; Windows has TTS via
   the same plugin but no bundled recogniser, so pronunciation feedback stays a mobile feature until
