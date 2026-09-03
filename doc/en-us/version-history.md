@@ -12,6 +12,44 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.2.1` — 2026-09-03. On-device AI assistance for the sentence lab, and the first release verified
+  on a real phone.
+
+  A **Pixel 10** became available, which is what made this release possible and what changes the
+  honesty of the rest of this entry: `0.2.0` was verified only through test seams, and two of its
+  behaviours turned out to be wrong the moment a device ran them.
+
+  On-device AI (`PLAN.md` M2.4): with **On-device AI assistance** turned on in Settings — off until
+  the learner turns it on — the sentence lab can explain one of its own findings in more words,
+  explain a whole sentence, and suggest a rewrite. Explanations come from ML Kit's Prompt API and
+  rewrites from its Proofreading API, both running on the phone through Android AICore. The switch is
+  a **gate rather than a filter**: while it is off, the method channel is never called at all.
+  Everything generated is shown in a card labelled as generated, under the deterministic finding it
+  comments on, and none of it is stored, synced, or written into the catalog. The prompts are a
+  versioned content asset grounded in the app's own analysis and the catalog's own grammar notes, so
+  an explanation cannot drift from what the Grammar page teaches. The only network use is the model
+  download, which the AICore system service performs when the learner taps Download; the privacy
+  policy now says so. AICore is reached through the app's own Kotlin channel rather than a plugin,
+  for the same Kotlin Gradle Plugin reason that pins `file_picker` and `speech_to_text`, and `minSdk`
+  rises to 26.
+
+  Two bugs the development host could not have shown, both found on the phone and fixed here:
+
+  1. **R8 shrank ML Kit into a `NullPointerException`** in release builds, which the app reported as
+     "not available on this device" — on a phone that supports it perfectly. Debug builds were fine,
+     which is what made it invisible. `android/app/proguard-rules.pro` now keeps
+     `com.google.mlkit.**`; keeping only the `genai` packages was not enough.
+  2. **Opening Settings raised the microphone prompt**, a `0.2.0` defect: the recognition status row
+     asked the recognizer whether it was available, and asking is what makes Android request the
+     microphone — breaking `0.2.0`'s documented promise that the prompt never arrives unexplained.
+     Settings now checks the permission first, and the status line has a third state for "not yet
+     checked", which is a different claim from "this device has no recognizer".
+
+  Verified: `flutter analyze` clean, 348 tests, release APK, and the whole AI feature exercised on the
+  Pixel 10 in English and Simplified Chinese. **Still not verified on a device:** text-to-speech and
+  speech recognition themselves — this release did not cover them — and macOS, which has still never
+  been compiled.
+
 - `0.2.0` — 2026-09-03. Phase 2: the app speaks, listens, and reads a sentence. Also the Windows
   and macOS projects, added early because the pronunciation work needs a machine that can run the
   app and the development host has no Android device.
