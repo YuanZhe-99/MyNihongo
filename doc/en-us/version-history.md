@@ -12,6 +12,65 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.2.0` — 2026-09-03. Phase 2: the app speaks, listens, and reads a sentence. Also the Windows
+  and macOS projects, added early because the pronunciation work needs a machine that can run the
+  app and the development host has no Android device.
+
+  Verified on this host by `flutter analyze` (clean), 297 tests, and debug builds of both the
+  Android APK and the Windows executable, the latter launched and checked. **Not verified on a
+  device:** this host has no Japanese text-to-speech voice, no Japanese speech data and no Android
+  phone, so the audio path and the recognizer itself are exercised only through their test seams —
+  what the host actually shows is the no-voice and no-recognizer state, and that state is covered.
+  macOS has never been compiled: there is no Mac here.
+
+  Windows and macOS (`PLAN.md` Phase 5, landed early): the two projects, an `installer.iss` that
+  builds both x64 and ARM64 from one script, an `msix_config`, desktop launcher icons, and a
+  single-instance Windows runner opening at 1000×720 — wide enough that the reference lists are
+  already two-column, which is the layout worth looking at on a desktop. CI stays Android-only on
+  purpose; the desktop targets are for local development. `flutter_tts`'s Windows plugin needs
+  `nuget.exe` on `PATH`, which is now a documented prerequisite. Settings shows the storage location
+  on desktop only: on a phone the path names a sandbox the user can neither browse to nor act on.
+  Every platform branch now lives in one file, `shared/utils/platform_capabilities.dart`, reading
+  `defaultTargetPlatform` so an Android-only branch stays testable on a Windows host.
+
+  Text to speech (`PLAN.md` M2.1): kana, headwords and every example sentence read aloud by the
+  device's own engine, with a long-press on any kana chart cell. The kana reading is always
+  preferred over the kanji surface, so the engine cannot guess a reading. One utterance at a time,
+  published so the button that is playing shows a stop icon and the rest stay idle. A speed slider
+  and a Japanese voice picker in Settings, both device-local. With no Japanese voice installed the
+  buttons are disabled rather than hidden, and Settings offers a button that opens the system
+  speech settings.
+
+  Speech recognition and pronunciation feedback (`PLAN.md` M2.2): say a kana, word or sentence and
+  see which morae matched. Recognition is **offline-only by default** — on Android that means the
+  attempt fails rather than quietly reaching a server when no Japanese model is installed, and the
+  sheet turns that failure into a message naming both fixes. A switch in Settings, off by default
+  and stored as an absent key, is the only way anything is ever sent to the system speech service;
+  it is the only setting besides WebDAV sync that lets anything leave the device. The microphone is
+  requested at first use behind the app's own rationale, never at install. Scoring normalises both
+  sides to hiragana morae and aligns them with an edit path whose ties prefer a substitution, so one
+  wrong mora reads as one wrong mora; the attempt is first rewritten through a new catalog index,
+  because the recognizer answers in kanji where the item is written in kanji. The per-mora diff is
+  the primary output and the score is a summary of it. Own-voice playback is deferred: it needs the
+  microphone at the same time as the recognizer, which cannot be verified without a device.
+
+  Sentence lab (`PLAN.md` M2.3): type a sentence and see the words, what modifies what, the taught
+  grammar it uses, and anything that looks unusual. Tokenizing is a cost lattice with a shortest
+  path rather than greedy longest match, because whether a kana run splits one way or another
+  depends on what follows it. De-inflection runs backwards — each auxiliary declares the stem shape
+  it attaches to, and the bundled vocabulary rejects every proposal that is not a word, so a voiced
+  te-stem can propose three verb classes and keep the one that exists. Grammar points are matched
+  against the token sequence rather than the raw text, which needed no content change and stops a
+  one-character particle matching inside a longer word. Four checks report **possible** issues, each
+  carrying the exemptions that keep it quiet. New content: a function-word table of about ninety
+  particles, copula forms, auxiliaries and formal nouns with `fw:` ids, authoritative over the
+  vocabulary for the same surface. The load-bearing test is that every example sentence the app
+  ships parses without an unknown token; the five words the vocabulary genuinely lacks are listed in
+  a capped fixture, each citing the example that needs it. Three parts of the M2.3 design were
+  dropped as unnecessary and one deferred, each recorded in `PLAN.md`'s decisions log: no
+  TinySegmenter port, no new token/POS match schema, one column at every window size, and the
+  AICore enhancement left as a `SentenceEnhancer` seam with no implementation.
+
 - `0.1.0` — 2026-09-03. First release: the Phase 1 reference app. Built from M1.0 through M1.4 in
   one day; the four milestone paragraphs below are what shipped in it, in the order they landed.
 
