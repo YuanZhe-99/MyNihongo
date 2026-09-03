@@ -28,6 +28,8 @@ anywhere except to a WebDAV server you configure yourself.
   and example sentences with readings.
 - Cross-links between all three: tap a word to see the grammar its examples
   use, tap a grammar point to see the words in its examples.
+- Everything read aloud by your device's own speech engine, and pronunciation
+  practice that compares what you said with the reading, mora by mora.
 - English and Simplified Chinese throughout. Chinese glosses cover N5; the rest
   show English.
 
@@ -54,6 +56,13 @@ app does not pretend to have them — the Learn tab says what is coming.
 
 Free software under the GPLv3.
 
+## What is new (0.2.0)
+
+Everything can be read aloud, and pronunciation practice compares what you said
+with the reading, mora by mora. Recognition runs on your device; a switch, off
+by default, is the only way anything is ever sent to the system speech service.
+Windows and macOS builds exist for development.
+
 ## What is new (0.1.0)
 
 First release. Kana, vocabulary and grammar reference; WebDAV sync with
@@ -78,3 +87,8 @@ offline, WebDAV.
 No data collected, no data shared. WebDAV sync is user-configured transfer to
 the user's own server and is not collection by Google Play's definition; the
 listing says so in the description rather than leaving it to be inferred.
+
+The microphone is declared. It is used only while the learner is recording a
+pronunciation attempt, no audio is stored, and recognition is offline unless the
+learner turns on the network fallback — which the description and the privacy
+policy both state.

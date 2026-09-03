@@ -60,5 +60,58 @@ query, or the engine is invisible and the app reports no voices at all.
 
 ## Speech recognition
 
-Not built yet — `PLAN.md` M2.2. This page grows a section when it lands, and the privacy policy is
-updated in the same change.
+`speech_to_text` over the platform recognizer — Android's `SpeechRecognizer`, Apple's
+`SFSpeechRecognizer`, the Windows speech platform. Linux has none behind the plugin, so
+`platformMayRecognizeSpeech` refuses there before anything asks for a microphone.
+
+### On the device, by default
+
+Every listening request is made with `onDevice: true` unless the learner has turned on
+**Settings › Speech › Allow network recognition**. On Android that maps to `EXTRA_PREFER_OFFLINE`,
+which is offline-**only**: on a device with no Japanese model downloaded the attempt fails rather
+than quietly going to a server. That failure is reported as `languageUnavailable`, and the practice
+sheet turns it into a message naming both fixes — install the Japanese speech data, or turn the
+fallback on knowingly.
+
+The switch is the only setting in the app besides WebDAV sync that lets anything leave the device,
+and its subtitle says exactly that. It is off by default and stored as an absent key
+(`speechNetworkFallback`), so a device that never touched it never sends audio anywhere.
+
+### The microphone
+
+`RECORD_AUDIO` is declared in the manifest but requested at **first use**, never at install: the
+practice sheet shows its own rationale dialog before the first `initialize()` when the permission is
+not already granted, so the system prompt never arrives unexplained. iOS and macOS carry
+`NSMicrophoneUsageDescription` and `NSSpeechRecognitionUsageDescription`; the macOS sandbox needs
+`com.apple.security.device.audio-input` in both entitlement files. Android 11+ package visibility
+needs an `android.speech.RecognitionService` query, alongside the text-to-speech one.
+
+No audio is recorded to a file, and nothing is stored. The recognizer's text is compared and then
+forgotten when the sheet closes.
+
+### The practice sheet
+
+Opened from the microphone button on the vocabulary and kana detail sheets, and from **Practise** in
+each example row's overflow menu. One column at every window size; it holds a target line with a
+speak button, a record button, the mora chips and a legend.
+
+| State | What is shown |
+|---|---|
+| idle | "Tap to speak" |
+| listening | a stop button and the partial transcript, live |
+| processing | the button disabled while the recognizer settles |
+| done | the mora diff, then the score, then what was heard |
+| failed | one sentence naming the cause and what to do about it |
+
+The **diff is the primary output** and the score is a summary of the same alignment; a perfect
+attempt gets a sentence rather than "100 of 100". Colour never carries meaning alone — the legend
+names all four states, a missing mora is struck through, and a substitution shows both what the item
+says and what was heard. The algorithm is in
+[`../algorithms/pronunciation-scoring.md`](../algorithms/pronunciation-scoring.md).
+
+The sheet states plainly that it judges whether you were **recognisable**, not your accent or pitch.
+
+### Not built
+
+Own-voice recording and playback (`record` + `just_audio`) are deferred: they need the microphone at
+the same time as the recognizer, which cannot be verified without a device. See `PLAN.md` M2.2.

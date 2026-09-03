@@ -114,6 +114,7 @@ int columnCapacity(double contentWidth, {required double minItemWidth,
 | 设置 | 形状门控 | `canSplitLayout` 时两个窗格；左窗格 `settingsLeftPaneWidth(shellContentWidth)`——比例式（0.44），钳制在 300–440，并加上限使详情窗格永不低于 `settingsRightPaneMinWidth`（280）。二级页面在窄窗口上全屏压栈，在宽窗口上承载于详情窗格内嵌套的 `Navigator`，因此同一组件服务两种模式。 |
 | WebDAV 同步、备份 | 无 | 在任何尺寸下都是单列。两者都是二级页面，因此由上面的“设置”一行决定它们是被压栈还是承载于详情窗格；页面本身不做任何测量。 |
 | 详情面板 | 无 | 底部面板，在每种模式下相同。 |
+| 发音练习 | 无 | 在任何尺寸下都是单列，宽度上限为 `pageMaxContentWidth`。它包含一行目标、一个录音按钮和一排音拍色块；没有第二样东西可以并排放置，色块自行换行而不需要分列。 |
 
 **明知而接受的代价：** 横持的手机（915 × 412）保留每个单列布局，尽管它是所有视口中高度最少的——本来受益最大的情形。本系列为其分栏表面的一致性接受了这个取舍；本应用沿用。
 

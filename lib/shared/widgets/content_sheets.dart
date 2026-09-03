@@ -18,6 +18,7 @@ import '../../features/content/models/vocab_entry.dart';
 import '../../features/content/services/content_links.dart';
 import '../../features/kana/models/kana.dart';
 import '../../features/kana/models/kana_note.dart';
+import '../../features/speech/widgets/pronunciation_practice_sheet.dart';
 import '../../features/speech/widgets/speak_button.dart';
 import '../../l10n/app_localizations.dart';
 import 'reference_widgets.dart';
@@ -111,6 +112,10 @@ Future<void> showVocabDetailSheet(
               ),
             ),
             SpeakButton(text: entry.reading),
+            _practiceButton(
+              context,
+              PracticeTarget(display: entry.headword, reading: entry.reading),
+            ),
             levelChip(context, entry.level),
           ],
         ),
@@ -266,6 +271,13 @@ Future<void> showKanaDetailSheet(
             const Spacer(),
             Text(entry.romaji, style: theme.textTheme.headlineSmall),
             SpeakButton(text: entry.hiragana),
+            _practiceButton(
+              context,
+              PracticeTarget(
+                display: entry.kana(KanaScript.hiragana),
+                reading: entry.hiragana,
+              ),
+            ),
           ],
         ),
         if (note?.strokes != null) ...[
@@ -319,3 +331,21 @@ Future<void> showKanaDetailSheet(
 /// Re-exported so a caller that only needs the note type does not import the
 /// kana model as well.
 typedef KanaSheetNote = KanaNote;
+
+/// Purpose: Build the button that opens pronunciation practice for an item.
+/// Inputs: `context`, `target`.
+/// Returns: `Widget`.
+/// Side effects: None until tapped; opens the practice sheet then.
+/// Notes: Sits beside the speak button on the vocabulary and kana sheets. It
+/// is always enabled: whether a recognizer exists is a runtime question the
+/// sheet answers with an explanation, and a device that cannot listen can
+/// still show the target and speak it.
+Widget _practiceButton(BuildContext context, PracticeTarget target) {
+  final l10n = AppLocalizations.of(context)!;
+  return IconButton(
+    visualDensity: VisualDensity.compact,
+    icon: const Icon(Icons.mic_none_outlined),
+    tooltip: l10n.practiceAction,
+    onPressed: () => showPronunciationPracticeSheet(context, target),
+  );
+}

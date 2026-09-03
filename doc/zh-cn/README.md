@@ -34,6 +34,7 @@
 - [`features/sync-and-backup.md`](features/sync-and-backup.md) — “设置 › 数据”下的同步、备份与 ZIP 界面。
 - [`features/reference-preferences.md`](features/reference-preferences.md) — 参考页面按设备记住的五个选择。
 - [`features/pronunciation.md`](features/pronunciation.md) — 一切发声与听声的部分：哪些内容会被朗读、速度与语音偏好，以及未安装日语语音时的表现。
+- [`algorithms/pronunciation-scoring.md`](algorithms/pronunciation-scoring.md) — 一次朗读尝试如何逐音拍地与读音作对照。
 - [`store-listing.md`](store-listing.md) — 发布与商店文案。
 
 ## 此处不涵盖

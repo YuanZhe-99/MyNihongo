@@ -35,6 +35,7 @@ about to change, verify against the code, then fix the docs in the same commit.
 | Backup, restore, ZIP transfer | `doc/en-us/backup-restore.md` |
 | Files on disk, what syncs, `storage_config.json` keys, progress record ids | `doc/en-us/data-formats.md` |
 | Per-feature behavior | `doc/en-us/features/*.md` |
+| A named algorithm, derived rather than described | `doc/en-us/algorithms/*.md` |
 | When the UI splits into panes or columns; foldable rules | `doc/en-us/adaptive-layout.md` |
 | Android specifics, Gradle/AGP state, planned platforms | `doc/en-us/platform-notes.md` |
 | CI jobs, build commands, fresh-clone steps | `doc/en-us/ci-cd.md` |

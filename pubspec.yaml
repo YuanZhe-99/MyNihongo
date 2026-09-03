@@ -83,5 +83,5 @@ msix_config:
   identity_name: com.yuanzhe.mynihongo
   msix_version: 0.1.0.0
   logo_path: assets/icon/app_icon.png
-  capabilities: internetClient
+  capabilities: internetClient,microphone
   install_certificate: false

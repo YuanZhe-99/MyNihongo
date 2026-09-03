@@ -625,4 +625,86 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get speechSettingsHintApple => '在系统设置的「辅助功能 → 朗读内容」中添加日语语音。';
+
+  @override
+  String get practiceTitle => '发音练习';
+
+  @override
+  String get practiceStart => '点击开始朗读';
+
+  @override
+  String get practiceListening => '正在聆听……';
+
+  @override
+  String get practiceProcessing => '正在识别你说的话……';
+
+  @override
+  String get practiceRetry => '再试一次';
+
+  @override
+  String practiceHeard(Object text) {
+    return '听到：$text';
+  }
+
+  @override
+  String practiceScore(int score) {
+    return '$score / 100';
+  }
+
+  @override
+  String get practicePerfect => '每个音拍都对上了。';
+
+  @override
+  String get practiceLegendCorrect => '正确';
+
+  @override
+  String get practiceLegendSubstituted => '不同';
+
+  @override
+  String get practiceLegendMissing => '缺少';
+
+  @override
+  String get practiceLegendExtra => '多余';
+
+  @override
+  String get practiceLimitsNote => '这是把语音识别理解到的内容与读音作对照。它判断的是你是否能被听懂，而不是口音或声调。';
+
+  @override
+  String get practiceNoMatch => '没有识别到内容。请再试一次，离麦克风近一些。';
+
+  @override
+  String get practiceLanguageUnavailable =>
+      '本设备没有离线日语识别。请在系统设置中安装日语语音数据，或在「设置 › 语音」中允许网络回退。';
+
+  @override
+  String get practicePermissionDenied => '麦克风权限被拒绝，因此无法收音。';
+
+  @override
+  String get practiceUnavailable => '本设备没有应用可以使用的语音识别器。';
+
+  @override
+  String get practiceMicRationaleTitle => '使用麦克风？';
+
+  @override
+  String get practiceMicRationaleBody =>
+      '为了对照你的发音，应用需要听到你的声音。识别在你的设备上进行，不会保存或发送任何音频。';
+
+  @override
+  String get practiceMicRationaleAllow => '继续';
+
+  @override
+  String get speechNetworkFallback => '允许网络识别';
+
+  @override
+  String get speechNetworkFallbackBody =>
+      '默认关闭。开启后，若你的设备没有离线日语识别，你说的内容会被发送到系统语音服务进行转写。';
+
+  @override
+  String get speechRecognizerReady => '语音识别可用';
+
+  @override
+  String get speechRecognizerMissing => '本设备没有日语语音识别';
+
+  @override
+  String get practiceAction => '练习';
 }

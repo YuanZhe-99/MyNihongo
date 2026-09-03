@@ -63,9 +63,10 @@ All data the app creates — your learning progress and your settings — is sto
 
 Network Access
 
-MyNihongo!!!!! accesses the internet only in the following situation:
+MyNihongo!!!!! accesses the internet only in the following situations, both of which you have to turn on yourself:
 
 • WebDAV sync: If you enable WebDAV cloud sync, the app sends your learning progress to a WebDAV server that you configure yourself. The app does not send data to any other server.
+• Network speech recognition, only if you turn on the switch described under Speech Recognition below. It is off by default.
 
 No other network communication takes place. The app requests the INTERNET permission for this and nothing else.
 
@@ -87,9 +88,17 @@ The app can read Japanese aloud — kana, words and example sentences. This uses
 
 If no Japanese voice is installed, nothing is spoken and the app says so; installing one is done in your system settings, not in the app.
 
+Speech Recognition
+
+Pronunciation practice listens to you and compares what the speech recognizer understood with the item's reading. Recognition is done by the speech service already on your device — Android's, Apple's, or the Windows speech platform.
+
+By default the app asks for offline recognition only. On a device with no offline Japanese data installed the attempt fails and the app tells you so, rather than quietly sending your voice anywhere. Settings has a switch, off by default, that allows a fallback to the system's network recognition; only when you turn it on can what you say be sent to the system speech service to be transcribed. On most Android devices that service is Google's.
+
+No audio is recorded to a file, and nothing you say is stored. The microphone is used only while you are recording an attempt, and the permission is requested the first time you tap record, with a reason.
+
 Changes to This Policy
 
-This privacy policy may be updated from time to time. Updated versions will be published within the app or on the relevant distribution channels. Text to speech is described above. Speech recognition has not shipped yet; it will be described here before it does, it is designed to run on the device, and the microphone permission will be requested at first use with a reason, never at install.''';
+This privacy policy may be updated from time to time. Updated versions will be published within the app or on the relevant distribution channels. Text to speech and speech recognition are described above. Any future feature that could send anything off the device will be described here before it ships, and will be off unless you turn it on.''';
 
   static const _zh = '''隐私政策
 
@@ -105,9 +114,10 @@ MyNihongo!!!!! 不收集、上传或共享任何个人信息。应用不包含�
 
 网络访问
 
-MyNihongo!!!!! 仅在以下情况下访问互联网：
+MyNihongo!!!!! 仅在以下两种情况下访问互联网，且两者都需要您自己开启：
 
 • WebDAV 同步：如果您启用了 WebDAV 云同步，应用会将您的学习进度发送到您自行配置的 WebDAV 服务器。应用不会向其他任何服务器发送数据。
+• 网络语音识别，仅当您打开下文「语音识别」中描述的开关时。它默认关闭。
 
 除此之外不进行任何网络通信。应用仅为此申请 INTERNET 权限，别无他用。
 
@@ -129,7 +139,15 @@ MyNihongo!!!!! 仅在以下情况下访问互联网：
 
 如果没有安装日语语音，则不会朗读，应用会明确说明；安装语音是在您的系统设置中完成的，而不是在应用内。
 
+语音识别
+
+发音练习会听取你的朗读，并把语音识别理解到的内容与词条读音作对照。识别由你设备上已有的语音服务完成——Android 的、Apple 的，或 Windows 语音平台。
+
+默认情况下应用只请求离线识别。在没有安装离线日语数据的设备上，请求会失败并明确告知你，而不是悄悄把你的声音发往任何地方。设置中有一个默认关闭的开关，允许回退到系统的网络识别；只有在你打开它之后，你说的内容才可能被发送到系统语音服务进行转写。在多数 Android 设备上，该服务是 Google 的。
+
+不会把音频录成文件，你说的话也不会被保存。麦克风仅在你录制一次尝试期间使用，权限在你第一次点击录音时带理由申请。
+
 政策变更
 
-本隐私政策可能会不时更新。更新版本将在应用内或相关分发渠道发布。语音合成已在上文说明。语音识别尚未发布；它会在发布前写入本政策，它设计为在设备上运行，麦克风权限将在首次使用时带说明申请，而不会在安装时申请。''';
+本隐私政策可能会不时更新。更新版本将在应用内或相关分发渠道发布。语音合成与语音识别已在上文说明。今后任何可能把内容发出设备的功能，都会在发布前写入本政策，并且默认关闭，除非你自己打开。''';
 }

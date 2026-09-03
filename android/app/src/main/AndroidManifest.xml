@@ -1,6 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- WebDAV sync talks to a server the user configures; nothing else uses the network. -->
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Pronunciation practice records the learner only while they hold the
+         record button. Requested at first use with a rationale, never at
+         install. Recognition is offline unless the learner turns the network
+         fallback on in Settings. See doc/en-us/features/pronunciation.md. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <application
         android:usesCleartextTraffic="true"
         android:label="MyNihongo!!!!!"
@@ -53,6 +58,10 @@
              visible. See doc/en-us/features/pronunciation.md. -->
         <intent>
             <action android:name="android.intent.action.TTS_SERVICE"/>
+        </intent>
+        <!-- Same reason, for the speech recognizer. -->
+        <intent>
+            <action android:name="android.speech.RecognitionService"/>
         </intent>
     </queries>
 </manifest>

@@ -1237,6 +1237,156 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Add a Japanese voice in System Settings, under Accessibility then Spoken Content.'**
   String get speechSettingsHintApple;
+
+  /// No description provided for @practiceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Pronunciation practice'**
+  String get practiceTitle;
+
+  /// No description provided for @practiceStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to speak'**
+  String get practiceStart;
+
+  /// No description provided for @practiceListening.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening…'**
+  String get practiceListening;
+
+  /// No description provided for @practiceProcessing.
+  ///
+  /// In en, this message translates to:
+  /// **'Working out what you said…'**
+  String get practiceProcessing;
+
+  /// No description provided for @practiceRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get practiceRetry;
+
+  /// No description provided for @practiceHeard.
+  ///
+  /// In en, this message translates to:
+  /// **'Heard: {text}'**
+  String practiceHeard(Object text);
+
+  /// No description provided for @practiceScore.
+  ///
+  /// In en, this message translates to:
+  /// **'{score} of 100'**
+  String practiceScore(int score);
+
+  /// No description provided for @practicePerfect.
+  ///
+  /// In en, this message translates to:
+  /// **'Every mora matched.'**
+  String get practicePerfect;
+
+  /// No description provided for @practiceLegendCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct'**
+  String get practiceLegendCorrect;
+
+  /// No description provided for @practiceLegendSubstituted.
+  ///
+  /// In en, this message translates to:
+  /// **'Different'**
+  String get practiceLegendSubstituted;
+
+  /// No description provided for @practiceLegendMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'Missing'**
+  String get practiceLegendMissing;
+
+  /// No description provided for @practiceLegendExtra.
+  ///
+  /// In en, this message translates to:
+  /// **'Extra'**
+  String get practiceLegendExtra;
+
+  /// No description provided for @practiceLimitsNote.
+  ///
+  /// In en, this message translates to:
+  /// **'This compares what the speech recognizer understood with the reading. It judges whether you were recognisable, not your accent or pitch.'**
+  String get practiceLimitsNote;
+
+  /// No description provided for @practiceNoMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing was recognized. Try again, a little closer to the microphone.'**
+  String get practiceNoMatch;
+
+  /// No description provided for @practiceLanguageUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No offline Japanese recognition on this device. Install the Japanese speech data in the system settings, or allow the network fallback in Settings › Speech.'**
+  String get practiceLanguageUnavailable;
+
+  /// No description provided for @practicePermissionDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Microphone access was declined, so nothing can be heard.'**
+  String get practicePermissionDenied;
+
+  /// No description provided for @practiceUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'This device has no speech recognizer the app can use.'**
+  String get practiceUnavailable;
+
+  /// No description provided for @practiceMicRationaleTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Use the microphone?'**
+  String get practiceMicRationaleTitle;
+
+  /// No description provided for @practiceMicRationaleBody.
+  ///
+  /// In en, this message translates to:
+  /// **'To compare your pronunciation, the app needs to hear you. Recognition runs on your device and no audio is stored or sent anywhere.'**
+  String get practiceMicRationaleBody;
+
+  /// No description provided for @practiceMicRationaleAllow.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get practiceMicRationaleAllow;
+
+  /// No description provided for @speechNetworkFallback.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow network recognition'**
+  String get speechNetworkFallback;
+
+  /// No description provided for @speechNetworkFallbackBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Off by default. When on, and your device has no offline Japanese recognition, what you say is sent to the system speech service to be transcribed.'**
+  String get speechNetworkFallbackBody;
+
+  /// No description provided for @speechRecognizerReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Speech recognition is available'**
+  String get speechRecognizerReady;
+
+  /// No description provided for @speechRecognizerMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'No Japanese speech recognition on this device'**
+  String get speechRecognizerMissing;
+
+  /// No description provided for @practiceAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Practise'**
+  String get practiceAction;
 }
 
 class _AppLocalizationsDelegate

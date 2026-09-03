@@ -473,4 +473,50 @@ class NihongoStorage {
   /// Side effects: Writes the config file.
   /// Notes: None.
   static Future<void> setTtsVoice(String? name) => _setString('ttsVoice', name);
+
+  /// Purpose: Read one boolean preference.
+  /// Inputs: `key`.
+  /// Returns: `Future<bool?>`.
+  /// Side effects: Reads the config file.
+  /// Notes: Internal helper used within this file only. Only a real JSON
+  /// boolean counts; the string `"true"` reads as unset, like every other
+  /// wrong-typed value in this file.
+  static Future<bool?> _getBool(String key) async {
+    final config = await readConfig();
+    final value = config[key];
+    return value is bool ? value : null;
+  }
+
+  /// Purpose: Write or remove one boolean preference.
+  /// Inputs: `key`, `value` — null removes the key.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: Internal helper used within this file only.
+  static Future<void> _setBool(String key, bool? value) async {
+    final config = await readConfig();
+    if (value == null) {
+      config.remove(key);
+    } else {
+      config[key] = value;
+    }
+    await writeConfig(config);
+  }
+
+  /// Purpose: Read whether network speech recognition is allowed.
+  /// Inputs: None.
+  /// Returns: `Future<bool>` — false unless the user turned it on.
+  /// Side effects: Reads the config file.
+  /// Notes: The default is off, and an absent key means off, so a device that
+  /// never touched the setting never sends audio to a server. See
+  /// `doc/en-us/features/pronunciation.md`.
+  static Future<bool> getSpeechNetworkFallback() async =>
+      await _getBool('speechNetworkFallback') ?? false;
+
+  /// Purpose: Remember whether network speech recognition is allowed.
+  /// Inputs: `allowed`.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: Off is stored as an absent key, like every other default here.
+  static Future<void> setSpeechNetworkFallback(bool allowed) =>
+      _setBool('speechNetworkFallback', allowed ? true : null);
 }

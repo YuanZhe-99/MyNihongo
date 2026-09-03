@@ -38,4 +38,36 @@ Android 11+ 的软件包可见性要求清单中声明 `android.intent.action.TT
 
 ## 语音识别
 
-尚未实现——`PLAN.md` M2.2。落地时本页会增加相应章节，并在同一次改动中更新隐私政策。
+通过 `speech_to_text` 调用平台识别器——Android 的 `SpeechRecognizer`、Apple 的 `SFSpeechRecognizer`、Windows 语音平台。插件背后没有 Linux 实现，因此 `platformMayRecognizeSpeech` 会在任何人索要麦克风之前就在那里拒绝。
+
+### 默认在端侧
+
+除非学习者打开**设置 › 语音 › 允许网络识别**，否则每次聆听请求都以 `onDevice: true` 发出。在 Android 上这对应 `EXTRA_PREFER_OFFLINE`，即**只用离线**：在没有下载日语模型的设备上，请求会失败，而不是悄悄发往服务器。该失败被报告为 `languageUnavailable`，练习表把它转成一条同时给出两种修复方式的提示——安装日语语音数据，或者在知情的前提下打开回退。
+
+除 WebDAV 同步之外，这个开关是应用中唯一会让内容离开设备的设置，它的副标题也正是这样写的。它默认关闭并以缺失键的形式存储（`speechNetworkFallback`），因此从未碰过它的设备永远不会把音频发往任何地方。
+
+### 麦克风
+
+`RECORD_AUDIO` 在清单中声明，但在**首次使用**时才申请，绝不在安装时申请：当权限尚未授予时，练习表会在第一次 `initialize()` 之前先弹出自己的说明对话框，因此系统弹窗绝不会毫无解释地出现。iOS 和 macOS 带有 `NSMicrophoneUsageDescription` 与 `NSSpeechRecognitionUsageDescription`；macOS 沙盒需要在两个 entitlement 文件中都有 `com.apple.security.device.audio-input`。Android 11+ 的软件包可见性需要 `android.speech.RecognitionService` 查询，与语音合成那条并列。
+
+不会把音频录成文件，也不会保存任何内容。识别器给出的文本用完即弃，练习表关闭时就被遗忘。
+
+### 练习表
+
+从词汇与假名详情表上的麦克风按钮进入，也可从每个例句行的溢出菜单里的**练习**进入。在任何窗口尺寸下都是单列；它包含带朗读按钮的目标行、一个录音按钮、音拍色块和图例。
+
+| 状态 | 显示内容 |
+|---|---|
+| 空闲 | "点击开始朗读" |
+| 聆听中 | 停止按钮，以及实时的部分转写 |
+| 处理中 | 识别器定稿期间按钮禁用 |
+| 完成 | 音拍差异，然后是分数，然后是听到的内容 |
+| 失败 | 一句话说明原因和该怎么办 |
+
+**差异是主要输出**，分数只是同一对齐结果的摘要；完美的尝试显示的是一句话而不是"100 / 100"。颜色从不单独承载含义——图例列出全部四种状态，缺失的音拍带删除线，替换会同时显示词条的读音和听到的内容。算法见 [`../algorithms/pronunciation-scoring.md`](../algorithms/pronunciation-scoring.md)。
+
+练习表明确说明：它判断的是你是否**能被听懂**，而不是口音或声调。
+
+### 尚未实现
+
+自录回放（`record` + `just_audio`）已推迟：它需要与识别器同时使用麦克风，而没有设备无法验证。见 `PLAN.md` M2.2。

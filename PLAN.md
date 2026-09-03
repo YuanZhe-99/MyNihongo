@@ -1,14 +1,16 @@
 # PLAN.md — MyNihongo!!!!! roadmapas analysis |
 |keeps their wire format, backup format, and lock semantics interoperable.
 |on every platform |
-| 2026-09-03 | `speech_to_text`| `speech_to_text`| Windows and macOS projectsThe phased plan for MyNihongo!!!!!, the Japanese learning app in the MyApps series. `AGENTS.md`
+|hardware does |
+| 2026-09-03 | Speech recognition is offline-only| `speech_to_text`| `speech_to_text`| Windows and macOS projectsThe phased plan for MyNihongo!!!!!, the Japanese learning app in the MyApps series. `AGENTS.md`
 says how to work here; `doc/en-us/` says what the code does; this file says **what is planned, in
 what order, why, and what is done**. Update the checklists in the same change that lands a
 milestone item.
 
 **Status as of 2026-09-03:** Phase 1 complete and released as `v0.1.0`; Phase 2 in progress —
-M2.1 (text-to-speech) landed, along with the Windows and macOS projects the pronunciation work
-needs a machine for.
+M2.1 (text-to-speech) and M2.2 (speech recognition and pronunciation feedback) landed, along with
+the Windows and macOS projects the pronunciation work needs a machine for. M2.3, the sentence lab,
+is next.
 
 M1.0 (skeleton) landed 2026-09-02; M1.1 (sync and backup UI), M1.2 (content pipeline), M1.3 (reference polish) and M1.4
 (release) landed 2026-09-03. Two items carry over for want of hardware: the foldable screenshot
@@ -247,21 +249,37 @@ of — all on-device.
       a fake engine, and the missing-voice UI — which is what this host shows — is covered by
       `test/speak_button_test.dart`
 
-#### M2.2 Speech-to-text and pronunciation feedback
+#### M2.2 Speech-to-text and pronunciation feedback — **done 2026-09-03**
 
-- [ ] `speech_to_text` over Android `SpeechRecognizer`, `ja_JP`, on-device recognition preferred
+- [x] `speech_to_text` over Android `SpeechRecognizer`, `ja_JP`, on-device recognition preferred
       (`EXTRA_PREFER_OFFLINE`); `RECORD_AUDIO` permission requested only when the user first taps
-      record, with a rationale
-- [ ] Scoring: normalise both target and recognised text to kana (katakana → hiragana, long vowels
+      record, with a rationale. Also Apple's `SFSpeechRecognizer` and the Windows speech platform.
+      **Amended:** "preferred" is too weak for what the plugin does — `onDevice` is offline-**only**,
+      so a device with no Japanese model fails rather than falling back. That failure is reported as
+      `languageUnavailable` and the sheet names both fixes; a switch in Settings, off by default,
+      is the only way a request that could reach a server is ever made
+- [x] Scoring: normalise both target and recognised text to kana (katakana → hiragana, long vowels
       expanded), split into morae, then mora-level edit distance → a 0–100 score and a per-mora
       diff (correct / missing / extra / substituted). The diff is what the user sees, the score is
-      secondary. Document the algorithm in `doc/en-us/algorithms/pronunciation-scoring.md`
+      secondary. Documented in `doc/en-us/algorithms/pronunciation-scoring.md`. **Amended:** the
+      recogniser answers in kanji where the item is written in kanji, so the attempt is first
+      rewritten through a catalog index (`Lexicon.toKana`); without that a perfect reading of 東京
+      would score zero
 - [ ] Optional own-voice playback (`record` + `just_audio`), files kept in the cache directory and
-      never synced or backed up
-- [ ] Honest limits stated in-app: the recogniser judges *recognisability*, not accent or pitch;
+      never synced or backed up. **Deferred:** it needs the microphone at the same time as the
+      recogniser, which cannot be verified without a device, and it adds two more native Windows
+      code paths to an ARM64 build. Nothing else in M2.2 depends on it
+- [x] Honest limits stated in-app: the recogniser judges *recognisability*, not accent or pitch;
       pitch-accent feedback is a possible Phase 3+ item (needs a pitch dictionary and f0 analysis)
-- [ ] Privacy policy: on-device recognition; note that some Android builds fall back to Google's
-      network recogniser and how the app detects/avoids that
+- [x] Privacy policy: on-device recognition; the network fallback is a switch that is off by
+      default, and the policy says that on most Android devices the system service behind it is
+      Google's
+- [x] **Not heard on a device:** this host has no Japanese speech data and no Android device, so the
+      recogniser itself is unverified. The state machine, the on-device rule and the scoring are
+      covered by `test/speech_recognition_service_test.dart`, `test/pronunciation_scorer_test.dart`,
+      `test/kana_text_test.dart`, `test/lexicon_test.dart` and
+      `test/pronunciation_practice_ui_test.dart`, and the merged Android manifest was checked to
+      carry `RECORD_AUDIO` and no Bluetooth permissions
 
 #### M2.3 Sentence lab (grammar tree)
 
@@ -454,6 +472,10 @@ catalog content, and never writes a progress record by itself — the learner's 
 | 2026-09-03 | Every platform branch lives in `shared/utils/platform_capabilities.dart` and reads `defaultTargetPlatform` | One named home, the same rule `adaptive_layout.dart` applies to widths; reading `defaultTargetPlatform` rather than `dart:io`'s `Platform` is what makes an Android-only branch testable on a Windows host |
 | 2026-09-03 | `speech_to_text` is pinned to exactly `7.4.0`, and `flutter_tts` to `^4.2.5` | Both apply the Kotlin Gradle Plugin themselves, which is what `android.builtInKotlin=false` needs — the same constraint that pins `file_picker`. The plugin's main branch has already dropped KGP for AGP's built-in Kotlin, so a caret constraint would break the Android build without warning |
 | 2026-09-03 | `TtsService` owns one utterance at a time, published as a `ValueNotifier` | There is one voice on the device; a second speak button that looked idle while it was in fact queued would be lying about what the hardware does |
+| 2026-09-03 | Speech recognition is offline-only unless the learner turns on one switch, and that switch is the only setting besides WebDAV sync that lets anything leave the device | `EXTRA_PREFER_OFFLINE` fails rather than falling back, and a failure the user can act on is more honest than a silent upload. The switch's subtitle says what turning it on means |
+| 2026-09-03 | The attempt is rewritten through a catalog index before it is scored | Android answers 東京 where the item says とうきょう; comparing those character by character would score a perfect reading at zero. An unresolved span is copied through so it still costs edits |
+| 2026-09-03 | Scoring compares morae, and the per-mora diff is the primary output | The mora is the unit Japanese rhythm is counted in and the unit a listener judges; a single number cannot say which part to fix |
+| 2026-09-03 | Own-voice recording and playback are deferred out of M2.2 | It needs the microphone at the same time as the recogniser, which cannot be verified on a host with no device, and adds two more native Windows code paths |
 
 ## 7. Open questions
 

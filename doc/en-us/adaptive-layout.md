@@ -152,6 +152,7 @@ Every decision is recorded here with what it costs.
 | Settings | shape gate | Two panes when `canSplitLayout`; left pane `settingsLeftPaneWidth(shellContentWidth)` — proportional (0.44), clamped 300–440, and capped so the detail pane never drops below `settingsRightPaneMinWidth` (280). Second-level pages are pushed full-screen on a narrow window and hosted in a nested `Navigator` in the detail pane on a wide one, so one widget serves both. |
 | WebDAV sync, Backup | none | One column at every size. Both are second-level pages, so the Settings row above decides whether they are pushed or hosted in the detail pane; the pages themselves measure nothing. |
 | Detail sheets | none | Bottom sheets, identical in every mode. |
+| Pronunciation practice | none | One column at every size, capped at `pageMaxContentWidth`. It holds a target line, a record button and a row of mora chips; there is no second thing to put beside them, and the chips wrap rather than needing columns. |
 
 **Cost accepted knowingly:** a phone in landscape (915 × 412) keeps every single-column layout
 although it has the least height of any viewport — the case that would have benefited most. The

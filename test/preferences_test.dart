@@ -129,4 +129,23 @@ void main() {
     await NihongoStorage.setTtsVoice(null);
     expect((await config()).containsKey('ttsVoice'), isFalse);
   });
+
+  test('network speech recognition is off unless it was turned on', () async {
+    expect(await NihongoStorage.getSpeechNetworkFallback(), isFalse);
+    await NihongoStorage.setSpeechNetworkFallback(true);
+    expect(await NihongoStorage.getSpeechNetworkFallback(), isTrue);
+    expect((await config())['speechNetworkFallback'], isTrue);
+  });
+
+  test('turning the network fallback off removes the key', () async {
+    await NihongoStorage.setSpeechNetworkFallback(true);
+    await NihongoStorage.setSpeechNetworkFallback(false);
+    expect((await config()).containsKey('speechNetworkFallback'), isFalse);
+    expect(await NihongoStorage.getSpeechNetworkFallback(), isFalse);
+  });
+
+  test('a hand-edited string does not switch the fallback on', () async {
+    await configFile.writeAsString('{"speechNetworkFallback": "true"}');
+    expect(await NihongoStorage.getSpeechNetworkFallback(), isFalse);
+  });
 }

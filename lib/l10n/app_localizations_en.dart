@@ -646,4 +646,91 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get speechSettingsHintApple =>
       'Add a Japanese voice in System Settings, under Accessibility then Spoken Content.';
+
+  @override
+  String get practiceTitle => 'Pronunciation practice';
+
+  @override
+  String get practiceStart => 'Tap to speak';
+
+  @override
+  String get practiceListening => 'Listening…';
+
+  @override
+  String get practiceProcessing => 'Working out what you said…';
+
+  @override
+  String get practiceRetry => 'Try again';
+
+  @override
+  String practiceHeard(Object text) {
+    return 'Heard: $text';
+  }
+
+  @override
+  String practiceScore(int score) {
+    return '$score of 100';
+  }
+
+  @override
+  String get practicePerfect => 'Every mora matched.';
+
+  @override
+  String get practiceLegendCorrect => 'Correct';
+
+  @override
+  String get practiceLegendSubstituted => 'Different';
+
+  @override
+  String get practiceLegendMissing => 'Missing';
+
+  @override
+  String get practiceLegendExtra => 'Extra';
+
+  @override
+  String get practiceLimitsNote =>
+      'This compares what the speech recognizer understood with the reading. It judges whether you were recognisable, not your accent or pitch.';
+
+  @override
+  String get practiceNoMatch =>
+      'Nothing was recognized. Try again, a little closer to the microphone.';
+
+  @override
+  String get practiceLanguageUnavailable =>
+      'No offline Japanese recognition on this device. Install the Japanese speech data in the system settings, or allow the network fallback in Settings › Speech.';
+
+  @override
+  String get practicePermissionDenied =>
+      'Microphone access was declined, so nothing can be heard.';
+
+  @override
+  String get practiceUnavailable =>
+      'This device has no speech recognizer the app can use.';
+
+  @override
+  String get practiceMicRationaleTitle => 'Use the microphone?';
+
+  @override
+  String get practiceMicRationaleBody =>
+      'To compare your pronunciation, the app needs to hear you. Recognition runs on your device and no audio is stored or sent anywhere.';
+
+  @override
+  String get practiceMicRationaleAllow => 'Continue';
+
+  @override
+  String get speechNetworkFallback => 'Allow network recognition';
+
+  @override
+  String get speechNetworkFallbackBody =>
+      'Off by default. When on, and your device has no offline Japanese recognition, what you say is sent to the system speech service to be transcribed.';
+
+  @override
+  String get speechRecognizerReady => 'Speech recognition is available';
+
+  @override
+  String get speechRecognizerMissing =>
+      'No Japanese speech recognition on this device';
+
+  @override
+  String get practiceAction => 'Practise';
 }

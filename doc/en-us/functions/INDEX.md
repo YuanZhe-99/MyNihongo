@@ -4,17 +4,17 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **361** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **417** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **364** documented declarations. The two counts are measured separately and
+The rows below sum to **422** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
-| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 45 |
-| Tier B (index row only) | 319 |
-| **Total** | **364** |
+| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 55 |
+| Tier B (index row only) | 367 |
+| **Total** | **422** |
 
 These totals were measured against the source tree at initialization (`PLAN.md` M1.0). If you
 change these numbers, measure them rather than adjusting them by hand:
@@ -58,17 +58,23 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/grammar/views/grammar_page.dart` | [features/grammar/views/grammar_page.md](features/grammar/views/grammar_page.md) | 7 | 1 |
 | `lib/features/kana/models/kana.dart` | [features/kana/models/kana.md](features/kana/models/kana.md) | 9 | 0 |
 | `lib/features/kana/models/kana_note.dart` | [features/kana/models/kana_note.md](features/kana/models/kana_note.md) | 4 | 0 |
+| `lib/features/kana/models/kana_text.dart` | [features/kana/models/kana_text.md](features/kana/models/kana_text.md) | 5 | 2 |
 | `lib/features/kana/models/romaji.dart` | [features/kana/models/romaji.md](features/kana/models/romaji.md) | 3 | 1 |
 | `lib/features/kana/views/kana_page.dart` | [features/kana/views/kana_page.md](features/kana/views/kana_page.md) | 15 | 2 |
 | `lib/features/learn/views/learn_page.dart` | [features/learn/views/learn_page.md](features/learn/views/learn_page.md) | 5 | 0 |
 | `lib/features/progress/models/study_record.dart` | [features/progress/models/study_record.md](features/progress/models/study_record.md) | 23 | 5 |
-| `lib/features/progress/services/nihongo_storage.dart` | [features/progress/services/nihongo_storage.md](features/progress/services/nihongo_storage.md) | 37 | 3 |
+| `lib/features/progress/services/nihongo_storage.dart` | [features/progress/services/nihongo_storage.md](features/progress/services/nihongo_storage.md) | 41 | 3 |
 | `lib/features/settings/views/license_page.dart` | [features/settings/views/license_page.md](features/settings/views/license_page.md) | 2 | 0 |
 | `lib/features/settings/views/privacy_policy_page.dart` | [features/settings/views/privacy_policy_page.md](features/settings/views/privacy_policy_page.md) | 3 | 0 |
+| `lib/features/sentence/services/lexicon.dart` | [features/sentence/services/lexicon.md](features/sentence/services/lexicon.md) | 4 | 1 |
+| `lib/features/speech/services/pronunciation_scorer.dart` | [features/speech/services/pronunciation_scorer.md](features/speech/services/pronunciation_scorer.md) | 3 | 2 |
+| `lib/features/speech/services/speech_backend.dart` | [features/speech/services/speech_backend.md](features/speech/services/speech_backend.md) | 13 | 1 |
+| `lib/features/speech/services/speech_recognition_service.dart` | [features/speech/services/speech_recognition_service.md](features/speech/services/speech_recognition_service.md) | 10 | 2 |
 | `lib/features/speech/services/tts_backend.dart` | [features/speech/services/tts_backend.md](features/speech/services/tts_backend.md) | 15 | 1 |
 | `lib/features/speech/services/tts_service.dart` | [features/speech/services/tts_service.md](features/speech/services/tts_service.md) | 8 | 3 |
+| `lib/features/speech/widgets/pronunciation_practice_sheet.dart` | [features/speech/widgets/pronunciation_practice_sheet.md](features/speech/widgets/pronunciation_practice_sheet.md) | 12 | 2 |
 | `lib/features/speech/widgets/speak_button.dart` | [features/speech/widgets/speak_button.md](features/speech/widgets/speak_button.md) | 1 | 1 |
-| `lib/features/speech/widgets/speech_settings_tiles.dart` | [features/speech/widgets/speech_settings_tiles.md](features/speech/widgets/speech_settings_tiles.md) | 2 | 1 |
+| `lib/features/speech/widgets/speech_settings_tiles.dart` | [features/speech/widgets/speech_settings_tiles.md](features/speech/widgets/speech_settings_tiles.md) | 5 | 1 |
 | `lib/features/settings/views/settings_page.dart` | [features/settings/views/settings_page.md](features/settings/views/settings_page.md) | 16 | 2 |
 | `lib/features/settings/views/backup_page.dart` | [features/settings/views/backup_page.md](features/settings/views/backup_page.md) | 17 | 1 |
 | `lib/features/vocab/views/vocab_page.dart` | [features/vocab/views/vocab_page.md](features/vocab/views/vocab_page.md) | 7 | 1 |
@@ -77,7 +83,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 
 | Source file | Page | Declarations | Tier A count |
 |---|---|---|---|
-| `lib/shared/providers/app_settings.dart` | [shared/providers/app_settings.md](shared/providers/app_settings.md) | 10 | 0 |
+| `lib/shared/providers/app_settings.dart` | [shared/providers/app_settings.md](shared/providers/app_settings.md) | 13 | 0 |
 | `lib/shared/providers/progress_provider.dart` | [shared/providers/progress_provider.md](shared/providers/progress_provider.md) | 5 | 0 |
 | `lib/shared/services/auto_sync_service.dart` | [shared/services/auto_sync_service.md](shared/services/auto_sync_service.md) | 18 | 0 |
 | `lib/shared/services/backup_service.dart` | [shared/services/backup_service.md](shared/services/backup_service.md) | 11 | 0 |
@@ -90,7 +96,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/shared/utils/platform_capabilities.dart` | [shared/utils/platform_capabilities.md](shared/utils/platform_capabilities.md) | 5 | 1 |
 | `lib/shared/widgets/adaptive_tile_grid.dart` | [shared/widgets/adaptive_tile_grid.md](shared/widgets/adaptive_tile_grid.md) | 3 | 0 |
 | `lib/shared/widgets/example_actions.dart` | [shared/widgets/example_actions.md](shared/widgets/example_actions.md) | 1 | 1 |
-| `lib/shared/widgets/content_sheets.dart` | [shared/widgets/content_sheets.md](shared/widgets/content_sheets.md) | 7 | 3 |
+| `lib/shared/widgets/content_sheets.dart` | [shared/widgets/content_sheets.md](shared/widgets/content_sheets.md) | 8 | 3 |
 | `lib/shared/widgets/reference_widgets.dart` | [shared/widgets/reference_widgets.md](shared/widgets/reference_widgets.md) | 4 | 0 |
 | `lib/shared/widgets/shell_scaffold.dart` | [shared/widgets/shell_scaffold.md](shared/widgets/shell_scaffold.md) | 5 | 1 |
 | `lib/shared/widgets/study_conflict_dialog.dart` | [shared/widgets/study_conflict_dialog.md](shared/widgets/study_conflict_dialog.md) | 6 | 1 |

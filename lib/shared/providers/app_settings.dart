@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../features/content/models/jlpt_level.dart';
 import '../../features/kana/models/kana.dart';
 import '../../features/progress/services/nihongo_storage.dart';
+import '../../features/speech/services/speech_recognition_service.dart';
 import '../../features/speech/services/tts_service.dart';
 import '../utils/adaptive_layout.dart';
 
@@ -31,6 +32,8 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     final columns = await NihongoStorage.getReferenceListColumns();
     final ttsRate = await NihongoStorage.getTtsRate();
     final ttsVoice = await NihongoStorage.getTtsVoice();
+    final speechNetworkFallback =
+        await NihongoStorage.getSpeechNetworkFallback();
 
     final themeMode = switch (modeStr) {
       'light' => ThemeMode.light,
@@ -58,12 +61,15 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
           : listColumnsAuto,
       ttsRate: ttsRate?.clamp(TtsService.minRate, TtsService.maxRate) ?? 1.0,
       ttsVoice: ttsVoice,
+      speechNetworkFallback: speechNetworkFallback,
     );
 
     // The engine is configured from the same values the UI shows, once the
     // preferences are known. It is deliberately not awaited: a device with no
     // speech engine must not delay the first frame.
     TtsService.instance.init(rate: state.ttsRate, voiceName: state.ttsVoice);
+    SpeechRecognitionService.instance.networkFallbackAllowed =
+        state.speechNetworkFallback;
   }
 
   /// Purpose: Remember the vocabulary page's level filter.
@@ -139,6 +145,19 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     NihongoStorage.setTtsVoice(name);
   }
 
+  /// Purpose: Allow or forbid a fallback to network speech recognition.
+  /// Inputs: `allowed`.
+  /// Returns: None.
+  /// Side effects: Applies the choice to the recognizer and persists it.
+  /// Notes: Off by default and stored as an absent key, so a device that never
+  /// touched this setting never sends audio anywhere. The app never turns it
+  /// on by itself — only this setter, from the switch in Settings.
+  void setSpeechNetworkFallback(bool allowed) {
+    state = state.copyWith(speechNetworkFallback: allowed);
+    SpeechRecognitionService.instance.networkFallbackAllowed = allowed;
+    NihongoStorage.setSpeechNetworkFallback(allowed);
+  }
+
   /// Purpose: Update theme mode with the provided value.
   /// Inputs: `mode`.
   /// Returns: None.
@@ -194,6 +213,10 @@ class AppSettings {
   /// The chosen Japanese voice's engine name; null uses the engine default.
   final String? ttsVoice;
 
+  /// Whether the user allowed speech recognition to fall back to a network
+  /// service. Off unless they turned it on.
+  final bool speechNetworkFallback;
+
   /// Purpose: Create an app settings instance.
   /// Inputs: All fields.
   /// Returns: A new `AppSettings` instance.
@@ -210,6 +233,7 @@ class AppSettings {
     this.referenceListColumns = listColumnsAuto,
     this.ttsRate = 1.0,
     this.ttsVoice,
+    this.speechNetworkFallback = false,
   });
 
   /// Purpose: Create a copy with selected fields replaced.
@@ -230,6 +254,7 @@ class AppSettings {
     double? ttsRate,
     String? ttsVoice,
     bool clearTtsVoice = false,
+    bool? speechNetworkFallback,
   }) {
     return AppSettings(
       themeMode: themeMode ?? this.themeMode,
@@ -242,6 +267,8 @@ class AppSettings {
       referenceListColumns: referenceListColumns ?? this.referenceListColumns,
       ttsRate: ttsRate ?? this.ttsRate,
       ttsVoice: clearTtsVoice ? null : (ttsVoice ?? this.ttsVoice),
+      speechNetworkFallback:
+          speechNetworkFallback ?? this.speechNetworkFallback,
     );
   }
 }

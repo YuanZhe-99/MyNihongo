@@ -60,6 +60,8 @@ The shared WebDAV sync, backup, and ZIP engines are not in this repository. They
   choices the reference pages remember.
 - [`features/pronunciation.md`](features/pronunciation.md) — everything that makes or hears sound:
   what speaks, the speed and voice preferences, and what happens with no Japanese voice installed.
+- [`algorithms/pronunciation-scoring.md`](algorithms/pronunciation-scoring.md) — how a spoken
+  attempt is compared with a reading, mora by mora.
 - [`store-listing.md`](store-listing.md) — the release and store text.
 
 ## Not covered here

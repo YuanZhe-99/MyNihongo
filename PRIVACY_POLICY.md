@@ -2,7 +2,7 @@
 
 Thank you for using MyNihongo!!!!!. We take your privacy seriously. This privacy policy explains how the app handles your data.
 
-Last reviewed against the shipped behaviour on 2026-09-03, for version 0.1.0.
+Last reviewed against the shipped behaviour on 2026-09-03, for version 0.2.0.
 
 ## Data Collection
 
@@ -14,9 +14,10 @@ All data the app creates — your learning progress and your settings — is sto
 
 ## Network Access
 
-MyNihongo!!!!! accesses the internet only in the following situation:
+MyNihongo!!!!! accesses the internet only in the following situations, both of which you have to turn on yourself:
 
 - **WebDAV sync**: If you enable WebDAV cloud sync, the app sends your learning progress to a WebDAV server that you configure yourself. The app does not send data to any other server.
+- **Network speech recognition**, only if you turn on the switch described under Speech Recognition below. It is off by default.
 
 No other network communication takes place. The app requests the `INTERNET` permission for this and nothing else.
 
@@ -37,6 +38,14 @@ The app can read Japanese aloud — kana, words and example sentences. This uses
 
 If no Japanese voice is installed, nothing is spoken and the app says so; installing one is done in your system settings, not in the app.
 
+## Speech Recognition
+
+Pronunciation practice listens to you and compares what the speech recognizer understood with the item's reading. Recognition is done by the speech service already on your device — Android's, Apple's, or the Windows speech platform.
+
+By default the app asks for offline recognition only. On a device with no offline Japanese data installed the attempt fails and the app tells you so, rather than quietly sending your voice anywhere. Settings has a switch, off by default, that allows a fallback to the system's network recognition; only when you turn it on can what you say be sent to the system speech service to be transcribed. On most Android devices that service is Google's.
+
+No audio is recorded to a file, and nothing you say is stored. The microphone is used only while you are recording an attempt, and the permission is requested the first time you tap record, with a reason.
+
 ## Changes to This Policy
 
-This privacy policy may be updated from time to time. Updated versions will be published within the app or on the relevant distribution channels. Text to speech is described above. Speech recognition has not shipped yet; it will be described here before it does, it is designed to run on the device, and the microphone permission will be requested at first use with a reason, never at install.
+This privacy policy may be updated from time to time. Updated versions will be published within the app or on the relevant distribution channels. Text to speech and speech recognition are described above. Any future feature that could send anything off the device will be described here before it ships, and will be off unless you turn it on.
