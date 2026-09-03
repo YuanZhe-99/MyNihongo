@@ -25,7 +25,9 @@ foldables, the Function Explanation Layer, bilingual docs, two remotes, GPL-3.0.
 
 **What is new:** a bundled read-only **content catalog** (kana, words, grammar, later drills)
 separate from the user's synced **progress**; on-device speech; a sentence analyser; a lesson and
-review engine.
+review engine; and, on devices that have it, on-device AICore assistance for writing practice, free
+answers and explanations (Phases 2–4), always optional and never a substitute for the deterministic
+baseline.
 
 ### Non-goals (for now)
 
@@ -294,6 +296,33 @@ with review folded in.
 - [ ] Notifications (optional, local only): daily reminder at a chosen time, like MyAnime's
       reminders; off by default
 
+#### M3.4 AICore-assisted practice (optional enhancement)
+
+Same policy as the Phase 2 enhancement: Android AICore / Gemini Nano through ML Kit GenAI, on-device
+only, off by default behind one switch shared with Phase 2, a capability check on every use, and a
+working baseline on devices without it. Generated text is always labelled as generated, never becomes
+catalog content, and never writes a progress record by itself — the learner's answer does.
+
+- [ ] Writing practice: prompts per level and unit ("write three sentences about your morning"
+      using this unit's words); the learner types; the Phase 2 pipeline runs first for token, form
+      and grammar checks; AICore adds a natural rewrite, per-sentence feedback (what reads
+      unnaturally and why) and one catalog grammar point to review. Without AICore: pipeline
+      checks plus a self-assessment rubric
+- [ ] Free-response grading in quizzes: a typed translation or open answer is compared with the
+      model answer — AICore judges meaning equivalence and explains the gap; fallback is
+      normalized exact match with "mark it yourself"
+- [ ] Scenario dialogue partner: in M3.3 scenario lessons the learner's free reply is answered in
+      character within the lesson's vocabulary set; the scripted branches stay the graded path
+      and the fallback
+- [ ] "Why was this wrong": a richer explanation on demand for a wrong answer, grounded in the
+      catalog's own grammar explanation passed as context, never contradicting it
+- [ ] Extra example sentences on demand for a word or grammar point at the learner's level,
+      marked "generated", not saved into the catalog
+- [ ] Guardrails: prompt templates versioned in `assets/content/prompts/`, output length limits,
+      fixture tests for the prompt builders and response parsers (the model itself is not unit
+      tested), and a per-feature fallback table in `doc/en-us/features/ai-assist.md`; the privacy
+      policy states that AICore runs on the device and sends nothing out
+
 ### Phase 4 — JLPT N5–N1 practice
 
 - [ ] Drill content per level and section: 文字・語彙, 文法, 読解, 聴解 (TTS-read passages),
@@ -304,6 +333,13 @@ with review folded in.
 - [ ] Results history synced: one record per attempt (`exam:<uuid>`) — a new record kind in the
       same module, or a new module `nihongo_exams.json` if the file grows past a few hundred kB
 - [ ] Weakness report: per-section and per-grammar-point accuracy feeding review priorities
+- [ ] AICore enhancement (M3.4 policy, same switch): a supplementary 作文 writing section — a short
+      composition per prompt with feedback against a rubric (task fulfilment, grammar range,
+      vocabulary level), labelled supplementary because the JLPT has no writing section; 読解 help —
+      paraphrase a hard sentence or explain why a chosen option contradicts the passage; 聴解
+      review — the transcript with what was missed pointed out; and a short narrative for the
+      weakness report, marked generated. Mock-mode scores come from the deterministic grader only;
+      AICore never changes a score
 - [ ] Level readiness estimate with an explicit "this is not an official score" note
 
 ### Phase 5 — Platforms and languages
@@ -361,6 +397,7 @@ with review folded in.
 | 2026-09-02 | Theme seed `FlexScheme.sakura` | Each app in the series has its own colour; sakura is unmistakably this one |
 | 2026-09-02 | Android only in Phase 1 | Speech APIs and the foldable work are Android-specific to verify; desktop is a `flutter create` away |
 | 2026-09-02 | Sentence analysis baseline is a bundled classic pipeline; AICore is an optional enhancement | Deterministic, testable, works on every device, no privacy question; AICore coverage is thin |
+| 2026-09-02 | AICore in Phases 3–4 assists practice (writing feedback, free-response grading, explanations, dialogue) but never sets a score or writes into the catalog | Results stay comparable between devices with and without AICore; generated text stays labelled and out of the shipped data |
 
 ## 7. Open questions
 

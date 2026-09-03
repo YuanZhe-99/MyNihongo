@@ -150,9 +150,11 @@ Do not change these without the user explicitly deciding to:
   progress on it. Ids may be added; a shipped id is never changed, and a retired one is kept as an
   alias in the catalog.
 - **Nothing leaves the device except WebDAV sync to a server the user configured.** Speech
-  recognition, text-to-speech and sentence analysis (Phases 2–3 in `PLAN.md`) must run on-device;
-  a cloud model is only ever an opt-in the user turns on explicitly, and the privacy policy is
-  updated in the same change.
+  recognition, text-to-speech, sentence analysis and AI-assisted practice (Phases 2–4 in `PLAN.md`)
+  must run on-device; AICore / Gemini Nano is used only through ML Kit GenAI on the device, off by
+  default, and generated text never enters the catalog or replaces a deterministic score. A cloud
+  model is only ever an opt-in the user turns on explicitly, and the privacy policy is updated in
+  the same change.
 - `android:configChanges` on the main activity keeps
   `screenLayout|screenSize|smallestScreenSize|density`, so folding does not recreate the activity.
 
