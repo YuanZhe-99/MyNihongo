@@ -1,6 +1,6 @@
 # lib/features/settings/views/settings_page.dart
 
-`SettingsPage` 是第五个标签。它显示三个节——通用（主题分段按钮、语言下拉）、数据、关于（版本、隐私政策、许可证、开源许可证）——并按 `canSplitLayout` 以一个或两个窗格（pane）布局自身。数据节现在包含 WebDAV 同步行（带实时状态副标题）、备份行、ZIP 导出与导入，以及存储位置。私有的 `_SettingsDetail` 枚举命名通向二级页面的四行：`webdav`、`backup`、`privacy`、`license`；导出与导入就地执行。见 [../../../../adaptive-layout.md](../../../../adaptive-layout.md)。
+`SettingsPage` 是第五个标签。它显示三个节——通用（主题分段按钮、语言下拉：跟随系统、English、简体中文、繁體中文）、数据、关于（版本、隐私政策、许可证、开源许可证）——并按 `canSplitLayout` 以一个或两个窗格（pane）布局自身。数据节现在包含 WebDAV 同步行（带实时状态副标题）、备份行、ZIP 导出与导入，以及存储位置。私有的 `_SettingsDetail` 枚举命名通向二级页面的四行：`webdav`、`backup`、`privacy`、`license`；导出与导入就地执行。见 [../../../../adaptive-layout.md](../../../../adaptive-layout.md)。
 
 ## 声明
 

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../shared/widgets/content_sheets.dart';
 import '../../content/models/content_catalog.dart';
+import '../../content/models/localized_strings.dart';
 import '../models/sentence_analysis.dart';
 import '../models/token.dart';
 
@@ -120,12 +121,13 @@ class TokenChips extends StatelessWidget {
     }
     final gloss = token.gloss;
     if (gloss == null || gloss.isEmpty) return;
-    final language = Localizations.localeOf(context).languageCode;
+    final keys = LocalizedStrings.lookupOrder(Localizations.localeOf(context));
+    final text = keys.map((key) => gloss[key]).nonNulls.firstOrNull ?? '';
     showDialog<void>(
       context: context,
       builder: (context) => AlertDialog(
         title: Text(token.surface),
-        content: Text(gloss[language] ?? gloss['en'] ?? ''),
+        content: Text(text),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(),

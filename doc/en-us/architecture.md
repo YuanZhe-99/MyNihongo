@@ -59,10 +59,15 @@ not be introduced for normal changes. Three providers exist:
 
 ## Localization (l10n)
 
-- Supported languages: English (template) and Simplified Chinese.
-- The ARB template is `lib/l10n/app_en.arb`; `app_zh.arb` mirrors it key for key.
+- Supported languages: English (template), Simplified Chinese, and Traditional Chinese.
+- The ARB template is `lib/l10n/app_en.arb`; `app_zh.arb` and `app_zh_TW.arb` mirror it key for
+  key. `test/l10n_arb_test.dart` fails when one of them does not.
 - Generated localization files live under `lib/l10n/` and are tracked; run `flutter gen-l10n`
   after editing an ARB file and commit the result.
+- `app/locale_resolution.dart` decides which of the three a device's language list means, and it
+  is the only place that reads a script subtag: a phone asking for `zh-Hant-HK` wants Traditional
+  Chinese, and Flutter's own resolution — which matches language and country — would give it
+  Simplified. An explicit choice in Settings bypasses this entirely.
 - JLPT level labels (`N5`…`N1`) and Japanese content text are not localized.
 
 ## Repository structure
@@ -74,6 +79,7 @@ lib/
     app.dart
     data_modules.dart
     flavor.dart
+    locale_resolution.dart
     router.dart
     theme.dart
   features/

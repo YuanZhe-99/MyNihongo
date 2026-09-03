@@ -192,8 +192,8 @@ void main() {
     const en = Locale('en');
     const zh = Locale('zh');
     for (final point in catalog.grammar) {
-      expect(point.meaning.values.keys, containsAll(['en', 'zh']));
-      expect(point.explanation.values.keys, containsAll(['en', 'zh']));
+      expect(point.meaning.values.keys, containsAll(['en', 'zh', 'zh_TW']));
+      expect(point.explanation.values.keys, containsAll(['en', 'zh', 'zh_TW']));
       expect(point.examples, isNotEmpty, reason: point.id);
       for (final example in point.examples) {
         expect(example.ja, isNotEmpty, reason: point.id);
@@ -244,6 +244,45 @@ void main() {
   test('an unknown id resolves to itself', () {
     expect(catalog.vocabById('vocab:nope'), isNull);
     expect(catalog.canonicalId('vocab:nope'), 'vocab:nope');
+  });
+
+  test('Traditional Chinese reads its own text, not the Simplified one', () {
+    // Every zh_TW string is generated from the zh beside it by
+    // tool/convert_zh_tw.dart; test/content_zh_tw_test.dart checks that the
+    // two have not drifted. This checks the lookup that puts it on screen.
+    const zh = Locale('zh');
+    const zhTw = Locale('zh', 'TW');
+    final point = catalog.grammarById('grammar:desu')!;
+
+    expect(point.explanation.resolve(zhTw), point.explanation.values['zh_TW']);
+    expect(point.explanation.resolve(zhTw), isNot(point.explanation.resolve(zh)));
+    expect(point.explanation.resolve(zh), point.explanation.values['zh']);
+  });
+
+  test('Traditional Chinese falls back to Simplified, then English', () {
+    const zhTw = Locale('zh', 'TW');
+    const simplifiedOnly = LocalizedStrings({
+      'en': ['english'],
+      'zh': ['simplified'],
+    });
+    const englishOnly = LocalizedStrings({
+      'en': ['english'],
+    });
+
+    expect(simplifiedOnly.resolve(zhTw), ['simplified']);
+    expect(englishOnly.resolve(zhTw), ['english']);
+    expect(LocalizedStrings.lookupOrder(zhTw), ['zh_TW', 'zh', 'en']);
+    expect(LocalizedStrings.lookupOrder(const Locale('zh')), ['zh', 'en']);
+    expect(LocalizedStrings.lookupOrder(const Locale('en')), ['en']);
+  });
+
+  test('Simplified Chinese never picks up the Traditional text', () {
+    const traditionalToo = LocalizedStrings({
+      'en': ['english'],
+      'zh': ['simplified'],
+      'zh_TW': ['traditional'],
+    });
+    expect(traditionalToo.resolve(const Locale('zh')), ['simplified']);
   });
 
   test('localized strings fall back to English, then anything', () {

@@ -63,7 +63,12 @@ the underlying lists are Jonathan Waller's, CC BY.
 https://github.com/stephenmk/yomitan-jlpt-vocab
 
 Grammar explanations, example sentences, kana notes and Chinese glosses are
-written for this app and are GPL-3.0 with it.''';
+written for this app and are GPL-3.0 with it.
+
+The Traditional Chinese text is generated from the Simplified Chinese text
+with the conversion dictionaries of OpenCC (https://github.com/BYVoid/OpenCC),
+Copyright (c) Carbo Kuo and contributors, licensed under the Apache License,
+Version 2.0. http://www.apache.org/licenses/LICENSE-2.0''';
 
   static const _licenseText = '''MyNihongo - Copyright (C) 2026 yuanzhe
 

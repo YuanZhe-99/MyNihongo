@@ -126,10 +126,18 @@ Other conventions:
   `grep -rnE "maxWidth *[<>]=? *[0-9]|size\.width *[<>]=? *[0-9]" lib/`.
 - **Content is data, in both languages.** Every bundled vocabulary entry and grammar point carries
   `en` and `zh` text, a JLPT level, and an id with its kind prefix (`vocab:`, `grammar:`); kana use
-  `kana:<hiragana>`. `test/content_catalog_test.dart` enforces this. Check Japanese examples for
+  `kana:<hiragana>`. `test/content_catalog_test.dart` enforces this.
+- **Traditional Chinese in the content is generated, never hand-edited.** After changing any `zh`
+  string in `assets/content/`, run `dart run tool/convert_zh_tw.dart`; it writes the `zh_TW` string
+  beside it and is idempotent. `test/content_zh_tw_test.dart` fails both when the tool has not been
+  re-run and when a `zh_TW` string was edited by hand. A Japanese word written in kanji inside the
+  Chinese prose belongs in `tool/content/opencc/preserve.txt`, or the conversion will change it. Check Japanese examples for
   correctness before committing them; a wrong example teaches the wrong thing.
-- **User-facing strings go through the ARB files** (`lib/l10n/app_en.arb` is the template, `app_zh.arb`
-  mirrors it). JLPT level labels (`N5`…`N1`) and Japanese text itself are the exceptions.
+- **User-facing strings go through the ARB files** (`lib/l10n/app_en.arb` is the template;
+  `app_zh.arb` and `app_zh_TW.arb` mirror it key for key, and `test/l10n_arb_test.dart` fails when
+  one of them does not). The two Chinese catalogs are **both hand-maintained**: Taiwan usage differs
+  by vocabulary and not only by characters — 設定 not 設置, 單字 not 單詞, 文法 not 語法. JLPT level
+  labels (`N5`…`N1`) and Japanese text itself are the exceptions.
 
 ## Behavior contract
 

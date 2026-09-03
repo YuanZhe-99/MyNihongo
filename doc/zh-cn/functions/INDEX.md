@@ -2,13 +2,13 @@
 
 这是 MyNihongo 仓库中 `lib/` 手写函数解释层文档的顶层索引。每行链接到 `doc/zh-cn/functions/` 下镜像 `lib/` 树的逐源文件页面（`.dart` 换成 `.md`）。
 
-**总计：** 仓库的 `/// Purpose:` 注释数为 **543**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **585** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
+**总计：** 仓库的 `/// Purpose:` 注释数为 **546**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **590** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
 
 | Tier | 计数 |
 |---|---|
-| Tier A（完整条目：Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes） | 104 |
-| Tier B（仅索引行） | 481 |
-| **总计** | **585** |
+| Tier A（完整条目：Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes） | 107 |
+| Tier B（仅索引行） | 483 |
+| **总计** | **590** |
 
 这些总计在初始化时（`PLAN.md` M1.0）对照源码树测得。若要改动这些数字，请测量而不要手工调整：
 
@@ -31,6 +31,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/app/app.dart` | [app/app.md](app/app.md) | 4 | 0 |
 | `lib/app/data_modules.dart` | [app/data_modules.md](app/data_modules.md) | 11 | 1 |
 | `lib/app/flavor.dart` | [app/flavor.md](app/flavor.md) | 1 | 0 |
+| `lib/app/locale_resolution.dart` | [app/locale_resolution.md](app/locale_resolution.md) | 4 | 2 |
 | `lib/app/router.dart` | [app/router.md](app/router.md) | 1 | 0 |
 | `lib/app/theme.dart` | [app/theme.md](app/theme.md) | 3 | 0 |
 
@@ -48,7 +49,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/content/models/content_catalog.dart` | [features/content/models/content_catalog.md](features/content/models/content_catalog.md) | 7 | 0 |
 | `lib/features/content/models/grammar_point.dart` | [features/content/models/grammar_point.md](features/content/models/grammar_point.md) | 3 | 0 |
 | `lib/features/content/models/jlpt_level.dart` | [features/content/models/jlpt_level.md](features/content/models/jlpt_level.md) | 2 | 0 |
-| `lib/features/content/models/localized_strings.dart` | [features/content/models/localized_strings.md](features/content/models/localized_strings.md) | 9 | 1 |
+| `lib/features/content/models/localized_strings.dart` | [features/content/models/localized_strings.md](features/content/models/localized_strings.md) | 10 | 2 |
 | `lib/features/content/models/parts_of_speech.dart` | [features/content/models/parts_of_speech.md](features/content/models/parts_of_speech.md) | 1 | 0 |
 | `lib/features/content/models/vocab_entry.dart` | [features/content/models/vocab_entry.md](features/content/models/vocab_entry.md) | 4 | 0 |
 | `lib/features/content/services/content_repository.dart` | [features/content/services/content_repository.md](features/content/services/content_repository.md) | 5 | 0 |

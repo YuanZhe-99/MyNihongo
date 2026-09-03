@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import '../../content/models/content_catalog.dart';
+import '../../content/models/localized_strings.dart';
 import '../../sentence/models/sentence_analysis.dart';
 import '../../sentence/models/token.dart';
 
@@ -143,7 +144,7 @@ class PromptBuilder {
 
   /// Purpose: Build the prompt asking about one flagged issue.
   /// Inputs: The `analysis`, the `issue`, its already-worded `message`, the
-  /// `catalog` for grammar explanations, and the UI `languageCode`.
+  /// `catalog` for grammar explanations, and the UI `locale`.
   /// Returns: `String?` — null when the templates are missing.
   /// Side effects: None.
   /// Notes: `message` is passed in rather than re-derived because it is the
@@ -154,11 +155,11 @@ class PromptBuilder {
     Issue issue,
     String message,
     ContentCatalog? catalog,
-    String languageCode,
+    Locale locale,
   ) {
     return _build(
       task: 'issue',
-      languageCode: languageCode,
+      locale: locale,
       analysis: analysis,
       catalog: catalog,
       note: '${_span(analysis, issue.first, issue.last)} — $message',
@@ -166,18 +167,18 @@ class PromptBuilder {
   }
 
   /// Purpose: Build the prompt asking about the sentence as a whole.
-  /// Inputs: The `analysis`, the `catalog`, and the UI `languageCode`.
+  /// Inputs: The `analysis`, the `catalog`, and the UI `locale`.
   /// Returns: `String?` — null when the templates are missing.
   /// Side effects: None.
   /// Notes: None.
   String? forSentence(
     SentenceAnalysis analysis,
     ContentCatalog? catalog,
-    String languageCode,
+    Locale locale,
   ) {
     return _build(
       task: 'sentence',
-      languageCode: languageCode,
+      locale: locale,
       analysis: analysis,
       catalog: catalog,
       note: null,
@@ -200,27 +201,31 @@ class PromptBuilder {
   }
 
   /// Purpose: Assemble one prompt.
-  /// Inputs: The `task` name, `languageCode`, `analysis`, `catalog` and an
-  /// optional `note`.
+  /// Inputs: The `task` name, `locale`, `analysis`, `catalog` and an optional
+  /// `note`.
   /// Returns: `String?`.
   /// Side effects: None.
   /// Notes: Internal helper used within this file only. The whole prompt is
   /// capped well under the Prompt API's 4000-token input limit; the parts are
   /// each capped first, so the cap is never reached by a runaway grammar
-  /// excerpt silently dropping the rules at the end.
+  /// excerpt silently dropping the rules at the end. The template is chosen by
+  /// the same fallback order the content uses, so Traditional Chinese asks in
+  /// Traditional Chinese and an unsupported language still asks in English.
   String? _build({
     required String task,
-    required String languageCode,
+    required Locale locale,
     required SentenceAnalysis analysis,
     required ContentCatalog? catalog,
     required String? note,
   }) {
     final byLanguage = templates.tasks[task];
     if (byLanguage == null || byLanguage.isEmpty) return null;
-    final template = byLanguage[languageCode] ?? byLanguage['en'];
+    final keys = LocalizedStrings.lookupOrder(locale);
+    final template = keys.map((key) => byLanguage[key]).nonNulls.firstOrNull;
     if (template == null) return null;
     final labels =
-        templates.labels[languageCode] ?? templates.labels['en'] ?? const {};
+        keys.map((key) => templates.labels[key]).nonNulls.firstOrNull ??
+        const <String, String>{};
 
     String label(String name, String fallback) => labels[name] ?? fallback;
 
@@ -236,7 +241,7 @@ class PromptBuilder {
     if (note != null) {
       buffer.writeln('${label('note', 'Flagged')}: $note');
     }
-    final grammar = _grammar(analysis, catalog, languageCode);
+    final grammar = _grammar(analysis, catalog, locale);
     if (grammar.isNotEmpty) {
       buffer.writeln('${label('grammar', 'Grammar notes')}:');
       for (final line in grammar) {
@@ -277,7 +282,7 @@ class PromptBuilder {
   }
 
   /// Purpose: Quote the catalog's own explanation of each matched point.
-  /// Inputs: The `analysis`, the `catalog` and the `languageCode`.
+  /// Inputs: The `analysis`, the `catalog` and the `locale`.
   /// Returns: `List<String>` — at most the configured number of points.
   /// Side effects: None.
   /// Notes: Internal helper used within this file only. This is the grounding:
@@ -287,10 +292,9 @@ class PromptBuilder {
   List<String> _grammar(
     SentenceAnalysis analysis,
     ContentCatalog? catalog,
-    String languageCode,
+    Locale locale,
   ) {
     if (catalog == null) return const [];
-    final locale = Locale(languageCode);
     final lines = <String>[];
     final maxPoints = templates.limit('maxGrammarPoints', 3);
     final maxChars = templates.limit('maxGrammarExcerptChars', 300);

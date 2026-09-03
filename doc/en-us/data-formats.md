@@ -39,7 +39,8 @@ gives a readable diff.
 - `pos` — part-of-speech tags from the closed set in
   `lib/features/content/models/parts_of_speech.dart`. A tag outside that set fails the catalog test.
 - `meanings` — language code to a list of glosses. `en` is always present; `zh` is present on N5
-  and on the seed words, and the UI falls back to English elsewhere.
+  and on the seed words, and the UI falls back to English elsewhere. `zh_TW` is generated from
+  `zh` and appears wherever `zh` does — see [Traditional Chinese](#traditional-chinese).
 - `common` — present and true when JMdict marks the chosen written form as common. Used to order
   suggestions, never to hide an entry.
 - `aliases` — ids this entry used to ship under. `vocabById` resolves them to the same entry.
@@ -85,7 +86,8 @@ authoring state and never reaches `vocab.json`.
 - `match` — optional literal strings that mark this point in a sentence, parsed into
   `GrammarPoint.matchForms`. A single-character particle needs one, because a form derived from its
   pattern would match nearly every sentence.
-- `meaning` and `explanation` are language-keyed; a bare string is taken as English.
+- `meaning` and `explanation` are language-keyed; a bare string is taken as English. Both carry
+  `zh_TW` beside `zh`, generated.
 
 ### Kana
 
@@ -129,7 +131,7 @@ the 2 MB vocabulary would make every page pay for a page that may never be opene
 | `lemma` | the base form of its family, so a whole conjugation lemmatizes to one word |
 | `needs` | the stem shape it attaches to; absent means it attaches to anything |
 | `forms` | the `InflectionForm` values it contributes to the chunk it closes |
-| `gloss` | `en` and `zh`, both required — a function word has no catalog entry, so the chip carries its own meaning |
+| `gloss` | `en` and `zh`, both required — a function word has no catalog entry, so the chip carries its own meaning; `zh_TW` is generated from `zh` |
 
 The file also carries `sets`: named word lists the checks read (`time-past`, `time-future`,
 `path-verbs`, `motion-verbs`) and `transitivity-pairs`, which are two-element arrays rather than an
@@ -141,10 +143,26 @@ enforces the rules above the way `content_catalog_test.dart` enforces the catalo
 ### Parsing rules
 
 `LocalizedStrings.fromJson` accepts a map of language code to a string or a list of strings, or a
-bare string taken as English. `resolve(locale)` returns the locale's language, then English, then
-the first language present. Malformed entries — a missing id, level, headword or pattern — are
+bare string taken as English. `resolve(locale)` walks `lookupOrder(locale)` — the full tag, then
+the bare language, then English — and falls back to the first language present. That order is what
+makes `zh_TW` fall back to `zh`: a Traditional reader sees the Simplified text of an entry that has
+no Traditional string rather than jumping to English. Malformed entries — a missing id, level, headword or pattern — are
 skipped rather than failing the whole file; content is bundled, so a bad entry is a content bug
 caught by `test/content_catalog_test.dart`, not user data to protect.
+
+### Traditional Chinese
+
+Every `zh_TW` string in the content is **generated** from the `zh` string beside it by
+`tool/convert_zh_tw.dart`, using OpenCC's Simplified-to-Traditional dictionaries, and committed. It
+is never hand-edited: `test/content_zh_tw_test.dart` compares each one against a fresh conversion,
+so an edited `zh` that never had the tool run over it, and a hand-edited `zh_TW`, both fail the
+same way. The fix in either case is to edit the `zh` and re-run the tool.
+
+The conversion is phrase-based, because a Simplified character's Traditional form depends on the
+word it is in (干净 → 乾淨 but 干部 → 幹部). Japanese words quoted inside the Chinese prose are
+listed in `tool/content/opencc/preserve.txt` and copied through untouched: a grammar note about
+来る must not ship 來る, which is a word in neither language. See
+[`features/content-catalog.md`](features/content-catalog.md).
 
 ### Content ids are a contract
 
@@ -254,7 +272,7 @@ Settings shows the resolved path only on desktop; see `platform_capabilities.dar
 | --- | --- | --- | --- |
 | Learning progress | `nihongo_progress.json` | Yes | Per-record by `id` and `modifiedAt`; unknown fields preserved |
 | Theme mode | `storage_config.json` | No | Device-specific preference (`themeMode`: `light`/`dark`; absent means system) |
-| Locale | `storage_config.json` | No | Device-specific preference (`locale`: `en`/`zh`; absent means system) |
+| Locale | `storage_config.json` | No | Device-specific preference (`locale`: `en`/`zh`/`zh_TW`; absent means system) |
 | Storage path override | `storage_config.json` | No | Device-specific path (`storagePath`) |
 | Auto-backup enabled | `storage_config.json` | No | Device-specific config (`autoBackupEnabled`) |
 | Backup retention days | `storage_config.json` | No | Device-specific config (`backupRetentionDays`) |

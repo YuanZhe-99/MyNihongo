@@ -1,6 +1,6 @@
 # lib/features/settings/views/privacy_policy_page.dart
 
-`PrivacyPolicyPage` 以当前 UI 语言显示隐私政策——`zh` 为简体中文，其余为英语——作为可选择文本。文本镜像仓库根目录的 `PRIVACY_POLICY.md`；两者一起更新。承载方式见 [settings_page.md](settings_page.md)。
+`PrivacyPolicyPage` 以当前 UI 语言显示隐私政策——`zh` 为简体中文，`zh_TW` 为繁体中文，其余为英语——作为可选择文本。每种语言的文本都是独立的字符串：隐私政策是读者有权据以信赖的那份文件，因此它不走内容的转换流程。文本镜像仓库根目录的 `PRIVACY_POLICY.md`；两者一起更新。承载方式见 [settings_page.md](settings_page.md)。
 
 ## 声明
 

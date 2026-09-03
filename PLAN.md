@@ -1,17 +1,15 @@
-# PLAN.md — MyNihongo!!!!! roadmapas analysis |
-|keeps their wire format, backup format, and lock semantics interoperable.
-|on every platform |
-|hardware does |
-|native Windows code paths |
-| 2026-09-03 | Segmentation is a cost lattice| Speech recognition is offline-only| `speech_to_text`| `speech_to_text`| Windows and macOS projectsThe phased plan for MyNihongo!!!!!, the Japanese learning app in the MyApps series. `AGENTS.md`
+# PLAN.md — MyNihongo!!!!! roadmap
+
+The phased plan for MyNihongo!!!!!, the Japanese learning app in the MyApps series. `AGENTS.md`
 says how to work here; `doc/en-us/` says what the code does; this file says **what is planned, in
 what order, why, and what is done**. Update the checklists in the same change that lands a
 milestone item.
 
 **Status as of 2026-09-03:** Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
-(text-to-speech), M2.2 (speech recognition and pronunciation feedback), M2.3 (the sentence lab) and
-M2.4 (on-device AI assist) have landed, along with the Windows and macOS projects the pronunciation
-work needs a machine for. `v0.2.1` is the current release. Phase 3 is next.
+(text-to-speech), M2.2 (speech recognition and pronunciation feedback), M2.3 (the sentence lab),
+M2.4 (on-device AI assist) and M2.5 (Traditional Chinese) have landed, along with the Windows and
+macOS projects the pronunciation work needs a machine for. `v0.2.1` is the current release; M2.5 is
+**unreleased and untagged on purpose** — it ships with Phase 3's `0.3.0`. Phase 3 is next.
 
 A **Pixel 10** is now available for testing, which changes what "verified" can mean. M2.4 was checked
 on it; **M2.1 and M2.2 still have not been heard on a device** — that is the largest remaining gap in
@@ -381,6 +379,36 @@ real hardware rather than through test seams.
       project-independent AICore/ML Kit GenAI reference for the other apps in the series, carrying a
       `Last verified` date and instructions for refreshing it
 
+#### M2.5 Traditional Chinese — **done 2026-09-03**
+
+Phase 5 listed `ja` and `zh_TW` together as "the series' four" languages. `zh_TW` is brought
+forward here as the Stage 2 wrap-up, **content included**; `ja` stays in Phase 5, where it also
+needs Japanese glosses that do not exist yet.
+
+- [x] `lib/l10n/app_zh_TW.arb`, hand-maintained like the other two, and
+      `test/l10n_arb_test.dart` to keep the three key-for-key. **Beyond the plan's "ARB files":**
+      Taiwan usage differs by vocabulary, not only by characters — 設定 not 設置, 單字 not 單詞,
+      文法 not 語法, 網路 not 網絡 — so a character conversion of `app_zh.arb` was a first draft and
+      not the deliverable
+- [x] The bundled content too, which the Phase 5 line explicitly deferred ("content stays en/zh
+      until glosses exist"): `zh_TW` is **generated** from `zh` by `tool/convert_zh_tw.dart` and
+      committed, at the same trust level as the machine-authored Simplified N5 glosses. The tool is
+      idempotent and `test/content_zh_tw_test.dart` compares every shipped string against a fresh
+      conversion, so a `zh` edit without a re-run fails, and so does a hand-edited `zh_TW`
+- [x] `lib/app/locale_resolution.dart`: a device asking for `zh-Hant-HK` gets Traditional Chinese.
+      Flutter's own resolution matches language and country, so every Traditional request except
+      `zh-Hant-TW` would have landed on Simplified. Only the input is corrected; the algorithm is
+      Flutter's
+- [x] Settings offers 繁體中文; the privacy policy has its own Traditional text, hand-checked rather
+      than generated, because it is the one document a reader is entitled to rely on; the prompt
+      asset gains a `zh_TW` block asking for Traditional answers, and the grammar notes handed to
+      the model are the Traditional ones
+- [x] **Not verified on a device:** the Traditional prompt block. If the model ignores it the answer
+      comes back in Simplified Chinese, which is what happened before it existed. Nothing else in
+      M2.5 needs hardware, and this round deliberately did not touch the phone
+- [x] **Nobody has reviewed the generated Traditional content**, exactly as nobody has reviewed the
+      Simplified N5 glosses. A native reader's pass over both is a Phase 3 item
+
 ### Phase 3 — Learning engine
 
 Goal: study, not just browse. Flashcards like MojiTest, grammar drills, a Duolingo-like lesson path
@@ -476,8 +504,10 @@ catalog content, and never writes a progress record by itself — the learner's 
 - [x] macOS project files (`--platforms=macos`, `AppInfo.xcconfig`, both entitlement files) —
       **landed early, unverified**: there is no Mac here. iOS/macOS speech through
       `AVSpeechSynthesizer` / `SFSpeechRecognizer` and the sideload IPA and DMG jobs stay in Phase 5
-- [ ] UI languages: `ja` and `zh_TW` ARB files (the series' four); content stays en/zh until
-      glosses exist in the new languages
+- [x] UI language `zh_TW` — **landed early as M2.5**, with the bundled content converted rather
+      than deferred
+- [ ] UI language `ja`: an `app_ja.arb` and Japanese glosses, which do not exist yet. A Japanese
+      UI over English-only glosses would be the worst of both
 - [ ] Windows ARM64 job on Flutter master until stable ships ARM64, as MyAnime does
 
 ---
@@ -493,12 +523,13 @@ catalog content, and never writes a progress record by itself — the learner's 
       tablet 1024×768 and 768×1024, phone 412×915 and 915×412; `expect(tester.takeException(), isNull)`
 - [ ] Layout tests driven in `zh` where text width matters (square CJK glyphs measure the real
       layout; the test font inflates Latin)
-- [ ] Strings in both ARB files; `flutter gen-l10n` output committed
+- [ ] Strings in all three ARB files; `flutter gen-l10n` output committed
 - [ ] Function Explanation Layer on every declaration; `doc/en-us/functions/` page + INDEX row;
       `doc/zh-cn/` mirror
 
 **Every content change**
 
+- [ ] `dart run tool/convert_zh_tw.dart`, then `flutter test test/content_zh_tw_test.dart`
 - [ ] `flutter test test/content_catalog_test.dart`
 - [ ] Ids stable; new ids prefixed; retired ids aliased
 - [ ] Japanese checked by a person; readings match the surface
@@ -556,6 +587,11 @@ catalog content, and never writes a progress record by itself — the learner's 
 | 2026-09-03 | Grammar matching runs over the token sequence, with no new `match` schema | Requiring both ends to fall on a token boundary is what 〜は needed; the token sequence supplies that, the existing literal forms already work, and the alternative was rewriting the `match` field of 81 points |
 | 2026-09-03 | De-inflection runs backwards and confirms every proposal against the lexicon | Forwards, each class has a dozen forms; backwards, each stem shape is one row transformation per class, and generous rules are safe because 飲ん proposes three verbs of which the dictionary keeps one |
 | 2026-09-03 | The function-word table is content with `fw:` ids, authoritative over the vocabulary | は is the topic marker far more often than it is 歯; a table the analyser can trust is what makes every other stage possible, and ids that never change let a token carry one |
+| 2026-09-03 | Traditional Chinese is `Locale('zh', 'TW')` everywhere: `app_zh_TW.arb`, the stored tag `zh_TW`, the content key `zh_TW` | The siblings already file it that way, the existing `language_COUNTRY` tag round-trips it with no change, and one string a reader learns once names it in all three places |
+| 2026-09-03 | A `localeListResolutionCallback` normalises Chinese before Flutter's own resolution | `basicLocaleListResolution` matches language and country, so `zh-Hant-HK`, `zh-Hant-MO` and `zh-HK` would all have been given Simplified Chinese. Correcting the input rather than replacing the algorithm leaves every other language exactly as Flutter defines it |
+| 2026-09-03 | The Traditional **content** is generated from the Simplified text and committed; the Traditional **UI** is hand-written | The content is 1,132 strings whose Simplified version is itself machine-authored and unreviewed — converting it changes nothing about how much it can be trusted. The UI is 274 strings a reader meets constantly, and Taiwan usage differs by vocabulary, which no conversion table can supply |
+| 2026-09-03 | The conversion is OpenCC's `s2tw` chain re-implemented in Dart, not `s2twp`, and not a character table | Phrases are what decide which Traditional character is right (干净 → 乾淨 but 干部 → 幹部), so a character table is wrong by construction; and `s2twp`'s Taiwan vocabulary table is mostly computing terms, which rewrote 连接 to 連線 and 对象 to 物件 inside a grammar note about which noun a particle connects |
+| 2026-09-03 | Japanese words quoted in the Chinese prose are listed in `preserve.txt` rather than detected | 来る is Japanese and must stay 来る, while 来 in the surrounding Chinese must become 來 — the same character, decided by which language the word belongs to, which no rule over adjacency can tell. The list is short, explicit, and a test fails when a shipped file contains the broken form |
 | 2026-09-03 | The sentence lab is a route outside the shell, not a sixth tab | The five tabs are the reference the app is built around; the lab is something done *to* a sentence you already have, and it is always entered with a purpose from somewhere else |
 
 ## 7. Open questions

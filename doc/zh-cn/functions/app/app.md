@@ -9,3 +9,5 @@
 | `_DesktopScrollBehavior.dragDevices` | getter 覆写 | B | 报告哪些指针类型可以拖动可滚动组件：触摸、鼠标、触控板。 |
 | `MyNihongoApp.new` | 构造函数（`MyNihongoApp`） | B | 创建根应用组件。 |
 | `MyNihongoApp.build` | 方法（`ConsumerWidget` build） | B | 用设置 provider 中的主题、语言和路由构建 `MaterialApp.router`。 |
+
+`localeListResolutionCallback` 是 [locale_resolution.md](locale_resolution.md) 中的 `resolveAppLocale`，它决定一台没有被指定语言的设备使用两种中文中的哪一种。

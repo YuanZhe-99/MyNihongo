@@ -1,7 +1,7 @@
 # lib/features/settings/views/settings_page.dart
 
 `SettingsPage` is the fifth tab. It shows three sections — General (theme segmented button,
-language dropdown), Data, About (version, privacy policy, license, open-source
+language dropdown: system, English, 简体中文, 繁體中文), Data, About (version, privacy policy, license, open-source
 licenses) — and lays itself out in one or two panes by `canSplitLayout`. Data now holds the WebDAV sync row (with a live status subtitle), the backup row, ZIP export and
 import, and the storage location. The private `_SettingsDetail` enum names the four rows that lead
 to a second-level page: `webdav`, `backup`, `privacy`, `license`. Export and import act in place. See [../../../../adaptive-layout.md](../../../../adaptive-layout.md).

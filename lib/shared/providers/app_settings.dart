@@ -199,7 +199,9 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
   /// Inputs: `locale` — null follows the system.
   /// Returns: None.
   /// Side effects: Persists the selected locale.
-  /// Notes: Stored as `language` or `language_COUNTRY`.
+  /// Notes: Stored as `language` or `language_COUNTRY`, which is what carries
+  /// `zh_TW`: Traditional and Simplified Chinese differ only by country here,
+  /// so a tag that dropped it would silently move a reader to the other one.
   void setLocale(Locale? locale) {
     state = state.copyWith(locale: locale, clearLocale: locale == null);
     if (locale == null) {

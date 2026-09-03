@@ -38,15 +38,17 @@ void main() {
     analyzer = SentenceAnalyzer(lexicon: lexicon, catalog: catalog);
   });
 
-  test('the shipped templates load and carry both languages', () {
+  test('the shipped templates load and carry every UI language', () {
     expect(templates.schemaVersion, greaterThan(0));
     for (final task in ['issue', 'sentence']) {
       expect(templates.tasks[task], isNotNull, reason: task);
-      expect(templates.tasks[task]!.keys, containsAll(['en', 'zh']));
-      expect(templates.tasks[task]!['en']!.rules, isNotEmpty);
-      expect(templates.tasks[task]!['zh']!.rules, isNotEmpty);
+      expect(templates.tasks[task]!.keys, containsAll(['en', 'zh', 'zh_TW']));
+      for (final language in ['en', 'zh', 'zh_TW']) {
+        expect(templates.tasks[task]![language]!.rules, isNotEmpty,
+            reason: '$task/$language');
+      }
     }
-    expect(templates.labels.keys, containsAll(['en', 'zh']));
+    expect(templates.labels.keys, containsAll(['en', 'zh', 'zh_TW']));
   });
 
   test('an issue prompt carries the sentence, the split and the message', () {
@@ -59,7 +61,7 @@ void main() {
       analysis.issues.first,
       message,
       catalog,
-      'en',
+      const Locale('en'),
     )!;
 
     expect(prompt, contains('私は昨日映画を見ます。'));
@@ -71,15 +73,47 @@ void main() {
 
   test('a Chinese prompt asks for Chinese', () {
     final analysis = analyzer.analyze('これは本です。');
-    final prompt = builder.forSentence(analysis, catalog, 'zh')!;
+    final prompt = builder.forSentence(analysis, catalog, const Locale('zh'))!;
 
     expect(prompt, contains('用简体中文回答。'));
     expect(prompt, isNot(contains('Answer in English.')));
   });
 
+  test('a Traditional Chinese prompt asks for Traditional Chinese', () {
+    final analysis = analyzer.analyze('これは本です。');
+    final prompt = builder.forSentence(
+      analysis,
+      catalog,
+      const Locale('zh', 'TW'),
+    )!;
+
+    expect(prompt, contains('用繁體中文回答。'));
+    expect(prompt, isNot(contains('用简体中文回答。')));
+  });
+
+  test('a Traditional Chinese prompt quotes the Traditional grammar note', () {
+    // The grounding has to follow the UI language all the way down: a prompt
+    // that asks for Traditional Chinese while handing the model the Simplified
+    // note is asking it to translate, which is not what it was told to do.
+    final analysis = analyzer.analyze('これは本です。');
+    final prompt = builder.forSentence(
+      analysis,
+      catalog,
+      const Locale('zh', 'TW'),
+    )!;
+    final point = catalog.grammarById(analysis.grammar.first.pointId)!;
+    final traditional = point.explanation.resolveJoined(
+      const Locale('zh', 'TW'),
+    );
+    final simplified = point.explanation.resolveJoined(const Locale('zh'));
+
+    expect(traditional, isNot(simplified), reason: 'the fixture must differ');
+    expect(prompt, contains(traditional.substring(0, 12)));
+  });
+
   test('an unknown language falls back to English rather than failing', () {
     final analysis = analyzer.analyze('これは本です。');
-    final prompt = builder.forSentence(analysis, catalog, 'de');
+    final prompt = builder.forSentence(analysis, catalog, const Locale('de'));
 
     expect(prompt, isNotNull);
     expect(prompt, contains('Answer in English.'));
@@ -90,7 +124,7 @@ void main() {
     expect(analysis.grammar, isNotEmpty, reason: 'です should match a point');
     final point = catalog.grammarById(analysis.grammar.first.pointId)!;
 
-    final prompt = builder.forSentence(analysis, catalog, 'en')!;
+    final prompt = builder.forSentence(analysis, catalog, const Locale('en'))!;
 
     expect(prompt, contains(point.pattern));
     final explanation = point.explanation.resolveJoined(const Locale('en'));
@@ -103,7 +137,7 @@ void main() {
 
   test('no catalog still produces a usable prompt', () {
     final analysis = analyzer.analyze('これは本です。');
-    final prompt = builder.forSentence(analysis, null, 'en');
+    final prompt = builder.forSentence(analysis, null, const Locale('en'));
 
     expect(prompt, isNotNull);
     expect(prompt, contains('これは本です。'));
@@ -111,7 +145,7 @@ void main() {
 
   test('at most three grammar points are quoted, each capped', () {
     final analysis = analyzer.analyze('私は昨日本を読みましたが、まだ終わっていません。');
-    final prompt = builder.forSentence(analysis, catalog, 'en')!;
+    final prompt = builder.forSentence(analysis, catalog, const Locale('en'))!;
 
     final quoted = '\n'.allMatches(prompt).length;
     expect(quoted, greaterThan(0));
@@ -141,8 +175,8 @@ void main() {
     ]) {
       final analysis = analyzer.analyze(sentence);
       for (final prompt in [
-        builder.forSentence(analysis, catalog, 'en'),
-        builder.forSentence(analysis, catalog, 'zh'),
+        builder.forSentence(analysis, catalog, const Locale('en')),
+        builder.forSentence(analysis, catalog, const Locale('zh')),
       ]) {
         expect(prompt!.length, lessThanOrEqualTo(cap + 1), reason: sentence);
       }
@@ -161,14 +195,14 @@ void main() {
     const empty = PromptBuilder(PromptTemplates.empty);
     final analysis = analyzer.analyze('これは本です。');
 
-    expect(empty.forSentence(analysis, catalog, 'en'), isNull);
+    expect(empty.forSentence(analysis, catalog, const Locale('en')), isNull);
     expect(
       empty.forIssue(
         analysis,
         const Issue(kind: IssueKind.missingCopula, first: 0, last: 0),
         'message',
         catalog,
-        'en',
+        const Locale('en'),
       ),
       isNull,
     );

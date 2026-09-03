@@ -390,7 +390,7 @@ class NihongoStorage {
 
   /// Purpose: Read the persisted locale tag.
   /// Inputs: None.
-  /// Returns: `Future<String?>` — `en`, `zh`, or null for system.
+  /// Returns: `Future<String?>` — `en`, `zh`, `zh_TW`, or null for system.
   /// Side effects: Reads the config file.
   /// Notes: None.
   static Future<String?> getLocaleTag() async {

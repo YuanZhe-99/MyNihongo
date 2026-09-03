@@ -207,6 +207,11 @@ Not copied to the other repos — no other app has these.
 | model download | 模型下载 | 由 AICore 完成，不是应用 |
 | explanation (AI) | 解释 | 「解释这个句子」 |
 | correction suggestion | 改写建议 | 校对 API 的输出；不说「纠错」 |
+| Traditional Chinese | 繁体中文 | UI 语言 `zh_TW`；文档树只有 `doc/zh-cn/`，不镜像繁体 |
+| Simplified Chinese | 简体中文 | UI 语言 `zh`；`doc/zh-cn/` 用它撰写 |
+| OpenCC | OpenCC | 简繁转换词典项目名，不译 |
+| conversion dictionary | 转换词典 | `tool/content/opencc/` 下的 OpenCC 词表 |
+| generated (Traditional text) | 生成 | 与「生成的文字」（AI）同词，但指构建期转换，绝不手工编辑 |
 | Learn tab | 学习标签页 | 首页 |
 | dashboard | 仪表盘 | 学习标签页的卡片总览 |
 | roadmap | 路线图 | `PLAN.md` |

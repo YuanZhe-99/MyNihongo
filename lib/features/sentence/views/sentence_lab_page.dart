@@ -398,7 +398,7 @@ class _SentenceLabPageState extends ConsumerState<SentenceLabPage> {
                       analysis,
                       null,
                       null,
-                      Localizations.localeOf(context).languageCode,
+                      Localizations.localeOf(context),
                     ),
                     (result) => _sentenceResult = result,
                   ),
@@ -443,7 +443,7 @@ class _SentenceLabPageState extends ConsumerState<SentenceLabPage> {
         analysis,
         issue,
         message,
-        Localizations.localeOf(context).languageCode,
+        Localizations.localeOf(context),
       ),
       (result) => _issueResults[index] = result,
     );

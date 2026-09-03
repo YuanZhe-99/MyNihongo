@@ -1,3 +1,5 @@
+import 'dart:ui' show Locale;
+
 import '../../content/models/content_catalog.dart';
 import '../../sentence/models/sentence_analysis.dart';
 import 'ai_assist_service.dart';
@@ -41,7 +43,7 @@ class AiCoreSentenceEnhancer implements SentenceEnhancer {
 
   /// Purpose: Explain one issue, or the whole sentence.
   /// Inputs: The `analysis`, the `issue` and its `issueMessage` when the
-  /// request is about one, and the UI `languageCode`.
+  /// request is about one, and the UI `locale`.
   /// Returns: `Future<String?>` — null when nothing usable came back.
   /// Side effects: Runs Gemini Nano on the device.
   /// Notes: A [GenAiException] is allowed through so the UI can word the
@@ -52,11 +54,11 @@ class AiCoreSentenceEnhancer implements SentenceEnhancer {
     SentenceAnalysis analysis,
     Issue? issue,
     String? issueMessage,
-    String languageCode,
+    Locale locale,
   ) async {
     final prompt = issue != null && issueMessage != null
-        ? prompts.forIssue(analysis, issue, issueMessage, catalog, languageCode)
-        : prompts.forSentence(analysis, catalog, languageCode);
+        ? prompts.forIssue(analysis, issue, issueMessage, catalog, locale)
+        : prompts.forSentence(analysis, catalog, locale);
     if (prompt == null) return null;
     final raw = await service.explain(prompt);
     return ResponseParser.explanation(raw, prompt: prompt);

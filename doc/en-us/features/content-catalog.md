@@ -43,10 +43,12 @@ case-insensitive parse), `LocalizedStrings` (language-keyed lists with English f
 | JMdict body (`jmdict-eng-<version>.json`) | `tool/data/` | **No** — git-ignored, downloaded by hand |
 | Hand-written seed words | `tool/content/vocab_seed.json` | Yes |
 | Chinese gloss overlay | `assets/content/vocab_zh.json` | Yes |
+| OpenCC conversion dictionaries | `tool/content/opencc/` | Yes, verbatim from upstream |
 
 ```bash
 dart run tool/import_vocab.dart
 dart run tool/import_vocab.dart --overlay-only
+dart run tool/convert_zh_tw.dart
 ```
 
 The tool exits 1 and prints the download URL when the dictionary is missing, and exits 1 rather
@@ -88,6 +90,35 @@ The overlay is bundled rather than kept under `tool/` so the test can read it th
 and compare it against what the catalog actually ships. That catches an overlay edit that never
 had `--overlay-only` run over it.
 
+### Traditional Chinese
+
+Traditional Chinese is **generated**, not authored: `tool/convert_zh_tw.dart` writes a `zh_TW`
+string beside every `zh` string in the content, and the result is committed. It carries the same
+warning the Simplified glosses do — nobody has reviewed it — and the same recourse: fix the `zh`
+and re-run the tool.
+
+The conversion is OpenCC's own `s2tw` chain, re-implemented in Dart in
+`tool/src/chinese_converter.dart` so a build-time step needs no native dependency. Two decisions
+are worth knowing:
+
+- **It is phrase-based, not character-based.** Which Traditional character a Simplified one becomes
+  depends on the word: 干净 → 乾淨 but 干部 → 幹部, 头发 → 頭髮 but 发现 → 發現. A character table
+  gets those wrong, which is why the 1 MB phrase dictionary is committed.
+- **`s2tw`, not `s2twp`.** OpenCC's Taiwan *vocabulary* table is domain vocabulary, mostly
+  computing, and it mistranslates ordinary prose: it rewrites 连接 to 連線 and 对象 to 物件 in a
+  grammar note about which noun a particle connects. Taiwan character variants are what this app
+  needs; it never says 软件.
+
+Japanese words written in kanji inside the Chinese prose are listed in
+`tool/content/opencc/preserve.txt` and copied through untouched. A grammar note about 来る is
+written in Chinese and quotes the Japanese verb; 來る is a word in neither language.
+`test/content_zh_tw_test.dart` fails if one of them reaches a shipped file, so the list cannot
+quietly fall behind the content.
+
+The UI strings are a different matter: `lib/l10n/app_zh_TW.arb` is hand-maintained, because Taiwan
+usage differs by vocabulary and not only by characters — 設定 not 設置, 單字 not 單詞, 文法 not
+語法, 網路 not 網絡.
+
 ## Rules every entry follows
 
 Enforced by `test/content_catalog_test.dart`:
@@ -97,7 +128,9 @@ Enforced by `test/content_catalog_test.dart`:
    may collide with a primary id.
 2. **Every retired id still resolves.** All 24 hand-written seed ids must find their entry and be
    listed in its `aliases`.
-3. **An English meaning on every entry**, and **Chinese on N5 and on every seed word**.
+3. **An English meaning on every entry**, and **Chinese on N5 and on every seed word**. Every
+   Chinese string has a generated Traditional one beside it, checked by
+   `test/content_zh_tw_test.dart`.
 4. **A JLPT level** on every entry, with plausible counts per level and no repeated headword and
    reading inside one level.
 5. **Only known part-of-speech tags.**
@@ -120,6 +153,7 @@ license and attribution recorded here and on the in-app license page:
 | Source | License | Status |
 |---|---|---|
 | Grammar, examples, kana notes, Chinese glosses, seed words | GPL-3.0 (with the app) | Shipped |
+| OpenCC conversion dictionaries (Carbo Kuo and contributors) | Apache-2.0 | Build input; the text they generate ships |
 | JMdict / EDICT (EDRDG, Monash University) | CC BY-SA 4.0 | Shipped |
 | JLPT lists (stephenmk/yomitan-jlpt-vocab; underlying lists by Jonathan Waller, CC BY) | CC BY-SA 4.0 | Shipped |
 

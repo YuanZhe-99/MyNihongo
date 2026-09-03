@@ -31,12 +31,12 @@ Consumers: `aicore_sentence_enhancer.dart`, `sentence_analyzer.dart`.
 
 ## Documentation
 
-### `String? forIssue(SentenceAnalysis, Issue, String message, ContentCatalog?, String languageCode)` <a id="forissue"></a>
+### `String? forIssue(SentenceAnalysis, Issue, String message, ContentCatalog?, Locale locale)` <a id="forissue"></a>
 
 - **Kind:** method
 - **Purpose:** Ask the model about one thing the checks flagged.
 - **Inputs:** The analysis, the issue, **its already-worded message**, the catalog and the UI
-  language.
+  locale.
 - **Returns:** `String?` — null when the templates are missing.
 - **Side effects:** None.
 - **Algorithm:** Delegates to `_build` with the quoted span and the message as the note.
@@ -63,22 +63,26 @@ Consumers: `aicore_sentence_enhancer.dart`, `sentence_analyzer.dart`.
 
 - **Kind:** method
 - **Purpose:** Assemble one prompt from the templates and the analysis.
-- **Inputs:** The task name, language code, analysis, catalog and an optional note.
+- **Inputs:** The task name, locale, analysis, catalog and an optional note.
 - **Returns:** `String?`.
 - **Side effects:** None.
-- **Algorithm:** Pick the task's block for the language, falling back to English; write the sentence,
-  the token split, the note, the grammar excerpts and the rules; cap the whole thing.
+- **Algorithm:** Pick the task's block through `LocalizedStrings.lookupOrder`, falling back to
+  English; write the sentence, the token split, the note, the grammar excerpts and the rules; cap
+  the whole thing.
 - **Usage:** `forIssue`, `forSentence`.
 - **Notes:** Internal helper used within this file only. Every part is capped **before** the whole is,
   so a runaway grammar excerpt cannot push the rules off the end — losing the rules would silently
   turn a constrained request into an open one. The English fallback means an unsupported UI language
-  still gets a working prompt rather than no feature at all.
+  still gets a working prompt rather than no feature at all. Sharing the content's lookup order is
+  what makes a Traditional Chinese prompt ask in Traditional Chinese *and* quote the Traditional
+  grammar notes: asking in one script while grounding in the other would be asking the model to
+  translate.
 
-### `List<String> _grammar(SentenceAnalysis, ContentCatalog?, String languageCode)` <a id="grammar"></a>
+### `List<String> _grammar(SentenceAnalysis, ContentCatalog?, Locale locale)` <a id="grammar"></a>
 
 - **Kind:** method
 - **Purpose:** Quote what the app itself teaches about each matched grammar point.
-- **Inputs:** The analysis, the catalog and the language.
+- **Inputs:** The analysis, the catalog and the locale.
 - **Returns:** At most the configured number of lines, each capped.
 - **Side effects:** None.
 - **Algorithm:** Walk the matches, resolve each point, prefer its explanation over its meaning, cap.

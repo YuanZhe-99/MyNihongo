@@ -32,7 +32,7 @@ anywhere except to a WebDAV server you configure yourself.
   practice that compares what you said with the reading, mora by mora.
 - A sentence lab: paste a sentence and see the words, what modifies what, which
   taught grammar it uses, and anything that looks unusual. Offline, no model.
-- English and Simplified Chinese throughout. Chinese glosses cover N5; the rest
+- English, Simplified Chinese and Traditional Chinese throughout. Chinese glosses cover N5; the rest
   show English.
 
 **Your data is yours**

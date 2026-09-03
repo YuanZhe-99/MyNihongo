@@ -27,7 +27,7 @@ sharing their sync, backup and data-management engine
   Tap a kana for its stroke count, the kana it is confused with, and words that start with it.
 - **Vocabulary** — 7,744 words from N5 to N1, built from JMdict and the openly licensed JLPT
   lists. Search by kanji, reading, romaji or meaning; filter by JLPT level; example sentences with
-  readings. Chinese glosses cover N5.
+  readings. Chinese glosses cover N5, in both Simplified and Traditional characters.
 - **Grammar** — 81 N5 points, each with structure, meaning, explanation and examples; JLPT filter.
 - **Cross-links** — a word shows the grammar its examples use, a grammar point shows the words in
   its examples, and a kana shows words that start with it.
@@ -45,7 +45,9 @@ sharing their sync, backup and data-management engine
 - **Foldable-aware layout** — one rule set decides when panes and columns appear; navigation moves
   to a side rail on wide windows.
 - **Remembered per device** — the tab, the two level filters, the kana script and the column count.
-- **Languages** — English and Simplified Chinese.
+- **Languages** — English, Simplified Chinese and Traditional Chinese. The Traditional text of the
+  bundled content is generated from the Simplified text and committed; the interface is translated
+  by hand.
 
 **Planned** — see [PLAN.md](PLAN.md): on-device pronunciation practice (Android speech recognition
 and text-to-speech), a sentence analyser, spaced-repetition quizzes and step-by-step lessons, and

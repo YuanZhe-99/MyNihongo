@@ -11,7 +11,7 @@
 | `TokenChips` | 类 | B | 句子的色块呈现，每个词一个。 |
 | `TokenChips.build` | 方法 | B | 构建色块行，跳过标点。 |
 | [`_chip`](#chip) | 方法 | A | 构建一个词的色块。 |
-| `_open` | 方法 | B | 打开目录词条，或功能词自己的释义。 |
+| `_open` | 方法 | B | 打开目录词条，或功能词自己的释义，经 `LocalizedStrings.lookupOrder` 解析。 |
 | [`_label`](#label) | 静态方法 | A | 用用户的语言命名一个类别。 |
 | `_colorsFor` | 静态方法 | B | 为某个类别选取主题配色。 |
 

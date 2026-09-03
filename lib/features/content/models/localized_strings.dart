@@ -52,17 +52,37 @@ class LocalizedStrings {
   /// Notes: None.
   bool get isEmpty => values.isEmpty;
 
+  /// Purpose: List the content keys to try for a locale, best first.
+  /// Inputs: `locale`.
+  /// Returns: `List<String>` — e.g. `['zh_TW', 'zh', 'en']` for Traditional
+  /// Chinese, `['zh', 'en']` for Simplified, `['en']` for English.
+  /// Side effects: None.
+  /// Notes: The full tag comes before the bare language, which is what lets
+  /// Traditional Chinese fall back to the Simplified text of an entry the
+  /// conversion has not reached — every `zh_TW` string is generated from the
+  /// `zh` beside it, so a missing one means there was no Chinese at all.
+  /// English is last because it is the one language every entry has.
+  static List<String> lookupOrder(Locale locale) {
+    final country = locale.countryCode;
+    return [
+      if (country != null && country.isNotEmpty)
+        '${locale.languageCode}_$country',
+      locale.languageCode,
+      if (locale.languageCode != 'en') 'en',
+    ];
+  }
+
   /// Purpose: Pick the strings for a locale.
   /// Inputs: `locale`.
-  /// Returns: `List<String>` — the locale's language, then English, then the
-  /// first language present; empty when there is nothing at all.
+  /// Returns: `List<String>` — the first of [lookupOrder] that is present,
+  /// then the first language there is; empty when there is nothing at all.
   /// Side effects: None.
-  /// Notes: Matches on language code only; `zh_TW` reads the `zh` strings.
+  /// Notes: None.
   List<String> resolve(Locale locale) {
-    final exact = values[locale.languageCode];
-    if (exact != null) return exact;
-    final english = values['en'];
-    if (english != null) return english;
+    for (final key in lookupOrder(locale)) {
+      final match = values[key];
+      if (match != null) return match;
+    }
     return values.isEmpty ? const [] : values.values.first;
   }
 

@@ -11,7 +11,9 @@ import 'package:my_nihongo/l10n/app_localizations.dart';
 /// Notes: The kana page is the one page with no disk or provider dependency,
 /// so it stands in for "the app boots". Chinese is pumped too because CJK
 /// glyphs are square in the test font, which makes the Chinese run measure the
-/// real production layout — see `doc/en-us/adaptive-layout.md`.
+/// real production layout — see `doc/en-us/adaptive-layout.md`. Both Chinese
+/// locales are pumped: they are separate string catalogs, and a locale that
+/// resolves to the wrong one still renders perfectly well.
 void main() {
   Future<void> pumpKana(WidgetTester tester, Locale locale) async {
     tester.view.devicePixelRatio = 1.0;
@@ -41,6 +43,16 @@ void main() {
     await pumpKana(tester, const Locale('zh'));
     expect(find.text('五十音速查'), findsOneWidget);
     expect(find.text('清音五十音'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('kana page renders in Traditional Chinese', (tester) async {
+    await pumpKana(tester, const Locale('zh', 'TW'));
+    expect(find.text('五十音速查'), findsOneWidget);
+    // A heading the two Chinese catalogs write differently, so this fails if
+    // the Traditional locale quietly fell back to the Simplified strings.
+    expect(find.text('發音規則'), findsOneWidget);
+    expect(find.text('发音规则'), findsNothing);
     expect(tester.takeException(), isNull);
   });
 }

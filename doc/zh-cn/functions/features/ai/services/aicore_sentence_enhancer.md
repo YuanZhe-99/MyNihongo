@@ -28,11 +28,11 @@
 - **使用：** 接缝的契约；实验室直接读服务。
 - **说明：** 底下其实是同步的，这是刻意的。真正的能力检查在每一次生成调用内部进行，所以这里只决定是否*提供*该操作——而 build 方法不能为了决定要不要画一个按钮去 await 一次平台调用。
 
-### `Future<String?> explain(SentenceAnalysis, Issue?, String?, String languageCode)` <a id="explain"></a>
+### `Future<String?> explain(SentenceAnalysis, Issue?, String?, Locale locale)` <a id="explain"></a>
 
 - **种类：** 方法
 - **用途：** 解释某个问题点，或整个句子。
-- **输入：** 分析结果；当请求针对某个问题时，还有该问题及其已措好辞的说明；以及界面语言码。
+- **输入：** 分析结果；当请求针对某个问题时，还有该问题及其已措好辞的说明；以及界面 locale。
 - **返回：** `Future<String?>` —— 没有可用内容时为 null。
 - **副作用：** 在设备上运行 Gemini Nano。
 - **算法：** 构建提示词、运行、解析回答。

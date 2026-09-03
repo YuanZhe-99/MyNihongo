@@ -1,6 +1,6 @@
 # lib/features/settings/views/license_page.dart
 
-`LicensePage` 在应用栏下以可选择文本显示 MyNihongo!!!!! 的 GPLv3 声明。它是两个二级设置页面之一，在窄窗口上全屏压栈，在宽窗口上承载在详情窗格（pane）中（见 [settings_page.md](settings_page.md)）。第三方内容的署名随其发布添加到这里（`PLAN.md` M1.2）。
+`LicensePage` 在应用栏下以可选择文本显示 MyNihongo!!!!! 的 GPLv3 声明。它是两个二级设置页面之一，在窄窗口上全屏压栈，在宽窗口上承载在详情窗格（pane）中（见 [settings_page.md](settings_page.md)）。第三方内容的署名随其发布添加到这里（`PLAN.md` M1.2）：JMdict/EDICT、JLPT 词表，以及用于生成繁体中文文本的 OpenCC 词典。
 
 ## 声明
 

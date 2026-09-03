@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 
 import '../l10n/app_localizations.dart';
 import '../shared/providers/app_settings.dart';
+import 'locale_resolution.dart';
 import 'router.dart';
 import 'theme.dart';
 
@@ -79,6 +80,7 @@ class _MyNihongoAppState extends ConsumerState<MyNihongoApp> {
       locale: settings.locale,
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localeListResolutionCallback: resolveAppLocale,
 
       // DevicePreview
       builder: DevicePreview.appBuilder,

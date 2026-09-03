@@ -32,7 +32,7 @@
 - `romaji` —— 可选罗马字；只有手写的种子词带这一字段。
 - `pos` —— 取自 `lib/features/content/models/parts_of_speech.dart` 中封闭集合的词性标签。集合之外的标签会
   让内容测试失败。
-- `meanings` —— 语言代码到释义列表。`en` 始终存在；`zh` 存在于 N5 与种子词，其余条目由界面回退到英语。
+- `meanings` —— 语言代码到释义列表。`en` 始终存在；`zh` 存在于 N5 与种子词，其余条目由界面回退到英语。`zh_TW` 由 `zh` 生成，`zh` 出现的地方它都出现——见[繁体中文](#繁体中文)。
 - `common` —— JMdict 将所选书写形式标为常用时该字段为 true。用于排序建议，绝不用于隐藏条目。
 - `aliases` —— 该条目曾经使用过的 id。`vocabById` 会把它们解析到同一个条目。
 - `examples` —— 每项为 `{ja, reading?, <语言>: 译文…}`；除 `ja` 与 `reading` 外的每个键都是语言代码。
@@ -75,7 +75,7 @@
 - `id`、`level`、`pattern` 为必填；`structure` 可选。
 - `match` —— 可选的字面字符串，用于在句中标出该语法点，解析为 `GrammarPoint.matchForms`。单字助词必须给出
   该字段，因为从其句型推导出的形式几乎会匹配任何句子。
-- `meaning` 与 `explanation` 按语言分键；纯字符串按英语处理。
+- `meaning` 与 `explanation` 按语言分键；纯字符串按英语处理。两者都在 `zh` 旁带有生成的 `zh_TW`。
 
 ### 假名
 
@@ -116,7 +116,7 @@
 | `lemma` | 其词族的基本形，使整套活用都归到同一个词 |
 | `needs` | 它所接的词干形态；缺失表示接在任何东西之后 |
 | `forms` | 它为所关闭的文节贡献的 `InflectionForm` 值 |
-| `gloss` | `en` 与 `zh`，两者必需——功能词没有目录条目，因此色块携带自己的含义 |
+| `gloss` | `en` 与 `zh`，两者必需——功能词没有目录条目，因此色块携带自己的含义；`zh_TW` 由 `zh` 生成 |
 
 文件还携带 `sets`：各项检查所读的命名词表（`time-past`、`time-future`、`path-verbs`、`motion-verbs`）以及 `transitivity-pairs`；后者是二元数组而非对象，因为检查会双向查找它们。
 
@@ -124,7 +124,13 @@
 
 ### 解析规则
 
-`LocalizedStrings.fromJson` 接受语言代码到字符串或字符串列表的映射，或视为英语的裸字符串。`resolve(locale)` 返回该语言的内容，其次英语，再次第一个存在的语言。畸形条目——缺少 id、级别、词条或句型——被跳过而不是让整个文件失败；内容是内置的，因此坏条目是由 `test/content_catalog_test.dart` 捕获的内容 bug，而不是需要保护的用户数据。
+`LocalizedStrings.fromJson` 接受语言代码到字符串或字符串列表的映射，或视为英语的裸字符串。`resolve(locale)` 按 `lookupOrder(locale)` 依次查找——完整标签、裸语言码、英语——再回退到第一个存在的语言。正是这个顺序让 `zh_TW` 回退到 `zh`：某条目没有繁体字符串时，繁体读者看到的是它的简体文本，而不是直接跳到英语。畸形条目——缺少 id、级别、词条或句型——被跳过而不是让整个文件失败；内容是内置的，因此坏条目是由 `test/content_catalog_test.dart` 捕获的内容 bug，而不是需要保护的用户数据。
+
+### 繁体中文
+
+内容中的每一个 `zh_TW` 字符串都由 `tool/convert_zh_tw.dart` 从旁边的 `zh` 字符串**生成**，使用 OpenCC 的简繁转换词典，并提交到仓库。它绝不手工编辑：`test/content_zh_tw_test.dart` 会把每一条与重新转换的结果比对，因此改了 `zh` 却没有运行工具，以及手工编辑了 `zh_TW`，都会以同样的方式失败。两种情况的修法都是改 `zh` 然后重新运行工具。
+
+转换基于词组，因为一个简体字对应哪个繁体字取决于它所在的词（干净 → 乾淨，但 干部 → 幹部）。中文行文中引用的日语词列在 `tool/content/opencc/preserve.txt` 中并原样保留：讲 来る 的语法说明不能发布成 來る，那在两种语言里都不是词。见 [`features/content-catalog.md`](features/content-catalog.md)。
 
 ### 内容 id 是契约
 
@@ -204,7 +210,7 @@
 | --- | --- | --- | --- |
 | 学习进度 | `nihongo_progress.json` | 是 | 按 `id` 和 `modifiedAt` 逐记录；保留未知字段 |
 | 主题模式 | `storage_config.json` | 否 | 设备特定偏好（`themeMode`：`light`/`dark`；缺失表示跟随系统） |
-| 语言 | `storage_config.json` | 否 | 设备特定偏好（`locale`：`en`/`zh`；缺失表示跟随系统） |
+| 语言 | `storage_config.json` | 否 | 设备特定偏好（`locale`：`en`/`zh`/`zh_TW`；缺失表示跟随系统） |
 | 存储路径覆盖 | `storage_config.json` | 否 | 设备特定路径（`storagePath`） |
 | 自动备份启用 | `storage_config.json` | 否 | 设备特定配置（`autoBackupEnabled`） |
 | 备份保留天数 | `storage_config.json` | 否 | 设备特定配置（`backupRetentionDays`） |

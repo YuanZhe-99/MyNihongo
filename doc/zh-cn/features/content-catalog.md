@@ -36,10 +36,12 @@
 | JMdict 本体（`jmdict-eng-<版本>.json`） | `tool/data/` | **否** —— 已 git 忽略，需手动下载 |
 | 手写种子词 | `tool/content/vocab_seed.json` | 是 |
 | 中文释义覆盖文件 | `assets/content/vocab_zh.json` | 是 |
+| OpenCC 转换词典 | `tool/content/opencc/` | 是，与上游逐字节一致 |
 
 ```bash
 dart run tool/import_vocab.dart
 dart run tool/import_vocab.dart --overlay-only
+dart run tool/convert_zh_tw.dart
 ```
 
 词典缺失时，工具以退出码 1 结束并打印下载地址；当词表引用了词典中不存在的序号时，它同样以 1 结束，而不是
@@ -70,6 +72,19 @@ dart run tool/import_vocab.dart --overlay-only
 覆盖文件放在资源目录而不是 `tool/` 下，是为了让测试可以通过 `rootBundle` 读到它，并与目录实际发布的内容
 比对，从而发现改了覆盖文件却忘记运行 `--overlay-only` 的情况。
 
+### 繁体中文
+
+繁体中文是**生成**的，而不是撰写的：`tool/convert_zh_tw.dart` 在内容中每一个 `zh` 字符串旁写入一个 `zh_TW` 字符串，结果提交到仓库。它带着与简体释义相同的提醒——无人校对过——以及相同的补救方式：改 `zh`，重新运行工具。
+
+转换用的是 OpenCC 自己的 `s2tw` 链，在 `tool/src/chinese_converter.dart` 中用 Dart 重新实现，这样一个构建期步骤不需要任何原生依赖。有两个决定值得知道：
+
+- **它基于词组，而不是基于单字。** 一个简体字变成哪个繁体字取决于所在的词：干净 → 乾淨，但 干部 → 幹部；头发 → 頭髮，但 发现 → 發現。单字表会弄错这些，这正是那份 1 MB 词组词典被提交的原因。
+- **用 `s2tw` 而不是 `s2twp`。** OpenCC 的台湾*词汇*表是领域词汇，大多与计算机有关，它会把普通行文译错：在讲某个助词连接哪个名词的语法说明里，它把 连接 改成 連線、把 对象 改成 物件。这个应用需要的是台湾字形变体；它从不说 软件。
+
+中文行文中以汉字书写的日语词列在 `tool/content/opencc/preserve.txt` 中并原样保留。讲 来る 的语法说明是中文写的，其中引用了这个日语动词；而 來る 在两种语言里都不是词。只要其中之一进入已发布的文件，`test/content_zh_tw_test.dart` 就会失败，因此这份列表不会悄悄落后于内容。
+
+界面文本是另一回事：`lib/l10n/app_zh_TW.arb` 由人工维护，因为台湾用法的差异不只在字形，也在词汇——是 設定 而不是 設置，是 單字 而不是 單詞，是 文法 而不是 語法，是 網路 而不是 網絡。
+
 ## 每个条目遵守的规则
 
 由 `test/content_catalog_test.dart` 强制执行：
@@ -77,7 +92,7 @@ dart run tool/import_vocab.dart --overlay-only
 1. **id 唯一且带前缀**，包括别名。使用 `vocab:` 与 `grammar:` 前缀；假名目录的 `kana:` id 共享同一命名空间。
    `studyKindOf(id)` 必须返回相应的类别。别名不得与任何主 id 冲突。
 2. **每个退役 id 仍可解析。** 全部 24 个手写种子 id 都必须找到其条目，并出现在该条目的 `aliases` 中。
-3. **每个条目都有英文释义**，且 **N5 与全部种子词都有中文释义**。
+3. **每个条目都有英文释义**，且 **N5 与全部种子词都有中文释义**。每个中文字符串旁都有一个生成的繁体字符串，由 `test/content_zh_tw_test.dart` 检查。
 4. **每个条目都有 JLPT 等级**，各等级数量合理，且同一等级内不出现重复的词头与读音组合。
 5. **只使用已知的词性标签。**
 6. **每个语法点都有两种语言**、有例句，句中含汉字处附读音。
@@ -96,6 +111,7 @@ dart run tool/import_vocab.dart --overlay-only
 | 来源 | 许可 | 状态 |
 |---|---|---|
 | 语法、例句、假名注释、中文释义、种子词 | GPL-3.0（随应用） | 已发布 |
+| OpenCC 转换词典（Carbo Kuo 及贡献者） | Apache-2.0 | 构建输入；其生成的文本随应用发布 |
 | JMdict / EDICT（EDRDG，莫纳什大学） | CC BY-SA 4.0 | 已发布 |
 | JLPT 词表（stephenmk/yomitan-jlpt-vocab；底层词表来自 Jonathan Waller，CC BY） | CC BY-SA 4.0 | 已发布 |
 

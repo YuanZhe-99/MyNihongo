@@ -33,12 +33,12 @@ Consumers: `sentence_analyzer.dart`, which attaches one to `SentenceAnalyzer.enh
   generating call, so this only decides whether to *offer* the action — and a build method must not
   await a platform call to decide whether to draw a button.
 
-### `Future<String?> explain(SentenceAnalysis, Issue?, String?, String languageCode)` <a id="explain"></a>
+### `Future<String?> explain(SentenceAnalysis, Issue?, String?, Locale locale)` <a id="explain"></a>
 
 - **Kind:** method
 - **Purpose:** Explain one issue, or the whole sentence.
 - **Inputs:** The analysis, the issue and its already-worded message when the request is about one,
-  and the UI language code.
+  and the UI locale.
 - **Returns:** `Future<String?>` — null when nothing usable came back.
 - **Side effects:** Runs Gemini Nano on the device.
 - **Algorithm:** Build the prompt, run it, parse the answer.

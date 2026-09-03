@@ -1,3 +1,5 @@
+import 'dart:ui' show Locale;
+
 import 'token.dart';
 
 /// One bunsetsu: a content word plus whatever attached to it.
@@ -190,8 +192,7 @@ abstract class SentenceEnhancer {
 
   /// Purpose: Explain one issue, or the sentence, in more words.
   /// Inputs: The `analysis`, an optional `issue` to focus on, the
-  /// `issueMessage` **as the app already worded it**, and the UI
-  /// `languageCode`.
+  /// `issueMessage` **as the app already worded it**, and the UI `locale`.
   /// Returns: `Future<String?>` — null when nothing could be generated.
   /// Side effects: Runs a model on the device.
   /// Notes: Whatever comes back is labelled as generated and never replaces a
@@ -203,7 +204,7 @@ abstract class SentenceEnhancer {
     SentenceAnalysis analysis,
     Issue? issue,
     String? issueMessage,
-    String languageCode,
+    Locale locale,
   );
 
   /// Purpose: Offer a corrected version of the whole sentence.

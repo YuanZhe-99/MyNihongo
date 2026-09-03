@@ -56,8 +56,13 @@ message the learner is reading — rather than re-deriving one — is what stops
 question they cannot see.
 
 The prompts live in `assets/content/prompts/sentence_explain.json`, versioned like every other
-content asset, with `en` and `zh` instruction blocks and the caps as data. They are deliberately not
-in the ARB files: nothing there is ever rendered.
+content asset, with `en`, `zh` and `zh_TW` instruction blocks and the caps as data. They are
+deliberately not in the ARB files: nothing there is ever rendered. The block is chosen by the same
+fallback order the content uses, so a Traditional Chinese reader is asked for Traditional Chinese
+and the grammar notes handed to the model are the Traditional ones — asking in one script while
+grounding in the other would be asking the model to translate, which is not what it was told to do.
+**The Traditional Chinese block has not been checked on a device:** if the model ignores it the
+answer comes back in Simplified Chinese, which is what it did before this existed.
 
 ## What comes back
 

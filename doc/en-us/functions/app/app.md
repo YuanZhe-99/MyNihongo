@@ -13,3 +13,7 @@ trackpads drag scrollables, for the planned desktop targets. See
 | `_DesktopScrollBehavior.dragDevices` | getter override | B | Report which pointer kinds may drag a scrollable: touch, mouse, trackpad. |
 | `MyNihongoApp.new` | constructor (`MyNihongoApp`) | B | Create the root app widget. |
 | `MyNihongoApp.build` | method (`ConsumerWidget` build) | B | Build the `MaterialApp.router` with theme, locale, and routes from the settings provider. |
+
+The `localeListResolutionCallback` is `resolveAppLocale` from
+[locale_resolution.md](locale_resolution.md), which is what decides between the two Chinese
+languages for a device that has not been told which to use.

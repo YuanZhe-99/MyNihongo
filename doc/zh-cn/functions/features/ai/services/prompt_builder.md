@@ -28,11 +28,11 @@
 
 ## 文档
 
-### `String? forIssue(SentenceAnalysis, Issue, String message, ContentCatalog?, String languageCode)` <a id="forissue"></a>
+### `String? forIssue(SentenceAnalysis, Issue, String message, ContentCatalog?, Locale locale)` <a id="forissue"></a>
 
 - **种类：** 方法
 - **用途：** 就检查标记出的某一处向模型发问。
-- **输入：** 分析结果、问题、**它已经措好辞的说明**、目录，以及界面语言。
+- **输入：** 分析结果、问题、**它已经措好辞的说明**、目录，以及界面 locale。
 - **返回：** `String?` —— 模板缺失时为 null。
 - **副作用：** 无。
 - **算法：** 以引用的片段与该说明作为 note，转交 `_build`。
@@ -54,14 +54,14 @@
 
 - **种类：** 方法
 - **用途：** 从模板与分析结果拼装一个提示词。
-- **输入：** 任务名、语言码、分析结果、目录，以及可选的 note。
+- **输入：** 任务名、locale、分析结果、目录，以及可选的 note。
 - **返回：** `String?`。
 - **副作用：** 无。
-- **算法：** 取该任务在该语言下的块，缺失时回退英文；写入句子、分词结果、note、语法摘录与要求；最后对整体截断。
+- **算法：** 通过 `LocalizedStrings.lookupOrder` 取该任务在该语言下的块，缺失时回退英文；写入句子、分词结果、note、语法摘录与要求；最后对整体截断。
 - **使用：** `forIssue`、`forSentence`。
-- **说明：** 仅在本文件内使用的辅助函数。每一部分都**先于**整体被截断，这样失控的语法摘录才不会把末尾的要求挤掉——丢掉要求会悄悄把一个受约束的请求变成开放请求。回退英文意味着不受支持的界面语言仍能得到一个可用的提示词，而不是干脆没有这项功能。
+- **说明：** 仅在本文件内使用的辅助函数。每一部分都**先于**整体被截断，这样失控的语法摘录才不会把末尾的要求挤掉——丢掉要求会悄悄把一个受约束的请求变成开放请求。回退英文意味着不受支持的界面语言仍能得到一个可用的提示词，而不是干脆没有这项功能。与内容共用同一套查找顺序，正是繁体中文的提示词既用繁体提问、又引用繁体语法说明的原因：用一种字体提问却用另一种字体做依据，等于让模型去翻译。
 
-### `List<String> _grammar(SentenceAnalysis, ContentCatalog?, String languageCode)` <a id="grammar"></a>
+### `List<String> _grammar(SentenceAnalysis, ContentCatalog?, Locale locale)` <a id="grammar"></a>
 
 - **种类：** 方法
 - **用途：** 引用应用自己对每个匹配语法点的讲解。

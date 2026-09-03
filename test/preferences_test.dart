@@ -167,4 +167,15 @@ void main() {
     await configFile.writeAsString('{"aiAssistEnabled": "true"}');
     expect(await NihongoStorage.getAiAssistEnabled(), isFalse);
   });
+
+  test('a locale with a country round trips', () async {
+    // Traditional and Simplified Chinese differ only by the country here, so
+    // a tag written without one would move a reader to the other language.
+    expect(await NihongoStorage.getLocaleTag(), isNull);
+    await NihongoStorage.setLocaleTag('zh_TW');
+    expect(await NihongoStorage.getLocaleTag(), 'zh_TW');
+    expect((await config())['locale'], 'zh_TW');
+    await NihongoStorage.setLocaleTag(null);
+    expect((await config()).containsKey('locale'), isFalse);
+  });
 }

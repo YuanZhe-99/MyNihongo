@@ -11,7 +11,7 @@ Consumers: `sentence_lab_page.dart`.
 | `TokenChips` | class | B | The sentence as chips, one per word. |
 | `TokenChips.build` | method | B | Build the chip row, skipping punctuation. |
 | [`_chip`](#chip) | method | A | Build one word's chip. |
-| `_open` | method | B | Open the catalog entry, or the function word's own gloss. |
+| `_open` | method | B | Open the catalog entry, or the function word's own gloss, resolved through `LocalizedStrings.lookupOrder`. |
 | [`_label`](#label) | static method | A | Name a category in the user's language. |
 | `_colorsFor` | static method | B | Pick the scheme colours for a category. |
 

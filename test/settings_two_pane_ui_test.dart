@@ -177,6 +177,21 @@ void main() {
     debugDefaultTargetPlatformOverride = null;
   });
 
+  testWidgets('the language picker offers all three UI languages', (
+    tester,
+  ) async {
+    await pumpAt(tester, 933, 704);
+    await tester.tap(find.byType(DropdownButton<Locale?>));
+    await tester.pumpAndSettle();
+
+    // The open menu lists every language the app ships, so a reader can find
+    // Traditional Chinese without knowing it exists.
+    expect(find.text('English'), findsWidgets);
+    expect(find.text('简体中文'), findsWidgets);
+    expect(find.text('繁體中文'), findsWidgets);
+    expect(tester.takeException(), isNull);
+  });
+
   testWidgets('a desktop shows the storage location row', (tester) async {
     debugDefaultTargetPlatformOverride = TargetPlatform.windows;
     await pumpAt(tester, 1000, 720);

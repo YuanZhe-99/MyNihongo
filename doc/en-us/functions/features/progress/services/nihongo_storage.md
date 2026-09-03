@@ -28,7 +28,7 @@ use delegates to it (see [../../../app/data_modules.md](../../../app/data_module
 | `NihongoStorage.writeConfig` | static method | B | Write `storage_config.json` atomically. |
 | `NihongoStorage.getThemeMode` | static method | B | Read the persisted theme mode (`light`, `dark`, or null for system). |
 | `NihongoStorage.setThemeMode` | static method | B | Persist the theme mode; the default is removed rather than stored. |
-| `NihongoStorage.getLocaleTag` | static method | B | Read the persisted locale tag. |
+| `NihongoStorage.getLocaleTag` | static method | B | Read the persisted locale tag (`en`, `zh`, `zh_TW`). |
 | `NihongoStorage.setLocaleTag` | static method | B | Persist the locale tag; null removes it. |
 
 ## Documentation
