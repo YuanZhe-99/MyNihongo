@@ -18,7 +18,9 @@ library;
 import 'dart:convert';
 import 'dart:io';
 
+import 'src/chinese_converter.dart';
 import 'src/vocab_import_core.dart';
+import 'src/zh_tw.dart';
 
 /// Where to get the JMdict body, printed when it is missing.
 const _jmdictRelease =
@@ -254,50 +256,27 @@ void _applyOverlayOnly(String out, Map<String, Map<String, Object?>> overlay) {
 /// Purpose: Write the catalog file.
 /// Inputs: `path`, `entries`, `jmdictVersion`, `jmdictDate`.
 /// Returns: None.
-/// Side effects: Writes the file.
-/// Notes: Internal helper. The header is pretty-printed for review, and the
-/// entries are one compact object per line: a 2 MB file pretty-printed would
-/// be four times the size and give a useless diff, while one entry per line
-/// shows exactly which words changed. No timestamp is written — a rebuild with
-/// unchanged inputs has to produce an identical file.
+/// Side effects: Writes the file; reads the conversion dictionaries.
+/// Notes: Internal helper. Traditional Chinese is generated here rather than
+/// by a later pass, so a fresh catalog already carries it and
+/// `tool/convert_zh_tw.dart` has nothing to do — the two tools cannot disagree
+/// about what the Traditional text should be, because they run the same code.
 void _write(
   String path, {
   required List<Map<String, Object?>> entries,
   required String jmdictVersion,
   required String jmdictDate,
 }) {
-  final buffer = StringBuffer()
-    ..writeln('{')
-    ..writeln('  "schemaVersion": 2,')
-    ..writeln('  "source": "jmdict+jlpt",')
-    ..writeln('  "sources": [')
-    ..writeln('    {')
-    ..writeln('      "name": "JMdict",')
-    ..writeln('      "url": "https://www.edrdg.org/jmdict/j_jmdict.html",')
-    ..writeln('      "license": "CC BY-SA 4.0 (EDRDG)",')
-    ..writeln('      "via": "https://github.com/scriptin/jmdict-simplified"')
-    ..writeln('    },')
-    ..writeln('    {')
-    ..writeln('      "name": "JLPT vocabulary lists",')
-    ..writeln('      "url": "https://github.com/stephenmk/yomitan-jlpt-vocab",')
-    ..writeln(
-      '      "license": "CC BY-SA 4.0; underlying lists CC BY (Waller)"',
-    )
-    ..writeln('    }')
-    ..writeln('  ],')
-    ..writeln('  "inputs": {')
-    ..writeln('    "jmdictVersion": ${jsonEncode(jmdictVersion)},')
-    ..writeln('    "jmdictDate": ${jsonEncode(jmdictDate)}')
-    ..writeln('  },')
-    ..writeln('  "entries": [');
-  for (var i = 0; i < entries.length; i++) {
-    buffer
-      ..write('    ')
-      ..write(jsonEncode(entries[i]))
-      ..writeln(i == entries.length - 1 ? '' : ',');
-  }
-  buffer
-    ..writeln('  ]')
-    ..writeln('}');
-  File(path).writeAsStringSync(buffer.toString());
+  final converter = OpenCcConverter.load(openCcDirectory);
+  final translated = <Map<String, Object?>>[
+    for (final entry in entries)
+      (withTraditional(entry, converter.convert) as Map).cast<String, Object?>(),
+  ];
+  File(path).writeAsStringSync(
+    encodeCatalog(
+      translated,
+      jmdictVersion: jmdictVersion,
+      jmdictDate: jmdictDate,
+    ),
+  );
 }

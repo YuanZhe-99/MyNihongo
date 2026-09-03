@@ -1,0 +1,14 @@
+# Japanese words, written in kanji, that appear inside the Simplified Chinese
+# text of the content files. The Simplified to Traditional conversion must not
+# touch them: Japanese uses 来る and 静か, and 來る or 靜か would be teaching a
+# character the language does not use.
+#
+# One token per line, kana included so the token is unambiguous — bare 来 is a
+# Chinese word too, and there it must become 來.
+#
+# `test/content_zh_tw_test.dart` fails when a Japanese token in the content
+# would be changed by the conversion and is not listed here, so this file
+# cannot silently fall behind the content.
+来る
+来ない
+静か

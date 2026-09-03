@@ -9,6 +9,8 @@
 /// timestamps, map iteration order, and anything derived from the file system.
 library;
 
+import 'dart:convert';
+
 // ignore: avoid_relative_lib_imports
 import '../../lib/features/content/models/parts_of_speech.dart';
 
@@ -585,4 +587,56 @@ Map<String, Object?> _entry({
     if (seedId is String && seedId != id) 'aliases': [seedId],
     if (examples is List && examples.isNotEmpty) 'examples': examples,
   };
+}
+
+/// Purpose: Encode the catalog file exactly as it ships.
+/// Inputs: `entries`, `jmdictVersion`, `jmdictDate`.
+/// Returns: `String` — the whole file.
+/// Side effects: None.
+/// Notes: The header is pretty-printed for review, and the entries are one
+/// compact object per line: a 1.5 MB file pretty-printed would be four times
+/// the size and give a useless diff, while one entry per line shows exactly
+/// which words changed. No timestamp is written — a rebuild with unchanged
+/// inputs has to produce an identical file. It lives here rather than beside
+/// the file writing so `tool/convert_zh_tw.dart` can rewrite the catalog in
+/// the same shape without importing the importer.
+String encodeCatalog(
+  List<Map<String, Object?>> entries, {
+  required String jmdictVersion,
+  required String jmdictDate,
+}) {
+  final buffer = StringBuffer()
+    ..writeln('{')
+    ..writeln('  "schemaVersion": 2,')
+    ..writeln('  "source": "jmdict+jlpt",')
+    ..writeln('  "sources": [')
+    ..writeln('    {')
+    ..writeln('      "name": "JMdict",')
+    ..writeln('      "url": "https://www.edrdg.org/jmdict/j_jmdict.html",')
+    ..writeln('      "license": "CC BY-SA 4.0 (EDRDG)",')
+    ..writeln('      "via": "https://github.com/scriptin/jmdict-simplified"')
+    ..writeln('    },')
+    ..writeln('    {')
+    ..writeln('      "name": "JLPT vocabulary lists",')
+    ..writeln('      "url": "https://github.com/stephenmk/yomitan-jlpt-vocab",')
+    ..writeln(
+      '      "license": "CC BY-SA 4.0; underlying lists CC BY (Waller)"',
+    )
+    ..writeln('    }')
+    ..writeln('  ],')
+    ..writeln('  "inputs": {')
+    ..writeln('    "jmdictVersion": ${jsonEncode(jmdictVersion)},')
+    ..writeln('    "jmdictDate": ${jsonEncode(jmdictDate)}')
+    ..writeln('  },')
+    ..writeln('  "entries": [');
+  for (var i = 0; i < entries.length; i++) {
+    buffer
+      ..write('    ')
+      ..write(jsonEncode(entries[i]))
+      ..writeln(i == entries.length - 1 ? '' : ',');
+  }
+  buffer
+    ..writeln('  ]')
+    ..writeln('}');
+  return buffer.toString();
 }

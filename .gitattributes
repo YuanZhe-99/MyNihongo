@@ -11,3 +11,8 @@ test/golden/goldens/**/*.txt text eol=lf
 *.json text eol=lf
 *.arb text eol=lf
 *.csv text eol=lf
+
+# The OpenCC dictionaries are committed verbatim from upstream and the
+# conversion is compared against what they say, so their bytes stay as
+# downloaded rather than being rewritten on checkout.
+tool/content/opencc/*.txt text eol=lf
