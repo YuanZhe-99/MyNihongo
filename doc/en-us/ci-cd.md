@@ -64,9 +64,21 @@ git submodule update --init
 
 ## `tool/` scripts
 
-None yet. `PLAN.md` M1.2 adds `tool/import_vocab.dart`, the offline JMdict + JLPT-list import that
-regenerates the vocabulary asset; like the sibling apps' generators it will be deterministic, so a
-re-run with unchanged inputs produces no diff.
+`tool/generate_ios_icons.dart` scales the app artwork into the iOS icon sources (see
+`platform-notes.md`).
+
+`tool/import_vocab.dart` regenerates `assets/content/vocab.json` from JMdict and the JLPT lists. It
+is offline and deterministic: a re-run with unchanged inputs leaves an empty `git diff`, which is
+the property that makes it worth re-running. It needs the JMdict body unpacked into the git-ignored
+`tool/data/`, and prints the download URL and exits 1 when it is missing.
+
+```bash
+dart run tool/import_vocab.dart
+dart run tool/import_vocab.dart --overlay-only
+```
+
+Neither script runs in CI. Both write files that are committed, so CI would only ever confirm what
+the committed diff already shows.
 
 ## Golden transcripts
 

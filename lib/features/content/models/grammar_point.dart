@@ -24,6 +24,14 @@ class GrammarPoint {
   /// Example sentences.
   final List<ContentExample> examples;
 
+  /// Literal strings that mark this point in a sentence, from the JSON key
+  /// `match`.
+  ///
+  /// The cross-linking in `content_links.dart` derives forms from the pattern
+  /// when this is empty. A single-character particle needs an explicit list,
+  /// because deriving one from its pattern would match nearly every sentence.
+  final List<String> matchForms;
+
   /// Purpose: Create a grammar point instance.
   /// Inputs: All fields.
   /// Returns: A new `GrammarPoint` instance.
@@ -37,6 +45,7 @@ class GrammarPoint {
     this.meaning = LocalizedStrings.empty,
     this.explanation = LocalizedStrings.empty,
     this.examples = const [],
+    this.matchForms = const [],
   });
 
   /// Purpose: Parse from content JSON.
@@ -62,6 +71,9 @@ class GrammarPoint {
       meaning: LocalizedStrings.fromJson(json['meaning']),
       explanation: LocalizedStrings.fromJson(json['explanation']),
       examples: ContentExample.listFromJson(json['examples']),
+      matchForms: json['match'] is List
+          ? (json['match'] as List).whereType<String>().toList()
+          : const [],
     );
   }
 

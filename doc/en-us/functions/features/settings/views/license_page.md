@@ -11,3 +11,8 @@ attributions are added here as they ship (`PLAN.md` M1.2).
 |---|---|---|---|
 | `LicensePage.new` | constructor | B | Create a license page instance. |
 | `LicensePage.build` | method (widget build) | B | Build the GPLv3 notice page. |
+
+Since `PLAN.md` M1.2 the page also carries a **Content licenses** section. JMdict and the JLPT
+lists are CC BY-SA, which requires the attribution to travel with the app rather than sitting only
+in a repository file. The attribution block itself is a `const` string and is deliberately not
+translated: EDRDG's licence asks for the project to be named and linked as it words it.

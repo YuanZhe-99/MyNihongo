@@ -48,7 +48,16 @@ git submodule update --init
 
 ## `tool/` 脚本
 
-尚无。`PLAN.md` M1.2 添加 `tool/import_vocab.dart`，即重新生成单词资源的离线 JMdict + JLPT 列表导入；与兄弟应用的生成器一样，它将是确定性的，因此输入不变时重跑不产生差异。
+`tool/generate_ios_icons.dart` 把应用图稿缩放为 iOS 图标源文件（见 `platform-notes.md`）。
+
+`tool/import_vocab.dart` 从 JMdict 与 JLPT 词表重新生成 `assets/content/vocab.json`。它离线运行且具有确定性：输入不变时重跑会留下空的 `git diff`，正是这一性质让重跑变得值得。它需要把 JMdict 本体解包到已 git 忽略的 `tool/data/`；文件缺失时会打印下载地址并以退出码 1 结束。
+
+```bash
+dart run tool/import_vocab.dart
+dart run tool/import_vocab.dart --overlay-only
+```
+
+两个脚本都不在 CI 中运行。它们写出的都是会被提交的文件，CI 至多只能确认提交的 diff 已经显示的内容。
 
 ## 黄金记录（golden transcripts）
 

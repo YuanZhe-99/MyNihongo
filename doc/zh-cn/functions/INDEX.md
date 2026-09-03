@@ -6,13 +6,13 @@
 
 这是 MyNihongo 仓库中 `lib/` 手写函数解释层文档的顶层索引。每行链接到 `doc/zh-cn/functions/` 下镜像 `lib/` 树的逐源文件页面（`.dart` 换成 `.md`）。
 
-**总计：** 仓库的 `/// Purpose:` 注释数为 **278**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **278** 个已记录声明。
+**总计：** 仓库的 `/// Purpose:` 注释数为 **292**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **292** 个已记录声明。
 
 | Tier | 计数 |
 |---|---|
-| Tier A（完整条目：Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes） | 29 |
-| Tier B（仅索引行） | 249 |
-| **总计** | **278** |
+| Tier A（完整条目：Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes） | 30 |
+| Tier B（仅索引行） | 262 |
+| **总计** | **292** |
 
 这些总计在初始化时（`PLAN.md` M1.0）对照源码树测得。若要改动这些数字，请测量而不要手工调整：
 
@@ -42,14 +42,17 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 
 | 源文件 | 页面 | 声明数 | Tier A 计数 |
 |---|---|---|---|
-| `lib/features/content/models/content_catalog.dart` | [features/content/models/content_catalog.md](features/content/models/content_catalog.md) | 4 | 0 |
+| `lib/features/content/models/content_catalog.dart` | [features/content/models/content_catalog.md](features/content/models/content_catalog.md) | 7 | 0 |
 | `lib/features/content/models/grammar_point.dart` | [features/content/models/grammar_point.md](features/content/models/grammar_point.md) | 3 | 0 |
 | `lib/features/content/models/jlpt_level.dart` | [features/content/models/jlpt_level.md](features/content/models/jlpt_level.md) | 2 | 0 |
 | `lib/features/content/models/localized_strings.dart` | [features/content/models/localized_strings.md](features/content/models/localized_strings.md) | 9 | 1 |
+| `lib/features/content/models/parts_of_speech.dart` | [features/content/models/parts_of_speech.md](features/content/models/parts_of_speech.md) | 1 | 0 |
 | `lib/features/content/models/vocab_entry.dart` | [features/content/models/vocab_entry.md](features/content/models/vocab_entry.md) | 4 | 0 |
-| `lib/features/content/services/content_repository.dart` | [features/content/services/content_repository.md](features/content/services/content_repository.md) | 2 | 0 |
+| `lib/features/content/services/content_repository.dart` | [features/content/services/content_repository.md](features/content/services/content_repository.md) | 5 | 0 |
 | `lib/features/grammar/views/grammar_page.dart` | [features/grammar/views/grammar_page.md](features/grammar/views/grammar_page.md) | 9 | 1 |
 | `lib/features/kana/models/kana.dart` | [features/kana/models/kana.md](features/kana/models/kana.md) | 9 | 0 |
+| `lib/features/kana/models/kana_note.dart` | [features/kana/models/kana_note.md](features/kana/models/kana_note.md) | 4 | 0 |
+| `lib/features/kana/models/romaji.dart` | [features/kana/models/romaji.md](features/kana/models/romaji.md) | 3 | 1 |
 | `lib/features/kana/views/kana_page.dart` | [features/kana/views/kana_page.md](features/kana/views/kana_page.md) | 14 | 2 |
 | `lib/features/learn/views/learn_page.dart` | [features/learn/views/learn_page.md](features/learn/views/learn_page.md) | 5 | 0 |
 | `lib/features/progress/models/study_record.dart` | [features/progress/models/study_record.md](features/progress/models/study_record.md) | 23 | 5 |
@@ -78,3 +81,13 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 ## l10n/
 
 生成代码；见 [l10n/INDEX.md](l10n/INDEX.md)。不计入上表。
+
+## tool/
+
+离线构建脚本，位于 `lib/` 之外，不计入上方的总计。
+
+| 源文件 | 页面 | 声明数 | Tier A 数 |
+|---|---|---|---|
+| `tool/import_vocab.dart` | [tool/import_vocab.md](tool/import_vocab.md) | 7 | 1 |
+| `tool/src/vocab_import_core.dart` | [tool/src/vocab_import_core.md](tool/src/vocab_import_core.md) | 14 | 3 |
+| `tool/generate_ios_icons.dart` | 未编写文档 | — | — |

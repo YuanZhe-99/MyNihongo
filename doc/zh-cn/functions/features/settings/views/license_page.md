@@ -8,3 +8,7 @@
 |---|---|---|---|
 | `LicensePage.new` | 构造函数 | B | 创建许可证页面实例。 |
 | `LicensePage.build` | 方法（widget build） | B | 构建 GPLv3 声明页面。 |
+
+自 `PLAN.md` M1.2 起，本页还包含**内容许可**一节。JMdict 与 JLPT 词表采用 CC BY-SA，要求署名随应用一同分发，
+而不能只放在仓库文件里。署名文本本身是 `const` 字符串，且有意不作翻译：EDRDG 的许可证要求按其原文标注项目名
+称与链接。

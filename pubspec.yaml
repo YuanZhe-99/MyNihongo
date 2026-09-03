@@ -64,3 +64,4 @@ flutter:
 
   assets:
     - assets/content/
+    - assets/content/grammar/

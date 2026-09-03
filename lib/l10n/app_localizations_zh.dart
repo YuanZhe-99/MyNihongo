@@ -545,4 +545,11 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get importFailed => '导入失败';
+
+  @override
+  String get licenseContentTitle => '内容许可';
+
+  @override
+  String get licenseContentBody =>
+      '本应用的词汇内容来自开放的词典与词表。其许可证要求保留下方的署名，因此该部分不作翻译。';
 }

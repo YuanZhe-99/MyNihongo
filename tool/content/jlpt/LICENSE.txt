@@ -1,0 +1,27 @@
+JLPT vocabulary lists
+=====================
+
+Source: https://github.com/stephenmk/yomitan-jlpt-vocab
+Files:  original_data/n1.csv .. n5.csv, copied here unmodified.
+Format: jmdict_seq,kana,kanji,waller_definition
+
+License
+-------
+
+The yomitan-jlpt-vocab repository is licensed CC BY-SA 4.0.
+The underlying level lists are Jonathan Waller's, licensed CC BY.
+
+  https://creativecommons.org/licenses/by-sa/4.0/
+  https://creativecommons.org/licenses/by/4.0/
+
+The generated catalog that these files feed, assets/content/vocab.json, carries
+the same attribution in its "sources" header, and the app repeats it on its
+in-app license page (Settings > License).
+
+A note on corrections
+---------------------
+
+These files are kept byte-identical to upstream. Three rows point at a JMdict
+homograph rather than the word the list means; the corrections live in
+jlptSeqCorrections in tool/src/vocab_import_core.dart, next to the reason for
+each one, rather than being edited into the data here.

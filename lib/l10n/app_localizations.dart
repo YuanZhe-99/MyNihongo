@@ -1093,6 +1093,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Import failed'**
   String get importFailed;
+
+  /// No description provided for @licenseContentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Content licenses'**
+  String get licenseContentTitle;
+
+  /// No description provided for @licenseContentBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The vocabulary in this app is derived from open dictionaries and word lists. Their licences require the attribution below, which is why it is not translated.'**
+  String get licenseContentBody;
 }
 
 class _AppLocalizationsDelegate

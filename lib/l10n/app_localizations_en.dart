@@ -564,4 +564,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get importFailed => 'Import failed';
+
+  @override
+  String get licenseContentTitle => 'Content licenses';
+
+  @override
+  String get licenseContentBody =>
+      'The vocabulary in this app is derived from open dictionaries and word lists. Their licences require the attribution below, which is why it is not translated.';
 }

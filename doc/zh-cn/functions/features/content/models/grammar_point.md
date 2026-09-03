@@ -9,3 +9,6 @@
 | `GrammarPoint.new` | 构造函数 | B | 创建语法点实例。 |
 | `GrammarPoint.fromJson` | 静态方法 | B | 从内容 JSON 解析；缺少 id、级别或句型时为 null。 |
 | `GrammarPoint.matches` | 方法 | B | 测试小写查询是否为句型、结构或任一语言任一释义的子串。 |
+
+`matchForms` 随 `PLAN.md` M1.2 加入，来自 JSON 键 `match`：用于在句中标出该语法点的字面字符串，供
+`content_links.dart` 的交叉链接使用。单字助词必须显式给出该列表，因为从其句型推导出的形式几乎会匹配任何句子。

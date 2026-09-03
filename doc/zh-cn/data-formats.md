@@ -6,50 +6,64 @@
 
 内容以 JSON 资源的形式放在 `assets/content/` 下，由 `ContentRepository` 每次运行解析一次成 `ContentCatalog`。它既不同步也不备份——它是应用的数据，不是用户的——并通过 `schemaVersion` 随构建版本化。
 
-### 单词（`vocab_seed.json`）
+### 单词（`vocab.json`）
+
+由 `tool/import_vocab.dart` 生成；流水线见
+[`features/content-catalog.md`](features/content-catalog.md)。文件头为便于查阅采用缩进格式，条目则每行一个
+紧凑对象，因此 2 MB 的文件仍能给出可读的 diff。
 
 ```json
 {
-  "schemaVersion": 1,
-  "source": "seed",
-  "license": "…",
+  "schemaVersion": 2,
+  "source": "jmdict+jlpt",
+  "sources": [ { "name": "JMdict", "url": "…", "license": "CC BY-SA 4.0 (EDRDG)", "via": "…" } ],
+  "inputs": { "jmdictVersion": "3.6.2", "jmdictDate": "2026-08-31" },
   "entries": [
-    {
-      "id": "vocab:watashi",
-      "level": "N5",
-      "kanji": "私",
-      "reading": "わたし",
-      "romaji": "watashi",
-      "pos": ["pronoun"],
-      "meanings": { "en": ["I", "me"], "zh": ["我"] },
-      "examples": [
-        { "ja": "私は学生です。", "reading": "わたしはがくせいです。", "en": "I am a student.", "zh": "我是学生。" }
-      ]
-    }
+    {"id":"vocab:jm1311110","level":"N5","kanji":"私","reading":"わたし","romaji":"watashi","pos":["pronoun"],"meanings":{"en":["I","me"],"zh":["我"]},"common":true,"aliases":["vocab:watashi"],"examples":[{"ja":"私は学生です。","reading":"わたしはがくせいです。","en":"I am a student.","zh":"我是学生。"}]}
   ]
 }
 ```
 
-- `id` — 稳定，`vocab:<slug>`；也是进度记录 id。**必填。**
-- `level` — JLPT 标签，`N5` 到 `N1`，大小写不敏感地解析。**必填。**
-- `kanji` — 有汉字时的书写形式；纯假名词省略。模型的 `headword` 在有 `kanji` 时取它，否则取 `reading`。
-- `reading` — 假名读音。**必填。**
-- `romaji` — 可选的罗马音。
-- `pos` — 作为内容字符串的词性标签（`noun`、`verb-godan`、`verb-ichidan`、`verb-irregular`、`i-adjective`、`na-adjective`、`pronoun`、`adverb`、`expression`、`transitive`、`intransitive`）。
-- `meanings` — 语言代码到释义列表。
-- `examples` — 每条 `{ja, reading?, <lang>: translation…}`；除 `ja` 和 `reading` 以外的每个键都是一种语言。
+- `id` —— 稳定 id，形如 `vocab:jm<JMdict 序号>`；同时也是进度记录的 id。**必填。**
+- `level` —— JLPT 标签，`N5` 到 `N1`，解析时忽略大小写。**必填。**
+- `kanji` —— 有汉字写法时的书写形式；纯假名词没有该字段。模型的 `headword` 在有 `kanji` 时取它，否则取
+  `reading`。
+- `reading` —— 假名读音。**必填。**
+- `romaji` —— 可选罗马字；只有手写的种子词带这一字段。
+- `pos` —— 取自 `lib/features/content/models/parts_of_speech.dart` 中封闭集合的词性标签。集合之外的标签会
+  让内容测试失败。
+- `meanings` —— 语言代码到释义列表。`en` 始终存在；`zh` 存在于 N5 与种子词，其余条目由界面回退到英语。
+- `common` —— JMdict 将所选书写形式标为常用时该字段为 true。用于排序建议，绝不用于隐藏条目。
+- `aliases` —— 该条目曾经使用过的 id。`vocabById` 会把它们解析到同一个条目。
+- `examples` —— 每项为 `{ja, reading?, <语言>: 译文…}`；除 `ja` 与 `reading` 外的每个键都是语言代码。
 
-### 语法（`grammar_seed.json`）
+### 中文释义覆盖文件（`vocab_zh.json`）
 
 ```json
 {
   "schemaVersion": 1,
+  "entries": {
+    "vocab:jm1198180": { "zh": ["见面；遇见"], "reviewed": false }
+  }
+}
+```
+
+这是构建输入，之所以随包发布，只是为了让内容测试能把它与实际发布的目录比对。`reviewed` 属于写作状态，绝不
+进入 `vocab.json`。
+
+### 语法（`grammar/n5.json`，每级一个文件）
+
+```json
+{
+  "schemaVersion": 2,
+  "level": "N5",
   "points": [
     {
       "id": "grammar:desu",
       "level": "N5",
       "pattern": "〜です",
       "structure": "N + です",
+      "match": ["です", "でした"],
       "meaning": { "en": "is; am; are (polite copula)", "zh": "是（敬体判断句）" },
       "explanation": { "en": "…", "zh": "…" },
       "examples": [ { "ja": "これは本です。", "reading": "これはほんです。", "en": "This is a book.", "zh": "这是一本书。" } ]
@@ -58,20 +72,38 @@
 }
 ```
 
-- `id`、`level`、`pattern` 必填；`structure` 可选。
-- `meaning` 和 `explanation` 按语言分键；裸字符串视为英语。
+- `id`、`level`、`pattern` 为必填；`structure` 可选。
+- `match` —— 可选的字面字符串，用于在句中标出该语法点，解析为 `GrammarPoint.matchForms`。单字助词必须给出
+  该字段，因为从其句型推导出的形式几乎会匹配任何句子。
+- `meaning` 与 `explanation` 按语言分键；纯字符串按英语处理。
 
 ### 假名
 
-假名目录是编译进应用的（`lib/features/kana/models/kana.dart`），不是资源：三张 `const` 表（`kanaBasicRows`、`kanaVoicedRows`、`kanaYoonRows`），每格是 `KanaEntry(hiragana, katakana, romaji)`。每个条目的进度 id 是 `kana:<hiragana>`；用平假名而不是罗马音，因为罗马音不唯一（`ji` 和 `zu` 各出现两次）。
+假名目录编译在代码中（`lib/features/kana/models/kana.dart`），不是资源文件：三张 `const` 表
+（`kanaBasicRows`、`kanaVoicedRows`、`kanaYoonRows`），元素为 `KanaEntry(平假名, 片假名, 罗马字)`。每个条目的
+进度 id 是 `kana:<平假名>`；用平假名而非罗马字，是因为罗马字不唯一（`ji` 与 `zu` 各出现两次）。
+`kanaEntryById` 可把 id 解析回其条目。
 
+### 假名注释（`kana_notes.json`）
+
+```json
+{
+  "schemaVersion": 1,
+  "notes": {
+    "kana:し": { "strokes": 1, "hint": { "en": "…", "zh": "…" }, "confusableWith": ["kana:つ"] }
+  }
+}
+```
+
+它是文字说明而非表格数据，因此做成资源文件：只有需要说明的假名才有条目，每个字段都可选，且每个键都必须
+指向假名表中确实存在的假名。
 ### 解析规则
 
 `LocalizedStrings.fromJson` 接受语言代码到字符串或字符串列表的映射，或视为英语的裸字符串。`resolve(locale)` 返回该语言的内容，其次英语，再次第一个存在的语言。畸形条目——缺少 id、级别、词条或句型——被跳过而不是让整个文件失败；内容是内置的，因此坏条目是由 `test/content_catalog_test.dart` 捕获的内容 bug，而不是需要保护的用户数据。
 
 ### 内容 id 是契约
 
-进度记录以其跟踪条目的 id 为键。重命名或移除已发布的 id 会让每个用户在该条目上的进度成为孤儿。可以新增 id；已发布的 id 绝不改变，退役的 id 在目录中保留为别名（别名机制随 JMdict 导入到来，`PLAN.md` M1.2）。
+进度记录以其跟踪条目的 id 为键。重命名或移除已发布的 id 会让每个用户在该条目上的进度成为孤儿。可以新增 id；已发布的 id 绝不改变，退役的 id 在目录中保留为别名。JMdict 导入把每个单词 id 改成了 `vocab:jm<序号>`；种子发布时使用的 24 个 id 现在都是别名，并有测试断言它们仍能解析。
 
 ## `StudyRecord` 模型
 

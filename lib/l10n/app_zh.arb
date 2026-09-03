@@ -198,5 +198,8 @@
   "importData": "从 ZIP 导入",
   "importConfirm": "这将用压缩包中的内容替换本地学习进度，是否继续？",
   "importSuccess": "导入完成",
-  "importFailed": "导入失败"
+  "importFailed": "导入失败",
+
+  "licenseContentTitle": "内容许可",
+  "licenseContentBody": "本应用的词汇内容来自开放的词典与词表。其许可证要求保留下方的署名，因此该部分不作翻译。"
 }

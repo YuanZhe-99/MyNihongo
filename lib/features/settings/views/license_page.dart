@@ -23,13 +23,47 @@ class LicensePage extends StatelessWidget {
       appBar: AppBar(title: Text(l10n.settingsLicense)),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
-        child: SelectableText(
-          _licenseText,
-          style: Theme.of(context).textTheme.bodyMedium,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SelectableText(
+              _licenseText,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 24),
+            Text(
+              l10n.licenseContentTitle,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: 8),
+            SelectableText(
+              l10n.licenseContentBody,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 8),
+            const SelectableText(_contentSources),
+          ],
         ),
       ),
     );
   }
+
+  /// The attribution the content licenses require, verbatim and unlocalized.
+  ///
+  /// EDRDG's licence asks for the project to be named and linked wherever its
+  /// data is used, so these lines are not translated and not paraphrased.
+  static const _contentSources =
+      '''JMdict / EDICT — © James William Breen and The Electronic Dictionary
+Research and Development Group, Monash University.
+Used under CC BY-SA 4.0. https://www.edrdg.org/edrdg/licence.html
+Packaged as jmdict-simplified: https://github.com/scriptin/jmdict-simplified
+
+JLPT vocabulary lists — from stephenmk/yomitan-jlpt-vocab, CC BY-SA 4.0;
+the underlying lists are Jonathan Waller's, CC BY.
+https://github.com/stephenmk/yomitan-jlpt-vocab
+
+Grammar explanations, example sentences, kana notes and Chinese glosses are
+written for this app and are GPL-3.0 with it.''';
 
   static const _licenseText = '''MyNihongo - Copyright (C) 2026 yuanzhe
 

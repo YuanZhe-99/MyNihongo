@@ -27,6 +27,18 @@ class VocabEntry {
   /// Example sentences.
   final List<ContentExample> examples;
 
+  /// Ids this entry used to ship under, still resolvable.
+  ///
+  /// A shipped content id is never renamed, because progress records are keyed
+  /// by it. When the JMdict import replaced the hand-written seed ids with
+  /// JMdict-numbered ones, the old id moved here instead of disappearing.
+  final List<String> aliases;
+
+  /// Whether JMdict marks the chosen written form as common.
+  ///
+  /// Used to order suggestions, never to hide an entry.
+  final bool common;
+
   /// Purpose: Create a vocab entry instance.
   /// Inputs: All fields.
   /// Returns: A new `VocabEntry` instance.
@@ -41,6 +53,8 @@ class VocabEntry {
     this.partsOfSpeech = const [],
     this.meanings = LocalizedStrings.empty,
     this.examples = const [],
+    this.aliases = const [],
+    this.common = false,
   });
 
   /// Purpose: Report whether the headword differs from the reading.
@@ -74,6 +88,10 @@ class VocabEntry {
       partsOfSpeech: pos is List ? pos.whereType<String>().toList() : const [],
       meanings: LocalizedStrings.fromJson(json['meanings']),
       examples: ContentExample.listFromJson(json['examples']),
+      aliases: json['aliases'] is List
+          ? (json['aliases'] as List).whereType<String>().toList()
+          : const [],
+      common: json['common'] == true,
     );
   }
 

@@ -5,8 +5,9 @@ says how to work here; `doc/en-us/` says what the code does; this file says **wh
 what order, why, and what is done**. Update the checklists in the same change that lands a
 milestone item.
 
-**Status as of 2026-09-02:** Phase 1 in progress. Milestone M1.0 (project skeleton) landed today.
-No release yet; `pubspec.yaml` says `0.1.0+1`.
+**Status as of 2026-09-03:** Phase 1 in progress. M1.0 (skeleton) landed 2026-09-02; M1.1 (sync and
+backup UI) and M1.2 (content pipeline) landed 2026-09-03. No release yet; `pubspec.yaml` says
+`0.1.0+1`.
 
 ---
 
@@ -82,7 +83,8 @@ lib/
     services/     webdav_service · backup_service · import_export_service · auto_sync_service · sync_merge
     utils/        adaptive_layout.dart
     widgets/      shell_scaffold · adaptive_tile_grid · reference_widgets
-assets/content/   vocab_seed.json · grammar_seed.json
+assets/content/   vocab.json (generated) · grammar/n5.json · kana_notes.json · vocab_zh.json
+tool/             import_vocab.dart · src/vocab_import_core.dart · content/jlpt/n{1..5}.csv
 packages/myapps_data   git submodule (shared engines)
 ```
 
@@ -161,21 +163,25 @@ Port from MyAnime, renaming types (`Anime` → `StudyRecord`) and dropping image
 
 Replace the seed with a real catalog while keeping the schema and ids stable.
 
-- [ ] **Vocabulary:** `tool/import_vocab.dart` builds `assets/content/vocab.json` from
-      JMdict (EDRDG, CC BY-SA 4.0) joined with an openly licensed JLPT level list. Ids become
-      `vocab:jm<seq>` for JMdict-backed entries; the 24 seed slugs are kept as aliases so any
-      progress recorded against them still resolves. Chinese glosses: JMdict has none — use the
-      CC-licensed Chinese gloss sources where available and mark machine-assisted glosses for review.
-- [ ] **Grammar:** hand-authored, level by level. Target counts: N5 ≈ 80, N4 ≈ 100, then N3–N1.
+- [x] **Vocabulary:** `tool/import_vocab.dart` builds `assets/content/vocab.json` from
+      JMdict (EDRDG, CC BY-SA 4.0) joined with an openly licensed JLPT level list. 7,744 entries,
+      N5 through N1. Ids are `vocab:jm<seq>`; all 24 seed slugs are aliases, and a test asserts each
+      still resolves. **Amended:** no CC-licensed Chinese gloss source was used — the N5 glosses are
+      machine-authored in `assets/content/vocab_zh.json`, every row flagged `reviewed: false`
+- [x] **Grammar:** N5 done — 81 points in `assets/content/grammar/n5.json`, the 8 seed ids kept
+      unchanged. N4 and above still to write. Target counts: N5 ≈ 80, N4 ≈ 100, then N3–N1.
       Each point: pattern, structure, en/zh meaning + explanation, 2–3 examples with readings.
       Author in `assets/content/grammar/<level>.json`; the repository merges them at load.
-- [ ] **Kana extras:** stroke-order hints (text), common confusions (シ/ツ, ソ/ン), small kana,
+- [x] **Kana extras:** 21 notes in `assets/content/kana_notes.json` — stroke counts, confusions
+      (シ/ツ, ソ/ン, ぬ/め, わ/ね/れ), は and へ as particles, を. Also `romaji.dart`, the Hepburn
+      romanizer Phase 2 scoring needs. Stroke-order hints (text), common confusions, small kana,
       ー and っ in katakana loanwords; each becomes a `kana:` detail, not a new record kind.
-- [ ] Catalog size: when the vocabulary passes ~10k entries, move parsing to `compute` and index
-      by id; if load time on a mid-range phone exceeds ~300 ms, switch the asset to a prebuilt
-      SQLite file (`sqflite`) and keep the JSON as the build input only.
-- [ ] License and attribution recorded in `features/content-catalog.md` and `license_page.dart`
-- [ ] `test/content_catalog_test.dart` extended: alias resolution, level coverage counts, no
+- [x] Catalog size: parsing moved to `compute` and lookups are maps built once, at 7,744 entries
+      and 1.5 MB. On-device load timing is still to measure: if it exceeds ~300 ms on a mid-range
+      phone, switch the asset to a prebuilt SQLite file (`sqflite`) and keep the JSON as the build
+      input only.
+- [x] License and attribution recorded in `features/content-catalog.md` and `license_page.dart`
+- [x] `test/content_catalog_test.dart` extended: alias resolution, level coverage counts, no
       duplicate headword+reading within a level
 
 #### M1.3 Reference polish
@@ -405,10 +411,14 @@ catalog content, and never writes a progress record by itself — the learner's 
 | 2026-09-03 | The progress provider, not each page, subscribes to `AutoSyncService.addOnLocalDataChanged` | One subscription for every page, and riverpod 1.x's `ref.refresh` would blank a loaded page on every background sync |
 | 2026-09-03 | The backup page does not re-implement invariant I5 | `BackupEngine.restoreBackup` in `myapps_data v1.0.1` already disables auto-sync before its first write; two writers of the same config file would race |
 | 2026-09-03 | `WebDavClient.download` decodes UTF-8 bytes instead of `response.body` (package fix) | Every progress id here contains kana; `package:http` falls back to latin1 when a server sends no charset, which corrupted every downloaded record. Found by the golden transcripts |
+| 2026-09-03 | Vocabulary ids are `vocab:jm<JMdict sequence number>`, with the seed slugs kept as aliases | The sequence number is the only stable key the sources share; a slug would have to be invented for 7,700 words and would collide |
+| 2026-09-03 | Three JLPT list rows are corrected in the tool rather than in the committed CSVs | The lists stay byte-identical to upstream, and the reason for each change stays readable next to it |
+| 2026-09-03 | The Chinese overlay is bundled, not kept under `tool/` | The catalog test reads it through `rootBundle` and compares it against what shipped, which catches an overlay edit that never had `--overlay-only` run over it |
 
 ## 7. Open questions
 
-- Chinese glosses for JMdict-scale vocabulary: which source, and how much review is feasible?
+- Chinese glosses for JMdict-scale vocabulary: N5 is machine-authored and unreviewed. Who reviews
+  it, and is the same approach acceptable for N4 and above?
 - Grammar authoring throughput: ~80 N5 points is a few days of careful writing; who reviews?
 - Pitch accent: worth a Phase 3 item if an openly licensed accent dictionary is available.
 - Whether Phase 4 attempts belong in the progress module or their own module (decide on file size

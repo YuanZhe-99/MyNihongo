@@ -198,5 +198,8 @@
   "importData": "Import from ZIP",
   "importConfirm": "This replaces your local progress with the contents of the archive. Continue?",
   "importSuccess": "Import complete",
-  "importFailed": "Import failed"
+  "importFailed": "Import failed",
+
+  "licenseContentTitle": "Content licenses",
+  "licenseContentBody": "The vocabulary in this app is derived from open dictionaries and word lists. Their licences require the attribution below, which is why it is not translated."
 }

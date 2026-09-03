@@ -395,7 +395,7 @@ packages:
       path: "packages/myapps_data"
       relative: true
     source: path
-    version: "1.0.1"
+    version: "1.0.2"
   nested:
     dependency: transitive
     description:

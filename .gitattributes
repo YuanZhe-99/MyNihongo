@@ -10,3 +10,4 @@ test/golden/goldens/**/*.txt text eol=lf
 *.yml text eol=lf
 *.json text eol=lf
 *.arb text eol=lf
+*.csv text eol=lf

@@ -1,0 +1,1302 @@
+{
+  "schemaVersion": 2,
+  "source": "hand-written",
+  "license": "Hand-written, GPL-3.0 with the app.",
+  "level": "N5",
+  "points": [
+    {
+      "id": "grammar:desu",
+      "level": "N5",
+      "pattern": "〜です",
+      "structure": "N + です",
+      "match": ["です", "でした", "ではありません", "じゃありません"],
+      "meaning": { "en": "is; am; are (polite copula)", "zh": "是（敬体判断句）" },
+      "explanation": {
+        "en": "です follows a noun or na-adjective to make a polite statement. The negative is ではありません (spoken: じゃありません), the past is でした.",
+        "zh": "です接在名词或形容动词后，构成敬体的判断句。否定形式为ではありません（口语：じゃありません），过去形式为でした。"
+      },
+      "examples": [
+        { "ja": "これは本です。", "reading": "これはほんです。", "en": "This is a book.", "zh": "这是一本书。" },
+        { "ja": "私は学生ではありません。", "reading": "わたしはがくせいではありません。", "en": "I am not a student.", "zh": "我不是学生。" }
+      ]
+    },
+    {
+      "id": "grammar:ka",
+      "level": "N5",
+      "pattern": "〜か",
+      "structure": "Sentence + か",
+      "match": ["ですか", "ますか", "ましたか"],
+      "meaning": { "en": "question marker", "zh": "疑问助词" },
+      "explanation": {
+        "en": "Adding か to the end of a polite sentence turns it into a question. Word order does not change, and a question mark is optional in writing.",
+        "zh": "在敬体句末加か即构成疑问句。语序不变，书面上问号可省略。"
+      },
+      "examples": [
+        { "ja": "あなたは学生ですか。", "reading": "あなたはがくせいですか。", "en": "Are you a student?", "zh": "你是学生吗？" },
+        { "ja": "もう昼ご飯を食べましたか。", "reading": "もうひるごはんをたべましたか。", "en": "Have you eaten lunch yet?", "zh": "你已经吃午饭了吗？" }
+      ]
+    },
+    {
+      "id": "grammar:wa-topic",
+      "level": "N5",
+      "pattern": "〜は",
+      "structure": "N + は",
+      "match": ["は"],
+      "meaning": { "en": "topic marker", "zh": "主题助词" },
+      "explanation": {
+        "en": "は (read wa) marks what the sentence is about. It is not the subject marker; the rest of the sentence is a comment on the topic.",
+        "zh": "は（读作wa）标示句子的主题，表示“关于……”。它不是主语助词，后面的部分是对主题的说明。"
+      },
+      "examples": [
+        { "ja": "私は田中です。", "reading": "わたしはたなかです。", "en": "I am Tanaka.", "zh": "我是田中。" },
+        { "ja": "この店は安いです。", "reading": "このみせはやすいです。", "en": "This shop is cheap.", "zh": "这家店很便宜。" }
+      ]
+    },
+    {
+      "id": "grammar:o-object",
+      "level": "N5",
+      "pattern": "〜を",
+      "structure": "N + を + V",
+      "match": ["を"],
+      "meaning": { "en": "direct object marker", "zh": "宾语助词" },
+      "explanation": {
+        "en": "を marks the direct object of a transitive verb — the thing the action is done to. It is written with its own kana を and read o.",
+        "zh": "を标示他动词的宾语，即动作所作用的对象。它有专用的假名を，读作o。"
+      },
+      "examples": [
+        { "ja": "水を飲みます。", "reading": "みずをのみます。", "en": "I drink water.", "zh": "我喝水。" },
+        { "ja": "毎晩ニュースを見ます。", "reading": "まいばんニュースをみます。", "en": "I watch the news every evening.", "zh": "我每晚看新闻。" }
+      ]
+    },
+    {
+      "id": "grammar:ni-e-direction",
+      "level": "N5",
+      "pattern": "〜に / 〜へ",
+      "structure": "Place + に / へ + 行く・来る・帰る",
+      "match": ["に行", "へ行", "に来", "へ来", "に帰", "へ帰"],
+      "meaning": { "en": "to (destination or direction)", "zh": "去往……（目的地、方向）" },
+      "explanation": {
+        "en": "With movement verbs, に or へ marks the destination. へ (read e) stresses the direction of travel; に stresses arriving at the place. In everyday speech they are interchangeable here.",
+        "zh": "与移动动词搭配时，に或へ表示目的地。へ（读作e）偏重移动的方向，に偏重到达的地点；日常口语中两者在此可互换。"
+      },
+      "examples": [
+        { "ja": "学校に行きます。", "reading": "がっこうにいきます。", "en": "I go to school.", "zh": "我去学校。" },
+        { "ja": "日本へ来ました。", "reading": "にほんへきました。", "en": "I came to Japan.", "zh": "我来到了日本。" }
+      ]
+    },
+    {
+      "id": "grammar:masu",
+      "level": "N5",
+      "pattern": "〜ます / 〜ません",
+      "structure": "V(ます-stem) + ます / ません",
+      "match": ["ます", "ません"],
+      "meaning": { "en": "polite non-past, affirmative and negative", "zh": "敬体动词现在／将来时，肯定与否定" },
+      "explanation": {
+        "en": "ます is the polite non-past ending; it covers both present habits and the future. ません is its negative.",
+        "zh": "ます是敬体的非过去时词尾，既表示现在的习惯，也表示将来。ません是其否定形式。"
+      },
+      "examples": [
+        { "ja": "毎日日本語を勉強します。", "reading": "まいにちにほんごをべんきょうします。", "en": "I study Japanese every day.", "zh": "我每天学习日语。" },
+        { "ja": "肉を食べません。", "reading": "にくをたべません。", "en": "I do not eat meat.", "zh": "我不吃肉。" }
+      ]
+    },
+    {
+      "id": "grammar:mashita",
+      "level": "N5",
+      "pattern": "〜ました / 〜ませんでした",
+      "structure": "V(ます-stem) + ました / ませんでした",
+      "match": ["ました", "ませんでした"],
+      "meaning": { "en": "polite past, affirmative and negative", "zh": "敬体动词过去时，肯定与否定" },
+      "explanation": {
+        "en": "Replace ます with ました for a polite past statement, and ません with ませんでした for its negative.",
+        "zh": "把ます换成ました即为敬体过去时肯定；把ません换成ませんでした即为过去时否定。"
+      },
+      "examples": [
+        { "ja": "昨日映画を見ました。", "reading": "きのうえいがをみました。", "en": "I watched a movie yesterday.", "zh": "我昨天看了电影。" },
+        { "ja": "朝ご飯を食べませんでした。", "reading": "あさごはんをたべませんでした。", "en": "I did not eat breakfast.", "zh": "我没吃早饭。" }
+      ]
+    },
+    {
+      "id": "grammar:arimasu-imasu",
+      "level": "N5",
+      "pattern": "あります / います",
+      "structure": "Place + に + N + が + あります / います",
+      "match": ["あります", "います"],
+      "meaning": { "en": "there is (inanimate / animate)", "zh": "存在句：有……（无生命／有生命）" },
+      "explanation": {
+        "en": "Both mean that something exists or is located somewhere. あります is for things and plants; います is for people and animals. The place takes に and the thing that exists takes が.",
+        "zh": "两者都表示某物存在于某处。あります用于物品和植物，います用于人和动物。地点用に，存在的事物用が。"
+      },
+      "examples": [
+        { "ja": "机の上に本があります。", "reading": "つくえのうえにほんがあります。", "en": "There is a book on the desk.", "zh": "桌子上有一本书。" },
+        { "ja": "教室に学生がいます。", "reading": "きょうしつにがくせいがいます。", "en": "There are students in the classroom.", "zh": "教室里有学生。" }
+      ]
+    },
+    {
+      "id": "grammar:ga-subject",
+      "level": "N5",
+      "pattern": "〜が",
+      "structure": "N + が + V / Adj",
+      "match": ["が"],
+      "meaning": { "en": "subject marker", "zh": "主语助词" },
+      "explanation": {
+        "en": "が marks the subject, especially new information the listener does not know yet, the thing that exists in あります/います sentences, and the object of feelings such as 好き, 上手 and ほしい.",
+        "zh": "が标示主语，尤其用于听话人尚不知道的新信息、あります／います句中存在的事物，以及好き、上手、ほしい等表示情感与能力的对象。"
+      },
+      "examples": [
+        { "ja": "雨が降っています。", "reading": "あめがふっています。", "en": "It is raining.", "zh": "正在下雨。" },
+        { "ja": "私は猫が好きです。", "reading": "わたしはねこがすきです。", "en": "I like cats.", "zh": "我喜欢猫。" }
+      ]
+    },
+    {
+      "id": "grammar:mo",
+      "level": "N5",
+      "pattern": "〜も",
+      "structure": "N + も",
+      "match": ["も"],
+      "meaning": { "en": "too; also; either", "zh": "也；（否定句中）也不" },
+      "explanation": {
+        "en": "も replaces は or が and means too. In a negative sentence it means not … either. It never stacks on top of は or が.",
+        "zh": "も取代は或が，表示“也”。用于否定句时表示“也不”。它不与は、が叠用。"
+      },
+      "examples": [
+        { "ja": "私も学生です。", "reading": "わたしもがくせいです。", "en": "I am a student too.", "zh": "我也是学生。" },
+        { "ja": "コーヒーもお茶も飲みません。", "reading": "コーヒーもおちゃものみません。", "en": "I drink neither coffee nor tea.", "zh": "咖啡和茶我都不喝。" }
+      ]
+    },
+    {
+      "id": "grammar:no-possessive",
+      "level": "N5",
+      "pattern": "〜の",
+      "structure": "N1 + の + N2",
+      "match": ["の"],
+      "meaning": { "en": "of; possessive (links two nouns)", "zh": "的（连接两个名词）" },
+      "explanation": {
+        "en": "の joins two nouns, with the first describing the second: owner, group, material, or kind. Japanese puts the describing noun first, which is the opposite order from the English of.",
+        "zh": "の连接两个名词，前者修饰后者，可表示所属、所属团体、材料或种类。日语把修饰的名词放在前面。"
+      },
+      "examples": [
+        { "ja": "これは私の傘です。", "reading": "これはわたしのかさです。", "en": "This is my umbrella.", "zh": "这是我的伞。" },
+        { "ja": "日本語の先生に会いました。", "reading": "にほんごのせんせいにあいました。", "en": "I met my Japanese teacher.", "zh": "我见到了日语老师。" }
+      ]
+    },
+    {
+      "id": "grammar:to-and",
+      "level": "N5",
+      "pattern": "〜と〜",
+      "structure": "N1 + と + N2",
+      "match": ["と"],
+      "meaning": { "en": "and (exhaustive list of nouns)", "zh": "和（穷尽列举名词）" },
+      "explanation": {
+        "en": "と joins nouns into a complete list: these and nothing else. It never joins verbs or clauses; that is what the て-form is for.",
+        "zh": "と把名词连成完整的列举，意为“只有这些”。它不能连接动词或句子，那要用て形。"
+      },
+      "examples": [
+        { "ja": "パンと牛乳を買いました。", "reading": "パンとぎゅうにゅうをかいました。", "en": "I bought bread and milk.", "zh": "我买了面包和牛奶。" },
+        { "ja": "机の上にペンとノートがあります。", "reading": "つくえのうえにペンとノートがあります。", "en": "There are a pen and a notebook on the desk.", "zh": "桌子上有笔和笔记本。" }
+      ]
+    },
+    {
+      "id": "grammar:ya",
+      "level": "N5",
+      "pattern": "〜や〜（など）",
+      "structure": "N1 + や + N2 + (など)",
+      "match": ["や", "など"],
+      "meaning": { "en": "and (partial list: among others)", "zh": "……啊……啊（部分列举）" },
+      "explanation": {
+        "en": "や lists examples rather than everything, often closed off with など. Use と when the list is complete and や when it is not.",
+        "zh": "や用于举例式的列举，而非全部，常与など呼应。列举完整时用と，不完整时用や。"
+      },
+      "examples": [
+        { "ja": "かばんの中に本やノートなどがあります。", "reading": "かばんのなかにほんやノートなどがあります。", "en": "There are books, notebooks and so on in the bag.", "zh": "包里有书、笔记本之类的东西。" },
+        { "ja": "週末は掃除や洗濯をします。", "reading": "しゅうまつはそうじやせんたくをします。", "en": "On weekends I do things like cleaning and laundry.", "zh": "周末我做打扫、洗衣之类的事。" }
+      ]
+    },
+    {
+      "id": "grammar:de-place",
+      "level": "N5",
+      "pattern": "〜で（場所）",
+      "structure": "Place + で + V",
+      "match": ["で"],
+      "meaning": { "en": "at; in (where an action happens)", "zh": "在……（动作发生的场所）" },
+      "explanation": {
+        "en": "で marks the place an action takes place. Compare に, which marks where something exists or where movement ends.",
+        "zh": "で标示动作发生的场所。与に对比：に标示存在的地点或移动的终点。"
+      },
+      "examples": [
+        { "ja": "図書館で勉強します。", "reading": "としょかんでべんきょうします。", "en": "I study at the library.", "zh": "我在图书馆学习。" },
+        { "ja": "公園で写真を撮りました。", "reading": "こうえんでしゃしんをとりました。", "en": "I took photos in the park.", "zh": "我在公园拍了照片。" }
+      ]
+    },
+    {
+      "id": "grammar:de-means",
+      "level": "N5",
+      "pattern": "〜で（手段）",
+      "structure": "N + で + V",
+      "match": ["で"],
+      "meaning": { "en": "by; with; in (means, tool, language)", "zh": "用……（手段、工具、语言）" },
+      "explanation": {
+        "en": "The same particle で also marks the means of an action: the tool used, the transport taken, or the language spoken.",
+        "zh": "同一个助词で也表示动作的手段：使用的工具、乘坐的交通工具或使用的语言。"
+      },
+      "examples": [
+        { "ja": "電車で会社に行きます。", "reading": "でんしゃでかいしゃにいきます。", "en": "I go to work by train.", "zh": "我坐电车去公司。" },
+        { "ja": "日本語で話しましょう。", "reading": "にほんごではなしましょう。", "en": "Let us talk in Japanese.", "zh": "我们用日语说吧。" }
+      ]
+    },
+    {
+      "id": "grammar:ni-time",
+      "level": "N5",
+      "pattern": "〜に（時）",
+      "structure": "Time + に + V",
+      "match": ["に"],
+      "meaning": { "en": "at; on; in (a specific time)", "zh": "在……（具体时间）" },
+      "explanation": {
+        "en": "に marks a time that can be named on a clock or calendar: 七時に, 月曜日に, 三月に. Relative times such as 今日, 明日, 毎日 and 今 take no particle.",
+        "zh": "に用于可以在钟表或日历上指明的时间：七時に、月曜日に、三月に。今日、明日、毎日、今等相对时间不加助词。"
+      },
+      "examples": [
+        { "ja": "七時に起きます。", "reading": "しちじにおきます。", "en": "I get up at seven.", "zh": "我七点起床。" },
+        { "ja": "日曜日に友達と会います。", "reading": "にちようびにともだちとあいます。", "en": "I meet my friend on Sunday.", "zh": "我星期天和朋友见面。" }
+      ]
+    },
+    {
+      "id": "grammar:ni-target",
+      "level": "N5",
+      "pattern": "〜に（相手）",
+      "structure": "Person + に + V",
+      "match": ["に"],
+      "meaning": { "en": "to (the person an action is directed at)", "zh": "向／给……（动作的对象）" },
+      "explanation": {
+        "en": "に marks the person on the receiving end: who you give something to, tell something to, or telephone.",
+        "zh": "に标示动作的接受方：给谁东西、对谁说话、给谁打电话。"
+      },
+      "examples": [
+        { "ja": "母に電話をかけました。", "reading": "ははにでんわをかけました。", "en": "I phoned my mother.", "zh": "我给妈妈打了电话。" },
+        { "ja": "先生に質問します。", "reading": "せんせいにしつもんします。", "en": "I ask the teacher a question.", "zh": "我向老师提问。" }
+      ]
+    },
+    {
+      "id": "grammar:to-with",
+      "level": "N5",
+      "pattern": "〜と（一緒に）",
+      "structure": "Person + と + V",
+      "match": ["と"],
+      "meaning": { "en": "with (someone)", "zh": "和……一起" },
+      "explanation": {
+        "en": "と after a person means doing something together with them. 一緒に is often added for emphasis but is not required.",
+        "zh": "と接在人物之后表示与其一同做某事。常加一緒に加强语气，但并非必需。"
+      },
+      "examples": [
+        { "ja": "友達と映画を見ました。", "reading": "ともだちとえいがをみました。", "en": "I watched a movie with a friend.", "zh": "我和朋友看了电影。" },
+        { "ja": "家族と一緒に住んでいます。", "reading": "かぞくといっしょにすんでいます。", "en": "I live together with my family.", "zh": "我和家人住在一起。" }
+      ]
+    },
+    {
+      "id": "grammar:kara-made",
+      "level": "N5",
+      "pattern": "〜から〜まで",
+      "structure": "Time / Place + から + Time / Place + まで",
+      "match": ["から", "まで"],
+      "meaning": { "en": "from … to …", "zh": "从……到……" },
+      "explanation": {
+        "en": "から marks a starting point and まで an end point, for both time and place. Either half can stand on its own.",
+        "zh": "から表示起点，まで表示终点，时间和地点都适用。两者可以单独使用。"
+      },
+      "examples": [
+        { "ja": "九時から五時まで働きます。", "reading": "くじからごじまではたらきます。", "en": "I work from nine to five.", "zh": "我从九点工作到五点。" },
+        { "ja": "駅から学校まで歩きました。", "reading": "えきからがっこうまであるきました。", "en": "I walked from the station to the school.", "zh": "我从车站走到了学校。" }
+      ]
+    },
+    {
+      "id": "grammar:kara-reason",
+      "level": "N5",
+      "pattern": "〜から（理由）",
+      "structure": "Reason + から、Result",
+      "match": ["から"],
+      "meaning": { "en": "because; so", "zh": "因为……所以" },
+      "explanation": {
+        "en": "から after a full sentence gives the reason for what follows. The reason comes first, the opposite order from an English because at the end.",
+        "zh": "から接在完整句子之后，说明后续内容的原因。日语先说原因，与英语把because放句末的顺序相反。"
+      },
+      "examples": [
+        { "ja": "寒いですから、窓を閉めます。", "reading": "さむいですから、まどをしめます。", "en": "It is cold, so I will close the window.", "zh": "因为很冷，所以我关窗。" },
+        { "ja": "明日試験がありますから、今日は勉強します。", "reading": "あしたしけんがありますから、きょうはべんきょうします。", "en": "I have an exam tomorrow, so I will study today.", "zh": "因为明天有考试，所以今天要学习。" }
+      ]
+    },
+    {
+      "id": "grammar:ne",
+      "level": "N5",
+      "pattern": "〜ね",
+      "structure": "Sentence + ね",
+      "match": ["ね"],
+      "meaning": { "en": "right? (seeking agreement)", "zh": "……吧（寻求同意）" },
+      "explanation": {
+        "en": "ね at the end of a sentence invites the listener to agree, assuming they already share the same view. It softens a statement rather than asking a real question.",
+        "zh": "句末的ね邀请对方表示同意，前提是双方看法一致。它使语气变得柔和，并非真正提问。"
+      },
+      "examples": [
+        { "ja": "今日は暑いですね。", "reading": "きょうはあついですね。", "en": "It is hot today, isn't it?", "zh": "今天很热啊。" },
+        { "ja": "この店は静かですね。", "reading": "このみせはしずかですね。", "en": "This shop is quiet, isn't it?", "zh": "这家店很安静呢。" }
+      ]
+    },
+    {
+      "id": "grammar:yo",
+      "level": "N5",
+      "pattern": "〜よ",
+      "structure": "Sentence + よ",
+      "match": ["よ"],
+      "meaning": { "en": "you know (telling something new)", "zh": "……哦（告知对方新信息）" },
+      "explanation": {
+        "en": "よ tells the listener something you assume they do not know. Overusing it sounds pushy, so it is kept for information that really is new.",
+        "zh": "よ用于告诉对方你认为他还不知道的信息。用得过多会显得强势，因此只在信息确实是新的时候使用。"
+      },
+      "examples": [
+        { "ja": "その店は今日休みですよ。", "reading": "そのみせはきょうやすみですよ。", "en": "That shop is closed today.", "zh": "那家店今天休息哦。" },
+        { "ja": "電車が来ましたよ。", "reading": "でんしゃがきましたよ。", "en": "The train has arrived.", "zh": "电车到了哦。" }
+      ]
+    },
+    {
+      "id": "grammar:ga-but",
+      "level": "N5",
+      "pattern": "〜が（逆接）",
+      "structure": "Sentence1 + が、Sentence2",
+      "match": ["が、"],
+      "meaning": { "en": "but; although", "zh": "但是；虽然" },
+      "explanation": {
+        "en": "が between two polite clauses means but. It is more formal than でも, which starts a new sentence instead.",
+        "zh": "が连接两个敬体分句，表示“但是”。它比另起一句的でも更正式。"
+      },
+      "examples": [
+        { "ja": "この部屋は狭いですが、明るいです。", "reading": "このへやはせまいですが、あかるいです。", "en": "This room is small, but it is bright.", "zh": "这个房间很窄，但是很明亮。" },
+        { "ja": "日本語は難しいですが、面白いです。", "reading": "にほんごはむずかしいですが、おもしろいです。", "en": "Japanese is difficult, but it is interesting.", "zh": "日语很难，但很有意思。" }
+      ]
+    },
+    {
+      "id": "grammar:ka-or",
+      "level": "N5",
+      "pattern": "〜か〜",
+      "structure": "N1 + か + N2",
+      "match": ["か"],
+      "meaning": { "en": "or", "zh": "或者" },
+      "explanation": {
+        "en": "か between nouns offers a choice. Unlike the English or, it sits between the two nouns and nothing else in the sentence changes.",
+        "zh": "か放在名词之间表示选择。与英语的or不同，它只放在两个名词中间，句子其他部分不变。"
+      },
+      "examples": [
+        { "ja": "コーヒーかお茶を飲みます。", "reading": "コーヒーかおちゃをのみます。", "en": "I will drink coffee or tea.", "zh": "我喝咖啡或者茶。" },
+        { "ja": "土曜日か日曜日に行きます。", "reading": "どようびかにちようびにいきます。", "en": "I will go on Saturday or Sunday.", "zh": "我星期六或星期天去。" }
+      ]
+    },
+    {
+      "id": "grammar:wa-contrast",
+      "level": "N5",
+      "pattern": "〜は（対比）",
+      "structure": "N + は … が、N + は …",
+      "match": ["は"],
+      "meaning": { "en": "as for … (contrast)", "zh": "……（对比）" },
+      "explanation": {
+        "en": "The same は also sets one thing against another. In a negative sentence it often marks the exception: 肉は食べません says that meat in particular is not eaten.",
+        "zh": "同一个は也用于对比。用于否定句时常表示例外：肉は食べません强调“肉”是不吃的。"
+      },
+      "examples": [
+        { "ja": "紅茶は飲みますが、コーヒーは飲みません。", "reading": "こうちゃはのみますが、コーヒーはのみません。", "en": "I drink black tea, but I do not drink coffee.", "zh": "红茶我喝，咖啡我不喝。" },
+        { "ja": "今日は行きません。", "reading": "きょうはいきません。", "en": "Today, at least, I am not going.", "zh": "今天我不去。" }
+      ]
+    },
+    {
+      "id": "grammar:dake",
+      "level": "N5",
+      "pattern": "〜だけ",
+      "structure": "N + だけ",
+      "match": ["だけ"],
+      "meaning": { "en": "only; just", "zh": "只；仅仅" },
+      "explanation": {
+        "en": "だけ limits the amount or the set: this much and no more. It goes straight after the noun and takes the place of は or が.",
+        "zh": "だけ限定数量或范围，表示“只有这些”。它直接接在名词后，并取代は或が。"
+      },
+      "examples": [
+        { "ja": "水だけ飲みます。", "reading": "みずだけのみます。", "en": "I drink only water.", "zh": "我只喝水。" },
+        { "ja": "一人だけ来ました。", "reading": "ひとりだけきました。", "en": "Only one person came.", "zh": "只来了一个人。" }
+      ]
+    },
+    {
+      "id": "grammar:gurai-goro",
+      "level": "N5",
+      "pattern": "〜ぐらい / 〜ごろ",
+      "structure": "Quantity + ぐらい / Time + ごろ",
+      "match": ["ぐらい", "くらい", "ごろ"],
+      "meaning": { "en": "about (amount) / around (point in time)", "zh": "大约（数量）／左右（时间点）" },
+      "explanation": {
+        "en": "ぐらい softens an amount or a length of time; ごろ softens a point in time. 三時ごろ is around three o'clock, 三時間ぐらい is about three hours. ごろ never takes に.",
+        "zh": "ぐらい用于概数或时间长度，ごろ用于时间点。三時ごろ是三点左右，三時間ぐらい是三个小时左右。ごろ后面不加に。"
+      },
+      "examples": [
+        { "ja": "毎日一時間ぐらい歩きます。", "reading": "まいにちいちじかんぐらいあるきます。", "en": "I walk for about an hour every day.", "zh": "我每天走一个小时左右。" },
+        { "ja": "八時ごろ家を出ます。", "reading": "はちじごろいえをでます。", "en": "I leave home around eight.", "zh": "我八点左右出门。" }
+      ]
+    },
+    {
+      "id": "grammar:shika-nai",
+      "level": "N5",
+      "pattern": "〜しか〜ない",
+      "structure": "N + しか + V(ない)",
+      "match": ["しか"],
+      "meaning": { "en": "only (nothing but)", "zh": "只有……（别无其他）" },
+      "explanation": {
+        "en": "しか also means only, but it always takes a negative verb and sounds like a complaint: there is only this and it is not enough. だけ is neutral about the amount.",
+        "zh": "しか同样表示“只”，但必须与否定形式呼应，带有“只有这些，不够”的语气。だけ则不含这种评价。"
+      },
+      "examples": [
+        { "ja": "百円しかありません。", "reading": "ひゃくえんしかありません。", "en": "I only have a hundred yen.", "zh": "我只有一百日元。" },
+        { "ja": "日本語しか話せません。", "reading": "にほんごしかはなせません。", "en": "I can only speak Japanese.", "zh": "我只会说日语。" }
+      ]
+    },
+    {
+      "id": "grammar:kore-sore-are",
+      "level": "N5",
+      "pattern": "これ・それ・あれ・どれ",
+      "structure": "これ / それ / あれ + は …",
+      "match": ["これ", "それ", "あれ", "どれ"],
+      "meaning": { "en": "this one / that one / that one over there / which one", "zh": "这个／那个／那个（远处）／哪个" },
+      "explanation": {
+        "en": "These stand on their own as pronouns. これ is near the speaker, それ near the listener, あれ away from both, どれ is the question word. Japanese splits by distance from each person, not by near and far alone.",
+        "zh": "这组词单独作代词使用。これ靠近说话人，それ靠近听话人，あれ离两者都远，どれ是疑问词。日语按与各方的距离区分，而不只分远近。"
+      },
+      "examples": [
+        { "ja": "これは何ですか。", "reading": "これはなんですか。", "en": "What is this?", "zh": "这是什么？" },
+        { "ja": "あれは私のかばんです。", "reading": "あれはわたしのかばんです。", "en": "That over there is my bag.", "zh": "那边那个是我的包。" }
+      ]
+    },
+    {
+      "id": "grammar:kono-sono-ano",
+      "level": "N5",
+      "pattern": "この・その・あの・どの",
+      "structure": "この / その / あの + N",
+      "match": ["この", "その", "あの", "どの"],
+      "meaning": { "en": "this / that / that … over there / which … (before a noun)", "zh": "这个／那个／那个（远处）／哪个（后接名词）" },
+      "explanation": {
+        "en": "These attach to a noun and cannot stand alone: この本, not このは. The distance rule is the same as これ・それ・あれ.",
+        "zh": "这组词必须接名词，不能单独使用：この本，不能说このは。距离的区分与これ・それ・あれ相同。"
+      },
+      "examples": [
+        { "ja": "この本は面白いです。", "reading": "このほんはおもしろいです。", "en": "This book is interesting.", "zh": "这本书很有意思。" },
+        { "ja": "その傘は誰のですか。", "reading": "そのかさはだれのですか。", "en": "Whose is that umbrella?", "zh": "那把伞是谁的？" }
+      ]
+    },
+    {
+      "id": "grammar:koko-soko-asoko",
+      "level": "N5",
+      "pattern": "ここ・そこ・あそこ・どこ",
+      "structure": "ここ / そこ / あそこ + は / で / に",
+      "match": ["ここ", "そこ", "あそこ", "どこ"],
+      "meaning": { "en": "here / there / over there / where", "zh": "这里／那里／那边／哪里" },
+      "explanation": {
+        "en": "The place members of the same family. こちら・そちら・あちら・どちら are their polite equivalents, and also mean this way and which of two.",
+        "zh": "同一组词中表示场所的成员。こちら・そちら・あちら・どちら是其礼貌说法，也可表示方向或二者择一。"
+      },
+      "examples": [
+        { "ja": "トイレはどこですか。", "reading": "トイレはどこですか。", "en": "Where is the toilet?", "zh": "洗手间在哪里？" },
+        { "ja": "ここで写真を撮ってもいいですか。", "reading": "ここでしゃしんをとってもいいですか。", "en": "May I take photos here?", "zh": "可以在这里拍照吗？" }
+      ]
+    },
+    {
+      "id": "grammar:question-words",
+      "level": "N5",
+      "pattern": "誰・何・いつ・どこ・なぜ",
+      "structure": "Question word + は / が / を … か",
+      "match": ["誰", "だれ", "何", "なに", "なん", "いつ", "どこ", "なぜ", "どうして"],
+      "meaning": { "en": "who / what / when / where / why", "zh": "谁／什么／什么时候／哪里／为什么" },
+      "explanation": {
+        "en": "A question word sits in the same slot as the answer would; the word order does not change and the sentence still ends in か. A question word as subject takes が, never は.",
+        "zh": "疑问词放在答案所在的位置，语序不变，句末仍加か。疑问词作主语时用が，不用は。"
+      },
+      "examples": [
+        { "ja": "誰が来ましたか。", "reading": "だれがきましたか。", "en": "Who came?", "zh": "谁来了？" },
+        { "ja": "いつ日本に行きますか。", "reading": "いつにほんにいきますか。", "en": "When are you going to Japan?", "zh": "你什么时候去日本？" }
+      ]
+    },
+    {
+      "id": "grammar:donna",
+      "level": "N5",
+      "pattern": "どんな + N",
+      "structure": "どんな + N + ですか",
+      "match": ["どんな"],
+      "meaning": { "en": "what kind of …", "zh": "什么样的……" },
+      "explanation": {
+        "en": "どんな asks what something is like and always takes a noun after it. どの asks which one out of a known set.",
+        "zh": "どんな询问事物的性质，后面必须接名词。どの则是在已知范围内问“哪一个”。"
+      },
+      "examples": [
+        { "ja": "どんな音楽が好きですか。", "reading": "どんなおんがくがすきですか。", "en": "What kind of music do you like?", "zh": "你喜欢什么样的音乐？" },
+        { "ja": "どんな人ですか。", "reading": "どんなひとですか。", "en": "What is that person like?", "zh": "是个什么样的人？" }
+      ]
+    },
+    {
+      "id": "grammar:ikutsu-ikura",
+      "level": "N5",
+      "pattern": "いくつ・いくら・何〜",
+      "structure": "いくつ / いくら / 何 + counter + ですか",
+      "match": ["いくつ", "いくら", "何人", "何時", "何個"],
+      "meaning": { "en": "how many / how much / how many + counter", "zh": "几个／多少钱／几＋量词" },
+      "explanation": {
+        "en": "いくら asks a price, いくつ a small count or an age, and 何 plus a counter asks a count in that counter's unit: 何人, 何枚, 何時間.",
+        "zh": "いくら问价格，いくつ问少量数目或年龄，何加量词则按该量词的单位提问：何人、何枚、何時間。"
+      },
+      "examples": [
+        { "ja": "この本はいくらですか。", "reading": "このほんはいくらですか。", "en": "How much is this book?", "zh": "这本书多少钱？" },
+        { "ja": "家族は何人ですか。", "reading": "かぞくはなんにんですか。", "en": "How many people are in your family?", "zh": "你家有几口人？" }
+      ]
+    },
+    {
+      "id": "grammar:deshita",
+      "level": "N5",
+      "pattern": "〜でした / 〜ではありませんでした",
+      "structure": "N + でした / ではありませんでした",
+      "match": ["でした", "ではありませんでした", "じゃありませんでした"],
+      "meaning": { "en": "was; were (polite past copula)", "zh": "（过去）是／不是" },
+      "explanation": {
+        "en": "The past of です. The negative past is ではありませんでした, spoken as じゃありませんでした. Nouns and na-adjectives use these; i-adjectives conjugate on their own.",
+        "zh": "です的过去形式。过去否定为ではありませんでした，口语说じゃありませんでした。名词与形容动词用这一组；形容词有自己的活用。"
+      },
+      "examples": [
+        { "ja": "昨日は休みでした。", "reading": "きのうはやすみでした。", "en": "Yesterday was a day off.", "zh": "昨天是休息日。" },
+        { "ja": "テストは簡単ではありませんでした。", "reading": "テストはかんたんではありませんでした。", "en": "The test was not easy.", "zh": "考试并不简单。" }
+      ]
+    },
+    {
+      "id": "grammar:i-adjective",
+      "level": "N5",
+      "pattern": "い形容詞（〜い / 〜くない）",
+      "structure": "Adj(い) + です / Adj(く) + ないです",
+      "match": ["くないです", "くありません"],
+      "meaning": { "en": "i-adjective, present affirmative and negative", "zh": "形容词的现在时肯定与否定" },
+      "explanation": {
+        "en": "An i-adjective already carries its own tense, so です only makes it polite and never changes. The negative drops い and adds くない: 高い to 高くないです. いい is irregular and becomes よくない.",
+        "zh": "形容词自身带有时态，です只表示礼貌，本身不变化。否定去掉い加くない：高い→高くないです。いい是特殊变化，否定为よくない。"
+      },
+      "examples": [
+        { "ja": "この鞄は高いです。", "reading": "このかばんはたかいです。", "en": "This bag is expensive.", "zh": "这个包很贵。" },
+        { "ja": "今日は寒くないです。", "reading": "きょうはさむくないです。", "en": "It is not cold today.", "zh": "今天不冷。" }
+      ]
+    },
+    {
+      "id": "grammar:i-adjective-past",
+      "level": "N5",
+      "pattern": "い形容詞（〜かった / 〜くなかった）",
+      "structure": "Adj(かった) + です / Adj(く) + なかったです",
+      "match": ["かったです", "くなかったです"],
+      "meaning": { "en": "i-adjective, past affirmative and negative", "zh": "形容词的过去时肯定与否定" },
+      "explanation": {
+        "en": "Drop い and add かった for the past, くなかった for the past negative. です stays unchanged after it; でした is never used with an i-adjective.",
+        "zh": "去掉い加かった构成过去时，加くなかった构成过去否定。其后的です不变，形容词绝不与でした搭配。"
+      },
+      "examples": [
+        { "ja": "映画は面白かったです。", "reading": "えいがはおもしろかったです。", "en": "The movie was interesting.", "zh": "电影很有意思。" },
+        { "ja": "料理は辛くなかったです。", "reading": "りょうりはからくなかったです。", "en": "The food was not spicy.", "zh": "菜不辣。" }
+      ]
+    },
+    {
+      "id": "grammar:na-adjective",
+      "level": "N5",
+      "pattern": "な形容詞（〜な / 〜ではない）",
+      "structure": "Adj(な) + N / Adj + です",
+      "match": ["な", "ではありません"],
+      "meaning": { "en": "na-adjective before a noun and as a predicate", "zh": "形容动词的连体用法与谓语用法" },
+      "explanation": {
+        "en": "A na-adjective takes な before a noun (静かな部屋) and behaves exactly like a noun at the end of a sentence (静かです, 静かではありません).",
+        "zh": "形容动词修饰名词时加な（静かな部屋），作谓语时与名词完全相同（静かです、静かではありません）。"
+      },
+      "examples": [
+        { "ja": "静かな部屋がいいです。", "reading": "しずかなへやがいいです。", "en": "I would like a quiet room.", "zh": "我想要安静的房间。" },
+        { "ja": "この町は便利ではありません。", "reading": "このまちはべんりではありません。", "en": "This town is not convenient.", "zh": "这个城市不方便。" }
+      ]
+    },
+    {
+      "id": "grammar:na-adjective-past",
+      "level": "N5",
+      "pattern": "な形容詞（〜でした / 〜ではありませんでした）",
+      "structure": "Adj + でした / ではありませんでした",
+      "match": ["でした"],
+      "meaning": { "en": "na-adjective, past affirmative and negative", "zh": "形容动词的过去时肯定与否定" },
+      "explanation": {
+        "en": "Because a na-adjective behaves like a noun, it takes でした and ではありませんでした, never かった.",
+        "zh": "形容动词与名词同样活用，因此用でした和ではありませんでした，不用かった。"
+      },
+      "examples": [
+        { "ja": "昨日の試験は簡単でした。", "reading": "きのうのしけんはかんたんでした。", "en": "Yesterday's exam was easy.", "zh": "昨天的考试很简单。" },
+        { "ja": "駅は静かではありませんでした。", "reading": "えきはしずかではありませんでした。", "en": "The station was not quiet.", "zh": "车站并不安静。" }
+      ]
+    },
+    {
+      "id": "grammar:adjective-te",
+      "level": "N5",
+      "pattern": "〜くて / 〜で（形容詞の接続）",
+      "structure": "Adj(い→くて) + Adj / Adj(な) + で + Adj",
+      "match": ["くて"],
+      "meaning": { "en": "and (joining two adjectives)", "zh": "又……又……（连接两个形容词）" },
+      "explanation": {
+        "en": "To pile up two descriptions, an i-adjective becomes くて and a na-adjective or noun becomes で. Both halves have to point the same way; a contrast needs が instead.",
+        "zh": "要连用两个描述时，形容词变为くて，形容动词或名词变为で。两部分的褒贬方向必须一致，转折要用が。"
+      },
+      "examples": [
+        { "ja": "この部屋は広くて明るいです。", "reading": "このへやはひろくてあかるいです。", "en": "This room is spacious and bright.", "zh": "这个房间又宽敞又明亮。" },
+        { "ja": "彼女は親切で有名です。", "reading": "かのじょはしんせつでゆうめいです。", "en": "She is kind and well known.", "zh": "她既亲切又有名。" }
+      ]
+    },
+    {
+      "id": "grammar:amari-nai",
+      "level": "N5",
+      "pattern": "あまり〜ない",
+      "structure": "あまり + V / Adj + ない",
+      "match": ["あまり"],
+      "meaning": { "en": "not very; not much", "zh": "不太……" },
+      "explanation": {
+        "en": "あまり always pairs with a negative and softens it: not very rather than not at all. 全然 with a negative means not at all.",
+        "zh": "あまり必须与否定呼应，表示“不太”，而非完全否定。全然与否定连用才表示“完全不”。"
+      },
+      "examples": [
+        { "ja": "あまり高くないです。", "reading": "あまりたかくないです。", "en": "It is not very expensive.", "zh": "不太贵。" },
+        { "ja": "テレビはあまり見ません。", "reading": "テレビはあまりみません。", "en": "I do not watch much television.", "zh": "我不太看电视。" }
+      ]
+    },
+    {
+      "id": "grammar:totemo",
+      "level": "N5",
+      "pattern": "とても・少し・ちょっと",
+      "structure": "とても / 少し / ちょっと + Adj",
+      "match": ["とても", "少し", "すこし", "ちょっと"],
+      "meaning": { "en": "very / a little / a bit", "zh": "非常／有点／稍微" },
+      "explanation": {
+        "en": "Degree adverbs go straight before the adjective. ちょっと is the everyday spoken form of 少し, and also softens a refusal on its own.",
+        "zh": "程度副词直接放在形容词前。ちょっと是少し的口语说法，单独使用时还可用于委婉拒绝。"
+      },
+      "examples": [
+        { "ja": "この料理はとてもおいしいです。", "reading": "このりょうりはとてもおいしいです。", "en": "This dish is very tasty.", "zh": "这道菜非常好吃。" },
+        { "ja": "少し疲れました。", "reading": "すこしつかれました。", "en": "I am a little tired.", "zh": "我有点累了。" }
+      ]
+    },
+    {
+      "id": "grammar:ichiban",
+      "level": "N5",
+      "pattern": "〜で一番〜",
+      "structure": "Group + で + 一番 + Adj",
+      "match": ["一番", "いちばん"],
+      "meaning": { "en": "the most … in …", "zh": "在……中最……" },
+      "explanation": {
+        "en": "一番 before an adjective makes a superlative, with the group marked by で or の中で.",
+        "zh": "一番放在形容词前构成最高级，范围用で或の中で表示。"
+      },
+      "examples": [
+        { "ja": "クラスで一番背が高いです。", "reading": "クラスでいちばんせがたかいです。", "en": "He is the tallest in the class.", "zh": "他在班上个子最高。" },
+        { "ja": "果物の中でりんごが一番好きです。", "reading": "くだもののなかでりんごがいちばんすきです。", "en": "Among fruits I like apples best.", "zh": "水果中我最喜欢苹果。" }
+      ]
+    },
+    {
+      "id": "grammar:hou-ga-yori",
+      "level": "N5",
+      "pattern": "〜のほうが〜より〜",
+      "structure": "N1 + のほうが + N2 + より + Adj",
+      "match": ["ほうが", "より"],
+      "meaning": { "en": "N1 is more … than N2", "zh": "……比……更……" },
+      "explanation": {
+        "en": "より marks the thing being compared against, and ほうが marks the winner. Either half can be dropped once the comparison is clear.",
+        "zh": "より标示比较的基准，ほうが标示胜出的一方。比较对象明确时可省略其中一半。"
+      },
+      "examples": [
+        { "ja": "電車のほうがバスより速いです。", "reading": "でんしゃのほうがバスよりはやいです。", "en": "The train is faster than the bus.", "zh": "电车比公交车快。" },
+        { "ja": "今日は昨日より暖かいです。", "reading": "きょうはきのうよりあたたかいです。", "en": "Today is warmer than yesterday.", "zh": "今天比昨天暖和。" }
+      ]
+    },
+    {
+      "id": "grammar:dictionary-form",
+      "level": "N5",
+      "pattern": "辞書形",
+      "structure": "V(辞書形)",
+      "meaning": { "en": "dictionary form (plain non-past)", "zh": "动词原形（简体非过去）" },
+      "explanation": {
+        "en": "The form a verb is listed under. Godan verbs end in an u-sound (行く, 話す), ichidan verbs in る after an i- or e-sound (食べる, 見る), and する and 来る are the two irregulars. Many later patterns attach to this form.",
+        "zh": "词典中列出的形式。五段动词以u段音结尾（行く、話す），一段动词在i段或e段后接る（食べる、見る），する和来る是两个不规则动词。许多后续句型都接在这一形式后。"
+      },
+      "examples": [
+        { "ja": "毎朝コーヒーを飲む。", "reading": "まいあさコーヒーをのむ。", "en": "I drink coffee every morning.", "zh": "我每天早上喝咖啡。" },
+        { "ja": "日本語を話すことができます。", "reading": "にほんごをはなすことができます。", "en": "I can speak Japanese.", "zh": "我会说日语。" }
+      ]
+    },
+    {
+      "id": "grammar:plain-form",
+      "level": "N5",
+      "pattern": "普通形",
+      "structure": "V(る / ない / た / なかった)",
+      "meaning": { "en": "plain form (casual style)", "zh": "简体形（常体）" },
+      "explanation": {
+        "en": "The four plain forms are the casual counterparts of ます, ません, ました and ませんでした. They are used with family and close friends, and they are also what longer patterns attach to, whatever the politeness of the sentence.",
+        "zh": "四种简体形分别对应ます、ません、ました、ませんでした。它们用于家人和亲近的朋友之间，同时也是许多复杂句型的接续形式，与整句的敬体与否无关。"
+      },
+      "examples": [
+        { "ja": "明日は行かない。", "reading": "あしたはいかない。", "en": "I am not going tomorrow.", "zh": "明天我不去。" },
+        { "ja": "昨日は忙しかった。", "reading": "きのうはいそがしかった。", "en": "I was busy yesterday.", "zh": "昨天很忙。" }
+      ]
+    },
+    {
+      "id": "grammar:te-form",
+      "level": "N5",
+      "pattern": "て形",
+      "structure": "V(て) + V …",
+      "match": ["て", "で"],
+      "meaning": { "en": "te-form: joins verbs into a sequence", "zh": "て形：连接动作，表示先后" },
+      "explanation": {
+        "en": "The て-form links actions in the order they happen and is the base of many patterns. Godan endings change: く to いて, ぐ to いで, う・つ・る to って, ぬ・ぶ・む to んで, す to して; 行く is the exception, 行って. Ichidan verbs drop る and add て.",
+        "zh": "て形按发生顺序连接动作，也是许多句型的基础。五段动词变化：く→いて，ぐ→いで，う・つ・る→って，ぬ・ぶ・む→んで，す→して；行く例外，为行って。一段动词去る加て。"
+      },
+      "examples": [
+        { "ja": "朝起きて、顔を洗います。", "reading": "あさおきて、かおをあらいます。", "en": "I get up in the morning and wash my face.", "zh": "早上起床后洗脸。" },
+        { "ja": "本を読んで、寝ました。", "reading": "ほんをよんで、ねました。", "en": "I read a book and went to sleep.", "zh": "我看了书然后睡了。" }
+      ]
+    },
+    {
+      "id": "grammar:te-imasu",
+      "level": "N5",
+      "pattern": "〜ています",
+      "structure": "V(て) + います",
+      "match": ["ています", "でいます", "ている", "でいる"],
+      "meaning": { "en": "is doing; is in a state", "zh": "正在……；处于……状态" },
+      "explanation": {
+        "en": "With an action verb this is the progressive: 食べています, is eating. With a verb of change it is the resulting state: 結婚しています means is married, not is getting married. It also covers habits: 銀行で働いています.",
+        "zh": "接动作动词表示进行：食べています（正在吃）。接变化动词表示结果状态：結婚しています是“已婚”，不是“正在结婚”。也可表示习惯：銀行で働いています。"
+      },
+      "examples": [
+        { "ja": "今、宿題をしています。", "reading": "いま、しゅくだいをしています。", "en": "I am doing my homework now.", "zh": "我现在正在做作业。" },
+        { "ja": "兄は東京に住んでいます。", "reading": "あにはとうきょうにすんでいます。", "en": "My older brother lives in Tokyo.", "zh": "我哥哥住在东京。" }
+      ]
+    },
+    {
+      "id": "grammar:te-kudasai",
+      "level": "N5",
+      "pattern": "〜てください",
+      "structure": "V(て) + ください",
+      "match": ["てください", "でください"],
+      "meaning": { "en": "please do …", "zh": "请……" },
+      "explanation": {
+        "en": "A polite request or instruction. It is an instruction as much as a favour, so a superior is usually asked with a longer, softer phrase instead.",
+        "zh": "礼貌的请求或指示。它同时带有指示的语气，因此对上级通常改用更委婉的长句。"
+      },
+      "examples": [
+        { "ja": "もう一度言ってください。", "reading": "もういちどいってください。", "en": "Please say that once more.", "zh": "请再说一遍。" },
+        { "ja": "ここに名前を書いてください。", "reading": "ここになまえをかいてください。", "en": "Please write your name here.", "zh": "请在这里写上名字。" }
+      ]
+    },
+    {
+      "id": "grammar:te-mo-ii",
+      "level": "N5",
+      "pattern": "〜てもいいです",
+      "structure": "V(て) + もいいです（か）",
+      "match": ["てもいい", "でもいい"],
+      "meaning": { "en": "may; it is all right to …", "zh": "可以……" },
+      "explanation": {
+        "en": "Gives or asks for permission. As a question it is the standard way to ask whether something is allowed.",
+        "zh": "表示给予或请求许可。用于疑问句时，是询问“是否可以”的标准说法。"
+      },
+      "examples": [
+        { "ja": "ここに座ってもいいですか。", "reading": "ここにすわってもいいですか。", "en": "May I sit here?", "zh": "我可以坐这里吗？" },
+        { "ja": "写真を撮ってもいいです。", "reading": "しゃしんをとってもいいです。", "en": "You may take photos.", "zh": "可以拍照。" }
+      ]
+    },
+    {
+      "id": "grammar:te-wa-ikemasen",
+      "level": "N5",
+      "pattern": "〜てはいけません",
+      "structure": "V(て) + はいけません",
+      "match": ["てはいけません", "ではいけません", "ちゃいけない"],
+      "meaning": { "en": "must not; may not", "zh": "不可以……；禁止……" },
+      "explanation": {
+        "en": "A prohibition, the opposite of てもいいです. It is strong, so signs and rules use it while a person asking a favour would not.",
+        "zh": "表示禁止，与てもいいです相对。语气较强，多见于告示和规定，个人请求时一般不用。"
+      },
+      "examples": [
+        { "ja": "ここでたばこを吸ってはいけません。", "reading": "ここでたばこをすってはいけません。", "en": "You must not smoke here.", "zh": "这里禁止吸烟。" },
+        { "ja": "図書館で話してはいけません。", "reading": "としょかんではなしてはいけません。", "en": "You must not talk in the library.", "zh": "图书馆内不可以说话。" }
+      ]
+    },
+    {
+      "id": "grammar:te-kara",
+      "level": "N5",
+      "pattern": "〜てから",
+      "structure": "V(て) + から、…",
+      "match": ["てから", "でから"],
+      "meaning": { "en": "after doing …", "zh": "……之后（再）" },
+      "explanation": {
+        "en": "Marks the first of two actions and stresses that the second waits for it. Plain て also puts actions in order; てから adds the sense of not before that.",
+        "zh": "标示两个动作中的前者，强调后者要等前者完成。单纯的て也表示先后，てから则强调“在此之前不做”。"
+      },
+      "examples": [
+        { "ja": "宿題をしてから、遊びます。", "reading": "しゅくだいをしてから、あそびます。", "en": "I will play after I finish my homework.", "zh": "做完作业之后再玩。" },
+        { "ja": "手を洗ってから食べてください。", "reading": "てをあらってからたべてください。", "en": "Please eat after washing your hands.", "zh": "请洗完手再吃。" }
+      ]
+    },
+    {
+      "id": "grammar:nai-form",
+      "level": "N5",
+      "pattern": "ない形",
+      "structure": "V(ない)",
+      "match": ["ない"],
+      "meaning": { "en": "plain negative", "zh": "简体否定形" },
+      "explanation": {
+        "en": "Godan verbs change the final u-sound to the a-row and add ない (書く to 書かない); a verb ending in う takes わ (買う to 買わない). Ichidan verbs drop る. する becomes しない and 来る becomes 来ない. ある is irregular: ない.",
+        "zh": "五段动词把词尾u段变为a段再加ない（書く→書かない）；以う结尾的变为わ（買う→買わない）。一段动词去る加ない。する→しない，来る→来ない。ある特殊，否定为ない。"
+      },
+      "examples": [
+        { "ja": "今日は出かけない。", "reading": "きょうはでかけない。", "en": "I am not going out today.", "zh": "今天不出门。" },
+        { "ja": "お酒は飲まない。", "reading": "おさけはのまない。", "en": "I do not drink alcohol.", "zh": "我不喝酒。" }
+      ]
+    },
+    {
+      "id": "grammar:naide-kudasai",
+      "level": "N5",
+      "pattern": "〜ないでください",
+      "structure": "V(ない) + でください",
+      "match": ["ないでください"],
+      "meaning": { "en": "please do not …", "zh": "请不要……" },
+      "explanation": {
+        "en": "The negative counterpart of てください. It asks someone not to do something, and is gentler than てはいけません.",
+        "zh": "てください的否定形式，用于请求对方不要做某事，语气比てはいけません柔和。"
+      },
+      "examples": [
+        { "ja": "ここに車を止めないでください。", "reading": "ここにくるまをとめないでください。", "en": "Please do not park here.", "zh": "请不要在这里停车。" },
+        { "ja": "心配しないでください。", "reading": "しんぱいしないでください。", "en": "Please do not worry.", "zh": "请不要担心。" }
+      ]
+    },
+    {
+      "id": "grammar:nakereba-narimasen",
+      "level": "N5",
+      "pattern": "〜なければなりません",
+      "structure": "V(ない→なければ) + なりません",
+      "match": ["なければなりません", "なければならない", "なくてはいけません"],
+      "meaning": { "en": "must; have to", "zh": "必须……" },
+      "explanation": {
+        "en": "Literally if you do not do it, it will not do. なくてはいけません means the same. Both are long; the casual spoken forms are なきゃ and なくちゃ.",
+        "zh": "字面意思是“不做就不行”。なくてはいけません意思相同。两者都较长，口语常缩略为なきゃ、なくちゃ。"
+      },
+      "examples": [
+        { "ja": "明日までに出さなければなりません。", "reading": "あしたまでにださなければなりません。", "en": "I must hand it in by tomorrow.", "zh": "必须在明天之前交上去。" },
+        { "ja": "薬を飲まなければなりません。", "reading": "くすりをのまなければなりません。", "en": "I have to take my medicine.", "zh": "我必须吃药。" }
+      ]
+    },
+    {
+      "id": "grammar:nakute-mo-ii",
+      "level": "N5",
+      "pattern": "〜なくてもいいです",
+      "structure": "V(ない→なくて) + もいいです",
+      "match": ["なくてもいい"],
+      "meaning": { "en": "do not have to", "zh": "不……也可以" },
+      "explanation": {
+        "en": "Says that an action is not required. It is the negative counterpart of てもいいです and the opposite of なければなりません.",
+        "zh": "表示不必做某事，是てもいいです的否定对应，也是なければなりません的反义表达。"
+      },
+      "examples": [
+        { "ja": "明日は来なくてもいいです。", "reading": "あしたはこなくてもいいです。", "en": "You do not have to come tomorrow.", "zh": "明天可以不来。" },
+        { "ja": "全部食べなくてもいいですよ。", "reading": "ぜんぶたべなくてもいいですよ。", "en": "You do not have to eat all of it.", "zh": "不用全部吃完也可以。" }
+      ]
+    },
+    {
+      "id": "grammar:ta-form",
+      "level": "N5",
+      "pattern": "た形",
+      "structure": "V(た)",
+      "match": ["た", "だ"],
+      "meaning": { "en": "plain past", "zh": "简体过去形" },
+      "explanation": {
+        "en": "Formed exactly like the て-form with た instead of て: 書いて to 書いた, 読んで to 読んだ. Several patterns attach to it, so it is worth learning as a form rather than only as a tense.",
+        "zh": "变化方式与て形完全相同，只是把て换成た：書いて→書いた，読んで→読んだ。多个句型接在这一形式后，因此要把它作为一种“形”来记，而不仅是时态。"
+      },
+      "examples": [
+        { "ja": "昨日友達に会った。", "reading": "きのうともだちにあった。", "en": "I met a friend yesterday.", "zh": "昨天我见了朋友。" },
+        { "ja": "もう昼ご飯を食べた。", "reading": "もうひるごはんをたべた。", "en": "I have already eaten lunch.", "zh": "我已经吃过午饭了。" }
+      ]
+    },
+    {
+      "id": "grammar:ta-koto-ga-aru",
+      "level": "N5",
+      "pattern": "〜たことがあります",
+      "structure": "V(た) + ことがあります",
+      "match": ["たことがあります", "たことがある"],
+      "meaning": { "en": "have done … before (experience)", "zh": "曾经……过（经验）" },
+      "explanation": {
+        "en": "Reports an experience at some point in the past, not a particular occasion. Something that happened yesterday is too recent for it.",
+        "zh": "表示过去有过的经验，而非某一次具体的事。昨天刚发生的事不能用这一句型。"
+      },
+      "examples": [
+        { "ja": "日本へ行ったことがあります。", "reading": "にほんへいったことがあります。", "en": "I have been to Japan.", "zh": "我去过日本。" },
+        { "ja": "馬に乗ったことがありません。", "reading": "うまにのったことがありません。", "en": "I have never ridden a horse.", "zh": "我没骑过马。" }
+      ]
+    },
+    {
+      "id": "grammar:tari-tari",
+      "level": "N5",
+      "pattern": "〜たり〜たりします",
+      "structure": "V(た→たり) + V(た→たり) + します",
+      "match": ["たり", "だり"],
+      "meaning": { "en": "do things like … and …", "zh": "又是……又是……（列举动作）" },
+      "explanation": {
+        "en": "Lists example activities without saying they happened in that order or that the list is complete. する at the end carries the tense for the whole sentence.",
+        "zh": "举例列举若干动作，不表示先后顺序，也不表示列举完整。句末的する承担全句的时态。"
+      },
+      "examples": [
+        { "ja": "週末は本を読んだり音楽を聞いたりします。", "reading": "しゅうまつはほんをよんだりおんがくをきいたりします。", "en": "On weekends I do things like reading and listening to music.", "zh": "周末我看看书、听听音乐。" },
+        { "ja": "昨日は掃除したり洗濯したりしました。", "reading": "きのうはそうじしたりせんたくしたりしました。", "en": "Yesterday I did things like cleaning and laundry.", "zh": "昨天我又是打扫又是洗衣服。" }
+      ]
+    },
+    {
+      "id": "grammar:koto-ga-dekiru",
+      "level": "N5",
+      "pattern": "〜ことができます",
+      "structure": "V(辞書形) + ことができます",
+      "match": ["ことができます", "ことができる"],
+      "meaning": { "en": "can; be able to", "zh": "能够……；会……" },
+      "explanation": {
+        "en": "States an ability or a permission. A noun can take it directly with が: 運転ができます. The shorter potential form is taught at N4.",
+        "zh": "表示能力或许可。名词可直接用が接续：運転ができます。更简短的可能形在N4学习。"
+      },
+      "examples": [
+        { "ja": "ピアノを弾くことができます。", "reading": "ピアノをひくことができます。", "en": "I can play the piano.", "zh": "我会弹钢琴。" },
+        { "ja": "ここで払うことができますか。", "reading": "ここではらうことができますか。", "en": "Can I pay here?", "zh": "可以在这里付款吗？" }
+      ]
+    },
+    {
+      "id": "grammar:mae-ni",
+      "level": "N5",
+      "pattern": "〜前に",
+      "structure": "V(辞書形) / N + の + 前に",
+      "match": ["前に", "まえに"],
+      "meaning": { "en": "before doing …", "zh": "在……之前" },
+      "explanation": {
+        "en": "The verb before 前に is always in the dictionary form, whatever the tense of the sentence, because it has not happened yet at that point.",
+        "zh": "前に前面的动词一律用原形，与全句时态无关，因为在那个时点动作尚未发生。"
+      },
+      "examples": [
+        { "ja": "寝る前に歯を磨きます。", "reading": "ねるまえにはをみがきます。", "en": "I brush my teeth before going to bed.", "zh": "睡觉前我刷牙。" },
+        { "ja": "食事の前に手を洗いました。", "reading": "しょくじのまえにてをあらいました。", "en": "I washed my hands before the meal.", "zh": "吃饭前我洗了手。" }
+      ]
+    },
+    {
+      "id": "grammar:ato-de",
+      "level": "N5",
+      "pattern": "〜後で",
+      "structure": "V(た) / N + の + 後で",
+      "match": ["後で", "あとで"],
+      "meaning": { "en": "after doing …", "zh": "在……之后" },
+      "explanation": {
+        "en": "The mirror image of 前に: the verb before 後で is always in the た-form, because it is finished at that point.",
+        "zh": "与前に相对：後で前面的动词一律用た形，因为在那个时点动作已经完成。"
+      },
+      "examples": [
+        { "ja": "映画を見た後で食事しました。", "reading": "えいがをみたあとでしょくじしました。", "en": "We ate after watching the movie.", "zh": "看完电影之后我们吃了饭。" },
+        { "ja": "授業の後で図書館へ行きます。", "reading": "じゅぎょうのあとでとしょかんへいきます。", "en": "I go to the library after class.", "zh": "下课后我去图书馆。" }
+      ]
+    },
+    {
+      "id": "grammar:nagara",
+      "level": "N5",
+      "pattern": "〜ながら",
+      "structure": "V(ます-stem) + ながら + V",
+      "match": ["ながら"],
+      "meaning": { "en": "while doing …", "zh": "一边……一边……" },
+      "explanation": {
+        "en": "Two actions by one person at the same time. The main action is the second one, so 音楽を聞きながら勉強する is studying, with music in the background.",
+        "zh": "同一个人同时进行两个动作。主要动作是后者，因此音楽を聞きながら勉強する的重点是“学习”。"
+      },
+      "examples": [
+        { "ja": "音楽を聞きながら勉強します。", "reading": "おんがくをききながらべんきょうします。", "en": "I study while listening to music.", "zh": "我一边听音乐一边学习。" },
+        { "ja": "歩きながら電話しないでください。", "reading": "あるきながらでんわしないでください。", "en": "Please do not use the phone while walking.", "zh": "请不要一边走路一边打电话。" }
+      ]
+    },
+    {
+      "id": "grammar:tai",
+      "level": "N5",
+      "pattern": "〜たいです",
+      "structure": "V(ます-stem) + たいです",
+      "match": ["たいです", "たい"],
+      "meaning": { "en": "want to do …", "zh": "想要……（做某事）" },
+      "explanation": {
+        "en": "Expresses the speaker's own wish, and conjugates like an i-adjective: たくない, たかった. The object may take を or が. It is not used to state what someone else wants; that needs たがっている.",
+        "zh": "表示说话人自身的愿望，按形容词活用：たくない、たかった。宾语可用を或が。不能用来陈述他人的愿望，那要用たがっている。"
+      },
+      "examples": [
+        { "ja": "日本へ行きたいです。", "reading": "にほんへいきたいです。", "en": "I want to go to Japan.", "zh": "我想去日本。" },
+        { "ja": "今日は何も食べたくないです。", "reading": "きょうはなにもたべたくないです。", "en": "I do not want to eat anything today.", "zh": "今天我什么都不想吃。" }
+      ]
+    },
+    {
+      "id": "grammar:hoshii",
+      "level": "N5",
+      "pattern": "〜がほしいです",
+      "structure": "N + がほしいです",
+      "match": ["ほしい"],
+      "meaning": { "en": "want (a thing)", "zh": "想要（某物）" },
+      "explanation": {
+        "en": "ほしい is for wanting a thing, たい for wanting to do something. The thing wanted takes が. Like たい it describes the speaker, not a third person.",
+        "zh": "ほしい表示想要某物，たい表示想做某事。想要的东西用が标示。与たい一样，只用于描述说话人。"
+      },
+      "examples": [
+        { "ja": "新しいパソコンがほしいです。", "reading": "あたらしいパソコンがほしいです。", "en": "I want a new computer.", "zh": "我想要一台新电脑。" },
+        { "ja": "今は何もほしくないです。", "reading": "いまはなにもほしくないです。", "en": "I do not want anything right now.", "zh": "我现在什么都不想要。" }
+      ]
+    },
+    {
+      "id": "grammar:mashou",
+      "level": "N5",
+      "pattern": "〜ましょう / 〜ましょうか",
+      "structure": "V(ます-stem) + ましょう（か）",
+      "match": ["ましょう"],
+      "meaning": { "en": "let us … / shall I …?", "zh": "……吧／我来……好吗？" },
+      "explanation": {
+        "en": "ましょう suggests doing something together. ましょうか offers to do it yourself, or asks whether the suggestion is welcome.",
+        "zh": "ましょう提议一起做某事。ましょうか则表示主动提出由自己来做，或询问对方是否愿意。"
+      },
+      "examples": [
+        { "ja": "一緒に昼ご飯を食べましょう。", "reading": "いっしょにひるごはんをたべましょう。", "en": "Let us have lunch together.", "zh": "我们一起吃午饭吧。" },
+        { "ja": "窓を開けましょうか。", "reading": "まどをあけましょうか。", "en": "Shall I open the window?", "zh": "我把窗户打开好吗？" }
+      ]
+    },
+    {
+      "id": "grammar:masen-ka",
+      "level": "N5",
+      "pattern": "〜ませんか",
+      "structure": "V(ます-stem) + ませんか",
+      "match": ["ませんか"],
+      "meaning": { "en": "would you like to …? (invitation)", "zh": "要不要……？（邀请）" },
+      "explanation": {
+        "en": "An invitation. It is softer than ましょう because the negative question leaves the listener room to decline.",
+        "zh": "用于邀请。因为采用否定疑问的形式，给对方留有拒绝的余地，语气比ましょう柔和。"
+      },
+      "examples": [
+        { "ja": "週末、映画を見ませんか。", "reading": "しゅうまつ、えいがをみませんか。", "en": "Would you like to see a movie this weekend?", "zh": "周末要不要看电影？" },
+        { "ja": "少し休みませんか。", "reading": "すこしやすみませんか。", "en": "Shall we take a short break?", "zh": "要不要休息一下？" }
+      ]
+    },
+    {
+      "id": "grammar:tsumori",
+      "level": "N5",
+      "pattern": "〜つもりです",
+      "structure": "V(辞書形 / ない) + つもりです",
+      "match": ["つもり"],
+      "meaning": { "en": "intend to …", "zh": "打算……" },
+      "explanation": {
+        "en": "States a decision already made, which is stronger than たいです. The negative is either 行かないつもり (intend not to go) or 行くつもりはない (have no intention of going).",
+        "zh": "表示已经做出的决定，语气比たいです强。否定有两种：行かないつもり（打算不去）与行くつもりはない（没有去的打算）。"
+      },
+      "examples": [
+        { "ja": "来年、日本へ留学するつもりです。", "reading": "らいねん、にほんへりゅうがくするつもりです。", "en": "I intend to study in Japan next year.", "zh": "我打算明年去日本留学。" },
+        { "ja": "今日は出かけないつもりです。", "reading": "きょうはでかけないつもりです。", "en": "I do not intend to go out today.", "zh": "我今天不打算出门。" }
+      ]
+    },
+    {
+      "id": "grammar:deshou",
+      "level": "N5",
+      "pattern": "〜でしょう",
+      "structure": "V / Adj / N + でしょう",
+      "match": ["でしょう", "だろう"],
+      "meaning": { "en": "probably; I suppose", "zh": "大概……吧" },
+      "explanation": {
+        "en": "Marks a guess rather than a fact, which is why it is the weather forecast's word of choice. Said with a rising tone it asks the listener to confirm.",
+        "zh": "表示推测而非事实，因此是天气预报常用的说法。用升调说时，则是请对方确认。"
+      },
+      "examples": [
+        { "ja": "明日は雨が降るでしょう。", "reading": "あしたはあめがふるでしょう。", "en": "It will probably rain tomorrow.", "zh": "明天大概会下雨。" },
+        { "ja": "彼はもう帰ったでしょう。", "reading": "かれはもうかえったでしょう。", "en": "He has probably gone home already.", "zh": "他大概已经回去了吧。" }
+      ]
+    },
+    {
+      "id": "grammar:naru",
+      "level": "N5",
+      "pattern": "〜くなる / 〜になる",
+      "structure": "Adj(い→く) / Adj(な) + に / N + に + なります",
+      "match": ["くなり", "になり", "くなる", "になる"],
+      "meaning": { "en": "become …", "zh": "变得……；成为……" },
+      "explanation": {
+        "en": "An i-adjective becomes く before なる, a na-adjective or a noun takes に. なる describes a change that happens; する in the same slot describes a change someone makes.",
+        "zh": "形容词变为く后接なる，形容动词与名词用に。なる表示自然发生的变化，同一位置用する则表示人为造成的变化。"
+      },
+      "examples": [
+        { "ja": "だんだん暖かくなりました。", "reading": "だんだんあたたかくなりました。", "en": "It has gradually become warm.", "zh": "天渐渐变暖了。" },
+        { "ja": "姉は医者になりました。", "reading": "あねはいしゃになりました。", "en": "My older sister became a doctor.", "zh": "我姐姐成了医生。" }
+      ]
+    },
+    {
+      "id": "grammar:ageru-kureru-morau",
+      "level": "N5",
+      "pattern": "あげます・くれます・もらいます",
+      "structure": "A + は + B + に + N + を + あげます / くれます、A + は + B + に + N + を + もらいます",
+      "match": ["あげます", "くれます", "もらいます"],
+      "meaning": { "en": "give (away from me) / give (toward me) / receive", "zh": "给（他人）／给（我方）／得到" },
+      "explanation": {
+        "en": "Japanese chooses the verb by direction. あげます is giving away from the speaker's side, くれます is giving toward it, and もらいます is receiving. あげます can never describe a gift to the speaker.",
+        "zh": "日语按方向选择动词。あげます表示从说话人一方给出，くれます表示给到说话人一方，もらいます表示得到。给说话人的东西绝不能用あげます。"
+      },
+      "examples": [
+        { "ja": "友達に花をあげました。", "reading": "ともだちにはなをあげました。", "en": "I gave my friend flowers.", "zh": "我送了朋友花。" },
+        { "ja": "友達が私に本をくれました。", "reading": "ともだちがわたしにほんをくれました。", "en": "My friend gave me a book.", "zh": "朋友送了我一本书。" }
+      ]
+    },
+    {
+      "id": "grammar:to-omoimasu",
+      "level": "N5",
+      "pattern": "〜と思います",
+      "structure": "Plain form + と思います",
+      "match": ["と思います", "とおもいます"],
+      "meaning": { "en": "I think that …", "zh": "我认为……" },
+      "explanation": {
+        "en": "The clause before と is always in the plain form, however polite the sentence is. と思います states the speaker's own opinion; someone else's thought needs と思っています.",
+        "zh": "と之前的分句一律使用简体，与全句敬体与否无关。と思います表示说话人自己的看法；他人的想法要用と思っています。"
+      },
+      "examples": [
+        { "ja": "この映画は面白いと思います。", "reading": "このえいがはおもしろいとおもいます。", "en": "I think this movie is interesting.", "zh": "我觉得这部电影很有意思。" },
+        { "ja": "彼は来ないと思います。", "reading": "かれはこないとおもいます。", "en": "I do not think he will come.", "zh": "我想他不会来。" }
+      ]
+    },
+    {
+      "id": "grammar:to-iimasu",
+      "level": "N5",
+      "pattern": "〜と言います",
+      "structure": "Quoted sentence + と言います",
+      "match": ["と言います", "といいます"],
+      "meaning": { "en": "say that …; be called …", "zh": "说……；叫作……" },
+      "explanation": {
+        "en": "と marks quoted speech, direct or reported, and the quoted part stays in the plain form. It is also how a name is given: 田中と言います.",
+        "zh": "と标示引用的内容，直接引用与转述皆可，被引用的部分用简体。自报姓名也用这一形式：田中と言います。"
+      },
+      "examples": [
+        { "ja": "田中と言います。よろしくお願いします。", "reading": "たなかといいます。よろしくおねがいします。", "en": "My name is Tanaka. Nice to meet you.", "zh": "我叫田中，请多关照。" },
+        { "ja": "先生は明日テストがあると言いました。", "reading": "せんせいはあしたテストがあるといいました。", "en": "The teacher said there is a test tomorrow.", "zh": "老师说明天有考试。" }
+      ]
+    },
+    {
+      "id": "grammar:toki",
+      "level": "N5",
+      "pattern": "〜とき",
+      "structure": "V(辞書形 / た) / Adj / N + の + とき",
+      "match": ["とき", "時"],
+      "meaning": { "en": "when …", "zh": "……的时候" },
+      "explanation": {
+        "en": "The form before とき sets the timing: the dictionary form means before or during, the た-form means after. 日本へ行くとき is on the way there, 日本へ行ったとき is once there.",
+        "zh": "とき前面的形式决定时间点：原形表示之前或过程中，た形表示之后。日本へ行くとき是去日本的路上，日本へ行ったとき是到了日本以后。"
+      },
+      "examples": [
+        { "ja": "暇なとき、本を読みます。", "reading": "ひまなとき、ほんをよみます。", "en": "I read books when I am free.", "zh": "有空的时候我看书。" },
+        { "ja": "子供のとき、よく公園で遊びました。", "reading": "こどものとき、よくこうえんであそびました。", "en": "When I was a child, I often played in the park.", "zh": "小时候我常在公园玩。" }
+      ]
+    },
+    {
+      "id": "grammar:mou-mada",
+      "level": "N5",
+      "pattern": "もう〜ました / まだ〜ていません",
+      "structure": "もう + V(ました) / まだ + V(ていません)",
+      "match": ["もう", "まだ"],
+      "meaning": { "en": "already … / not yet …", "zh": "已经……／还没……" },
+      "explanation": {
+        "en": "The answer to a もう question is not ませんでした but まだです or まだ〜ていません: the action has not happened yet, rather than having failed to happen.",
+        "zh": "回答もう的提问时不用ませんでした，而用まだです或まだ〜ていません：表示动作尚未发生，而不是没有发生过。"
+      },
+      "examples": [
+        { "ja": "もう宿題をしました。", "reading": "もうしゅくだいをしました。", "en": "I have already done my homework.", "zh": "我已经做完作业了。" },
+        { "ja": "まだ食べていません。", "reading": "まだたべていません。", "en": "I have not eaten yet.", "zh": "我还没吃。" }
+      ]
+    },
+    {
+      "id": "grammar:counters",
+      "level": "N5",
+      "pattern": "助数詞（〜人・〜枚・〜本・〜個）",
+      "structure": "Number + counter",
+      "match": ["人", "枚", "本", "個", "冊", "匹", "台"],
+      "meaning": { "en": "counters: a unit word for each kind of thing", "zh": "量词：按事物种类使用不同的单位" },
+      "explanation": {
+        "en": "Japanese counts with a counter chosen by shape or kind: 人 for people, 枚 for flat things, 本 for long things, 冊 for books, 匹 for small animals, 台 for machines, 個 as a general fallback. The counter usually follows the noun and its particle: りんごを三つ.",
+        "zh": "日语按形状或种类选择量词：人用于人，枚用于扁平物，本用于细长物，冊用于书本，匹用于小动物，台用于机器，個为通用量词。量词通常放在名词及其助词之后：りんごを三つ。"
+      },
+      "examples": [
+        { "ja": "切手を三枚ください。", "reading": "きってをさんまいください。", "en": "Three stamps, please.", "zh": "请给我三张邮票。" },
+        { "ja": "犬が二匹います。", "reading": "いぬがにひきいます。", "en": "There are two dogs.", "zh": "有两只狗。" }
+      ]
+    },
+    {
+      "id": "grammar:telling-time",
+      "level": "N5",
+      "pattern": "〜時〜分",
+      "structure": "Number + 時 + Number + 分",
+      "match": ["時", "分", "半"],
+      "meaning": { "en": "telling the time", "zh": "时刻的说法" },
+      "explanation": {
+        "en": "Hours take 時 and minutes 分, with 半 for half past. Four irregular readings have to be learned: 四時 yoji, 七時 shichiji, 九時 kuji, and 四分 yonpun.",
+        "zh": "小时用時，分钟用分，半小时用半。有四个特殊读音必须记住：四時读yoji，七時读shichiji，九時读kuji，四分读yonpun。"
+      },
+      "examples": [
+        { "ja": "今、四時半です。", "reading": "いま、よじはんです。", "en": "It is half past four now.", "zh": "现在四点半。" },
+        { "ja": "会議は九時十五分に始まります。", "reading": "かいぎはくじじゅうごふんにはじまります。", "en": "The meeting starts at nine fifteen.", "zh": "会议九点十五分开始。" }
+      ]
+    },
+    {
+      "id": "grammar:dates",
+      "level": "N5",
+      "pattern": "〜月〜日・曜日",
+      "structure": "Number + 月 + Number + 日",
+      "match": ["月", "日", "曜日"],
+      "meaning": { "en": "dates and days of the week", "zh": "日期与星期的说法" },
+      "explanation": {
+        "en": "Months are simply the number plus 月, but the days of the month from the first to the tenth, plus the fourteenth, twentieth and twenty-fourth, have their own readings: 一日 tsuitachi, 二十日 hatsuka. The week runs 日月火水木金土.",
+        "zh": "月份直接用数字加月，但一日到十日以及十四日、二十日、二十四日有特殊读法：一日读tsuitachi，二十日读hatsuka。星期依次为日月火水木金土。"
+      },
+      "examples": [
+        { "ja": "誕生日は五月二十日です。", "reading": "たんじょうびはごがつはつかです。", "en": "My birthday is the twentieth of May.", "zh": "我的生日是五月二十日。" },
+        { "ja": "水曜日にテストがあります。", "reading": "すいようびにテストがあります。", "en": "There is a test on Wednesday.", "zh": "星期三有考试。" }
+      ]
+    },
+    {
+      "id": "grammar:ni-iku",
+      "level": "N5",
+      "pattern": "〜に行きます（目的）",
+      "structure": "V(ます-stem) / N + に + 行きます / 来ます",
+      "match": ["に行きます", "に来ます"],
+      "meaning": { "en": "go somewhere in order to …", "zh": "去做……（表示目的）" },
+      "explanation": {
+        "en": "The ます-stem before に names the purpose of the trip: 食べに行きます, go to eat. A noun that describes an activity can stand there directly: 買い物に行きます.",
+        "zh": "に前面的ます形词干表示前往的目的：食べに行きます（去吃饭）。表示活动的名词可直接放在这里：買い物に行きます。"
+      },
+      "examples": [
+        { "ja": "昼ご飯を食べに行きます。", "reading": "ひるごはんをたべにいきます。", "en": "I am going out to eat lunch.", "zh": "我去吃午饭。" },
+        { "ja": "友達に会いに東京へ行きます。", "reading": "ともだちにあいにとうきょうへいきます。", "en": "I am going to Tokyo to meet a friend.", "zh": "我去东京见朋友。" }
+      ]
+    },
+    {
+      "id": "grammar:issho-ni",
+      "level": "N5",
+      "pattern": "一緒に",
+      "structure": "Person + と + 一緒に + V",
+      "match": ["一緒に", "いっしょに"],
+      "meaning": { "en": "together (with)", "zh": "一起" },
+      "explanation": {
+        "en": "一緒に says the action is done together and usually appears with と marking the other person. It sits just before the verb.",
+        "zh": "一緒に表示共同进行，通常与标示同伴的と搭配。它放在动词之前。"
+      },
+      "examples": [
+        { "ja": "一緒に帰りましょう。", "reading": "いっしょにかえりましょう。", "en": "Let us go home together.", "zh": "我们一起回去吧。" },
+        { "ja": "妹と一緒に住んでいます。", "reading": "いもうとといっしょにすんでいます。", "en": "I live together with my younger sister.", "zh": "我和妹妹住在一起。" }
+      ]
+    },
+    {
+      "id": "grammar:demo",
+      "level": "N5",
+      "pattern": "でも（接続詞）",
+      "structure": "Sentence1。でも、Sentence2",
+      "match": ["でも"],
+      "meaning": { "en": "but; however (starting a sentence)", "zh": "但是（用于句首）" },
+      "explanation": {
+        "en": "でも starts a new sentence that goes against the last one. It is the spoken counterpart of が, which joins clauses inside one sentence instead.",
+        "zh": "でも用于另起一句，转折上一句的内容。它是が的口语对应说法，而が在同一句内连接分句。"
+      },
+      "examples": [
+        { "ja": "この店は安いです。でも、あまりおいしくないです。", "reading": "このみせはやすいです。でも、あまりおいしくないです。", "en": "This shop is cheap. But it is not very tasty.", "zh": "这家店很便宜。但是不太好吃。" },
+        { "ja": "行きたいです。でも、時間がありません。", "reading": "いきたいです。でも、じかんがありません。", "en": "I want to go. But I have no time.", "zh": "我想去。但是没有时间。" }
+      ]
+    }
+  ]
+}

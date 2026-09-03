@@ -1,10 +1,11 @@
 {
   "schemaVersion": 1,
   "source": "seed",
-  "license": "Hand-written seed content, GPL-3.0 with the app. Replaced by the JMdict-derived catalog in PLAN.md M1.3.",
+  "license": "Hand-written seed content, GPL-3.0 with the app. Build input only: tool/import_vocab.dart folds these entries into assets/content/vocab.json, where each keeps its original id as an alias of the JMdict-numbered one.",
   "entries": [
     {
       "id": "vocab:watashi",
+      "jmdictSeq": 1311110,
       "level": "N5",
       "kanji": "私",
       "reading": "わたし",
@@ -17,6 +18,7 @@
     },
     {
       "id": "vocab:gakusei",
+      "jmdictSeq": 1206900,
       "level": "N5",
       "kanji": "学生",
       "reading": "がくせい",
@@ -29,6 +31,7 @@
     },
     {
       "id": "vocab:sensei",
+      "jmdictSeq": 1387990,
       "level": "N5",
       "kanji": "先生",
       "reading": "せんせい",
@@ -41,6 +44,7 @@
     },
     {
       "id": "vocab:hon",
+      "jmdictSeq": 1522150,
       "level": "N5",
       "kanji": "本",
       "reading": "ほん",
@@ -53,6 +57,7 @@
     },
     {
       "id": "vocab:mizu",
+      "jmdictSeq": 1371260,
       "level": "N5",
       "kanji": "水",
       "reading": "みず",
@@ -65,6 +70,7 @@
     },
     {
       "id": "vocab:taberu",
+      "jmdictSeq": 1358280,
       "level": "N5",
       "kanji": "食べる",
       "reading": "たべる",
@@ -77,6 +83,7 @@
     },
     {
       "id": "vocab:nomu",
+      "jmdictSeq": 1169870,
       "level": "N5",
       "kanji": "飲む",
       "reading": "のむ",
@@ -89,6 +96,7 @@
     },
     {
       "id": "vocab:iku",
+      "jmdictSeq": 1578850,
       "level": "N5",
       "kanji": "行く",
       "reading": "いく",
@@ -101,6 +109,7 @@
     },
     {
       "id": "vocab:kuru",
+      "jmdictSeq": 1547720,
       "level": "N5",
       "kanji": "来る",
       "reading": "くる",
@@ -113,6 +122,7 @@
     },
     {
       "id": "vocab:miru",
+      "jmdictSeq": 1259290,
       "level": "N5",
       "kanji": "見る",
       "reading": "みる",
@@ -125,6 +135,7 @@
     },
     {
       "id": "vocab:kau",
+      "jmdictSeq": 1473740,
       "level": "N5",
       "kanji": "買う",
       "reading": "かう",
@@ -137,6 +148,7 @@
     },
     {
       "id": "vocab:ookii",
+      "jmdictSeq": 1588880,
       "level": "N5",
       "kanji": "大きい",
       "reading": "おおきい",
@@ -149,6 +161,7 @@
     },
     {
       "id": "vocab:chiisai",
+      "jmdictSeq": 1347750,
       "level": "N5",
       "kanji": "小さい",
       "reading": "ちいさい",
@@ -161,6 +174,7 @@
     },
     {
       "id": "vocab:atarashii",
+      "jmdictSeq": 1361490,
       "level": "N5",
       "kanji": "新しい",
       "reading": "あたらしい",
@@ -173,6 +187,7 @@
     },
     {
       "id": "vocab:genki",
+      "jmdictSeq": 1260720,
       "level": "N5",
       "kanji": "元気",
       "reading": "げんき",
@@ -185,6 +200,7 @@
     },
     {
       "id": "vocab:suki",
+      "jmdictSeq": 1277450,
       "level": "N5",
       "kanji": "好き",
       "reading": "すき",
@@ -197,6 +213,7 @@
     },
     {
       "id": "vocab:kyou",
+      "jmdictSeq": 1579110,
       "level": "N5",
       "kanji": "今日",
       "reading": "きょう",
@@ -209,6 +226,7 @@
     },
     {
       "id": "vocab:ashita",
+      "jmdictSeq": 1584660,
       "level": "N5",
       "kanji": "明日",
       "reading": "あした",
@@ -221,6 +239,7 @@
     },
     {
       "id": "vocab:jikan",
+      "jmdictSeq": 1315920,
       "level": "N5",
       "kanji": "時間",
       "reading": "じかん",
@@ -233,6 +252,7 @@
     },
     {
       "id": "vocab:gakkou",
+      "jmdictSeq": 1206730,
       "level": "N5",
       "kanji": "学校",
       "reading": "がっこう",
@@ -245,6 +265,7 @@
     },
     {
       "id": "vocab:tomodachi",
+      "jmdictSeq": 1540170,
       "level": "N5",
       "kanji": "友達",
       "reading": "ともだち",
@@ -257,6 +278,7 @@
     },
     {
       "id": "vocab:nihongo",
+      "jmdictSeq": 1464530,
       "level": "N5",
       "kanji": "日本語",
       "reading": "にほんご",
@@ -269,6 +291,7 @@
     },
     {
       "id": "vocab:arigatou",
+      "jmdictSeq": 1586820,
       "level": "N5",
       "reading": "ありがとう",
       "romaji": "arigatou",
@@ -280,6 +303,7 @@
     },
     {
       "id": "vocab:sumimasen",
+      "jmdictSeq": 1295060,
       "level": "N5",
       "reading": "すみません",
       "romaji": "sumimasen",

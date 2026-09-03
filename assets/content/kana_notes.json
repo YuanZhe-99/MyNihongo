@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "source": "hand-written",
+  "license": "Hand-written, GPL-3.0 with the app.",
+  "notes": {
+    "kana:し": {
+      "strokes": 1,
+      "hint": {
+        "en": "Written bottom-to-top with one long curve. Its katakana シ is the pair everyone mixes up with ツ: シ's strokes come in from the left and the long stroke sweeps up, while ツ's come down from the top.",
+        "zh": "一笔由下往上带出长弧。片假名 シ 与 ツ 是最常被混淆的一对：シ 的短笔从左侧进入、长笔向上撇出，ツ 的短笔则从顶部向下。"
+      },
+      "confusableWith": ["kana:つ"]
+    },
+    "kana:つ": {
+      "strokes": 1,
+      "hint": {
+        "en": "One stroke, left to right then curving down. Its katakana ツ has two short strokes on top, dropping downward — compare シ.",
+        "zh": "一笔，先向右再向下弯。片假名 ツ 顶部有两短笔，方向朝下——与 シ 对比记忆。"
+      },
+      "confusableWith": ["kana:し"]
+    },
+    "kana:そ": {
+      "strokes": 1,
+      "hint": {
+        "en": "Katakana ソ is two strokes like ツ but written from the top down and slanting; ン slants up from the lower left. The difference is the direction of the long stroke, not its position.",
+        "zh": "片假名 ソ 与 ツ 一样是两笔，但由上往下、笔画倾斜；ン 则自左下向上撇。区别在长笔的方向，而不是位置。"
+      },
+      "confusableWith": ["kana:ん"]
+    },
+    "kana:ん": {
+      "strokes": 1,
+      "hint": {
+        "en": "The only kana that is not a full syllable: it is a mora on its own and never starts a word. Its katakana ン is easily confused with ソ.",
+        "zh": "唯一不构成完整音节的假名：它自成一拍，且从不出现在词首。片假名 ン 容易与 ソ 混淆。"
+      },
+      "confusableWith": ["kana:そ"]
+    },
+    "kana:ぬ": {
+      "strokes": 2,
+      "hint": {
+        "en": "Ends in a loop; め does not. Its katakana ヌ differs from ス by having no descending tail.",
+        "zh": "结尾带一个圈；め 没有。片假名 ヌ 与 ス 的区别是没有向下的长尾。"
+      },
+      "confusableWith": ["kana:め", "kana:す"]
+    },
+    "kana:め": {
+      "strokes": 2,
+      "hint": {
+        "en": "Like ぬ without the closing loop.",
+        "zh": "像 ぬ，但没有末尾收笔的圈。"
+      },
+      "confusableWith": ["kana:ぬ"]
+    },
+    "kana:す": {
+      "strokes": 2,
+      "hint": {
+        "en": "A small loop with a long tail. Its katakana ス has a straight descending stroke — compare ヌ.",
+        "zh": "一个小圈加一条长尾。片假名 ス 的下笔是直的——与 ヌ 对比。"
+      },
+      "confusableWith": ["kana:ぬ"]
+    },
+    "kana:わ": {
+      "strokes": 2,
+      "hint": {
+        "en": "Compare ね (has a loop at the end) and れ (has a hook). All three share the same left side.",
+        "zh": "与 ね（末端有圈）和 れ（末端有钩）对比。三者左半部分相同。"
+      },
+      "confusableWith": ["kana:ね", "kana:れ"]
+    },
+    "kana:ね": {
+      "strokes": 2,
+      "hint": {
+        "en": "The one with a loop at the end; わ has none, れ hooks outward.",
+        "zh": "末端带圈的那个；わ 没有，れ 向外带钩。"
+      },
+      "confusableWith": ["kana:わ", "kana:れ"]
+    },
+    "kana:れ": {
+      "strokes": 2,
+      "hint": {
+        "en": "Ends in an outward hook, no loop.",
+        "zh": "末端向外带钩，没有圈。"
+      },
+      "confusableWith": ["kana:わ", "kana:ね"]
+    },
+    "kana:い": {
+      "strokes": 2,
+      "hint": {
+        "en": "Two separate strokes, left one longer. Compare り, whose strokes lean the other way.",
+        "zh": "两笔分开，左边较长。与 り 对比，り 的两笔倾斜方向相反。"
+      },
+      "confusableWith": ["kana:り"]
+    },
+    "kana:り": {
+      "strokes": 2,
+      "hint": {
+        "en": "Two strokes, the right one longer and curving left at the bottom.",
+        "zh": "两笔，右边较长且底部向左弯。"
+      },
+      "confusableWith": ["kana:い"]
+    },
+    "kana:た": {
+      "strokes": 4,
+      "hint": {
+        "en": "Built from a cross and a な-like right half; compare な, which has a loop.",
+        "zh": "由一个十字和类似 な 的右半部组成；与 な 对比，な 的右下带圈。"
+      },
+      "confusableWith": ["kana:な"]
+    },
+    "kana:な": {
+      "strokes": 4,
+      "hint": {
+        "en": "The loop at the lower right is what separates it from た.",
+        "zh": "右下角的圈是它与 た 的区别。"
+      },
+      "confusableWith": ["kana:た"]
+    },
+    "kana:ろ": {
+      "strokes": 1,
+      "hint": {
+        "en": "One stroke and no loop; る closes into a loop at the bottom.",
+        "zh": "一笔且不收圈；る 在底部收成一个圈。"
+      },
+      "confusableWith": ["kana:る"]
+    },
+    "kana:る": {
+      "strokes": 1,
+      "hint": {
+        "en": "Same shape as ろ but closing into a loop.",
+        "zh": "与 ろ 形状相同，但末端收成一个圈。"
+      },
+      "confusableWith": ["kana:ろ"]
+    },
+    "kana:は": {
+      "strokes": 3,
+      "hint": {
+        "en": "As the topic particle it is read wa, not ha. Compare ほ, which has one more horizontal stroke.",
+        "zh": "作提示助词时读作 wa，不读 ha。与 ほ 对比，ほ 多一横。"
+      },
+      "confusableWith": ["kana:ほ"]
+    },
+    "kana:ほ": {
+      "strokes": 4,
+      "hint": {
+        "en": "は with one extra horizontal stroke.",
+        "zh": "在 は 的基础上多一横。"
+      },
+      "confusableWith": ["kana:は"]
+    },
+    "kana:へ": {
+      "strokes": 1,
+      "hint": {
+        "en": "As the direction particle it is read e, not he. The katakana ヘ is nearly identical to the hiragana.",
+        "zh": "作方向助词时读作 e，不读 he。片假名 ヘ 与平假名几乎相同。"
+      },
+      "confusableWith": []
+    },
+    "kana:を": {
+      "strokes": 3,
+      "hint": {
+        "en": "Used only as the object particle, and pronounced o. You will never see it inside a word.",
+        "zh": "只用作宾格助词，读作 o。不会出现在单词内部。"
+      },
+      "confusableWith": ["kana:お"]
+    },
+    "kana:お": {
+      "strokes": 3,
+      "hint": {
+        "en": "Compare あ, which crosses its vertical stroke, and を, which is a particle only.",
+        "zh": "与 あ 对比（あ 的竖笔穿过横笔），以及只作助词的 を。"
+      },
+      "confusableWith": ["kana:あ", "kana:を"]
+    }
+  }
+}
