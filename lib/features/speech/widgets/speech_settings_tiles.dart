@@ -30,13 +30,19 @@ class SpeechSettingsTiles extends ConsumerStatefulWidget {
 class _SpeechSettingsTilesState extends ConsumerState<SpeechSettingsTiles> {
   bool? _recognizerAvailable;
 
-  /// Purpose: Ask the recognizer whether it can be used, once.
+  /// Purpose: Ask the recognizer whether it can be used, without prompting.
   /// Inputs: None.
   /// Returns: None.
-  /// Side effects: May initialize the platform recognizer.
-  /// Notes: Only asked when the platform could have one at all, so opening
-  /// Settings on a platform without a recognizer never prompts for a
-  /// microphone. The answer is a status line, not a control.
+  /// Side effects: Initializes the platform recognizer **only** when the
+  /// microphone permission has already been granted.
+  /// Notes: The permission check comes first and is load-bearing. Initializing
+  /// the recognizer is what makes the platform ask for the microphone, so
+  /// calling it unconditionally made opening Settings raise a system prompt
+  /// with no explanation in front of it — exactly what
+  /// `doc/en-us/features/pronunciation.md` promises never happens. Found on a
+  /// device; the emulator-less test host could not show it. Without the
+  /// permission the row says the check happens at first use, which is true and
+  /// is not the same claim as "this device has no recognizer".
   @override
   void initState() {
     super.initState();
@@ -44,8 +50,16 @@ class _SpeechSettingsTilesState extends ConsumerState<SpeechSettingsTiles> {
       _recognizerAvailable = false;
       return;
     }
-    SpeechRecognitionService.instance.ensureAvailable().then((available) {
-      if (mounted) setState(() => _recognizerAvailable = available);
+    final speech = SpeechRecognitionService.instance;
+    speech.hasPermission().then((granted) {
+      if (!mounted) return;
+      if (!granted) {
+        setState(() => _recognizerAvailable = null);
+        return;
+      }
+      speech.ensureAvailable().then((available) {
+        if (mounted) setState(() => _recognizerAvailable = available);
+      });
     });
   }
 
@@ -159,20 +173,30 @@ class _SpeechSettingsTilesState extends ConsumerState<SpeechSettingsTiles> {
   /// whose owner may want to turn it on: an offline-only request is what
   /// failed. Its subtitle says plainly what turning it on means, since it is
   /// the one setting in the app that lets anything leave the device besides
-  /// WebDAV sync.
+  /// WebDAV sync. The status line has three states, not two: **not yet
+  /// checked** is a different claim from *missing*, and reporting the second
+  /// when the first is true would tell a working phone it cannot listen.
   List<Widget> _buildRecognitionRows(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final settings = ref.watch(appSettingsProvider);
     final notifier = ref.read(appSettingsProvider.notifier);
-    final available = _recognizerAvailable ?? false;
+    final available = _recognizerAvailable;
     return [
       ListTile(
         leading: Icon(
-          available ? Icons.mic_none_outlined : Icons.mic_off_outlined,
+          switch (available) {
+            true => Icons.mic_none_outlined,
+            false => Icons.mic_off_outlined,
+            null => Icons.help_outline,
+          },
         ),
         title: Text(
-          available ? l10n.speechRecognizerReady : l10n.speechRecognizerMissing,
+          switch (available) {
+            true => l10n.speechRecognizerReady,
+            false => l10n.speechRecognizerMissing,
+            null => l10n.speechRecognizerUnchecked,
+          },
           style: theme.textTheme.bodyMedium,
         ),
       ),

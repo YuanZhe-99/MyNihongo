@@ -148,4 +148,23 @@ void main() {
     await configFile.writeAsString('{"speechNetworkFallback": "true"}');
     expect(await NihongoStorage.getSpeechNetworkFallback(), isFalse);
   });
+
+  test('on-device AI is off until it is turned on', () async {
+    expect(await NihongoStorage.getAiAssistEnabled(), isFalse);
+    await NihongoStorage.setAiAssistEnabled(true);
+    expect(await NihongoStorage.getAiAssistEnabled(), isTrue);
+    expect((await config())['aiAssistEnabled'], isTrue);
+  });
+
+  test('turning on-device AI off removes the key', () async {
+    await NihongoStorage.setAiAssistEnabled(true);
+    await NihongoStorage.setAiAssistEnabled(false);
+    expect((await config()).containsKey('aiAssistEnabled'), isFalse);
+    expect(await NihongoStorage.getAiAssistEnabled(), isFalse);
+  });
+
+  test('a hand-edited string does not switch on-device AI on', () async {
+    await configFile.writeAsString('{"aiAssistEnabled": "true"}');
+    expect(await NihongoStorage.getAiAssistEnabled(), isFalse);
+  });
 }

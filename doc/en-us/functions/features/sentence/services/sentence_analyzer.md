@@ -17,7 +17,8 @@ Consumers: `sentence_lab_page.dart`.
 | [`analyze`](#analyze) | method | A | Analyse one sentence. |
 | `functionWordsProvider` | provider | B | The function-word table, loaded once per app run. |
 | [`lexiconProvider`](#lexiconprovider) | provider | A | The surface-to-entry index, built once from the catalog and the table. |
-| `sentenceAnalyzerProvider` | provider | B | The analyser itself, ready to use. |
+| `promptTemplatesProvider` | provider | B | The prompt templates the optional on-device model is driven by. |
+| `sentenceAnalyzerProvider` | provider | B | The analyser itself, ready to use, with an enhancer where one could run. |
 
 ## Documentation
 

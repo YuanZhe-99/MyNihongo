@@ -105,6 +105,13 @@ void main() {
     expect(tester.takeException(), isNull);
 
     await openTab(tester, 'Settings');
+    // The Data section sits below Appearance, Speech and On-device AI, which
+    // together are taller than a phone screen, so it has to be scrolled to.
+    await tester.scrollUntilVisible(
+      find.text('WebDAV Sync'),
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
     expect(find.text('WebDAV Sync'), findsOneWidget);
     expect(find.text('Backup'), findsOneWidget);
     expect(tester.takeException(), isNull);

@@ -15,6 +15,7 @@ Consumers: `settings_page.dart`.
 |---|---|---|---|
 | `SpeechSettingsTiles` | class | B | The Settings → Speech section. |
 | `previewText` | static const | B | The greeting the preview button speaks. |
+| [`initState`](#initstate) | method | A | Ask what the recognizer can do **without** prompting for the microphone. |
 | [`SpeechSettingsTiles.build`](#build) | method | A | Build the speech settings rows. |
 | `_openSettings` | method | B | Send the user to the platform's speech settings, reporting failure in a snack bar. |
 
@@ -35,3 +36,26 @@ Consumers: `settings_page.dart`.
 - **Notes:** The dropdown's null entry is the engine default, and it is the value stored when the
   user has expressed no preference. On Apple platforms, where no deep link exists, the notice gains
   a sentence naming the settings pane instead of a button.
+
+### `void initState()` <a id="initstate"></a>
+
+- **Kind:** method
+- **Purpose:** Find out what the recognizer can do, without asking for the microphone.
+- **Inputs:** None.
+- **Returns:** None.
+- **Side effects:** Checks the microphone permission; initializes the recognizer **only** when it has
+  already been granted.
+- **Algorithm:** Give up immediately where the platform has no recognizer; otherwise check the
+  permission, and only then call `ensureAvailable()`.
+- **Usage:** The Settings page.
+- **Notes:** The permission check comes first, and that ordering is the whole point. Initializing the
+  recognizer is what makes Android raise the microphone prompt, so the earlier version — which called
+  `ensureAvailable()` unconditionally — produced a system dialog the moment Settings opened, with no
+  explanation in front of it. That is exactly what
+  [`../../../../features/pronunciation.md`](../../../../features/pronunciation.md) promises never
+  happens; the practice sheet's own rationale dialog is the only place the prompt should come from.
+  Found on a real phone, which is the only way it could be found — the test host has no permission
+  model. The status line consequently has **three** states: available, missing, and not yet checked.
+  Reporting "missing" for the third would tell a perfectly capable phone that it cannot listen.
+  `test/speech_settings_tiles_test.dart` asserts that the backend is never initialized while the
+  permission is absent.

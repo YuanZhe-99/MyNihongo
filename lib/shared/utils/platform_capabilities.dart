@@ -46,6 +46,19 @@ bool get canOpenSystemSpeechSettings =>
     defaultTargetPlatform == TargetPlatform.android ||
     defaultTargetPlatform == TargetPlatform.windows;
 
+/// Purpose: Report whether an on-device generative model can exist here.
+/// Inputs: None.
+/// Returns: `bool` — true on Android only.
+/// Side effects: None.
+/// Notes: A coarse gate. The app reaches Gemini Nano through Android AICore,
+/// which exists on no other platform, so every other platform answers
+/// `GenAiStatus.unsupported` without touching the method channel. Whether a
+/// given Android device actually has AICore and the model is a runtime
+/// question answered by `AiAssistService.refreshStatus()`; see
+/// `doc/en-us/android-aicore.md`.
+bool get platformMayHaveOnDeviceModel =>
+    defaultTargetPlatform == TargetPlatform.android;
+
 /// Purpose: Report whether speech recognition can exist on this platform.
 /// Inputs: None.
 /// Returns: `bool` — false on Linux, which has no recognizer behind the plugin.

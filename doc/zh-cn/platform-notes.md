@@ -8,7 +8,11 @@ Android 是第一阶段唯一发布的平台。代码是平台中立的；其他
 - **Gradle/AGP 状态镜像自 MyAnime!!!!! 已验证的配置**而不是 `flutter create` 模板，因此本系列共享的插件家族确知可以构建：Gradle wrapper `9.3.1`、AGP `9.1.1`、在 `settings.gradle.kts` 中声明（`apply false`）的 Kotlin `2.2.20`，应用本身不再应用 `kotlin-android`，Java 17 加核心库脱糖，以及一个顶层 `kotlin { compilerOptions { jvmTarget = JvmTarget.JVM_17 } }` 块——刻意**不**用 `jvmToolchain`（需要真实安装 JDK 17），也**不**用 `kotlinOptions`（已移除）。`android/gradle.properties` 保留 Flutter 迁移器的兼容标志 `android.builtInKotlin=false` 和 `android.newDsl=false`，因为若干插件仍直接应用 Kotlin Gradle Plugin；`builtInKotlin=true` 会让它们每一个都失败。
 - **`file_picker` 精确固定到 `10.3.7`**（不是脱字号约束），因为它是最后一个既自己应用 KGP（`builtInKotlin=false` 期间必需）又针对 `flutter.compileSdkVersion` 编译（AGP 9 的 AAR 元数据检查必需）的版本。`10.3.9+` 和 `11.x` 依赖 AGP 内置 Kotlin，在兼容模式下失败；`10.3.2` 及更早固定 `compileSdk 34`，通不过元数据检查。
 - Keystore 属性使用可空转换（`as String?`）；签名在本地通过 `android/key.properties` 可选，在 CI 中来自 GitHub Secrets。`key.properties` 和 `*.jks` 被 git 忽略。
-- **权限：** 仅 `INTERNET`（WebDAV 同步）。`RECORD_AUDIO` 随第二阶段的语音识别到来，在首次使用时附说明请求，绝不在安装时请求。
+- **权限：** 仅 `INTERNET`（WebDAV 同步）。`RECORD_AUDIO` 随第二阶段的语音识别到来，在首次使用时附说明请求，绝不在安装时请求。端侧 AI **不需要**任何权限：其背后用到网络的是 AICore 系统服务，不是应用。
+- **`minSdk` 为 26，而非 `flutter.minSdkVersion`**（24）。ML Kit GenAI 库需要 API 26，应用中别无他物需要；该值在 `android/app/build.gradle.kts` 中显式设置，理由就写在旁边。
+- **两个方法通道**，都由 `MainActivity` 注册：`com.yuanzhe.my_nihongo/system`（打开系统语音设置）和 `com.yuanzhe.my_nihongo/genai`（`GenAiChannel`，通往 AICore 的桥）。两者都用自写通道而不用插件，因为各自接口面都很小，而每多一个 Flutter 插件就多一个可能应用 Kotlin Gradle 插件的插件——正是这条约束已经锁定了 `file_picker` 与 `speech_to_text`。
+- **端侧 AI 依赖：** `com.google.mlkit:genai-prompt:1.0.0-beta2`、`com.google.mlkit:genai-proofreading:1.0.0-beta1` 与 `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2`，全部精确锁定，因为 ML Kit GenAI API 处于 beta 且没有弃用政策。见 [`android-aicore.md`](android-aicore.md)。
+- **`android/app/proguard-rules.pro` 只为 ML Kit GenAI 而存在。** R8 会把它压缩成一个运行时 `NullPointerException`，从应用看上去就是「本设备不支持 AI」——而且只出现在 release 构建，debug 构建会把它藏起来。规则保留 `com.google.mlkit.**` 与 `com.google.android.gms.internal.mlkit_**`；只保留 `genai` 那几个包是不够的，因为出错帧在 ML Kit 的共享 SDK 内部。在 Pixel 10 上发现，推理过程写在 `android-aicore.md`。
 - **折叠：** activity 的 `configChanges` 包含 `screenLayout|screenSize|smallestScreenSize|density`，因此展开时窗口调整大小而不重建 activity。见 [`adaptive-layout.md`](adaptive-layout.md)。
 - 允许**明文流量**（`usesCleartextTraffic="true"`），使家庭网络上走纯 HTTP 的 WebDAV 服务器可用，与兄弟应用相同。
 
@@ -75,6 +79,7 @@ winget install --id Microsoft.NuGet --exact
 | `showsStorageLocation` | 非移动端 | 设置 → 数据在手机上隐藏存储路径：那里的路径指向用户既无法浏览也无法处置的沙盒。自定义存储路径本身在所有平台仍然有效，隐藏的只是显示 |
 | `canOpenSystemSpeechSettings` | Android、Windows | 把"安装日语语音"作为一个动作而非一句说明提供 |
 | `platformMayRecognizeSpeech` | 非 Linux、非 Fuchsia | 粗粒度判断；识别器是否真的存在是运行时问题 |
+| `platformMayHaveOnDeviceModel` | Android | AICore 只存在于 Android；其他平台的设置页省略「端侧 AI」整节，分析器也不挂接增强器。某台 Android 设备究竟能否提供模型，是运行时问题 |
 
 ## 其他计划中的平台
 

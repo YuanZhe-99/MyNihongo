@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../features/ai/services/ai_assist_service.dart';
 import '../../features/content/models/jlpt_level.dart';
 import '../../features/kana/models/kana.dart';
 import '../../features/progress/services/nihongo_storage.dart';
@@ -34,6 +37,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     final ttsVoice = await NihongoStorage.getTtsVoice();
     final speechNetworkFallback =
         await NihongoStorage.getSpeechNetworkFallback();
+    final aiAssistEnabled = await NihongoStorage.getAiAssistEnabled();
 
     final themeMode = switch (modeStr) {
       'light' => ThemeMode.light,
@@ -62,6 +66,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
       ttsRate: ttsRate?.clamp(TtsService.minRate, TtsService.maxRate) ?? 1.0,
       ttsVoice: ttsVoice,
       speechNetworkFallback: speechNetworkFallback,
+      aiAssistEnabled: aiAssistEnabled,
     );
 
     // The engine is configured from the same values the UI shows, once the
@@ -70,6 +75,10 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     TtsService.instance.init(rate: state.ttsRate, voiceName: state.ttsVoice);
     SpeechRecognitionService.instance.networkFallbackAllowed =
         state.speechNetworkFallback;
+    // Same reason it is not awaited: switching the AI on asks the device what
+    // its models can do, which must not delay the first frame — and on a
+    // device that was left switched off it does nothing at all.
+    unawaited(AiAssistService.instance.setEnabled(state.aiAssistEnabled));
   }
 
   /// Purpose: Remember the vocabulary page's level filter.
@@ -158,6 +167,19 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     NihongoStorage.setSpeechNetworkFallback(allowed);
   }
 
+  /// Purpose: Turn on-device AI assistance on or off.
+  /// Inputs: `enabled`.
+  /// Returns: None.
+  /// Side effects: Applies the choice to `AiAssistService` — which asks the
+  /// device what its models can do when switched on — and persists it.
+  /// Notes: Off by default and stored as an absent key. Nothing in the app
+  /// turns this on by itself; only this setter, from the switch in Settings.
+  void setAiAssistEnabled(bool enabled) {
+    state = state.copyWith(aiAssistEnabled: enabled);
+    unawaited(AiAssistService.instance.setEnabled(enabled));
+    NihongoStorage.setAiAssistEnabled(enabled);
+  }
+
   /// Purpose: Update theme mode with the provided value.
   /// Inputs: `mode`.
   /// Returns: None.
@@ -217,6 +239,9 @@ class AppSettings {
   /// service. Off unless they turned it on.
   final bool speechNetworkFallback;
 
+  /// Whether the user turned on-device AI assistance on. Off unless they did.
+  final bool aiAssistEnabled;
+
   /// Purpose: Create an app settings instance.
   /// Inputs: All fields.
   /// Returns: A new `AppSettings` instance.
@@ -234,6 +259,7 @@ class AppSettings {
     this.ttsRate = 1.0,
     this.ttsVoice,
     this.speechNetworkFallback = false,
+    this.aiAssistEnabled = false,
   });
 
   /// Purpose: Create a copy with selected fields replaced.
@@ -255,6 +281,7 @@ class AppSettings {
     String? ttsVoice,
     bool clearTtsVoice = false,
     bool? speechNetworkFallback,
+    bool? aiAssistEnabled,
   }) {
     return AppSettings(
       themeMode: themeMode ?? this.themeMode,
@@ -269,6 +296,7 @@ class AppSettings {
       ttsVoice: clearTtsVoice ? null : (ttsVoice ?? this.ttsVoice),
       speechNetworkFallback:
           speechNetworkFallback ?? this.speechNetworkFallback,
+      aiAssistEnabled: aiAssistEnabled ?? this.aiAssistEnabled,
     );
   }
 }

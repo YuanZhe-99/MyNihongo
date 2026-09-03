@@ -167,14 +167,18 @@ class SentenceAnalysis {
   }
 }
 
-/// The seam an on-device model would plug into, if one is ever added.
+/// The seam an on-device model plugs into.
 ///
 /// `PLAN.md` M2.3 keeps AICore / Gemini Nano as an **optional enhancement**
 /// that never becomes the source of truth: the analysis above is deterministic
-/// and testable, and anything a model adds is labelled as generated. Nothing
-/// implements this yet — it is here so the shape is decided before the
-/// pressure to add one exists, and so `SentenceAnalyzer` has somewhere to put
-/// it that is not the middle of the pipeline.
+/// and testable, and anything a model adds is labelled as generated. The seam
+/// was declared before there was an implementation so the shape would be
+/// decided before the pressure to add one existed, and so `SentenceAnalyzer`
+/// has somewhere to put it that is not the middle of the pipeline.
+///
+/// `AiCoreSentenceEnhancer` (M2.4) implements it on Android. Every other
+/// platform, and every Android device where the learner has not turned the
+/// feature on, still has `SentenceAnalyzer.enhancer` set to null.
 abstract class SentenceEnhancer {
   /// Purpose: Report whether an on-device model is present and enabled.
   /// Inputs: None.
@@ -185,15 +189,31 @@ abstract class SentenceEnhancer {
   Future<bool> isAvailable();
 
   /// Purpose: Explain one issue, or the sentence, in more words.
-  /// Inputs: The `analysis`, an optional `issue` to focus on, and the UI
-  /// `locale`.
+  /// Inputs: The `analysis`, an optional `issue` to focus on, the
+  /// `issueMessage` **as the app already worded it**, and the UI
+  /// `languageCode`.
   /// Returns: `Future<String?>` — null when nothing could be generated.
   /// Side effects: Runs a model on the device.
   /// Notes: Whatever comes back is labelled as generated and never replaces a
-  /// deterministic result.
+  /// deterministic result. `issueMessage` is passed in rather than derived
+  /// here — an amendment made when the seam was implemented — because it is
+  /// the sentence on the learner's screen, and explaining a differently worded
+  /// issue would answer a question they cannot see.
   Future<String?> explain(
     SentenceAnalysis analysis,
     Issue? issue,
-    String locale,
+    String? issueMessage,
+    String languageCode,
   );
+
+  /// Purpose: Offer a corrected version of the whole sentence.
+  /// Inputs: The `analysis`.
+  /// Returns: `Future<String?>` — null when the model suggested nothing, or
+  /// nothing different from what was typed.
+  /// Side effects: Runs a model on the device.
+  /// Notes: Added with the implementation, because the Proofreading API turned
+  /// out to answer a question the Prompt API answers badly. A suggestion is
+  /// shown beside the learner's own sentence and never replaces it: the app
+  /// does not know what they meant.
+  Future<String?> suggestCorrection(SentenceAnalysis analysis);
 }

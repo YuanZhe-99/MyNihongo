@@ -13,6 +13,8 @@
 
 **CI 刻意只跑 Android。** Windows 和 macOS 工程用于本地开发与测试（见 [`platform-notes.md`](platform-notes.md)）；为它们添加任务，以及 MSIX 与 Inno Setup 发布产物，属于第五阶段的工作，从 MyAnime 的工作流复制。
 
+**CI 中没有任何环节触及 AICore。** 端侧 AI 只在真实且受支持的手机上运行，所以 CI 验证的是它下面那一层：策略、提示词与解析，全部对着假实现。模型本身在设备上人工核对——见 [`android-aicore.md`](android-aicore.md)。
+
 ## 工作流注意事项
 
 - 让工作流 Flutter 版本（`3.44.2`）与 `pubspec.yaml` 中的 Dart SDK 约束保持一致。
@@ -40,6 +42,15 @@ iscc installer.iss          # x64 安装包，需要 PATH 中有 Inno Setup
 iscc /DARM64 installer.iss  # ARM64 安装包
 dart run msix:create        # MSIX 包
 flutter build macos --release --dart-define=FLAVOR=full   # 需要一台 Mac
+```
+
+在连接的 Android 手机上，用于任何必须看到或听到的东西——语音链路与端侧 AI。`adb` 默认不在 `PATH` 上，它位于 Android SDK 的 `platform-tools`。`scrcpy` 用于投屏，在没有音频设备的主机上需要加 `--no-audio`：
+
+```powershell
+flutter devices
+flutter run --release -d <device-id> --dart-define=FLAVOR=full
+scrcpy --no-audio
+adb logcat | Select-String -Pattern "AICore|my_nihongo"
 ```
 
 用最窄的相关命令集做校验。模型或同步变更包含 `flutter test test/progress_json_test.dart test/data_modules_test.dart`；内容变更用 `flutter test test/content_catalog_test.dart`；布局变更用三个 UI 测试。

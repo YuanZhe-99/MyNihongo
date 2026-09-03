@@ -2,7 +2,7 @@
 
 Thank you for using MyNihongo!!!!!. We take your privacy seriously. This privacy policy explains how the app handles your data.
 
-Last reviewed against the shipped behaviour on 2026-09-03, for version 0.2.0.
+Last reviewed against the shipped behaviour on 2026-09-03, for version 0.2.1.
 
 ## Data Collection
 
@@ -14,10 +14,11 @@ All data the app creates — your learning progress and your settings — is sto
 
 ## Network Access
 
-MyNihongo!!!!! accesses the internet only in the following situations, both of which you have to turn on yourself:
+MyNihongo!!!!! accesses the internet only in the following situations, each of which you have to turn on yourself:
 
 - **WebDAV sync**: If you enable WebDAV cloud sync, the app sends your learning progress to a WebDAV server that you configure yourself. The app does not send data to any other server.
 - **Network speech recognition**, only if you turn on the switch described under Speech Recognition below. It is off by default.
+- **Downloading an on-device AI model**, only if you turn on On-device AI assistance and then tap Download. The download is performed by the Android AICore system service, not by the app.
 
 No other network communication takes place. The app requests the `INTERNET` permission for this and nothing else.
 
@@ -46,6 +47,16 @@ By default the app asks for offline recognition only. On a device with no offlin
 
 No audio is recorded to a file, and nothing you say is stored. The microphone is used only while you are recording an attempt, and the permission is requested the first time you tap record, with a reason.
 
+## On-device AI Assistance
+
+On an Android phone that has Google's AICore system service, the sentence lab can explain one of its own findings in more words, explain a sentence, and suggest a rewrite. This is **off by default**; nothing happens until you turn on On-device AI assistance in Settings.
+
+When it is on, the sentence you typed — together with the app's own analysis of it and the app's own grammar notes — is handed to a model that runs **on your phone**, through AICore. Nothing is sent to a server, nothing is recorded, and nothing generated is saved: it is gone when you change the sentence or leave the page.
+
+One part of this does use the network, and only when you ask for it: the first time you tap **Download** for a feature, the AICore system service fetches that model from Google. The app does not perform the download and does not send anything with it. Once the model is on your phone, the feature works with no network at all.
+
+Generated text is always labelled as generated. It can be wrong, it never changes the app's own analysis, and it is never written into the app's dictionary or grammar content.
+
 ## Changes to This Policy
 
-This privacy policy may be updated from time to time. Updated versions will be published within the app or on the relevant distribution channels. Text to speech and speech recognition are described above. Any future feature that could send anything off the device will be described here before it ships, and will be off unless you turn it on.
+This privacy policy may be updated from time to time. Updated versions will be published within the app or on the relevant distribution channels. Text to speech, speech recognition and on-device AI assistance are described above. Any future feature that could send anything off the device will be described here before it ships, and will be off unless you turn it on.

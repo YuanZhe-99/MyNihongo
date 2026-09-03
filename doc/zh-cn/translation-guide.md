@@ -175,6 +175,14 @@
 | attributive | 连体形 | 修饰名词的形式 |
 | possible issue | 可能的问题 | 检查的结论措辞，绝不说"错误" |
 | conjugation | 活用 | 动词、形容词的变形 |
+| on-device AI assistance | 端侧 AI 辅助 | 设置中的开关名；默认关闭 |
+| AICore | AICore | Android 系统服务，不译 |
+| Gemini Nano | Gemini Nano | 模型名，不译 |
+| generated text | 生成的文字 | 始终带标注；绝不替代确定性结果 |
+| prompt (to a model) | 提示词 | 送给模型的文本；与「句型」无关 |
+| model download | 模型下载 | 由 AICore 完成，不是应用 |
+| explanation (AI) | 解释 | 「解释这个句子」 |
+| correction suggestion | 改写建议 | 校对 API 的输出；不说「纠错」 |
 | Learn tab | 学习标签页 | 首页 |
 | dashboard | 仪表盘 | 学习标签页的卡片总览 |
 | roadmap | 路线图 | `PLAN.md` |

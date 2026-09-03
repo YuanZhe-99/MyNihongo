@@ -85,3 +85,17 @@ so the file stays small and a future change of default reaches devices that neve
 setting. And a value of the wrong type reads as unset rather than throwing: the file is plain JSON
 in a folder the user can point anywhere, so it can be hand-edited. See
 [`../../../../features/reference-preferences.md`](../../../../features/reference-preferences.md).
+
+## Speech and AI preferences (`PLAN.md` M2.1, M2.2, M2.4)
+
+Four more pairs over `_getDouble`/`_setDouble` and `_getBool`/`_setBool`, following the same two
+rules: `getTtsRate`/`setTtsRate`, `getTtsVoice`/`setTtsVoice`,
+`getSpeechNetworkFallback`/`setSpeechNetworkFallback`, and
+`getAiAssistEnabled`/`setAiAssistEnabled`.
+
+The last two are the ones worth naming here, because both gate something that would otherwise leave
+the device or run a model: each is **false unless the user turned it on**, and each stores "off" as
+an absent key rather than as `false`. A hand-edited `"true"` string reads as unset, like every other
+wrong-typed value in this file — the string is not a boolean, and a setting this consequential should
+not be switchable by a typo. See [`../../../../features/pronunciation.md`](../../../../features/pronunciation.md)
+and [`../../../../features/ai-assist.md`](../../../../features/ai-assist.md).

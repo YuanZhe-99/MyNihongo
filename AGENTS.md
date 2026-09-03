@@ -38,6 +38,7 @@ about to change, verify against the code, then fix the docs in the same commit.
 | A named algorithm, derived rather than described | `doc/en-us/algorithms/*.md` |
 | When the UI splits into panes or columns; foldable rules | `doc/en-us/adaptive-layout.md` |
 | Android specifics, Gradle/AGP state, planned platforms | `doc/en-us/platform-notes.md` |
+| Android AICore and the ML Kit GenAI APIs — requirements, versions, limits, how to check a device | `doc/en-us/android-aicore.md` (project-independent; carries a `Last verified` date to refresh) |
 | CI jobs, build commands, fresh-clone steps | `doc/en-us/ci-cd.md` |
 | Why a behavior exists; past releases | `doc/en-us/version-history.md` |
 | English→Chinese terminology | `doc/en-us/translation-guide.md` |

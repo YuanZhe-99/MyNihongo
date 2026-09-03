@@ -33,7 +33,8 @@ one voice on the device, and the UI never implies otherwise.
 
 Settings → Speech. The speed slider runs 0.6x to 1.2x in steps of 0.1 with a preview button that
 speaks a fixed greeting, and the voice dropdown lists the installed Japanese voices (it is hidden
-when the engine offers fewer than two). Both are device-local preferences in `storage_config.json`
+when the engine offers fewer than two). Below them, the recognition status has **three** states —
+available, missing, and not yet checked — and the network-fallback switch. Both are device-local preferences in `storage_config.json`
 (`ttsRate`, `ttsVoice`), because a phone speaker and a desktop speaker want different speeds and a
 voice name means nothing on another device's engine.
 
@@ -81,7 +82,15 @@ and its subtitle says exactly that. It is off by default and stored as an absent
 
 `RECORD_AUDIO` is declared in the manifest but requested at **first use**, never at install: the
 practice sheet shows its own rationale dialog before the first `initialize()` when the permission is
-not already granted, so the system prompt never arrives unexplained. iOS and macOS carry
+not already granted, so the system prompt never arrives unexplained.
+
+That promise had a hole until it was tried on a real phone. Settings → Speech asked the recognizer
+whether it was available as soon as the page was built, and asking means `initialize()`, which is
+what raises the system prompt — so **opening Settings produced a microphone dialog out of nowhere**.
+It now checks the permission first and only initializes when it has already been granted; without
+it, the status line says the check happens the first time you practise, which is true and is not the
+same claim as "this device has no recognizer". `test/speech_settings_tiles_test.dart` holds it,
+asserting that the backend is never initialized while the permission is absent. iOS and macOS carry
 `NSMicrophoneUsageDescription` and `NSSpeechRecognitionUsageDescription`; the macOS sandbox needs
 `com.apple.security.device.audio-input` in both entitlement files. Android 11+ package visibility
 needs an `android.speech.RecognitionService` query, alongside the text-to-speech one.

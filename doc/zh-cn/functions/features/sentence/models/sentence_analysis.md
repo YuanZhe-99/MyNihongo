@@ -18,7 +18,8 @@
 | [`toFixtureString`](#tofixturestring) | 方法 | A | 把分析渲染成一行，用于 fixture 比对。 |
 | [`SentenceEnhancer`](#enhancer) | 抽象类 | A | 端侧模型将来接入的接缝。 |
 | `SentenceEnhancer.isAvailable` | 方法 | B | 报告端侧模型是否存在并已启用。 |
-| `SentenceEnhancer.explain` | 方法 | B | 用更多文字解释一条问题或整个句子。 |
+| `SentenceEnhancer.explain` | 方法 | B | 用界面语言、以更多文字解释一条问题或整个句子。 |
+| `SentenceEnhancer.suggestCorrection` | 方法 | B | 给出整句的修改写法。 |
 
 ## 文档
 

@@ -63,10 +63,11 @@ All data the app creates — your learning progress and your settings — is sto
 
 Network Access
 
-MyNihongo!!!!! accesses the internet only in the following situations, both of which you have to turn on yourself:
+MyNihongo!!!!! accesses the internet only in the following situations, each of which you have to turn on yourself:
 
 • WebDAV sync: If you enable WebDAV cloud sync, the app sends your learning progress to a WebDAV server that you configure yourself. The app does not send data to any other server.
 • Network speech recognition, only if you turn on the switch described under Speech Recognition below. It is off by default.
+• Downloading an on-device AI model, only if you turn on On-device AI assistance and then tap Download. The download is performed by the Android AICore system service, not by the app.
 
 No other network communication takes place. The app requests the INTERNET permission for this and nothing else.
 
@@ -96,9 +97,19 @@ By default the app asks for offline recognition only. On a device with no offlin
 
 No audio is recorded to a file, and nothing you say is stored. The microphone is used only while you are recording an attempt, and the permission is requested the first time you tap record, with a reason.
 
+On-device AI Assistance
+
+On an Android phone that has Google's AICore system service, the sentence lab can explain one of its own findings in more words, explain a sentence, and suggest a rewrite. This is off by default; nothing happens until you turn on On-device AI assistance in Settings.
+
+When it is on, the sentence you typed — together with the app's own analysis of it and the app's own grammar notes — is handed to a model that runs on your phone, through AICore. Nothing is sent to a server, nothing is recorded, and nothing generated is saved: it is gone when you change the sentence or leave the page.
+
+One part of this does use the network, and only when you ask for it: the first time you tap Download for a feature, the AICore system service fetches that model from Google. The app does not perform the download and does not send anything with it. Once the model is on your phone, the feature works with no network at all.
+
+Generated text is always labelled as generated. It can be wrong, it never changes the app's own analysis, and it is never written into the app's dictionary or grammar content.
+
 Changes to This Policy
 
-This privacy policy may be updated from time to time. Updated versions will be published within the app or on the relevant distribution channels. Text to speech and speech recognition are described above. Any future feature that could send anything off the device will be described here before it ships, and will be off unless you turn it on.''';
+This privacy policy may be updated from time to time. Updated versions will be published within the app or on the relevant distribution channels. Text to speech, speech recognition and on-device AI assistance are described above. Any future feature that could send anything off the device will be described here before it ships, and will be off unless you turn it on.''';
 
   static const _zh = '''隐私政策
 
@@ -114,10 +125,11 @@ MyNihongo!!!!! 不收集、上传或共享任何个人信息。应用不包含�
 
 网络访问
 
-MyNihongo!!!!! 仅在以下两种情况下访问互联网，且两者都需要您自己开启：
+MyNihongo!!!!! 仅在以下情况下访问互联网，且每一项都需要您自己开启：
 
 • WebDAV 同步：如果您启用了 WebDAV 云同步，应用会将您的学习进度发送到您自行配置的 WebDAV 服务器。应用不会向其他任何服务器发送数据。
 • 网络语音识别，仅当您打开下文「语音识别」中描述的开关时。它默认关闭。
+• 下载端侧 AI 模型，仅当您打开「端侧 AI 辅助」并点击「下载」时。下载由 Android AICore 系统服务完成，而不是由应用完成。
 
 除此之外不进行任何网络通信。应用仅为此申请 INTERNET 权限，别无他用。
 
@@ -147,7 +159,17 @@ MyNihongo!!!!! 仅在以下两种情况下访问互联网，且两者都需要�
 
 不会把音频录成文件，你说的话也不会被保存。麦克风仅在你录制一次尝试期间使用，权限在你第一次点击录音时带理由申请。
 
+端侧 AI 辅助
+
+在装有 Google AICore 系统服务的 Android 手机上，句子实验室可以用更多文字解释它自己的一处发现、解释整个句子，并给出改写建议。此功能默认关闭；在你于设置中打开「端侧 AI 辅助」之前，什么都不会发生。
+
+打开之后，你输入的句子——连同应用对它的分析以及应用自带的语法说明——会交给一个在你手机上运行的模型，通过 AICore 完成。没有任何内容被发送到服务器，没有录音，生成的内容也不会被保存：当你更换句子或离开页面时它就消失了。
+
+其中只有一件事会用到网络，而且只在你主动要求时：你首次为某项功能点击「下载」时，AICore 系统服务会从 Google 获取该模型。应用不执行这次下载，也不会随之发送任何内容。模型下载到手机后，该功能完全不需要网络。
+
+生成的文字始终带有「生成」标注。它可能有误，绝不会改变应用自身的分析结果，也绝不会写入应用的词典或语法内容。
+
 政策变更
 
-本隐私政策可能会不时更新。更新版本将在应用内或相关分发渠道发布。语音合成与语音识别已在上文说明。今后任何可能把内容发出设备的功能，都会在发布前写入本政策，并且默认关闭，除非你自己打开。''';
+本隐私政策可能会不时更新。更新版本将在应用内或相关分发渠道发布。语音合成、语音识别与端侧 AI 辅助已在上文说明。今后任何可能把内容发出设备的功能，都会在发布前写入本政策，并且默认关闭，除非你自己打开。''';
 }

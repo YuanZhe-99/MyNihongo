@@ -9,10 +9,21 @@ what order, why, and what is done**. Update the checklists in the same change th
 milestone item.
 
 **Status as of 2026-09-03:** Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
-(text-to-speech), M2.2 (speech recognition and pronunciation feedback) and M2.3 (the sentence lab)
-have landed, along with the Windows and macOS projects the pronunciation work needs a machine for.
-Two Phase 2 items are deferred with reasons in their milestones: own-voice playback, and the AICore
-enhancement. Phase 3 is next.
+(text-to-speech), M2.2 (speech recognition and pronunciation feedback), M2.3 (the sentence lab) and
+M2.4 (on-device AI assist) have landed, along with the Windows and macOS projects the pronunciation
+work needs a machine for. `v0.2.1` is the current release. Phase 3 is next.
+
+A **Pixel 10** is now available for testing, which changes what "verified" can mean. M2.4 was checked
+on it; **M2.1 and M2.2 still have not been heard on a device** — that is the largest remaining gap in
+Phase 2, along with own-voice playback, which stays deferred with the reason in M2.2.
+
+Two known gaps found while testing on the phone, neither in scope for M2.4:
+
+- The token chips in the sentence lab print the recovered forms as their English enum names
+  (`polite + negative`) in every language, because `InflectionForm` has no ARB strings. Visible to a
+  Chinese reader; a Phase 3 fix, roughly 28 keys.
+- Five words the shipped vocabulary lacks (母, 顔, 東京, 鞄 in kanji, 速い), tracked in
+  `test/fixtures/sentence/allowed_unknown.json`.
 
 M1.0 (skeleton) landed 2026-09-02; M1.1 (sync and backup UI), M1.2 (content pipeline), M1.3 (reference polish) and M1.4
 (release) landed 2026-09-03. Two items carry over for want of hardware: the foldable screenshot
@@ -305,10 +316,8 @@ Input a sentence; see tokens, their roles, meanings, and which taught grammar po
       5. Checks — four of the five run; the fifth (adjective given a verb ending) is unreachable
          because the lattice makes such a sentence fail to parse rather than parse wrongly. Output is
          "possible issue", never "wrong", and every check carries the exemptions that keep it quiet
-- [ ] **Optional enhancement:** Android AICore / Gemini Nano through ML Kit GenAI. **Deferred:** the
-      Flutter plugins are at 0.3.x and this host has no Android 14+ device to evaluate coverage or
-      output stability on. `SentenceEnhancer` is an abstract class with no implementation, so the
-      shape is settled and the baseline stays the source of truth
+- [x] **Optional enhancement:** Android AICore / Gemini Nano through ML Kit GenAI — **landed as M2.4
+      below**, once a Pixel 10 was available to evaluate it on
 - [x] UI: tokens as chips coloured by role with the role also named in words; tap → the catalog
       sheet, or the function word's own gloss; the bunsetsu dependencies as an indented list;
       grammar points matched listed below with links. **Amended:** one column at every size rather
@@ -323,6 +332,54 @@ Input a sentence; see tokens, their roles, meanings, and which taught grammar po
       tested, but the every-example test proved the more useful gate, because it fails on the app's
       own content rather than on a transcript somebody has to re-record
 - [x] Docs: `doc/en-us/algorithms/sentence-analysis.md`, `features/sentence-lab.md`
+
+#### M2.4 On-device AI assist — **done 2026-09-03**
+
+The M2.3 enhancement, built once a **Pixel 10** was attached. The first Phase 2 milestone verified on
+real hardware rather than through test seams.
+
+- [x] **Two ML Kit GenAI APIs, not one:** `genai-prompt` for explanations and `genai-proofreading`
+      for a rewrite suggestion. Proofreading answers the "what should I have written" question that
+      the Prompt API answers badly, supports Japanese, and has its own model and status
+- [x] **Native Kotlin on a second method channel** (`GenAiChannel`), no Flutter plugin. **Amended
+      from the plan's assumption:** the published plugins are 0.x, wrap the Prompt API only, and each
+      would apply the Kotlin Gradle Plugin — the constraint that already pins `file_picker` and
+      `speech_to_text`. `minSdk` rises to 26, which is all the libraries need
+- [x] Policy in Dart, where it is testable without a device: off by default (`aiAssistEnabled`,
+      absent when off); the switch is a **gate, not a filter** — while it is off the channel is never
+      called at all; capability re-checked before every use; one request at a time; 45-second
+      timeout; nothing generated is stored, synced or written into the catalog
+- [x] Prompts are a **content asset** (`assets/content/prompts/sentence_explain.json`, en + zh,
+      schemaVersion 1) grounded in the deterministic analysis: the tokens, the issue message **as the
+      UI worded it**, and the catalog's own explanation of up to three matched grammar points, with
+      "do not contradict the notes above" in the rules
+- [x] `ResponseParser` rejects an echo of the prompt, and rejects a "correction" identical to the
+      input — a proofreader handed a correct sentence returns it unchanged, and offering that would
+      tell the learner their correct sentence was wrong
+- [x] UI: **Explain** per issue, **Explain this sentence** and **Suggest a correction** below them,
+      all in `AiExplanationCard` with a generated label above the text and always **under** the
+      deterministic finding. Settings → On-device AI: the switch, one status row per feature with its
+      own Download button and progress, and a line saying the download is AICore's, not the app's
+- [x] Tests: the enabled gate, statuses, download progress, busy and timeout
+      (`ai_assist_service_test.dart`); the prompt against the **shipped** templates and catalog
+      (`ai_prompt_builder_test.dart`); the parser (`ai_response_parser_test.dart`); the Settings
+      section and the lab with and without a model, including that nothing appears while the switch
+      is off (`ai_ui_test.dart`)
+- [x] **Verified on the Pixel 10:** both models downloaded from Settings, all three actions answering
+      correctly in English and in Simplified Chinese, the honest "no different sentence" path, and
+      the loading state. Roughly 20–30 s per answer
+- [x] **Two bugs found that the test host could not show**, both fixed here:
+      1. **R8 shrinks ML Kit into a `NullPointerException`** in release builds only, which the app
+         reported as "not available on this device". Keeping `com.google.mlkit.genai.**` is not
+         enough — R8's `mapping.txt` named `com.google.mlkit.common.sdkinternal.LazyInstanceMap`, so
+         `android/app/proguard-rules.pro` keeps `com.google.mlkit.**` and the `mlkit_**` internals
+      2. **Settings raised the microphone prompt on open** (a Phase 2 M2.2 defect): the recognition
+         row called `ensureAvailable()`, and initializing the recognizer is what asks for the
+         microphone — breaking the documented promise that the prompt never arrives unexplained. It
+         now checks the permission first, and the status line has a third state
+- [x] Docs: `doc/en-us/features/ai-assist.md`, and **`doc/en-us/android-aicore.md`** — a
+      project-independent AICore/ML Kit GenAI reference for the other apps in the series, carrying a
+      `Last verified` date and instructions for refreshing it
 
 ### Phase 3 — Learning engine
 
@@ -477,6 +534,12 @@ catalog content, and never writes a progress record by itself — the learner's 
 | 2026-09-03 | The Chinese overlay is bundled, not kept under `tool/` | The catalog test reads it through `rootBundle` and compares it against what shipped, which catches an overlay edit that never had `--overlay-only` run over it |
 | 2026-09-03 | The reference preferences are device-local, never synced | A phone and a tablet want different column counts, and a habit lives on a device |
 | 2026-09-03 | The router is built once and kept in the root widget's state | A `GoRouter` owns navigation history; rebuilding one on a theme change would send the user back to the initial tab mid-session |
+| 2026-09-03 | AICore is reached through the app's own Kotlin method channel, not a Flutter plugin | The published plugins are 0.x, wrap the Prompt API only, and each applies the Kotlin Gradle Plugin — the constraint that already pins `file_picker` and `speech_to_text`. Two clients and five methods are less risk than a dependency |
+| 2026-09-03 | Proofreading is a second GenAI feature beside Prompt, with its own switch-independent status | It answers "what should I have written" directly and supports Japanese; a device can have one model and not the other, so the UI never treats "AI" as one thing |
+| 2026-09-03 | `minSdk` rises from Flutter's 24 to 26 | The only requirement of the ML Kit GenAI libraries; nothing else in the app needs it |
+| 2026-09-03 | `proguard-rules.pro` keeps all of `com.google.mlkit.**` | R8 otherwise shrinks ML Kit into a runtime NPE that the app reports as an unsupported device, in release builds only. Keeping just the `genai` packages was not enough — the failing frame was in ML Kit's shared SDK internals |
+| 2026-09-03 | The prompt is grounded in the catalog's own grammar explanation, and in the issue message **as the UI worded it** | An explanation that drifts from what the Grammar page says, or that answers a differently worded question, is worse than none |
+| 2026-09-03 | The AI switch gates the method channel itself, not the result | "Off" has to mean nothing was asked of the device, not that an answer was discarded; it is the first assertion in the service's tests |
 | 2026-09-03 | Cross-links are substring matches, not parsing | A real tokenizer is Phase 3's sentence analyser; until then a wrong link is cheaper than no links, and the chips are labelled as what the example uses rather than as analysis |
 | 2026-09-03 | Windows and macOS projects land with Phase 2, but CI stays Android-only | Pronunciation and the sentence lab need a machine that can actually run the app, and this host has no Android device or emulator; desktop CI jobs, MSIX and Inno artefacts remain Phase 5 |
 | 2026-09-03 | The Windows window opens at 1000×720, not the siblings' 400×860 | At that width the reference lists and settings are already two-column, which is the layout worth looking at on a desktop; the siblings are phone-shaped because they are phone-shaped apps |

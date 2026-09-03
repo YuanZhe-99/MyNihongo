@@ -22,6 +22,7 @@ Consumers: `settings_page.dart` (`showsStorageLocation`).
 | [`showsStorageLocation`](#showsstoragelocation) | top-level getter | A | Decide whether Settings shows the storage location row. |
 | `canOpenSystemSpeechSettings` | top-level getter | B | Report whether a deep link to the system speech settings exists (Android, Windows). |
 | `platformMayRecognizeSpeech` | top-level getter | B | Report whether speech recognition can exist on this platform at all. |
+| `platformMayHaveOnDeviceModel` | top-level getter | B | Report whether an on-device generative model can exist here — Android only, because AICore does not exist elsewhere. |
 
 ## Documentation
 

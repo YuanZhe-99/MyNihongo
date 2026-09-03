@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "_comment": "Prompt templates for the on-device model. Versioned like every other content asset because a change here changes what the model is asked, and a bad edit is only visible on a device. Not learner-facing text: these strings are sent to the model, never rendered, so they are not in the ARB files. See doc/en-us/features/ai-assist.md.",
+  "limits": {
+    "maxOutputTokens": 256,
+    "maxPromptChars": 4000,
+    "maxProofreadChars": 200,
+    "maxGrammarPoints": 3,
+    "maxGrammarExcerptChars": 300,
+    "maxSentenceChars": 200
+  },
+  "labels": {
+    "en": {
+      "sentence": "Sentence",
+      "words": "How the app split it",
+      "note": "What the app flagged",
+      "grammar": "The app's own notes on the grammar used",
+      "rules": "Rules"
+    },
+    "zh": {
+      "sentence": "句子",
+      "words": "应用的分词结果",
+      "note": "应用标记的问题",
+      "grammar": "应用自带的语法说明",
+      "rules": "要求"
+    }
+  },
+  "tasks": {
+    "issue": {
+      "en": {
+        "instruction": "You are helping a learner of Japanese. The app has flagged one part of their sentence as possibly unusual. Explain why it may be unusual and what would read more naturally.",
+        "rules": [
+          "Answer in English.",
+          "At most 4 sentences.",
+          "Say what the app flagged is a possibility, not a certainty.",
+          "Do not contradict the app's own grammar notes above.",
+          "Do not translate the whole sentence.",
+          "Do not add a greeting, a sign-off, or headings."
+        ]
+      },
+      "zh": {
+        "instruction": "你在帮助一位日语学习者。应用标记出了这句话中可能不太自然的一处。请说明它为什么可能不自然，以及怎样写更自然。",
+        "rules": [
+          "用简体中文回答。",
+          "最多 4 句话。",
+          "说明这只是可能的问题，而不是确定的错误。",
+          "不要与上面应用自带的语法说明相矛盾。",
+          "不要翻译整个句子。",
+          "不要加问候语、结束语或标题。"
+        ]
+      }
+    },
+    "sentence": {
+      "en": {
+        "instruction": "You are helping a learner of Japanese. Explain what their sentence says and how it is put together, using the app's own analysis below.",
+        "rules": [
+          "Answer in English.",
+          "At most 4 sentences.",
+          "Describe the structure, not just the meaning.",
+          "Do not contradict the app's own grammar notes above.",
+          "Do not add a greeting, a sign-off, or headings."
+        ]
+      },
+      "zh": {
+        "instruction": "你在帮助一位日语学习者。请根据下面应用的分析，说明这句话的意思以及它是怎样组织起来的。",
+        "rules": [
+          "用简体中文回答。",
+          "最多 4 句话。",
+          "既说意思，也说结构。",
+          "不要与上面应用自带的语法说明相矛盾。",
+          "不要加问候语、结束语或标题。"
+        ]
+      }
+    }
+  }
+}

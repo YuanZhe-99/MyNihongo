@@ -1,5 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../ai/services/ai_assist_service.dart';
+import '../../ai/services/aicore_sentence_enhancer.dart';
+import '../../ai/services/prompt_builder.dart';
+import '../../../shared/utils/platform_capabilities.dart';
 import '../../content/models/content_catalog.dart';
 import '../../content/services/content_repository.dart';
 import '../models/function_word.dart';
@@ -30,8 +34,13 @@ class SentenceAnalyzer {
   final SentenceChecks _checks;
   static const _chunker = Chunker();
 
-  /// An optional on-device model. Null in every build today; see
-  /// [SentenceEnhancer] for why the seam exists before the implementation.
+  /// An optional on-device model.
+  ///
+  /// Null wherever one cannot run — every platform but Android, and any build
+  /// whose prompt templates failed to load. Non-null does **not** mean a model
+  /// will answer: the service behind it refuses every call while the learner
+  /// has the feature switched off. Nothing in the pipeline above reads this;
+  /// see [SentenceEnhancer].
   final SentenceEnhancer? enhancer;
 
   /// Purpose: Analyse one sentence.
@@ -77,9 +86,40 @@ final lexiconProvider = FutureProvider<Lexicon>((ref) async {
   return Lexicon.build(catalog, functionWords: words);
 });
 
+/// The prompt templates the optional on-device model is driven by.
+///
+/// A separate provider from the catalog for the same reason the function-word
+/// table is one: a few kilobytes that only one page needs.
+final promptTemplatesProvider = FutureProvider<PromptTemplates>(
+  (ref) => loadPromptTemplates(),
+);
+
 /// The analyser itself, ready to use.
+///
+/// The enhancer is attached only where one could possibly run: a platform with
+/// an on-device model, and templates that loaded. Every other build gets a null
+/// enhancer and an analyser that behaves exactly as it did before M2.4, which
+/// is what "optional enhancement" has to mean.
+///
+/// Whether the learner has actually turned the feature **on** is deliberately
+/// not part of this condition. That state changes while the page is open, and
+/// rebuilding the analyser — and with it the 7,700-entry lexicon — on a switch
+/// flip would be a heavy way to hide two buttons. `AiAssistService` refuses
+/// every call while the switch is off, so an attached enhancer is inert.
 final sentenceAnalyzerProvider = FutureProvider<SentenceAnalyzer>((ref) async {
   final lexicon = await ref.watch(lexiconProvider.future);
   final catalog = await ref.watch(contentCatalogProvider.future);
-  return SentenceAnalyzer(lexicon: lexicon, catalog: catalog);
+  final templates = await ref.watch(promptTemplatesProvider.future);
+  final enhancer = platformMayHaveOnDeviceModel && templates.schemaVersion > 0
+      ? AiCoreSentenceEnhancer(
+          service: ref.watch(aiAssistServiceProvider),
+          prompts: PromptBuilder(templates),
+          catalog: catalog,
+        )
+      : null;
+  return SentenceAnalyzer(
+    lexicon: lexicon,
+    catalog: catalog,
+    enhancer: enhancer,
+  );
 });

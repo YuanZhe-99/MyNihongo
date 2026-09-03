@@ -704,6 +704,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get speechRecognizerMissing => '本设备没有日语语音识别';
 
   @override
+  String get speechRecognizerUnchecked => '首次练习发音时才会检查语音识别';
+
+  @override
   String get practiceAction => '练习';
 
   @override
@@ -807,4 +810,95 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get labCategoryUnknown => '不在词典中';
+
+  @override
+  String get aiSection => '端侧 AI';
+
+  @override
+  String get aiEnable => '端侧 AI 辅助';
+
+  @override
+  String get aiEnableBody =>
+      '默认关闭。打开后，句子实验室可以用更多文字解释一处发现，并给出一个改写建议，模型在本设备上运行。生成的文字始终带有标注，且绝不会改变分析结果。';
+
+  @override
+  String get aiUnsupportedPlatform => '此平台没有端侧模型。';
+
+  @override
+  String get aiStatusPrompt => '解释';
+
+  @override
+  String get aiStatusProofread => '改写建议';
+
+  @override
+  String get aiStatusUnavailable => '本设备不支持';
+
+  @override
+  String get aiStatusDownloadable => '尚未下载';
+
+  @override
+  String get aiStatusDownloading => '系统正在下载';
+
+  @override
+  String get aiStatusAvailable => '可以使用';
+
+  @override
+  String get aiDownload => '下载';
+
+  @override
+  String get aiDownloadNote =>
+      '下载由 Android AICore 系统服务完成，模型从 Google 获取。只有你点击「下载」后才会开始。';
+
+  @override
+  String get aiDownloading => '下载中…';
+
+  @override
+  String aiDownloadedBytes(Object megabytes) {
+    return '已下载 $megabytes MB';
+  }
+
+  @override
+  String get aiDownloadFailed => '模型下载失败，可以再试一次。';
+
+  @override
+  String get aiExplain => '解释';
+
+  @override
+  String get aiExplainSentence => '解释这个句子';
+
+  @override
+  String get aiSuggestCorrection => '给出改写建议';
+
+  @override
+  String get aiGeneratedLabel => '在本设备上生成——可能有误';
+
+  @override
+  String get aiGenerating => '正在本设备上生成…';
+
+  @override
+  String get aiDismiss => '收起';
+
+  @override
+  String get aiCorrectionNone => '模型没有给出与原句不同的写法。';
+
+  @override
+  String get aiCorrectionHeading => '一种可能的改写';
+
+  @override
+  String get aiFailedUnavailable => '端侧模型尚未就绪，请到设置中查看。';
+
+  @override
+  String get aiFailedBusy => '还有一条回答正在生成。';
+
+  @override
+  String get aiFailedTimeout => '模型耗时过长，请再试一次。';
+
+  @override
+  String get aiFailedTooLong => '这个句子对端侧模型来说太长了。';
+
+  @override
+  String get aiFailedGeneric => '无法为此生成内容。';
+
+  @override
+  String get aiHintDownload => '端侧 AI 已打开，但模型尚未下载。设置 › 端侧 AI。';
 }

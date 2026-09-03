@@ -11,17 +11,35 @@ import '../models/sentence_analysis.dart';
 /// the findings usable — a learner told they are wrong when they are not stops
 /// reading the section at all.
 class IssueList extends StatelessWidget {
-  const IssueList({super.key, required this.analysis});
+  const IssueList({
+    super.key,
+    required this.analysis,
+    this.onExplain,
+    this.cardBuilder,
+  });
 
   /// The analysed sentence.
   final SentenceAnalysis analysis;
+
+  /// Called when the learner asks for an issue to be explained, with the
+  /// issue's index and **the message this widget showed for it**.
+  ///
+  /// The message is handed up rather than re-derived by the caller so the
+  /// model is asked about the sentence the learner is actually reading. Null
+  /// when on-device AI is off or unavailable, which is what hides the button.
+  final void Function(int index, String message)? onExplain;
+
+  /// Builds the generated card under one issue, when there is one.
+  final Widget? Function(int index)? cardBuilder;
 
   /// Purpose: Build the issue list.
   /// Inputs: The build `context`.
   /// Returns: `Widget`.
   /// Side effects: None.
   /// Notes: An empty list says "nothing looked unusual" rather than rendering
-  /// nothing, so a clean sentence gets an answer instead of an absence.
+  /// nothing, so a clean sentence gets an answer instead of an absence. Any
+  /// generated card is rendered **under** the deterministic row it belongs to,
+  /// never in place of it.
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -37,39 +55,61 @@ class IssueList extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        for (final issue in analysis.issues)
-          Padding(
-            padding: const EdgeInsets.only(bottom: 8),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(
-                  Icons.help_outline,
-                  size: 18,
-                  color: theme.colorScheme.tertiary,
-                ),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        _span(issue),
-                        style: theme.textTheme.bodyMedium?.copyWith(
-                          fontWeight: FontWeight.w700,
+        for (var index = 0; index < analysis.issues.length; index++)
+          Builder(
+            builder: (context) {
+              final issue = analysis.issues[index];
+              final message = _message(l10n, issue);
+              final card = cardBuilder?.call(index);
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(
+                          Icons.help_outline,
+                          size: 18,
+                          color: theme.colorScheme.tertiary,
                         ),
-                      ),
-                      Text(
-                        _message(l10n, issue),
-                        style: theme.textTheme.bodySmall?.copyWith(
-                          color: theme.colorScheme.onSurfaceVariant,
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                _span(issue),
+                                style: theme.textTheme.bodyMedium?.copyWith(
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                              Text(
+                                message,
+                                style: theme.textTheme.bodySmall?.copyWith(
+                                  color: theme.colorScheme.onSurfaceVariant,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                        if (onExplain != null)
+                          TextButton.icon(
+                            icon: const Icon(
+                              Icons.auto_awesome_outlined,
+                              size: 16,
+                            ),
+                            label: Text(l10n.aiExplain),
+                            onPressed: () => onExplain!(index, message),
+                          ),
+                      ],
+                    ),
+                    ?card,
+                  ],
                 ),
-              ],
-            ),
+              );
+            },
           ),
       ],
     );

@@ -23,7 +23,7 @@
 
 ### 速度与语音
 
-设置 → 语音。速度滑块在 0.6× 到 1.2× 之间以 0.1 为步进，配有试听按钮朗读一句固定的问候语；语音下拉框列出已安装的日语语音（引擎提供少于两个时该行隐藏）。两者都是 `storage_config.json` 中的设备本地偏好（`ttsRate`、`ttsVoice`）：手机扬声器和桌面扬声器需要不同的速度，而语音名称在另一台设备的引擎上毫无意义。
+设置 → 语音。速度滑块在 0.6× 到 1.2× 之间以 0.1 为步进，配有试听按钮朗读一句固定的问候语；语音下拉框列出已安装的日语语音（引擎提供少于两个时该行隐藏）。其下是语音识别状态——共**三**种：可用、不可用、尚未检查——以及网络回退开关。两者都是 `storage_config.json` 中的设备本地偏好（`ttsRate`、`ttsVoice`）：手机扬声器和桌面扬声器需要不同的速度，而语音名称在另一台设备的引擎上毫无意义。
 
 `flutter_tts` 在其支持的**每个平台上都把 0.5 视为正常速度**，因此 `TtsService.engineRate` 把用户面的数值乘以 0.5，这里没有平台分支。若某个语音名称不再存在——两次运行之间被卸载——则回退到引擎默认语音，而不是失败。
 
@@ -48,7 +48,9 @@ Android 11+ 的软件包可见性要求清单中声明 `android.intent.action.TT
 
 ### 麦克风
 
-`RECORD_AUDIO` 在清单中声明，但在**首次使用**时才申请，绝不在安装时申请：当权限尚未授予时，练习表会在第一次 `initialize()` 之前先弹出自己的说明对话框，因此系统弹窗绝不会毫无解释地出现。iOS 和 macOS 带有 `NSMicrophoneUsageDescription` 与 `NSSpeechRecognitionUsageDescription`；macOS 沙盒需要在两个 entitlement 文件中都有 `com.apple.security.device.audio-input`。Android 11+ 的软件包可见性需要 `android.speech.RecognitionService` 查询，与语音合成那条并列。
+`RECORD_AUDIO` 在清单中声明，但在**首次使用**时才申请，绝不在安装时申请：当权限尚未授予时，练习表会在第一次 `initialize()` 之前先弹出自己的说明对话框，因此系统弹窗绝不会毫无解释地出现。
+
+在真机上试过之前，这个承诺有一个漏洞。设置 → 语音在页面构建时就去问识别器是否可用，而「问」意味着 `initialize()`，正是它触发系统弹窗——于是**仅仅打开设置页就会凭空冒出一个麦克风授权对话框**。现在它先检查权限，只有在已授予时才初始化；未授予时状态行会说这项检查在你首次练习时才进行，这是事实，而且与「本设备没有识别器」不是同一个判断。`test/speech_settings_tiles_test.dart` 守住这一点：权限缺失时后端绝不会被初始化。iOS 和 macOS 带有 `NSMicrophoneUsageDescription` 与 `NSSpeechRecognitionUsageDescription`；macOS 沙盒需要在两个 entitlement 文件中都有 `com.apple.security.device.audio-input`。Android 11+ 的软件包可见性需要 `android.speech.RecognitionService` 查询，与语音合成那条并列。
 
 不会把音频录成文件，也不会保存任何内容。识别器给出的文本用完即弃，练习表关闭时就被遗忘。
 

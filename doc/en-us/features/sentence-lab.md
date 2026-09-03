@@ -92,9 +92,13 @@ loading it with the 2 MB catalog would make every page pay for a page that may n
 - Possible issues are worth checking, not trusting.
 - Words the bundled dictionary lacks are called out where they occur.
 
-## Not built
+## The optional on-device model
 
-`PLAN.md` M2.3 keeps an on-device model (AICore / Gemini Nano through ML Kit GenAI) as an optional
-enhancement that never becomes the source of truth. Nothing implements it: `SentenceEnhancer` is an
-abstract class with no implementation, so the shape is settled before the pressure to add one
-exists, and the analyser has somewhere to put it that is not the middle of the pipeline.
+`PLAN.md` M2.4 fills the `SentenceEnhancer` seam with Android AICore, as an optional enhancement
+that never becomes the source of truth. Turned on in **Settings › On-device AI** — off until then —
+it adds an **Explain** button beside each possible issue, and **Explain this sentence** and **Suggest
+a correction** below them. Everything it produces is drawn in a card labelled as generated, under the
+deterministic finding it comments on, and none of it is stored.
+
+With the switch off, or on any platform but Android, the page is exactly what this document
+otherwise describes. See [`ai-assist.md`](ai-assist.md).

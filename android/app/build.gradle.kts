@@ -32,7 +32,10 @@ android {
         applicationId = "com.yuanzhe.my_nihongo"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
+        // 26, not flutter.minSdkVersion (24): the ML Kit GenAI libraries below
+        // require API 26. Nothing else in the app does. See
+        // doc/en-us/android-aicore.md.
+        minSdk = 26
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
@@ -56,6 +59,11 @@ android {
             } else {
                 signingConfigs.getByName("debug")
             }
+            // Additive to the rules the libraries and AGP contribute. The file
+            // exists only for ML Kit GenAI, which R8 otherwise shrinks into a
+            // runtime NullPointerException that looks like an unsupported
+            // device. See the comment in proguard-rules.pro.
+            proguardFiles("proguard-rules.pro")
         }
     }
 }
@@ -66,6 +74,16 @@ flutter {
 
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
+
+    // On-device generative AI through Android AICore. Both are beta APIs with
+    // no deprecation policy, so the versions are exact rather than dynamic.
+    // genai-prompt is coroutine-based; genai-proofreading returns Guava
+    // ListenableFutures. See doc/en-us/android-aicore.md.
+    implementation("com.google.mlkit:genai-prompt:1.0.0-beta2")
+    implementation("com.google.mlkit:genai-proofreading:1.0.0-beta1")
+    // The Prompt API suspends and returns a Flow; the coroutine runtime is not
+    // pulled in by the Flutter Android embedding, so it is declared here.
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
 }
 
 // Built-in Kotlin migration: align the Kotlin jvmTarget with the Java 17

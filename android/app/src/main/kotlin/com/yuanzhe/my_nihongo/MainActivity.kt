@@ -8,20 +8,24 @@ import io.flutter.plugin.common.MethodChannel
 /**
  * The app's only activity.
  *
- * It hosts one method channel, `com.yuanzhe.my_nihongo/system`, so Settings can
+ * It hosts two method channels. `com.yuanzhe.my_nihongo/system` lets Settings
  * send the user to the system text-to-speech settings when no Japanese voice is
- * installed. There is no Flutter plugin for that intent and it is one call, so
- * the channel stays deliberately small.
+ * installed: there is no Flutter plugin for that intent and it is one call, so
+ * the channel stays deliberately small. `com.yuanzhe.my_nihongo/genai` is
+ * [GenAiChannel], the bridge to Android AICore.
  */
 class MainActivity : FlutterActivity() {
+    private val genAi = GenAiChannel(this)
+
     /**
-     * Purpose: Register the system settings method channel.
+     * Purpose: Register the two method channels.
      * Inputs: `flutterEngine` — the engine this activity attaches to.
      * Returns: None.
-     * Side effects: Adds a method-call handler to the engine.
+     * Side effects: Adds method-call handlers to the engine.
      * Notes: `openSpeechSettings` answers true when the intent was started and
      * false when no activity on the device handles it, so the Dart side can
-     * show a message rather than leaving the user waiting.
+     * show a message rather than leaving the user waiting. [GenAiChannel]
+     * creates no AICore client here — see its own note on why.
      */
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
@@ -34,6 +38,20 @@ class MainActivity : FlutterActivity() {
                 else -> result.notImplemented()
             }
         }
+        genAi.attach(flutterEngine)
+    }
+
+    /**
+     * Purpose: Release the AICore clients when the activity goes away.
+     * Inputs: None.
+     * Returns: None.
+     * Side effects: Closes both generative models.
+     * Notes: An open model holds an AICore session, which is shared across the
+     * device; leaking one would deny it to whatever the user opens next.
+     */
+    override fun onDestroy() {
+        genAi.detach()
+        super.onDestroy()
     }
 
     /**

@@ -1376,6 +1376,12 @@ abstract class AppLocalizations {
   /// **'No Japanese speech recognition on this device'**
   String get speechRecognizerMissing;
 
+  /// No description provided for @speechRecognizerUnchecked.
+  ///
+  /// In en, this message translates to:
+  /// **'Speech recognition is checked the first time you practise'**
+  String get speechRecognizerUnchecked;
+
   /// No description provided for @practiceAction.
   ///
   /// In en, this message translates to:
@@ -1561,6 +1567,180 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'not in the dictionary'**
   String get labCategoryUnknown;
+
+  /// No description provided for @aiSection.
+  ///
+  /// In en, this message translates to:
+  /// **'On-device AI'**
+  String get aiSection;
+
+  /// No description provided for @aiEnable.
+  ///
+  /// In en, this message translates to:
+  /// **'On-device AI assistance'**
+  String get aiEnable;
+
+  /// No description provided for @aiEnableBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Off by default. When on, the sentence lab can explain a finding in more words and suggest a correction, using a model that runs on this device. Generated text is always labelled and never changes the analysis.'**
+  String get aiEnableBody;
+
+  /// No description provided for @aiUnsupportedPlatform.
+  ///
+  /// In en, this message translates to:
+  /// **'This platform has no on-device model.'**
+  String get aiUnsupportedPlatform;
+
+  /// No description provided for @aiStatusPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Explanations'**
+  String get aiStatusPrompt;
+
+  /// No description provided for @aiStatusProofread.
+  ///
+  /// In en, this message translates to:
+  /// **'Correction suggestions'**
+  String get aiStatusProofread;
+
+  /// No description provided for @aiStatusUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Not available on this device'**
+  String get aiStatusUnavailable;
+
+  /// No description provided for @aiStatusDownloadable.
+  ///
+  /// In en, this message translates to:
+  /// **'Not downloaded yet'**
+  String get aiStatusDownloadable;
+
+  /// No description provided for @aiStatusDownloading.
+  ///
+  /// In en, this message translates to:
+  /// **'The system is downloading it'**
+  String get aiStatusDownloading;
+
+  /// No description provided for @aiStatusAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready'**
+  String get aiStatusAvailable;
+
+  /// No description provided for @aiDownload.
+  ///
+  /// In en, this message translates to:
+  /// **'Download'**
+  String get aiDownload;
+
+  /// No description provided for @aiDownloadNote.
+  ///
+  /// In en, this message translates to:
+  /// **'The download is performed by the Android AICore system service, which fetches the model from Google. It starts only when you tap Download.'**
+  String get aiDownloadNote;
+
+  /// No description provided for @aiDownloading.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloading…'**
+  String get aiDownloading;
+
+  /// No description provided for @aiDownloadedBytes.
+  ///
+  /// In en, this message translates to:
+  /// **'{megabytes} MB so far'**
+  String aiDownloadedBytes(Object megabytes);
+
+  /// No description provided for @aiDownloadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'The model could not be downloaded. You can try again.'**
+  String get aiDownloadFailed;
+
+  /// No description provided for @aiExplain.
+  ///
+  /// In en, this message translates to:
+  /// **'Explain'**
+  String get aiExplain;
+
+  /// No description provided for @aiExplainSentence.
+  ///
+  /// In en, this message translates to:
+  /// **'Explain this sentence'**
+  String get aiExplainSentence;
+
+  /// No description provided for @aiSuggestCorrection.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggest a correction'**
+  String get aiSuggestCorrection;
+
+  /// No description provided for @aiGeneratedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Generated on this device — may be wrong'**
+  String get aiGeneratedLabel;
+
+  /// No description provided for @aiGenerating.
+  ///
+  /// In en, this message translates to:
+  /// **'Generating on your device…'**
+  String get aiGenerating;
+
+  /// No description provided for @aiDismiss.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismiss'**
+  String get aiDismiss;
+
+  /// No description provided for @aiCorrectionNone.
+  ///
+  /// In en, this message translates to:
+  /// **'The model did not suggest a different sentence.'**
+  String get aiCorrectionNone;
+
+  /// No description provided for @aiCorrectionHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'One possible rewrite'**
+  String get aiCorrectionHeading;
+
+  /// No description provided for @aiFailedUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'The on-device model is not ready. Check Settings.'**
+  String get aiFailedUnavailable;
+
+  /// No description provided for @aiFailedBusy.
+  ///
+  /// In en, this message translates to:
+  /// **'Another answer is still being generated.'**
+  String get aiFailedBusy;
+
+  /// No description provided for @aiFailedTimeout.
+  ///
+  /// In en, this message translates to:
+  /// **'The model took too long. Try again.'**
+  String get aiFailedTimeout;
+
+  /// No description provided for @aiFailedTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'This sentence is too long for the on-device model.'**
+  String get aiFailedTooLong;
+
+  /// No description provided for @aiFailedGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing could be generated for this.'**
+  String get aiFailedGeneric;
+
+  /// No description provided for @aiHintDownload.
+  ///
+  /// In en, this message translates to:
+  /// **'On-device AI is on, but the model is not downloaded yet. Settings › On-device AI.'**
+  String get aiHintDownload;
 }
 
 class _AppLocalizationsDelegate

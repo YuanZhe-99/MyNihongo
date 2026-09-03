@@ -519,4 +519,23 @@ class NihongoStorage {
   /// Notes: Off is stored as an absent key, like every other default here.
   static Future<void> setSpeechNetworkFallback(bool allowed) =>
       _setBool('speechNetworkFallback', allowed ? true : null);
+
+  /// Purpose: Read whether on-device AI assistance is turned on.
+  /// Inputs: None.
+  /// Returns: `Future<bool>` — false unless the user turned it on.
+  /// Side effects: Reads the config file.
+  /// Notes: Device-local and never synced: whether a phone has AICore and a
+  /// downloaded model is a fact about that phone. Off is stored as an absent
+  /// key, so a device that never touched the setting never runs a model. See
+  /// `doc/en-us/features/ai-assist.md`.
+  static Future<bool> getAiAssistEnabled() async =>
+      await _getBool('aiAssistEnabled') ?? false;
+
+  /// Purpose: Remember whether on-device AI assistance is turned on.
+  /// Inputs: `enabled`.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: Off is stored as an absent key, like every other default here.
+  static Future<void> setAiAssistEnabled(bool enabled) =>
+      _setBool('aiAssistEnabled', enabled ? true : null);
 }

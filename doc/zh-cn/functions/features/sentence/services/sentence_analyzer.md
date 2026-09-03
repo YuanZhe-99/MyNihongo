@@ -15,7 +15,8 @@
 | [`analyze`](#analyze) | 方法 | A | 分析一个句子。 |
 | `functionWordsProvider` | provider | B | 功能词表，每次运行加载一次。 |
 | [`lexiconProvider`](#lexiconprovider) | provider | A | 表层到词条的索引，由目录与词表构建一次。 |
-| `sentenceAnalyzerProvider` | provider | B | 可直接使用的分析器。 |
+| `promptTemplatesProvider` | provider | B | 驱动可选端侧模型的提示词模板。 |
+| `sentenceAnalyzerProvider` | provider | B | 可直接使用的分析器，在可能运行模型处挂接增强器。 |
 
 ## 文档
 

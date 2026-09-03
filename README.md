@@ -36,6 +36,9 @@ sharing their sync, backup and data-management engine
   you turn the network fallback on.
 - **Sentence lab** — paste a sentence and see the words, what modifies what, the taught
   grammar it uses, and anything that looks unusual. A dictionary and rules, not a model.
+- **On-device AI (optional, Android, off by default)** — on a phone with Android AICore, the lab can
+  explain one of its findings in more words and suggest a rewrite, using a model that runs on the
+  phone. Generated text is always labelled and never changes the analysis.
 - **Learning progress** — a synced record per studied item, ready for the review engine.
 - **WebDAV sync, backup, ZIP export** — configure a server, sync by hand or automatically, resolve
   conflicts per record, keep local backups with a retention policy, and export a ZIP anywhere.

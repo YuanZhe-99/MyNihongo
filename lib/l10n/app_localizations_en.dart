@@ -728,6 +728,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'No Japanese speech recognition on this device';
 
   @override
+  String get speechRecognizerUnchecked =>
+      'Speech recognition is checked the first time you practise';
+
+  @override
   String get practiceAction => 'Practise';
 
   @override
@@ -834,4 +838,100 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get labCategoryUnknown => 'not in the dictionary';
+
+  @override
+  String get aiSection => 'On-device AI';
+
+  @override
+  String get aiEnable => 'On-device AI assistance';
+
+  @override
+  String get aiEnableBody =>
+      'Off by default. When on, the sentence lab can explain a finding in more words and suggest a correction, using a model that runs on this device. Generated text is always labelled and never changes the analysis.';
+
+  @override
+  String get aiUnsupportedPlatform => 'This platform has no on-device model.';
+
+  @override
+  String get aiStatusPrompt => 'Explanations';
+
+  @override
+  String get aiStatusProofread => 'Correction suggestions';
+
+  @override
+  String get aiStatusUnavailable => 'Not available on this device';
+
+  @override
+  String get aiStatusDownloadable => 'Not downloaded yet';
+
+  @override
+  String get aiStatusDownloading => 'The system is downloading it';
+
+  @override
+  String get aiStatusAvailable => 'Ready';
+
+  @override
+  String get aiDownload => 'Download';
+
+  @override
+  String get aiDownloadNote =>
+      'The download is performed by the Android AICore system service, which fetches the model from Google. It starts only when you tap Download.';
+
+  @override
+  String get aiDownloading => 'Downloading…';
+
+  @override
+  String aiDownloadedBytes(Object megabytes) {
+    return '$megabytes MB so far';
+  }
+
+  @override
+  String get aiDownloadFailed =>
+      'The model could not be downloaded. You can try again.';
+
+  @override
+  String get aiExplain => 'Explain';
+
+  @override
+  String get aiExplainSentence => 'Explain this sentence';
+
+  @override
+  String get aiSuggestCorrection => 'Suggest a correction';
+
+  @override
+  String get aiGeneratedLabel => 'Generated on this device — may be wrong';
+
+  @override
+  String get aiGenerating => 'Generating on your device…';
+
+  @override
+  String get aiDismiss => 'Dismiss';
+
+  @override
+  String get aiCorrectionNone =>
+      'The model did not suggest a different sentence.';
+
+  @override
+  String get aiCorrectionHeading => 'One possible rewrite';
+
+  @override
+  String get aiFailedUnavailable =>
+      'The on-device model is not ready. Check Settings.';
+
+  @override
+  String get aiFailedBusy => 'Another answer is still being generated.';
+
+  @override
+  String get aiFailedTimeout => 'The model took too long. Try again.';
+
+  @override
+  String get aiFailedTooLong =>
+      'This sentence is too long for the on-device model.';
+
+  @override
+  String get aiFailedGeneric => 'Nothing could be generated for this.';
+
+  @override
+  String get aiHintDownload =>
+      'On-device AI is on, but the model is not downloaded yet. Settings › On-device AI.';
 }

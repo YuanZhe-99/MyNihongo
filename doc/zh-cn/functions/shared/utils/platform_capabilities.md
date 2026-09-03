@@ -15,6 +15,7 @@
 | [`showsStorageLocation`](#showsstoragelocation) | 顶层 getter | A | 决定设置页是否显示存储位置一行。 |
 | `canOpenSystemSpeechSettings` | 顶层 getter | B | 报告是否存在指向系统语音设置的深链接（Android、Windows）。 |
 | `platformMayRecognizeSpeech` | 顶层 getter | B | 报告本平台是否可能存在语音识别。 |
+| `platformMayHaveOnDeviceModel` | 顶层 getter | B | 报告本平台是否可能存在端侧生成式模型——仅 Android，因为 AICore 不存在于别处。 |
 
 ## 文档
 

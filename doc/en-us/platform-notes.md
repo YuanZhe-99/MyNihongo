@@ -25,7 +25,27 @@ listed at the end with what adding each involves.
   `android/key.properties` and comes from GitHub Secrets in CI. `key.properties` and `*.jks` are
   git-ignored.
 - **Permissions:** `INTERNET` only (WebDAV sync). `RECORD_AUDIO` arrives with Phase 2's speech
-  recognition and is requested at first use with a rationale, never at install.
+  recognition and is requested at first use with a rationale, never at install. On-device AI needs
+  **no** permission: the network use behind it is the AICore system service's, not the app's.
+- **`minSdk` is 26, not `flutter.minSdkVersion`** (24). The ML Kit GenAI libraries require API 26 and
+  nothing else in the app does; the value is set explicitly in `android/app/build.gradle.kts` with
+  the reason next to it.
+- **Two method channels**, both registered by `MainActivity`:
+  `com.yuanzhe.my_nihongo/system` (open the system speech settings) and
+  `com.yuanzhe.my_nihongo/genai` (`GenAiChannel`, the bridge to AICore). Both exist instead of a
+  plugin because each is a small surface, and every extra Flutter plugin is another one that may
+  apply the Kotlin Gradle Plugin — the constraint that already pins `file_picker` and
+  `speech_to_text`.
+- **On-device AI dependencies:** `com.google.mlkit:genai-prompt:1.0.0-beta2`,
+  `com.google.mlkit:genai-proofreading:1.0.0-beta1` and
+  `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2`, all pinned exactly because the ML Kit
+  GenAI APIs are beta with no deprecation policy. See [`android-aicore.md`](android-aicore.md).
+- **`android/app/proguard-rules.pro` exists only for ML Kit GenAI.** R8 shrinks it into a runtime
+  `NullPointerException` that reads, from the app, as "this device does not support AI" — and only in
+  a release build, so the debug build hides it. The rules keep `com.google.mlkit.**` and
+  `com.google.android.gms.internal.mlkit_**`; keeping just the `genai` packages is not enough,
+  because the failing frame was in ML Kit's shared SDK internals. Found on a Pixel 10; the reasoning
+  is written out in `android-aicore.md`.
 - **Folding:** the activity's `configChanges` includes
   `screenLayout|screenSize|smallestScreenSize|density`, so unfolding resizes the window without
   recreating the activity. See [`adaptive-layout.md`](adaptive-layout.md).
@@ -134,6 +154,7 @@ project whose one development host is Windows.
 | `showsStorageLocation` | not mobile | Settings → Data hides the storage path on a phone, where it names a sandbox the user can neither browse nor act on. The custom storage path itself still works everywhere; only the display is hidden |
 | `canOpenSystemSpeechSettings` | Android, Windows | offering "install a Japanese voice" as an action instead of as text |
 | `platformMayRecognizeSpeech` | not Linux or Fuchsia | a coarse gate; whether a recognizer is really present is a runtime question |
+| `platformMayHaveOnDeviceModel` | Android | AICore exists nowhere else; Settings omits the On-device AI section elsewhere, and the analyser attaches no enhancer. Whether a given Android device can actually serve a model is a runtime question |
 
 ## Other planned platforms
 

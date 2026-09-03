@@ -213,6 +213,10 @@
 | 语法等级筛选 | `storage_config.json` | 否 | JLPT 标签，缺失表示全部等级（`grammarLevel`） |
 | 假名字体 | `storage_config.json` | 否 | `katakana`，缺失表示平假名（`kanaScript`） |
 | 参考列表列数 | `storage_config.json` | 否 | 1-4，缺失表示自动（`referenceListColumns`） |
+| 朗读速度 | `storage_config.json` | 否 | 0.6-1.2，缺失表示 1.0（`ttsRate`） |
+| 选定的日语语音 | `storage_config.json` | 否 | 引擎的语音名，缺失表示引擎默认（`ttsVoice`） |
+| 网络语音识别 | `storage_config.json` | 否 | 仅在开启时为 `true`；缺失表示仅离线（`speechNetworkFallback`） |
+| 端侧 AI 辅助 | `storage_config.json` | 否 | 仅在开启时为 `true`；缺失表示关闭（`aiAssistEnabled`） |
 | WebDAV 配置 | `webdav_config.json` | 否 | 仅本地密钥 / 配置 |
 | 同步基线快照 | `.sync_base/nihongo_progress.json` | 否 | 本地合并跟踪 |
 | 上传锁记录 | `.sync_base/upload_lock.json` | 否 | 检测中途中断的上传 |

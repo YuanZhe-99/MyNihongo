@@ -20,7 +20,8 @@ under `features/sentence/widgets/`.
 | [`toFixtureString`](#tofixturestring) | method | A | Render the analysis as one line, for fixture comparison. |
 | [`SentenceEnhancer`](#enhancer) | abstract class | A | The seam an on-device model would plug into. |
 | `SentenceEnhancer.isAvailable` | method | B | Report whether an on-device model is present and enabled. |
-| `SentenceEnhancer.explain` | method | B | Explain one issue, or the sentence, in more words. |
+| `SentenceEnhancer.explain` | method | B | Explain one issue, or the sentence, in more words, in the UI language. |
+| `SentenceEnhancer.suggestCorrection` | method | B | Offer a corrected version of the whole sentence. |
 
 ## Documentation
 

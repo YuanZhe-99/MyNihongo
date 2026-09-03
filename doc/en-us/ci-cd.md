@@ -20,6 +20,10 @@ in CI, so the default `GITHUB_TOKEN` is sufficient.
 and testing (see [`platform-notes.md`](platform-notes.md)); adding jobs for them, and the MSIX and
 Inno Setup release artefacts, is Phase 5 work copied from MyAnime's workflow.
 
+**Nothing in CI touches AICore.** The on-device AI runs only on a real, supported phone, so what CI
+verifies is the layer below it: the policy, the prompts and the parsing, all against fakes. The
+model itself is checked by hand on a device — see [`android-aicore.md`](android-aicore.md).
+
 ## Workflow caveats
 
 - Keep the workflow Flutter version (`3.44.2`) aligned with the Dart SDK constraint in
@@ -53,6 +57,17 @@ iscc installer.iss          # x64 installer, needs Inno Setup on PATH
 iscc /DARM64 installer.iss  # ARM64 installer
 dart run msix:create        # MSIX package
 flutter build macos --release --dart-define=FLAVOR=full   # needs a Mac
+```
+
+On a connected Android phone, for anything that has to be seen or heard — the speech path and the
+on-device AI. `adb` is not on `PATH` by default; it lives in the Android SDK's `platform-tools`.
+`scrcpy` mirrors the screen, and needs `--no-audio` on a host with no audio device:
+
+```powershell
+flutter devices
+flutter run --release -d <device-id> --dart-define=FLAVOR=full
+scrcpy --no-audio
+adb logcat | Select-String -Pattern "AICore|my_nihongo"
 ```
 
 Use the narrowest relevant command set for verification. For model or sync changes, include

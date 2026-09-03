@@ -68,3 +68,9 @@
 辅助方法为它们统一保证两条性质。默认值会被**移除**而不是写入，因此文件保持精简，将来默认值的调整也能覆盖到从未
 改过该设置的设备。类型不对的值按“未设置”读取而不是抛出异常：文件是用户可指定目录中的纯 JSON，可以手工编辑。见
 [`../../../../features/reference-preferences.md`](../../../../features/reference-preferences.md)。
+
+## 语音与 AI 偏好（`PLAN.md` M2.1、M2.2、M2.4）
+
+在 `_getDouble`/`_setDouble` 与 `_getBool`/`_setBool` 之上再有四对访问器，遵循同样的两条规则：`getTtsRate`/`setTtsRate`、`getTtsVoice`/`setTtsVoice`、`getSpeechNetworkFallback`/`setSpeechNetworkFallback`，以及 `getAiAssistEnabled`/`setAiAssistEnabled`。
+
+后两对值得在这里点名，因为它们各自把守着一件要么会离开设备、要么会运行模型的事：每一个都**在用户打开之前为 false**，并且把「关闭」存为缺失键而不是 `false`。手工写入的 `"true"` 字符串按未设置读取，与本文件中其他类型不对的值一样——字符串不是布尔值，而这种分量的设置不应该被一个笔误打开。见 [`../../../../features/pronunciation.md`](../../../../features/pronunciation.md) 与 [`../../../../features/ai-assist.md`](../../../../features/ai-assist.md)。
