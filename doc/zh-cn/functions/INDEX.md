@@ -1,4 +1,6 @@
-| `lib/shared/widgets/study_conflict_dialog.dart` | [shared/widgets/study_conflict_dialog.md](shared/widgets/study_conflict_dialog.md) | 6 | 1 |
+| Tier A（完整条目：Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes） | 37 |
+| Tier B（仅索引行） | 293 |
+| **总计** | **330** || `lib/shared/widgets/study_conflict_dialog.dart` | [shared/widgets/study_conflict_dialog.md](shared/widgets/study_conflict_dialog.md) | 6 | 1 |
 | `lib/shared/views/webdav_config_page.dart` | [shared/views/webdav_config_page.md](shared/views/webdav_config_page.md) | 21 | 1 |
 | `lib/features/settings/views/backup_page.dart` | [features/settings/views/backup_page.md](features/settings/views/backup_page.md) | 17 | 1 |
 | `lib/features/content/services/study_item_labels.dart` | [features/content/services/study_item_labels.md](features/content/services/study_item_labels.md) | 3 | 1 |
@@ -6,13 +8,13 @@
 
 这是 MyNihongo 仓库中 `lib/` 手写函数解释层文档的顶层索引。每行链接到 `doc/zh-cn/functions/` 下镜像 `lib/` 树的逐源文件页面（`.dart` 换成 `.md`）。
 
-**总计：** 仓库的 `/// Purpose:` 注释数为 **325**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **325** 个已记录声明。
+**总计：** 仓库的 `/// Purpose:` 注释数为 **324**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **330** 个已记录声明。各行之所以更多，是因为库级文档头在其页面上算作一个声明，却不带自己的 `/// Purpose:` 行；两个数字分别测量，并不要求相等。
 
 | Tier | 计数 |
 |---|---|
-| Tier A（完整条目：Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes） | 36 |
-| Tier B（仅索引行） | 289 |
-| **总计** | **325** |
+| Tier A（完整条目：Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes） | 37 |
+| Tier B（仅索引行） | 293 |
+| **总计** | **330** |
 
 这些总计在初始化时（`PLAN.md` M1.0）对照源码树测得。若要改动这些数字，请测量而不要手工调整：
 
@@ -75,6 +77,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/shared/services/sync_merge.dart` | [shared/services/sync_merge.md](shared/services/sync_merge.md) | 4 | 2 |
 | `lib/shared/services/webdav_service.dart` | [shared/services/webdav_service.md](shared/services/webdav_service.md) | 15 | 2 |
 | `lib/shared/utils/adaptive_layout.dart` | [shared/utils/adaptive_layout.md](shared/utils/adaptive_layout.md) | 9 | 4 |
+| `lib/shared/utils/platform_capabilities.dart` | [shared/utils/platform_capabilities.md](shared/utils/platform_capabilities.md) | 5 | 1 |
 | `lib/shared/widgets/adaptive_tile_grid.dart` | [shared/widgets/adaptive_tile_grid.md](shared/widgets/adaptive_tile_grid.md) | 3 | 0 |
 | `lib/shared/widgets/content_sheets.dart` | [shared/widgets/content_sheets.md](shared/widgets/content_sheets.md) | 7 | 3 |
 | `lib/shared/widgets/reference_widgets.dart` | [shared/widgets/reference_widgets.md](shared/widgets/reference_widgets.md) | 4 | 0 |

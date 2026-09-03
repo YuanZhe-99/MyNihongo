@@ -9,6 +9,7 @@ import '../../../shared/providers/app_settings.dart';
 import '../../../shared/services/auto_sync_service.dart';
 import '../../../shared/services/import_export_service.dart';
 import '../../../shared/utils/adaptive_layout.dart';
+import '../../../shared/utils/platform_capabilities.dart';
 import '../../../shared/views/webdav_config_page.dart';
 import '../../progress/services/nihongo_storage.dart';
 import 'backup_page.dart';
@@ -98,8 +99,10 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
   /// Inputs: None.
   /// Returns: None.
   /// Side effects: Rebuilds with the path.
-  /// Notes: Internal helper used within this file only.
+  /// Notes: Internal helper used within this file only. Skipped on mobile,
+  /// where the row that would show the path is not built at all.
   Future<void> _loadStoragePath() async {
+    if (!showsStorageLocation) return;
     final path = await NihongoStorage.getStoragePath();
     if (mounted) setState(() => _storagePath = path);
   }
@@ -437,16 +440,20 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
             title: Text(l10n.importData),
             onTap: _importZip,
           ),
-          ListTile(
-            leading: const Icon(Icons.folder_outlined),
-            title: Text(l10n.settingsStorageLocation),
-            subtitle: Text(
-              _storagePath,
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
+          // The storage path is a sandbox location on a phone: the user can
+          // neither browse to it nor change what it means, so the row is only
+          // built where it is actionable. See `platform_capabilities.dart`.
+          if (showsStorageLocation)
+            ListTile(
+              leading: const Icon(Icons.folder_outlined),
+              title: Text(l10n.settingsStorageLocation),
+              subtitle: Text(
+                _storagePath,
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
               ),
             ),
-          ),
         ]),
 
         // ── About ──

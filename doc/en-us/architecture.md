@@ -116,7 +116,9 @@ lib/
       import_export_service.dart
       sync_merge.dart
       webdav_service.dart
-    utils/adaptive_layout.dart
+    utils/
+      adaptive_layout.dart
+      platform_capabilities.dart
     views/webdav_config_page.dart
     widgets/
       adaptive_tile_grid.dart

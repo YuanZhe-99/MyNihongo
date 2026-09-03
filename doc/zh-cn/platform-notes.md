@@ -23,11 +23,42 @@ dart run tool/generate_ios_icons.dart
 dart run flutter_launcher_icons
 ```
 
+- 同一份源图也生成 Windows 的 `.ico` 和 macOS 的 `AppIcon.appiconset`；`flutter_launcher_icons` 配置中四个平台都已启用。
 - `ios/` 文件夹的存在是为了给图标集一个位置，且 `CFBundleDisplayName` 已是 `MyNihongo!!!!!`；除此之外 iOS 仍是计划中的平台，CI 不构建它。
 
-## 计划中的平台
+## Windows
 
-- **Windows：** `flutter create --platforms=windows .`，然后是本系列的 `installer.iss`（通过 `#ifdef ARM64` 支持 x64 和 ARM64）、`pubspec.yaml` 中的 `msix_config`、`windows/runner/resources/app_icon.ico`，以及 `AGENTS.md` 中列出的版本位置。ARM64 CI 任务在 stable 发布 ARM64 引擎之前运行在 Flutter master 上，与 MyAnime 的一样。
-- **iOS / macOS：** `ios/` 已存在（见*应用图标*）；用 `--platforms=macos` 添加 macOS；`AppInfo.xcconfig` 名称为 `MyNihongo!!!!!`；两个 macOS entitlement 文件中都要有 `com.apple.security.network.client` 以支持 WebDAV；带边距的 iOS 图标源已生成。
-- **语音（第二阶段）：** `flutter_tts` 和 `speech_to_text` 包装 Android 的 `TextToSpeech` / `SpeechRecognizer` 与 Apple 的 `AVSpeechSynthesizer` / `SFSpeechRecognizer`；Windows 通过同一插件有 TTS，但没有内置识别器，因此在选定方案之前，发音反馈仍是移动端功能。
+Windows 是**本地开发与测试目标**：工程、安装脚本和图标都在仓库中，但没有 CI 任务构建它们（见 [`ci-cd.md`](ci-cd.md)）。
+
+- `windows/` 由 `flutter create --platforms=windows,macos .` 生成；`CMakeLists.txt`（`BINARY_NAME my_nihongo`）与 `Runner.rc` 从模板出来就带有组织名和工程名，只有 `runner/main.cpp` 被修改。
+- **单实例：** `main.cpp` 取用命名互斥体 `MyNihongo_SingleInstance_A1B2C3D4`；再次启动会恢复并聚焦已有窗口，而不是打开第二个。查找时同时传入 runner 的窗口类（`FLUTTER_RUNNER_WIN32_WINDOW`）和标题，因此不会匹配到无关窗口。
+- **初始窗口 1000×720**，而非同系列应用的手机形状 400×860：在该宽度下参考列表和设置页已是双列，这正是桌面端值得查看的布局。见 [`adaptive-layout.md`](adaptive-layout.md)。
+- **图标：** `windows/runner/resources/app_icon.ico`，由 `flutter_launcher_icons` 以 `icon_size: 256` 从与其他平台相同的 `assets/icon/app_icon.png` 生成。
+- **安装包：** 仓库根目录的 `installer.iss`，用 Inno Setup 构建。一份脚本生成两种架构——x64 用 `iscc installer.iss`，ARM64 用 `iscc /DARM64 installer.iss`——输出到 `build/installer/`。它没有 `[Registry]` 段：本应用不声明任何文件类型。
+- **MSIX：** `pubspec.yaml` 中的 `msix_config` 是为了与同系列应用的版本位置保持一致。没有工作流构建 MSIX；`dart run msix:create` 是手动步骤。
+- **ARM64：** 与同系列应用不同，本工程不需要 Flutter master 任务——stable 3.44.2 已将 `windows-arm64` 列为设备，本机的 debug 与 release 构建都是 ARM64（`build/windows/arm64/`）。
+
+## macOS
+
+- `macos/` 已生成，但**从未编译过**：开发主机是 Windows。下面的配置只经过审阅，未经验证。
+- `Runner/Configs/AppInfo.xcconfig`：`PRODUCT_NAME = MyNihongo!!!!!`，`PRODUCT_BUNDLE_IDENTIFIER = com.yuanzhe.myNihongo`（与 iOS 相同的标识符）。
+- `com.apple.security.network.client` 同时加入 `DebugProfile.entitlements` 和 `Release.entitlements`；若 Release 中缺失，WebDAV 同步只在 release 构建中失败。
+- `MACOSX_DEPLOYMENT_TARGET = 13.0`，与同系列应用一致。
+- 图标由 `flutter_launcher_icons` 生成到 `Runner/Assets.xcassets/AppIcon.appiconset`。
+
+## Dart 中的平台分支
+
+`lib/shared/utils/platform_capabilities.dart` 是 `lib/` 中**唯一**按平台分支的文件。它读取 `defaultTargetPlatform` 而非 `dart:io` 的 `Platform`，因此每个分支都能通过 `debugDefaultTargetPlatformOverride` 在 widget 测试中触达——这对唯一开发主机是 Windows 的工程尤其重要。
+
+| Getter | 为真的条件 | 用途 |
+|---|---|---|
+| `isMobilePlatform` | Android、iOS | 下面各项的平台族判断 |
+| `isDesktopPlatform` | Windows、macOS、Linux | — |
+| `showsStorageLocation` | 非移动端 | 设置 → 数据在手机上隐藏存储路径：那里的路径指向用户既无法浏览也无法处置的沙盒。自定义存储路径本身在所有平台仍然有效，隐藏的只是显示 |
+| `canOpenSystemSpeechSettings` | Android、Windows | 把"安装日语语音"作为一个动作而非一句说明提供 |
+| `platformMayRecognizeSpeech` | 非 Linux、非 Fuchsia | 粗粒度判断；识别器是否真的存在是运行时问题 |
+
+## 其他计划中的平台
+
+- **iOS：** `ios/` 已存在（见*应用图标*），CI 不构建它。
 - **Web** 不是目标。

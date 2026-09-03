@@ -1,3 +1,14 @@
+| Android  | AAB (`app-release.aab`) | store |
+| Windows  | Installer (`MyNihongo_<ver>[_arm64]_Setup.exe`) | full |
+| macOS    | `.app` bundle | full |
+
+Only the Android artifacts are built by CI. Windows and macOS are local build targets for
+development and testing; macOS has not been compiled (the development host is Windows).
+| Windows  | Installer (`MyNihongo_<ver>[_arm64]_Setup.exe`) | full |
+| macOS    | `.app` bundle | full |
+
+Only the Android artifacts are built by CI. Windows and macOS are local build targets for
+development and testing; macOS has not been compiled (the development host is Windows).
 # MyNihongo!!!!! — Your Japanese Learning Companion
 
 A clean, privacy-first Japanese learning app. Android first; Windows, iOS and macOS planned.
@@ -48,6 +59,11 @@ gated on it yet.
 |----------|----------|--------|
 | Android  | APK (`app-release.apk`) | full |
 | Android  | AAB (`app-release.aab`) | store |
+| Windows  | Installer (`MyNihongo_<ver>[_arm64]_Setup.exe`) | full |
+| macOS    | `.app` bundle | full |
+
+Only the Android artifacts are built by CI. Windows and macOS are local build targets for
+development and testing; macOS has not been compiled (the development host is Windows).
 
 ## Build
 
@@ -62,6 +78,14 @@ flutter build apk --release --dart-define=FLAVOR=full
 
 # Android AAB (Google Play)
 flutter build appbundle --release --dart-define=FLAVOR=store
+
+# Windows (local only) — installers need Inno Setup on PATH
+flutter build windows --release --dart-define=FLAVOR=full
+iscc installer.iss
+iscc /DARM64 installer.iss
+
+# macOS (local only, needs a Mac)
+flutter build macos --release --dart-define=FLAVOR=full
 ```
 
 After a plain clone, fetch the shared engine package with `git submodule update --init`.

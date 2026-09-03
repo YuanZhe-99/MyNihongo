@@ -214,8 +214,10 @@ string-equality fast path on the next sync instead of triggering a spurious re-u
 ## Persisted Data Inventory
 
 The default app data directory is `<documents>/MyNihongo` — the platform application-documents
-directory on Android. Custom storage paths are stored in `storage_config.json`; changing the path
-migrates everything in the folder except that config file.
+directory on every platform, with no per-platform branch. Custom storage paths are stored in
+`storage_config.json`; changing the path migrates everything in the folder except that config file.
+Settings shows the resolved path only on desktop; see `platform_capabilities.dart` in
+[`platform-notes.md`](platform-notes.md).
 
 | Data | File | Synced | Notes |
 | --- | --- | --- | --- |
@@ -225,6 +227,11 @@ migrates everything in the folder except that config file.
 | Storage path override | `storage_config.json` | No | Device-specific path (`storagePath`) |
 | Auto-backup enabled | `storage_config.json` | No | Device-specific config (`autoBackupEnabled`) |
 | Backup retention days | `storage_config.json` | No | Device-specific config (`backupRetentionDays`) |
+| Last tab | `storage_config.json` | No | The tab the app reopens on (`lastTab`) |
+| Vocabulary level filter | `storage_config.json` | No | JLPT label, absent means all levels (`vocabLevel`) |
+| Grammar level filter | `storage_config.json` | No | JLPT label, absent means all levels (`grammarLevel`) |
+| Kana script | `storage_config.json` | No | `katakana`, absent means hiragana (`kanaScript`) |
+| Reference list columns | `storage_config.json` | No | 1-4, absent means automatic (`referenceListColumns`) |
 | WebDAV configuration | `webdav_config.json` | No | Local secret/config only |
 | Sync base snapshot | `.sync_base/nihongo_progress.json` | No | Local merge tracking |
 | Upload lock record | `.sync_base/upload_lock.json` | No | Detects an upload interrupted mid-flight |

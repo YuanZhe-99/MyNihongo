@@ -1,6 +1,5 @@
-# PLAN.md — MyNihongo!!!!! roadmap
-
-The phased plan for MyNihongo!!!!!, the Japanese learning app in the MyApps series. `AGENTS.md`
+# PLAN.md — MyNihongo!!!!! roadmapas analysis |
+| 2026-09-03 | Windows and macOS projectsThe phased plan for MyNihongo!!!!!, the Japanese learning app in the MyApps series. `AGENTS.md`
 says how to work here; `doc/en-us/` says what the code does; this file says **what is planned, in
 what order, why, and what is done**. Update the checklists in the same change that lands a
 milestone item.
@@ -366,10 +365,13 @@ catalog content, and never writes a progress record by itself — the learner's 
 
 ### Phase 5 — Platforms and languages
 
-- [ ] Windows: `flutter create --platforms=windows`, `installer.iss` (x64 + ARM64), MSIX config,
-      the series' version locations; desktop scroll and keyboard shortcuts for quizzes
-- [ ] iOS and macOS: `--platforms=ios,macos`, `AVSpeechSynthesizer` / `SFSpeechRecognizer` through
-      the same plugins; sideload IPA and DMG jobs copied from MyAnime's workflow
+- [x] Windows: `flutter create --platforms=windows`, `installer.iss` (x64 + ARM64), MSIX config and
+      the series' version locations — **landed early, with Phase 2**, because pronunciation work
+      needs a machine that can run the app and this host has no Android device. Desktop scroll and
+      keyboard shortcuts for quizzes stay in Phase 5
+- [x] macOS project files (`--platforms=macos`, `AppInfo.xcconfig`, both entitlement files) —
+      **landed early, unverified**: there is no Mac here. iOS/macOS speech through
+      `AVSpeechSynthesizer` / `SFSpeechRecognizer` and the sideload IPA and DMG jobs stay in Phase 5
 - [ ] UI languages: `ja` and `zh_TW` ARB files (the series' four); content stays en/zh until
       glosses exist in the new languages
 - [ ] Windows ARM64 job on Flutter master until stable ships ARM64, as MyAnime does
@@ -429,6 +431,11 @@ catalog content, and never writes a progress record by itself — the learner's 
 | 2026-09-03 | The reference preferences are device-local, never synced | A phone and a tablet want different column counts, and a habit lives on a device |
 | 2026-09-03 | The router is built once and kept in the root widget's state | A `GoRouter` owns navigation history; rebuilding one on a theme change would send the user back to the initial tab mid-session |
 | 2026-09-03 | Cross-links are substring matches, not parsing | A real tokenizer is Phase 3's sentence analyser; until then a wrong link is cheaper than no links, and the chips are labelled as what the example uses rather than as analysis |
+
+| 2026-09-03 | Windows and macOS projects land with Phase 2, but CI stays Android-only | Pronunciation and the sentence lab need a machine that can actually run the app, and this host has no Android device or emulator; desktop CI jobs, MSIX and Inno artefacts remain Phase 5 |
+| 2026-09-03 | The Windows window opens at 1000×720, not the siblings' 400×860 | At that width the reference lists and settings are already two-column, which is the layout worth looking at on a desktop; the siblings are phone-shaped because they are phone-shaped apps |
+| 2026-09-03 | Every platform branch lives in `shared/utils/platform_capabilities.dart` and reads `defaultTargetPlatform` | One named home, the same rule `adaptive_layout.dart` applies to widths; reading `defaultTargetPlatform` rather than `dart:io`'s `Platform` is what makes an Android-only branch testable on a Windows host |
+| 2026-09-03 | Settings shows the storage location on desktop only | On a phone the path names a sandbox the user can neither browse nor act on; the custom storage path itself keeps working on every platform |
 
 ## 7. Open questions
 

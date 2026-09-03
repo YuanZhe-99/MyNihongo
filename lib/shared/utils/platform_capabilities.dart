@@ -1,0 +1,59 @@
+import 'package:flutter/foundation.dart';
+
+/// What the current platform can do, in one place.
+///
+/// This is the only file in `lib/` that branches on the platform. Everything
+/// here reads [defaultTargetPlatform] rather than `dart:io`'s `Platform`, so a
+/// widget test can drive any branch through
+/// `debugDefaultTargetPlatformOverride`, and so the rules stay testable on the
+/// one host the project actually has. See `doc/en-us/platform-notes.md`.
+
+/// Purpose: Report whether the app is running on a phone or tablet.
+/// Inputs: None.
+/// Returns: `bool` — true on Android and iOS.
+/// Side effects: None.
+/// Notes: Reads [defaultTargetPlatform], so a test override changes it.
+bool get isMobilePlatform =>
+    defaultTargetPlatform == TargetPlatform.android ||
+    defaultTargetPlatform == TargetPlatform.iOS;
+
+/// Purpose: Report whether the app is running on a desktop.
+/// Inputs: None.
+/// Returns: `bool` — true on Windows, macOS and Linux.
+/// Side effects: None.
+/// Notes: The complement of [isMobilePlatform]; both are spelled out because
+/// call sites read better naming the platform family they care about.
+bool get isDesktopPlatform => !isMobilePlatform;
+
+/// Purpose: Decide whether Settings shows the storage location row.
+/// Inputs: None.
+/// Returns: `bool` — false on mobile.
+/// Side effects: None.
+/// Notes: On a phone the path is a sandbox location the user can neither read
+/// nor act on, so the row is noise; on a desktop it is a real folder they may
+/// want to find. The custom storage path itself keeps working on every
+/// platform — only the display is hidden.
+bool get showsStorageLocation => !isMobilePlatform;
+
+/// Purpose: Decide whether a deep link to the system speech settings exists.
+/// Inputs: None.
+/// Returns: `bool` — true on Android and Windows.
+/// Side effects: None.
+/// Notes: Used to offer "install a Japanese voice" as an action rather than
+/// as plain text. Apple platforms have no documented deep link, so the message
+/// there names the settings pane instead.
+bool get canOpenSystemSpeechSettings =>
+    defaultTargetPlatform == TargetPlatform.android ||
+    defaultTargetPlatform == TargetPlatform.windows;
+
+/// Purpose: Report whether speech recognition can exist on this platform.
+/// Inputs: None.
+/// Returns: `bool` — false on Linux, which has no recognizer behind the plugin.
+/// Side effects: None.
+/// Notes: A coarse gate only. Whether a recognizer and a Japanese model are
+/// actually present is decided at runtime by
+/// `SpeechRecognitionService.ensureAvailable()`; this just avoids offering the
+/// feature where it can never work.
+bool get platformMayRecognizeSpeech =>
+    defaultTargetPlatform != TargetPlatform.linux &&
+    defaultTargetPlatform != TargetPlatform.fuchsia;

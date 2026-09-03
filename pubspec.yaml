@@ -51,6 +51,9 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^6.0.0
   flutter_launcher_icons: ^0.14.4
+  # Windows Store packaging, for parity with the sibling apps' version
+  # locations; no CI job builds an MSIX (see doc/en-us/ci-cd.md).
+  msix: ^3.16.8
   image: ^4.8.0
   # Used by the golden sync transcript harness and the backup/ZIP tests, which
   # drive the shared engines directly rather than through the UI.
@@ -65,3 +68,14 @@ flutter:
   assets:
     - assets/content/
     - assets/content/grammar/
+
+# Windows MSIX packaging. `msix_version` is one of the version locations listed
+# in AGENTS.md and moves with `version:` above.
+msix_config:
+  display_name: MyNihongo!!!!!
+  publisher_display_name: yuanzhe
+  identity_name: com.yuanzhe.mynihongo
+  msix_version: 0.1.0.0
+  logo_path: assets/icon/app_icon.png
+  capabilities: internetClient
+  install_certificate: false

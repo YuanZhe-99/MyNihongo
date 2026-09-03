@@ -186,8 +186,9 @@ When the user confirms:
 
 1. Update every version location:
    - `pubspec.yaml`: `version: X.Y.Z+N` (`N` increments for releases)
-   - Once desktop targets exist: `pubspec.yaml` `msix_config.msix_version: X.Y.Z.0` and
-     `installer.iss` `AppVersion=X.Y.Z`, following the sibling apps
+   - `pubspec.yaml` `msix_config.msix_version: X.Y.Z.0`
+   - `installer.iss` `AppVersion=X.Y.Z`, `VersionInfoVersion=X.Y.Z.0`,
+     `VersionInfoProductVersion=X.Y.Z` (the installer file names derive from `AppVersion`)
    - Never hand-edit the settings-page version display; it reads `PackageInfo.fromPlatform()`
 2. Re-run verification.
 3. Commit all intended changes, and add the `doc/en-us/version-history.md` entry.

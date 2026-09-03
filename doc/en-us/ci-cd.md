@@ -16,8 +16,9 @@ in CI, so the default `GITHUB_TOKEN` is sufficient.
 - `release` — on a tag push, downloads the artifacts and creates a GitHub Release with generated
   notes.
 
-Desktop, iOS and macOS jobs are added with their platforms (`PLAN.md`, Phase 5), copied from
-MyAnime's workflow.
+**CI stays Android-only on purpose.** The Windows and macOS projects exist for local development
+and testing (see [`platform-notes.md`](platform-notes.md)); adding jobs for them, and the MSIX and
+Inno Setup release artefacts, is Phase 5 work copied from MyAnime's workflow.
 
 ## Workflow caveats
 
@@ -42,6 +43,16 @@ flutter test
 flutter test test/content_catalog_test.dart
 flutter build apk --release --dart-define=FLAVOR=full
 flutter build appbundle --release --dart-define=FLAVOR=store
+```
+
+Desktop builds are local only; nothing below runs in CI:
+
+```powershell
+flutter build windows --release --dart-define=FLAVOR=full
+iscc installer.iss          # x64 installer, needs Inno Setup on PATH
+iscc /DARM64 installer.iss  # ARM64 installer
+dart run msix:create        # MSIX package
+flutter build macos --release --dart-define=FLAVOR=full   # needs a Mac
 ```
 
 Use the narrowest relevant command set for verification. For model or sync changes, include

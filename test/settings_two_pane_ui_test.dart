@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -38,6 +39,7 @@ void main() {
   const webdav = 'WebDAV 同步';
   const backup = '备份';
   const placeholder = '从左侧列表中选择一项';
+  const storageLocation = '存储位置';
 
   setUpAll(() async {
     tempDir = await Directory.systemTemp.createTemp('mynihongo_settings_ui');
@@ -158,5 +160,29 @@ void main() {
   testWidgets('a folded Z Fold 8 stays on one pane', (tester) async {
     await pumpAt(tester, 704, 933);
     expect(find.text(placeholder), findsNothing);
+  });
+
+  testWidgets('a phone hides the storage location row', (tester) async {
+    // Reset inside the body, not in a tear-down: the framework asserts every
+    // foundation debug variable is unset before tear-downs run.
+    debugDefaultTargetPlatformOverride = TargetPlatform.android;
+    await pumpAt(tester, 412, 915);
+    expect(find.text(storageLocation), findsNothing);
+    expect(find.text(webdav), findsOneWidget);
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
+  testWidgets('a desktop shows the storage location row', (tester) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.windows;
+    await pumpAt(tester, 1000, 720);
+    await tester.scrollUntilVisible(
+      find.text(storageLocation),
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
+    expect(find.text(storageLocation), findsOneWidget);
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
   });
 }

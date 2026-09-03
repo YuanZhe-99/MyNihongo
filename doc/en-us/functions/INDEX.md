@@ -1,4 +1,6 @@
-| `lib/shared/widgets/study_conflict_dialog.dart` | [shared/widgets/study_conflict_dialog.md](shared/widgets/study_conflict_dialog.md) | 6 | 1 |
+| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 37 |
+| Tier B (index row only) | 293 |
+| **Total** | **330** || `lib/shared/widgets/study_conflict_dialog.dart` | [shared/widgets/study_conflict_dialog.md](shared/widgets/study_conflict_dialog.md) | 6 | 1 |
 | `lib/shared/views/webdav_config_page.dart` | [shared/views/webdav_config_page.md](shared/views/webdav_config_page.md) | 21 | 1 |
 | `lib/features/settings/views/backup_page.dart` | [features/settings/views/backup_page.md](features/settings/views/backup_page.md) | 17 | 1 |
 | `lib/features/content/services/study_item_labels.dart` | [features/content/services/study_item_labels.md](features/content/services/study_item_labels.md) | 3 | 1 |
@@ -8,9 +10,11 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **325** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **324** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **325** documented declarations.
+The rows below sum to **330** documented declarations. The rows are the larger number because a
+library-level doc header counts as a declaration on its page without carrying its own
+`/// Purpose:` line; the two numbers are measured separately and are not expected to match.
 
 | Tier | Count |
 |---|---|
@@ -81,6 +85,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/shared/services/sync_merge.dart` | [shared/services/sync_merge.md](shared/services/sync_merge.md) | 4 | 2 |
 | `lib/shared/services/webdav_service.dart` | [shared/services/webdav_service.md](shared/services/webdav_service.md) | 15 | 2 |
 | `lib/shared/utils/adaptive_layout.dart` | [shared/utils/adaptive_layout.md](shared/utils/adaptive_layout.md) | 9 | 4 |
+| `lib/shared/utils/platform_capabilities.dart` | [shared/utils/platform_capabilities.md](shared/utils/platform_capabilities.md) | 5 | 1 |
 | `lib/shared/widgets/adaptive_tile_grid.dart` | [shared/widgets/adaptive_tile_grid.md](shared/widgets/adaptive_tile_grid.md) | 3 | 0 |
 | `lib/shared/widgets/content_sheets.dart` | [shared/widgets/content_sheets.md](shared/widgets/content_sheets.md) | 7 | 3 |
 | `lib/shared/widgets/reference_widgets.dart` | [shared/widgets/reference_widgets.md](shared/widgets/reference_widgets.md) | 4 | 0 |

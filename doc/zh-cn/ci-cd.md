@@ -11,7 +11,7 @@
 - `android` — `flutter pub get`、`flutter gen-l10n`、`flutter analyze`、`flutter test`，然后是 APK（full 风味）和 AAB（store 风味）。仅当 `KEYSTORE_BASE64` secret 存在时配置签名。
 - `release` — 标签推送时下载工件，并创建带生成说明的 GitHub Release。
 
-桌面、iOS 和 macOS 任务随其平台添加（`PLAN.md`，第五阶段），从 MyAnime 的工作流复制。
+**CI 刻意只跑 Android。** Windows 和 macOS 工程用于本地开发与测试（见 [`platform-notes.md`](platform-notes.md)）；为它们添加任务，以及 MSIX 与 Inno Setup 发布产物，属于第五阶段的工作，从 MyAnime 的工作流复制。
 
 ## 工作流注意事项
 
@@ -30,6 +30,16 @@ flutter test
 flutter test test/content_catalog_test.dart
 flutter build apk --release --dart-define=FLAVOR=full
 flutter build appbundle --release --dart-define=FLAVOR=store
+```
+
+桌面构建仅在本地进行，以下命令都不在 CI 中运行：
+
+```powershell
+flutter build windows --release --dart-define=FLAVOR=full
+iscc installer.iss          # x64 安装包，需要 PATH 中有 Inno Setup
+iscc /DARM64 installer.iss  # ARM64 安装包
+dart run msix:create        # MSIX 包
+flutter build macos --release --dart-define=FLAVOR=full   # 需要一台 Mac
 ```
 
 用最窄的相关命令集做校验。模型或同步变更包含 `flutter test test/progress_json_test.dart test/data_modules_test.dart`；内容变更用 `flutter test test/content_catalog_test.dart`；布局变更用三个 UI 测试。

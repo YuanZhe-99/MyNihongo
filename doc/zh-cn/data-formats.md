@@ -173,7 +173,7 @@
 
 ## 持久化数据清单
 
-默认应用数据目录是 `<documents>/MyNihongo`——Android 上的平台应用文档目录。自定义存储路径保存在 `storage_config.json` 中；更改路径会迁移文件夹里除该配置文件外的一切。
+默认应用数据目录是 `<documents>/MyNihongo`——所有平台上的平台应用文档目录，没有按平台分支。自定义存储路径保存在 `storage_config.json` 中；更改路径会迁移文件夹里除该配置文件外的一切。设置页仅在桌面端显示解析出的路径，见 [`platform-notes.md`](platform-notes.md) 中的 `platform_capabilities.dart`。
 
 | 数据 | 文件 | 同步 | 说明 |
 | --- | --- | --- | --- |
@@ -183,6 +183,11 @@
 | 存储路径覆盖 | `storage_config.json` | 否 | 设备特定路径（`storagePath`） |
 | 自动备份启用 | `storage_config.json` | 否 | 设备特定配置（`autoBackupEnabled`） |
 | 备份保留天数 | `storage_config.json` | 否 | 设备特定配置（`backupRetentionDays`） |
+| 上次标签页 | `storage_config.json` | 否 | 应用重新打开时所在的标签页（`lastTab`） |
+| 词汇等级筛选 | `storage_config.json` | 否 | JLPT 标签，缺失表示全部等级（`vocabLevel`） |
+| 语法等级筛选 | `storage_config.json` | 否 | JLPT 标签，缺失表示全部等级（`grammarLevel`） |
+| 假名字体 | `storage_config.json` | 否 | `katakana`，缺失表示平假名（`kanaScript`） |
+| 参考列表列数 | `storage_config.json` | 否 | 1-4，缺失表示自动（`referenceListColumns`） |
 | WebDAV 配置 | `webdav_config.json` | 否 | 仅本地密钥 / 配置 |
 | 同步基线快照 | `.sync_base/nihongo_progress.json` | 否 | 本地合并跟踪 |
 | 上传锁记录 | `.sync_base/upload_lock.json` | 否 | 检测中途中断的上传 |
