@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'app/app.dart';
+import 'features/progress/services/nihongo_storage.dart';
 import 'shared/services/auto_sync_service.dart';
 import 'shared/services/backup_service.dart';
+import 'shared/widgets/shell_scaffold.dart';
 
 /// Purpose: Initialize startup services and launch the app entry point.
 /// Inputs: None.
@@ -25,10 +27,19 @@ void main() async {
   // Start the auto-sync lifecycle observer.
   AutoSyncService.instance.start();
 
+  // Read the last tab before the first frame, so the app opens where the user
+  // left it rather than showing Learn and jumping.
+  final lastTab = await NihongoStorage.getLastTab();
+  final candidate = '/$lastTab';
+  final initialLocation = ShellScaffold.routes.contains(candidate)
+      ? candidate
+      : '/learn';
+
   runApp(
     DevicePreview(
       enabled: kDebugMode,
-      builder: (_) => const ProviderScope(child: MyNihongoApp()),
+      builder: (_) =>
+          ProviderScope(child: MyNihongoApp(initialLocation: initialLocation)),
     ),
   );
 }

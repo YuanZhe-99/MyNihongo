@@ -56,6 +56,8 @@ The shared WebDAV sync, backup, and ZIP engines are not in this repository. They
   the Learn dashboard.
 - [`features/sync-and-backup.md`](features/sync-and-backup.md) — the sync, backup and ZIP screens
   under Settings › Data.
+- [`features/reference-preferences.md`](features/reference-preferences.md) — the five per-device
+  choices the reference pages remember.
 
 ## Not covered here
 

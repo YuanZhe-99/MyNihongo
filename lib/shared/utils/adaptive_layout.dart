@@ -178,16 +178,24 @@ int columnCapacity(
 /// Notes: The gate reads the screen while the capacity reads the list's own
 /// width, deliberately. Measuring the split decision against the body would
 /// subtract the app bar and read a Fold 8 in portrait as 0.80 rather than
-/// 0.755, leaving almost no margin under [splitMinAspect]. There is no stored
-/// preference yet; when one arrives, clamp it to the capacity rather than
-/// rejecting it, so a choice made on a desktop survives a folded phone.
+/// 0.755, leaving almost no margin under [splitMinAspect].
+///
+/// A stored [preference] is clamped to what fits rather than rejected, so a
+/// choice made on a tablet survives a folded phone and comes back when the
+/// window grows again. [listColumnsAuto] means the width decides.
 int referenceColumnCount({
   required double screenWidth,
   required double screenHeight,
   required double contentWidth,
+  int preference = listColumnsAuto,
 }) {
   if (!canSplitLayout(screenWidth, screenHeight)) return 1;
-  return columnCapacity(contentWidth, minItemWidth: referenceTileMinWidth);
+  final capacity = columnCapacity(
+    contentWidth,
+    minItemWidth: referenceTileMinWidth,
+  );
+  if (preference == listColumnsAuto) return capacity;
+  return preference.clamp(1, capacity);
 }
 
 /// Purpose: Return how many rows a list of items needs at a column count.

@@ -227,6 +227,142 @@ class NihongoStorage {
     );
   }
 
+  /// Purpose: Read one string preference from `storage_config.json`.
+  /// Inputs: `key`.
+  /// Returns: `Future<String?>` — null when absent or not a string.
+  /// Side effects: Reads the config file.
+  /// Notes: Internal helper used within this file only. Every typed getter
+  /// below funnels through here so a hand-edited config with a wrong type
+  /// reads as "unset" rather than crashing the app on launch.
+  static Future<String?> _getString(String key) async {
+    final config = await readConfig();
+    final value = config[key];
+    return value is String ? value : null;
+  }
+
+  /// Purpose: Write or remove one string preference.
+  /// Inputs: `key`, `value` — null removes the key.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: Internal helper used within this file only. A default is removed
+  /// rather than written, so the file stays small and a future change of
+  /// default reaches devices that never touched the setting.
+  static Future<void> _setString(String key, String? value) async {
+    final config = await readConfig();
+    if (value == null) {
+      config.remove(key);
+    } else {
+      config[key] = value;
+    }
+    await writeConfig(config);
+  }
+
+  /// Purpose: Read one integer preference.
+  /// Inputs: `key`.
+  /// Returns: `Future<int?>`.
+  /// Side effects: Reads the config file.
+  /// Notes: Internal helper used within this file only.
+  static Future<int?> _getInt(String key) async {
+    final config = await readConfig();
+    final value = config[key];
+    return value is int ? value : null;
+  }
+
+  /// Purpose: Write or remove one integer preference.
+  /// Inputs: `key`, `value` — null removes the key.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: Internal helper used within this file only.
+  static Future<void> _setInt(String key, int? value) async {
+    final config = await readConfig();
+    if (value == null) {
+      config.remove(key);
+    } else {
+      config[key] = value;
+    }
+    await writeConfig(config);
+  }
+
+  /// Purpose: Read the tab the app was last on.
+  /// Inputs: None.
+  /// Returns: `Future<String?>` — `learn`, `kana`, `vocab`, `grammar` or
+  /// `settings`; null before the first switch.
+  /// Side effects: Reads the config file.
+  /// Notes: The router validates it; an unknown value falls back to Learn.
+  static Future<String?> getLastTab() => _getString('lastTab');
+
+  /// Purpose: Remember the tab the user is on.
+  /// Inputs: `tab`.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: Written on every tab switch, so it stays cheap: one small file.
+  static Future<void> setLastTab(String? tab) => _setString('lastTab', tab);
+
+  /// Purpose: Read the level filter the vocabulary page was left on.
+  /// Inputs: None.
+  /// Returns: `Future<String?>` — a JLPT label, or null for all levels.
+  /// Side effects: Reads the config file.
+  /// Notes: None.
+  static Future<String?> getVocabLevel() => _getString('vocabLevel');
+
+  /// Purpose: Remember the vocabulary page's level filter.
+  /// Inputs: `level` — a JLPT label, or null for all levels.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: None.
+  static Future<void> setVocabLevel(String? level) =>
+      _setString('vocabLevel', level);
+
+  /// Purpose: Read the level filter the grammar page was left on.
+  /// Inputs: None.
+  /// Returns: `Future<String?>` — a JLPT label, or null for all levels.
+  /// Side effects: Reads the config file.
+  /// Notes: Separate from the vocabulary filter: a learner reading N3 grammar
+  /// is often still looking up N5 words.
+  static Future<String?> getGrammarLevel() => _getString('grammarLevel');
+
+  /// Purpose: Remember the grammar page's level filter.
+  /// Inputs: `level` — a JLPT label, or null for all levels.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: None.
+  static Future<void> setGrammarLevel(String? level) =>
+      _setString('grammarLevel', level);
+
+  /// Purpose: Read the kana script the chart was left on.
+  /// Inputs: None.
+  /// Returns: `Future<String?>` — `katakana`, or null for hiragana.
+  /// Side effects: Reads the config file.
+  /// Notes: Hiragana is the default and is stored as an absent key.
+  static Future<String?> getKanaScript() => _getString('kanaScript');
+
+  /// Purpose: Remember the kana chart's script.
+  /// Inputs: `script` — `katakana`, or null for hiragana.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: None.
+  static Future<void> setKanaScript(String? script) =>
+      _setString('kanaScript', script);
+
+  /// Purpose: Read the chosen column count for the reference lists.
+  /// Inputs: None.
+  /// Returns: `Future<int?>` — 1 to 4, or null to let the layout decide.
+  /// Side effects: Reads the config file.
+  /// Notes: One preference for both reference lists: they use the same tile
+  /// width and the same rule, so two settings would only ever disagree by
+  /// accident.
+  static Future<int?> getReferenceListColumns() =>
+      _getInt('referenceListColumns');
+
+  /// Purpose: Remember the chosen column count.
+  /// Inputs: `columns` — 1 to 4, or null for automatic.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: The layout clamps whatever is stored to what actually fits, so a
+  /// value saved on a tablet does nothing harmful on a phone.
+  static Future<void> setReferenceListColumns(int? columns) =>
+      _setInt('referenceListColumns', columns);
+
   /// Purpose: Read the persisted theme mode.
   /// Inputs: None.
   /// Returns: `Future<String?>` — `light`, `dark`, or null for system.

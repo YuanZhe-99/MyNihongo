@@ -46,8 +46,18 @@ narrower unfolded foldables, tablets in portrait and every phone keep one. Both 
 numbers behind them are in [`../adaptive-layout.md`](../adaptive-layout.md), and
 `test/kana_layout_ui_test.dart` pins each of those devices.
 
+## The detail sheet
+
+Tapping a cell, or a search result, opens the kana in a bottom sheet: both scripts large with the
+romaji beside them, the stroke count and teaching note from `assets/content/kana_notes.json` when
+there is one, chips for the kana it is confused with, and the easiest and most common words that
+start with it. Those example words are the point of the sheet — a chart teaches shapes, and a
+beginner needs to see the shape inside a word to read it. The word chips open the vocabulary sheet,
+and the confusable chips open the other kana, so ツ and シ can be compared without leaving the page.
+The sheet lives in `lib/shared/widgets/content_sheets.dart`; the ordering rule is
+`vocabStartingWithKana` in `content_links.dart`.
+
 ## Planned
 
-`PLAN.md` M1.3 adds a detail sheet per cell (both scripts, romaji, example words from the catalog);
 Phase 2 adds text-to-speech on long-press and a kana listening quiz; Phase 3 adds kana quiz modes
 whose results become `kana:` progress records.

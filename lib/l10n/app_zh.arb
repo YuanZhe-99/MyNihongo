@@ -201,5 +201,17 @@
   "importFailed": "导入失败",
 
   "licenseContentTitle": "内容许可",
-  "licenseContentBody": "本应用的词汇内容来自开放的词典与词表。其许可证要求保留下方的署名，因此该部分不作翻译。"
+  "licenseContentBody": "本应用的词汇内容来自开放的词典与词表。其许可证要求保留下方的署名，因此该部分不作翻译。",
+
+  "vocabGrammarUsed": "例句中的语法",
+  "grammarWordsUsed": "例句中的单词",
+  "kanaExampleWords": "以此假名开头的单词",
+  "kanaStrokes": "{count} 画",
+  "@kanaStrokes": { "placeholders": { "count": { "type": "int" } } },
+  "kanaConfusableWith": "容易混淆",
+  "kanaNoExtras": "这个假名暂无说明。",
+  "listColumns": "列数",
+  "listColumnsAuto": "自动",
+  "listColumnsCount": "{count}",
+  "@listColumnsCount": { "placeholders": { "count": { "type": "int" } } }
 }

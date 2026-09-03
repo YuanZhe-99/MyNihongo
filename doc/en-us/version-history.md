@@ -32,3 +32,14 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
   behalf. A shared-package fix landed with it: `WebDavClient.download` now decodes UTF-8 bytes
   instead of `response.body`, which `package:http` decodes as latin1 when the server sends no
   charset — it corrupted every downloaded record id containing kana.
+
+  Content pipeline (`PLAN.md` M1.2): the vocabulary became 7,744 entries across N5 to N1, generated
+  offline from JMdict and the JLPT lists by `tool/import_vocab.dart`, with the 24 hand-written seed
+  ids kept as aliases so no progress is orphaned; 81 N5 grammar points; 21 kana teaching notes; a
+  Hepburn romanizer; and machine-authored, unreviewed Chinese glosses for every N5 word. Parsing
+  moved to a background isolate and the catalog lookups became maps.
+
+  Reference polish (`PLAN.md` M1.3): a kana detail sheet with example words, cross-links between
+  vocabulary and grammar examples, a remembered tab, level filter, script and column count per
+  device, and a column-count control on the reference lists. The screenshot pass is still
+  outstanding: no emulator runs on the development host.

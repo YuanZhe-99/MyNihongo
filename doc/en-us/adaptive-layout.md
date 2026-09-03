@@ -147,7 +147,7 @@ Every decision is recorded here with what it costs.
 |---|---|---|
 | Shell | width only | Rail from 600 dp. |
 | Kana | **double gate** | Two columns when `canSplitLayout` **and** two `kanaTableMinWidth` tables fit `referenceContentWidth`. The second gate is what keeps the Z Fold 5/6 and a Fold 7 in portrait (546–637 dp of content; two tables need 672) on one column with no breakpoint of their own. The script switch and the search field share a row in two-column mode. Rule cards flow 1–2 across by `ruleCardMinWidth` against whatever width the section gets. |
-| Vocabulary, Grammar | shape gate + capacity | `referenceColumnCount`: 1 column unless `canSplitLayout`, then `columnCapacity` at `referenceTileMinWidth`, capped at `listMaxColumns` (4). A Fold 8 in landscape gets two, a tablet in landscape two, a desktop three. No stored preference yet; when one arrives it is clamped, never rejected, and hidden when capacity is 1. |
+| Vocabulary, Grammar | shape gate + capacity | `referenceColumnCount`: 1 column unless `canSplitLayout`, then `columnCapacity` at `referenceTileMinWidth`, capped at `listMaxColumns` (4). A Fold 8 in landscape gets two, a tablet in landscape two, a desktop three. A stored `referenceListColumns` preference is clamped to that capacity, never rejected, so a 4 chosen on a tablet renders as 2 on a folded phone and returns to 4 when the window grows. The control is hidden when capacity is 1. See [`features/reference-preferences.md`](features/reference-preferences.md). |
 | Learn | shape gate + capacity | Dashboard cards 1–2 across by `ruleCardMinWidth`, gated on `canSplitLayout`. |
 | Settings | shape gate | Two panes when `canSplitLayout`; left pane `settingsLeftPaneWidth(shellContentWidth)` — proportional (0.44), clamped 300–440, and capped so the detail pane never drops below `settingsRightPaneMinWidth` (280). Second-level pages are pushed full-screen on a narrow window and hosted in a nested `Navigator` in the detail pane on a wide one, so one widget serves both. |
 | WebDAV sync, Backup | none | One column at every size. Both are second-level pages, so the Settings row above decides whether they are pushed or hosted in the detail pane; the pages themselves measure nothing. |
@@ -186,6 +186,19 @@ mid-fold.
 ```bash
 grep -rnE "maxWidth *[<>]=? *[0-9]|size\.width *[<>]=? *[0-9]" lib/
 ```
+
+### Looking at it
+
+Tests catch overflow and column counts; they do not catch a layout that is
+technically correct and visually wrong. The screenshot pass covers that, and it
+needs real hardware — the development host has no emulator. The procedure is in
+[`../../tool/screenshots.md`](../../tool/screenshots.md). Each shot is checked
+for four things:
+
+- [ ] No overflow stripes and no text clipped mid-glyph.
+- [ ] Navigation on the expected side: rail from 600 dp, bottom bar below it.
+- [ ] The column count the rules predict for that geometry.
+- [ ] Nothing under the gesture bar or the hinge.
 
 ## Divergence from Google's guidance, stated on purpose
 

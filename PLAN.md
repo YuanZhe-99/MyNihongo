@@ -6,7 +6,8 @@ what order, why, and what is done**. Update the checklists in the same change th
 milestone item.
 
 **Status as of 2026-09-03:** Phase 1 in progress. M1.0 (skeleton) landed 2026-09-02; M1.1 (sync and
-backup UI) and M1.2 (content pipeline) landed 2026-09-03. No release yet; `pubspec.yaml` says
+backup UI), M1.2 (content pipeline) and M1.3 (reference polish) landed 2026-09-03, the last with
+its screenshot pass still outstanding for want of hardware. No release yet; `pubspec.yaml` says
 `0.1.0+1`.
 
 ---
@@ -186,14 +187,18 @@ Replace the seed with a real catalog while keeping the schema and ids stable.
 
 #### M1.3 Reference polish
 
-- [ ] Kana cell tap → detail sheet (both scripts, romaji, example words from the catalog)
-- [ ] Vocabulary detail: link each example's grammar to its grammar point when the pattern occurs
-- [ ] Grammar detail: "words that appear" links back to vocabulary
-- [ ] Remember last tab, last level filter and last script per device (`storage_config.json`)
-- [ ] Column-count preference for the reference lists (`listColumnsAuto` default; clamp, never
+- [x] Kana cell tap → detail sheet (both scripts, romaji, stroke count and note, confusable kana,
+      example words from the catalog)
+- [x] Vocabulary detail: link each example's grammar to its grammar point when the pattern occurs
+- [x] Grammar detail: "words that appear" links back to vocabulary
+- [x] Remember last tab, last level filter (separately for vocabulary and grammar) and last script
+      per device (`storage_config.json`)
+- [x] Column-count preference for the reference lists (`listColumnsAuto` default; clamp, never
       reject; hidden when capacity is 1) — same rule as MyAnime's lists
 - [ ] Rendered screenshots at the pinned geometries (Fold 8 both ways, Fold 8 Ultra, Pixel 10 Pro
-      Fold, tablet both ways, phone both ways) and a look at each
+      Fold, tablet both ways, phone both ways) and a look at each. **Blocked on hardware:** this
+      host has no emulator and no attached device. The procedure and the review checklist are
+      written up in `tool/screenshots.md` and `adaptive-layout.md`; the captures need the phone
 
 #### M1.4 First release `v0.1.0`
 
@@ -414,6 +419,9 @@ catalog content, and never writes a progress record by itself — the learner's 
 | 2026-09-03 | Vocabulary ids are `vocab:jm<JMdict sequence number>`, with the seed slugs kept as aliases | The sequence number is the only stable key the sources share; a slug would have to be invented for 7,700 words and would collide |
 | 2026-09-03 | Three JLPT list rows are corrected in the tool rather than in the committed CSVs | The lists stay byte-identical to upstream, and the reason for each change stays readable next to it |
 | 2026-09-03 | The Chinese overlay is bundled, not kept under `tool/` | The catalog test reads it through `rootBundle` and compares it against what shipped, which catches an overlay edit that never had `--overlay-only` run over it |
+| 2026-09-03 | The reference preferences are device-local, never synced | A phone and a tablet want different column counts, and a habit lives on a device |
+| 2026-09-03 | The router is built once and kept in the root widget's state | A `GoRouter` owns navigation history; rebuilding one on a theme change would send the user back to the initial tab mid-session |
+| 2026-09-03 | Cross-links are substring matches, not parsing | A real tokenizer is Phase 3's sentence analyser; until then a wrong link is cheaper than no links, and the chips are labelled as what the example uses rather than as analysis |
 
 ## 7. Open questions
 

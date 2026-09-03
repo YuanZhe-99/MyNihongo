@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../utils/adaptive_layout.dart';
 
 /// Purpose: Build one row of a multi-column list, filled left to right.
@@ -57,5 +58,39 @@ List<Widget> adaptiveTileRows({
       itemBuilder: itemBuilder,
       gap: gap,
     ),
+  );
+}
+
+/// Purpose: Build the app-bar control that picks a list's column count.
+/// Inputs: `context`; `preference` — the stored choice; `capacity` — the most
+/// columns the current width can carry; `onChanged` — receives the new
+/// preference.
+/// Returns: A `PopupMenuButton`, or an empty widget when the window cannot
+/// carry more than one column.
+/// Side effects: None beyond invoking `onChanged` when the user picks.
+/// Notes: Hidden rather than disabled when `capacity` is 1, so a phone and a
+/// folded cover screen never show a control that could not do anything. The
+/// menu always offers every count up to [listMaxColumns] so a preference can
+/// be set while folded and take effect on unfolding; the check mark tracks the
+/// stored preference, while what renders is that preference clamped to what
+/// fits. Ported from MyAnime!!!!!, which answered this question first.
+Widget listColumnsButton(
+  BuildContext context, {
+  required int preference,
+  required int capacity,
+  required ValueChanged<int> onChanged,
+}) {
+  if (capacity <= 1) return const SizedBox.shrink();
+  final l10n = AppLocalizations.of(context)!;
+  return PopupMenuButton<int>(
+    icon: const Icon(Icons.view_column_outlined),
+    tooltip: l10n.listColumns,
+    initialValue: preference,
+    onSelected: onChanged,
+    itemBuilder: (context) => [
+      PopupMenuItem(value: listColumnsAuto, child: Text(l10n.listColumnsAuto)),
+      for (var n = 1; n <= listMaxColumns; n++)
+        PopupMenuItem(value: n, child: Text(l10n.listColumnsCount(n))),
+    ],
   );
 }

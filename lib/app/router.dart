@@ -7,10 +7,16 @@ import '../features/settings/views/settings_page.dart';
 import '../features/vocab/views/vocab_page.dart';
 import '../shared/widgets/shell_scaffold.dart';
 
-/// The five shell tabs, in the order the bottom bar and the rail show them.
-/// `ShellScaffold.routes` holds the same list; keep the two in step.
-final appRouter = GoRouter(
-  initialLocation: '/learn',
+/// Purpose: Build the app's router.
+/// Inputs: `initialLocation` — the tab to open on, defaulting to Learn.
+/// Returns: `GoRouter`.
+/// Side effects: None.
+/// Notes: The five shell tabs, in the order the bottom bar and the rail show
+/// them; `ShellScaffold.routes` holds the same list, keep the two in step.
+/// `main()` passes the tab the app was last on, read before `runApp`, so the
+/// app opens where the user left it without a visible jump from Learn.
+GoRouter buildAppRouter({String initialLocation = '/learn'}) => GoRouter(
+  initialLocation: initialLocation,
   routes: [
     ShellRoute(
       builder: (context, state, child) => ShellScaffold(child: child),

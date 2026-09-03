@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:my_nihongo/features/kana/views/kana_page.dart';
 import 'package:my_nihongo/l10n/app_localizations.dart';
@@ -19,11 +20,13 @@ void main() {
     tester.view.physicalSize = Size(width, height);
     addTearDown(tester.view.reset);
     await tester.pumpWidget(
-      const MaterialApp(
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
-        locale: Locale('en'),
-        home: KanaPage(),
+      const ProviderScope(
+        child: MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale('en'),
+          home: KanaPage(),
+        ),
       ),
     );
     await tester.pumpAndSettle();

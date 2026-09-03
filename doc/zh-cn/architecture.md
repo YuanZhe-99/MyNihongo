@@ -65,6 +65,7 @@ lib/
         parts_of_speech.dart
         vocab_entry.dart
       services/
+        content_links.dart
         content_repository.dart
         study_item_labels.dart
     grammar/views/grammar_page.dart
@@ -98,6 +99,7 @@ lib/
     views/webdav_config_page.dart
     widgets/
       adaptive_tile_grid.dart
+      content_sheets.dart
       reference_widgets.dart
       shell_scaffold.dart
       study_conflict_dialog.dart
@@ -109,6 +111,7 @@ assets/content/
   vocab_zh.json            Chinese gloss overlay (build input)
 tool/
   import_vocab.dart
+  screenshots.md
   src/vocab_import_core.dart
   content/jlpt/n{1..5}.csv
   content/vocab_seed.json
@@ -131,6 +134,8 @@ assets/icon/                     app_icon.png + generated iOS sources (not bundl
 - `test/progress_provider_test.dart` — 首次读取，以及收到本地数据变更通知后的重新读取（无加载闪烁）。
 - `test/study_item_labels_test.dart`、`test/study_conflict_dialog_test.dart` — 为记录命名，并在两个版本之间选择。
 - `test/webdav_config_page_ui_test.dart`、`test/backup_page_ui_test.dart`、`test/settings_two_pane_ui_test.dart` — 三个数据页面在指定几何尺寸下的表现。
+- `test/preferences_test.dart`、`test/router_test.dart` — 五项记住的选择，以及应用在上次所在标签打开。
+- `test/content_links_test.dart`、`test/list_columns_ui_test.dart` — 交叉链接与列数控件。
 
 ## 三类数据
 

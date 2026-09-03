@@ -86,6 +86,7 @@ lib/
         parts_of_speech.dart
         vocab_entry.dart
       services/
+        content_links.dart
         content_repository.dart
         study_item_labels.dart
     grammar/views/grammar_page.dart
@@ -119,6 +120,7 @@ lib/
     views/webdav_config_page.dart
     widgets/
       adaptive_tile_grid.dart
+      content_sheets.dart
       reference_widgets.dart
       shell_scaffold.dart
       study_conflict_dialog.dart
@@ -130,6 +132,7 @@ assets/content/
   vocab_zh.json            Chinese gloss overlay (build input)
 tool/
   import_vocab.dart
+  screenshots.md
   src/vocab_import_core.dart
   content/jlpt/n{1..5}.csv
   content/vocab_seed.json
@@ -162,6 +165,10 @@ Primary tests:
   choosing between two versions of it.
 - `test/webdav_config_page_ui_test.dart`, `test/backup_page_ui_test.dart`,
   `test/settings_two_pane_ui_test.dart` — the three data pages at the named geometries.
+- `test/preferences_test.dart`, `test/router_test.dart` — the five remembered choices, and the
+  app opening on the tab it was left on.
+- `test/content_links_test.dart`, `test/list_columns_ui_test.dart` — the cross-links, and the
+  column-count control.
 
 ## Three kinds of data
 

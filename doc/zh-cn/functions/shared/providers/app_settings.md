@@ -14,3 +14,10 @@
 | `AppSettings.copyWith` | 方法 | B | 创建替换了选定字段的副本；`clearLocale` 存在是因为 null 已经表示「保留」。 |
 
 `appSettingsProvider` 是没有文档注释的顶层 `final StateNotifierProvider`；不计入。
+
+## 参考页面偏好（`PLAN.md` M1.3）
+
+`AppSettings` 还承载 `vocabLevel`、`grammarLevel`、`kanaScript` 与 `referenceListColumns`，notifier 上
+对应 `setVocabLevel`、`setGrammarLevel`、`setKanaScript` 与 `setReferenceListColumns`。它们集中在一个对象里，
+使页面能从 provider 同步读取，而不必各自发起异步读取并与自己的首帧竞争——在首次加载完成之前点选的筛选不会被它
+覆盖。见 [`../../../features/reference-preferences.md`](../../../features/reference-preferences.md)。

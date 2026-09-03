@@ -19,3 +19,12 @@ Device-local UI preferences as Riverpod state: `AppSettings` (theme mode, locale
 
 `appSettingsProvider` is a top-level `final StateNotifierProvider` with no doc comment; it is not
 counted.
+
+## Reference preferences (`PLAN.md` M1.3)
+
+`AppSettings` also carries `vocabLevel`, `grammarLevel`, `kanaScript` and `referenceListColumns`,
+with `setVocabLevel`, `setGrammarLevel`, `setKanaScript` and `setReferenceListColumns` on the
+notifier. They live in one object so a page reads them synchronously from the provider rather than
+starting its own async read and racing its own first frame — a filter tapped before the first load
+has landed is not overwritten by it. See
+[`../../../features/reference-preferences.md`](../../../features/reference-preferences.md).

@@ -73,3 +73,15 @@ use delegates to it (see [../../../app/data_modules.md](../../../app/data_module
 - **Usage:** `upsertRecords`; every future write path.
 - **Notes:** The two-space format is the one the shared sync engine writes, which is what lets an
   unchanged file hit the raw-equality fast path instead of re-uploading.
+
+## Reference preferences (`PLAN.md` M1.3)
+
+Five typed accessors over two private helpers, `_getString`/`_setString` and `_getInt`/`_setInt`:
+`getLastTab`/`setLastTab`, `getVocabLevel`/`setVocabLevel`, `getGrammarLevel`/`setGrammarLevel`,
+`getKanaScript`/`setKanaScript`, `getReferenceListColumns`/`setReferenceListColumns`.
+
+Two properties the helpers enforce for all of them. A default is **removed** rather than written,
+so the file stays small and a future change of default reaches devices that never touched the
+setting. And a value of the wrong type reads as unset rather than throwing: the file is plain JSON
+in a folder the user can point anywhere, so it can be hand-edited. See
+[`../../../../features/reference-preferences.md`](../../../../features/reference-preferences.md).

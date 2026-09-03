@@ -552,4 +552,35 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get licenseContentBody =>
       '本应用的词汇内容来自开放的词典与词表。其许可证要求保留下方的署名，因此该部分不作翻译。';
+
+  @override
+  String get vocabGrammarUsed => '例句中的语法';
+
+  @override
+  String get grammarWordsUsed => '例句中的单词';
+
+  @override
+  String get kanaExampleWords => '以此假名开头的单词';
+
+  @override
+  String kanaStrokes(int count) {
+    return '$count 画';
+  }
+
+  @override
+  String get kanaConfusableWith => '容易混淆';
+
+  @override
+  String get kanaNoExtras => '这个假名暂无说明。';
+
+  @override
+  String get listColumns => '列数';
+
+  @override
+  String get listColumnsAuto => '自动';
+
+  @override
+  String listColumnsCount(int count) {
+    return '$count';
+  }
 }

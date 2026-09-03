@@ -1105,6 +1105,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The vocabulary in this app is derived from open dictionaries and word lists. Their licences require the attribution below, which is why it is not translated.'**
   String get licenseContentBody;
+
+  /// No description provided for @vocabGrammarUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Grammar in these examples'**
+  String get vocabGrammarUsed;
+
+  /// No description provided for @grammarWordsUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Words in these examples'**
+  String get grammarWordsUsed;
+
+  /// No description provided for @kanaExampleWords.
+  ///
+  /// In en, this message translates to:
+  /// **'Words starting with this kana'**
+  String get kanaExampleWords;
+
+  /// No description provided for @kanaStrokes.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} strokes'**
+  String kanaStrokes(int count);
+
+  /// No description provided for @kanaConfusableWith.
+  ///
+  /// In en, this message translates to:
+  /// **'Easily confused with'**
+  String get kanaConfusableWith;
+
+  /// No description provided for @kanaNoExtras.
+  ///
+  /// In en, this message translates to:
+  /// **'No notes for this kana yet.'**
+  String get kanaNoExtras;
+
+  /// No description provided for @listColumns.
+  ///
+  /// In en, this message translates to:
+  /// **'Columns'**
+  String get listColumns;
+
+  /// No description provided for @listColumnsAuto.
+  ///
+  /// In en, this message translates to:
+  /// **'Automatic'**
+  String get listColumnsAuto;
+
+  /// No description provided for @listColumnsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count}'**
+  String listColumnsCount(int count);
 }
 
 class _AppLocalizationsDelegate

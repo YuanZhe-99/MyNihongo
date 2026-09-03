@@ -12,3 +12,9 @@ grammar pages. See [../../../adaptive-layout.md](../../../adaptive-layout.md).
 |---|---|---|---|
 | `adaptiveTileRow` | top-level function | B | Build one row of a multi-column list, filled left to right, padded at the end. |
 | `adaptiveTileRows` | top-level function | B | Build a list's children as rows; at one column returns the tiles untouched. |
+
+`listColumnsButton` builds the popup menu that picks a list's column count. It is hidden rather
+than disabled when the window can only carry one column, so a phone never shows a control that
+could not do anything. The menu always offers every count up to `listMaxColumns`, so a preference
+can be set while folded and take effect on unfolding; the check mark tracks the stored preference,
+while what renders is that preference clamped to what fits.

@@ -571,4 +571,35 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get licenseContentBody =>
       'The vocabulary in this app is derived from open dictionaries and word lists. Their licences require the attribution below, which is why it is not translated.';
+
+  @override
+  String get vocabGrammarUsed => 'Grammar in these examples';
+
+  @override
+  String get grammarWordsUsed => 'Words in these examples';
+
+  @override
+  String get kanaExampleWords => 'Words starting with this kana';
+
+  @override
+  String kanaStrokes(int count) {
+    return '$count strokes';
+  }
+
+  @override
+  String get kanaConfusableWith => 'Easily confused with';
+
+  @override
+  String get kanaNoExtras => 'No notes for this kana yet.';
+
+  @override
+  String get listColumns => 'Columns';
+
+  @override
+  String get listColumnsAuto => 'Automatic';
+
+  @override
+  String listColumnsCount(int count) {
+    return '$count';
+  }
 }

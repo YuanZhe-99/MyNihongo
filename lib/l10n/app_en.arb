@@ -201,5 +201,17 @@
   "importFailed": "Import failed",
 
   "licenseContentTitle": "Content licenses",
-  "licenseContentBody": "The vocabulary in this app is derived from open dictionaries and word lists. Their licences require the attribution below, which is why it is not translated."
+  "licenseContentBody": "The vocabulary in this app is derived from open dictionaries and word lists. Their licences require the attribution below, which is why it is not translated.",
+
+  "vocabGrammarUsed": "Grammar in these examples",
+  "grammarWordsUsed": "Words in these examples",
+  "kanaExampleWords": "Words starting with this kana",
+  "kanaStrokes": "{count} strokes",
+  "@kanaStrokes": { "placeholders": { "count": { "type": "int" } } },
+  "kanaConfusableWith": "Easily confused with",
+  "kanaNoExtras": "No notes for this kana yet.",
+  "listColumns": "Columns",
+  "listColumnsAuto": "Automatic",
+  "listColumnsCount": "{count}",
+  "@listColumnsCount": { "placeholders": { "count": { "type": "int" } } }
 }

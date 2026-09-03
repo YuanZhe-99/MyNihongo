@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/progress/services/nihongo_storage.dart';
 import '../../l10n/app_localizations.dart';
 import '../utils/adaptive_layout.dart';
 
@@ -79,7 +80,13 @@ class ShellScaffold extends StatelessWidget {
     final destinations = _destinations(l10n);
     final index = _currentIndex(context);
 
-    void select(int i) => context.go(routes[i]);
+    void select(int i) {
+      context.go(routes[i]);
+      // Remember where the user is, so the next launch opens here. Fire and
+      // forget: it is one small file, and losing the write on a crash costs
+      // nothing more than starting on Learn.
+      NihongoStorage.setLastTab(routes[i].substring(1));
+    }
 
     if (!useNavigationRail(MediaQuery.sizeOf(context).width)) {
       return Scaffold(

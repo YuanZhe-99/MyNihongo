@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../l10n/app_localizations.dart';
+import '../../../shared/providers/app_settings.dart';
 import '../../../shared/utils/adaptive_layout.dart';
+import '../../../shared/widgets/content_sheets.dart';
+import '../../content/services/content_repository.dart';
 import '../models/kana.dart';
 
-class KanaPage extends StatefulWidget {
+class KanaPage extends ConsumerStatefulWidget {
   /// Purpose: Create a kana page instance.
   /// Inputs: None.
   /// Returns: A new `KanaPage` instance.
@@ -18,13 +22,18 @@ class KanaPage extends StatefulWidget {
   /// Side effects: None.
   /// Notes: Flutter lifecycle override.
   @override
-  State<KanaPage> createState() => _KanaPageState();
+  ConsumerState<KanaPage> createState() => _KanaPageState();
 }
 
-class _KanaPageState extends State<KanaPage> {
+class _KanaPageState extends ConsumerState<KanaPage> {
   final _searchController = TextEditingController();
-  KanaScript _script = KanaScript.hiragana;
   String _query = '';
+
+  /// Which script the chart shows, from the device preferences.
+  ///
+  /// A getter rather than page state, so the choice survives a tab switch and
+  /// a restart. `build` watches the provider, so every read here is current.
+  KanaScript get _script => ref.watch(appSettingsProvider).kanaScript;
 
   /// Purpose: Release the search controller.
   /// Inputs: None.
@@ -50,6 +59,9 @@ class _KanaPageState extends State<KanaPage> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
+    // Watched, not read: a cell tapped before the catalog finishes loading
+    // should become live as soon as it does, without a second tap.
+    ref.watch(contentCatalogProvider);
     final matches = matchingKanaEntries(_query);
     final searching = _query.trim().isNotEmpty;
 
@@ -79,7 +91,7 @@ class _KanaPageState extends State<KanaPage> {
       ],
       selected: {_script},
       onSelectionChanged: (selection) {
-        setState(() => _script = selection.first);
+        ref.read(appSettingsProvider.notifier).setKanaScript(selection.first);
       },
     );
 
@@ -302,10 +314,29 @@ class _KanaPageState extends State<KanaPage> {
     );
   }
 
+  /// Purpose: Open one kana's detail sheet.
+  /// Inputs: `entry`.
+  /// Returns: None.
+  /// Side effects: Pushes a modal bottom sheet.
+  /// Notes: Internal helper used within this file only. The catalog is read at
+  /// tap time rather than threaded through every table builder; before it has
+  /// loaded there is nothing to show, so the tap does nothing rather than
+  /// opening an empty sheet.
+  void _openKana(KanaEntry entry) {
+    final catalog = ref.read(contentCatalogProvider).value;
+    if (catalog == null) return;
+    showKanaDetailSheet(
+      context,
+      catalog,
+      entry,
+      Localizations.localeOf(context),
+    );
+  }
+
   /// Purpose: Render one kana/romaji cell, or a blank for a missing slot.
   /// Inputs: `theme`, `entry`.
   /// Returns: `Widget`.
-  /// Side effects: None.
+  /// Side effects: Opens the kana detail sheet on tap.
   /// Notes: Internal helper used within this file only.
   Widget _buildKanaCell(ThemeData theme, KanaEntry? entry) {
     return Expanded(
@@ -315,33 +346,36 @@ class _KanaPageState extends State<KanaPage> {
             ? const SizedBox(height: 58)
             : Tooltip(
                 message: '${entry.kana(_script)} / ${entry.romaji}',
-                child: Container(
-                  height: 58,
-                  decoration: BoxDecoration(
-                    color: theme.colorScheme.surfaceContainerHighest.withValues(
-                      alpha: 0.52,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(8),
+                  onTap: () => _openKana(entry),
+                  child: Container(
+                    height: 58,
+                    decoration: BoxDecoration(
+                      color: theme.colorScheme.surfaceContainerHighest
+                          .withValues(alpha: 0.52),
+                      borderRadius: BorderRadius.circular(8),
                     ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        entry.kana(_script),
-                        style: theme.textTheme.titleLarge?.copyWith(
-                          fontWeight: FontWeight.w700,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          entry.kana(_script),
+                          style: theme.textTheme.titleLarge?.copyWith(
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 2),
-                      Text(
-                        entry.romaji,
-                        style: theme.textTheme.labelSmall?.copyWith(
-                          color: theme.colorScheme.onSurfaceVariant,
+                        const SizedBox(height: 2),
+                        Text(
+                          entry.romaji,
+                          style: theme.textTheme.labelSmall?.copyWith(
+                            color: theme.colorScheme.onSurfaceVariant,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -402,30 +436,34 @@ class _KanaPageState extends State<KanaPage> {
   /// Side effects: None.
   /// Notes: Internal helper used within this file only.
   Widget _buildResultTile(ThemeData theme, KanaEntry entry) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
-      decoration: BoxDecoration(
-        color: theme.colorScheme.primaryContainer,
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            entry.kana(_script),
-            style: theme.textTheme.headlineSmall?.copyWith(
-              color: theme.colorScheme.onPrimaryContainer,
-              fontWeight: FontWeight.w800,
+    return InkWell(
+      borderRadius: BorderRadius.circular(8),
+      onTap: () => _openKana(entry),
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+        decoration: BoxDecoration(
+          color: theme.colorScheme.primaryContainer,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              entry.kana(_script),
+              style: theme.textTheme.headlineSmall?.copyWith(
+                color: theme.colorScheme.onPrimaryContainer,
+                fontWeight: FontWeight.w800,
+              ),
             ),
-          ),
-          const SizedBox(height: 2),
-          Text(
-            entry.romaji,
-            style: theme.textTheme.labelMedium?.copyWith(
-              color: theme.colorScheme.onPrimaryContainer,
+            const SizedBox(height: 2),
+            Text(
+              entry.romaji,
+              style: theme.textTheme.labelMedium?.copyWith(
+                color: theme.colorScheme.onPrimaryContainer,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

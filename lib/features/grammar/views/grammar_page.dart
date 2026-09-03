@@ -8,6 +8,8 @@ import '../../../shared/widgets/reference_widgets.dart';
 import '../../content/models/content_catalog.dart';
 import '../../content/models/grammar_point.dart';
 import '../../content/models/jlpt_level.dart';
+import '../../../shared/providers/app_settings.dart';
+import '../../../shared/widgets/content_sheets.dart';
 import '../../content/services/content_repository.dart';
 
 class GrammarPage extends ConsumerStatefulWidget {
@@ -30,7 +32,6 @@ class GrammarPage extends ConsumerStatefulWidget {
 class _GrammarPageState extends ConsumerState<GrammarPage> {
   final _searchController = TextEditingController();
   String _query = '';
-  JlptLevel? _level;
 
   /// Purpose: Release the search controller.
   /// Inputs: None.
@@ -77,10 +78,12 @@ class _GrammarPageState extends ConsumerState<GrammarPage> {
     ContentCatalog catalog,
   ) {
     final locale = Localizations.localeOf(context);
+    final settings = ref.watch(appSettingsProvider);
+    final level = settings.grammarLevel;
     final query = _query.trim().toLowerCase();
     final filtered = [
       for (final point in catalog.grammar)
-        if ((_level == null || point.level == _level) &&
+        if ((level == null || point.level == level) &&
             (query.isEmpty || point.matches(query)))
           point,
     ];
@@ -91,6 +94,7 @@ class _GrammarPageState extends ConsumerState<GrammarPage> {
       screenWidth: screen.width,
       screenHeight: screen.height,
       contentWidth: contentWidth,
+      preference: settings.referenceListColumns,
     );
     final rowCount = listRowCount(filtered.length, columns);
 
@@ -111,7 +115,9 @@ class _GrammarPageState extends ConsumerState<GrammarPage> {
       itemCount: 1 + (filtered.isEmpty ? 1 : rowCount),
       itemBuilder: (context, index) {
         if (index == 0) {
-          return constrain(_buildHeader(context, l10n, filtered.length));
+          return constrain(
+            _buildHeader(context, l10n, filtered.length, level, contentWidth),
+          );
         }
         if (filtered.isEmpty) {
           return constrain(emptyResults(context, l10n.grammarEmpty));
@@ -123,7 +129,8 @@ class _GrammarPageState extends ConsumerState<GrammarPage> {
               rowIndex: index - 1,
               columns: columns,
               itemCount: filtered.length,
-              itemBuilder: (i) => _buildTile(context, filtered[i], locale),
+              itemBuilder: (i) =>
+                  _buildTile(context, catalog, filtered[i], locale),
             ),
           ),
         );
@@ -131,13 +138,33 @@ class _GrammarPageState extends ConsumerState<GrammarPage> {
     );
   }
 
-  /// Purpose: Build the search field, level chips, and result count.
-  /// Inputs: `context`, `l10n`, `count`.
+  /// Purpose: Build the search field, level chips, result count and the
+  /// column-count control.
+  /// Inputs: `context`, `l10n`, `count`, `level` — the active filter,
+  /// `contentWidth` — the width the list gets.
   /// Returns: `Widget`.
-  /// Side effects: None.
-  /// Notes: Internal helper used within this file only.
-  Widget _buildHeader(BuildContext context, AppLocalizations l10n, int count) {
+  /// Side effects: None beyond building widgets; the controls persist through
+  /// the settings notifier.
+  /// Notes: Internal helper used within this file only. The grammar level
+  /// filter is separate from the vocabulary one: a learner reading N3 grammar
+  /// is often still looking up N5 words. The column count is shared, because
+  /// both lists use the same tile width and the same rule.
+  Widget _buildHeader(
+    BuildContext context,
+    AppLocalizations l10n,
+    int count,
+    JlptLevel? level,
+    double contentWidth,
+  ) {
     final theme = Theme.of(context);
+    final screen = MediaQuery.sizeOf(context);
+    final notifier = ref.read(appSettingsProvider.notifier);
+    final preference = ref.watch(appSettingsProvider).referenceListColumns;
+    final capacity = referenceColumnCount(
+      screenWidth: screen.width,
+      screenHeight: screen.height,
+      contentWidth: contentWidth,
+    );
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -161,15 +188,27 @@ class _GrammarPageState extends ConsumerState<GrammarPage> {
         const SizedBox(height: 12),
         levelFilterRow(
           context,
-          selected: _level,
-          onChanged: (level) => setState(() => _level = level),
+          selected: level,
+          onChanged: notifier.setGrammarLevel,
         ),
         const SizedBox(height: 12),
-        Text(
-          l10n.grammarCount(count),
-          style: theme.textTheme.labelLarge?.copyWith(
-            color: theme.colorScheme.onSurfaceVariant,
-          ),
+        Row(
+          children: [
+            Expanded(
+              child: Text(
+                l10n.grammarCount(count),
+                style: theme.textTheme.labelLarge?.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
+              ),
+            ),
+            listColumnsButton(
+              context,
+              preference: preference,
+              capacity: capacity,
+              onChanged: notifier.setReferenceListColumns,
+            ),
+          ],
         ),
         const SizedBox(height: 8),
       ],
@@ -181,13 +220,18 @@ class _GrammarPageState extends ConsumerState<GrammarPage> {
   /// Returns: `Widget`.
   /// Side effects: Opens the detail sheet on tap.
   /// Notes: Internal helper used within this file only.
-  Widget _buildTile(BuildContext context, GrammarPoint point, Locale locale) {
+  Widget _buildTile(
+    BuildContext context,
+    ContentCatalog catalog,
+    GrammarPoint point,
+    Locale locale,
+  ) {
     final theme = Theme.of(context);
     return Card(
       margin: EdgeInsets.zero,
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
-        onTap: () => _showDetail(context, point, locale),
+        onTap: () => showGrammarDetailSheet(context, catalog, point, locale),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 12, 12, 12),
           child: Row(
@@ -225,86 +269,6 @@ class _GrammarPageState extends ConsumerState<GrammarPage> {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  /// Purpose: Show a grammar point's full entry in a bottom sheet.
-  /// Inputs: `context`, `point`, `locale`.
-  /// Returns: None.
-  /// Side effects: Pushes a modal bottom sheet.
-  /// Notes: Internal helper used within this file only.
-  void _showDetail(BuildContext context, GrammarPoint point, Locale locale) {
-    final l10n = AppLocalizations.of(context)!;
-    showModalBottomSheet<void>(
-      context: context,
-      showDragHandle: true,
-      isScrollControlled: true,
-      builder: (context) {
-        final theme = Theme.of(context);
-        final explanation = point.explanation.resolveJoined(
-          locale,
-          separator: '\n',
-        );
-        return SafeArea(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Text(
-                        point.pattern,
-                        style: theme.textTheme.headlineMedium?.copyWith(
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                    ),
-                    levelChip(context, point.level),
-                  ],
-                ),
-                Text(
-                  point.meaning.resolveJoined(locale),
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    color: theme.colorScheme.onSurfaceVariant,
-                  ),
-                ),
-                if (point.structure != null) ...[
-                  const SizedBox(height: 16),
-                  _sectionLabel(theme, l10n.grammarStructure),
-                  const SizedBox(height: 4),
-                  Text(point.structure!, style: theme.textTheme.bodyLarge),
-                ],
-                if (explanation.isNotEmpty) ...[
-                  const SizedBox(height: 16),
-                  _sectionLabel(theme, l10n.grammarExplanation),
-                  const SizedBox(height: 4),
-                  Text(explanation, style: theme.textTheme.bodyMedium),
-                ],
-                const SizedBox(height: 16),
-                exampleList(context, point.examples, locale),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-
-  /// Purpose: Render a small section label inside the detail sheet.
-  /// Inputs: `theme`, `text`.
-  /// Returns: `Widget`.
-  /// Side effects: None.
-  /// Notes: Internal helper used within this file only.
-  Widget _sectionLabel(ThemeData theme, String text) {
-    return Text(
-      text,
-      style: theme.textTheme.titleSmall?.copyWith(
-        color: theme.colorScheme.primary,
-        fontWeight: FontWeight.w700,
       ),
     );
   }
