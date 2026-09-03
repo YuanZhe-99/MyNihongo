@@ -54,6 +54,8 @@ The shared WebDAV sync, backup, and ZIP engines are not in this repository. They
   content: schema, ids, languages, licensing, and the browser pages.
 - [`features/learning-progress.md`](features/learning-progress.md) — the synced progress record and
   the Learn dashboard.
+- [`features/sync-and-backup.md`](features/sync-and-backup.md) — the sync, backup and ZIP screens
+  under Settings › Data.
 
 ## Not covered here
 

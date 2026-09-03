@@ -282,3 +282,17 @@ List<KanaEntry> matchingKanaEntries(String query) {
       if (entry.matches(folded)) entry,
   ];
 }
+
+/// Cache behind [kanaEntryById], built on first lookup.
+Map<String, KanaEntry>? _kanaById;
+
+/// Purpose: Resolve a `kana:` progress id back to its table entry.
+/// Inputs: `progressId` — a full id such as `kana:あ`.
+/// Returns: `KanaEntry?` — null for an id no shipped table carries.
+/// Side effects: Builds a lookup map on the first call.
+/// Notes: Used by the sync conflict dialog to name a record, so an id retired
+/// from the tables must keep resolving; add it back rather than renaming it.
+KanaEntry? kanaEntryById(String progressId) {
+  final map = _kanaById ??= {for (final e in allKanaEntries()) e.progressId: e};
+  return map[progressId];
+}

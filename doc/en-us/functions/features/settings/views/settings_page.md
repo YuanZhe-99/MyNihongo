@@ -1,10 +1,10 @@
 # lib/features/settings/views/settings_page.dart
 
 `SettingsPage` is the fifth tab. It shows three sections — General (theme segmented button,
-language dropdown), Data (storage location), About (version, privacy policy, license, open-source
-licenses) — and lays itself out in one or two panes by `canSplitLayout`. The private
-`_SettingsDetail` enum names the rows that lead to a second-level page (`privacy`, `license`); WebDAV
-and backup join it in `PLAN.md` M1.1. See [../../../../adaptive-layout.md](../../../../adaptive-layout.md).
+language dropdown), Data, About (version, privacy policy, license, open-source
+licenses) — and lays itself out in one or two panes by `canSplitLayout`. Data now holds the WebDAV sync row (with a live status subtitle), the backup row, ZIP export and
+import, and the storage location. The private `_SettingsDetail` enum names the four rows that lead
+to a second-level page: `webdav`, `backup`, `privacy`, `license`. Export and import act in place. See [../../../../adaptive-layout.md](../../../../adaptive-layout.md).
 
 ## Declarations
 
@@ -14,7 +14,12 @@ and backup join it in `PLAN.md` M1.1. See [../../../../adaptive-layout.md](../..
 | `SettingsPage.createState` | method | B | Create the mutable state object for this widget. |
 | `_SettingsPageState.initState` | method | B | Kick off the version and storage-path loads. |
 | `_SettingsPageState._loadVersion` | method | B | Read the app version from `PackageInfo.fromPlatform()` for the About section. |
+| `_SettingsPageState._refreshSyncStatus` | method | B | Redraw the WebDAV row when background sync status changes. |
+| `_SettingsPageState.dispose` | method | B | Drop the sync status listener. |
 | `_SettingsPageState._loadStoragePath` | method | B | Read the active storage directory for display. |
+| `_SettingsPageState._syncSubtitle` | method | B | Summarize sync health for the WebDAV row's subtitle. |
+| `_SettingsPageState._exportZip` | method | B | Write every data module to a ZIP in a folder the user picks. |
+| `_SettingsPageState._importZip` | method | B | Replace local data from a ZIP the user picks. |
 | `_SettingsPageState._detailPage` | method (widget helper) | B | Build the second-level page a settings row leads to. |
 | [`_SettingsPageState._open`](#open) | method | A | Open a second-level page the way the current layout calls for. |
 | [`_SettingsPageState._buildDetailPane`](#builddetailpane) | method (widget helper) | A | Build the right-hand pane of the two-pane layout. |

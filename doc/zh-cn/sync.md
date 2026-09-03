@@ -21,7 +21,7 @@
 
 ## 冲突呈现给用户
 
-冲突绝不静默解决——`autoResolve` 在每个调用点都是 false，这是与兄弟应用共享的不变量。引擎返回挂起结果；`WebDAVService` 把它包装成携带有类型 `ProgressMergeResult` 的 `PendingSync`，因此冲突对话框（在 `PLAN.md` M1.1 中移植）可以展示每条记录的两个副本——通过目录把 id 解析为它命名的假名、词条或句型，两侧各附计数器和 `modifiedAt`——并让用户逐记录保留本地或远程副本。关闭对话框即中止解决。`finalizePendingSync` 重新下载远程文件，并在新锁下上传解决后的数据；基线快照只在该上传成功后保存。
+冲突绝不静默解决——`autoResolve` 在每个调用点都是 false，这是与兄弟应用共享的不变量。引擎返回挂起结果；`WebDAVService` 把它包装成携带有类型 `ProgressMergeResult` 的 `PendingSync`，因此冲突对话框（`lib/shared/widgets/study_conflict_dialog.dart`）可以展示每条记录的两个副本——通过目录把 id 解析为它命名的假名、词条或句型，两侧各附计数器和 `modifiedAt`——并让用户逐记录保留本地或远程副本。关闭对话框即中止解决。`finalizePendingSync` 重新下载远程文件，并在新锁下上传解决后的数据；基线快照只在该上传成功后保存。
 
 没有决定的冲突回落到本地记录（`ProgressMergeResult.buildResolved`），与兄弟应用使用的回落相同。
 

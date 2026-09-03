@@ -1,0 +1,2 @@
+=== [0] GET /dav/files/u/MyNihongo/nihongo_progress.json -> 200
+  authorization: <basic-auth>

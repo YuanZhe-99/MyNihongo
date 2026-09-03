@@ -50,7 +50,11 @@ not be introduced for normal changes. Three providers exist:
 - `contentCatalogProvider` (`features/content/services/content_repository.dart`) — the parsed
   bundled content, a `FutureProvider` loaded once per run.
 - `progressDataProvider` (`shared/providers/progress_provider.dart`) — the progress file, a
-  `FutureProvider` pages refresh after a save or a sync.
+  `StateNotifierProvider` pages reload after a save. It, not each page, registers
+  `AutoSyncService.addOnLocalDataChanged`, so a sync, a backup restore or a ZIP import refreshes
+  every open page through one subscription. (`PLAN.md` M1.1 says "pages register"; this is the
+  deliberate deviation, and it also avoids the loading flash `ref.refresh` would cause on
+  riverpod 1.x.)
 
 ## Localization (l10n)
 
@@ -79,7 +83,9 @@ lib/
         jlpt_level.dart
         localized_strings.dart
         vocab_entry.dart
-      services/content_repository.dart
+      services/
+        content_repository.dart
+        study_item_labels.dart
     grammar/views/grammar_page.dart
     kana/
       models/kana.dart
@@ -89,6 +95,7 @@ lib/
       models/study_record.dart
       services/nihongo_storage.dart
     settings/views/
+      backup_page.dart
       license_page.dart
       privacy_policy_page.dart
       settings_page.dart
@@ -104,10 +111,12 @@ lib/
       sync_merge.dart
       webdav_service.dart
     utils/adaptive_layout.dart
+    views/webdav_config_page.dart
     widgets/
       adaptive_tile_grid.dart
       reference_widgets.dart
       shell_scaffold.dart
+      study_conflict_dialog.dart
   l10n/
 assets/content/
   grammar_seed.json
@@ -129,6 +138,14 @@ Primary tests:
 - `test/content_catalog_test.dart` — the bundled content parses, ids are unique and prefixed, every
   entry has both languages.
 - `test/widget_test.dart` — a real page renders in both languages without overflow.
+- `test/golden/webdav_golden_test.dart` — the real sync, backup and ZIP engines against an
+  in-memory WebDAV server, recorded as request transcripts under `test/golden/goldens/mynihongo/`.
+- `test/progress_provider_test.dart` — the first read, and a re-read on a local-data-changed
+  notification with no loading flash.
+- `test/study_item_labels_test.dart`, `test/study_conflict_dialog_test.dart` — naming a record and
+  choosing between two versions of it.
+- `test/webdav_config_page_ui_test.dart`, `test/backup_page_ui_test.dart`,
+  `test/settings_two_pane_ui_test.dart` — the three data pages at the named geometries.
 
 ## Three kinds of data
 

@@ -37,8 +37,8 @@ locally, upload, save the new base, release the lock. Two paths matter to this a
 
 Conflicts are never resolved silently — `autoResolve` is false at every call site, an invariant
 shared with the sibling apps. The engine returns a pending result; `WebDAVService` wraps it as a
-`PendingSync` carrying the typed `ProgressMergeResult`, so the conflict dialog (ported in `PLAN.md`
-M1.1) can show both copies of each record — resolved through the catalog to the kana, headword or
+`PendingSync` carrying the typed `ProgressMergeResult`, so the conflict dialog
+(`lib/shared/widgets/study_conflict_dialog.dart`) can show both copies of each record — resolved through the catalog to the kana, headword or
 pattern the id names, with counters and `modifiedAt` on each side — and let the user keep the local
 or the remote copy per record. Dismissing the dialog aborts the resolution. `finalizePendingSync`
 re-downloads the remote file and uploads the resolved data under a fresh lock; the base snapshot is

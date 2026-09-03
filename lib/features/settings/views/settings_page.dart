@@ -1,20 +1,25 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import '../../../l10n/app_localizations.dart';
 import '../../../shared/providers/app_settings.dart';
+import '../../../shared/services/auto_sync_service.dart';
+import '../../../shared/services/import_export_service.dart';
 import '../../../shared/utils/adaptive_layout.dart';
+import '../../../shared/views/webdav_config_page.dart';
 import '../../progress/services/nihongo_storage.dart';
+import 'backup_page.dart';
 import 'license_page.dart' as app_license;
 import 'privacy_policy_page.dart';
 
 /// The settings rows that lead to a second-level page.
 ///
 /// Only these participate in the two-pane layout. Everything else on the page
-/// is an inline control. WebDAV and backup join this list when their pages
-/// are ported (see `PLAN.md`, M1.2).
-enum _SettingsDetail { privacy, license }
+/// is an inline control (the ZIP export and import rows act in place).
+enum _SettingsDetail { webdav, backup, privacy, license }
 
 class SettingsPage extends ConsumerStatefulWidget {
   /// Purpose: Create a settings page instance.
@@ -51,8 +56,29 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
   @override
   void initState() {
     super.initState();
+    AutoSyncService.instance.addOnStatusChanged(_refreshSyncStatus);
     _loadVersion();
     _loadStoragePath();
+  }
+
+  /// Purpose: Redraw the WebDAV row when background sync status changes.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: Triggers a rebuild.
+  /// Notes: Internal helper used within this file only.
+  void _refreshSyncStatus() {
+    if (mounted) setState(() {});
+  }
+
+  /// Purpose: Drop the sync status listener.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: Unregisters the callback.
+  /// Notes: Flutter lifecycle override.
+  @override
+  void dispose() {
+    AutoSyncService.instance.removeOnStatusChanged(_refreshSyncStatus);
+    super.dispose();
   }
 
   /// Purpose: Read the app version for the About section.
@@ -78,6 +104,91 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
     if (mounted) setState(() => _storagePath = path);
   }
 
+  /// Purpose: Summarize sync health for the WebDAV row's subtitle.
+  /// Inputs: `l10n`.
+  /// Returns: `String`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. Order matters: an
+  /// error outranks a past success, and a pending conflict is named as such
+  /// rather than as a plain failure, because the user has to act on it.
+  String _syncSubtitle(AppLocalizations l10n) {
+    final service = AutoSyncService.instance;
+    if (service.lastError != null) {
+      return service.hasPendingConflicts
+          ? l10n.settingsWebDAVAutoSyncConflict
+          : l10n.settingsWebDAVAutoSyncFailed;
+    }
+    final success = service.lastSuccessAt;
+    if (success != null) {
+      final when = DateFormat.yMd().add_Hm().format(success.toLocal());
+      return '${l10n.settingsWebDAVLastSuccess}: $when';
+    }
+    return l10n.settingsWebDAVNotConfigured;
+  }
+
+  /// Purpose: Write every data module to a ZIP in a folder the user picks.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: Opens the system directory picker; writes a ZIP file.
+  /// Notes: Internal helper used within this file only. The picker returns
+  /// null when the user cancels, which is not an error.
+  Future<void> _exportZip() async {
+    final l10n = AppLocalizations.of(context)!;
+    final dir = await FilePicker.platform.getDirectoryPath();
+    if (dir == null || !mounted) return;
+    final path = await ImportExportService.exportZIP(dir);
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          path == null ? l10n.exportFailed : '${l10n.exportSuccess}: $path',
+        ),
+      ),
+    );
+  }
+
+  /// Purpose: Replace local data from a ZIP the user picks.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: Opens the system file picker; overwrites data files after
+  /// confirmation; makes the progress provider re-read.
+  /// Notes: Internal helper used within this file only. The facade has no
+  /// post-import hook, so the reload is requested here through
+  /// `AutoSyncService`, the same path a restore uses.
+  Future<void> _importZip() async {
+    final l10n = AppLocalizations.of(context)!;
+    final picked = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: const ['zip'],
+    );
+    final path = picked?.files.single.path;
+    if (path == null || !mounted) return;
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(l10n.importData),
+        content: Text(l10n.importConfirm),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(ctx).pop(false),
+            child: Text(l10n.cancel),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(ctx).pop(true),
+            child: Text(l10n.ok),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true || !mounted) return;
+    final ok = await ImportExportService.importZIP(path);
+    if (ok) AutoSyncService.instance.notifyLocalDataChangedNow();
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(ok ? l10n.importSuccess : l10n.importFailed)),
+    );
+  }
+
   /// Purpose: Build the second-level page a settings row leads to.
   /// Inputs: `detail`.
   /// Returns: `Widget` — the page, a `Scaffold` with its own app bar.
@@ -88,6 +199,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
   /// `canPop == false`, so the hosted page's app bar grows no back arrow.
   Widget _detailPage(_SettingsDetail detail) {
     return switch (detail) {
+      _SettingsDetail.webdav => const WebDAVConfigPage(),
+      _SettingsDetail.backup => const BackupPage(),
       _SettingsDetail.privacy => const PrivacyPolicyPage(),
       _SettingsDetail.license => const app_license.LicensePage(),
     };
@@ -288,6 +401,42 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
 
         // ── Data ──
         _buildSection(l10n.settingsData, [
+          ListTile(
+            leading: const Icon(Icons.cloud_sync_outlined),
+            title: Text(l10n.settingsWebDAVSync),
+            subtitle: Text(
+              _syncSubtitle(l10n),
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+            ),
+            trailing: const Icon(Icons.chevron_right),
+            selected: _twoPane && _detail == _SettingsDetail.webdav,
+            onTap: () => _open(_SettingsDetail.webdav),
+          ),
+          ListTile(
+            leading: const Icon(Icons.backup_outlined),
+            title: Text(l10n.backupTitle),
+            subtitle: Text(
+              l10n.backupSubtitle,
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+            ),
+            trailing: const Icon(Icons.chevron_right),
+            selected: _twoPane && _detail == _SettingsDetail.backup,
+            onTap: () => _open(_SettingsDetail.backup),
+          ),
+          ListTile(
+            leading: const Icon(Icons.ios_share),
+            title: Text(l10n.exportData),
+            onTap: _exportZip,
+          ),
+          ListTile(
+            leading: const Icon(Icons.file_download_outlined),
+            title: Text(l10n.importData),
+            onTap: _importZip,
+          ),
           ListTile(
             leading: const Icon(Icons.folder_outlined),
             title: Text(l10n.settingsStorageLocation),

@@ -31,6 +31,7 @@
 - [`features/kana-reference.md`](features/kana-reference.md) — 五十音图页面及其背后的假名目录。
 - [`features/content-catalog.md`](features/content-catalog.md) — 内置的单词和语法内容：schema、id、语言、许可，以及浏览页面。
 - [`features/learning-progress.md`](features/learning-progress.md) — 同步的学习进度记录和学习仪表盘。
+- [`features/sync-and-backup.md`](features/sync-and-backup.md) — “设置 › 数据”下的同步、备份与 ZIP 界面。
 
 ## 此处不涵盖
 

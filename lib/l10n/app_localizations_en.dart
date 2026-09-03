@@ -271,4 +271,297 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsLicenses => 'Open Source Licenses';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get settingsWebDAVSync => 'WebDAV Sync';
+
+  @override
+  String get settingsWebDAVServerURL => 'Server URL';
+
+  @override
+  String get settingsWebDAVUsername => 'Username';
+
+  @override
+  String get settingsWebDAVPassword => 'Password';
+
+  @override
+  String get settingsWebDAVRemotePath => 'Remote Path';
+
+  @override
+  String get settingsWebDAVNextcloud => 'Nextcloud Preset';
+
+  @override
+  String get settingsWebDAVTestConnection => 'Test Connection';
+
+  @override
+  String get settingsWebDAVAutoSync => 'Auto-sync';
+
+  @override
+  String get settingsWebDAVAutoSyncDesc =>
+      'Automatically sync after a review and when the app resumes';
+
+  @override
+  String get settingsWebDAVSyncNow => 'Sync Now';
+
+  @override
+  String get settingsWebDAVSyncing => 'Syncing…';
+
+  @override
+  String get settingsWebDAVDisconnect => 'Disconnect';
+
+  @override
+  String get settingsWebDAVConfigSaved => 'Configuration saved';
+
+  @override
+  String get settingsWebDAVConfigRemoved => 'Configuration removed';
+
+  @override
+  String get settingsWebDAVConnectionSuccess => 'Connection successful';
+
+  @override
+  String get settingsWebDAVConnectionFailed => 'Connection failed';
+
+  @override
+  String get settingsWebDAVSyncSuccess => 'Sync completed';
+
+  @override
+  String get settingsWebDAVSyncFailed => 'Sync failed';
+
+  @override
+  String get settingsWebDAVAutoSyncFailed => 'Auto-sync failed';
+
+  @override
+  String get settingsWebDAVAutoSyncConflict => 'Auto-sync found conflicts';
+
+  @override
+  String get settingsWebDAVLastSuccess => 'Last successful sync';
+
+  @override
+  String get settingsWebDAVNotConfigured => 'Not connected';
+
+  @override
+  String settingsWebDAVSyncWarnings(int count) {
+    return 'Sync completed with $count warning(s)';
+  }
+
+  @override
+  String get settingsWebDAVForceUpload => 'Force Upload';
+
+  @override
+  String get settingsWebDAVForceDownload => 'Force Download';
+
+  @override
+  String get settingsWebDAVForceUploadConfirmTitle => 'Force upload?';
+
+  @override
+  String get settingsWebDAVForceUploadConfirmBody =>
+      'This will overwrite the remote progress with your local copy. Remote changes since the last sync will be lost.';
+
+  @override
+  String get settingsWebDAVForceDownloadConfirmTitle => 'Force download?';
+
+  @override
+  String get settingsWebDAVForceDownloadConfirmBody =>
+      'This will replace your local progress with the remote copy. Local changes since the last sync will be lost.';
+
+  @override
+  String get syncPhaseConnecting => 'Connecting…';
+
+  @override
+  String syncPhaseDownloadingData(Object file, int current, int total) {
+    return 'Downloading $file ($current/$total)';
+  }
+
+  @override
+  String syncPhaseMerging(Object file) {
+    return 'Merging $file…';
+  }
+
+  @override
+  String syncPhaseUploadingData(Object file) {
+    return 'Uploading $file…';
+  }
+
+  @override
+  String syncConflictTitle(Object name) {
+    return 'Sync conflict: $name';
+  }
+
+  @override
+  String get syncConflictDesc =>
+      'This item was studied on both devices since the last sync. Keep one version.';
+
+  @override
+  String get syncUnknownItem =>
+      'This item is not in the current content catalog.';
+
+  @override
+  String get syncLocalVersion => 'Local version';
+
+  @override
+  String get syncRemoteVersion => 'Remote version';
+
+  @override
+  String syncModifiedAt(Object time) {
+    return 'Modified: $time';
+  }
+
+  @override
+  String syncRecordAnswers(int correct, int wrong) {
+    return 'Correct $correct · Wrong $wrong';
+  }
+
+  @override
+  String syncStreak(int count) {
+    return 'Streak: $count';
+  }
+
+  @override
+  String get syncStage => 'Stage';
+
+  @override
+  String get stageFresh => 'Not started';
+
+  @override
+  String get stageLearning => 'Learning';
+
+  @override
+  String get stageMastered => 'Mastered';
+
+  @override
+  String syncLastReviewed(Object time) {
+    return 'Last reviewed: $time';
+  }
+
+  @override
+  String get syncNeverReviewed => 'Never reviewed';
+
+  @override
+  String get syncKeepLocal => 'Keep Local';
+
+  @override
+  String get syncKeepRemote => 'Keep Remote';
+
+  @override
+  String get backupTitle => 'Backup';
+
+  @override
+  String get backupSubtitle => 'Full local backup of your learning progress';
+
+  @override
+  String get backupCreate => 'Create backup';
+
+  @override
+  String get backupCreated => 'Backup created';
+
+  @override
+  String get backupFailed => 'Could not create the backup';
+
+  @override
+  String get backupAutoBackup => 'Automatic backup';
+
+  @override
+  String get backupAutoBackupDesc => 'Back up once a day when the app starts';
+
+  @override
+  String get backupRetention => 'Keep backups for';
+
+  @override
+  String get backupKeepForever => 'Forever';
+
+  @override
+  String backupKeepDays(int days) {
+    return '$days days';
+  }
+
+  @override
+  String backupHistory(int count) {
+    return 'History ($count)';
+  }
+
+  @override
+  String get backupNoBackups => 'No backups yet';
+
+  @override
+  String get backupCorrupt => 'Damaged';
+
+  @override
+  String get backupLocalOnlyNote =>
+      'Backups stay on this device. They are never uploaded anywhere.';
+
+  @override
+  String get backupRestore => 'Restore';
+
+  @override
+  String get backupRestoreConfirm =>
+      'This replaces the selected data with the backup. Continue?';
+
+  @override
+  String get backupRestoreModules => 'What to restore';
+
+  @override
+  String get backupSelectAll => 'Select all';
+
+  @override
+  String get backupModuleProgress => 'Learning progress';
+
+  @override
+  String get backupRestored => 'Backup restored';
+
+  @override
+  String get backupRestoreFailed => 'Could not restore the backup';
+
+  @override
+  String get backupDeleteConfirm => 'Delete this backup?';
+
+  @override
+  String get backupRestoredSyncDisabled =>
+      'Auto-sync has been turned off so the restored data is not merged into your server by accident.';
+
+  @override
+  String get backupForceUploadPrompt =>
+      'Overwrite the remote copy with the restored data?';
+
+  @override
+  String get backupForceUploadSkip => 'Not now';
+
+  @override
+  String get backupForceUploadDone => 'Remote copy overwritten';
+
+  @override
+  String get backupForceUploadFailed => 'Upload failed';
+
+  @override
+  String get exportData => 'Export to ZIP';
+
+  @override
+  String get exportSuccess => 'Exported';
+
+  @override
+  String get exportFailed => 'Export failed';
+
+  @override
+  String get importData => 'Import from ZIP';
+
+  @override
+  String get importConfirm =>
+      'This replaces your local progress with the contents of the archive. Continue?';
+
+  @override
+  String get importSuccess => 'Import complete';
+
+  @override
+  String get importFailed => 'Import failed';
 }

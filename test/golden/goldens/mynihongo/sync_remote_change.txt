@@ -1,0 +1,65 @@
+=== [0] MKCOL /dav/files/u/MyNihongo/ -> 201
+  authorization: <basic-auth>
+=== [1] GET /dav/files/u/MyNihongo/.lock -> 404
+  authorization: <basic-auth>
+=== [2] PUT /dav/files/u/MyNihongo/.lock -> 201
+  authorization: <basic-auth>
+  content-type: application/octet-stream
+  if-none-match: *
+  body:
+    {
+      "clientId": "<uuid>",
+      "token": "<uuid>",
+      "startedAt": "<timestamp>",
+      "updatedAt": "<timestamp>",
+      "ttlSeconds": 60
+    }
+=== [3] GET /dav/files/u/MyNihongo/nihongo_progress.json -> 200
+  authorization: <basic-auth>
+=== [4] GET /dav/files/u/MyNihongo/.lock -> 200
+  authorization: <basic-auth>
+=== [5] PUT /dav/files/u/MyNihongo/.lock -> 204
+  authorization: <basic-auth>
+  content-type: application/octet-stream
+  if-match: "<etag>"
+  body:
+    {
+      "clientId": "<uuid>",
+      "token": "<uuid>",
+      "startedAt": "<timestamp>",
+      "updatedAt": "<timestamp>",
+      "ttlSeconds": 60
+    }
+=== [6] PUT /dav/files/u/MyNihongo/nihongo_progress.json -> 204
+  authorization: <basic-auth>
+  content-type: application/octet-stream
+  body:
+    {
+      "records": [
+        {
+          "id": "kana:あ",
+          "correct": 1,
+          "wrong": 0,
+          "streak": 1,
+          "intervalDays": 1,
+          "ease": 2.5,
+          "createdAt": "<timestamp>",
+          "modifiedAt": "<timestamp>"
+        },
+        {
+          "id": "grammar:desu",
+          "correct": 1,
+          "wrong": 0,
+          "streak": 1,
+          "intervalDays": 1,
+          "ease": 2.5,
+          "createdAt": "<timestamp>",
+          "modifiedAt": "<timestamp>"
+        }
+      ]
+    }
+=== [7] GET /dav/files/u/MyNihongo/.lock -> 200
+  authorization: <basic-auth>
+=== [8] DELETE /dav/files/u/MyNihongo/.lock -> 204
+  authorization: <basic-auth>
+  if-match: "<etag>"

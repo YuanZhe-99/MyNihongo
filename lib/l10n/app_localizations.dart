@@ -571,6 +571,528 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Open Source Licenses'**
   String get settingsLicenses;
+
+  /// No description provided for @ok.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get ok;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// No description provided for @settingsWebDAVSync.
+  ///
+  /// In en, this message translates to:
+  /// **'WebDAV Sync'**
+  String get settingsWebDAVSync;
+
+  /// No description provided for @settingsWebDAVServerURL.
+  ///
+  /// In en, this message translates to:
+  /// **'Server URL'**
+  String get settingsWebDAVServerURL;
+
+  /// No description provided for @settingsWebDAVUsername.
+  ///
+  /// In en, this message translates to:
+  /// **'Username'**
+  String get settingsWebDAVUsername;
+
+  /// No description provided for @settingsWebDAVPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get settingsWebDAVPassword;
+
+  /// No description provided for @settingsWebDAVRemotePath.
+  ///
+  /// In en, this message translates to:
+  /// **'Remote Path'**
+  String get settingsWebDAVRemotePath;
+
+  /// No description provided for @settingsWebDAVNextcloud.
+  ///
+  /// In en, this message translates to:
+  /// **'Nextcloud Preset'**
+  String get settingsWebDAVNextcloud;
+
+  /// No description provided for @settingsWebDAVTestConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'Test Connection'**
+  String get settingsWebDAVTestConnection;
+
+  /// No description provided for @settingsWebDAVAutoSync.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto-sync'**
+  String get settingsWebDAVAutoSync;
+
+  /// No description provided for @settingsWebDAVAutoSyncDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Automatically sync after a review and when the app resumes'**
+  String get settingsWebDAVAutoSyncDesc;
+
+  /// No description provided for @settingsWebDAVSyncNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync Now'**
+  String get settingsWebDAVSyncNow;
+
+  /// No description provided for @settingsWebDAVSyncing.
+  ///
+  /// In en, this message translates to:
+  /// **'Syncing…'**
+  String get settingsWebDAVSyncing;
+
+  /// No description provided for @settingsWebDAVDisconnect.
+  ///
+  /// In en, this message translates to:
+  /// **'Disconnect'**
+  String get settingsWebDAVDisconnect;
+
+  /// No description provided for @settingsWebDAVConfigSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Configuration saved'**
+  String get settingsWebDAVConfigSaved;
+
+  /// No description provided for @settingsWebDAVConfigRemoved.
+  ///
+  /// In en, this message translates to:
+  /// **'Configuration removed'**
+  String get settingsWebDAVConfigRemoved;
+
+  /// No description provided for @settingsWebDAVConnectionSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection successful'**
+  String get settingsWebDAVConnectionSuccess;
+
+  /// No description provided for @settingsWebDAVConnectionFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection failed'**
+  String get settingsWebDAVConnectionFailed;
+
+  /// No description provided for @settingsWebDAVSyncSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync completed'**
+  String get settingsWebDAVSyncSuccess;
+
+  /// No description provided for @settingsWebDAVSyncFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync failed'**
+  String get settingsWebDAVSyncFailed;
+
+  /// No description provided for @settingsWebDAVAutoSyncFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto-sync failed'**
+  String get settingsWebDAVAutoSyncFailed;
+
+  /// No description provided for @settingsWebDAVAutoSyncConflict.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto-sync found conflicts'**
+  String get settingsWebDAVAutoSyncConflict;
+
+  /// No description provided for @settingsWebDAVLastSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Last successful sync'**
+  String get settingsWebDAVLastSuccess;
+
+  /// No description provided for @settingsWebDAVNotConfigured.
+  ///
+  /// In en, this message translates to:
+  /// **'Not connected'**
+  String get settingsWebDAVNotConfigured;
+
+  /// No description provided for @settingsWebDAVSyncWarnings.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync completed with {count} warning(s)'**
+  String settingsWebDAVSyncWarnings(int count);
+
+  /// No description provided for @settingsWebDAVForceUpload.
+  ///
+  /// In en, this message translates to:
+  /// **'Force Upload'**
+  String get settingsWebDAVForceUpload;
+
+  /// No description provided for @settingsWebDAVForceDownload.
+  ///
+  /// In en, this message translates to:
+  /// **'Force Download'**
+  String get settingsWebDAVForceDownload;
+
+  /// No description provided for @settingsWebDAVForceUploadConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Force upload?'**
+  String get settingsWebDAVForceUploadConfirmTitle;
+
+  /// No description provided for @settingsWebDAVForceUploadConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This will overwrite the remote progress with your local copy. Remote changes since the last sync will be lost.'**
+  String get settingsWebDAVForceUploadConfirmBody;
+
+  /// No description provided for @settingsWebDAVForceDownloadConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Force download?'**
+  String get settingsWebDAVForceDownloadConfirmTitle;
+
+  /// No description provided for @settingsWebDAVForceDownloadConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This will replace your local progress with the remote copy. Local changes since the last sync will be lost.'**
+  String get settingsWebDAVForceDownloadConfirmBody;
+
+  /// No description provided for @syncPhaseConnecting.
+  ///
+  /// In en, this message translates to:
+  /// **'Connecting…'**
+  String get syncPhaseConnecting;
+
+  /// No description provided for @syncPhaseDownloadingData.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloading {file} ({current}/{total})'**
+  String syncPhaseDownloadingData(Object file, int current, int total);
+
+  /// No description provided for @syncPhaseMerging.
+  ///
+  /// In en, this message translates to:
+  /// **'Merging {file}…'**
+  String syncPhaseMerging(Object file);
+
+  /// No description provided for @syncPhaseUploadingData.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploading {file}…'**
+  String syncPhaseUploadingData(Object file);
+
+  /// No description provided for @syncConflictTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync conflict: {name}'**
+  String syncConflictTitle(Object name);
+
+  /// No description provided for @syncConflictDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'This item was studied on both devices since the last sync. Keep one version.'**
+  String get syncConflictDesc;
+
+  /// No description provided for @syncUnknownItem.
+  ///
+  /// In en, this message translates to:
+  /// **'This item is not in the current content catalog.'**
+  String get syncUnknownItem;
+
+  /// No description provided for @syncLocalVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Local version'**
+  String get syncLocalVersion;
+
+  /// No description provided for @syncRemoteVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Remote version'**
+  String get syncRemoteVersion;
+
+  /// No description provided for @syncModifiedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Modified: {time}'**
+  String syncModifiedAt(Object time);
+
+  /// No description provided for @syncRecordAnswers.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct {correct} · Wrong {wrong}'**
+  String syncRecordAnswers(int correct, int wrong);
+
+  /// No description provided for @syncStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'Streak: {count}'**
+  String syncStreak(int count);
+
+  /// No description provided for @syncStage.
+  ///
+  /// In en, this message translates to:
+  /// **'Stage'**
+  String get syncStage;
+
+  /// No description provided for @stageFresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Not started'**
+  String get stageFresh;
+
+  /// No description provided for @stageLearning.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning'**
+  String get stageLearning;
+
+  /// No description provided for @stageMastered.
+  ///
+  /// In en, this message translates to:
+  /// **'Mastered'**
+  String get stageMastered;
+
+  /// No description provided for @syncLastReviewed.
+  ///
+  /// In en, this message translates to:
+  /// **'Last reviewed: {time}'**
+  String syncLastReviewed(Object time);
+
+  /// No description provided for @syncNeverReviewed.
+  ///
+  /// In en, this message translates to:
+  /// **'Never reviewed'**
+  String get syncNeverReviewed;
+
+  /// No description provided for @syncKeepLocal.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep Local'**
+  String get syncKeepLocal;
+
+  /// No description provided for @syncKeepRemote.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep Remote'**
+  String get syncKeepRemote;
+
+  /// No description provided for @backupTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup'**
+  String get backupTitle;
+
+  /// No description provided for @backupSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Full local backup of your learning progress'**
+  String get backupSubtitle;
+
+  /// No description provided for @backupCreate.
+  ///
+  /// In en, this message translates to:
+  /// **'Create backup'**
+  String get backupCreate;
+
+  /// No description provided for @backupCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup created'**
+  String get backupCreated;
+
+  /// No description provided for @backupFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not create the backup'**
+  String get backupFailed;
+
+  /// No description provided for @backupAutoBackup.
+  ///
+  /// In en, this message translates to:
+  /// **'Automatic backup'**
+  String get backupAutoBackup;
+
+  /// No description provided for @backupAutoBackupDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Back up once a day when the app starts'**
+  String get backupAutoBackupDesc;
+
+  /// No description provided for @backupRetention.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep backups for'**
+  String get backupRetention;
+
+  /// No description provided for @backupKeepForever.
+  ///
+  /// In en, this message translates to:
+  /// **'Forever'**
+  String get backupKeepForever;
+
+  /// No description provided for @backupKeepDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} days'**
+  String backupKeepDays(int days);
+
+  /// No description provided for @backupHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'History ({count})'**
+  String backupHistory(int count);
+
+  /// No description provided for @backupNoBackups.
+  ///
+  /// In en, this message translates to:
+  /// **'No backups yet'**
+  String get backupNoBackups;
+
+  /// No description provided for @backupCorrupt.
+  ///
+  /// In en, this message translates to:
+  /// **'Damaged'**
+  String get backupCorrupt;
+
+  /// No description provided for @backupLocalOnlyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Backups stay on this device. They are never uploaded anywhere.'**
+  String get backupLocalOnlyNote;
+
+  /// No description provided for @backupRestore.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get backupRestore;
+
+  /// No description provided for @backupRestoreConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'This replaces the selected data with the backup. Continue?'**
+  String get backupRestoreConfirm;
+
+  /// No description provided for @backupRestoreModules.
+  ///
+  /// In en, this message translates to:
+  /// **'What to restore'**
+  String get backupRestoreModules;
+
+  /// No description provided for @backupSelectAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Select all'**
+  String get backupSelectAll;
+
+  /// No description provided for @backupModuleProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning progress'**
+  String get backupModuleProgress;
+
+  /// No description provided for @backupRestored.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup restored'**
+  String get backupRestored;
+
+  /// No description provided for @backupRestoreFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not restore the backup'**
+  String get backupRestoreFailed;
+
+  /// No description provided for @backupDeleteConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this backup?'**
+  String get backupDeleteConfirm;
+
+  /// No description provided for @backupRestoredSyncDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto-sync has been turned off so the restored data is not merged into your server by accident.'**
+  String get backupRestoredSyncDisabled;
+
+  /// No description provided for @backupForceUploadPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Overwrite the remote copy with the restored data?'**
+  String get backupForceUploadPrompt;
+
+  /// No description provided for @backupForceUploadSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get backupForceUploadSkip;
+
+  /// No description provided for @backupForceUploadDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Remote copy overwritten'**
+  String get backupForceUploadDone;
+
+  /// No description provided for @backupForceUploadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload failed'**
+  String get backupForceUploadFailed;
+
+  /// No description provided for @exportData.
+  ///
+  /// In en, this message translates to:
+  /// **'Export to ZIP'**
+  String get exportData;
+
+  /// No description provided for @exportSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Exported'**
+  String get exportSuccess;
+
+  /// No description provided for @exportFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Export failed'**
+  String get exportFailed;
+
+  /// No description provided for @importData.
+  ///
+  /// In en, this message translates to:
+  /// **'Import from ZIP'**
+  String get importData;
+
+  /// No description provided for @importConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'This replaces your local progress with the contents of the archive. Continue?'**
+  String get importConfirm;
+
+  /// No description provided for @importSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Import complete'**
+  String get importSuccess;
+
+  /// No description provided for @importFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Import failed'**
+  String get importFailed;
 }
 
 class _AppLocalizationsDelegate

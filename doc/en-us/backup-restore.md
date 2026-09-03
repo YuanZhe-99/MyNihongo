@@ -25,7 +25,9 @@ the app's module registry.
   backup page offers a force upload so the restored state propagates deliberately rather than
   through a merge that would look like mass deletion elsewhere.
 
-The backup page itself is ported in `PLAN.md` M1.1.
+The backup page is `lib/features/settings/views/backup_page.dart`, reached from Settings › Data. It
+does not repeat the auto-sync guard in the app: the engine owns invariant I5, and a second
+implementation would fight it over the same config file.
 
 ## ZIP export and import
 

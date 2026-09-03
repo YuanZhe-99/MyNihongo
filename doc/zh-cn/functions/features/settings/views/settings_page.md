@@ -1,6 +1,6 @@
 # lib/features/settings/views/settings_page.dart
 
-`SettingsPage` 是第五个标签。它显示三个节——通用（主题分段按钮、语言下拉）、数据（存储位置）、关于（版本、隐私政策、许可证、开源许可证）——并按 `canSplitLayout` 以一个或两个窗格（pane）布局自身。私有的 `_SettingsDetail` 枚举命名通向二级页面的行（`privacy`、`license`）；WebDAV 和备份在 `PLAN.md` M1.1 中加入。见 [../../../../adaptive-layout.md](../../../../adaptive-layout.md)。
+`SettingsPage` 是第五个标签。它显示三个节——通用（主题分段按钮、语言下拉）、数据、关于（版本、隐私政策、许可证、开源许可证）——并按 `canSplitLayout` 以一个或两个窗格（pane）布局自身。数据节现在包含 WebDAV 同步行（带实时状态副标题）、备份行、ZIP 导出与导入，以及存储位置。私有的 `_SettingsDetail` 枚举命名通向二级页面的四行：`webdav`、`backup`、`privacy`、`license`；导出与导入就地执行。见 [../../../../adaptive-layout.md](../../../../adaptive-layout.md)。
 
 ## 声明
 
@@ -10,7 +10,12 @@
 | `SettingsPage.createState` | 方法 | B | 为此组件创建可变状态对象。 |
 | `_SettingsPageState.initState` | 方法 | B | 启动版本和存储路径的加载。 |
 | `_SettingsPageState._loadVersion` | 方法 | B | 从 `PackageInfo.fromPlatform()` 读取应用版本供关于节显示。 |
+| `_SettingsPageState._refreshSyncStatus` | 方法 | B | 后台同步状态变化时重绘 WebDAV 行。 |
+| `_SettingsPageState.dispose` | 方法 | B | 移除同步状态监听器。 |
 | `_SettingsPageState._loadStoragePath` | 方法 | B | 读取活动存储目录以供显示。 |
+| `_SettingsPageState._syncSubtitle` | 方法 | B | 为 WebDAV 行的副标题总结同步健康状况。 |
+| `_SettingsPageState._exportZip` | 方法 | B | 把每个数据模块写入用户选择目录中的 ZIP。 |
+| `_SettingsPageState._importZip` | 方法 | B | 用用户选择的 ZIP 替换本地数据。 |
 | `_SettingsPageState._detailPage` | 方法（widget 辅助） | B | 构建设置行通向的二级页面。 |
 | [`_SettingsPageState._open`](#open) | 方法 | A | 以当前布局要求的方式打开二级页面。 |
 | [`_SettingsPageState._buildDetailPane`](#builddetailpane) | 方法（widget 辅助） | A | 构建双栏布局的右侧窗格。 |

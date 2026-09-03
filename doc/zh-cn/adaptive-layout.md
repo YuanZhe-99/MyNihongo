@@ -112,6 +112,7 @@ int columnCapacity(double contentWidth, {required double minItemWidth,
 | 单词、语法 | 形状门控 + 容量 | `referenceColumnCount`：除非 `canSplitLayout`，否则 1 列，然后是 `referenceTileMinWidth` 下的 `columnCapacity`，上限 `listMaxColumns`（4）。横持的 Fold 8 得到两列，横持平板两列，桌面三列。尚无存储的偏好；到来时钳制而不拒绝，容量为 1 时隐藏。 |
 | 学习 | 形状门控 + 容量 | 仪表盘卡片按 `ruleCardMinWidth` 排成 1–2 列，以 `canSplitLayout` 为门控。 |
 | 设置 | 形状门控 | `canSplitLayout` 时两个窗格；左窗格 `settingsLeftPaneWidth(shellContentWidth)`——比例式（0.44），钳制在 300–440，并加上限使详情窗格永不低于 `settingsRightPaneMinWidth`（280）。二级页面在窄窗口上全屏压栈，在宽窗口上承载于详情窗格内嵌套的 `Navigator`，因此同一组件服务两种模式。 |
+| WebDAV 同步、备份 | 无 | 在任何尺寸下都是单列。两者都是二级页面，因此由上面的“设置”一行决定它们是被压栈还是承载于详情窗格；页面本身不做任何测量。 |
 | 详情面板 | 无 | 底部面板，在每种模式下相同。 |
 
 **明知而接受的代价：** 横持的手机（915 × 412）保留每个单列布局，尽管它是所有视口中高度最少的——本来受益最大的情形。本系列为其分栏表面的一致性接受了这个取舍；本应用沿用。

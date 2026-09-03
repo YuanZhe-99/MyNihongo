@@ -1,0 +1,5 @@
+backupFormat: 2
+topLevelKeys: _backupFormat,nihongo_progress.json
+hasImageRefs: false
+imageRefKeys: []
+dataIsString: true

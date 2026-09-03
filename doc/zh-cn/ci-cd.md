@@ -49,3 +49,17 @@ git submodule update --init
 ## `tool/` 脚本
 
 尚无。`PLAN.md` M1.2 添加 `tool/import_vocab.dart`，即重新生成单词资源的离线 JMdict + JLPT 列表导入；与兄弟应用的生成器一样，它将是确定性的，因此输入不变时重跑不产生差异。
+
+## 黄金记录（golden transcripts）
+
+`test/golden/webdav_golden_test.dart` 让真实的同步、备份与 ZIP 引擎对内存中的 WebDAV 服务器运行，并把记录下的
+请求序列与 `test/golden/goldens/mynihongo/` 下的文件比对。`flutter test` 会像验证其他测试一样验证它们，CI 中
+不需要额外步骤。协议有意变更后再有意重新录制，然后阅读差异：
+
+```bash
+flutter test --dart-define=GOLDEN_RECORD=true test/golden/webdav_golden_test.dart
+```
+
+该 define 必须字面为 `true`；`bool.fromEnvironment` 把 `1` 读作 false，运行会静默停留在验证模式。
+`test/golden/fake_webdav_server.dart` 与 `request_recorder.dart` 是共享包测试装置的副本 —— 请在那里修复再复制
+回来，绝不要在此处编辑。记录按字节比对，因此根目录的 `.gitattributes` 把它们固定为 LF。

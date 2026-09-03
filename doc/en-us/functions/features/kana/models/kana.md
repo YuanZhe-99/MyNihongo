@@ -18,3 +18,4 @@ source. A kana's progress id is `kana:<hiragana>`. See
 | `KanaRow.new` | constructor | B | Create a labeled row; `null` slots mark combinations that do not exist. |
 | `allKanaEntries` | top-level function | B | List every kana entry across the three tables, once each, in table order. |
 | `matchingKanaEntries` | top-level function | B | Trim and lowercase a query and return every matching entry; empty for a blank query. |
+| `kanaEntryById` | top-level function | B | Resolve a `kana:` progress id back to its table entry, through a lazily built map. |

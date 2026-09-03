@@ -67,3 +67,19 @@ git submodule update --init
 None yet. `PLAN.md` M1.2 adds `tool/import_vocab.dart`, the offline JMdict + JLPT-list import that
 regenerates the vocabulary asset; like the sibling apps' generators it will be deterministic, so a
 re-run with unchanged inputs produces no diff.
+
+## Golden transcripts
+
+`test/golden/webdav_golden_test.dart` drives the real sync, backup and ZIP engines against an
+in-memory WebDAV server and compares the recorded request sequence to files under
+`test/golden/goldens/mynihongo/`. `flutter test` verifies them like any other test; nothing extra
+runs in CI. Re-record deliberately after an intended protocol change, then read the diff:
+
+```bash
+flutter test --dart-define=GOLDEN_RECORD=true test/golden/webdav_golden_test.dart
+```
+
+The define must be literally `true`; `bool.fromEnvironment` reads `1` as false and the run stays
+silently in verify mode. `test/golden/fake_webdav_server.dart` and `request_recorder.dart` are
+copies of the shared package's harness — fix them there and copy again, never edit them here. The
+transcripts are byte-compared, so the root `.gitattributes` pins them to LF.

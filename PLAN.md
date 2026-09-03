@@ -109,7 +109,7 @@ Goal: a useful, releasable kana/vocabulary/grammar reference with sync and backu
 
 - [x] `flutter create` (Android), package `my_nihongo`, id `com.yuanzhe.my_nihongo`, name
       `MyNihongo!!!!!`
-- [x] `myapps_data` submodule at `packages/myapps_data`, relative URL, pinned to `54fa8d7`
+- [x] `myapps_data` submodule at `packages/myapps_data`, relative URL, now pinned to the `v1.0.2` tag
       (main after `v1.0.1`; docs-only delta)
 - [x] Android config mirrored from MyAnime's verified state: Gradle 9.3.1, AGP 9.1.1,
       `builtInKotlin=false`, Java 17 desugaring, `configChanges` for folding
@@ -135,22 +135,26 @@ Goal: a useful, releasable kana/vocabulary/grammar reference with sync and backu
 
 Port from MyAnime, renaming types (`Anime` → `StudyRecord`) and dropping image handling:
 
-- [ ] `shared/views/webdav_config_page.dart` — server/credentials/remote path, test connection,
+- [x] `shared/views/webdav_config_page.dart` — server/credentials/remote path, test connection,
       auto-sync switch, sync now, force upload/download with confirmations, progress bar from
       `WebDAVService.progress`, last-success/failure status from `AutoSyncService`
-- [ ] Conflict dialog: shows each conflicting record's id resolved to its catalog label (kana,
+- [x] Conflict dialog: shows each conflicting record's id resolved to its catalog label (kana,
       headword, pattern) plus counters and `modifiedAt` on both sides; keep-local / keep-remote per
       record; dismissing aborts the resolution (never uploads silently)
-- [ ] `features/settings/views/backup_page.dart` — create, list (newest first, corrupt flagged),
+- [x] `features/settings/views/backup_page.dart` — create, list (newest first, corrupt flagged),
       restore with module selection, delete, auto-backup switch, retention days; after a restore
-      that wrote data, disable auto-sync and offer force upload (series rule I5)
-- [ ] ZIP export/import rows in Settings → Data, using `file_picker` pinned to `10.3.7`
+      that wrote data, offer force upload. **Amended:** the app does not disable auto-sync itself —
+      `myapps_data v1.0.1`'s `BackupEngine.restoreBackup` implements I5 internally, and a second
+      implementation would fight it over the same config file
+- [x] ZIP export/import rows in Settings → Data, using `file_picker` pinned to `10.3.7`
       (see `platform-notes.md` for why that exact version)
-- [ ] Pages register `AutoSyncService.addOnLocalDataChanged` and refresh `progressDataProvider`
-- [ ] Widget tests at phone and Fold 8 geometries; golden request transcripts against
+- [x] **Amended:** `progressDataProvider` — now a `StateNotifierProvider` — registers
+      `AutoSyncService.addOnLocalDataChanged` once and reloads itself, instead of every page
+      registering. One subscription, and no loading flash from `ref.refresh` on riverpod 1.x
+- [x] Widget tests at phone and Fold 8 geometries; golden request transcripts against
       `myapps_data`'s fake WebDAV server (copy `test/golden/` harness from MyAnime, one module)
-- [ ] `.gitattributes` for golden `*.txt` files (`eol=lf`)
-- [ ] Docs: `sync.md`, `backup-restore.md`, `features/sync-and-backup.md`; ARB strings for both
+- [x] `.gitattributes` for golden `*.txt` files (`eol=lf`)
+- [x] Docs: `sync.md`, `backup-restore.md`, `features/sync-and-backup.md`; ARB strings for both
       pages in `en` and `zh`
 
 #### M1.2 Content pipeline
@@ -398,6 +402,9 @@ catalog content, and never writes a progress record by itself — the learner's 
 | 2026-09-02 | Android only in Phase 1 | Speech APIs and the foldable work are Android-specific to verify; desktop is a `flutter create` away |
 | 2026-09-02 | Sentence analysis baseline is a bundled classic pipeline; AICore is an optional enhancement | Deterministic, testable, works on every device, no privacy question; AICore coverage is thin |
 | 2026-09-02 | AICore in Phases 3–4 assists practice (writing feedback, free-response grading, explanations, dialogue) but never sets a score or writes into the catalog | Results stay comparable between devices with and without AICore; generated text stays labelled and out of the shipped data |
+| 2026-09-03 | The progress provider, not each page, subscribes to `AutoSyncService.addOnLocalDataChanged` | One subscription for every page, and riverpod 1.x's `ref.refresh` would blank a loaded page on every background sync |
+| 2026-09-03 | The backup page does not re-implement invariant I5 | `BackupEngine.restoreBackup` in `myapps_data v1.0.1` already disables auto-sync before its first write; two writers of the same config file would race |
+| 2026-09-03 | `WebDavClient.download` decodes UTF-8 bytes instead of `response.body` (package fix) | Every progress id here contains kana; `package:http` falls back to latin1 when a server sends no charset, which corrupted every downloaded record. Found by the golden transcripts |
 
 ## 7. Open questions
 

@@ -35,7 +35,7 @@
 
 - `appSettingsProvider`（`shared/providers/app_settings.dart`）——主题模式和语言，设备本地持久化。
 - `contentCatalogProvider`（`features/content/services/content_repository.dart`）——解析后的内置内容，每次运行加载一次的 `FutureProvider`。
-- `progressDataProvider`（`shared/providers/progress_provider.dart`）——进度文件，页面在保存或同步后刷新的 `FutureProvider`。
+- `progressDataProvider`（`shared/providers/progress_provider.dart`）——进度文件，页面在保存后重新加载的 `StateNotifierProvider`。注册 `AutoSyncService.addOnLocalDataChanged` 的是它而不是每个页面，因此同步、备份还原或 ZIP 导入通过一个订阅刷新所有打开的页面。（`PLAN.md` M1.1 写的是“页面注册”；这是有意的偏离，同时也避免了 riverpod 1.x 上 `ref.refresh` 造成的加载闪烁。）
 
 ## 本地化（l10n）
 
@@ -63,7 +63,9 @@ lib/
         jlpt_level.dart
         localized_strings.dart
         vocab_entry.dart
-      services/content_repository.dart
+      services/
+        content_repository.dart
+        study_item_labels.dart
     grammar/views/grammar_page.dart
     kana/
       models/kana.dart
@@ -73,6 +75,7 @@ lib/
       models/study_record.dart
       services/nihongo_storage.dart
     settings/views/
+      backup_page.dart
       license_page.dart
       privacy_policy_page.dart
       settings_page.dart
@@ -88,10 +91,12 @@ lib/
       sync_merge.dart
       webdav_service.dart
     utils/adaptive_layout.dart
+    views/webdav_config_page.dart
     widgets/
       adaptive_tile_grid.dart
       reference_widgets.dart
       shell_scaffold.dart
+      study_conflict_dialog.dart
   l10n/
 assets/content/
   grammar_seed.json
@@ -109,6 +114,10 @@ tool/generate_ios_icons.dart    iOS default / dark / tinted icon generator
 - `test/data_modules_test.dart` — 模块注册表的名称、校验、美化输出的合并结果，以及应用中立的冲突解决。
 - `test/content_catalog_test.dart` — 内置内容可解析、id 唯一且带前缀、每个条目都有两种语言。
 - `test/widget_test.dart` — 真实页面在两种语言下渲染且不溢出。
+- `test/golden/webdav_golden_test.dart` — 真实的同步、备份与 ZIP 引擎对内存中的 WebDAV 服务器运行，请求记录保存在 `test/golden/goldens/mynihongo/`。
+- `test/progress_provider_test.dart` — 首次读取，以及收到本地数据变更通知后的重新读取（无加载闪烁）。
+- `test/study_item_labels_test.dart`、`test/study_conflict_dialog_test.dart` — 为记录命名，并在两个版本之间选择。
+- `test/webdav_config_page_ui_test.dart`、`test/backup_page_ui_test.dart`、`test/settings_two_pane_ui_test.dart` — 三个数据页面在指定几何尺寸下的表现。
 
 ## 三类数据
 

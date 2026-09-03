@@ -14,3 +14,4 @@
 | `KanaRow.new` | 构造函数 | B | 创建带标签的行；`null` 槽位标记不存在的组合。 |
 | `allKanaEntries` | 顶层函数 | B | 按表顺序列出三张表中的每个假名条目，每个一次。 |
 | `matchingKanaEntries` | 顶层函数 | B | 修剪并转小写查询，返回每个匹配的条目；空白查询返回空。 |
+| `kanaEntryById` | 顶层函数 | B | 通过惰性构建的映射，把 `kana:` 进度 id 解析回其表内条目。 |

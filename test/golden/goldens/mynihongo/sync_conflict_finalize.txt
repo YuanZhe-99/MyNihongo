@@ -1,0 +1,76 @@
+=== [0] MKCOL /dav/files/u/MyNihongo/ -> 201
+  authorization: <basic-auth>
+=== [1] GET /dav/files/u/MyNihongo/.lock -> 404
+  authorization: <basic-auth>
+=== [2] PUT /dav/files/u/MyNihongo/.lock -> 201
+  authorization: <basic-auth>
+  content-type: application/octet-stream
+  if-none-match: *
+  body:
+    {
+      "clientId": "<uuid>",
+      "token": "<uuid>",
+      "startedAt": "<timestamp>",
+      "updatedAt": "<timestamp>",
+      "ttlSeconds": 60
+    }
+=== [3] GET /dav/files/u/MyNihongo/nihongo_progress.json -> 200
+  authorization: <basic-auth>
+=== [4] GET /dav/files/u/MyNihongo/.lock -> 200
+  authorization: <basic-auth>
+=== [5] DELETE /dav/files/u/MyNihongo/.lock -> 204
+  authorization: <basic-auth>
+  if-match: "<etag>"
+=== [6] GET /dav/files/u/MyNihongo/.lock -> 404
+  authorization: <basic-auth>
+=== [7] PUT /dav/files/u/MyNihongo/.lock -> 201
+  authorization: <basic-auth>
+  content-type: application/octet-stream
+  if-none-match: *
+  body:
+    {
+      "clientId": "<uuid>",
+      "token": "<uuid>",
+      "startedAt": "<timestamp>",
+      "updatedAt": "<timestamp>",
+      "ttlSeconds": 60
+    }
+=== [8] GET /dav/files/u/MyNihongo/nihongo_progress.json -> 200
+  authorization: <basic-auth>
+=== [9] GET /dav/files/u/MyNihongo/.lock -> 200
+  authorization: <basic-auth>
+=== [10] PUT /dav/files/u/MyNihongo/.lock -> 204
+  authorization: <basic-auth>
+  content-type: application/octet-stream
+  if-match: "<etag>"
+  body:
+    {
+      "clientId": "<uuid>",
+      "token": "<uuid>",
+      "startedAt": "<timestamp>",
+      "updatedAt": "<timestamp>",
+      "ttlSeconds": 60
+    }
+=== [11] PUT /dav/files/u/MyNihongo/nihongo_progress.json -> 204
+  authorization: <basic-auth>
+  content-type: application/octet-stream
+  body:
+    {
+      "records": [
+        {
+          "id": "kana:あ",
+          "correct": 9,
+          "wrong": 0,
+          "streak": 9,
+          "intervalDays": 1,
+          "ease": 2.5,
+          "createdAt": "<timestamp>",
+          "modifiedAt": "<timestamp>"
+        }
+      ]
+    }
+=== [12] GET /dav/files/u/MyNihongo/.lock -> 200
+  authorization: <basic-auth>
+=== [13] DELETE /dav/files/u/MyNihongo/.lock -> 204
+  authorization: <basic-auth>
+  if-match: "<etag>"

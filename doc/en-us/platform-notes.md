@@ -16,7 +16,7 @@ listed at the end with what adding each involves.
   `android/gradle.properties` keeps the Flutter-migrator compat flags `android.builtInKotlin=false`
   and `android.newDsl=false`, because several plugins still apply the Kotlin Gradle Plugin directly;
   `builtInKotlin=true` breaks every one of them.
-- **When `file_picker` is added (M1.1), pin it to exactly `10.3.7`** (not a caret constraint): it is
+- **`file_picker` is pinned to exactly `10.3.7`** (not a caret constraint), because it is
   the last release that both applies KGP itself (required while `builtInKotlin=false`) and compiles
   against `flutter.compileSdkVersion` (required by AGP 9 AAR metadata checks). `10.3.9+` and `11.x`
   rely on AGP's built-in Kotlin and fail in compat mode; `10.3.2` and older pin `compileSdk 34` and

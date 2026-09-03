@@ -150,6 +150,7 @@ Every decision is recorded here with what it costs.
 | Vocabulary, Grammar | shape gate + capacity | `referenceColumnCount`: 1 column unless `canSplitLayout`, then `columnCapacity` at `referenceTileMinWidth`, capped at `listMaxColumns` (4). A Fold 8 in landscape gets two, a tablet in landscape two, a desktop three. No stored preference yet; when one arrives it is clamped, never rejected, and hidden when capacity is 1. |
 | Learn | shape gate + capacity | Dashboard cards 1–2 across by `ruleCardMinWidth`, gated on `canSplitLayout`. |
 | Settings | shape gate | Two panes when `canSplitLayout`; left pane `settingsLeftPaneWidth(shellContentWidth)` — proportional (0.44), clamped 300–440, and capped so the detail pane never drops below `settingsRightPaneMinWidth` (280). Second-level pages are pushed full-screen on a narrow window and hosted in a nested `Navigator` in the detail pane on a wide one, so one widget serves both. |
+| WebDAV sync, Backup | none | One column at every size. Both are second-level pages, so the Settings row above decides whether they are pushed or hosted in the detail pane; the pages themselves measure nothing. |
 | Detail sheets | none | Bottom sheets, identical in every mode. |
 
 **Cost accepted knowingly:** a phone in landscape (915 × 412) keeps every single-column layout
