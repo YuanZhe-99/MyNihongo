@@ -33,6 +33,7 @@
 - [`features/learning-progress.md`](features/learning-progress.md) — 同步的学习进度记录和学习仪表盘。
 - [`features/sync-and-backup.md`](features/sync-and-backup.md) — “设置 › 数据”下的同步、备份与 ZIP 界面。
 - [`features/reference-preferences.md`](features/reference-preferences.md) — 参考页面按设备记住的五个选择。
+- [`store-listing.md`](store-listing.md) — 发布与商店文案。
 
 ## 此处不涵盖
 

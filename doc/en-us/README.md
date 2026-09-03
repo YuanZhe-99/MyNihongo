@@ -58,6 +58,7 @@ The shared WebDAV sync, backup, and ZIP engines are not in this repository. They
   under Settings › Data.
 - [`features/reference-preferences.md`](features/reference-preferences.md) — the five per-device
   choices the reference pages remember.
+- [`store-listing.md`](store-listing.md) — the release and store text.
 
 ## Not covered here
 

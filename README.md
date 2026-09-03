@@ -9,18 +9,23 @@ sharing their sync, backup and data-management engine
 
 ## Features
 
-**Available now (Phase 1 skeleton)**
+**Available now (v0.1.0, Phase 1)**
 
 - **Kana** — hiragana/katakana chart with gojūon, dakuten and yōon tables, search, and
   pronunciation rules. Two tables side by side on an unfolded foldable or a tablet in landscape.
-- **Vocabulary** — browse and search by kanji, reading, romaji or meaning; filter by JLPT level;
-  example sentences with readings.
-- **Grammar** — patterns with structure, meaning, explanation and examples; JLPT filter.
+  Tap a kana for its stroke count, the kana it is confused with, and words that start with it.
+- **Vocabulary** — 7,744 words from N5 to N1, built from JMdict and the openly licensed JLPT
+  lists. Search by kanji, reading, romaji or meaning; filter by JLPT level; example sentences with
+  readings. Chinese glosses cover N5.
+- **Grammar** — 81 N5 points, each with structure, meaning, explanation and examples; JLPT filter.
+- **Cross-links** — a word shows the grammar its examples use, a grammar point shows the words in
+  its examples, and a kana shows words that start with it.
 - **Learning progress** — a synced record per studied item, ready for the review engine.
-- **WebDAV sync, backup, ZIP export** — the series' shared engines are wired in (settings pages
-  land in the next milestone).
+- **WebDAV sync, backup, ZIP export** — configure a server, sync by hand or automatically, resolve
+  conflicts per record, keep local backups with a retention policy, and export a ZIP anywhere.
 - **Foldable-aware layout** — one rule set decides when panes and columns appear; navigation moves
   to a side rail on wide windows.
+- **Remembered per device** — the tab, the two level filters, the kana script and the column count.
 - **Languages** — English and Simplified Chinese.
 
 **Planned** — see [PLAN.md](PLAN.md): on-device pronunciation practice (Android speech recognition
@@ -68,6 +73,15 @@ flutter analyze
 flutter test
 ```
 
+The vocabulary asset is generated. To rebuild it, download the JMdict body into the git-ignored
+`tool/data/` (the tool prints the URL) and run:
+
+```bash
+dart run tool/import_vocab.dart
+```
+
+It is deterministic: a re-run with unchanged inputs leaves an empty `git diff`.
+
 ## Documentation
 
 - [`doc/en-us/`](doc/en-us/) — architecture, data formats, adaptive layout, sync, CI. Start at
@@ -78,3 +92,9 @@ flutter test
 ## License
 
 This project is licensed under the [GNU General Public License v3.0](LICENSE).
+
+The bundled vocabulary is derived from [JMdict](https://www.edrdg.org/jmdict/j_jmdict.html)
+(© EDRDG, Monash University, CC BY-SA 4.0) joined to the JLPT lists from
+[stephenmk/yomitan-jlpt-vocab](https://github.com/stephenmk/yomitan-jlpt-vocab) (CC BY-SA 4.0;
+underlying lists by Jonathan Waller, CC BY). The same attribution appears in the app under
+Settings › License.

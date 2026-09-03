@@ -12,7 +12,17 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
-- *Unreleased* `0.1.0`: Project skeleton (`PLAN.md` M1.0) — Android target, five-tab shell with the
+- `0.1.0` — 2026-09-03. First release: the Phase 1 reference app. Built from M1.0 through M1.4 in
+  one day; the four milestone paragraphs below are what shipped in it, in the order they landed.
+
+  Verified on this host by `flutter analyze` (clean), 174 tests including a whole-app smoke test
+  that walks every tab against the real generated catalog, and release builds of both the APK and
+  the app bundle. **Not verified on a device:** the development host has no emulator and no
+  attached phone, so the foldable screenshot pass and a sync against a real WebDAV server are
+  outstanding. The golden transcripts cover the sync, backup and ZIP protocols against an in-memory
+  server instead.
+
+  Project skeleton (`PLAN.md` M1.0) — Android target, five-tab shell with the
   series' adaptive layout and navigation rail, kana chart ported from MyAnime!!!!! with its data
   extracted into a catalog model, bundled vocabulary and grammar seed content (24 N5 words, 8 N5
   grammar points, English and Simplified Chinese) with browser pages, the synced `StudyRecord`
