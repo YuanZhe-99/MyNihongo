@@ -35,7 +35,7 @@ flutter build appbundle --release --dart-define=FLAVOR=store
 桌面构建仅在本地进行，以下命令都不在 CI 中运行：
 
 ```powershell
-flutter build windows --release --dart-define=FLAVOR=full
+flutter build windows --release --dart-define=FLAVOR=full   # 需要 PATH 中有 nuget.exe
 iscc installer.iss          # x64 安装包，需要 PATH 中有 Inno Setup
 iscc /DARM64 installer.iss  # ARM64 安装包
 dart run msix:create        # MSIX 包

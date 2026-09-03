@@ -79,7 +79,8 @@ flutter build apk --release --dart-define=FLAVOR=full
 # Android AAB (Google Play)
 flutter build appbundle --release --dart-define=FLAVOR=store
 
-# Windows (local only) — installers need Inno Setup on PATH
+# Windows (local only) — needs nuget.exe on PATH (winget install --id Microsoft.NuGet),
+# and Inno Setup for the installers
 flutter build windows --release --dart-define=FLAVOR=full
 iscc installer.iss
 iscc /DARM64 installer.iss

@@ -15,7 +15,7 @@
 
   "learnTitle": "学习",
   "learnWelcome": "欢迎使用 MyNihongo!!!!!",
-  "learnWelcomeBody": "现在可以浏览五十音、单词和语法；课程、复习与发音练习正在路上。",
+  "learnWelcomeBody": "现在可以浏览五十音、单词和语法，并可朗读全部内容；课程、复习与发音练习正在路上。",
   "learnContentSummary": "内容",
   "learnKanaCount": "{count} 个假名",
   "@learnKanaCount": { "placeholders": { "count": { "type": "int" } } },
@@ -34,7 +34,7 @@
   "learnOpenVocab": "查看单词",
   "learnOpenGrammar": "查看语法",
   "learnRoadmap": "即将推出",
-  "learnRoadmapPronunciation": "借助语音识别与语音合成的发音练习",
+  "learnRoadmapPronunciation": "发音练习：录下自己的发音并与读音对照",
   "learnRoadmapSrs": "间隔重复复习与循序渐进的课程",
   "learnRoadmapJlpt": "JLPT N5–N1 练习",
 
@@ -213,5 +213,20 @@
   "listColumns": "列数",
   "listColumnsAuto": "自动",
   "listColumnsCount": "{count}",
-  "@listColumnsCount": { "placeholders": { "count": { "type": "int" } } }
+  "@listColumnsCount": { "placeholders": { "count": { "type": "int" } } },
+
+  "speechSection": "语音",
+  "speechSpeak": "朗读",
+  "speechStop": "停止",
+  "speechRate": "朗读速度",
+  "speechRateValue": "{rate}×",
+  "@speechRateValue": { "placeholders": { "rate": {} } },
+  "speechRatePreview": "试听",
+  "speechVoice": "日语语音",
+  "speechVoiceDefault": "引擎默认",
+  "speechNoVoiceTitle": "未安装日语语音",
+  "speechNoVoiceBody": "设备的语音引擎没有日语语音，因此无法朗读。请在系统语音设置中安装一个，然后重新打开应用。",
+  "speechOpenSystemSettings": "打开语音设置",
+  "speechOpenSystemSettingsFailed": "无法打开系统语音设置",
+  "speechSettingsHintApple": "在系统设置的「辅助功能 → 朗读内容」中添加日语语音。"
 }

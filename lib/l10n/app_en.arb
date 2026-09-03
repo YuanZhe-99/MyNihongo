@@ -15,7 +15,7 @@
 
   "learnTitle": "Learn",
   "learnWelcome": "Welcome to MyNihongo!!!!!",
-  "learnWelcomeBody": "Kana, vocabulary and grammar to browse now; lessons, reviews and pronunciation practice are on the way.",
+  "learnWelcomeBody": "Kana, vocabulary and grammar to browse now, and everything read aloud; lessons, reviews and pronunciation practice are on the way.",
   "learnContentSummary": "Content",
   "learnKanaCount": "{count} kana",
   "@learnKanaCount": { "placeholders": { "count": { "type": "int" } } },
@@ -34,7 +34,7 @@
   "learnOpenVocab": "Browse vocabulary",
   "learnOpenGrammar": "Browse grammar",
   "learnRoadmap": "Coming next",
-  "learnRoadmapPronunciation": "Pronunciation practice with speech recognition and text-to-speech",
+  "learnRoadmapPronunciation": "Pronunciation practice: record yourself and compare it with the reading",
   "learnRoadmapSrs": "Spaced-repetition reviews and step-by-step lessons",
   "learnRoadmapJlpt": "JLPT N5–N1 practice sets",
 
@@ -213,5 +213,20 @@
   "listColumns": "Columns",
   "listColumnsAuto": "Automatic",
   "listColumnsCount": "{count}",
-  "@listColumnsCount": { "placeholders": { "count": { "type": "int" } } }
+  "@listColumnsCount": { "placeholders": { "count": { "type": "int" } } },
+
+  "speechSection": "Speech",
+  "speechSpeak": "Speak",
+  "speechStop": "Stop",
+  "speechRate": "Speaking speed",
+  "speechRateValue": "{rate}x",
+  "@speechRateValue": { "placeholders": { "rate": {} } },
+  "speechRatePreview": "Preview",
+  "speechVoice": "Japanese voice",
+  "speechVoiceDefault": "Engine default",
+  "speechNoVoiceTitle": "No Japanese voice installed",
+  "speechNoVoiceBody": "The device speech engine has no Japanese voice, so nothing can be read aloud. Install one in the system speech settings, then reopen the app.",
+  "speechOpenSystemSettings": "Open speech settings",
+  "speechOpenSystemSettingsFailed": "Could not open the system speech settings",
+  "speechSettingsHintApple": "Add a Japanese voice in System Settings, under Accessibility then Spoken Content."
 }

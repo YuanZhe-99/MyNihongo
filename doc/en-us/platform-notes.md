@@ -79,6 +79,36 @@ icons are in the repository, but no CI job builds them (see [`ci-cd.md`](ci-cd.m
   already lists `windows-arm64` as a device, and the debug and release builds on this host are
   ARM64 (`build/windows/arm64/`).
 
+
+## Speech plugins
+
+- **`flutter_tts: ^4.2.5`** and **`speech_to_text: 7.4.0`**, both resolved and built against this
+  project's Gradle state. Both still apply the Kotlin Gradle Plugin themselves, which is what
+  `android.builtInKotlin=false` requires — the same constraint that pins `file_picker`. The Android
+  build prints Flutter's "plugins that apply KGP" warning for `file_picker`, `flutter_tts`,
+  `package_info_plus`, `speech_to_text` and `wakelock_plus`; it is plugin-side and unfixable here.
+- **`speech_to_text` is pinned exactly.** Its main branch has already dropped `kotlin-android` for
+  AGP's built-in Kotlin, so a caret constraint would break the Android build the first time a new
+  release lands.
+- `flutter_tts` declares `compileSdk 36` and `minSdk 24`; both are satisfied by
+  `flutter.compileSdkVersion` and `flutter.minSdkVersion` here.
+- **Neither plugin injects a permission.** The merged manifest after a debug build carries only
+  `INTERNET`, so `RECORD_AUDIO` and the recognizer `<queries>` entry are the app's to declare. The
+  Bluetooth permissions `speech_to_text`'s README lists are for headset routing and are deliberately
+  not declared.
+
+### Windows prerequisite: `nuget.exe`
+
+`flutter_tts`'s Windows CMake calls `nuget install Microsoft.Windows.CppWinRT` and fails the
+configure step with `nuget.exe not found` when it is missing. Install it once per development
+machine:
+
+```powershell
+winget install --id Microsoft.NuGet --exact
+```
+
+It has to be on `PATH` before `flutter build windows`. Nothing else in the project needs it.
+
 ## macOS
 
 - `macos/` is generated but **has never been compiled**: the development host is Windows. Treat the

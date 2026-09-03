@@ -105,6 +105,13 @@ lib/
       license_page.dart
       privacy_policy_page.dart
       settings_page.dart
+    speech/
+      services/
+        tts_backend.dart
+        tts_service.dart
+      widgets/
+        speak_button.dart
+        speech_settings_tiles.dart
     vocab/views/vocab_page.dart
   shared/
     providers/
@@ -115,6 +122,7 @@ lib/
       backup_service.dart
       import_export_service.dart
       sync_merge.dart
+      system_settings_launcher.dart
       webdav_service.dart
     utils/
       adaptive_layout.dart
@@ -123,6 +131,7 @@ lib/
     widgets/
       adaptive_tile_grid.dart
       content_sheets.dart
+      example_actions.dart
       reference_widgets.dart
       shell_scaffold.dart
       study_conflict_dialog.dart

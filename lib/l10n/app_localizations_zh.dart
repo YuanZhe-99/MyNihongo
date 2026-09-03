@@ -42,7 +42,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get learnWelcome => '欢迎使用 MyNihongo!!!!!';
 
   @override
-  String get learnWelcomeBody => '现在可以浏览五十音、单词和语法；课程、复习与发音练习正在路上。';
+  String get learnWelcomeBody => '现在可以浏览五十音、单词和语法，并可朗读全部内容；课程、复习与发音练习正在路上。';
 
   @override
   String get learnContentSummary => '内容';
@@ -94,7 +94,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get learnRoadmap => '即将推出';
 
   @override
-  String get learnRoadmapPronunciation => '借助语音识别与语音合成的发音练习';
+  String get learnRoadmapPronunciation => '发音练习：录下自己的发音并与读音对照';
 
   @override
   String get learnRoadmapSrs => '间隔重复复习与循序渐进的课程';
@@ -583,4 +583,46 @@ class AppLocalizationsZh extends AppLocalizations {
   String listColumnsCount(int count) {
     return '$count';
   }
+
+  @override
+  String get speechSection => '语音';
+
+  @override
+  String get speechSpeak => '朗读';
+
+  @override
+  String get speechStop => '停止';
+
+  @override
+  String get speechRate => '朗读速度';
+
+  @override
+  String speechRateValue(Object rate) {
+    return '$rate×';
+  }
+
+  @override
+  String get speechRatePreview => '试听';
+
+  @override
+  String get speechVoice => '日语语音';
+
+  @override
+  String get speechVoiceDefault => '引擎默认';
+
+  @override
+  String get speechNoVoiceTitle => '未安装日语语音';
+
+  @override
+  String get speechNoVoiceBody =>
+      '设备的语音引擎没有日语语音，因此无法朗读。请在系统语音设置中安装一个，然后重新打开应用。';
+
+  @override
+  String get speechOpenSystemSettings => '打开语音设置';
+
+  @override
+  String get speechOpenSystemSettingsFailed => '无法打开系统语音设置';
+
+  @override
+  String get speechSettingsHintApple => '在系统设置的「辅助功能 → 朗读内容」中添加日语语音。';
 }

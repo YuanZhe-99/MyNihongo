@@ -18,6 +18,7 @@ import '../../features/content/models/vocab_entry.dart';
 import '../../features/content/services/content_links.dart';
 import '../../features/kana/models/kana.dart';
 import '../../features/kana/models/kana_note.dart';
+import '../../features/speech/widgets/speak_button.dart';
 import '../../l10n/app_localizations.dart';
 import 'reference_widgets.dart';
 
@@ -109,6 +110,7 @@ Future<void> showVocabDetailSheet(
                 ),
               ),
             ),
+            SpeakButton(text: entry.reading),
             levelChip(context, entry.level),
           ],
         ),
@@ -263,6 +265,7 @@ Future<void> showKanaDetailSheet(
             ),
             const Spacer(),
             Text(entry.romaji, style: theme.textTheme.headlineSmall),
+            SpeakButton(text: entry.hiragana),
           ],
         ),
         if (note?.strokes != null) ...[

@@ -48,7 +48,7 @@ flutter build appbundle --release --dart-define=FLAVOR=store
 Desktop builds are local only; nothing below runs in CI:
 
 ```powershell
-flutter build windows --release --dart-define=FLAVOR=full
+flutter build windows --release --dart-define=FLAVOR=full   # needs nuget.exe on PATH
 iscc installer.iss          # x64 installer, needs Inno Setup on PATH
 iscc /DARM64 installer.iss  # ARM64 installer
 dart run msix:create        # MSIX package

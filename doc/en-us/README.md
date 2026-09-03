@@ -58,6 +58,8 @@ The shared WebDAV sync, backup, and ZIP engines are not in this repository. They
   under Settings › Data.
 - [`features/reference-preferences.md`](features/reference-preferences.md) — the five per-device
   choices the reference pages remember.
+- [`features/pronunciation.md`](features/pronunciation.md) — everything that makes or hears sound:
+  what speaks, the speed and voice preferences, and what happens with no Japanese voice installed.
 - [`store-listing.md`](store-listing.md) — the release and store text.
 
 ## Not covered here

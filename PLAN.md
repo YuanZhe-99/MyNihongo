@@ -1,11 +1,16 @@
 # PLAN.md — MyNihongo!!!!! roadmapas analysis |
-| 2026-09-03 | Windows and macOS projectsThe phased plan for MyNihongo!!!!!, the Japanese learning app in the MyApps series. `AGENTS.md`
+|keeps their wire format, backup format, and lock semantics interoperable.
+|on every platform |
+| 2026-09-03 | `speech_to_text`| `speech_to_text`| Windows and macOS projectsThe phased plan for MyNihongo!!!!!, the Japanese learning app in the MyApps series. `AGENTS.md`
 says how to work here; `doc/en-us/` says what the code does; this file says **what is planned, in
 what order, why, and what is done**. Update the checklists in the same change that lands a
 milestone item.
 
-**Status as of 2026-09-03:** Phase 1 complete and released as `v0.1.0`. M1.0 (skeleton) landed
-2026-09-02; M1.1 (sync and backup UI), M1.2 (content pipeline), M1.3 (reference polish) and M1.4
+**Status as of 2026-09-03:** Phase 1 complete and released as `v0.1.0`; Phase 2 in progress —
+M2.1 (text-to-speech) landed, along with the Windows and macOS projects the pronunciation work
+needs a machine for.
+
+M1.0 (skeleton) landed 2026-09-02; M1.1 (sync and backup UI), M1.2 (content pipeline), M1.3 (reference polish) and M1.4
 (release) landed 2026-09-03. Two items carry over for want of hardware: the foldable screenshot
 pass, and a sync against a real WebDAV server. `pubspec.yaml` says `0.1.0+1`.
 
@@ -221,14 +226,26 @@ Replace the seed with a real catalog while keeping the schema and ids stable.
 Goal: hear every item, record and compare your own attempt, and see what a typed sentence is made
 of — all on-device.
 
-#### M2.1 Text-to-speech
+#### M2.1 Text-to-speech — **done 2026-09-03**
 
-- [ ] `flutter_tts` with Android `TextToSpeech`, locale `ja-JP`; speak kana, headwords, example
-      sentences from every detail sheet and the kana cells (long-press)
-- [ ] Speed control (0.6×–1.2×) and a voice picker listing the installed Japanese voices; a clear
+- [x] `flutter_tts` with Android `TextToSpeech`, locale `ja-JP`; speak kana, headwords, example
+      sentences from every detail sheet and the kana cells (long-press). Also Apple's
+      `AVSpeechSynthesizer` and the Windows speech platform, which is what makes the feature
+      testable on this host at all
+- [x] Speed control (0.6×–1.2×) and a voice picker listing the installed Japanese voices; a clear
       message when no Japanese voice is installed, with a link to the system TTS settings
-- [ ] Reading text prefers the kana `reading` field over the kanji surface so the engine cannot
+      (`com.android.settings.TTS_SETTINGS` through the app's one method channel on Android,
+      `ms-settings:speech` on Windows; Apple platforms have no deep link, so the message names the
+      pane). **Amended:** the voice picker is hidden when the engine offers fewer than two Japanese
+      voices — a dropdown with one entry is a label
+- [x] Reading text prefers the kana `reading` field over the kanji surface so the engine cannot
       mis-read kanji
+- [x] **Amended:** `flutter_tts` treats 0.5 as normal speed on every platform, so the rate mapping
+      is one multiplication with no platform branch
+- [x] **Not heard on a device:** this host has no Japanese voice installed and no Android device, so
+      the audio path itself is unverified. `test/tts_service_test.dart` drives every branch through
+      a fake engine, and the missing-voice UI — which is what this host shows — is covered by
+      `test/speak_button_test.dart`
 
 #### M2.2 Speech-to-text and pronunciation feedback
 
@@ -431,11 +448,12 @@ catalog content, and never writes a progress record by itself — the learner's 
 | 2026-09-03 | The reference preferences are device-local, never synced | A phone and a tablet want different column counts, and a habit lives on a device |
 | 2026-09-03 | The router is built once and kept in the root widget's state | A `GoRouter` owns navigation history; rebuilding one on a theme change would send the user back to the initial tab mid-session |
 | 2026-09-03 | Cross-links are substring matches, not parsing | A real tokenizer is Phase 3's sentence analyser; until then a wrong link is cheaper than no links, and the chips are labelled as what the example uses rather than as analysis |
-
 | 2026-09-03 | Windows and macOS projects land with Phase 2, but CI stays Android-only | Pronunciation and the sentence lab need a machine that can actually run the app, and this host has no Android device or emulator; desktop CI jobs, MSIX and Inno artefacts remain Phase 5 |
 | 2026-09-03 | The Windows window opens at 1000×720, not the siblings' 400×860 | At that width the reference lists and settings are already two-column, which is the layout worth looking at on a desktop; the siblings are phone-shaped because they are phone-shaped apps |
-| 2026-09-03 | Every platform branch lives in `shared/utils/platform_capabilities.dart` and reads `defaultTargetPlatform` | One named home, the same rule `adaptive_layout.dart` applies to widths; reading `defaultTargetPlatform` rather than `dart:io`'s `Platform` is what makes an Android-only branch testable on a Windows host |
 | 2026-09-03 | Settings shows the storage location on desktop only | On a phone the path names a sandbox the user can neither browse nor act on; the custom storage path itself keeps working on every platform |
+| 2026-09-03 | Every platform branch lives in `shared/utils/platform_capabilities.dart` and reads `defaultTargetPlatform` | One named home, the same rule `adaptive_layout.dart` applies to widths; reading `defaultTargetPlatform` rather than `dart:io`'s `Platform` is what makes an Android-only branch testable on a Windows host |
+| 2026-09-03 | `speech_to_text` is pinned to exactly `7.4.0`, and `flutter_tts` to `^4.2.5` | Both apply the Kotlin Gradle Plugin themselves, which is what `android.builtInKotlin=false` needs — the same constraint that pins `file_picker`. The plugin's main branch has already dropped KGP for AGP's built-in Kotlin, so a caret constraint would break the Android build without warning |
+| 2026-09-03 | `TtsService` owns one utterance at a time, published as a `ValueNotifier` | There is one voice on the device; a second speak button that looked idle while it was in fact queued would be lying about what the hardware does |
 
 ## 7. Open questions
 

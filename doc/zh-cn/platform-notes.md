@@ -38,6 +38,24 @@ Windows 是**本地开发与测试目标**：工程、安装脚本和图标都�
 - **MSIX：** `pubspec.yaml` 中的 `msix_config` 是为了与同系列应用的版本位置保持一致。没有工作流构建 MSIX；`dart run msix:create` 是手动步骤。
 - **ARM64：** 与同系列应用不同，本工程不需要 Flutter master 任务——stable 3.44.2 已将 `windows-arm64` 列为设备，本机的 debug 与 release 构建都是 ARM64（`build/windows/arm64/`）。
 
+
+## 语音插件
+
+- **`flutter_tts: ^4.2.5`** 与 **`speech_to_text: 7.4.0`**，两者都已针对本工程的 Gradle 状态解析并构建通过。它们仍然自行应用 Kotlin Gradle 插件，而这正是 `android.builtInKotlin=false` 所需要的——与 `file_picker` 被钉版本的约束相同。Android 构建会为 `file_picker`、`flutter_tts`、`package_info_plus`、`speech_to_text` 和 `wakelock_plus` 打印 Flutter 的"插件应用了 KGP"警告；这属于插件侧，在此无法修复。
+- **`speech_to_text` 精确钉版本。** 它的主分支已经把 `kotlin-android` 换成了 AGP 的内置 Kotlin，因此使用脱字号约束会在新版本发布的第一时间弄坏 Android 构建。
+- `flutter_tts` 声明 `compileSdk 36` 和 `minSdk 24`；这里的 `flutter.compileSdkVersion` 与 `flutter.minSdkVersion` 都满足。
+- **两个插件都不会注入权限。** debug 构建后的合并清单中只有 `INTERNET`，因此 `RECORD_AUDIO` 和识别器的 `<queries>` 条目要由应用自己声明。`speech_to_text` README 中列出的蓝牙权限用于耳机路由，这里刻意不声明。
+
+### Windows 前置条件：`nuget.exe`
+
+`flutter_tts` 的 Windows CMake 会调用 `nuget install Microsoft.Windows.CppWinRT`，缺少它时 configure 阶段会以 `nuget.exe not found` 失败。每台开发机安装一次：
+
+```powershell
+winget install --id Microsoft.NuGet --exact
+```
+
+它必须在 `flutter build windows` 之前位于 `PATH` 上。本工程其他部分都不需要它。
+
 ## macOS
 
 - `macos/` 已生成，但**从未编译过**：开发主机是 Windows。下面的配置只经过审阅，未经验证。

@@ -412,4 +412,65 @@ class NihongoStorage {
     }
     await writeConfig(config);
   }
+
+  /// Purpose: Read one fractional preference.
+  /// Inputs: `key`.
+  /// Returns: `Future<double?>`.
+  /// Side effects: Reads the config file.
+  /// Notes: Internal helper used within this file only. A whole number written
+  /// by an earlier build (or by hand) arrives as an `int`, so both numeric
+  /// shapes are accepted; anything else reads as unset.
+  static Future<double?> _getDouble(String key) async {
+    final config = await readConfig();
+    final value = config[key];
+    return value is num ? value.toDouble() : null;
+  }
+
+  /// Purpose: Write or remove one fractional preference.
+  /// Inputs: `key`, `value` — null removes the key.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: Internal helper used within this file only.
+  static Future<void> _setDouble(String key, double? value) async {
+    final config = await readConfig();
+    if (value == null) {
+      config.remove(key);
+    } else {
+      config[key] = value;
+    }
+    await writeConfig(config);
+  }
+
+  /// Purpose: Read the chosen text-to-speech speaking rate.
+  /// Inputs: None.
+  /// Returns: `Future<double?>` — a multiple of normal speed, or null for 1.0.
+  /// Side effects: Reads the config file.
+  /// Notes: Device-local: a phone speaker and a desktop speaker want different
+  /// speeds, and the value means nothing on another device's engine.
+  static Future<double?> getTtsRate() => _getDouble('ttsRate');
+
+  /// Purpose: Remember the speaking rate.
+  /// Inputs: `rate` — null restores the default.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: `TtsService` clamps whatever is stored to the range it offers, so
+  /// a hand-edited extreme does nothing harmful.
+  static Future<void> setTtsRate(double? rate) => _setDouble('ttsRate', rate);
+
+  /// Purpose: Read the chosen Japanese voice.
+  /// Inputs: None.
+  /// Returns: `Future<String?>` — an engine voice name, or null for the
+  /// engine's own default.
+  /// Side effects: Reads the config file.
+  /// Notes: Voice names are engine-specific, which is another reason this is
+  /// device-local and never synced. A name that no longer exists resolves back
+  /// to the default rather than failing.
+  static Future<String?> getTtsVoice() => _getString('ttsVoice');
+
+  /// Purpose: Remember the chosen Japanese voice.
+  /// Inputs: `name` — null restores the engine default.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: None.
+  static Future<void> setTtsVoice(String? name) => _setString('ttsVoice', name);
 }

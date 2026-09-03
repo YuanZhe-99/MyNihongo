@@ -48,5 +48,11 @@
             <action android:name="android.intent.action.PROCESS_TEXT"/>
             <data android:mimeType="text/plain"/>
         </intent>
+        <!-- Android 11+ package visibility: the app asks the system text-to-speech
+             engine what Japanese voices it has, which needs the engine to be
+             visible. See doc/en-us/features/pronunciation.md. -->
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE"/>
+        </intent>
     </queries>
 </manifest>

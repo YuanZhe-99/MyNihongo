@@ -89,13 +89,17 @@ void main() {
   }
 
   Future<void> openRow(WidgetTester tester, String title) async {
-    final row = find.widgetWithText(ListTile, title).first;
+    // Scroll with a finder that may match nothing: `scrollUntilVisible` asks
+    // the finder whether it is empty on every step, and a `.first` finder
+    // throws instead of answering while the row is still unbuilt below the
+    // fold. The Speech section pushed the About rows past the cache extent.
     await tester.scrollUntilVisible(
-      row,
+      find.text(title),
       200,
       scrollable: find.byType(Scrollable).first,
     );
     await tester.pumpAndSettle();
+    final row = find.widgetWithText(ListTile, title).first;
     await tester.runAsync(() async {
       await tester.tap(row);
       for (var i = 0; i < 3; i++) {

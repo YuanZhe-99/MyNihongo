@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../features/content/models/jlpt_level.dart';
 import '../../features/content/models/localized_strings.dart';
 import '../../l10n/app_localizations.dart';
+import 'example_actions.dart';
 
 /// Purpose: Render a small JLPT level badge.
 /// Inputs: `level`.
@@ -88,23 +89,31 @@ Widget exampleList(
       for (final example in examples)
         Padding(
           padding: const EdgeInsets.only(bottom: 10),
-          child: Column(
+          child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(example.ja, style: theme.textTheme.bodyLarge),
-              if (example.reading != null)
-                Text(
-                  example.reading!,
-                  style: theme.textTheme.bodySmall?.copyWith(
-                    color: theme.colorScheme.onSurfaceVariant,
-                  ),
-                ),
-              Text(
-                example.translations.resolveJoined(locale),
-                style: theme.textTheme.bodyMedium?.copyWith(
-                  color: theme.colorScheme.onSurfaceVariant,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(example.ja, style: theme.textTheme.bodyLarge),
+                    if (example.reading != null)
+                      Text(
+                        example.reading!,
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          color: theme.colorScheme.onSurfaceVariant,
+                        ),
+                      ),
+                    Text(
+                      example.translations.resolveJoined(locale),
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
                 ),
               ),
+              ExampleActions(example: example),
             ],
           ),
         ),

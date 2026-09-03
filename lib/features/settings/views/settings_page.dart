@@ -12,6 +12,7 @@ import '../../../shared/utils/adaptive_layout.dart';
 import '../../../shared/utils/platform_capabilities.dart';
 import '../../../shared/views/webdav_config_page.dart';
 import '../../progress/services/nihongo_storage.dart';
+import '../../speech/widgets/speech_settings_tiles.dart';
 import 'backup_page.dart';
 import 'license_page.dart' as app_license;
 import 'privacy_policy_page.dart';
@@ -401,6 +402,9 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
             ),
           ),
         ]),
+
+        // ── Speech ──
+        _buildSection(l10n.speechSection, const [SpeechSettingsTiles()]),
 
         // ── Data ──
         _buildSection(l10n.settingsData, [

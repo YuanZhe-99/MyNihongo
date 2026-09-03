@@ -156,6 +156,11 @@
 | pronunciation practice | 发音练习 | |
 | speech recognition (STT) | 语音识别（STT） | |
 | text-to-speech (TTS) | 语音合成（TTS） | |
+| speaking rate | 朗读速度 | 设置中的 0.6×–1.2× 倍速 |
+| voice (TTS) | 语音 | 引擎的具体嗓音；不译作"声音" |
+| utterance | 一段朗读 | 一次朗读请求的文本 |
+| on-device | 端侧 | 在设备上运行，数据不外传 |
+| pronunciation score | 发音评分 | 0–100 的对照结果 |
 | sentence lab | 句子实验室 | 句法分析页 |
 | token | 词元（token） | 首次出现附英文原词 |
 | bunsetsu | 文节（bunsetsu） | 首次出现附英文原词 |

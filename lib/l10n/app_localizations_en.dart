@@ -43,7 +43,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get learnWelcomeBody =>
-      'Kana, vocabulary and grammar to browse now; lessons, reviews and pronunciation practice are on the way.';
+      'Kana, vocabulary and grammar to browse now, and everything read aloud; lessons, reviews and pronunciation practice are on the way.';
 
   @override
   String get learnContentSummary => 'Content';
@@ -97,7 +97,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get learnRoadmapPronunciation =>
-      'Pronunciation practice with speech recognition and text-to-speech';
+      'Pronunciation practice: record yourself and compare it with the reading';
 
   @override
   String get learnRoadmapSrs =>
@@ -602,4 +602,48 @@ class AppLocalizationsEn extends AppLocalizations {
   String listColumnsCount(int count) {
     return '$count';
   }
+
+  @override
+  String get speechSection => 'Speech';
+
+  @override
+  String get speechSpeak => 'Speak';
+
+  @override
+  String get speechStop => 'Stop';
+
+  @override
+  String get speechRate => 'Speaking speed';
+
+  @override
+  String speechRateValue(Object rate) {
+    return '${rate}x';
+  }
+
+  @override
+  String get speechRatePreview => 'Preview';
+
+  @override
+  String get speechVoice => 'Japanese voice';
+
+  @override
+  String get speechVoiceDefault => 'Engine default';
+
+  @override
+  String get speechNoVoiceTitle => 'No Japanese voice installed';
+
+  @override
+  String get speechNoVoiceBody =>
+      'The device speech engine has no Japanese voice, so nothing can be read aloud. Install one in the system speech settings, then reopen the app.';
+
+  @override
+  String get speechOpenSystemSettings => 'Open speech settings';
+
+  @override
+  String get speechOpenSystemSettingsFailed =>
+      'Could not open the system speech settings';
+
+  @override
+  String get speechSettingsHintApple =>
+      'Add a Japanese voice in System Settings, under Accessibility then Spoken Content.';
 }

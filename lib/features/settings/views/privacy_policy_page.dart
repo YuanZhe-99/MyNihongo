@@ -81,9 +81,15 @@ The app provides a local backup feature and a ZIP export and import. Backup file
 
 Picking a folder or a file uses the system picker, which grants the app access to that one location and requires no storage permission.
 
+Text to Speech
+
+The app can read Japanese aloud — kana, words and example sentences. This uses the text-to-speech engine that is already installed on your device (Android's, Apple's, or the Windows speech platform): the text is handed to that engine and the audio is produced on the device. Nothing is sent anywhere, nothing is recorded, and no audio file is written. Your chosen speaking speed and voice are stored on the device only.
+
+If no Japanese voice is installed, nothing is spoken and the app says so; installing one is done in your system settings, not in the app.
+
 Changes to This Policy
 
-This privacy policy may be updated from time to time. Updated versions will be published within the app or on the relevant distribution channels. In particular, the planned pronunciation features (speech recognition and text-to-speech) will be described here before they ship; they are designed to run on the device, and the microphone permission will be requested at first use with a reason, never at install.''';
+This privacy policy may be updated from time to time. Updated versions will be published within the app or on the relevant distribution channels. Text to speech is described above. Speech recognition has not shipped yet; it will be described here before it does, it is designed to run on the device, and the microphone permission will be requested at first use with a reason, never at install.''';
 
   static const _zh = '''隐私政策
 
@@ -117,7 +123,13 @@ MyNihongo!!!!! 仅在以下情况下访问互联网：
 
 选择文件夹或文件时使用系统选择器，它只授予应用对该位置的访问权限，无需存储权限。
 
+语音合成
+
+应用可以朗读日语——假名、单词和例句。这使用您设备上已安装的语音合成引擎（Android 的、Apple 的，或 Windows 语音平台）：文本交给该引擎，音频在设备上生成。没有任何内容被发送到别处，没有录音，也不会写出音频文件。您选择的朗读速度和语音仅保存在设备上。
+
+如果没有安装日语语音，则不会朗读，应用会明确说明；安装语音是在您的系统设置中完成的，而不是在应用内。
+
 政策变更
 
-本隐私政策可能会不时更新。更新版本将在应用内或相关分发渠道发布。特别地，计划中的发音功能（语音识别与语音合成）会在发布前写入本政策；它们设计为在设备上运行，麦克风权限将在首次使用时带说明申请，而不会在安装时申请。''';
+本隐私政策可能会不时更新。更新版本将在应用内或相关分发渠道发布。语音合成已在上文说明。语音识别尚未发布；它会在发布前写入本政策，它设计为在设备上运行，麦克风权限将在首次使用时带说明申请，而不会在安装时申请。''';
 }

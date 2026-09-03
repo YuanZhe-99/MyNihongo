@@ -167,7 +167,7 @@ abstract class AppLocalizations {
   /// No description provided for @learnWelcomeBody.
   ///
   /// In en, this message translates to:
-  /// **'Kana, vocabulary and grammar to browse now; lessons, reviews and pronunciation practice are on the way.'**
+  /// **'Kana, vocabulary and grammar to browse now, and everything read aloud; lessons, reviews and pronunciation practice are on the way.'**
   String get learnWelcomeBody;
 
   /// No description provided for @learnContentSummary.
@@ -251,7 +251,7 @@ abstract class AppLocalizations {
   /// No description provided for @learnRoadmapPronunciation.
   ///
   /// In en, this message translates to:
-  /// **'Pronunciation practice with speech recognition and text-to-speech'**
+  /// **'Pronunciation practice: record yourself and compare it with the reading'**
   String get learnRoadmapPronunciation;
 
   /// No description provided for @learnRoadmapSrs.
@@ -1159,6 +1159,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count}'**
   String listColumnsCount(int count);
+
+  /// No description provided for @speechSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Speech'**
+  String get speechSection;
+
+  /// No description provided for @speechSpeak.
+  ///
+  /// In en, this message translates to:
+  /// **'Speak'**
+  String get speechSpeak;
+
+  /// No description provided for @speechStop.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop'**
+  String get speechStop;
+
+  /// No description provided for @speechRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Speaking speed'**
+  String get speechRate;
+
+  /// No description provided for @speechRateValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{rate}x'**
+  String speechRateValue(Object rate);
+
+  /// No description provided for @speechRatePreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview'**
+  String get speechRatePreview;
+
+  /// No description provided for @speechVoice.
+  ///
+  /// In en, this message translates to:
+  /// **'Japanese voice'**
+  String get speechVoice;
+
+  /// No description provided for @speechVoiceDefault.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine default'**
+  String get speechVoiceDefault;
+
+  /// No description provided for @speechNoVoiceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No Japanese voice installed'**
+  String get speechNoVoiceTitle;
+
+  /// No description provided for @speechNoVoiceBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The device speech engine has no Japanese voice, so nothing can be read aloud. Install one in the system speech settings, then reopen the app.'**
+  String get speechNoVoiceBody;
+
+  /// No description provided for @speechOpenSystemSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open speech settings'**
+  String get speechOpenSystemSettings;
+
+  /// No description provided for @speechOpenSystemSettingsFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open the system speech settings'**
+  String get speechOpenSystemSettingsFailed;
+
+  /// No description provided for @speechSettingsHintApple.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a Japanese voice in System Settings, under Accessibility then Spoken Content.'**
+  String get speechSettingsHintApple;
 }
 
 class _AppLocalizationsDelegate

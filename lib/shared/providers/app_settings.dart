@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../features/content/models/jlpt_level.dart';
 import '../../features/kana/models/kana.dart';
 import '../../features/progress/services/nihongo_storage.dart';
+import '../../features/speech/services/tts_service.dart';
 import '../utils/adaptive_layout.dart';
 
 class AppSettingsNotifier extends StateNotifier<AppSettings> {
@@ -28,6 +29,8 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     final grammarLevel = await NihongoStorage.getGrammarLevel();
     final kanaScript = await NihongoStorage.getKanaScript();
     final columns = await NihongoStorage.getReferenceListColumns();
+    final ttsRate = await NihongoStorage.getTtsRate();
+    final ttsVoice = await NihongoStorage.getTtsVoice();
 
     final themeMode = switch (modeStr) {
       'light' => ThemeMode.light,
@@ -53,7 +56,14 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
       referenceListColumns: columns != null && columns >= 1 && columns <= 4
           ? columns
           : listColumnsAuto,
+      ttsRate: ttsRate?.clamp(TtsService.minRate, TtsService.maxRate) ?? 1.0,
+      ttsVoice: ttsVoice,
     );
+
+    // The engine is configured from the same values the UI shows, once the
+    // preferences are known. It is deliberately not awaited: a device with no
+    // speech engine must not delay the first frame.
+    TtsService.instance.init(rate: state.ttsRate, voiceName: state.ttsVoice);
   }
 
   /// Purpose: Remember the vocabulary page's level filter.
@@ -105,6 +115,30 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     );
   }
 
+  /// Purpose: Change the text-to-speech speaking rate.
+  /// Inputs: `rate` — a multiple of normal speed.
+  /// Returns: None.
+  /// Side effects: Applies the rate to the engine and persists it.
+  /// Notes: 1.0 is stored as an absent key, not as a value.
+  void setTtsRate(double rate) {
+    final clamped = rate.clamp(TtsService.minRate, TtsService.maxRate);
+    state = state.copyWith(ttsRate: clamped);
+    TtsService.instance.setRate(clamped);
+    NihongoStorage.setTtsRate(clamped == 1.0 ? null : clamped);
+  }
+
+  /// Purpose: Choose the Japanese voice.
+  /// Inputs: `name` — null selects the engine default.
+  /// Returns: None.
+  /// Side effects: Applies the voice to the engine and persists the choice.
+  /// Notes: A voice that has since been uninstalled resolves back to the
+  /// engine default inside `TtsService`, so a stale name is harmless.
+  void setTtsVoice(String? name) {
+    state = state.copyWith(ttsVoice: name, clearTtsVoice: name == null);
+    TtsService.instance.setVoiceByName(name);
+    NihongoStorage.setTtsVoice(name);
+  }
+
   /// Purpose: Update theme mode with the provided value.
   /// Inputs: `mode`.
   /// Returns: None.
@@ -154,6 +188,12 @@ class AppSettings {
   /// Chosen column count for the reference lists, or [listColumnsAuto].
   final int referenceListColumns;
 
+  /// The text-to-speech speaking rate as a multiple of normal speed.
+  final double ttsRate;
+
+  /// The chosen Japanese voice's engine name; null uses the engine default.
+  final String? ttsVoice;
+
   /// Purpose: Create an app settings instance.
   /// Inputs: All fields.
   /// Returns: A new `AppSettings` instance.
@@ -168,6 +208,8 @@ class AppSettings {
     this.grammarLevel,
     this.kanaScript = KanaScript.hiragana,
     this.referenceListColumns = listColumnsAuto,
+    this.ttsRate = 1.0,
+    this.ttsVoice,
   });
 
   /// Purpose: Create a copy with selected fields replaced.
@@ -185,6 +227,9 @@ class AppSettings {
     bool clearGrammarLevel = false,
     KanaScript? kanaScript,
     int? referenceListColumns,
+    double? ttsRate,
+    String? ttsVoice,
+    bool clearTtsVoice = false,
   }) {
     return AppSettings(
       themeMode: themeMode ?? this.themeMode,
@@ -195,6 +240,8 @@ class AppSettings {
           : (grammarLevel ?? this.grammarLevel),
       kanaScript: kanaScript ?? this.kanaScript,
       referenceListColumns: referenceListColumns ?? this.referenceListColumns,
+      ttsRate: ttsRate ?? this.ttsRate,
+      ttsVoice: clearTtsVoice ? null : (ttsVoice ?? this.ttsVoice),
     );
   }
 }

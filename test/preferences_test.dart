@@ -98,4 +98,35 @@ void main() {
     expect(saved['lastTab'], 'kana');
     expect(saved['referenceListColumns'], 2);
   });
+
+  test('the speaking rate round trips as a number', () async {
+    expect(await NihongoStorage.getTtsRate(), isNull);
+    await NihongoStorage.setTtsRate(0.8);
+    expect(await NihongoStorage.getTtsRate(), 0.8);
+    expect((await config())['ttsRate'], 0.8);
+  });
+
+  test('a whole-number rate written by hand still reads', () async {
+    await configFile.writeAsString('{"ttsRate": 1}');
+    expect(await NihongoStorage.getTtsRate(), 1.0);
+  });
+
+  test('clearing the rate removes the key', () async {
+    await NihongoStorage.setTtsRate(0.8);
+    await NihongoStorage.setTtsRate(null);
+    expect((await config()).containsKey('ttsRate'), isFalse);
+  });
+
+  test('a rate of the wrong type reads as unset', () async {
+    await configFile.writeAsString('{"ttsRate": "fast"}');
+    expect(await NihongoStorage.getTtsRate(), isNull);
+  });
+
+  test('the chosen voice round trips', () async {
+    expect(await NihongoStorage.getTtsVoice(), isNull);
+    await NihongoStorage.setTtsVoice('Kyoko');
+    expect(await NihongoStorage.getTtsVoice(), 'Kyoko');
+    await NihongoStorage.setTtsVoice(null);
+    expect((await config()).containsKey('ttsVoice'), isFalse);
+  });
 }

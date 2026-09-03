@@ -6,6 +6,7 @@ import '../../../shared/providers/app_settings.dart';
 import '../../../shared/utils/adaptive_layout.dart';
 import '../../../shared/widgets/content_sheets.dart';
 import '../../content/services/content_repository.dart';
+import '../../speech/services/tts_service.dart';
 import '../models/kana.dart';
 
 class KanaPage extends ConsumerStatefulWidget {
@@ -333,6 +334,18 @@ class _KanaPageState extends ConsumerState<KanaPage> {
     );
   }
 
+  /// Purpose: Read one kana aloud without opening its detail sheet.
+  /// Inputs: `entry`.
+  /// Returns: None.
+  /// Side effects: Speaks through the device engine.
+  /// Notes: Internal helper used within this file only. Bound to long-press on
+  /// a chart cell and on a search result, so running down a row and hearing it
+  /// takes no navigation. The kana spoken is the script currently shown, since
+  /// that is the one the user is looking at; both scripts read the same.
+  void _speakKana(KanaEntry entry) {
+    TtsService.instance.speak(entry.kana(_script));
+  }
+
   /// Purpose: Render one kana/romaji cell, or a blank for a missing slot.
   /// Inputs: `theme`, `entry`.
   /// Returns: `Widget`.
@@ -349,6 +362,7 @@ class _KanaPageState extends ConsumerState<KanaPage> {
                 child: InkWell(
                   borderRadius: BorderRadius.circular(8),
                   onTap: () => _openKana(entry),
+                  onLongPress: () => _speakKana(entry),
                   child: Container(
                     height: 58,
                     decoration: BoxDecoration(
@@ -439,6 +453,7 @@ class _KanaPageState extends ConsumerState<KanaPage> {
     return InkWell(
       borderRadius: BorderRadius.circular(8),
       onTap: () => _openKana(entry),
+      onLongPress: () => _speakKana(entry),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
         decoration: BoxDecoration(

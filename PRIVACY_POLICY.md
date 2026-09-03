@@ -31,6 +31,12 @@ The app provides a local backup feature and a ZIP export and import. Backup file
 
 Picking a folder or a file uses the system picker, which grants the app access to that one location and requires no storage permission.
 
+## Text to Speech
+
+The app can read Japanese aloud — kana, words and example sentences. This uses the text-to-speech engine that is already installed on your device (Android's, Apple's, or the Windows speech platform): the text is handed to that engine and the audio is produced on the device. Nothing is sent anywhere, nothing is recorded, and no audio file is written. Your chosen speaking speed and voice are stored on the device only.
+
+If no Japanese voice is installed, nothing is spoken and the app says so; installing one is done in your system settings, not in the app.
+
 ## Changes to This Policy
 
-This privacy policy may be updated from time to time. Updated versions will be published within the app or on the relevant distribution channels. In particular, the planned pronunciation features (speech recognition and text-to-speech) will be described here before they ship; they are designed to run on the device, and the microphone permission will be requested at first use with a reason, never at install.
+This privacy policy may be updated from time to time. Updated versions will be published within the app or on the relevant distribution channels. Text to speech is described above. Speech recognition has not shipped yet; it will be described here before it does, it is designed to run on the device, and the microphone permission will be requested at first use with a reason, never at install.

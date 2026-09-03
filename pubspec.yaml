@@ -40,6 +40,12 @@ dependencies:
   # android.builtInKotlin=false) and compiles against flutter.compileSdkVersion.
   file_picker: 10.3.7
 
+  # On-device speech. The system engines do the work; nothing leaves the device.
+  # `speech_to_text` is pinned exactly for the same reason `file_picker` is —
+  # see doc/en-us/platform-notes.md.
+  flutter_tts: ^4.2.5
+  speech_to_text: 7.4.0
+
   # Utilities
   path: ^1.9.0
   path_provider: ^2.1.5
