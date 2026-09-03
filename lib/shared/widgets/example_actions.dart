@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../features/content/models/localized_strings.dart';
 import '../../features/speech/widgets/pronunciation_practice_sheet.dart';
@@ -46,6 +47,18 @@ class ExampleActions extends StatelessWidget {
                   const Icon(Icons.mic_none_outlined, size: 20),
                   const SizedBox(width: 8),
                   Text(l10n.practiceAction),
+                ],
+              ),
+            ),
+            PopupMenuItem<void>(
+              // The lab wants the sentence as written, not its reading: it
+              // reads kanji, and the kanji are what carry the word boundaries.
+              onTap: () => context.push('/lab', extra: example.ja),
+              child: Row(
+                children: [
+                  const Icon(Icons.biotech_outlined, size: 20),
+                  const SizedBox(width: 8),
+                  Text(l10n.labOpenAction),
                 ],
               ),
             ),

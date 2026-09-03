@@ -107,6 +107,37 @@ is not unique (`ji` and `zu` each appear twice). `kanaEntryById` resolves an id 
 
 Prose rather than table data, so it is an asset: only the kana that need a note have one, every
 field is optional, and each key must name a kana the tables carry.
+### Function words (`function_words.json`)
+
+The particles, copula forms, auxiliaries and formal nouns the sentence analyser reads. **Not part of
+the catalog:** it describes the grammar the catalog's words are put together with, nothing tracks
+progress on it, and it is loaded separately — only the sentence lab needs it, and loading it with
+the 2 MB vocabulary would make every page pay for a page that may never be opened.
+
+```json
+{ "id": "fw:masendeshita", "surface": "ませんでした", "category": "auxiliary",
+  "lemma": "ます", "needs": "masuStem", "forms": ["polite", "negative", "past"],
+  "gloss": { "en": "polite negative past", "zh": "敬体否定过去" } }
+```
+
+| Field | Meaning |
+|---|---|
+| `id` | `fw:` plus a slug. A compatibility contract, like a `vocab:` id: a shipped one is never renamed |
+| `surface` | how the word is written |
+| `reading` | its kana reading, when it differs — the topic marker and the object marker both do |
+| `category` | `particle-case`, `particle-binding`, `particle-conjunctive`, `particle-final`, `copula`, `auxiliary`, `formal-noun` |
+| `lemma` | the base form of its family, so a whole conjugation lemmatizes to one word |
+| `needs` | the stem shape it attaches to; absent means it attaches to anything |
+| `forms` | the `InflectionForm` values it contributes to the chunk it closes |
+| `gloss` | `en` and `zh`, both required — a function word has no catalog entry, so the chip carries its own meaning |
+
+The file also carries `sets`: named word lists the checks read (`time-past`, `time-future`,
+`path-verbs`, `motion-verbs`) and `transitivity-pairs`, which are two-element arrays rather than an
+object because the check looks them up in both directions.
+
+The table is **authoritative over the vocabulary** for the same surface. `test/function_words_test.dart`
+enforces the rules above the way `content_catalog_test.dart` enforces the catalog's.
+
 ### Parsing rules
 
 `LocalizedStrings.fromJson` accepts a map of language code to a string or a list of strings, or a

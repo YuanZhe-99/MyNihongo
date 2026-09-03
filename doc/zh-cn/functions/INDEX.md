@@ -2,13 +2,13 @@
 
 这是 MyNihongo 仓库中 `lib/` 手写函数解释层文档的顶层索引。每行链接到 `doc/zh-cn/functions/` 下镜像 `lib/` 树的逐源文件页面（`.dart` 换成 `.md`）。
 
-**总计：** 仓库的 `/// Purpose:` 注释数为 **417**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **422** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
+**总计：** 仓库的 `/// Purpose:` 注释数为 **479**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **484** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
 
 | Tier | 计数 |
 |---|---|
-| Tier A（完整条目：Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes） | 55 |
-| Tier B（仅索引行） | 367 |
-| **总计** | **422** |
+| Tier A（完整条目：Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes） | 81 |
+| Tier B（仅索引行） | 403 |
+| **总计** | **484** |
 
 这些总计在初始化时（`PLAN.md` M1.0）对照源码树测得。若要改动这些数字，请测量而不要手工调整：
 
@@ -58,7 +58,21 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/progress/services/nihongo_storage.dart` | [features/progress/services/nihongo_storage.md](features/progress/services/nihongo_storage.md) | 41 | 3 |
 | `lib/features/settings/views/license_page.dart` | [features/settings/views/license_page.md](features/settings/views/license_page.md) | 2 | 0 |
 | `lib/features/settings/views/privacy_policy_page.dart` | [features/settings/views/privacy_policy_page.md](features/settings/views/privacy_policy_page.md) | 3 | 0 |
-| `lib/features/sentence/services/lexicon.dart` | [features/sentence/services/lexicon.md](features/sentence/services/lexicon.md) | 4 | 1 |
+| `lib/features/sentence/models/function_word.dart` | [features/sentence/models/function_word.md](features/sentence/models/function_word.md) | 7 | 1 |
+| `lib/features/sentence/models/sentence_analysis.dart` | [features/sentence/models/sentence_analysis.md](features/sentence/models/sentence_analysis.md) | 3 | 2 |
+| `lib/features/sentence/models/token.dart` | [features/sentence/models/token.md](features/sentence/models/token.md) | 1 | 1 |
+| `lib/features/sentence/services/chunker.dart` | [features/sentence/services/chunker.md](features/sentence/services/chunker.md) | 6 | 3 |
+| `lib/features/sentence/services/deinflector.dart` | [features/sentence/services/deinflector.md](features/sentence/services/deinflector.md) | 5 | 3 |
+| `lib/features/sentence/services/grammar_matcher.dart` | [features/sentence/services/grammar_matcher.md](features/sentence/services/grammar_matcher.md) | 2 | 1 |
+| `lib/features/sentence/services/lexicon.dart` | [features/sentence/services/lexicon.md](features/sentence/services/lexicon.md) | 10 | 3 |
+| `lib/features/sentence/services/sentence_analyzer.dart` | [features/sentence/services/sentence_analyzer.md](features/sentence/services/sentence_analyzer.md) | 1 | 2 |
+| `lib/features/sentence/services/sentence_checks.dart` | [features/sentence/services/sentence_checks.md](features/sentence/services/sentence_checks.md) | 5 | 2 |
+| `lib/features/sentence/services/tokenizer.dart` | [features/sentence/services/tokenizer.md](features/sentence/services/tokenizer.md) | 12 | 3 |
+| `lib/features/sentence/views/sentence_lab_page.dart` | [features/sentence/views/sentence_lab_page.md](features/sentence/views/sentence_lab_page.md) | 4 | 1 |
+| `lib/features/sentence/widgets/bunsetsu_tree.dart` | [features/sentence/widgets/bunsetsu_tree.md](features/sentence/widgets/bunsetsu_tree.md) | 1 | 1 |
+| `lib/features/sentence/widgets/grammar_used_list.dart` | [features/sentence/widgets/grammar_used_list.md](features/sentence/widgets/grammar_used_list.md) | 1 | 1 |
+| `lib/features/sentence/widgets/issue_list.dart` | [features/sentence/widgets/issue_list.md](features/sentence/widgets/issue_list.md) | 3 | 1 |
+| `lib/features/sentence/widgets/token_chips.dart` | [features/sentence/widgets/token_chips.md](features/sentence/widgets/token_chips.md) | 5 | 2 |
 | `lib/features/speech/services/pronunciation_scorer.dart` | [features/speech/services/pronunciation_scorer.md](features/speech/services/pronunciation_scorer.md) | 3 | 2 |
 | `lib/features/speech/services/speech_backend.dart` | [features/speech/services/speech_backend.md](features/speech/services/speech_backend.md) | 13 | 1 |
 | `lib/features/speech/services/speech_recognition_service.dart` | [features/speech/services/speech_recognition_service.md](features/speech/services/speech_recognition_service.md) | 10 | 2 |

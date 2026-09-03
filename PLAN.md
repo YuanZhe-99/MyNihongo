@@ -2,15 +2,17 @@
 |keeps their wire format, backup format, and lock semantics interoperable.
 |on every platform |
 |hardware does |
-| 2026-09-03 | Speech recognition is offline-only| `speech_to_text`| `speech_to_text`| Windows and macOS projectsThe phased plan for MyNihongo!!!!!, the Japanese learning app in the MyApps series. `AGENTS.md`
+|native Windows code paths |
+| 2026-09-03 | Segmentation is a cost lattice| Speech recognition is offline-only| `speech_to_text`| `speech_to_text`| Windows and macOS projectsThe phased plan for MyNihongo!!!!!, the Japanese learning app in the MyApps series. `AGENTS.md`
 says how to work here; `doc/en-us/` says what the code does; this file says **what is planned, in
 what order, why, and what is done**. Update the checklists in the same change that lands a
 milestone item.
 
-**Status as of 2026-09-03:** Phase 1 complete and released as `v0.1.0`; Phase 2 in progress —
-M2.1 (text-to-speech) and M2.2 (speech recognition and pronunciation feedback) landed, along with
-the Windows and macOS projects the pronunciation work needs a machine for. M2.3, the sentence lab,
-is next.
+**Status as of 2026-09-03:** Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
+(text-to-speech), M2.2 (speech recognition and pronunciation feedback) and M2.3 (the sentence lab)
+have landed, along with the Windows and macOS projects the pronunciation work needs a machine for.
+Two Phase 2 items are deferred with reasons in their milestones: own-voice playback, and the AICore
+enhancement. Phase 3 is next.
 
 M1.0 (skeleton) landed 2026-09-02; M1.1 (sync and backup UI), M1.2 (content pipeline), M1.3 (reference polish) and M1.4
 (release) landed 2026-09-03. Two items carry over for want of hardware: the foldable screenshot
@@ -281,36 +283,46 @@ of — all on-device.
       `test/pronunciation_practice_ui_test.dart`, and the merged Android manifest was checked to
       carry `RECORD_AUDIO` and no Bluetooth permissions
 
-#### M2.3 Sentence lab (grammar tree)
+#### M2.3 Sentence lab (grammar tree) — **done 2026-09-03**
 
 Input a sentence; see tokens, their roles, meanings, and which taught grammar points appear.
 
-- [ ] **Baseline (classic, bundled):** a Dart morphological analyser over the catalog:
-      1. Segmentation — port of TinySegmenter (character-class n-gram model, ~25 kB, BSD) for a
-         first split, then longest-match against the vocabulary and a bundled function-word table
-         (particles, auxiliaries, copula forms, conjugation endings).
-      2. Conjugation — table-driven de-inflection for godan/ichidan/irregular verbs, i- and
-         na-adjectives; each surface form maps back to the catalog entry plus a form label
-         (polite non-past, negative, past, て-form, …).
-      3. Chunking — bunsetsu grouping (content word + attached particles/auxiliaries) and a
-         dependency guess by the standard right-headed rule: each chunk attaches to the nearest
-         later chunk that can govern it (particle → predicate, modifier → noun).
-      4. Pattern matching — each grammar point carries a machine-readable `match` rule
-         (token/POS/form sequence); matched rules become the "grammar used" list.
-      5. Checks — a small set of known error patterns with explanations: wrong particle for the
-         verb frame, adjective conjugated as a verb, な/の confusion, tense mismatch with time
-         words, missing copula. Output is "possible issue", never "wrong".
-- [ ] **Optional enhancement:** Android AICore / Gemini Nano through ML Kit GenAI where present
-      (Android 14+, supported devices only): rephrasing, richer explanation of a flagged issue,
-      natural translation. On-device, behind a switch off by default, with a capability check
-      and a clear fallback to the baseline. Evaluate device coverage and output stability before
-      committing; keep the baseline the source of truth for the tree.
-- [ ] UI: tokens as chips coloured by role; tap → dictionary sheet; a tree view of bunsetsu
-      dependencies (indented list on phones, side-by-side tree on a split window); grammar points
-      matched listed below with links
-- [ ] Tests: a fixture set of ~200 sentences (from the catalog examples first) with expected
-      token/form/chunk output; every catalog example must parse without an unknown token
-- [ ] Docs: `doc/en-us/algorithms/sentence-analysis.md`, `features/sentence-lab.md`
+- [x] **Baseline (classic, bundled):** a Dart morphological analyser over the catalog.
+      **Amended in three places, each recorded in the decisions log:**
+      1. Segmentation — **no TinySegmenter.** A lattice over the 7,700-entry catalog plus the
+         function-word table reaches every shipped example sentence on its own, and the port would
+         have added a model to maintain for what the design used only as a tie-break bonus. The
+         lattice is a shortest path over per-position candidate edges with an integer cost table.
+      2. Conjugation — table-driven de-inflection running **backwards**: each auxiliary declares the
+         stem shape it attaches to, and the lexicon rejects every proposal that is not a word. Godan
+         rows, ichidan, both irregular verbs, i- and na-adjectives.
+      3. Chunking — bunsetsu grouping and the right-headed dependency guess, with the correction
+         that a chunk modifying a noun is not a predicate.
+      4. Pattern matching — **no new `match` schema.** The existing literal forms are matched against
+         the **token sequence** rather than the raw text, so a one-character particle matches only
+         where the tokenizer found a particle. The grammar files stay at `schemaVersion` 2 and no
+         content was rewritten.
+      5. Checks — four of the five run; the fifth (adjective given a verb ending) is unreachable
+         because the lattice makes such a sentence fail to parse rather than parse wrongly. Output is
+         "possible issue", never "wrong", and every check carries the exemptions that keep it quiet
+- [ ] **Optional enhancement:** Android AICore / Gemini Nano through ML Kit GenAI. **Deferred:** the
+      Flutter plugins are at 0.3.x and this host has no Android 14+ device to evaluate coverage or
+      output stability on. `SentenceEnhancer` is an abstract class with no implementation, so the
+      shape is settled and the baseline stays the source of truth
+- [x] UI: tokens as chips coloured by role with the role also named in words; tap → the catalog
+      sheet, or the function word's own gloss; the bunsetsu dependencies as an indented list;
+      grammar points matched listed below with links. **Amended:** one column at every size rather
+      than a side-by-side tree on a split window — the sections are a chain, and putting a reference
+      beside its referent makes the reading order ambiguous. Recorded in `adaptive-layout.md`
+- [x] Tests: **every catalog example must parse without an unknown token** — the five words the
+      shipped vocabulary genuinely lacks are listed in
+      `test/fixtures/sentence/allowed_unknown.json`, capped at 20, each citing the example that
+      needs it. Plus the tokenizer, the de-inflector, the function-word table as content, the
+      chunker, the matcher, each check firing and staying quiet, and the page at the named
+      geometries. **Amended:** no 200-sentence recorded-fixture set — `toFixtureString` exists and is
+      tested, but the every-example test proved the more useful gate, because it fails on the app's
+      own content rather than on a transcript somebody has to re-record
+- [x] Docs: `doc/en-us/algorithms/sentence-analysis.md`, `features/sentence-lab.md`
 
 ### Phase 3 — Learning engine
 
@@ -476,9 +488,20 @@ catalog content, and never writes a progress record by itself — the learner's 
 | 2026-09-03 | The attempt is rewritten through a catalog index before it is scored | Android answers 東京 where the item says とうきょう; comparing those character by character would score a perfect reading at zero. An unresolved span is copied through so it still costs edits |
 | 2026-09-03 | Scoring compares morae, and the per-mora diff is the primary output | The mora is the unit Japanese rhythm is counted in and the unit a listener judges; a single number cannot say which part to fix |
 | 2026-09-03 | Own-voice recording and playback are deferred out of M2.2 | It needs the microphone at the same time as the recogniser, which cannot be verified on a host with no device, and adds two more native Windows code paths |
+| 2026-09-03 | Segmentation is a cost lattice with a shortest path, not greedy longest match | Whether ここではなして splits as ここ/で/はなして or ここ/では/なして depends on what follows, and a left-to-right pass cannot know. Costs also make the tie-breaks explicit and testable instead of hiding them in loop order |
+| 2026-09-03 | No TinySegmenter port, against the M2.3 design | The design used it only as a −1 tie-break bonus. At 7,700 entries plus the function-word table the lattice reaches every shipped example on its own, and the port would have added a model to maintain for a bonus nothing needed |
+| 2026-09-03 | Grammar matching runs over the token sequence, with no new `match` schema | Requiring both ends to fall on a token boundary is what 〜は needed; the token sequence supplies that, the existing literal forms already work, and the alternative was rewriting the `match` field of 81 points |
+| 2026-09-03 | De-inflection runs backwards and confirms every proposal against the lexicon | Forwards, each class has a dozen forms; backwards, each stem shape is one row transformation per class, and generous rules are safe because 飲ん proposes three verbs of which the dictionary keeps one |
+| 2026-09-03 | The function-word table is content with `fw:` ids, authoritative over the vocabulary | は is the topic marker far more often than it is 歯; a table the analyser can trust is what makes every other stage possible, and ids that never change let a token carry one |
+| 2026-09-03 | The sentence lab is a route outside the shell, not a sixth tab | The five tabs are the reference the app is built around; the lab is something done *to* a sentence you already have, and it is always entered with a purpose from somewhere else |
 
 ## 7. Open questions
 
+- Five words the sentence lab needs are missing from the vocabulary, because the JLPT lists it is
+  generated from do not contain them: 母, 顔, 東京, 鞄 in kanji and 速い. They are listed in
+  `test/fixtures/sentence/allowed_unknown.json`. Adding them means changing the source lists and
+  regenerating `vocab.json` — is that worth doing for a handful of words, or should the import tool
+  gain a small hand-maintained supplement?
 - Chinese glosses for JMdict-scale vocabulary: N5 is machine-authored and unreviewed. Who reviews
   it, and is the same approach acceptable for N4 and above?
 - Grammar authoring throughput: ~80 N5 points is a few days of careful writing; who reviews?

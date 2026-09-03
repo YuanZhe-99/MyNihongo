@@ -13,6 +13,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../sentence/models/function_word.dart';
 import '../models/content_catalog.dart';
 
 /// The raw strings of the content files, in the order the parser wants them.
@@ -44,6 +45,11 @@ class ContentRepository {
 
   /// Asset path of the kana teaching notes.
   static const kanaNotesAsset = 'assets/content/kana_notes.json';
+
+  /// Asset path of the particle, copula and auxiliary table the sentence
+  /// analyser reads. Not part of the catalog: it describes the grammar the
+  /// catalog's words are put together with, and nothing tracks progress on it.
+  static const functionWordsAsset = 'assets/content/function_words.json';
 
   /// Whether to parse on a background isolate.
   ///
@@ -102,3 +108,24 @@ ContentCatalog parseContent(ContentSources sources) =>
 final contentCatalogProvider = FutureProvider<ContentCatalog>(
   (ref) => ContentRepository.load(),
 );
+
+/// Purpose: Read and parse the function-word table.
+/// Inputs: Optional `bundle` for tests; defaults to `rootBundle`.
+/// Returns: `Future<FunctionWordTable>` — empty when the asset is unreadable.
+/// Side effects: Reads one asset.
+/// Notes: Separate from `ContentRepository.load` because it is small, has no
+/// progress attached to it, and only the sentence lab needs it — loading it
+/// with the 2 MB catalog would make every page pay for a page that may never
+/// be opened. A failure is an empty table rather than an exception: the
+/// analyser then finds no particles and says so, which is better than a page
+/// that cannot open.
+Future<FunctionWordTable> loadFunctionWords([AssetBundle? bundle]) async {
+  try {
+    final raw = await (bundle ?? rootBundle).loadString(
+      ContentRepository.functionWordsAsset,
+    );
+    return FunctionWordTable.fromJson(jsonDecode(raw));
+  } catch (_) {
+    return FunctionWordTable.empty;
+  }
+}

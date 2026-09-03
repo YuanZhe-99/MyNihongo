@@ -31,6 +31,11 @@ sharing their sync, backup and data-management engine
 - **Grammar** — 81 N5 points, each with structure, meaning, explanation and examples; JLPT filter.
 - **Cross-links** — a word shows the grammar its examples use, a grammar point shows the words in
   its examples, and a kana shows words that start with it.
+- **Speech** — everything read aloud by the device's own engine, and pronunciation practice
+  that compares what you said with the reading, mora by mora. Recognition is offline unless
+  you turn the network fallback on.
+- **Sentence lab** — paste a sentence and see the words, what modifies what, the taught
+  grammar it uses, and anything that looks unusual. A dictionary and rules, not a model.
 - **Learning progress** — a synced record per studied item, ready for the review engine.
 - **WebDAV sync, backup, ZIP export** — configure a server, sync by hand or automatically, resolve
   conflicts per record, keep local backups with a retention policy, and export a ZIP anywhere.

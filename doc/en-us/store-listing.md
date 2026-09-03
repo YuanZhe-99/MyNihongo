@@ -30,6 +30,8 @@ anywhere except to a WebDAV server you configure yourself.
   use, tap a grammar point to see the words in its examples.
 - Everything read aloud by your device's own speech engine, and pronunciation
   practice that compares what you said with the reading, mora by mora.
+- A sentence lab: paste a sentence and see the words, what modifies what, which
+  taught grammar it uses, and anything that looks unusual. Offline, no model.
 - English and Simplified Chinese throughout. Chinese glosses cover N5; the rest
   show English.
 
@@ -59,8 +61,9 @@ Free software under the GPLv3.
 ## What is new (0.2.0)
 
 Everything can be read aloud, and pronunciation practice compares what you said
-with the reading, mora by mora. Recognition runs on your device; a switch, off
-by default, is the only way anything is ever sent to the system speech service.
+with the reading, mora by mora. A new sentence lab breaks a sentence into words,
+structure and grammar points. Recognition runs on your device; a switch, off by
+default, is the only way anything is ever sent to the system speech service.
 Windows and macOS builds exist for development.
 
 ## What is new (0.1.0)

@@ -60,8 +60,12 @@ The shared WebDAV sync, backup, and ZIP engines are not in this repository. They
   choices the reference pages remember.
 - [`features/pronunciation.md`](features/pronunciation.md) — everything that makes or hears sound:
   what speaks, the speed and voice preferences, and what happens with no Japanese voice installed.
+- [`features/sentence-lab.md`](features/sentence-lab.md) — the sentence lab page: what it
+  shows, where it is reached from, and the limits it states.
 - [`algorithms/pronunciation-scoring.md`](algorithms/pronunciation-scoring.md) — how a spoken
   attempt is compared with a reading, mora by mora.
+- [`algorithms/sentence-analysis.md`](algorithms/sentence-analysis.md) — how a typed sentence
+  becomes words, structure, grammar points and possible issues.
 - [`store-listing.md`](store-listing.md) — the release and store text.
 
 ## Not covered here

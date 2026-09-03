@@ -12,12 +12,19 @@ this page is about the rules, the pipeline that builds the files, and the UI.
 | `assets/content/grammar/n5.json` (one file per level) | `ContentCatalog.grammar` | `GrammarPoint` |
 | `assets/content/kana_notes.json` | `ContentCatalog.kanaNotes` | `KanaNote` |
 | `assets/content/vocab_zh.json` | nothing at runtime | build input, see below |
+| `assets/content/function_words.json` | `FunctionWordTable`, loaded separately | `FunctionWord` |
 
 `ContentRepository.load()` reads the strings on the calling isolate and hands them to `compute` for
 decoding, so the roughly 2 MB vocabulary file does not drop a frame at launch. The vocabulary is
 read with `cache: false`, because it is parsed exactly once and the bundle's string cache would
 otherwise hold a second copy for the life of the process. Widget tests set
 `ContentRepository.parseInIsolate = false`, since `compute` never completes under `FakeAsync`.
+
+The function-word table is deliberately **not** part of the catalog: it describes the grammar the
+catalog's words are put together with, nothing tracks progress on it, and only the sentence lab
+reads it, so it is loaded by its own `loadFunctionWords` and its own provider. Its schema is in
+[`../data-formats.md`](../data-formats.md) and its use in
+[`sentence-lab.md`](sentence-lab.md).
 
 `contentCatalogProvider` exposes the result to pages. Lookups are maps built once at construction:
 `vocabById`, `grammarById` and `canonicalId` are constant time, and `vocabById` resolves aliases to

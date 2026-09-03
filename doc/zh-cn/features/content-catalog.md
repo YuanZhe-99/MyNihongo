@@ -11,11 +11,14 @@
 | `assets/content/grammar/n5.json`（每级一个文件） | `ContentCatalog.grammar` | `GrammarPoint` |
 | `assets/content/kana_notes.json` | `ContentCatalog.kanaNotes` | `KanaNote` |
 | `assets/content/vocab_zh.json` | 运行时不解析 | 构建输入，见下文 |
+| `assets/content/function_words.json` | `FunctionWordTable`，单独加载 | `FunctionWord` |
 
 `ContentRepository.load()` 在调用方 isolate 上读取字符串，再交给 `compute` 解码，因此约 2 MB 的单词文件
 不会在启动时丢帧。单词文件以 `cache: false` 读取：它只解析一次，若留在资源包的字符串缓存中，会在整个进程
 生命周期内多占一份副本。控件测试会设置 `ContentRepository.parseInIsolate = false`，因为 `compute` 在
 `FakeAsync` 下永远不会完成。
+
+功能词表刻意**不**属于目录：它描述的是把目录中的词组织起来的语法，没有任何进度追踪它，而且只有句子实验室读它，因此由它自己的 `loadFunctionWords` 和自己的 provider 加载。它的 schema 见 [`../data-formats.md`](../data-formats.md)，用途见 [`sentence-lab.md`](sentence-lab.md)。
 
 `contentCatalogProvider` 把结果提供给页面。查找使用构造时建好的映射：`vocabById`、`grammarById` 与
 `canonicalId` 都是常数时间，且 `vocabById` 会把别名解析到与主 id 相同的条目对象。共享值类型：`JlptLevel`

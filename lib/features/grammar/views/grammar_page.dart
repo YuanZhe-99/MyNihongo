@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../l10n/app_localizations.dart';
 import '../../../shared/utils/adaptive_layout.dart';
@@ -57,7 +58,16 @@ class _GrammarPageState extends ConsumerState<GrammarPage> {
     final catalog = ref.watch(contentCatalogProvider);
 
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.grammarTitle)),
+      appBar: AppBar(
+        title: Text(l10n.grammarTitle),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.biotech_outlined),
+            tooltip: l10n.labTitle,
+            onPressed: () => context.push('/lab'),
+          ),
+        ],
+      ),
       body: catalog.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (_, _) => emptyResults(context, l10n.contentLoadFailed),

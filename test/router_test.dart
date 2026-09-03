@@ -96,4 +96,16 @@ void main() {
       '/settings',
     ]);
   });
+
+  testWidgets('the sentence lab opens on its own route, outside the shell', (
+    tester,
+  ) async {
+    await pumpAt(tester, '/lab');
+    expect(find.text('句子实验室'), findsOneWidget);
+    // Outside the shell: no navigation bar or rail is drawn around it, which
+    // is what gives a long sentence the whole window.
+    expect(find.byType(NavigationBar), findsNothing);
+    expect(find.byType(NavigationRail), findsNothing);
+    expect(tester.takeException(), isNull);
+  });
 }

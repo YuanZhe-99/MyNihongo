@@ -43,7 +43,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get learnWelcomeBody =>
-      'Kana, vocabulary and grammar to browse now, and everything read aloud; lessons, reviews and pronunciation practice are on the way.';
+      'Kana, vocabulary and grammar to browse, everything read aloud, pronunciation practice and the sentence lab; lessons and reviews are on the way.';
 
   @override
   String get learnContentSummary => 'Content';
@@ -96,12 +96,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get learnRoadmap => 'Coming next';
 
   @override
-  String get learnRoadmapPronunciation =>
-      'Pronunciation practice: record yourself and compare it with the reading';
-
-  @override
   String get learnRoadmapSrs =>
-      'Spaced-repetition reviews and step-by-step lessons';
+      'Spaced-repetition reviews, quizzes and a step-by-step lesson path';
 
   @override
   String get learnRoadmapJlpt => 'JLPT N5–N1 practice sets';
@@ -733,4 +729,109 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get practiceAction => 'Practise';
+
+  @override
+  String get labTitle => 'Sentence lab';
+
+  @override
+  String get labSubtitle => 'See what a sentence is made of';
+
+  @override
+  String get labInputHint => 'Type or paste a Japanese sentence';
+
+  @override
+  String get labAnalyze => 'Analyse';
+
+  @override
+  String get labClear => 'Clear';
+
+  @override
+  String get labEmpty =>
+      'Type a sentence above, or open one from a vocabulary or grammar example.';
+
+  @override
+  String get labWords => 'Words';
+
+  @override
+  String get labStructure => 'Structure';
+
+  @override
+  String get labGrammarUsed => 'Grammar used';
+
+  @override
+  String get labGrammarNone => 'No taught grammar point matched this sentence.';
+
+  @override
+  String get labIssues => 'Possible issues';
+
+  @override
+  String get labIssuesNone => 'Nothing looked unusual.';
+
+  @override
+  String get labUnknownWarning =>
+      'Some characters are not in the bundled dictionary, so parts of this may be wrong.';
+
+  @override
+  String get labDependsOn => 'modifies';
+
+  @override
+  String get labRoot => 'main predicate';
+
+  @override
+  String get labLimitsNote =>
+      'This is a dictionary and a set of rules, not a translator. The structure is a best guess, and possible issues are worth checking rather than trusting.';
+
+  @override
+  String get labOpenAction => 'Analyse this sentence';
+
+  @override
+  String labIssueParticleFrame(Object word) {
+    return '$word usually takes が rather than を here.';
+  }
+
+  @override
+  String labIssueParticleFrameSuggest(Object word, Object suggestion) {
+    return '$word usually takes が rather than を. Did you mean $suggestion?';
+  }
+
+  @override
+  String labIssueNaNo(Object word, Object suggestion) {
+    return '$word may need $suggestion before the next noun.';
+  }
+
+  @override
+  String labIssueTense(Object word) {
+    return '$word points at another time than the verb\'s form.';
+  }
+
+  @override
+  String labIssueCopula(Object word) {
+    return 'This ends on $word with nothing to predicate it. Did you mean $wordです?';
+  }
+
+  @override
+  String labIssueAdjectiveAsVerb(Object word) {
+    return '$word is an adjective and does not take a verb ending.';
+  }
+
+  @override
+  String get labCategoryNoun => 'noun';
+
+  @override
+  String get labCategoryVerb => 'verb';
+
+  @override
+  String get labCategoryAdjective => 'adjective';
+
+  @override
+  String get labCategoryParticle => 'particle';
+
+  @override
+  String get labCategoryAuxiliary => 'auxiliary';
+
+  @override
+  String get labCategoryOther => 'other';
+
+  @override
+  String get labCategoryUnknown => 'not in the dictionary';
 }

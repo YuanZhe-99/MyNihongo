@@ -189,6 +189,15 @@ Not copied to the other repos — no other app has these.
 | token | 词元（token） | 首次出现附英文原词 |
 | bunsetsu | 文节（bunsetsu） | 首次出现附英文原词 |
 | dependency (syntax) | 依存关系 | |
+| lattice (segmentation) | 词格 | 分词搜索所用的候选图 |
+| de-inflection | 活用还原 | 由活用形反推词典形 |
+| conjugation class | 活用类 | 五段、一段、不规则等 |
+| function word | 功能词 | 助词、系动词、助动词、形式名词 |
+| stem | 词干 | 活用形去掉词尾后的部分 |
+| lemma | 词元 | 词的词典形 |
+| predicate | 谓语 | 文节能否支配其他文节 |
+| attributive | 连体形 | 修饰名词的形式 |
+| possible issue | 可能的问题 | 检查的结论措辞，绝不说"错误" |
 | conjugation | 活用 | 动词、形容词的变形 |
 | Learn tab | 学习标签页 | 首页 |
 | dashboard | 仪表盘 | 学习标签页的卡片总览 |

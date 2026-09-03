@@ -167,7 +167,7 @@ abstract class AppLocalizations {
   /// No description provided for @learnWelcomeBody.
   ///
   /// In en, this message translates to:
-  /// **'Kana, vocabulary and grammar to browse now, and everything read aloud; lessons, reviews and pronunciation practice are on the way.'**
+  /// **'Kana, vocabulary and grammar to browse, everything read aloud, pronunciation practice and the sentence lab; lessons and reviews are on the way.'**
   String get learnWelcomeBody;
 
   /// No description provided for @learnContentSummary.
@@ -248,16 +248,10 @@ abstract class AppLocalizations {
   /// **'Coming next'**
   String get learnRoadmap;
 
-  /// No description provided for @learnRoadmapPronunciation.
-  ///
-  /// In en, this message translates to:
-  /// **'Pronunciation practice: record yourself and compare it with the reading'**
-  String get learnRoadmapPronunciation;
-
   /// No description provided for @learnRoadmapSrs.
   ///
   /// In en, this message translates to:
-  /// **'Spaced-repetition reviews and step-by-step lessons'**
+  /// **'Spaced-repetition reviews, quizzes and a step-by-step lesson path'**
   String get learnRoadmapSrs;
 
   /// No description provided for @learnRoadmapJlpt.
@@ -1387,6 +1381,186 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Practise'**
   String get practiceAction;
+
+  /// No description provided for @labTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sentence lab'**
+  String get labTitle;
+
+  /// No description provided for @labSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'See what a sentence is made of'**
+  String get labSubtitle;
+
+  /// No description provided for @labInputHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Type or paste a Japanese sentence'**
+  String get labInputHint;
+
+  /// No description provided for @labAnalyze.
+  ///
+  /// In en, this message translates to:
+  /// **'Analyse'**
+  String get labAnalyze;
+
+  /// No description provided for @labClear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get labClear;
+
+  /// No description provided for @labEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Type a sentence above, or open one from a vocabulary or grammar example.'**
+  String get labEmpty;
+
+  /// No description provided for @labWords.
+  ///
+  /// In en, this message translates to:
+  /// **'Words'**
+  String get labWords;
+
+  /// No description provided for @labStructure.
+  ///
+  /// In en, this message translates to:
+  /// **'Structure'**
+  String get labStructure;
+
+  /// No description provided for @labGrammarUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Grammar used'**
+  String get labGrammarUsed;
+
+  /// No description provided for @labGrammarNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No taught grammar point matched this sentence.'**
+  String get labGrammarNone;
+
+  /// No description provided for @labIssues.
+  ///
+  /// In en, this message translates to:
+  /// **'Possible issues'**
+  String get labIssues;
+
+  /// No description provided for @labIssuesNone.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing looked unusual.'**
+  String get labIssuesNone;
+
+  /// No description provided for @labUnknownWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Some characters are not in the bundled dictionary, so parts of this may be wrong.'**
+  String get labUnknownWarning;
+
+  /// No description provided for @labDependsOn.
+  ///
+  /// In en, this message translates to:
+  /// **'modifies'**
+  String get labDependsOn;
+
+  /// No description provided for @labRoot.
+  ///
+  /// In en, this message translates to:
+  /// **'main predicate'**
+  String get labRoot;
+
+  /// No description provided for @labLimitsNote.
+  ///
+  /// In en, this message translates to:
+  /// **'This is a dictionary and a set of rules, not a translator. The structure is a best guess, and possible issues are worth checking rather than trusting.'**
+  String get labLimitsNote;
+
+  /// No description provided for @labOpenAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Analyse this sentence'**
+  String get labOpenAction;
+
+  /// No description provided for @labIssueParticleFrame.
+  ///
+  /// In en, this message translates to:
+  /// **'{word} usually takes が rather than を here.'**
+  String labIssueParticleFrame(Object word);
+
+  /// No description provided for @labIssueParticleFrameSuggest.
+  ///
+  /// In en, this message translates to:
+  /// **'{word} usually takes が rather than を. Did you mean {suggestion}?'**
+  String labIssueParticleFrameSuggest(Object word, Object suggestion);
+
+  /// No description provided for @labIssueNaNo.
+  ///
+  /// In en, this message translates to:
+  /// **'{word} may need {suggestion} before the next noun.'**
+  String labIssueNaNo(Object word, Object suggestion);
+
+  /// No description provided for @labIssueTense.
+  ///
+  /// In en, this message translates to:
+  /// **'{word} points at another time than the verb\'s form.'**
+  String labIssueTense(Object word);
+
+  /// No description provided for @labIssueCopula.
+  ///
+  /// In en, this message translates to:
+  /// **'This ends on {word} with nothing to predicate it. Did you mean {word}です?'**
+  String labIssueCopula(Object word);
+
+  /// No description provided for @labIssueAdjectiveAsVerb.
+  ///
+  /// In en, this message translates to:
+  /// **'{word} is an adjective and does not take a verb ending.'**
+  String labIssueAdjectiveAsVerb(Object word);
+
+  /// No description provided for @labCategoryNoun.
+  ///
+  /// In en, this message translates to:
+  /// **'noun'**
+  String get labCategoryNoun;
+
+  /// No description provided for @labCategoryVerb.
+  ///
+  /// In en, this message translates to:
+  /// **'verb'**
+  String get labCategoryVerb;
+
+  /// No description provided for @labCategoryAdjective.
+  ///
+  /// In en, this message translates to:
+  /// **'adjective'**
+  String get labCategoryAdjective;
+
+  /// No description provided for @labCategoryParticle.
+  ///
+  /// In en, this message translates to:
+  /// **'particle'**
+  String get labCategoryParticle;
+
+  /// No description provided for @labCategoryAuxiliary.
+  ///
+  /// In en, this message translates to:
+  /// **'auxiliary'**
+  String get labCategoryAuxiliary;
+
+  /// No description provided for @labCategoryOther.
+  ///
+  /// In en, this message translates to:
+  /// **'other'**
+  String get labCategoryOther;
+
+  /// No description provided for @labCategoryUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'not in the dictionary'**
+  String get labCategoryUnknown;
 }
 
 class _AppLocalizationsDelegate

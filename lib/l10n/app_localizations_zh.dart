@@ -42,7 +42,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get learnWelcome => '欢迎使用 MyNihongo!!!!!';
 
   @override
-  String get learnWelcomeBody => '现在可以浏览五十音、单词和语法，并可朗读全部内容；课程、复习与发音练习正在路上。';
+  String get learnWelcomeBody =>
+      '可以浏览五十音、单词和语法，全部内容都可朗读，还有发音练习与句子实验室；课程与复习正在路上。';
 
   @override
   String get learnContentSummary => '内容';
@@ -94,10 +95,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get learnRoadmap => '即将推出';
 
   @override
-  String get learnRoadmapPronunciation => '发音练习：录下自己的发音并与读音对照';
-
-  @override
-  String get learnRoadmapSrs => '间隔重复复习与循序渐进的课程';
+  String get learnRoadmapSrs => '间隔重复复习、测验与循序渐进的课程路径';
 
   @override
   String get learnRoadmapJlpt => 'JLPT N5–N1 练习';
@@ -707,4 +705,106 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get practiceAction => '练习';
+
+  @override
+  String get labTitle => '句子实验室';
+
+  @override
+  String get labSubtitle => '看看一个句子由什么组成';
+
+  @override
+  String get labInputHint => '输入或粘贴一个日语句子';
+
+  @override
+  String get labAnalyze => '分析';
+
+  @override
+  String get labClear => '清空';
+
+  @override
+  String get labEmpty => '在上面输入一个句子，或者从词汇、语法的例句打开一个。';
+
+  @override
+  String get labWords => '词';
+
+  @override
+  String get labStructure => '结构';
+
+  @override
+  String get labGrammarUsed => '用到的语法';
+
+  @override
+  String get labGrammarNone => '没有匹配到已收录的语法点。';
+
+  @override
+  String get labIssues => '可能的问题';
+
+  @override
+  String get labIssuesNone => '没有看到异常之处。';
+
+  @override
+  String get labUnknownWarning => '有些字不在内置词典中，因此这里的部分结果可能不对。';
+
+  @override
+  String get labDependsOn => '修饰';
+
+  @override
+  String get labRoot => '主谓语';
+
+  @override
+  String get labLimitsNote => '这是一部词典加一组规则，不是翻译器。结构是最佳猜测，「可能的问题」值得核对，而不宜直接采信。';
+
+  @override
+  String get labOpenAction => '分析这个句子';
+
+  @override
+  String labIssueParticleFrame(Object word) {
+    return '这里的$word通常用が而不是を。';
+  }
+
+  @override
+  String labIssueParticleFrameSuggest(Object word, Object suggestion) {
+    return '$word通常用が而不是を。你想说的是$suggestion吗？';
+  }
+
+  @override
+  String labIssueNaNo(Object word, Object suggestion) {
+    return '$word后面接名词时可能需要$suggestion。';
+  }
+
+  @override
+  String labIssueTense(Object word) {
+    return '$word指向的时间与动词形式不一致。';
+  }
+
+  @override
+  String labIssueCopula(Object word) {
+    return '句子以$word结尾，却没有谓语。你想说的是$wordです吗？';
+  }
+
+  @override
+  String labIssueAdjectiveAsVerb(Object word) {
+    return '$word是形容词，不接动词词尾。';
+  }
+
+  @override
+  String get labCategoryNoun => '名词';
+
+  @override
+  String get labCategoryVerb => '动词';
+
+  @override
+  String get labCategoryAdjective => '形容词';
+
+  @override
+  String get labCategoryParticle => '助词';
+
+  @override
+  String get labCategoryAuxiliary => '助动词';
+
+  @override
+  String get labCategoryOther => '其他';
+
+  @override
+  String get labCategoryUnknown => '不在词典中';
 }

@@ -118,6 +118,13 @@ class LearnPage extends ConsumerWidget {
               l10n.learnOpenGrammar,
               '/grammar',
             ),
+            _link(
+              context,
+              Icons.biotech_outlined,
+              l10n.labTitle,
+              '/lab',
+              push: true,
+            ),
           ],
         ),
       ),
@@ -128,7 +135,6 @@ class LearnPage extends ConsumerWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _line(theme, l10n.learnRoadmapPronunciation),
             _line(theme, l10n.learnRoadmapSrs),
             _line(theme, l10n.learnRoadmapJlpt),
           ],
@@ -237,15 +243,18 @@ class LearnPage extends ConsumerWidget {
     BuildContext context,
     IconData icon,
     String label,
-    String route,
-  ) {
+    String route, {
+    bool push = false,
+  }) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
       dense: true,
       leading: Icon(icon),
       title: Text(label),
       trailing: const Icon(Icons.chevron_right),
-      onTap: () => context.go(route),
+      // A tab is switched to; a page outside the shell is pushed, so the back
+      // button returns here rather than leaving the app.
+      onTap: () => push ? context.push(route) : context.go(route),
     );
   }
 }

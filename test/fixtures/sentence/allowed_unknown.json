@@ -1,0 +1,11 @@
+{
+  "note": "Characters in shipped example sentences that no catalog word explains. Each one is a gap in the vocabulary, not in the analyser: the JLPT lists the catalog is built from do not contain these words, so the tokenizer has nothing to find. Listed here so the every-example-parses test stays meaningful instead of being deleted, and capped so the list cannot grow quietly. Fixing one means adding the word to the source lists and regenerating vocab.json - see doc/en-us/features/content-catalog.md.",
+  "max": 20,
+  "allowed": [
+    { "surface": "母", "word": "母 (はは)", "example": "grammar:ni-target#0" },
+    { "surface": "鞄", "word": "鞄 (かばん) - the catalog has the kana form only", "example": "grammar:i-adjective#0" },
+    { "surface": "速", "word": "速い (はやい) - the catalog has 早い only", "example": "grammar:hou-ga-yori#0" },
+    { "surface": "顔", "word": "顔 (かお)", "example": "grammar:te-form#0" },
+    { "surface": "京", "word": "東京 (とうきょう) - a proper noun the JLPT lists omit", "example": "grammar:te-imasu#1" }
+  ]
+}

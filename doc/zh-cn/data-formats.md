@@ -97,6 +97,31 @@
 
 它是文字说明而非表格数据，因此做成资源文件：只有需要说明的假名才有条目，每个字段都可选，且每个键都必须
 指向假名表中确实存在的假名。
+### 功能词（`function_words.json`）
+
+句子分析器所读的助词、系动词各形、助动词与形式名词。**不属于目录：** 它描述的是把目录中的词组织起来的语法，没有任何进度追踪它，而且它单独加载——只有句子实验室需要它，与 2 MB 的词汇一起加载会让每个页面为一个可能永远不会打开的页面付出代价。
+
+```json
+{ "id": "fw:masendeshita", "surface": "ませんでした", "category": "auxiliary",
+  "lemma": "ます", "needs": "masuStem", "forms": ["polite", "negative", "past"],
+  "gloss": { "en": "polite negative past", "zh": "敬体否定过去" } }
+```
+
+| 字段 | 含义 |
+|---|---|
+| `id` | `fw:` 加一个 slug。与 `vocab:` id 一样是兼容性约定：已发布的绝不重命名 |
+| `surface` | 该词如何书写 |
+| `reading` | 与书写不同时的假名读音——提示助词和宾格助词都属于这种情况 |
+| `category` | `particle-case`、`particle-binding`、`particle-conjunctive`、`particle-final`、`copula`、`auxiliary`、`formal-noun` |
+| `lemma` | 其词族的基本形，使整套活用都归到同一个词 |
+| `needs` | 它所接的词干形态；缺失表示接在任何东西之后 |
+| `forms` | 它为所关闭的文节贡献的 `InflectionForm` 值 |
+| `gloss` | `en` 与 `zh`，两者必需——功能词没有目录条目，因此色块携带自己的含义 |
+
+文件还携带 `sets`：各项检查所读的命名词表（`time-past`、`time-future`、`path-verbs`、`motion-verbs`）以及 `transitivity-pairs`；后者是二元数组而非对象，因为检查会双向查找它们。
+
+对同一表层而言，该表**优先于词汇表**。`test/function_words_test.dart` 强制执行上述规则，正如 `content_catalog_test.dart` 之于目录。
+
 ### 解析规则
 
 `LocalizedStrings.fromJson` 接受语言代码到字符串或字符串列表的映射，或视为英语的裸字符串。`resolve(locale)` 返回该语言的内容，其次英语，再次第一个存在的语言。畸形条目——缺少 id、级别、词条或句型——被跳过而不是让整个文件失败；内容是内置的，因此坏条目是由 `test/content_catalog_test.dart` 捕获的内容 bug，而不是需要保护的用户数据。

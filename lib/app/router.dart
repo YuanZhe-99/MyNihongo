@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import '../features/grammar/views/grammar_page.dart';
 import '../features/kana/views/kana_page.dart';
 import '../features/learn/views/learn_page.dart';
+import '../features/sentence/views/sentence_lab_page.dart';
 import '../features/settings/views/settings_page.dart';
 import '../features/vocab/views/vocab_page.dart';
 import '../shared/widgets/shell_scaffold.dart';
@@ -12,7 +13,8 @@ import '../shared/widgets/shell_scaffold.dart';
 /// Returns: `GoRouter`.
 /// Side effects: None.
 /// Notes: The five shell tabs, in the order the bottom bar and the rail show
-/// them; `ShellScaffold.routes` holds the same list, keep the two in step.
+/// them; `ShellScaffold.routes` holds the same list, keep the two in step. The
+/// sentence lab is a sixth route but not a sixth tab — see the comment on it.
 /// `main()` passes the tab the app was last on, read before `runApp`, so the
 /// app opens where the user left it without a visible jump from Learn.
 GoRouter buildAppRouter({String initialLocation = '/learn'}) => GoRouter(
@@ -33,6 +35,15 @@ GoRouter buildAppRouter({String initialLocation = '/learn'}) => GoRouter(
           builder: (context, state) => const SettingsPage(),
         ),
       ],
+    ),
+    // Outside the shell on purpose: the five tabs are the reference the app is
+    // built around, and the lab is something you do *to* a sentence you
+    // already have. It is opened from Learn, from the reference pages and from
+    // any example, and it takes the whole window so a long sentence has room.
+    GoRoute(
+      path: '/lab',
+      builder: (context, state) =>
+          SentenceLabPage(initialSentence: state.extra as String?),
     ),
   ],
 );

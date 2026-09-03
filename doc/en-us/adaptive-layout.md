@@ -153,6 +153,7 @@ Every decision is recorded here with what it costs.
 | WebDAV sync, Backup | none | One column at every size. Both are second-level pages, so the Settings row above decides whether they are pushed or hosted in the detail pane; the pages themselves measure nothing. |
 | Detail sheets | none | Bottom sheets, identical in every mode. |
 | Pronunciation practice | none | One column at every size, capped at `pageMaxContentWidth`. It holds a target line, a record button and a row of mora chips; there is no second thing to put beside them, and the chips wrap rather than needing columns. |
+| Sentence lab | none | One column at every size, capped at `pageMaxContentWidth`. A deliberate exception to the usual split-when-it-fits rule: the four sections are a chain — the structure refers to the words, the grammar to the structure, the issues to both — and putting a reference beside its referent would make the reading order ambiguous. |
 
 **Cost accepted knowingly:** a phone in landscape (915 × 412) keeps every single-column layout
 although it has the least height of any viewport — the case that would have benefited most. The
