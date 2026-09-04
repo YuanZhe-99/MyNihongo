@@ -1397,6 +1397,23 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get aiHintDownload => '端侧 AI 已打开，但模型尚未下载。设置 › 端侧 AI。';
+
+  @override
+  String get historyTitle => '历史记录';
+
+  @override
+  String get historyEmpty => '这里还没有内容。你分析过的句子会记在本机，并随学习进度同步。';
+
+  @override
+  String get historyDelete => '删除';
+
+  @override
+  String get historyShow => '历史记录';
+
+  @override
+  String writingSentenceN(int n) {
+    return '第 $n 句';
+  }
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -2792,4 +2809,21 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get aiHintDownload => '裝置端 AI 已開啟，但模型尚未下載。設定 › 裝置端 AI。';
+
+  @override
+  String get historyTitle => '歷史記錄';
+
+  @override
+  String get historyEmpty => '這裡還沒有內容。你分析過的句子會記在本機，並隨學習進度同步。';
+
+  @override
+  String get historyDelete => '刪除';
+
+  @override
+  String get historyShow => '歷史記錄';
+
+  @override
+  String writingSentenceN(int n) {
+    return '第 $n 句';
+  }
 }

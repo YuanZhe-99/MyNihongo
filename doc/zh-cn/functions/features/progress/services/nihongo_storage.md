@@ -19,6 +19,8 @@ M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地�
 | [`NihongoStorage.load`](#load) | 静态方法 | A | 加载进度数据文件；缺失或空白时为空，损坏时抛出。 |
 | [`NihongoStorage.save`](#save) | 静态方法 | A | 原子写入进度数据文件并通知自动同步。 |
 | `NihongoStorage.upsertRecords` | 静态方法 | B | 按 id 插入或替换学习记录，把容器的 `extraJson` 带过去。 |
+| [`NihongoStorage.recordHistory`](#recordhistory) | 静态方法 | A | 记住一条分析过的句子，并裁掉超出上限的最旧条目。 |
+| [`NihongoStorage.deleteRecords`](#deleterecords) | 静态方法 | A | 忘掉学习者删除的记录。 |
 | `NihongoStorage.readConfig` | 静态方法 | B | 读取 `storage_config.json`；缺失或空白时为空。 |
 | `NihongoStorage.writeConfig` | 静态方法 | B | 原子写入 `storage_config.json`。 |
 | `NihongoStorage.getThemeMode` | 静态方法 | B | 读取持久化的主题模式（`light`、`dark`，或表示跟随系统的 null）。 |
@@ -76,3 +78,26 @@ M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地�
 在 `_getDouble`/`_setDouble` 与 `_getBool`/`_setBool` 之上再有四对访问器，遵循同样的两条规则：`getTtsRate`/`setTtsRate`、`getTtsVoice`/`setTtsVoice`、`getSpeechNetworkFallback`/`setSpeechNetworkFallback`，以及 `getAiAssistEnabled`/`setAiAssistEnabled`。
 
 后两对值得在这里点名，因为它们各自把守着一件要么会离开设备、要么会运行模型的事：每一个都**在用户打开之前为 false**，并且把「关闭」存为缺失键而不是 `false`。手工写入的 `"true"` 字符串按未设置读取，与本文件中其他类型不对的值一样——字符串不是布尔值，而这种分量的设置不应该被一个笔误打开。见 [`../../../../features/pronunciation.md`](../../../../features/pronunciation.md) 与 [`../../../../features/ai-assist.md`](../../../../features/ai-assist.md)。
+
+### `static Future<void> recordHistory(HistoryEntry entry, {DateTime? now})` <a id="recordhistory"></a>
+
+- **种类：** 静态方法
+- **用途：** 记住一条分析过的句子或一份写作。
+- **输入：** `entry`；`now` 供测试使用。
+- **返回：** 无。
+- **副作用：** 读取并重写数据文件；只通知自动同步一次。
+- **算法：** 按条目的 id upsert，然后取出该种类的全部条目，把超出 `historyMaxEntries` 的部分从最旧的开始移除。一次加载、一次保存。
+- **用法：** 句子实验室在分析之后；写作练习在检查之后。
+- **注意：** id 由内容决定，所以同一个句子再分析一次会更新已在那里的记录并把它移到最前，而不是新增一条。裁剪发生在同一次写入里——进度文件每次同步都被整份上传，无上限的日志最终会比它所搭载的进度还贵。**按种类**裁剪，使繁忙的句子实验室不会把写作历史清空，而且只会移除历史记录。两个调用方都会吞掉这里的失败：记住是便利，屏幕上的分析才是功能本身。
+
+### `static Future<void> deleteRecords(Iterable<String> ids)` <a id="deleterecords"></a>
+
+- **种类：** 静态方法
+- **用途：** 移除学习者删除的记录。
+- **输入：** `ids`。
+- **返回：** 无。
+- **副作用：** 读取并重写数据文件；通知自动同步。
+- **算法：** 丢弃每一条被点名 id 的记录。集合为空或没有命中时直接返回，不做写入。
+- **用法：** 历史记录行上的删除按钮。
+- **注意：** 是真删除而不是墓碑：三方合并把「一侧删除、另一侧未改动」的记录视为已删除，所以忘掉一个句子也会在学习者的其他设备上忘掉它。删除按钮必须具备这种行为——一个下次同步又回来的条目，比没有这个按钮更糟。没有改动时不写入，可以避免一次无效删除去碰文件并唤醒同步。
+

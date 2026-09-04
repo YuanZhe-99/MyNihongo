@@ -28,9 +28,15 @@ class _FakeGenAiBackend extends GenAiBackend {
     this.answer = 'これは説明です。',
     this.detail,
     this.core,
+    this.perFeature = const {},
   });
 
   GenAiStatus status_;
+
+  /// Overrides [status_] for the features named, so a test can describe a
+  /// device that has one model and not the other — which is what most non-Pixel
+  /// hardware actually is.
+  final Map<GenAiFeature, GenAiStatus> perFeature;
   String answer;
   String? detail;
   GenAiCoreInfo? core;
@@ -39,7 +45,7 @@ class _FakeGenAiBackend extends GenAiBackend {
   @override
   Future<GenAiStatus> status(GenAiFeature feature) async {
     calls.add('status');
-    return status_;
+    return perFeature[feature] ?? status_;
   }
 
   @override
@@ -310,6 +316,91 @@ void main() {
 
     expect(find.text('Explain this sentence'), findsNothing);
     expect(find.textContaining('not downloaded yet'), findsNothing);
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
+  testWidgets('a proofreading-only device still offers the rewrite', (
+    tester,
+  ) async {
+    // The Galaxy Z Fold 8's actual shape: the Prompt API is unreachable and
+    // Proofreading is ready. Until v0.3.2 both buttons were gated on
+    // explanations, so this device saw no AI at all while Settings correctly
+    // reported one feature as usable.
+    debugDefaultTargetPlatformOverride = TargetPlatform.android;
+    await useService(
+      _FakeGenAiBackend(
+        perFeature: const {
+          GenAiFeature.prompt: GenAiStatus.unreachable,
+          GenAiFeature.proofread: GenAiStatus.available,
+        },
+      ),
+      enabled: true,
+    );
+
+    await pumpLab(tester, 'これは本です。');
+
+    expect(find.text('Suggest a correction'), findsOneWidget);
+    expect(find.text('Explain this sentence'), findsNothing);
+    expect(find.text('Explain'), findsNothing);
+    expect(
+      find.textContaining('not downloaded yet'),
+      findsNothing,
+      reason: 'a hint under a usable button reads as if it will fail',
+    );
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
+  testWidgets('the rewrite runs on a proofreading-only device', (tester) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.android;
+    final backend = _FakeGenAiBackend(
+      perFeature: const {
+        GenAiFeature.prompt: GenAiStatus.unreachable,
+        GenAiFeature.proofread: GenAiStatus.available,
+      },
+    );
+    await useService(backend, enabled: true);
+
+    await pumpLab(tester, 'これは本です。');
+    await tester.runAsync(() async {
+      await tester.tap(find.text('Suggest a correction'));
+      for (var i = 0; i < 6; i++) {
+        await Future<void>.delayed(const Duration(milliseconds: 50));
+        await tester.pump();
+      }
+    });
+    await tester.pumpAndSettle();
+
+    expect(backend.calls, contains('proofread'));
+    expect(
+      backend.calls,
+      isNot(contains('explain')),
+      reason: 'the Prompt API is not on this device',
+    );
+    expect(find.text('One possible rewrite'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
+  testWidgets('an explanation-only device still offers the explanation', (
+    tester,
+  ) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.android;
+    await useService(
+      _FakeGenAiBackend(
+        perFeature: const {
+          GenAiFeature.prompt: GenAiStatus.available,
+          GenAiFeature.proofread: GenAiStatus.unavailable,
+        },
+      ),
+      enabled: true,
+    );
+
+    await pumpLab(tester, 'これは本です。');
+
+    expect(find.text('Explain this sentence'), findsOneWidget);
+    expect(find.text('Suggest a correction'), findsNothing);
     expect(tester.takeException(), isNull);
     debugDefaultTargetPlatformOverride = null;
   });

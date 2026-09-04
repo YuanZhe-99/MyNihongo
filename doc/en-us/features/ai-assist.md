@@ -38,7 +38,7 @@ Six rules, and each one is enforced in code rather than by convention:
 | **Why was this wrong** | under a wrong quiz answer | Prompt | the catalog's own explanation of the grammar point, or the question's own note, which is always shown first |
 | **More examples** | in a word's detail sheet | Prompt | the catalog's own examples, which most words do not have |
 | **A second opinion on a typed answer** | after Check, on a typed question the string comparison rejected | Prompt | the string comparison alone, which is what marked it before |
-| **A rewrite of what you wrote** | in writing practice | Prompt | the parse: which unit words were used, how each sentence was read, what looked unusual |
+| **A rewrite of what you wrote** | in writing practice | Prompt, or Proofreading when Prompt is unavailable | the parse: which unit words were used, how each sentence was read, what looked unusual |
 | **An extra question** | inside a unit practice session, labelled | Prompt | the question bank itself, which is a full session on its own |
 
 Every row of that last column is the point: **the fallback is the app**. Removing the AI removes
@@ -95,9 +95,19 @@ sentence that makes the switch an informed choice.
 
 ### When a row says the feature is not available
 
-The two features have **separate device lists**, and the Prompt API's is the narrower one. On most
-non-Pixel hardware the honest answer is that correction suggestions work and explanations do not.
-That is why there is a row per feature rather than one "AI" state.
+The two features have **separate device lists**, and the Prompt API's is the narrower one, so a
+device can have one model and not the other. That is why there is a row per feature rather than one
+"AI" state, and why **every button is gated on the feature it actually uses**.
+
+Until `v0.3.2` that last part was not true: the rewrite button in the sentence lab and the one in
+writing practice were both hidden whenever explanations were unavailable. A Galaxy Z Fold 8, which
+had proofreading ready, was shown no AI at all while Settings correctly reported one feature as
+usable. Each button now appears with its own feature.
+
+`v0.3.2` also raised `genai-prompt` to `1.0.0-beta4`, which is what the Prompt API needs to run on a
+Gemini Nano v4 device — the Z Fold8 family among them. An older client throws `FEATURE_NOT_FOUND`
+there, which reads as an unsupported device and is not one. The story is in
+[`../android-aicore.md`](../android-aicore.md).
 
 A row that cannot offer the feature says which of two different things happened:
 

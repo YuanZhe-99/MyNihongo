@@ -15,8 +15,11 @@ no longer ships.
 ### `resolveStudyItemLabel`
 
 - **Purpose:** Look up the display name for a progress record id.
-- **Inputs:** `id` — a `kana:`, `vocab:` or `grammar:` id; `catalog` — the parsed content, or null
-  when it has not loaded; `locale` — the UI locale, which picks the language of the meaning shown.
+- **Inputs:** `id` — a `kana:`, `vocab:`, `grammar:`, `profile:`, `lesson:`, `lab:` or `writing:` id;
+  `catalog` — the parsed content, or null when it has not loaded; `locale` — the UI locale, which
+  picks the language of the meaning shown; `profileName` and `historyName` — what to call the learner
+  profile and the history in the UI language; `historyRecord` — the record itself, for a remembered
+  sentence.
 - **Returns:** `StudyItemLabel`; never null.
 - **Side effects:** None.
 - **Algorithm:** Switch on `studyKindOf(id)`. `kana:` resolves through `kanaEntryById` to a title of
@@ -28,3 +31,9 @@ no longer ships.
 - **Notes:** Vocabulary lookups are alias-aware, so an id retired in favour of a JMdict-keyed one
   still names its entry. An unresolved label is shown with an "unknown item" caption rather than
   hidden — progress ids outlive the catalog, and a record must never be silently unresolvable.
+
+A **history** record (`lab:` or `writing:`) is named by the text it remembers, with the page's name
+beneath it. The record is passed in rather than looked up, because this function is given an id and
+only its caller has the file — and unlike every other kind, a history record's identity is its own
+content rather than an entry in the catalog.
+

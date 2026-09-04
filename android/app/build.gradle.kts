@@ -79,7 +79,12 @@ dependencies {
     // no deprecation policy, so the versions are exact rather than dynamic.
     // genai-prompt is coroutine-based; genai-proofreading returns Guava
     // ListenableFutures. See doc/en-us/android-aicore.md.
-    implementation("com.google.mlkit:genai-prompt:1.0.0-beta2")
+    //
+    // genai-prompt must be at least 1.0.0-beta4: an earlier client throws
+    // FEATURE_NOT_FOUND from checkStatus() on a Gemini Nano v4 device, which
+    // is every non-Pixel device the Prompt API supports — the Galaxy
+    // Z Fold8 included. beta2 is why a Fold 8 reported the feature missing.
+    implementation("com.google.mlkit:genai-prompt:1.0.0-beta4")
     implementation("com.google.mlkit:genai-proofreading:1.0.0-beta1")
     // The Prompt API suspends and returns a Flow; the coroutine runtime is not
     // pulled in by the Flutter Android embedding, so it is declared here.

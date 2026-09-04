@@ -499,5 +499,11 @@
   "aiFailedTimeout": "The model took too long. Try again.",
   "aiFailedTooLong": "This sentence is too long for the on-device model.",
   "aiFailedGeneric": "Nothing could be generated for this.",
-  "aiHintDownload": "On-device AI is on, but the model is not downloaded yet. Settings › On-device AI."
+  "aiHintDownload": "On-device AI is on, but the model is not downloaded yet. Settings › On-device AI.",
+  "historyTitle": "History",
+  "historyEmpty": "Nothing here yet. What you analyse is remembered on this device and synced with your progress.",
+  "historyDelete": "Delete",
+  "historyShow": "History",
+  "writingSentenceN": "Sentence {n}",
+  "@writingSentenceN": { "placeholders": { "n": { "type": "int" } } }
 }

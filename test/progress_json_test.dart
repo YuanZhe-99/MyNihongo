@@ -74,6 +74,39 @@ void main() {
     expect(studyKindOf('no-prefix'), StudyKind.other);
   });
 
+  test('a history record loads, merges and is not a studied item', () {
+    final data = ProgressData.fromJson({
+      'records': [
+        {
+          'id': 'lab:abc123',
+          'correct': 0,
+          'wrong': 0,
+          'createdAt': '2026-09-04T10:00:00.000Z',
+          'modifiedAt': '2026-09-04T10:00:00.000Z',
+          'history': {'text': 'これは本です。'},
+        },
+        {
+          'id': 'vocab:watashi',
+          'createdAt': '2026-09-04T10:00:00.000Z',
+          'modifiedAt': '2026-09-04T10:00:00.000Z',
+        },
+      ],
+    });
+
+    final record = data.recordById('lab:abc123')!;
+    expect(record.kind, StudyKind.history);
+    expect(
+      data.studyRecords.map((r) => r.id),
+      ['vocab:watashi'],
+      reason: 'a remembered sentence is not something anybody studied',
+    );
+    // The payload survives a round trip through this build's serializer.
+    expect(
+      (record.toJson()['history'] as Map)['text'],
+      'これは本です。',
+    );
+  });
+
   test('stage is derived from review state', () {
     final fresh = StudyRecord.create('kana:あ');
     expect(fresh.stage, StudyStage.fresh);

@@ -249,3 +249,32 @@ double settingsLeftPaneWidth(double contentWidth) {
   if (preferred <= capped) return preferred;
   return capped.clamp(240.0, 440.0);
 }
+
+/// The narrowest the sentence lab's result pane may be before splitting stops
+/// paying.
+///
+/// Wider than [settingsRightPaneMinWidth] because the content is different: a
+/// settings detail pane holds rows of text, while this holds a wrapped row of
+/// word chips with a reading over each, an indented dependency list, and issue
+/// rows with a button on the end. Below this the chips wrap to one word a line,
+/// which is worse than the single column the split replaced.
+const labResultPaneMinWidth = 360.0;
+
+/// Purpose: Return the width of the input-and-history pane on the sentence lab
+/// and writing practice.
+/// Inputs: `contentWidth` — the width both panes share, which is
+/// [shellContentWidth] rather than the screen width.
+/// Returns: `double`.
+/// Side effects: None.
+/// Notes: Proportional, then clamped, then capped so the result pane can never
+/// drop below [labResultPaneMinWidth] — the same shape as
+/// [settingsLeftPaneWidth] and [quizQuestionPaneWidth]. The input is the
+/// smaller half: it holds one text field and a list of past sentences, while
+/// the result holds the whole analysis chain. The cap binds on the narrowest
+/// window that splits at all, where it gives up input width rather than let the
+/// analysis become the harder half to read.
+double labInputPaneWidth(double contentWidth) {
+  final preferred = (contentWidth * 0.40).clamp(320.0, 460.0);
+  final capped = contentWidth - labResultPaneMinWidth;
+  return capped < preferred ? capped : preferred;
+}

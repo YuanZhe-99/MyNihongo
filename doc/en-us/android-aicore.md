@@ -53,17 +53,22 @@ Six as of the verification date. The four "feature" APIs are task-shaped and ret
 
 | API | Artifact | Purpose | Input limit |
 |---|---|---|---|
-| Prompt | `com.google.mlkit:genai-prompt:1.0.0-beta2` | Free-form text or image + text → text | < 4000 tokens |
+| Prompt | `com.google.mlkit:genai-prompt:1.0.0-beta4` | Free-form text or image + text → text | < 4000 tokens |
 | Summarization | `com.google.mlkit:genai-summarization` | Article or chat → bulleted summary | see docs |
 | Proofreading | `com.google.mlkit:genai-proofreading:1.0.0-beta1` | Fix grammar and spelling in short text | < 256 tokens |
 | Rewriting | `com.google.mlkit:genai-rewriting:1.0.0-beta1` | Restate in a tone or style | < 256 tokens |
 | Image description | `com.google.mlkit:genai-image-description` | Image → one-line description | — |
 | Speech recognition | `com.google.mlkit:genai-speech-recognition` | Audio → text; basic mode API 31+, advanced mode on Pixel 10/11 | — |
 
-All of them depend on `com.google.mlkit:genai-common` (`1.0.0-beta3`), which is where
+All of them depend on `com.google.mlkit:genai-common` (`1.0.0-beta4`), which is where
 `FeatureStatus`, `DownloadCallback`, `DownloadStatus`, `StreamingCallback` and `GenAiException` live.
+The Prompt API's POM pulls the matching `genai-common` itself, so pinning `genai-prompt` is enough.
 
-Everything is **beta**: no SLA, no deprecation policy. Pin exact versions.
+Everything is **beta**: no SLA, no deprecation policy. Pin exact versions — and read the
+[release notes](https://developers.google.com/ml-kit/release-notes) when you do, because a beta
+bump here has already fixed a device-visible bug rather than only adding features. `genai-prompt`
+`1.0.0-beta4` (2026-07-21) is the floor for any app that wants the Prompt API to work on non-Pixel
+hardware: see [Devices](#devices).
 
 ### Languages
 
@@ -75,10 +80,27 @@ configuration".
 
 ### Devices
 
-The feature APIs list Pixel 9 and newer plus a set of Snapdragon, Tensor and Dimensity devices
-(Samsung Galaxy S25 among them). The **Prompt API's list is narrower** and, as of the verification
-date, names Pixel 10, 10 Pro, 10 Pro XL and 10 Pro Fold. Treat published device lists as a floor and
-the runtime status as the truth.
+The feature APIs (summarization, proofreading, rewriting, image description) list Pixel 9 and newer
+plus a wide set of Snapdragon, Tensor and Dimensity devices — Samsung's Galaxy S25 and S26 families,
+the Galaxy Z Flip8, Z Fold8 and Z Fold8 Ultra, and phones from Honor, iQOO, Lenovo, Motorola,
+OnePlus, OPPO, POCO, realme, Sharp, Sony, vivo and Xiaomi.
+
+The **Prompt API's list is narrower and is split by Gemini Nano version**, which is the part that
+matters when a call fails:
+
+| Nano | Devices, abbreviated |
+|---|---|
+| nano-v2 | Honor, iQOO, Motorola, OnePlus, OPPO, POCO, realme, Samsung Z Fold7 and Z TriFold, vivo, Xiaomi |
+| nano-v3 | Pixel 10 family, Honor, iQOO, Lenovo, Motorola, OnePlus, OPPO, realme, Samsung S26 family, Sharp, Sony, vivo |
+| nano-v4 | Pixel 11 family; **Samsung Galaxy Z Flip8, Z Fold8, Z Fold8 Ultra** |
+
+**A nano-v4 device needs `genai-prompt` 1.0.0-beta4 or newer.** Earlier clients throw
+`FEATURE_NOT_FOUND` from `checkStatus()` on one — the release note for beta4 is precisely "fixed
+compatibility with Gemini Nano v4 … a `GenAiException` when `checkStatus()` is used". The failure
+looks exactly like an unsupported device, and it is not one. See the Z Fold 8 field note below.
+
+Treat published device lists as a floor and the runtime status as the truth — but check the client
+version before believing a refusal.
 
 ## The two API shapes
 
@@ -165,10 +187,14 @@ two clients and five methods, no plugin, no version to track. MyNihongo does thi
 Set `minSdk = 26` explicitly in `android/app/build.gradle.kts` — Flutter's default is 24.
 
 ```kotlin
-implementation("com.google.mlkit:genai-prompt:1.0.0-beta2")
+implementation("com.google.mlkit:genai-prompt:1.0.0-beta4")
 implementation("com.google.mlkit:genai-proofreading:1.0.0-beta1")
 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
 ```
+
+`genai-prompt` beta4 depends on `kotlin-stdlib` 2.3.21. A project on an older Kotlin Gradle Plugin
+(this app is on 2.2.20) still builds, because Kotlin reads metadata from one minor version ahead;
+verified by building the app rather than assumed.
 
 No manifest permission is needed: the network use is AICore's, not the app's.
 
@@ -198,19 +224,25 @@ unrelated causes. Work down the list; the first two need no cable.
    AICore was asked and said no, or an exception class and message when the call could not be made
    at all. A version line under the section names the installed AICore build and the device. Those
    three facts separate every case below.
-2. **Compare the two features.** They have separate device lists. Explanations use the Prompt API,
+2. **Check the client library version first when the message is `FEATURE_NOT_FOUND`.** On a Gemini
+   Nano v4 device — the Galaxy Z Fold8 family, the Pixel 11 family — any `genai-prompt` older than
+   `1.0.0-beta4` throws exactly that from `checkStatus()`. It reads as "this device does not have the
+   feature" and means "this client cannot ask this device". Bump the library before diagnosing
+   anything else.
+3. **Compare the two features.** They have separate device lists. Explanations use the Prompt API,
    whose list is the narrower one; correction suggestions use Proofreading, whose list is much wider.
-   *One row ready and the other unavailable is the expected answer on most non-Pixel hardware*, not a
-   bug — and it is why the app never treats "AI" as one switchable thing.
-3. **Check the bootloader.** `verifiedbootstate` must be `green` and `flash.locked` must be `1`. An
+   One row ready and the other unavailable is an ordinary answer on hardware that is on one list and
+   not the other — and it is why the app never treats "AI" as one switchable thing. It is *not*
+   automatically the right answer: check step 2 first.
+4. **Check the bootloader.** `verifiedbootstate` must be `green` and `flash.locked` must be `1`. An
    unlocked bootloader fails as "unavailable", with no hint that this is the reason.
-4. **Give provisioning time and network.** Right after setup, an AICore reset, or an OS update, the
+5. **Give provisioning time and network.** Right after setup, an AICore reset, or an OS update, the
    service can answer `UNAVAILABLE` until it has fetched what it needs, sometimes only after a
    restart. Re-check rather than concluding — this is what the **Check again** button in Settings is
    for.
-5. **Check the AICore version against the device.** A manufacturer ships AICore through its own
+6. **Check the AICore version against the device.** A manufacturer ships AICore through its own
    update channel, so a phone can be new and its AICore old.
-6. **Only then suspect the build.** `logcat -s MyNihongoGenAi` prints every status answer and every
+7. **Only then suspect the build.** `logcat -s MyNihongoGenAi` prints every status answer and every
    failure with its exception class. If the failure appears in a release build but not a debug one,
    read [the R8 field note](#field-notes) before anything else.
 
@@ -274,21 +306,33 @@ of it is guaranteed to generalise.
   | Explanations (Prompt) | `GenAiException: [ErrorCode 606] AICore failed with error type 3-PREPARATION_ERROR and error code 606-FEATURE_NOT_FOUND: Feature 636 is not available.` |
   | Correction suggestions (Proofreading) | Ready |
 
-  **This is the expected answer on this hardware, not a fault.** `FEATURE_NOT_FOUND` is AICore
-  saying the Prompt feature does not exist on this device at all — not that a model needs
-  downloading, not that the call went wrong. It is the published device list, observed at runtime,
-  and it confirms what the paragraph below had to guess at a day earlier. Proofreading is available
-  on the same phone, which is exactly the split the API lists predict.
+  **This was read wrongly at first, and the correction is the useful part of this note.** The
+  original conclusion here was that `FEATURE_NOT_FOUND` is AICore saying the Prompt feature does not
+  exist on this device, and that a refusal is the expected answer on non-Pixel hardware. That was
+  wrong on both counts.
 
-  What this changes for the app: nothing, and that is the point. The row says what the device said,
-  the other row still works, and **Check again** re-asks without toggling the switch. What it
-  changes for a reader of this page: the guess below is now a measurement.
+  The Z Fold 8 **is** a supported Prompt API device: it is on the published nano-v4 list, alongside
+  the Z Flip8, the Z Fold8 Ultra and the Pixel 11 family. What the error actually meant is that the
+  **client library was too old to talk to a nano-v4 device**. `genai-prompt` `1.0.0-beta4`
+  (2026-07-21) is released with the note "fixed compatibility with Gemini Nano v4", naming a
+  `GenAiException` from `checkStatus()` as the symptom. The app was pinned to `1.0.0-beta2`.
+
+  Fixed in `v0.3.2` by bumping that one dependency. The Kotlin needed no change, which was checked by
+  running `javap` over both AARs rather than assumed. **Not yet confirmed on the device:** this host
+  has no Samsung hardware, so what has been verified is that the app builds, not that the row turned
+  green.
+
+  Two things worth carrying to another project. **A published device list is evidence about the
+  device, not about your client** — the runtime status is the truth, but only once the library is
+  current enough to ask the question. And **the plausible explanation is the dangerous one**: "this
+  hardware is off the list" fitted every fact available, was written down here as settled, and closed
+  the investigation for a day.
 
 - **Samsung Galaxy Z Fold 8, reported 2026-09-03: AICore installed, both features "not available".**
   Not reproduced here — there is no Samsung device on this host — and recorded because the *shape* of
-  the report is the useful part. The two most likely causes are ordinary rather than broken: the
-  Prompt API's published device list named only the Pixel 10 family at the verification date above,
-  and AICore on a manufacturer's own update channel can lag the phone. What made it undiagnosable was
+  the report is the useful part. The causes guessed at here — an unlisted device, or an AICore build
+  lagging the phone — were both wrong; the entry above has the measured cause and the fix. What made
+  it undiagnosable was
   the app, not the device: every failure path answered with the same sentence, so "AICore said no",
   "the call threw" and "the package is invisible to this build" were indistinguishable. The
   instrumentation described under [Diagnosing](#diagnosing-not-available-on-this-device) was added

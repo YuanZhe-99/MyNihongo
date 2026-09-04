@@ -41,14 +41,18 @@ JSON helpers the pattern needs and the constants `defaultStudyEase` (2.5) and
 
 - **Kind:** top-level function
 - **Purpose:** Derive the catalog a record id belongs to.
-- **Inputs:** `id` — `kana:あ`, `vocab:watashi`, `grammar:desu`, …
-- **Returns:** `kana`, `vocab`, `grammar`, or `other`.
+- **Inputs:** `id` — `kana:あ`, `vocab:watashi`, `grammar:desu`, `lab:<hash>`, …
+- **Returns:** `kana`, `vocab`, `grammar`, `profile`, `lesson`, `history`, or `other`.
 - **Side effects:** None.
 - **Algorithm:** Take the substring before the first `:` (the whole id when there is none) and
   switch on it.
 - **Usage:** `StudyRecord.kind`; the content test asserts every catalog id maps to its kind.
 - **Notes:** The kind is not stored on purpose: deriving it leaves nothing to fall out of step with
-  the id, and a record from a newer build with a new prefix loads as `other` and still merges.
+  the id, and a record from a newer build with a new prefix loads as `other` and still merges. Both
+  `lab:` and `writing:` map to the one `history` kind: the two pages keep separate lists, but nothing
+  that switches on the kind needs to tell them apart. Only `studiedKinds` — kana, vocabulary and
+  grammar — counts as something the learner studies, so the profile, the lesson results and the
+  history are all outside the review queue and outside any count of items tracked.
 
 ### `factory StudyRecord.fromJson(Map<String, dynamic> json)` <a id="fromjson"></a>
 

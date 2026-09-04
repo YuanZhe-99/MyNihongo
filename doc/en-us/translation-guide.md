@@ -236,6 +236,7 @@ Not copied to the other repos — no other app has these.
 | reminder | 提醒 | 每日通知；默认关闭 |
 | study calendar | 学习日历 | 最近 12 周的学习天数格子 |
 | writing practice | 写作练习 | 单元的写作题 |
+| history | 历史记录 | 句子实验室与写作练习记住的输入 |
 | self-assessment | 自评 | 没有模型时由学习者自己判定 |
 | overlay | 叠加层 | 折进生成词表的中文与例句文件 |
 | content gate | 内容门禁 | 合并草稿前跑的检查 |

@@ -6,6 +6,7 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
 import '../../../shared/services/auto_sync_service.dart';
+import '../models/history_entry.dart';
 import '../models/learner_profile.dart';
 import '../models/study_record.dart';
 import 'sm2_scheduler.dart';
@@ -340,6 +341,59 @@ class NihongoStorage {
       streakLastDate: stored.streakLastDate,
     );
     await upsertRecords([merged.toRecord(existing, stamp)]);
+  }
+
+  /// Purpose: Remember one analysed sentence or piece of writing.
+  /// Inputs: `entry`; `now` for tests.
+  /// Returns: None.
+  /// Side effects: Reads then rewrites the data file; notifies auto-sync.
+  /// Notes: The id is content-addressed, so re-analysing the same sentence
+  /// updates the record already there and moves it to the top rather than
+  /// adding a second one. Everything past [historyMaxEntries] of that kind is
+  /// dropped in the same write, oldest first: the progress file is uploaded
+  /// whole on every sync, so an unbounded log would eventually cost more than
+  /// the progress it travels with. Pruning by kind rather than overall keeps a
+  /// busy sentence lab from emptying the writing history.
+  static Future<void> recordHistory(HistoryEntry entry, {DateTime? now}) async {
+    final stamp = (now ?? DateTime.now()).toUtc();
+    final data = await load();
+    final list = List<StudyRecord>.of(data.records);
+    final index = list.indexWhere((record) => record.id == entry.id);
+    final written = entry.toRecord(index >= 0 ? list[index] : null, stamp);
+    if (index >= 0) {
+      list[index] = written;
+    } else {
+      list.add(written);
+    }
+
+    final ofKind = historyEntries(list, kind: entry.kind);
+    if (ofKind.length > historyMaxEntries) {
+      final doomed = {
+        for (final old in ofKind.skip(historyMaxEntries)) old.id,
+      };
+      list.removeWhere((record) => doomed.contains(record.id));
+    }
+
+    await save(ProgressData(records: list, extraJson: data.extraJson));
+  }
+
+  /// Purpose: Forget records the learner deleted.
+  /// Inputs: `ids`.
+  /// Returns: None.
+  /// Side effects: Reads then rewrites the data file; notifies auto-sync.
+  /// Notes: A real deletion, not a tombstone: the three-way merge treats a
+  /// record deleted on one side and untouched on the other as deleted, so a
+  /// history entry removed here is removed everywhere on the next sync. That is
+  /// the behaviour a delete button has to have; a record that came back would
+  /// be worse than no button at all.
+  static Future<void> deleteRecords(Iterable<String> ids) async {
+    final doomed = ids.toSet();
+    if (doomed.isEmpty) return;
+    final data = await load();
+    final list = List<StudyRecord>.of(data.records)
+      ..removeWhere((record) => doomed.contains(record.id));
+    if (list.length == data.records.length) return;
+    await save(ProgressData(records: list, extraJson: data.extraJson));
   }
 
   // ── Config persistence ──

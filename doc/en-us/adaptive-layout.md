@@ -154,11 +154,18 @@ Every decision is recorded here with what it costs.
 | WebDAV sync, Backup | none | One column at every size. Both are second-level pages, so the Settings row above decides whether they are pushed or hosted in the detail pane; the pages themselves measure nothing. |
 | Detail sheets | none | Bottom sheets, identical in every mode. |
 | Pronunciation practice | none | One column at every size, capped at `pageMaxContentWidth`. It holds a target line, a record button and a row of mora chips; there is no second thing to put beside them, and the chips wrap rather than needing columns. |
-| Sentence lab | none | One column at every size, capped at `pageMaxContentWidth`. A deliberate exception to the usual split-when-it-fits rule: the four sections are a chain — the structure refers to the words, the grammar to the structure, the issues to both — and putting a reference beside its referent would make the reading order ambiguous. |
+| Sentence lab, Writing practice | shape gate | Input pane fixed at `labInputPaneWidth` (0.40 of the content width, clamped 320–460, then capped so the result pane keeps `labResultPaneMinWidth` of 360), the analysis in the rest, when `canSplitLayout`; stacked otherwise. **The four analysis sections stay one column inside the result pane at every size** — they are a chain, the structure refers to the words, the grammar to the structure, the issues to both, and putting a reference beside its referent would make the reading order ambiguous. What the split adds is a pane for the *input*: the prompt, the field, the buttons and the history, none of which the analysis refers to. Below the threshold the history moves behind an app-bar button that opens a sheet, because a list between the field and the answer would push the answer off screen. |
 
 **Cost accepted knowingly:** a phone in landscape (915 × 412) keeps every single-column layout
 although it has the least height of any viewport — the case that would have benefited most. The
 series took that trade for consistency across its split surfaces; this app follows it.
+
+**A note on the sentence lab's rule, which changed in `v0.3.2`.** It was one column at every size,
+recorded here as a deliberate exception because its sections are a chain. The exception was drawn
+too widely: what must not be split is the *chain*, and the input field and the history are not part
+of it. Splitting those into their own pane leaves the chain exactly as it was — one column, in
+order — and gives an unfolded phone something better to do with 933 dp than pad the margins. The
+rule the exception protected is still enforced; it is enforced on the right thing.
 
 ## Folding and unfolding at runtime
 

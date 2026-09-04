@@ -27,9 +27,15 @@ the kanji are where most word boundaries are visible.
 
 ## What it shows
 
-Four sections, in order, each referring to the one above it. That chain is why the page is one
+Four sections, in order, each referring to the one above it. That chain is why the sections are one
 column at every window size — putting the reference beside the referent would make the reading order
-ambiguous. Recorded in [`../adaptive-layout.md`](../adaptive-layout.md).
+ambiguous. On a window wide enough to split, the *input* moves into a pane of its own beside them,
+which changes nothing about the chain. Recorded in
+[`../adaptive-layout.md`](../adaptive-layout.md).
+
+Writing practice shows the same four sections, through the same widget, once per sentence. A learner
+who has met one page is reading a familiar answer on the other; see
+[`writing-practice.md`](writing-practice.md).
 
 ### Words
 
@@ -71,6 +77,23 @@ algorithm page. Each row quotes the part of the sentence it is about and says wh
 one sentence, as a possibility. At most three are shown: a sentence that trips more is likelier to
 have been tokenized badly than to be that wrong.
 
+## History
+
+Every analysed sentence is remembered, newest first, and tapping one puts it back in the field and
+analyses it again. On a wide window the list sits under the input; on a narrow one it is behind the
+app-bar button.
+
+**Only the sentence is stored** — never the analysis, which is recomputed from the text and the
+shipped catalog, and never anything a model generated. Storing an analysis would freeze an answer
+that the next release improves; storing generated text would keep a wrong answer to be re-read.
+
+Entries are `lab:<hash>` records in the progress file, so they sync with everything else and reach
+the conflict dialog like any other record. The id is **derived from the sentence**, which is what
+makes analysing the same sentence twice update one entry rather than add a second, and what lets two
+devices that analysed the same sentence merge into one. A hundred are kept per page; past that the
+oldest goes. Deleting one is a real deletion, and the merge propagates it. The format is in
+[`../data-formats.md`](../data-formats.md).
+
 ## The function-word table
 
 `assets/content/function_words.json` — about ninety particles, copula forms, auxiliaries and formal
@@ -98,7 +121,10 @@ loading it with the 2 MB catalog would make every page pay for a page that may n
 that never becomes the source of truth. Turned on in **Settings › On-device AI** — off until then —
 it adds an **Explain** button beside each possible issue, and **Explain this sentence** and **Suggest
 a correction** below them. Everything it produces is drawn in a card labelled as generated, under the
-deterministic finding it comments on, and none of it is stored.
+deterministic finding it comments on, and none of it is stored — including in the history.
+
+Each button is gated on the feature it uses: the explanations on the Prompt API, the rewrite on
+Proofreading. A device with one and not the other gets the half that works.
 
 With the switch off, or on any platform but Android, the page is exactly what this document
 otherwise describes. See [`ai-assist.md`](ai-assist.md).

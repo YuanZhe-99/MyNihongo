@@ -35,14 +35,14 @@ bootloader 必须锁定这一条最容易让人意外：已 root 或刷了第三
 
 | API | 构件 | 用途 | 输入上限 |
 |---|---|---|---|
-| Prompt | `com.google.mlkit:genai-prompt:1.0.0-beta2` | 自由文本或图文 → 文本 | < 4000 token |
+| Prompt | `com.google.mlkit:genai-prompt:1.0.0-beta4` | 自由文本或图文 → 文本 | < 4000 token |
 | 摘要 | `com.google.mlkit:genai-summarization` | 文章或对话 → 要点摘要 | 见文档 |
 | 校对 | `com.google.mlkit:genai-proofreading:1.0.0-beta1` | 修正短文本的语法与拼写 | < 256 token |
 | 改写 | `com.google.mlkit:genai-rewriting:1.0.0-beta1` | 换一种语气或风格重述 | < 256 token |
 | 图像描述 | `com.google.mlkit:genai-image-description` | 图片 → 一句描述 | — |
 | 语音识别 | `com.google.mlkit:genai-speech-recognition` | 音频 → 文本；基础模式 API 31+，高级模式限 Pixel 10/11 | — |
 
-它们都依赖 `com.google.mlkit:genai-common`（`1.0.0-beta3`），`FeatureStatus`、`DownloadCallback`、`DownloadStatus`、`StreamingCallback` 和 `GenAiException` 都在那里。
+它们都依赖 `com.google.mlkit:genai-common`（`1.0.0-beta4`），`FeatureStatus`、`DownloadCallback`、`DownloadStatus`、`StreamingCallback` 和 `GenAiException` 都在那里。Prompt API 的 POM 会自己拉取配套的 `genai-common`，所以只钉住 `genai-prompt` 就够了。
 
 全部是 **beta**：没有 SLA，没有弃用政策。请锁定确切版本。
 
@@ -52,7 +52,19 @@ bootloader 必须锁定这一条最容易让人意外：已 root 或刷了第三
 
 ### 设备
 
-功能类 API 列出了 Pixel 9 及更新机型，外加一批骁龙、Tensor 和天玑设备（其中包括三星 Galaxy S25）。**Prompt API 的列表更窄**，截至核实日期列的是 Pixel 10、10 Pro、10 Pro XL 和 10 Pro Fold。请把公布的设备列表当作下限，把运行时状态当作事实。
+功能类 API（摘要、校对、改写、图像描述）列出了 Pixel 9 及更新机型，外加一大批骁龙、Tensor 和天玑设备——三星 Galaxy S25 与 S26 系列、Galaxy Z Flip8、Z Fold8 和 Z Fold8 Ultra，以及荣耀、iQOO、联想、摩托罗拉、一加、OPPO、POCO、realme、夏普、索尼、vivo、小米的机型。
+
+**Prompt API 的列表更窄，并且按 Gemini Nano 版本分层**——调用失败时，这一点才是关键：
+
+| Nano | 设备（节选） |
+|---|---|
+| nano-v2 | 荣耀、iQOO、摩托罗拉、一加、OPPO、POCO、realme、三星 Z Fold7 与 Z TriFold、vivo、小米 |
+| nano-v3 | Pixel 10 系列、荣耀、iQOO、联想、摩托罗拉、一加、OPPO、realme、三星 S26 系列、夏普、索尼、vivo |
+| nano-v4 | Pixel 11 系列；**三星 Galaxy Z Flip8、Z Fold8、Z Fold8 Ultra** |
+
+**nano-v4 设备需要 `genai-prompt` 1.0.0-beta4 或更新版本。** 更早的客户端在这类设备上调用 `checkStatus()` 会抛出 `FEATURE_NOT_FOUND`——beta4 的发布说明写得很明白：「修复了与 Gemini Nano v4 的兼容性……使用 `checkStatus()` 时抛出 `GenAiException`」。这个失败看起来和「设备不支持」一模一样，但它不是。见下面的 Z Fold 8 现场记录。
+
+请把公布的设备列表当作下限，把运行时状态当作事实——但在相信一次拒绝之前，先看客户端库的版本。
 
 ## 两种 API 形态
 
@@ -127,7 +139,7 @@ AICore **每个应用同一时刻只服务一次推理**，并施加应用级推
 在 `android/app/build.gradle.kts` 中显式设置 `minSdk = 26`——Flutter 的默认值是 24。
 
 ```kotlin
-implementation("com.google.mlkit:genai-prompt:1.0.0-beta2")
+implementation("com.google.mlkit:genai-prompt:1.0.0-beta4")
 implementation("com.google.mlkit:genai-proofreading:1.0.0-beta1")
 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
 ```
@@ -154,11 +166,12 @@ adb logcat | grep -i aicore
 这是最需要一套流程的失败，因为至少四种互不相关的原因都会让应用显示这一句。按顺序排查；前两步不用接线。
 
 1. **先读应用自己的状态行。** 每一行下面都带着设备的原始回答——AICore 被问到并拒绝时是 `FeatureStatus=0`，根本调不通时是异常类名与消息。分区底部还有一行写明已安装的 AICore 版本与设备型号。这三项事实足以区分下面的每一种情况。
-2. **对比两项功能。** 它们的设备列表不同。「解释」用 Prompt API，其列表更窄；「改写建议」用校对 API，其列表宽得多。*在多数非 Pixel 硬件上，一行可用、另一行不可用才是预期结果*，不是故障——这也正是界面从不把「AI」当成一个整体开关的原因。
-3. **检查 bootloader。** `verifiedbootstate` 必须是 `green`，`flash.locked` 必须是 `1`。解锁的 bootloader 会以「不可用」失败，且不会提示这就是原因。
-4. **给准备过程时间和网络。** 刚完成设备初始化、重置过 AICore 或系统更新之后，该服务可能一直回答 `UNAVAILABLE`，直到它取回所需内容为止，有时还需要重启。要重新检查而不是直接下结论——设置里的**重新检查**按钮就是为此存在的。
-5. **核对 AICore 版本与设备。** 厂商通过自己的更新渠道分发 AICore，所以手机很新而它的 AICore 很旧是可能的。
-6. **最后才怀疑构建本身。** `logcat -s MyNihongoGenAi` 会打印每一次状态回答和每一次失败及其异常类。如果失败只出现在 release 构建而 debug 构建正常，先去看 [R8 那条实地记录](#实地记录)。
+2. **当错误是 `FEATURE_NOT_FOUND` 时，先看客户端库的版本。** 在 Gemini Nano v4 设备上——Galaxy Z Fold8 系列、Pixel 11 系列——任何早于 `1.0.0-beta4` 的 `genai-prompt` 从 `checkStatus()` 抛出的正是这个错误。它读起来像「本设备没有这项功能」，实际含义是「这个客户端问不了这台设备」。在诊断别的任何事情之前，先升级这个库。
+3. **对比两项功能。** 它们的设备列表不同。「解释」用 Prompt API，其列表更窄；「改写建议」用校对 API，其列表宽得多。一台设备在其中一份列表上而不在另一份上时，一行可用、另一行不可用是很平常的答案——这也正是界面从不把「AI」当成一个整体开关的原因。但它*并不自动*就是正确答案：请先做第 2 步。
+4. **检查 bootloader。** `verifiedbootstate` 必须是 `green`，`flash.locked` 必须是 `1`。解锁的 bootloader 会以「不可用」失败，且不会提示这就是原因。
+5. **给准备过程时间和网络。** 刚完成设备初始化、重置过 AICore 或系统更新之后，该服务可能一直回答 `UNAVAILABLE`，直到它取回所需内容为止，有时还需要重启。要重新检查而不是直接下结论——设置里的**重新检查**按钮就是为此存在的。
+6. **核对 AICore 版本与设备。** 厂商通过自己的更新渠道分发 AICore，所以手机很新而它的 AICore 很旧是可能的。
+7. **最后才怀疑构建本身。** `logcat -s MyNihongoGenAi` 会打印每一次状态回答和每一次失败及其异常类。如果失败只出现在 release 构建而 debug 构建正常，先去看 [R8 那条实地记录](#实地记录)。
 
 应用正是为此加了埋点：`GenAiChannel.status` 捕获自己的异常并回答 `unreachable`，附带异常类名，而不是让它们塌缩成 `unavailable`；同时通过清单里的 `<queries>` 条目读取 AICore 包版本。没有那个条目，在 API 30 及以上该包不可见，每台设备看起来都像没有装 AICore。
 
@@ -195,11 +208,17 @@ adb logcat | grep -i aicore
   | 解释（Prompt） | `GenAiException: [ErrorCode 606] AICore failed with error type 3-PREPARATION_ERROR and error code 606-FEATURE_NOT_FOUND: Feature 636 is not available.` |
   | 改写建议（校对） | 可以使用 |
 
-  **在这台硬件上，这就是预期的答案，而不是故障。** `FEATURE_NOT_FOUND` 是 AICore 在说：Prompt 这项功能在本设备上根本不存在——不是需要下载模型，也不是调用出了差错。这就是公布的设备列表在运行时的样子，它印证了下面那一段在一天前只能猜测的内容。同一台手机上校对功能可用，这正是两份 API 列表所预测的分裂。
+  **这里一开始读错了，而这条更正才是本记录有用的部分。** 原先的结论是：`FEATURE_NOT_FOUND` 是 AICore 在说 Prompt 这项功能在本设备上根本不存在，并且在非 Pixel 硬件上被拒绝就是预期结果。这两点都是错的。
+
+  Z Fold 8 **是**受支持的 Prompt API 设备：它在公布的 nano-v4 列表上，与 Z Flip8、Z Fold8 Ultra 和 Pixel 11 系列并列。这个错误的真正含义是：**客户端库太旧，无法与 nano-v4 设备对话**。`genai-prompt` `1.0.0-beta4`（2026-07-21）的发布说明是「修复了与 Gemini Nano v4 的兼容性」，并把 `checkStatus()` 抛出 `GenAiException` 列为症状。而应用当时钉在 `1.0.0-beta2`。
+
+  已在 `v0.3.2` 中通过升级这一个依赖修复。Kotlin 代码无需改动，这一点是用 `javap` 对比两个 AAR 核实过的，不是想当然。**尚未在设备上确认：** 本机没有三星硬件，所以已核实的是应用能够构建，而不是那一行变绿了。
+
+  有两点值得带到别的项目去。**公布的设备列表是关于设备的证据，不是关于你的客户端的**——运行时状态才是事实，但前提是库新到足以把问题问出口。还有，**看起来说得通的解释才是危险的那个**：「这台硬件不在列表上」符合当时掌握的每一条事实，被当作定论写了下来，并且让调查停了一天。
 
   这对应用改变了什么：什么都没有，而这正是要点。那一行显示的就是设备自己说的话，另一行照常工作，而**重新检查**可以在不切换开关的情况下再问一次。这对本页的读者改变了什么：下面那个猜测，现在是一次实测。
 
-- **三星 Galaxy Z Fold 8，2026-09-03 反馈：AICore 已安装，两项功能都显示「不可用」。** 未在此复现——本机没有三星设备——记录下来是因为这份反馈的*形状*才是有用的部分。两种最可能的原因都很平常，而不是故障：在上面那个核实日期，Prompt API 公布的设备列表只有 Pixel 10 系列；而走厂商自有更新渠道的 AICore 可能落后于手机本身。真正让它无法诊断的是应用，不是设备：所有失败路径都回答同一句话，于是「AICore 说不行」「调用抛异常」「这个构建看不见该包」三者无法区分。[诊断小节](#诊断本设备不支持)描述的埋点就是为这份反馈加的；**把公布的设备列表当作下限，把运行时状态当作事实**，并且预期在 Prompt API 不支持的硬件上校对功能仍然可用。
+- **三星 Galaxy Z Fold 8，2026-09-03 反馈：AICore 已安装，两项功能都显示「不可用」。** 未在此复现——本机没有三星设备——记录下来是因为这份反馈的*形状*才是有用的部分。这里猜测的两种原因——设备不在列表上，或 AICore 落后于手机——都是错的；上面那条记录里有实测出的原因和修复方式。真正让它无法诊断的是应用，不是设备：所有失败路径都回答同一句话，于是「AICore 说不行」「调用抛异常」「这个构建看不见该包」三者无法区分。[诊断小节](#诊断本设备不支持)描述的埋点就是为这份反馈加的；**把公布的设备列表当作下限，把运行时状态当作事实**，并且预期在 Prompt API 不支持的硬件上校对功能仍然可用。
 - 校对 API 拿到一个**正确**的句子时，会原样返回该句子，所以客户端必须自己比较并说「无需修改」——否则就是在告诉学习者他们正确的句子写错了。
 
 ## 如何刷新本页

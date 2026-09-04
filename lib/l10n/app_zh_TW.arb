@@ -499,5 +499,11 @@
   "aiFailedTimeout": "模型耗時過長，請再試一次。",
   "aiFailedTooLong": "這個句子對裝置端模型來說太長了。",
   "aiFailedGeneric": "無法為此生成內容。",
-  "aiHintDownload": "裝置端 AI 已開啟，但模型尚未下載。設定 › 裝置端 AI。"
+  "aiHintDownload": "裝置端 AI 已開啟，但模型尚未下載。設定 › 裝置端 AI。",
+  "historyTitle": "歷史記錄",
+  "historyEmpty": "這裡還沒有內容。你分析過的句子會記在本機，並隨學習進度同步。",
+  "historyDelete": "刪除",
+  "historyShow": "歷史記錄",
+  "writingSentenceN": "第 {n} 句",
+  "@writingSentenceN": { "placeholders": { "n": { "type": "int" } } }
 }

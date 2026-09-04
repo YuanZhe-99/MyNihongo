@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:my_nihongo/features/content/services/study_item_labels.dart';
+import 'package:my_nihongo/features/progress/models/history_entry.dart';
 import 'package:my_nihongo/features/progress/models/study_record.dart';
 import 'package:my_nihongo/l10n/app_localizations.dart';
 import 'package:my_nihongo/shared/services/sync_merge.dart';
@@ -47,6 +48,7 @@ void main() {
     required double width,
     required double height,
     StudyItemLabel dialogLabel = label,
+    RecordConflict<StudyRecord>? pair,
   }) async {
     tester.view.devicePixelRatio = 1.0;
     tester.view.physicalSize = Size(width, height);
@@ -65,7 +67,7 @@ void main() {
                 onPressed: () async {
                   chosen = await showStudyConflictDialog(
                     context,
-                    conflict,
+                    pair ?? conflict,
                     dialogLabel,
                   );
                 },
@@ -155,6 +157,53 @@ void main() {
     tester,
   ) async {
     await open(tester, width: 915, height: 412);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('a remembered sentence shows its text, not empty counters', (
+    tester,
+  ) async {
+    // A history record has none of the counter fields, so the ordinary block
+    // would describe every version as "correct 0 · wrong 0, stage fresh" and
+    // the learner would be choosing between two identical descriptions.
+    final at = DateTime.parse('2026-09-04T10:00:00.000Z');
+    final local = HistoryEntry(
+      id: 'lab:abc',
+      kind: HistoryKind.lab,
+      text: 'これは本です。',
+      at: at,
+    ).toRecord(null, at);
+    final remote = HistoryEntry(
+      id: 'lab:abc',
+      kind: HistoryKind.lab,
+      text: 'それは本です。',
+      at: at.add(const Duration(hours: 1)),
+    ).toRecord(null, at.add(const Duration(hours: 1)));
+
+    await open(
+      tester,
+      width: 412,
+      height: 915,
+      pair: RecordConflict<StudyRecord>(
+        id: 'lab:abc',
+        localRecord: local,
+        remoteRecord: remote,
+        displayName: 'lab:abc',
+      ),
+      dialogLabel: const StudyItemLabel(
+        title: 'これは本です。',
+        subtitle: '历史记录',
+        kind: StudyKind.history,
+      ),
+    );
+
+    expect(find.text('これは本です。'), findsWidgets);
+    expect(find.text('それは本です。'), findsOneWidget);
+    expect(
+      find.textContaining('答对'),
+      findsNothing,
+      reason: 'a remembered sentence has no answers to report',
+    );
     expect(tester.takeException(), isNull);
   });
 }

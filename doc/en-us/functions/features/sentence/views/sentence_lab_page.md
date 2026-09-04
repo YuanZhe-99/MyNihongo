@@ -15,15 +15,19 @@ Consumers: `router.dart`.
 |---|---|---|---|
 | `SentenceLabPage` | class | B | The lab page, optionally opened with a sentence to analyse. |
 | `_SentenceLabPageState.initState` | method | B | Schedule the first analysis when the page was opened with a sentence. |
-| `_analyze` | method | B | Analyse what is in the text field. |
-| [`build`](#build) | method | A | Build the page. |
-| `_buildResult` | method | B | Build the four result sections, plus the AI actions. |
+| `_analyze` | method | B | Analyse what is in the text field, and remember the sentence. |
+| [`build`](#build) | method | A | Build the page in one or two panes. |
+| `_buildInput` | method | B | The subtitle, the field and the analyse row, shared by both layouts. |
+| `_remember` | method | B | Add the analysed sentence to the history. |
+| `_openHistory` | method | B | Put a remembered sentence back in the field and analyse it. |
+| `_deleteHistory` | method | B | Forget one remembered sentence. |
 | `_AiResult` | class | B | One pending or finished answer from the on-device model. |
 | `_onAiChanged` | method | B | Rebuild when the on-device AI state changes. |
 | `dispose` | method | B | Stop following the AI service and cancel anything running. |
 | `_clearGenerated` | method | B | Forget every generated answer. |
 | [`_generate`](#generate) | method | A | Run one generation and file its outcome. |
-| `_canExplain` | getter | B | Whether the on-device model can be offered right now. |
+| `_canExplain` | getter | B | Whether an explanation can be offered: the Prompt API. |
+| `_canProofread` | getter | B | Whether a rewrite can be offered: the Proofreading API. |
 | [`_buildAiActions`](#aiactions) | method | A | Build the whole-sentence AI actions and their cards. |
 | `_explainIssue` | method | B | Explain one flagged issue. |
 | `_cardFor` | method | B | Build the card for one result, when there is one. |
@@ -33,6 +37,12 @@ Consumers: `router.dart`.
 ### `Widget build(BuildContext context)` <a id="build"></a>
 
 - **Kind:** method
+- **Layout note (v0.3.2):** the page is two panes when `canSplitLayout` passes against the whole
+  screen — the subtitle, field, buttons and history at `labInputPaneWidth` on the left, the analysis
+  in the rest — and one column otherwise, with the history behind an app-bar button. **The four
+  analysis sections stay one column inside the result pane at every size**; what the split adds is a
+  pane for the input, which the analysis does not refer to. Recorded in
+  [`../../../../adaptive-layout.md`](../../../../adaptive-layout.md).
 - **Purpose:** Lay the page out.
 - **Inputs:** The build context; watches `contentCatalogProvider`.
 - **Returns:** `Widget`.

@@ -18,7 +18,8 @@ Consumers: `shell_scaffold.dart` (`useNavigationRail`); `kana_page.dart` (`refer
 `canSplitLayout`, `columnCapacity` at `kanaTableMinWidth` and `ruleCardMinWidth`); `vocab_page.dart`
 and `grammar_page.dart` (`referenceColumnCount`, `listRowCount`); `learn_page.dart`
 (`canSplitLayout`, `columnCapacity` at `ruleCardMinWidth`); `settings_page.dart` (`canSplitLayout`,
-`shellContentWidth`, `settingsLeftPaneWidth`); every scrolling page (`shellListBottomInset`);
+`shellContentWidth`, `settingsLeftPaneWidth`); the sentence lab and writing practice
+(`labInputPaneWidth`); every scrolling page (`shellListBottomInset`);
 `adaptive_tile_grid.dart` (`listRowCount`, `listTileGap`).
 
 ## Declarations
@@ -34,6 +35,8 @@ and `grammar_page.dart` (`referenceColumnCount`, `listRowCount`); `learn_page.da
 | [`referenceColumnCount`](#referencecolumncount) | top-level function | A | Return the number of columns a vocabulary or grammar list renders. |
 | `listRowCount` | top-level function | B | Return how many rows a list of items needs at a column count; ragged last row included. |
 | `settingsLeftPaneWidth` | top-level function | B | Return the settings page's left pane width: 0.44 of the content, clamped 300–440, capped so the right pane keeps 280. |
+| `labResultPaneMinWidth` | top-level constant | B | The narrowest the sentence lab's analysis pane may be: 360. |
+| `labInputPaneWidth` | top-level function | B | Return the lab's and writing practice's input pane width: 0.40 of the content, clamped 320–460, capped so the result pane keeps 360. |
 
 ## Documentation
 

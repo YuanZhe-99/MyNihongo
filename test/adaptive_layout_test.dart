@@ -205,4 +205,37 @@ void main() {
       expect(578 - left, settingsRightPaneMinWidth);
     });
   });
+
+  group('sentence lab input pane width', () {
+    test('is proportional between its clamps', () {
+      // Z Fold 8 in landscape, less the rail.
+      expect(labInputPaneWidth(852), closeTo(340.8, 0.01));
+    });
+
+    test('clamps at both ends', () {
+      // A window narrow enough that 40% would fall under the floor, but wide
+      // enough that the floor still leaves the result pane its minimum.
+      expect(labInputPaneWidth(760), 320);
+      expect(labInputPaneWidth(1519), 460); // desktop, ceiling
+    });
+
+    test('never squeezes the result pane below its minimum', () {
+      // Z Fold 5 unfolded, less the rail: the input pane gives way rather than
+      // let the analysis become the harder half to read.
+      final input = labInputPaneWidth(578);
+      expect(input, 578 - labResultPaneMinWidth);
+      expect(578 - input, labResultPaneMinWidth);
+    });
+
+    test('the result pane keeps its minimum at every splitting width', () {
+      // Every geometry that splits at all, less the rail where there is one.
+      for (final width in [600.0, 623.0, 710.0, 852.0, 943.0, 1519.0]) {
+        expect(
+          width - labInputPaneWidth(width),
+          greaterThanOrEqualTo(labResultPaneMinWidth),
+          reason: 'at $width the analysis pane fell below its minimum',
+        );
+      }
+    });
+  });
 }

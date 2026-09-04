@@ -41,13 +41,13 @@ const masteredIntervalDays = 21;
 
 /// Which catalog a study record belongs to, derived from its id prefix.
 ///
-/// `profile` and `lesson` are not catalog items. They share the file, and the
-/// merge, because a second data module would mean a second remote file, a
-/// second backup entry and a second set of golden transcripts for state that
-/// is a handful of fields — see the decisions log in `PLAN.md`. The kinds that
-/// are studied are what [studiedKinds] names.
+/// `profile`, `lesson` and `history` are not catalog items. They share the
+/// file, and the merge, because a second data module would mean a second remote
+/// file, a second backup entry and a second set of golden transcripts for state
+/// that is a handful of fields — see the decisions log in `PLAN.md`. The kinds
+/// that are studied are what [studiedKinds] names.
 
-enum StudyKind { kana, vocab, grammar, profile, lesson, other }
+enum StudyKind { kana, vocab, grammar, profile, lesson, history, other }
 
 /// The kinds the review queue schedules. The others live in the same file but
 /// are not items anybody studies.
@@ -57,7 +57,8 @@ const studiedKinds = {StudyKind.kana, StudyKind.vocab, StudyKind.grammar};
 enum StudyStage { fresh, learning, mastered }
 
 /// Purpose: Derive the catalog a record id belongs to.
-/// Inputs: `id` — `kana:あ`, `vocab:watashi`, `grammar:desu`, and so on.
+/// Inputs: `id` — `kana:あ`, `vocab:watashi`, `grammar:desu`, `lab:<hash>`,
+/// and so on.
 /// Returns: `StudyKind`; [StudyKind.other] for a prefix this build does not
 /// know, so a record written by a newer build still loads and merges.
 /// Side effects: None.
@@ -72,6 +73,7 @@ StudyKind studyKindOf(String id) {
     'grammar' => StudyKind.grammar,
     'profile' => StudyKind.profile,
     'lesson' => StudyKind.lesson,
+    'lab' || 'writing' => StudyKind.history,
     _ => StudyKind.other,
   };
 }
@@ -442,9 +444,9 @@ class ProgressData {
 
   /// Every record that tracks a studied catalog item.
   ///
-  /// The learner profile and the lesson results share the file; neither is an
-  /// item, so neither belongs in a count of what has been studied or in the
-  /// review queue.
+  /// The learner profile, the lesson results and the sentence history share
+  /// the file; none of them is an item, so none belongs in a count of what has
+  /// been studied or in the review queue.
   Iterable<StudyRecord> get studyRecords =>
       records.where((record) => studiedKinds.contains(record.kind));
 

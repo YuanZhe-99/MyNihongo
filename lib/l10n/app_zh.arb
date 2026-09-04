@@ -499,5 +499,11 @@
   "aiFailedTimeout": "模型耗时过长，请再试一次。",
   "aiFailedTooLong": "这个句子对端侧模型来说太长了。",
   "aiFailedGeneric": "无法为此生成内容。",
-  "aiHintDownload": "端侧 AI 已打开，但模型尚未下载。设置 › 端侧 AI。"
+  "aiHintDownload": "端侧 AI 已打开，但模型尚未下载。设置 › 端侧 AI。",
+  "historyTitle": "历史记录",
+  "historyEmpty": "这里还没有内容。你分析过的句子会记在本机，并随学习进度同步。",
+  "historyDelete": "删除",
+  "historyShow": "历史记录",
+  "writingSentenceN": "第 {n} 句",
+  "@writingSentenceN": { "placeholders": { "n": { "type": "int" } } }
 }

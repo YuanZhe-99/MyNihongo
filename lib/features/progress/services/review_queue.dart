@@ -189,6 +189,7 @@ class ReviewQueue {
           );
         case StudyKind.profile:
         case StudyKind.lesson:
+        case StudyKind.history:
         case StudyKind.other:
           break;
       }

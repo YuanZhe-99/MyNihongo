@@ -4,7 +4,7 @@
 
 该模块刻意只依赖 `dart:core`——没有 Flutter 导入，`canSplitLayout` 接受两个 double 而不是 `Size`——因此每个辅助都可以直接单元测试（`test/adaptive_layout_test.dart`），而渲染结果由 `test/kana_layout_ui_test.dart`、`test/shell_nav_ui_test.dart` 和 `test/widget_test.dart` 在真实设备几何下单独覆盖。数字的推导在 [../../../adaptive-layout.md](../../../adaptive-layout.md)；本页记录声明。
 
-使用者：`shell_scaffold.dart`（`useNavigationRail`）；`kana_page.dart`（`referenceContentWidth`、`canSplitLayout`、以 `kanaTableMinWidth` 和 `ruleCardMinWidth` 调用的 `columnCapacity`）；`vocab_page.dart` 和 `grammar_page.dart`（`referenceColumnCount`、`listRowCount`）；`learn_page.dart`（`canSplitLayout`、以 `ruleCardMinWidth` 调用的 `columnCapacity`）；`settings_page.dart`（`canSplitLayout`、`shellContentWidth`、`settingsLeftPaneWidth`）；每个滚动页面（`shellListBottomInset`）；`adaptive_tile_grid.dart`（`listRowCount`、`listTileGap`）。
+使用者：`shell_scaffold.dart`（`useNavigationRail`）；`kana_page.dart`（`referenceContentWidth`、`canSplitLayout`、以 `kanaTableMinWidth` 和 `ruleCardMinWidth` 调用的 `columnCapacity`）；`vocab_page.dart` 和 `grammar_page.dart`（`referenceColumnCount`、`listRowCount`）；`learn_page.dart`（`canSplitLayout`、以 `ruleCardMinWidth` 调用的 `columnCapacity`）；`settings_page.dart`（`canSplitLayout`、`shellContentWidth`、`settingsLeftPaneWidth`）；句子实验室与写作练习（`labInputPaneWidth`）；每个滚动页面（`shellListBottomInset`）；`adaptive_tile_grid.dart`（`listRowCount`、`listTileGap`）。
 
 ## 声明
 
@@ -19,6 +19,8 @@
 | [`referenceColumnCount`](#referencecolumncount) | 顶层函数 | A | 返回单词或语法列表渲染的列数。 |
 | `listRowCount` | 顶层函数 | B | 返回一组条目在某列数下需要多少行；包含不满的最后一行。 |
 | `settingsLeftPaneWidth` | 顶层函数 | B | 返回设置页左面板宽度：内容的 0.44，夹在 300–440，并封顶以让右面板保留 280。 |
+| `labResultPaneMinWidth` | 顶层常量 | B | 句子实验室分析栏的最小宽度：360。 |
+| `labInputPaneWidth` | 顶层函数 | B | 返回实验室与写作练习输入栏的宽度：内容宽度的 0.40，夹在 320–460，再上限化以保证结果栏至少 360。 |
 
 ## 文档
 

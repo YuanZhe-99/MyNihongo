@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../features/content/services/study_item_labels.dart';
+import '../../features/progress/models/history_entry.dart';
 import '../../features/progress/models/learner_profile.dart';
 import '../../features/progress/models/study_record.dart';
 import '../../l10n/app_localizations.dart';
@@ -64,6 +65,9 @@ class StudyConflictDialog extends StatelessWidget {
     if (record.kind == StudyKind.profile) {
       return _profileVersion(l10n, heading, record);
     }
+    if (record.kind == StudyKind.history) {
+      return _historyVersion(l10n, heading, record);
+    }
     final stage = switch (record.stage) {
       StudyStage.fresh => l10n.stageFresh,
       StudyStage.learning => l10n.stageLearning,
@@ -84,6 +88,32 @@ class StudyConflictDialog extends StatelessWidget {
               ? l10n.syncNeverReviewed
               : l10n.syncLastReviewed(_formatTime(reviewed)),
         ),
+      ],
+    );
+  }
+
+  /// Purpose: Show one side of a remembered-sentence conflict.
+  /// Inputs: `l10n`, `heading`, `record`.
+  /// Returns: `Widget`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. A history record has
+  /// none of the counter fields either, and the only thing that distinguishes
+  /// two versions of one is the text and when it was written. The text is shown
+  /// in full rather than truncated: it is the whole content of the record the
+  /// learner is being asked to choose between.
+  Widget _historyVersion(
+    AppLocalizations l10n,
+    String heading,
+    StudyRecord record,
+  ) {
+    final entry = HistoryEntry.fromRecord(record);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(heading, style: const TextStyle(fontWeight: FontWeight.bold)),
+        Text(l10n.syncModifiedAt(_formatTime(record.modifiedAt))),
+        if (entry != null) Text(entry.text),
       ],
     );
   }

@@ -12,6 +12,54 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.3.2` — 2026-09-04. What a Galaxy Z Fold 8 found: an AI feature that was
+  never broken, a button that hid itself, and two pages that had never been
+  given a foldable.
+
+  **On-device explanations work on a Z Fold 8, and the earlier diagnosis was
+  wrong.** `0.3.1` reported `FEATURE_NOT_FOUND` there and recorded the cause as
+  "this hardware is not on the Prompt API's device list". It is on the list —
+  under Gemini Nano v4, alongside the Z Flip8, the Z Fold8 Ultra and the Pixel 11
+  family. What was too old was the **client library**: `genai-prompt` before
+  `1.0.0-beta4` throws exactly that error on a nano-v4 device, and the fix is one
+  line of Gradle. The Kotlin needed no change, checked with `javap` against both
+  published archives rather than assumed. Not confirmed on the device, because
+  there is no Samsung hardware here.
+
+  **A rewrite is offered whenever the proofreader works.** The two on-device
+  features have separate device lists, and the app knew that — Settings has said
+  so per feature since `0.3.0`. The pages did not: the sentence lab's rewrite
+  button sat inside a block that returned early when *explanations* were
+  unavailable, and writing practice's rewrite asked the Prompt API only. On a
+  Fold 8 that meant no AI at all, while Settings correctly reported one feature
+  as ready. Every button now follows the feature it actually uses. Writing
+  practice gains a proofreader path that corrects each sentence in turn, because
+  the system serves one request at a time.
+
+  **Writing practice shows what the sentence lab shows.** It drew unlabelled word
+  chips and a bare list of issues; it now draws the same four headed sections —
+  words, structure, grammar used, possible issues — through the same widget, one
+  per sentence. It was always the same analysis underneath. Only the presentation
+  was thinner, so anyone who had used the sentence lab met a worse version of an
+  answer they already knew how to read.
+
+  **Both pages remember what you typed.** A history list, newest first: tap to
+  bring a sentence back, tap to forget it. It syncs with everything else, because
+  the entries are ordinary progress records. **Only the text is stored** — the
+  analysis is recomputed each time, so it improves with the app, and nothing a
+  model generated is ever kept. An entry's identity is its own content, so
+  analysing the same sentence twice updates one row instead of adding another,
+  and two devices that analysed the same sentence merge rather than collide. A
+  hundred are kept per page; deleting one deletes it everywhere.
+
+  **Both pages use a foldable's width.** Unfolded, the prompt, the field and the
+  history move into a pane of their own beside the analysis. The analysis itself
+  stays one column at every size, which was always the point of the rule: the
+  four sections are a chain, and only the chain needed protecting — not the text
+  field sitting above it.
+
+  726 tests pass, up from 667. Writing practice had none before this release.
+
 - `0.3.1` — 2026-09-04. The three things Phase 3 had designed and never written,
   and a catalog that is finally complete.
 

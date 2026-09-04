@@ -153,10 +153,13 @@ class StudyCalendar extends ConsumerWidget {
 /// its first answer**. Both count, so the day somebody started a word shows up
 /// even after they have reviewed it since. The profile record is skipped: it
 /// is written once a day by the streak and would mark days nothing was
-/// studied on.
+/// studied on. The sentence history is skipped for the same reason: looking a
+/// sentence up is not answering anything, and a calendar that filled in on the
+/// strength of it would overstate what the learner did.
 Set<String> studiedDays(ProgressData progress) => {
   for (final record in progress.records)
-    if (studyKindOf(record.id) != StudyKind.profile) ...[
+    if (studyKindOf(record.id) != StudyKind.profile &&
+        studyKindOf(record.id) != StudyKind.history) ...[
       LearnerProfile.localDateKey(record.createdAt.toLocal()),
       if (record.lastReviewedAt case final at?)
         LearnerProfile.localDateKey(at.toLocal()),

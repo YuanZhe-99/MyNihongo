@@ -12,15 +12,19 @@
 |---|---|---|---|
 | `SentenceLabPage` | 类 | B | 实验室页面，可带一个待分析的句子打开。 |
 | `_SentenceLabPageState.initState` | 方法 | B | 当页面带句子打开时，安排第一次分析。 |
-| `_analyze` | 方法 | B | 分析输入框中的内容。 |
-| [`build`](#build) | 方法 | A | 构建页面。 |
-| `_buildResult` | 方法 | B | 构建四个结果部分，以及 AI 操作。 |
+| `_analyze` | 方法 | B | 分析输入框中的内容，并记住这个句子。 |
+| [`build`](#build) | 方法 | A | 以单栏或双栏构建页面。 |
+| `_buildInput` | 方法 | B | 副标题、输入框与分析行，由两种布局共用。 |
+| `_remember` | 方法 | B | 把分析过的句子加入历史记录。 |
+| `_openHistory` | 方法 | B | 把被记住的句子放回输入框并分析。 |
+| `_deleteHistory` | 方法 | B | 忘掉一条被记住的句子。 |
 | `_AiResult` | 类 | B | 端侧模型的一个待完成或已完成的回答。 |
 | `_onAiChanged` | 方法 | B | 端侧 AI 状态变化时重建。 |
 | `dispose` | 方法 | B | 停止跟随 AI 服务并取消正在进行的操作。 |
 | `_clearGenerated` | 方法 | B | 忘掉所有生成的回答。 |
 | [`_generate`](#generate) | 方法 | A | 运行一次生成并归档其结果。 |
-| `_canExplain` | getter | B | 此刻是否可以提供端侧模型。 |
+| `_canExplain` | getter | B | 此刻是否可以提供解释：Prompt API。 |
+| `_canProofread` | getter | B | 此刻是否可以提供改写：校对 API。 |
 | [`_buildAiActions`](#aiactions) | 方法 | A | 构建整句 AI 操作及其卡片。 |
 | `_explainIssue` | 方法 | B | 解释某条被标记的问题。 |
 | `_cardFor` | 方法 | B | 为某个结果构建卡片（如果有）。 |
@@ -29,6 +33,7 @@
 
 ### `Widget build(BuildContext context)` <a id="build"></a>
 
+- **布局说明（v0.3.2）：** 当 `canSplitLayout` 对整块屏幕判定通过时，页面分为两栏——左侧是副标题、输入框、按钮与历史记录，宽度为 `labInputPaneWidth`，分析占其余部分；否则为单列，历史记录移到顶栏按钮后面。**四个分析部分在任何尺寸下都留在结果栏内的单列中**；分栏新增的是输入那一栏，而分析并不引用它。已记入 [`../../../../adaptive-layout.md`](../../../../adaptive-layout.md)。
 - **种类：** 方法
 - **用途：** 排布页面。
 - **输入：** 构建 context；监听 `contentCatalogProvider`。

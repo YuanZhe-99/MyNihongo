@@ -10,7 +10,9 @@ devices. See [../../../sync.md](../../../sync.md).
 | library header | `library` | B | Let the user pick a winner when sync finds one record edited on two devices. |
 | `StudyConflictDialog` | constructor | B | Create a study conflict dialog instance. |
 | `StudyConflictDialog._formatTime` | static method | B | Format a UTC timestamp in the device's zone. |
-| `StudyConflictDialog._version` | method | B | Render one version's facts as a labelled block. |
+| `StudyConflictDialog._version` | method | B | Render one version's facts as a labelled block, dispatching by kind. |
+| `StudyConflictDialog._historyVersion` | method | B | Show one side of a remembered-sentence conflict. |
+| `StudyConflictDialog._profileVersion` | method | B | Show one side of a learner-profile conflict. |
 | `StudyConflictDialog.build` | method | B | Build the current widget subtree. |
 | `showStudyConflictDialog` | top-level function | A | Present one conflict and wait for the user's choice. |
 
@@ -26,6 +28,19 @@ devices. See [../../../sync.md](../../../sync.md).
   text button and the remote record from the filled button.
 - **Usage:** Called in a loop over `pending.allConflicts` by the WebDAV page.
 - **Notes:** There is no cancel action, and the barrier is inert, because resolution is
-  all-or-nothing: the caller treats null as "abort the whole sync", never as "keep local". Each
-  block shows the modification time in local time, the correct and wrong counts, the streak, the
-  derived stage, and when the item was last reviewed.
+  all-or-nothing: the caller treats null as "abort the whole sync", never as "keep local".
+
+**Three kinds of block, because not every record has counters.** `_version` dispatches on
+`record.kind`:
+
+- An ordinary item shows the modification time in local time, the correct and wrong counts, the
+  streak, the derived stage, and when it was last reviewed.
+- The **learner profile** (`profile:me`) shows the target level, the daily limits and the streak
+  instead. "Correct 0 · wrong 0, stage fresh" is not a description of a target level, and a conflict
+  the learner cannot read is a conflict they cannot resolve.
+- A **remembered sentence** (`lab:` or `writing:`, from `v0.3.2`) shows the timestamp and the text in
+  full. The text *is* the record, so truncating it would hide the only thing that tells the two
+  versions apart.
+
+Both blocks read their payload through the model's own `fromRecord`, so a record written by a newer
+build with fields this one cannot show still renders the ones it can.

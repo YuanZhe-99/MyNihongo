@@ -159,7 +159,7 @@
 | authored question | 手写题 | 为某单元写的题，带说明 |
 | generated question | 生成的题 | 由模型写的题，不进入调度器 |
 | reminder | 提醒 | 每日本地通知 |
-| writing practice | 写作练习 | 尚未构建 |
+| writing practice | 写作练习 | 单元的写作题 |
 | free response | 自由作答 | 键入的答案，非选择 |
 | overlay (content) | 叠加层 | 折入生成目录的手写内容，如中文释义、例句 |
 | authoring gate | 撰写门禁 | 合并前判定草稿的测试 |
@@ -228,6 +228,7 @@
 | reminder | 提醒 | 每日通知；默认关闭 |
 | study calendar | 学习日历 | 最近 12 周的学习天数格子 |
 | writing practice | 写作练习 | 单元的写作题 |
+| history | 历史记录 | 句子实验室与写作练习记住的输入 |
 | self-assessment | 自评 | 没有模型时由学习者自己判定 |
 | overlay | 叠加层 | 折进生成词表的中文与例句文件 |
 | content gate | 内容门禁 | 合并草稿前跑的检查 |

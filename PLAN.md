@@ -5,7 +5,7 @@ says how to work here; `doc/en-us/` says what the code does; this file says **wh
 what order, why, and what is done**. Update the checklists in the same change that lands a
 milestone item.
 
-**Status as of 2026-09-04:** **Phase 3 is complete** and is released as `v0.3.1`: M3.0 (device fixes), M3.1 (spaced repetition core), M3.2 (quiz modes), M3.3 (kana over kanji), M3.4 (the rest of the catalog), M3.5 (lesson path and reminders), M3.6 (AI-assisted practice) and M3.7 (scenario lessons, generated questions, writing practice routed) have all landed. The catalog is complete: grammar, Chinese glosses, example sentences and lesson units at every level from N5 to N1, with the coverage stated in `version-history.md`. What remains from Phase 3 is deliberately deferred rather than missing — the free-response translation mode and the scenario dialogue partner, both listed under M3.6. Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
+**Status as of 2026-09-04:** **Phase 3 is complete**, released as `v0.3.1` and polished by `v0.3.2` (M3.8 below — the on-device AI fix a Z Fold 8 found, plus history and a foldable layout for the two writing surfaces). Phase 3's milestones: M3.0 (device fixes), M3.1 (spaced repetition core), M3.2 (quiz modes), M3.3 (kana over kanji), M3.4 (the rest of the catalog), M3.5 (lesson path and reminders), M3.6 (AI-assisted practice) and M3.7 (scenario lessons, generated questions, writing practice routed) have all landed. The catalog is complete: grammar, Chinese glosses, example sentences and lesson units at every level from N5 to N1, with the coverage stated in `version-history.md`. What remains from Phase 3 is deliberately deferred rather than missing — the free-response translation mode and the scenario dialogue partner, both listed under M3.6. Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
 (text-to-speech), M2.2 (speech recognition and pronunciation feedback), M2.3 (the sentence lab),
 M2.4 (on-device AI assist) and M2.5 (Traditional Chinese) have landed, along with the Windows and
 macOS projects the pronunciation work needs a machine for. `v0.2.1` is the current release; M2.5 is
@@ -443,9 +443,12 @@ below all depend on speech.
       `FeatureStatus`), each row shows that line, a **Check again** button re-asks without toggling
       the switch, and the manifest's new `<queries>` entry lets the app report the installed AICore
       build and the device. `android-aicore.md` gains a diagnosis procedure and a Samsung field note.
-      **The most likely cause is not a bug:** the Prompt API's device list named only the Pixel 10
-      family at the last verification, while proofreading's is much wider — so one row ready and the
-      other not is the expected answer on that hardware
+      **Amended by M3.8: the guess recorded here was wrong.** The instrumentation did its job — it
+      produced `FEATURE_NOT_FOUND` rather than a bare "unavailable" — but the conclusion drawn from
+      it, that the Z Fold 8 is off the Prompt API's device list, was not. The device is on the
+      published nano-v4 list; the *client library* was too old to talk to a nano-v4 device, which
+      `genai-prompt` 1.0.0-beta4 fixes. One line of Gradle, found by reading the release notes this
+      very field note told the next agent to read
 - [x] Tests: `voice_ordering_test.dart`, `genai_backend_test.dart`, and new cases in
       `tts_service_test.dart` (probe ordering, re-apply per utterance, rebuild once, best-voice
       choice, preview restores), `speech_settings_tiles_test.dart`, `ai_assist_service_test.dart`,
@@ -717,6 +720,49 @@ they all hang off.
       invisible: the sentence simply failed to parse, with no error
 - [x] Chinese glosses reach **100% of all 7,744 words**, at every level
 
+#### M3.8 Device fixes and the two writing surfaces — **done 2026-09-04**, released as `v0.3.2`
+
+Four things a Galaxy Z Fold 8 asked for, taken before Phase 4 because two of them are defects and
+the other two are the pages Phase 4's 作文 section will be built on.
+
+- [x] **The Prompt API works on a Z Fold 8, and M3.0's diagnosis was wrong.** `genai-prompt` goes
+      from `1.0.0-beta2` to `1.0.0-beta4`, whose release note is "fixed compatibility with Gemini
+      Nano v4 … a `GenAiException` when `checkStatus()` is used". The Z Fold8 family **is** on the
+      published Prompt API device list, under nano-v4; the client was too old to ask. `javap` over
+      both AARs first confirmed that every member `GenAiChannel.kt` uses is unchanged, so the Kotlin
+      did not move. Debug **and release** builds verified — the release one because M2.4's R8 failure
+      was release-only. **Not confirmed on the device:** there is no Samsung hardware here
+- [x] **A rewrite is offered whenever proofreading works, even when explanations do not.** The
+      sentence lab's correction button sat inside a block that returned early on `!canExplain`, and
+      writing practice's rewrite was Prompt-only — so the Fold 8, whose Settings correctly said
+      proofreading was ready, was shown no AI at all. Each button is now gated on the feature it
+      actually uses. Writing practice gains a proofreader path that corrects each sentence **in
+      turn**, because AICore serves one inference at a time
+- [x] **History for both pages**, as `lab:<hash>` and `writing:<hash>` records in the progress file —
+      the `profile:me` pattern, so they sync, back up and reach the conflict dialog with no new
+      module. **The id is a hash of the content**, which is what makes re-analysing update one entry
+      rather than add a second, and what makes two devices that analysed the same sentence merge
+      instead of conflict. **Only the input is stored:** the analysis is recomputed, and generated
+      text is never written. A hundred per kind, pruned per kind, deleted for real
+- [x] **Writing practice shows the sentence lab's four sections**, through one shared
+      `AnalysisResultView`, rather than the unlabelled chips and bare issue list it drew before. It
+      was always the same pipeline; only the presentation was thinner, and a learner who had met the
+      lab met a worse version of an answer they already knew how to read
+- [x] **Both pages split on a foldable**: input, buttons and history in a pane at
+      `labInputPaneWidth`, the analysis in the rest, gated on `canSplitLayout`; the history behind an
+      app-bar sheet below the threshold. **The analysis chain stays one column at every size** — the
+      M2.3 exception was drawn too widely, and what it protects is the chain, not the text field
+- [x] Tests: `history_entry_test` (18, through real files for the cap and the prune),
+      `writing_rewrite_test` (7, including that the proofreader is driven sequentially),
+      `writing_practice_ui_test` (18 at the eight geometries — **the page had no test at all**), new
+      history and split cases in `sentence_lab_ui_test`, a per-feature fake backend in `ai_ui_test`
+      covering the proofreading-only device, `labInputPaneWidth` in `adaptive_layout_test`, and a
+      history record in `progress_json_test` and `study_conflict_dialog_test`. 726 tests pass
+- [x] Docs: `features/writing-practice.md` is new (the page was undocumented), `android-aicore.md`'s
+      Fold 8 field note is rewritten from a wrong conclusion into a measured one, and
+      `adaptive-layout.md`, `data-formats.md`, `features/sentence-lab.md`, `features/ai-assist.md`
+      and eleven `functions/` pages follow; both language trees
+
 ### Phase 4 — JLPT N5–N1 practice
 
 - [ ] Drill content per level and section: 文字・語彙, 文法, 読解, 聴解 (TTS-read passages),
@@ -871,6 +917,13 @@ they all hang off.
 | 2026-09-04 | Twenty-six N1 grammar points were dropped, not renamed, when their slug collided with N2 | Renaming keeps the count at the price of teaching the same pattern twice under two ids. The count is a number in a table; the duplicate is what a learner would actually meet |
 | 2026-09-04 | The classical layer went into `function_words.json`; missing ordinary words went into rewritten sentences | ぬ, ざる, べからざる, 極まりない and the rest **are** the N1 grammar points, so no example can avoid them. 東京, 顔 and 皆 are only scenery, and widening the dictionary for scenery widens everything downstream that reads it |
 | 2026-09-04 | A scenario added to a shipped lessons file is gated by turning that file back into a draft | `merge_drafts units` rewrites a whole level, so re-running it to add one conversation would be a far larger change than the conversation. Stripping the generated `zh_TW` is the only difference between the two shapes |
+| 2026-09-04 | `genai-prompt` is pinned to `1.0.0-beta4`, and a beta bump is treated as a possible bug fix rather than only a feature release | An older client throws `FEATURE_NOT_FOUND` from `checkStatus()` on every Gemini Nano v4 device, which is what a Z Fold 8 reported and what M3.0 wrote down as "this hardware is off the list". The device was on the list; the client could not ask. The release notes had said so a month before the report |
+| 2026-09-04 | Every AI button is gated on the feature it uses, never on "AI" | The Prompt and Proofreading APIs have separate device lists, so a device commonly has one and not the other. Gating both on explanations hid a working proofreader on exactly the hardware Settings was correctly reporting as ready — the app contradicted its own status page |
+| 2026-09-04 | The history is `lab:`/`writing:` **records** in the progress file, not a new module and not a local-only file | The same reasoning as `profile:me`: a record gets the per-record three-way merge, the conflict dialog, sync and backup for free, while a second module means a second remote file, a second backup entry and a second set of golden transcripts. Syncing it is what was asked for |
+| 2026-09-04 | A history id is a hash of its content, not a random id | Re-analysing the same sentence should update one entry rather than add a second, and two devices that analysed the same sentence should merge rather than conflict. Both fall out of a content key; neither is available with a random one. The unit is part of the key, so the same sentence written for two exercises stays two pieces of work |
+| 2026-09-04 | Only the input is stored in the history — never the analysis, never generated text | The analysis is a pure function of the text and the shipped catalog, so storing it would freeze an answer that the next release improves. Generated text is barred by the behavior contract, and a wrong answer kept is a wrong answer re-read |
+| 2026-09-04 | The sentence lab's single-column exception now covers the analysis chain, not the whole page | The chain is what must not be split: the structure refers to the words, the grammar to the structure. The text field and the history refer to nothing in it, so giving them their own pane leaves the chain exactly as it was and gives an unfolded phone something better to do with 933 dp than pad the margins |
+| 2026-09-04 | Writing practice renders through the sentence lab's own widget rather than its own thinner layout | It was always the same pipeline; only the presentation differed, so the second page was strictly a worse way to read an answer the learner already knew how to read. One widget also means the two cannot drift apart again |
 | 2026-09-03 | The sentence lab is a route outside the shell, not a sixth tab | The five tabs are the reference the app is built around; the lab is something done *to* a sentence you already have, and it is always entered with a purpose from somewhere else |
 
 ## 7. Open questions

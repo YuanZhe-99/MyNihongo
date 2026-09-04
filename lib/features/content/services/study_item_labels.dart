@@ -11,6 +11,7 @@ library;
 import 'dart:ui';
 
 import '../../kana/models/kana.dart';
+import '../../progress/models/history_entry.dart';
 import '../../progress/models/study_record.dart';
 import '../models/content_catalog.dart';
 
@@ -45,7 +46,9 @@ class StudyItemLabel {
 /// Inputs: `id` — a `kana:`, `vocab:`, `grammar:`, `profile:` or `lesson:` id;
 /// `catalog` — the parsed content, or null when it has not loaded; `locale` —
 /// the UI locale, which picks the language of the meaning shown; `profileName`
-/// — what to call the learner profile in the UI language.
+/// — what to call the learner profile in the UI language; `historyRecord` and
+/// `historyName` — the record itself and what to call its page, for a
+/// remembered sentence.
 /// Returns: `StudyItemLabel`; never null.
 /// Side effects: None.
 /// Notes: Vocabulary lookups go through `ContentCatalog.vocabById`, which is
@@ -53,12 +56,16 @@ class StudyItemLabel {
 /// its entry. The profile and lesson kinds share the progress file but name no
 /// catalog item, so they are resolved from their own sources rather than left
 /// to fall through to the raw id — a sync conflict has to say what is in
-/// conflict.
+/// conflict. A history record names no catalog item either, and its own text is
+/// the only thing identifying it, so the record is passed in rather than looked
+/// up: this function is given an id, and only its caller has the file.
 StudyItemLabel resolveStudyItemLabel(
   String id, {
   ContentCatalog? catalog,
   required Locale locale,
   String? profileName,
+  StudyRecord? historyRecord,
+  String? historyName,
 }) {
   final kind = studyKindOf(id);
   switch (kind) {
@@ -98,6 +105,15 @@ StudyItemLabel resolveStudyItemLabel(
     case StudyKind.profile:
       if (profileName != null) {
         return StudyItemLabel(title: profileName, kind: kind);
+      }
+    case StudyKind.history:
+      final entry = HistoryEntry.fromRecord(historyRecord);
+      if (entry != null) {
+        return StudyItemLabel(
+          title: entry.text,
+          subtitle: historyName,
+          kind: kind,
+        );
       }
     case StudyKind.lesson:
     case StudyKind.other:

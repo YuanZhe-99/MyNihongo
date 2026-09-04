@@ -1442,4 +1442,22 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get aiHintDownload =>
       'On-device AI is on, but the model is not downloaded yet. Settings › On-device AI.';
+
+  @override
+  String get historyTitle => 'History';
+
+  @override
+  String get historyEmpty =>
+      'Nothing here yet. What you analyse is remembered on this device and synced with your progress.';
+
+  @override
+  String get historyDelete => 'Delete';
+
+  @override
+  String get historyShow => 'History';
+
+  @override
+  String writingSentenceN(int n) {
+    return 'Sentence $n';
+  }
 }

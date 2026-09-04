@@ -2636,6 +2636,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'On-device AI is on, but the model is not downloaded yet. Settings › On-device AI.'**
   String get aiHintDownload;
+
+  /// No description provided for @historyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get historyTitle;
+
+  /// No description provided for @historyEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing here yet. What you analyse is remembered on this device and synced with your progress.'**
+  String get historyEmpty;
+
+  /// No description provided for @historyDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get historyDelete;
+
+  /// No description provided for @historyShow.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get historyShow;
+
+  /// No description provided for @writingSentenceN.
+  ///
+  /// In en, this message translates to:
+  /// **'Sentence {n}'**
+  String writingSentenceN(int n);
 }
 
 class _AppLocalizationsDelegate
