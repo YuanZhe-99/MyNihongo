@@ -7,6 +7,7 @@ import '../../features/ai/services/ai_assist_service.dart';
 import '../../features/content/models/jlpt_level.dart';
 import '../../features/kana/models/kana.dart';
 import '../../features/progress/services/nihongo_storage.dart';
+import '../../features/quiz/models/quiz_question.dart';
 import '../../features/speech/services/speech_recognition_service.dart';
 import '../../features/speech/services/tts_service.dart';
 import '../utils/adaptive_layout.dart';
@@ -36,6 +37,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     final ttsRate = await NihongoStorage.getTtsRate();
     final ttsVoice = await NihongoStorage.getTtsVoice();
     final ttsEngine = await NihongoStorage.getTtsEngine();
+    final quizModes = await NihongoStorage.getQuizModes();
     final speechNetworkFallback =
         await NihongoStorage.getSpeechNetworkFallback();
     final aiAssistEnabled = await NihongoStorage.getAiAssistEnabled();
@@ -67,6 +69,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
       ttsRate: ttsRate?.clamp(TtsService.minRate, TtsService.maxRate) ?? 1.0,
       ttsVoice: ttsVoice,
       ttsEngine: ttsEngine,
+      quizModes: _parseQuizModes(quizModes),
       speechNetworkFallback: speechNetworkFallback,
       aiAssistEnabled: aiAssistEnabled,
     );
@@ -180,6 +183,37 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     NihongoStorage.setTtsVoice(null);
   }
 
+  /// Purpose: Remember which quiz modes are switched on.
+  /// Inputs: `modes` — an empty set means every mode.
+  /// Returns: None.
+  /// Side effects: Persists the choice.
+  /// Notes: Stored as an absent key when every mode is on, so a later build
+  /// that adds a mode switches it on for anybody who never opted out. The
+  /// caller is responsible for not switching every mode off; the quiz would
+  /// have nothing to ask.
+  void setQuizModes(Set<QuizMode> modes) {
+    state = state.copyWith(quizModes: modes);
+    final all = modes.length == QuizMode.values.length;
+    NihongoStorage.setQuizModes(
+      modes.isEmpty || all ? null : modes.map((m) => m.name).join(','),
+    );
+  }
+
+  /// Purpose: Read a stored quiz-mode list.
+  /// Inputs: `stored` — the comma-joined names, or null.
+  /// Returns: `Set<QuizMode>`; empty for null, meaning every mode.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. A name this build does
+  /// not know is skipped rather than fatal: a preference written by a newer
+  /// build must not stop the app from starting.
+  static Set<QuizMode> _parseQuizModes(String? stored) {
+    if (stored == null || stored.isEmpty) return const {};
+    final byName = {for (final mode in QuizMode.values) mode.name: mode};
+    return {
+      for (final name in stored.split(',')) ?byName[name.trim()],
+    };
+  }
+
   /// Purpose: Allow or forbid a fallback to network speech recognition.
   /// Inputs: `allowed`.
   /// Returns: None.
@@ -267,6 +301,9 @@ class AppSettings {
   /// The chosen speech engine's package name; null uses the system default.
   final String? ttsEngine;
 
+  /// The quiz modes left switched on; empty means every mode.
+  final Set<QuizMode> quizModes;
+
   /// Whether the user allowed speech recognition to fall back to a network
   /// service. Off unless they turned it on.
   final bool speechNetworkFallback;
@@ -291,6 +328,7 @@ class AppSettings {
     this.ttsRate = 1.0,
     this.ttsVoice,
     this.ttsEngine,
+    this.quizModes = const {},
     this.speechNetworkFallback = false,
     this.aiAssistEnabled = false,
   });
@@ -315,6 +353,7 @@ class AppSettings {
     bool clearTtsVoice = false,
     String? ttsEngine,
     bool clearTtsEngine = false,
+    Set<QuizMode>? quizModes,
     bool? speechNetworkFallback,
     bool? aiAssistEnabled,
   }) {
@@ -330,6 +369,7 @@ class AppSettings {
       ttsRate: ttsRate ?? this.ttsRate,
       ttsVoice: clearTtsVoice ? null : (ttsVoice ?? this.ttsVoice),
       ttsEngine: clearTtsEngine ? null : (ttsEngine ?? this.ttsEngine),
+      quizModes: quizModes ?? this.quizModes,
       speechNetworkFallback:
           speechNetworkFallback ?? this.speechNetworkFallback,
       aiAssistEnabled: aiAssistEnabled ?? this.aiAssistEnabled,

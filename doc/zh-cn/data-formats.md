@@ -261,6 +261,7 @@
 | 朗读速度 | `storage_config.json` | 否 | 0.6-1.2，缺失表示 1.0（`ttsRate`） |
 | 选定的日语语音 | `storage_config.json` | 否 | 引擎的语音名，缺失表示可用的最佳日语语音（`ttsVoice`） |
 | 选定的语音引擎 | `storage_config.json` | 否 | 引擎包名，缺失表示系统默认引擎（`ttsEngine`） |
+| 启用的测验模式 | `storage_config.json` | 否 | 逗号连接的模式名，缺失表示全部模式（`quizModes`） |
 | 网络语音识别 | `storage_config.json` | 否 | 仅在开启时为 `true`；缺失表示仅离线（`speechNetworkFallback`） |
 | 端侧 AI 辅助 | `storage_config.json` | 否 | 仅在开启时为 `true`；缺失表示关闭（`aiAssistEnabled`） |
 | WebDAV 配置 | `webdav_config.json` | 否 | 仅本地密钥 / 配置 |

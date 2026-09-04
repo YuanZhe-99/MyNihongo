@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../l10n/app_localizations.dart';
+import '../../../shared/providers/app_settings.dart';
 import '../../../shared/providers/learner_profile_provider.dart';
 import '../../progress/services/review_queue.dart';
+import '../../quiz/models/quiz_config.dart';
 
 /// What there is to do today: the streak, what is due, and what is new.
 ///
 /// The first card on the Learn tab, and the one thing a returning learner
-/// should be able to read without scrolling. It states counts only; the
-/// buttons that act on them arrive with the quiz modes in M3.2.
+/// should be able to read without scrolling. Each count is also the button that
+/// acts on it, so starting a session is one tap from opening the app.
 class TodayCard extends ConsumerWidget {
   /// Purpose: Create the today card.
   /// Inputs: None.
@@ -77,10 +80,48 @@ class TodayCard extends ConsumerWidget {
             const SizedBox(height: 10),
             if (queue == null)
               const LinearProgressIndicator()
-            else
+            else ...[
               ..._lines(l10n, theme, queue),
+              if (!queue.isEmpty) ...[
+                const SizedBox(height: 12),
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    if (queue.due.isNotEmpty)
+                      FilledButton.icon(
+                        icon: const Icon(Icons.repeat, size: 18),
+                        label: Text(l10n.quizStartReviews),
+                        onPressed: () => _start(context, ref, const DueReviews()),
+                      ),
+                    if (queue.newIds.isNotEmpty)
+                      FilledButton.tonalIcon(
+                        icon: const Icon(Icons.add, size: 18),
+                        label: Text(l10n.quizStartNew),
+                        onPressed: () => _start(context, ref, const NewItems()),
+                      ),
+                  ],
+                ),
+              ],
+            ],
           ],
         ),
+      ),
+    );
+  }
+
+  /// Purpose: Open a quiz over the queue.
+  /// Inputs: `context`, `ref`, and which part of the queue.
+  /// Returns: None.
+  /// Side effects: Pushes the quiz route.
+  /// Notes: Internal helper used within this file only. Pushed rather than
+  /// navigated to, so finishing or leaving the quiz comes back here.
+  void _start(BuildContext context, WidgetRef ref, QuizSource source) {
+    context.push(
+      '/quiz',
+      extra: QuizConfig(
+        source: source,
+        modes: ref.read(appSettingsProvider).quizModes,
       ),
     );
   }

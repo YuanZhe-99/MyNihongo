@@ -116,6 +116,21 @@ lib/
       license_page.dart
       privacy_policy_page.dart
       settings_page.dart
+    quiz/
+      models/
+        quiz_config.dart
+        quiz_question.dart
+      services/
+        answer_checker.dart
+        distractors.dart
+        question_generator.dart
+        quiz_session.dart
+      views/
+        quiz_modes_page.dart
+        quiz_page.dart
+      widgets/
+        answer_panes.dart
+        quiz_runner.dart
     speech/
       models/voice_ordering.dart
       services/
@@ -198,6 +213,11 @@ assets/icon/                     app_icon.png + generated iOS sources (not bundl
 - `test/review_queue_test.dart` — 哪些到期、哪些是新的，包括「到期」按本地日历日判断，以及今日计数由记录推导而非存储。
 - `test/learner_profile_test.dart`、`test/record_answer_test.dart` — 档案经真实文件的往返，以及写入路径：一批一次保存、记录由首次作答创建、连续天数每天写一次，以及新版本写入的字段能在本版本编辑后存活。
 - `test/learn_today_ui_test.dart` — 今日卡片在每个指定几何下的表现，以及学习设置写入的是同步记录而不是设备偏好。
+- `test/question_generator_test.dart` — 针对**已发布**内容库的出题；关键用例是每个 N5 语法点至少能用一种方式出题，以及每道生成出来的题都可作答——四个互不相同的选项、恰好一个正确。
+- `test/distractors_test.dart` — 错误选项错得有道理：绝不是同义词、绝不重复同一个罗马字、绝不用泄露答案的词性。
+- `test/conjugator_test.dart` — 「选活用形」测验据以判分的正向活用，逐形式验证，包括行く与いい。
+- `test/quiz_session_test.dart` — 判分、重排与计分；关键用例是每个条目只记录首次作答，以及难缠的条目仍能让会话结束。
+- `test/quiz_page_ui_test.dart` — 测验在每个指定几何下的表现、分栏门槛，以及测验模式开关（含拒绝关掉最后一个）。
 
 ## 三类数据
 

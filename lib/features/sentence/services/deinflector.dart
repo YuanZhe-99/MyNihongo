@@ -1,4 +1,5 @@
 import '../models/function_word.dart';
+import 'godan_rows.dart';
 import 'lexicon.dart';
 
 /// One conjugable word recovered from an inflected stem.
@@ -54,12 +55,12 @@ class Deinflector {
       case StemShape.masuStem:
         // 食べ → 食べる (ichidan); 行き → 行く (godan, i-row → u-row).
         accept('$stemる', _ichidanOnly);
-        _godanFromRow(stem, _iRow, accept);
+        _godanFromRow(stem, godanIRow, accept);
         _acceptIrregular(stem, out, masu: true);
       case StemShape.naiStem:
         // 食べ → 食べる; 行か → 行く (a-row → u-row), with わ → う.
         accept('$stemる', _ichidanOnly);
-        _godanFromRow(stem, _aRow, accept);
+        _godanFromRow(stem, godanARow, accept);
         _acceptIrregular(stem, out, nai: true);
       case StemShape.teStem:
         // 食べ → 食べる; 行っ → 行く/言う/待つ/取る; 話し → 話す.
@@ -75,7 +76,7 @@ class Deinflector {
         if (stem.endsWith('れ')) {
           accept('${stem.substring(0, stem.length - 1)}るる', _ichidanOnly);
         }
-        _godanFromRow(stem, _eRow, accept);
+        _godanFromRow(stem, godanERow, accept);
       case StemShape.any:
       case StemShape.plain:
       case StemShape.dictionary:
@@ -114,58 +115,6 @@ class Deinflector {
   /// The classes an ichidan guess may resolve to.
   static const _ichidanOnly = {ConjClass.ichidan};
 
-  /// Godan rows, indexed by the class they belong to.
-  static const _uRow = {
-    ConjClass.godanU: 'う',
-    ConjClass.godanKu: 'く',
-    ConjClass.godanGu: 'ぐ',
-    ConjClass.godanSu: 'す',
-    ConjClass.godanTsu: 'つ',
-    ConjClass.godanNu: 'ぬ',
-    ConjClass.godanBu: 'ぶ',
-    ConjClass.godanMu: 'む',
-    ConjClass.godanRu: 'る',
-  };
-
-  /// The i-row kana each godan class inflects through: 行き, 話し, 飲み.
-  static const _iRow = {
-    ConjClass.godanU: 'い',
-    ConjClass.godanKu: 'き',
-    ConjClass.godanGu: 'ぎ',
-    ConjClass.godanSu: 'し',
-    ConjClass.godanTsu: 'ち',
-    ConjClass.godanNu: 'に',
-    ConjClass.godanBu: 'び',
-    ConjClass.godanMu: 'み',
-    ConjClass.godanRu: 'り',
-  };
-
-  /// The a-row: 行か, 話さ, 飲ま. `う` verbs use わ, not あ — 買わない.
-  static const _aRow = {
-    ConjClass.godanU: 'わ',
-    ConjClass.godanKu: 'か',
-    ConjClass.godanGu: 'が',
-    ConjClass.godanSu: 'さ',
-    ConjClass.godanTsu: 'た',
-    ConjClass.godanNu: 'な',
-    ConjClass.godanBu: 'ば',
-    ConjClass.godanMu: 'ま',
-    ConjClass.godanRu: 'ら',
-  };
-
-  /// The e-row: 行け, 話せ, 飲め.
-  static const _eRow = {
-    ConjClass.godanU: 'え',
-    ConjClass.godanKu: 'け',
-    ConjClass.godanGu: 'げ',
-    ConjClass.godanSu: 'せ',
-    ConjClass.godanTsu: 'て',
-    ConjClass.godanNu: 'ね',
-    ConjClass.godanBu: 'べ',
-    ConjClass.godanMu: 'め',
-    ConjClass.godanRu: 'れ',
-  };
-
   /// Purpose: Propose godan lemmas for a stem ending in a known row.
   /// Inputs: `stem`, the `row` table, and the `accept` sink.
   /// Returns: None.
@@ -183,7 +132,7 @@ class Deinflector {
     final head = stem.substring(0, stem.length - 1);
     for (final entry in row.entries) {
       if (entry.value != last) continue;
-      accept('$head${_uRow[entry.key]}', {entry.key});
+      accept('$head${godanURow[entry.key]}', {entry.key});
     }
   }
 

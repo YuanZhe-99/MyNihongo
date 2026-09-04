@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import '../features/grammar/views/grammar_page.dart';
 import '../features/kana/views/kana_page.dart';
 import '../features/learn/views/learn_page.dart';
+import '../features/quiz/models/quiz_config.dart';
+import '../features/quiz/views/quiz_page.dart';
 import '../features/sentence/views/sentence_lab_page.dart';
 import '../features/settings/views/settings_page.dart';
 import '../features/vocab/views/vocab_page.dart';
@@ -40,6 +42,13 @@ GoRouter buildAppRouter({String initialLocation = '/learn'}) => GoRouter(
     // built around, and the lab is something you do *to* a sentence you
     // already have. It is opened from Learn, from the reference pages and from
     // any example, and it takes the whole window so a long sentence has room.
+    // A quiz is entered with a purpose and left when it is finished, like the
+    // lab; it is not a place to browse, so it is not a tab.
+    GoRoute(
+      path: '/quiz',
+      builder: (context, state) =>
+          QuizPage(config: state.extra! as QuizConfig),
+    ),
     GoRoute(
       path: '/lab',
       builder: (context, state) =>

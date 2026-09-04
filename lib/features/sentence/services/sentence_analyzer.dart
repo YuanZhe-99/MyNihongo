@@ -22,12 +22,19 @@ import 'tokenizer.dart';
 /// one. See `doc/en-us/algorithms/sentence-analysis.md`.
 class SentenceAnalyzer {
   SentenceAnalyzer({
-    required Lexicon lexicon,
+    required this.lexicon,
     required ContentCatalog catalog,
     this.enhancer,
   }) : _tokenizer = Tokenizer(lexicon),
        _grammar = GrammarMatcher(catalog),
        _checks = SentenceChecks(lexicon.functionWordTable);
+
+  /// The surface-to-entry index this analyser parses with.
+  ///
+  /// Exposed so the quiz can ask how a word conjugates using the same index
+  /// the parser used. Two lexicons would eventually disagree, and a quiz that
+  /// graded against a different one would mark correct Japanese wrong.
+  final Lexicon lexicon;
 
   final Tokenizer _tokenizer;
   final GrammarMatcher _grammar;

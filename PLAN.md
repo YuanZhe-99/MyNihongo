@@ -5,7 +5,7 @@ says how to work here; `doc/en-us/` says what the code does; this file says **wh
 what order, why, and what is done**. Update the checklists in the same change that lands a
 milestone item.
 
-**Status as of 2026-09-03:** Phase 3 is in progress; M3.0 (device fixes) and M3.1 (spaced repetition core) have landed. Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
+**Status as of 2026-09-04:** Phase 3 is in progress; M3.0 (device fixes), M3.1 (spaced repetition core) and M3.2 (quiz modes) have landed. Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
 (text-to-speech), M2.2 (speech recognition and pronunciation feedback), M2.3 (the sentence lab),
 M2.4 (on-device AI assist) and M2.5 (Traditional Chinese) have landed, along with the Windows and
 macOS projects the pronunciation work needs a machine for. `v0.2.1` is the current release; M2.5 is
@@ -482,16 +482,43 @@ below all depend on speech.
 - [x] Tests: `sm2_scheduler_test`, `review_queue_test`, `learner_profile_test`, `record_answer_test`
       (through real files), `learn_today_ui_test` at all eight named geometries
 
-#### M3.2 Quiz modes (MojiTest-style)
+#### M3.2 Quiz modes (MojiTest-style) — **done 2026-09-04**
 
-- [ ] Vocabulary: JA → meaning (choice), meaning → JA (choice), reading → kanji, kanji → reading,
-      listening (TTS) → meaning, typing the reading; per-mode toggles
-- [ ] Kana: kana → romaji, romaji → kana, listening; row/table selection
-- [ ] Grammar: fill the particle, choose the conjugation, order the fragments, pick the pattern
-      that fits the context
-- [ ] Session summary and per-item history; wrong answers re-queued in the same session
-- [ ] Adaptive: question card fixed on the left pane, answer area right, on a split window;
-      stacked otherwise (same gate as the rest of the app)
+- [x] All thirteen modes, with per-mode switches in Settings › Learning › Quiz modes. **The last
+      mode on cannot be switched off** — a quiz with no modes opens empty and looks broken rather
+      than configured. `quizModes` is device-local: which ways of asking suit somebody depends on the
+      keyboard and the speaker in front of them
+- [x] Vocabulary: JA → meaning, meaning → JA, reading → written form, written form → reading,
+      listening, typing the reading. Kana: kana → romaji, romaji → kana, listening; the whole chart
+      in the script currently shown. Grammar: fill the particle, choose the form, order the pieces,
+      pick the grammar point
+- [x] **Amended: a question is generated or it is not.** Returning null is the normal case — most
+      words have no kanji, most have no example sentence, a thin level may have no three plausible
+      distractors. The generator is asked for each enabled mode in a shuffled order and the first
+      that works wins. Listening modes are dropped where the device has no Japanese voice, and the
+      grammar modes are dropped without the analyser, which is only awaited when one is enabled
+- [x] Distractors that are wrong for the right reason: same level and part of speech for meanings,
+      shared characters for written forms, the catalog's own `confusableWith` list for kana
+      (deduplicated **by romaji**, or じ and ぢ would both be "ji"), the fifteen N5 particles rather
+      than the whole function-word table, and same-level grammar points **whose own forms do not
+      appear in the sentence**
+- [x] **A forward conjugator**, which the analyser never had: `Deinflector` runs backwards because
+      parsing does. Four forms only — polite, negative, past, te — sharing the row tables with the
+      de-inflector so a quiz can never grade against a table the parser disagrees with. **An
+      inflected form turned out to be several tokens** (食べ + ます), so a conjugation question spans
+      the auxiliary chain and is skipped when the conjugator cannot reproduce what the sentence says
+- [x] Session: wrong answers re-queued at most twice, the right answer always shown after a wrong
+      one, first-try accuracy as the score, and the wrong list named through the catalog. **Only the
+      first answer to an item is recorded** — an item answered right on the third attempt within one
+      minute was not recalled, and telling the scheduler otherwise would be a lie about the learner
+- [x] Adaptive: question pane fixed at `quizQuestionPaneWidth`, answers in the rest, gated on
+      `canSplitLayout`; stacked otherwise. Recorded in `adaptive-layout.md`
+- [x] **The `InflectionForm` ARB gap from Phase 2 is closed** — 22 keys, so the sentence lab's token
+      chips stop printing English enum names in every language. The prompt handed to the on-device
+      model still uses the enum names, because that text is read by a model rather than a person
+- [x] Tests: `question_generator_test` against the **shipped** catalog (every N5 grammar point can
+      be asked at least one way; every generated question is answerable), `distractors_test`,
+      `conjugator_test`, `answer`/`quiz_session_test`, `quiz_page_ui_test` at all eight geometries
 
 #### M3.3 Lesson path (Duolingo-style)
 
@@ -649,6 +676,10 @@ catalog content, and never writes a progress record by itself — the learner's 
 | 2026-09-03 | The Traditional **content** is generated from the Simplified text and committed; the Traditional **UI** is hand-written | The content is 1,132 strings whose Simplified version is itself machine-authored and unreviewed — converting it changes nothing about how much it can be trusted. The UI is 274 strings a reader meets constantly, and Taiwan usage differs by vocabulary, which no conversion table can supply |
 | 2026-09-03 | The conversion is OpenCC's `s2tw` chain re-implemented in Dart, not `s2twp`, and not a character table | Phrases are what decide which Traditional character is right (干净 → 乾淨 but 干部 → 幹部), so a character table is wrong by construction; and `s2twp`'s Taiwan vocabulary table is mostly computing terms, which rewrote 连接 to 連線 and 对象 to 物件 inside a grammar note about which noun a particle connects |
 | 2026-09-03 | Japanese words quoted in the Chinese prose are listed in `preserve.txt` rather than detected | 来る is Japanese and must stay 来る, while 来 in the surrounding Chinese must become 來 — the same character, decided by which language the word belongs to, which no rule over adjacency can tell. The list is short, explicit, and a test fails when a shipped file contains the broken form |
+| 2026-09-04 | A question that cannot be built is skipped, never padded | Two identical options are two correct answers; a distractor that is not a real form of a word teaches the wrong thing. Every rule may return short, and the generator drops the question rather than filling it with something arbitrary |
+| 2026-09-04 | Forward conjugation is a separate class sharing the de-inflector's row tables | Parsing needs backwards, a quiz needs forwards, and two copies of the tables would eventually disagree — at which point the quiz would mark correct Japanese wrong |
+| 2026-09-04 | Only an item's first answer in a session reaches the scheduler | A wrong item is re-queued, and an item answered right on the third attempt one minute later was not recalled. Recording the retry would tell SM-2 the learner knows a word they had just got wrong |
+| 2026-09-04 | Kana distractors are deduplicated by romaji, not by kana | じ and ぢ are both "ji", and a romaji question offering both has two correct answers |
 | 2026-09-03 | The learner profile is a `profile:me` **record**, with its payload inside the record's `extraJson` | A top-level object in the same file lands in the container's `extraJson`, where the merge is a key-by-key union with local always winning and no conflict detection. As a record it gets the ordinary three-way merge and the conflict dialog. Putting the payload in `extraJson` rather than in new `StudyRecord` fields meant no model change, no golden re-recording, and an older build carrying a newer one's fields through untouched |
 | 2026-09-03 | A wrong answer costs 0.20 of ease, not SM-2's 0.54 | The textbook value assumes a 0–5 self-assessment, so its worst penalty is reserved for genuinely blank answers. With binary grading every mistake takes it, and three mistakes drop an item to the 1.3 floor — daily review forever, regardless of later performance. At 0.20 the same three reach 1.9 and the item recovers |
 | 2026-09-03 | `dueAt` is stored as a UTC instant but "due" is judged by local calendar day | The instant compares identically on every device and needs no timezone arithmetic on disk; the learner expects anything due today to be available all day, in their own day. The scheduler stores instants, the queue reads days |

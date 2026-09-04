@@ -862,6 +862,222 @@ class AppLocalizationsEn extends AppLocalizations {
   String get practiceAction => 'Practise';
 
   @override
+  String get quizTitle => 'Quiz';
+
+  @override
+  String get quizStartReviews => 'Start reviews';
+
+  @override
+  String get quizStartNew => 'Learn new items';
+
+  @override
+  String get quizThisLevel => 'Quiz this level';
+
+  @override
+  String get quizThisTable => 'Quiz these kana';
+
+  @override
+  String quizProgress(int done, int total) {
+    return '$done of $total';
+  }
+
+  @override
+  String get quizCheck => 'Check';
+
+  @override
+  String get quizContinue => 'Continue';
+
+  @override
+  String get quizCorrect => 'Correct';
+
+  @override
+  String get quizWrong => 'Not quite';
+
+  @override
+  String quizExpected(Object answer) {
+    return 'Answer: $answer';
+  }
+
+  @override
+  String get quizListenPrompt => 'Listen, then choose';
+
+  @override
+  String get quizTypeReadingHint => 'Type the reading';
+
+  @override
+  String get quizOrderPrompt => 'Put the pieces in order';
+
+  @override
+  String get quizOrderReset => 'Start over';
+
+  @override
+  String get quizConjugationPrompt => 'Which form belongs in the blank?';
+
+  @override
+  String get quizParticlePrompt => 'Which particle belongs in the blank?';
+
+  @override
+  String get quizPatternPrompt => 'Which grammar point does this use?';
+
+  @override
+  String get quizSummaryTitle => 'Session finished';
+
+  @override
+  String quizSummaryScore(int correct, int total) {
+    return '$correct of $total right first time';
+  }
+
+  @override
+  String get quizSummaryPerfect => 'Everything right first time.';
+
+  @override
+  String get quizSummaryReview => 'Worth another look';
+
+  @override
+  String get quizSummaryDone => 'Done';
+
+  @override
+  String get quizEmpty =>
+      'Nothing to ask about yet. Enable more quiz modes, or study some items first.';
+
+  @override
+  String get quizLeaveTitle => 'Leave the quiz?';
+
+  @override
+  String get quizLeaveBody =>
+      'Answers already given are kept. The rest of the session is discarded.';
+
+  @override
+  String get quizLeaveConfirm => 'Leave';
+
+  @override
+  String get quizModesTitle => 'Quiz modes';
+
+  @override
+  String get quizModesBody =>
+      'Switch off any way of asking you would rather not see. A mode that this device or this word cannot support is skipped anyway.';
+
+  @override
+  String get quizModesVocab => 'Vocabulary';
+
+  @override
+  String get quizModesKana => 'Kana';
+
+  @override
+  String get quizModesGrammar => 'Grammar';
+
+  @override
+  String get quizModesNoneWarning => 'At least one mode has to stay on.';
+
+  @override
+  String get quizModeVocabJaToMeaning => 'Japanese to meaning';
+
+  @override
+  String get quizModeVocabMeaningToJa => 'Meaning to Japanese';
+
+  @override
+  String get quizModeVocabReadingToKanji => 'Reading to written form';
+
+  @override
+  String get quizModeVocabKanjiToReading => 'Written form to reading';
+
+  @override
+  String get quizModeVocabListening => 'Listening';
+
+  @override
+  String get quizModeVocabTypeReading => 'Type the reading';
+
+  @override
+  String get quizModeKanaToRomaji => 'Kana to romaji';
+
+  @override
+  String get quizModeRomajiToKana => 'Romaji to kana';
+
+  @override
+  String get quizModeKanaListening => 'Listening';
+
+  @override
+  String get quizModeGrammarParticle => 'Fill in the particle';
+
+  @override
+  String get quizModeGrammarConjugation => 'Choose the form';
+
+  @override
+  String get quizModeGrammarOrder => 'Order the pieces';
+
+  @override
+  String get quizModeGrammarPattern => 'Pick the grammar point';
+
+  @override
+  String get formDictionary => 'dictionary';
+
+  @override
+  String get formMasuStem => 'masu stem';
+
+  @override
+  String get formNaiStem => 'nai stem';
+
+  @override
+  String get formTeStem => 'te stem';
+
+  @override
+  String get formEStem => 'e stem';
+
+  @override
+  String get formPolite => 'polite';
+
+  @override
+  String get formNegative => 'negative';
+
+  @override
+  String get formPast => 'past';
+
+  @override
+  String get formTe => 'te form';
+
+  @override
+  String get formTai => 'want to';
+
+  @override
+  String get formPotential => 'potential';
+
+  @override
+  String get formPassive => 'passive';
+
+  @override
+  String get formCausative => 'causative';
+
+  @override
+  String get formImperative => 'imperative';
+
+  @override
+  String get formVolitional => 'volitional';
+
+  @override
+  String get formConditionalBa => 'conditional ba';
+
+  @override
+  String get formConditionalTara => 'conditional tara';
+
+  @override
+  String get formTari => 'tari';
+
+  @override
+  String get formNagara => 'while';
+
+  @override
+  String get formAdverbial => 'adverbial';
+
+  @override
+  String get formAttributive => 'attributive';
+
+  @override
+  String get formProgressive => 'progressive';
+
+  @override
+  String get formRequest => 'request';
+
+  @override
   String get labTitle => 'Sentence lab';
 
   @override

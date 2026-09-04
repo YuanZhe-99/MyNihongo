@@ -1593,6 +1593,420 @@ abstract class AppLocalizations {
   /// **'Practise'**
   String get practiceAction;
 
+  /// No description provided for @quizTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz'**
+  String get quizTitle;
+
+  /// No description provided for @quizStartReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'Start reviews'**
+  String get quizStartReviews;
+
+  /// No description provided for @quizStartNew.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn new items'**
+  String get quizStartNew;
+
+  /// No description provided for @quizThisLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz this level'**
+  String get quizThisLevel;
+
+  /// No description provided for @quizThisTable.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz these kana'**
+  String get quizThisTable;
+
+  /// No description provided for @quizProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {total}'**
+  String quizProgress(int done, int total);
+
+  /// No description provided for @quizCheck.
+  ///
+  /// In en, this message translates to:
+  /// **'Check'**
+  String get quizCheck;
+
+  /// No description provided for @quizContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get quizContinue;
+
+  /// No description provided for @quizCorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct'**
+  String get quizCorrect;
+
+  /// No description provided for @quizWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite'**
+  String get quizWrong;
+
+  /// No description provided for @quizExpected.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer: {answer}'**
+  String quizExpected(Object answer);
+
+  /// No description provided for @quizListenPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Listen, then choose'**
+  String get quizListenPrompt;
+
+  /// No description provided for @quizTypeReadingHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Type the reading'**
+  String get quizTypeReadingHint;
+
+  /// No description provided for @quizOrderPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Put the pieces in order'**
+  String get quizOrderPrompt;
+
+  /// No description provided for @quizOrderReset.
+  ///
+  /// In en, this message translates to:
+  /// **'Start over'**
+  String get quizOrderReset;
+
+  /// No description provided for @quizConjugationPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Which form belongs in the blank?'**
+  String get quizConjugationPrompt;
+
+  /// No description provided for @quizParticlePrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Which particle belongs in the blank?'**
+  String get quizParticlePrompt;
+
+  /// No description provided for @quizPatternPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Which grammar point does this use?'**
+  String get quizPatternPrompt;
+
+  /// No description provided for @quizSummaryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Session finished'**
+  String get quizSummaryTitle;
+
+  /// No description provided for @quizSummaryScore.
+  ///
+  /// In en, this message translates to:
+  /// **'{correct} of {total} right first time'**
+  String quizSummaryScore(int correct, int total);
+
+  /// No description provided for @quizSummaryPerfect.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything right first time.'**
+  String get quizSummaryPerfect;
+
+  /// No description provided for @quizSummaryReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Worth another look'**
+  String get quizSummaryReview;
+
+  /// No description provided for @quizSummaryDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get quizSummaryDone;
+
+  /// No description provided for @quizEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing to ask about yet. Enable more quiz modes, or study some items first.'**
+  String get quizEmpty;
+
+  /// No description provided for @quizLeaveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave the quiz?'**
+  String get quizLeaveTitle;
+
+  /// No description provided for @quizLeaveBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Answers already given are kept. The rest of the session is discarded.'**
+  String get quizLeaveBody;
+
+  /// No description provided for @quizLeaveConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave'**
+  String get quizLeaveConfirm;
+
+  /// No description provided for @quizModesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz modes'**
+  String get quizModesTitle;
+
+  /// No description provided for @quizModesBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch off any way of asking you would rather not see. A mode that this device or this word cannot support is skipped anyway.'**
+  String get quizModesBody;
+
+  /// No description provided for @quizModesVocab.
+  ///
+  /// In en, this message translates to:
+  /// **'Vocabulary'**
+  String get quizModesVocab;
+
+  /// No description provided for @quizModesKana.
+  ///
+  /// In en, this message translates to:
+  /// **'Kana'**
+  String get quizModesKana;
+
+  /// No description provided for @quizModesGrammar.
+  ///
+  /// In en, this message translates to:
+  /// **'Grammar'**
+  String get quizModesGrammar;
+
+  /// No description provided for @quizModesNoneWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'At least one mode has to stay on.'**
+  String get quizModesNoneWarning;
+
+  /// No description provided for @quizModeVocabJaToMeaning.
+  ///
+  /// In en, this message translates to:
+  /// **'Japanese to meaning'**
+  String get quizModeVocabJaToMeaning;
+
+  /// No description provided for @quizModeVocabMeaningToJa.
+  ///
+  /// In en, this message translates to:
+  /// **'Meaning to Japanese'**
+  String get quizModeVocabMeaningToJa;
+
+  /// No description provided for @quizModeVocabReadingToKanji.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading to written form'**
+  String get quizModeVocabReadingToKanji;
+
+  /// No description provided for @quizModeVocabKanjiToReading.
+  ///
+  /// In en, this message translates to:
+  /// **'Written form to reading'**
+  String get quizModeVocabKanjiToReading;
+
+  /// No description provided for @quizModeVocabListening.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening'**
+  String get quizModeVocabListening;
+
+  /// No description provided for @quizModeVocabTypeReading.
+  ///
+  /// In en, this message translates to:
+  /// **'Type the reading'**
+  String get quizModeVocabTypeReading;
+
+  /// No description provided for @quizModeKanaToRomaji.
+  ///
+  /// In en, this message translates to:
+  /// **'Kana to romaji'**
+  String get quizModeKanaToRomaji;
+
+  /// No description provided for @quizModeRomajiToKana.
+  ///
+  /// In en, this message translates to:
+  /// **'Romaji to kana'**
+  String get quizModeRomajiToKana;
+
+  /// No description provided for @quizModeKanaListening.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening'**
+  String get quizModeKanaListening;
+
+  /// No description provided for @quizModeGrammarParticle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fill in the particle'**
+  String get quizModeGrammarParticle;
+
+  /// No description provided for @quizModeGrammarConjugation.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the form'**
+  String get quizModeGrammarConjugation;
+
+  /// No description provided for @quizModeGrammarOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'Order the pieces'**
+  String get quizModeGrammarOrder;
+
+  /// No description provided for @quizModeGrammarPattern.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick the grammar point'**
+  String get quizModeGrammarPattern;
+
+  /// No description provided for @formDictionary.
+  ///
+  /// In en, this message translates to:
+  /// **'dictionary'**
+  String get formDictionary;
+
+  /// No description provided for @formMasuStem.
+  ///
+  /// In en, this message translates to:
+  /// **'masu stem'**
+  String get formMasuStem;
+
+  /// No description provided for @formNaiStem.
+  ///
+  /// In en, this message translates to:
+  /// **'nai stem'**
+  String get formNaiStem;
+
+  /// No description provided for @formTeStem.
+  ///
+  /// In en, this message translates to:
+  /// **'te stem'**
+  String get formTeStem;
+
+  /// No description provided for @formEStem.
+  ///
+  /// In en, this message translates to:
+  /// **'e stem'**
+  String get formEStem;
+
+  /// No description provided for @formPolite.
+  ///
+  /// In en, this message translates to:
+  /// **'polite'**
+  String get formPolite;
+
+  /// No description provided for @formNegative.
+  ///
+  /// In en, this message translates to:
+  /// **'negative'**
+  String get formNegative;
+
+  /// No description provided for @formPast.
+  ///
+  /// In en, this message translates to:
+  /// **'past'**
+  String get formPast;
+
+  /// No description provided for @formTe.
+  ///
+  /// In en, this message translates to:
+  /// **'te form'**
+  String get formTe;
+
+  /// No description provided for @formTai.
+  ///
+  /// In en, this message translates to:
+  /// **'want to'**
+  String get formTai;
+
+  /// No description provided for @formPotential.
+  ///
+  /// In en, this message translates to:
+  /// **'potential'**
+  String get formPotential;
+
+  /// No description provided for @formPassive.
+  ///
+  /// In en, this message translates to:
+  /// **'passive'**
+  String get formPassive;
+
+  /// No description provided for @formCausative.
+  ///
+  /// In en, this message translates to:
+  /// **'causative'**
+  String get formCausative;
+
+  /// No description provided for @formImperative.
+  ///
+  /// In en, this message translates to:
+  /// **'imperative'**
+  String get formImperative;
+
+  /// No description provided for @formVolitional.
+  ///
+  /// In en, this message translates to:
+  /// **'volitional'**
+  String get formVolitional;
+
+  /// No description provided for @formConditionalBa.
+  ///
+  /// In en, this message translates to:
+  /// **'conditional ba'**
+  String get formConditionalBa;
+
+  /// No description provided for @formConditionalTara.
+  ///
+  /// In en, this message translates to:
+  /// **'conditional tara'**
+  String get formConditionalTara;
+
+  /// No description provided for @formTari.
+  ///
+  /// In en, this message translates to:
+  /// **'tari'**
+  String get formTari;
+
+  /// No description provided for @formNagara.
+  ///
+  /// In en, this message translates to:
+  /// **'while'**
+  String get formNagara;
+
+  /// No description provided for @formAdverbial.
+  ///
+  /// In en, this message translates to:
+  /// **'adverbial'**
+  String get formAdverbial;
+
+  /// No description provided for @formAttributive.
+  ///
+  /// In en, this message translates to:
+  /// **'attributive'**
+  String get formAttributive;
+
+  /// No description provided for @formProgressive.
+  ///
+  /// In en, this message translates to:
+  /// **'progressive'**
+  String get formProgressive;
+
+  /// No description provided for @formRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'request'**
+  String get formRequest;
+
   /// No description provided for @labTitle.
   ///
   /// In en, this message translates to:

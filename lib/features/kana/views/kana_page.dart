@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../l10n/app_localizations.dart';
+import '../../quiz/models/quiz_config.dart';
 import '../../../shared/providers/app_settings.dart';
 import '../../../shared/utils/adaptive_layout.dart';
 import '../../../shared/widgets/content_sheets.dart';
@@ -135,7 +137,30 @@ class _KanaPageState extends ConsumerState<KanaPage> {
     final rules = _buildRules(theme, l10n);
 
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.kanaTitle)),
+      appBar: AppBar(
+        title: Text(l10n.kanaTitle),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.quiz_outlined),
+            tooltip: l10n.quizThisTable,
+            // Every row of every table, in the script currently shown. Picking
+            // individual rows is a control the chart has no room for; a learner
+            // who wants a subset can use the level quizzes instead.
+            onPressed: () => context.push(
+              '/quiz',
+              extra: QuizConfig(
+                source: KanaRows(
+                  basic: List.generate(kanaBasicRows.length, (i) => i),
+                  voiced: List.generate(kanaVoicedRows.length, (i) => i),
+                  yoon: List.generate(kanaYoonRows.length, (i) => i),
+                  script: _script,
+                ),
+                modes: ref.read(appSettingsProvider).quizModes,
+              ),
+            ),
+          ),
+        ],
+      ),
       body: ListView(
         padding: EdgeInsets.fromLTRB(
           16,

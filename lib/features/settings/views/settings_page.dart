@@ -14,6 +14,7 @@ import '../../../shared/views/webdav_config_page.dart';
 import '../../ai/widgets/ai_settings_tiles.dart';
 import '../../progress/services/nihongo_storage.dart';
 import '../../learn/widgets/learning_settings_tiles.dart';
+import '../../quiz/views/quiz_modes_page.dart';
 import '../../speech/widgets/speech_settings_tiles.dart';
 import 'backup_page.dart';
 import 'license_page.dart' as app_license;
@@ -23,7 +24,7 @@ import 'privacy_policy_page.dart';
 ///
 /// Only these participate in the two-pane layout. Everything else on the page
 /// is an inline control (the ZIP export and import rows act in place).
-enum _SettingsDetail { webdav, backup, privacy, license }
+enum _SettingsDetail { quizModes, webdav, backup, privacy, license }
 
 class SettingsPage extends ConsumerStatefulWidget {
   /// Purpose: Create a settings page instance.
@@ -205,6 +206,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
   /// `canPop == false`, so the hosted page's app bar grows no back arrow.
   Widget _detailPage(_SettingsDetail detail) {
     return switch (detail) {
+      _SettingsDetail.quizModes => const QuizModesPage(),
       _SettingsDetail.webdav => const WebDAVConfigPage(),
       _SettingsDetail.backup => const BackupPage(),
       _SettingsDetail.privacy => const PrivacyPolicyPage(),
@@ -414,7 +416,16 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
         // Above Speech because it is the section a learner returns to, and
         // unlike every other section here its values are synced rather than
         // device-local.
-        _buildSection(l10n.settingsLearning, const [LearningSettingsTiles()]),
+        _buildSection(l10n.settingsLearning, [
+          const LearningSettingsTiles(),
+          ListTile(
+            leading: const Icon(Icons.quiz_outlined),
+            title: Text(l10n.quizModesTitle),
+            trailing: const Icon(Icons.chevron_right),
+            selected: _twoPane && _detail == _SettingsDetail.quizModes,
+            onTap: () => _open(_SettingsDetail.quizModes),
+          ),
+        ]),
 
         // ── Speech ──
         _buildSection(l10n.speechSection, const [SpeechSettingsTiles()]),

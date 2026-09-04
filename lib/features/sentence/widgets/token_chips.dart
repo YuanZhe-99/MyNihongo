@@ -6,6 +6,7 @@ import '../../content/models/content_catalog.dart';
 import '../../content/models/localized_strings.dart';
 import '../models/sentence_analysis.dart';
 import '../models/token.dart';
+import 'form_labels.dart';
 
 /// The sentence as a row of tappable word chips.
 ///
@@ -63,7 +64,7 @@ class TokenChips extends StatelessWidget {
     final colors = _colorsFor(theme, token.category);
     final forms = token.forms.isEmpty
         ? null
-        : token.forms.map((f) => f.name).join(' + ');
+        : formChainLabel(l10n, token.forms);
     return InkWell(
       borderRadius: BorderRadius.circular(8),
       onTap: () => _open(context, token),

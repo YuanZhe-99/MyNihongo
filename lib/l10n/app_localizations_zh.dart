@@ -833,6 +833,219 @@ class AppLocalizationsZh extends AppLocalizations {
   String get practiceAction => '练习';
 
   @override
+  String get quizTitle => '测验';
+
+  @override
+  String get quizStartReviews => '开始复习';
+
+  @override
+  String get quizStartNew => '学习新内容';
+
+  @override
+  String get quizThisLevel => '测验本级别';
+
+  @override
+  String get quizThisTable => '测验这些假名';
+
+  @override
+  String quizProgress(int done, int total) {
+    return '第 $done / $total 题';
+  }
+
+  @override
+  String get quizCheck => '检查';
+
+  @override
+  String get quizContinue => '继续';
+
+  @override
+  String get quizCorrect => '正确';
+
+  @override
+  String get quizWrong => '还差一点';
+
+  @override
+  String quizExpected(Object answer) {
+    return '答案：$answer';
+  }
+
+  @override
+  String get quizListenPrompt => '先听，再选';
+
+  @override
+  String get quizTypeReadingHint => '输入读音';
+
+  @override
+  String get quizOrderPrompt => '把各部分排好顺序';
+
+  @override
+  String get quizOrderReset => '重新排';
+
+  @override
+  String get quizConjugationPrompt => '空格里该填哪个形式？';
+
+  @override
+  String get quizParticlePrompt => '空格里该填哪个助词？';
+
+  @override
+  String get quizPatternPrompt => '这句用了哪个语法点？';
+
+  @override
+  String get quizSummaryTitle => '本次结束';
+
+  @override
+  String quizSummaryScore(int correct, int total) {
+    return '首次答对 $correct / $total';
+  }
+
+  @override
+  String get quizSummaryPerfect => '全部一次答对。';
+
+  @override
+  String get quizSummaryReview => '值得再看一遍';
+
+  @override
+  String get quizSummaryDone => '完成';
+
+  @override
+  String get quizEmpty => '暂时没有可出的题。可以打开更多测验模式，或先学一些内容。';
+
+  @override
+  String get quizLeaveTitle => '离开测验？';
+
+  @override
+  String get quizLeaveBody => '已作答的部分会保留，本次剩下的题目将被放弃。';
+
+  @override
+  String get quizLeaveConfirm => '离开';
+
+  @override
+  String get quizModesTitle => '测验模式';
+
+  @override
+  String get quizModesBody => '可以关掉你不想遇到的出题方式。本设备或某个词支持不了的模式，本来就会被跳过。';
+
+  @override
+  String get quizModesVocab => '单词';
+
+  @override
+  String get quizModesKana => '假名';
+
+  @override
+  String get quizModesGrammar => '语法';
+
+  @override
+  String get quizModesNoneWarning => '至少要保留一种模式。';
+
+  @override
+  String get quizModeVocabJaToMeaning => '日语 → 词义';
+
+  @override
+  String get quizModeVocabMeaningToJa => '词义 → 日语';
+
+  @override
+  String get quizModeVocabReadingToKanji => '读音 → 写法';
+
+  @override
+  String get quizModeVocabKanjiToReading => '写法 → 读音';
+
+  @override
+  String get quizModeVocabListening => '听力';
+
+  @override
+  String get quizModeVocabTypeReading => '输入读音';
+
+  @override
+  String get quizModeKanaToRomaji => '假名 → 罗马字';
+
+  @override
+  String get quizModeRomajiToKana => '罗马字 → 假名';
+
+  @override
+  String get quizModeKanaListening => '听力';
+
+  @override
+  String get quizModeGrammarParticle => '填助词';
+
+  @override
+  String get quizModeGrammarConjugation => '选活用形';
+
+  @override
+  String get quizModeGrammarOrder => '排序';
+
+  @override
+  String get quizModeGrammarPattern => '选语法点';
+
+  @override
+  String get formDictionary => '辞书形';
+
+  @override
+  String get formMasuStem => 'ます形词干';
+
+  @override
+  String get formNaiStem => 'ない形词干';
+
+  @override
+  String get formTeStem => 'て形词干';
+
+  @override
+  String get formEStem => 'え段词干';
+
+  @override
+  String get formPolite => '敬体';
+
+  @override
+  String get formNegative => '否定';
+
+  @override
+  String get formPast => '过去';
+
+  @override
+  String get formTe => 'て形';
+
+  @override
+  String get formTai => '想要';
+
+  @override
+  String get formPotential => '可能';
+
+  @override
+  String get formPassive => '被动';
+
+  @override
+  String get formCausative => '使役';
+
+  @override
+  String get formImperative => '命令';
+
+  @override
+  String get formVolitional => '意志';
+
+  @override
+  String get formConditionalBa => 'ば条件';
+
+  @override
+  String get formConditionalTara => 'たら条件';
+
+  @override
+  String get formTari => 'たり';
+
+  @override
+  String get formNagara => '一边…一边';
+
+  @override
+  String get formAdverbial => '连用';
+
+  @override
+  String get formAttributive => '连体';
+
+  @override
+  String get formProgressive => '进行';
+
+  @override
+  String get formRequest => '请求';
+
+  @override
   String get labTitle => '句子实验室';
 
   @override
@@ -1867,6 +2080,219 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get practiceAction => '練習';
+
+  @override
+  String get quizTitle => '測驗';
+
+  @override
+  String get quizStartReviews => '開始複習';
+
+  @override
+  String get quizStartNew => '學習新內容';
+
+  @override
+  String get quizThisLevel => '測驗本級別';
+
+  @override
+  String get quizThisTable => '測驗這些假名';
+
+  @override
+  String quizProgress(int done, int total) {
+    return '第 $done / $total 題';
+  }
+
+  @override
+  String get quizCheck => '檢查';
+
+  @override
+  String get quizContinue => '繼續';
+
+  @override
+  String get quizCorrect => '正確';
+
+  @override
+  String get quizWrong => '還差一點';
+
+  @override
+  String quizExpected(Object answer) {
+    return '答案：$answer';
+  }
+
+  @override
+  String get quizListenPrompt => '先聽，再選';
+
+  @override
+  String get quizTypeReadingHint => '輸入讀音';
+
+  @override
+  String get quizOrderPrompt => '把各部分排好順序';
+
+  @override
+  String get quizOrderReset => '重新排';
+
+  @override
+  String get quizConjugationPrompt => '空格裡該填哪個形式？';
+
+  @override
+  String get quizParticlePrompt => '空格裡該填哪個助詞？';
+
+  @override
+  String get quizPatternPrompt => '這句用了哪個文法點？';
+
+  @override
+  String get quizSummaryTitle => '本次結束';
+
+  @override
+  String quizSummaryScore(int correct, int total) {
+    return '首次答對 $correct / $total';
+  }
+
+  @override
+  String get quizSummaryPerfect => '全部一次答對。';
+
+  @override
+  String get quizSummaryReview => '值得再看一遍';
+
+  @override
+  String get quizSummaryDone => '完成';
+
+  @override
+  String get quizEmpty => '暫時沒有可出的題。可以開啟更多測驗模式，或先學一些內容。';
+
+  @override
+  String get quizLeaveTitle => '離開測驗？';
+
+  @override
+  String get quizLeaveBody => '已作答的部分會保留，本次剩下的題目將被放棄。';
+
+  @override
+  String get quizLeaveConfirm => '離開';
+
+  @override
+  String get quizModesTitle => '測驗模式';
+
+  @override
+  String get quizModesBody => '可以關掉你不想遇到的出題方式。本裝置或某個單字支援不了的模式，本來就會被跳過。';
+
+  @override
+  String get quizModesVocab => '單字';
+
+  @override
+  String get quizModesKana => '假名';
+
+  @override
+  String get quizModesGrammar => '文法';
+
+  @override
+  String get quizModesNoneWarning => '至少要保留一種模式。';
+
+  @override
+  String get quizModeVocabJaToMeaning => '日語 → 詞義';
+
+  @override
+  String get quizModeVocabMeaningToJa => '詞義 → 日語';
+
+  @override
+  String get quizModeVocabReadingToKanji => '讀音 → 寫法';
+
+  @override
+  String get quizModeVocabKanjiToReading => '寫法 → 讀音';
+
+  @override
+  String get quizModeVocabListening => '聽力';
+
+  @override
+  String get quizModeVocabTypeReading => '輸入讀音';
+
+  @override
+  String get quizModeKanaToRomaji => '假名 → 羅馬字';
+
+  @override
+  String get quizModeRomajiToKana => '羅馬字 → 假名';
+
+  @override
+  String get quizModeKanaListening => '聽力';
+
+  @override
+  String get quizModeGrammarParticle => '填助詞';
+
+  @override
+  String get quizModeGrammarConjugation => '選活用形';
+
+  @override
+  String get quizModeGrammarOrder => '排序';
+
+  @override
+  String get quizModeGrammarPattern => '選文法點';
+
+  @override
+  String get formDictionary => '辭書形';
+
+  @override
+  String get formMasuStem => 'ます形語幹';
+
+  @override
+  String get formNaiStem => 'ない形語幹';
+
+  @override
+  String get formTeStem => 'て形語幹';
+
+  @override
+  String get formEStem => 'え段語幹';
+
+  @override
+  String get formPolite => '敬體';
+
+  @override
+  String get formNegative => '否定';
+
+  @override
+  String get formPast => '過去';
+
+  @override
+  String get formTe => 'て形';
+
+  @override
+  String get formTai => '想要';
+
+  @override
+  String get formPotential => '可能';
+
+  @override
+  String get formPassive => '被動';
+
+  @override
+  String get formCausative => '使役';
+
+  @override
+  String get formImperative => '命令';
+
+  @override
+  String get formVolitional => '意志';
+
+  @override
+  String get formConditionalBa => 'ば條件';
+
+  @override
+  String get formConditionalTara => 'たら條件';
+
+  @override
+  String get formTari => 'たり';
+
+  @override
+  String get formNagara => '一邊…一邊';
+
+  @override
+  String get formAdverbial => '連用';
+
+  @override
+  String get formAttributive => '連體';
+
+  @override
+  String get formProgressive => '進行';
+
+  @override
+  String get formRequest => '請求';
 
   @override
   String get labTitle => '句子實驗室';

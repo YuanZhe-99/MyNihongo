@@ -4,17 +4,17 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **618** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **715** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **630** documented declarations. The two counts are measured separately and
+The rows below sum to **732** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
-| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 117 |
-| Tier B (index row only) | 513 |
-| **Total** | **630** |
+| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 133 |
+| Tier B (index row only) | 599 |
+| **Total** | **732** |
 
 These totals were measured against the source tree at initialization (`PLAN.md` M1.0). If you
 change these numbers, measure them rather than adjusting them by hand:
@@ -79,10 +79,22 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/progress/services/sm2_scheduler.dart` | [features/progress/services/sm2_scheduler.md](features/progress/services/sm2_scheduler.md) | 5 | 2 |
 | `lib/features/settings/views/license_page.dart` | [features/settings/views/license_page.md](features/settings/views/license_page.md) | 2 | 0 |
 | `lib/features/settings/views/privacy_policy_page.dart` | [features/settings/views/privacy_policy_page.md](features/settings/views/privacy_policy_page.md) | 3 | 0 |
+| `lib/features/quiz/models/quiz_config.dart` | [features/quiz/models/quiz_config.md](features/quiz/models/quiz_config.md) | 8 | 1 |
+| `lib/features/quiz/models/quiz_question.dart` | [features/quiz/models/quiz_question.md](features/quiz/models/quiz_question.md) | 7 | 1 |
+| `lib/features/quiz/services/answer_checker.dart` | [features/quiz/services/answer_checker.md](features/quiz/services/answer_checker.md) | 8 | 0 |
+| `lib/features/quiz/services/distractors.dart` | [features/quiz/services/distractors.md](features/quiz/services/distractors.md) | 8 | 2 |
+| `lib/features/quiz/services/question_generator.dart` | [features/quiz/services/question_generator.md](features/quiz/services/question_generator.md) | 15 | 3 |
+| `lib/features/quiz/services/quiz_session.dart` | [features/quiz/services/quiz_session.md](features/quiz/services/quiz_session.md) | 10 | 2 |
+| `lib/features/quiz/views/quiz_modes_page.dart` | [features/quiz/views/quiz_modes_page.md](features/quiz/views/quiz_modes_page.md) | 3 | 1 |
+| `lib/features/quiz/views/quiz_page.dart` | [features/quiz/views/quiz_page.md](features/quiz/views/quiz_page.md) | 9 | 1 |
+| `lib/features/quiz/widgets/answer_panes.dart` | [features/quiz/widgets/answer_panes.md](features/quiz/widgets/answer_panes.md) | 8 | 1 |
+| `lib/features/quiz/widgets/quiz_runner.dart` | [features/quiz/widgets/quiz_runner.md](features/quiz/widgets/quiz_runner.md) | 8 | 1 |
 | `lib/features/sentence/models/function_word.dart` | [features/sentence/models/function_word.md](features/sentence/models/function_word.md) | 7 | 1 |
 | `lib/features/sentence/models/sentence_analysis.dart` | [features/sentence/models/sentence_analysis.md](features/sentence/models/sentence_analysis.md) | 12 | 2 |
 | `lib/features/sentence/models/token.dart` | [features/sentence/models/token.md](features/sentence/models/token.md) | 1 | 1 |
 | `lib/features/sentence/services/chunker.dart` | [features/sentence/services/chunker.md](features/sentence/services/chunker.md) | 6 | 3 |
+| `lib/features/sentence/services/conjugator.dart` | [features/sentence/services/conjugator.md](features/sentence/services/conjugator.md) | 10 | 2 |
+| `lib/features/sentence/services/godan_rows.dart` | [features/sentence/services/godan_rows.md](features/sentence/services/godan_rows.md) | 6 | 0 |
 | `lib/features/sentence/services/deinflector.dart` | [features/sentence/services/deinflector.md](features/sentence/services/deinflector.md) | 5 | 3 |
 | `lib/features/sentence/services/grammar_matcher.dart` | [features/sentence/services/grammar_matcher.md](features/sentence/services/grammar_matcher.md) | 2 | 1 |
 | `lib/features/sentence/services/lexicon.dart` | [features/sentence/services/lexicon.md](features/sentence/services/lexicon.md) | 10 | 3 |
@@ -90,6 +102,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/sentence/services/sentence_checks.dart` | [features/sentence/services/sentence_checks.md](features/sentence/services/sentence_checks.md) | 5 | 2 |
 | `lib/features/sentence/services/tokenizer.dart` | [features/sentence/services/tokenizer.md](features/sentence/services/tokenizer.md) | 12 | 3 |
 | `lib/features/sentence/views/sentence_lab_page.dart` | [features/sentence/views/sentence_lab_page.md](features/sentence/views/sentence_lab_page.md) | 14 | 3 |
+| `lib/features/sentence/widgets/form_labels.dart` | [features/sentence/widgets/form_labels.md](features/sentence/widgets/form_labels.md) | 2 | 1 |
 | `lib/features/sentence/widgets/bunsetsu_tree.dart` | [features/sentence/widgets/bunsetsu_tree.md](features/sentence/widgets/bunsetsu_tree.md) | 1 | 1 |
 | `lib/features/sentence/widgets/grammar_used_list.dart` | [features/sentence/widgets/grammar_used_list.md](features/sentence/widgets/grammar_used_list.md) | 1 | 1 |
 | `lib/features/sentence/widgets/issue_list.dart` | [features/sentence/widgets/issue_list.md](features/sentence/widgets/issue_list.md) | 6 | 1 |

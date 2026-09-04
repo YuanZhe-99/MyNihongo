@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../l10n/app_localizations.dart';
+import '../../quiz/models/quiz_config.dart';
+import '../../progress/models/study_record.dart';
 import '../../../shared/utils/adaptive_layout.dart';
 import '../../../shared/widgets/adaptive_tile_grid.dart';
 import '../../../shared/widgets/reference_widgets.dart';
@@ -61,6 +63,22 @@ class _VocabPageState extends ConsumerState<VocabPage> {
       appBar: AppBar(
         title: Text(l10n.vocabTitle),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.quiz_outlined),
+            tooltip: l10n.quizThisLevel,
+            // The level the learner is looking at, not their target level:
+            // this button is about what is on screen.
+            onPressed: () => context.push(
+              '/quiz',
+              extra: QuizConfig(
+                source: LevelSource(
+                  ref.read(appSettingsProvider).vocabLevel ?? JlptLevel.n5,
+                  StudyKind.vocab,
+                ),
+                modes: ref.read(appSettingsProvider).quizModes,
+              ),
+            ),
+          ),
           IconButton(
             icon: const Icon(Icons.biotech_outlined),
             tooltip: l10n.labTitle,

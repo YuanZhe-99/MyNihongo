@@ -210,6 +210,28 @@ int listRowCount(int itemCount, int columns) {
   return (itemCount + perRow - 1) ~/ perRow;
 }
 
+/// The narrowest a quiz answer pane may be before splitting stops paying.
+///
+/// Four option buttons with Japanese on them need room to breathe; below this
+/// the split makes both halves worse than one column would have been.
+const quizAnswerPaneMinWidth = 280.0;
+
+/// Purpose: Return the width of the quiz page's fixed question pane.
+/// Inputs: `contentWidth` — the width the page has to lay out in.
+/// Returns: `double`.
+/// Side effects: None.
+/// Notes: Proportional and then clamped, the same shape as
+/// [settingsLeftPaneWidth]. The question is the smaller half: it holds a word
+/// or a sentence, while the answer half holds four options. The final cap keeps
+/// the answer pane at [quizAnswerPaneMinWidth] on the narrowest window that
+/// splits at all, so the split never makes the answers harder to read than
+/// stacking them would have been.
+double quizQuestionPaneWidth(double contentWidth) {
+  final proportional = (contentWidth * 0.45).clamp(320.0, 520.0);
+  final capped = contentWidth - quizAnswerPaneMinWidth;
+  return capped < proportional ? capped : proportional;
+}
+
 /// Purpose: Return the width of the settings page's fixed left pane.
 /// Inputs: `contentWidth` — the width both panes share, in logical pixels,
 /// which is [shellContentWidth] rather than the screen width.

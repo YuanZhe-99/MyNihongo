@@ -598,6 +598,25 @@ class NihongoStorage {
   static Future<void> setTtsEngine(String? engine) =>
       _setString('ttsEngine', engine);
 
+  /// Purpose: Read which quiz modes the learner has left switched on.
+  /// Inputs: None.
+  /// Returns: `Future<String?>` — a comma-joined list of mode names, or null
+  /// when every mode is on.
+  /// Side effects: Reads the config file.
+  /// Notes: Absent means all of them, so a build that adds a mode switches it
+  /// on for everybody who never touched the setting — which is what a learner
+  /// who has not opted out expects. Device-local: which ways of asking suit
+  /// somebody depends on the keyboard and the speaker in front of them.
+  static Future<String?> getQuizModes() => _getString('quizModes');
+
+  /// Purpose: Remember which quiz modes are switched on.
+  /// Inputs: `modes` — a comma-joined list, or null for all of them.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: None.
+  static Future<void> setQuizModes(String? modes) =>
+      _setString('quizModes', modes);
+
   /// Purpose: Read one boolean preference.
   /// Inputs: `key`.
   /// Returns: `Future<bool?>`.

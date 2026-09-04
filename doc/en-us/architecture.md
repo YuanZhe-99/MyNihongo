@@ -145,6 +145,21 @@ lib/
       license_page.dart
       privacy_policy_page.dart
       settings_page.dart
+    quiz/
+      models/
+        quiz_config.dart
+        quiz_question.dart
+      services/
+        answer_checker.dart
+        distractors.dart
+        question_generator.dart
+        quiz_session.dart
+      views/
+        quiz_modes_page.dart
+        quiz_page.dart
+      widgets/
+        answer_panes.dart
+        quiz_runner.dart
     speech/
       models/voice_ordering.dart
       services/
@@ -253,6 +268,17 @@ Primary tests:
   written once a day, and a newer build's fields surviving an edit by this one.
 - `test/learn_today_ui_test.dart` — the today card at every named geometry, and the Learning settings
   writing a synced record rather than a device preference.
+- `test/question_generator_test.dart` — question generation against the **shipped** catalog; the
+  load-bearing cases are that every N5 grammar point can be asked about at least one way, and that
+  every generated question is answerable — four distinct options, exactly one right.
+- `test/distractors_test.dart` — that a wrong option is wrong for the right reason: never a synonym,
+  never the same romaji twice, never a part of speech that gives the answer away.
+- `test/conjugator_test.dart` — the forward conjugation the "choose the form" quiz grades with, form
+  by form, including 行く and いい.
+- `test/quiz_session_test.dart` — marking, re-queueing and scoring; the load-bearing cases are that
+  only an item's first answer is recorded and that a stubborn item still lets the session end.
+- `test/quiz_page_ui_test.dart` — the quiz at every named geometry, the split gate, and the quiz-mode
+  switches including the refusal to turn the last one off.
 
 ## Three kinds of data
 

@@ -110,7 +110,8 @@ int columnCapacity(double contentWidth, {required double minItemWidth,
 | 外壳 | 仅宽度 | 从 600 dp 起使用导航栏。 |
 | 五十音 | **双重门控** | 当 `canSplitLayout` **且** 两张 `kanaTableMinWidth` 表能放进 `referenceContentWidth` 时两列。第二道门控让 Z Fold 5/6 和竖持的 Fold 7（546–637 dp 内容；两张表需要 672）保持单列，而无需它们自己的断点。两列模式下书写体系切换与搜索框共用一行。规则卡按 `ruleCardMinWidth` 对该节实际得到的宽度自行排成 1–2 列。 |
 | 单词、语法 | 形状门控 + 容量 | `referenceColumnCount`：除非 `canSplitLayout`，否则 1 列，然后是 `referenceTileMinWidth` 下的 `columnCapacity`，上限 `listMaxColumns`（4）。横持的 Fold 8 得到两列，横持平板两列，桌面三列。存储的 `referenceListColumns` 偏好会被钳制到该容量而不是被拒绝，因此在平板上选的 4 在折叠手机上渲染为 2，窗口变大后回到 4。容量为 1 时隐藏该控件。见 [`features/reference-preferences.md`](features/reference-preferences.md)。 |
-| 学习 | 形状门控 + 容量 | 仪表盘卡片按 `ruleCardMinWidth` 排成 1–2 列，以 `canSplitLayout` 为门控。 |
+| 学习 | 形状门控 + 容量 | 仪表盘卡片按 `ruleCardMinWidth` 排成 1–2 列，以 `canSplitLayout` 为门控。今日卡片在任何尺寸下都横跨整个宽度置于其上：现在该做什么，是回访的学习者不必扫视就该读到的那一样东西。 |
+| 测验 | 形状门控 | 当 `canSplitLayout` 成立时，题目面板固定为 `quizQuestionPaneWidth`（内容宽度的 0.45，夹在 320–520 之间，再封顶以保证作答面板保有 `quizAnswerPaneMinWidth` 的 280），作答区占其余部分；否则堆叠。题目刻意是较小的一半：它只放一个词或一个句子，而作答那一半要放四个带日语的选项。低于 600 dp 时，分栏会让两边都比单列更糟。 |
 | 设置 | 形状门控 | `canSplitLayout` 时两个窗格；左窗格 `settingsLeftPaneWidth(shellContentWidth)`——比例式（0.44），钳制在 300–440，并加上限使详情窗格永不低于 `settingsRightPaneMinWidth`（280）。二级页面在窄窗口上全屏压栈，在宽窗口上承载于详情窗格内嵌套的 `Navigator`，因此同一组件服务两种模式。 |
 | WebDAV 同步、备份 | 无 | 在任何尺寸下都是单列。两者都是二级页面，因此由上面的“设置”一行决定它们是被压栈还是承载于详情窗格；页面本身不做任何测量。 |
 | 详情面板 | 无 | 底部面板，在每种模式下相同。 |

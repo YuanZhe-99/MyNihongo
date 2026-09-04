@@ -2,13 +2,13 @@
 
 这是 MyNihongo 仓库中 `lib/` 手写函数解释层文档的顶层索引。每行链接到 `doc/zh-cn/functions/` 下镜像 `lib/` 树的逐源文件页面（`.dart` 换成 `.md`）。
 
-**总计：** 仓库的 `/// Purpose:` 注释数为 **618**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **630** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
+**总计：** 仓库的 `/// Purpose:` 注释数为 **715**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **732** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
 
 | Tier | 计数 |
 |---|---|
 | Tier A（完整条目：Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes） | 107 |
 | Tier B（仅索引行） | 483 |
-| **总计** | **630** |
+| **总计** | **732** |
 
 这些总计在初始化时（`PLAN.md` M1.0）对照源码树测得。若要改动这些数字，请测量而不要手工调整：
 
@@ -71,10 +71,22 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/progress/services/sm2_scheduler.dart` | [features/progress/services/sm2_scheduler.md](features/progress/services/sm2_scheduler.md) | 5 | 2 |
 | `lib/features/settings/views/license_page.dart` | [features/settings/views/license_page.md](features/settings/views/license_page.md) | 2 | 0 |
 | `lib/features/settings/views/privacy_policy_page.dart` | [features/settings/views/privacy_policy_page.md](features/settings/views/privacy_policy_page.md) | 3 | 0 |
+| `lib/features/quiz/models/quiz_config.dart` | [features/quiz/models/quiz_config.md](features/quiz/models/quiz_config.md) | 8 | 1 |
+| `lib/features/quiz/models/quiz_question.dart` | [features/quiz/models/quiz_question.md](features/quiz/models/quiz_question.md) | 7 | 1 |
+| `lib/features/quiz/services/answer_checker.dart` | [features/quiz/services/answer_checker.md](features/quiz/services/answer_checker.md) | 8 | 0 |
+| `lib/features/quiz/services/distractors.dart` | [features/quiz/services/distractors.md](features/quiz/services/distractors.md) | 8 | 2 |
+| `lib/features/quiz/services/question_generator.dart` | [features/quiz/services/question_generator.md](features/quiz/services/question_generator.md) | 15 | 3 |
+| `lib/features/quiz/services/quiz_session.dart` | [features/quiz/services/quiz_session.md](features/quiz/services/quiz_session.md) | 10 | 2 |
+| `lib/features/quiz/views/quiz_modes_page.dart` | [features/quiz/views/quiz_modes_page.md](features/quiz/views/quiz_modes_page.md) | 3 | 1 |
+| `lib/features/quiz/views/quiz_page.dart` | [features/quiz/views/quiz_page.md](features/quiz/views/quiz_page.md) | 9 | 1 |
+| `lib/features/quiz/widgets/answer_panes.dart` | [features/quiz/widgets/answer_panes.md](features/quiz/widgets/answer_panes.md) | 8 | 1 |
+| `lib/features/quiz/widgets/quiz_runner.dart` | [features/quiz/widgets/quiz_runner.md](features/quiz/widgets/quiz_runner.md) | 8 | 1 |
 | `lib/features/sentence/models/function_word.dart` | [features/sentence/models/function_word.md](features/sentence/models/function_word.md) | 7 | 1 |
 | `lib/features/sentence/models/sentence_analysis.dart` | [features/sentence/models/sentence_analysis.md](features/sentence/models/sentence_analysis.md) | 12 | 2 |
 | `lib/features/sentence/models/token.dart` | [features/sentence/models/token.md](features/sentence/models/token.md) | 1 | 1 |
 | `lib/features/sentence/services/chunker.dart` | [features/sentence/services/chunker.md](features/sentence/services/chunker.md) | 6 | 3 |
+| `lib/features/sentence/services/conjugator.dart` | [features/sentence/services/conjugator.md](features/sentence/services/conjugator.md) | 10 | 2 |
+| `lib/features/sentence/services/godan_rows.dart` | [features/sentence/services/godan_rows.md](features/sentence/services/godan_rows.md) | 6 | 0 |
 | `lib/features/sentence/services/deinflector.dart` | [features/sentence/services/deinflector.md](features/sentence/services/deinflector.md) | 5 | 3 |
 | `lib/features/sentence/services/grammar_matcher.dart` | [features/sentence/services/grammar_matcher.md](features/sentence/services/grammar_matcher.md) | 2 | 1 |
 | `lib/features/sentence/services/lexicon.dart` | [features/sentence/services/lexicon.md](features/sentence/services/lexicon.md) | 10 | 3 |
@@ -82,6 +94,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/sentence/services/sentence_checks.dart` | [features/sentence/services/sentence_checks.md](features/sentence/services/sentence_checks.md) | 5 | 2 |
 | `lib/features/sentence/services/tokenizer.dart` | [features/sentence/services/tokenizer.md](features/sentence/services/tokenizer.md) | 12 | 3 |
 | `lib/features/sentence/views/sentence_lab_page.dart` | [features/sentence/views/sentence_lab_page.md](features/sentence/views/sentence_lab_page.md) | 14 | 3 |
+| `lib/features/sentence/widgets/form_labels.dart` | [features/sentence/widgets/form_labels.md](features/sentence/widgets/form_labels.md) | 2 | 1 |
 | `lib/features/sentence/widgets/bunsetsu_tree.dart` | [features/sentence/widgets/bunsetsu_tree.md](features/sentence/widgets/bunsetsu_tree.md) | 1 | 1 |
 | `lib/features/sentence/widgets/grammar_used_list.dart` | [features/sentence/widgets/grammar_used_list.md](features/sentence/widgets/grammar_used_list.md) | 1 | 1 |
 | `lib/features/sentence/widgets/issue_list.dart` | [features/sentence/widgets/issue_list.md](features/sentence/widgets/issue_list.md) | 6 | 1 |
