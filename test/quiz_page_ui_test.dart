@@ -192,7 +192,10 @@ void main() {
   testWidgets('the modes page groups every mode under its catalog', (
     tester,
   ) async {
-    await pumpAt(tester, 412, 915, home: const QuizModesPage());
+    // Tall enough that the list builds every row: this is about which modes
+    // exist, not about how many fit on a phone. A `ListView` does not build
+    // what is below the fold, and there are more modes than a phone screen.
+    await pumpAt(tester, 412, 2400, home: const QuizModesPage());
     expect(find.text('测验模式'), findsOneWidget);
     expect(find.text('单词'), findsOneWidget);
     expect(find.text('假名'), findsOneWidget);
@@ -206,7 +209,7 @@ void main() {
   });
 
   testWidgets('every mode starts switched on', (tester) async {
-    await pumpAt(tester, 412, 915, home: const QuizModesPage());
+    await pumpAt(tester, 412, 2400, home: const QuizModesPage());
     for (final tile in tester.widgetList<SwitchListTile>(
       find.byType(SwitchListTile),
     )) {

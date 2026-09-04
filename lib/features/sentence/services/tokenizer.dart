@@ -84,6 +84,17 @@ class Tokenizer {
   /// counter for long thin things, and without a number the book is meant.
   static const _penaltyBareCounter = 5;
 
+  /// A word the catalog does not mark common.
+  ///
+  /// 殊に, 生かす, がる and よって are all real words, and all of them are what
+  /// ことに, かしら, たがる and によって look like to a lattice that weighs every
+  /// entry the same. Charging a rare word more is what lets the ordinary
+  /// reading win: the penalty is large enough to lose to a function word plus
+  /// a particle, and small enough that a rare word still beats an unknown
+  /// kanji by a wide margin. Found by the N4 authoring batches, every one of
+  /// which tripped over it.
+  static const _penaltyRareWord = 7;
+
   /// A masu-stem with no auxiliary behind it, used as a noun. Above a real
   /// catalog word, so one is never displaced by a stem that happens to fit.
   static const _costBareStem = 14;
@@ -343,6 +354,7 @@ class Tokenizer {
           : _penaltyBareCounter;
     }
     if (entry.viaReading) penalty += _penaltyViaReading;
+    if (!entry.common) penalty += _penaltyRareWord;
     return penalty;
   }
 
@@ -389,7 +401,10 @@ class Tokenizer {
               _functionWordToken(word, surface, start, end),
             ],
             end: end,
-            cost: _costVocab + _costPerAuxiliary,
+            cost:
+                _costVocab +
+                _costPerAuxiliary +
+                (candidate.entry.common ? 0 : _penaltyRareWord),
           ),
         );
       }

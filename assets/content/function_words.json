@@ -2845,6 +2845,234 @@
         "zh": "（口语）不小心……了",
         "zh_TW": "（口語）不小心……了"
       }
+    },
+    {
+      "id": "fw:koto-ni",
+      "surface": "ことに",
+      "category": "formal-noun",
+      "lemma": "ことに",
+      "forms": [],
+      "gloss": {
+        "en": "decide to, come to",
+        "zh": "决定、变成",
+        "zh_TW": "決定、變成"
+      }
+    },
+    {
+      "id": "fw:you-ni",
+      "surface": "ように",
+      "category": "formal-noun",
+      "lemma": "ように",
+      "forms": [],
+      "gloss": {
+        "en": "so that, in order to",
+        "zh": "为了、以便",
+        "zh_TW": "為了、以便"
+      }
+    },
+    {
+      "id": "fw:tame-ni",
+      "surface": "ために",
+      "category": "formal-noun",
+      "lemma": "ために",
+      "forms": [],
+      "gloss": {
+        "en": "in order to, because of",
+        "zh": "为了、因为",
+        "zh_TW": "為了、因為"
+      }
+    },
+    {
+      "id": "fw:kashira",
+      "surface": "かしら",
+      "category": "particle-final",
+      "lemma": "かしら",
+      "forms": [],
+      "gloss": {
+        "en": "I wonder",
+        "zh": "……吧？（自问）",
+        "zh_TW": "……吧？（自問）"
+      }
+    },
+    {
+      "id": "fw:kana-final",
+      "surface": "かなあ",
+      "category": "particle-final",
+      "lemma": "かな",
+      "forms": [],
+      "gloss": {
+        "en": "I wonder",
+        "zh": "……吧？（自问）",
+        "zh_TW": "……吧？（自問）"
+      }
+    },
+    {
+      "id": "fw:gozaimasu",
+      "surface": "ございます",
+      "category": "copula",
+      "lemma": "ございます",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "there is (polite)",
+        "zh": "有（郑重）",
+        "zh_TW": "有（鄭重）"
+      }
+    },
+    {
+      "id": "fw:degozaimasu",
+      "surface": "でございます",
+      "category": "copula",
+      "lemma": "でございます",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "is (polite)",
+        "zh": "是（郑重）",
+        "zh_TW": "是（鄭重）"
+      }
+    },
+    {
+      "id": "fw:zurai",
+      "surface": "づらい",
+      "category": "auxiliary",
+      "lemma": "づらい",
+      "needs": "masuStem",
+      "forms": [],
+      "gloss": {
+        "en": "hard to",
+        "zh": "难以……",
+        "zh_TW": "難以……"
+      }
+    },
+    {
+      "id": "fw:zurai-desu",
+      "surface": "づらいです",
+      "category": "auxiliary",
+      "lemma": "づらい",
+      "needs": "masuStem",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "hard to",
+        "zh": "难以……",
+        "zh_TW": "難以……"
+      }
+    },
+    {
+      "id": "fw:yasui-desu",
+      "surface": "やすいです",
+      "category": "auxiliary",
+      "lemma": "やすい",
+      "needs": "masuStem",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "easy to",
+        "zh": "容易……",
+        "zh_TW": "容易……"
+      }
+    },
+    {
+      "id": "fw:nikui-desu",
+      "surface": "にくいです",
+      "category": "auxiliary",
+      "lemma": "にくい",
+      "needs": "masuStem",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "hard to",
+        "zh": "难以……",
+        "zh_TW": "難以……"
+      }
+    },
+    {
+      "id": "fw:tagatte",
+      "surface": "たがって",
+      "category": "auxiliary",
+      "lemma": "たがる",
+      "needs": "masuStem",
+      "forms": [
+        "tai",
+        "te"
+      ],
+      "gloss": {
+        "en": "shows signs of wanting to",
+        "zh": "（第三人称）想要",
+        "zh_TW": "（第三人稱）想要"
+      }
+    },
+    {
+      "id": "fw:tagatteimasu",
+      "surface": "たがっています",
+      "category": "auxiliary",
+      "lemma": "たがる",
+      "needs": "masuStem",
+      "forms": [
+        "tai",
+        "progressive",
+        "polite"
+      ],
+      "gloss": {
+        "en": "shows signs of wanting to",
+        "zh": "（第三人称）想要",
+        "zh_TW": "（第三人稱）想要"
+      }
+    },
+    {
+      "id": "fw:tagarimasu",
+      "surface": "たがります",
+      "category": "auxiliary",
+      "lemma": "たがる",
+      "needs": "masuStem",
+      "forms": [
+        "tai",
+        "polite"
+      ],
+      "gloss": {
+        "en": "shows signs of wanting to",
+        "zh": "（第三人称）想要",
+        "zh_TW": "（第三人稱）想要"
+      }
+    },
+    {
+      "id": "fw:tagarimashita",
+      "surface": "たがりました",
+      "category": "auxiliary",
+      "lemma": "たがる",
+      "needs": "masuStem",
+      "forms": [
+        "tai",
+        "polite",
+        "past"
+      ],
+      "gloss": {
+        "en": "shows signs of wanting to",
+        "zh": "（第三人称）想要",
+        "zh_TW": "（第三人稱）想要"
+      }
+    },
+    {
+      "id": "fw:tagatta",
+      "surface": "たがった",
+      "category": "auxiliary",
+      "lemma": "たがる",
+      "needs": "masuStem",
+      "forms": [
+        "tai",
+        "past"
+      ],
+      "gloss": {
+        "en": "showed signs of wanting to",
+        "zh": "（第三人称）想要",
+        "zh_TW": "（第三人稱）想要"
+      }
     }
   ],
   "sets": {

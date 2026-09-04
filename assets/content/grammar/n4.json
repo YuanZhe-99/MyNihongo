@@ -1,0 +1,3703 @@
+{
+  "schemaVersion": 2,
+  "source": "model-authored (Claude), unreviewed",
+  "license": "GPL-3.0 with the app.",
+  "level": "N4",
+  "points": [
+    {
+      "id": "grammar:relative-clause",
+      "level": "N4",
+      "pattern": "名詞修飾（連体修飾）",
+      "structure": "普通形 + 名詞",
+      "match": [
+        "買った本",
+        "会った人"
+      ],
+      "meaning": {
+        "en": "a noun modified by a whole clause",
+        "zh": "用一个小句修饰名词",
+        "zh_TW": "用一個小句修飾名詞"
+      },
+      "explanation": {
+        "en": "A clause in plain form goes directly in front of the noun it describes, with no word like \"that\" between them. The subject inside the clause is marked with が or の, not は.",
+        "zh": "用普通形的小句直接放在被修饰的名词前面，中间不加任何连接词。小句内部的主语用が或の表示，不用は。",
+        "zh_TW": "用普通形的小句直接放在被修飾的名詞前面，中間不加任何連接詞。小句內部的主語用が或の表示，不用は。"
+      },
+      "examples": [
+        {
+          "ja": "これは私が昨日買った本です。",
+          "reading": "これはわたしがきのうかったほんです。",
+          "en": "This is the book I bought yesterday.",
+          "zh": "这是我昨天买的书。",
+          "zh_TW": "這是我昨天買的書。"
+        },
+        {
+          "ja": "昨日会った人の名前を知りません。",
+          "reading": "きのうあったひとのなまえをしりません。",
+          "en": "I don't know the name of the person I met yesterday.",
+          "zh": "我不知道昨天见到的那个人的名字。",
+          "zh_TW": "我不知道昨天見到的那個人的名字。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:koto-nominalizer",
+      "level": "N4",
+      "pattern": "〜こと（名詞化）",
+      "structure": "動詞普通形 + こと",
+      "match": [
+        "読むこと",
+        "話すこと",
+        "こと"
+      ],
+      "meaning": {
+        "en": "turns a verb clause into a noun",
+        "zh": "把动词小句变成名词",
+        "zh_TW": "把動詞小句變成名詞"
+      },
+      "explanation": {
+        "en": "こと after a plain-form verb makes the whole clause work as a noun, so it can take は or が or be the thing after です. Use it for general facts and abilities; の is preferred when you actually watch or hear the event.",
+        "zh": "こと接在动词普通形后，使整个小句像名词一样使用，可以加は、が，也可以放在です前。它多用于一般的事实和能力；亲眼看到、亲耳听到的具体场面则多用の。",
+        "zh_TW": "こと接在動詞普通形後，使整個小句像名詞一樣使用，可以加は、が，也可以放在です前。它多用於一般的事實和能力；親眼看到、親耳聽到的具體場面則多用の。"
+      },
+      "examples": [
+        {
+          "ja": "私の趣味は本を読むことです。",
+          "reading": "わたしのしゅみはほんをよむことです。",
+          "en": "My hobby is reading books.",
+          "zh": "我的爱好是读书。",
+          "zh_TW": "我的愛好是讀書。"
+        },
+        {
+          "ja": "日本語を話すことは難しくありません。",
+          "reading": "にほんごをはなすことはむずかしくありません。",
+          "en": "Speaking Japanese is not difficult.",
+          "zh": "说日语并不难。",
+          "zh_TW": "說日語並不難。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:no-nominalizer",
+      "level": "N4",
+      "pattern": "〜の（名詞化）",
+      "structure": "動詞普通形 + の",
+      "match": [
+        "読むのが",
+        "食べるのが",
+        "のが"
+      ],
+      "meaning": {
+        "en": "turns a verb clause into a noun with の",
+        "zh": "用の把动词小句变成名词",
+        "zh_TW": "用の把動詞小句變成名詞"
+      },
+      "explanation": {
+        "en": "の does the same job as こと but sounds closer and more concrete. It is the normal choice with 好き, 上手, 見る and 聞く, where you are talking about the actual scene rather than the idea.",
+        "zh": "の的作用与こと相同，但语感更具体、更贴近眼前。与好き、上手、見る、聞く搭配时一般用の，因为说的是眼前的具体场面而不是抽象的事。",
+        "zh_TW": "の的作用與こと相同，但語感更具體、更貼近眼前。與好き、上手、見る、聞く搭配時一般用の，因為說的是眼前的具體場面而不是抽象的事。"
+      },
+      "examples": [
+        {
+          "ja": "私は本を読むのが好きです。",
+          "reading": "わたしはほんをよむのがすきです。",
+          "en": "I like reading books.",
+          "zh": "我喜欢读书。",
+          "zh_TW": "我喜歡讀書。"
+        },
+        {
+          "ja": "私は魚を食べるのが好きではありません。",
+          "reading": "わたしはさかなをたべるのがすきではありません。",
+          "en": "I don't like eating fish.",
+          "zh": "我不喜欢吃鱼。",
+          "zh_TW": "我不喜歡吃魚。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:no-wa-da",
+      "level": "N4",
+      "pattern": "〜のは〜です",
+      "structure": "普通形 + のは + N + です",
+      "match": [
+        "のは"
+      ],
+      "meaning": {
+        "en": "the one that ... is ...",
+        "zh": "……的是……",
+        "zh_TW": "……的是……"
+      },
+      "explanation": {
+        "en": "This splits a sentence in two so that one part is highlighted: everything before のは is old information, and what comes after です is the new, stressed part. It answers questions like \"which one?\" or \"who?\".",
+        "zh": "这个句型把句子分成两半来突出重点：のは前面是已知信息，です后面才是要强调的新信息。常用来回答“哪一个”“是谁”之类的问题。",
+        "zh_TW": "這個句型把句子分成兩半來突出重點：のは前面是已知信息，です後面才是要強調的新信息。常用來回答“哪一個”“是誰”之類的問題。"
+      },
+      "examples": [
+        {
+          "ja": "私が昨日買ったのはこの本です。",
+          "reading": "わたしがきのうかったのはこのほんです。",
+          "en": "What I bought yesterday is this book.",
+          "zh": "我昨天买的是这本书。",
+          "zh_TW": "我昨天買的是這本書。"
+        },
+        {
+          "ja": "駅で待っているのは誰ですか。",
+          "reading": "えきでまっているのはだれですか。",
+          "en": "Who is the person waiting at the station?",
+          "zh": "在车站等着的人是谁？",
+          "zh_TW": "在車站等著的人是誰？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:no-ga-jouzu",
+      "level": "N4",
+      "pattern": "〜のが上手です / 下手です",
+      "structure": "動詞辞書形 + のが上手です / 下手です",
+      "match": [
+        "のが上手",
+        "のが下手"
+      ],
+      "meaning": {
+        "en": "be good at / bad at doing something",
+        "zh": "擅长／不擅长做某事",
+        "zh_TW": "擅長／不擅長做某事"
+      },
+      "explanation": {
+        "en": "上手 and 下手 describe a learned skill, so the action is turned into a noun with のが first. Do not use 上手 about yourself; say it about other people, and use 好き or できます for yourself.",
+        "zh": "上手、下手表示学来的技能，所以要先用のが把动作名词化。不要用上手说自己，说别人时用它，说自己时用好き或できます。",
+        "zh_TW": "上手、下手錶示學來的技能，所以要先用のが把動作名詞化。不要用上手說自己，說別人時用它，說自己時用好き或できます。"
+      },
+      "examples": [
+        {
+          "ja": "彼は日本語を話すのが上手です。",
+          "reading": "かれはにほんごをはなすのがじょうずです。",
+          "en": "He is good at speaking Japanese.",
+          "zh": "他日语说得很好。",
+          "zh_TW": "他日語說得很好。"
+        },
+        {
+          "ja": "私は歌を歌うのが下手です。",
+          "reading": "わたしはうたをうたうのがへたです。",
+          "en": "I am bad at singing.",
+          "zh": "我唱歌唱得不好。",
+          "zh_TW": "我唱歌唱得不好。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:potential",
+      "level": "N4",
+      "pattern": "可能形（〜える / 〜られる）",
+      "structure": "動詞可能形（話す→話せます、食べる→食べられます）",
+      "match": [
+        "話せます",
+        "読めます",
+        "食べられます",
+        "食べられません",
+        "行けます"
+      ],
+      "meaning": {
+        "en": "can do; be able to do",
+        "zh": "能够做；会做",
+        "zh_TW": "能夠做；會做"
+      },
+      "explanation": {
+        "en": "Group 1 verbs change the final -u to -eru (話す→話せる), group 2 add られる (食べる→食べられる), and する→できる, 来る→来られる. The object usually takes が instead of を.",
+        "zh": "五段动词把词尾的う段变成え段（話す→話せる），一段动词加られる（食べる→食べられる），する→できる，来る→来られる。宾语一般用が而不用を。",
+        "zh_TW": "五段動詞把詞尾的う段變成え段（話す→話せる），一段動詞加られる（食べる→食べられる），する→できる，来る→來られる。賓語一般用が而不用を。"
+      },
+      "examples": [
+        {
+          "ja": "私は日本語が少し話せます。",
+          "reading": "わたしはにほんごがすこしはなせます。",
+          "en": "I can speak a little Japanese.",
+          "zh": "我会说一点日语。",
+          "zh_TW": "我會說一點日語。"
+        },
+        {
+          "ja": "私は魚が食べられません。",
+          "reading": "わたしはさかながたべられません。",
+          "en": "I can't eat fish.",
+          "zh": "我不能吃鱼。",
+          "zh_TW": "我不能吃魚。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:mieru-kikoeru",
+      "level": "N4",
+      "pattern": "見えます / 聞こえます",
+      "structure": "N + が見えます / が聞こえます",
+      "match": [
+        "見えます",
+        "聞こえます",
+        "見えません",
+        "聞こえませんでした"
+      ],
+      "meaning": {
+        "en": "be visible / be audible on its own",
+        "zh": "看得见／听得见",
+        "zh_TW": "看得見／聽得見"
+      },
+      "explanation": {
+        "en": "These say that something reaches your eyes or ears whether you meant it to or not. The potential forms 見られます and 聞けます are different: they mean you have the chance or the ability to watch or listen on purpose.",
+        "zh": "这两个词表示不管你想不想看、想不想听，东西自然进入眼睛或耳朵。可能形見られます、聞けます不同，它们表示有机会或有能力主动去看、去听。",
+        "zh_TW": "這兩個詞表示不管你想不想看、想不想聽，東西自然進入眼睛或耳朵。可能形見られます、聞けます不同，它們表示有機會或有能力主動去看、去聽。"
+      },
+      "examples": [
+        {
+          "ja": "ここから海が見えます。",
+          "reading": "ここからうみがみえます。",
+          "en": "You can see the sea from here.",
+          "zh": "从这里能看见海。",
+          "zh_TW": "從這裡能看見海。"
+        },
+        {
+          "ja": "友達の声が聞こえませんでした。",
+          "reading": "ともだちのこえがきこえませんでした。",
+          "en": "I couldn't hear my friend's voice.",
+          "zh": "我没有听见朋友的声音。",
+          "zh_TW": "我沒有聽見朋友的聲音。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:koto-ga-aru",
+      "level": "N4",
+      "pattern": "〜ことがあります",
+      "structure": "動詞辞書形・ない形 + ことがあります",
+      "match": [
+        "ことがあります",
+        "ことがある",
+        "ことがありますか"
+      ],
+      "meaning": {
+        "en": "there are times when; it sometimes happens",
+        "zh": "有时候会……",
+        "zh_TW": "有時候會……"
+      },
+      "explanation": {
+        "en": "With a dictionary or ない form this says that something happens now and then, not always. With a た form (行ったことがあります) it means something else: experience in the past.",
+        "zh": "接动词辞书形或ない形时，表示某事偶尔发生，并非总是如此。接た形（行ったことがあります）时意思不同，表示过去的经历。",
+        "zh_TW": "接動詞辭書形或ない形時，表示某事偶爾發生，並非總是如此。接た形（行ったことがあります）時意思不同，表示過去的經歷。"
+      },
+      "examples": [
+        {
+          "ja": "朝ご飯を食べないことがあります。",
+          "reading": "あさごはんをたべないことがあります。",
+          "en": "There are times when I don't eat breakfast.",
+          "zh": "我有时候不吃早饭。",
+          "zh_TW": "我有時候不吃早飯。"
+        },
+        {
+          "ja": "電車が遅れることがありますか。",
+          "reading": "でんしゃがおくれることがありますか。",
+          "en": "Are there times when the train is late?",
+          "zh": "电车有时候会晚点吗？",
+          "zh_TW": "電車有時候會晚點嗎？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:volitional",
+      "level": "N4",
+      "pattern": "意向形（〜(よ)う）",
+      "structure": "動詞意向形（見る→見よう、帰る→帰ろう）",
+      "match": [
+        "見よう",
+        "帰ろう",
+        "よう",
+        "ろう"
+      ],
+      "meaning": {
+        "en": "let's ...; I think I'll ... (plain form)",
+        "zh": "……吧（意志形）",
+        "zh_TW": "……吧（意志形）"
+      },
+      "explanation": {
+        "en": "The volitional is the plain-style version of 〜ましょう: group 1 verbs end in -ou (帰る→帰ろう), group 2 add よう (見る→見よう). Use it with friends and family; use 〜ましょう when you need to be polite.",
+        "zh": "意志形是〜ましょう的简体说法：五段动词词尾变成お段加う（帰る→帰ろう），一段动词加よう（見る→見よう）。对朋友、家人用它，需要礼貌时用〜ましょう。",
+        "zh_TW": "意志形是〜ましょう的簡體說法：五段動詞詞尾變成お段加う（帰る→帰ろう），一段動詞加よう（見る→見よう）。對朋友、家人用它，需要禮貌時用〜ましょう。"
+      },
+      "examples": [
+        {
+          "ja": "一緒に映画を見よう。",
+          "reading": "いっしょにえいがをみよう。",
+          "en": "Let's watch a movie together.",
+          "zh": "一起看电影吧。",
+          "zh_TW": "一起看電影吧。"
+        },
+        {
+          "ja": "今日はもう帰ろう。",
+          "reading": "きょうはもうかえろう。",
+          "en": "Let's go home already today.",
+          "zh": "今天就回家吧。",
+          "zh_TW": "今天就回家吧。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:you-to-omou",
+      "level": "N4",
+      "pattern": "〜(よ)うと思います",
+      "structure": "動詞意向形 + と思います",
+      "match": [
+        "ろうと思います",
+        "ようと思います",
+        "おうと思います",
+        "うと思いました"
+      ],
+      "meaning": {
+        "en": "I intend to; I'm thinking of doing",
+        "zh": "打算……；想要……",
+        "zh_TW": "打算……；想要……"
+      },
+      "explanation": {
+        "en": "This states a decision you have made yourself, and it is softer than 〜つもりです. Because it is about your own mind, use it for yourself, not to report what someone else has decided.",
+        "zh": "表示自己心里做出的决定，语气比〜つもりです委婉。因为说的是自己的想法，一般只用于第一人称，不用来说别人的决定。",
+        "zh_TW": "表示自己心裡做出的決定，語氣比〜つもりです委婉。因為說的是自己的想法，一般只用於第一人稱，不用來說別人的決定。"
+      },
+      "examples": [
+        {
+          "ja": "明日から毎日走ろうと思います。",
+          "reading": "あしたからまいにちはしろうとおもいます。",
+          "en": "I'm thinking of running every day starting tomorrow.",
+          "zh": "我打算从明天开始每天跑步。",
+          "zh_TW": "我打算從明天開始每天跑步。"
+        },
+        {
+          "ja": "来年、日本へ行こうと思いました。",
+          "reading": "らいねん、にほんへいこうとおもいました。",
+          "en": "I decided I would go to Japan next year.",
+          "zh": "我当时想明年去日本。",
+          "zh_TW": "我當時想明年去日本。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:you-to-suru",
+      "level": "N4",
+      "pattern": "〜(よ)うとします",
+      "structure": "動詞意向形 + とします",
+      "match": [
+        "ようとします",
+        "ようとしません",
+        "ろうとしました",
+        "うとしました"
+      ],
+      "meaning": {
+        "en": "try to do; be about to do",
+        "zh": "试图做；正要做",
+        "zh_TW": "試圖做；正要做"
+      },
+      "explanation": {
+        "en": "This describes the effort or the moment right before the action, so it often appears when the action fails or is interrupted. 〜てみます is different: there the action really happens and you are checking the result.",
+        "zh": "表示努力去做，或动作即将开始的那一瞬间，所以常用于动作没能完成或被打断的场合。〜てみます不同，那是动作确实做了，看看结果如何。",
+        "zh_TW": "表示努力去做，或動作即將開始的那一瞬間，所以常用於動作沒能完成或被打斷的場合。〜てみます不同，那是動作確實做了，看看結果如何。"
+      },
+      "examples": [
+        {
+          "ja": "彼は車に乗ろうとしました。",
+          "reading": "かれはくるまにのろうとしました。",
+          "en": "He tried to get into the car.",
+          "zh": "他正要上车。",
+          "zh_TW": "他正要上車。"
+        },
+        {
+          "ja": "弟は野菜を食べようとしません。",
+          "reading": "おとうとはやさいをたべようとしません。",
+          "en": "My little brother won't even try to eat vegetables.",
+          "zh": "弟弟怎么也不肯吃蔬菜。",
+          "zh_TW": "弟弟怎麼也不肯吃蔬菜。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:yotei",
+      "level": "N4",
+      "pattern": "〜予定です",
+      "structure": "動詞辞書形 / N + の + 予定です",
+      "match": [
+        "予定です",
+        "予定ですか",
+        "予定でした"
+      ],
+      "meaning": {
+        "en": "be scheduled to; be due to",
+        "zh": "预定……；计划……",
+        "zh_TW": "預定……；計劃……"
+      },
+      "explanation": {
+        "en": "予定 is a plan already fixed on a calendar, often decided with other people. 〜つもりです and 〜(よ)うと思います are only what you have decided in your own head.",
+        "zh": "予定指已经排进日程、往往是和别人一起定下的安排。〜つもりです和〜(よ)うと思います只是自己心里的打算。",
+        "zh_TW": "予定指已經排進日程、往往是和別人一起定下的安排。〜つもりです和〜(よ)うと思います只是自己心裡的打算。"
+      },
+      "examples": [
+        {
+          "ja": "来月、日本へ行く予定です。",
+          "reading": "らいげつ、にほんへいくよていです。",
+          "en": "I'm scheduled to go to Japan next month.",
+          "zh": "我预定下个月去日本。",
+          "zh_TW": "我預定下個月去日本。"
+        },
+        {
+          "ja": "何時に会う予定ですか。",
+          "reading": "なんじにあうよていですか。",
+          "en": "What time are you scheduled to meet?",
+          "zh": "预定几点见面？",
+          "zh_TW": "預定幾點見面？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nai-tsumori",
+      "level": "N4",
+      "pattern": "〜ないつもりです",
+      "structure": "動詞ない形 + つもりです",
+      "match": [
+        "ないつもりです",
+        "ないつもりだ",
+        "ないつもりでした"
+      ],
+      "meaning": {
+        "en": "intend not to do something",
+        "zh": "打算不做某事",
+        "zh_TW": "打算不做某事"
+      },
+      "explanation": {
+        "en": "つもり is a firm intention you are holding on to, and putting the verb in ない form makes it an intention to refrain. 〜つもりはありません is stronger still: it denies having any such plan at all.",
+        "zh": "つもり表示自己坚持的打算，动词用ない形就成了“打算不做”。〜つもりはありません语气更强，是彻底否认有这种打算。",
+        "zh_TW": "つもり表示自己堅持的打算，動詞用ない形就成了“打算不做”。〜つもりはありません語氣更強，是徹底否認有這種打算。"
+      },
+      "examples": [
+        {
+          "ja": "今日はお酒を飲まないつもりです。",
+          "reading": "きょうはおさけをのまないつもりです。",
+          "en": "I don't intend to drink alcohol today.",
+          "zh": "我今天打算不喝酒。",
+          "zh_TW": "我今天打算不喝酒。"
+        },
+        {
+          "ja": "彼にはもう会わないつもりでした。",
+          "reading": "かれにはもうあわないつもりでした。",
+          "en": "I had intended never to meet him again.",
+          "zh": "我本来打算不再见他了。",
+          "zh_TW": "我本來打算不再見他了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:jidoushi-tadoushi",
+      "level": "N4",
+      "pattern": "自動詞・他動詞",
+      "structure": "N + が + 自動詞 / N + を + 他動詞",
+      "match": [
+        "が開きました",
+        "を開けました",
+        "が開きます",
+        "を開けます"
+      ],
+      "meaning": {
+        "en": "paired verbs: something happens / someone does it",
+        "zh": "自动词与他动词的成对用法",
+        "zh_TW": "自動詞與他動詞的成對用法"
+      },
+      "explanation": {
+        "en": "Many Japanese verbs come in pairs: the intransitive one takes が and just says what happened (窓が開く), the transitive one takes を and names the person doing it (窓を開ける). Choose by whether you want to mention the doer.",
+        "zh": "日语很多动词成对出现：自动词用が，只说发生了什么（窓が開く）；他动词用を，点出动作的人（窓を開ける）。选哪个取决于要不要提到动作者。",
+        "zh_TW": "日語很多動詞成對出現：自動詞用が，只說發生了什麼（窓が開く）；他動詞用を，點出動作的人（窓を開ける）。選哪個取決於要不要提到動作者。"
+      },
+      "examples": [
+        {
+          "ja": "風で窓が開きました。",
+          "reading": "かぜでまどがあきました。",
+          "en": "The window opened in the wind.",
+          "zh": "窗户被风吹开了。",
+          "zh_TW": "窗戶被風吹開了。"
+        },
+        {
+          "ja": "誰が窓を開けましたか。",
+          "reading": "だれがまどをあけましたか。",
+          "en": "Who opened the window?",
+          "zh": "是谁把窗户打开的？",
+          "zh_TW": "是誰把窗戶打開的？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-aru",
+      "level": "N4",
+      "pattern": "〜てあります",
+      "structure": "他動詞て形 + あります",
+      "match": [
+        "てあります",
+        "てある",
+        "てありません",
+        "てありませんでした"
+      ],
+      "meaning": {
+        "en": "has been done and left that way on purpose",
+        "zh": "（有意）做好后保持着那个状态",
+        "zh_TW": "（有意）做好後保持著那個狀態"
+      },
+      "explanation": {
+        "en": "A transitive verb plus あります describes the state left behind by someone's deliberate act, and the thing acted on takes が. 〜ています with an intransitive verb (窓が開いています) just reports the state without implying anyone did it.",
+        "zh": "他动词加あります，表示某人有意做完后留下的状态，动作对象用が。自动词的〜ています（窓が開いています）只是陈述状态，不暗示有人做过。",
+        "zh_TW": "他動詞加あります，表示某人有意做完後留下的狀態，動作對象用が。自動詞的〜ています（窓が開いています）只是陳述狀態，不暗示有人做過。"
+      },
+      "examples": [
+        {
+          "ja": "机の上に本が置いてあります。",
+          "reading": "つくえのうえにほんがおいてあります。",
+          "en": "A book has been placed on the desk.",
+          "zh": "桌子上放着一本书。",
+          "zh_TW": "桌子上放著一本書。"
+        },
+        {
+          "ja": "部屋に何も書いてありませんでした。",
+          "reading": "へやになにもかいてありませんでした。",
+          "en": "Nothing had been written in the room.",
+          "zh": "房间里什么也没写着。",
+          "zh_TW": "房間裡什麼也沒寫著。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-oku",
+      "level": "N4",
+      "pattern": "〜ておきます",
+      "structure": "動詞て形 + おきます",
+      "match": [
+        "ておきます",
+        "ておきました",
+        "ておく",
+        "ておいて"
+      ],
+      "meaning": {
+        "en": "do in advance; leave it as it is",
+        "zh": "事先做好；就那样放着",
+        "zh_TW": "事先做好；就那樣放著"
+      },
+      "explanation": {
+        "en": "おきます adds the idea of preparing for something later, or of deliberately leaving a thing the way it is. 〜てあります looks at the result afterwards; 〜ておきます looks forward from the act itself.",
+        "zh": "おきます表示为以后做准备，或有意让某物保持原样。〜てあります着眼于事后的状态，〜ておきます则从动作本身向后看。",
+        "zh_TW": "おきます表示為以後做準備，或有意讓某物保持原樣。〜てあります著眼於事後的狀態，〜ておきます則從動作本身向後看。"
+      },
+      "examples": [
+        {
+          "ja": "明日の朝ご飯を作っておきます。",
+          "reading": "あしたのあさごはんをつくっておきます。",
+          "en": "I'll make tomorrow's breakfast in advance.",
+          "zh": "我先把明天的早饭做好。",
+          "zh_TW": "我先把明天的早飯做好。"
+        },
+        {
+          "ja": "先生に聞いておきました。",
+          "reading": "せんせいにきいておきました。",
+          "en": "I asked the teacher beforehand.",
+          "zh": "我事先问过老师了。",
+          "zh_TW": "我事先問過老師了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-shimau",
+      "level": "N4",
+      "pattern": "〜てしまいます",
+      "structure": "動詞て形 + しまいます",
+      "match": [
+        "てしまいます",
+        "てしまいました",
+        "でしまいました",
+        "でしまう",
+        "てしまった",
+        "てしまう"
+      ],
+      "meaning": {
+        "en": "finish completely; do by mistake",
+        "zh": "做完；不小心做了",
+        "zh_TW": "做完；不小心做了"
+      },
+      "explanation": {
+        "en": "しまいます has two uses: finishing something off entirely, and regretting an act you did not mean to do. Which one it is comes from the context, often from words like 全部 or うっかり.",
+        "zh": "しまいます有两种用法：把某事彻底做完，以及对无意中做了的事表示懊悔。具体是哪一种要看上下文，常由全部、うっかり之类的词提示。",
+        "zh_TW": "しまいます有兩種用法：把某事徹底做完，以及對無意中做了的事表示懊悔。具體是哪一種要看上下文，常由全部、うっかり之類的詞提示。"
+      },
+      "examples": [
+        {
+          "ja": "その本を全部読んでしまいました。",
+          "reading": "そのほんをぜんぶよんでしまいました。",
+          "en": "I finished reading the whole book.",
+          "zh": "我把那本书全部读完了。",
+          "zh_TW": "我把那本書全部讀完了。"
+        },
+        {
+          "ja": "電車に傘を忘れてしまった。",
+          "reading": "でんしゃにかさをわすれてしまった。",
+          "en": "I went and left my umbrella on the train.",
+          "zh": "我把伞落在电车上了。",
+          "zh_TW": "我把傘落在電車上了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:chau",
+      "level": "N4",
+      "pattern": "〜ちゃう / 〜じゃう",
+      "structure": "てしまう→ちゃう、でしまう→じゃう",
+      "match": [
+        "ちゃう",
+        "じゃう",
+        "ちゃった",
+        "じゃった",
+        "ちゃいました"
+      ],
+      "meaning": {
+        "en": "casual contraction of 〜てしまう",
+        "zh": "〜てしまう的口语缩略形",
+        "zh_TW": "〜てしまう的口語縮略形"
+      },
+      "explanation": {
+        "en": "In speech てしまう shrinks to ちゃう and でしまう to じゃう, keeping both meanings, finishing and regret. It is casual, so keep 〜てしまいます for work and for people you are not close to.",
+        "zh": "口语中てしまう缩成ちゃう，でしまう缩成じゃう，两种意思都保留。这是随便的说法，工作场合和不熟的人面前仍用〜てしまいます。",
+        "zh_TW": "口語中てしまう縮成ちゃう，でしまう縮成じゃう，兩種意思都保留。這是隨便的說法，工作場合和不熟的人面前仍用〜てしまいます。"
+      },
+      "examples": [
+        {
+          "ja": "その本をもう読んじゃった。",
+          "reading": "そのほんをもうよんじゃった。",
+          "en": "I've already finished that book.",
+          "zh": "那本书我已经读完了。",
+          "zh_TW": "那本書我已經讀完了。"
+        },
+        {
+          "ja": "私の傘を忘れちゃいました。",
+          "reading": "わたしのかさをわすれちゃいました。",
+          "en": "I went and forgot my umbrella.",
+          "zh": "我把我的伞给忘了。",
+          "zh_TW": "我把我的傘給忘了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-miru",
+      "level": "N4",
+      "pattern": "〜てみます",
+      "structure": "動詞て形 + みます",
+      "match": [
+        "てみます",
+        "でみます",
+        "てみました",
+        "てみる",
+        "てみませんか"
+      ],
+      "meaning": {
+        "en": "try doing it and see how it goes",
+        "zh": "试着做做看",
+        "zh_TW": "試著做做看"
+      },
+      "explanation": {
+        "en": "みます means you actually do the action once to find out what it is like. It is not the same as 〜(よ)うとします, which is only an attempt that may never come off.",
+        "zh": "みます表示实际做一次，看看情况如何。它与〜(よ)うとします不同，后者只是尝试，动作未必真的完成。",
+        "zh_TW": "みます表示實際做一次，看看情況如何。它與〜(よ)うとします不同，後者只是嘗試，動作未必真的完成。"
+      },
+      "examples": [
+        {
+          "ja": "この本を読んでみます。",
+          "reading": "このほんをよんでみます。",
+          "en": "I'll give this book a try.",
+          "zh": "我试着读读这本书。",
+          "zh_TW": "我試著讀讀這本書。"
+        },
+        {
+          "ja": "新しい店で食べてみましたか。",
+          "reading": "あたらしいみせでたべてみましたか。",
+          "en": "Did you try eating at the new restaurant?",
+          "zh": "你在新开的店里试着吃过了吗？",
+          "zh_TW": "你在新開的店裡試著吃過了嗎？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-iku",
+      "level": "N4",
+      "pattern": "〜ていきます",
+      "structure": "動詞て形 + いきます",
+      "match": [
+        "ていきます",
+        "ていきました",
+        "ていく"
+      ],
+      "meaning": {
+        "en": "go on doing; move away from now",
+        "zh": "……下去；从现在起变化",
+        "zh_TW": "……下去；從現在起變化"
+      },
+      "explanation": {
+        "en": "いきます points away from the speaker, either in space (walking off) or in time (a change that will continue from now on). 〜てきます points the other way, towards the speaker and towards now.",
+        "zh": "いきます指向离开说话人的方向：空间上是走远，时间上是从现在往后持续的变化。〜てきます方向相反，指向说话人、指向现在。",
+        "zh_TW": "いきます指向離開說話人的方向：空間上是走遠，時間上是從現在往後持續的變化。〜てきます方向相反，指向說話人、指向現在。"
+      },
+      "examples": [
+        {
+          "ja": "これからも日本語を勉強していきます。",
+          "reading": "これからもにほんごをべんきょうしていきます。",
+          "en": "I'll go on studying Japanese from now on too.",
+          "zh": "今后我也会继续学习日语。",
+          "zh_TW": "今後我也會繼續學習日語。"
+        },
+        {
+          "ja": "彼は急いで駅へ走っていきました。",
+          "reading": "かれはいそいでえきへはしっていきました。",
+          "en": "He ran off towards the station in a hurry.",
+          "zh": "他急急忙忙朝车站跑去了。",
+          "zh_TW": "他急急忙忙朝車站跑去了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-kuru",
+      "level": "N4",
+      "pattern": "〜てきます",
+      "structure": "動詞て形 + きます",
+      "match": [
+        "てきます",
+        "てきました",
+        "てきた",
+        "てくる"
+      ],
+      "meaning": {
+        "en": "come to be; do and come back",
+        "zh": "渐渐变得……；去做了回来",
+        "zh_TW": "漸漸變得……；去做了回來"
+      },
+      "explanation": {
+        "en": "きます brings the action towards the speaker: a change that has built up to now (寒くなってきました), or going somewhere, doing a thing and returning (買ってきます). Compare 〜ていきます, which points away.",
+        "zh": "きます把动作拉向说话人：或是持续到现在的变化（寒くなってきました），或是去做了某事再回来（買ってきます）。与方向相反的〜ていきます对照记忆。",
+        "zh_TW": "きます把動作拉向說話人：或是持續到現在的變化（寒くなってきました），或是去做了某事再回來（買ってきます）。與方向相反的〜ていきます對照記憶。"
+      },
+      "examples": [
+        {
+          "ja": "少し寒くなってきました。",
+          "reading": "すこしさむくなってきました。",
+          "en": "It has gradually got a bit cold.",
+          "zh": "天渐渐变冷了。",
+          "zh_TW": "天漸漸變冷了。"
+        },
+        {
+          "ja": "ちょっと水を買ってきます。",
+          "reading": "ちょっとみずをかってきます。",
+          "en": "I'll just go and buy some water.",
+          "zh": "我去买点水就回来。",
+          "zh_TW": "我去買點水就回來。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-ageru",
+      "level": "N4",
+      "pattern": "〜てあげます",
+      "structure": "動詞て形 + あげます",
+      "match": [
+        "てあげます",
+        "てあげました",
+        "てあげる"
+      ],
+      "meaning": {
+        "en": "do something for someone else",
+        "zh": "（我）为别人做某事",
+        "zh_TW": "（我）為別人做某事"
+      },
+      "explanation": {
+        "en": "The favour goes out from the speaker, or from someone close to the speaker, to another person. Said straight to the listener it can sound like you want credit, so with a superior use 〜ましょうか instead.",
+        "zh": "恩惠的方向是从说话人（或说话人一方）流向别人。直接对听话人说容易显得邀功，对上级应改用〜ましょうか。",
+        "zh_TW": "恩惠的方向是從說話人（或說話人一方）流向別人。直接對聽話人說容易顯得邀功，對上級應改用〜ましょうか。"
+      },
+      "examples": [
+        {
+          "ja": "私は友達に本を貸してあげました。",
+          "reading": "わたしはともだちにほんをかしてあげました。",
+          "en": "I lent my friend a book.",
+          "zh": "我把书借给了朋友。",
+          "zh_TW": "我把書借給了朋友。"
+        },
+        {
+          "ja": "妹に日本語を教えてあげます。",
+          "reading": "いもうとににほんごをおしえてあげます。",
+          "en": "I'll teach my little sister Japanese.",
+          "zh": "我教妹妹日语。",
+          "zh_TW": "我教妹妹日語。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-kureru",
+      "level": "N4",
+      "pattern": "〜てくれます",
+      "structure": "動詞て形 + くれます",
+      "match": [
+        "てくれます",
+        "てくれました",
+        "てくれません",
+        "てくれませんでした"
+      ],
+      "meaning": {
+        "en": "someone does something for me",
+        "zh": "别人为我做某事",
+        "zh_TW": "別人為我做某事"
+      },
+      "explanation": {
+        "en": "Here the favour comes in towards the speaker, and the doer is the subject with が. 〜てもらいます says the same event from the receiver's side, as something the receiver asked for.",
+        "zh": "这里恩惠的方向是流向说话人，做事的人是主语，用が。〜てもらいます说的是同一件事，但站在接受方的角度，含有请求对方的意思。",
+        "zh_TW": "這裡恩惠的方向是流向說話人，做事的人是主語，用が。〜てもらいます說的是同一件事，但站在接受方的角度，含有請求對方的意思。"
+      },
+      "examples": [
+        {
+          "ja": "友達が私にお金を貸してくれました。",
+          "reading": "ともだちがわたしにおかねをかしてくれました。",
+          "en": "My friend lent me money.",
+          "zh": "朋友借钱给我了。",
+          "zh_TW": "朋友借錢給我了。"
+        },
+        {
+          "ja": "誰も手伝ってくれませんでした。",
+          "reading": "だれもてつだってくれませんでした。",
+          "en": "Nobody helped me.",
+          "zh": "谁也没有帮我。",
+          "zh_TW": "誰也沒有幫我。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-morau",
+      "level": "N4",
+      "pattern": "〜てもらいます",
+      "structure": "動詞て形 + もらいます",
+      "match": [
+        "てもらいます",
+        "てもらいました",
+        "てもらう"
+      ],
+      "meaning": {
+        "en": "have someone do something for me",
+        "zh": "请别人为我做某事",
+        "zh_TW": "請別人為我做某事"
+      },
+      "explanation": {
+        "en": "The receiver is the topic and the person who does it takes に, so this usually means you asked for the favour. くれます tells the same story with the giver as subject and no request implied.",
+        "zh": "接受恩惠的人是主题，做事的人用に，所以通常含有主动请求的意思。くれます讲的是同一件事，但以施予者为主语，不含请求之意。",
+        "zh_TW": "接受恩惠的人是主題，做事的人用に，所以通常含有主動請求的意思。くれます講的是同一件事，但以施予者為主語，不含請求之意。"
+      },
+      "examples": [
+        {
+          "ja": "私は先生に日本語を教えてもらいました。",
+          "reading": "わたしはせんせいににほんごをおしえてもらいました。",
+          "en": "I had the teacher teach me Japanese.",
+          "zh": "我请老师教了我日语。",
+          "zh_TW": "我請老師教了我日語。"
+        },
+        {
+          "ja": "友達に写真を撮ってもらいます。",
+          "reading": "ともだちにしゃしんをとってもらいます。",
+          "en": "I'll have my friend take a photo.",
+          "zh": "我请朋友帮我拍照。",
+          "zh_TW": "我請朋友幫我拍照。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-kuremasen-ka",
+      "level": "N4",
+      "pattern": "〜てくれませんか",
+      "structure": "動詞て形 + くれませんか",
+      "match": [
+        "てくれませんか",
+        "でくれませんか",
+        "てくれない"
+      ],
+      "meaning": {
+        "en": "would you do this for me?",
+        "zh": "能为我做……吗？",
+        "zh_TW": "能為我做……嗎？"
+      },
+      "explanation": {
+        "en": "The negative question softens a request, so it is gentler than 〜てください. 〜てくれない is the casual version for friends, and 〜ていただけませんか is the polite one for a teacher or a customer.",
+        "zh": "用否定疑问的形式提出请求，语气比〜てください柔和。对朋友用简体的〜てくれない，对老师或客户则用更礼貌的〜ていただけませんか。",
+        "zh_TW": "用否定疑問的形式提出請求，語氣比〜てください柔和。對朋友用簡體的〜てくれない，對老師或客戶則用更禮貌的〜ていただけませんか。"
+      },
+      "examples": [
+        {
+          "ja": "ちょっと手伝ってくれませんか。",
+          "reading": "ちょっとてつだってくれませんか。",
+          "en": "Could you give me a hand?",
+          "zh": "你能帮我一下吗？",
+          "zh_TW": "你能幫我一下嗎？"
+        },
+        {
+          "ja": "この本を読んでくれませんか。",
+          "reading": "このほんをよんでくれませんか。",
+          "en": "Would you read this book for me?",
+          "zh": "你能帮我读一下这本书吗？",
+          "zh_TW": "你能幫我讀一下這本書嗎？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-moraemasen-ka",
+      "level": "N4",
+      "pattern": "〜てもらえませんか",
+      "structure": "V て形 + もらえませんか / もらえますか",
+      "match": [
+        "てもらえませんか",
+        "てもらえますか",
+        "でもらえませんか",
+        "でもらえますか"
+      ],
+      "meaning": {
+        "en": "could I have you do this? (softer request)",
+        "zh": "能请您做…吗？（更委婉的请求）",
+        "zh_TW": "能請您做…嗎？（更委婉的請求）"
+      },
+      "explanation": {
+        "en": "てもらえませんか asks someone to do something for you. It is softer than てください because the negative question leaves the other person room to refuse; てもらえますか is a little more direct.",
+        "zh": "てもらえませんか用来请别人为自己做某事。因为用否定疑问，语气比てください更客气，给对方留有余地；てもらえますか则稍直接一些。",
+        "zh_TW": "てもらえませんか用來請別人為自己做某事。因為用否定疑問，語氣比てください更客氣，給對方留有餘地；てもらえますか則稍直接一些。"
+      },
+      "examples": [
+        {
+          "ja": "ちょっと待ってもらえませんか。",
+          "reading": "ちょっとまってもらえませんか。",
+          "en": "Could you wait a moment?",
+          "zh": "能请您稍等一下吗？",
+          "zh_TW": "能請您稍等一下嗎？"
+        },
+        {
+          "ja": "この本を貸してもらえますか。",
+          "reading": "このほんをかしてもらえますか。",
+          "en": "Could you lend me this book?",
+          "zh": "能把这本书借给我吗？",
+          "zh_TW": "能把這本書借給我嗎？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-hoshii",
+      "level": "N4",
+      "pattern": "〜てほしいです",
+      "structure": "N に + V て形 + ほしいです",
+      "match": [
+        "てほしいです",
+        "てほしい",
+        "でほしいです",
+        "てほしくない"
+      ],
+      "meaning": {
+        "en": "I want someone to do something",
+        "zh": "希望别人做某事",
+        "zh_TW": "希望別人做某事"
+      },
+      "explanation": {
+        "en": "てほしい says what you want another person to do; the person is marked with に. Use たい for what you yourself want to do, and keep てほしい for people you are close to or below you.",
+        "zh": "てほしい表示希望别人做某事，对象用に标示。自己想做某事用たい；てほしい多用于对亲近的人或下位者。",
+        "zh_TW": "てほしい表示希望別人做某事，對象用に標示。自己想做某事用たい；てほしい多用於對親近的人或下位者。"
+      },
+      "examples": [
+        {
+          "ja": "友達に来てほしいです。",
+          "reading": "ともだちにきてほしいです。",
+          "en": "I want my friend to come.",
+          "zh": "我希望朋友来。",
+          "zh_TW": "我希望朋友來。"
+        },
+        {
+          "ja": "先生に話を聞いてほしいです。",
+          "reading": "せんせいにはなしをきいてほしいです。",
+          "en": "I want the teacher to listen to me.",
+          "zh": "我希望老师听我说。",
+          "zh_TW": "我希望老師聽我說。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-mo",
+      "level": "N4",
+      "pattern": "〜ても",
+      "structure": "V て形 / A-くて / N で + も",
+      "match": [
+        "ても",
+        "でも",
+        "くても",
+        "なくても"
+      ],
+      "meaning": {
+        "en": "even if; no matter how",
+        "zh": "即使…也…；无论…都…",
+        "zh_TW": "即使…也…；無論…都…"
+      },
+      "explanation": {
+        "en": "ても says the result does not change even if the first part happens. It is the concessive partner of たら and ば, which say the result does depend on the condition.",
+        "zh": "ても表示即使前项成立，结果也不变。它与表示结果取决于条件的たら、ば正好相反，属于让步用法。",
+        "zh_TW": "ても表示即使前項成立，結果也不變。它與表示結果取決於條件的たら、ば正好相反，屬於讓步用法。"
+      },
+      "examples": [
+        {
+          "ja": "雨が降っても行きます。",
+          "reading": "あめがふってもいきます。",
+          "en": "I will go even if it rains.",
+          "zh": "即使下雨我也去。",
+          "zh_TW": "即使下雨我也去。"
+        },
+        {
+          "ja": "高くても買いたいです。",
+          "reading": "たかくてもかいたいです。",
+          "en": "I want to buy it even if it is expensive.",
+          "zh": "即使贵我也想买。",
+          "zh_TW": "即使貴我也想買。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-reason",
+      "level": "N4",
+      "pattern": "〜て（理由）",
+      "structure": "V て形 / A-くて + （結果・気持ち）",
+      "match": [
+        "くて",
+        "なくて",
+        "忙しくて",
+        "来なくて"
+      ],
+      "meaning": {
+        "en": "te-form linking a cause to a feeling or result",
+        "zh": "て形连接原因与随之而来的感情或结果",
+        "zh_TW": "て形連接原因與隨之而來的感情或結果"
+      },
+      "explanation": {
+        "en": "The te-form alone can join a cause to its result, especially when the result is a feeling or something you could not control. Unlike から, it cannot be followed by an order, an invitation or a request.",
+        "zh": "て形本身就能连接原因和结果，尤其在结果是感情或非意志性事态时。与から不同，后面不能接命令、劝诱或请求。",
+        "zh_TW": "て形本身就能連接原因和結果，尤其在結果是感情或非意志性事態時。與から不同，後面不能接命令、勸誘或請求。"
+      },
+      "examples": [
+        {
+          "ja": "仕事が忙しくて、休みません。",
+          "reading": "しごとがいそがしくて、やすみません。",
+          "en": "Work is busy, so I cannot take a rest.",
+          "zh": "工作忙，没法休息。",
+          "zh_TW": "工作忙，沒法休息。"
+        },
+        {
+          "ja": "電車が来なくて、遅れました。",
+          "reading": "でんしゃがこなくて、おくれました。",
+          "en": "The train did not come, so I was late.",
+          "zh": "电车没来，所以我迟到了。",
+          "zh_TW": "電車沒來，所以我遲到了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:mama",
+      "level": "N4",
+      "pattern": "〜まま",
+      "structure": "V た形 / N の + まま",
+      "match": [
+        "まま",
+        "たまま",
+        "のまま",
+        "ままで"
+      ],
+      "meaning": {
+        "en": "leaving something in an unchanged state",
+        "zh": "保持某种状态不变",
+        "zh_TW": "保持某種狀態不變"
+      },
+      "explanation": {
+        "en": "まま says a state was left as it was while something else happened. The verb before it is in the past form, because the state has already been set.",
+        "zh": "まま表示某种状态原封不动地持续着，同时发生了别的事。前面的动词用た形，因为状态已经形成。",
+        "zh_TW": "まま表示某種狀態原封不動地持續著，同時發生了別的事。前面的動詞用た形，因為狀態已經形成。"
+      },
+      "examples": [
+        {
+          "ja": "電気をつけたまま寝ました。",
+          "reading": "でんきをつけたままねました。",
+          "en": "I fell asleep with the light left on.",
+          "zh": "我开着灯就睡着了。",
+          "zh_TW": "我開著燈就睡著了。"
+        },
+        {
+          "ja": "窓を開けたままにしないでください。",
+          "reading": "まどをあけたままにしないでください。",
+          "en": "Please do not leave the window open.",
+          "zh": "请不要一直开着窗。",
+          "zh_TW": "請不要一直開著窗。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-conditional",
+      "level": "N4",
+      "pattern": "〜と（条件）",
+      "structure": "V 辞書形 / A-い / N だ + と",
+      "match": [
+        "ると",
+        "くと",
+        "と、",
+        "うと"
+      ],
+      "meaning": {
+        "en": "whenever A happens, B follows automatically",
+        "zh": "一…就…（必然结果）",
+        "zh_TW": "一…就…（必然結果）"
+      },
+      "explanation": {
+        "en": "と states a result that always follows: natural laws, machines, directions. The second half cannot be a request, an order or an invitation, so use たら or ば when you want those.",
+        "zh": "と表示前项一旦成立，后项必然发生，多用于自然规律、机器操作和指路。后半句不能是请求、命令或劝诱，那时要用たら或ば。",
+        "zh_TW": "と表示前項一旦成立，後項必然發生，多用於自然規律、機器操作和指路。後半句不能是請求、命令或勸誘，那時要用たら或ば。"
+      },
+      "examples": [
+        {
+          "ja": "春になると、暖かくなります。",
+          "reading": "はるになると、あたたかくなります。",
+          "en": "When spring comes, it gets warm.",
+          "zh": "一到春天就变暖了。",
+          "zh_TW": "一到春天就變暖了。"
+        },
+        {
+          "ja": "右へ行くと駅があります。",
+          "reading": "みぎへいくとえきがあります。",
+          "en": "If you go right, there is a station.",
+          "zh": "往右走就有车站。",
+          "zh_TW": "往右走就有車站。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tara",
+      "level": "N4",
+      "pattern": "〜たら",
+      "structure": "V た形 / A-かった / N だった + ら",
+      "match": [
+        "たら",
+        "だら",
+        "かったら",
+        "なかったら"
+      ],
+      "meaning": {
+        "en": "if / when A, then B (general conditional)",
+        "zh": "如果…就…；…之后就…",
+        "zh_TW": "如果…就…；…之後就…"
+      },
+      "explanation": {
+        "en": "たら is the widest conditional: it covers both \"if\" and \"once A is finished\". Unlike と, the second half may be a request, a suggestion or a plan.",
+        "zh": "たら是使用范围最广的条件形式，既表示“如果”，也表示“…之后”。与と不同，后半句可以是请求、建议或打算。",
+        "zh_TW": "たら是使用範圍最廣的條件形式，既表示“如果”，也表示“…之後”。與と不同，後半句可以是請求、建議或打算。"
+      },
+      "examples": [
+        {
+          "ja": "雨が降ったら、行きません。",
+          "reading": "あめがふったら、いきません。",
+          "en": "If it rains, I will not go.",
+          "zh": "如果下雨，我就不去。",
+          "zh_TW": "如果下雨，我就不去。"
+        },
+        {
+          "ja": "安かったら買います。",
+          "reading": "やすかったらかいます。",
+          "en": "I will buy it if it is cheap.",
+          "zh": "便宜的话我就买。",
+          "zh_TW": "便宜的話我就買。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ba-conditional",
+      "level": "N4",
+      "pattern": "〜ば",
+      "structure": "V ば形 / A-ければ / N であれば",
+      "match": [
+        "れば",
+        "えば",
+        "ければ",
+        "なければ"
+      ],
+      "meaning": {
+        "en": "if A, then B (hypothetical conditional)",
+        "zh": "如果…的话，就…（假定条件）",
+        "zh_TW": "如果…的話，就…（假定條件）"
+      },
+      "explanation": {
+        "en": "ば sets up a condition in the abstract, so it fits general truths and \"if only\" wishes. It is a little stiffer than たら and is common in fixed phrases and proverbs.",
+        "zh": "ば表示抽象的假定条件，适合一般道理和“只要…就好了”的愿望。语气比たら书面一些，常见于固定说法和谚语。",
+        "zh_TW": "ば表示抽象的假定條件，適合一般道理和“只要…就好了”的願望。語氣比たら書面一些，常見於固定說法和諺語。"
+      },
+      "examples": [
+        {
+          "ja": "時間があれば、映画を見ます。",
+          "reading": "じかんがあれば、えいがをみます。",
+          "en": "If I have time, I watch a movie.",
+          "zh": "有时间的话我就看电影。",
+          "zh_TW": "有時間的話我就看電影。"
+        },
+        {
+          "ja": "安ければ買います。",
+          "reading": "やすければかいます。",
+          "en": "I will buy it if it is cheap.",
+          "zh": "便宜的话我就买。",
+          "zh_TW": "便宜的話我就買。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nara",
+      "level": "N4",
+      "pattern": "〜なら",
+      "structure": "N / V 普通形 + なら",
+      "match": [
+        "なら",
+        "のなら",
+        "だったら"
+      ],
+      "meaning": {
+        "en": "if that's the case; speaking of that",
+        "zh": "如果是…的话；说到…",
+        "zh_TW": "如果是…的話；說到…"
+      },
+      "explanation": {
+        "en": "なら picks up something the other person just said or brought up and gives advice or an opinion about it. Unlike たら, it does not mean \"after A happens\".",
+        "zh": "なら承接对方刚提到的话题，就此给出建议或看法。与たら不同，它不表示“…之后”。",
+        "zh_TW": "なら承接對方剛提到的話題，就此給出建議或看法。與たら不同，它不表示“…之後”。"
+      },
+      "examples": [
+        {
+          "ja": "日本語なら、少し分かります。",
+          "reading": "にほんごなら、すこしわかります。",
+          "en": "If it is Japanese, I understand a little.",
+          "zh": "如果是日语的话，我懂一点。",
+          "zh_TW": "如果是日語的話，我懂一點。"
+        },
+        {
+          "ja": "行くなら、車で行きましょう。",
+          "reading": "いくなら、くるまでいきましょう。",
+          "en": "If we are going, let's go by car.",
+          "zh": "要去的话，我们开车去吧。",
+          "zh_TW": "要去的話，我們開車去吧。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tara-dou",
+      "level": "N4",
+      "pattern": "〜たらどうですか",
+      "structure": "V た形 + らどうですか",
+      "match": [
+        "たらどうですか",
+        "だらどうですか",
+        "たらどう",
+        "だらどう"
+      ],
+      "meaning": {
+        "en": "why don't you...? (suggestion)",
+        "zh": "…怎么样？（建议）",
+        "zh_TW": "…怎麼樣？（建議）"
+      },
+      "explanation": {
+        "en": "たらどうですか offers advice about what the listener could do. It is gentler than an order, but it still points at the other person, so it is not used to a superior.",
+        "zh": "たらどうですか用来向对方提出建议，比命令委婉。但因为直接指向对方，一般不对上级使用。",
+        "zh_TW": "たらどうですか用來向對方提出建議，比命令委婉。但因為直接指向對方，一般不對上級使用。"
+      },
+      "examples": [
+        {
+          "ja": "少し休んだらどうですか。",
+          "reading": "すこしやすんだらどうですか。",
+          "en": "Why don't you rest a little?",
+          "zh": "你稍微休息一下怎么样？",
+          "zh_TW": "你稍微休息一下怎麼樣？"
+        },
+        {
+          "ja": "先生に聞いてみたらどうですか。",
+          "reading": "せんせいにきいてみたらどうですか。",
+          "en": "Why don't you try asking the teacher?",
+          "zh": "你问问老师怎么样？",
+          "zh_TW": "你問問老師怎麼樣？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ba-ii",
+      "level": "N4",
+      "pattern": "〜ばいいですか",
+      "structure": "V ば形 + いいですか",
+      "match": [
+        "ばいいですか",
+        "ばいいです",
+        "ばいい"
+      ],
+      "meaning": {
+        "en": "what should I do? / it would be good if",
+        "zh": "该怎么做才好呢？；…就好了",
+        "zh_TW": "該怎麼做才好呢？；…就好了"
+      },
+      "explanation": {
+        "en": "Asked with a question word, ばいいですか asks for instructions: where, when or how you should do something. Without the question it simply says that doing so would be fine.",
+        "zh": "与疑问词连用时，ばいいですか用来询问指示：该在哪里、什么时候、怎样做。不带疑问时则表示“这样做就好”。",
+        "zh_TW": "與疑問詞連用時，ばいいですか用來詢問指示：該在哪裡、什麼時候、怎樣做。不帶疑問時則表示“這樣做就好”。"
+      },
+      "examples": [
+        {
+          "ja": "どこで待てばいいですか。",
+          "reading": "どこでまてばいいですか。",
+          "en": "Where should I wait?",
+          "zh": "我该在哪里等呢？",
+          "zh_TW": "我該在哪裡等呢？"
+        },
+        {
+          "ja": "何を持って行けばいいですか。",
+          "reading": "なにをもっていけばいいですか。",
+          "en": "What should I take with me?",
+          "zh": "我该带什么去呢？",
+          "zh_TW": "我該帶什麼去呢？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ba-yokatta",
+      "level": "N4",
+      "pattern": "〜ばよかった",
+      "structure": "V ば形 + よかった（です）",
+      "match": [
+        "ばよかった",
+        "ばよかったです",
+        "ばよかったのに"
+      ],
+      "meaning": {
+        "en": "I should have done it (regret)",
+        "zh": "早知道就…了（后悔）",
+        "zh_TW": "早知道就…了（後悔）"
+      },
+      "explanation": {
+        "en": "ばよかった looks back at something you did not do and regrets it. The negative なければよかった regrets something you did do.",
+        "zh": "ばよかった表示对没做的事感到后悔。否定形式なければよかった则表示后悔做了某事。",
+        "zh_TW": "ばよかった表示對沒做的事感到後悔。否定形式なければよかった則表示後悔做了某事。"
+      },
+      "examples": [
+        {
+          "ja": "もっと早く起きればよかったです。",
+          "reading": "もっとはやくおきればよかったです。",
+          "en": "I should have gotten up earlier.",
+          "zh": "我早点起床就好了。",
+          "zh_TW": "我早點起床就好了。"
+        },
+        {
+          "ja": "あの本を買えばよかった。",
+          "reading": "あのほんをかえばよかった。",
+          "en": "I should have bought that book.",
+          "zh": "早知道就买那本书了。",
+          "zh_TW": "早知道就買那本書了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nakucha",
+      "level": "N4",
+      "pattern": "〜なきゃ / 〜なくちゃ",
+      "structure": "V ない形 −ない + なきゃ / なくちゃ",
+      "match": [
+        "なきゃ",
+        "なくちゃ",
+        "なきゃいけない",
+        "なくちゃいけない"
+      ],
+      "meaning": {
+        "en": "casual 'I have to' contractions",
+        "zh": "口语的“必须…”缩略形",
+        "zh_TW": "口語的“必須…”縮略形"
+      },
+      "explanation": {
+        "en": "なきゃ shortens なければ and なくちゃ shortens なくては; both usually drop いけません and stand alone. They are casual, so keep なければなりません for polite speech and writing.",
+        "zh": "なきゃ是なければ的缩略，なくちゃ是なくては的缩略，后面的いけません通常省略。二者都很口语，郑重场合和书面语仍用なければなりません。",
+        "zh_TW": "なきゃ是なければ的縮略，なくちゃ是なくては的縮略，後面的いけません通常省略。二者都很口語，鄭重場合和書面語仍用なければなりません。"
+      },
+      "examples": [
+        {
+          "ja": "もう帰らなきゃ。",
+          "reading": "もうかえらなきゃ。",
+          "en": "I have to go home now.",
+          "zh": "我得回家了。",
+          "zh_TW": "我得回家了。"
+        },
+        {
+          "ja": "明日までに作らなくちゃ。",
+          "reading": "あしたまでにつくらなくちゃ。",
+          "en": "I have to make it by tomorrow.",
+          "zh": "我明天之前得做好。",
+          "zh_TW": "我明天之前得做好。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:node",
+      "level": "N4",
+      "pattern": "〜ので",
+      "structure": "V/A 普通形 + ので、Na/N な + ので",
+      "match": [
+        "ので",
+        "なので",
+        "ですので"
+      ],
+      "meaning": {
+        "en": "because (softer, more objective than から)",
+        "zh": "因为（比から更客观、更委婉）",
+        "zh_TW": "因為（比から更客觀、更委婉）"
+      },
+      "explanation": {
+        "en": "ので gives a reason as a plain fact, so it sounds softer than から and suits explanations and excuses. Na-adjectives and nouns take な before it.",
+        "zh": "ので把理由作为客观事实陈述，语气比から柔和，适合说明和道歉。形容动词和名词后要加な。",
+        "zh_TW": "ので把理由作為客觀事實陳述，語氣比から柔和，適合說明和道歉。形容動詞和名詞後要加な。"
+      },
+      "examples": [
+        {
+          "ja": "忙しいので、行けません。",
+          "reading": "いそがしいので、いけません。",
+          "en": "I am busy, so I cannot go.",
+          "zh": "因为忙，我去不了。",
+          "zh_TW": "因為忙，我去不了。"
+        },
+        {
+          "ja": "静かなので、よく寝られます。",
+          "reading": "しずかなので、よくねられます。",
+          "en": "It is quiet, so I can sleep well.",
+          "zh": "因为很安静，我能睡得很好。",
+          "zh_TW": "因為很安靜，我能睡得很好。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:noni",
+      "level": "N4",
+      "pattern": "〜のに",
+      "structure": "V/A 普通形 + のに、Na/N な + のに",
+      "match": [
+        "のに",
+        "なのに"
+      ],
+      "meaning": {
+        "en": "even though; although (with surprise or regret)",
+        "zh": "明明…却…（含意外或不满）",
+        "zh_TW": "明明…卻…（含意外或不滿）"
+      },
+      "explanation": {
+        "en": "のに joins two facts that do not fit together, and adds the speaker's surprise or complaint. が and けど state the same contrast flatly, without that feeling.",
+        "zh": "のに连接两件本不该同时成立的事，并带有说话人的意外或不满。が、けど只是平铺地表示转折，没有这种情绪。",
+        "zh_TW": "のに連接兩件本不該同時成立的事，並帶有說話人的意外或不滿。が、けど只是平鋪地表示轉折，沒有這種情緒。"
+      },
+      "examples": [
+        {
+          "ja": "高いのに、買いました。",
+          "reading": "たかいのに、かいました。",
+          "en": "Even though it was expensive, I bought it.",
+          "zh": "明明很贵，我还是买了。",
+          "zh_TW": "明明很貴，我還是買了。"
+        },
+        {
+          "ja": "待ったのに、来ませんでした。",
+          "reading": "まったのに、きませんでした。",
+          "en": "Even though I waited, he did not come.",
+          "zh": "我明明等了，他却没来。",
+          "zh_TW": "我明明等了，他卻沒來。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:shi",
+      "level": "N4",
+      "pattern": "〜し",
+      "structure": "V/A 普通形 + し",
+      "match": [
+        "し、",
+        "いし",
+        "だし",
+        "ますし"
+      ],
+      "meaning": {
+        "en": "listing several reasons or qualities",
+        "zh": "列举多个理由或性质",
+        "zh_TW": "列舉多個理由或性質"
+      },
+      "explanation": {
+        "en": "し lines up two or more reasons and hints that there are others. Unlike て, which just joins, し tells the listener the reasons are piling up toward a conclusion.",
+        "zh": "し并列两个以上的理由，并暗示还有其他理由。て只是单纯连接，し则提示这些理由在叠加，指向某个结论。",
+        "zh_TW": "し並列兩個以上的理由，並暗示還有其他理由。て只是單純連接，し則提示這些理由在疊加，指向某個結論。"
+      },
+      "examples": [
+        {
+          "ja": "この店は安いし、近いです。",
+          "reading": "このみせはやすいし、ちかいです。",
+          "en": "This shop is cheap, and it is close too.",
+          "zh": "这家店又便宜又近。",
+          "zh_TW": "這家店又便宜又近。"
+        },
+        {
+          "ja": "今日は雨だし、家で休みます。",
+          "reading": "きょうはあめだし、いえでやすみます。",
+          "en": "It is raining today, so I will rest at home.",
+          "zh": "今天又下雨，我就在家休息。",
+          "zh_TW": "今天又下雨，我就在家休息。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tame-ni",
+      "level": "N4",
+      "pattern": "〜ために（目的）",
+      "structure": "V 辞書形 / N の + ために",
+      "match": [
+        "ために",
+        "のために",
+        "るために"
+      ],
+      "meaning": {
+        "en": "in order to; for the sake of",
+        "zh": "为了…",
+        "zh_TW": "為了…"
+      },
+      "explanation": {
+        "en": "ために gives the purpose of a deliberate action, so both halves are things you decide to do. Use ように instead when the first half is beyond your control, such as being able to do something.",
+        "zh": "ために表示有意识行为的目的，前后都是自己能决定的事。若前项是自己无法控制的状态（如“能够…”），则用ように。",
+        "zh_TW": "ために表示有意識行為的目的，前後都是自己能決定的事。若前項是自己無法控制的狀態（如“能夠…”），則用ように。"
+      },
+      "examples": [
+        {
+          "ja": "日本語を話すために、毎日勉強します。",
+          "reading": "にほんごをはなすために、まいにちべんきょうします。",
+          "en": "I study every day in order to speak Japanese.",
+          "zh": "为了说日语，我每天学习。",
+          "zh_TW": "為了說日語，我每天學習。"
+        },
+        {
+          "ja": "家族のために働いています。",
+          "reading": "かぞくのためにはたらいています。",
+          "en": "I work for my family.",
+          "zh": "我为了家人而工作。",
+          "zh_TW": "我為了家人而工作。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tame-reason",
+      "level": "N4",
+      "pattern": "〜ため（原因）",
+      "structure": "N の / V 普通形 + ため（に）",
+      "match": [
+        "のため",
+        "ため、",
+        "ためです"
+      ],
+      "meaning": {
+        "en": "because of; due to (formal reason)",
+        "zh": "由于…（书面、正式的原因）",
+        "zh_TW": "由於…（書面、正式的原因）"
+      },
+      "explanation": {
+        "en": "ため also states a cause, and in that use it is formal: notices, announcements and news rather than conversation. から and ので are the everyday equivalents.",
+        "zh": "ため也可表示原因，此时语气正式，多见于通知、公告和新闻，而非日常会话。口语中相当于から、ので。",
+        "zh_TW": "ため也可表示原因，此時語氣正式，多見於通知、公告和新聞，而非日常會話。口語中相當於から、ので。"
+      },
+      "examples": [
+        {
+          "ja": "雨のため、電車が遅れました。",
+          "reading": "あめのため、でんしゃがおくれました。",
+          "en": "The train was late because of the rain.",
+          "zh": "由于下雨，电车晚点了。",
+          "zh_TW": "由於下雨，電車晚點了。"
+        },
+        {
+          "ja": "病気のため、学校を休みました。",
+          "reading": "びょうきのため、がっこうをやすみました。",
+          "en": "I was absent from school because of illness.",
+          "zh": "由于生病，我没去学校。",
+          "zh_TW": "由於生病，我沒去學校。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kamoshirenai",
+      "level": "N4",
+      "pattern": "〜かもしれません",
+      "structure": "V/A 普通形 + かもしれません、Na/N + かもしれません",
+      "match": [
+        "かもしれません",
+        "かもしれない",
+        "かもしれませんが"
+      ],
+      "meaning": {
+        "en": "might; may; perhaps",
+        "zh": "也许…；可能…",
+        "zh_TW": "也許…；可能…"
+      },
+      "explanation": {
+        "en": "かもしれません says something is possible, without claiming it is likely. でしょう is more confident, and はずです says you have a reason to expect it.",
+        "zh": "かもしれません表示存在这种可能，但并不说明可能性大小。でしょう的把握更大，はずです则表示有根据地推测。",
+        "zh_TW": "かもしれません表示存在這種可能，但並不說明可能性大小。でしょう的把握更大，はずです則表示有根據地推測。"
+      },
+      "examples": [
+        {
+          "ja": "明日は雨かもしれません。",
+          "reading": "あしたはあめかもしれません。",
+          "en": "It might rain tomorrow.",
+          "zh": "明天也许会下雨。",
+          "zh_TW": "明天也許會下雨。"
+        },
+        {
+          "ja": "先生はもう帰ったかもしれない。",
+          "reading": "せんせいはもうかえったかもしれない。",
+          "en": "The teacher might have already gone home.",
+          "zh": "老师也许已经回去了。",
+          "zh_TW": "老師也許已經回去了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:hazu",
+      "level": "N4",
+      "pattern": "〜はずです",
+      "structure": "V/A 普通形 + はずです、N の + はずです",
+      "match": [
+        "はずです",
+        "はずだ",
+        "はずでした"
+      ],
+      "meaning": {
+        "en": "it is expected that; should be the case",
+        "zh": "按理说应该…",
+        "zh_TW": "按理說應該…"
+      },
+      "explanation": {
+        "en": "はずです says you expect something because you have a reason for it: a schedule, a rule, what you were told. It is not a wish, and not as strong as a plain statement of fact.",
+        "zh": "はずです表示有根据的推断，根据可以是时间表、规定或听到的消息。它不表示愿望，语气也弱于直接的断定。",
+        "zh_TW": "はずです表示有根據的推斷，根據可以是時間表、規定或聽到的消息。它不表示願望，語氣也弱於直接的斷定。"
+      },
+      "examples": [
+        {
+          "ja": "友達は今日来るはずです。",
+          "reading": "ともだちはきょうくるはずです。",
+          "en": "My friend should be coming today.",
+          "zh": "朋友今天应该会来。",
+          "zh_TW": "朋友今天應該會來。"
+        },
+        {
+          "ja": "電車はもう着いたはずだ。",
+          "reading": "でんしゃはもうついたはずだ。",
+          "en": "The train should have arrived already.",
+          "zh": "电车应该已经到了。",
+          "zh_TW": "電車應該已經到了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:hazu-ga-nai",
+      "level": "N4",
+      "pattern": "〜はずがありません",
+      "structure": "V/A 普通形 + はずがありません",
+      "match": [
+        "はずがありません",
+        "はずがない",
+        "はずはない"
+      ],
+      "meaning": {
+        "en": "there's no way that could be true",
+        "zh": "不可能…",
+        "zh_TW": "不可能…"
+      },
+      "explanation": {
+        "en": "はずがありません denies a possibility on the strength of what you know. It is stronger than ないはずです, which only says you do not expect it.",
+        "zh": "はずがありません根据已知情况否定某种可能性。语气强于ないはずです，后者只是表示估计不会。",
+        "zh_TW": "はずがありません根據已知情況否定某種可能性。語氣強於ないはずです，後者只是表示估計不會。"
+      },
+      "examples": [
+        {
+          "ja": "彼がそんなことを言うはずがありません。",
+          "reading": "かれがそんなことをいうはずがありません。",
+          "en": "There is no way he would say such a thing.",
+          "zh": "他不可能说那种话。",
+          "zh_TW": "他不可能說那種話。"
+        },
+        {
+          "ja": "この問題が簡単なはずがない。",
+          "reading": "このもんだいがかんたんなはずがない。",
+          "en": "There is no way this problem is easy.",
+          "zh": "这道题不可能简单。",
+          "zh_TW": "這道題不可能簡單。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:darou-to-omou",
+      "level": "N4",
+      "pattern": "〜だろうと思います",
+      "structure": "V/A 普通形 + だろうと思います",
+      "match": [
+        "だろうと思います",
+        "だろうと思う",
+        "だろうと"
+      ],
+      "meaning": {
+        "en": "I suppose that; I imagine that",
+        "zh": "我想大概…吧",
+        "zh_TW": "我想大概…吧"
+      },
+      "explanation": {
+        "en": "だろうと思います marks a guess clearly as your own, so it sounds more modest than plain でしょう. と思います alone states an opinion; だろう adds the uncertainty.",
+        "zh": "だろうと思います明确表示这是自己的推测，语气比单用でしょう更谦逊。と思います表示看法，だろう则加上了不确定的语气。",
+        "zh_TW": "だろうと思います明確表示這是自己的推測，語氣比單用でしょう更謙遜。と思います表示看法，だろう則加上了不確定的語氣。"
+      },
+      "examples": [
+        {
+          "ja": "明日は寒いだろうと思います。",
+          "reading": "あしたはさむいだろうとおもいます。",
+          "en": "I suppose it will be cold tomorrow.",
+          "zh": "我想明天大概会冷吧。",
+          "zh_TW": "我想明天大概會冷吧。"
+        },
+        {
+          "ja": "彼は来ないだろうと思う。",
+          "reading": "かれはこないだろうとおもう。",
+          "en": "I imagine he will not come.",
+          "zh": "我想他大概不会来吧。",
+          "zh_TW": "我想他大概不會來吧。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:sou-appearance",
+      "level": "N4",
+      "pattern": "〜そうです（様態）",
+      "structure": "V ます形 / A 語幹 + そうです",
+      "match": [
+        "そうです",
+        "そうに",
+        "そうな",
+        "りそう"
+      ],
+      "meaning": {
+        "en": "looks like; seems about to happen",
+        "zh": "看起来…；眼看就要…",
+        "zh_TW": "看起來…；眼看就要…"
+      },
+      "explanation": {
+        "en": "This そう is attached to the stem and reports what you judge from looking. With a verb it means something is about to happen; with an adjective it means it looks that way.",
+        "zh": "这个そう接在词干后，表示凭眼睛所见做出的判断。接动词表示眼看就要发生，接形容词表示看上去如此。",
+        "zh_TW": "這個そう接在詞幹後，表示憑眼睛所見做出的判斷。接動詞表示眼看就要發生，接形容詞表示看上去如此。"
+      },
+      "examples": [
+        {
+          "ja": "この料理はおいしそうです。",
+          "reading": "このりょうりはおいしそうです。",
+          "en": "This dish looks delicious.",
+          "zh": "这道菜看起来很好吃。",
+          "zh_TW": "這道菜看起來很好吃。"
+        },
+        {
+          "ja": "雨が降りそうになりました。",
+          "reading": "あめがふりそうになりました。",
+          "en": "It started to look like rain.",
+          "zh": "看样子快要下雨了。",
+          "zh_TW": "看樣子快要下雨了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:sou-ni-nai",
+      "level": "N4",
+      "pattern": "〜そうにありません",
+      "structure": "V ます形 + そうにありません",
+      "match": [
+        "そうにありません",
+        "そうにない",
+        "そうもない"
+      ],
+      "meaning": {
+        "en": "doesn't look like it will happen",
+        "zh": "看样子不会…",
+        "zh_TW": "看樣子不會…"
+      },
+      "explanation": {
+        "en": "This is the negative of the appearance そう: from what you can see, there is little chance of it happening. そうじゃないです is not used for this meaning.",
+        "zh": "这是样态そう的否定形式，表示从眼前情况看几乎没有发生的可能。此义不能说成そうじゃないです。",
+        "zh_TW": "這是樣態そう的否定形式，表示從眼前情況看幾乎沒有發生的可能。此義不能說成そうじゃないです。"
+      },
+      "examples": [
+        {
+          "ja": "雨は止みそうにありません。",
+          "reading": "あめはやみそうにありません。",
+          "en": "It does not look like the rain will stop.",
+          "zh": "看样子雨不会停。",
+          "zh_TW": "看樣子雨不會停。"
+        },
+        {
+          "ja": "仕事は今日終わりそうにない。",
+          "reading": "しごとはきょうおわりそうにない。",
+          "en": "It does not look like the work will finish today.",
+          "zh": "看样子工作今天做不完。",
+          "zh_TW": "看樣子工作今天做不完。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:sou-hearsay",
+      "level": "N4",
+      "pattern": "〜そうです（伝聞）",
+      "structure": "V/A 普通形 + そうです、N だ + そうです",
+      "match": [
+        "そうです",
+        "そうだ",
+        "だそうです",
+        "るそうです"
+      ],
+      "meaning": {
+        "en": "I hear that; they say that",
+        "zh": "听说…",
+        "zh_TW": "聽說…"
+      },
+      "explanation": {
+        "en": "This そう follows the plain form and passes on what you heard or read, unchanged. Compare the appearance そう, which attaches to the stem and reports your own judgement.",
+        "zh": "这个そう接在普通形后，原样转述听到或读到的内容。与之相对，样态的そう接在词干后，表示自己的判断。",
+        "zh_TW": "這個そう接在普通形後，原樣轉述聽到或讀到的內容。與之相對，樣態的そう接在詞幹後，表示自己的判斷。"
+      },
+      "examples": [
+        {
+          "ja": "明日は雨が降るそうです。",
+          "reading": "あしたはあめがふるそうです。",
+          "en": "I hear it will rain tomorrow.",
+          "zh": "听说明天会下雨。",
+          "zh_TW": "聽說明天會下雨。"
+        },
+        {
+          "ja": "あの店は安いそうだ。",
+          "reading": "あのみせはやすいそうだ。",
+          "en": "They say that shop is cheap.",
+          "zh": "听说那家店很便宜。",
+          "zh_TW": "聽說那家店很便宜。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:you-da",
+      "level": "N4",
+      "pattern": "〜ようです",
+      "structure": "普通形 + ようです（ナ形容詞・名詞は 〜な / 〜の + ようです）",
+      "match": [
+        "ようです",
+        "ようでした",
+        "ようだ"
+      ],
+      "meaning": {
+        "en": "it appears that (based on what I observe)",
+        "zh": "看样子……（根据观察做出的判断）",
+        "zh_TW": "看樣子……（根據觀察做出的判斷）"
+      },
+      "explanation": {
+        "en": "ようです is a guess you make yourself after looking at the situation in front of you. It is more careful and a little more formal than みたいです, and unlike らしいです the evidence is your own, not something you were told.",
+        "zh": "ようです是自己看到眼前的情况后做出的推测，语气比みたいです慎重、正式一些。与らしいです不同，判断的依据是自己的观察，而不是听来的消息。",
+        "zh_TW": "ようです是自己看到眼前的情況後做出的推測，語氣比みたいです慎重、正式一些。與らしいです不同，判斷的依據是自己的觀察，而不是聽來的消息。"
+      },
+      "examples": [
+        {
+          "ja": "先生は忙しいようです。",
+          "reading": "せんせいはいそがしいようです。",
+          "en": "The teacher appears to be busy.",
+          "zh": "老师看样子很忙。",
+          "zh_TW": "老師看樣子很忙。"
+        },
+        {
+          "ja": "彼は家にいないようでした。",
+          "reading": "かれはいえにいないようでした。",
+          "en": "It appeared that he was not at home.",
+          "zh": "他当时好像不在家。",
+          "zh_TW": "他當時好像不在家。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:mitai",
+      "level": "N4",
+      "pattern": "〜みたいです",
+      "structure": "普通形 / N + みたいです",
+      "match": [
+        "みたいです",
+        "みたいだ",
+        "みたいな"
+      ],
+      "meaning": {
+        "en": "seems like; is like (casual ようだ)",
+        "zh": "好像……（ようだ的口语说法）",
+        "zh_TW": "好像……（ようだ的口語說法）"
+      },
+      "explanation": {
+        "en": "みたいです carries the same meaning as ようです but sounds relaxed and spoken. Note that it attaches straight to a noun with nothing in between, while ようです needs の there.",
+        "zh": "みたいです的意思与ようです相同，只是语气更随意、更口语。要注意它直接接在名词后面，中间什么都不加，而ようです需要加の。",
+        "zh_TW": "みたいです的意思與ようです相同，只是語氣更隨意、更口語。要注意它直接接在名詞後面，中間什麼都不加，而ようです需要加の。"
+      },
+      "examples": [
+        {
+          "ja": "あの人は学生みたいです。",
+          "reading": "あのひとはがくせいみたいです。",
+          "en": "That person seems to be a student.",
+          "zh": "那个人好像是学生。",
+          "zh_TW": "那個人好像是學生。"
+        },
+        {
+          "ja": "彼は日本語が分かるみたいだ。",
+          "reading": "かれはにほんごがわかるみたいだ。",
+          "en": "It seems he understands Japanese.",
+          "zh": "他好像懂日语。",
+          "zh_TW": "他好像懂日語。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:rashii",
+      "level": "N4",
+      "pattern": "〜らしいです",
+      "structure": "普通形 / N + らしいです",
+      "match": [
+        "らしいです",
+        "らしい",
+        "らしかったです"
+      ],
+      "meaning": {
+        "en": "apparently; seems (from what I heard)",
+        "zh": "听说……；据说好像……",
+        "zh_TW": "聽說……；據說好像……"
+      },
+      "explanation": {
+        "en": "らしい passes on information that came from outside you, from someone's words or from the news, so you are not taking full responsibility for it. When the judgement is your own, from what you can see, use ようです instead.",
+        "zh": "らしい转述从外部得到的信息，比如别人说的或新闻里看到的，说话人不完全为内容负责。如果是自己亲眼所见得出的判断，则用ようです。",
+        "zh_TW": "らしい轉述從外部得到的信息，比如別人說的或新聞裡看到的，說話人不完全為內容負責。如果是自己親眼所見得出的判斷，則用ようです。"
+      },
+      "examples": [
+        {
+          "ja": "明日は雨らしいです。",
+          "reading": "あしたはあめらしいです。",
+          "en": "Apparently it will rain tomorrow.",
+          "zh": "听说明天会下雨。",
+          "zh_TW": "聽說明天會下雨。"
+        },
+        {
+          "ja": "先生は来ないらしい。",
+          "reading": "せんせいはこないらしい。",
+          "en": "Apparently the teacher isn't coming.",
+          "zh": "听说老师不来。",
+          "zh_TW": "聽說老師不來。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kadouka",
+      "level": "N4",
+      "pattern": "〜かどうか",
+      "structure": "普通形 + かどうか + 動詞（ナ形容詞・名詞は語幹のまま）",
+      "match": [
+        "かどうか"
+      ],
+      "meaning": {
+        "en": "whether or not (embedded yes-no question)",
+        "zh": "是否……（嵌入句中的是非疑问）",
+        "zh_TW": "是否……（嵌入句中的是非疑問）"
+      },
+      "explanation": {
+        "en": "かどうか puts a yes-no question inside a bigger sentence, in front of verbs like 分かりません, 知りません and 教えてください. When the inner question has a question word such as 誰 or どこ, drop どうか and use か alone.",
+        "zh": "かどうか把一个是非疑问句嵌进大句子里，后面常接分かりません、知りません、教えてください等。如果里面的疑问句带有誰、どこ之类的疑问词，就去掉どうか，只用か。",
+        "zh_TW": "かどうか把一個是非疑問句嵌進大句子裡，後面常接分かりません、知りません、教えてください等。如果裡面的疑問句帶有誰、どこ之類的疑問詞，就去掉どうか，只用か。"
+      },
+      "examples": [
+        {
+          "ja": "彼が来るかどうか分かりません。",
+          "reading": "かれがくるかどうかわかりません。",
+          "en": "I don't know whether he is coming or not.",
+          "zh": "我不知道他来不来。",
+          "zh_TW": "我不知道他來不來。"
+        },
+        {
+          "ja": "この本が面白いかどうか教えてください。",
+          "reading": "このほんがおもしろいかどうかおしえてください。",
+          "en": "Please tell me whether this book is interesting or not.",
+          "zh": "请告诉我这本书有没有意思。",
+          "zh_TW": "請告訴我這本書有沒有意思。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:embedded-question",
+      "level": "N4",
+      "pattern": "疑問詞＋か（間接疑問）",
+      "structure": "疑問詞 + 普通形 + か + 動詞",
+      "match": [
+        "か知りません",
+        "か分かりますか",
+        "か教えてください"
+      ],
+      "meaning": {
+        "en": "embedded question with a question word",
+        "zh": "带疑问词的间接疑问句",
+        "zh_TW": "帶疑問詞的間接疑問句"
+      },
+      "explanation": {
+        "en": "A question containing 誰, どこ, 何 or 何時 can sit inside a longer sentence: keep the plain form, close it with か, and carry on. The subject of the inner question takes が, and the polite ます form is not used inside.",
+        "zh": "含有誰、どこ、何、何時的疑问句可以放进更长的句子里：里面用普通形，末尾加か，然后继续说下去。内部小句的主语用が，句中不使用礼貌的ます形。",
+        "zh_TW": "含有誰、どこ、何、何時的疑問句可以放進更長的句子裡：裡面用普通形，末尾加か，然後繼續說下去。內部小句的主語用が，句中不使用禮貌的ます形。"
+      },
+      "examples": [
+        {
+          "ja": "彼がどこに住んでいるか知りません。",
+          "reading": "かれがどこにすんでいるかしりません。",
+          "en": "I don't know where he lives.",
+          "zh": "我不知道他住在哪里。",
+          "zh_TW": "我不知道他住在哪裡。"
+        },
+        {
+          "ja": "誰が来るか分かりますか。",
+          "reading": "だれがくるかわかりますか。",
+          "en": "Do you know who is coming?",
+          "zh": "你知道谁会来吗？",
+          "zh_TW": "你知道誰會來嗎？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kana",
+      "level": "N4",
+      "pattern": "〜かな / 〜かしら",
+      "structure": "普通形 + かな / かしら",
+      "match": [
+        "かな",
+        "かしら"
+      ],
+      "meaning": {
+        "en": "I wonder... (talking to yourself)",
+        "zh": "……吧；不知道……（自言自语）",
+        "zh_TW": "……吧；不知道……（自言自語）"
+      },
+      "explanation": {
+        "en": "These endings turn a question inward, as if you were thinking out loud rather than asking anyone. かな is used by everyone, かしら sounds feminine and a little old-fashioned; neither is polite enough for a teacher or a customer.",
+        "zh": "这两个句尾把疑问转向自己，像是自言自语，而不是在问对方。かな男女都用，かしら偏女性、略显老派；对老师或客户都不够礼貌。",
+        "zh_TW": "這兩個句尾把疑問轉向自己，像是自言自語，而不是在問對方。かな男女都用，かしら偏女性、略顯老派；對老師或客戶都不夠禮貌。"
+      },
+      "examples": [
+        {
+          "ja": "彼は今日も来ないかな。",
+          "reading": "かれはきょうもこないかな。",
+          "en": "I wonder if he isn't coming today either.",
+          "zh": "他今天是不是也不来呢。",
+          "zh_TW": "他今天是不是也不來呢。"
+        },
+        {
+          "ja": "明日の朝は雨かしら。",
+          "reading": "あしたのあさはあめかしら。",
+          "en": "I wonder if it will rain tomorrow morning.",
+          "zh": "明天早上会下雨吗，不知道呢。",
+          "zh_TW": "明天早上會下雨嗎，不知道呢。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:question-demo",
+      "level": "N4",
+      "pattern": "疑問詞＋でも",
+      "structure": "何 / 誰 / どこ / いつ + でも",
+      "match": [
+        "何でも",
+        "誰でも",
+        "どこでも",
+        "いつでも"
+      ],
+      "meaning": {
+        "en": "anything, anywhere, anyone at all",
+        "zh": "无论什么、哪里、谁都……",
+        "zh_TW": "無論什麼、哪裡、誰都……"
+      },
+      "explanation": {
+        "en": "A question word plus でも sweeps in every possibility with no exception, so the sentence stays positive. Do not confuse it with 疑問詞＋も, which needs a negative verb and means the opposite.",
+        "zh": "疑问词加でも表示把所有可能都包括进来，毫无例外，句子用肯定形式。注意不要和疑问词＋も混淆，后者要接否定，意思正好相反。",
+        "zh_TW": "疑問詞加でも表示把所有可能都包括進來，毫無例外，句子用肯定形式。注意不要和疑問詞＋も混淆，後者要接否定，意思正好相反。"
+      },
+      "examples": [
+        {
+          "ja": "私は何でも食べます。",
+          "reading": "わたしはなんでもたべます。",
+          "en": "I eat anything at all.",
+          "zh": "我什么都吃。",
+          "zh_TW": "我什麼都吃。"
+        },
+        {
+          "ja": "彼はいつでも元気です。",
+          "reading": "かれはいつでもげんきです。",
+          "en": "He is cheerful at any time.",
+          "zh": "他什么时候都很精神。",
+          "zh_TW": "他什麼時候都很精神。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:question-mo-nai",
+      "level": "N4",
+      "pattern": "疑問詞＋も〜ない",
+      "structure": "何 / 誰 / どこ + も + 動詞否定形",
+      "match": [
+        "何も",
+        "誰も",
+        "どこも"
+      ],
+      "meaning": {
+        "en": "nothing, nowhere, no one at all",
+        "zh": "什么也不、谁也不、哪里也不",
+        "zh_TW": "什麼也不、誰也不、哪裡也不"
+      },
+      "explanation": {
+        "en": "With も the sentence must end in a negative, and the meaning becomes a complete denial. With place words を and へ stay in place (どこへも行きません), but が and を drop out before も.",
+        "zh": "用も时句末必须是否定形，表示彻底的否定。表示场所时を、へ要保留（どこへも行きません），但が和を在も前面要省去。",
+        "zh_TW": "用も時句末必須是否定形，表示徹底的否定。表示場所時を、へ要保留（どこへも行きません），但が和を在も前面要省去。"
+      },
+      "examples": [
+        {
+          "ja": "今日は何も買いませんでした。",
+          "reading": "きょうはなにもかいませんでした。",
+          "en": "I didn't buy anything today.",
+          "zh": "我今天什么也没买。",
+          "zh_TW": "我今天什麼也沒買。"
+        },
+        {
+          "ja": "昨日は誰も来ませんでした。",
+          "reading": "きのうはだれもきませんでした。",
+          "en": "Nobody came yesterday.",
+          "zh": "昨天谁也没来。",
+          "zh_TW": "昨天誰也沒來。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:passive",
+      "level": "N4",
+      "pattern": "受身形（〜(ら)れる）",
+      "structure": "N は N に + 動詞受身形（読む→読まれる、食べる→食べられる）",
+      "match": [
+        "聞かれました",
+        "読まれています",
+        "読まれます",
+        "見られます"
+      ],
+      "meaning": {
+        "en": "passive: be done to by someone",
+        "zh": "被动：被别人做某事",
+        "zh_TW": "被動：被別人做某事"
+      },
+      "explanation": {
+        "en": "Group 1 verbs change the final -u to -areru (読む→読まれる), group 2 add られる (食べる→食べられる), する→される and 来る→来られる. The person affected becomes the topic and the doer takes に.",
+        "zh": "五段动词把词尾变成あ段加れる（読む→読まれる），一段动词加られる（食べる→食べられる），する→される，来る→来られる。受影响的人作主题，动作者用に。",
+        "zh_TW": "五段動詞把詞尾變成あ段加れる（読む→読まれる），一段動詞加られる（食べる→食べられる），する→される，来る→來られる。受影響的人作主題，動作者用に。"
+      },
+      "examples": [
+        {
+          "ja": "私は先生に名前を聞かれました。",
+          "reading": "わたしはせんせいになまえをきかれました。",
+          "en": "I was asked my name by the teacher.",
+          "zh": "我被老师问了名字。",
+          "zh_TW": "我被老師問了名字。"
+        },
+        {
+          "ja": "この本は学生に読まれています。",
+          "reading": "このほんはがくせいによまれています。",
+          "en": "This book is read by students.",
+          "zh": "这本书被学生们读着。",
+          "zh_TW": "這本書被學生們讀著。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:indirect-passive",
+      "level": "N4",
+      "pattern": "迷惑の受身",
+      "structure": "私は N に + 動詞受身形（迷惑・被害の気持ち）",
+      "match": [
+        "読まれました",
+        "見られて",
+        "見られました"
+      ],
+      "meaning": {
+        "en": "adversative passive: suffering from an action",
+        "zh": "受害被动：因某人的动作而受困扰",
+        "zh_TW": "受害被動：因某人的動作而受困擾"
+      },
+      "explanation": {
+        "en": "Japanese can put a passive around an action that nobody did to you directly, just to say that it bothered you. English usually needs a whole extra phrase for this feeling, so translate it as \"someone went and ...\" rather than a plain passive.",
+        "zh": "日语可以给一个本来与自己无关的动作加上被动形，只为表达“因此感到困扰”。汉语一般要另加词语才能表达这种语感，可译作“被人……了”“让人给……了”。",
+        "zh_TW": "日語可以給一個本來與自己無關的動作加上被動形，只為表達“因此感到困擾”。漢語一般要另加詞語才能表達這種語感，可譯作“被人……了”“讓人給……了”。"
+      },
+      "examples": [
+        {
+          "ja": "友達に本を読まれました。",
+          "reading": "ともだちにほんをよまれました。",
+          "en": "My friend went and read my book.",
+          "zh": "我的书被朋友看了。",
+          "zh_TW": "我的書被朋友看了。"
+        },
+        {
+          "ja": "子供に部屋を見られてしまいました。",
+          "reading": "こどもにへやをみられてしまいました。",
+          "en": "The child went and saw my room.",
+          "zh": "房间让孩子给看见了。",
+          "zh_TW": "房間讓孩子給看見了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:passive-ni-yotte",
+      "level": "N4",
+      "pattern": "〜によって〜られました",
+      "structure": "N は N によって + 動詞受身形",
+      "match": [
+        "によって書かれました",
+        "によって作られました",
+        "によって"
+      ],
+      "meaning": {
+        "en": "was created / discovered by (agent in passive)",
+        "zh": "由……所写／所造（被动句中的施动者）",
+        "zh_TW": "由……所寫／所造（被動句中的施動者）"
+      },
+      "explanation": {
+        "en": "When the passive verb is about making, writing, building or discovering something, the doer is marked with によって instead of に. This sounds written and factual, so it suits explanations and descriptions in books.",
+        "zh": "当被动句的动词表示创作、书写、建造、发现之类的意思时，施动者用によって而不用に。这种说法偏书面、客观，适合用于说明和介绍。",
+        "zh_TW": "當被動句的動詞表示創作、書寫、建造、發現之類的意思時，施動者用によって而不用に。這種說法偏書面、客觀，適合用於說明和介紹。"
+      },
+      "examples": [
+        {
+          "ja": "この本は彼によって書かれました。",
+          "reading": "このほんはかれによってかかれました。",
+          "en": "This book was written by him.",
+          "zh": "这本书是由他写的。",
+          "zh_TW": "這本書是由他寫的。"
+        },
+        {
+          "ja": "この車は学生によって作られました。",
+          "reading": "このくるまはがくせいによってつくられました。",
+          "en": "This car was made by students.",
+          "zh": "这辆车是由学生们造的。",
+          "zh_TW": "這輛車是由學生們造的。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:causative",
+      "level": "N4",
+      "pattern": "使役形（〜(さ)せる）",
+      "structure": "N は N に / を + 動詞使役形（読む→読ませる、食べる→食べさせる）",
+      "match": [
+        "読ませました",
+        "行かせます",
+        "食べさせます"
+      ],
+      "meaning": {
+        "en": "make or let someone do something",
+        "zh": "让某人做某事",
+        "zh_TW": "讓某人做某事"
+      },
+      "explanation": {
+        "en": "Group 1 verbs change -u to -aseru (読む→読ませる), group 2 add させる (食べる→食べさせる). A verb that already has an object marks the person with に; a verb without one marks the person with を.",
+        "zh": "五段动词把词尾变成あ段加せる（読む→読ませる），一段动词加させる（食べる→食べさせる）。动词本身已有宾语时，被使役的人用に；没有宾语时用を。",
+        "zh_TW": "五段動詞把詞尾變成あ段加せる（読む→読ませる），一段動詞加させる（食べる→食べさせる）。動詞本身已有賓語時，被使役的人用に；沒有賓語時用を。"
+      },
+      "examples": [
+        {
+          "ja": "先生は学生に本を読ませました。",
+          "reading": "せんせいはがくせいにほんをよませました。",
+          "en": "The teacher made the students read a book.",
+          "zh": "老师让学生读了书。",
+          "zh_TW": "老師讓學生讀了書。"
+        },
+        {
+          "ja": "子供を友達の家へ行かせます。",
+          "reading": "こどもをともだちのいえへいかせます。",
+          "en": "I'll let my child go to a friend's house.",
+          "zh": "我让孩子去朋友家。",
+          "zh_TW": "我讓孩子去朋友家。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:sasete-kudasai",
+      "level": "N4",
+      "pattern": "〜(さ)せてください",
+      "structure": "動詞使役て形 + ください",
+      "match": [
+        "せてください",
+        "らせてください",
+        "させてください"
+      ],
+      "meaning": {
+        "en": "please let me do it",
+        "zh": "请让我做……",
+        "zh_TW": "請讓我做……"
+      },
+      "explanation": {
+        "en": "This asks for permission to do something yourself, so the speaker is always the one acting. 〜てください is different: there you are asking the other person to act.",
+        "zh": "这是请求对方允许自己做某事，动作者永远是说话人。〜てください不同，那是请对方去做。",
+        "zh_TW": "這是請求對方允許自己做某事，動作者永遠是說話人。〜てください不同，那是請對方去做。"
+      },
+      "examples": [
+        {
+          "ja": "その本を読ませてください。",
+          "reading": "そのほんをよませてください。",
+          "en": "Please let me read that book.",
+          "zh": "请让我读一下那本书。",
+          "zh_TW": "請讓我讀一下那本書。"
+        },
+        {
+          "ja": "今日は早く帰らせてください。",
+          "reading": "きょうははやくかえらせてください。",
+          "en": "Please let me go home early today.",
+          "zh": "今天请让我早点回去。",
+          "zh_TW": "今天請讓我早點回去。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:sasete-morau",
+      "level": "N4",
+      "pattern": "〜(さ)せてもらいます",
+      "structure": "動詞使役て形 + もらいます / いただきます",
+      "match": [
+        "せてもらいます",
+        "せてもらいました",
+        "させてもらいます"
+      ],
+      "meaning": {
+        "en": "get permission to do; humbly do",
+        "zh": "承蒙允许做……；（谦虚地）做某事",
+        "zh_TW": "承蒙允許做……；（謙虛地）做某事"
+      },
+      "explanation": {
+        "en": "You do the action yourself, but you frame it as a favour the other side allowed, which sounds modest and grateful. Replace もらいます with いただきます to raise the politeness further.",
+        "zh": "动作是自己做的，但表达成对方允许自己做的恩惠，语气谦虚而含感谢之意。把もらいます换成いただきます可以进一步提高礼貌程度。",
+        "zh_TW": "動作是自己做的，但表達成對方允許自己做的恩惠，語氣謙虛而含感謝之意。把もらいます換成いただきます可以進一步提高禮貌程度。"
+      },
+      "examples": [
+        {
+          "ja": "今日は休ませてもらいます。",
+          "reading": "きょうはやすませてもらいます。",
+          "en": "I'll take the day off, if I may.",
+          "zh": "今天我就请个假了。",
+          "zh_TW": "今天我就請個假了。"
+        },
+        {
+          "ja": "先生の本を使わせてもらいました。",
+          "reading": "せんせいのほんをつかわせてもらいました。",
+          "en": "I was allowed to use the teacher's book.",
+          "zh": "我承蒙老师允许使用了他的书。",
+          "zh_TW": "我承蒙老師允許使用了他的書。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:causative-passive",
+      "level": "N4",
+      "pattern": "使役受身（〜(さ)せられる）",
+      "structure": "N は N に + 動詞使役受身形（読む→読ませられる、食べる→食べさせられる）",
+      "match": [
+        "読ませられました",
+        "食べさせられました",
+        "せられました"
+      ],
+      "meaning": {
+        "en": "be made to do something unwillingly",
+        "zh": "被迫做某事",
+        "zh_TW": "被迫做某事"
+      },
+      "explanation": {
+        "en": "Build it by making the causative first and then the passive, so the person who was pushed becomes the subject and the person pushing takes に. The feeling is always that you did not want to.",
+        "zh": "先变使役形再变被动形，被迫的人作主语，逼迫的人用に。这一形式总是带有“并非自愿”的语感。",
+        "zh_TW": "先變使役形再變被動形，被迫的人作主語，逼迫的人用に。這一形式總是帶有“並非自願”的語感。"
+      },
+      "examples": [
+        {
+          "ja": "学生は先生に本を読ませられました。",
+          "reading": "がくせいはせんせいにほんをよませられました。",
+          "en": "The students were made to read a book by the teacher.",
+          "zh": "学生被老师逼着读了书。",
+          "zh_TW": "學生被老師逼著讀了書。"
+        },
+        {
+          "ja": "私は野菜を食べさせられました。",
+          "reading": "わたしはやさいをたべさせられました。",
+          "en": "I was made to eat vegetables.",
+          "zh": "我被逼着吃了蔬菜。",
+          "zh_TW": "我被逼著吃了蔬菜。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:sonkeigo",
+      "level": "N4",
+      "pattern": "尊敬語",
+      "structure": "特別な尊敬動詞（いる→いらっしゃる）/ お〜になる / 〜(ら)れる",
+      "match": [
+        "いらっしゃいます",
+        "帰られました",
+        "いらっしゃる"
+      ],
+      "meaning": {
+        "en": "honorific language raising the other person",
+        "zh": "尊敬语：抬高对方的说法",
+        "zh_TW": "尊敬語：抬高對方的說法"
+      },
+      "explanation": {
+        "en": "Honorific language lifts up the person you are talking about, so it is used for a teacher, a customer or a superior, never for yourself or your own group. Some verbs have special honorific words, and the rest use お〜になります or the 〜(ら)れます form.",
+        "zh": "尊敬语抬高所谈及的人，用于老师、客户、上级，绝不用于自己或自己一方。有些动词有专门的尊敬语说法，其余的用お〜になります或〜(ら)れます形。",
+        "zh_TW": "尊敬語抬高所談及的人，用於老師、客戶、上級，絕不用於自己或自己一方。有些動詞有專門的尊敬語說法，其餘的用お〜になります或〜(ら)れます形。"
+      },
+      "examples": [
+        {
+          "ja": "先生は今、会社にいらっしゃいます。",
+          "reading": "せんせいはいま、かいしゃにいらっしゃいます。",
+          "en": "The teacher is at the company now.",
+          "zh": "老师现在在公司。",
+          "zh_TW": "老師現在在公司。"
+        },
+        {
+          "ja": "先生はもう帰られましたか。",
+          "reading": "せんせいはもうかえられましたか。",
+          "en": "Has the teacher gone home already?",
+          "zh": "老师已经回去了吗？",
+          "zh_TW": "老師已經回去了嗎？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-ni-naru",
+      "level": "N4",
+      "pattern": "お〜になります",
+      "structure": "お + 動詞ます形の語幹 + になります",
+      "match": [
+        "お読みになりました",
+        "お買いになります",
+        "になります"
+      ],
+      "meaning": {
+        "en": "standard honorific verb pattern",
+        "zh": "尊敬语的标准句型",
+        "zh_TW": "尊敬語的標準句型"
+      },
+      "explanation": {
+        "en": "Take the ます stem, put お in front and になります behind, and almost any verb becomes honorific. Verbs with a special honorific word, such as 行く and 食べる, use that word instead of this pattern.",
+        "zh": "取ます形的词干，前加お，后加になります，几乎任何动词都能变成尊敬语。像行く、食べる这类有专门尊敬语说法的动词，则用专门的词而不用这个句型。",
+        "zh_TW": "取ます形的詞幹，前加お，後加になります，幾乎任何動詞都能變成尊敬語。像行く、食べる這類有專門尊敬語說法的動詞，則用專門的詞而不用這個句型。"
+      },
+      "examples": [
+        {
+          "ja": "先生はこの本をお読みになりました。",
+          "reading": "せんせいはこのほんをおよみになりました。",
+          "en": "The teacher read this book.",
+          "zh": "老师读了这本书。",
+          "zh_TW": "老師讀了這本書。"
+        },
+        {
+          "ja": "もう新しい車をお買いになりますか。",
+          "reading": "もうあたらしいくるまをおかいになりますか。",
+          "en": "Are you going to buy a new car already?",
+          "zh": "您已经要买新车了吗？",
+          "zh_TW": "您已經要買新車了嗎？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:rareru-honorific",
+      "level": "N4",
+      "pattern": "〜(ら)れます（尊敬）",
+      "structure": "動詞受身形と同じ形を尊敬の意味で使う",
+      "match": [
+        "行かれます",
+        "食べられました",
+        "帰られます"
+      ],
+      "meaning": {
+        "en": "light honorific using the passive form",
+        "zh": "用被动形表示的轻度尊敬",
+        "zh_TW": "用被動形表示的輕度尊敬"
+      },
+      "explanation": {
+        "en": "The passive form doubles as a mild honorific, common in offices because it is easy to build and not too heavy. It looks exactly like the passive and the potential, so the context has to tell them apart.",
+        "zh": "被动形也可以表示轻度的尊敬，因为好造又不过分郑重，在职场很常用。它与被动形、可能形完全同形，只能靠上下文区分。",
+        "zh_TW": "被動形也可以表示輕度的尊敬，因為好造又不過分鄭重，在職場很常用。它與被動形、可能形完全同形，只能靠上下文區分。"
+      },
+      "examples": [
+        {
+          "ja": "先生は明日会社へ行かれます。",
+          "reading": "せんせいはあしたかいしゃへいかれます。",
+          "en": "The teacher will go to the company tomorrow.",
+          "zh": "老师明天要去公司。",
+          "zh_TW": "老師明天要去公司。"
+        },
+        {
+          "ja": "もう昼ご飯を食べられましたか。",
+          "reading": "もうひるごはんをたべられましたか。",
+          "en": "Have you had lunch already?",
+          "zh": "您已经吃过午饭了吗？",
+          "zh_TW": "您已經吃過午飯了嗎？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-kudasai",
+      "level": "N4",
+      "pattern": "お〜ください",
+      "structure": "お + 動詞ます形の語幹 + ください",
+      "match": [
+        "お待ちください",
+        "お読みください",
+        "ください"
+      ],
+      "meaning": {
+        "en": "please do (polite honorific request)",
+        "zh": "请……（尊敬的请求说法）",
+        "zh_TW": "請……（尊敬的請求說法）"
+      },
+      "explanation": {
+        "en": "This is the honorific version of 〜てください, heard in shops, stations and offices. Nouns that came from Chinese take ご instead of お, as in ご注意ください.",
+        "zh": "这是〜てください的尊敬说法，常在商店、车站、公司里听到。汉语来源的词用ご而不用お，例如ご注意ください。",
+        "zh_TW": "這是〜てください的尊敬說法，常在商店、車站、公司裡聽到。漢語來源的詞用ご而不用お，例如ご注意ください。"
+      },
+      "examples": [
+        {
+          "ja": "こちらでお待ちください。",
+          "reading": "こちらでおまちください。",
+          "en": "Please wait here.",
+          "zh": "请在这边稍等。",
+          "zh_TW": "請在這邊稍等。"
+        },
+        {
+          "ja": "こちらの本をお読みください。",
+          "reading": "こちらのほんをおよみください。",
+          "en": "Please read this book.",
+          "zh": "请阅读这本书。",
+          "zh_TW": "請閱讀這本書。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kenjougo",
+      "level": "N4",
+      "pattern": "謙譲語",
+      "structure": "特別な謙譲動詞（する→いたす）/ お〜します",
+      "match": [
+        "いたします",
+        "いたしました",
+        "いたす"
+      ],
+      "meaning": {
+        "en": "humble language lowering yourself",
+        "zh": "谦让语：贬低自己的说法",
+        "zh_TW": "謙讓語：貶低自己的說法"
+      },
+      "explanation": {
+        "en": "Humble language lowers your own actions so that the listener is raised by comparison, so it is only ever used for what you or your own group do. Never apply it to the other person's actions; that is what honorific language is for.",
+        "zh": "谦让语通过压低自己的动作来相对抬高对方，因此只能用于自己或自己一方的行为。绝不能用于对方的动作，那要用尊敬语。",
+        "zh_TW": "謙讓語通過壓低自己的動作來相對抬高對方，因此只能用於自己或自己一方的行為。絕不能用於對方的動作，那要用尊敬語。"
+      },
+      "examples": [
+        {
+          "ja": "その仕事は私がいたします。",
+          "reading": "そのしごとはわたしがいたします。",
+          "en": "I will do that job.",
+          "zh": "那项工作由我来做。",
+          "zh_TW": "那項工作由我來做。"
+        },
+        {
+          "ja": "私が先生に電話をいたしました。",
+          "reading": "わたしがせんせいにでんわをいたしました。",
+          "en": "I telephoned the teacher.",
+          "zh": "我给老师打了电话。",
+          "zh_TW": "我給老師打了電話。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-suru",
+      "level": "N4",
+      "pattern": "お〜します",
+      "structure": "お + 動詞ます形の語幹 + します",
+      "match": [
+        "お待ちします",
+        "お会いしました",
+        "お会いします"
+      ],
+      "meaning": {
+        "en": "standard humble verb pattern",
+        "zh": "谦让语的标准句型",
+        "zh_TW": "謙讓語的標準句型"
+      },
+      "explanation": {
+        "en": "This is the humble twin of お〜になります: same shape, but します at the end and always about your own action. Use it when what you do touches the other person, such as waiting for them or going to meet them.",
+        "zh": "这是お〜になります的谦让语对应形式：结构相同，但结尾用します，且永远说自己的动作。当自己的行为涉及对方时使用，例如等候对方或前去拜访对方。",
+        "zh_TW": "這是お〜になります的謙讓語對應形式：結構相同，但結尾用します，且永遠說自己的動作。當自己的行為涉及對方時使用，例如等候對方或前去拜訪對方。"
+      },
+      "examples": [
+        {
+          "ja": "私がこちらでお待ちします。",
+          "reading": "わたしがこちらでおまちします。",
+          "en": "I will wait here for you.",
+          "zh": "我在这边等您。",
+          "zh_TW": "我在這邊等您。"
+        },
+        {
+          "ja": "昨日、先生にお会いしました。",
+          "reading": "きのう、せんせいにおあいしました。",
+          "en": "I met the teacher yesterday.",
+          "zh": "昨天我见到了老师。",
+          "zh_TW": "昨天我見到了老師。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-go-prefix",
+      "level": "N4",
+      "pattern": "お〜 / ご〜",
+      "structure": "お / ご + 名詞・形容詞",
+      "match": [
+        "お仕事",
+        "お時間",
+        "お名前"
+      ],
+      "meaning": {
+        "en": "polite prefixes on nouns and adjectives",
+        "zh": "加在名词、形容词前的礼貌接头词",
+        "zh_TW": "加在名詞、形容詞前的禮貌接頭詞"
+      },
+      "explanation": {
+        "en": "お and ご make a word polite, either by respecting something that belongs to the listener or by making your own speech softer. Words of Japanese origin usually take お and words of Chinese origin take ご, though a few, like お時間, break the rule.",
+        "zh": "お和ご使词语变得礼貌，或表示对听话人所属之物的尊重，或使自己的说法更委婉。和语词一般用お，汉语词一般用ご，但也有お時間这样的例外。",
+        "zh_TW": "お和ご使詞語變得禮貌，或表示對聽話人所屬之物的尊重，或使自己的說法更委婉。和語詞一般用お，漢語詞一般用ご，但也有お時間這樣的例外。"
+      },
+      "examples": [
+        {
+          "ja": "お仕事は忙しいですか。",
+          "reading": "おしごとはいそがしいですか。",
+          "en": "Is your work busy?",
+          "zh": "您工作忙吗？",
+          "zh_TW": "您工作忙嗎？"
+        },
+        {
+          "ja": "明日、お時間はありますか。",
+          "reading": "あした、おじかんはありますか。",
+          "en": "Do you have time tomorrow?",
+          "zh": "您明天有时间吗？",
+          "zh_TW": "您明天有時間嗎？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:gozaimasu",
+      "level": "N4",
+      "pattern": "ございます / でございます",
+      "structure": "あります→ございます、です→でございます",
+      "match": [
+        "ございます",
+        "でございます"
+      ],
+      "meaning": {
+        "en": "very formal あります and です",
+        "zh": "あります和です的郑重说法",
+        "zh_TW": "あります和です的鄭重說法"
+      },
+      "explanation": {
+        "en": "ございます replaces あります and でございます replaces です in very formal speech, the kind heard from shop staff and hotel front desks. It is polite rather than honorific, so it can be used about anything, including your own things.",
+        "zh": "在非常郑重的场合，ございます代替あります，でございます代替です，常出自店员和酒店前台之口。它属于郑重语而非尊敬语，可以用于任何事物，包括自己的东西。",
+        "zh_TW": "在非常鄭重的場合，ございます代替あります，でございます代替です，常出自店員和酒店前臺之口。它屬於鄭重語而非尊敬語，可以用於任何事物，包括自己的東西。"
+      },
+      "examples": [
+        {
+          "ja": "水はこちらにございます。",
+          "reading": "みずはこちらにございます。",
+          "en": "The water is over here.",
+          "zh": "水在这边。",
+          "zh_TW": "水在這邊。"
+        },
+        {
+          "ja": "こちらが私の会社でございます。",
+          "reading": "こちらがわたしのかいしゃでございます。",
+          "en": "This is my company.",
+          "zh": "这就是我的公司。",
+          "zh_TW": "這就是我的公司。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:koto-ni-suru",
+      "level": "N4",
+      "pattern": "〜ことにします",
+      "structure": "動詞辞書形・ない形 + ことにします",
+      "match": [
+        "ことにします",
+        "ことにしました",
+        "ことにする"
+      ],
+      "meaning": {
+        "en": "decide to do something yourself",
+        "zh": "决定做某事（自己决定）",
+        "zh_TW": "決定做某事（自己決定）"
+      },
+      "explanation": {
+        "en": "The decision is yours, made at the moment of speaking with ことにします or already settled with ことにしました. Compare 〜ことになります, where the decision came from somewhere else.",
+        "zh": "决定是自己做的：ことにします表示此刻决定，ことにしました表示已经定下。与〜ことになります对照，后者的决定来自别处。",
+        "zh_TW": "決定是自己做的：ことにします表示此刻決定，ことにしました表示已經定下。與〜ことになります對照，後者的決定來自別處。"
+      },
+      "examples": [
+        {
+          "ja": "明日から毎日走ることにします。",
+          "reading": "あしたからまいにちはしることにします。",
+          "en": "I've decided to run every day from tomorrow.",
+          "zh": "我决定从明天开始每天跑步。",
+          "zh_TW": "我決定從明天開始每天跑步。"
+        },
+        {
+          "ja": "今日は早く帰ることにしました。",
+          "reading": "きょうははやくかえることにしました。",
+          "en": "I decided to go home early today.",
+          "zh": "我决定今天早点回家。",
+          "zh_TW": "我決定今天早點回家。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:koto-ni-naru",
+      "level": "N4",
+      "pattern": "〜ことになります",
+      "structure": "動詞辞書形・ない形 + ことになります",
+      "match": [
+        "ことになりました",
+        "ことになります",
+        "ことになる"
+      ],
+      "meaning": {
+        "en": "it has been decided that (by others)",
+        "zh": "（被）决定……；结果成了……",
+        "zh_TW": "（被）決定……；結果成了……"
+      },
+      "explanation": {
+        "en": "Here the outcome is presented as something that came about, decided by a company, a school or circumstances rather than by you. Japanese often prefers it even for personal news, because it sounds modest.",
+        "zh": "这个句型把结果说成自然而然定下来的事，决定者是公司、学校或客观情况，而不是自己。即使是自己的事，日语也常用它，因为语气谦虚。",
+        "zh_TW": "這個句型把結果說成自然而然定下來的事，決定者是公司、學校或客觀情況，而不是自己。即使是自己的事，日語也常用它，因為語氣謙虛。"
+      },
+      "examples": [
+        {
+          "ja": "来月、日本へ行くことになりました。",
+          "reading": "らいげつ、にほんへいくことになりました。",
+          "en": "It has been decided that I will go to Japan next month.",
+          "zh": "定下来了，我下个月要去日本。",
+          "zh_TW": "定下來了，我下個月要去日本。"
+        },
+        {
+          "ja": "明日から新しい仕事をすることになります。",
+          "reading": "あしたからあたらしいしごとをすることになります。",
+          "en": "It will be arranged that I start a new job from tomorrow.",
+          "zh": "从明天起我要开始做新工作了。",
+          "zh_TW": "從明天起我要開始做新工作了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:koto-ni-shiteiru",
+      "level": "N4",
+      "pattern": "〜ことにしています",
+      "structure": "動詞辞書形・ない形 + ことにしています",
+      "match": [
+        "ことにしています",
+        "ことにしている"
+      ],
+      "meaning": {
+        "en": "make a habit of doing something",
+        "zh": "养成……的习惯；坚持做某事",
+        "zh_TW": "養成……的習慣；堅持做某事"
+      },
+      "explanation": {
+        "en": "〜ことにします is the moment you decide something yourself; putting it in the ています form says the decision is still being kept up, so it has become a habit. 〜ようにしています is close but softer: it is an effort you are making, not a rule you set.",
+        "zh": "〜ことにします指自己做决定的那一刻，改成ています形则表示这个决定一直在坚持，也就成了习惯。〜ようにしています意思相近但语气更弱，说的是努力去做，而不是给自己定下的规矩。",
+        "zh_TW": "〜ことにします指自己做決定的那一刻，改成ています形則表示這個決定一直在堅持，也就成了習慣。〜ようにしています意思相近但語氣更弱，說的是努力去做，而不是給自己定下的規矩。"
+      },
+      "examples": [
+        {
+          "ja": "毎日日本語の本を読むことにしています。",
+          "reading": "まいにちにほんごのほんをよむことにしています。",
+          "en": "I make a point of reading a Japanese book every day.",
+          "zh": "我坚持每天读日语书。",
+          "zh_TW": "我堅持每天讀日語書。"
+        },
+        {
+          "ja": "夜はお酒を飲まないことにしている。",
+          "reading": "よるはおさけをのまないことにしている。",
+          "en": "I make it a rule not to drink at night.",
+          "zh": "我给自己定了规矩，晚上不喝酒。",
+          "zh_TW": "我給自己定了規矩，晚上不喝酒。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:you-ni-naru",
+      "level": "N4",
+      "pattern": "〜ようになります",
+      "structure": "動詞辞書形・可能形・ない形 + ようになります",
+      "match": [
+        "ようになりました",
+        "ようになります"
+      ],
+      "meaning": {
+        "en": "reach the point where; come to be able to",
+        "zh": "变得会……；渐渐变成……",
+        "zh_TW": "變得會……；漸漸變成……"
+      },
+      "explanation": {
+        "en": "This describes a change that has taken place over time, from not doing or not being able to doing. It is often used with the potential form, because the natural pair is \"could not before, can now\".",
+        "zh": "表示经过一段时间发生的变化，从不做、不会变成做、会做。常与可能形搭配，因为最自然的组合就是“以前不会，现在会了”。",
+        "zh_TW": "表示經過一段時間發生的變化，從不做、不會變成做、會做。常與可能形搭配，因為最自然的組合就是“以前不會，現在會了”。"
+      },
+      "examples": [
+        {
+          "ja": "日本語が少し話せるようになりました。",
+          "reading": "にほんごがすこしはなせるようになりました。",
+          "en": "I have come to be able to speak a little Japanese.",
+          "zh": "我变得会说一点日语了。",
+          "zh_TW": "我變得會說一點日語了。"
+        },
+        {
+          "ja": "子供は野菜を食べるようになります。",
+          "reading": "こどもはやさいをたべるようになります。",
+          "en": "Children come to eat vegetables in time.",
+          "zh": "孩子慢慢就会吃蔬菜了。",
+          "zh_TW": "孩子慢慢就會吃蔬菜了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:you-ni-suru",
+      "level": "N4",
+      "pattern": "〜ようにします",
+      "structure": "動詞辞書形・ない形 + ようにします",
+      "match": [
+        "ようにします",
+        "ようにしてください"
+      ],
+      "meaning": {
+        "en": "make an effort to do; try to keep doing",
+        "zh": "尽量做到……；注意不要……",
+        "zh_TW": "儘量做到……；注意不要……"
+      },
+      "explanation": {
+        "en": "Here you are aiming at something and working at it, so it fits things you cannot promise outright. 〜ことにします is a clean decision instead, made once and for all.",
+        "zh": "这是给自己定一个目标并努力去做，适合那些不能打包票的事。〜ことにします则是一次性做出的明确决定。",
+        "zh_TW": "這是給自己定一個目標並努力去做，適合那些不能打包票的事。〜ことにします則是一次性做出的明確決定。"
+      },
+      "examples": [
+        {
+          "ja": "毎日野菜を食べるようにします。",
+          "reading": "まいにちやさいをたべるようにします。",
+          "en": "I'll try to eat vegetables every day.",
+          "zh": "我会尽量每天吃蔬菜。",
+          "zh_TW": "我會盡量每天吃蔬菜。"
+        },
+        {
+          "ja": "遅れないようにしてください。",
+          "reading": "おくれないようにしてください。",
+          "en": "Please try not to be late.",
+          "zh": "请注意不要迟到。",
+          "zh_TW": "請注意不要遲到。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:you-ni-purpose",
+      "level": "N4",
+      "pattern": "〜ように（目的）",
+      "structure": "動詞可能形・ない形 + ように + 動作",
+      "match": [
+        "ように"
+      ],
+      "meaning": {
+        "en": "so that (a state or ability comes about)",
+        "zh": "为了（能够、不至于）……",
+        "zh_TW": "為了（能夠、不至於）……"
+      },
+      "explanation": {
+        "en": "ように gives the aim when the aim is a state you cannot control directly, so the verb before it is potential, negative, or intransitive. When the aim is something you do on purpose, use ために instead.",
+        "zh": "ように表示目的，而这个目的是自己无法直接控制的状态，所以前面用可能形、否定形或自动词。如果目的是自己有意去做的动作，则用ために。",
+        "zh_TW": "ように表示目的，而這個目的是自己無法直接控制的狀態，所以前面用可能形、否定形或自動詞。如果目的是自己有意去做的動作，則用ために。"
+      },
+      "examples": [
+        {
+          "ja": "よく聞こえるように大きい声で話します。",
+          "reading": "よくきこえるようにおおきいこえではなします。",
+          "en": "I speak in a loud voice so that I can be heard well.",
+          "zh": "为了让大家听得清楚，我大声说话。",
+          "zh_TW": "為了讓大家聽得清楚，我大聲說話。"
+        },
+        {
+          "ja": "忘れないようにここに書きます。",
+          "reading": "わすれないようにここにかきます。",
+          "en": "I'll write it here so I don't forget.",
+          "zh": "为了不忘记，我写在这里。",
+          "zh_TW": "為了不忘記，我寫在這裡。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:you-ni-iu",
+      "level": "N4",
+      "pattern": "〜ように言います",
+      "structure": "動詞辞書形・ない形 + ように言います",
+      "match": [
+        "ように言いました",
+        "ように言います"
+      ],
+      "meaning": {
+        "en": "tell someone to do something (indirect)",
+        "zh": "（间接引述）叫某人做某事",
+        "zh_TW": "（間接引述）叫某人做某事"
+      },
+      "explanation": {
+        "en": "This reports an order or a request without quoting the exact words, so no と and no quotation marks are needed. 伝えます and 頼みます can replace 言います to soften or to make it a request.",
+        "zh": "用来转述命令或请求，不引用原话，所以不用と，也不加引号。把言います换成伝えます、頼みます，语气会变得委婉或变成请求。",
+        "zh_TW": "用來轉述命令或請求，不引用原話，所以不用と，也不加引號。把言います換成伝えます、頼みます，語氣會變得委婉或變成請求。"
+      },
+      "examples": [
+        {
+          "ja": "先生は本を読むように言いました。",
+          "reading": "せんせいはほんをよむようにいいました。",
+          "en": "The teacher told us to read the book.",
+          "zh": "老师叫我们读那本书。",
+          "zh_TW": "老師叫我們讀那本書。"
+        },
+        {
+          "ja": "友達に早く来るように言います。",
+          "reading": "ともだちにはやくくるようにいいます。",
+          "en": "I'll tell my friend to come early.",
+          "zh": "我会叫朋友早点来。",
+          "zh_TW": "我會叫朋友早點來。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:aida-ni",
+      "level": "N4",
+      "pattern": "〜間に",
+      "structure": "動詞ている形 / N + の + 間に",
+      "match": [
+        "間に"
+      ],
+      "meaning": {
+        "en": "while; during the time that",
+        "zh": "在……期间（做了某事）",
+        "zh_TW": "在……期間（做了某事）"
+      },
+      "explanation": {
+        "en": "間に marks a window of time inside which one short action happens. Drop the に and 間 means the two things go on side by side for the whole stretch instead.",
+        "zh": "間に表示在某段时间之内发生了一个短暂的动作。去掉に只用間，则表示两件事在整段时间里同时持续。",
+        "zh_TW": "間に表示在某段時間之內發生了一個短暫的動作。去掉に只用間，則表示兩件事在整段時間裡同時持續。"
+      },
+      "examples": [
+        {
+          "ja": "子供が寝ている間に本を読みました。",
+          "reading": "こどもがねているあいだにほんをよみました。",
+          "en": "I read a book while the children were asleep.",
+          "zh": "孩子睡着的时候我读了书。",
+          "zh_TW": "孩子睡著的時候我讀了書。"
+        },
+        {
+          "ja": "昼の間に本を書きます。",
+          "reading": "ひるのあいだにほんをかきます。",
+          "en": "I write my book during the daytime.",
+          "zh": "我白天写书。",
+          "zh_TW": "我白天寫書。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:uchi-ni",
+      "level": "N4",
+      "pattern": "〜うちに",
+      "structure": "動詞辞書形・ない形・ている形 / い形容詞 / N + の + うちに",
+      "match": [
+        "うちに"
+      ],
+      "meaning": {
+        "en": "while the situation still lasts",
+        "zh": "趁着……还……的时候",
+        "zh_TW": "趁著……還……的時候"
+      },
+      "explanation": {
+        "en": "うちに carries the feeling that the good conditions will not last, so you should act now. 間に is neutral about that; it only marks the time window.",
+        "zh": "うちに带有“这个状态不会持续太久，要趁现在”的语感。間に则没有这层意思，只是单纯标出时间范围。",
+        "zh_TW": "うちに帶有“這個狀態不會持續太久，要趁現在”的語感。間に則沒有這層意思，只是單純標出時間範圍。"
+      },
+      "examples": [
+        {
+          "ja": "忘れないうちに書いておきます。",
+          "reading": "わすれないうちにかいておきます。",
+          "en": "I'll write it down before I forget.",
+          "zh": "趁还没忘，我先写下来。",
+          "zh_TW": "趁還沒忘，我先寫下來。"
+        },
+        {
+          "ja": "時間があるうちに休みます。",
+          "reading": "じかんがあるうちにやすみます。",
+          "en": "I'll rest while I still have time.",
+          "zh": "趁还有时间，我休息一下。",
+          "zh_TW": "趁還有時間，我休息一下。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:made-ni",
+      "level": "N4",
+      "pattern": "〜までに",
+      "structure": "N / 動詞辞書形 + までに",
+      "match": [
+        "までに"
+      ],
+      "meaning": {
+        "en": "by (a deadline)",
+        "zh": "在……之前（完成）",
+        "zh_TW": "在……之前（完成）"
+      },
+      "explanation": {
+        "en": "までに gives a deadline: the action happens at some point before that moment. まで without に means the action continues right up to that moment, so the two are not interchangeable.",
+        "zh": "までに表示期限，动作在那个时间点之前的某一刻完成。まで不加に则表示动作一直持续到那个时间点，两者不能互换。",
+        "zh_TW": "までに表示期限，動作在那個時間點之前的某一刻完成。まで不加に則表示動作一直持續到那個時間點，兩者不能互換。"
+      },
+      "examples": [
+        {
+          "ja": "明日までにこの本を読みます。",
+          "reading": "あしたまでにこのほんをよみます。",
+          "en": "I'll read this book by tomorrow.",
+          "zh": "我明天之前会读完这本书。",
+          "zh_TW": "我明天之前會讀完這本書。"
+        },
+        {
+          "ja": "何時までに帰りますか。",
+          "reading": "なんじまでにかえりますか。",
+          "en": "By what time will you go home?",
+          "zh": "你几点之前回去？",
+          "zh_TW": "你幾點之前回去？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tokoro-da",
+      "level": "N4",
+      "pattern": "〜ところです",
+      "structure": "動詞辞書形 / ている形 / た形 + ところです",
+      "match": [
+        "ところです",
+        "ところでした"
+      ],
+      "meaning": {
+        "en": "about to / in the middle of / just finished",
+        "zh": "正要……／正在……／刚刚……",
+        "zh_TW": "正要……／正在……／剛剛……"
+      },
+      "explanation": {
+        "en": "The form of the verb decides the stage: dictionary form is just before, ている form is in the middle, and た form is just after. It points at a moment, so it does not go with words like 毎日.",
+        "zh": "动词的形式决定了处于哪个阶段：辞书形是马上要做，ている形是正在做，た形是刚做完。它指的是某一瞬间，所以不能和毎日之类的词连用。",
+        "zh_TW": "動詞的形式決定了處於哪個階段：辭書形是馬上要做，ている形是正在做，た形是剛做完。它指的是某一瞬間，所以不能和毎日之類的詞連用。"
+      },
+      "examples": [
+        {
+          "ja": "今、ご飯を食べているところです。",
+          "reading": "いま、ごはんをたべているところです。",
+          "en": "I'm in the middle of eating right now.",
+          "zh": "我正在吃饭。",
+          "zh_TW": "我正在吃飯。"
+        },
+        {
+          "ja": "仕事が終わったところでした。",
+          "reading": "しごとがおわったところでした。",
+          "en": "The work had just finished.",
+          "zh": "当时工作刚刚结束。",
+          "zh_TW": "當時工作剛剛結束。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ta-bakari",
+      "level": "N4",
+      "pattern": "〜たばかりです",
+      "structure": "動詞た形 + ばかりです",
+      "match": [
+        "たばかりです",
+        "たばかりだ"
+      ],
+      "meaning": {
+        "en": "have just done it a moment ago",
+        "zh": "刚刚做完……",
+        "zh_TW": "剛剛做完……"
+      },
+      "explanation": {
+        "en": "ばかり says the speaker feels little time has passed, so it can be used even months later if that still feels new. たところです is stricter: the action really has only just ended.",
+        "zh": "ばかり表示说话人觉得过去的时间不长，所以即使过了几个月，只要感觉还很新，也可以用。たところです更严格，动作确实刚刚结束。",
+        "zh_TW": "ばかり表示說話人覺得過去的時間不長，所以即使過了幾個月，只要感覺還很新，也可以用。たところです更嚴格，動作確實剛剛結束。"
+      },
+      "examples": [
+        {
+          "ja": "この車は買ったばかりです。",
+          "reading": "このくるまはかったばかりです。",
+          "en": "I only just bought this car.",
+          "zh": "这辆车我刚买不久。",
+          "zh_TW": "這輛車我剛買不久。"
+        },
+        {
+          "ja": "私はご飯を食べたばかりだ。",
+          "reading": "わたしはごはんをたべたばかりだ。",
+          "en": "I've just eaten.",
+          "zh": "我刚吃完饭。",
+          "zh_TW": "我剛吃完飯。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:hajimeru",
+      "level": "N4",
+      "pattern": "〜始めます",
+      "structure": "動詞ます形 + 始めます",
+      "match": [
+        "始めました",
+        "始めます"
+      ],
+      "meaning": {
+        "en": "start doing something",
+        "zh": "开始做……",
+        "zh_TW": "開始做……"
+      },
+      "explanation": {
+        "en": "Drop ます from the verb and add 始めます to say the action got under way. It joins to the verb itself, so unlike 〜てから it does not need a second clause.",
+        "zh": "把动词的ます去掉，接上始めます，表示动作开始了。它直接与动词结合，不像〜てから那样需要另一个小句。",
+        "zh_TW": "把動詞的ます去掉，接上始めます，表示動作開始了。它直接與動詞結合，不像〜てから那樣需要另一個小句。"
+      },
+      "examples": [
+        {
+          "ja": "日本語を勉強し始めました。",
+          "reading": "にほんごをべんきょうしはじめました。",
+          "en": "I started studying Japanese.",
+          "zh": "我开始学日语了。",
+          "zh_TW": "我開始學日語了。"
+        },
+        {
+          "ja": "子供が本を読み始めます。",
+          "reading": "こどもがほんをよみはじめます。",
+          "en": "The child is about to start reading a book.",
+          "zh": "孩子要开始读书了。",
+          "zh_TW": "孩子要開始讀書了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tsuzukeru",
+      "level": "N4",
+      "pattern": "〜続けます",
+      "structure": "動詞ます形 + 続けます",
+      "match": [
+        "続けています",
+        "続けました"
+      ],
+      "meaning": {
+        "en": "keep on doing something",
+        "zh": "继续做……；一直做……",
+        "zh_TW": "繼續做……；一直做……"
+      },
+      "explanation": {
+        "en": "続けます says the action goes on without stopping, and 続けています says it is still going now. Compare 〜ていきます, which is about a change carrying on into the future.",
+        "zh": "続けます表示动作不间断地进行下去，続けています表示现在仍在进行。与〜ていきます对照：后者说的是变化持续到今后。",
+        "zh_TW": "続けます表示動作不間斷地進行下去，続けています表示現在仍在進行。與〜ていきます對照：後者說的是變化持續到今後。"
+      },
+      "examples": [
+        {
+          "ja": "私は日本語を勉強し続けています。",
+          "reading": "わたしはにほんごをべんきょうしつづけています。",
+          "en": "I have kept on studying Japanese.",
+          "zh": "我一直在坚持学日语。",
+          "zh_TW": "我一直在堅持學日語。"
+        },
+        {
+          "ja": "子供は昼まで待ち続けました。",
+          "reading": "こどもはひるまでまちつづけました。",
+          "en": "The child kept waiting until noon.",
+          "zh": "孩子一直等到了中午。",
+          "zh_TW": "孩子一直等到了中午。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:owaru",
+      "level": "N4",
+      "pattern": "〜終わります",
+      "structure": "動詞ます形 + 終わります",
+      "match": [
+        "終わりました",
+        "終わります"
+      ],
+      "meaning": {
+        "en": "finish doing something",
+        "zh": "做完……",
+        "zh_TW": "做完……"
+      },
+      "explanation": {
+        "en": "終わります attaches to actions that take a stretch of time and have a clear end, such as reading or eating. It does not fit instant verbs, and it does not carry the regret that 〜てしまいます can.",
+        "zh": "終わります接在需要持续一段时间、且有明确终点的动作后面，比如读、吃。它不能接瞬间性动词，也没有〜てしまいます那种懊悔的语感。",
+        "zh_TW": "終わります接在需要持續一段時間、且有明確終點的動作後面，比如讀、吃。它不能接瞬間性動詞，也沒有〜てしまいます那種懊悔的語感。"
+      },
+      "examples": [
+        {
+          "ja": "この本をもう読み終わりました。",
+          "reading": "このほんをもうよみおわりました。",
+          "en": "I have already finished reading this book.",
+          "zh": "这本书我已经读完了。",
+          "zh_TW": "這本書我已經讀完了。"
+        },
+        {
+          "ja": "私は昼ご飯を食べ終わります。",
+          "reading": "わたしはひるごはんをたべおわります。",
+          "en": "I'll finish eating lunch.",
+          "zh": "我要把午饭吃完。",
+          "zh_TW": "我要把午飯吃完。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:naosu",
+      "level": "N4",
+      "pattern": "〜直します",
+      "structure": "動詞ます形 + 直します",
+      "match": [
+        "直しました",
+        "直します"
+      ],
+      "meaning": {
+        "en": "do something over again",
+        "zh": "重新做……",
+        "zh_TW": "重新做……"
+      },
+      "explanation": {
+        "en": "直します means doing the same thing a second time, usually because the first try was not good enough. もう一度 just counts the repetition; 直します adds the idea of putting it right.",
+        "zh": "直します表示同一件事再做一遍，通常是因为第一次做得不够好。もう一度只是说再来一次，直します还含有把它改好的意思。",
+        "zh_TW": "直します表示同一件事再做一遍，通常是因為第一次做得不夠好。もう一度只是說再來一次，直します還含有把它改好的意思。"
+      },
+      "examples": [
+        {
+          "ja": "名前を書き直しました。",
+          "reading": "なまえをかきなおしました。",
+          "en": "I rewrote my name.",
+          "zh": "我把名字重写了一遍。",
+          "zh_TW": "我把名字重寫了一遍。"
+        },
+        {
+          "ja": "私は日本語を勉強し直します。",
+          "reading": "わたしはにほんごをべんきょうしなおします。",
+          "en": "I'm going to study Japanese all over again.",
+          "zh": "我要重新学一遍日语。",
+          "zh_TW": "我要重新學一遍日語。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:sugiru",
+      "level": "N4",
+      "pattern": "〜すぎます",
+      "structure": "動詞ます形 / い形容詞語幹 / な形容詞語幹 + すぎます",
+      "match": [
+        "すぎます",
+        "すぎました"
+      ],
+      "meaning": {
+        "en": "too much; excessively",
+        "zh": "太……；过于……",
+        "zh_TW": "太……；過於……"
+      },
+      "explanation": {
+        "en": "すぎます says the amount or degree has gone past what is good, so it nearly always sounds negative. Adjectives drop their final い or な first (高い→高すぎる).",
+        "zh": "すぎます表示数量或程度超过了合适的范围，因此几乎总带有负面语感。形容词要先去掉词尾的い或な（高い→高すぎる）。",
+        "zh_TW": "すぎます表示數量或程度超過了合適的範圍，因此幾乎總帶有負面語感。形容詞要先去掉詞尾的い或な（高い→高すぎる）。"
+      },
+      "examples": [
+        {
+          "ja": "この車は高すぎます。",
+          "reading": "このくるまはたかすぎます。",
+          "en": "This car is too expensive.",
+          "zh": "这辆车太贵了。",
+          "zh_TW": "這輛車太貴了。"
+        },
+        {
+          "ja": "昨日、お酒を飲みすぎました。",
+          "reading": "きのう、おさけをのみすぎました。",
+          "en": "I drank too much yesterday.",
+          "zh": "昨天我酒喝多了。",
+          "zh_TW": "昨天我酒喝多了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:yasui",
+      "level": "N4",
+      "pattern": "〜やすいです",
+      "structure": "動詞ます形 + やすいです",
+      "match": [
+        "やすいです",
+        "やすい"
+      ],
+      "meaning": {
+        "en": "easy to do",
+        "zh": "容易……；好……",
+        "zh_TW": "容易……；好……"
+      },
+      "explanation": {
+        "en": "The compound behaves as an い-adjective, so it conjugates like 高い (読みやすくない, 読みやすかった). It describes the thing, not the person, so the doer is not the subject.",
+        "zh": "这个复合形式相当于一个い形容词，变化与高い相同（読みやすくない、読みやすかった）。它描述的是事物本身，不是做的人，所以主语不是动作者。",
+        "zh_TW": "這個複合形式相當於一個い形容詞，變化與高い相同（読みやすくない、読みやすかった）。它描述的是事物本身，不是做的人，所以主語不是動作者。"
+      },
+      "examples": [
+        {
+          "ja": "この本は読みやすいです。",
+          "reading": "このほんはよみやすいです。",
+          "en": "This book is easy to read.",
+          "zh": "这本书很好读。",
+          "zh_TW": "這本書很好讀。"
+        },
+        {
+          "ja": "先生の日本語は分かりやすいですか。",
+          "reading": "せんせいのにほんごはわかりやすいですか。",
+          "en": "Is the teacher's Japanese easy to understand?",
+          "zh": "老师的日语好懂吗？",
+          "zh_TW": "老師的日語好懂嗎？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nikui",
+      "level": "N4",
+      "pattern": "〜にくいです",
+      "structure": "動詞ます形 + にくいです",
+      "match": [
+        "にくいです",
+        "にくい"
+      ],
+      "meaning": {
+        "en": "hard to do",
+        "zh": "难以……；不好……",
+        "zh_TW": "難以……；不好……"
+      },
+      "explanation": {
+        "en": "にくい is the opposite of やすい and points at the thing itself being awkward or unclear. 〜づらい is close, but it stresses that doing it is unpleasant for the person.",
+        "zh": "にくい与やすい相反，指事物本身不好用、不好懂。〜づらい意思相近，但强调做起来让人感到难受。",
+        "zh_TW": "にくい與やすい相反，指事物本身不好用、不好懂。〜づらい意思相近，但強調做起來讓人感到難受。"
+      },
+      "examples": [
+        {
+          "ja": "この本は読みにくいです。",
+          "reading": "このほんはよみにくいです。",
+          "en": "This book is hard to read.",
+          "zh": "这本书很难读。",
+          "zh_TW": "這本書很難讀。"
+        },
+        {
+          "ja": "この車は古くて使いにくいです。",
+          "reading": "このくるまはふるくてつかいにくいです。",
+          "en": "This car is old and hard to use.",
+          "zh": "这辆车又旧又不好用。",
+          "zh_TW": "這輛車又舊又不好用。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:zurai",
+      "level": "N4",
+      "pattern": "〜づらいです",
+      "structure": "動詞ます形 + づらいです",
+      "match": [
+        "づらいです",
+        "づらい"
+      ],
+      "meaning": {
+        "en": "hard to do because it is unpleasant",
+        "zh": "（因为难受、为难而）不好……",
+        "zh_TW": "（因為難受、為難而）不好……"
+      },
+      "explanation": {
+        "en": "づらい comes from つらい, painful, so the difficulty is felt by the person: it hurts, or it is awkward to say. にくい blames the thing instead, and it is the safer choice when no feeling is involved.",
+        "zh": "づらい来自つらい（难受），所以困难是人感受到的：身体难受，或者不好开口。にくい把原因归于事物本身，与感受无关时用它更稳妥。",
+        "zh_TW": "づらい來自つらい（難受），所以困難是人感受到的：身體難受，或者不好開口。にくい把原因歸於事物本身，與感受無關時用它更穩妥。"
+      },
+      "examples": [
+        {
+          "ja": "雨の日は歩きづらいです。",
+          "reading": "あめのひはあるきづらいです。",
+          "en": "It's hard going walking on rainy days.",
+          "zh": "下雨天走路很不方便。",
+          "zh_TW": "下雨天走路很不方便。"
+        },
+        {
+          "ja": "先生には言いづらいことがあります。",
+          "reading": "せんせいにはいいづらいことがあります。",
+          "en": "There are things that are hard to say to a teacher.",
+          "zh": "有些话对老师很难开口。",
+          "zh_TW": "有些話對老師很難開口。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kata",
+      "level": "N4",
+      "pattern": "〜方",
+      "structure": "動詞ます形 + 方",
+      "match": [
+        "使い方",
+        "話し方",
+        "方"
+      ],
+      "meaning": {
+        "en": "the way of doing; how to do",
+        "zh": "……的方法；……的方式",
+        "zh_TW": "……的方法；……的方式"
+      },
+      "explanation": {
+        "en": "方 turns a verb into a noun meaning the method or manner, so it takes particles like any noun. When the verb had を, that を usually becomes の in front of 方.",
+        "zh": "方把动词变成表示方法、方式的名词，可以像普通名词一样加助词。原本用を的宾语，放在方前面时一般改成の。",
+        "zh_TW": "方把動詞變成表示方法、方式的名詞，可以像普通名詞一樣加助詞。原本用を的賓語，放在方前面時一般改成の。"
+      },
+      "examples": [
+        {
+          "ja": "この車の使い方を教えてください。",
+          "reading": "このくるまのつかいかたをおしえてください。",
+          "en": "Please teach me how to use this car.",
+          "zh": "请教我这辆车的用法。",
+          "zh_TW": "請教我這輛車的用法。"
+        },
+        {
+          "ja": "日本語の話し方を勉強します。",
+          "reading": "にほんごのはなしかたをべんきょうします。",
+          "en": "I'll study how to speak Japanese.",
+          "zh": "我要学习日语的说法。",
+          "zh_TW": "我要學習日語的說法。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nasai",
+      "level": "N4",
+      "pattern": "〜なさい",
+      "structure": "動詞ます形 + なさい",
+      "match": [
+        "なさい"
+      ],
+      "meaning": {
+        "en": "do it (firm instruction to an inferior)",
+        "zh": "（对下级的命令）快……吧",
+        "zh_TW": "（對下級的命令）快……吧"
+      },
+      "explanation": {
+        "en": "なさい is a firm but not rough order, used by parents to children, teachers to pupils, and in exam questions. Never say it to someone above you; use 〜てください there.",
+        "zh": "なさい是语气坚决但不粗鲁的命令，用于家长对孩子、老师对学生，也常见于考题。绝不能对长辈或上级使用，那时要用〜てください。",
+        "zh_TW": "なさい是語氣堅決但不粗魯的命令，用於家長對孩子、老師對學生，也常見於考題。絕不能對長輩或上級使用，那時要用〜てください。"
+      },
+      "examples": [
+        {
+          "ja": "もう遅いから早く寝なさい。",
+          "reading": "もうおそいからはやくねなさい。",
+          "en": "It's late, so go to bed early.",
+          "zh": "已经很晚了，快去睡觉。",
+          "zh_TW": "已經很晚了，快去睡覺。"
+        },
+        {
+          "ja": "この本をよく読みなさい。",
+          "reading": "このほんをよくよみなさい。",
+          "en": "Read this book carefully.",
+          "zh": "把这本书好好读一读。",
+          "zh_TW": "把這本書好好讀一讀。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:sa-nominalizer",
+      "level": "N4",
+      "pattern": "〜さ",
+      "structure": "い形容詞語幹 / な形容詞語幹 + さ",
+      "match": [
+        "大きさ",
+        "面白さ",
+        "さ"
+      ],
+      "meaning": {
+        "en": "turning an adjective into a noun of degree",
+        "zh": "把形容词变成表示程度的名词",
+        "zh_TW": "把形容詞變成表示程度的名詞"
+      },
+      "explanation": {
+        "en": "Drop the final い or な and add さ to get a noun naming the degree: 大きい→大きさ, 静か→静かさ. It is neutral, so it can be measured or talked about like any other noun.",
+        "zh": "去掉词尾的い或な，加上さ，就得到表示程度的名词：大きい→大きさ，静か→静かさ。它是中性的，可以像普通名词那样被测量或谈论。",
+        "zh_TW": "去掉詞尾的い或な，加上さ，就得到表示程度的名詞：大きい→大きさ，静か→静かさ。它是中性的，可以像普通名詞那樣被測量或談論。"
+      },
+      "examples": [
+        {
+          "ja": "この車の大きさが分かりません。",
+          "reading": "このくるまのおおきさがわかりません。",
+          "en": "I don't know the size of this car.",
+          "zh": "我不知道这辆车有多大。",
+          "zh_TW": "我不知道這輛車有多大。"
+        },
+        {
+          "ja": "この本の面白さを友達に話しました。",
+          "reading": "このほんのおもしろさをともだちにはなしました。",
+          "en": "I told my friend how interesting this book is.",
+          "zh": "我把这本书有多有趣讲给了朋友听。",
+          "zh_TW": "我把這本書有多有趣講給了朋友聽。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:garu",
+      "level": "N4",
+      "pattern": "〜がります",
+      "structure": "形容詞語幹 / 〜たい + がります",
+      "match": [
+        "たがっています",
+        "たがりました",
+        "たがります"
+      ],
+      "meaning": {
+        "en": "show signs of feeling (third person)",
+        "zh": "（第三人称）显出想要……的样子",
+        "zh_TW": "（第三人稱）顯出想要……的樣子"
+      },
+      "explanation": {
+        "en": "You cannot see inside another person, so Japanese uses がる to report the outward signs of their feelings. Say 私は行きたいです about yourself, but 彼は行きたがっています about someone else.",
+        "zh": "别人心里怎么想是看不见的，所以日语用がる来陈述从外表看出的感情。说自己用私は行きたいです，说别人则用彼は行きたがっています。",
+        "zh_TW": "別人心裡怎麼想是看不見的，所以日語用がる來陳述從外表看出的感情。說自己用私は行きたいです，說別人則用彼は行きたがっています。"
+      },
+      "examples": [
+        {
+          "ja": "子供は水を飲みたがっています。",
+          "reading": "こどもはみずをのみたがっています。",
+          "en": "The child looks like she wants a drink of water.",
+          "zh": "孩子看样子想喝水。",
+          "zh_TW": "孩子看樣子想喝水。"
+        },
+        {
+          "ja": "友達は日本へ行きたがりました。",
+          "reading": "ともだちはにほんへいきたがりました。",
+          "en": "My friend was keen to go to Japan.",
+          "zh": "朋友当时很想去日本。",
+          "zh_TW": "朋友當時很想去日本。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:bakari",
+      "level": "N4",
+      "pattern": "〜ばかり",
+      "structure": "N / 動詞て形 + ばかり",
+      "match": [
+        "ばかり"
+      ],
+      "meaning": {
+        "en": "nothing but; only that, again and again",
+        "zh": "净是……；老是……",
+        "zh_TW": "淨是……；老是……"
+      },
+      "explanation": {
+        "en": "ばかり says one thing fills the whole picture and shuts everything else out, often with a hint of complaint. だけ simply limits the number and carries no such feeling.",
+        "zh": "ばかり表示某一件事占满了全部，把别的都排除在外，常带有责怪的语气。だけ只是单纯地限定范围，没有这种语感。",
+        "zh_TW": "ばかり表示某一件事佔滿了全部，把別的都排除在外，常帶有責怪的語氣。だけ只是單純地限定範圍，沒有這種語感。"
+      },
+      "examples": [
+        {
+          "ja": "彼は毎日お酒ばかり飲んでいます。",
+          "reading": "かれはまいにちおさけばかりのんでいます。",
+          "en": "He does nothing but drink every day.",
+          "zh": "他每天净喝酒。",
+          "zh_TW": "他每天淨喝酒。"
+        },
+        {
+          "ja": "子供は寝てばかりいます。",
+          "reading": "こどもはねてばかりいます。",
+          "en": "The child does nothing but sleep.",
+          "zh": "孩子老是在睡觉。",
+          "zh_TW": "孩子老是在睡覺。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:toori-ni",
+      "level": "N4",
+      "pattern": "〜とおりに",
+      "structure": "動詞辞書形・た形 / N + の + とおりに",
+      "match": [
+        "とおりに"
+      ],
+      "meaning": {
+        "en": "just as; in the way that",
+        "zh": "按照……；正如……",
+        "zh_TW": "按照……；正如……"
+      },
+      "explanation": {
+        "en": "とおりに says the second action copies the first exactly, with nothing changed. After a noun it becomes Nのとおりに, and in compounds the reading shifts to どおり (説明どおり).",
+        "zh": "とおりに表示后面的动作完全照着前面的样子做，不作改动。接名词时用Nのとおりに，构成复合词时读音浊化为どおり（説明どおり）。",
+        "zh_TW": "とおりに表示後面的動作完全照著前面的樣子做，不作改動。接名詞時用Nのとおりに，構成複合詞時讀音濁化為どおり（説明どおり）。"
+      },
+      "examples": [
+        {
+          "ja": "先生が言ったとおりに書きました。",
+          "reading": "せんせいがいったとおりにかきました。",
+          "en": "I wrote it just as the teacher said.",
+          "zh": "我按照老师说的写了。",
+          "zh_TW": "我按照老師說的寫了。"
+        },
+        {
+          "ja": "私が教えるとおりにしてください。",
+          "reading": "わたしがおしえるとおりにしてください。",
+          "en": "Please do it just the way I show you.",
+          "zh": "请按我教的做。",
+          "zh_TW": "請按我教的做。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-tsuite",
+      "level": "N4",
+      "pattern": "〜について",
+      "structure": "N + について / についての + N",
+      "match": [
+        "について",
+        "についての"
+      ],
+      "meaning": {
+        "en": "about; concerning",
+        "zh": "关于……",
+        "zh_TW": "關於……"
+      },
+      "explanation": {
+        "en": "について marks the topic of talking, writing, thinking or asking. Before a noun it takes の (日本についての本), and it is a little more formal than plain のこと.",
+        "zh": "について标出谈论、书写、思考或询问的话题。修饰名词时要加の（日本についての本），语气比单说のこと稍正式一些。",
+        "zh_TW": "について標出談論、書寫、思考或詢問的話題。修飾名詞時要加の（日本についての本），語氣比單說のこと稍正式一些。"
+      },
+      "examples": [
+        {
+          "ja": "日本語の本について話しました。",
+          "reading": "にほんごのほんについてはなしました。",
+          "en": "We talked about Japanese books.",
+          "zh": "我们谈了关于日语书的事。",
+          "zh_TW": "我們談了關於日語書的事。"
+        },
+        {
+          "ja": "先生に仕事について聞きます。",
+          "reading": "せんせいにしごとについてききます。",
+          "en": "I'll ask my teacher about work.",
+          "zh": "我要向老师请教关于工作的事。",
+          "zh_TW": "我要向老師請教關於工作的事。"
+        }
+      ]
+    }
+  ]
+}

@@ -41,7 +41,10 @@ class ContentRepository {
   ///
   /// One file per level so a level can be written and reviewed on its own, and
   /// so the diff of adding N4 does not touch N5. Append as levels are written.
-  static const grammarAssets = ['assets/content/grammar/n5.json'];
+  static const grammarAssets = [
+    'assets/content/grammar/n5.json',
+    'assets/content/grammar/n4.json',
+  ];
 
   /// Asset path of the kana teaching notes.
   static const kanaNotesAsset = 'assets/content/kana_notes.json';

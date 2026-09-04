@@ -45,6 +45,7 @@ class LexEntry {
     required this.category,
     required this.pos,
     this.viaReading = false,
+    this.common = true,
   });
 
   /// The `vocab:` id, so a token can open its catalog entry.
@@ -74,6 +75,14 @@ class LexEntry {
   /// written — see the cost table in `tokenizer.dart`.
   final bool viaReading;
 
+  /// Whether the catalog marks this word as common.
+  ///
+  /// The tokenizer charges a rare word more, because a rare word that happens
+  /// to spell the same characters as a common construction is almost never
+  /// what was meant: ことにします is こと + に + します far more often than it
+  /// is the adverb 殊に.
+  final bool common;
+
   /// Purpose: Copy this entry, marked as reached through its reading.
   /// Inputs: None.
   /// Returns: `LexEntry`.
@@ -90,6 +99,7 @@ class LexEntry {
     category: category,
     pos: pos,
     viaReading: true,
+    common: common,
   );
 }
 
@@ -178,6 +188,7 @@ class Lexicon {
             : vocab.headword.substring(0, vocab.headword.length - 1),
         category: _categoryOf(vocab),
         pos: vocab.partsOfSpeech,
+        common: vocab.common,
       );
       index(entriesBySurface, vocab.headword, entry);
       if (vocab.headword != toHiragana(vocab.reading)) {

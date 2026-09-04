@@ -102,30 +102,20 @@ void main() {
       '$label: "$ja" uses ${unknown.join('/')}, which is in no catalog the '
       'app ships. Rewrite it with words the level already has.',
     );
-    for (final token in analysis.tokens) {
-      final refId = token.refId;
-      if (refId == null || !refId.startsWith('vocab:')) continue;
-      final word = catalog.vocabById(refId);
-      if (word == null) continue;
-      // Two allowances, both learnt from the first batch this gate saw.
-      //
-      // **Single-character tokens are skipped.** 六時 is not in the catalog,
-      // so it segments into 六 and 時, and 時 on its own is filed at N3 — the
-      // sentence is ordinary N5 Japanese and the finding is an artefact of
-      // where the word boundary fell. A genuinely hard word written in kanji
-      // is caught by the unknown-token rule above instead, because the
-      // catalog does not have it at all.
-      //
-      // **One level of slack.** An example sentence that reaches one level up
-      // for a word like ケーキ or 優しい is how textbooks are written; two
-      // levels up is where a sentence stops being readable at its own level.
-      if (token.surface.length < 2) continue;
-      need(
-        word.level.index <= level.index + 1,
-        '$label: "$ja" uses ${word.headword} (${word.level.label}), which is '
-        'more than one level harder than ${level.label}.',
-      );
-    }
+    // **There is no level check on the words a sentence parses into**, and
+    // there was one until the N4 batches were written. Every finding it
+    // produced turned out to be about the parse rather than about the
+    // sentence: 使い方 segments into the rare noun 使い, お借りしました into
+    // 借り, and これ is filed at N1 because that is the only JLPT list it
+    // appears on. Three rounds of narrowing it — single characters, then one
+    // level of slack, then rare words — removed every true positive it had
+    // and left the false ones.
+    //
+    // The invariant is still enforced, by `content_links_test` on the merged
+    // file, where it works on the catalog's own cross-links rather than on a
+    // parse. A gate that cries wolf is worse than no gate: its whole value is
+    // that an author can trust the list it prints.
+
     if (reading == null || reading.isEmpty) {
       need(false, '$label: no reading');
       return;
