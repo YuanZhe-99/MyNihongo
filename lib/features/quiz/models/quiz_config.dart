@@ -95,6 +95,29 @@ class IdsSource extends QuizSource {
   final List<String> ids;
 }
 
+/// One unit of a level's path.
+class UnitSource extends QuizSource {
+  /// Purpose: Ask about one unit of the lesson path.
+  /// Inputs: The `unitId`, the `level` its file belongs to, and whether this
+  /// is the unit's `checkpoint`.
+  /// Returns: A new `UnitSource` instance.
+  /// Side effects: None.
+  /// Notes: The only source whose questions come from a bank rather than from
+  /// the catalog directly, because a unit ships sentences and questions of its
+  /// own. A checkpoint asks more of them and writes a pass or a fail; ordinary
+  /// practice does neither.
+  const UnitSource(this.unitId, this.level, {this.checkpoint = false});
+
+  /// The `unit:` id.
+  final String unitId;
+
+  /// The level whose file the unit is in.
+  final JlptLevel level;
+
+  /// Whether passing this session unlocks the next unit.
+  final bool checkpoint;
+}
+
 /// One session's settings.
 class QuizConfig {
   /// Purpose: Describe a quiz session.

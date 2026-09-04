@@ -270,6 +270,44 @@ class NihongoStorage {
     DateTime? now,
   }) => recordAnswers({id: correct}, now: now);
 
+  /// Purpose: Record whether a unit's checkpoint was passed.
+  /// Inputs: The `recordId` — a `lesson:` id; `passed`; `now` for tests.
+  /// Returns: None.
+  /// Side effects: Loads, updates and saves the progress file.
+  /// Notes: **Not through the scheduler.** A unit is not an item to be
+  /// reviewed on a schedule; it is a gate that is open or shut. So the record
+  /// is a plain counter — how many times the checkpoint was passed, how many
+  /// times it was not — and `correct > 0` is what the path reads as "open the
+  /// next unit". The item answers inside the session were already recorded
+  /// one at a time, by the ordinary path, while the learner was answering
+  /// them.
+  static Future<void> recordLessonResult(
+    String recordId,
+    bool passed, {
+    DateTime? now,
+  }) async {
+    final at = now ?? DateTime.now().toUtc();
+    final data = await load();
+    final list = List<StudyRecord>.of(data.records);
+    final index = list.indexWhere((record) => record.id == recordId);
+    final existing = index >= 0
+        ? list[index]
+        : StudyRecord.create(recordId, now: at);
+    final updated = existing.copyWith(
+      correct: existing.correct + (passed ? 1 : 0),
+      wrong: existing.wrong + (passed ? 0 : 1),
+      streak: passed ? existing.streak + 1 : 0,
+      lastReviewedAt: at,
+      modifiedAt: at,
+    );
+    if (index >= 0) {
+      list[index] = updated;
+    } else {
+      list.add(updated);
+    }
+    await save(ProgressData(records: list, extraJson: data.extraJson));
+  }
+
   /// Purpose: Read the learner profile out of the progress file.
   /// Inputs: None.
   /// Returns: `Future<LearnerProfile>` — defaults when there is none yet.

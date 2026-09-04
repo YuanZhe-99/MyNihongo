@@ -83,6 +83,38 @@ class AppLocalizationsZh extends AppLocalizations {
   String get learnReviewLimitReached => '已达今日复习上限。想多复习可以在设置里调高。';
 
   @override
+  String pathTitle(String level) {
+    return '$level 学习路径';
+  }
+
+  @override
+  String pathNotWritten(String level) {
+    return '$level 的单元还没有编写。各个级别的参考列表与测验都可以使用。';
+  }
+
+  @override
+  String pathUnitItems(int grammar, int vocab) {
+    return '$grammar 个语法点，$vocab 个单词';
+  }
+
+  @override
+  String get pathPractise => '练习';
+
+  @override
+  String get pathCheckpoint => '单元测验';
+
+  @override
+  String get pathCheckpointAgain => '再测一次';
+
+  @override
+  String get pathCheckpointPassed => '通过了——下一个单元已解锁。';
+
+  @override
+  String pathCheckpointFailed(int percent, int needed) {
+    return '这次没通过。正确率 $percent%，达到 $needed% 即可解锁下一单元。';
+  }
+
+  @override
   String get learnContentSummary => '内容';
 
   @override
@@ -1354,6 +1386,38 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get learnReviewLimitReached => '已達今日複習上限。想多複習可以在設定裡調高。';
+
+  @override
+  String pathTitle(String level) {
+    return '$level 學習路徑';
+  }
+
+  @override
+  String pathNotWritten(String level) {
+    return '$level 的單元還沒有編寫。各個級別的參考列表與測驗都可以使用。';
+  }
+
+  @override
+  String pathUnitItems(int grammar, int vocab) {
+    return '$grammar 個文法點，$vocab 個單字';
+  }
+
+  @override
+  String get pathPractise => '練習';
+
+  @override
+  String get pathCheckpoint => '單元測驗';
+
+  @override
+  String get pathCheckpointAgain => '再測一次';
+
+  @override
+  String get pathCheckpointPassed => '通過了——下一個單元已解鎖。';
+
+  @override
+  String pathCheckpointFailed(int percent, int needed) {
+    return '這次沒通過。正確率 $percent%，達到 $needed% 即可解鎖下一單元。';
+  }
 
   @override
   String get learnContentSummary => '內容';

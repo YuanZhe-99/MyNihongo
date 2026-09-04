@@ -112,6 +112,53 @@ class QuestionGenerator {
     return null;
   }
 
+  /// Purpose: Build a grammar question from a sentence that is not in the
+  /// catalog.
+  /// Inputs: The `itemId` the answer belongs to, the `example` to ask about,
+  /// the `mode`, and the `locale`.
+  /// Returns: `QuizQuestion?`.
+  /// Side effects: None.
+  /// Notes: A unit ships its own sentences, and they are worth asking about in
+  /// exactly the ways a catalog example is asked about. The point they teach
+  /// is passed in rather than looked up, because a unit sentence says which of
+  /// its ids it is there to teach and the analyser cannot know that.
+  QuizQuestion? fromSentence({
+    required String itemId,
+    required ContentExample example,
+    required QuizMode mode,
+    required Locale locale,
+  }) {
+    final point = catalog.grammarById(itemId);
+    if (point == null) return null;
+    final translation = example.translations.resolveJoined(locale);
+
+    if (mode == QuizMode.grammarPattern) {
+      return _pattern(point, example, translation);
+    }
+    if (mode == QuizMode.grammarSentenceToMeaning ||
+        mode == QuizMode.grammarMeaningToSentence) {
+      return _wholeSentence(point, example, translation, mode, locale);
+    }
+    final analysis = analyzer?.analyze(example.ja);
+    if (analysis == null) return null;
+    return switch (mode) {
+      QuizMode.grammarParticle => _particle(
+        point,
+        analysis,
+        example,
+        translation,
+      ),
+      QuizMode.grammarConjugation => _conjugation(
+        point,
+        analysis,
+        example,
+        translation,
+      ),
+      QuizMode.grammarOrder => _order(point, analysis, translation),
+      _ => null,
+    };
+  }
+
   // ── Kana ──
 
   /// Purpose: Build a kana question.

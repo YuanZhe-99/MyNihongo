@@ -3073,6 +3073,196 @@
         "zh": "（第三人称）想要",
         "zh_TW": "（第三人稱）想要"
       }
+    },
+    {
+      "id": "fw:n-desu",
+      "surface": "んです",
+      "category": "copula",
+      "lemma": "のだ",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "explaining, it is that",
+        "zh": "（说明）是……",
+        "zh_TW": "（說明）是……"
+      }
+    },
+    {
+      "id": "fw:n-desu-ka",
+      "surface": "んですか",
+      "category": "copula",
+      "lemma": "のだ",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "asking for an explanation",
+        "zh": "（询问）是……吗",
+        "zh_TW": "（詢問）是……嗎"
+      }
+    },
+    {
+      "id": "fw:n-da",
+      "surface": "んだ",
+      "category": "copula",
+      "lemma": "のだ",
+      "forms": [],
+      "gloss": {
+        "en": "explaining, it is that",
+        "zh": "（说明）是……",
+        "zh_TW": "（說明）是……"
+      }
+    },
+    {
+      "id": "fw:n-deshita",
+      "surface": "んでした",
+      "category": "copula",
+      "lemma": "のだ",
+      "forms": [
+        "polite",
+        "past"
+      ],
+      "gloss": {
+        "en": "explaining, it was that",
+        "zh": "（说明）是……",
+        "zh_TW": "（說明）是……"
+      }
+    },
+    {
+      "id": "fw:n-ja-nai",
+      "surface": "んじゃない",
+      "category": "copula",
+      "lemma": "のだ",
+      "forms": [
+        "negative"
+      ],
+      "gloss": {
+        "en": "is it not that",
+        "zh": "不是……吗",
+        "zh_TW": "不是……嗎"
+      }
+    },
+    {
+      "id": "fw:n-ja-nai-ka",
+      "surface": "んじゃないか",
+      "category": "copula",
+      "lemma": "のだ",
+      "forms": [
+        "negative"
+      ],
+      "gloss": {
+        "en": "is it not that",
+        "zh": "不是……吗",
+        "zh_TW": "不是……嗎"
+      }
+    },
+    {
+      "id": "fw:no-desu",
+      "surface": "のです",
+      "category": "copula",
+      "lemma": "のだ",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "explaining, it is that",
+        "zh": "（说明）是……",
+        "zh_TW": "（說明）是……"
+      }
+    },
+    {
+      "id": "fw:no-da",
+      "surface": "のだ",
+      "category": "copula",
+      "lemma": "のだ",
+      "forms": [],
+      "gloss": {
+        "en": "explaining, it is that",
+        "zh": "（说明）是……",
+        "zh_TW": "（說明）是……"
+      }
+    },
+    {
+      "id": "fw:beki",
+      "surface": "べき",
+      "category": "formal-noun",
+      "lemma": "べし",
+      "forms": [],
+      "gloss": {
+        "en": "ought to, should",
+        "zh": "应该",
+        "zh_TW": "應該"
+      }
+    },
+    {
+      "id": "fw:beki-da",
+      "surface": "べきだ",
+      "category": "formal-noun",
+      "lemma": "べし",
+      "forms": [],
+      "gloss": {
+        "en": "ought to, should",
+        "zh": "应该",
+        "zh_TW": "應該"
+      }
+    },
+    {
+      "id": "fw:beki-desu",
+      "surface": "べきです",
+      "category": "formal-noun",
+      "lemma": "べし",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "ought to, should",
+        "zh": "应该",
+        "zh_TW": "應該"
+      }
+    },
+    {
+      "id": "fw:beki-dewa-nai",
+      "surface": "べきではない",
+      "category": "formal-noun",
+      "lemma": "べし",
+      "forms": [
+        "negative"
+      ],
+      "gloss": {
+        "en": "ought not to",
+        "zh": "不应该",
+        "zh_TW": "不應該"
+      }
+    },
+    {
+      "id": "fw:beki-dewa-arimasen",
+      "surface": "べきではありません",
+      "category": "formal-noun",
+      "lemma": "べし",
+      "forms": [
+        "negative",
+        "polite"
+      ],
+      "gloss": {
+        "en": "ought not to",
+        "zh": "不应该",
+        "zh_TW": "不應該"
+      }
+    },
+    {
+      "id": "fw:beki-ja-nai",
+      "surface": "べきじゃない",
+      "category": "formal-noun",
+      "lemma": "べし",
+      "forms": [
+        "negative"
+      ],
+      "gloss": {
+        "en": "ought not to",
+        "zh": "不应该",
+        "zh_TW": "不應該"
+      }
     }
   ],
   "sets": {

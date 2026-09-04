@@ -54,12 +54,23 @@ class ProgressNotifier extends StateNotifier<AsyncValue<ProgressData>> {
   /// Notes: Write then reload, rather than patching the state in place. The
   /// file is authoritative — a sync may have rewritten it under this notifier
   /// between two answers — and re-reading it is cheap next to the write.
-  Future<void> recordAnswer(
-    String id,
-    bool correct, {
+  Future<void> recordAnswer(String id, bool correct, {DateTime? now}) async {
+    await NihongoStorage.recordAnswer(id, correct, now: now);
+    await reload();
+  }
+
+  /// Purpose: Record whether a unit's checkpoint was passed.
+  /// Inputs: The `recordId`, `passed`; `now` for tests.
+  /// Returns: A future completing once the file is written and re-read.
+  /// Side effects: Writes the progress file and reloads it.
+  /// Notes: A checkpoint is a gate rather than an item, so this does not go
+  /// through the scheduler; see `NihongoStorage.recordLessonResult`.
+  Future<void> recordLessonResult(
+    String recordId,
+    bool passed, {
     DateTime? now,
   }) async {
-    await NihongoStorage.recordAnswer(id, correct, now: now);
+    await NihongoStorage.recordLessonResult(recordId, passed, now: now);
     await reload();
   }
 
@@ -70,10 +81,7 @@ class ProgressNotifier extends StateNotifier<AsyncValue<ProgressData>> {
   /// Notes: For a caller that already has every answer, such as a finished
   /// lesson. A quiz records each answer as it happens instead, so an
   /// interrupted session is not lost.
-  Future<void> recordAnswers(
-    Map<String, bool> answers, {
-    DateTime? now,
-  }) async {
+  Future<void> recordAnswers(Map<String, bool> answers, {DateTime? now}) async {
     await NihongoStorage.recordAnswers(answers, now: now);
     await reload();
   }
@@ -84,10 +92,7 @@ class ProgressNotifier extends StateNotifier<AsyncValue<ProgressData>> {
   /// Side effects: Writes the progress file, notifies auto-sync, reloads.
   /// Notes: The profile is a record inside the same file, so this is an
   /// ordinary progress write and syncs like any other.
-  Future<void> updateProfile(
-    LearnerProfile profile, {
-    DateTime? now,
-  }) async {
+  Future<void> updateProfile(LearnerProfile profile, {DateTime? now}) async {
     await NihongoStorage.saveProfile(profile, now: now);
     await reload();
   }

@@ -231,6 +231,54 @@ abstract class AppLocalizations {
   /// **'Today\'s review limit is reached. Raise it in Settings if you want more.'**
   String get learnReviewLimitReached;
 
+  /// No description provided for @pathTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{level} path'**
+  String pathTitle(String level);
+
+  /// No description provided for @pathNotWritten.
+  ///
+  /// In en, this message translates to:
+  /// **'The {level} units are not written yet. The reference lists and quizzes work at every level.'**
+  String pathNotWritten(String level);
+
+  /// No description provided for @pathUnitItems.
+  ///
+  /// In en, this message translates to:
+  /// **'{grammar} grammar points, {vocab} words'**
+  String pathUnitItems(int grammar, int vocab);
+
+  /// No description provided for @pathPractise.
+  ///
+  /// In en, this message translates to:
+  /// **'Practise'**
+  String get pathPractise;
+
+  /// No description provided for @pathCheckpoint.
+  ///
+  /// In en, this message translates to:
+  /// **'Checkpoint'**
+  String get pathCheckpoint;
+
+  /// No description provided for @pathCheckpointAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Checkpoint again'**
+  String get pathCheckpointAgain;
+
+  /// No description provided for @pathCheckpointPassed.
+  ///
+  /// In en, this message translates to:
+  /// **'Checkpoint passed — the next unit is open.'**
+  String get pathCheckpointPassed;
+
+  /// No description provided for @pathCheckpointFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Not this time. {percent}% right; {needed}% opens the next unit.'**
+  String pathCheckpointFailed(int percent, int needed);
+
   /// No description provided for @learnContentSummary.
   ///
   /// In en, this message translates to:

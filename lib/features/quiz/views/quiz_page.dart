@@ -14,6 +14,9 @@ import '../../sentence/services/sentence_analyzer.dart';
 import '../../speech/services/tts_service.dart';
 import '../models/quiz_config.dart';
 import '../models/quiz_question.dart';
+import '../../lessons/services/lesson_repository.dart';
+import '../../lessons/services/lesson_rules.dart';
+import '../services/question_bank.dart';
 import '../services/question_generator.dart';
 import '../services/quiz_session.dart';
 import '../widgets/quiz_runner.dart';
@@ -43,6 +46,9 @@ class _QuizPageState extends ConsumerState<QuizPage> {
   bool _building = true;
   bool _finished = false;
 
+  /// Whether a checkpoint was passed, once one has been marked.
+  bool? _checkpointPassed;
+
   @override
   void initState() {
     super.initState();
@@ -67,27 +73,51 @@ class _QuizPageState extends ConsumerState<QuizPage> {
   Future<void> _build() async {
     final catalog = await ref.read(contentCatalogProvider.future);
     final modes = _enabledModes();
-    final analyzer = modes.any(grammarQuizModes.contains)
+    final analyzer = modes.any(parsedQuizModes.contains)
         ? await ref.read(sentenceAnalyzerProvider.future)
+        : null;
+
+    final source = widget.config.source;
+    final unit = source is UnitSource
+        ? (await ref.read(
+            lessonPathProvider(source.level).future,
+          )).unitById(source.unitId)
         : null;
     if (!mounted) return;
 
     final generator = QuestionGenerator(catalog: catalog, analyzer: analyzer);
     final locale = Localizations.localeOf(context);
-    final script = widget.config.source is KanaRows
-        ? (widget.config.source as KanaRows).script
-        : KanaScript.hiragana;
+    final script = source is KanaRows ? source.script : KanaScript.hiragana;
 
     final questions = <QuizQuestion>[];
-    for (final id in _itemIds(catalog)) {
-      if (questions.length >= widget.config.maxQuestions) break;
-      final question = generator.forItem(
-        id,
-        modes,
-        locale: locale,
-        script: script,
+    if (unit != null) {
+      // A unit is small enough to build its whole pool and then draw from it,
+      // which is what makes a rare mode as likely as a common one.
+      questions.addAll(
+        QuestionBank.build(
+          unit: unit,
+          catalog: catalog,
+          generator: generator,
+          modes: modes,
+          locale: locale,
+        ).draw(
+          widget.config.maxQuestions,
+          progress:
+              ref.read(progressDataProvider).value ??
+              const ProgressData(records: []),
+        ),
       );
-      if (question != null) questions.add(question);
+    } else {
+      for (final id in _itemIds(catalog)) {
+        if (questions.length >= widget.config.maxQuestions) break;
+        final question = generator.forItem(
+          id,
+          modes,
+          locale: locale,
+          script: script,
+        );
+        if (question != null) questions.add(question);
+      }
     }
 
     if (!mounted) return;
@@ -104,6 +134,29 @@ class _QuizPageState extends ConsumerState<QuizPage> {
                   : null,
             );
     });
+  }
+
+  /// Purpose: Write the checkpoint result, when this session was one.
+  /// Inputs: The finished `session`.
+  /// Returns: None.
+  /// Side effects: Writes a `lesson:` record and reloads the progress file.
+  /// Notes: Internal helper used within this file only. Only a checkpoint
+  /// writes anything here — ordinary practice over a unit has already
+  /// recorded every item it asked about, one answer at a time, and a unit is
+  /// not itself a thing to be reviewed on a schedule.
+  ///
+  /// **Passing is judged on first-try accuracy**, the same number the summary
+  /// shows, so the learner can see why they passed or did not.
+  void _recordCheckpoint(QuizSession session) {
+    final source = widget.config.source;
+    if (source is! UnitSource || !source.checkpoint) return;
+    if (!widget.config.recordProgress) return;
+    final summary = session.summary;
+    if (summary.total == 0) return;
+    _checkpointPassed = summary.accuracy >= checkpointPassAccuracy;
+    ref
+        .read(progressDataProvider.notifier)
+        .recordLessonResult(lessonRecordId(source.unitId), _checkpointPassed!);
   }
 
   /// Purpose: Decide which modes may be used in this session.
@@ -139,6 +192,9 @@ class _QuizPageState extends ConsumerState<QuizPage> {
       NewItems() => [...?queue?.newIds],
       IdsSource(:final ids) => ids,
       KanaRows() => _kanaIds(source),
+      // A unit does not go through here: its questions come from the bank,
+      // which needs the unit rather than a list of ids.
+      UnitSource() => const <String>[],
       LevelSource(:final level, :final kind) => switch (kind) {
         StudyKind.vocab => [
           for (final entry in catalog.vocab)
@@ -236,7 +292,10 @@ class _QuizPageState extends ConsumerState<QuizPage> {
               (_, final s?, true) => _summary(context, l10n, s),
               (_, final s?, false) => QuizRunner(
                 session: s,
-                onFinished: () => setState(() => _finished = true),
+                onFinished: () {
+                  _recordCheckpoint(s);
+                  setState(() => _finished = true);
+                },
               ),
             },
           ),
@@ -254,9 +313,7 @@ class _QuizPageState extends ConsumerState<QuizPage> {
   /// about words that have no kanji, has asked for nothing answerable.
   Widget _empty(BuildContext context, AppLocalizations l10n) => Padding(
     padding: const EdgeInsets.all(24),
-    child: Center(
-      child: Text(l10n.quizEmpty, textAlign: TextAlign.center),
-    ),
+    child: Center(child: Text(l10n.quizEmpty, textAlign: TextAlign.center)),
   );
 
   /// Purpose: Show the session's result.
@@ -290,6 +347,28 @@ class _QuizPageState extends ConsumerState<QuizPage> {
           l10n.quizSummaryScore(summary.firstTryCorrect, summary.total),
           style: theme.textTheme.titleMedium,
         ),
+        if (_checkpointPassed case final passed?) ...[
+          const SizedBox(height: 12),
+          Card(
+            margin: EdgeInsets.zero,
+            color: passed
+                ? theme.colorScheme.primaryContainer
+                : theme.colorScheme.surfaceContainerHighest,
+            elevation: 0,
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: Text(
+                passed
+                    ? l10n.pathCheckpointPassed
+                    : l10n.pathCheckpointFailed(
+                        (summary.accuracy * 100).round(),
+                        (checkpointPassAccuracy * 100).round(),
+                      ),
+                style: theme.textTheme.bodyMedium,
+              ),
+            ),
+          ),
+        ],
         const SizedBox(height: 16),
         if (summary.wrongIds.isEmpty)
           Text(l10n.quizSummaryPerfect)

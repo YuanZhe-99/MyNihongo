@@ -74,6 +74,7 @@ flutter:
   assets:
     - assets/content/
     - assets/content/grammar/
+    - assets/content/lessons/
     - assets/content/prompts/
 
 # Windows MSIX packaging. `msix_version` is one of the version locations listed

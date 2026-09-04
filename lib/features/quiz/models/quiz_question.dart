@@ -142,6 +142,8 @@ class QuizQuestion {
     this.acceptedAnswers = const {},
     this.answerOrder = const [],
     this.formLabel,
+    this.explanation,
+    this.generated = false,
   });
 
   /// The catalog id this question's answer is recorded against.
@@ -192,6 +194,20 @@ class QuizQuestion {
   /// Which inflected form a conjugation question asks for, as an enum name the
   /// UI localizes.
   final String? formLabel;
+
+  /// Why the right answer is right, when somebody wrote it down.
+  ///
+  /// Only a hand-written question has one. A generated question's reason is
+  /// the catalog entry behind it, which the summary already links to.
+  final String? explanation;
+
+  /// Whether a model wrote this question rather than the catalog.
+  ///
+  /// A generated question is shown with the same label every other generated
+  /// thing carries, and **its answer never reaches the scheduler**: the
+  /// spacing of a word's reviews must not depend on a question that might be
+  /// wrong about the word.
+  final bool generated;
 
   /// The correct option's text, for showing after a wrong answer.
   String? get answerText {

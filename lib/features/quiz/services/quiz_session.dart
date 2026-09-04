@@ -82,7 +82,7 @@ class QuizSession extends ChangeNotifier {
   final void Function(String itemId, bool correct)? onFirstAnswer;
 
   final List<QuizQuestion> _queue;
-  final int _total;
+  int _total;
   final AnswerChecker _checker = const AnswerChecker();
   final Map<String, bool> _firstResults = {};
   final Map<String, int> _requeues = {};
@@ -100,8 +100,23 @@ class QuizSession extends ChangeNotifier {
   /// Whether every question has been answered.
   bool get isFinished => _queue.isEmpty;
 
-  /// How many distinct items the session started with.
+  /// How many distinct items the session holds.
   int get total => _total;
+
+  /// Purpose: Add a question to a session already running.
+  /// Inputs: The `question`.
+  /// Returns: None.
+  /// Side effects: Lengthens the queue; notifies listeners.
+  /// Notes: For a question that arrives after the session started — today,
+  /// one written by the on-device model, which takes seconds the learner
+  /// should not spend staring at a spinner. It goes to the back rather than
+  /// interrupting, and the total grows so the progress indicator stays
+  /// honest about how much is left.
+  void append(QuizQuestion question) {
+    _queue.add(question);
+    _total++;
+    notifyListeners();
+  }
 
   /// How many items have been answered at least once.
   int get answeredCount => _firstResults.length;
@@ -134,7 +149,11 @@ class QuizSession extends ChangeNotifier {
     if (!_firstResults.containsKey(question.itemId)) {
       _firstResults[question.itemId] = correct;
       if (!correct) _wrongOrder.add(question.itemId);
-      onFirstAnswer?.call(question.itemId, correct);
+      // A generated question never reaches the scheduler. It may be wrong
+      // about the word, and the spacing of a word's reviews must not depend
+      // on that. It still counts towards the score the learner sees, because
+      // they answered it.
+      if (!question.generated) onFirstAnswer?.call(question.itemId, correct);
     }
 
     _lastOutcome = QuizOutcome(

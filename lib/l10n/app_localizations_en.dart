@@ -86,6 +86,39 @@ class AppLocalizationsEn extends AppLocalizations {
       'Today\'s review limit is reached. Raise it in Settings if you want more.';
 
   @override
+  String pathTitle(String level) {
+    return '$level path';
+  }
+
+  @override
+  String pathNotWritten(String level) {
+    return 'The $level units are not written yet. The reference lists and quizzes work at every level.';
+  }
+
+  @override
+  String pathUnitItems(int grammar, int vocab) {
+    return '$grammar grammar points, $vocab words';
+  }
+
+  @override
+  String get pathPractise => 'Practise';
+
+  @override
+  String get pathCheckpoint => 'Checkpoint';
+
+  @override
+  String get pathCheckpointAgain => 'Checkpoint again';
+
+  @override
+  String get pathCheckpointPassed =>
+      'Checkpoint passed — the next unit is open.';
+
+  @override
+  String pathCheckpointFailed(int percent, int needed) {
+    return 'Not this time. $percent% right; $needed% opens the next unit.';
+  }
+
+  @override
   String get learnContentSummary => 'Content';
 
   @override
