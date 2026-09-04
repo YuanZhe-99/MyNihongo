@@ -64,6 +64,11 @@ class FuriganaSegment {
 /// the repeat marks, an unpaired surrogate — is something a reading has to
 /// supply kana for.
 bool _readsItself(int code) {
+  // ヵ and ヶ sit in the katakana block but are not katakana in practice: they
+  // are the counter abbreviations, and 三ヶ月 is read さんかげつ, not さんヶげつ.
+  // Treated as kana they anchor on a character the reading never contains, and
+  // every counted-month sentence fails to align.
+  if (code == 0x30F5 || code == 0x30F6) return false;
   // Hiragana, katakana, the prolonged sound mark and the kana marks.
   if (code >= 0x3040 && code <= 0x30FF) return true;
   // Halfwidth katakana, which a hand-edited file may still contain.

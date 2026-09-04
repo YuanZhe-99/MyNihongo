@@ -56,6 +56,14 @@ void main() {
       expect(align('３時', 'さんじ'), '３時[さんじ]');
     });
 
+    test('the counter abbreviations are read, not anchored', () {
+      // ヶ and ヵ sit in the katakana block but are not katakana: 三ヶ月 is
+      // read さんかげつ. Anchored as kana they would demand a ヶ the reading
+      // never contains, and every counted-month sentence would fail.
+      expect(align('何ヶ月', 'なんかげつ'), '何ヶ月[なんかげつ]');
+      expect(align('一ヵ所', 'いっかしょ'), '一ヵ所[いっかしょ]');
+    });
+
     test('punctuation anchors like kana', () {
       expect(align('私は学生です。', 'わたしはがくせいです。'), '私[わたし]は学生[がくせい]です。');
     });
