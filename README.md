@@ -20,7 +20,7 @@ account, no telemetry, no cloud model and no ads.
   for its stroke count, the kana it is confused with, and words that start with it.
 - **Vocabulary** — 7,744 words from N5 to N1, built from JMdict and the openly licensed JLPT
   lists. Search by kanji, reading, romaji or meaning, and filter by level.
-- **Grammar** — 331 points across N5, N4 and N3, each with structure, meaning, explanation and
+- **Grammar** — 659 points across all five levels, each with structure, meaning, explanation and
   examples.
 - **Kana over kanji** — readings printed above the characters that need them, everywhere Japanese
   appears. On by default, and it refuses rather than guessing when a reading cannot be aligned.
@@ -34,9 +34,14 @@ account, no telemetry, no cloud model and no ads.
 - **Sixteen quiz modes** — meaning, written form, reading, listening, typing, kana, particles,
   conjugation, sentence ordering, grammar points, whole sentences either way, and filling a word
   into its own example. Each one is a switch you can turn off.
-- **A lesson path** — the target level as units, each a topic with its own sentences and questions.
-  A checkpoint opens the next unit, and a locked unit's checkpoint is still open, because that is
-  how somebody who already knows the material skips ahead.
+- **A lesson path** — every level as units, 65 of them, each a topic with its own sentences and
+  questions. A checkpoint opens the next unit, and a locked unit's checkpoint is still open,
+  because that is how somebody who already knows the material skips ahead.
+- **Scenario lessons** — a scripted conversation at the end of a unit, read aloud, stopping to ask
+  what you would say. A wrong reply does not end the conversation: it changes the tally at the end
+  and nothing else.
+- **Writing practice** — write a few sentences from a unit's prompt and have them parsed: which of
+  the unit's words you used, how each sentence was read, and anything unusual.
 - **A study calendar** and a daily reminder, both off the same progress file. The reminder is off
   until you turn it on, and asks for notification permission at that moment and not before.
 
@@ -52,9 +57,11 @@ account, no telemetry, no cloud model and no ads.
 ### On-device AI (Android, off by default)
 
 On a phone with Android AICore, and only with the switch on, the app can explain a finding in more
-words, suggest a rewrite, say why a quiz answer was wrong, write extra example sentences, and give
-a second opinion on a typed answer the string comparison rejected. Generated text is always
-labelled, never becomes catalog content, and the deterministic answer always comes first.
+words, suggest a rewrite of what you wrote, say why a quiz answer was wrong, write extra example
+sentences, give a second opinion on a typed answer the string comparison rejected, and add up to
+three extra questions to a unit session. Generated text is always labelled, never becomes catalog
+content, and the deterministic answer always comes first — a generated question is asked for only
+after the session is already on screen, and answering one never touches the review schedule.
 
 ### Everything else
 
@@ -66,30 +73,30 @@ labelled, never becomes catalog content, and the deterministic answer always com
 
 ## Content coverage
 
-Grammar and Chinese glosses are filled level by level. The current state, as of `v0.3.0`:
+The catalog is complete, as of `v0.3.1`:
 
-| Level | Grammar points | Chinese glosses | Example sentences |
-|---|---|---|---|
-| N5 | 81 | 667 / 667 | 517 / 667 |
-| N4 | 100 | 630 / 630 | 0 / 630 |
-| N3 | 150 | 1,650 / 1,650 | 2 / 1,650 |
-| N2 | — | 0 / 1,737 | 0 / 1,737 |
-| N1 | — | 0 / 3,060 | 0 / 3,060 |
+| Level | Grammar points | Lesson units | Chinese glosses | Example sentences |
+|---|---|---|---|---|
+| N5 | 81 | 9 | 667 / 667 | 667 / 667 |
+| N4 | 100 | 12 | 630 / 630 | 630 / 630 |
+| N3 | 150 | 14 | 1,650 / 1,650 | 1,650 / 1,650 |
+| N2 | 170 | 15 | 1,737 / 1,737 | 1,737 / 1,737 |
+| N1 | 158 | 15 | 3,060 / 3,060 | 3,059 / 3,060 |
 
-Every word carries an English meaning at every level; the table above is about the Chinese and the
-example sentences, which are being written.
+The one gap is real and is left in: ＯＫ is written in fullwidth Latin and read オーケー, and the
+analyser can reach it by neither spelling, so no example sentence for it could be checked.
 
 **How that content was made matters, so it is stated plainly.** The N5 grammar was written by hand.
-Everything beyond it — the N4 and N3 points, the Chinese glosses, the example sentences and the
-lesson units — was written by model agents against an automated gate and **has not been read by a
-Japanese or Chinese speaker**. The gate proves a sentence parses against the app's own dictionary,
-is read the way its reading says, and names ids that exist. It cannot prove the Japanese is
-natural. Every such file records that in its `source` field, and
+Everything beyond it — the N4 through N1 points, the Chinese glosses, the example sentences, the
+lesson units and the scenario dialogues — was written by model agents against an automated gate and
+**has not been read by a Japanese or Chinese speaker**. The gate proves a sentence parses against
+the app's own dictionary, is read the way its reading says, and names ids that exist. It cannot
+prove the Japanese is natural. Every such file records that in its `source` field, and
 [`doc/en-us/features/content-authoring.md`](doc/en-us/features/content-authoring.md) says what the
 checks cannot promise.
 
-**Planned** — see [PLAN.md](PLAN.md): N2 and N1 grammar, scenario lessons, writing practice, and
-JLPT N5–N1 practice sets.
+**Planned** — see [PLAN.md](PLAN.md): free-response translation grading, a scenario dialogue
+partner, and JLPT N5–N1 practice sets.
 
 ## Build flavors
 

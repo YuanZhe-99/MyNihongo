@@ -12,6 +12,85 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.3.1` — 2026-09-04. The three things Phase 3 had designed and never written,
+  and a catalog that is finally complete.
+
+  **Scenario lessons.** A unit may end with a scripted conversation: six to
+  eight lines with a speaker each, and one or two points where the script stops
+  and asks the learner what to say. Every line and every candidate reply can be
+  read aloud. Written for N5 units 1–4 and N4 units 1–2; a unit without one
+  shows no button.
+
+  A wrong reply does not end the conversation and does not fork it. The script
+  is linear, and what the learner said changes the tally at the end and nothing
+  else — a conversation that stops when you say the wrong thing teaches nothing
+  about what to say instead. Nothing here reaches the scheduler: picking one of
+  three is not recall, and the unit's practice session already measures that.
+
+  **AI-generated questions**, with the switch on. A unit session asks the model
+  for up to three extra questions about its own grammar points, **after** the
+  session is on screen, so waiting on a model never delays question one. They
+  are labelled above the prompt, before being read; and answering one never
+  reaches SM-2, because a question that may be wrong must not move a real
+  review interval. The parser refuses six ways — no `Q:` line, no blank in the
+  sentence, not four options, a blank option, two identical options, an
+  `Answer:` naming none of them — since a guessed question looks exactly as
+  authoritative on screen as an authored one.
+
+  **Writing practice is reachable.** The page shipped in `0.3.0` and nothing
+  opened it; a unit's writing prompt now does.
+
+  **The catalog is complete.** N2 grammar (170 points) and N1 grammar (158)
+  fill the last two levels of chips; every one of the 7,744 words has a Chinese
+  gloss and, with one exception, an example sentence; and every level has its
+  units, 65 in all.
+
+  | Level | Grammar points | Lesson units | Chinese glosses | Example sentences |
+  |---|---|---|---|---|
+  | N5 | 81 | 9 | 667 of 667 | 667 of 667 |
+  | N4 | 100 | 12 | 630 of 630 | 630 of 630 |
+  | N3 | 150 | 14 | 1,650 of 1,650 | 1,650 of 1,650 |
+  | N2 | 170 | 15 | 1,737 of 1,737 | 1,737 of 1,737 |
+  | N1 | 158 | 15 | 3,060 of 3,060 | 3,059 of 3,060 |
+
+  The one gap is left in rather than papered over: ＯＫ is written in fullwidth
+  Latin and read オーケー, and the lexicon indexes a surface by its headword, so
+  the analyser reaches it by neither spelling and no example for it could be
+  checked.
+
+  Twenty-six N1 points were **dropped rather than renamed** when their slug
+  collided with an N2 point. Renaming keeps the count at the price of teaching
+  the same pattern twice under two ids; the count is a number in a table, and
+  the duplicate is what a learner would meet.
+
+  Getting N1 to parse at all meant teaching the analyser the classical layer:
+  ぬ, ざる, べからざる, べからず, んとする, んばかり, や否や, すべ, こととて,
+  〜つ〜つ, 極まりない, 極み, の至り, 同然, 関の山, ぐるみ, 三昧, やら〜やら.
+  Each of those **is** an N1 grammar point, so no example can avoid it and the
+  function-word table had to grow; ordinary words the dictionary happens to lack
+  went the other way, by rewriting the sentence. Two failures were silent and
+  cost a while: `needs` on a function word means "attach me to a stem", so it is
+  wrong for a form that follows a finished dictionary form, and `particle-conj`
+  is not a category name the loader knows. Both dropped the entry with no error
+  anywhere, and the only symptom was a sentence that would not parse.
+
+  Also here: ヶ and ヵ now align. They sit in the katakana block but are not
+  katakana — 三ヶ月 is read さんかげつ — and anchored as kana they demanded a ヶ
+  the reading never contains, so every counted-month sentence failed.
+
+  **Content authoring is now four committed subagent definitions**, one per
+  draft kind, so the model and the reasoning effort belong to the stream rather
+  than to whichever prompt was typed. `AGENTS.md` says to revisit both keys
+  whenever the available models change.
+
+  Everything past N5 remains **model-authored and unreviewed**, which every such
+  file records in its `source` field.
+
+  Verified: 667 tests, `flutter analyze` clean.
+
+  **Not verified on a device yet:** the scenario page, a generated question
+  arriving mid-session, and writing practice opened from a unit.
+
 - `0.3.0` — 2026-09-04. The learning engine: spaced repetition, quizzes, a lesson
   path, kana over kanji, a daily reminder, and a catalog that finally reaches
   past N5.
