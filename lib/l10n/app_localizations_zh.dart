@@ -962,6 +962,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get quizModeVocabTypeReading => '输入读音';
 
   @override
+  String get quizModeVocabCloze => '填词';
+
+  @override
   String get quizModeKanaToRomaji => '假名 → 罗马字';
 
   @override
@@ -981,6 +984,21 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get quizModeGrammarPattern => '选语法点';
+
+  @override
+  String get quizModeGrammarSentenceToMeaning => '整句 → 词义';
+
+  @override
+  String get quizModeGrammarMeaningToSentence => '词义 → 整句';
+
+  @override
+  String get quizClozePrompt => '空格里应该填哪个词？';
+
+  @override
+  String get quizSentenceToMeaningPrompt => '这句话说的是什么？';
+
+  @override
+  String get quizMeaningToSentencePrompt => '哪一句表达了这个意思？';
 
   @override
   String get formDictionary => '辞书形';
@@ -2217,6 +2235,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get quizModeVocabTypeReading => '輸入讀音';
 
   @override
+  String get quizModeVocabCloze => '填詞';
+
+  @override
   String get quizModeKanaToRomaji => '假名 → 羅馬字';
 
   @override
@@ -2236,6 +2257,21 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get quizModeGrammarPattern => '選文法點';
+
+  @override
+  String get quizModeGrammarSentenceToMeaning => '整句 → 詞義';
+
+  @override
+  String get quizModeGrammarMeaningToSentence => '詞義 → 整句';
+
+  @override
+  String get quizClozePrompt => '空格裡應該填哪個詞？';
+
+  @override
+  String get quizSentenceToMeaningPrompt => '這句話說的是什麼？';
+
+  @override
+  String get quizMeaningToSentencePrompt => '哪一句表達了這個意思？';
 
   @override
   String get formDictionary => '辭書形';

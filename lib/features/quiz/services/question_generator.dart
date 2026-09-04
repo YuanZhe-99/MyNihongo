@@ -238,6 +238,9 @@ class QuestionGenerator {
           speakText: entry.reading,
         );
 
+      case QuizMode.vocabCloze:
+        return _cloze(entry, locale);
+
       case QuizMode.vocabTypeReading:
         return QuizQuestion(
           itemId: entry.id,
@@ -278,6 +281,10 @@ class QuestionGenerator {
 
     if (mode == QuizMode.grammarPattern) {
       return _pattern(point, example, translation);
+    }
+    if (mode == QuizMode.grammarSentenceToMeaning ||
+        mode == QuizMode.grammarMeaningToSentence) {
+      return _wholeSentence(point, example, translation, mode, locale);
     }
 
     final analysis = analyzer?.analyze(example.ja);
@@ -540,6 +547,114 @@ class QuestionGenerator {
       correct: point.pattern,
       wrong: [for (final other in wrong.take(distractorCount)) other.pattern],
       speakText: example.reading ?? example.ja,
+    );
+  }
+
+  /// Purpose: Blank a word out of its own example sentence and ask which one
+  /// belongs there.
+  /// Inputs: `entry`, `locale`.
+  /// Returns: `QuizQuestion?`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. The one mode that asks
+  /// a word in context rather than in isolation, which is the difference
+  /// between recognising 洗う on a list and knowing it takes 手 rather than
+  /// 掃除. It needs the analyser, because the blank has to fall on a token
+  /// boundary: cutting 洗います in half leaves a fragment nobody can answer.
+  /// The distractors are the same words the meaning modes would offer, so they
+  /// are the same part of speech and level, and the option shown is each one's
+  /// written form rather than its meaning.
+  QuizQuestion? _cloze(VocabEntry entry, Locale locale) {
+    final analyzer = this.analyzer;
+    if (analyzer == null || entry.examples.isEmpty) return null;
+
+    for (final example in entry.examples) {
+      final analysis = analyzer.analyze(example.ja);
+      final token = analysis.tokens
+          .where((t) => t.refId == entry.id && t.surface.isNotEmpty)
+          .firstOrNull;
+      if (token == null) continue;
+
+      final wrong = _distractors.forMeaning(entry, locale: locale);
+      if (wrong.length < distractorCount) continue;
+
+      final blanked = analysis.normalized.replaceRange(
+        token.start,
+        token.end,
+        particleBlank,
+      );
+      final question = _choice(
+        itemId: entry.id,
+        mode: QuizMode.vocabCloze,
+        prompt: blanked,
+        promptReading: _blankedReading(
+          analysis,
+          example,
+          token.start,
+          token.end,
+        ),
+        promptSubtitle: example.translations.resolveJoined(locale),
+        correct: token.surface,
+        wrong: [for (final other in wrong) other.headword],
+      );
+      if (question != null) return question;
+    }
+    return null;
+  }
+
+  /// Purpose: Ask what a whole sentence means, or which sentence means this.
+  /// Inputs: `point`, its `example`, the `translation`, the `mode`, `locale`.
+  /// Returns: `QuizQuestion?`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. The only two modes
+  /// that ask about a sentence as a whole rather than about one word in it,
+  /// and the only grammar modes that need no parse — which is what lets a
+  /// lesson ask them without paying for the lexicon. The wrong sentences come
+  /// from the same level and are kept to a similar length, because a
+  /// three-word sentence among three long ones is picked on shape.
+  QuizQuestion? _wholeSentence(
+    GrammarPoint point,
+    ContentExample example,
+    String translation,
+    QuizMode mode,
+    Locale locale,
+  ) {
+    if (translation.isEmpty) return null;
+    final length = example.ja.length;
+    final pool = <ContentExample>[];
+    for (final other in catalog.grammar) {
+      if (other.id == point.id || other.level != point.level) continue;
+      for (final candidate in other.examples) {
+        final gap = (candidate.ja.length - length).abs();
+        if (gap > (length * 0.4).ceil()) continue;
+        final meaning = candidate.translations.resolveJoined(locale);
+        if (meaning.isEmpty || meaning == translation) continue;
+        if (candidate.ja == example.ja) continue;
+        pool.add(candidate);
+      }
+    }
+    pool.shuffle(_random);
+    if (pool.length < distractorCount) return null;
+    final wrong = pool.take(distractorCount).toList();
+
+    if (mode == QuizMode.grammarSentenceToMeaning) {
+      return _choice(
+        itemId: point.id,
+        mode: mode,
+        prompt: example.ja,
+        promptReading: example.reading,
+        correct: translation,
+        wrong: [
+          for (final other in wrong) other.translations.resolveJoined(locale),
+        ],
+        speakText: example.reading ?? example.ja,
+      );
+    }
+    return _choice(
+      itemId: point.id,
+      mode: mode,
+      prompt: translation,
+      correct: example.ja,
+      wrong: [for (final other in wrong) other.ja],
     );
   }
 

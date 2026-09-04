@@ -995,6 +995,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get quizModeVocabTypeReading => 'Type the reading';
 
   @override
+  String get quizModeVocabCloze => 'Fill in the word';
+
+  @override
   String get quizModeKanaToRomaji => 'Kana to romaji';
 
   @override
@@ -1014,6 +1017,21 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get quizModeGrammarPattern => 'Pick the grammar point';
+
+  @override
+  String get quizModeGrammarSentenceToMeaning => 'Sentence to meaning';
+
+  @override
+  String get quizModeGrammarMeaningToSentence => 'Meaning to sentence';
+
+  @override
+  String get quizClozePrompt => 'Which word belongs in the blank?';
+
+  @override
+  String get quizSentenceToMeaningPrompt => 'What does this sentence say?';
+
+  @override
+  String get quizMeaningToSentencePrompt => 'Which sentence says this?';
 
   @override
   String get formDictionary => 'dictionary';

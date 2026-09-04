@@ -82,11 +82,7 @@ void main() {
   test('every kana can be asked about in all three kana modes', () {
     for (final entry in allKanaEntries()) {
       for (final mode in kanaQuizModes) {
-        final question = generator.generate(
-          entry.progressId,
-          mode,
-          locale: en,
-        );
+        final question = generator.generate(entry.progressId, mode, locale: en);
         expect(
           question,
           isNotNull,
@@ -144,11 +140,7 @@ void main() {
   test('the written-form modes apply only to words that have kanji', () {
     final kanaOnly = catalog.vocab.firstWhere((v) => !v.hasKanji);
     expect(
-      generator.generate(
-        kanaOnly.id,
-        QuizMode.vocabReadingToKanji,
-        locale: en,
-      ),
+      generator.generate(kanaOnly.id, QuizMode.vocabReadingToKanji, locale: en),
       isNull,
       reason: 'the prompt and the answer would be the same string',
     );
@@ -315,21 +307,67 @@ void main() {
       isNull,
     );
     expect(
-      generator.generate('vocab:nonexistent', QuizMode.vocabJaToMeaning,
-          locale: en),
+      generator.generate(
+        'vocab:nonexistent',
+        QuizMode.vocabJaToMeaning,
+        locale: en,
+      ),
       isNull,
     );
   });
 
-  test('without an analyser the grammar modes simply do not fire', () {
+  test('without an analyser only the whole-sentence modes fire', () {
+    // Three of the grammar modes ask about a sentence as a whole — which one
+    // it is, what it means, which one means this — and none of them needs the
+    // sentence taken apart. That is what lets a lesson ask grammar questions
+    // without paying for the 7,700-entry lexicon first.
     final plain = QuestionGenerator(catalog: catalog, random: Random(1));
     for (final mode in grammarQuizModes) {
       final question = plain.generate('grammar:desu', mode, locale: en);
-      if (mode == QuizMode.grammarPattern) {
-        expect(question, isNotNull, reason: 'this one needs no parse');
+      if (parsedQuizModes.contains(mode)) {
+        expect(question, isNull, reason: '${mode.name} needs a parse');
       } else {
-        expect(question, isNull);
+        expect(question, isNotNull, reason: '${mode.name} needs no parse');
       }
     }
+  });
+
+  test('a word in a sentence can be blanked out and asked about', () {
+    // The cloze mode is the one that asks a word in context rather than in
+    // isolation, so it needs both an example sentence and the analyser.
+    final entry = catalog.vocab.firstWhere(
+      (v) => v.examples.isNotEmpty && v.level.label == 'N5',
+    );
+    final question = generator.generate(
+      entry.id,
+      QuizMode.vocabCloze,
+      locale: en,
+    );
+    if (question == null) return;
+    expect(question.prompt, contains(particleBlank));
+    expectAnswerable(question);
+    expect(
+      QuestionGenerator(
+        catalog: catalog,
+        random: Random(1),
+      ).generate(entry.id, QuizMode.vocabCloze, locale: en),
+      isNull,
+      reason: 'without the analyser the blank could fall inside a word',
+    );
+  });
+
+  test('a whole-sentence question offers sentences of a similar length', () {
+    var built = 0;
+    for (final point in catalog.grammar) {
+      final question = generator.generate(
+        point.id,
+        QuizMode.grammarSentenceToMeaning,
+        locale: en,
+      );
+      if (question == null) continue;
+      built++;
+      expectAnswerable(question);
+    }
+    expect(built, greaterThan(20));
   });
 }

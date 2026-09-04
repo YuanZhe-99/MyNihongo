@@ -296,6 +296,9 @@ class _QuestionPane extends StatelessWidget {
     QuizMode.grammarParticle => l10n.quizParticlePrompt,
     QuizMode.grammarConjugation => l10n.quizConjugationPrompt,
     QuizMode.grammarPattern => l10n.quizPatternPrompt,
+    QuizMode.vocabCloze => l10n.quizClozePrompt,
+    QuizMode.grammarSentenceToMeaning => l10n.quizSentenceToMeaningPrompt,
+    QuizMode.grammarMeaningToSentence => l10n.quizMeaningToSentencePrompt,
     _ => l10n.quizModeLabel(question.mode),
   };
 }
@@ -327,5 +330,8 @@ extension QuizModeLabel on AppLocalizations {
     QuizMode.grammarConjugation => quizModeGrammarConjugation,
     QuizMode.grammarOrder => quizModeGrammarOrder,
     QuizMode.grammarPattern => quizModeGrammarPattern,
+    QuizMode.vocabCloze => quizModeVocabCloze,
+    QuizMode.grammarSentenceToMeaning => quizModeGrammarSentenceToMeaning,
+    QuizMode.grammarMeaningToSentence => quizModeGrammarMeaningToSentence,
   };
 }

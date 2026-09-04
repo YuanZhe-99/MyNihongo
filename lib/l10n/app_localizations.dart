@@ -1839,6 +1839,12 @@ abstract class AppLocalizations {
   /// **'Type the reading'**
   String get quizModeVocabTypeReading;
 
+  /// No description provided for @quizModeVocabCloze.
+  ///
+  /// In en, this message translates to:
+  /// **'Fill in the word'**
+  String get quizModeVocabCloze;
+
   /// No description provided for @quizModeKanaToRomaji.
   ///
   /// In en, this message translates to:
@@ -1880,6 +1886,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Pick the grammar point'**
   String get quizModeGrammarPattern;
+
+  /// No description provided for @quizModeGrammarSentenceToMeaning.
+  ///
+  /// In en, this message translates to:
+  /// **'Sentence to meaning'**
+  String get quizModeGrammarSentenceToMeaning;
+
+  /// No description provided for @quizModeGrammarMeaningToSentence.
+  ///
+  /// In en, this message translates to:
+  /// **'Meaning to sentence'**
+  String get quizModeGrammarMeaningToSentence;
+
+  /// No description provided for @quizClozePrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Which word belongs in the blank?'**
+  String get quizClozePrompt;
+
+  /// No description provided for @quizSentenceToMeaningPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'What does this sentence say?'**
+  String get quizSentenceToMeaningPrompt;
+
+  /// No description provided for @quizMeaningToSentencePrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Which sentence says this?'**
+  String get quizMeaningToSentencePrompt;
 
   /// No description provided for @formDictionary.
   ///

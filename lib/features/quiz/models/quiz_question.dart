@@ -33,6 +33,9 @@ enum QuizMode {
   /// Word shown, type its reading.
   vocabTypeReading,
 
+  /// A sentence with the word blanked out of it, pick which word belongs.
+  vocabCloze,
+
   /// Kana shown, pick the romaji.
   kanaToRomaji,
 
@@ -53,6 +56,12 @@ enum QuizMode {
 
   /// A sentence shown, pick the grammar point it uses.
   grammarPattern,
+
+  /// A whole sentence shown, pick what it means.
+  grammarSentenceToMeaning,
+
+  /// A meaning shown, pick the sentence that says it.
+  grammarMeaningToSentence,
 }
 
 /// How a question is answered, which decides the widget that renders it.
@@ -75,6 +84,7 @@ const vocabQuizModes = {
   QuizMode.vocabKanjiToReading,
   QuizMode.vocabListening,
   QuizMode.vocabTypeReading,
+  QuizMode.vocabCloze,
 };
 
 /// The kana modes.
@@ -84,12 +94,26 @@ const kanaQuizModes = {
   QuizMode.kanaListening,
 };
 
-/// The grammar modes, every one of which needs the sentence analyser.
+/// The grammar modes.
+///
+/// All but the three that work on a whole sentence need the sentence analyser,
+/// which is why `sentenceQuizModes` is a separate set: a quiz that only asks
+/// about whole sentences does not have to build the lexicon.
 const grammarQuizModes = {
   QuizMode.grammarParticle,
   QuizMode.grammarConjugation,
   QuizMode.grammarOrder,
   QuizMode.grammarPattern,
+  QuizMode.grammarSentenceToMeaning,
+  QuizMode.grammarMeaningToSentence,
+};
+
+/// The modes that need the sentence analyser and are dropped without it.
+const parsedQuizModes = {
+  QuizMode.grammarParticle,
+  QuizMode.grammarConjugation,
+  QuizMode.grammarOrder,
+  QuizMode.vocabCloze,
 };
 
 /// The modes that speak rather than show, and so need a Japanese voice.
