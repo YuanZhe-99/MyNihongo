@@ -25,9 +25,9 @@ import 'package:my_nihongo/features/content/services/content_repository.dart';
 /// mangled example sentence is shown beside the catalog's own and looks
 /// exactly as authoritative.
 class _FakeBackend extends GenAiBackend {
-  _FakeBackend({this.reply = 'ok'});
+  _FakeBackend();
 
-  String reply;
+  String reply = 'ok';
   int calls = 0;
   int busyFor = 0;
   final order = <String>[];
