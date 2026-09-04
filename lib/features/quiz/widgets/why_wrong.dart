@@ -5,7 +5,6 @@ import '../../../l10n/app_localizations.dart';
 import '../../ai/services/ai_assist_service.dart';
 import '../../ai/services/ai_practice_service.dart';
 import '../../ai/services/genai_backend.dart';
-import '../../ai/services/practice_prompt_builder.dart';
 import '../../ai/services/practice_response_parser.dart';
 import '../../ai/widgets/ai_explanation_card.dart';
 import '../../content/models/content_catalog.dart';
@@ -117,15 +116,16 @@ class _WhyWrongState extends ConsumerState<WhyWrong> {
   /// over exactly as it was worded on screen, and the catalog's own note is
   /// handed over with an instruction not to contradict it.
   Future<void> _ask(ContentCatalog? catalog) async {
-    final templates = ref.read(practicePromptTemplatesProvider).value;
     final question = widget.question;
     final chose = widget.chose;
-    if (templates == null || chose == null) return;
+    if (chose == null) return;
+    final builder = await practicePromptBuilder(ref);
+    if (builder == null || !mounted) return;
     if (chose < 0 || chose >= question.options.length) return;
     final answer = question.answerText;
     if (answer == null) return;
 
-    final prompt = PracticePromptBuilder(templates).forWhyWrong(
+    final prompt = builder.forWhyWrong(
       question: question.prompt,
       chosen: question.options[chose],
       correct: answer,

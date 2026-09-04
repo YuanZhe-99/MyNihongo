@@ -99,9 +99,10 @@ read aloud.
 Three rules make it a lesson rather than a quiz:
 
 - **A wrong reply does not end the conversation.** The script is linear; what
-  the learner said changes the tally shown at the end and nothing else. A
-  conversation that stops when you say the wrong thing teaches nothing about
-  what to say instead.
+  the learner said is added to the transcript where it was said, marked right or
+  wrong, and changes the tally shown at the end. Nothing else. A conversation
+  that stops when you say the wrong thing teaches nothing about what to say
+  instead — and seeing the wrong reply in place is the part worth reading.
 - **The script does not fork per choice either.** Every fork would have to be
   written and gated, which is a content cost paid on every unit, for a lesson
   whose point is reading a real exchange.

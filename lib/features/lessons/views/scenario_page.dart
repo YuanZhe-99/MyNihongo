@@ -32,9 +32,10 @@ class ScenarioArgs {
 /// conversation the app can speak.
 ///
 /// **A wrong choice does not end the conversation.** The chosen line is shown
-/// as said, the script carries on, and the tally at the end says how many were
-/// right. Nothing is written to the scheduler: choosing a reply from four is
-/// not recall, and the unit's practice session is where recall is measured.
+/// in the transcript where it was said, marked right or wrong, the script
+/// carries on, and the tally at the end says how many were right. Nothing is
+/// written to the scheduler: choosing one of three is not recall, and the
+/// unit's practice session is where recall is measured.
 class ScenarioPage extends ConsumerStatefulWidget {
   /// Purpose: Show one conversation.
   /// Inputs: The `args`.
@@ -57,8 +58,9 @@ class _ScenarioPageState extends ConsumerState<ScenarioPage> {
   /// The branch waiting for an answer, when one is.
   ScenarioBranch? _asking;
 
-  /// What the learner said, in the order they said it.
-  final _said = <ScenarioChoice>[];
+  /// What the learner said, keyed by the branch's `after` so the reply can be
+  /// shown in the place in the conversation where it was said.
+  final _said = <int, ScenarioChoice>{};
 
   Scenario get _scenario => widget.args.scenario;
 
@@ -91,8 +93,10 @@ class _ScenarioPageState extends ConsumerState<ScenarioPage> {
   /// Notes: Internal helper used within this file only. The conversation
   /// continues whether the choice was right or wrong; only the tally differs.
   void _choose(ScenarioChoice choice) {
+    final branch = _asking;
+    if (branch == null) return;
     setState(() {
-      _said.add(choice);
+      _said[branch.after] = choice;
       _asking = null;
     });
   }
@@ -120,7 +124,14 @@ class _ScenarioPageState extends ConsumerState<ScenarioPage> {
           child: ListView(
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
             children: [
-              for (final line in lines) _line(context, line, locale),
+              for (var i = 0; i < lines.length; i++) ...[
+                _line(context, lines[i], locale),
+                // The learner's own reply belongs in the conversation, at the
+                // point they said it — a transcript that drops it reads as if
+                // the other speaker simply carried on alone.
+                if (_said[i + 1] case final choice?)
+                  _saidLine(context, choice, locale),
+              ],
               if (branch != null) ...[
                 const SizedBox(height: 12),
                 Text(
@@ -161,7 +172,65 @@ class _ScenarioPageState extends ConsumerState<ScenarioPage> {
   }
 
   /// How many of the learner's replies were the expected one.
-  int get _rightCount => _said.where((choice) => choice.correct).length;
+  int get _rightCount => _said.values.where((choice) => choice.correct).length;
+
+  /// Purpose: Render the line the learner chose to say.
+  /// Inputs: `context`, the `choice`, the `locale`.
+  /// Returns: `Widget`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. Marked right or wrong
+  /// where the speaker's name would be, and set apart from the script by its
+  /// tinted background, because the learner needs to see at a glance which
+  /// lines in the transcript were theirs. It is shown either way: the whole
+  /// point of a wrong reply not ending the conversation is being able to read
+  /// what it looked like in place.
+  Widget _saidLine(
+    BuildContext context,
+    ScenarioChoice choice,
+    Locale locale,
+  ) {
+    final theme = Theme.of(context);
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          color: theme.colorScheme.surfaceContainerHighest,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 6, right: 8),
+              child: Icon(
+                choice.correct ? Icons.check_circle : Icons.cancel_outlined,
+                size: 20,
+                color: choice.correct
+                    ? theme.colorScheme.primary
+                    : theme.colorScheme.error,
+              ),
+            ),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  FuriganaText(choice.ja, reading: choice.reading),
+                  Text(
+                    choice.translations.resolveJoined(locale),
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SpeakButton(text: choice.reading ?? choice.ja),
+          ],
+        ),
+      ),
+    );
+  }
 
   /// Purpose: Render one spoken line.
   /// Inputs: `context`, the `line`, the `locale`.

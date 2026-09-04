@@ -86,10 +86,26 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
   Everything past N5 remains **model-authored and unreviewed**, which every such
   file records in its `source` field.
 
-  Verified: 667 tests, `flutter analyze` clean.
+  Two things the device found that no test could. **Generated questions never
+  arrived at all**: the prompt asset is a `FutureProvider`, nothing on the way
+  into a session touches it, and the code read its `.value` — which is null
+  until it loads. There was no error anywhere; the feature simply did nothing,
+  and a second attempt would have worked. The same read was in all four
+  practice callers, so all four now go through one helper that awaits it.
 
-  **Not verified on a device yet:** the scenario page, a generated question
-  arriving mid-session, and writing practice opened from a unit.
+  And **the reply the learner chose vanished from the scenario transcript**,
+  which made the conversation read as if the other speaker had carried on
+  alone. It is now shown in place, marked right or wrong.
+
+  Verified: 667 tests, `flutter analyze` clean, and on a Pixel 10 (Android 17,
+  release build): the scenario page end to end — furigana over each line, the
+  branch, a wrong reply kept in the transcript, the conversation continuing,
+  and the tally; writing practice opened from a unit with its prompt and both
+  actions; and a unit session growing from 12 questions to 15 as the generated
+  ones arrived, with AICore called for each.
+
+  **Not verified on a device:** the generated question's own label, which needs
+  answering twelve questions to reach.
 
 - `0.3.0` — 2026-09-04. The learning engine: spaced repetition, quizzes, a lesson
   path, kana over kanji, a daily reminder, and a catalog that finally reaches

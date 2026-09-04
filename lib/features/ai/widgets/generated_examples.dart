@@ -10,7 +10,6 @@ import '../../speech/widgets/speak_button.dart';
 import '../services/ai_assist_service.dart';
 import '../services/ai_practice_service.dart';
 import '../services/genai_backend.dart';
-import '../services/practice_prompt_builder.dart';
 import '../services/practice_response_parser.dart';
 import 'ai_explanation_card.dart';
 
@@ -148,12 +147,10 @@ class _GeneratedExamplesState extends ConsumerState<GeneratedExamples> {
   /// sentence sits beside the catalog's own and would otherwise look exactly
   /// as authoritative as one somebody wrote.
   Future<void> _ask() async {
-    final templates = ref.read(practicePromptTemplatesProvider).value;
-    if (templates == null) return;
+    final builder = await practicePromptBuilder(ref);
+    if (builder == null || !mounted) return;
     final locale = Localizations.localeOf(context);
-    final prompt = PracticePromptBuilder(
-      templates,
-    ).forExamples(widget.entry, locale: locale);
+    final prompt = builder.forExamples(widget.entry, locale: locale);
     if (prompt == null) return;
 
     setState(() {
@@ -166,7 +163,7 @@ class _GeneratedExamplesState extends ConsumerState<GeneratedExamples> {
       final parsed = PracticeResponseParser.examples(
         raw,
         language: locale.languageCode == 'en' ? 'en' : 'zh',
-        limit: templates.limit('maxExamples', 3),
+        limit: builder.templates.limit('maxExamples', 3),
       );
       setState(() {
         _examples = parsed;

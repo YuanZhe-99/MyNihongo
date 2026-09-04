@@ -22,7 +22,6 @@ import 'dart:async';
 
 import '../../ai/services/ai_assist_service.dart';
 import '../../ai/services/ai_practice_service.dart';
-import '../../ai/services/practice_prompt_builder.dart';
 import '../../lessons/models/lesson_path.dart';
 import '../services/ai_question_generator.dart';
 import '../services/quiz_session.dart';
@@ -173,12 +172,12 @@ class _QuizPageState extends ConsumerState<QuizPage> {
     Set<String> avoid,
   ) async {
     if (!ref.read(aiAssistServiceProvider).canExplain) return;
-    final templates = ref.read(practicePromptTemplatesProvider).value;
-    if (templates == null || !mounted) return;
+    final builder = await practicePromptBuilder(ref);
+    if (builder == null || !mounted) return;
     final generator = AiQuestionGenerator(
       unit: unit,
       catalog: catalog,
-      builder: PracticePromptBuilder(templates),
+      builder: builder,
       locale: Localizations.localeOf(context),
       service: AiPracticeService.instance,
     );

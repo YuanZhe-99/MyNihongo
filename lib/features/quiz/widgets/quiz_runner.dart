@@ -11,7 +11,6 @@ import '../models/quiz_question.dart';
 import 'why_wrong.dart';
 import '../../ai/services/ai_assist_service.dart';
 import '../../ai/services/ai_practice_service.dart';
-import '../../ai/services/practice_prompt_builder.dart';
 import '../../ai/services/practice_response_parser.dart';
 import '../../sentence/services/sentence_analyzer.dart';
 import '../services/answer_checker.dart';
@@ -116,9 +115,10 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
     if (answer is! TypedAnswer) return null;
     if (!ref.read(aiAssistServiceProvider).canExplain) return null;
     final expected = question.acceptedAnswers.firstOrNull;
-    final templates = ref.read(practicePromptTemplatesProvider).value;
-    if (expected == null || templates == null) return null;
-    final prompt = PracticePromptBuilder(templates).forGrading(
+    if (expected == null) return null;
+    final builder = await practicePromptBuilder(ref);
+    if (builder == null || !mounted) return null;
+    final prompt = builder.forGrading(
       answer.text,
       expected,
       locale: Localizations.localeOf(context),

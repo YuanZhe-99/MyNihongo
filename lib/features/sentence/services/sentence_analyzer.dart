@@ -107,6 +107,25 @@ final practicePromptTemplatesProvider = FutureProvider<PromptTemplates>(
   (ref) => loadPromptTemplates(null, practicePromptAsset),
 );
 
+/// Purpose: Get a prompt builder, waiting for the asset if it is still loading.
+/// Inputs: `ref`.
+/// Returns: `PracticePromptBuilder?` — null when the asset cannot be read.
+/// Side effects: Starts the asset load if nothing has yet.
+/// Notes: **Awaited, never read.** Reading `practicePromptTemplatesProvider`
+/// for its `.value` returns null until the asset has finished loading, and
+/// nothing on the way into a practice screen touches it first — so the first
+/// AI action after launch silently did nothing, with no error anywhere, and
+/// only a second attempt worked. Every caller goes through here.
+Future<PracticePromptBuilder?> practicePromptBuilder(WidgetRef ref) async {
+  try {
+    return PracticePromptBuilder(
+      await ref.read(practicePromptTemplatesProvider.future),
+    );
+  } catch (_) {
+    return null;
+  }
+}
+
 final promptTemplatesProvider = FutureProvider<PromptTemplates>(
   (ref) => loadPromptTemplates(),
 );

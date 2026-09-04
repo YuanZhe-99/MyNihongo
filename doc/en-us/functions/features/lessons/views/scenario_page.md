@@ -19,6 +19,7 @@ Consumers: `router.dart` (`/scenario`), `lesson_path_view.dart` (the button that
 | `ScenarioPage.new` | constructor | B | Hold the args. |
 | `_ScenarioPageState._advance` | method | B | Show the next line, or the branch before it. |
 | [`_ScenarioPageState._choose`](#choose) | method | A | Record the reply and carry on. |
+| `_ScenarioPageState._saidLine` | method | B | Render the line the learner chose. |
 | `_ScenarioPageState.build` | method | B | Build the page. |
 | `_ScenarioPageState._line` | method | B | Render one spoken line. |
 
@@ -31,8 +32,10 @@ Consumers: `router.dart` (`/scenario`), `lesson_path_view.dart` (the button that
 - **Inputs:** The `choice`.
 - **Returns:** None.
 - **Side effects:** Rebuilds.
-- **Algorithm:** Append to `_said`, clear `_asking`. That is the whole thing: the branch is gone,
-  the next Next button appears, and the tally reads `_said` at the end.
+- **Algorithm:** Store the choice in `_said` under the branch's `after`, and clear `_asking`. The
+  key is what puts the reply back into the transcript in the place it was said — a transcript that
+  drops it reads as if the other speaker simply carried on alone. The tally reads `_said.values`
+  at the end.
 - **Usage:** The choice buttons in `build`.
 - **Notes:** **A wrong choice does not end the conversation, and does not branch it either.** The
   script is linear; what the learner said changes the tally at the end and nothing else. A

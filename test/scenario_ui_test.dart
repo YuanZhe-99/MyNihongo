@@ -114,10 +114,13 @@ void main() {
     await tester.pump();
     expect(find.text('你要说什么？'), findsOneWidget);
 
-    // Pick the wrong one. The script carries on regardless.
+    // Pick the wrong one. The script carries on regardless, and the reply
+    // stays in the transcript where it was said.
     await tester.tap(find.byType(OutlinedButton).last);
     await tester.pump();
     expect(find.text('你要说什么？'), findsNothing);
+    expect(find.text('不是。'), findsOneWidget);
+    expect(find.byIcon(Icons.cancel_outlined), findsOneWidget);
     await tester.tap(find.byType(FilledButton).first);
     await tester.pump();
     expect(find.text('谢谢。'), findsOneWidget);

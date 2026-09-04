@@ -6,7 +6,6 @@ import '../../../shared/utils/adaptive_layout.dart';
 import '../../ai/services/ai_assist_service.dart';
 import '../../ai/services/ai_practice_service.dart';
 import '../../ai/services/genai_backend.dart';
-import '../../ai/services/practice_prompt_builder.dart';
 import '../../ai/services/practice_response_parser.dart';
 import '../../ai/widgets/ai_explanation_card.dart';
 import '../../content/models/content_catalog.dart';
@@ -237,8 +236,9 @@ class _WritingPracticePageState extends ConsumerState<WritingPracticePage> {
   /// this exercise rather than about Japanese in general.
   Future<void> _ask() async {
     final text = _controller.text.trim();
-    final templates = ref.read(practicePromptTemplatesProvider).value;
-    if (text.isEmpty || templates == null) return;
+    if (text.isEmpty) return;
+    final builder = await practicePromptBuilder(ref);
+    if (builder == null || !mounted) return;
     final catalog = _catalog;
     final unit = widget.prompt.unit;
     final words = <VocabEntry>[
@@ -246,7 +246,7 @@ class _WritingPracticePageState extends ConsumerState<WritingPracticePage> {
         for (final id in unit.vocab) ?catalog.vocabById(id),
     ];
 
-    final prompt = PracticePromptBuilder(templates).forWriting(
+    final prompt = builder.forWriting(
       text,
       unitWords: words,
       locale: Localizations.localeOf(context),
