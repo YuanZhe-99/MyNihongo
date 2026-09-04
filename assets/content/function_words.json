@@ -3263,6 +3263,78 @@
         "zh": "不应该",
         "zh_TW": "不應該"
       }
+    },
+    {
+      "id": "fw:koso",
+      "surface": "こそ",
+      "category": "particle-binding",
+      "lemma": "こそ",
+      "forms": [],
+      "gloss": {
+        "en": "this one in particular",
+        "zh": "正是、才是",
+        "zh_TW": "正是、才是"
+      }
+    },
+    {
+      "id": "fw:sae",
+      "surface": "さえ",
+      "category": "particle-binding",
+      "lemma": "さえ",
+      "forms": [],
+      "gloss": {
+        "en": "even",
+        "zh": "连……都",
+        "zh_TW": "連……都"
+      }
+    },
+    {
+      "id": "fw:nante",
+      "surface": "なんて",
+      "category": "particle-binding",
+      "lemma": "なんて",
+      "forms": [],
+      "gloss": {
+        "en": "such a thing as",
+        "zh": "什么的、居然",
+        "zh_TW": "什麼的、居然"
+      }
+    },
+    {
+      "id": "fw:nanka",
+      "surface": "なんか",
+      "category": "particle-binding",
+      "lemma": "なんか",
+      "forms": [],
+      "gloss": {
+        "en": "such a thing as",
+        "zh": "什么的、之类",
+        "zh_TW": "什麼的、之類"
+      }
+    },
+    {
+      "id": "fw:ni-kanshite",
+      "surface": "に関して",
+      "category": "particle-case",
+      "lemma": "に関する",
+      "forms": [],
+      "gloss": {
+        "en": "concerning, regarding",
+        "zh": "关于",
+        "zh_TW": "關於"
+      }
+    },
+    {
+      "id": "fw:ni-kansuru",
+      "surface": "に関する",
+      "category": "particle-case",
+      "lemma": "に関する",
+      "forms": [],
+      "gloss": {
+        "en": "concerning, regarding",
+        "zh": "关于",
+        "zh_TW": "關於"
+      }
     }
   ],
   "sets": {

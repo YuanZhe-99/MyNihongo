@@ -6,12 +6,18 @@
 
 #include "generated_plugin_registrant.h"
 
+#include <flutter_timezone/flutter_timezone_plugin_c_api.h>
 #include <flutter_tts/flutter_tts_plugin.h>
+#include <local_notifier/local_notifier_plugin.h>
 #include <speech_to_text_windows/speech_to_text_windows.h>
 
 void RegisterPlugins(flutter::PluginRegistry* registry) {
+  FlutterTimezonePluginCApiRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("FlutterTimezonePluginCApi"));
   FlutterTtsPluginRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("FlutterTtsPlugin"));
+  LocalNotifierPluginRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("LocalNotifierPlugin"));
   SpeechToTextWindowsRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("SpeechToTextWindows"));
 }

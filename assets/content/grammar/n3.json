@@ -1,0 +1,3557 @@
+{
+  "schemaVersion": 2,
+  "source": "model-authored (Claude), unreviewed",
+  "license": "GPL-3.0 with the app.",
+  "level": "N3",
+  "points": [
+    {
+      "id": "grammar:n-desu",
+      "level": "N3",
+      "pattern": "〜んです / 〜のです",
+      "structure": "普通形 + んです（な形容詞・名詞は な + んです）",
+      "match": [
+        "んです",
+        "んですか"
+      ],
+      "meaning": {
+        "en": "explaining the background behind a fact",
+        "zh": "说明某个事实背后的原因或情况",
+        "zh_TW": "說明某個事實背後的原因或情況"
+      },
+      "explanation": {
+        "en": "んです ties what you say to the situation in front of you: you are explaining a reason, or asking the other person to explain one. のです is the written form, んです the spoken one. Plain です just reports a fact, with no explaining in it.",
+        "zh": "んです把话和眼前的情况联系起来：或是说明理由，或是请对方说明理由。书面用のです，口语用んです。单纯的です只是陈述事实，不含解释的语气。",
+        "zh_TW": "んです把話和眼前的情況聯繫起來：或是說明理由，或是請對方說明理由。書面用のです，口語用んです。單純的です只是陳述事實，不含解釋的語氣。"
+      },
+      "examples": [
+        {
+          "ja": "今日は忙しいんです。",
+          "reading": "きょうはいそがしいんです。",
+          "en": "The thing is, I'm busy today.",
+          "zh": "今天我很忙（所以……）。",
+          "zh_TW": "今天我很忙（所以……）。"
+        },
+        {
+          "ja": "彼は来ないんですか。",
+          "reading": "かれはこないんですか。",
+          "en": "So he isn't coming, then?",
+          "zh": "他是不来了吗？",
+          "zh_TW": "他是不來了嗎？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:n-desu-ga",
+      "level": "N3",
+      "pattern": "〜んですが",
+      "structure": "普通形 + んですが + 依頼・質問",
+      "match": [
+        "んですが"
+      ],
+      "meaning": {
+        "en": "softening preface before a request or question",
+        "zh": "提出请求或问题前的委婉铺垫",
+        "zh_TW": "提出請求或問題前的委婉鋪墊"
+      },
+      "explanation": {
+        "en": "You set out your situation first with んですが, and only then ask. The が is not really \"but\"; it just leaves the sentence open so the request does not land too hard. Often the request is left unsaid and the sentence simply stops after が.",
+        "zh": "先用んですが说明自己的情况，然后再提出请求。这里的が并不是“但是”，只是把句子留在半开的状态，让请求不那么生硬。有时请求干脆不说出来，句子就停在が后面。",
+        "zh_TW": "先用んですが說明自己的情況，然後再提出請求。這裡的が並不是“但是”，只是把句子留在半開的狀態，讓請求不那麼生硬。有時請求乾脆不說出來，句子就停在が後面。"
+      },
+      "examples": [
+        {
+          "ja": "ちょっと聞きたいんですが。",
+          "reading": "ちょっとききたいんですが。",
+          "en": "There's something I'd like to ask you about.",
+          "zh": "我有点事想问一下。",
+          "zh_TW": "我有點事想問一下。"
+        },
+        {
+          "ja": "時間がないんですが、手伝ってくれませんか。",
+          "reading": "じかんがないんですが、てつだってくれませんか。",
+          "en": "I'm short of time, so could you help me?",
+          "zh": "我没有时间了，你能帮我一下吗？",
+          "zh_TW": "我沒有時間了，你能幫我一下嗎？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-iu-noun",
+      "level": "N3",
+      "pattern": "〜という＋名詞",
+      "structure": "N1 + という + N2",
+      "match": [
+        "という"
+      ],
+      "meaning": {
+        "en": "a thing called; a place called",
+        "zh": "叫作……的（人、地方、东西）",
+        "zh_TW": "叫作……的（人、地方、東西）"
+      },
+      "explanation": {
+        "en": "という puts a name in front of the noun it names, so the listener knows the name may be new to them. Leave it out when the name is already familiar to both of you.",
+        "zh": "という把名字放在被命名的名词前面，暗示这个名字对听话人来说可能是陌生的。如果双方都熟悉这个名字，就不用它。",
+        "zh_TW": "という把名字放在被命名的名詞前面，暗示這個名字對聽話人來說可能是陌生的。如果雙方都熟悉這個名字，就不用它。"
+      },
+      "examples": [
+        {
+          "ja": "これは何という本ですか。",
+          "reading": "これはなんというほんですか。",
+          "en": "What is this book called?",
+          "zh": "这本书叫什么名字？",
+          "zh_TW": "這本書叫什麼名字？"
+        },
+        {
+          "ja": "日本という国は面白いです。",
+          "reading": "にほんというくにはおもしろいです。",
+          "en": "The country called Japan is interesting.",
+          "zh": "日本这个国家很有意思。",
+          "zh_TW": "日本這個國家很有意思。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-iu-koto",
+      "level": "N3",
+      "pattern": "〜ということ",
+      "structure": "普通形 + ということ",
+      "match": [
+        "ということ"
+      ],
+      "meaning": {
+        "en": "turns a whole statement into a noun",
+        "zh": "把整个句子变成名词",
+        "zh_TW": "把整個句子變成名詞"
+      },
+      "explanation": {
+        "en": "ということ wraps a whole sentence up so that it can work as a noun, usually one you learn, understand or tell someone. Plain こと nominalises a single action; ということ nominalises a fact you can state.",
+        "zh": "ということ把整个句子包起来，使它像名词一样使用，多与知道、明白、告诉之类的动词搭配。单用こと是把一个动作名词化，ということ则是把一个可以陈述的事实名词化。",
+        "zh_TW": "ということ把整個句子包起來，使它像名詞一樣使用，多與知道、明白、告訴之類的動詞搭配。單用こと是把一個動作名詞化，ということ則是把一個可以陳述的事實名詞化。"
+      },
+      "examples": [
+        {
+          "ja": "彼が来ないということが分かりました。",
+          "reading": "かれがこないということがわかりました。",
+          "en": "I found out that he isn't coming.",
+          "zh": "我知道了他不来这件事。",
+          "zh_TW": "我知道了他不來這件事。"
+        },
+        {
+          "ja": "日本語を毎日使うということは大切です。",
+          "reading": "にほんごをまいにちつかうということはたいせつです。",
+          "en": "Using Japanese every day is important.",
+          "zh": "每天使用日语这件事很重要。",
+          "zh_TW": "每天使用日語這件事很重要。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-iu-no-wa",
+      "level": "N3",
+      "pattern": "〜というのは",
+      "structure": "N / 普通形 + というのは 〜だ",
+      "match": [
+        "というのは"
+      ],
+      "meaning": {
+        "en": "as for what we call ...; ... means",
+        "zh": "所谓……就是……",
+        "zh_TW": "所謂……就是……"
+      },
+      "explanation": {
+        "en": "This picks up a word or an idea and puts it on the table so that you can then say what it is. It is the normal opening for a definition or an explanation, and in speech it often shortens to 〜って.",
+        "zh": "这个句型先把一个词或一件事提出来作为话题，然后对它加以说明。它是下定义、作解释时常用的开头，口语中常缩略成〜って。",
+        "zh_TW": "這個句型先把一個詞或一件事提出來作為話題，然後對它加以說明。它是下定義、作解釋時常用的開頭，口語中常縮略成〜って。"
+      },
+      "examples": [
+        {
+          "ja": "仕事というのは大切なものです。",
+          "reading": "しごとというのはたいせつなものです。",
+          "en": "Work is something important.",
+          "zh": "所谓工作，是很重要的东西。",
+          "zh_TW": "所謂工作，是很重要的東西。"
+        },
+        {
+          "ja": "彼というのはどんな人ですか。",
+          "reading": "かれというのはどんなひとですか。",
+          "en": "What kind of person is he, exactly?",
+          "zh": "他到底是个什么样的人？",
+          "zh_TW": "他到底是個什麼樣的人？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-iu-koto-da",
+      "level": "N3",
+      "pattern": "〜ということだ",
+      "structure": "普通形 + ということだ / ということです",
+      "match": [
+        "ということだ",
+        "ということです"
+      ],
+      "meaning": {
+        "en": "I hear that; which means that",
+        "zh": "据说……；也就是说……",
+        "zh_TW": "據說……；也就是說……"
+      },
+      "explanation": {
+        "en": "This has two jobs. It passes on news you heard from somewhere else, without adding your own opinion, and it draws a conclusion from what has just been said. Which one it is depends on whether a source has been mentioned.",
+        "zh": "这个句型有两种用法：一是转达从别处听来的消息，不加自己的看法；二是从刚才的话中得出结论。到底是哪一种，要看前面有没有提到消息来源。",
+        "zh_TW": "這個句型有兩種用法：一是轉達從別處聽來的消息，不加自己的看法；二是從剛才的話中得出結論。到底是哪一種，要看前面有沒有提到消息來源。"
+      },
+      "examples": [
+        {
+          "ja": "先生は明日来ないということだ。",
+          "reading": "せんせいはあしたこないということだ。",
+          "en": "I hear the teacher isn't coming tomorrow.",
+          "zh": "据说老师明天不来。",
+          "zh_TW": "據說老師明天不來。"
+        },
+        {
+          "ja": "天気が悪くなるということです。",
+          "reading": "てんきがわるくなるということです。",
+          "en": "They say the weather is going to get worse.",
+          "zh": "据说天气会变坏。",
+          "zh_TW": "據說天氣會變壞。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tte-casual",
+      "level": "N3",
+      "pattern": "〜って",
+      "structure": "普通形 + って（＝と / というのは）",
+      "match": [
+        "って"
+      ],
+      "meaning": {
+        "en": "casual quoting and casual topic marking",
+        "zh": "口语中的引用与提示话题",
+        "zh_TW": "口語中的引用與提示話題"
+      },
+      "explanation": {
+        "en": "In speech って stands in for と when quoting, and for というのは when putting up a topic. It belongs to casual conversation, so keep the full forms in writing and at work.",
+        "zh": "口语中引用时って代替と，提示话题时代替というのは。它属于随便的口语，写文章和工作场合仍用完整的形式。",
+        "zh_TW": "口語中引用時って代替と，提示話題時代替というのは。它屬於隨便的口語，寫文章和工作場合仍用完整的形式。"
+      },
+      "examples": [
+        {
+          "ja": "彼は来ないって言っていた。",
+          "reading": "かれはこないっていっていた。",
+          "en": "He said he wasn't coming.",
+          "zh": "他说他不来。",
+          "zh_TW": "他說他不來。"
+        },
+        {
+          "ja": "日本語って難しいね。",
+          "reading": "にほんごってむずかしいね。",
+          "en": "Japanese is hard, isn't it.",
+          "zh": "日语真难啊。",
+          "zh_TW": "日語真難啊。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-iwarete-iru",
+      "level": "N3",
+      "pattern": "〜と言われている",
+      "structure": "普通形 + と言われている / と言われています",
+      "match": [
+        "と言われている",
+        "と言われています"
+      ],
+      "meaning": {
+        "en": "it is said that; people say that",
+        "zh": "据说；人们都说",
+        "zh_TW": "據說；人們都說"
+      },
+      "explanation": {
+        "en": "The passive with no named speaker means that this is what people in general say, not one particular person. Use it for common knowledge and for claims you do not want to take responsibility for yourself.",
+        "zh": "用被动形式而不点出说话人，表示这是一般人普遍的说法，而不是某个具体的人说的。用于人所共知的事，或自己不想负责的说法。",
+        "zh_TW": "用被動形式而不點出說話人，表示這是一般人普遍的說法，而不是某個具體的人說的。用於人所共知的事，或自己不想負責的說法。"
+      },
+      "examples": [
+        {
+          "ja": "日本の水はきれいだと言われている。",
+          "reading": "にほんのみずはきれいだといわれている。",
+          "en": "Japan's water is said to be clean.",
+          "zh": "据说日本的水很干净。",
+          "zh_TW": "據說日本的水很乾淨。"
+        },
+        {
+          "ja": "この本は面白いと言われています。",
+          "reading": "このほんはおもしろいといわれています。",
+          "en": "This book is said to be interesting.",
+          "zh": "据说这本书很有意思。",
+          "zh_TW": "據說這本書很有意思。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-ka",
+      "level": "N3",
+      "pattern": "〜とか〜とか",
+      "structure": "N + とか + N + とか / 動詞普通形 + とか",
+      "match": [
+        "とか"
+      ],
+      "meaning": {
+        "en": "things like A and B",
+        "zh": "……啦……啦；诸如……之类",
+        "zh_TW": "……啦……啦；諸如……之類"
+      },
+      "explanation": {
+        "en": "とか picks a couple of examples out of a longer list and leaves the rest open, so it sounds relaxed and vague. や does a similar job with nouns only; とか also works after verbs and sounds more casual.",
+        "zh": "とか从一长串事物中举出几个例子，其余的留着不说，语气轻松而含糊。や作用相似但只能接名词，とか还能接在动词后面，口语色彩更浓。",
+        "zh_TW": "とか從一長串事物中舉出幾個例子，其餘的留著不說，語氣輕鬆而含糊。や作用相似但只能接名詞，とか還能接在動詞後面，口語色彩更濃。"
+      },
+      "examples": [
+        {
+          "ja": "休みの日は本を読むとか映画を見るとかします。",
+          "reading": "やすみのひはほんをよむとかえいがをみるとかします。",
+          "en": "On my days off I do things like read books and watch films.",
+          "zh": "休息日我会看看书啦、看看电影啦。",
+          "zh_TW": "休息日我會看看書啦、看看電影啦。"
+        },
+        {
+          "ja": "電車とか車とかで会社へ行きます。",
+          "reading": "でんしゃとかくるまとかでかいしゃへいきます。",
+          "en": "I go to work by train or car or something.",
+          "zh": "我坐电车啦、开车啦去公司。",
+          "zh_TW": "我坐電車啦、開車啦去公司。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:koto-rule",
+      "level": "N3",
+      "pattern": "〜こと（規則）",
+      "structure": "動詞辞書形・ない形 + こと。",
+      "match": [
+        "こと。",
+        "ないこと"
+      ],
+      "meaning": {
+        "en": "you are to do this (written rule)",
+        "zh": "（书面规定）必须……／不得……",
+        "zh_TW": "（書面規定）必須……／不得……"
+      },
+      "explanation": {
+        "en": "A sentence that simply ends in こと is an order in writing: notices, school rules, lists of instructions. It is impersonal, so nobody is named as giving the order, and it never appears in ordinary speech.",
+        "zh": "句子直接以こと结尾是书面的命令，用于通知、校规、注意事项等。它不点出下命令的人，语气客观，日常口语中不这样说。",
+        "zh_TW": "句子直接以こと結尾是書面的命令，用於通知、校規、注意事項等。它不點出下命令的人，語氣客觀，日常口語中不這樣說。"
+      },
+      "examples": [
+        {
+          "ja": "部屋で音楽を聞かないこと。",
+          "reading": "へやでおんがくをきかないこと。",
+          "en": "Do not listen to music in the room.",
+          "zh": "不得在房间里听音乐。",
+          "zh_TW": "不得在房間裡聽音樂。"
+        },
+        {
+          "ja": "毎日日本語で話すこと。",
+          "reading": "まいにちにほんごではなすこと。",
+          "en": "You are to speak in Japanese every day.",
+          "zh": "每天必须用日语说话。",
+          "zh_TW": "每天必須用日語說話。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:koto-ni-natteiru",
+      "level": "N3",
+      "pattern": "〜ことになっている",
+      "structure": "動詞辞書形・ない形 + ことになっている",
+      "match": [
+        "ことになっている",
+        "ことになっています"
+      ],
+      "meaning": {
+        "en": "it is the rule that; it is arranged that",
+        "zh": "按规定……；已定好……",
+        "zh_TW": "按規定……；已定好……"
+      },
+      "explanation": {
+        "en": "This reports a rule or an arrangement that is already in force, without saying who decided it. 〜ことにしている is different: that is a habit you yourself chose to keep.",
+        "zh": "表示已经生效的规定或安排，不说明是谁决定的。〜ことにしている不同，那是自己决定并一直坚持的习惯。",
+        "zh_TW": "表示已經生效的規定或安排，不說明是誰決定的。〜ことにしている不同，那是自己決定並一直堅持的習慣。"
+      },
+      "examples": [
+        {
+          "ja": "会社では日本語を使うことになっている。",
+          "reading": "かいしゃではにほんごをつかうことになっている。",
+          "en": "At the company we are supposed to use Japanese.",
+          "zh": "公司规定要使用日语。",
+          "zh_TW": "公司規定要使用日語。"
+        },
+        {
+          "ja": "明日先生に会うことになっています。",
+          "reading": "あしたせんせいにあうことになっています。",
+          "en": "It has been arranged that I meet the teacher tomorrow.",
+          "zh": "已经定好明天见老师。",
+          "zh_TW": "已經定好明天見老師。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:mono-da",
+      "level": "N3",
+      "pattern": "〜ものだ",
+      "structure": "普通形 + ものだ（な形容詞は な + ものだ）",
+      "match": [
+        "ものだ",
+        "ものです"
+      ],
+      "meaning": {
+        "en": "that's how things are; we used to",
+        "zh": "本来就是……；过去常常……",
+        "zh_TW": "本來就是……；過去常常……"
+      },
+      "explanation": {
+        "en": "With a dictionary form ものだ states a general truth that everyone accepts. With a た form it looks back fondly on something you often did long ago. Do not use it for a single event.",
+        "zh": "接辞书形时表示大家公认的普遍道理；接た形时是带着怀念回想过去常做的事。它不用来说一次性发生的事情。",
+        "zh_TW": "接辭書形時表示大家公認的普遍道理；接た形時是帶著懷念回想過去常做的事。它不用來說一次性發生的事情。"
+      },
+      "examples": [
+        {
+          "ja": "子供は元気なものだ。",
+          "reading": "こどもはげんきなものだ。",
+          "en": "Children are full of energy, that's just how it is.",
+          "zh": "小孩子本来就是精力充沛的。",
+          "zh_TW": "小孩子本來就是精力充沛的。"
+        },
+        {
+          "ja": "学生の時、よく映画を見たものです。",
+          "reading": "がくせいのとき、よくえいがをみたものです。",
+          "en": "When I was a student I used to watch a lot of films.",
+          "zh": "学生时代我常常看电影。",
+          "zh_TW": "學生時代我常常看電影。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:mono-dakara",
+      "level": "N3",
+      "pattern": "〜ものだから",
+      "structure": "普通形 + ものだから",
+      "match": [
+        "ものだから"
+      ],
+      "meaning": {
+        "en": "it's just that; because (excuse)",
+        "zh": "就是因为……（辩解）",
+        "zh_TW": "就是因為……（辯解）"
+      },
+      "explanation": {
+        "en": "You use this to excuse yourself: the reason was beyond your control, so please understand. Because it is an excuse, the second half is usually something you regret, and a command or an invitation cannot follow it.",
+        "zh": "用来为自己辩解：原因不由自己控制，希望对方谅解。正因为是辩解，后半句通常是令人遗憾的结果，后面不能接命令或邀请。",
+        "zh_TW": "用來為自己辯解：原因不由自己控制，希望對方諒解。正因為是辯解，後半句通常是令人遺憾的結果，後面不能接命令或邀請。"
+      },
+      "examples": [
+        {
+          "ja": "忙しかったものだから、電話しませんでした。",
+          "reading": "いそがしかったものだから、でんわしませんでした。",
+          "en": "I was just so busy that I didn't call.",
+          "zh": "实在是太忙了，所以没打电话。",
+          "zh_TW": "實在是太忙了，所以沒打電話。"
+        },
+        {
+          "ja": "電車が遅れたものだから、遅くなりました。",
+          "reading": "でんしゃがおくれたものだから、おそくなりました。",
+          "en": "The train was late, that's why I'm late.",
+          "zh": "都怪电车晚点，所以我迟到了。",
+          "zh_TW": "都怪電車晚點，所以我遲到了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:koto-da",
+      "level": "N3",
+      "pattern": "〜ことだ",
+      "structure": "動詞辞書形・ない形 + ことだ",
+      "match": [
+        "ことだ",
+        "ことです"
+      ],
+      "meaning": {
+        "en": "the thing to do is; you should",
+        "zh": "最好……；应该……",
+        "zh_TW": "最好……；應該……"
+      },
+      "explanation": {
+        "en": "This gives advice on what to do about a particular problem, and it sounds like an older person speaking to a younger one. Do not use it to a superior; 〜たほうがいいです is safer there.",
+        "zh": "针对具体问题给出建议，语气像长辈对晚辈说话。不要对上级使用，那种场合用〜たほうがいいです更稳妥。",
+        "zh_TW": "針對具體問題給出建議，語氣像長輩對晚輩說話。不要對上級使用，那種場合用〜たほうがいいです更穩妥。"
+      },
+      "examples": [
+        {
+          "ja": "元気になりたいなら、よく休むことだ。",
+          "reading": "げんきになりたいなら、よくやすむことだ。",
+          "en": "If you want to get well, the thing to do is rest.",
+          "zh": "想恢复精神的话，就要好好休息。",
+          "zh_TW": "想恢復精神的話，就要好好休息。"
+        },
+        {
+          "ja": "分からない時は先生に聞くことです。",
+          "reading": "わからないときはせんせいにきくことです。",
+          "en": "When you don't understand, you should ask the teacher.",
+          "zh": "不明白的时候就该去问老师。",
+          "zh_TW": "不明白的時候就該去問老師。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:koto-wa-nai",
+      "level": "N3",
+      "pattern": "〜ことはない",
+      "structure": "動詞辞書形 + ことはない / ことはありません",
+      "match": [
+        "ことはない",
+        "ことはありません"
+      ],
+      "meaning": {
+        "en": "there is no need to do that",
+        "zh": "没必要……；用不着……",
+        "zh_TW": "沒必要……；用不著……"
+      },
+      "explanation": {
+        "en": "This tells someone to stop worrying: doing that is simply not necessary. It reassures rather than forbids, so it is not the same as 〜てはいけません, which bans the action.",
+        "zh": "用来让对方放心：那样做完全没有必要。它是宽慰而不是禁止，与表示不许可的〜てはいけません不同。",
+        "zh_TW": "用來讓對方放心：那樣做完全沒有必要。它是寬慰而不是禁止，與表示不許可的〜てはいけません不同。"
+      },
+      "examples": [
+        {
+          "ja": "この本を今日読むことはない。",
+          "reading": "このほんをきょうよむことはない。",
+          "en": "There's no need to read this book today.",
+          "zh": "这本书没必要今天就读。",
+          "zh_TW": "這本書沒必要今天就讀。"
+        },
+        {
+          "ja": "明日は早く起きることはありません。",
+          "reading": "あしたははやくおきることはありません。",
+          "en": "There's no need to get up early tomorrow.",
+          "zh": "明天用不着早起。",
+          "zh_TW": "明天用不著早起。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:wake-da",
+      "level": "N3",
+      "pattern": "〜わけだ",
+      "structure": "普通形 + わけだ（な形容詞は な + わけだ）",
+      "match": [
+        "わけだ",
+        "わけです"
+      ],
+      "meaning": {
+        "en": "so that's why; it follows that",
+        "zh": "怪不得……；也就是说……",
+        "zh_TW": "怪不得……；也就是說……"
+      },
+      "explanation": {
+        "en": "わけだ says that the result makes perfect sense once you know the reason, so it often carries the feeling of \"ah, no wonder\". It is about a conclusion you reach yourself, not about a fact you were told.",
+        "zh": "わけだ表示知道了原因之后，结果就顺理成章，常带有“怪不得”的语气。它说的是自己推出来的结论，而不是听来的事实。",
+        "zh_TW": "わけだ表示知道了原因之後，結果就順理成章，常帶有“怪不得”的語氣。它說的是自己推出來的結論，而不是聽來的事實。"
+      },
+      "examples": [
+        {
+          "ja": "毎日勉強したから、上手になったわけだ。",
+          "reading": "まいにちべんきょうしたから、じょうずになったわけだ。",
+          "en": "He studied every day, so naturally he got good at it.",
+          "zh": "每天都学习，所以当然就变好了。",
+          "zh_TW": "每天都學習，所以當然就變好了。"
+        },
+        {
+          "ja": "雨だから、駅が静かなわけです。",
+          "reading": "あめだから、えきがしずかなわけです。",
+          "en": "It's raining, so that's why the station is quiet.",
+          "zh": "下雨了，怪不得车站这么安静。",
+          "zh_TW": "下雨了，怪不得車站這麼安靜。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:wake-ga-nai",
+      "level": "N3",
+      "pattern": "〜わけがない",
+      "structure": "普通形 + わけがない / わけがありません",
+      "match": [
+        "わけがない",
+        "わけがありません"
+      ],
+      "meaning": {
+        "en": "there is no way that is true",
+        "zh": "不可能……；绝不会……",
+        "zh_TW": "不可能……；絕不會……"
+      },
+      "explanation": {
+        "en": "This is a strong denial: from what you know, the thing simply cannot be so. It is much stronger than 〜ないでしょう, and stronger than 〜はずがない too.",
+        "zh": "这是很强的否定：根据已知的情况，那绝不可能。语气比〜ないでしょう强得多，也比〜はずがない强。",
+        "zh_TW": "這是很強的否定：根據已知的情況，那絕不可能。語氣比〜ないでしょう強得多，也比〜はずがない強。"
+      },
+      "examples": [
+        {
+          "ja": "彼にこの問題が分かるわけがない。",
+          "reading": "かれにこのもんだいがわかるわけがない。",
+          "en": "There's no way he understands this problem.",
+          "zh": "他不可能懂这个问题。",
+          "zh_TW": "他不可能懂這個問題。"
+        },
+        {
+          "ja": "この仕事が今日終わるわけがありません。",
+          "reading": "このしごとがきょうおわるわけがありません。",
+          "en": "There's no way this work will finish today.",
+          "zh": "这个工作今天绝不可能做完。",
+          "zh_TW": "這個工作今天絕不可能做完。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:wake-de-wa-nai",
+      "level": "N3",
+      "pattern": "〜わけではない",
+      "structure": "普通形 + わけではない / わけではありません",
+      "match": [
+        "わけではない",
+        "わけではありません"
+      ],
+      "meaning": {
+        "en": "it doesn't mean that; not necessarily",
+        "zh": "并不是……；未必……",
+        "zh_TW": "並不是……；未必……"
+      },
+      "explanation": {
+        "en": "This denies only part of what the listener might have concluded, leaving the rest standing. わけがない denies the whole thing; わけではない just says \"don't take it that far\".",
+        "zh": "这个句型只否定听话人可能得出的结论的一部分，其余仍然成立。わけがない是全盘否定，わけではない只是说“别理解得那么绝对”。",
+        "zh_TW": "這個句型只否定聽話人可能得出的結論的一部分，其餘仍然成立。わけがない是全盤否定，わけではない只是說“別理解得那麼絕對”。"
+      },
+      "examples": [
+        {
+          "ja": "日本語が嫌いなわけではない。",
+          "reading": "にほんごがきらいなわけではない。",
+          "en": "It's not that I dislike Japanese.",
+          "zh": "我并不是讨厌日语。",
+          "zh_TW": "我並不是討厭日語。"
+        },
+        {
+          "ja": "毎日料理を作るわけではありません。",
+          "reading": "まいにちりょうりをつくるわけではありません。",
+          "en": "It's not as if I cook every day.",
+          "zh": "我并不是每天都做饭。",
+          "zh_TW": "我並不是每天都做飯。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:wake-ni-wa-ikanai",
+      "level": "N3",
+      "pattern": "〜わけにはいかない",
+      "structure": "動詞辞書形・ない形 + わけにはいかない",
+      "match": [
+        "わけにはいかない",
+        "わけにはいきません"
+      ],
+      "meaning": {
+        "en": "I can't do it (for social reasons)",
+        "zh": "不能……（出于情理或立场）",
+        "zh_TW": "不能……（出於情理或立場）"
+      },
+      "explanation": {
+        "en": "You could physically do it, but your duty or the people around you make it impossible. With a ない form it flips round and means you have no choice but to do it. For plain inability use the potential form instead.",
+        "zh": "并不是做不到，而是出于责任或人情不能那么做。接ない形时意思反过来，表示不能不做。单纯表示能力上做不到时要用可能形。",
+        "zh_TW": "並不是做不到，而是出於責任或人情不能那麼做。接ない形時意思反過來，表示不能不做。單純表示能力上做不到時要用可能形。"
+      },
+      "examples": [
+        {
+          "ja": "仕事があるから、休むわけにはいかない。",
+          "reading": "しごとがあるから、やすむわけにはいかない。",
+          "en": "I have work, so I can't just take the day off.",
+          "zh": "有工作，所以不能休息。",
+          "zh_TW": "有工作，所以不能休息。"
+        },
+        {
+          "ja": "友達の話を聞かないわけにはいきません。",
+          "reading": "ともだちのはなしをきかないわけにはいきません。",
+          "en": "I can't very well refuse to hear my friend out.",
+          "zh": "不能不听朋友把话说完。",
+          "zh_TW": "不能不聽朋友把話說完。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:hazu-datta",
+      "level": "N3",
+      "pattern": "〜はずだった",
+      "structure": "普通形 + はずだった / はずでした",
+      "match": [
+        "はずだった",
+        "はずでした"
+      ],
+      "meaning": {
+        "en": "was supposed to, but didn't happen",
+        "zh": "本来应该……（结果没有）",
+        "zh_TW": "本來應該……（結果沒有）"
+      },
+      "explanation": {
+        "en": "はず is what you expect from the facts you have; putting it in the past says the expectation was not met. The disappointing result usually follows, or is left obvious from the situation.",
+        "zh": "はず表示根据已知情况的推测，变成过去式就表示这个推测落空了。后面通常接上令人失望的结果，或者结果不言自明。",
+        "zh_TW": "はず表示根據已知情況的推測，變成過去式就表示這個推測落空了。後面通常接上令人失望的結果，或者結果不言自明。"
+      },
+      "examples": [
+        {
+          "ja": "今日は友達に会うはずだった。",
+          "reading": "きょうはともだちにあうはずだった。",
+          "en": "I was supposed to meet my friend today.",
+          "zh": "我今天本来应该见朋友的。",
+          "zh_TW": "我今天本來應該見朋友的。"
+        },
+        {
+          "ja": "電車はもっと早く来るはずでした。",
+          "reading": "でんしゃはもっとはやくくるはずでした。",
+          "en": "The train was supposed to come earlier.",
+          "zh": "电车本来应该来得更早的。",
+          "zh_TW": "電車本來應該來得更早的。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:beki",
+      "level": "N3",
+      "pattern": "〜べきだ",
+      "structure": "動詞辞書形 + べきだ（する→するべき／すべき）",
+      "match": [
+        "べきだ",
+        "べきです"
+      ],
+      "meaning": {
+        "en": "ought to; should (by right)",
+        "zh": "应该……（理应如此）",
+        "zh_TW": "應該……（理應如此）"
+      },
+      "explanation": {
+        "en": "べき is about what is right, not about what is convenient, so it sounds serious and a little strong. 〜たほうがいいです gives friendly advice; べきだ states a duty, and is best avoided when speaking to a superior.",
+        "zh": "べき说的是道理上应该，而不是方便与否，所以语气郑重而略强。〜たほうがいいです是友好的建议，べきだ则是在讲道义，对上级最好不用。",
+        "zh_TW": "べき說的是道理上應該，而不是方便與否，所以語氣鄭重而略強。〜たほうがいいです是友好的建議，べきだ則是在講道義，對上級最好不用。"
+      },
+      "examples": [
+        {
+          "ja": "学生はもっと本を読むべきだ。",
+          "reading": "がくせいはもっとほんをよむべきだ。",
+          "en": "Students ought to read more books.",
+          "zh": "学生应该多读书。",
+          "zh_TW": "學生應該多讀書。"
+        },
+        {
+          "ja": "先生に意見を言うべきです。",
+          "reading": "せんせいにいけんをいうべきです。",
+          "en": "You should tell the teacher your opinion.",
+          "zh": "应该把意见告诉老师。",
+          "zh_TW": "應該把意見告訴老師。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:beki-de-wa-nai",
+      "level": "N3",
+      "pattern": "〜べきではない",
+      "structure": "動詞辞書形 + べきではない / べきではありません",
+      "match": [
+        "べきではない",
+        "べきではありません"
+      ],
+      "meaning": {
+        "en": "ought not to do it",
+        "zh": "不应该……",
+        "zh_TW": "不應該……"
+      },
+      "explanation": {
+        "en": "The negative of べきだ says the action is wrong, not that it is forbidden by a rule. 〜てはいけません is a ban from someone in charge; べきではない is your judgement about right and wrong.",
+        "zh": "べきだ的否定形表示这样做不对，而不是规则上禁止。〜てはいけません是有权者的禁止，べきではない是自己对是非的判断。",
+        "zh_TW": "べきだ的否定形表示這樣做不對，而不是規則上禁止。〜てはいけません是有權者的禁止，べきではない是自己對是非的判斷。"
+      },
+      "examples": [
+        {
+          "ja": "同じ問題をまた聞くべきではない。",
+          "reading": "おなじもんだいをまたきくべきではない。",
+          "en": "You shouldn't ask about the same problem again.",
+          "zh": "不应该再问同样的问题。",
+          "zh_TW": "不應該再問同樣的問題。"
+        },
+        {
+          "ja": "この話を友達に言うべきではありません。",
+          "reading": "このはなしをともだちにいうべきではありません。",
+          "en": "You shouldn't tell your friends about this.",
+          "zh": "不应该把这件事告诉朋友。",
+          "zh_TW": "不應該把這件事告訴朋友。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:hitsuyou-ga-aru",
+      "level": "N3",
+      "pattern": "〜必要がある",
+      "structure": "動詞辞書形 / N + が + 必要がある",
+      "match": [
+        "必要がある",
+        "必要があります"
+      ],
+      "meaning": {
+        "en": "there is a need to do it",
+        "zh": "有必要……；需要……",
+        "zh_TW": "有必要……；需要……"
+      },
+      "explanation": {
+        "en": "This states plainly that something is necessary, looking at the situation from outside. 〜なければなりません puts the duty on a person; 必要がある just says the need exists.",
+        "zh": "客观地陈述某事是必要的，站在事情之外来看。〜なければなりません是把义务落在人身上，必要がある只是说存在这个需要。",
+        "zh_TW": "客觀地陳述某事是必要的，站在事情之外來看。〜なければなりません是把義務落在人身上，必要がある只是說存在這個需要。"
+      },
+      "examples": [
+        {
+          "ja": "明日先生に会う必要がある。",
+          "reading": "あしたせんせいにあうひつようがある。",
+          "en": "I need to see the teacher tomorrow.",
+          "zh": "明天有必要见一下老师。",
+          "zh_TW": "明天有必要見一下老師。"
+        },
+        {
+          "ja": "この問題をもう一度考える必要があります。",
+          "reading": "このもんだいをもういちどかんがえるひつようがあります。",
+          "en": "We need to think about this problem once more.",
+          "zh": "这个问题需要再考虑一次。",
+          "zh_TW": "這個問題需要再考慮一次。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:suru-shika-nai",
+      "level": "N3",
+      "pattern": "〜しかない",
+      "structure": "動詞辞書形 / N + しかない",
+      "match": [
+        "しかない",
+        "しかありません"
+      ],
+      "meaning": {
+        "en": "there is no choice but to do it",
+        "zh": "只好……；只能……",
+        "zh_TW": "只好……；只能……"
+      },
+      "explanation": {
+        "en": "Every other way is closed, so this one is left, whether you like it or not. After a noun the same shape means \"only this much and nothing else\".",
+        "zh": "别的路都断了，不管愿不愿意只剩这一条。接名词时同样的形式表示“只有这些，再没别的”。",
+        "zh_TW": "別的路都斷了，不管願不願意只剩這一條。接名詞時同樣的形式表示“只有這些，再沒別的”。"
+      },
+      "examples": [
+        {
+          "ja": "電車がないから、待つしかない。",
+          "reading": "でんしゃがないから、まつしかない。",
+          "en": "There's no train, so we have no choice but to wait.",
+          "zh": "没有电车，只好等着。",
+          "zh_TW": "沒有電車，只好等著。"
+        },
+        {
+          "ja": "今は待つしかありません。",
+          "reading": "いまはまつしかありません。",
+          "en": "For now there's nothing to do but wait.",
+          "zh": "现在只能等待。",
+          "zh_TW": "現在只能等待。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:you-ga-nai",
+      "level": "N3",
+      "pattern": "〜ようがない",
+      "structure": "動詞ます形 + ようがない / ようがありません",
+      "match": [
+        "ようがない",
+        "ようがありません"
+      ],
+      "meaning": {
+        "en": "there is no way to do it",
+        "zh": "无法……；没办法……",
+        "zh_TW": "無法……；沒辦法……"
+      },
+      "explanation": {
+        "en": "Attached to the ます stem, ようがない says that no method exists at all, usually because something you would need is missing. It is stronger than the plain potential negative, which only says you personally cannot.",
+        "zh": "接在ます形词干后，ようがない表示根本没有办法，通常是因为缺少必要的条件。它比单纯的可能形否定更强，后者只是说自己做不到。",
+        "zh_TW": "接在ます形詞幹後，ようがない表示根本沒有辦法，通常是因為缺少必要的條件。它比單純的可能形否定更強，後者只是說自己做不到。"
+      },
+      "examples": [
+        {
+          "ja": "彼の家を知らないから、行きようがない。",
+          "reading": "かれのいえをしらないから、いきようがない。",
+          "en": "I don't know where he lives, so there's no way to go.",
+          "zh": "不知道他家在哪儿，根本没法去。",
+          "zh_TW": "不知道他家在哪兒，根本沒法去。"
+        },
+        {
+          "ja": "この問題は難しくて、教えようがありません。",
+          "reading": "このもんだいはむずかしくて、おしえようがありません。",
+          "en": "This problem is so hard there's no way to teach it.",
+          "zh": "这个问题太难，没办法教。",
+          "zh_TW": "這個問題太難，沒辦法教。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ta-hou-ga-ii",
+      "level": "N3",
+      "pattern": "〜たほうがいい",
+      "structure": "動詞た形 / ない形 + ほうがいい",
+      "match": [
+        "たほうがいい",
+        "ないほうがいい"
+      ],
+      "meaning": {
+        "en": "you had better do it",
+        "zh": "最好还是做……",
+        "zh_TW": "最好還是做……"
+      },
+      "explanation": {
+        "en": "This gives advice by comparing two courses of action and picking one, so the past form た is used even about the future. For the opposite advice use ない形 + ほうがいい, not なかったほうがいい.",
+        "zh": "这个句型把两种做法比较之后推荐其中一种，所以即使说的是将来，动词也用た形。劝人不要做时用ない形＋ほうがいい，不用なかったほうがいい。",
+        "zh_TW": "這個句型把兩種做法比較之後推薦其中一種，所以即使說的是將來，動詞也用た形。勸人不要做時用ない形＋ほうがいい，不用なかったほうがいい。"
+      },
+      "examples": [
+        {
+          "ja": "早く寝たほうがいいですよ。",
+          "reading": "はやくねたほうがいいですよ。",
+          "en": "You had better go to bed early.",
+          "zh": "你最好早点睡。",
+          "zh_TW": "你最好早點睡。"
+        },
+        {
+          "ja": "雨の日は車で行かないほうがいいです。",
+          "reading": "あめのひはくるまでいかないほうがいいです。",
+          "en": "On rainy days you had better not go by car.",
+          "zh": "下雨天最好不要开车去。",
+          "zh_TW": "下雨天最好不要開車去。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-chigainai",
+      "level": "N3",
+      "pattern": "〜に違いない",
+      "structure": "普通形（ナ形・名詞は語幹） + に違いない",
+      "match": [
+        "に違いない",
+        "に違いありません"
+      ],
+      "meaning": {
+        "en": "it must be so; I'm certain of it",
+        "zh": "一定是……；肯定……",
+        "zh_TW": "一定是……；肯定……"
+      },
+      "explanation": {
+        "en": "The speaker is almost sure, on the strength of what they can see or know. It is stronger than 〜だろう and 〜かもしれない, and it is a personal conviction, so do not use it for facts you can simply check.",
+        "zh": "说话人根据看到或知道的情况做出几乎肯定的判断，语气比〜だろう、〜かもしれない强。它表达的是主观确信，能直接查证的事实不用它。",
+        "zh_TW": "說話人根據看到或知道的情況做出幾乎肯定的判斷，語氣比〜だろう、〜かもしれない強。它表達的是主觀確信，能直接查證的事實不用它。"
+      },
+      "examples": [
+        {
+          "ja": "彼は最近忙しいに違いない。",
+          "reading": "かれはさいきんいそがしいにちがいない。",
+          "en": "He must be busy lately.",
+          "zh": "他最近一定很忙。",
+          "zh_TW": "他最近一定很忙。"
+        },
+        {
+          "ja": "あの人は日本語の先生に違いありません。",
+          "reading": "あのひとはにほんごのせんせいにちがいありません。",
+          "en": "That person must be a Japanese teacher.",
+          "zh": "那个人肯定是日语老师。",
+          "zh_TW": "那個人肯定是日語老師。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-kimatteiru",
+      "level": "N3",
+      "pattern": "〜に決まっている",
+      "structure": "普通形（ナ形・名詞は語幹） + に決まっている",
+      "match": [
+        "に決まっている",
+        "に決まっています"
+      ],
+      "meaning": {
+        "en": "of course it is; obviously so",
+        "zh": "肯定是……；当然……",
+        "zh_TW": "肯定是……；當然……"
+      },
+      "explanation": {
+        "en": "This says the answer is too obvious to argue about, and it carries a little emotion, sometimes impatience. Compared with 〜に違いない it sounds spoken and casual, so keep it out of writing and formal talk.",
+        "zh": "表示结论显而易见、不必再讨论，带有一点情绪，有时略显不耐烦。与〜に違いない相比更口语、更随便，正式场合和书面语中不用。",
+        "zh_TW": "表示結論顯而易見、不必再討論，帶有一點情緒，有時略顯不耐煩。與〜に違いない相比更口語、更隨便，正式場合和書面語中不用。"
+      },
+      "examples": [
+        {
+          "ja": "明日も雨に決まっている。",
+          "reading": "あしたもあめにきまっている。",
+          "en": "Of course it will rain tomorrow too.",
+          "zh": "明天肯定也下雨。",
+          "zh_TW": "明天肯定也下雨。"
+        },
+        {
+          "ja": "この問題は難しいに決まっています。",
+          "reading": "このもんだいはむずかしいにきまっています。",
+          "en": "This problem is obviously difficult.",
+          "zh": "这个问题当然很难。",
+          "zh_TW": "這個問題當然很難。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:no-de-wa-nai-ka",
+      "level": "N3",
+      "pattern": "〜のではないか",
+      "structure": "普通形 + のではないか / のではないでしょうか",
+      "match": [
+        "のではないか",
+        "のではないでしょうか"
+      ],
+      "meaning": {
+        "en": "isn't it the case that ...?",
+        "zh": "是不是……呢？",
+        "zh_TW": "是不是……呢？"
+      },
+      "explanation": {
+        "en": "This puts forward an opinion in the shape of a question, so it sounds careful rather than pushy. のではないでしょうか is the polite form and is common when you disagree gently or make a suggestion at work.",
+        "zh": "用疑问的形式提出自己的看法，语气谨慎，不显得强硬。のではないでしょうか是礼貌形，常用于委婉地表示不同意见或在工作中提建议。",
+        "zh_TW": "用疑問的形式提出自己的看法，語氣謹慎，不顯得強硬。のではないでしょうか是禮貌形，常用於委婉地表示不同意見或在工作中提建議。"
+      },
+      "examples": [
+        {
+          "ja": "彼はもう帰ったのではないか。",
+          "reading": "かれはもうかえったのではないか。",
+          "en": "Hasn't he already gone home?",
+          "zh": "他是不是已经回去了呢？",
+          "zh_TW": "他是不是已經回去了呢？"
+        },
+        {
+          "ja": "この説明は少し難しいのではないでしょうか。",
+          "reading": "このせつめいはすこしむずかしいのではないでしょうか。",
+          "en": "Isn't this explanation a little difficult?",
+          "zh": "这个说明是不是有点难呢？",
+          "zh_TW": "這個說明是不是有點難呢？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kanousei-ga-aru",
+      "level": "N3",
+      "pattern": "〜可能性がある",
+      "structure": "普通形 / N + の + 可能性がある",
+      "match": [
+        "可能性があります",
+        "可能性が高い",
+        "可能性がある"
+      ],
+      "meaning": {
+        "en": "there is a possibility that it happens",
+        "zh": "有可能……",
+        "zh_TW": "有可能……"
+      },
+      "explanation": {
+        "en": "可能性 is a noun, so it can take 高い or 低い to say how likely something is. Unlike 〜かもしれない, which is a quick guess, this sounds measured and fits news, work and anything you have thought about.",
+        "zh": "可能性是名词，可以加高い、低い来说明可能性的大小。〜かもしれない是随口的推测，而这个说法显得慎重，适合新闻、工作等经过思考的场合。",
+        "zh_TW": "可能性是名詞，可以加高い、低い來說明可能性的大小。〜かもしれない是隨口的推測，而這個說法顯得慎重，適合新聞、工作等經過思考的場合。"
+      },
+      "examples": [
+        {
+          "ja": "明日は雨が降る可能性があります。",
+          "reading": "あしたはあめがふるかのうせいがあります。",
+          "en": "There is a possibility that it will rain tomorrow.",
+          "zh": "明天有可能下雨。",
+          "zh_TW": "明天有可能下雨。"
+        },
+        {
+          "ja": "電車が遅れる可能性が高い。",
+          "reading": "でんしゃがおくれるかのうせいがたかい。",
+          "en": "There is a high possibility the train will be late.",
+          "zh": "电车晚点的可能性很高。",
+          "zh_TW": "電車晚點的可能性很高。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:sou-mo-nai",
+      "level": "N3",
+      "pattern": "〜そう(に)もない",
+      "structure": "動詞ます形 + そうもない / そうにもない",
+      "match": [
+        "そうもない",
+        "そうにもありません"
+      ],
+      "meaning": {
+        "en": "it shows no sign of happening",
+        "zh": "看样子不会……",
+        "zh_TW": "看樣子不會……"
+      },
+      "explanation": {
+        "en": "This is the negative of 〜そうです for appearances, and it says that from what you can see the thing is not going to happen. The に adds emphasis; そうにない and そうもない mean the same.",
+        "zh": "这是表示样态的〜そうです的否定形式，表示从眼前的情况看，某事不会发生。加に语气更强，そうにない和そうもない意思相同。",
+        "zh_TW": "這是表示樣態的〜そうです的否定形式，表示從眼前的情況看，某事不會發生。加に語氣更強，そうにない和そうもない意思相同。"
+      },
+      "examples": [
+        {
+          "ja": "この仕事は今日終わりそうもない。",
+          "reading": "このしごとはきょうおわりそうもない。",
+          "en": "This work shows no sign of finishing today.",
+          "zh": "这个工作今天看样子做不完。",
+          "zh_TW": "這個工作今天看樣子做不完。"
+        },
+        {
+          "ja": "彼は来そうにもありません。",
+          "reading": "かれはきそうにもありません。",
+          "en": "There is no sign that he is coming.",
+          "zh": "他看样子不会来了。",
+          "zh_TW": "他看樣子不會來了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:you-ni-mieru",
+      "level": "N3",
+      "pattern": "〜ように見える",
+      "structure": "普通形 / ナ形 + な / N + の + ように見える",
+      "match": [
+        "ように見えます",
+        "ように見えました"
+      ],
+      "meaning": {
+        "en": "it looks as though; it appears to be",
+        "zh": "看起来像……",
+        "zh_TW": "看起來像……"
+      },
+      "explanation": {
+        "en": "This reports how something strikes the eye, leaving room for the truth to be different. 〜そうに見える is about a feeling read off the surface, while 〜ように見える compares the thing to something else.",
+        "zh": "陈述眼睛看到的印象，同时留有事实可能不同的余地。〜そうに見える说的是从表面读出的感觉，〜ように見える则是把事物比作别的东西。",
+        "zh_TW": "陳述眼睛看到的印象，同時留有事實可能不同的餘地。〜そうに見える說的是從表面讀出的感覺，〜ように見える則是把事物比作別的東西。"
+      },
+      "examples": [
+        {
+          "ja": "彼は元気なように見えます。",
+          "reading": "かれはげんきなようにみえます。",
+          "en": "He looks as though he is well.",
+          "zh": "他看起来很有精神。",
+          "zh_TW": "他看起來很有精神。"
+        },
+        {
+          "ja": "先生は少し忙しいように見えました。",
+          "reading": "せんせいはすこしいそがしいようにみえました。",
+          "en": "The teacher looked a little busy.",
+          "zh": "老师看起来有点忙。",
+          "zh_TW": "老師看起來有點忙。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:mitai-na",
+      "level": "N3",
+      "pattern": "〜みたいな / 〜みたいに",
+      "structure": "N / 普通形 + みたいな + N、みたいに + 動詞",
+      "match": [
+        "みたいに",
+        "みたいな"
+      ],
+      "meaning": {
+        "en": "like X, before a noun or a verb",
+        "zh": "像……一样的／地",
+        "zh_TW": "像……一樣的／地"
+      },
+      "explanation": {
+        "en": "みたい is the spoken twin of ような・ように: use みたいな in front of a noun and みたいに in front of a verb or adjective. After a noun nothing comes between, so say 先生みたいに, never 先生のみたいに.",
+        "zh": "みたい是ような・ように的口语说法：修饰名词用みたいな，修饰动词或形容词用みたいに。接名词时中间不加东西，说先生みたいに，不说先生のみたいに。",
+        "zh_TW": "みたい是ような・ように的口語說法：修飾名詞用みたいな，修飾動詞或形容詞用みたいに。接名詞時中間不加東西，說先生みたいに，不說先生のみたいに。"
+      },
+      "examples": [
+        {
+          "ja": "彼は先生みたいに話します。",
+          "reading": "かれはせんせいみたいにはなします。",
+          "en": "He talks like a teacher.",
+          "zh": "他说话像老师一样。",
+          "zh_TW": "他說話像老師一樣。"
+        },
+        {
+          "ja": "私も彼みたいな車が買いたいです。",
+          "reading": "わたしもかれみたいなくるまがかいたいです。",
+          "en": "I want to buy a car like his too.",
+          "zh": "我也想买一辆像他那样的车。",
+          "zh_TW": "我也想買一輛像他那樣的車。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:rashii-typical",
+      "level": "N3",
+      "pattern": "〜らしい（典型）",
+      "structure": "N + らしい",
+      "match": [
+        "らしい",
+        "らしいです"
+      ],
+      "meaning": {
+        "en": "behaving as a typical example of X",
+        "zh": "有……的样子；像样的……",
+        "zh_TW": "有……的樣子；像樣的……"
+      },
+      "explanation": {
+        "en": "Here らしい attaches to a noun and praises the thing for being a good example of what it is: 春らしい天気 is weather that feels properly like spring. This is not the hearsay らしい, which follows a whole plain-form clause.",
+        "zh": "这里的らしい接在名词后，称赞某物很有该事物应有的样子：春らしい天気就是很有春天味道的天气。它不是表示传闻的らしい，后者接在整个普通形小句之后。",
+        "zh_TW": "這裡的らしい接在名詞後，稱讚某物很有該事物應有的樣子：春らしい天気就是很有春天味道的天氣。它不是表示傳聞的らしい，後者接在整個普通形小句之後。"
+      },
+      "examples": [
+        {
+          "ja": "今日は春らしい天気ですね。",
+          "reading": "きょうははるらしいてんきですね。",
+          "en": "Today the weather feels properly like spring.",
+          "zh": "今天的天气很有春天的样子呢。",
+          "zh_TW": "今天的天氣很有春天的樣子呢。"
+        },
+        {
+          "ja": "彼の意見はとても彼らしいです。",
+          "reading": "かれのいけんはとてもかれらしいです。",
+          "en": "His opinion is very much like him.",
+          "zh": "他的意见很有他的风格。",
+          "zh_TW": "他的意見很有他的風格。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:furi-o-suru",
+      "level": "N3",
+      "pattern": "〜ふりをする",
+      "structure": "普通形 / ナ形 + な / N + の + ふりをする",
+      "match": [
+        "ふりをしました",
+        "ふりをしている"
+      ],
+      "meaning": {
+        "en": "pretend to be or to do something",
+        "zh": "假装……",
+        "zh_TW": "假裝……"
+      },
+      "explanation": {
+        "en": "ふり is a noun meaning an act put on for others, so the speaker knows the truth is different. Unlike 〜ように見える, which is only how a thing looks, this says the person is doing it on purpose.",
+        "zh": "ふり是名词，指做给别人看的样子，所以说话人清楚事实并非如此。与只讲外观的〜ように見える不同，这个说法强调是故意装出来的。",
+        "zh_TW": "ふり是名詞，指做給別人看的樣子，所以說話人清楚事實並非如此。與只講外觀的〜ように見える不同，這個說法強調是故意裝出來的。"
+      },
+      "examples": [
+        {
+          "ja": "彼は分からないふりをしました。",
+          "reading": "かれはわからないふりをしました。",
+          "en": "He pretended not to understand.",
+          "zh": "他假装不明白。",
+          "zh_TW": "他假裝不明白。"
+        },
+        {
+          "ja": "子供は寝ているふりをしている。",
+          "reading": "こどもはねているふりをしている。",
+          "en": "The child is pretending to be asleep.",
+          "zh": "孩子正装睡。",
+          "zh_TW": "孩子正裝睡。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:you-na-ki-ga-suru",
+      "level": "N3",
+      "pattern": "〜ような気がする",
+      "structure": "普通形 + ような気がする",
+      "match": [
+        "ような気がします",
+        "ような気がした"
+      ],
+      "meaning": {
+        "en": "I get the feeling that ...",
+        "zh": "总觉得……",
+        "zh_TW": "總覺得……"
+      },
+      "explanation": {
+        "en": "This reports a feeling you cannot fully explain, so it is much weaker than 〜と思います and far weaker than 〜に違いない. Use it when the impression comes from nowhere in particular.",
+        "zh": "表达一种说不清来由的感觉，语气比〜と思います弱得多，更远不如〜に違いない肯定。当这种印象没有明确根据时用它。",
+        "zh_TW": "表達一種說不清來由的感覺，語氣比〜と思います弱得多，更遠不如〜に違いない肯定。當這種印象沒有明確根據時用它。"
+      },
+      "examples": [
+        {
+          "ja": "どこかで彼に会ったような気がします。",
+          "reading": "どこかでかれにあったようなきがします。",
+          "en": "I get the feeling I have met him somewhere.",
+          "zh": "我总觉得在哪里见过他。",
+          "zh_TW": "我總覺得在哪裡見過他。"
+        },
+        {
+          "ja": "明日は雨が降るような気がした。",
+          "reading": "あしたはあめがふるようなきがした。",
+          "en": "I had a feeling it would rain tomorrow.",
+          "zh": "我当时总觉得明天会下雨。",
+          "zh_TW": "我當時總覺得明天會下雨。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:janai-ka",
+      "level": "N3",
+      "pattern": "〜じゃない（か）",
+      "structure": "普通形 + じゃない / んじゃないか",
+      "match": [
+        "じゃないですか",
+        "んじゃないか"
+      ],
+      "meaning": {
+        "en": "seeking agreement, or sudden realization",
+        "zh": "……不是吗？；原来是……啊",
+        "zh_TW": "……不是嗎？；原來是……啊"
+      },
+      "explanation": {
+        "en": "Said with a rising tone it asks the listener to agree with something you both know; said flat it is surprise at what you have just noticed. んじゃないか adds の and turns it into a soft guess.",
+        "zh": "语调上扬时是请对方认同双方都知道的事；语调平缓时表示刚刚发现的惊讶。加上の变成んじゃないか，则是委婉的推测。",
+        "zh_TW": "語調上揚時是請對方認同雙方都知道的事；語調平緩時表示剛剛發現的驚訝。加上の變成んじゃないか，則是委婉的推測。"
+      },
+      "examples": [
+        {
+          "ja": "これ、あなたの本じゃないですか。",
+          "reading": "これ、あなたのほんじゃないですか。",
+          "en": "Hey, isn't this your book?",
+          "zh": "这个不是你的书吗？",
+          "zh_TW": "這個不是你的書嗎？"
+        },
+        {
+          "ja": "彼も来るんじゃないかと思います。",
+          "reading": "かれもくるんじゃないかとおもいます。",
+          "en": "I think he might come as well.",
+          "zh": "我觉得他大概也会来。",
+          "zh_TW": "我覺得他大概也會來。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tsumori-datta",
+      "level": "N3",
+      "pattern": "〜つもりだった",
+      "structure": "動詞辞書形 / ない形 + つもりだった",
+      "match": [
+        "つもりだった",
+        "つもりでした"
+      ],
+      "meaning": {
+        "en": "I had intended to, but it went otherwise",
+        "zh": "本来打算……（结果没做成）",
+        "zh_TW": "本來打算……（結果沒做成）"
+      },
+      "explanation": {
+        "en": "Putting つもり in the past says the plan was real but the result did not match it, so a が or けど clause about what actually happened usually follows. The plain 〜つもりです is simply a plan still standing.",
+        "zh": "把つもり变成过去式，表示当初确有此打算，但结果并非如此，所以后面常接が、けど说明实际情况。普通的〜つもりです只是现在仍然有效的打算。",
+        "zh_TW": "把つもり變成過去式，表示當初確有此打算，但結果並非如此，所以後面常接が、けど說明實際情況。普通的〜つもりです只是現在仍然有效的打算。"
+      },
+      "examples": [
+        {
+          "ja": "今日は早く帰るつもりだった。",
+          "reading": "きょうははやくかえるつもりだった。",
+          "en": "I had intended to go home early today.",
+          "zh": "我本来打算今天早点回家。",
+          "zh_TW": "我本來打算今天早點回家。"
+        },
+        {
+          "ja": "彼に言うつもりでしたが、忘れました。",
+          "reading": "かれにいうつもりでしたが、わすれました。",
+          "en": "I had meant to tell him, but I forgot.",
+          "zh": "我本来打算告诉他，结果忘了。",
+          "zh_TW": "我本來打算告訴他，結果忘了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nai-uchi-ni",
+      "level": "N3",
+      "pattern": "〜ないうちに",
+      "structure": "動詞ない形 + うちに",
+      "match": [
+        "ないうちに"
+      ],
+      "meaning": {
+        "en": "doing it before something else happens",
+        "zh": "趁着还没……的时候",
+        "zh_TW": "趁著還沒……的時候"
+      },
+      "explanation": {
+        "en": "This means you act while the other thing has still not happened, because once it does the chance is gone. 〜前に is a neutral order of events; 〜ないうちに carries the sense of making use of the time you have.",
+        "zh": "表示趁另一件事还没发生就先行动，因为一旦发生机会就没有了。〜前に只是客观的先后顺序，〜ないうちに则含有抓住现有时机的意思。",
+        "zh_TW": "表示趁另一件事還沒發生就先行動，因為一旦發生機會就沒有了。〜前に只是客觀的先後順序，〜ないうちに則含有抓住現有時機的意思。"
+      },
+      "examples": [
+        {
+          "ja": "雨が降らないうちに帰りましょう。",
+          "reading": "あめがふらないうちにかえりましょう。",
+          "en": "Let's go home before it starts raining.",
+          "zh": "趁还没下雨我们回去吧。",
+          "zh_TW": "趁還沒下雨我們回去吧。"
+        },
+        {
+          "ja": "忘れないうちに書いておきます。",
+          "reading": "わすれないうちにかいておきます。",
+          "en": "I'll write it down before I forget.",
+          "zh": "趁还没忘我先写下来。",
+          "zh_TW": "趁還沒忘我先寫下來。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tabi-ni",
+      "level": "N3",
+      "pattern": "〜たびに",
+      "structure": "動詞辞書形 / N + の + たびに",
+      "match": [
+        "たびに"
+      ],
+      "meaning": {
+        "en": "every time that happens, ...",
+        "zh": "每当……的时候",
+        "zh_TW": "每當……的時候"
+      },
+      "explanation": {
+        "en": "たび comes from the noun 度, one occasion, so this says that whenever the first thing happens the second follows. Use it for repeated occasions, not for clock time; for that use 〜ごとに.",
+        "zh": "たび来自名词「度」，指一次一次的场合，表示每逢前项发生，后项就随之出现。它用于反复出现的场合，不用于钟表时间，那种情况用〜ごとに。",
+        "zh_TW": "たび來自名詞「度」，指一次一次的場合，表示每逢前項發生，後項就隨之出現。它用於反覆出現的場合，不用於鐘錶時間，那種情況用〜ごとに。"
+      },
+      "examples": [
+        {
+          "ja": "彼に会うたびに元気になります。",
+          "reading": "かれにあうたびにげんきになります。",
+          "en": "Every time I meet him I feel better.",
+          "zh": "每次见到他我都变得有精神。",
+          "zh_TW": "每次見到他我都變得有精神。"
+        },
+        {
+          "ja": "この歌を聞くたびに彼のことを思います。",
+          "reading": "このうたをきくたびにかれのことをおもいます。",
+          "en": "Every time I hear this song I think of him.",
+          "zh": "每次听到这首歌我都会想起他。",
+          "zh_TW": "每次聽到這首歌我都會想起他。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:saichuu-ni",
+      "level": "N3",
+      "pattern": "〜最中に",
+      "structure": "動詞ている形 / N + の + 最中に",
+      "match": [
+        "最中に"
+      ],
+      "meaning": {
+        "en": "right in the middle of doing something",
+        "zh": "正在……的时候",
+        "zh_TW": "正在……的時候"
+      },
+      "explanation": {
+        "en": "最中 marks the very peak of an activity, so what follows is usually an interruption or something unwelcome. 〜ている間に only says that the time overlaps, with no sense of being cut off.",
+        "zh": "最中指某活动进行到最热闹、最投入的当口，所以后面多是打断或不受欢迎的事。〜ている間に只表示时间上重叠，没有被打断的意味。",
+        "zh_TW": "最中指某活動進行到最熱鬧、最投入的當口，所以後面多是打斷或不受歡迎的事。〜ている間に只表示時間上重疊，沒有被打斷的意味。"
+      },
+      "examples": [
+        {
+          "ja": "仕事の最中に友達が来ました。",
+          "reading": "しごとのさいちゅうにともだちがきました。",
+          "en": "A friend turned up right in the middle of my work.",
+          "zh": "我正在工作的时候朋友来了。",
+          "zh_TW": "我正在工作的時候朋友來了。"
+        },
+        {
+          "ja": "話をしている最中に彼が帰りました。",
+          "reading": "はなしをしているさいちゅうにかれがかえりました。",
+          "en": "He left right in the middle of our conversation.",
+          "zh": "正说着话的时候他就回去了。",
+          "zh_TW": "正說著話的時候他就回去了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:shidai",
+      "level": "N3",
+      "pattern": "〜次第",
+      "structure": "動詞ます形 / N + 次第",
+      "match": [
+        "次第"
+      ],
+      "meaning": {
+        "en": "as soon as it is done, ...",
+        "zh": "一……就立刻……",
+        "zh_TW": "一……就立刻……"
+      },
+      "explanation": {
+        "en": "次第 joins to the ます stem and means the next action starts the moment the first one is complete. It belongs to business speech, and the second half must be about the future, so no past tense follows it.",
+        "zh": "次第接在动词ます形词干后，表示前项一完成就立刻进行后项。它属于商务用语，后半句必须是将来的事，不能用过去时。",
+        "zh_TW": "次第接在動詞ます形詞幹後，表示前項一完成就立刻進行後項。它屬於商務用語，後半句必須是將來的事，不能用過去時。"
+      },
+      "examples": [
+        {
+          "ja": "仕事が終わり次第、帰ります。",
+          "reading": "しごとがおわりしだい、かえります。",
+          "en": "I'll go home as soon as work is finished.",
+          "zh": "工作一结束我就回去。",
+          "zh_TW": "工作一結束我就回去。"
+        },
+        {
+          "ja": "分かり次第、すぐに教えてください。",
+          "reading": "わかりしだい、すぐにおしえてください。",
+          "en": "Please tell me as soon as you find out.",
+          "zh": "一知道就请马上告诉我。",
+          "zh_TW": "一知道就請馬上告訴我。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ta-tokoro",
+      "level": "N3",
+      "pattern": "〜たところ",
+      "structure": "動詞た形 + ところ",
+      "match": [
+        "たところ"
+      ],
+      "meaning": {
+        "en": "I did it, and this is what happened",
+        "zh": "……了之后，结果……",
+        "zh_TW": "……了之後，結果……"
+      },
+      "explanation": {
+        "en": "You did something, and the second half reports what you found out as a result. It is written and formal, and both halves must already have happened, so the ending is in the past.",
+        "zh": "先做了某事，后半句报告由此得知的结果。这是书面、正式的说法，前后两件事都已经发生，所以句尾用过去时。",
+        "zh_TW": "先做了某事，後半句報告由此得知的結果。這是書面、正式的說法，前後兩件事都已經發生，所以句尾用過去時。"
+      },
+      "examples": [
+        {
+          "ja": "先生に聞いたところ、すぐに分かりました。",
+          "reading": "せんせいにきいたところ、すぐにわかりました。",
+          "en": "I asked the teacher, and I understood at once.",
+          "zh": "我问了老师，结果马上就明白了。",
+          "zh_TW": "我問了老師，結果馬上就明白了。"
+        },
+        {
+          "ja": "使ってみたところ、とても便利でした。",
+          "reading": "つかってみたところ、とてもべんりでした。",
+          "en": "I tried using it, and it turned out to be very handy.",
+          "zh": "试着用了一下，结果非常方便。",
+          "zh_TW": "試著用了一下，結果非常方便。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-kara-de-nai-to",
+      "level": "N3",
+      "pattern": "〜てからでないと",
+      "structure": "動詞て形 + からでないと + 否定",
+      "match": [
+        "てからでないと"
+      ],
+      "meaning": {
+        "en": "unless you do this first, it won't work",
+        "zh": "不先……的话就不行",
+        "zh_TW": "不先……的話就不行"
+      },
+      "explanation": {
+        "en": "The first action is a condition that has to be met before anything else can go ahead, so the second half is always negative. 〜てから on its own is only about order and takes any ending.",
+        "zh": "前项动作是必须先满足的条件，否则后面无法进行，所以后半句一定是否定形式。单用〜てから只表示先后顺序，后面接什么都可以。",
+        "zh_TW": "前項動作是必須先滿足的條件，否則後面無法進行，所以後半句一定是否定形式。單用〜てから只表示先後順序，後面接什麼都可以。"
+      },
+      "examples": [
+        {
+          "ja": "説明を聞いてからでないと、分かりません。",
+          "reading": "せつめいをきいてからでないと、わかりません。",
+          "en": "I won't understand unless I hear the explanation first.",
+          "zh": "不先听说明的话，我就不明白。",
+          "zh_TW": "不先聽說明的話，我就不明白。"
+        },
+        {
+          "ja": "家に帰ってからでないと、決められない。",
+          "reading": "いえにかえってからでないと、きめられない。",
+          "en": "I can't decide until I've got home.",
+          "zh": "不先回家的话，我没法决定。",
+          "zh_TW": "不先回家的話，我沒法決定。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-doujini",
+      "level": "N3",
+      "pattern": "〜と同時に",
+      "structure": "動詞辞書形 / N + と同時に",
+      "match": [
+        "と同時に"
+      ],
+      "meaning": {
+        "en": "at the same moment as; while also",
+        "zh": "与……同时；既……又……",
+        "zh_TW": "與……同時；既……又……"
+      },
+      "explanation": {
+        "en": "This has two jobs: two events happening at the very same moment, and one person or thing holding two roles at once. Which one is meant is clear from whether a verb or a noun comes in front.",
+        "zh": "这个句型有两种用法：两件事同时发生，以及一个人或事物同时具有两种身份。前面接的是动词还是名词，就决定了是哪一种。",
+        "zh_TW": "這個句型有兩種用法：兩件事同時發生，以及一個人或事物同時具有兩種身份。前面接的是動詞還是名詞，就決定了是哪一種。"
+      },
+      "examples": [
+        {
+          "ja": "家を出ると同時に雨が降りました。",
+          "reading": "いえをでるとどうじにあめがふりました。",
+          "en": "The moment I left the house it started to rain.",
+          "zh": "我一出家门就下起了雨。",
+          "zh_TW": "我一齣家門就下起了雨。"
+        },
+        {
+          "ja": "彼は学生であると同時に会社で働いている。",
+          "reading": "かれはがくせいであるとどうじにかいしゃではたらいている。",
+          "en": "He is a student and at the same time works at a company.",
+          "zh": "他既是学生，同时又在公司工作。",
+          "zh_TW": "他既是學生，同時又在公司工作。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-tomo-ni",
+      "level": "N3",
+      "pattern": "〜とともに",
+      "structure": "N / 動詞辞書形 + とともに",
+      "match": [
+        "とともに"
+      ],
+      "meaning": {
+        "en": "together with; as it changes, so does",
+        "zh": "和……一起；随着……",
+        "zh_TW": "和……一起；隨著……"
+      },
+      "explanation": {
+        "en": "After a person it simply means together with them, in a written tone; after a word for change or time it means that as one thing moves the other moves with it. 〜と一緒に is the everyday spoken word for the first meaning.",
+        "zh": "接在表示人的词后就是「和……一起」，语气偏书面；接在表示变化或时间的词后，则表示一方变化另一方随之变化。第一种意思在口语中一般说〜と一緒に。",
+        "zh_TW": "接在表示人的詞後就是「和……一起」，語氣偏書面；接在表示變化或時間的詞後，則表示一方變化另一方隨之變化。第一種意思在口語中一般說〜と一緒に。"
+      },
+      "examples": [
+        {
+          "ja": "友達とともに日本語を勉強しています。",
+          "reading": "ともだちとともににほんごをべんきょうしています。",
+          "en": "I am studying Japanese together with a friend.",
+          "zh": "我和朋友一起学习日语。",
+          "zh_TW": "我和朋友一起學習日語。"
+        },
+        {
+          "ja": "時間とともに問題は小さくなりました。",
+          "reading": "じかんとともにもんだいはちいさくなりました。",
+          "en": "With time the problem became smaller.",
+          "zh": "随着时间的推移，问题变小了。",
+          "zh_TW": "隨著時間的推移，問題變小了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ue-de",
+      "level": "N3",
+      "pattern": "〜上で",
+      "structure": "動詞た形 / N + の + 上で",
+      "match": [
+        "上で"
+      ],
+      "meaning": {
+        "en": "after doing this, then decide or act",
+        "zh": "在……之后再……",
+        "zh_TW": "在……之後再……"
+      },
+      "explanation": {
+        "en": "The first step is done on purpose to prepare for the decision that follows, so the second half is usually 決める, 話す or something else deliberate. 〜てから is plain sequence and has no such purpose.",
+        "zh": "前项是为后面的判断有意先做的准备，所以后半句多是決める、話す之类需要斟酌的动作。〜てから只表示单纯的先后，没有这层用意。",
+        "zh_TW": "前項是為後面的判斷有意先做的準備，所以後半句多是決める、話す之類需要斟酌的動作。〜てから只表示單純的先後，沒有這層用意。"
+      },
+      "examples": [
+        {
+          "ja": "よく考えた上で決めます。",
+          "reading": "よくかんがえたうえできめます。",
+          "en": "I'll decide after thinking it over carefully.",
+          "zh": "我会仔细考虑之后再决定。",
+          "zh_TW": "我會仔細考慮之後再決定。"
+        },
+        {
+          "ja": "説明を聞いた上で、もう一度話しましょう。",
+          "reading": "せつめいをきいたうえで、もういちどはなしましょう。",
+          "en": "Let's talk again after we have heard the explanation.",
+          "zh": "听完说明之后我们再谈一次吧。",
+          "zh_TW": "聽完說明之後我們再談一次吧。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tsuide-ni",
+      "level": "N3",
+      "pattern": "〜ついでに",
+      "structure": "動詞辞書形・た形 / N + の + ついでに",
+      "match": [
+        "ついでに"
+      ],
+      "meaning": {
+        "en": "while you're at it; taking the chance",
+        "zh": "顺便……",
+        "zh_TW": "順便……"
+      },
+      "explanation": {
+        "en": "The main errand comes first and the second thing is done because you happen to be there anyway, so the second must be the smaller of the two. Two equally important tasks cannot be joined with ついでに.",
+        "zh": "主要的事在前，后面那件是趁着已经在做的机会顺手完成的，所以后项一定是次要的。两件同样重要的事不能用ついでに连接。",
+        "zh_TW": "主要的事在前，後面那件是趁著已經在做的機會順手完成的，所以後項一定是次要的。兩件同樣重要的事不能用ついでに連接。"
+      },
+      "examples": [
+        {
+          "ja": "駅へ行くついでに水を買ってきます。",
+          "reading": "えきへいくついでにみずをかってきます。",
+          "en": "I'll buy some water while I'm going to the station.",
+          "zh": "我去车站顺便买点水回来。",
+          "zh_TW": "我去車站順便買點水回來。"
+        },
+        {
+          "ja": "買い物のついでに友達に会いました。",
+          "reading": "かいもののついでにともだちにあいました。",
+          "en": "I met a friend while I was out shopping.",
+          "zh": "我买东西的时候顺便见了朋友。",
+          "zh_TW": "我買東西的時候順便見了朋友。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:oki-ni",
+      "level": "N3",
+      "pattern": "〜おきに",
+      "structure": "数量詞 + おきに",
+      "match": [
+        "おきに"
+      ],
+      "meaning": {
+        "en": "at intervals of; every other one",
+        "zh": "每隔……",
+        "zh_TW": "每隔……"
+      },
+      "explanation": {
+        "en": "おきに measures the gap left between one occasion and the next, so 一日おきに means with one day skipped in between. Do not confuse it with ごとに, which counts the occasions themselves.",
+        "zh": "おきに说的是两次之间空出的间隔，所以一日おきに是中间隔一天。不要和ごとに混淆，后者数的是次数本身。",
+        "zh_TW": "おきに說的是兩次之間空出的間隔，所以一日おきに是中間隔一天。不要和ごとに混淆，後者數的是次數本身。"
+      },
+      "examples": [
+        {
+          "ja": "一日おきに映画を見ています。",
+          "reading": "いちにちおきにえいがをみています。",
+          "en": "I watch a film every other day.",
+          "zh": "我每隔一天看一部电影。",
+          "zh_TW": "我每隔一天看一部電影。"
+        },
+        {
+          "ja": "この電車は五分おきに出ます。",
+          "reading": "このでんしゃはごふんおきにでます。",
+          "en": "This train leaves at five-minute intervals.",
+          "zh": "这趟电车每隔五分钟发一班。",
+          "zh_TW": "這趟電車每隔五分鐘發一班。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:goto-ni",
+      "level": "N3",
+      "pattern": "〜ごとに",
+      "structure": "N / 数量詞 / 動詞辞書形 + ごとに",
+      "match": [
+        "ごとに"
+      ],
+      "meaning": {
+        "en": "every single one; at each occurrence",
+        "zh": "每……；每一个……",
+        "zh_TW": "每……；每一個……"
+      },
+      "explanation": {
+        "en": "ごとに counts the items or occasions themselves and leaves none out, so 一日ごとに means every day. With a verb it works much like たびに but sounds more written and orderly.",
+        "zh": "ごとに数的是事物或场合本身，一个也不漏，所以一日ごとに是每一天。接动词时用法接近たびに，但语气更书面、更规整。",
+        "zh_TW": "ごとに數的是事物或場合本身，一個也不漏，所以一日ごとに是每一天。接動詞時用法接近たびに，但語氣更書面、更規整。"
+      },
+      "examples": [
+        {
+          "ja": "会うごとに彼は元気になっています。",
+          "reading": "あうごとにかれはげんきになっています。",
+          "en": "He gets livelier every time we meet.",
+          "zh": "每次见面他都更有精神了。",
+          "zh_TW": "每次見面他都更有精神了。"
+        },
+        {
+          "ja": "この店は月ごとに新しい料理を作ります。",
+          "reading": "このみせはつきごとにあたらしいりょうりをつくります。",
+          "en": "This restaurant makes a new dish every month.",
+          "zh": "这家店每个月都做新的菜。",
+          "zh_TW": "這家店每個月都做新的菜。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:chuu-juu",
+      "level": "N3",
+      "pattern": "〜中（ちゅう・じゅう）",
+      "structure": "N + 中（ちゅう＝進行中 / じゅう＝その間ずっと）",
+      "match": [
+        "中"
+      ],
+      "meaning": {
+        "en": "in the middle of it, or all through it",
+        "zh": "正在……中；整个……期间",
+        "zh_TW": "正在……中；整個……期間"
+      },
+      "explanation": {
+        "en": "Read ちゅう, it says the thing is going on right now and is not finished. Read じゅう, it covers a whole stretch of time or space from end to end. The word in front decides the reading, so learn them as set pairs.",
+        "zh": "读ちゅう时表示事情正在进行、尚未结束；读じゅう时表示整段时间或整个范围从头到尾。读法由前面的词决定，所以要成组记住。",
+        "zh_TW": "讀ちゅう時表示事情正在進行、尚未結束；讀じゅう時表示整段時間或整個範圍從頭到尾。讀法由前面的詞決定，所以要成組記住。"
+      },
+      "examples": [
+        {
+          "ja": "今、仕事中です。",
+          "reading": "いま、しごとちゅうです。",
+          "en": "I'm in the middle of work right now.",
+          "zh": "我现在正在工作中。",
+          "zh_TW": "我現在正在工作中。"
+        },
+        {
+          "ja": "今日は一日中雨が降っていた。",
+          "reading": "きょうはいちにちじゅうあめがふっていた。",
+          "en": "It rained all day today.",
+          "zh": "今天一整天都在下雨。",
+          "zh_TW": "今天一整天都在下雨。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-tsurete",
+      "level": "N3",
+      "pattern": "〜につれて",
+      "structure": "動詞辞書形 / N + につれて",
+      "match": [
+        "につれて"
+      ],
+      "meaning": {
+        "en": "as one thing changes, the other changes with it",
+        "zh": "随着……（另一事也随之变化）",
+        "zh_TW": "隨著……（另一事也隨之變化）"
+      },
+      "explanation": {
+        "en": "Two changes move together, slowly and by themselves. Nobody is making it happen, so a command or a wish cannot follow it. Use it for gradual change, not for a single moment.",
+        "zh": "两种变化一同缓慢地自然发生，不是谁有意造成的，所以后面不能接命令或愿望。它表示逐渐的变化，不用于一瞬间的事。",
+        "zh_TW": "兩種變化一同緩慢地自然發生，不是誰有意造成的，所以後面不能接命令或願望。它表示逐漸的變化，不用於一瞬間的事。"
+      },
+      "examples": [
+        {
+          "ja": "日本語が上手になるにつれて、話が面白くなった。",
+          "reading": "にほんごがじょうずになるにつれて、はなしがおもしろくなった。",
+          "en": "As my Japanese got better, conversation became fun.",
+          "zh": "随着日语变好，聊天也变得有意思了。",
+          "zh_TW": "隨著日語變好，聊天也變得有意思了。"
+        },
+        {
+          "ja": "春になるにつれて、雨が多くなります。",
+          "reading": "はるになるにつれて、あめがおおくなります。",
+          "en": "As spring comes on, the rain grows more frequent.",
+          "zh": "随着春天到来，雨也多了起来。",
+          "zh_TW": "隨著春天到來，雨也多了起來。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-shitagatte",
+      "level": "N3",
+      "pattern": "〜に従って",
+      "structure": "動詞辞書形 / N + に従って（にしたがって）",
+      "match": [
+        "に従って",
+        "にしたがって"
+      ],
+      "meaning": {
+        "en": "in accordance with; as it progresses",
+        "zh": "按照……；随着……",
+        "zh_TW": "按照……；隨著……"
+      },
+      "explanation": {
+        "en": "After a noun it means doing as the rule, the sign or the instructions say. After a verb it works like につれて, one change following another. It is a shade stiffer than につれて and common in writing.",
+        "zh": "接名词时表示按照规定、指示或标识去做；接动词时和につれて一样，表示随着一方变化另一方也变化。语气比につれて生硬，多用于书面。",
+        "zh_TW": "接名詞時表示按照規定、指示或標識去做；接動詞時和につれて一樣，表示隨著一方變化另一方也變化。語氣比につれて生硬，多用於書面。"
+      },
+      "examples": [
+        {
+          "ja": "説明に従って、ここに名前を書いてください。",
+          "reading": "せつめいにしたがって、ここになまえをかいてください。",
+          "en": "Following the instructions, please write your name here.",
+          "zh": "请按照说明在这里写上名字。",
+          "zh_TW": "請按照說明在這裡寫上名字。"
+        },
+        {
+          "ja": "勉強を続けるにしたがって、日本語が面白くなった。",
+          "reading": "べんきょうをつづけるにしたがって、にほんごがおもしろくなった。",
+          "en": "As I kept studying, Japanese became more interesting.",
+          "zh": "随着学习的继续，日语变得有意思起来。",
+          "zh_TW": "隨著學習的繼續，日語變得有意思起來。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:sei-de",
+      "level": "N3",
+      "pattern": "〜せいで",
+      "structure": "普通形 + せいで（N は の + せいで、な形容詞は な + せいで）",
+      "match": [
+        "せいで"
+      ],
+      "meaning": {
+        "en": "because of it, and the result is bad",
+        "zh": "都怪……；因为……（结果不好）",
+        "zh_TW": "都怪……；因為……（結果不好）"
+      },
+      "explanation": {
+        "en": "せいで points at what went wrong and blames it. The result must be unwelcome, so it is the mirror image of おかげで. Plain から and ので carry no blame at all.",
+        "zh": "せいで指出问题所在并加以责怪，后面的结果必须是不好的，正好与おかげで相反。普通的から、ので则完全不带责怪的语气。",
+        "zh_TW": "せいで指出問題所在並加以責怪，後面的結果必須是不好的，正好與おかげで相反。普通的から、ので則完全不帶責怪的語氣。"
+      },
+      "examples": [
+        {
+          "ja": "雨のせいで、電車が遅れました。",
+          "reading": "あめのせいで、でんしゃがおくれました。",
+          "en": "Because of the rain, the train was late.",
+          "zh": "都怪下雨，电车晚点了。",
+          "zh_TW": "都怪下雨，電車晚點了。"
+        },
+        {
+          "ja": "遅く寝たせいで、今日は元気がない。",
+          "reading": "おそくねたせいで、きょうはげんきがない。",
+          "en": "I went to bed late, and that's why I have no energy today.",
+          "zh": "都怪睡得晚，今天没精神。",
+          "zh_TW": "都怪睡得晚，今天沒精神。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:sei-ka",
+      "level": "N3",
+      "pattern": "〜せいか",
+      "structure": "普通形 + せいか",
+      "match": [
+        "せいか"
+      ],
+      "meaning": {
+        "en": "perhaps because of it",
+        "zh": "也许是因为……；可能是……的缘故",
+        "zh_TW": "也許是因為……；可能是……的緣故"
+      },
+      "explanation": {
+        "en": "The か turns the blame into a guess: this may be the reason, but you are not sure. Because it is only a guess, the result can be bad or simply odd, not always unwelcome.",
+        "zh": "加上か就把责怪变成了推测：也许是这个原因，但自己也不确定。既然只是推测，结果可以是不好的，也可以只是有点奇怪。",
+        "zh_TW": "加上か就把責怪變成了推測：也許是這個原因，但自己也不確定。既然只是推測，結果可以是不好的，也可以只是有點奇怪。"
+      },
+      "examples": [
+        {
+          "ja": "天気が悪いせいか、店に人が少ない。",
+          "reading": "てんきがわるいせいか、みせにひとがすくない。",
+          "en": "Maybe because the weather is bad, there are few people in the shop.",
+          "zh": "也许是天气不好，店里人很少。",
+          "zh_TW": "也許是天氣不好，店裡人很少。"
+        },
+        {
+          "ja": "最近忙しいせいか、よく忘れます。",
+          "reading": "さいきんいそがしいせいか、よくわすれます。",
+          "en": "Perhaps because I've been busy lately, I forget things a lot.",
+          "zh": "也许是最近太忙，我常常忘事。",
+          "zh_TW": "也許是最近太忙，我常常忘事。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:okage-de",
+      "level": "N3",
+      "pattern": "〜おかげで",
+      "structure": "普通形 + おかげで（N は の + おかげで）",
+      "match": [
+        "おかげで"
+      ],
+      "meaning": {
+        "en": "thanks to it, something good happened",
+        "zh": "多亏……；托……的福",
+        "zh_TW": "多虧……；托……的福"
+      },
+      "explanation": {
+        "en": "おかげで thanks the cause for a good result, so it is warm where せいで is cold. Used with a bad result on purpose it turns into sarcasm, so keep the result a happy one.",
+        "zh": "おかげで是为好的结果向原因道谢，与冷冰冰的せいで相反。故意接不好的结果就成了讽刺，所以后面应当是好事。",
+        "zh_TW": "おかげで是為好的結果向原因道謝，與冷冰冰的せいで相反。故意接不好的結果就成了諷刺，所以後面應當是好事。"
+      },
+      "examples": [
+        {
+          "ja": "先生のおかげで、日本語が上手になりました。",
+          "reading": "せんせいのおかげで、にほんごがじょうずになりました。",
+          "en": "Thanks to my teacher, my Japanese got good.",
+          "zh": "多亏了老师，我的日语变好了。",
+          "zh_TW": "多虧了老師，我的日語變好了。"
+        },
+        {
+          "ja": "友達が手伝ってくれたおかげで、仕事が早く終わった。",
+          "reading": "ともだちがてつだってくれたおかげで、しごとがはやくおわった。",
+          "en": "Thanks to my friend helping me, the work finished early.",
+          "zh": "多亏朋友帮忙，工作很早就做完了。",
+          "zh_TW": "多虧朋友幫忙，工作很早就做完了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:amari",
+      "level": "N3",
+      "pattern": "〜あまり",
+      "structure": "N + の + あまり / 動詞辞書形 + あまり",
+      "match": [
+        "あまり"
+      ],
+      "meaning": {
+        "en": "so much so that it caused something",
+        "zh": "过于……以至于……",
+        "zh_TW": "過於……以至於……"
+      },
+      "explanation": {
+        "en": "A feeling or an effort goes past the normal level, and that excess brings on the result. The result is usually a bad or surprising one, and the whole pattern belongs to careful, written Japanese.",
+        "zh": "某种感情或行为超过了正常的程度，因而引出后面的结果。结果多半是不好的或出人意料的，整个句型属于书面色彩较浓的表达。",
+        "zh_TW": "某種感情或行為超過了正常的程度，因而引出後面的結果。結果多半是不好的或出人意料的，整個句型屬於書面色彩較濃的表達。"
+      },
+      "examples": [
+        {
+          "ja": "心配のあまり、寝られなかった。",
+          "reading": "しんぱいのあまり、ねられなかった。",
+          "en": "I was so worried that I couldn't sleep.",
+          "zh": "因为太担心，睡不着觉。",
+          "zh_TW": "因為太擔心，睡不著覺。"
+        },
+        {
+          "ja": "彼は考えるあまり、何も決められなかった。",
+          "reading": "かれはかんがえるあまり、なにもきめられなかった。",
+          "en": "He thought about it so much that he couldn't decide anything.",
+          "zh": "他想得太多，结果什么也决定不了。",
+          "zh_TW": "他想得太多，結果什麼也決定不了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kuse-ni",
+      "level": "N3",
+      "pattern": "〜くせに",
+      "structure": "普通形 + くせに（N は の + くせに、な形容詞は な + くせに）",
+      "match": [
+        "くせに"
+      ],
+      "meaning": {
+        "en": "even though, said with reproach",
+        "zh": "明明……却……（带责备）",
+        "zh_TW": "明明……卻……（帶責備）"
+      },
+      "explanation": {
+        "en": "くせに is のに with a frown added: you are criticising or looking down on the person. Both halves must be about the same person, and you cannot use it about yourself in a polite setting.",
+        "zh": "くせに就是带着不满的のに，含有批评或看不起对方的意思。前后两半必须说的是同一个人，正式场合也不用来说自己。",
+        "zh_TW": "くせに就是帶著不滿的のに，含有批評或看不起對方的意思。前後兩半必須說的是同一個人，正式場合也不用來說自己。"
+      },
+      "examples": [
+        {
+          "ja": "彼は知っているくせに、何も言わない。",
+          "reading": "かれはしっているくせに、なにもいわない。",
+          "en": "He knows perfectly well, yet he says nothing.",
+          "zh": "他明明知道，却什么都不说。",
+          "zh_TW": "他明明知道，卻什麼都不說。"
+        },
+        {
+          "ja": "学生のくせに、勉強しません。",
+          "reading": "がくせいのくせに、べんきょうしません。",
+          "en": "He's a student and yet he doesn't study.",
+          "zh": "明明是学生，却不学习。",
+          "zh_TW": "明明是學生，卻不學習。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:wari-ni",
+      "level": "N3",
+      "pattern": "〜わりに",
+      "structure": "普通形 + わりに（N は の + わりに、な形容詞は な + わりに）",
+      "match": [
+        "わりに"
+      ],
+      "meaning": {
+        "en": "considering how X it is, unexpectedly Y",
+        "zh": "虽然……但是（出乎意料）",
+        "zh_TW": "雖然……但是（出乎意料）"
+      },
+      "explanation": {
+        "en": "You weigh the second half against the standard the first half sets, and it does not match. There is no blame in it, only mild surprise, which is what separates it from くせに.",
+        "zh": "以前半句为标准来衡量后半句，结果与预想不符。其中没有责备，只有轻微的意外，这一点与くせに不同。",
+        "zh_TW": "以前半句為標準來衡量後半句，結果與預想不符。其中沒有責備，只有輕微的意外，這一點與くせに不同。"
+      },
+      "examples": [
+        {
+          "ja": "この店は安いわりに、料理がおいしい。",
+          "reading": "このみせはやすいわりに、りょうりがおいしい。",
+          "en": "For how cheap this place is, the food is good.",
+          "zh": "这家店虽然便宜，菜却很好吃。",
+          "zh_TW": "這家店雖然便宜，菜卻很好吃。"
+        },
+        {
+          "ja": "彼は若いわりによく知っている。",
+          "reading": "かれはわかいわりによくしっている。",
+          "en": "For someone so young, he knows a lot.",
+          "zh": "他年纪虽轻，却知道得很多。",
+          "zh_TW": "他年紀雖輕，卻知道得很多。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nagara-mo",
+      "level": "N3",
+      "pattern": "〜ながらも",
+      "structure": "動詞ます形 / い形容詞 / N + ながらも",
+      "match": [
+        "ながらも"
+      ],
+      "meaning": {
+        "en": "although it is so, nevertheless",
+        "zh": "虽然……但是……",
+        "zh_TW": "雖然……但是……"
+      },
+      "explanation": {
+        "en": "This is not the ながら of doing two things at once; the も turns it into a concession. It sounds literary, and the two halves must pull against each other.",
+        "zh": "这不是表示同时做两件事的ながら，加上も就变成了让步。语气偏书面，前后两半必须是相反的内容。",
+        "zh_TW": "這不是表示同時做兩件事的ながら，加上も就變成了讓步。語氣偏書面，前後兩半必須是相反的內容。"
+      },
+      "examples": [
+        {
+          "ja": "小さいながらも、便利な部屋です。",
+          "reading": "ちいさいながらも、べんりなへやです。",
+          "en": "It's small, but it's a convenient room.",
+          "zh": "房间虽小，却很方便。",
+          "zh_TW": "房間雖小，卻很方便。"
+        },
+        {
+          "ja": "彼は忙しいながらも、毎日勉強を続けている。",
+          "reading": "かれはいそがしいながらも、まいにちべんきょうをつづけている。",
+          "en": "Busy as he is, he keeps studying every day.",
+          "zh": "他虽然很忙，但每天都坚持学习。",
+          "zh_TW": "他雖然很忙，但每天都堅持學習。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tsutsu",
+      "level": "N3",
+      "pattern": "〜つつ",
+      "structure": "動詞ます形 + つつ",
+      "match": [
+        "つつ"
+      ],
+      "meaning": {
+        "en": "while doing; or although, in writing",
+        "zh": "一边……一边……；虽然……却……",
+        "zh_TW": "一邊……一邊……；雖然……卻……"
+      },
+      "explanation": {
+        "en": "つつ is the written cousin of ながら, in both of its meanings: two actions at once, or a concession. The subject of both halves must be the same person, and you will rarely hear it spoken.",
+        "zh": "つつ是ながら的书面说法，两种意思都有：同时做两件事，或表示让步。前后两半的主语必须是同一个人，口语中很少使用。",
+        "zh_TW": "つつ是ながら的書面說法，兩種意思都有：同時做兩件事，或表示讓步。前後兩半的主語必須是同一個人，口語中很少使用。"
+      },
+      "examples": [
+        {
+          "ja": "音楽を聞きつつ、料理を作りました。",
+          "reading": "おんがくをききつつ、りょうりをつくりました。",
+          "en": "I cooked while listening to music.",
+          "zh": "我一边听音乐一边做菜。",
+          "zh_TW": "我一邊聽音樂一邊做菜。"
+        },
+        {
+          "ja": "悪いと知りつつ、また同じことをした。",
+          "reading": "わるいとしりつつ、またおなじことをした。",
+          "en": "Knowing it was wrong, I did the same thing again.",
+          "zh": "明知不对，却又做了同样的事。",
+          "zh_TW": "明知不對，卻又做了同樣的事。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:dokoro-ka",
+      "level": "N3",
+      "pattern": "〜どころか",
+      "structure": "普通形 / N + どころか",
+      "match": [
+        "どころか"
+      ],
+      "meaning": {
+        "en": "far from it; not only that, but rather",
+        "zh": "别说……；不但不……反而……",
+        "zh_TW": "別說……；不但不……反而……"
+      },
+      "explanation": {
+        "en": "どころか throws out what the listener expected and puts something much further along in its place. The second half may go far above the first, or in the opposite direction entirely.",
+        "zh": "どころか把听话人预想的内容推翻，换上程度差得多的事实。后半句可以远远超过前半句，也可以完全朝相反的方向。",
+        "zh_TW": "どころか把聽話人預想的內容推翻，換上程度差得多的事實。後半句可以遠遠超過前半句，也可以完全朝相反的方向。"
+      },
+      "examples": [
+        {
+          "ja": "彼は日本語どころか、英語も話せる。",
+          "reading": "かれはにほんごどころか、えいごもはなせる。",
+          "en": "Not only Japanese, he can speak English too.",
+          "zh": "他不但会日语，连英语也会说。",
+          "zh_TW": "他不但會日語，連英語也會說。"
+        },
+        {
+          "ja": "忙しくて、休むどころか、食べる時間もない。",
+          "reading": "いそがしくて、やすむどころか、たべるじかんもない。",
+          "en": "I'm so busy that, far from resting, I have no time to eat.",
+          "zh": "太忙了，别说休息，连吃饭的时间都没有。",
+          "zh_TW": "太忙了，別說休息，連吃飯的時間都沒有。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:bakari-ka",
+      "level": "N3",
+      "pattern": "〜ばかりか",
+      "structure": "普通形 + ばかりか（N はそのまま、な形容詞は な + ばかりか）",
+      "match": [
+        "ばかりか"
+      ],
+      "meaning": {
+        "en": "not only that, but even more so",
+        "zh": "不但……而且……",
+        "zh_TW": "不但……而且……"
+      },
+      "explanation": {
+        "en": "The first half is already true; the second half adds something beyond it, usually more surprising. Unlike どころか it does not deny the first half, it builds on it.",
+        "zh": "前半句本来就成立，后半句在此之上再添一层，而且往往更出人意料。与どころか不同，它不否定前半句，而是在其基础上递进。",
+        "zh_TW": "前半句本來就成立，後半句在此之上再添一層，而且往往更出人意料。與どころか不同，它不否定前半句，而是在其基礎上遞進。"
+      },
+      "examples": [
+        {
+          "ja": "彼は英語ばかりか、日本語も上手です。",
+          "reading": "かれはえいごばかりか、にほんごもじょうずです。",
+          "en": "Not only is his English good, his Japanese is too.",
+          "zh": "他不但英语好，日语也很好。",
+          "zh_TW": "他不但英語好，日語也很好。"
+        },
+        {
+          "ja": "この本は面白いばかりか、とても安い。",
+          "reading": "このほんはおもしろいばかりか、とてもやすい。",
+          "en": "This book is not only interesting, it's also very cheap.",
+          "zh": "这本书不但有意思，而且很便宜。",
+          "zh_TW": "這本書不但有意思，而且很便宜。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:dake-de-naku",
+      "level": "N3",
+      "pattern": "〜だけでなく",
+      "structure": "普通形 / N + だけでなく（〜も）",
+      "match": [
+        "だけでなく"
+      ],
+      "meaning": {
+        "en": "not only A but also B",
+        "zh": "不仅……而且……",
+        "zh_TW": "不僅……而且……"
+      },
+      "explanation": {
+        "en": "The plainest way to add a second item to the first, and the one you can use anywhere, spoken or written. The second half usually takes も. ばかりか says the same thing with more surprise in it.",
+        "zh": "在前项之外再加一项最平实的说法，口语书面都能用，后半句多用も呼应。ばかりか意思相同，但带有更多意外的语气。",
+        "zh_TW": "在前項之外再加一項最平實的說法，口語書面都能用，後半句多用も呼應。ばかりか意思相同，但帶有更多意外的語氣。"
+      },
+      "examples": [
+        {
+          "ja": "子供だけでなく、大人も映画を見に来た。",
+          "reading": "こどもだけでなく、おとなもえいがをみにきた。",
+          "en": "Not only children but adults came to see the film.",
+          "zh": "不仅是孩子，大人也来看电影了。",
+          "zh_TW": "不僅是孩子，大人也來看電影了。"
+        },
+        {
+          "ja": "彼は音楽が好きなだけでなく、歌も上手です。",
+          "reading": "かれはおんがくがすきなだけでなく、うたもじょうずです。",
+          "en": "He not only likes music, he sings well too.",
+          "zh": "他不仅喜欢音乐，歌也唱得好。",
+          "zh_TW": "他不僅喜歡音樂，歌也唱得好。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-shitemo",
+      "level": "N3",
+      "pattern": "〜としても",
+      "structure": "普通形 + としても",
+      "match": [
+        "としても"
+      ],
+      "meaning": {
+        "en": "even supposing that it were so",
+        "zh": "即使……也……",
+        "zh_TW": "即使……也……"
+      },
+      "explanation": {
+        "en": "You accept the first half for the sake of argument and then say it changes nothing. It is about a supposition, so it fits things not yet settled, or things you doubt.",
+        "zh": "先姑且承认前半句，然后说这并不影响结果。它讲的是假设，所以适用于尚未确定或自己并不相信的事情。",
+        "zh_TW": "先姑且承認前半句，然後說這並不影響結果。它講的是假設，所以適用於尚未確定或自己並不相信的事情。"
+      },
+      "examples": [
+        {
+          "ja": "雨が降るとしても、明日は行きます。",
+          "reading": "あめがふるとしても、あしたはいきます。",
+          "en": "Even if it rains, I'm going tomorrow.",
+          "zh": "即使下雨，明天我也去。",
+          "zh_TW": "即使下雨，明天我也去。"
+        },
+        {
+          "ja": "難しいとしても、やってみるべきです。",
+          "reading": "むずかしいとしても、やってみるべきです。",
+          "en": "Even supposing it's hard, you ought to give it a try.",
+          "zh": "即使很难，也应该试一试。",
+          "zh_TW": "即使很難，也應該試一試。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tatoe-temo",
+      "level": "N3",
+      "pattern": "たとえ〜ても",
+      "structure": "たとえ + 動詞て形 / い形容詞くて + も",
+      "match": [
+        "たとえ"
+      ],
+      "meaning": {
+        "en": "even if, however things turn out",
+        "zh": "即使……也……；哪怕……",
+        "zh_TW": "即使……也……；哪怕……"
+      },
+      "explanation": {
+        "en": "たとえ at the front warns the listener early that a 〜ても is coming, and makes the concession stronger. The たとえ can be dropped, but with it the sentence sounds far more determined.",
+        "zh": "句首的たとえ提前告诉听话人后面会有〜ても，使让步的语气更强。たとえ可以省略，但加上之后句子显得更坚决。",
+        "zh_TW": "句首的たとえ提前告訴聽話人後面會有〜ても，使讓步的語氣更強。たとえ可以省略，但加上之後句子顯得更堅決。"
+      },
+      "examples": [
+        {
+          "ja": "たとえ雨が降っても、駅まで歩きます。",
+          "reading": "たとえあめがふっても、えきまであるきます。",
+          "en": "Even if it rains, I'll walk to the station.",
+          "zh": "即使下雨，我也走到车站去。",
+          "zh_TW": "即使下雨，我也走到車站去。"
+        },
+        {
+          "ja": "たとえ難しくても、最後まで続けます。",
+          "reading": "たとえむずかしくても、さいごまでつづけます。",
+          "en": "Even if it's hard, I'll keep going to the end.",
+          "zh": "哪怕再难，我也要坚持到最后。",
+          "zh_TW": "哪怕再難，我也要堅持到最後。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:donnani-temo",
+      "level": "N3",
+      "pattern": "どんなに / いくら〜ても",
+      "structure": "どんなに・いくら + 動詞て形 / い形容詞くて + も",
+      "match": [
+        "どんなに",
+        "いくら"
+      ],
+      "meaning": {
+        "en": "no matter how much you do it",
+        "zh": "无论怎样……也……",
+        "zh_TW": "無論怎樣……也……"
+      },
+      "explanation": {
+        "en": "These put no limit on the degree: however far the first half goes, the result does not change. いくら sounds a little more everyday, どんなに a little more emphatic, and both usually end in a negative or an unwelcome outcome.",
+        "zh": "这两个词表示程度没有上限：前半句无论到什么地步，结果都不变。いくら偏口语，どんなに语气更强，后面多接否定或不如意的结果。",
+        "zh_TW": "這兩個詞表示程度沒有上限：前半句無論到什麼地步，結果都不變。いくら偏口語，どんなに語氣更強，後面多接否定或不如意的結果。"
+      },
+      "examples": [
+        {
+          "ja": "どんなに忙しくても、毎日勉強します。",
+          "reading": "どんなにいそがしくても、まいにちべんきょうします。",
+          "en": "No matter how busy I am, I study every day.",
+          "zh": "无论多忙，我每天都学习。",
+          "zh_TW": "無論多忙，我每天都學習。"
+        },
+        {
+          "ja": "いくら説明しても、彼は分かってくれない。",
+          "reading": "いくらせつめいしても、かれはわかってくれない。",
+          "en": "However much I explain, he won't understand.",
+          "zh": "无论怎么解释，他都不肯明白。",
+          "zh_TW": "無論怎麼解釋，他都不肯明白。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-mo-kamawanai",
+      "level": "N3",
+      "pattern": "〜てもかまわない",
+      "structure": "動詞て形 / ない形なくて + もかまわない",
+      "match": [
+        "てもかまわない",
+        "てもかまいません"
+      ],
+      "meaning": {
+        "en": "it's fine either way; I don't mind",
+        "zh": "……也没关系；……也无所谓",
+        "zh_TW": "……也沒關係；……也無所謂"
+      },
+      "explanation": {
+        "en": "This grants permission in a cool, unbothered way: it would be no trouble to me. 〜てもいいです sounds friendlier and more like real approval; かまわない sounds more like indifference.",
+        "zh": "这是一种淡然的许可：对我来说没有妨碍。〜てもいいです听起来更亲切，更像真的同意；かまわない则更接近无所谓的态度。",
+        "zh_TW": "這是一種淡然的許可：對我來說沒有妨礙。〜てもいいです聽起來更親切，更像真的同意；かまわない則更接近無所謂的態度。"
+      },
+      "examples": [
+        {
+          "ja": "ここで待ってもかまわない。",
+          "reading": "ここでまってもかまわない。",
+          "en": "You can wait here, I don't mind.",
+          "zh": "在这里等着也没关系。",
+          "zh_TW": "在這裡等著也沒關係。"
+        },
+        {
+          "ja": "明日来なくてもかまいません。",
+          "reading": "あしたこなくてもかまいません。",
+          "en": "You don't have to come tomorrow.",
+          "zh": "明天不来也没关系。",
+          "zh_TW": "明天不來也沒關係。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-kurabete",
+      "level": "N3",
+      "pattern": "〜に比べて",
+      "structure": "N + に比べて（にくらべて）",
+      "match": [
+        "に比べて",
+        "にくらべて"
+      ],
+      "meaning": {
+        "en": "compared with; in contrast to",
+        "zh": "与……相比",
+        "zh_TW": "與……相比"
+      },
+      "explanation": {
+        "en": "The noun before it is the yardstick, and the rest of the sentence says how the other thing measures up. Unlike より, which sits inside the comparison, に比べて sets the whole standard up first.",
+        "zh": "前面的名词是比较的基准，后面说明另一方相比之下如何。より是在句中直接比较，に比べて则先把整个基准提出来。",
+        "zh_TW": "前面的名詞是比較的基準，後面說明另一方相比之下如何。より是在句中直接比較，に比べて則先把整個基準提出來。"
+      },
+      "examples": [
+        {
+          "ja": "去年に比べて、今年は雨が多い。",
+          "reading": "きょねんにくらべて、ことしはあめがおおい。",
+          "en": "Compared with last year, there's more rain this year.",
+          "zh": "和去年相比，今年雨水多。",
+          "zh_TW": "和去年相比，今年雨水多。"
+        },
+        {
+          "ja": "前にくらべて、この店は安くなった。",
+          "reading": "まえにくらべて、このみせはやすくなった。",
+          "en": "Compared with before, this shop has got cheaper.",
+          "zh": "和以前相比，这家店便宜了。",
+          "zh_TW": "和以前相比，這家店便宜了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kawari-ni",
+      "level": "N3",
+      "pattern": "〜かわりに",
+      "structure": "動詞辞書形 / N + の + かわりに",
+      "match": [
+        "かわりに"
+      ],
+      "meaning": {
+        "en": "instead of; in exchange for",
+        "zh": "代替……；作为交换",
+        "zh_TW": "代替……；作為交換"
+      },
+      "explanation": {
+        "en": "One thing stands in for another, or one thing is given to balance the other. Which of the two it is depends on the sentence: a substitute, or a trade.",
+        "zh": "或是一方代替另一方，或是拿一方来抵偿另一方。到底是代替还是交换，要看整句的意思。",
+        "zh_TW": "或是一方代替另一方，或是拿一方來抵償另一方。到底是代替還是交換，要看整句的意思。"
+      },
+      "examples": [
+        {
+          "ja": "先生のかわりに、私が説明します。",
+          "reading": "せんせいのかわりに、わたしがせつめいします。",
+          "en": "I'll explain in the teacher's place.",
+          "zh": "我代替老师来说明。",
+          "zh_TW": "我代替老師來說明。"
+        },
+        {
+          "ja": "手伝うかわりに、今日は早く帰ります。",
+          "reading": "てつだうかわりに、きょうははやくかえります。",
+          "en": "In exchange for helping out, I'll go home early today.",
+          "zh": "作为帮忙的交换，我今天早点回家。",
+          "zh_TW": "作為幫忙的交換，我今天早點回家。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ippou-de",
+      "level": "N3",
+      "pattern": "〜一方（で）",
+      "structure": "普通形 + 一方（で）（な形容詞は な + 一方）",
+      "match": [
+        "一方で",
+        "一方"
+      ],
+      "meaning": {
+        "en": "on one hand this, on the other hand that",
+        "zh": "一方面……另一方面……",
+        "zh_TW": "一方面……另一方面……"
+      },
+      "explanation": {
+        "en": "Two sides of the same thing are laid out side by side, without saying which one wins. It is a calm, even-handed way to describe something, so it suits explanation rather than complaint.",
+        "zh": "把同一件事的两个方面并列摆出，不说哪一面更重要。语气冷静、不偏不倚，适合客观说明，而不是抱怨。",
+        "zh_TW": "把同一件事的兩個方面並列擺出，不說哪一面更重要。語氣冷靜、不偏不倚，適合客觀說明，而不是抱怨。"
+      },
+      "examples": [
+        {
+          "ja": "この仕事は面白い一方で、とても難しい。",
+          "reading": "このしごとはおもしろいいっぽうで、とてもむずかしい。",
+          "en": "This job is interesting, but on the other hand very hard.",
+          "zh": "这份工作一方面有意思，另一方面又很难。",
+          "zh_TW": "這份工作一方面有意思，另一方面又很難。"
+        },
+        {
+          "ja": "電車は便利な一方、高いです。",
+          "reading": "でんしゃはべんりないっぽう、たかいです。",
+          "en": "Trains are convenient, but on the other hand expensive.",
+          "zh": "电车一方面方便，另一方面又贵。",
+          "zh_TW": "電車一方面方便，另一方面又貴。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ijou",
+      "level": "N3",
+      "pattern": "〜以上（は）",
+      "structure": "普通形 + 以上（は）（N・な形容詞は である + 以上）",
+      "match": [
+        "以上は",
+        "以上"
+      ],
+      "meaning": {
+        "en": "now that it is so, you must act on it",
+        "zh": "既然……就……",
+        "zh_TW": "既然……就……"
+      },
+      "explanation": {
+        "en": "Once the first half is settled, the second half follows as a matter of duty or resolve. So the ending is a must, a should or a firm intention, never a plain description.",
+        "zh": "既然前半句已成事实，后半句就是理所当然的责任或决心。所以句末多是必须、应该或坚定的意志，而不是单纯的叙述。",
+        "zh_TW": "既然前半句已成事實，後半句就是理所當然的責任或決心。所以句末多是必須、應該或堅定的意志，而不是單純的敘述。"
+      },
+      "examples": [
+        {
+          "ja": "約束した以上は、必ず行きます。",
+          "reading": "やくそくしたいじょうは、かならずいきます。",
+          "en": "Now that I've promised, I'll definitely go.",
+          "zh": "既然答应了，就一定去。",
+          "zh_TW": "既然答應了，就一定去。"
+        },
+        {
+          "ja": "学生である以上、勉強するべきだ。",
+          "reading": "がくせいであるいじょう、べんきょうするべきだ。",
+          "en": "As long as you're a student, you ought to study.",
+          "zh": "既然是学生，就应该学习。",
+          "zh_TW": "既然是學生，就應該學習。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kagiri",
+      "level": "N3",
+      "pattern": "〜限り",
+      "structure": "動詞辞書形 / い形容詞 / な形容詞 な / N の + 限り（かぎり）",
+      "match": [
+        "限り",
+        "かぎり"
+      ],
+      "meaning": {
+        "en": "as long as this holds; to the very limit",
+        "zh": "只要……就……；尽……的限度",
+        "zh_TW": "只要……就……；盡……的限度"
+      },
+      "explanation": {
+        "en": "限り draws a boundary. With a state it means the second half holds for as long as that state does; with できる or a similar verb it means going to the utmost within that boundary.",
+        "zh": "限り是划出一条界线。接状态时表示只要那个状态持续，后半句就成立；接できる之类的词时表示在界线之内做到极限。",
+        "zh_TW": "限り是劃出一條界線。接狀態時表示只要那個狀態持續，後半句就成立；接できる之類的詞時表示在界線之內做到極限。"
+      },
+      "examples": [
+        {
+          "ja": "できる限り、早く帰ります。",
+          "reading": "できるかぎり、はやくかえります。",
+          "en": "I'll come home as early as I possibly can.",
+          "zh": "我尽可能早点回家。",
+          "zh_TW": "我儘可能早點回家。"
+        },
+        {
+          "ja": "私が元気な限り、この仕事を続けます。",
+          "reading": "わたしがげんきなかぎり、このしごとをつづけます。",
+          "en": "As long as I'm in good health, I'll keep doing this work.",
+          "zh": "只要我身体好，就一直做这份工作。",
+          "zh_TW": "只要我身體好，就一直做這份工作。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kagiri-de-wa",
+      "level": "N3",
+      "pattern": "〜限りでは",
+      "structure": "動詞辞書形・た形 + 限りでは（かぎりでは）",
+      "match": [
+        "限りでは",
+        "かぎりでは"
+      ],
+      "meaning": {
+        "en": "as far as I know, saw, or heard",
+        "zh": "据我所知（所见、所闻）",
+        "zh_TW": "據我所知（所見、所聞）"
+      },
+      "explanation": {
+        "en": "This marks off how much you actually know and admits that beyond it you cannot say. It goes with verbs of knowing, seeing, hearing and reading, and the sentence ends in a careful guess rather than a flat statement.",
+        "zh": "这个句型划出自己了解的范围，并承认范围之外不敢断言。多与知道、看、听、读一类的动词搭配，句末是谨慎的推测而不是断言。",
+        "zh_TW": "這個句型劃出自己瞭解的範圍，並承認範圍之外不敢斷言。多與知道、看、聽、讀一類的動詞搭配，句末是謹慎的推測而不是斷言。"
+      },
+      "examples": [
+        {
+          "ja": "私が知っている限りでは、彼は来ません。",
+          "reading": "わたしがしっているかぎりでは、かれはきません。",
+          "en": "As far as I know, he isn't coming.",
+          "zh": "据我所知，他不来。",
+          "zh_TW": "據我所知，他不來。"
+        },
+        {
+          "ja": "聞いた限りでは、天気は悪くなるそうです。",
+          "reading": "きいたかぎりでは、てんきはわるくなるそうです。",
+          "en": "From what I've heard, the weather is going to get worse.",
+          "zh": "据我听到的，天气会变坏。",
+          "zh_TW": "據我聽到的，天氣會變壞。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nai-kagiri",
+      "level": "N3",
+      "pattern": "〜ない限り",
+      "structure": "動詞ない形 + 限り（かぎり）",
+      "match": [
+        "ない限り",
+        "ないかぎり"
+      ],
+      "meaning": {
+        "en": "unless this happens, it stays as it is",
+        "zh": "只要不……就……；除非……",
+        "zh_TW": "只要不……就……；除非……"
+      },
+      "explanation": {
+        "en": "The one thing named is the only thing that would change the outcome; until it happens, nothing moves. It is stronger than なければ because it shuts out every other possibility.",
+        "zh": "所提到的那一件事是唯一能改变结果的条件，在它发生之前一切照旧。语气比なければ强，因为它排除了其他一切可能。",
+        "zh_TW": "所提到的那一件事是唯一能改變結果的條件，在它發生之前一切照舊。語氣比なければ強，因為它排除了其他一切可能。"
+      },
+      "examples": [
+        {
+          "ja": "雨が降らない限り、駅まで歩きます。",
+          "reading": "あめがふらないかぎり、えきまであるきます。",
+          "en": "Unless it rains, I'll walk to the station.",
+          "zh": "只要不下雨，我就走到车站。",
+          "zh_TW": "只要不下雨，我就走到車站。"
+        },
+        {
+          "ja": "説明を聞かないかぎり、この問題は分かりません。",
+          "reading": "せつめいをきかないかぎり、このもんだいはわかりません。",
+          "en": "Unless I hear an explanation, I won't understand this problem.",
+          "zh": "不听说明的话，这个问题就弄不明白。",
+          "zh_TW": "不聽說明的話，這個問題就弄不明白。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:baai-wa",
+      "level": "N3",
+      "pattern": "〜場合は",
+      "structure": "N + の / 普通形 + 場合は",
+      "match": [
+        "場合は",
+        "場合"
+      ],
+      "meaning": {
+        "en": "in the case that this happens",
+        "zh": "……的时候；如果出现……的情况",
+        "zh_TW": "……的時候；如果出現……的情況"
+      },
+      "explanation": {
+        "en": "場合は sets up a situation that may come about and tells you what to do if it does. It is more formal than たら and belongs to notices, rules and instructions, where the writer wants to cover a possible case rather than talk about one real event.",
+        "zh": "場合は先假设一种可能出现的情况，再说明这时该怎么办。它比たら正式，多见于通知、规定、说明书，重点是把某种可能的情况交代清楚，而不是叙述实际发生的事。",
+        "zh_TW": "場合は先假設一種可能出現的情況，再說明這時該怎麼辦。它比たら正式，多見於通知、規定、說明書，重點是把某種可能的情況交代清楚，而不是敘述實際發生的事。"
+      },
+      "examples": [
+        {
+          "ja": "雨の場合は、行きません。",
+          "reading": "あめのばあいは、いきません。",
+          "en": "In the case of rain, we will not go.",
+          "zh": "下雨的话就不去了。",
+          "zh_TW": "下雨的話就不去了。"
+        },
+        {
+          "ja": "分からない場合は、先生に聞いてください。",
+          "reading": "わからないばあいは、せんせいにきいてください。",
+          "en": "If you don't understand, please ask the teacher.",
+          "zh": "不明白的时候请去问老师。",
+          "zh_TW": "不明白的時候請去問老師。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-shitara",
+      "level": "N3",
+      "pattern": "〜としたら / 〜とすれば",
+      "structure": "普通形 + としたら / とすれば",
+      "match": [
+        "としたら",
+        "とすれば"
+      ],
+      "meaning": {
+        "en": "supposing that were true, then...",
+        "zh": "假如是那样的话，那么……",
+        "zh_TW": "假如是那樣的話，那麼……"
+      },
+      "explanation": {
+        "en": "You take something as given for the sake of argument and then work out what follows from it. The second half is your own conclusion or question, so a command does not sit well after it.",
+        "zh": "先把某件事姑且当作事实，再推出由此得出的结论。后半句是自己的推断或提问，因此后面一般不接命令。",
+        "zh_TW": "先把某件事姑且當作事實，再推出由此得出的結論。後半句是自己的推斷或提問，因此後面一般不接命令。"
+      },
+      "examples": [
+        {
+          "ja": "明日雨だとしたら、映画を見ます。",
+          "reading": "あしたあめだとしたら、えいがをみます。",
+          "en": "Supposing it rains tomorrow, I'll watch a film.",
+          "zh": "假如明天下雨，我就去看电影。",
+          "zh_TW": "假如明天下雨，我就去看電影。"
+        },
+        {
+          "ja": "彼が来ないとすれば、どうしますか。",
+          "reading": "かれがこないとすれば、どうしますか。",
+          "en": "If he isn't coming, what will you do?",
+          "zh": "假如他不来，你打算怎么办？",
+          "zh_TW": "假如他不來，你打算怎麼辦？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:shidai-de",
+      "level": "N3",
+      "pattern": "〜次第で",
+      "structure": "N + 次第で / 次第だ",
+      "match": [
+        "次第で"
+      ],
+      "meaning": {
+        "en": "it depends on; it varies with",
+        "zh": "取决于……；根据……而定",
+        "zh_TW": "取決於……；根據……而定"
+      },
+      "explanation": {
+        "en": "次第で says that the result is not fixed: change the noun in front and the outcome changes with it. Only a noun goes before it, and the tone is fairly formal.",
+        "zh": "次第で表示结果并不固定，前面的名词一变，结果也随之改变。它前面只能接名词，语气比较郑重。",
+        "zh_TW": "次第で表示結果並不固定，前面的名詞一變，結果也隨之改變。它前面只能接名詞，語氣比較鄭重。"
+      },
+      "examples": [
+        {
+          "ja": "天気次第で、行くか行かないかを決めます。",
+          "reading": "てんきしだいで、いくかいかないかをきめます。",
+          "en": "Depending on the weather, we'll decide whether to go.",
+          "zh": "根据天气情况来决定去还是不去。",
+          "zh_TW": "根據天氣情況來決定去還是不去。"
+        },
+        {
+          "ja": "先生の話次第で、明日休みます。",
+          "reading": "せんせいのはなししだいで、あしたやすみます。",
+          "en": "Depending on what the teacher says, I'll take tomorrow off.",
+          "zh": "要看老师怎么说，我明天可能请假。",
+          "zh_TW": "要看老師怎麼說，我明天可能請假。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:sae-ba",
+      "level": "N3",
+      "pattern": "〜さえ〜ば",
+      "structure": "N + さえ + 動詞ば形 / N + さえあれば",
+      "match": [
+        "さえあれば",
+        "さえ"
+      ],
+      "meaning": {
+        "en": "if only this one thing, that's enough",
+        "zh": "只要……就……",
+        "zh_TW": "只要……就……"
+      },
+      "explanation": {
+        "en": "This picks out the one condition that really matters and says nothing else is needed. さえ marks that condition and the ば clause carries the result, so the two halves work as a pair.",
+        "zh": "这个句型挑出真正关键的那一个条件，表示只要它成立就够了。さえ提示条件，ば小句说出结果，两半必须配合使用。",
+        "zh_TW": "這個句型挑出真正關鍵的那一個條件，表示只要它成立就夠了。さえ提示條件，ば小句說出結果，兩半必須配合使用。"
+      },
+      "examples": [
+        {
+          "ja": "時間さえあれば、手伝います。",
+          "reading": "じかんさえあれば、てつだいます。",
+          "en": "As long as I have time, I'll help you.",
+          "zh": "只要有时间，我就帮忙。",
+          "zh_TW": "只要有時間，我就幫忙。"
+        },
+        {
+          "ja": "この本さえ読めば、分かります。",
+          "reading": "このほんさえよめば、わかります。",
+          "en": "If you just read this book, you'll understand.",
+          "zh": "只要读了这本书就能明白。",
+          "zh_TW": "只要讀了這本書就能明白。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nai-to",
+      "level": "N3",
+      "pattern": "〜ないと",
+      "structure": "動詞ない形 + と（＋困る結果）",
+      "match": [
+        "ないと"
+      ],
+      "meaning": {
+        "en": "if you don't do it, there'll be trouble",
+        "zh": "不……的话就糟了；必须……",
+        "zh_TW": "不……的話就糟了；必須……"
+      },
+      "explanation": {
+        "en": "The bad result of not acting follows the と, so the sentence works as a warning or as a reminder to yourself. In speech the second half is often dropped and the sentence just stops after ないと.",
+        "zh": "と后面接不做就会出现的坏结果，因此整句是提醒或自我督促。口语中常把后半句省略，句子就停在ないと。",
+        "zh_TW": "と後面接不做就會出現的壞結果，因此整句是提醒或自我督促。口語中常把後半句省略，句子就停在ないと。"
+      },
+      "examples": [
+        {
+          "ja": "早く起きないと、電車に遅れます。",
+          "reading": "はやくおきないと、でんしゃにおくれます。",
+          "en": "If you don't get up early, you'll miss the train.",
+          "zh": "不早点起床的话就赶不上电车了。",
+          "zh_TW": "不早點起床的話就趕不上電車了。"
+        },
+        {
+          "ja": "もっと勉強しないと、上手になりません。",
+          "reading": "もっとべんきょうしないと、じょうずになりません。",
+          "en": "If you don't study more, you won't get good at it.",
+          "zh": "不多学习的话是不会进步的。",
+          "zh_TW": "不多學習的話是不會進步的。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tara-discovery",
+      "level": "N3",
+      "pattern": "〜たら〜た",
+      "structure": "動詞た形 + ら + 過去の文",
+      "match": [
+        "たら",
+        "ったら"
+      ],
+      "meaning": {
+        "en": "I did it and discovered something",
+        "zh": "做了之后，发现……",
+        "zh_TW": "做了之後，發現……"
+      },
+      "explanation": {
+        "en": "Here たら is not a condition at all. You did one thing and, on doing it, found something out. The second half must be past tense and must be beyond your control, so no plan or request can follow.",
+        "zh": "这里的たら并不表示条件，而是做了某件事之后发现了某种情况。后半句必须是过去时，而且是自己无法左右的事，因此后面不能接打算或请求。",
+        "zh_TW": "這裡的たら並不表示條件，而是做了某件事之後發現了某種情況。後半句必須是過去時，而且是自己無法左右的事，因此後面不能接打算或請求。"
+      },
+      "examples": [
+        {
+          "ja": "家に帰ったら、友達が待っていた。",
+          "reading": "いえにかえったら、ともだちがまっていた。",
+          "en": "When I got home, my friend was waiting.",
+          "zh": "回到家一看，朋友正在等我。",
+          "zh_TW": "回到家一看，朋友正在等我。"
+        },
+        {
+          "ja": "店に行ったら、休みでした。",
+          "reading": "みせにいったら、やすみでした。",
+          "en": "I went to the shop and it was closed.",
+          "zh": "去了店里一看，居然休息。",
+          "zh_TW": "去了店裡一看，居然休息。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:noni-purpose",
+      "level": "N3",
+      "pattern": "〜のに（用途）",
+      "structure": "動詞辞書形 + のに + 使う・便利だ・いい など",
+      "match": [
+        "のに"
+      ],
+      "meaning": {
+        "en": "used for doing this; useful for that",
+        "zh": "用于……；做……很方便",
+        "zh_TW": "用於……；做……很方便"
+      },
+      "explanation": {
+        "en": "This のに has nothing to do with \"although\". It names the purpose a thing serves, and is followed by words about use or suitability, such as 使う, 便利だ or いい.",
+        "zh": "这个のに与表示转折的“虽然”无关，而是说明某物的用途，后面接使う、便利だ、いい之类表示使用或适合的词语。",
+        "zh_TW": "這個のに與表示轉折的“雖然”無關，而是說明某物的用途，後面接使う、便利だ、いい之類表示使用或適合的詞語。"
+      },
+      "examples": [
+        {
+          "ja": "この本は日本語を勉強するのに使います。",
+          "reading": "このほんはにほんごをべんきょうするのにつかいます。",
+          "en": "I use this book for studying Japanese.",
+          "zh": "这本书是用来学日语的。",
+          "zh_TW": "這本書是用來學日語的。"
+        },
+        {
+          "ja": "この部屋は本を読むのに静かでいいです。",
+          "reading": "このへやはほんをよむのにしずかでいいです。",
+          "en": "This room is quiet and good for reading books.",
+          "zh": "这个房间很安静，适合看书。",
+          "zh_TW": "這個房間很安靜，適合看書。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:sae",
+      "level": "N3",
+      "pattern": "〜さえ",
+      "structure": "N + さえ / N + でさえ",
+      "match": [
+        "さえ"
+      ],
+      "meaning": {
+        "en": "even this, of all things",
+        "zh": "连……都……",
+        "zh_TW": "連……都……"
+      },
+      "explanation": {
+        "en": "さえ points at an extreme example and lets the listener work out the rest: if even this is so, everything else certainly is. も does a similar job but sounds flat; さえ carries surprise.",
+        "zh": "さえ举出一个极端的例子，让听话人自己推想其余：连这个都如此，别的就更不用说了。も作用相似但语气平淡，さえ则带有意外的感觉。",
+        "zh_TW": "さえ舉出一個極端的例子，讓聽話人自己推想其餘：連這個都如此，別的就更不用說了。も作用相似但語氣平淡，さえ則帶有意外的感覺。"
+      },
+      "examples": [
+        {
+          "ja": "子供さえ知っている話です。",
+          "reading": "こどもさえしっているはなしです。",
+          "en": "It's a story that even children know.",
+          "zh": "这是连小孩子都知道的事。",
+          "zh_TW": "這是連小孩子都知道的事。"
+        },
+        {
+          "ja": "彼は水さえ飲まなかった。",
+          "reading": "かれはみずさえのまなかった。",
+          "en": "He didn't even drink any water.",
+          "zh": "他连水都没喝。",
+          "zh_TW": "他連水都沒喝。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:koso",
+      "level": "N3",
+      "pattern": "〜こそ",
+      "structure": "N + こそ",
+      "match": [
+        "こそ"
+      ],
+      "meaning": {
+        "en": "this one above all; precisely this",
+        "zh": "正是……；这次一定……",
+        "zh_TW": "正是……；這次一定……"
+      },
+      "explanation": {
+        "en": "こそ singles out one thing and pushes everything else aside: this and no other. After a time word it often carries the promise that this time, unlike last time, it really will happen.",
+        "zh": "こそ把一样东西单独提出来，排除其他：正是这个，不是别的。接在时间词后面时，常带有“这一次一定不同于上次”的决心。",
+        "zh_TW": "こそ把一樣東西單獨提出來，排除其他：正是這個，不是別的。接在時間詞後面時，常帶有“這一次一定不同於上次”的決心。"
+      },
+      "examples": [
+        {
+          "ja": "今日こそ早く寝ます。",
+          "reading": "きょうこそはやくねます。",
+          "en": "Today of all days, I'm going to bed early.",
+          "zh": "今天一定要早点睡。",
+          "zh_TW": "今天一定要早點睡。"
+        },
+        {
+          "ja": "彼こそこの仕事に必要な人です。",
+          "reading": "かれこそこのしごとにひつようなひとです。",
+          "en": "He is precisely the person this job needs.",
+          "zh": "他正是这份工作需要的人。",
+          "zh_TW": "他正是這份工作需要的人。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:made-extreme",
+      "level": "N3",
+      "pattern": "〜まで",
+      "structure": "N + まで / N + にまで",
+      "match": [
+        "まで"
+      ],
+      "meaning": {
+        "en": "going so far as to; even to that extent",
+        "zh": "甚至连……也……",
+        "zh_TW": "甚至連……也……"
+      },
+      "explanation": {
+        "en": "This まで is not about place or time. It marks the far end of a range that the speaker did not expect to be reached, so it always sounds like \"it went that far?\".",
+        "zh": "这个まで与地点和时间无关，而是标出说话人没想到会达到的极限，因此总带有“居然到了这个地步”的语气。",
+        "zh_TW": "這個まで與地點和時間無關，而是標出說話人沒想到會達到的極限，因此總帶有“居然到了這個地步”的語氣。"
+      },
+      "examples": [
+        {
+          "ja": "彼は先生にまで同じ話をした。",
+          "reading": "かれはせんせいにまでおなじはなしをした。",
+          "en": "He told even the teacher the same story.",
+          "zh": "他甚至连老师都说了同样的话。",
+          "zh_TW": "他甚至連老師都說了同樣的話。"
+        },
+        {
+          "ja": "子供までその歌を知っています。",
+          "reading": "こどもまでそのうたをしっています。",
+          "en": "Even the children know that song.",
+          "zh": "连小孩子都知道那首歌。",
+          "zh_TW": "連小孩子都知道那首歌。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:demo-example",
+      "level": "N3",
+      "pattern": "〜でも（例示）",
+      "structure": "N + でも + 誘い・提案",
+      "match": [
+        "でも"
+      ],
+      "meaning": {
+        "en": "how about tea or something?",
+        "zh": "……什么的（举例提议）",
+        "zh_TW": "……什麼的（舉例提議）"
+      },
+      "explanation": {
+        "en": "You name one example rather than the whole list, which leaves the other person free to choose something else. It softens an invitation, so it goes with 〜ませんか and 〜ましょう.",
+        "zh": "只举出一个例子而不把所有选择说尽，给对方留下另选的余地。它使邀请显得委婉，常与〜ませんか、〜ましょう搭配。",
+        "zh_TW": "只舉出一個例子而不把所有選擇說盡，給對方留下另選的餘地。它使邀請顯得委婉，常與〜ませんか、〜ましょう搭配。"
+      },
+      "examples": [
+        {
+          "ja": "映画でも見ませんか。",
+          "reading": "えいがでもみませんか。",
+          "en": "How about watching a film or something?",
+          "zh": "要不要去看看电影什么的？",
+          "zh_TW": "要不要去看看電影什麼的？"
+        },
+        {
+          "ja": "音楽でも聞きながら、休みましょう。",
+          "reading": "おんがくでもききながら、やすみましょう。",
+          "en": "Let's rest while listening to some music or something.",
+          "zh": "一边听听音乐什么的，一边休息吧。",
+          "zh_TW": "一邊聽聽音樂什麼的，一邊休息吧。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nante-nanka",
+      "level": "N3",
+      "pattern": "〜なんて / 〜なんか",
+      "structure": "N / 普通形 + なんて・なんか",
+      "match": [
+        "なんて",
+        "なんか"
+      ],
+      "meaning": {
+        "en": "things like that, dismissively or in shock",
+        "zh": "……什么的（轻视或惊讶）",
+        "zh_TW": "……什麼的（輕視或驚訝）"
+      },
+      "explanation": {
+        "en": "Both put the thing in front of them down, or show surprise at it. なんて follows a whole clause as well as a noun and often ends in shock; なんか follows a noun and usually sounds dismissive, including about yourself.",
+        "zh": "两者都带有看轻或惊讶的语气。なんて既可接名词也可接整句，多表示吃惊；なんか只接名词，多表示轻视，也可用来贬低自己。",
+        "zh_TW": "兩者都帶有看輕或驚訝的語氣。なんて既可接名詞也可接整句，多表示吃驚；なんか只接名詞，多表示輕視，也可用來貶低自己。"
+      },
+      "examples": [
+        {
+          "ja": "彼が来ないなんて、思わなかった。",
+          "reading": "かれがこないなんて、おもわなかった。",
+          "en": "I never thought he wouldn't come.",
+          "zh": "没想到他居然不来。",
+          "zh_TW": "沒想到他居然不來。"
+        },
+        {
+          "ja": "私なんか、まだ上手に話せません。",
+          "reading": "わたしなんか、まだじょうずにはなせません。",
+          "en": "Someone like me still can't speak well.",
+          "zh": "像我这样的人还说不好呢。",
+          "zh_TW": "像我這樣的人還說不好呢。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kurai-extent",
+      "level": "N3",
+      "pattern": "〜くらい（程度）",
+      "structure": "普通形 + くらい / ぐらい",
+      "match": [
+        "くらい",
+        "ぐらい"
+      ],
+      "meaning": {
+        "en": "to the extent that; about that much",
+        "zh": "到……的程度；……那么厉害",
+        "zh_TW": "到……的程度；……那麼厲害"
+      },
+      "explanation": {
+        "en": "くらい gives the size of something by comparing it with a picture the listener can imagine. ぐらい is the same word, only voiced. Compared with ほど it sounds lighter and more everyday.",
+        "zh": "くらい用一个听话人能想象的情景来说明程度大小，ぐらい只是浊音形式，意思相同。与ほど相比，它语气更轻，更口语化。",
+        "zh_TW": "くらい用一個聽話人能想像的情景來說明程度大小，ぐらい只是濁音形式，意思相同。與ほど相比，它語氣更輕，更口語化。"
+      },
+      "examples": [
+        {
+          "ja": "今日は忙しくて、休む時間もないくらいです。",
+          "reading": "きょうはいそがしくて、やすむじかんもないくらいです。",
+          "en": "I'm so busy today I hardly have time to rest.",
+          "zh": "今天忙得连休息的时间都没有。",
+          "zh_TW": "今天忙得連休息的時間都沒有。"
+        },
+        {
+          "ja": "その映画は忘れられないくらい面白かった。",
+          "reading": "そのえいがはわすれられないくらいおもしろかった。",
+          "en": "That film was so interesting I can't forget it.",
+          "zh": "那部电影有意思得让人忘不了。",
+          "zh_TW": "那部電影有意思得讓人忘不了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:hodo-extent",
+      "level": "N3",
+      "pattern": "〜ほど（程度）",
+      "structure": "普通形 + ほど",
+      "match": [
+        "ほど"
+      ],
+      "meaning": {
+        "en": "so much that; to the degree of",
+        "zh": "……得……；到了……的地步",
+        "zh_TW": "……得……；到了……的地步"
+      },
+      "explanation": {
+        "en": "ほど shows how far something goes by naming the point it reaches. It is a shade more formal and more written than くらい, and works well when the degree is extreme.",
+        "zh": "ほど用达到的程度来说明事情的厉害之处。它比くらい略正式、略书面，尤其适合表示极端的程度。",
+        "zh_TW": "ほど用達到的程度來說明事情的厲害之處。它比くらい略正式、略書面，尤其適合表示極端的程度。"
+      },
+      "examples": [
+        {
+          "ja": "今日は話す時間もないほど忙しかった。",
+          "reading": "きょうははなすじかんもないほどいそがしかった。",
+          "en": "Today I was so busy I had no time even to talk.",
+          "zh": "今天忙得连说话的时间都没有。",
+          "zh_TW": "今天忙得連說話的時間都沒有。"
+        },
+        {
+          "ja": "この問題は先生も分からないほど難しい。",
+          "reading": "このもんだいはせんせいもわからないほどむずかしい。",
+          "en": "This problem is so hard that even the teacher can't solve it.",
+          "zh": "这个问题难得连老师都不明白。",
+          "zh_TW": "這個問題難得連老師都不明白。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:hodo-nai",
+      "level": "N3",
+      "pattern": "〜ほど〜ない",
+      "structure": "N + ほど + 形容詞・動詞の否定",
+      "match": [
+        "ほど"
+      ],
+      "meaning": {
+        "en": "not as much as the other thing",
+        "zh": "没有……那么……",
+        "zh_TW": "沒有……那麼……"
+      },
+      "explanation": {
+        "en": "The noun before ほど is the standard you measure against, and the negative says you fall short of it. The standard is usually the higher of the two, so the sentence quietly admits the other one wins.",
+        "zh": "ほど前面的名词是比较的基准，否定形表示达不到那个程度。基准通常是较高的一方，所以句子暗含承认对方更胜一筹。",
+        "zh_TW": "ほど前面的名詞是比較的基準，否定形表示達不到那個程度。基準通常是較高的一方，所以句子暗含承認對方更勝一籌。"
+      },
+      "examples": [
+        {
+          "ja": "この本はあの本ほど面白くない。",
+          "reading": "このほんはあのほんほどおもしろくない。",
+          "en": "This book isn't as interesting as that one.",
+          "zh": "这本书没有那本有意思。",
+          "zh_TW": "這本書沒有那本有意思。"
+        },
+        {
+          "ja": "日本語は思ったほど難しくありません。",
+          "reading": "にほんごはおもったほどむずかしくありません。",
+          "en": "Japanese isn't as hard as I thought.",
+          "zh": "日语没有想象的那么难。",
+          "zh_TW": "日語沒有想像的那麼難。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ba-hodo",
+      "level": "N3",
+      "pattern": "〜ば〜ほど",
+      "structure": "動詞ば形 + 同じ動詞辞書形 + ほど",
+      "match": [
+        "ほど",
+        "ば"
+      ],
+      "meaning": {
+        "en": "the more you do it, the more it becomes",
+        "zh": "越……越……",
+        "zh_TW": "越……越……"
+      },
+      "explanation": {
+        "en": "The same verb appears twice, first in the ば form and then in the dictionary form before ほど, and the two changes move together. With な adjectives the shape is 〜なら〜なほど.",
+        "zh": "同一个动词出现两次，先用ば形，再用辞书形接ほど，两种变化同步发生。な形容词的形式是〜なら〜なほど。",
+        "zh_TW": "同一個動詞出現兩次，先用ば形，再用辭書形接ほど，兩種變化同步發生。な形容詞的形式是〜なら〜なほど。"
+      },
+      "examples": [
+        {
+          "ja": "読めば読むほど面白くなります。",
+          "reading": "よめばよむほどおもしろくなります。",
+          "en": "The more you read it, the more interesting it gets.",
+          "zh": "越读越有意思。",
+          "zh_TW": "越讀越有意思。"
+        },
+        {
+          "ja": "日本語は使えば使うほど上手になります。",
+          "reading": "にほんごはつかえばつかうほどじょうずになります。",
+          "en": "The more you use Japanese, the better you get.",
+          "zh": "日语越用越熟练。",
+          "zh_TW": "日語越用越熟練。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-onaji-kurai",
+      "level": "N3",
+      "pattern": "〜と同じくらい",
+      "structure": "N + と同じくらい + 形容詞・動詞",
+      "match": [
+        "と同じくらい"
+      ],
+      "meaning": {
+        "en": "about as much as; equally so",
+        "zh": "和……差不多一样",
+        "zh_TW": "和……差不多一樣"
+      },
+      "explanation": {
+        "en": "This says the two sides come out roughly level, without deciding which is greater. くらい keeps it approximate, so it is gentler than saying flatly that they are the same.",
+        "zh": "表示两者大致相当，并不判断哪一方更强。くらい留有“大约”的余地，因此比断言完全相同要委婉。",
+        "zh_TW": "表示兩者大致相當，並不判斷哪一方更強。くらい留有“大約”的餘地，因此比斷言完全相同要委婉。"
+      },
+      "examples": [
+        {
+          "ja": "彼は私と同じくらい日本語が上手です。",
+          "reading": "かれはわたしとおなじくらいにほんごがじょうずです。",
+          "en": "He is about as good at Japanese as I am.",
+          "zh": "他的日语和我差不多好。",
+          "zh_TW": "他的日語和我差不多好。"
+        },
+        {
+          "ja": "この店はあの店と同じくらい安いです。",
+          "reading": "このみせはあのみせとおなじくらいやすいです。",
+          "en": "This shop is about as cheap as that one.",
+          "zh": "这家店和那家店差不多便宜。",
+          "zh_TW": "這家店和那家店差不多便宜。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:zutsu",
+      "level": "N3",
+      "pattern": "〜ずつ",
+      "structure": "数量詞 + ずつ",
+      "match": [
+        "ずつ"
+      ],
+      "meaning": {
+        "en": "so many each, or so many at a time",
+        "zh": "各……；每次……",
+        "zh_TW": "各……；每次……"
+      },
+      "explanation": {
+        "en": "ずつ follows an amount and says that the same amount goes to each person, or comes round each time. With 少し it means step by step rather than all at once.",
+        "zh": "ずつ接在数量词后面，表示每人分到同样的数量，或每次都是这个数量。与少し连用时表示一点一点地进行，而不是一下子完成。",
+        "zh_TW": "ずつ接在數量詞後面，表示每人分到同樣的數量，或每次都是這個數量。與少し連用時表示一點一點地進行，而不是一下子完成。"
+      },
+      "examples": [
+        {
+          "ja": "毎日少しずつ日本語を勉強しています。",
+          "reading": "まいにちすこしずつにほんごをべんきょうしています。",
+          "en": "I study Japanese a little at a time every day.",
+          "zh": "每天一点一点地学习日语。",
+          "zh_TW": "每天一點一點地學習日語。"
+        },
+        {
+          "ja": "友達に本を一つずつ買いました。",
+          "reading": "ともだちにほんをひとつずつかいました。",
+          "en": "I bought one book each for my friends.",
+          "zh": "给朋友们每人买了一本书。",
+          "zh_TW": "給朋友們每人買了一本書。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kesshite-nai",
+      "level": "N3",
+      "pattern": "決して〜ない",
+      "structure": "決して + 動詞・形容詞の否定形",
+      "match": [
+        "決して"
+      ],
+      "meaning": {
+        "en": "never, not under any circumstances",
+        "zh": "决不……；绝对不……",
+        "zh_TW": "決不……；絕對不……"
+      },
+      "explanation": {
+        "en": "決して always waits for a negative at the end of the sentence, and it makes that negative absolute. Used of yourself it becomes a promise; used of others it is a firm statement of fact.",
+        "zh": "決して必须与句尾的否定呼应，使这个否定变得斩钉截铁。用于自己时是承诺，用于他人时是肯定的断言。",
+        "zh_TW": "決して必須與句尾的否定呼應，使這個否定變得斬釘截鐵。用於自己時是承諾，用於他人時是肯定的斷言。"
+      },
+      "examples": [
+        {
+          "ja": "私は決してその話を忘れません。",
+          "reading": "わたしはけっしてそのはなしをわすれません。",
+          "en": "I will never forget that story.",
+          "zh": "我决不会忘记那件事。",
+          "zh_TW": "我決不會忘記那件事。"
+        },
+        {
+          "ja": "彼は決して人の意見を聞かない。",
+          "reading": "かれはけっしてひとのいけんをきかない。",
+          "en": "He never listens to anyone's opinion.",
+          "zh": "他从来不听别人的意见。",
+          "zh_TW": "他從來不聽別人的意見。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:mettani-nai",
+      "level": "N3",
+      "pattern": "めったに〜ない",
+      "structure": "めったに + 動詞の否定形",
+      "match": [
+        "めったに"
+      ],
+      "meaning": {
+        "en": "rarely ever happens",
+        "zh": "很少……；难得……",
+        "zh_TW": "很少……；難得……"
+      },
+      "explanation": {
+        "en": "めったに also needs a negative, but it does not shut the door completely: the thing happens, just very seldom. 決して〜ない rules it out; めったに〜ない only makes it rare.",
+        "zh": "めったに同样要与否定呼应，但并不把话说死：事情还是会发生，只是极少。決して〜ない是完全否定，めったに〜ない只是表示次数很少。",
+        "zh_TW": "めったに同樣要與否定呼應，但並不把話說死：事情還是會發生，只是極少。決して〜ない是完全否定，めったに〜ない只是表示次數很少。"
+      },
+      "examples": [
+        {
+          "ja": "彼はめったに映画を見ない。",
+          "reading": "かれはめったにえいがをみない。",
+          "en": "He hardly ever watches films.",
+          "zh": "他很少看电影。",
+          "zh_TW": "他很少看電影。"
+        },
+        {
+          "ja": "最近はめったに雨が降りません。",
+          "reading": "さいきんはめったにあめがふりません。",
+          "en": "It rarely rains these days.",
+          "zh": "最近很少下雨。",
+          "zh_TW": "最近很少下雨。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nakanaka-nai",
+      "level": "N3",
+      "pattern": "なかなか〜ない",
+      "structure": "なかなか + 動詞の否定形",
+      "match": [
+        "なかなか"
+      ],
+      "meaning": {
+        "en": "it just won't happen, however you try",
+        "zh": "怎么也不……；迟迟不……",
+        "zh_TW": "怎麼也不……；遲遲不……"
+      },
+      "explanation": {
+        "en": "This carries the speaker's impatience: you want it to happen, you are waiting or trying, and still it does not come. Before a positive word なかなか means \"quite good\", a completely different use.",
+        "zh": "这个说法带着说话人的着急：本来希望它发生，一直在等或在努力，可就是不来。なかなか接肯定形时是“相当好”的意思，用法完全不同。",
+        "zh_TW": "這個說法帶著說話人的著急：本來希望它發生，一直在等或在努力，可就是不來。なかなか接肯定形時是“相當好”的意思，用法完全不同。"
+      },
+      "examples": [
+        {
+          "ja": "電車がなかなか来ません。",
+          "reading": "でんしゃがなかなかきません。",
+          "en": "The train just won't come.",
+          "zh": "电车怎么也不来。",
+          "zh_TW": "電車怎麼也不來。"
+        },
+        {
+          "ja": "日本語はなかなか上手になりません。",
+          "reading": "にほんごはなかなかじょうずになりません。",
+          "en": "My Japanese just won't get any better.",
+          "zh": "日语怎么也提高不了。",
+          "zh_TW": "日語怎麼也提高不了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kanarazushimo-nai",
+      "level": "N3",
+      "pattern": "必ずしも〜ない",
+      "structure": "必ずしも + 否定形（〜とは限らない・〜わけではない など）",
+      "match": [
+        "必ずしも"
+      ],
+      "meaning": {
+        "en": "not necessarily always the case",
+        "zh": "未必……；不一定……",
+        "zh_TW": "未必……；不一定……"
+      },
+      "explanation": {
+        "en": "This denies only that something is always true, leaving room for the cases where it is. It is a partial denial, so it often ends in わけではない or とは限らない, and it belongs to careful, written Japanese.",
+        "zh": "它只否定“总是如此”，并不排除确实如此的情况，属于部分否定，因此常以わけではない、とは限らない结尾，多用于严谨的书面语。",
+        "zh_TW": "它只否定“總是如此”，並不排除確實如此的情況，屬於部分否定，因此常以わけではない、とは限らない結尾，多用於嚴謹的書面語。"
+      },
+      "examples": [
+        {
+          "ja": "高い店の料理が必ずしもおいしいわけではない。",
+          "reading": "たかいみせのりょうりがかならずしもおいしいわけではない。",
+          "en": "Food at expensive restaurants isn't necessarily good.",
+          "zh": "贵店的菜未必就好吃。",
+          "zh_TW": "貴店的菜未必就好吃。"
+        },
+        {
+          "ja": "新しいものが必ずしも便利ではありません。",
+          "reading": "あたらしいものがかならずしもべんりではありません。",
+          "en": "New things are not always convenient.",
+          "zh": "新的东西不一定就方便。",
+          "zh_TW": "新的東西不一定就方便。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-kanshite",
+      "level": "N3",
+      "pattern": "〜に関して / 〜に関する",
+      "structure": "N + に関して + 動詞 / N + に関する + 名詞",
+      "match": [
+        "に関して",
+        "に関する"
+      ],
+      "meaning": {
+        "en": "concerning; with regard to (formal)",
+        "zh": "关于……（正式）",
+        "zh_TW": "關於……（正式）"
+      },
+      "explanation": {
+        "en": "Both name the topic being dealt with; に関して goes on to a verb, に関する to a noun. It is the formal cousin of について and belongs to reports, notices and speeches.",
+        "zh": "两者都用来提示所涉及的话题：に関して后接动词，に関する后接名词。它是について的正式说法，多用于报告、通知和演讲。",
+        "zh_TW": "兩者都用來提示所涉及的話題：に関して後接動詞，に関する後接名詞。它是について的正式說法，多用於報告、通知和演講。"
+      },
+      "examples": [
+        {
+          "ja": "この問題に関して意見を言いました。",
+          "reading": "このもんだいにかんしていけんをいいました。",
+          "en": "I gave my opinion regarding this problem.",
+          "zh": "关于这个问题我发表了意见。",
+          "zh_TW": "關於這個問題我發表了意見。"
+        },
+        {
+          "ja": "日本語に関する本を買いました。",
+          "reading": "にほんごにかんするほんをかいました。",
+          "en": "I bought a book concerning the Japanese language.",
+          "zh": "我买了一本关于日语的书。",
+          "zh_TW": "我買了一本關於日語的書。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-taishite",
+      "level": "N3",
+      "pattern": "〜に対して",
+      "structure": "N + に対して / 普通形 + の + に対して",
+      "match": [
+        "に対して"
+      ],
+      "meaning": {
+        "en": "toward a person, or in contrast with",
+        "zh": "对……；与……相对",
+        "zh_TW": "對……；與……相對"
+      },
+      "explanation": {
+        "en": "After a person or a thing it shows where an attitude or an action is directed. Between two clauses it sets them against each other, which is the contrast use. に関して is about a topic; に対して is about a target.",
+        "zh": "接人或事物时，表示态度或行为指向的对象；连接两个小句时表示两者对照。に関して提示话题，に対して指出对象。",
+        "zh_TW": "接人或事物時，表示態度或行為指向的對象；連接兩個小句時表示兩者對照。に関して提示話題，に対して指出對象。"
+      },
+      "examples": [
+        {
+          "ja": "先生の説明に対して、意見を言いました。",
+          "reading": "せんせいのせつめいにたいして、いけんをいいました。",
+          "en": "I voiced an opinion in response to the teacher's explanation.",
+          "zh": "针对老师的说明发表了意见。",
+          "zh_TW": "針對老師的說明發表了意見。"
+        },
+        {
+          "ja": "この店は安いのに対して、あの店は高い。",
+          "reading": "このみせはやすいのにたいして、あのみせはたかい。",
+          "en": "This shop is cheap, whereas that one is expensive.",
+          "zh": "这家店便宜，而那家店很贵。",
+          "zh_TW": "這家店便宜，而那家店很貴。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-taisuru",
+      "level": "N3",
+      "pattern": "〜に対する＋名詞",
+      "structure": "N1 + に対する + N2",
+      "match": [
+        "に対する"
+      ],
+      "meaning": {
+        "en": "the noun form: attitude toward X",
+        "zh": "对……的（态度、意见等）",
+        "zh_TW": "對……的（態度、意見等）"
+      },
+      "explanation": {
+        "en": "When に対して has to modify a noun it becomes に対する. The noun that follows is usually one about a stance or a response, such as 意見, 説明 or 話.",
+        "zh": "に対して要修饰名词时改为に対する。后面接的名词多与立场或回应有关，如意見、説明、話等。",
+        "zh_TW": "に対して要修飾名詞時改為に対する。後面接的名詞多與立場或回應有關，如意見、説明、話等。"
+      },
+      "examples": [
+        {
+          "ja": "先生に対する意見を言いました。",
+          "reading": "せんせいにたいするいけんをいいました。",
+          "en": "I stated my opinion about the teacher.",
+          "zh": "我说出了对老师的意见。",
+          "zh_TW": "我說出了對老師的意見。"
+        },
+        {
+          "ja": "彼の話に対する説明が必要です。",
+          "reading": "かれのはなしにたいするせつめいがひつようです。",
+          "en": "An explanation regarding his story is needed.",
+          "zh": "需要对他的话作出说明。",
+          "zh_TW": "需要對他的話作出說明。"
+        }
+      ]
+    }
+  ]
+}

@@ -44,6 +44,7 @@ class ContentRepository {
   static const grammarAssets = [
     'assets/content/grammar/n5.json',
     'assets/content/grammar/n4.json',
+    'assets/content/grammar/n3.json',
   ];
 
   /// Asset path of the kana teaching notes.
