@@ -623,7 +623,47 @@ class AppLocalizationsEn extends AppLocalizations {
   String get speechVoice => 'Japanese voice';
 
   @override
-  String get speechVoiceDefault => 'Engine default';
+  String get speechVoiceDefault => 'Chosen automatically';
+
+  @override
+  String speechVoiceUsing(Object voice) {
+    return 'Using $voice';
+  }
+
+  @override
+  String get speechVoicePick => 'Choose a Japanese voice';
+
+  @override
+  String speechVoiceNumbered(int number) {
+    return 'Japanese voice $number';
+  }
+
+  @override
+  String get speechVoicePreview => 'Play a sample';
+
+  @override
+  String get speechVoiceOffline => 'On this device';
+
+  @override
+  String get speechVoiceNetwork => 'Needs the network';
+
+  @override
+  String get speechVoiceNotInstalled => 'Not downloaded';
+
+  @override
+  String get speechVoiceQualityHigh => 'Higher quality';
+
+  @override
+  String get speechVoiceQualityNormal => 'Standard quality';
+
+  @override
+  String get speechVoiceQualityLow => 'Lower quality';
+
+  @override
+  String get speechEngine => 'Speech engine';
+
+  @override
+  String get speechEngineDefault => 'System default';
 
   @override
   String get speechNoVoiceTitle => 'No Japanese voice installed';
@@ -862,6 +902,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aiStatusUnavailable => 'Not available on this device';
 
   @override
+  String get aiStatusUnreachable => 'The AI service could not be reached';
+
+  @override
   String get aiStatusDownloadable => 'Not downloaded yet';
 
   @override
@@ -869,6 +912,17 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aiStatusAvailable => 'Ready';
+
+  @override
+  String get aiCheckAgain => 'Check again';
+
+  @override
+  String aiCoreVersion(Object version) {
+    return 'AICore $version';
+  }
+
+  @override
+  String get aiCoreMissing => 'AICore is not installed on this device.';
 
   @override
   String get aiDownload => 'Download';

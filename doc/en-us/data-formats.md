@@ -282,7 +282,8 @@ Settings shows the resolved path only on desktop; see `platform_capabilities.dar
 | Kana script | `storage_config.json` | No | `katakana`, absent means hiragana (`kanaScript`) |
 | Reference list columns | `storage_config.json` | No | 1-4, absent means automatic (`referenceListColumns`) |
 | Speaking rate | `storage_config.json` | No | 0.6-1.2, absent means 1.0 (`ttsRate`) |
-| Chosen Japanese voice | `storage_config.json` | No | An engine voice name, absent means the engine default (`ttsVoice`) |
+| Chosen Japanese voice | `storage_config.json` | No | An engine voice name, absent means the best available Japanese voice (`ttsVoice`) |
+| Chosen speech engine | `storage_config.json` | No | An engine package name, absent means the system default engine (`ttsEngine`) |
 | Network speech recognition | `storage_config.json` | No | `true` only if turned on; absent means offline-only (`speechNetworkFallback`) |
 | On-device AI assistance | `storage_config.json` | No | `true` only if turned on; absent means off (`aiAssistEnabled`) |
 | WebDAV configuration | `webdav_config.json` | No | Local secret/config only |

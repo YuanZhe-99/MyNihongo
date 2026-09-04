@@ -31,7 +31,16 @@ class _FakeBackend implements TtsBackend {
         ]
       : const [];
   @override
-  Future<void> setVoice(Map<String, String> voice) async {}
+  Future<bool> setVoice(Map<String, String> voice) async => true;
+
+  @override
+  Future<List<String>> engines() async => const [];
+
+  @override
+  Future<String?> defaultEngine() async => null;
+
+  @override
+  Future<bool> setEngine(String engine) async => true;
   @override
   Future<void> speak(String text) async => spoken.add(text);
   @override

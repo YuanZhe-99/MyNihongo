@@ -63,5 +63,11 @@
         <intent>
             <action android:name="android.speech.RecognitionService"/>
         </intent>
+        <!-- Android 11+ package visibility again: the app reads the installed
+             AICore version so a device that reports "not available" can say
+             whether AICore is present and which build it is. Without this the
+             package is invisible and every device looks like it has none. See
+             doc/en-us/android-aicore.md. -->
+        <package android:name="com.google.android.aicore"/>
     </queries>
 </manifest>

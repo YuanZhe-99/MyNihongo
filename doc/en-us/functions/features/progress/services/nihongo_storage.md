@@ -9,6 +9,9 @@ use delegates to it (see [../../../app/data_modules.md](../../../app/data_module
 [../../../../data-formats.md](../../../../data-formats.md) and
 [../../../../features/learning-progress.md](../../../../features/learning-progress.md).
 
+M3.0 added the `ttsEngine` preference beside `ttsVoice`; both are device-local and never synced,
+because neither a voice name nor an engine package means anything on another device.
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |

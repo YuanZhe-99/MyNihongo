@@ -6,6 +6,8 @@
 
 使用方：`ai_assist_service.dart`，以及 `sentence_lab_page.dart` 与 `ai_settings_tiles.dart`（使用其中的枚举）和测试。
 
+M3.0 把原本合成一个的答案拆成了两部分。`statusReport` 在状态之外**还**返回平台的原始值或其背后的异常，而 `GenAiStatus.unreachable` 表示调用根本没能发出——这与 AICore 拒绝是两回事，修法也不同。`coreInfo` 读取已安装的 AICore 版本。两者都带有默认实现而非保持抽象，这样无需补充信息的后端可以原样继续工作。
+
 ## 声明
 
 | 声明 | 种类 | 层级 | 用途 |

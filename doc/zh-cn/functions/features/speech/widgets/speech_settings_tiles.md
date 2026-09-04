@@ -6,6 +6,8 @@
 
 使用方：`settings_page.dart`。
 
+自 M3.0 起，日语语音一行打开 [`voice_picker_sheet.md`](voice_picker_sheet.md)，而不再是由引擎标识符组成的下拉框；设备装有多个引擎时还会出现语音引擎一行。
+
 ## 声明
 
 | 声明 | 种类 | 层级 | 用途 |

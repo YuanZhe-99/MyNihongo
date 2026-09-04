@@ -5,7 +5,7 @@ says how to work here; `doc/en-us/` says what the code does; this file says **wh
 what order, why, and what is done**. Update the checklists in the same change that lands a
 milestone item.
 
-**Status as of 2026-09-03:** Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
+**Status as of 2026-09-03:** Phase 3 is in progress; M3.0 (device fixes) has landed. Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
 (text-to-speech), M2.2 (speech recognition and pronunciation feedback), M2.3 (the sentence lab),
 M2.4 (on-device AI assist) and M2.5 (Traditional Chinese) have landed, along with the Windows and
 macOS projects the pronunciation work needs a machine for. `v0.2.1` is the current release; M2.5 is
@@ -414,6 +414,43 @@ needs Japanese glosses that do not exist yet.
 Goal: study, not just browse. Flashcards like MojiTest, grammar drills, a Duolingo-like lesson path
 with review folded in.
 
+#### M3.0 Device fixes — **done 2026-09-03**
+
+Three defects a real phone found, fixed ahead of the learning engine because the quizzes and lessons
+below all depend on speech.
+
+- [x] **Text-to-speech read Japanese in the device's own language**, intermittently, and only for
+      words — example sentences were usually fine, and visiting Settings once cured it. Two causes,
+      both in `flutter_tts`'s Android plugin and both invisible from Dart: its init callback replays
+      queued method calls and **then** overwrites the language with the system default, so the app's
+      `setLanguage` was applied and immediately discarded; and `speak` silently rebuilds the
+      `TextToSpeech` instance after the service connection drops, landing on the system default
+      again. `TtsService` now awaits a queued call as a **probe** before its first write, re-applies
+      language, voice and rate **before every utterance**, and selects an explicit Japanese voice
+      rather than only a language. If Japanese is refused after having worked, it rebuilds the engine
+      once. Written up in `features/pronunciation.md`
+- [x] **The voice picker was a dropdown of engine identifiers** with no way to hear anything. It is
+      now a sheet: voices numbered over a total order (installed, offline, quality, name), each with
+      what is different about it, its raw name for a bug report, and a play button.
+      **Listening is not choosing** — the sample restores the learner's own voice afterwards. A
+      **speech engine** row appears when the device has more than one engine, which is common on
+      Android and is why two devices offer different voices; `ttsEngine` joins `ttsVoice` as a
+      device-local preference
+- [x] **On-device AI reported "not available on this device" on a Z Fold 8 that has AICore.** Not
+      reproducible here, so this is instrumentation rather than a claimed fix: every failure path had
+      collapsed into one sentence. `status` now separates **unreachable** (the call threw, with the
+      exception class) from **unavailable** (AICore was asked and refused, with the raw
+      `FeatureStatus`), each row shows that line, a **Check again** button re-asks without toggling
+      the switch, and the manifest's new `<queries>` entry lets the app report the installed AICore
+      build and the device. `android-aicore.md` gains a diagnosis procedure and a Samsung field note.
+      **The most likely cause is not a bug:** the Prompt API's device list named only the Pixel 10
+      family at the last verification, while proofreading's is much wider — so one row ready and the
+      other not is the expected answer on that hardware
+- [x] Tests: `voice_ordering_test.dart`, `genai_backend_test.dart`, and new cases in
+      `tts_service_test.dart` (probe ordering, re-apply per utterance, rebuild once, best-voice
+      choice, preview restores), `speech_settings_tiles_test.dart`, `ai_assist_service_test.dart`,
+      `ai_ui_test.dart`, `preferences_test.dart`
+
 #### M3.1 Spaced repetition core
 
 - [ ] SM-2 over `StudyRecord` (`ease`, `intervalDays`, `dueAt`, `streak`); a pure Dart scheduler
@@ -592,6 +629,11 @@ catalog content, and never writes a progress record by itself — the learner's 
 | 2026-09-03 | The Traditional **content** is generated from the Simplified text and committed; the Traditional **UI** is hand-written | The content is 1,132 strings whose Simplified version is itself machine-authored and unreviewed — converting it changes nothing about how much it can be trusted. The UI is 274 strings a reader meets constantly, and Taiwan usage differs by vocabulary, which no conversion table can supply |
 | 2026-09-03 | The conversion is OpenCC's `s2tw` chain re-implemented in Dart, not `s2twp`, and not a character table | Phrases are what decide which Traditional character is right (干净 → 乾淨 but 干部 → 幹部), so a character table is wrong by construction; and `s2twp`'s Taiwan vocabulary table is mostly computing terms, which rewrote 连接 to 連線 and 对象 to 物件 inside a grammar note about which noun a particle connects |
 | 2026-09-03 | Japanese words quoted in the Chinese prose are listed in `preserve.txt` rather than detected | 来る is Japanese and must stay 来る, while 来 in the surrounding Chinese must become 來 — the same character, decided by which language the word belongs to, which no rule over adjacency can tell. The list is short, explicit, and a test fails when a shipped file contains the broken form |
+| 2026-09-03 | `TtsService` awaits a queued plugin call as a probe before its first `setLanguage`, and re-applies language, voice and rate before every utterance | The Android plugin overwrites the language with the system default after its init callback and after every silent engine rebuild, with no event to listen for. The probe is the only ordering guarantee available; re-applying is the only defence against the rebuild. Three engine calls per utterance cost milliseconds, and the symptom they prevent — Japanese read as English — is invisible to the app |
+| 2026-09-03 | The app always selects a named Japanese voice, never only a language | An engine left to its own default falls back to whatever voice it was last on, which is how a language that was set correctly still produced English audio |
+| 2026-09-03 | Japanese voices are numbered over a total order rather than shown by engine name | `ja-jp-x-jab#male_1-local` says nothing about how a voice sounds and differs per engine. The order is total (installed, offline, quality, name) so the numbers cannot move between runs; the raw name is still shown small, because that is what a bug report needs |
+| 2026-09-03 | Auditioning a voice restores the previous one in a `finally` | Hearing a voice and choosing it are different acts, and a sample that silently changed the app's voice would make the picker unusable for comparison |
+| 2026-09-03 | `GenAiStatus.unreachable` is separate from `unavailable`, and both carry the device's own answer | A phone with AICore installed reported having no on-device model, and nothing in the app could say whether AICore had refused, the call had thrown, or the package was invisible to the build. One sentence for four causes is not a diagnosis |
 | 2026-09-03 | The sentence lab is a route outside the shell, not a sixth tab | The five tabs are the reference the app is built around; the lab is something done *to* a sentence you already have, and it is always entered with a purpose from somewhere else |
 
 ## 7. Open questions

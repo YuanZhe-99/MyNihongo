@@ -22,14 +22,18 @@ import 'package:my_nihongo/l10n/app_localizations.dart';
 /// deterministic finding rather than in place of it. Driven in English, unlike
 /// the layout tests: what is asserted here is the wording of controls and
 /// labels, not how wide anything measures.
-class _FakeGenAiBackend implements GenAiBackend {
+class _FakeGenAiBackend extends GenAiBackend {
   _FakeGenAiBackend({
     this.status_ = GenAiStatus.available,
     this.answer = 'これは説明です。',
+    this.detail,
+    this.core,
   });
 
   GenAiStatus status_;
   String answer;
+  String? detail;
+  GenAiCoreInfo? core;
   final List<String> calls = [];
 
   @override
@@ -37,6 +41,13 @@ class _FakeGenAiBackend implements GenAiBackend {
     calls.add('status');
     return status_;
   }
+
+  @override
+  Future<GenAiStatusReport> statusReport(GenAiFeature feature) async =>
+      GenAiStatusReport(await status(feature), detail: detail);
+
+  @override
+  Future<GenAiCoreInfo?> coreInfo() async => core;
 
   @override
   Future<bool> download(
@@ -299,6 +310,82 @@ void main() {
 
     expect(find.text('Explain this sentence'), findsNothing);
     expect(find.textContaining('not downloaded yet'), findsNothing);
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
+  testWidgets('a refusing device shows what it said and offers a re-check', (
+    tester,
+  ) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.android;
+    final backend = _FakeGenAiBackend(
+      status_: GenAiStatus.unavailable,
+      detail: 'FeatureStatus=0',
+      core: const GenAiCoreInfo(
+        installed: true,
+        versionName: 'aicore_20260723.00_RC11',
+        sdk: 36,
+        device: 'samsung SM-F978B',
+      ),
+    );
+    await useService(backend, enabled: true);
+
+    await pumpSettings(tester);
+    await tester.tap(find.byType(SwitchListTile));
+    await tester.pumpAndSettle();
+
+    // Without these three lines the learner is told "not available on this
+    // device" and has nothing to act on or report.
+    expect(find.text('FeatureStatus=0'), findsNWidgets(2));
+    expect(
+      find.text('AICore aicore_20260723.00_RC11 · samsung SM-F978B'),
+      findsOneWidget,
+    );
+    expect(find.byIcon(Icons.refresh), findsNWidgets(2));
+
+    backend.calls.clear();
+    await tester.tap(find.byIcon(Icons.refresh).first);
+    await tester.pumpAndSettle();
+    expect(backend.calls, contains('status'));
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
+  testWidgets('a device AICore could not be asked says so in its own words', (
+    tester,
+  ) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.android;
+    await useService(
+      _FakeGenAiBackend(
+        status_: GenAiStatus.unreachable,
+        detail: 'GenAiException: AICore is out of date',
+        core: const GenAiCoreInfo(installed: false, sdk: 34, device: 'Pixel 6'),
+      ),
+      enabled: true,
+    );
+
+    await pumpSettings(tester);
+    await tester.tap(find.byType(SwitchListTile));
+    await tester.pumpAndSettle();
+
+    expect(find.text('The AI service could not be reached'), findsNWidgets(2));
+    expect(find.text('AICore is not installed on this device.'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
+  testWidgets('a working feature is not cluttered with diagnostics', (
+    tester,
+  ) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.android;
+    await useService(_FakeGenAiBackend(), enabled: true);
+
+    await pumpSettings(tester);
+    await tester.tap(find.byType(SwitchListTile));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Ready'), findsNWidgets(2));
+    expect(find.byIcon(Icons.refresh), findsNothing);
     expect(tester.takeException(), isNull);
     debugDefaultTargetPlatformOverride = null;
   });

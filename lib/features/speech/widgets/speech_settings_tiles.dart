@@ -7,6 +7,8 @@ import '../../../shared/services/system_settings_launcher.dart';
 import '../../../shared/utils/platform_capabilities.dart';
 import '../services/speech_recognition_service.dart';
 import '../services/tts_service.dart';
+import 'voice_labels.dart';
+import 'voice_picker_sheet.dart';
 
 /// The Settings rows that configure spoken Japanese.
 ///
@@ -144,23 +146,74 @@ class _SpeechSettingsTilesState extends ConsumerState<SpeechSettingsTiles> {
         ListTile(
           leading: const Icon(Icons.record_voice_over_outlined),
           title: Text(l10n.speechVoice),
+          subtitle: Text(
+            _voiceSubtitle(l10n, tts, settings.ttsVoice),
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
+          trailing: const Icon(Icons.chevron_right),
+          onTap: () => showVoicePickerSheet(
+            context,
+            previewText: SpeechSettingsTiles.previewText,
+            selected: settings.ttsVoice,
+            onChanged: (name) {
+              notifier.setTtsVoice(name);
+              setState(() {});
+            },
+          ),
+        ),
+      if (tts.engines.length > 1)
+        ListTile(
+          leading: const Icon(Icons.tune_outlined),
+          title: Text(l10n.speechEngine),
           trailing: DropdownButton<String?>(
-            value: settings.ttsVoice,
+            value: settings.ttsEngine,
             items: [
               DropdownMenuItem(
                 value: null,
-                child: Text(l10n.speechVoiceDefault),
+                child: Text(l10n.speechEngineDefault),
               ),
-              for (final voice in tts.japaneseVoices)
+              for (final engine in tts.engines)
                 DropdownMenuItem(
-                  value: voice['name'],
-                  child: Text(voice['name'] ?? ''),
+                  value: engine,
+                  child: Text(engineDisplayName(engine)),
                 ),
             ],
-            onChanged: notifier.setTtsVoice,
+            onChanged: (engine) async {
+              notifier.setTtsEngine(engine);
+              // The engine rebuild replaces the voice list, so the rows below
+              // are stale until it finishes. Awaiting the service rather than
+              // the setter keeps the setter fire-and-forget for every other
+              // caller.
+              await TtsService.instance.setEngine(engine);
+              if (mounted) setState(() {});
+            },
           ),
         ),
     ];
+  }
+
+  /// Purpose: Say which voice the app is speaking with.
+  /// Inputs: `l10n`, `tts`, `chosen` — the persisted voice name, if any.
+  /// Returns: `String`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. A chosen voice that no
+  /// longer resolves shows the automatic label, because that is what the
+  /// service will actually use.
+  String _voiceSubtitle(
+    AppLocalizations l10n,
+    TtsService tts,
+    String? chosen,
+  ) {
+    final voices = tts.japaneseVoices;
+    final index = chosen == null
+        ? -1
+        : voices.indexWhere((voice) => voice['name'] == chosen);
+    if (index < 0) {
+      return voiceDefaultLabel(l10n, voices, tts.defaultJapaneseVoice);
+    }
+    return voiceDisplayName(l10n, voices, index);
   }
 
   /// Purpose: Build the recognition status line and the network-fallback

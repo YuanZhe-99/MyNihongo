@@ -4,17 +4,17 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **546** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **586** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **590** documented declarations. The two counts are measured separately and
+The rows below sum to **603** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
-| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 107 |
-| Tier B (index row only) | 483 |
-| **Total** | **590** |
+| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 110 |
+| Tier B (index row only) | 493 |
+| **Total** | **603** |
 
 These totals were measured against the source tree at initialization (`PLAN.md` M1.0). If you
 change these numbers, measure them rather than adjusting them by hand:
@@ -89,6 +89,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/sentence/widgets/grammar_used_list.dart` | [features/sentence/widgets/grammar_used_list.md](features/sentence/widgets/grammar_used_list.md) | 1 | 1 |
 | `lib/features/sentence/widgets/issue_list.dart` | [features/sentence/widgets/issue_list.md](features/sentence/widgets/issue_list.md) | 6 | 1 |
 | `lib/features/sentence/widgets/token_chips.dart` | [features/sentence/widgets/token_chips.md](features/sentence/widgets/token_chips.md) | 5 | 2 |
+| `lib/features/speech/models/voice_ordering.dart` | [features/speech/models/voice_ordering.md](features/speech/models/voice_ordering.md) | 5 | 1 |
 | `lib/features/speech/services/pronunciation_scorer.dart` | [features/speech/services/pronunciation_scorer.md](features/speech/services/pronunciation_scorer.md) | 3 | 2 |
 | `lib/features/speech/services/speech_backend.dart` | [features/speech/services/speech_backend.md](features/speech/services/speech_backend.md) | 13 | 1 |
 | `lib/features/speech/services/speech_recognition_service.dart` | [features/speech/services/speech_recognition_service.md](features/speech/services/speech_recognition_service.md) | 10 | 2 |
@@ -97,6 +98,8 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/speech/widgets/pronunciation_practice_sheet.dart` | [features/speech/widgets/pronunciation_practice_sheet.md](features/speech/widgets/pronunciation_practice_sheet.md) | 12 | 2 |
 | `lib/features/speech/widgets/speak_button.dart` | [features/speech/widgets/speak_button.md](features/speech/widgets/speak_button.md) | 1 | 1 |
 | `lib/features/speech/widgets/speech_settings_tiles.dart` | [features/speech/widgets/speech_settings_tiles.md](features/speech/widgets/speech_settings_tiles.md) | 5 | 2 |
+| `lib/features/speech/widgets/voice_labels.dart` | [features/speech/widgets/voice_labels.md](features/speech/widgets/voice_labels.md) | 4 | 1 |
+| `lib/features/speech/widgets/voice_picker_sheet.dart` | [features/speech/widgets/voice_picker_sheet.md](features/speech/widgets/voice_picker_sheet.md) | 4 | 1 |
 | `lib/features/settings/views/settings_page.dart` | [features/settings/views/settings_page.md](features/settings/views/settings_page.md) | 16 | 2 |
 | `lib/features/settings/views/backup_page.dart` | [features/settings/views/backup_page.md](features/settings/views/backup_page.md) | 17 | 1 |
 | `lib/features/vocab/views/vocab_page.dart` | [features/vocab/views/vocab_page.md](features/vocab/views/vocab_page.md) | 7 | 1 |

@@ -142,6 +142,7 @@ lib/
       privacy_policy_page.dart
       settings_page.dart
     speech/
+      models/voice_ordering.dart
       services/
         pronunciation_scorer.dart
         speech_backend.dart
@@ -152,6 +153,8 @@ lib/
         pronunciation_practice_sheet.dart
         speak_button.dart
         speech_settings_tiles.dart
+        voice_labels.dart
+        voice_picker_sheet.dart
     vocab/views/vocab_page.dart
   shared/
     providers/
@@ -228,6 +231,15 @@ Primary tests:
   against the shipped templates and catalog, and what of its answer is worth showing.
 - `test/ai_ui_test.dart` — the Settings section and the lab's AI actions, with and without a model,
   including that nothing AI-related appears while the switch is off.
+- `test/genai_backend_test.dart` — how the platform channel's answers become statuses, against a
+  mocked channel; the load-bearing case is that a call which threw is `unreachable` rather than
+  `unavailable`, because collapsing the two made a phone with AICore installed undiagnosable.
+- `test/tts_service_test.dart` — the speech engine seam: the rate conversion, the voice filter and
+  ordering, the one-utterance rule, and the three defences against the plugin dropping the language
+  (probe before the first write, re-apply before every utterance, rebuild once when Japanese is
+  refused).
+- `test/voice_ordering_test.dart` — the voice order the picker numbers against, which has to be
+  total or the numbers move between runs.
 
 ## Three kinds of data
 

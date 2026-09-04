@@ -35,6 +35,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     final columns = await NihongoStorage.getReferenceListColumns();
     final ttsRate = await NihongoStorage.getTtsRate();
     final ttsVoice = await NihongoStorage.getTtsVoice();
+    final ttsEngine = await NihongoStorage.getTtsEngine();
     final speechNetworkFallback =
         await NihongoStorage.getSpeechNetworkFallback();
     final aiAssistEnabled = await NihongoStorage.getAiAssistEnabled();
@@ -65,6 +66,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
           : listColumnsAuto,
       ttsRate: ttsRate?.clamp(TtsService.minRate, TtsService.maxRate) ?? 1.0,
       ttsVoice: ttsVoice,
+      ttsEngine: ttsEngine,
       speechNetworkFallback: speechNetworkFallback,
       aiAssistEnabled: aiAssistEnabled,
     );
@@ -72,7 +74,11 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     // The engine is configured from the same values the UI shows, once the
     // preferences are known. It is deliberately not awaited: a device with no
     // speech engine must not delay the first frame.
-    TtsService.instance.init(rate: state.ttsRate, voiceName: state.ttsVoice);
+    TtsService.instance.init(
+      rate: state.ttsRate,
+      voiceName: state.ttsVoice,
+      engineId: state.ttsEngine,
+    );
     SpeechRecognitionService.instance.networkFallbackAllowed =
         state.speechNetworkFallback;
     // Same reason it is not awaited: switching the AI on asks the device what
@@ -152,6 +158,26 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     state = state.copyWith(ttsVoice: name, clearTtsVoice: name == null);
     TtsService.instance.setVoiceByName(name);
     NihongoStorage.setTtsVoice(name);
+  }
+
+  /// Purpose: Switch to another text-to-speech engine.
+  /// Inputs: `engine` — an engine package name, or null for the system
+  /// default.
+  /// Returns: None.
+  /// Side effects: Rebuilds the platform engine, clears the chosen voice, and
+  /// persists both.
+  /// Notes: The voice is cleared because voice names belong to an engine: the
+  /// name the user picked on one engine names nothing on another, and keeping
+  /// it would leave the picker showing a choice the engine never accepted.
+  void setTtsEngine(String? engine) {
+    state = state.copyWith(
+      ttsEngine: engine,
+      clearTtsEngine: engine == null,
+      clearTtsVoice: true,
+    );
+    unawaited(TtsService.instance.setEngine(engine));
+    NihongoStorage.setTtsEngine(engine);
+    NihongoStorage.setTtsVoice(null);
   }
 
   /// Purpose: Allow or forbid a fallback to network speech recognition.
@@ -234,8 +260,12 @@ class AppSettings {
   /// The text-to-speech speaking rate as a multiple of normal speed.
   final double ttsRate;
 
-  /// The chosen Japanese voice's engine name; null uses the engine default.
+  /// The chosen Japanese voice's engine name; null uses the best voice the
+  /// engine offers.
   final String? ttsVoice;
+
+  /// The chosen speech engine's package name; null uses the system default.
+  final String? ttsEngine;
 
   /// Whether the user allowed speech recognition to fall back to a network
   /// service. Off unless they turned it on.
@@ -260,6 +290,7 @@ class AppSettings {
     this.referenceListColumns = listColumnsAuto,
     this.ttsRate = 1.0,
     this.ttsVoice,
+    this.ttsEngine,
     this.speechNetworkFallback = false,
     this.aiAssistEnabled = false,
   });
@@ -282,6 +313,8 @@ class AppSettings {
     double? ttsRate,
     String? ttsVoice,
     bool clearTtsVoice = false,
+    String? ttsEngine,
+    bool clearTtsEngine = false,
     bool? speechNetworkFallback,
     bool? aiAssistEnabled,
   }) {
@@ -296,6 +329,7 @@ class AppSettings {
       referenceListColumns: referenceListColumns ?? this.referenceListColumns,
       ttsRate: ttsRate ?? this.ttsRate,
       ttsVoice: clearTtsVoice ? null : (ttsVoice ?? this.ttsVoice),
+      ttsEngine: clearTtsEngine ? null : (ttsEngine ?? this.ttsEngine),
       speechNetworkFallback:
           speechNetworkFallback ?? this.speechNetworkFallback,
       aiAssistEnabled: aiAssistEnabled ?? this.aiAssistEnabled,

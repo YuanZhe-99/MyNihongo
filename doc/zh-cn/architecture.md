@@ -117,6 +117,7 @@ lib/
       privacy_policy_page.dart
       settings_page.dart
     speech/
+      models/voice_ordering.dart
       services/
         pronunciation_scorer.dart
         speech_backend.dart
@@ -127,6 +128,8 @@ lib/
         pronunciation_practice_sheet.dart
         speak_button.dart
         speech_settings_tiles.dart
+        voice_labels.dart
+        voice_picker_sheet.dart
     vocab/views/vocab_page.dart
   shared/
     providers/
@@ -188,6 +191,9 @@ assets/icon/                     app_icon.png + generated iOS sources (not bundl
 - `test/ai_assist_service_test.dart` — 用假后端测端侧 AI 策略；关键用例是关闭状态下的服务根本不触及平台。
 - `test/ai_prompt_builder_test.dart`、`test/ai_response_parser_test.dart` — 对着**随应用发布的**模板与目录检查模型被问了什么，以及它的回答有多少值得展示。
 - `test/ai_ui_test.dart` — 设置分节与实验室的 AI 操作，有模型与无模型两种情况，包括开关关闭时不出现任何 AI 内容。
+- `test/genai_backend_test.dart` — 平台通道的回答如何变成状态，针对一个被 mock 的通道；关键用例是抛出异常的调用应为 `unreachable` 而非 `unavailable`，因为把两者合并会让一台装有 AICore 的手机无从诊断。
+- `test/tts_service_test.dart` — 语音引擎接缝：速度换算、语音过滤与排序、同一时刻一段朗读的规则，以及针对插件丢弃语言的三重防护（首次写入前探测、每次朗读前重新应用、日语被拒时重建一次）。
+- `test/voice_ordering_test.dart` — 选择面板据以编号的语音顺序，它必须完全确定，否则编号会在两次运行之间移动。
 
 ## 三类数据
 

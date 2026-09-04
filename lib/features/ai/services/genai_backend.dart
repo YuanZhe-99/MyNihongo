@@ -21,7 +21,13 @@ enum GenAiStatus {
   unsupported,
 
   /// The device cannot run this feature — no AICore, or an unsupported model.
+  /// AICore was asked and said no.
   unavailable,
+
+  /// AICore could not be asked at all: the call threw. A different fact from
+  /// [unavailable], with a different fix, and the two looked identical until a
+  /// phone that has AICore reported having no model.
+  unreachable,
 
   /// The model is not on the device yet, and the system can fetch it.
   downloadable,
@@ -66,6 +72,81 @@ class GenAiException implements Exception {
 
   @override
   String toString() => 'GenAiException(${failure.name}, $message)';
+}
+
+/// One feature's status plus what the device said about it.
+///
+/// The extra fields exist for one reason: the published device lists differ per
+/// API and are a floor rather than the truth, so "not available on this device"
+/// is not a diagnosis. The raw `FeatureStatus` code, or the exception when the
+/// call threw, is what separates a phone that is simply not on the Prompt API's
+/// list from one where something is broken.
+class GenAiStatusReport {
+  /// Purpose: Describe one feature's availability.
+  /// Inputs: `status`; `code` — the platform's own value, -1 when it threw;
+  /// `detail` — a short untranslated line, or null when there is nothing to
+  /// explain.
+  /// Returns: A new `GenAiStatusReport` instance.
+  /// Side effects: None.
+  /// Notes: `detail` is deliberately not localized: it is an identifier to
+  /// quote in a bug report, not prose to read.
+  const GenAiStatusReport(this.status, {this.code = -1, this.detail});
+
+  /// What the feature can do.
+  final GenAiStatus status;
+
+  /// The platform's raw status value; -1 when the call threw.
+  final int code;
+
+  /// A short diagnostic line, or null.
+  final String? detail;
+
+  /// A report for a platform that was never asked.
+  static const unsupported = GenAiStatusReport(GenAiStatus.unsupported);
+}
+
+/// What the AICore system service on this device is, if anything.
+class GenAiCoreInfo {
+  /// Purpose: Describe the device's AICore installation.
+  /// Inputs: `installed`, `versionName`, `sdk`, `device`.
+  /// Returns: A new `GenAiCoreInfo` instance.
+  /// Side effects: None.
+  /// Notes: Reading this needs the manifest's `<queries>` entry for
+  /// `com.google.android.aicore`; without it every device answers
+  /// `installed: false`.
+  const GenAiCoreInfo({
+    required this.installed,
+    this.versionName,
+    this.sdk,
+    this.device,
+  });
+
+  /// Whether the AICore package is present.
+  final bool installed;
+
+  /// The AICore build, such as `aicore_20260723.00_RC11`.
+  final String? versionName;
+
+  /// The device's Android API level.
+  final int? sdk;
+
+  /// Manufacturer and model, as the system reports them.
+  final String? device;
+
+  /// Purpose: Read the map the platform channel sends.
+  /// Inputs: `json`.
+  /// Returns: `GenAiCoreInfo?` — null when the platform sent nothing usable.
+  /// Side effects: None.
+  /// Notes: None.
+  static GenAiCoreInfo? fromJson(Object? json) {
+    if (json is! Map) return null;
+    return GenAiCoreInfo(
+      installed: json['installed'] == true,
+      versionName: json['versionName']?.toString(),
+      sdk: json['sdk'] is int ? json['sdk'] as int : null,
+      device: json['device']?.toString(),
+    );
+  }
 }
 
 /// The seam between [AiAssistService] and the platform's generative models.
@@ -115,6 +196,22 @@ abstract class GenAiBackend {
   /// Side effects: Cancels the in-flight platform request.
   /// Notes: Safe to call when nothing is running.
   Future<void> cancel();
+
+  /// Purpose: Ask what a feature can do, and what the device said about it.
+  /// Inputs: `feature`.
+  /// Returns: `Future<GenAiStatusReport>`.
+  /// Side effects: Queries the platform.
+  /// Notes: Given a body rather than left abstract so a backend that has
+  /// nothing to add — every test fake — keeps working unchanged. Never throws.
+  Future<GenAiStatusReport> statusReport(GenAiFeature feature) async =>
+      GenAiStatusReport(await status(feature));
+
+  /// Purpose: Describe the device's AICore installation.
+  /// Inputs: None.
+  /// Returns: `Future<GenAiCoreInfo?>` — null where the question is meaningless.
+  /// Side effects: Queries the platform.
+  /// Notes: Given a body for the same reason as [statusReport]. Never throws.
+  Future<GenAiCoreInfo?> coreInfo() async => null;
 }
 
 /// The real backend, talking to `GenAiChannel` on the Android side.
@@ -138,23 +235,68 @@ class MethodChannelGenAiBackend implements GenAiBackend {
   /// Inputs: `feature`.
   /// Returns: `Future<GenAiStatus>`.
   /// Side effects: One channel call.
-  /// Notes: A platform error is `unavailable`, not an exception: "this device
-  /// cannot" is exactly what a failure to ask means here.
+  /// Notes: The full answer is in [statusReport]; this drops the diagnostics.
   @override
-  Future<GenAiStatus> status(GenAiFeature feature) async {
-    if (!platformMayHaveOnDeviceModel) return GenAiStatus.unsupported;
+  Future<GenAiStatus> status(GenAiFeature feature) async =>
+      (await statusReport(feature)).status;
+
+  /// Purpose: Ask the platform for a feature's status and what it said.
+  /// Inputs: `feature`.
+  /// Returns: `Future<GenAiStatusReport>`.
+  /// Side effects: One channel call.
+  /// Notes: A platform error is [GenAiStatus.unreachable] rather than
+  /// `unavailable`. The two used to share an answer, and the cost of that was a
+  /// phone with AICore installed reporting it had no on-device model, with
+  /// nothing anywhere to say which of the two had happened.
+  @override
+  Future<GenAiStatusReport> statusReport(GenAiFeature feature) async {
+    if (!platformMayHaveOnDeviceModel) return GenAiStatusReport.unsupported;
     try {
-      final answer = await _channel.invokeMethod<String>('status', {
+      final answer = await _channel.invokeMapMethod<String, Object?>('status', {
         'feature': feature.name,
       });
-      return switch (answer) {
+      final name = answer?['status']?.toString();
+      final status = switch (name) {
         'available' => GenAiStatus.available,
         'downloadable' => GenAiStatus.downloadable,
         'downloading' => GenAiStatus.downloading,
+        'unreachable' => GenAiStatus.unreachable,
         _ => GenAiStatus.unavailable,
       };
+      return GenAiStatusReport(
+        status,
+        code: answer?['code'] is int ? answer!['code'] as int : -1,
+        detail: answer?['detail']?.toString(),
+      );
+    } on PlatformException catch (error) {
+      return GenAiStatusReport(
+        GenAiStatus.unreachable,
+        detail: '${error.code}: ${error.message}',
+      );
+    } catch (error) {
+      return GenAiStatusReport(
+        GenAiStatus.unreachable,
+        detail: error.runtimeType.toString(),
+      );
+    }
+  }
+
+  /// Purpose: Read the device's AICore installation.
+  /// Inputs: None.
+  /// Returns: `Future<GenAiCoreInfo?>`.
+  /// Side effects: One channel call.
+  /// Notes: Null off Android and whenever the call fails — this is a
+  /// diagnostic, and failing to gather one must never break the page showing
+  /// it.
+  @override
+  Future<GenAiCoreInfo?> coreInfo() async {
+    if (!platformMayHaveOnDeviceModel) return null;
+    try {
+      return GenAiCoreInfo.fromJson(
+        await _channel.invokeMapMethod<String, Object?>('aicore'),
+      );
     } catch (_) {
-      return GenAiStatus.unavailable;
+      return null;
     }
   }
 

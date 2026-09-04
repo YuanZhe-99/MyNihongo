@@ -474,6 +474,25 @@ class NihongoStorage {
   /// Notes: None.
   static Future<void> setTtsVoice(String? name) => _setString('ttsVoice', name);
 
+  /// Purpose: Read the chosen speech engine.
+  /// Inputs: None.
+  /// Returns: `Future<String?>` — an engine package name, or null for the
+  /// system default engine.
+  /// Side effects: Reads the config file.
+  /// Notes: Android devices commonly ship two engines, and they do not have
+  /// the same voices — so this is device-local for the same reason the voice
+  /// name is. An engine that has since been uninstalled resolves back to the
+  /// system default rather than failing.
+  static Future<String?> getTtsEngine() => _getString('ttsEngine');
+
+  /// Purpose: Remember the chosen speech engine.
+  /// Inputs: `engine` — null restores the system default engine.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: None.
+  static Future<void> setTtsEngine(String? engine) =>
+      _setString('ttsEngine', engine);
+
   /// Purpose: Read one boolean preference.
   /// Inputs: `key`.
   /// Returns: `Future<bool?>`.

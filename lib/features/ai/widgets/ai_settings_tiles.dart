@@ -128,11 +128,29 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-            child: Text(
-              l10n.aiDownloadNote,
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  l10n.aiDownloadNote,
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ),
+                // Which AICore build is installed is the other half of the
+                // diagnosis: the feature APIs and the Prompt API are served by
+                // the same package at different versions.
+                if (_coreLine(l10n, service.coreInfo) case final line?)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Text(
+                      line,
+                      style: theme.textTheme.labelSmall?.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ),
+              ],
             ),
           ),
         ],
@@ -160,21 +178,52 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
     final downloadingThis = service.downloadingFeature == feature;
     final progress = service.downloadProgress;
 
+    final report = service.reportOf(feature);
+    final failed =
+        status == GenAiStatus.unavailable || status == GenAiStatus.unreachable;
+    final detail = report.detail;
+
     return ListTile(
       leading: Icon(_iconFor(status)),
       title: Text(label, style: theme.textTheme.bodyMedium),
-      subtitle: Text(
-        downloadingThis
-            ? _progressLabel(l10n, progress)
-            : _statusLabel(l10n, status),
-        style: theme.textTheme.bodySmall?.copyWith(
-          color: theme.colorScheme.onSurfaceVariant,
-        ),
+      subtitle: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            downloadingThis
+                ? _progressLabel(l10n, progress)
+                : _statusLabel(l10n, status),
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
+          // Untranslated on purpose: this is an identifier to quote in a bug
+          // report, not prose. Without it "not available on this device" is
+          // the same sentence whether the device is off a published support
+          // list or the call threw, and those have different fixes.
+          if (failed && detail != null)
+            Text(
+              detail,
+              style: theme.textTheme.labelSmall?.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+                fontFamily: 'monospace',
+              ),
+            ),
+        ],
       ),
+      isThreeLine: failed && detail != null,
       trailing: switch (status) {
         GenAiStatus.downloadable => FilledButton.tonal(
           onPressed: service.busy ? null : () => service.download(feature),
           child: Text(l10n.aiDownload),
+        ),
+        // Availability changes without the app doing anything: AICore
+        // provisions itself after setup, and sometimes only after a restart.
+        // Without this the only way to re-ask was to toggle the switch.
+        GenAiStatus.unavailable || GenAiStatus.unreachable => IconButton(
+          icon: const Icon(Icons.refresh),
+          tooltip: l10n.aiCheckAgain,
+          onPressed: service.busy ? null : () => service.refreshStatus(),
         ),
         GenAiStatus.downloading || GenAiStatus.available || _ =>
           downloadingThis
@@ -202,7 +251,26 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
         GenAiStatus.downloading => l10n.aiStatusDownloading,
         GenAiStatus.unavailable => l10n.aiStatusUnavailable,
         GenAiStatus.unsupported => l10n.aiStatusUnavailable,
+        GenAiStatus.unreachable => l10n.aiStatusUnreachable,
       };
+
+  /// Purpose: Name the AICore installation behind these features.
+  /// Inputs: `l10n`, `info` — null before the device has been asked.
+  /// Returns: `String?` — null when there is nothing to say.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. The device model rides
+  /// along because the published support lists are per device, and "which
+  /// phone is this" is the first thing a report about them has to answer.
+  static String? _coreLine(AppLocalizations l10n, GenAiCoreInfo? info) {
+    if (info == null) return null;
+    if (!info.installed) return l10n.aiCoreMissing;
+    final version = info.versionName;
+    final device = info.device;
+    return [
+      if (version != null) l10n.aiCoreVersion(version),
+      ?device,
+    ].join(' · ');
+  }
 
   /// Purpose: Say how far a download has got.
   /// Inputs: `l10n`, `progress`.

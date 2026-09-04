@@ -10,6 +10,10 @@ device with no engine — is on the service's side of it.
 
 Consumers: `tts_service.dart`.
 
+It gained three engine methods in M3.0. `setVoice` also returns a `bool` now: whether the engine
+accepted the voice is load-bearing, because an engine that refuses one keeps speaking in whatever
+language it was left in.
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |

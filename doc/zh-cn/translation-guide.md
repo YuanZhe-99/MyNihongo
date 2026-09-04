@@ -138,6 +138,12 @@
 | level filter | 级别筛选 | |
 | tile | 条目卡片 | 单词或语法列表中的一格 |
 | detail sheet | 详情面板 | 底部弹出的详情 |
+| speech engine | 语音引擎 | 合成引擎的包，如 Google 或三星；繁体「語音引擎」 |
+| voice | 语音 | 引擎内的一个合成嗓音；繁体「語音」 |
+| preview / play a sample | 试听 | 听一个语音但不选它；繁体「試聽」 |
+| offline voice | 本机可用 | 不需要联网的语音；繁体「本機可用」 |
+| AICore | AICore | 从不翻译，它是包名 |
+| unreachable (AI service) | 无法访问 | 与「不支持」不同：调用本身失败；繁体「無法存取」 |
 | learning progress | 学习进度 | 同步的用户数据 |
 | study record | 学习记录 | 每个学习项一条 |
 | kind (study kind) | 类别 | kana / vocab / grammar，由 id 前缀推导 |

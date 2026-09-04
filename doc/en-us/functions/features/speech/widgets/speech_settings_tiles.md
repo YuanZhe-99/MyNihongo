@@ -9,6 +9,10 @@ long. Preferences are read from `appSettingsProvider`, the same place every othe
 
 Consumers: `settings_page.dart`.
 
+Since M3.0 the Japanese voice row opens
+[`voice_picker_sheet.md`](voice_picker_sheet.md) rather than a dropdown of engine identifiers, and a
+speech engine row appears when the device has more than one engine installed.
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |

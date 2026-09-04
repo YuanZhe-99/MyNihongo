@@ -2,6 +2,8 @@
 
 `NihongoStorage` 是应用的存储中枢：唯一知道数据在磁盘上何处的地方。它解析应用目录（平台文档目录加 `MyNihongo`，或 `storage_config.json` 中的自定义路径），通过包里的 `atomicWriteString` 原子地读写 `nihongo_progress.json` 和 `storage_config.json`，在每次数据保存后通知自动同步，并在存储路径改变时迁移整个文件夹。共享引擎使用的 `StorageAdapter` 委托给它（见 [../../../app/data_modules.md](../../../app/data_modules.md)）。见 [../../../../data-formats.md](../../../../data-formats.md) 和 [../../../../features/learning-progress.md](../../../../features/learning-progress.md)。
 
+M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地的，从不同步，因为语音名称与引擎包名在另一台设备上都毫无意义。
+
 ## 声明
 
 | 声明 | 类型 | Tier | Purpose |

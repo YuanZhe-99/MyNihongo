@@ -88,6 +88,32 @@ through is worse than a number that only grows.
 The note under the buttons says who performs the download and when. It is not a footnote: it is the
 sentence that makes the switch an informed choice.
 
+### When a row says the feature is not available
+
+The two features have **separate device lists**, and the Prompt API's is the narrower one. On most
+non-Pixel hardware the honest answer is that correction suggestions work and explanations do not.
+That is why there is a row per feature rather than one "AI" state.
+
+A row that cannot offer the feature says which of two different things happened:
+
+| Row | Meaning | Diagnostic line under it |
+|---|---|---|
+| Not available on this device | AICore was asked and refused | the raw `FeatureStatus` value |
+| The AI service could not be reached | the call itself failed | the exception class and message |
+
+The diagnostic line is deliberately untranslated: it is an identifier to quote in a bug report, not
+prose to read. Under the section, one more line names the installed AICore build and the device, or
+says AICore is not installed at all.
+
+Both failing rows carry a **Check again** button, because availability changes without the app doing
+anything: AICore provisions itself after device setup or an update, sometimes only after a restart.
+Without it the only way to re-ask was to toggle the switch off and on.
+
+This exists because of a report from a Galaxy Z Fold 8 with AICore installed where both rows read
+"not available", and nothing in the app could say whether the device was off a published list, the
+service was too old, or the call had thrown. `doc/en-us/android-aicore.md` carries the full
+diagnosis procedure.
+
 ## In the sentence lab
 
 With the switch off, the lab is exactly what it was before — no buttons, no hints, nothing.

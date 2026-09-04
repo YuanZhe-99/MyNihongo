@@ -46,6 +46,8 @@ Windows 是**本地开发与测试目标**：工程、安装脚本和图标都�
 ## 语音插件
 
 - **`flutter_tts: ^4.2.5`** 与 **`speech_to_text: 7.4.0`**，两者都已针对本工程的 Gradle 状态解析并构建通过。它们仍然自行应用 Kotlin Gradle 插件，而这正是 `android.builtInKotlin=false` 所需要的——与 `file_picker` 被钉版本的约束相同。Android 构建会为 `file_picker`、`flutter_tts`、`package_info_plus`、`speech_to_text` 和 `wakelock_plus` 打印 Flutter 的"插件应用了 KGP"警告；这属于插件侧，在此无法修复。
+- **`flutter_tts` 会背着应用覆盖引擎语言**，在它的 Android 插件里有两处：init 回调重放被排队的方法调用，*然后*把语言设成系统默认语音的区域设置；以及服务连接断开后 `speak` 会静默重建 `TextToSpeech` 实例。两者从 Dart 侧都看不见。`TtsService` 绕开了这两处——第一次写入前先探测、每次朗读前重新应用、并显式指定语音而不只是语言。理由写在 `features/pronunciation.md`；不要在读它之前移除其中任何一条。
+- **清单为 `com.google.android.aicore` 声明了 `<queries>` 条目。** 否则 Android 11+ 的软件包可见性会把它藏起来，应用就读不到已安装的 AICore 版本——而这正是区分「设备不受支持」与「服务版本过旧」的那项事实。见 `android-aicore.md`。
 - **`speech_to_text` 精确钉版本。** 它的主分支已经把 `kotlin-android` 换成了 AGP 的内置 Kotlin，因此使用脱字号约束会在新版本发布的第一时间弄坏 Android 构建。
 - `flutter_tts` 声明 `compileSdk 36` 和 `minSdk 24`；这里的 `flutter.compileSdkVersion` 与 `flutter.minSdkVersion` 都满足。
 - **两个插件都不会注入权限。** debug 构建后的合并清单中只有 `INTERNET`，因此 `RECORD_AUDIO` 和识别器的 `<queries>` 条目要由应用自己声明。`speech_to_text` README 中列出的蓝牙权限用于耳机路由，这里刻意不声明。

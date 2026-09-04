@@ -6,6 +6,8 @@
 
 使用方：`settings_page.dart`，它仅在 Android 上纳入这一节。
 
+自 M3.0 起，无法提供功能的那一行还会显示设备的原话——原始的 `FeatureStatus` 值，或调用失败时的异常类名——并带一个**重新检查**按钮，因为 AICore 会在设备初始化之后自行准备，有时还要重启一次。分区底部有一行写明已安装的 AICore 版本与设备型号。见 [`../../../../features/ai-assist.md`](../../../../features/ai-assist.md)。
+
 ## 声明
 
 | 声明 | 种类 | 层级 | 用途 |

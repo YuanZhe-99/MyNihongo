@@ -54,7 +54,8 @@ class AiAssistService extends ChangeNotifier {
   final GenAiBackend _backend;
 
   bool _enabled = false;
-  final Map<GenAiFeature, GenAiStatus> _status = {};
+  final Map<GenAiFeature, GenAiStatusReport> _status = {};
+  GenAiCoreInfo? _coreInfo;
   GenAiDownload? _download;
   GenAiFeature? _downloading;
   bool _busy = false;
@@ -77,8 +78,19 @@ class AiAssistService extends ChangeNotifier {
   /// Side effects: None.
   /// Notes: `unsupported` until [refreshStatus] has run, which is also the
   /// right answer on every platform that has no on-device model.
-  GenAiStatus statusOf(GenAiFeature feature) =>
-      _status[feature] ?? GenAiStatus.unsupported;
+  GenAiStatus statusOf(GenAiFeature feature) => reportOf(feature).status;
+
+  /// Purpose: Report a feature's status together with what the device said.
+  /// Inputs: `feature`.
+  /// Returns: `GenAiStatusReport`.
+  /// Side effects: None.
+  /// Notes: The detail is what makes a refusal actionable on a device that is
+  /// not on a published support list; [statusOf] is the same answer without it.
+  GenAiStatusReport reportOf(GenAiFeature feature) =>
+      _status[feature] ?? GenAiStatusReport.unsupported;
+
+  /// What AICore is installed on this device, once [refreshStatus] has asked.
+  GenAiCoreInfo? get coreInfo => _coreInfo;
 
   /// Whether explanations can be generated right now.
   bool get canExplain =>
@@ -134,14 +146,15 @@ class AiAssistService extends ChangeNotifier {
         ..clear()
         ..addAll({
           for (final feature in GenAiFeature.values)
-            feature: GenAiStatus.unsupported,
+            feature: GenAiStatusReport.unsupported,
         });
       notifyListeners();
       return;
     }
     for (final feature in GenAiFeature.values) {
-      _status[feature] = await _backend.status(feature);
+      _status[feature] = await _backend.statusReport(feature);
     }
+    _coreInfo = await _backend.coreInfo();
     notifyListeners();
   }
 
@@ -169,10 +182,10 @@ class AiAssistService extends ChangeNotifier {
           notifyListeners();
         },
       );
-      _status[feature] = await _backend.status(feature);
-      return _status[feature] == GenAiStatus.available;
+      _status[feature] = await _backend.statusReport(feature);
+      return statusOf(feature) == GenAiStatus.available;
     } on GenAiException {
-      _status[feature] = await _backend.status(feature);
+      _status[feature] = await _backend.statusReport(feature);
       return false;
     } finally {
       _busy = false;
@@ -193,8 +206,10 @@ class AiAssistService extends ChangeNotifier {
   Future<String> explain(String prompt) async {
     _requireEnabled();
     if (_busy) throw const GenAiException(GenAiFailure.busy);
-    _status[GenAiFeature.prompt] = await _backend.status(GenAiFeature.prompt);
-    if (_status[GenAiFeature.prompt] != GenAiStatus.available) {
+    _status[GenAiFeature.prompt] = await _backend.statusReport(
+      GenAiFeature.prompt,
+    );
+    if (statusOf(GenAiFeature.prompt) != GenAiStatus.available) {
       notifyListeners();
       throw const GenAiException(GenAiFailure.unavailable);
     }
@@ -221,10 +236,10 @@ class AiAssistService extends ChangeNotifier {
   Future<List<String>> proofread(String sentence) async {
     _requireEnabled();
     if (_busy) throw const GenAiException(GenAiFailure.busy);
-    _status[GenAiFeature.proofread] = await _backend.status(
+    _status[GenAiFeature.proofread] = await _backend.statusReport(
       GenAiFeature.proofread,
     );
-    if (_status[GenAiFeature.proofread] != GenAiStatus.available) {
+    if (statusOf(GenAiFeature.proofread) != GenAiStatus.available) {
       notifyListeners();
       throw const GenAiException(GenAiFailure.unavailable);
     }

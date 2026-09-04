@@ -1200,8 +1200,80 @@ abstract class AppLocalizations {
   /// No description provided for @speechVoiceDefault.
   ///
   /// In en, this message translates to:
-  /// **'Engine default'**
+  /// **'Chosen automatically'**
   String get speechVoiceDefault;
+
+  /// No description provided for @speechVoiceUsing.
+  ///
+  /// In en, this message translates to:
+  /// **'Using {voice}'**
+  String speechVoiceUsing(Object voice);
+
+  /// No description provided for @speechVoicePick.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a Japanese voice'**
+  String get speechVoicePick;
+
+  /// No description provided for @speechVoiceNumbered.
+  ///
+  /// In en, this message translates to:
+  /// **'Japanese voice {number}'**
+  String speechVoiceNumbered(int number);
+
+  /// No description provided for @speechVoicePreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Play a sample'**
+  String get speechVoicePreview;
+
+  /// No description provided for @speechVoiceOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'On this device'**
+  String get speechVoiceOffline;
+
+  /// No description provided for @speechVoiceNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs the network'**
+  String get speechVoiceNetwork;
+
+  /// No description provided for @speechVoiceNotInstalled.
+  ///
+  /// In en, this message translates to:
+  /// **'Not downloaded'**
+  String get speechVoiceNotInstalled;
+
+  /// No description provided for @speechVoiceQualityHigh.
+  ///
+  /// In en, this message translates to:
+  /// **'Higher quality'**
+  String get speechVoiceQualityHigh;
+
+  /// No description provided for @speechVoiceQualityNormal.
+  ///
+  /// In en, this message translates to:
+  /// **'Standard quality'**
+  String get speechVoiceQualityNormal;
+
+  /// No description provided for @speechVoiceQualityLow.
+  ///
+  /// In en, this message translates to:
+  /// **'Lower quality'**
+  String get speechVoiceQualityLow;
+
+  /// No description provided for @speechEngine.
+  ///
+  /// In en, this message translates to:
+  /// **'Speech engine'**
+  String get speechEngine;
+
+  /// No description provided for @speechEngineDefault.
+  ///
+  /// In en, this message translates to:
+  /// **'System default'**
+  String get speechEngineDefault;
 
   /// No description provided for @speechNoVoiceTitle.
   ///
@@ -1611,6 +1683,12 @@ abstract class AppLocalizations {
   /// **'Not available on this device'**
   String get aiStatusUnavailable;
 
+  /// No description provided for @aiStatusUnreachable.
+  ///
+  /// In en, this message translates to:
+  /// **'The AI service could not be reached'**
+  String get aiStatusUnreachable;
+
   /// No description provided for @aiStatusDownloadable.
   ///
   /// In en, this message translates to:
@@ -1628,6 +1706,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Ready'**
   String get aiStatusAvailable;
+
+  /// No description provided for @aiCheckAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Check again'**
+  String get aiCheckAgain;
+
+  /// No description provided for @aiCoreVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'AICore {version}'**
+  String aiCoreVersion(Object version);
+
+  /// No description provided for @aiCoreMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'AICore is not installed on this device.'**
+  String get aiCoreMissing;
 
   /// No description provided for @aiDownload.
   ///

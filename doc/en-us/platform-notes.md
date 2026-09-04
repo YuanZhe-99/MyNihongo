@@ -107,6 +107,16 @@ icons are in the repository, but no CI job builds them (see [`ci-cd.md`](ci-cd.m
   `android.builtInKotlin=false` requires — the same constraint that pins `file_picker`. The Android
   build prints Flutter's "plugins that apply KGP" warning for `file_picker`, `flutter_tts`,
   `package_info_plus`, `speech_to_text` and `wakelock_plus`; it is plugin-side and unfixable here.
+- **`flutter_tts` overwrites the engine language behind the app's back**, in two places in its
+  Android plugin: its init callback replays queued method calls and *then* sets the language to the
+  system default voice's locale, and `speak` silently rebuilds the `TextToSpeech` instance when the
+  service connection has dropped. Neither is visible from Dart. `TtsService` works around both — a
+  probe before the first write, a re-apply before every utterance, and an explicit voice rather than
+  only a language. The reasoning is in `features/pronunciation.md`; do not remove any of the three
+  without reading it.
+- **The manifest declares a `<queries>` entry for `com.google.android.aicore`.** Android 11+ package
+  visibility otherwise hides it, and the app cannot read which AICore build is installed — the fact
+  that separates an unsupported device from an out-of-date service. See `android-aicore.md`.
 - **`speech_to_text` is pinned exactly.** Its main branch has already dropped `kotlin-android` for
   AGP's built-in Kotlin, so a caret constraint would break the Android build the first time a new
   release lands.

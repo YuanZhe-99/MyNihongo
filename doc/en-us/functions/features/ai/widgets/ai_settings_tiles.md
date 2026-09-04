@@ -7,6 +7,12 @@ Built the same way the Speech section is, and kept out of `settings_page.dart` f
 
 Consumers: `settings_page.dart`, which includes the section on Android only.
 
+Since M3.0 a row that cannot offer its feature also shows what the device said — the raw
+`FeatureStatus` value, or the exception class when the call failed — and carries a **Check again**
+button, because AICore provisions itself after setup and sometimes only after a restart. A line under
+the section names the installed AICore build and the device. See
+[`../../../../features/ai-assist.md`](../../../../features/ai-assist.md).
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |

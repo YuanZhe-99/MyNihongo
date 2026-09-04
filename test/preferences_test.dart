@@ -130,6 +130,21 @@ void main() {
     expect((await config()).containsKey('ttsVoice'), isFalse);
   });
 
+  test('the chosen speech engine round trips and clears', () async {
+    expect(await NihongoStorage.getTtsEngine(), isNull);
+    await NihongoStorage.setTtsEngine('com.samsung.SMT');
+    expect(await NihongoStorage.getTtsEngine(), 'com.samsung.SMT');
+    await NihongoStorage.setTtsEngine(null);
+    expect((await config()).containsKey('ttsEngine'), isFalse);
+  });
+
+  test('the engine and the voice are stored independently', () async {
+    await NihongoStorage.setTtsEngine('com.google.android.tts');
+    await NihongoStorage.setTtsVoice('ja-jp-x-jab#male_1-local');
+    expect(await NihongoStorage.getTtsEngine(), 'com.google.android.tts');
+    expect(await NihongoStorage.getTtsVoice(), 'ja-jp-x-jab#male_1-local');
+  });
+
   test('network speech recognition is off unless it was turned on', () async {
     expect(await NihongoStorage.getSpeechNetworkFallback(), isFalse);
     await NihongoStorage.setSpeechNetworkFallback(true);

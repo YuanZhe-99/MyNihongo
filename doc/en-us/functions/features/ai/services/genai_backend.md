@@ -10,6 +10,12 @@ parsing — is on the service's side of it.
 Consumers: `ai_assist_service.dart`, `sentence_lab_page.dart` and `ai_settings_tiles.dart` (for the
 enums), and the tests.
 
+M3.0 split what used to be one answer in two. `statusReport` returns the status **plus** the raw
+platform value or the exception behind it, and `GenAiStatus.unreachable` says the call could not be
+made at all — a different fact from AICore refusing, with a different fix. `coreInfo` reads the
+installed AICore build. Both were added with bodies rather than left abstract so a backend with
+nothing to add keeps working unchanged.
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |

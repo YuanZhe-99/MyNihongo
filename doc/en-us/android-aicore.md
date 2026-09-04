@@ -189,6 +189,36 @@ adb logcat | grep -i aicore
 A device may report two AICore entries — a `/product/priv-app` prebuilt stub and an updated version
 installed over it. The updated one is what serves requests, so read the higher `versionName`.
 
+### Diagnosing "not available on this device"
+
+This is the failure that needs a procedure, because it is what the app reports for at least four
+unrelated causes. Work down the list; the first two need no cable.
+
+1. **Read the app's own status rows.** Each carries the raw answer under it — `FeatureStatus=0` when
+   AICore was asked and said no, or an exception class and message when the call could not be made
+   at all. A version line under the section names the installed AICore build and the device. Those
+   three facts separate every case below.
+2. **Compare the two features.** They have separate device lists. Explanations use the Prompt API,
+   whose list is the narrower one; correction suggestions use Proofreading, whose list is much wider.
+   *One row ready and the other unavailable is the expected answer on most non-Pixel hardware*, not a
+   bug — and it is why the app never treats "AI" as one switchable thing.
+3. **Check the bootloader.** `verifiedbootstate` must be `green` and `flash.locked` must be `1`. An
+   unlocked bootloader fails as "unavailable", with no hint that this is the reason.
+4. **Give provisioning time and network.** Right after setup, an AICore reset, or an OS update, the
+   service can answer `UNAVAILABLE` until it has fetched what it needs, sometimes only after a
+   restart. Re-check rather than concluding — this is what the **Check again** button in Settings is
+   for.
+5. **Check the AICore version against the device.** A manufacturer ships AICore through its own
+   update channel, so a phone can be new and its AICore old.
+6. **Only then suspect the build.** `logcat -s MyNihongoGenAi` prints every status answer and every
+   failure with its exception class. If the failure appears in a release build but not a debug one,
+   read [the R8 field note](#field-notes) before anything else.
+
+The app is instrumented for exactly this: `GenAiChannel.status` catches its own exceptions and
+answers `unreachable` with the exception class rather than letting them collapse into `unavailable`,
+and it reads the AICore package version through the manifest's `<queries>` entry. Without that entry
+the package is invisible on API 30+ and every device looks like it has no AICore at all.
+
 ## Privacy, honestly stated
 
 Worth being precise, because "on-device AI" is easy to overclaim:
@@ -235,6 +265,16 @@ of it is guaranteed to generalise.
 - **Both English and Simplified Chinese output were correct and idiomatic** when the prompt asked for
   them, on `nano-v3`. The Prompt API publishes no language list; this is one data point, not a
   guarantee.
+- **Samsung Galaxy Z Fold 8, reported 2026-09-03: AICore installed, both features "not available".**
+  Not reproduced here — there is no Samsung device on this host — and recorded because the *shape* of
+  the report is the useful part. The two most likely causes are ordinary rather than broken: the
+  Prompt API's published device list named only the Pixel 10 family at the verification date above,
+  and AICore on a manufacturer's own update channel can lag the phone. What made it undiagnosable was
+  the app, not the device: every failure path answered with the same sentence, so "AICore said no",
+  "the call threw" and "the package is invisible to this build" were indistinguishable. The
+  instrumentation described under [Diagnosing](#diagnosing-not-available-on-this-device) was added
+  for this report; **treat a published device list as a floor and the runtime status as the truth**,
+  and expect proofreading to be available on hardware where the Prompt API is not.
 - The Proofreading API handed a **correct** sentence returns that sentence unchanged, so a client
   has to compare and say "nothing to change" itself — otherwise it tells the learner their correct
   sentence was wrong.

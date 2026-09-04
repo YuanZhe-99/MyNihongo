@@ -13,7 +13,7 @@ import 'package:my_nihongo/features/ai/services/genai_backend.dart';
 /// else here is the state the Settings rows and the sentence lab render — the
 /// per-feature statuses, the one-at-a-time rule, and the timeout that stops a
 /// wedged model leaving a spinner on the screen.
-class _FakeGenAiBackend implements GenAiBackend {
+class _FakeGenAiBackend extends GenAiBackend {
   _FakeGenAiBackend({
     this.promptStatus = GenAiStatus.available,
     this.proofreadStatus = GenAiStatus.available,
@@ -41,12 +41,28 @@ class _FakeGenAiBackend implements GenAiBackend {
   /// Progress events to emit during a download.
   List<(int, int)> progress = const [(1024, 4096), (4096, 4096)];
 
+  /// The diagnostic line the platform sends back with a failing status.
+  String? detail;
+
+  /// What the device says about its AICore installation.
+  GenAiCoreInfo? core;
+
   int cancels = 0;
 
   @override
   Future<GenAiStatus> status(GenAiFeature feature) async {
     calls.add('status:${feature.name}');
     return feature == GenAiFeature.prompt ? promptStatus : proofreadStatus;
+  }
+
+  @override
+  Future<GenAiStatusReport> statusReport(GenAiFeature feature) async =>
+      GenAiStatusReport(await status(feature), detail: detail);
+
+  @override
+  Future<GenAiCoreInfo?> coreInfo() async {
+    calls.add('coreInfo');
+    return core;
   }
 
   @override
@@ -276,5 +292,63 @@ void main() {
       isFalse,
       reason: 'offering a download that cannot help would be a false promise',
     );
+  });
+
+  test('a status the device could not be asked for is not "unavailable"', () async {
+    final backend = _FakeGenAiBackend(
+      promptStatus: GenAiStatus.unreachable,
+      proofreadStatus: GenAiStatus.available,
+    )..detail = 'GenAiException: AICore is out of date';
+    final service = AiAssistService(backend: backend);
+    await service.setEnabled(true);
+
+    // The two used to share one answer, and a phone with AICore installed then
+    // reported that it had no on-device model at all.
+    expect(service.statusOf(GenAiFeature.prompt), GenAiStatus.unreachable);
+    expect(service.statusOf(GenAiFeature.proofread), GenAiStatus.available);
+    expect(
+      service.reportOf(GenAiFeature.prompt).detail,
+      'GenAiException: AICore is out of date',
+    );
+  });
+
+  test('one feature can be unavailable while the other is ready', () async {
+    final backend = _FakeGenAiBackend(
+      promptStatus: GenAiStatus.unavailable,
+      proofreadStatus: GenAiStatus.downloadable,
+    );
+    final service = AiAssistService(backend: backend);
+    await service.setEnabled(true);
+    expect(service.canExplain, isFalse);
+    expect(service.statusOf(GenAiFeature.proofread), GenAiStatus.downloadable);
+  });
+
+  test('the AICore version is read when the statuses are refreshed', () async {
+    final backend = _FakeGenAiBackend()
+      ..core = const GenAiCoreInfo(
+        installed: true,
+        versionName: 'aicore_20260723.00_RC11',
+        sdk: 36,
+        device: 'samsung SM-F978B',
+      );
+    final service = AiAssistService(backend: backend);
+    await service.setEnabled(true);
+    expect(service.coreInfo?.versionName, 'aicore_20260723.00_RC11');
+    expect(service.coreInfo?.device, 'samsung SM-F978B');
+  });
+
+  test('a device that reports no AICore info does not break the page', () async {
+    final service = AiAssistService(backend: _FakeGenAiBackend());
+    await service.setEnabled(true);
+    expect(service.coreInfo, isNull);
+  });
+
+  test('turning the switch off asks the device nothing, diagnostics included',
+      () async {
+    final backend = _FakeGenAiBackend();
+    final service = AiAssistService(backend: backend);
+    expect(backend.calls, isEmpty);
+    expect(service.reportOf(GenAiFeature.prompt).status,
+        GenAiStatus.unsupported);
   });
 }

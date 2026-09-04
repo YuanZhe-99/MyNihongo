@@ -1,5 +1,7 @@
 package com.yuanzhe.my_nihongo
 
+import android.content.pm.PackageManager
+import android.os.Build
 import android.util.Log
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.mlkit.genai.common.DownloadCallback
@@ -100,6 +102,7 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
         when (call.method) {
             "status" -> run(result) { status(call.argument<String>("feature")) }
+            "aicore" -> run(result) { aiCoreInfo() }
             "download" -> run(result) { download(call.argument<String>("feature")) }
             "explain" -> run(result) {
                 explain(
@@ -153,26 +156,83 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
     /**
      * Purpose: Report whether a feature can be used, downloaded, or not at all.
      * Inputs: `feature` — `prompt` or `proofread`.
-     * Returns: `String` — `unavailable`, `downloadable`, `downloading` or
-     * `available`.
+     * Returns: A map of `status` (`available`, `downloadable`, `downloading`,
+     * `unavailable` or `unreachable`), the raw `code`, and a `detail` line when
+     * there is something to explain.
      * Side effects: Queries AICore.
      * Notes: Internal helper used within this file only. Asked before every
      * use rather than once: the system can remove a model between two
      * requests, and a stale "available" produces a failure the learner cannot
-     * interpret.
+     * interpret. The raw code and the exception travel with the answer because
+     * the published device lists differ per API and are a floor rather than the
+     * truth — without them a phone that has AICore and is simply not on the
+     * Prompt API's list is indistinguishable from one where the call threw.
      */
-    private suspend fun status(feature: String?): String {
-        val code = if (feature == FEATURE_PROOFREAD) {
-            proofreader().checkFeatureStatus().await()
-        } else {
-            model().checkStatus()
+    private suspend fun status(feature: String?): Map<String, Any?> {
+        val code = try {
+            if (feature == FEATURE_PROOFREAD) {
+                proofreader().checkFeatureStatus().await()
+            } else {
+                model().checkStatus()
+            }
+        } catch (e: Throwable) {
+            // Not rethrown. "AICore answered UNAVAILABLE" and "AICore could not
+            // be asked at all" are different facts with different fixes, and
+            // collapsing them into one reply is what left a device that has
+            // AICore installed reporting that it has no on-device model.
+            val cause = if (e is ExecutionException) e.cause ?: e else e
+            Log.w(TAG, "status($feature) failed", cause)
+            return mapOf(
+                "status" to "unreachable",
+                "code" to -1,
+                "detail" to "${cause.javaClass.simpleName}: ${cause.message}",
+            )
         }
         Log.i(TAG, "status($feature) = $code")
-        return when (code) {
+        val name = when (code) {
             FeatureStatus.AVAILABLE -> "available"
             FeatureStatus.DOWNLOADABLE -> "downloadable"
             FeatureStatus.DOWNLOADING -> "downloading"
             else -> "unavailable"
+        }
+        return mapOf(
+            "status" to name,
+            "code" to code,
+            // Only when there is something to explain: a working feature needs
+            // no diagnostic line under it.
+            "detail" to if (name == "unavailable") "FeatureStatus=$code" else null,
+        )
+    }
+
+    /**
+     * Purpose: Describe the AICore installation this device actually has.
+     * Inputs: None.
+     * Returns: A map naming the AICore package version, the API level and the
+     * device, or `installed = false`.
+     * Side effects: Queries the package manager.
+     * Notes: Internal helper used within this file only. The published device
+     * lists differ per API and are a floor rather than the truth, so the only
+     * way to tell "this phone is not on the list" from "AICore here is too old"
+     * is to report what is installed. Reading it needs the `<queries>` entry in
+     * the manifest on API 30 and up, or the package is invisible and this
+     * answers `installed = false` on a device that has it.
+     */
+    private fun aiCoreInfo(): Map<String, Any?> {
+        val device = "${Build.MANUFACTURER} ${Build.MODEL}"
+        return try {
+            val info = activity.packageManager.getPackageInfo(AICORE_PACKAGE, 0)
+            mapOf(
+                "installed" to true,
+                "versionName" to info.versionName,
+                "sdk" to Build.VERSION.SDK_INT,
+                "device" to device,
+            )
+        } catch (e: PackageManager.NameNotFoundException) {
+            mapOf(
+                "installed" to false,
+                "sdk" to Build.VERSION.SDK_INT,
+                "device" to device,
+            )
         }
     }
 
@@ -369,5 +429,8 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
 
         /** The Proofreading API, used for correction suggestions. */
         const val FEATURE_PROOFREAD = "proofread"
+
+        /** The AICore system service, whose version decides what is served. */
+        private const val AICORE_PACKAGE = "com.google.android.aicore"
     }
 }

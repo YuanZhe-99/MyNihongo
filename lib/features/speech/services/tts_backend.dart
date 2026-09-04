@@ -43,10 +43,37 @@ abstract class TtsBackend {
 
   /// Purpose: Select a voice by name and locale.
   /// Inputs: `voice` — a map from [voices].
-  /// Returns: None.
+  /// Returns: `Future<bool>` — whether the engine accepted the voice.
   /// Side effects: Changes engine state.
+  /// Notes: The answer is load-bearing: an engine that rejects the voice keeps
+  /// speaking in whatever language it was left in, and [TtsService] uses this
+  /// to decide whether Japanese is actually reachable.
+  Future<bool> setVoice(Map<String, String> voice);
+
+  /// Purpose: List the speech engines installed on the device.
+  /// Inputs: None.
+  /// Returns: `Future<List<String>>` — engine package names; empty where the
+  /// platform has no concept of selectable engines.
+  /// Side effects: None.
+  /// Notes: Android only in practice. A phone often has two — the Google
+  /// engine and the manufacturer's — and they do not have the same voices.
+  Future<List<String>> engines();
+
+  /// Purpose: Name the engine the system would use by default.
+  /// Inputs: None.
+  /// Returns: `Future<String?>` — a package name, or null when unknown.
+  /// Side effects: None.
   /// Notes: None.
-  Future<void> setVoice(Map<String, String> voice);
+  Future<String?> defaultEngine();
+
+  /// Purpose: Switch to another speech engine.
+  /// Inputs: `engine` — a package name from [engines].
+  /// Returns: `Future<bool>` — whether the engine initialized.
+  /// Side effects: Rebuilds the platform engine; every piece of engine state
+  /// (language, voice, rate) is lost and must be re-applied.
+  /// Notes: The plugin resolves this only after the new engine's init callback
+  /// has run, which is why awaiting it is what makes re-applying safe.
+  Future<bool> setEngine(String engine);
 
   /// Purpose: Speak a string and complete when the utterance finishes.
   /// Inputs: `text`.
@@ -127,11 +154,64 @@ class FlutterTtsBackend implements TtsBackend {
 
   /// Purpose: Select a voice.
   /// Inputs: `voice`.
-  /// Returns: None.
+  /// Returns: `Future<bool>` — the engine's own answer.
   /// Side effects: Changes engine state.
-  /// Notes: None.
+  /// Notes: Android answers `1` when it found a voice with that exact name and
+  /// locale, `0` when it did not; the same loose typing as [setLanguage].
   @override
-  Future<void> setVoice(Map<String, String> voice) => _tts.setVoice(voice);
+  Future<bool> setVoice(Map<String, String> voice) async =>
+      _asBool(await _tts.setVoice(voice));
+
+  /// Purpose: List the installed speech engines.
+  /// Inputs: None.
+  /// Returns: `Future<List<String>>`; empty on a platform without engines or
+  /// when the query fails.
+  /// Side effects: None.
+  /// Notes: `getEngines` exists only on the Android side of the plugin and
+  /// throws elsewhere, so the failure is swallowed rather than branched on
+  /// `defaultTargetPlatform` — the empty list is the same answer either way.
+  @override
+  Future<List<String>> engines() async {
+    try {
+      final raw = await _tts.getEngines;
+      if (raw is! List) return const [];
+      return [for (final engine in raw) engine.toString()];
+    } catch (_) {
+      return const [];
+    }
+  }
+
+  /// Purpose: Name the system's default speech engine.
+  /// Inputs: None.
+  /// Returns: `Future<String?>`.
+  /// Side effects: None.
+  /// Notes: Same platform caveat as [engines].
+  @override
+  Future<String?> defaultEngine() async {
+    try {
+      final raw = await _tts.getDefaultEngine;
+      return raw is String && raw.isNotEmpty ? raw : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /// Purpose: Switch the platform engine.
+  /// Inputs: `engine`.
+  /// Returns: `Future<bool>`.
+  /// Side effects: Rebuilds the platform engine.
+  /// Notes: The plugin's `setEngine` completes from the new engine's init
+  /// callback, so a caller that awaits it knows the engine is ready — and
+  /// knows its own language and voice were discarded.
+  @override
+  Future<bool> setEngine(String engine) async {
+    try {
+      await _tts.setEngine(engine);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
 
   /// Purpose: Speak text, completing when the audio ends.
   /// Inputs: `text`.

@@ -606,7 +606,47 @@ class AppLocalizationsZh extends AppLocalizations {
   String get speechVoice => '日语语音';
 
   @override
-  String get speechVoiceDefault => '引擎默认';
+  String get speechVoiceDefault => '自动选择';
+
+  @override
+  String speechVoiceUsing(Object voice) {
+    return '正在使用$voice';
+  }
+
+  @override
+  String get speechVoicePick => '选择日语语音';
+
+  @override
+  String speechVoiceNumbered(int number) {
+    return '日语语音 $number';
+  }
+
+  @override
+  String get speechVoicePreview => '试听';
+
+  @override
+  String get speechVoiceOffline => '本机可用';
+
+  @override
+  String get speechVoiceNetwork => '需要联网';
+
+  @override
+  String get speechVoiceNotInstalled => '尚未下载';
+
+  @override
+  String get speechVoiceQualityHigh => '音质较高';
+
+  @override
+  String get speechVoiceQualityNormal => '音质标准';
+
+  @override
+  String get speechVoiceQualityLow => '音质较低';
+
+  @override
+  String get speechEngine => '语音引擎';
+
+  @override
+  String get speechEngineDefault => '系统默认';
 
   @override
   String get speechNoVoiceTitle => '未安装日语语音';
@@ -834,6 +874,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get aiStatusUnavailable => '本设备不支持';
 
   @override
+  String get aiStatusUnreachable => '无法访问 AI 服务';
+
+  @override
   String get aiStatusDownloadable => '尚未下载';
 
   @override
@@ -841,6 +884,17 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get aiStatusAvailable => '可以使用';
+
+  @override
+  String get aiCheckAgain => '重新检查';
+
+  @override
+  String aiCoreVersion(Object version) {
+    return 'AICore $version';
+  }
+
+  @override
+  String get aiCoreMissing => '本设备未安装 AICore。';
 
   @override
   String get aiDownload => '下载';
@@ -1505,7 +1559,47 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get speechVoice => '日語語音';
 
   @override
-  String get speechVoiceDefault => '引擎預設';
+  String get speechVoiceDefault => '自動選擇';
+
+  @override
+  String speechVoiceUsing(Object voice) {
+    return '正在使用$voice';
+  }
+
+  @override
+  String get speechVoicePick => '選擇日語語音';
+
+  @override
+  String speechVoiceNumbered(int number) {
+    return '日語語音 $number';
+  }
+
+  @override
+  String get speechVoicePreview => '試聽';
+
+  @override
+  String get speechVoiceOffline => '本機可用';
+
+  @override
+  String get speechVoiceNetwork => '需要連網';
+
+  @override
+  String get speechVoiceNotInstalled => '尚未下載';
+
+  @override
+  String get speechVoiceQualityHigh => '音質較高';
+
+  @override
+  String get speechVoiceQualityNormal => '音質標準';
+
+  @override
+  String get speechVoiceQualityLow => '音質較低';
+
+  @override
+  String get speechEngine => '語音引擎';
+
+  @override
+  String get speechEngineDefault => '系統預設';
 
   @override
   String get speechNoVoiceTitle => '未安裝日語語音';
@@ -1733,6 +1827,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get aiStatusUnavailable => '本裝置不支援';
 
   @override
+  String get aiStatusUnreachable => '無法存取 AI 服務';
+
+  @override
   String get aiStatusDownloadable => '尚未下載';
 
   @override
@@ -1740,6 +1837,17 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get aiStatusAvailable => '可以使用';
+
+  @override
+  String get aiCheckAgain => '重新檢查';
+
+  @override
+  String aiCoreVersion(Object version) {
+    return 'AICore $version';
+  }
+
+  @override
+  String get aiCoreMissing => '本裝置未安裝 AICore。';
 
   @override
   String get aiDownload => '下載';
