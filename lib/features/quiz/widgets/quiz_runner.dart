@@ -5,6 +5,7 @@ import '../../../shared/utils/adaptive_layout.dart';
 import '../../speech/widgets/speak_button.dart';
 import '../../../shared/widgets/furigana_text.dart';
 import '../models/quiz_question.dart';
+import 'why_wrong.dart';
 import '../services/answer_checker.dart';
 import '../services/quiz_session.dart';
 import 'answer_panes.dart';
@@ -120,7 +121,7 @@ class _QuizRunnerState extends State<QuizRunner> {
           onSubmit: _submit,
         ),
         const SizedBox(height: 12),
-        if (answered) _feedback(context, l10n, outcome),
+        if (answered) _feedback(context, l10n, outcome, question),
         const SizedBox(height: 12),
         FilledButton(
           onPressed: answered ? _continue : (_pending == null ? null : _submit),
@@ -169,7 +170,12 @@ class _QuizRunnerState extends State<QuizRunner> {
     BuildContext context,
     AppLocalizations l10n,
     QuizOutcome outcome,
+    QuizQuestion question,
   ) {
+    // The option they picked, for the explanation to be about. Held until
+    // Continue clears it, which is exactly as long as the feedback is shown.
+    final pending = _pending;
+    final chosen = pending is ChoiceAnswer ? pending.index : null;
     final theme = Theme.of(context);
     final color = outcome.correct
         ? theme.colorScheme.primary
@@ -199,6 +205,8 @@ class _QuizRunnerState extends State<QuizRunner> {
               style: theme.textTheme.bodyMedium,
             ),
           ),
+        if (!outcome.correct)
+          WhyWrong(question: question, chose: chosen),
       ],
     );
   }

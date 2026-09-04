@@ -3335,6 +3335,297 @@
         "zh": "关于",
         "zh_TW": "關於"
       }
+    },
+    {
+      "id": "fw:sareru",
+      "surface": "される",
+      "category": "auxiliary",
+      "lemma": "される",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive"
+      ],
+      "gloss": {
+        "en": "made to do",
+        "zh": "被迫做",
+        "zh_TW": "被迫做"
+      }
+    },
+    {
+      "id": "fw:saremasu",
+      "surface": "されます",
+      "category": "auxiliary",
+      "lemma": "される",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "polite"
+      ],
+      "gloss": {
+        "en": "made to do",
+        "zh": "被迫做",
+        "zh_TW": "被迫做"
+      }
+    },
+    {
+      "id": "fw:sareta",
+      "surface": "された",
+      "category": "auxiliary",
+      "lemma": "される",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "past"
+      ],
+      "gloss": {
+        "en": "was made to do",
+        "zh": "被迫做了",
+        "zh_TW": "被迫做了"
+      }
+    },
+    {
+      "id": "fw:saremashita",
+      "surface": "されました",
+      "category": "auxiliary",
+      "lemma": "される",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "polite",
+        "past"
+      ],
+      "gloss": {
+        "en": "was made to do",
+        "zh": "被迫做了",
+        "zh_TW": "被迫做了"
+      }
+    },
+    {
+      "id": "fw:sarete",
+      "surface": "されて",
+      "category": "auxiliary",
+      "lemma": "される",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "te"
+      ],
+      "gloss": {
+        "en": "made to do",
+        "zh": "被迫做",
+        "zh_TW": "被迫做"
+      }
+    },
+    {
+      "id": "fw:zu-ni",
+      "surface": "ずに",
+      "category": "particle-conjunctive",
+      "lemma": "ず",
+      "needs": "naiStem",
+      "forms": [
+        "negative"
+      ],
+      "gloss": {
+        "en": "without doing",
+        "zh": "不……而",
+        "zh_TW": "不……而"
+      }
+    },
+    {
+      "id": "fw:zu",
+      "surface": "ず",
+      "category": "auxiliary",
+      "lemma": "ず",
+      "needs": "naiStem",
+      "forms": [
+        "negative"
+      ],
+      "gloss": {
+        "en": "without doing",
+        "zh": "不……",
+        "zh_TW": "不……"
+      }
+    },
+    {
+      "id": "fw:kke",
+      "surface": "っけ",
+      "category": "particle-final",
+      "lemma": "っけ",
+      "forms": [],
+      "gloss": {
+        "en": "what was it again?",
+        "zh": "来着？",
+        "zh_TW": "來著？"
+      }
+    },
+    {
+      "id": "fw:dakke",
+      "surface": "だっけ",
+      "category": "particle-final",
+      "lemma": "っけ",
+      "forms": [],
+      "gloss": {
+        "en": "what was it again?",
+        "zh": "来着？",
+        "zh_TW": "來著？"
+      }
+    },
+    {
+      "id": "fw:dattakke",
+      "surface": "だったっけ",
+      "category": "particle-final",
+      "lemma": "っけ",
+      "forms": [
+        "past"
+      ],
+      "gloss": {
+        "en": "what was it again?",
+        "zh": "来着？",
+        "zh_TW": "來著？"
+      }
+    },
+    {
+      "id": "fw:ossharu",
+      "surface": "おっしゃいます",
+      "category": "copula",
+      "lemma": "おっしゃる",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "says (honorific)",
+        "zh": "说（尊敬）",
+        "zh_TW": "說（尊敬）"
+      }
+    },
+    {
+      "id": "fw:osshaimashita",
+      "surface": "おっしゃいました",
+      "category": "copula",
+      "lemma": "おっしゃる",
+      "forms": [
+        "polite",
+        "past"
+      ],
+      "gloss": {
+        "en": "said (honorific)",
+        "zh": "说了（尊敬）",
+        "zh_TW": "說了（尊敬）"
+      }
+    },
+    {
+      "id": "fw:nasaimasu",
+      "surface": "なさいます",
+      "category": "copula",
+      "lemma": "なさる",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "does (honorific)",
+        "zh": "做（尊敬）",
+        "zh_TW": "做（尊敬）"
+      }
+    },
+    {
+      "id": "fw:irasshaimasu",
+      "surface": "いらっしゃいます",
+      "category": "copula",
+      "lemma": "いらっしゃる",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "is, goes, comes (honorific)",
+        "zh": "在、去、来（尊敬）",
+        "zh_TW": "在、去、來（尊敬）"
+      }
+    },
+    {
+      "id": "fw:mairimasu",
+      "surface": "参ります",
+      "category": "copula",
+      "lemma": "参る",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "goes, comes (humble)",
+        "zh": "去、来（自谦）",
+        "zh_TW": "去、來（自謙）"
+      }
+    },
+    {
+      "id": "fw:moushimasu",
+      "surface": "申します",
+      "category": "copula",
+      "lemma": "申す",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "says (humble)",
+        "zh": "说（自谦）",
+        "zh_TW": "說（自謙）"
+      }
+    },
+    {
+      "id": "fw:ukagaimasu",
+      "surface": "伺います",
+      "category": "copula",
+      "lemma": "伺う",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "asks, visits (humble)",
+        "zh": "请教、拜访（自谦）",
+        "zh_TW": "請教、拜訪（自謙）"
+      }
+    },
+    {
+      "id": "fw:ppoi",
+      "surface": "っぽい",
+      "category": "formal-noun",
+      "lemma": "っぽい",
+      "forms": [],
+      "gloss": {
+        "en": "tends to be, -ish",
+        "zh": "容易……、有点像",
+        "zh_TW": "容易……、有點像"
+      }
+    },
+    {
+      "id": "fw:ppoi-noun",
+      "surface": "っぽいです",
+      "category": "formal-noun",
+      "lemma": "っぽい",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "tends to be, -ish",
+        "zh": "容易……、有点像",
+        "zh_TW": "容易……、有點像"
+      }
+    },
+    {
+      "id": "fw:ge",
+      "surface": "げ",
+      "category": "auxiliary",
+      "lemma": "げ",
+      "needs": "adjectiveStem",
+      "forms": [],
+      "gloss": {
+        "en": "looking, seeming",
+        "zh": "显得……的样子",
+        "zh_TW": "顯得……的樣子"
+      }
     }
   ],
   "sets": {

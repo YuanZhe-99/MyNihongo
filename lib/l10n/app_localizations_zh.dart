@@ -928,6 +928,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get quizContinue => '继续';
 
   @override
+  String get quizWhyWrong => '为什么这样不对？';
+
+  @override
   String get quizCorrect => '正确';
 
   @override
@@ -1305,6 +1308,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get aiSuggestCorrection => '给出改写建议';
+
+  @override
+  String get aiMoreExamples => '更多例句';
 
   @override
   String get aiGeneratedLabel => '在本设备上生成——可能有误';
@@ -2264,6 +2270,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get quizContinue => '繼續';
 
   @override
+  String get quizWhyWrong => '為什麼這樣不對？';
+
+  @override
   String get quizCorrect => '正確';
 
   @override
@@ -2641,6 +2650,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get aiSuggestCorrection => '給出改寫建議';
+
+  @override
+  String get aiMoreExamples => '更多例句';
 
   @override
   String get aiGeneratedLabel => '在本裝置上生成——可能有誤';

@@ -961,6 +961,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get quizContinue => 'Continue';
 
   @override
+  String get quizWhyWrong => 'Why was this wrong?';
+
+  @override
   String get quizCorrect => 'Correct';
 
   @override
@@ -1345,6 +1348,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aiSuggestCorrection => 'Suggest a correction';
+
+  @override
+  String get aiMoreExamples => 'More examples';
 
   @override
   String get aiGeneratedLabel => 'Generated on this device — may be wrong';

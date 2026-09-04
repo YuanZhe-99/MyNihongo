@@ -21,6 +21,7 @@ import '../../features/kana/models/kana_note.dart';
 import '../../features/speech/widgets/pronunciation_practice_sheet.dart';
 import '../../features/speech/widgets/speak_button.dart';
 import '../../l10n/app_localizations.dart';
+import '../../features/ai/widgets/generated_examples.dart';
 import 'furigana_text.dart';
 import 'reference_widgets.dart';
 
@@ -144,6 +145,7 @@ Future<void> showVocabDetailSheet(
           ),
         const SizedBox(height: 16),
         exampleList(context, entry.examples, locale),
+        GeneratedExamples(entry: entry),
         _chipSection(context, l10n.vocabGrammarUsed, [
           for (final point in grammar)
             ActionChip(

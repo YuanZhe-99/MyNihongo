@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../ai/services/ai_assist_service.dart';
 import '../../ai/services/aicore_sentence_enhancer.dart';
+import '../../ai/services/practice_prompt_builder.dart';
 import '../../ai/services/prompt_builder.dart';
 import '../../../shared/utils/platform_capabilities.dart';
 import '../../content/models/content_catalog.dart';
@@ -97,6 +98,15 @@ final lexiconProvider = FutureProvider<Lexicon>((ref) async {
 ///
 /// A separate provider from the catalog for the same reason the function-word
 /// table is one: a few kilobytes that only one page needs.
+/// The practice tasks' templates, loaded on demand.
+///
+/// A separate asset and a separate provider from the sentence lab's, because
+/// the two are edited for different reasons and a build that never opens a
+/// practice screen should not parse them.
+final practicePromptTemplatesProvider = FutureProvider<PromptTemplates>(
+  (ref) => loadPromptTemplates(null, practicePromptAsset),
+);
+
 final promptTemplatesProvider = FutureProvider<PromptTemplates>(
   (ref) => loadPromptTemplates(),
 );

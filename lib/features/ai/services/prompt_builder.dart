@@ -330,18 +330,22 @@ class PromptBuilder {
       text.length <= max ? text : '${text.substring(0, max)}…';
 }
 
-/// Purpose: Read and parse the prompt template asset.
-/// Inputs: Optional `bundle` for tests; defaults to `rootBundle`.
+/// The asset the sentence lab's templates live in.
+const sentencePromptAsset = 'assets/content/prompts/sentence_explain.json';
+
+/// Purpose: Read and parse a prompt template asset.
+/// Inputs: The `asset` path, and an optional `bundle` for tests.
 /// Returns: `Future<PromptTemplates>` — empty when the asset is unreadable.
 /// Side effects: Reads one asset.
 /// Notes: A failure is an empty set rather than an exception, which makes the
 /// AI features unavailable while every deterministic part of the app keeps
 /// working — the same rule the function-word table follows.
-Future<PromptTemplates> loadPromptTemplates([AssetBundle? bundle]) async {
+Future<PromptTemplates> loadPromptTemplates([
+  AssetBundle? bundle,
+  String asset = sentencePromptAsset,
+]) async {
   try {
-    final raw = await (bundle ?? rootBundle).loadString(
-      'assets/content/prompts/sentence_explain.json',
-    );
+    final raw = await (bundle ?? rootBundle).loadString(asset);
     return PromptTemplates.fromJson(jsonDecode(raw));
   } catch (_) {
     return PromptTemplates.empty;

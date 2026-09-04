@@ -35,6 +35,8 @@ Six rules, and each one is enforced in code rather than by convention:
 | **Explain** one possible issue | beside each issue row | Prompt | the deterministic one-sentence message, which is always shown |
 | **Explain this sentence** | below the issues | Prompt | the words, structure and grammar sections, which are always shown |
 | **Suggest a correction** | below the issues | Proofreading | nothing; the checks already say what looks unusual |
+| **Why was this wrong** | under a wrong quiz answer | Prompt | the catalog's own explanation of the grammar point, or the question's own note, which is always shown first |
+| **More examples** | in a word's detail sheet | Prompt | the catalog's own examples, which most words do not have |
 
 Every row of that last column is the point: **the fallback is the app**. Removing the AI removes
 three buttons, not a feature the learner depends on.
@@ -126,6 +128,38 @@ so a model is not left working on an answer nobody will read.
 With the switch on but no model downloaded, the actions are replaced by one line pointing at
 Settings. A button that always fails teaches the learner to distrust the feature rather than to fix
 it. On a device that simply cannot run a model, there is no line either — there is nothing to fix.
+
+## Taking turns
+
+There is one model on the device and `AiAssistService` allows one generation at
+a time, so two features that both want it have to queue. `AiPracticeService`
+does the queueing, and the rule is that **the learner's request wins**.
+
+Interactive requests queue behind each other rather than failing with "busy" —
+somebody who taps two buttons quickly should get two answers, not an error. A
+background job waits for whatever is interactive, retries a few times if the
+model is busy, and then gives up **silently**: nothing is waiting for it, so
+there is nobody to tell.
+
+`AiPracticeService` imports no storage and no progress provider, and a test
+asserts that by reading the file's own imports. Nothing generated writes a
+record.
+
+## Reading what came back
+
+Every parser refuses rather than guessing.
+
+- A writing reply with no `Rewrite:` line is dropped whole. The rewrite is the
+  only part a learner can act on.
+- A grading reply whose first line is not `SAME` or `DIFFERENT` is dropped, and
+  the learner marks it themselves — which is what a device with no model does
+  anyway.
+- An example line without exactly three bar-separated fields is dropped. A
+  generated sentence is drawn beside the catalog's own and would otherwise look
+  exactly as authoritative as one somebody wrote.
+
+A model that ignored the format is a model whose content cannot be trusted
+either, so a half-parsed answer is worse than none.
 
 ## Limits, stated plainly
 

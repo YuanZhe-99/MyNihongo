@@ -1755,6 +1755,12 @@ abstract class AppLocalizations {
   /// **'Continue'**
   String get quizContinue;
 
+  /// No description provided for @quizWhyWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Why was this wrong?'**
+  String get quizWhyWrong;
+
   /// No description provided for @quizCorrect.
   ///
   /// In en, this message translates to:
@@ -2468,6 +2474,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Suggest a correction'**
   String get aiSuggestCorrection;
+
+  /// No description provided for @aiMoreExamples.
+  ///
+  /// In en, this message translates to:
+  /// **'More examples'**
+  String get aiMoreExamples;
 
   /// No description provided for @aiGeneratedLabel.
   ///

@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "_comment": "Prompt templates for the practice features: writing feedback, free-answer grading, why an answer was wrong, and extra example sentences. Versioned like every other content asset, because a change here changes what the model is asked and a bad edit is only visible on a device. Not learner-facing text: these strings are sent to the model, never rendered, so they are not in the ARB files. The Traditional Chinese here is hand-written, like the ARB catalogs and unlike the rest of assets/content/ — tool/convert_zh_tw.dart does not touch this directory. See doc/en-us/features/ai-assist.md.",
+  "limits": {
+    "maxOutputTokens": 320,
+    "maxPromptChars": 4000,
+    "maxWritingChars": 600,
+    "maxVocabInPrompt": 12,
+    "maxExamples": 3,
+    "maxAnswerChars": 200
+  },
+  "labels": {
+    "en": {
+      "sentence": "Sentence",
+      "words": "How the app split it",
+      "note": "What the app flagged",
+      "grammar": "The app's own notes on the grammar used",
+      "rules": "Rules",
+      "learner": "What the learner wrote",
+      "expected": "The model answer",
+      "vocabulary": "Words this unit teaches",
+      "question": "The question",
+      "chosen": "What the learner chose",
+      "correct": "The right answer"
+    },
+    "zh": {
+      "sentence": "句子",
+      "words": "应用的分词结果",
+      "note": "应用标记的问题",
+      "grammar": "应用自带的语法说明",
+      "rules": "要求",
+      "learner": "学习者写的",
+      "expected": "参考答案",
+      "vocabulary": "本单元教的词",
+      "question": "题目",
+      "chosen": "学习者选的",
+      "correct": "正确答案"
+    },
+    "zh_TW": {
+      "sentence": "句子",
+      "words": "應用程式的斷詞結果",
+      "note": "應用程式標記的問題",
+      "grammar": "應用程式自帶的文法說明",
+      "rules": "要求",
+      "learner": "學習者寫的",
+      "expected": "參考答案",
+      "vocabulary": "本單元教的詞",
+      "question": "題目",
+      "chosen": "學習者選的",
+      "correct": "正確答案"
+    }
+  },
+  "tasks": {
+    "writing": {
+      "en": {
+        "instruction": "A Japanese learner wrote the text below. Rewrite it as a native speaker would, then say briefly what you changed and why.",
+        "rules": [
+          "Answer in English.",
+          "Start with a line beginning 'Rewrite: ' holding only the rewritten Japanese.",
+          "Then at most three lines each beginning 'Note: ', one point each.",
+          "Keep the learner's meaning. Do not add ideas they did not write.",
+          "Do not contradict the app's own grammar notes above.",
+          "No headings and no greeting."
+        ]
+      },
+      "zh": {
+        "instruction": "下面是一位日语学习者写的文字。请把它改写成母语者会写的样子，然后简短说明你改了什么、为什么。",
+        "rules": [
+          "用简体中文回答。",
+          "第一行以「Rewrite: 」开头，其后只放改写后的日文。",
+          "然后最多三行，每行以「Note: 」开头，每行说一点。",
+          "保留学习者原本的意思，不要添加他们没写的内容。",
+          "不要与上面应用自带的语法说明相矛盾。",
+          "不要加标题，也不要加问候语。"
+        ]
+      },
+      "zh_TW": {
+        "instruction": "下面是一位日語學習者寫的文字。請把它改寫成母語者會寫的樣子，然後簡短說明你改了什麼、為什麼。",
+        "rules": [
+          "用繁體中文回答。",
+          "第一行以「Rewrite: 」開頭，其後只放改寫後的日文。",
+          "然後最多三行，每行以「Note: 」開頭，每行說一點。",
+          "保留學習者原本的意思，不要添加他們沒寫的內容。",
+          "不要與上面應用程式自帶的文法說明相矛盾。",
+          "不要加標題，也不要加問候語。"
+        ]
+      }
+    },
+    "grade": {
+      "en": {
+        "instruction": "Decide whether the learner's answer means the same as the model answer. Small differences of wording, politeness or particle choice are the same; a different tense, a different subject or a missing idea are not.",
+        "rules": [
+          "Answer in English.",
+          "The first line is exactly SAME or DIFFERENT.",
+          "Then one sentence saying what differs, or what is right.",
+          "Nothing else."
+        ]
+      },
+      "zh": {
+        "instruction": "判断学习者的答案与参考答案意思是否相同。措辞、敬体程度或助词的细微差别算相同；时态不同、主语不同或漏掉了内容则不算。",
+        "rules": [
+          "用简体中文回答。",
+          "第一行只写 SAME 或 DIFFERENT。",
+          "然后用一句话说明哪里不同，或哪里对。",
+          "不要写别的。"
+        ]
+      },
+      "zh_TW": {
+        "instruction": "判斷學習者的答案與參考答案意思是否相同。措辭、敬體程度或助詞的細微差別算相同；時態不同、主語不同或漏掉了內容則不算。",
+        "rules": [
+          "用繁體中文回答。",
+          "第一行只寫 SAME 或 DIFFERENT。",
+          "然後用一句話說明哪裡不同，或哪裡對。",
+          "不要寫別的。"
+        ]
+      }
+    },
+    "whyWrong": {
+      "en": {
+        "instruction": "A learner picked the wrong answer to the question below. Explain why their choice does not work and why the right one does.",
+        "rules": [
+          "Answer in English.",
+          "At most four sentences.",
+          "Talk about their choice specifically, not about the topic in general.",
+          "Do not contradict the app's own grammar notes above.",
+          "No headings and no greeting."
+        ]
+      },
+      "zh": {
+        "instruction": "一位学习者在下面这道题上选错了。请说明他选的那项为什么不行，正确的那项为什么行。",
+        "rules": [
+          "用简体中文回答。",
+          "最多四句话。",
+          "针对他选的那一项来说，不要泛泛谈这个语法点。",
+          "不要与上面应用自带的语法说明相矛盾。",
+          "不要加标题，也不要加问候语。"
+        ]
+      },
+      "zh_TW": {
+        "instruction": "一位學習者在下面這道題上選錯了。請說明他選的那項為什麼不行，正確的那項為什麼行。",
+        "rules": [
+          "用繁體中文回答。",
+          "最多四句話。",
+          "針對他選的那一項來說，不要泛泛談這個文法點。",
+          "不要與上面應用程式自帶的文法說明相矛盾。",
+          "不要加標題，也不要加問候語。"
+        ]
+      }
+    },
+    "examples": {
+      "en": {
+        "instruction": "Write short example sentences using the word below, at the learner's level.",
+        "rules": [
+          "Write three sentences, no more.",
+          "One line each, in the form: Japanese|reading in kana|English",
+          "Use the vertical bar exactly twice per line.",
+          "Keep every other word simple enough for this level.",
+          "Polite style. Nothing else on the line."
+        ]
+      },
+      "zh": {
+        "instruction": "请用下面这个词写几个适合该学习者水平的短例句。",
+        "rules": [
+          "写三句，不要更多。",
+          "每句一行，格式为：日文|假名读音|中文",
+          "每行恰好用两个竖线。",
+          "句中其余的词都要简单到符合这个级别。",
+          "使用敬体。行内不要写别的东西。"
+        ]
+      },
+      "zh_TW": {
+        "instruction": "請用下面這個詞寫幾個適合該學習者程度的短例句。",
+        "rules": [
+          "寫三句，不要更多。",
+          "每句一行，格式為：日文|假名讀音|中文",
+          "每行恰好用兩個豎線。",
+          "句中其餘的詞都要簡單到符合這個級別。",
+          "使用敬體。行內不要寫別的東西。"
+        ]
+      }
+    }
+  }
+}
