@@ -4204,6 +4204,16 @@
         }
       ]
     },
+    "vocab:jm1103110": {
+      "examples": [
+        {
+          "ja": "彼はパンクした。",
+          "reading": "かれはパンクした。",
+          "en": "He got a flat tire.",
+          "zh": "他爆胎了。"
+        }
+      ]
+    },
     "vocab:jm1103270": {
       "examples": [
         {
@@ -4211,6 +4221,26 @@
           "reading": "かれはパンツをあらう。",
           "en": "He washes his underpants.",
           "zh": "他洗内裤。"
+        }
+      ]
+    },
+    "vocab:jm1104300": {
+      "examples": [
+        {
+          "ja": "先生はヒントを出す。",
+          "reading": "せんせいはヒントをだす。",
+          "en": "The teacher gives a hint.",
+          "zh": "老师给出提示。"
+        }
+      ]
+    },
+    "vocab:jm1104780": {
+      "examples": [
+        {
+          "ja": "彼はビジネスをする。",
+          "reading": "かれはビジネスをする。",
+          "en": "He does business.",
+          "zh": "他做生意。"
         }
       ]
     },
@@ -4314,6 +4344,26 @@
         }
       ]
     },
+    "vocab:jm1107700": {
+      "examples": [
+        {
+          "ja": "彼にはファイトがある。",
+          "reading": "かれにはファイトがある。",
+          "en": "He has fighting spirit.",
+          "zh": "他有斗志。"
+        }
+      ]
+    },
+    "vocab:jm1107800": {
+      "examples": [
+        {
+          "ja": "彼はファイルを使う。",
+          "reading": "かれはファイルをつかう。",
+          "en": "He uses a file.",
+          "zh": "他使用文件。"
+        }
+      ]
+    },
     "vocab:jm1108160": {
       "examples": [
         {
@@ -4334,6 +4384,26 @@
         }
       ]
     },
+    "vocab:jm1108540": {
+      "examples": [
+        {
+          "ja": "彼はファンを使う。",
+          "reading": "かれはファンをつかう。",
+          "en": "He uses a fan.",
+          "zh": "他使用风扇。"
+        }
+      ]
+    },
+    "vocab:jm1109330": {
+      "examples": [
+        {
+          "ja": "彼はフィルターを使う。",
+          "reading": "かれはフィルターをつかう。",
+          "en": "He uses a filter.",
+          "zh": "他使用过滤器。"
+        }
+      ]
+    },
     "vocab:jm1109380": {
       "examples": [
         {
@@ -4344,6 +4414,16 @@
         }
       ]
     },
+    "vocab:jm1109980": {
+      "examples": [
+        {
+          "ja": "彼はフェリーを使う。",
+          "reading": "かれはフェリーをつかう。",
+          "en": "He takes the ferry.",
+          "zh": "他乘坐渡轮。"
+        }
+      ]
+    },
     "vocab:jm1110110": {
       "examples": [
         {
@@ -4351,6 +4431,16 @@
           "reading": "ふぉーくでたべます。",
           "en": "I eat with a fork.",
           "zh": "用叉子吃饭。"
+        }
+      ]
+    },
+    "vocab:jm1110340": {
+      "examples": [
+        {
+          "ja": "彼はフォームを使う。",
+          "reading": "かれはフォームをつかう。",
+          "en": "He uses a form.",
+          "zh": "他使用表格。"
         }
       ]
     },
@@ -4374,6 +4464,16 @@
         }
       ]
     },
+    "vocab:jm1112990": {
+      "examples": [
+        {
+          "ja": "彼はフロントに行く。",
+          "reading": "かれはフロントにいく。",
+          "en": "He goes to the front desk.",
+          "zh": "他去前台。"
+        }
+      ]
+    },
     "vocab:jm1113060": {
       "examples": [
         {
@@ -4384,6 +4484,36 @@
         }
       ]
     },
+    "vocab:jm1113130": {
+      "examples": [
+        {
+          "ja": "彼はブーツを買う。",
+          "reading": "かれはブーツをかう。",
+          "en": "He buys boots.",
+          "zh": "他买靴子。"
+        }
+      ]
+    },
+    "vocab:jm1113160": {
+      "examples": [
+        {
+          "ja": "これはブームだ。",
+          "reading": "これはブームだ。",
+          "en": "This is a trend.",
+          "zh": "这是一种潮流。"
+        }
+      ]
+    },
+    "vocab:jm1113300": {
+      "examples": [
+        {
+          "ja": "彼はブザーを使う。",
+          "reading": "かれはブザーをつかう。",
+          "en": "He uses the buzzer.",
+          "zh": "他使用蜂鸣器。"
+        }
+      ]
+    },
     "vocab:jm1113650": {
       "examples": [
         {
@@ -4391,6 +4521,16 @@
           "reading": "かのじょはブラウスをきる。",
           "en": "She wears a blouse.",
           "zh": "她穿衬衫。"
+        }
+      ]
+    },
+    "vocab:jm1114310": {
+      "examples": [
+        {
+          "ja": "それはブルーだ。",
+          "reading": "それはブルーだ。",
+          "en": "That is blue.",
+          "zh": "那是蓝色的。"
         }
       ]
     },
@@ -4514,6 +4654,36 @@
         }
       ]
     },
+    "vocab:jm1119210": {
+      "examples": [
+        {
+          "ja": "彼はベースを使う。",
+          "reading": "かれはベースをつかう。",
+          "en": "He uses the base.",
+          "zh": "他使用基地。"
+        }
+      ]
+    },
+    "vocab:jm1119530": {
+      "examples": [
+        {
+          "ja": "それはベストだ。",
+          "reading": "それはベストだ。",
+          "en": "That is the best.",
+          "zh": "那是最好的。"
+        }
+      ]
+    },
+    "vocab:jm1119560": {
+      "examples": [
+        {
+          "ja": "この本はベストセラーだ。",
+          "reading": "このほんはベストセラーだ。",
+          "en": "This book is a bestseller.",
+          "zh": "这本书是畅销书。"
+        }
+      ]
+    },
     "vocab:jm1119650": {
       "examples": [
         {
@@ -4574,6 +4744,16 @@
         }
       ]
     },
+    "vocab:jm1120690": {
+      "examples": [
+        {
+          "ja": "彼はペアを作る。",
+          "reading": "かれはペアをつくる。",
+          "en": "He makes a pair.",
+          "zh": "他组成一对。"
+        }
+      ]
+    },
     "vocab:jm1120990": {
       "examples": [
         {
@@ -4614,6 +4794,16 @@
         }
       ]
     },
+    "vocab:jm1121630": {
+      "examples": [
+        {
+          "ja": "彼はホースを使う。",
+          "reading": "かれはホースをつかう。",
+          "en": "He uses a hose.",
+          "zh": "他使用水管。"
+        }
+      ]
+    },
     "vocab:jm1121740": {
       "examples": [
         {
@@ -4621,6 +4811,16 @@
           "reading": "でんしゃがほーむにはいってきました。",
           "en": "The train came into the platform.",
           "zh": "电车驶入站台。"
+        }
+      ]
+    },
+    "vocab:jm1122130": {
+      "examples": [
+        {
+          "ja": "彼はホールに行く。",
+          "reading": "かれはホールにいく。",
+          "en": "He goes to the hall.",
+          "zh": "他去大厅。"
         }
       ]
     },
@@ -4684,6 +4884,16 @@
         }
       ]
     },
+    "vocab:jm1123670": {
+      "examples": [
+        {
+          "ja": "彼はボイコットした。",
+          "reading": "かれはボイコットした。",
+          "en": "He boycotted it.",
+          "zh": "他抵制了。"
+        }
+      ]
+    },
     "vocab:jm1123880": {
       "examples": [
         {
@@ -4694,6 +4904,36 @@
         }
       ]
     },
+    "vocab:jm1124390": {
+      "examples": [
+        {
+          "ja": "これはボルトだ。",
+          "reading": "これはボルトだ。",
+          "en": "This is a volt.",
+          "zh": "这是伏特。"
+        }
+      ]
+    },
+    "vocab:jm1124650": {
+      "examples": [
+        {
+          "ja": "彼はポーズをする。",
+          "reading": "かれはポーズをする。",
+          "en": "He strikes a pose.",
+          "zh": "他摆姿势。"
+        }
+      ]
+    },
+    "vocab:jm1124860": {
+      "examples": [
+        {
+          "ja": "彼はポイントを覚える。",
+          "reading": "かれはポイントをおぼえる。",
+          "en": "He remembers the key point.",
+          "zh": "他记住了要点。"
+        }
+      ]
+    },
     "vocab:jm1124970": {
       "examples": [
         {
@@ -4701,6 +4941,16 @@
           "reading": "ぽけっとをみます。",
           "en": "I look at the pocket.",
           "zh": "我看口袋。"
+        }
+      ]
+    },
+    "vocab:jm1125060": {
+      "examples": [
+        {
+          "ja": "彼はポジションを持つ。",
+          "reading": "かれはポジションをもつ。",
+          "en": "He holds a position.",
+          "zh": "他担任一个职位。"
         }
       ]
     },
@@ -4721,6 +4971,36 @@
           "reading": "ぽすとをみます。",
           "en": "I look at the postbox.",
           "zh": "我看邮筒。"
+        }
+      ]
+    },
+    "vocab:jm1125290": {
+      "examples": [
+        {
+          "ja": "彼はポットを使う。",
+          "reading": "かれはポットをつかう。",
+          "en": "He uses a pot.",
+          "zh": "他使用茶壶。"
+        }
+      ]
+    },
+    "vocab:jm1126040": {
+      "examples": [
+        {
+          "ja": "彼はポンプを使う。",
+          "reading": "かれはポンプをつかう。",
+          "en": "He uses a pump.",
+          "zh": "他使用泵。"
+        }
+      ]
+    },
+    "vocab:jm1126140": {
+      "examples": [
+        {
+          "ja": "彼はマークした。",
+          "reading": "かれはマークした。",
+          "en": "He marked it.",
+          "zh": "他做了标记。"
         }
       ]
     },
@@ -4764,6 +5044,16 @@
         }
       ]
     },
+    "vocab:jm1127900": {
+      "examples": [
+        {
+          "ja": "マスコミが会社を調べる。",
+          "reading": "マスコミがかいしゃをしらべる。",
+          "en": "The mass media investigates the company.",
+          "zh": "媒体调查公司。"
+        }
+      ]
+    },
     "vocab:jm1127970": {
       "examples": [
         {
@@ -4771,6 +5061,16 @@
           "reading": "かれはにほんごをますたーしました。",
           "en": "He mastered Japanese.",
           "zh": "他掌握了日语。"
+        }
+      ]
+    },
+    "vocab:jm1128360": {
+      "examples": [
+        {
+          "ja": "彼はマッサージした。",
+          "reading": "かれはマッサージした。",
+          "en": "He gave a massage.",
+          "zh": "他按摩了。"
         }
       ]
     },
@@ -4834,6 +5134,36 @@
         }
       ]
     },
+    "vocab:jm1130830": {
+      "examples": [
+        {
+          "ja": "本にミスプリントがある。",
+          "reading": "ほんにミスプリントがある。",
+          "en": "There is a misprint in the book.",
+          "zh": "书里有印刷错误。"
+        }
+      ]
+    },
+    "vocab:jm1130880": {
+      "examples": [
+        {
+          "ja": "彼女はミセスだ。",
+          "reading": "かのじょはミセスだ。",
+          "en": "She is a married woman.",
+          "zh": "她是已婚女士。"
+        }
+      ]
+    },
+    "vocab:jm1131680": {
+      "examples": [
+        {
+          "ja": "彼はミュージックを聞く。",
+          "reading": "かれはミュージックをきく。",
+          "en": "He listens to music.",
+          "zh": "他听音乐。"
+        }
+      ]
+    },
     "vocab:jm1131830": {
       "examples": [
         {
@@ -4851,6 +5181,26 @@
           "reading": "あかちゃんにみるくをあげました。",
           "en": "I gave milk to the baby.",
           "zh": "我给婴儿喂了奶。"
+        }
+      ]
+    },
+    "vocab:jm1132190": {
+      "examples": [
+        {
+          "ja": "家にムードがある。",
+          "reading": "いえにムードがある。",
+          "en": "There is a certain mood in the house.",
+          "zh": "家里有种气氛。"
+        }
+      ]
+    },
+    "vocab:jm1132420": {
+      "examples": [
+        {
+          "ja": "先生はメーカーを調べる。",
+          "reading": "せんせいはメーカーをしらべる。",
+          "en": "The teacher looks into the manufacturer.",
+          "zh": "老师调查制造商。"
         }
       ]
     },
@@ -4874,6 +5224,26 @@
         }
       ]
     },
+    "vocab:jm1133570": {
+      "examples": [
+        {
+          "ja": "彼はメッセージを送る。",
+          "reading": "かれはメッセージをおくる。",
+          "en": "He sends a message.",
+          "zh": "他发送消息。"
+        }
+      ]
+    },
+    "vocab:jm1133620": {
+      "examples": [
+        {
+          "ja": "メディアが会社を調べる。",
+          "reading": "メディアがかいしゃをしらべる。",
+          "en": "The media investigates the company.",
+          "zh": "媒体调查公司。"
+        }
+      ]
+    },
     "vocab:jm1133790": {
       "examples": [
         {
@@ -4891,6 +5261,16 @@
           "reading": "だいじなことをめもしました。",
           "en": "I made a memo of the important thing.",
           "zh": "我记下了重要的事情。"
+        }
+      ]
+    },
+    "vocab:jm1134150": {
+      "examples": [
+        {
+          "ja": "彼はメロディーを覚える。",
+          "reading": "かれはメロディーをおぼえる。",
+          "en": "He memorizes the melody.",
+          "zh": "他记住了旋律。"
         }
       ]
     },
@@ -4924,6 +5304,16 @@
         }
       ]
     },
+    "vocab:jm1135150": {
+      "examples": [
+        {
+          "ja": "彼はモーテルに行く。",
+          "reading": "かれはモーテルにいく。",
+          "en": "He goes to the motel.",
+          "zh": "他去汽车旅馆。"
+        }
+      ]
+    },
     "vocab:jm1135270": {
       "examples": [
         {
@@ -4931,6 +5321,16 @@
           "reading": "かのじょはモデルです。",
           "en": "She is a model.",
           "zh": "她是模特。"
+        }
+      ]
+    },
+    "vocab:jm1135430": {
+      "examples": [
+        {
+          "ja": "彼はモニターを見る。",
+          "reading": "かれはモニターをみる。",
+          "en": "He looks at the monitor.",
+          "zh": "他看着显示器。"
         }
       ]
     },
@@ -4944,6 +5344,16 @@
         }
       ]
     },
+    "vocab:jm1136400": {
+      "examples": [
+        {
+          "ja": "彼はヤングだ。",
+          "reading": "かれはヤングだ。",
+          "en": "He is a young person.",
+          "zh": "他是年轻人。"
+        }
+      ]
+    },
     "vocab:jm1136850": {
       "examples": [
         {
@@ -4951,6 +5361,26 @@
           "reading": "かれはゆーもあがあります。",
           "en": "He has a sense of humor.",
           "zh": "他很有幽默感。"
+        }
+      ]
+    },
+    "vocab:jm1137120": {
+      "examples": [
+        {
+          "ja": "それはユニークだ。",
+          "reading": "それはユニークだ。",
+          "en": "That is unique.",
+          "zh": "那很独特。"
+        }
+      ]
+    },
+    "vocab:jm1137430": {
+      "examples": [
+        {
+          "ja": "学生はユニフォームを買う。",
+          "reading": "がくせいはユニフォームをかう。",
+          "en": "The student buys a uniform.",
+          "zh": "学生买了制服。"
         }
       ]
     },
@@ -4971,6 +5401,16 @@
           "reading": "うみでよっとにのりました。",
           "en": "I rode a yacht on the sea.",
           "zh": "我在海上乘了帆船。"
+        }
+      ]
+    },
+    "vocab:jm1137820": {
+      "examples": [
+        {
+          "ja": "彼はライスを食べる。",
+          "reading": "かれはライスをたべる。",
+          "en": "He eats rice.",
+          "zh": "他吃米饭。"
         }
       ]
     },
@@ -5034,6 +5474,16 @@
         }
       ]
     },
+    "vocab:jm1139720": {
+      "examples": [
+        {
+          "ja": "本にラベルがある。",
+          "reading": "ほんにラベルがある。",
+          "en": "There is a label on the book.",
+          "zh": "书上有标签。"
+        }
+      ]
+    },
     "vocab:jm1140100": {
       "examples": [
         {
@@ -5051,6 +5501,16 @@
           "reading": "かれはまいあさランニングする。",
           "en": "He goes running every morning.",
           "zh": "他每天早上跑步。"
+        }
+      ]
+    },
+    "vocab:jm1140360": {
+      "examples": [
+        {
+          "ja": "家にランプがある。",
+          "reading": "いえにランプがある。",
+          "en": "There is a lamp in the house.",
+          "zh": "家里有台灯。"
         }
       ]
     },
@@ -5084,6 +5544,36 @@
         }
       ]
     },
+    "vocab:jm1143590": {
+      "examples": [
+        {
+          "ja": "それはルーズだ。",
+          "reading": "それはルーズだ。",
+          "en": "That is careless.",
+          "zh": "那很松散。"
+        }
+      ]
+    },
+    "vocab:jm1143920": {
+      "examples": [
+        {
+          "ja": "学校にルールがある。",
+          "reading": "がっこうにルールがある。",
+          "en": "The school has rules.",
+          "zh": "学校有规则。"
+        }
+      ]
+    },
+    "vocab:jm1144380": {
+      "examples": [
+        {
+          "ja": "彼はレースに出る。",
+          "reading": "かれはレースにでる。",
+          "en": "He enters a race.",
+          "zh": "他参加比赛。"
+        }
+      ]
+    },
     "vocab:jm1144700": {
       "examples": [
         {
@@ -5091,6 +5581,16 @@
           "reading": "あめのひにレインコートをきる。",
           "en": "I wear a raincoat on rainy days.",
           "zh": "下雨天穿雨衣。"
+        }
+      ]
+    },
+    "vocab:jm1144790": {
+      "examples": [
+        {
+          "ja": "彼はレギュラーだ。",
+          "reading": "かれはレギュラーだ。",
+          "en": "He is a regular player.",
+          "zh": "他是正式队员。"
         }
       ]
     },
@@ -5144,6 +5644,36 @@
         }
       ]
     },
+    "vocab:jm1145510": {
+      "examples": [
+        {
+          "ja": "彼はレッスンを受ける。",
+          "reading": "かれはレッスンをうける。",
+          "en": "He takes a lesson.",
+          "zh": "他接受课程。"
+        }
+      ]
+    },
+    "vocab:jm1145590": {
+      "examples": [
+        {
+          "ja": "彼女はレディーだ。",
+          "reading": "かのじょはレディーだ。",
+          "en": "She is a lady.",
+          "zh": "她是位女士。"
+        }
+      ]
+    },
+    "vocab:jm1145720": {
+      "examples": [
+        {
+          "ja": "彼はレバーを食べる。",
+          "reading": "かれはレバーをたべる。",
+          "en": "He eats liver.",
+          "zh": "他吃肝脏。"
+        }
+      ]
+    },
     "vocab:jm1145910": {
       "examples": [
         {
@@ -5164,6 +5694,16 @@
         }
       ]
     },
+    "vocab:jm1146110": {
+      "examples": [
+        {
+          "ja": "彼はレンジを使う。",
+          "reading": "かれはレンジをつかう。",
+          "en": "He uses the microwave.",
+          "zh": "他使用微波炉。"
+        }
+      ]
+    },
     "vocab:jm1146140": {
       "examples": [
         {
@@ -5171,6 +5711,36 @@
           "reading": "カメラのレンズをみる。",
           "en": "I look at the camera lens.",
           "zh": "查看相机镜头。"
+        }
+      ]
+    },
+    "vocab:jm1146160": {
+      "examples": [
+        {
+          "ja": "彼はレンタカーを使う。",
+          "reading": "かれはレンタカーをつかう。",
+          "en": "He uses a rental car.",
+          "zh": "他使用租来的车。"
+        }
+      ]
+    },
+    "vocab:jm1146230": {
+      "examples": [
+        {
+          "ja": "医者はレントゲンを調べる。",
+          "reading": "いしゃはレントゲンをしらべる。",
+          "en": "The doctor examines the X-ray.",
+          "zh": "医生查看X光片。"
+        }
+      ]
+    },
+    "vocab:jm1146750": {
+      "examples": [
+        {
+          "ja": "彼はロープを使う。",
+          "reading": "かれはロープをつかう。",
+          "en": "He uses a rope.",
+          "zh": "他使用绳子。"
         }
       ]
     },
@@ -5214,6 +5784,16 @@
         }
       ]
     },
+    "vocab:jm1148010": {
+      "examples": [
+        {
+          "ja": "それはロマンチックだ。",
+          "reading": "それはロマンチックだ。",
+          "en": "That is romantic.",
+          "zh": "那很浪漫。"
+        }
+      ]
+    },
     "vocab:jm1148520": {
       "examples": [
         {
@@ -5241,6 +5821,16 @@
           "reading": "あかいわいんをのみました。",
           "en": "I drank red wine.",
           "zh": "我喝了红酒。"
+        }
+      ]
+    },
+    "vocab:jm1149070": {
+      "examples": [
+        {
+          "ja": "これはワットだ。",
+          "reading": "これはワットだ。",
+          "en": "This is a watt.",
+          "zh": "这是瓦特。"
         }
       ]
     },
@@ -58271,6 +58861,16 @@
           "reading": "わたくしはがくせいです。",
           "en": "I am a student.",
           "zh": "我是学生。"
+        }
+      ]
+    },
+    "vocab:jm2843940": {
+      "examples": [
+        {
+          "ja": "医者はビールスを調べる。",
+          "reading": "いしゃはビールスをしらべる。",
+          "en": "The doctor examines the virus.",
+          "zh": "医生检查病毒。"
         }
       ]
     },

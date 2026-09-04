@@ -220,6 +220,33 @@ default / dark / tinted sources) → `dart run flutter_launcher_icons` (Android 
 `AppIcon.appiconset`). Never hand-edit generated icon files; change the source and rerun both
 commands. `doc/en-us/platform-notes.md` describes the outputs.
 
+## Content-authoring subagents
+
+`.claude/agents/` holds four definitions for the content pipeline — one per
+draft kind in `doc/en-us/features/content-authoring.md`:
+
+| Agent | Stream | Model | Effort |
+|---|---|---|---|
+| `content-gloss` | Chinese glosses | `sonnet` | `low` |
+| `content-examples` | example sentences | `sonnet` | `low` |
+| `content-grammar` | grammar points | `opus` | `low` |
+| `content-units` | a level's lesson units | `opus` | `low` |
+
+The split is by **what the writing has to be good at**, not by how much of it
+there is. A gloss and an example sentence are mechanical and enormous in volume,
+so they take the cheaper model; an explanation and a syllabus division are
+judgement, small in volume, and a bad one is not caught by any gate. `effort` is
+`low` throughout because the gate — not the model's own deliberation — is what
+decides whether a draft is acceptable, and a rejected batch costs one more
+round trip rather than a wrong file.
+
+**These model names go stale.** `model:` and `effort:` are the two keys to
+revisit whenever the available models change: pick the current cheap model for
+the two `sonnet` rows and the current capable one for the two `opus` rows, keep
+the split, and raise `effort` for a stream only if its gate failure rate stays
+high after two rounds. Record the change in `PLAN.md`'s decisions log, since the
+content that follows is not comparable to the content before it.
+
 ## Agent co-author attribution
 
 An agent that made a real, material contribution to a commit may add its own accurate

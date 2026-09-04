@@ -1,0 +1,4471 @@
+{
+  "schemaVersion": 1,
+  "source": "model-authored (Claude), unreviewed",
+  "license": "GPL-3.0 with the app.",
+  "level": "N1",
+  "units": [
+    {
+      "id": "unit:n1-1",
+      "title": {
+        "en": "Written-style register and classical negation",
+        "zh": "书面语文体与文语否定形",
+        "zh_TW": "書面語文體與文語否定形"
+      },
+      "grammar": [
+        "grammar:de-aru-tai",
+        "grammar:renyou-chuushi",
+        "grammar:nu-negative",
+        "grammar:zaru-negative",
+        "grammar:zu-shite",
+        "grammar:nomi",
+        "grammar:nomi-narazu",
+        "grammar:hitori-nomi-narazu",
+        "grammar:gotoki",
+        "grammar:taru",
+        "grammar:taru-ya"
+      ],
+      "vocab": [
+        "vocab:jm1351600",
+        "vocab:jm1223280",
+        "vocab:jm1427070",
+        "vocab:jm1273170",
+        "vocab:jm1357450",
+        "vocab:jm1198760",
+        "vocab:jm1201060",
+        "vocab:jm1199800",
+        "vocab:jm1189710",
+        "vocab:jm1212440",
+        "vocab:jm1223230",
+        "vocab:jm1223430",
+        "vocab:jm1281690",
+        "vocab:jm1244180",
+        "vocab:jm1249610",
+        "vocab:jm1251250",
+        "vocab:jm1249780",
+        "vocab:jm1257930"
+      ],
+      "sentences": [
+        {
+          "ja": "これは重要な問題である。",
+          "reading": "これはじゅうようなもんだいである。",
+          "en": "This is an important problem.",
+          "zh": "这是一个重要的问题。",
+          "zh_TW": "這是一個重要的問題。",
+          "items": [
+            "grammar:de-aru-tai"
+          ]
+        },
+        {
+          "ja": "彼は本を読み、彼女は音楽を聞く。",
+          "reading": "かれはほんをよみ、かのじょはおんがくをきく。",
+          "en": "He reads a book, and she listens to music.",
+          "zh": "他看书，她听音乐。",
+          "zh_TW": "他看書，她聽音樂。",
+          "items": [
+            "grammar:renyou-chuushi"
+          ]
+        },
+        {
+          "ja": "彼の言うことはわからぬ。",
+          "reading": "かれのいうことはわからぬ。",
+          "en": "I cannot understand what he says.",
+          "zh": "我不明白他说的话。",
+          "zh_TW": "我不明白他說的話。",
+          "items": [
+            "grammar:nu-negative"
+          ]
+        },
+        {
+          "ja": "その罪は許さざる行為だ。",
+          "reading": "そのつみはゆるさざるこういだ。",
+          "en": "That crime is an unforgivable act.",
+          "zh": "那项罪行是不可原谅的行为。",
+          "zh_TW": "那項罪行是不可原諒的行為。",
+          "items": [
+            "grammar:zaru-negative"
+          ]
+        },
+        {
+          "ja": "彼は仕事のみを考えている。",
+          "reading": "かれはしごとのみをかんがえている。",
+          "en": "He thinks only of work.",
+          "zh": "他只想着工作。",
+          "zh_TW": "他只想著工作。",
+          "items": [
+            "grammar:nomi"
+          ]
+        },
+        {
+          "ja": "彼は仕事のみならず家庭も大切にする。",
+          "reading": "かれはしごとのみならずかていもたいせつにする。",
+          "en": "He values not only work but also family.",
+          "zh": "他不仅重视工作，也重视家庭。",
+          "zh_TW": "他不僅重視工作，也重視家庭。",
+          "items": [
+            "grammar:nomi-narazu"
+          ]
+        },
+        {
+          "ja": "時は水のごとく流れる。",
+          "reading": "ときはみずのごとくながれる。",
+          "en": "Time flows like water.",
+          "zh": "时光如水般流逝。",
+          "zh_TW": "時光如水般流逝。",
+          "items": [
+            "grammar:gotoki"
+          ]
+        },
+        {
+          "ja": "医者たる者は患者を大切にすべきだ。",
+          "reading": "いしゃたるものはかんじゃをたいせつにすべきだ。",
+          "en": "One who is a doctor should value patients.",
+          "zh": "身为医生的人应当重视患者。",
+          "zh_TW": "身為醫生的人應當重視患者。",
+          "items": [
+            "grammar:taru"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n1-1-01",
+          "item": "grammar:de-aru-tai",
+          "prompt": {
+            "en": "Which ending marks the formal である style used in essays and reports?",
+            "zh": "哪一个词尾标志着论文、报告中使用的である体？",
+            "zh_TW": "哪一個詞尾標誌著論文、報告中使用的である體？"
+          },
+          "options": [
+            "である",
+            "です",
+            "だ",
+            "であります"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "である is the plain written-register equivalent of だ/です, used throughout essays and reports.",
+            "zh": "である是だ／です在书面语中的对应形式，用于论文、报告等文体全篇。",
+            "zh_TW": "である是だ／です在書面語中的對應形式，用於論文、報告等文體全篇。"
+          }
+        },
+        {
+          "id": "q:n1-1-02",
+          "item": "grammar:renyou-chuushi",
+          "prompt": {
+            "en": "Which fills the blank: 彼は本を＿＿、彼女は音楽を聞く。",
+            "zh": "填空：彼は本を＿＿、彼女は音楽を聞く。",
+            "zh_TW": "填空：彼は本を＿＿、彼女は音楽を聞く。"
+          },
+          "options": [
+            "読み",
+            "読んで",
+            "読む",
+            "読んだ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "連用中止法 links two clauses in written style using the masu-stem instead of て, giving a more literary tone.",
+            "zh": "連用中止法用ます形词干（而非て形）连接两个分句，语气更书面化。",
+            "zh_TW": "連用中止法用ます形詞幹（而非て形）連接兩個分句，語氣更書面化。"
+          }
+        },
+        {
+          "id": "q:n1-1-03",
+          "item": "grammar:nu-negative",
+          "prompt": {
+            "en": "Which is the classical written form of 彼の言うことはわからない。?",
+            "zh": "「彼の言うことはわからない。」的文语说法是哪一个？",
+            "zh_TW": "「彼の言うことはわからない。」的文語說法是哪一個？"
+          },
+          "options": [
+            "彼の言うことはわからぬ。",
+            "彼の言うことはわかるぬ。",
+            "彼の言うことはわかりぬ。",
+            "彼の言うことはわからんだ。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ぬ attaches to the same negative (mizen) stem as ない: わから＋ぬ.",
+            "zh": "ぬ接在与ない相同的未然形词干后：わから＋ぬ。",
+            "zh_TW": "ぬ接在與ない相同的未然形詞幹後：わから＋ぬ。"
+          }
+        },
+        {
+          "id": "q:n1-1-04",
+          "item": "grammar:zaru-negative",
+          "prompt": {
+            "en": "Which fills the blank: その罪は＿＿行為だ。",
+            "zh": "填空：その罪は＿＿行為だ。",
+            "zh_TW": "填空：その罪は＿＿行為だ。"
+          },
+          "options": [
+            "許さざる",
+            "許されざる",
+            "許さないざる",
+            "許すざる"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ざる attaches to the negative stem of the active verb (許さ＋ざる); it never attaches to a passive stem such as 許され-.",
+            "zh": "ざる接在主动词的未然形词干后（許さ＋ざる），绝不接被动形词干（如許され-）。",
+            "zh_TW": "ざる接在主動詞的未然形詞幹後（許さ＋ざる），絕不接被動形詞幹（如許され-）。"
+          }
+        },
+        {
+          "id": "q:n1-1-05",
+          "item": "grammar:nomi",
+          "prompt": {
+            "en": "Which fills the blank: 彼は仕事＿＿を考えている。",
+            "zh": "填空：彼は仕事＿＿を考えている。",
+            "zh_TW": "填空：彼は仕事＿＿を考えている。"
+          },
+          "options": [
+            "のみ",
+            "だけ",
+            "ばかり",
+            "さえ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "のみ is the formal written-register equivalent of だけ, meaning 'only'.",
+            "zh": "のみ是だけ「只」的书面语正式说法。",
+            "zh_TW": "のみ是だけ「只」的書面語正式說法。"
+          }
+        },
+        {
+          "id": "q:n1-1-06",
+          "item": "grammar:nomi-narazu",
+          "prompt": {
+            "en": "Which fills the blank: 彼は仕事＿＿家庭も大切にする。",
+            "zh": "填空：彼は仕事＿＿家庭も大切にする。",
+            "zh_TW": "填空：彼は仕事＿＿家庭も大切にする。"
+          },
+          "options": [
+            "のみならず",
+            "だけでなく",
+            "ばかりでなく",
+            "のみでは"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "のみならず is the formal written pattern for 'not only X but also Y'; だけでなく／ばかりでなく are the everyday equivalents.",
+            "zh": "のみならず是书面语「不仅…而且…」的正式说法；だけでなく／ばかりでなく是口语中的对应说法。",
+            "zh_TW": "のみならず是書面語「不僅…而且…」的正式說法；だけでなく／ばかりでなく是口語中的對應說法。"
+          }
+        },
+        {
+          "id": "q:n1-1-07",
+          "item": "grammar:gotoki",
+          "prompt": {
+            "en": "Which fills the blank: 時は水＿＿流れる。",
+            "zh": "填空：時は水＿＿流れる。",
+            "zh_TW": "填空：時は水＿＿流れる。"
+          },
+          "options": [
+            "のごとく",
+            "のように",
+            "みたいに",
+            "らしく"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ごとく is the literary equivalent of ように, common in formal writing.",
+            "zh": "ごとく是ように的文语说法，常用于书面文章。",
+            "zh_TW": "ごとく是ように的文語說法，常用於書面文章。"
+          }
+        },
+        {
+          "id": "q:n1-1-08",
+          "item": "grammar:taru",
+          "prompt": {
+            "en": "Which fills the blank: 医者＿＿者は患者を大切にすべきだ。",
+            "zh": "填空：医者＿＿者は患者を大切にすべきだ。",
+            "zh_TW": "填空：醫者＿＿者は患者を大切にすべきだ。"
+          },
+          "options": [
+            "たる",
+            "である",
+            "という",
+            "による"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜たる attaches directly to a noun and expresses being in the capacity or status of X, typically before another noun.",
+            "zh": "〜たる直接接在名词后，表示「身为…」「作为…」的身份，通常后接另一个名词。",
+            "zh_TW": "〜たる直接接在名詞後，表示「身為…」「作為…」的身份，通常後接另一個名詞。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Write two or three sentences in である体 about a social problem, using at least one of ぬ, ざる, のみ, or のみならず.",
+        "zh": "用である体写两三句关于社会问题的句子，至少使用ぬ、ざる、のみ、のみならず中的一个。",
+        "zh_TW": "用である體寫兩三句關於社會問題的句子，至少使用ぬ、ざる、のみ、のみならず中的一個。"
+      }
+    },
+    {
+      "id": "unit:n1-2",
+      "title": {
+        "en": "Obligation, prohibition, and formal volition",
+        "zh": "义务、禁止与文语意志表达",
+        "zh_TW": "義務、禁止與文語意志表達"
+      },
+      "grammar": [
+        "grammar:beku-purpose",
+        "grammar:beku-shite",
+        "grammar:beku-mo-nai",
+        "grammar:bekarazu",
+        "grammar:bekarazaru",
+        "grammar:majiki",
+        "grammar:mai-n1",
+        "grammar:you-ka-mai-ka",
+        "grammar:you-ga-mai-ga",
+        "grammar:de-wa-arumai-ka",
+        "grammar:n-ga-tame",
+        "grammar:n-to-suru"
+      ],
+      "vocab": [
+        "vocab:jm1309800",
+        "vocab:jm1312690",
+        "vocab:jm1258130",
+        "vocab:jm1422520",
+        "vocab:jm1232410",
+        "vocab:jm1572680",
+        "vocab:jm1161390",
+        "vocab:jm1397710",
+        "vocab:jm1001130",
+        "vocab:jm1359800",
+        "vocab:jm1201040",
+        "vocab:jm1186150",
+        "vocab:jm1215930",
+        "vocab:jm1590970",
+        "vocab:jm1223010",
+        "vocab:jm1223110",
+        "vocab:jm1232910",
+        "vocab:jm1241470"
+      ],
+      "sentences": [
+        {
+          "ja": "問題を解決すべく努力を続けた。",
+          "reading": "もんだいをかいけつすべくどりょくをつづけた。",
+          "en": "I kept up my efforts in order to solve the problem.",
+          "zh": "为了解决问题，我不断努力。",
+          "zh_TW": "為了解決問題，我不斷努力。",
+          "items": [
+            "grammar:beku-purpose"
+          ]
+        },
+        {
+          "ja": "その失敗は起こるべくして起こった。",
+          "reading": "そのしっぱいはおこるべくしておこった。",
+          "en": "That failure happened exactly as it was bound to happen.",
+          "zh": "那次失败正是必然会发生的。",
+          "zh_TW": "那次失敗正是必然會發生的。",
+          "items": [
+            "grammar:beku-shite"
+          ]
+        },
+        {
+          "ja": "今の状況では成功を期待すべくもない。",
+          "reading": "いまのじょうきょうではせいこうをきたいすべくもない。",
+          "en": "Given the present situation, there is no way one could expect success.",
+          "zh": "以目前的状况，根本无法期待成功。",
+          "zh_TW": "以目前的狀況，根本無法期待成功。",
+          "items": [
+            "grammar:beku-mo-nai"
+          ]
+        },
+        {
+          "ja": "ここに車を止めるべからず。",
+          "reading": "ここにくるまをとめるべからず。",
+          "en": "Do not park a car here.",
+          "zh": "禁止在此停车。",
+          "zh_TW": "禁止在此停車。",
+          "items": [
+            "grammar:bekarazu"
+          ]
+        },
+        {
+          "ja": "これは許すべからざる行為だ。",
+          "reading": "これはゆるすべからざるこういだ。",
+          "en": "This is an act that must never be permitted.",
+          "zh": "这是绝不能容许的行为。",
+          "zh_TW": "這是絕不能容許的行為。",
+          "items": [
+            "grammar:bekarazaru"
+          ]
+        },
+        {
+          "ja": "それは教師にあるまじき態度だ。",
+          "reading": "それはきょうしにあるまじきたいどだ。",
+          "en": "That is an attitude unbecoming of a teacher.",
+          "zh": "那是身为教师不该有的态度。",
+          "zh_TW": "那是身為教師不該有的態度。",
+          "items": [
+            "grammar:majiki"
+          ]
+        },
+        {
+          "ja": "彼は同じ失敗はするまい。",
+          "reading": "かれはおなじしっぱいはするまい。",
+          "en": "He surely will not make the same mistake again.",
+          "zh": "他绝不会再犯同样的错误。",
+          "zh_TW": "他絕不會再犯同樣的錯誤。",
+          "items": [
+            "grammar:mai-n1"
+          ]
+        },
+        {
+          "ja": "試験が終わらんとしていた。",
+          "reading": "しけんがおわらんとしていた。",
+          "en": "The exam was about to end.",
+          "zh": "考试即将结束。",
+          "zh_TW": "考試即將結束。",
+          "items": [
+            "grammar:n-to-suru"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n1-2-01",
+          "item": "grammar:beku-purpose",
+          "prompt": {
+            "en": "Which is the most formal, written-style way to say 'in order to solve the problem'?",
+            "zh": "「为了解决问题」最正式、书面化的说法是哪一个？",
+            "zh_TW": "「為了解決問題」最正式、書面化的說法是哪一個？"
+          },
+          "options": [
+            "問題を解決すべく",
+            "問題を解決するために",
+            "問題を解決したくて",
+            "問題を解決すれば"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "べく is a formal written equivalent of ために, expressing purpose.",
+            "zh": "べく是ために「为了」的正式书面说法，表示目的。",
+            "zh_TW": "べく是ために「為了」的正式書面說法，表示目的。"
+          }
+        },
+        {
+          "id": "q:n1-2-02",
+          "item": "grammar:bekarazu",
+          "prompt": {
+            "en": "Which fills the blank on a sign: ここに車を＿＿。",
+            "zh": "填空（告示牌用语）：ここに車を＿＿。",
+            "zh_TW": "填空（告示牌用語）：ここに車を＿＿。"
+          },
+          "options": [
+            "止めるべからず",
+            "止めないべからず",
+            "止めたべからず",
+            "止めるべきからず"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "べからず attaches to the plain dictionary form of a verb and is used on formal signs to mean 'must not'.",
+            "zh": "べからず接在动词辞书形后，常用于告示牌，表示「禁止…」。",
+            "zh_TW": "べからず接在動詞辭書形後，常用於告示牌，表示「禁止…」。"
+          }
+        },
+        {
+          "id": "q:n1-2-03",
+          "item": "grammar:bekarazaru",
+          "prompt": {
+            "en": "Which fills the blank: これは＿＿行為だ。",
+            "zh": "填空：これは＿＿行為だ。",
+            "zh_TW": "填空：これは＿＿行為だ。"
+          },
+          "options": [
+            "許すべからざる",
+            "許さないべからざる",
+            "許されべからざる",
+            "許すべからず"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "べからざる is the attributive form of べからず and modifies a following noun, unlike べからず which ends a sentence.",
+            "zh": "べからざる是べからず的连体形，后面接名词；べからず则用于句末。",
+            "zh_TW": "べからざる是べからず的連體形，後面接名詞；べからず則用於句末。"
+          }
+        },
+        {
+          "id": "q:n1-2-04",
+          "item": "grammar:mai-n1",
+          "prompt": {
+            "en": "Which fills the blank: 彼は同じ失敗は＿＿。",
+            "zh": "填空：彼は同じ失敗は＿＿。",
+            "zh_TW": "填空：彼は同じ失敗は＿＿。"
+          },
+          "options": [
+            "するまい",
+            "しまい",
+            "するまいか",
+            "しないまい"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "まい attaches to the dictionary form of a verb and expresses the speaker's firm negative resolve or judgment, 'surely will not.'",
+            "zh": "まい接在动词辞书形后，表示说话人「绝不会…」的强烈否定判断或意志。",
+            "zh_TW": "まい接在動詞辭書形後，表示說話人「絕不會…」的強烈否定判斷或意志。"
+          }
+        },
+        {
+          "id": "q:n1-2-05",
+          "item": "grammar:you-ka-mai-ka",
+          "prompt": {
+            "en": "Which correctly expresses 'wondering whether to join or not'?",
+            "zh": "哪一个正确表达「犹豫要不要参加」？",
+            "zh_TW": "哪一個正確表達「猶豫要不要參加」？"
+          },
+          "options": [
+            "参加しようか参加するまいか",
+            "参加しようが参加するまいが",
+            "参加するかしないか",
+            "参加しようとしまいと"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜(よ)うか〜まいか pairs the volitional form with まいか to show indecision between doing and not doing something.",
+            "zh": "〜(よ)うか〜まいか把意向形与まいか并用，表示「做还是不做」的犹豫不决。",
+            "zh_TW": "〜(よ)うか〜まいか把意向形與まいか並用，表示「做還是不做」的猶豫不決。"
+          }
+        },
+        {
+          "id": "q:n1-2-06",
+          "item": "grammar:you-ga-mai-ga",
+          "prompt": {
+            "en": "Which fills the blank using 〜(よ)うが〜まいが (whether or not): 彼が＿＿、私はやる。",
+            "zh": "用「〜(よ)うが〜まいが」（不管…不…）填空：彼が＿＿、私はやる。",
+            "zh_TW": "用「〜(よ)うが〜まいが」（不管…不…）填空：彼が＿＿、私はやる。"
+          },
+          "options": [
+            "賛成しようが賛成するまいが",
+            "賛成しようかまいか",
+            "賛成するかしないか",
+            "賛成しようとしまいと"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜(よ)うが〜まいが combines the volitional and まい forms with が…が to mean 'whether or not'.",
+            "zh": "〜(よ)うが〜まいが用「意向形+が…まい+が」表示「不管…不…」。",
+            "zh_TW": "〜(よ)うが〜まいが用「意向形+が…まい+が」表示「不管…不…」。"
+          }
+        },
+        {
+          "id": "q:n1-2-07",
+          "item": "grammar:de-wa-arumai-ka",
+          "prompt": {
+            "en": "Which politely floats the idea 'might it not be that...'?",
+            "zh": "哪一个是委婉推测「难道不是…吗」？",
+            "zh_TW": "哪一個是委婉推測「難道不是…嗎」？"
+          },
+          "options": [
+            "そうではあるまいか",
+            "そうではないだろうか",
+            "そうかもしれない",
+            "そうに違いない"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ではあるまいか is a formal, literary way to suggest a tentative idea, similar to ではないだろうか but more classical.",
+            "zh": "ではあるまいか是较为文语、正式的委婉推测说法，相当于ではないだろうか。",
+            "zh_TW": "ではあるまいか是較為文語、正式的委婉推測說法，相當於ではないだろうか。"
+          }
+        },
+        {
+          "id": "q:n1-2-08",
+          "item": "grammar:n-ga-tame",
+          "prompt": {
+            "en": "Which fills the blank: 生き＿＿、彼は必死に働いた。",
+            "zh": "填空：生き＿＿、彼は必死に働いた。",
+            "zh_TW": "填空：生き＿＿、彼は必死に働いた。"
+          },
+          "options": [
+            "んがために",
+            "んとして",
+            "べく",
+            "ように"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "んがため(に) is a strong, formal way to state purpose, attaching to the ん-stem of the verb (the same stem used for んとする).",
+            "zh": "んがため(に)是很强烈、正式的目的表达，接在动词的「ん」形词干后（与んとする用同一词干）。",
+            "zh_TW": "んがため(に)是很強烈、正式的目的表達，接在動詞的「ん」形詞幹後（與んとする用同一詞幹）。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Describe a rule using 〜べからず or 〜べからざる, then explain your firm intention with 〜まい.",
+        "zh": "用「〜べからず」或「〜べからざる」描述一条规则，再用「〜まい」表达你坚定的意志。",
+        "zh_TW": "用「〜べからず」或「〜べからざる」描述一條規則，再用「〜まい」表達你堅定的意志。"
+      }
+    },
+    {
+      "id": "unit:n1-3",
+      "title": {
+        "en": "Reasons and circumstances",
+        "zh": "原因与情由",
+        "zh_TW": "原因與情由"
+      },
+      "grammar": [
+        "grammar:yue-ni-formal",
+        "grammar:kototote",
+        "grammar:temae",
+        "grammar:to-atte",
+        "grammar:to-areba",
+        "grammar:shidai-da-reason",
+        "grammar:koto-naku-n1",
+        "grammar:koto-nashi-ni"
+      ],
+      "vocab": [
+        "vocab:jm1251250",
+        "vocab:jm1254220",
+        "vocab:jm1409840",
+        "vocab:jm1541060",
+        "vocab:jm1432720",
+        "vocab:jm1002080",
+        "vocab:jm1213150",
+        "vocab:jm1207200",
+        "vocab:jm1218450",
+        "vocab:jm1591140",
+        "vocab:jm1236000",
+        "vocab:jm1227170",
+        "vocab:jm1250350",
+        "vocab:jm1251690",
+        "vocab:jm1262160",
+        "vocab:jm1185450",
+        "vocab:jm1364110",
+        "vocab:jm1595260"
+      ],
+      "sentences": [
+        {
+          "ja": "彼は経験不足ゆえに失敗した。",
+          "reading": "かれはけいけんぶそくゆえにしっぱいした。",
+          "en": "He failed because of his lack of experience.",
+          "zh": "他因为经验不足而失败了。",
+          "zh_TW": "他因為經驗不足而失敗了。",
+          "items": [
+            "grammar:yue-ni-formal"
+          ]
+        },
+        {
+          "ja": "経験が浅いこととて、失敗もあるだろう。",
+          "reading": "けいけんがあさいこととて、しっぱいもあるだろう。",
+          "en": "Since my experience is shallow, there will surely be failures too.",
+          "zh": "由于经验尚浅，难免也会有失败。",
+          "zh_TW": "由於經驗尚淺，難免也會有失敗。",
+          "items": [
+            "grammar:kototote"
+          ]
+        },
+        {
+          "ja": "部長に約束した手前、失敗はできない。",
+          "reading": "ぶちょうにやくそくしたてまえ、しっぱいはできない。",
+          "en": "Having promised the department manager, I cannot afford to fail.",
+          "zh": "既然向部长承诺过了，就不能失败。",
+          "zh_TW": "既然向部長承諾過了，就不能失敗。",
+          "items": [
+            "grammar:temae"
+          ]
+        },
+        {
+          "ja": "重要な会議とあって、全員が真剣だった。",
+          "reading": "じゅうようなかいぎとあって、ぜんいんがしんけんだった。",
+          "en": "Because it was an important meeting, everyone was serious.",
+          "zh": "因为是重要的会议，大家都很认真。",
+          "zh_TW": "因為是重要的會議，大家都很認真。",
+          "items": [
+            "grammar:to-atte"
+          ]
+        },
+        {
+          "ja": "家族のためとあれば、どんな苦労も我慢できる。",
+          "reading": "かぞくのためとあれば、どんなくろうもがまんできる。",
+          "en": "If it's for my family, I can bear any hardship.",
+          "zh": "如果是为了家人，什么样的辛苦都能忍受。",
+          "zh_TW": "如果是為了家人，什麼樣的辛苦都能忍受。",
+          "items": [
+            "grammar:to-areba"
+          ]
+        },
+        {
+          "ja": "事情があって遅れた次第です。",
+          "reading": "じじょうがあっておくれたしだいです。",
+          "en": "That is the circumstance; I was late due to certain reasons.",
+          "zh": "由于种种原因，就这样迟到了。",
+          "zh_TW": "由於種種原因，就這樣遲到了。",
+          "items": [
+            "grammar:shidai-da-reason"
+          ]
+        },
+        {
+          "ja": "彼は一度も諦めることなく努力を続けた。",
+          "reading": "かれはいちどもあきらめることなくどりょくをつづけた。",
+          "en": "He continued his efforts without ever giving up even once.",
+          "zh": "他从未放弃，持续不断地努力。",
+          "zh_TW": "他從未放棄，持續不斷地努力。",
+          "items": [
+            "grammar:koto-naku-n1"
+          ]
+        },
+        {
+          "ja": "努力することなしに成功はない。",
+          "reading": "どりょくすることなしにせいこうはない。",
+          "en": "Without effort, there is no success.",
+          "zh": "没有努力就没有成功。",
+          "zh_TW": "沒有努力就沒有成功。",
+          "items": [
+            "grammar:koto-nashi-ni"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n1-3-01",
+          "item": "grammar:yue-ni-formal",
+          "prompt": {
+            "en": "Which fills the blank: 彼は経験不足＿＿失敗した。",
+            "zh": "填空：彼は経験不足＿＿失敗した。",
+            "zh_TW": "填空：彼は経験不足＿＿失敗した。"
+          },
+          "options": [
+            "ゆえに",
+            "のために",
+            "によって",
+            "のせいで"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "(が)ゆえに is a formal literary way to state a cause, used mainly in writing.",
+            "zh": "(が)ゆえに是书面语中表示原因的正式说法，多用于文章。",
+            "zh_TW": "(が)ゆえに是書面語中表示原因的正式說法，多用於文章。"
+          }
+        },
+        {
+          "id": "q:n1-3-02",
+          "item": "grammar:kototote",
+          "prompt": {
+            "en": "Which fills the blank: 経験が浅い＿＿、失敗もあるだろう。",
+            "zh": "填空：経験が浅い＿＿、失敗もあるだろう。",
+            "zh_TW": "填空：経験が淺い＿＿、失敗もあるだろう。"
+          },
+          "options": [
+            "こととて",
+            "ものだから",
+            "とはいえ",
+            "からには"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "こととて states a reason while implying an apology or excuse for the resulting situation.",
+            "zh": "こととて陈述原因，同时带有为随之而来的情况致歉、辩解的语气。",
+            "zh_TW": "こととて陳述原因，同時帶有為隨之而來的情況致歉、辯解的語氣。"
+          }
+        },
+        {
+          "id": "q:n1-3-03",
+          "item": "grammar:temae",
+          "prompt": {
+            "en": "Which fills the blank: 部長に約束した＿＿、失敗はできない。",
+            "zh": "填空：部長に約束した＿＿、失敗はできない。",
+            "zh_TW": "填空：部長に約束した＿＿、失敗はできない。"
+          },
+          "options": [
+            "手前",
+            "おかげで",
+            "せいで",
+            "ばかりに"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "手前 after a plain-past verb means 'having done X (in front of others), I am now obliged to follow through'.",
+            "zh": "手前接在动词过去式后，表示「既然（当着别人）做了…，就不能不…」。",
+            "zh_TW": "手前接在動詞過去式後，表示「既然（當著別人）做了…，就不能不…」。"
+          }
+        },
+        {
+          "id": "q:n1-3-04",
+          "item": "grammar:to-atte",
+          "prompt": {
+            "en": "Which fills the blank: 重要な会議＿＿、全員が真剣だった。",
+            "zh": "填空：重要な会議＿＿、全員が真剣だった。",
+            "zh_TW": "填空：重要な會議＿＿、全員が真剣だった。"
+          },
+          "options": [
+            "とあって",
+            "にとって",
+            "にたいして",
+            "といって"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "とあって means 'because it is the special circumstance of X', explaining why something unusual is happening.",
+            "zh": "とあって表示「正因为是…这种特殊情况」，说明异乎寻常之事的原因。",
+            "zh_TW": "とあって表示「正因為是…這種特殊情況」，說明異乎尋常之事的原因。"
+          }
+        },
+        {
+          "id": "q:n1-3-05",
+          "item": "grammar:to-areba",
+          "prompt": {
+            "en": "Which fills the blank: 家族のため＿＿、どんな苦労も我慢できる。",
+            "zh": "填空：家族のため＿＿、どんな苦労も我慢できる。",
+            "zh_TW": "填空：家族のため＿＿、どんな苦労も我慢できる。"
+          },
+          "options": [
+            "とあれば",
+            "としても",
+            "とすれば",
+            "にしては"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "とあれば means 'if it is for the sake of X', implying that of course one would act accordingly.",
+            "zh": "とあれば表示「如果是为了…的话」，暗示理所当然会如此行动。",
+            "zh_TW": "とあれば表示「如果是為了…的話」，暗示理所當然會如此行動。"
+          }
+        },
+        {
+          "id": "q:n1-3-06",
+          "item": "grammar:shidai-da-reason",
+          "prompt": {
+            "en": "Which fills the blank: 事情があって遅れた＿＿です。",
+            "zh": "填空：事情があって遅れた＿＿です。",
+            "zh_TW": "填空：事情があって遅れた＿＿です。"
+          },
+          "options": [
+            "次第",
+            "わけ",
+            "つもり",
+            "はず"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "次第だ at the end of a sentence explains the process or circumstances that led to the current situation.",
+            "zh": "句末的次第だ用来说明导致目前情况的经过或原委。",
+            "zh_TW": "句末的次第だ用來說明導致目前情況的經過或原委。"
+          }
+        },
+        {
+          "id": "q:n1-3-07",
+          "item": "grammar:koto-naku-n1",
+          "prompt": {
+            "en": "Which fills the blank: 彼は一度も諦める＿＿努力を続けた。",
+            "zh": "填空：彼は一度も諦める＿＿努力を続けた。",
+            "zh_TW": "填空：彼は一度も諦める＿＿努力を続けた。"
+          },
+          "options": [
+            "ことなく",
+            "ことにより",
+            "ことだから",
+            "ことにせよ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ことなく means 'without ever doing X', describing an action that never occurred throughout a period.",
+            "zh": "ことなく表示「一直没有…」，说明某动作自始至终都没有发生。",
+            "zh_TW": "ことなく表示「一直沒有…」，說明某動作自始至終都沒有發生。"
+          }
+        },
+        {
+          "id": "q:n1-3-08",
+          "item": "grammar:koto-nashi-ni",
+          "prompt": {
+            "en": "Which fills the blank: 努力する＿＿成功はない。",
+            "zh": "填空：努力する＿＿成功はない。",
+            "zh_TW": "填空：努力する＿＿成功はない。"
+          },
+          "options": [
+            "ことなしに",
+            "ことなく",
+            "ことだから",
+            "こととて"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ことなしに means 'without doing X first, Y cannot happen', stressing X as a necessary condition.",
+            "zh": "ことなしに表示「不先做…，就不会有…」，强调该动作是必要条件。",
+            "zh_TW": "ことなしに表示「不先做…，就不會有…」，強調該動作是必要條件。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Explain, using 次第だ or こととて, the circumstances behind a promise you kept even though it was difficult.",
+        "zh": "用「次第だ」或「こととて」说明你即使很难也遵守了一个承诺的原委。",
+        "zh_TW": "用「次第だ」或「こととて」說明你即使很難也遵守了一個承諾的原委。"
+      }
+    },
+    {
+      "id": "unit:n1-4",
+      "title": {
+        "en": "The instant it happens",
+        "zh": "事情发生的瞬间",
+        "zh_TW": "事情發生的瞬間"
+      },
+      "grammar": [
+        "grammar:ga-hayai-ka",
+        "grammar:ya-inaya",
+        "grammar:nari-immediate",
+        "grammar:soba-kara",
+        "grammar:ga-saigo",
+        "grammar:tara-saigo",
+        "grammar:te-kara-to-iu-mono-n1",
+        "grammar:to-iu-mono-duration"
+      ],
+      "vocab": [
+        "vocab:jm1515600",
+        "vocab:jm1214290",
+        "vocab:jm1004080",
+        "vocab:jm1581270",
+        "vocab:jm1345590",
+        "vocab:jm1430610",
+        "vocab:jm1392570",
+        "vocab:jm1404190",
+        "vocab:jm1404490",
+        "vocab:jm1565170",
+        "vocab:jm1457090",
+        "vocab:jm1445240",
+        "vocab:jm1600630",
+        "vocab:jm1491210",
+        "vocab:jm1236250",
+        "vocab:jm1236270",
+        "vocab:jm1235440",
+        "vocab:jm1234430"
+      ],
+      "sentences": [
+        {
+          "ja": "彼は名前を呼ばれるが早いか、立ち上がった。",
+          "reading": "かれはなまえをよばれるがはやいか、たちあがった。",
+          "en": "The instant his name was called, he stood up.",
+          "zh": "他的名字一被叫到，就立刻站了起来。",
+          "zh_TW": "他的名字一被叫到，就立刻站了起來。",
+          "items": [
+            "grammar:ga-hayai-ka"
+          ]
+        },
+        {
+          "ja": "彼は席に着くや否や、電話が鳴った。",
+          "reading": "かれはせきにつくやいなや、でんわがなった。",
+          "en": "No sooner had he sat down than the phone rang.",
+          "zh": "他刚一坐下，电话就响了。",
+          "zh_TW": "他剛一坐下，電話就響了。",
+          "items": [
+            "grammar:ya-inaya"
+          ]
+        },
+        {
+          "ja": "彼は話を聞くなり、驚いて立ち上がった。",
+          "reading": "かれははなしをきくなり、おどろいてたちあがった。",
+          "en": "As soon as he heard the story, he jumped up in surprise.",
+          "zh": "他一听到这件事，就吃惊地站了起来。",
+          "zh_TW": "他一聽到這件事，就吃驚地站了起來。",
+          "items": [
+            "grammar:nari-immediate"
+          ]
+        },
+        {
+          "ja": "教えるそばから忘れてしまう。",
+          "reading": "おしえるそばからわすれてしまう。",
+          "en": "He forgets things as fast as I teach them to him.",
+          "zh": "刚教就忘。",
+          "zh_TW": "剛教就忘。",
+          "items": [
+            "grammar:soba-kara"
+          ]
+        },
+        {
+          "ja": "この約束は破ったが最後、信頼を失う。",
+          "reading": "このやくそくはやぶったがさいご、しんらいをうしなう。",
+          "en": "Once you break this promise, you lose all trust for good.",
+          "zh": "这个约定一旦违背，就会失去信任。",
+          "zh_TW": "這個約定一旦違背，就會失去信任。",
+          "items": [
+            "grammar:ga-saigo"
+          ]
+        },
+        {
+          "ja": "彼にそれを話したら最後、みんなに伝わるだろう。",
+          "reading": "かれにそれをはなしたらさいご、みんなにつたわるだろう。",
+          "en": "If I tell him that, it will surely spread to everyone in no time.",
+          "zh": "要是告诉了他，恐怕马上就会传到大家耳中。",
+          "zh_TW": "要是告訴了他，恐怕馬上就會傳到大家耳中。",
+          "items": [
+            "grammar:tara-saigo"
+          ]
+        },
+        {
+          "ja": "彼は失敗してからというもの、慎重になった。",
+          "reading": "かれはしっぱいしてからというもの、しんちょうになった。",
+          "en": "Ever since he failed, he has become cautious.",
+          "zh": "自从他失败以后，就变得谨慎了。",
+          "zh_TW": "自從他失敗以後，就變得謹慎了。",
+          "items": [
+            "grammar:te-kara-to-iu-mono-n1"
+          ]
+        },
+        {
+          "ja": "この三日というもの、休む暇もなかった。",
+          "reading": "このみっかというもの、やすむひまもなかった。",
+          "en": "For these three days, I haven't had a moment's rest.",
+          "zh": "这三天以来，都没有休息的时间。",
+          "zh_TW": "這三天以來，都沒有休息的時間。",
+          "items": [
+            "grammar:to-iu-mono-duration"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n1-4-01",
+          "item": "grammar:ga-hayai-ka",
+          "prompt": {
+            "en": "Which fills the blank: 彼は名前を呼ばれる＿＿、立ち上がった。",
+            "zh": "填空：彼は名前を呼ばれる＿＿、立ち上がった。",
+            "zh_TW": "填空：彼は名前を呼ばれる＿＿、立ち上がった。"
+          },
+          "options": [
+            "が早いか",
+            "や否や",
+            "なり",
+            "そばから"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "が早いか describes the very next thing happening the instant the first action finishes.",
+            "zh": "が早いか表示前一动作刚结束，下一件事马上就发生。",
+            "zh_TW": "が早いか表示前一動作剛結束，下一件事馬上就發生。"
+          }
+        },
+        {
+          "id": "q:n1-4-02",
+          "item": "grammar:ya-inaya",
+          "prompt": {
+            "en": "Which fills the blank: 彼は席に着く＿＿、電話が鳴った。",
+            "zh": "填空：彼は席に着く＿＿、電話が鳴った。",
+            "zh_TW": "填空：彼は席に著く＿＿、電話が鳴った。"
+          },
+          "options": [
+            "や否や",
+            "が早いか",
+            "が最後",
+            "たら最後"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "や否や means 'no sooner had X happened than Y', a literary expression for near-simultaneous events.",
+            "zh": "や否や表示「刚一…就…」，文语中形容两件事几乎同时发生。",
+            "zh_TW": "や否や表示「剛一…就…」，文語中形容兩件事幾乎同時發生。"
+          }
+        },
+        {
+          "id": "q:n1-4-03",
+          "item": "grammar:nari-immediate",
+          "prompt": {
+            "en": "Which fills the blank: 彼は話を聞く＿＿、驚いて立ち上がった。",
+            "zh": "填空：彼は話を聞く＿＿、驚いて立ち上がった。",
+            "zh_TW": "填空：彼は話を聞く＿＿、驚いて立ち上がった。"
+          },
+          "options": [
+            "なり",
+            "そばから",
+            "が最後",
+            "ことなく"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "なり means 'right upon doing X, an unexpected Y happened', with X and Y almost simultaneous.",
+            "zh": "なり表示「刚一…就（意外地）…」，两个动作几乎同时发生。",
+            "zh_TW": "なり表示「剛一…就（意外地）…」，兩個動作幾乎同時發生。"
+          }
+        },
+        {
+          "id": "q:n1-4-04",
+          "item": "grammar:soba-kara",
+          "prompt": {
+            "en": "Which fills the blank: 教える＿＿忘れてしまう。",
+            "zh": "填空：教える＿＿忘れてしまう。",
+            "zh_TW": "填空：教える＿＿忘れてしまう。"
+          },
+          "options": [
+            "そばから",
+            "が早いか",
+            "や否や",
+            "なり"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "そばから means 'as fast as X happens, it is immediately undone', describing a repeated frustrating pattern.",
+            "zh": "そばから表示「刚…就（马上又…）」，形容反复出现的令人无奈的情况。",
+            "zh_TW": "そばから表示「剛…就（馬上又…）」，形容反覆出現的令人無奈的情況。"
+          }
+        },
+        {
+          "id": "q:n1-4-05",
+          "item": "grammar:ga-saigo",
+          "prompt": {
+            "en": "Which fills the blank: この約束は破った＿＿、信頼を失う。",
+            "zh": "填空：この約束は破った＿＿、信頼を失う。",
+            "zh_TW": "填空：この約束は破った＿＿、信頼を失う。"
+          },
+          "options": [
+            "が最後",
+            "たら最後",
+            "そばから",
+            "なり"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "が最後 attaches to a plain-past verb and means 'once that happens, there is no going back'.",
+            "zh": "が最後接在动词过去式后，表示「一旦…就再也无法挽回」。",
+            "zh_TW": "が最後接在動詞過去式後，表示「一旦…就再也無法挽回」。"
+          }
+        },
+        {
+          "id": "q:n1-4-06",
+          "item": "grammar:tara-saigo",
+          "prompt": {
+            "en": "Which fills the blank: 彼にそれを話し＿＿、みんなに伝わるだろう。",
+            "zh": "填空：彼にそれを話し＿＿、みんなに伝わるだろう。",
+            "zh_TW": "填空：彼にそれを話し＿＿、みんなに伝わるだろう。"
+          },
+          "options": [
+            "たら最後",
+            "が最後",
+            "てからというもの",
+            "というもの"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "たら最後 attaches to the たら-form and means 'once you do it, a certain bad result is guaranteed'.",
+            "zh": "たら最後接在たら形后，表示「一旦…，必然会招致某种不好的结果」。",
+            "zh_TW": "たら最後接在たら形後，表示「一旦…，必然會招致某種不好的結果」。"
+          }
+        },
+        {
+          "id": "q:n1-4-07",
+          "item": "grammar:te-kara-to-iu-mono-n1",
+          "prompt": {
+            "en": "Which fills the blank: 彼は失敗＿＿、慎重になった。",
+            "zh": "填空：彼は失敗＿＿、慎重になった。",
+            "zh_TW": "填空：彼は失敗＿＿、慎重になった。"
+          },
+          "options": [
+            "してからというもの",
+            "してから",
+            "するそばから",
+            "するなり"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "てからというもの means 'ever since X, things have stayed changed', emphasizing a lasting change.",
+            "zh": "てからというもの表示「自从…以后，情况就一直是那样」，强调持续的变化。",
+            "zh_TW": "てからというもの表示「自從…以後，情況就一直是那樣」，強調持續的變化。"
+          }
+        },
+        {
+          "id": "q:n1-4-08",
+          "item": "grammar:to-iu-mono-duration",
+          "prompt": {
+            "en": "Which fills the blank: この三日＿＿、休む暇もなかった。",
+            "zh": "填空：この三日＿＿、休む暇もなかった。",
+            "zh_TW": "填空：この三日＿＿、休む暇もなかった。"
+          },
+          "options": [
+            "というもの",
+            "というのに",
+            "といっても",
+            "というより"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "というもの after a duration expression means 'for that whole stretch of time', emphasizing how long it felt.",
+            "zh": "というもの接在表示时间长度的词后，表示「整整那一段时间」，强调时间之长。",
+            "zh_TW": "というもの接在表示時間長度的詞後，表示「整整那一段時間」，強調時間之長。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Describe a moment of surprise using 〜なり or 〜や否や, then describe a change since then using 〜てからというもの.",
+        "zh": "用「〜なり」或「〜や否や」描述一个令人惊讶的瞬间，再用「〜てからというもの」描述此后发生的变化。",
+        "zh_TW": "用「〜なり」或「〜や否や」描述一個令人驚訝的瞬間，再用「〜てからというもの」描述此後發生的變化。"
+      }
+    },
+    {
+      "id": "unit:n1-5",
+      "title": {
+        "en": "Turning points and doing two things at once",
+        "zh": "转折点与同时进行的动作",
+        "zh_TW": "轉折點與同時進行的動作"
+      },
+      "grammar": [
+        "grammar:o-kawakiri-ni",
+        "grammar:o-ki-ni",
+        "grammar:o-sakai-ni",
+        "grammar:o-kagiri-ni",
+        "grammar:katawara",
+        "grammar:katagata",
+        "grammar:gatera",
+        "grammar:nagara-ni",
+        "grammar:tsu-tsu"
+      ],
+      "vocab": [
+        "vocab:jm1263210",
+        "vocab:jm1277250",
+        "vocab:jm1424900",
+        "vocab:jm1416260",
+        "vocab:jm1158240",
+        "vocab:jm1197170",
+        "vocab:jm1250180",
+        "vocab:jm1386140",
+        "vocab:jm1441080",
+        "vocab:jm1441040",
+        "vocab:jm1598670",
+        "vocab:jm1511260",
+        "vocab:jm1604170",
+        "vocab:jm1278860",
+        "vocab:jm1238240",
+        "vocab:jm1282560",
+        "vocab:jm1283490",
+        "vocab:jm1281120"
+      ],
+      "sentences": [
+        {
+          "ja": "彼の発言を皮切りに、議論が始まった。",
+          "reading": "かれのはつげんをかわきりに、ぎろんがはじまった。",
+          "en": "Starting with his remark, the discussion began.",
+          "zh": "以他的发言为开端，讨论开始了。",
+          "zh_TW": "以他的發言為開端，討論開始了。",
+          "items": [
+            "grammar:o-kawakiri-ni"
+          ]
+        },
+        {
+          "ja": "卒業を機に、彼は田舎に戻った。",
+          "reading": "そつぎょうをきに、かれはいなかにもどった。",
+          "en": "Taking graduation as the occasion, he went back to the countryside.",
+          "zh": "以毕业为契机，他回到了乡下。",
+          "zh_TW": "以畢業為契機，他回到了鄉下。",
+          "items": [
+            "grammar:o-ki-ni"
+          ]
+        },
+        {
+          "ja": "その事故を境に、規則が厳しくなった。",
+          "reading": "そのじこをさかいに、きそくがきびしくなった。",
+          "en": "With that accident as the dividing line, the rules became stricter.",
+          "zh": "以那次事故为分界点，规则变得严格了。",
+          "zh_TW": "以那次事故為分界點，規則變得嚴格了。",
+          "items": [
+            "grammar:o-sakai-ni"
+          ]
+        },
+        {
+          "ja": "今日を限りに、贅沢をやめる。",
+          "reading": "きょうをかぎりに、ぜいたくをやめる。",
+          "en": "As of today, I will stop indulging in luxury.",
+          "zh": "从今天起，我不再奢侈浪费了。",
+          "zh_TW": "從今天起，我不再奢侈浪費了。",
+          "items": [
+            "grammar:o-kagiri-ni"
+          ]
+        },
+        {
+          "ja": "彼は仕事のかたわら、研究を続けている。",
+          "reading": "かれはしごとのかたわら、けんきゅうをつづけている。",
+          "en": "Alongside his job, he continues his research on the side.",
+          "zh": "他在工作之余，还坚持做研究。",
+          "zh_TW": "他在工作之餘，還堅持做研究。",
+          "items": [
+            "grammar:katawara"
+          ]
+        },
+        {
+          "ja": "散歩がてら、買い物に行った。",
+          "reading": "さんぽがてら、かいものにいった。",
+          "en": "I went shopping, taking the opportunity of a walk.",
+          "zh": "散步顺便去买了东西。",
+          "zh_TW": "散步順便去買了東西。",
+          "items": [
+            "grammar:gatera"
+          ]
+        },
+        {
+          "ja": "彼は生まれながらにして才能に恵まれていた。",
+          "reading": "かれはうまれながらにしてさいのうにめぐまれていた。",
+          "en": "He was blessed with talent from birth.",
+          "zh": "他生来就富有才能。",
+          "zh_TW": "他生來就富有才能。",
+          "items": [
+            "grammar:nagara-ni"
+          ]
+        },
+        {
+          "ja": "二人は行きつ戻りつの関係だ。",
+          "reading": "ふたりはいきつもどりつのかんけいだ。",
+          "en": "The two of them have a give-and-take, mutually supportive relationship.",
+          "zh": "两人是互相扶持、彼此依存的关系。",
+          "zh_TW": "兩人是互相扶持、彼此依存的關係。",
+          "items": [
+            "grammar:tsu-tsu"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n1-5-01",
+          "item": "grammar:o-kawakiri-ni",
+          "prompt": {
+            "en": "Which fills the blank: 彼の発言＿＿、議論が始まった。",
+            "zh": "填空：彼の発言＿＿、議論が始まった。",
+            "zh_TW": "填空：彼の発言＿＿、議論が始まった。"
+          },
+          "options": [
+            "を皮切りに",
+            "を機に",
+            "を境に",
+            "を限りに"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "を皮切りに means 'starting with X, a whole series followed', marking the first in a sequence.",
+            "zh": "を皮切りに表示「以…为开端，一连串的事随之而来」，标示一连串事情的起点。",
+            "zh_TW": "を皮切りに表示「以…為開端，一連串的事隨之而來」，標示一連串事情的起點。"
+          }
+        },
+        {
+          "id": "q:n1-5-02",
+          "item": "grammar:o-ki-ni",
+          "prompt": {
+            "en": "Which fills the blank: 卒業＿＿、彼は田舎に戻った。",
+            "zh": "填空：卒業＿＿、彼は田舎に戻った。",
+            "zh_TW": "填空：卒業＿＿、彼は田舎に戻った。"
+          },
+          "options": [
+            "を機に",
+            "を皮切りに",
+            "を限りに",
+            "のかたわら"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "を機に means 'taking X as the occasion for a change', marking a turning point for a decision.",
+            "zh": "を機に表示「以…为契机」，标示做出改变的转折点。",
+            "zh_TW": "を機に表示「以…為契機」，標示做出改變的轉折點。"
+          }
+        },
+        {
+          "id": "q:n1-5-03",
+          "item": "grammar:o-sakai-ni",
+          "prompt": {
+            "en": "Which fills the blank: その事故＿＿、規則が厳しくなった。",
+            "zh": "填空：その事故＿＿、規則が厳しくなった。",
+            "zh_TW": "填空：その事故＿＿、規則が厳しくなった。"
+          },
+          "options": [
+            "を境に",
+            "を機に",
+            "を皮切りに",
+            "がてら"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "を境に means 'with X as the dividing line', showing a clear before-and-after change.",
+            "zh": "を境に表示「以…为分界点」，说明前后发生了明显的变化。",
+            "zh_TW": "を境に表示「以…為分界點」，說明前後發生了明顯的變化。"
+          }
+        },
+        {
+          "id": "q:n1-5-04",
+          "item": "grammar:o-kagiri-ni",
+          "prompt": {
+            "en": "Which fills the blank: 今日＿＿、贅沢をやめる。",
+            "zh": "填空：今日＿＿、贅沢をやめる。",
+            "zh_TW": "填空：今日＿＿、贅沢をやめる。"
+          },
+          "options": [
+            "を限りに",
+            "を機に",
+            "を境に",
+            "を皮切りに"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "を限りに means 'as of X, doing it for the last time', marking a firm ending point.",
+            "zh": "を限りに表示「从…起，就此不再」，标示一个明确的终点。",
+            "zh_TW": "を限りに表示「從…起，就此不再」，標示一個明確的終點。"
+          }
+        },
+        {
+          "id": "q:n1-5-05",
+          "item": "grammar:katawara",
+          "prompt": {
+            "en": "Which fills the blank: 彼は仕事の＿＿、研究を続けている。",
+            "zh": "填空：彼は仕事の＿＿、研究を続けている。",
+            "zh_TW": "填空：彼は仕事の＿＿、研究を続けている。"
+          },
+          "options": [
+            "かたわら",
+            "がてら",
+            "かたがた",
+            "ながらに"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "かたわら means 'while mainly doing X, also doing Y', describing a secondary activity kept up alongside a main one.",
+            "zh": "かたわら表示「以…为主，同时也做…」，描述在主要事情之外坚持进行的次要活动。",
+            "zh_TW": "かたわら表示「以…為主，同時也做…」，描述在主要事情之外堅持進行的次要活動。"
+          }
+        },
+        {
+          "id": "q:n1-5-06",
+          "item": "grammar:gatera",
+          "prompt": {
+            "en": "Which fills the blank: 散歩＿＿、買い物に行った。",
+            "zh": "填空：散歩＿＿、買い物に行った。",
+            "zh_TW": "填空：散歩＿＿、買い物に行った。"
+          },
+          "options": [
+            "がてら",
+            "かたわら",
+            "かたがた",
+            "つつ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "がてら means 'while doing X, take the chance to also do Y', combining two casual actions.",
+            "zh": "がてら表示「趁着做…的机会，顺便也做…」，把两件随意的事结合在一起。",
+            "zh_TW": "がてら表示「趁著做…的機會，順便也做…」，把兩件隨意的事結合在一起。"
+          }
+        },
+        {
+          "id": "q:n1-5-07",
+          "item": "grammar:nagara-ni",
+          "prompt": {
+            "en": "Which fills the blank: 彼は生まれ＿＿して才能に恵まれていた。",
+            "zh": "填空：彼は生まれ＿＿して才能に恵まれていた。",
+            "zh_TW": "填空：彼は生まれ＿＿して才能に恵まれていた。"
+          },
+          "options": [
+            "ながらに",
+            "つつ",
+            "がてら",
+            "そばから"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ながらに(して) means 'while remaining just as one is', often used with 生まれながらに to mean 'from birth'.",
+            "zh": "ながらに(して)表示「保持原来的样子」，常与生まれながらに连用，表示「与生俱来」。",
+            "zh_TW": "ながらに(して)表示「保持原來的樣子」，常與生まれながらに連用，表示「與生俱來」。"
+          }
+        },
+        {
+          "id": "q:n1-5-08",
+          "item": "grammar:tsu-tsu",
+          "prompt": {
+            "en": "Which fills the blank: 二人は＿＿の関係だ。",
+            "zh": "填空：二人は＿＿の関係だ。",
+            "zh_TW": "填空：二人は＿＿の関係だ。"
+          },
+          "options": [
+            "持ちつ持たれつ",
+            "持ちながら持たれ",
+            "持ちつつ持たれつつ",
+            "持ちがてら持たれがてら"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜つ〜つ repeats a verb stem in two related forms to show two actions happening alternately, as in 持ちつ持たれつ ('give and take').",
+            "zh": "〜つ〜つ把动词词干重复两次、以相关的两种形式出现，表示两个动作交替发生，如「持ちつ持たれつ」（互相扶持）。",
+            "zh_TW": "〜つ〜つ把動詞詞幹重複兩次、以相關的兩種形式出現，表示兩個動作交替發生，如「持ちつ持たれつ」（互相扶持）。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Describe a turning point in your life using 〜を機に or 〜を境に, and something you do alongside your main activity using 〜かたわら.",
+        "zh": "用「〜を機に」或「〜を境に」描述人生中的一个转折点，再用「〜かたわら」说说你在主要事情之外坚持做的事。",
+        "zh_TW": "用「〜を機に」或「〜を境に」描述人生中的一個轉折點，再用「〜かたわら」說說你在主要事情之外堅持做的事。"
+      }
+    },
+    {
+      "id": "unit:n1-6",
+      "title": {
+        "en": "Vivid manner and reckless disregard",
+        "zh": "生动的姿态与不顾一切",
+        "zh_TW": "生動的姿態與不顧一切"
+      },
+      "grammar": [
+        "grammar:n-bakari",
+        "grammar:to-bakari-ni",
+        "grammar:to-mo-naku",
+        "grammar:sube-o-shiranai",
+        "grammar:mo-kaerimizu",
+        "grammar:o-oshite"
+      ],
+      "vocab": [
+        "vocab:jm1365930",
+        "vocab:jm1225450",
+        "vocab:jm1252310",
+        "vocab:jm1414500",
+        "vocab:jm1212850",
+        "vocab:jm1403760",
+        "vocab:jm1548590",
+        "vocab:jm1253760",
+        "vocab:jm1004250",
+        "vocab:jm1360500",
+        "vocab:jm1347550",
+        "vocab:jm1361380",
+        "vocab:jm1006400",
+        "vocab:jm1403780",
+        "vocab:jm1410770",
+        "vocab:jm1597110",
+        "vocab:jm1557350",
+        "vocab:jm1483240"
+      ],
+      "sentences": [
+        {
+          "ja": "彼は泣かんばかりに謝った。",
+          "reading": "かれはなかんばかりにあやまった。",
+          "en": "He apologized as if he were about to cry.",
+          "zh": "他几乎要哭出来似地道歉了。",
+          "zh_TW": "他幾乎要哭出來似地道歉了。",
+          "items": [
+            "grammar:n-bakari"
+          ]
+        },
+        {
+          "ja": "彼はこの時とばかりに前に出た。",
+          "reading": "かれはこのときとばかりにまえにでた。",
+          "en": "As if to say 'now is the moment', he stepped forward.",
+          "zh": "他像是说「就是现在」似地站了出来。",
+          "zh_TW": "他像是說「就是現在」似地站了出來。",
+          "items": [
+            "grammar:to-bakari-ni"
+          ]
+        },
+        {
+          "ja": "彼はどこへともなく歩き始めた。",
+          "reading": "かれはどこへともなくあるきはじめた。",
+          "en": "He started walking off, without any particular destination in mind.",
+          "zh": "他漫无目的地开始走了起来。",
+          "zh_TW": "他漫無目的地開始走了起來。",
+          "items": [
+            "grammar:to-mo-naku"
+          ]
+        },
+        {
+          "ja": "彼は驚きを表すすべを知らない。",
+          "reading": "かれはおどろきをあらわすすべをしらない。",
+          "en": "He has no idea how to express his surprise.",
+          "zh": "他不知道该如何表达自己的惊讶。",
+          "zh_TW": "他不知道該如何表達自己的驚訝。",
+          "items": [
+            "grammar:sube-o-shiranai"
+          ]
+        },
+        {
+          "ja": "彼は危険も顧みず、川に飛び込んだ。",
+          "reading": "かれはきけんもかえりみず、かわにとびこんだ。",
+          "en": "Without any regard for the danger, he jumped into the river.",
+          "zh": "他不顾危险，跳进了河里。",
+          "zh_TW": "他不顧危險，跳進了河裡。",
+          "items": [
+            "grammar:mo-kaerimizu"
+          ]
+        },
+        {
+          "ja": "彼は反対を押して、計画を実行した。",
+          "reading": "かれははんたいをおして、けいかくをじっこうした。",
+          "en": "Pushing ahead in spite of the opposition, he carried out the plan.",
+          "zh": "他不顾反对，执行了计划。",
+          "zh_TW": "他不顧反對，執行了計劃。",
+          "items": [
+            "grammar:o-oshite"
+          ]
+        },
+        {
+          "ja": "客は今にも帰らんばかりの態度を見せた。",
+          "reading": "きゃくはいまにもかえらんばかりのたいどをみせた。",
+          "en": "The guest showed an attitude as if about to leave any moment.",
+          "zh": "客人表现出一副马上就要走的样子。",
+          "zh_TW": "客人表現出一副馬上就要走的樣子。",
+          "items": [
+            "grammar:n-bakari"
+          ]
+        },
+        {
+          "ja": "彼女は反対を押して、留学を決めた。",
+          "reading": "かのじょははんたいをおして、りゅうがくをきめた。",
+          "en": "Pushing past the opposition, she decided to study abroad.",
+          "zh": "她不顾反对，决定出国留学。",
+          "zh_TW": "她不顧反對，決定出國留學。",
+          "items": [
+            "grammar:o-oshite"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n1-6-01",
+          "item": "grammar:n-bakari",
+          "prompt": {
+            "en": "Which fills the blank: 彼は泣＿＿に謝った。",
+            "zh": "填空：彼は泣＿＿に謝った。",
+            "zh_TW": "填空：彼は泣＿＿に謝った。"
+          },
+          "options": [
+            "かんばかり",
+            "くばかり",
+            "こうばかり",
+            "かないばかり"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "んばかり attaches to the negative stem of the verb (泣か＋んばかり), never to a passive stem, and means 'as if about to'.",
+            "zh": "んばかり接在动词的未然形词干后（泣か＋んばかり），绝不接被动形，表示「几乎要…」。",
+            "zh_TW": "んばかり接在動詞的未然形詞幹後（泣か＋んばかり），絕不接被動形，表示「幾乎要…」。"
+          }
+        },
+        {
+          "id": "q:n1-6-02",
+          "item": "grammar:to-bakari-ni",
+          "prompt": {
+            "en": "Which fills the blank: 彼はこの時＿＿前に出た。",
+            "zh": "填空：彼はこの時＿＿前に出た。",
+            "zh_TW": "填空：彼はこの時＿＿前に出た。"
+          },
+          "options": [
+            "とばかりに",
+            "んばかりに",
+            "ともなく",
+            "をよそに"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "とばかりに means 'as if to say X', describing an action performed with a clear unspoken attitude.",
+            "zh": "とばかりに表示「一副…的样子」，描述带着某种未说出口的态度所做的动作。",
+            "zh_TW": "とばかりに表示「一副…的樣子」，描述帶著某種未說出口的態度所做的動作。"
+          }
+        },
+        {
+          "id": "q:n1-6-03",
+          "item": "grammar:to-mo-naku",
+          "prompt": {
+            "en": "Which fills the blank: 彼はどこへ＿＿歩き始めた。",
+            "zh": "填空：彼はどこへ＿＿歩き始めた。",
+            "zh_TW": "填空：彼はどこへ＿＿歩き始めた。"
+          },
+          "options": [
+            "ともなく",
+            "ばかりに",
+            "をよそに",
+            "もかえりみず"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ともなく／〜ともなしに means doing something absent-mindedly, without a clear intention.",
+            "zh": "〜ともなく／〜ともなしに表示心不在焉、没有明确目的地做某事。",
+            "zh_TW": "〜ともなく／〜ともなしに表示心不在焉、沒有明確目的地做某事。"
+          }
+        },
+        {
+          "id": "q:n1-6-04",
+          "item": "grammar:sube-o-shiranai",
+          "prompt": {
+            "en": "Which fills the blank: 彼は驚きを表す＿＿。",
+            "zh": "填空：彼は驚きを表す＿＿。",
+            "zh_TW": "填空：彼は驚きを表す＿＿。"
+          },
+          "options": [
+            "すべを知らない",
+            "ことなく",
+            "ものでもない",
+            "はずがない"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "すべを知らない means 'has no idea how to do it at all', describing complete helplessness about a method.",
+            "zh": "すべを知らない表示「完全不知道该怎么做」，形容对方法束手无策。",
+            "zh_TW": "すべを知らない表示「完全不知道該怎麼做」，形容對方法束手無策。"
+          }
+        },
+        {
+          "id": "q:n1-6-05",
+          "item": "grammar:mo-kaerimizu",
+          "prompt": {
+            "en": "Which fills the blank: 彼は危険＿＿、川に飛び込んだ。",
+            "zh": "填空：彼は危険＿＿、川に飛び込んだ。",
+            "zh_TW": "填空：彼は危険＿＿、川に飛び込んだ。"
+          },
+          "options": [
+            "も顧みず",
+            "をよそに",
+            "をものともせず",
+            "を押して"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜も顧みず means 'without any regard for X', usually a risk or one's own condition.",
+            "zh": "〜も顧みず表示「不顾…」，通常指风险或自身状况。",
+            "zh_TW": "〜も顧みず表示「不顧…」，通常指風險或自身狀況。"
+          }
+        },
+        {
+          "id": "q:n1-6-06",
+          "item": "grammar:o-oshite",
+          "prompt": {
+            "en": "Which fills the blank: 彼は反対＿＿、計画を実行した。",
+            "zh": "填空：彼は反対＿＿、計画を実行した。",
+            "zh_TW": "填空：彼は反対＿＿、計畫を実行した。"
+          },
+          "options": [
+            "を押して",
+            "も顧みず",
+            "をよそに",
+            "をものともせず"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜を押して means 'pushing ahead in spite of X', typically opposition or a difficulty.",
+            "zh": "〜を押して表示「不顾…，坚持推进」，通常指反对意见或困难。",
+            "zh_TW": "〜を押して表示「不顧…，堅持推進」，通常指反對意見或困難。"
+          }
+        },
+        {
+          "id": "q:n1-6-07",
+          "item": "grammar:n-bakari",
+          "prompt": {
+            "en": "Which fills the blank: 客は今にも帰＿＿の態度を見せた。",
+            "zh": "填空：客は今にも帰＿＿の態度を見せた。",
+            "zh_TW": "填空：客は今にも帰＿＿の態度を見せた。"
+          },
+          "options": [
+            "らんばかり",
+            "るばかり",
+            "ろうばかり",
+            "らないばかり"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "んばかり again attaches to the negative stem: 帰ら＋んばかり, meaning 'looking ready to do X any moment'.",
+            "zh": "んばかり同样接在未然形词干后：帰ら＋んばかり，表示「眼看就要…」。",
+            "zh_TW": "んばかり同樣接在未然形詞幹後：帰ら＋んばかり，表示「眼看就要…」。"
+          }
+        },
+        {
+          "id": "q:n1-6-08",
+          "item": "grammar:o-oshite",
+          "prompt": {
+            "en": "Which fills the blank: 彼女は反対＿＿、留学を決めた。",
+            "zh": "填空：彼女は反対＿＿、留学を決めた。",
+            "zh_TW": "填空：彼女は反対＿＿、留學を決めた。"
+          },
+          "options": [
+            "を押して",
+            "も顧みず",
+            "とばかりに",
+            "ともなく"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜を押して here shows she went ahead with her decision despite the opposition she faced.",
+            "zh": "〜を押して在此表示她不顾所面临的反对，坚持做出了决定。",
+            "zh_TW": "〜を押して在此表示她不顧所面臨的反對，堅持做出了決定。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Describe someone acting recklessly using 〜も顧みず or 〜を押して, and their expression using 〜んばかり.",
+        "zh": "用「〜も顧みず」或「〜を押して」描述某人不顾一切的行动，再用「〜んばかり」描述他的表情。",
+        "zh_TW": "用「〜も顧みず」或「〜を押して」描述某人不顧一切的行動，再用「〜んばかり」描述他的表情。"
+      }
+    },
+    {
+      "id": "unit:n1-7",
+      "title": {
+        "en": "Reaching a point: extent and endurance",
+        "zh": "到达极限——程度与忍耐",
+        "zh_TW": "到達極限——程度與忍耐"
+      },
+      "grammar": [
+        "grammar:ni-atte",
+        "grammar:ni-shite",
+        "grammar:ni-itaru",
+        "grammar:ni-itatte-wa",
+        "grammar:ni-itaru-made",
+        "grammar:ni-oyonde",
+        "grammar:ni-oyobanai",
+        "grammar:ni-taru",
+        "grammar:ni-taeru",
+        "grammar:ni-taenai",
+        "grammar:ni-katakunai",
+        "grammar:ni-todomarazu"
+      ],
+      "vocab": [
+        "vocab:jm1491400",
+        "vocab:jm1584130",
+        "vocab:jm1334340",
+        "vocab:jm1497930",
+        "vocab:jm1223090",
+        "vocab:jm1239600",
+        "vocab:jm1225230",
+        "vocab:jm1264670",
+        "vocab:jm1319820",
+        "vocab:jm1554200",
+        "vocab:jm1005590",
+        "vocab:jm1365930",
+        "vocab:jm1374970",
+        "vocab:jm1211310",
+        "vocab:jm1428920",
+        "vocab:jm1435740",
+        "vocab:jm1192860",
+        "vocab:jm1071600"
+      ],
+      "sentences": [
+        {
+          "ja": "この危機にあって、冷静さを保つことが大切だ。",
+          "reading": "このききにあって、れいせいさをたもつことがたいせつだ。",
+          "en": "In this crisis, it is important to keep one's composure.",
+          "zh": "在这场危机中，保持冷静非常重要。",
+          "zh_TW": "在這場危機中，保持冷靜非常重要。",
+          "items": [
+            "grammar:ni-atte"
+          ]
+        },
+        {
+          "ja": "長い議論の末、ようやく結論に至った。",
+          "reading": "ながいぎろんのすえ、ようやくけつろんにいたった。",
+          "en": "After a long discussion, we finally reached a conclusion.",
+          "zh": "经过长时间的讨论，终于得出了结论。",
+          "zh_TW": "經過長時間的討論，終於得出了結論。",
+          "items": [
+            "grammar:ni-itaru"
+          ]
+        },
+        {
+          "ja": "彼は細かい点に至るまで計画を確認した。",
+          "reading": "かれはこまかいてんにいたるまでけいかくをかくにんした。",
+          "en": "He checked the plan down to the smallest details.",
+          "zh": "他连细节都仔细确认了计划。",
+          "zh_TW": "他連細節都仔細確認了計劃。",
+          "items": [
+            "grammar:ni-itaru-made"
+          ]
+        },
+        {
+          "ja": "そんなに心配するには及ばない。",
+          "reading": "そんなにしんぱいするにはおよばない。",
+          "en": "There is no need to worry that much.",
+          "zh": "用不着那么担心。",
+          "zh_TW": "用不著那麼擔心。",
+          "items": [
+            "grammar:ni-oyobanai"
+          ]
+        },
+        {
+          "ja": "彼は信頼するに足る人物だ。",
+          "reading": "かれはしんらいするにたるじんぶつだ。",
+          "en": "He is a person worthy of trust.",
+          "zh": "他是一个值得信赖的人。",
+          "zh_TW": "他是一個值得信賴的人。",
+          "items": [
+            "grammar:ni-taru"
+          ]
+        },
+        {
+          "ja": "この提案は検討に堪える内容だ。",
+          "reading": "このていあんはけんとうにたえるないようだ。",
+          "en": "This proposal has content worth examining.",
+          "zh": "这项提案的内容值得研究。",
+          "zh_TW": "這項提案的內容值得研究。",
+          "items": [
+            "grammar:ni-taeru"
+          ]
+        },
+        {
+          "ja": "その光景は見るに堪えない。",
+          "reading": "そのこうけいはみるにたえない。",
+          "en": "That sight was too awful to bear looking at.",
+          "zh": "那景象让人不忍直视。",
+          "zh_TW": "那景象讓人不忍直視。",
+          "items": [
+            "grammar:ni-taenai"
+          ]
+        },
+        {
+          "ja": "彼の苦労は想像に難くない。",
+          "reading": "かれのくろうはそうぞうにかたくない。",
+          "en": "His hardship is not hard to imagine.",
+          "zh": "他的辛苦不难想象。",
+          "zh_TW": "他的辛苦不難想像。",
+          "items": [
+            "grammar:ni-katakunai"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n1-7-01",
+          "item": "grammar:ni-atte",
+          "prompt": {
+            "en": "Which fills the blank: この危機＿＿、冷静さを保つことが大切だ。",
+            "zh": "填空：この危機＿＿、冷静さを保つことが大切だ。",
+            "zh_TW": "填空：この危機＿＿、冷靜さを保つことが大切だ。"
+          },
+          "options": [
+            "にあって",
+            "において",
+            "に対して",
+            "によって"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "にあって highlights a special or difficult circumstance one finds oneself in.",
+            "zh": "にあって强调「正处于…的特殊状况下」。",
+            "zh_TW": "にあって強調「正處於…的特殊狀況下」。"
+          }
+        },
+        {
+          "id": "q:n1-7-02",
+          "item": "grammar:ni-shite",
+          "prompt": {
+            "en": "Which means 'even a genius like him (is not exempt)'?",
+            "zh": "哪一个意思是「即使是他这样的天才（也不例外）」？",
+            "zh_TW": "哪一個意思是「即使是他這樣的天才（也不例外）」？"
+          },
+          "options": [
+            "彼にして",
+            "彼にとって",
+            "彼にしたら",
+            "彼にしても"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "にして here means 'even X', emphasizing that even someone remarkable is subject to something.",
+            "zh": "にして在此表示「即使是…」，强调连了不起的人也不例外。",
+            "zh_TW": "にして在此表示「即使是…」，強調連了不起的人也不例外。"
+          }
+        },
+        {
+          "id": "q:n1-7-03",
+          "item": "grammar:ni-itaru",
+          "prompt": {
+            "en": "Which fills the blank: 長い議論の末、ようやく結論＿＿。",
+            "zh": "填空：長い議論の末、ようやく結論＿＿。",
+            "zh_TW": "填空：長い議論の末、ようやく結論＿＿。"
+          },
+          "options": [
+            "に至った",
+            "に及んだ",
+            "に堪えた",
+            "に足った"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "に至る means to finally arrive at a point or state after a process.",
+            "zh": "に至る表示经过一番过程终于到达某个地步或结论。",
+            "zh_TW": "に至る表示經過一番過程終於到達某個地步或結論。"
+          }
+        },
+        {
+          "id": "q:n1-7-04",
+          "item": "grammar:ni-itatte-wa",
+          "prompt": {
+            "en": "Which means 'when it comes to this extreme case'?",
+            "zh": "哪一个意思是「说到这种极端的情况」？",
+            "zh_TW": "哪一個意思是「說到這種極端的情況」？"
+          },
+          "options": [
+            "この件に至っては",
+            "この件に至るまで",
+            "この件にあって",
+            "この件にして"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "に至っては singles out an extreme case for special comment, often critical.",
+            "zh": "に至っては挑出一个极端的例子加以特别评论，常带批评语气。",
+            "zh_TW": "に至っては挑出一個極端的例子加以特別評論，常帶批評語氣。"
+          }
+        },
+        {
+          "id": "q:n1-7-05",
+          "item": "grammar:ni-oyonde",
+          "prompt": {
+            "en": "Which fills the blank: ここ＿＿、もう後戻りはできない。",
+            "zh": "填空：ここ＿＿、もう後戻りはできない。",
+            "zh_TW": "填空：ここ＿＿、もう後戻りはできない。"
+          },
+          "options": [
+            "に及んで",
+            "に至って",
+            "に堪えて",
+            "に足りて"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "に及んで means 'now that things have reached this point', often implying it's too late to change course.",
+            "zh": "に及んで表示「事情已经到了这个地步」，常暗示为时已晚。",
+            "zh_TW": "に及んで表示「事情已經到了這個地步」，常暗示為時已晚。"
+          }
+        },
+        {
+          "id": "q:n1-7-06",
+          "item": "grammar:ni-oyobanai",
+          "prompt": {
+            "en": "Which fills the blank: そんなに心配する＿＿。",
+            "zh": "填空：そんなに心配する＿＿。",
+            "zh_TW": "填空：そんなに心配する＿＿。"
+          },
+          "options": [
+            "には及ばない",
+            "には堪えない",
+            "には足りない",
+            "には至らない"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "には及ばない means there's no need to go that far, or that something doesn't measure up to another.",
+            "zh": "には及ばない表示「用不着…」或「比不上…」。",
+            "zh_TW": "には及ばない表示「用不著…」或「比不上…」。"
+          }
+        },
+        {
+          "id": "q:n1-7-07",
+          "item": "grammar:ni-taenai",
+          "prompt": {
+            "en": "Which fills the blank: その光景は見る＿＿。",
+            "zh": "填空：その光景は見る＿＿。",
+            "zh_TW": "填空：その光景は見る＿＿。"
+          },
+          "options": [
+            "に堪えなかった",
+            "に足りなかった",
+            "に難くなかった",
+            "に及ばなかった"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "に堪えない after 見る／聞く means something is too dreadful to watch or listen to.",
+            "zh": "に堪えない接在見る／聞く后，表示惨不忍睹、不忍卒听。",
+            "zh_TW": "に堪えない接在見る／聞く後，表示慘不忍睹、不忍卒聽。"
+          }
+        },
+        {
+          "id": "q:n1-7-08",
+          "item": "grammar:ni-todomarazu",
+          "prompt": {
+            "en": "Which fills the blank: この問題はこの会社＿＿、世界に広がっている。",
+            "zh": "填空：この問題はこの会社＿＿、世界に広がっている。",
+            "zh_TW": "填空：この問題はこの會社＿＿、世界に広がっている。"
+          },
+          "options": [
+            "にとどまらず",
+            "に至っては",
+            "をおいて",
+            "をよそに"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "にとどまらず means 'not limited to X', showing that something extends beyond the stated scope.",
+            "zh": "にとどまらず表示「不仅限于…」，说明事情的范围超出了所述对象。",
+            "zh_TW": "にとどまらず表示「不僅限於…」，說明事情的範圍超出了所述對象。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Describe something you find hard to imagine using 〜に難くない, and something you find unbearable to watch using 〜に堪えない.",
+        "zh": "用「〜に難くない」描述一件你不难想象的事，再用「〜に堪えない」描述一件让你不忍目睹的事。",
+        "zh_TW": "用「〜に難くない」描述一件你不難想像的事，再用「〜に堪えない」描述一件讓你不忍目睹的事。"
+      }
+    },
+    {
+      "id": "unit:n1-8",
+      "title": {
+        "en": "Basis, certainty, and comparison",
+        "zh": "依据、确信与对比",
+        "zh_TW": "依據、確信與對比"
+      },
+      "grammar": [
+        "grammar:ni-sokushite",
+        "grammar:ni-terashite",
+        "grammar:ni-kakotsukete",
+        "grammar:ni-kakatte-iru",
+        "grammar:ni-hoka-naranai",
+        "grammar:ni-soui-nai",
+        "grammar:ni-kagitta-koto-de-wa-nai",
+        "grammar:ni-koshita-koto-wa-nai-n1",
+        "grammar:ni-hikikae",
+        "grammar:ni-mo-mashite"
+      ],
+      "vocab": [
+        "vocab:jm2848289",
+        "vocab:jm1522620",
+        "vocab:jm1351600",
+        "vocab:jm1409840",
+        "vocab:jm1275210",
+        "vocab:jm1222970",
+        "vocab:jm1219020",
+        "vocab:jm1591390",
+        "vocab:jm1290120",
+        "vocab:jm1290260",
+        "vocab:jm1302410",
+        "vocab:jm1185920",
+        "vocab:jm1350920",
+        "vocab:jm1341510",
+        "vocab:jm1341520",
+        "vocab:jm1398320",
+        "vocab:jm1410260",
+        "vocab:jm1433730"
+      ],
+      "sentences": [
+        {
+          "ja": "規則に即して判断すべきだ。",
+          "reading": "きそくにそくしてはんだんすべきだ。",
+          "en": "One should judge in accordance with the rules.",
+          "zh": "应该按照规则来判断。",
+          "zh_TW": "應該按照規則來判斷。",
+          "items": [
+            "grammar:ni-sokushite"
+          ]
+        },
+        {
+          "ja": "法律に照らして、この行為は許されない。",
+          "reading": "ほうりつにてらして、このこういはゆるされない。",
+          "en": "Judged in the light of the law, this act cannot be permitted.",
+          "zh": "从法律角度来看，这种行为是不被允许的。",
+          "zh_TW": "從法律角度來看，這種行為是不被允許的。",
+          "items": [
+            "grammar:ni-terashite"
+          ]
+        },
+        {
+          "ja": "彼は病気にかこつけて、会議を休んだ。",
+          "reading": "かれはびょうきにかこつけて、かいぎをやすんだ。",
+          "en": "Using his illness as an excuse, he skipped the meeting.",
+          "zh": "他借口生病，缺席了会议。",
+          "zh_TW": "他藉口生病，缺席了會議。",
+          "items": [
+            "grammar:ni-kakotsukete"
+          ]
+        },
+        {
+          "ja": "計画の成功は彼の判断にかかっている。",
+          "reading": "けいかくのせいこうはかれのはんだんにかかっている。",
+          "en": "The success of the plan depends on his judgment.",
+          "zh": "计划能否成功取决于他的判断。",
+          "zh_TW": "計劃能否成功取決於他的判斷。",
+          "items": [
+            "grammar:ni-kakatte-iru"
+          ]
+        },
+        {
+          "ja": "彼の成功は努力の結果にほかならない。",
+          "reading": "かれのせいこうはどりょくのけっかにほかならない。",
+          "en": "His success is nothing other than the result of his effort.",
+          "zh": "他的成功正是努力的结果。",
+          "zh_TW": "他的成功正是努力的結果。",
+          "items": [
+            "grammar:ni-hoka-naranai"
+          ]
+        },
+        {
+          "ja": "彼はこの計画に反対するに相違ない。",
+          "reading": "かれはこのけいかくにはんたいするにそういない。",
+          "en": "There is no doubt that he will oppose this plan.",
+          "zh": "毫无疑问他会反对这个计划。",
+          "zh_TW": "毫無疑問他會反對這個計劃。",
+          "items": [
+            "grammar:ni-soui-nai"
+          ]
+        },
+        {
+          "ja": "早く準備するに越したことはない。",
+          "reading": "はやくじゅんびするにこしたことはない。",
+          "en": "Nothing beats preparing early.",
+          "zh": "早做准备总是好的。",
+          "zh_TW": "早做準備總是好的。",
+          "items": [
+            "grammar:ni-koshita-koto-wa-nai-n1"
+          ]
+        },
+        {
+          "ja": "兄の成功にひきかえ、弟は失敗ばかりだ。",
+          "reading": "あにのせいこうにひきかえ、おとうとはしっぱいばかりだ。",
+          "en": "In sharp contrast with his older brother's success, the younger brother has nothing but failures.",
+          "zh": "与哥哥的成功相反，弟弟总是失败。",
+          "zh_TW": "與哥哥的成功相反，弟弟總是失敗。",
+          "items": [
+            "grammar:ni-hikikae"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n1-8-01",
+          "item": "grammar:ni-sokushite",
+          "prompt": {
+            "en": "Which fills the blank: 規則＿＿判断すべきだ。",
+            "zh": "填空：規則＿＿判断すべきだ。",
+            "zh_TW": "填空：規則＿＿判斷すべきだ。"
+          },
+          "options": [
+            "に即して",
+            "に照らして",
+            "にかこつけて",
+            "にひきかえ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "に即して means to act strictly following the actual facts or rules, without deviation.",
+            "zh": "に即して表示严格依照实际情况或规则行事，不偏离。",
+            "zh_TW": "に即して表示嚴格依照實際情況或規則行事，不偏離。"
+          }
+        },
+        {
+          "id": "q:n1-8-02",
+          "item": "grammar:ni-terashite",
+          "prompt": {
+            "en": "Which fills the blank: 法律＿＿、この行為は許されない。",
+            "zh": "填空：法律＿＿、この行為は許されない。",
+            "zh_TW": "填空：法律＿＿、この行為は許されない。"
+          },
+          "options": [
+            "に照らして",
+            "に即して",
+            "にかかっている",
+            "にほかならない"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "に照らして means 'judged against X (a law, standard)', evaluating something by a fixed criterion.",
+            "zh": "に照らして表示「对照…来看」，依据某个固定标准来评判。",
+            "zh_TW": "に照らして表示「對照…來看」，依據某個固定標準來評判。"
+          }
+        },
+        {
+          "id": "q:n1-8-03",
+          "item": "grammar:ni-kakotsukete",
+          "prompt": {
+            "en": "Which fills the blank: 彼は病気＿＿、会議を休んだ。",
+            "zh": "填空：彼は病気＿＿、会議を休んだ。",
+            "zh_TW": "填空：彼は病気＿＿、會議を休んだ。"
+          },
+          "options": [
+            "にかこつけて",
+            "にもまして",
+            "にひきかえ",
+            "にとどまらず"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "にかこつけて means 'using X as a convenient excuse' for one's real motive.",
+            "zh": "にかこつけて表示「借…为借口」，掩盖真正的动机。",
+            "zh_TW": "にかこつけて表示「借…為藉口」，掩蓋真正的動機。"
+          }
+        },
+        {
+          "id": "q:n1-8-04",
+          "item": "grammar:ni-kakatte-iru",
+          "prompt": {
+            "en": "Which fills the blank: 計画の成功は彼の判断＿＿。",
+            "zh": "填空：計画の成功は彼の判断＿＿。",
+            "zh_TW": "填空：計畫の成功は彼の判斷＿＿。"
+          },
+          "options": [
+            "にかかっている",
+            "に足りている",
+            "に堪えている",
+            "に至っている"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "にかかっている means 'it all depends on X'.",
+            "zh": "にかかっている表示「全都取决于…」。",
+            "zh_TW": "にかかっている表示「全都取決於…」。"
+          }
+        },
+        {
+          "id": "q:n1-8-05",
+          "item": "grammar:ni-hoka-naranai",
+          "prompt": {
+            "en": "Which fills the blank: 彼の成功は努力の結果＿＿。",
+            "zh": "填空：彼の成功は努力の結果＿＿。",
+            "zh_TW": "填空：彼の成功は努力の結果＿＿。"
+          },
+          "options": [
+            "にほかならない",
+            "に相違ない",
+            "に足る",
+            "に堪えない"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "にほかならない means 'it is nothing other than X', asserting there is no other explanation.",
+            "zh": "にほかならない表示「正是…，不是别的」，强调没有其他解释。",
+            "zh_TW": "にほかならない表示「正是…，不是別的」，強調沒有其他解釋。"
+          }
+        },
+        {
+          "id": "q:n1-8-06",
+          "item": "grammar:ni-kagitta-koto-de-wa-nai",
+          "prompt": {
+            "en": "Which means 'this problem is not limited to this company alone'?",
+            "zh": "哪一个意思是「这个问题不仅限于这家公司」？",
+            "zh_TW": "哪一個意思是「這個問題不僅限於這家公司」？"
+          },
+          "options": [
+            "この問題はこの会社に限ったことではない",
+            "この問題はこの会社にとどまらない",
+            "この問題はこの会社にほかならない",
+            "この問題はこの会社にひきかえだ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "に限ったことではない means 'this is not unique to X alone; it applies more broadly'.",
+            "zh": "に限ったことではない表示「不仅限于…，其他情况也是如此」。",
+            "zh_TW": "に限ったことではない表示「不僅限於…，其他情況也是如此」。"
+          }
+        },
+        {
+          "id": "q:n1-8-07",
+          "item": "grammar:ni-koshita-koto-wa-nai-n1",
+          "prompt": {
+            "en": "Which fills the blank: 早く準備する＿＿。",
+            "zh": "填空：早く準備する＿＿。",
+            "zh_TW": "填空：早く準備する＿＿。"
+          },
+          "options": [
+            "に越したことはない",
+            "に足ることはない",
+            "に堪えることはない",
+            "にほかならないことはない"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "に越したことはない means 'nothing is better than doing X', recommending the best option among possibilities.",
+            "zh": "に越したことはない表示「没有比…更好的了」，推荐最理想的做法。",
+            "zh_TW": "に越したことはない表示「沒有比…更好的了」，推薦最理想的做法。"
+          }
+        },
+        {
+          "id": "q:n1-8-08",
+          "item": "grammar:ni-mo-mashite",
+          "prompt": {
+            "en": "Which fills the blank: 今年は去年＿＿寒い。",
+            "zh": "填空：今年は去年＿＿寒い。",
+            "zh_TW": "填空：今年は去年＿＿寒い。"
+          },
+          "options": [
+            "にもまして",
+            "にひきかえ",
+            "にかこつけて",
+            "にかかっては"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "にもまして means 'even more than X', indicating an increase compared to a previous standard.",
+            "zh": "にもまして表示「比…更加…」，说明程度超过了之前的基准。",
+            "zh_TW": "にもまして表示「比…更加…」，說明程度超過了之前的基準。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Compare two people or two years using 〜にひきかえ or 〜にもまして.",
+        "zh": "用「〜にひきかえ」或「〜にもまして」比较两个人或两年的情况。",
+        "zh_TW": "用「〜にひきかえ」或「〜にもまして」比較兩個人或兩年的情況。"
+      }
+    },
+    {
+      "id": "unit:n1-9",
+      "title": {
+        "en": "Formal means and circumstance",
+        "zh": "正式的方式与处境",
+        "zh_TW": "正式的方式與處境"
+      },
+      "grammar": [
+        "grammar:o-motte",
+        "grammar:o-motte-shitemo",
+        "grammar:o-fumaete",
+        "grammar:o-oite",
+        "grammar:o-yoso-ni",
+        "grammar:o-mono-tomo-sezu",
+        "grammar:o-yoginaku-sareru",
+        "grammar:o-kinjienai"
+      ],
+      "vocab": [
+        "vocab:jm1410770",
+        "vocab:jm1594180",
+        "vocab:jm1327810",
+        "vocab:jm1409840",
+        "vocab:jm1000225",
+        "vocab:jm1184480",
+        "vocab:jm1205270",
+        "vocab:jm1222250",
+        "vocab:jm1222670",
+        "vocab:jm1564360",
+        "vocab:jm1239700",
+        "vocab:jm1003840",
+        "vocab:jm1360910",
+        "vocab:jm1284550",
+        "vocab:jm1284940",
+        "vocab:jm1298260",
+        "vocab:jm1291140",
+        "vocab:jm1312750"
+      ],
+      "sentences": [
+        {
+          "ja": "実力をもって示すべきだ。",
+          "reading": "じつりょくをもってしめすべきだ。",
+          "en": "One should demonstrate it through actual ability.",
+          "zh": "应该用实力来证明。",
+          "zh_TW": "應該用實力來證明。",
+          "items": [
+            "grammar:o-motte"
+          ]
+        },
+        {
+          "ja": "彼の実力をもってしても、優勝はできなかった。",
+          "reading": "かれのじつりょくをもってしても、ゆうしょうはできなかった。",
+          "en": "Even with his skill, he could not win the championship.",
+          "zh": "即使凭他的实力，也未能获胜。",
+          "zh_TW": "即使憑他的實力，也未能獲勝。",
+          "items": [
+            "grammar:o-motte-shitemo"
+          ]
+        },
+        {
+          "ja": "現状を踏まえて、計画を立てる。",
+          "reading": "げんじょうをふまえて、けいかくをたてる。",
+          "en": "Taking the current situation into account, I will make a plan.",
+          "zh": "基于现状来制定计划。",
+          "zh_TW": "基於現狀來制定計劃。",
+          "items": [
+            "grammar:o-fumaete"
+          ]
+        },
+        {
+          "ja": "彼をおいて、この仕事ができる人はいない。",
+          "reading": "かれをおいて、このしごとができるひとはいない。",
+          "en": "There is no one but him who can do this job.",
+          "zh": "除了他，没有人能做这份工作。",
+          "zh_TW": "除了他，沒有人能做這份工作。",
+          "items": [
+            "grammar:o-oite"
+          ]
+        },
+        {
+          "ja": "彼は周囲の心配をよそに、旅に出た。",
+          "reading": "かれはしゅういのしんぱいをよそに、たびにでた。",
+          "en": "Ignoring the worries of those around him, he set out on a journey.",
+          "zh": "他不顾周围人的担心，出门旅行去了。",
+          "zh_TW": "他不顧周圍人的擔心，出門旅行去了。",
+          "items": [
+            "grammar:o-yoso-ni"
+          ]
+        },
+        {
+          "ja": "彼は危険をものともせず、前に進んだ。",
+          "reading": "かれはきけんをものともせず、まえにすすんだ。",
+          "en": "Undaunted by the danger, he moved forward.",
+          "zh": "他不畏危险，勇往直前。",
+          "zh_TW": "他不畏危險，勇往直前。",
+          "items": [
+            "grammar:o-mono-tomo-sezu"
+          ]
+        },
+        {
+          "ja": "台風のため、旅行は中止を余儀なくされた。",
+          "reading": "たいふうのため、りょこうはちゅうしをよぎなくされた。",
+          "en": "Because of the typhoon, the trip was forced to be cancelled.",
+          "zh": "由于台风，旅行被迫取消了。",
+          "zh_TW": "由於颱風，旅行被迫取消了。",
+          "items": [
+            "grammar:o-yoginaku-sareru"
+          ]
+        },
+        {
+          "ja": "彼の勇気には感動を禁じ得ない。",
+          "reading": "かれのゆうきにはかんどうをきんじえない。",
+          "en": "I cannot help feeling moved by his courage.",
+          "zh": "对他的勇气不禁深受感动。",
+          "zh_TW": "對他的勇氣不禁深受感動。",
+          "items": [
+            "grammar:o-kinjienai"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n1-9-01",
+          "item": "grammar:o-motte",
+          "prompt": {
+            "en": "Which fills the blank: 実力＿＿示すべきだ。",
+            "zh": "填空：実力＿＿示すべきだ。",
+            "zh_TW": "填空：実力＿＿示すべきだ。"
+          },
+          "options": [
+            "をもって",
+            "をおいて",
+            "をよそに",
+            "を踏まえて"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜をもって is a formal way to say 'by means of X', naming the tool or basis of an action.",
+            "zh": "〜をもって是正式说法，表示「用…来」，说明动作所凭借的手段或依据。",
+            "zh_TW": "〜をもって是正式說法，表示「用…來」，說明動作所憑藉的手段或依據。"
+          }
+        },
+        {
+          "id": "q:n1-9-02",
+          "item": "grammar:o-motte-shitemo",
+          "prompt": {
+            "en": "Which fills the blank: 彼の実力＿＿、優勝はできなかった。",
+            "zh": "填空：彼の実力＿＿、優勝はできなかった。",
+            "zh_TW": "填空：彼の実力＿＿、優勝はできなかった。"
+          },
+          "options": [
+            "をもってしても",
+            "をもってすら",
+            "をおいても",
+            "をよそにしても"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜をもってしても means 'even with X, it was still not enough', showing X falls short despite being impressive.",
+            "zh": "〜をもってしても表示「即使凭借…，也仍然不够」，说明即使条件出色仍未达成。",
+            "zh_TW": "〜をもってしても表示「即使憑藉…，也仍然不夠」，說明即使條件出色仍未達成。"
+          }
+        },
+        {
+          "id": "q:n1-9-03",
+          "item": "grammar:o-fumaete",
+          "prompt": {
+            "en": "Which fills the blank: 現状＿＿、計画を立てる。",
+            "zh": "填空：現状＿＿、計画を立てる。",
+            "zh_TW": "填空：現狀＿＿、計畫を立てる。"
+          },
+          "options": [
+            "を踏まえて",
+            "をおいて",
+            "をよそに",
+            "をもって"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜を踏まえて means 'on the basis of X, taking X into account', grounding an action in facts already known.",
+            "zh": "〜を踏まえて表示「基于…，考虑到…」，把行动建立在已知事实之上。",
+            "zh_TW": "〜を踏まえて表示「基於…，考慮到…」，把行動建立在已知事實之上。"
+          }
+        },
+        {
+          "id": "q:n1-9-04",
+          "item": "grammar:o-oite",
+          "prompt": {
+            "en": "Which fills the blank: 彼＿＿、この仕事ができる人はいない。",
+            "zh": "填空：彼＿＿、この仕事ができる人はいない。",
+            "zh_TW": "填空：彼＿＿、この仕事ができる人はいない。"
+          },
+          "options": [
+            "をおいて",
+            "をもって",
+            "をよそに",
+            "をものともせず"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜をおいて means 'there is no one/nothing but X', usually followed by a negative statement.",
+            "zh": "〜をおいて表示「除了…（没有别的）」，后面通常接否定表达。",
+            "zh_TW": "〜をおいて表示「除了…（沒有別的）」，後面通常接否定表達。"
+          }
+        },
+        {
+          "id": "q:n1-9-05",
+          "item": "grammar:o-yoso-ni",
+          "prompt": {
+            "en": "Which fills the blank: 彼は周囲の心配＿＿、旅に出た。",
+            "zh": "填空：彼は周囲の心配＿＿、旅に出た。",
+            "zh_TW": "填空：彼は周囲の心配＿＿、旅に出た。"
+          },
+          "options": [
+            "をよそに",
+            "をおいて",
+            "をもって",
+            "を踏まえて"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜をよそに means 'paying no attention to X at all', ignoring others' concern or expectation.",
+            "zh": "〜をよそに表示「完全不顾…」，无视他人的担心或期待。",
+            "zh_TW": "〜をよそに表示「完全不顧…」，無視他人的擔心或期待。"
+          }
+        },
+        {
+          "id": "q:n1-9-06",
+          "item": "grammar:o-mono-tomo-sezu",
+          "prompt": {
+            "en": "Which fills the blank: 彼は危険＿＿、前に進んだ。",
+            "zh": "填空：彼は危険＿＿、前に進んだ。",
+            "zh_TW": "填空：彼は危険＿＿、前に進んだ。"
+          },
+          "options": [
+            "をものともせず",
+            "をよそに",
+            "も顧みず",
+            "を押して"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜をものともせず(に) means 'undaunted by X', making light of a difficulty while pushing forward.",
+            "zh": "〜をものともせず(に)表示「不畏惧…」，轻视困难、勇往直前。",
+            "zh_TW": "〜をものともせず(に)表示「不畏懼…」，輕視困難、勇往直前。"
+          }
+        },
+        {
+          "id": "q:n1-9-07",
+          "item": "grammar:o-yoginaku-sareru",
+          "prompt": {
+            "en": "Which fills the blank: 台風のため、旅行は中止＿＿。",
+            "zh": "填空：台風のため、旅行は中止＿＿。",
+            "zh_TW": "填空：臺風のため、旅行は中止＿＿。"
+          },
+          "options": [
+            "を余儀なくされた",
+            "を禁じ得なかった",
+            "をものともせなかった",
+            "をよそにした"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜を余儀なくされる means 'be forced into X with no other choice', a passive construction for unavoidable outcomes.",
+            "zh": "〜を余儀なくされる表示「被迫…，别无选择」，是被动结构，用于无可避免的结果。",
+            "zh_TW": "〜を餘儀なくされる表示「被迫…，別無選擇」，是被動結構，用於無可避免的結果。"
+          }
+        },
+        {
+          "id": "q:n1-9-08",
+          "item": "grammar:o-kinjienai",
+          "prompt": {
+            "en": "Which fills the blank: 彼の勇気には感動＿＿。",
+            "zh": "填空：彼の勇気には感動＿＿。",
+            "zh_TW": "填空：彼の勇気には感動＿＿。"
+          },
+          "options": [
+            "を禁じ得ない",
+            "を余儀なくされる",
+            "をものともしない",
+            "をよそにしない"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜を禁じ得ない means 'cannot suppress/help feeling X', usually a strong emotion.",
+            "zh": "〜を禁じ得ない表示「无法抑制…之情」，通常指强烈的情感。",
+            "zh_TW": "〜を禁じ得ない表示「無法抑制…之情」，通常指強烈的情感。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Describe a difficult situation where someone pushed forward using 〜をものともせず, and explain why using 〜を踏まえて.",
+        "zh": "用「〜をものともせず」描述某人在困境中勇往直前，再用「〜を踏まえて」说明原因。",
+        "zh_TW": "用「〜をものともせず」描述某人在困境中勇往直前，再用「〜を踏まえて」說明原因。"
+      }
+    },
+    {
+      "id": "unit:n1-10",
+      "title": {
+        "en": "No matter what: concession",
+        "zh": "无论如何——让步表达",
+        "zh_TW": "無論如何——讓步表達"
+      },
+      "grammar": [
+        "grammar:to-aimatte",
+        "grammar:naradewa",
+        "grammar:to-mo-naru-to",
+        "grammar:to-mo-arou",
+        "grammar:de-are",
+        "grammar:de-arou-to",
+        "grammar:you-to-mo",
+        "grammar:taritomo",
+        "grammar:to-iedomo",
+        "grammar:to-wa-iu-mono-no",
+        "grammar:nagara-mo-advanced",
+        "grammar:koso-are",
+        "grammar:koso-sure",
+        "grammar:ba-koso"
+      ],
+      "vocab": [
+        "vocab:jm1531870",
+        "vocab:jm1317970",
+        "vocab:jm1318220",
+        "vocab:jm1381180",
+        "vocab:jm1258090",
+        "vocab:jm1254220",
+        "vocab:jm1587770",
+        "vocab:jm1335940",
+        "vocab:jm1335950",
+        "vocab:jm1215110",
+        "vocab:jm1225920",
+        "vocab:jm1254370",
+        "vocab:jm1258130",
+        "vocab:jm1258220",
+        "vocab:jm1270190",
+        "vocab:jm1345130",
+        "vocab:jm1410250",
+        "vocab:jm1597125"
+      ],
+      "sentences": [
+        {
+          "ja": "努力と運が相まって、成功した。",
+          "reading": "どりょくとうんがあいまって、せいこうした。",
+          "en": "Effort and luck combined, leading to success.",
+          "zh": "努力和运气结合在一起，取得了成功。",
+          "zh_TW": "努力和運氣結合在一起，取得了成功。",
+          "items": [
+            "grammar:to-aimatte"
+          ]
+        },
+        {
+          "ja": "これは彼ならではの発想だ。",
+          "reading": "これはかれならではのはっそうだ。",
+          "en": "This is an idea that only he could come up with.",
+          "zh": "这是只有他才能想出的点子。",
+          "zh_TW": "這是隻有他才能想出的點子。",
+          "items": [
+            "grammar:naradewa"
+          ]
+        },
+        {
+          "ja": "社長ともなると、責任も大きい。",
+          "reading": "しゃちょうともなると、せきにんもおおきい。",
+          "en": "Once you become a company president, the responsibility is great too.",
+          "zh": "一旦当上了社长，责任也就重大了。",
+          "zh_TW": "一旦當上了社長，責任也就重大了。",
+          "items": [
+            "grammar:to-mo-naru-to"
+          ]
+        },
+        {
+          "ja": "どんな理由であれ、暴力は許されない。",
+          "reading": "どんなりゆうであれ、ぼうりょくはゆるされない。",
+          "en": "No matter what the reason, violence cannot be forgiven.",
+          "zh": "无论理由是什么，暴力都不可原谅。",
+          "zh_TW": "無論理由是什麼，暴力都不可原諒。",
+          "items": [
+            "grammar:de-are"
+          ]
+        },
+        {
+          "ja": "一瞬たりとも油断できない。",
+          "reading": "いっしゅんたりともゆだんできない。",
+          "en": "One cannot let their guard down even for a moment.",
+          "zh": "一刻也不能松懈。",
+          "zh_TW": "一刻也不能鬆懈。",
+          "items": [
+            "grammar:taritomo"
+          ]
+        },
+        {
+          "ja": "学者といえども、間違えることがある。",
+          "reading": "がくしゃといえども、まちがえることがある。",
+          "en": "Even a scholar can make mistakes.",
+          "zh": "即便是学者，也会有出错的时候。",
+          "zh_TW": "即便是學者，也會有出錯的時候。",
+          "items": [
+            "grammar:to-iedomo"
+          ]
+        },
+        {
+          "ja": "計画は立てたとはいうものの、実行は難しい。",
+          "reading": "けいかくはたてたとはいうものの、じっこうはむずかしい。",
+          "en": "Although I made a plan, actually carrying it out is difficult.",
+          "zh": "虽说制定了计划，但实行起来却很难。",
+          "zh_TW": "雖說制定了計劃，但實行起來卻很難。",
+          "items": [
+            "grammar:to-wa-iu-mono-no"
+          ]
+        },
+        {
+          "ja": "君を信じるからこそ、任せるのだ。",
+          "reading": "きみをしんじるからこそ、まかせるのだ。",
+          "en": "It is precisely because I trust you that I entrust this to you.",
+          "zh": "正因为相信你，才把这件事交给你。",
+          "zh_TW": "正因為相信你，才把這件事交給你。",
+          "items": [
+            "grammar:ba-koso"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n1-10-01",
+          "item": "grammar:to-aimatte",
+          "prompt": {
+            "en": "Which fills the blank: 努力と運が＿＿、成功した。",
+            "zh": "填空：努力と運が＿＿、成功した。",
+            "zh_TW": "填空：努力と運が＿＿、成功した。"
+          },
+          "options": [
+            "相まって",
+            "かこつけて",
+            "もまして",
+            "ひきかえ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "と相まって means 'combined with X', showing two factors working together to produce an effect.",
+            "zh": "と相まって表示「与…相结合」，说明两个因素共同产生了某种效果。",
+            "zh_TW": "と相まって表示「與…相結合」，說明兩個因素共同產生了某種效果。"
+          }
+        },
+        {
+          "id": "q:n1-10-02",
+          "item": "grammar:to-mo-arou",
+          "prompt": {
+            "en": "Which fills the blank (criticizing 'someone as important as a company president'): 社長＿＿人が、そんな失敗をするとは。",
+            "zh": "填空（批评「身为社长这样的人」）：社長＿＿人が、そんな失敗をするとは。",
+            "zh_TW": "填空（批評「身為社長這樣的人」）：社長＿＿人が、そんな失敗をするとは。"
+          },
+          "options": [
+            "ともあろう",
+            "ともなろう",
+            "であろう",
+            "でもあろう"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ともあろう precedes a noun of high status and expresses surprise or criticism that such a person would do something unexpected.",
+            "zh": "ともあろう接在身份很高的名词前，表示「身为…这样的人」，带惊讶或批评语气。",
+            "zh_TW": "ともあろう接在身份很高的名詞前，表示「身為…這樣的人」，帶驚訝或批評語氣。"
+          }
+        },
+        {
+          "id": "q:n1-10-03",
+          "item": "grammar:you-to-mo",
+          "prompt": {
+            "en": "Which means 'no matter how painful it may be, I will see it through to the end'?",
+            "zh": "哪一个意思是「不管多么痛苦，都要坚持到最后」？",
+            "zh_TW": "哪一個意思是「不管多麼痛苦，都要堅持到最後」？"
+          },
+          "options": [
+            "苦しかろうとも、最後までやり遂げる。",
+            "苦しかろうが、最後までやり遂げる。",
+            "苦しくとも、最後までやり遂げる。",
+            "苦しいとも、最後までやり遂げる。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "(よ)うとも is a literary form meaning 'no matter how X', attaching to the volitional form.",
+            "zh": "(よ)うとも是文语说法，表示「不管多么…」，接在意向形后。",
+            "zh_TW": "(よ)うとも是文語說法，表示「不管多麼…」，接在意向形後。"
+          }
+        },
+        {
+          "id": "q:n1-10-04",
+          "item": "grammar:nagara-mo-advanced",
+          "prompt": {
+            "en": "Which fills the blank: 貧しい＿＿、幸せに暮らしている。",
+            "zh": "填空：貧しい＿＿、幸せに暮らしている。",
+            "zh_TW": "填空：貧しい＿＿、幸せに暮らしている。"
+          },
+          "options": [
+            "ながらも",
+            "つつも",
+            "とはいえ",
+            "といえども"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ながらも (literary) means 'although it is X', concessive, similar to けれども but more written.",
+            "zh": "ながらも（书面语）表示「虽然…」，让步语气，比けれども更书面化。",
+            "zh_TW": "ながらも（書面語）表示「雖然…」，讓步語氣，比けれども更書面化。"
+          }
+        },
+        {
+          "id": "q:n1-10-05",
+          "item": "grammar:koso-are",
+          "prompt": {
+            "en": "Which fills the blank (there is admiration, but nothing of the opposite): 尊敬＿＿、批判する気はない。",
+            "zh": "填空（有的只是敬佩，绝非相反）：尊敬＿＿、批判する気はない。",
+            "zh_TW": "填空（有的只是敬佩，絕非相反）：尊敬＿＿、批判する気はない。"
+          },
+          "options": [
+            "こそあれ",
+            "こそすれ",
+            "はあれ",
+            "もあれ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "こそあれ means 'there is indeed X, but nothing else (especially not the opposite)'.",
+            "zh": "こそあれ表示「有的只是…，而绝非相反的情况」。",
+            "zh_TW": "こそあれ表示「有的只是…，而絕非相反的情況」。"
+          }
+        },
+        {
+          "id": "q:n1-10-06",
+          "item": "grammar:koso-sure",
+          "prompt": {
+            "en": "Which fills the blank: 彼を尊敬＿＿、恨むことはない。",
+            "zh": "填空：彼を尊敬＿＿、恨むことはない。",
+            "zh_TW": "填空：彼を尊敬＿＿、恨むことはない。"
+          },
+          "options": [
+            "こそすれ",
+            "こそあれ",
+            "すらすれ",
+            "さえすれ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "こそすれ means 'if anything, X is what happens, never the opposite'.",
+            "zh": "こそすれ表示「如果说会怎样，那也只会是…，绝不会相反」。",
+            "zh_TW": "こそすれ表示「如果說會怎樣，那也只會是…，絕不會相反」。"
+          }
+        },
+        {
+          "id": "q:n1-10-07",
+          "item": "grammar:de-arou-to",
+          "prompt": {
+            "en": "Which fills the blank: どんな結果＿＿、最善を尽くす。",
+            "zh": "填空：どんな結果＿＿、最善を尽くす。",
+            "zh_TW": "填空：どんな結果＿＿、最善を盡くす。"
+          },
+          "options": [
+            "であろうと",
+            "であれば",
+            "であるが",
+            "でも"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "であろうと is a formal way to say 'whatever it may be', similar to であれ but slightly more literary.",
+            "zh": "であろうと是较为文语的说法，表示「不管是…」，与であれ相近但更书面化。",
+            "zh_TW": "であろうと是較為文語的說法，表示「不管是…」，與であれ相近但更書面化。"
+          }
+        },
+        {
+          "id": "q:n1-10-08",
+          "item": "grammar:de-are",
+          "prompt": {
+            "en": "Which fills the blank: どんな理由＿＿、暴力は許されない。",
+            "zh": "填空：どんな理由＿＿、暴力は許されない。",
+            "zh_TW": "填空：どんな理由＿＿、暴力は許されない。"
+          },
+          "options": [
+            "であれ",
+            "であろうと",
+            "とはいえ",
+            "こそあれ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "であれ means 'no matter what X is', a slightly less formal alternative to であろうと.",
+            "zh": "であれ表示「不管是…」，比であろうと稍口语一些的说法。",
+            "zh_TW": "であれ表示「不管是…」，比であろうと稍口語一些的說法。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Write about someone you admire, using 〜こそあれ and 〜ともあろう.",
+        "zh": "写一写你敬佩的人，用「〜こそあれ」和「〜ともあろう」。",
+        "zh_TW": "寫一寫你敬佩的人，用「〜こそあれ」和「〜ともあろう」。"
+      }
+    },
+    {
+      "id": "unit:n1-11",
+      "title": {
+        "en": "Hypothetical outcomes and indispensable conditions",
+        "zh": "假设的后果与不可或缺的条件",
+        "zh_TW": "假設的後果與不可或缺的條件"
+      },
+      "grammar": [
+        "grammar:you-mono-nara",
+        "grammar:you-de-wa",
+        "grammar:ba-sore-made-da",
+        "grammar:mono-o",
+        "grammar:tara-ta-de",
+        "grammar:naku-shite-wa",
+        "grammar:nashi-ni-wa",
+        "grammar:atte-no",
+        "grammar:ikan-da",
+        "grammar:ikan-de",
+        "grammar:ikan-ni-yorazu",
+        "grammar:nara-iza-shirazu",
+        "grammar:nara-madashimo"
+      ],
+      "vocab": [
+        "vocab:jm1406750",
+        "vocab:jm1222270",
+        "vocab:jm1269510",
+        "vocab:jm1277620",
+        "vocab:jm1351000",
+        "vocab:jm1321360",
+        "vocab:jm1393680",
+        "vocab:jm1409160",
+        "vocab:jm1418090",
+        "vocab:jm1493840",
+        "vocab:jm1526670",
+        "vocab:jm1528130",
+        "vocab:jm1530770",
+        "vocab:jm1545840",
+        "vocab:jm1469260",
+        "vocab:jm1470380",
+        "vocab:jm1470680",
+        "vocab:jm1470720"
+      ],
+      "sentences": [
+        {
+          "ja": "そんなことを言おうものなら、大変なことになる。",
+          "reading": "そんなことをいおうものなら、たいへんなことになる。",
+          "en": "If you were to say such a thing, it would lead to serious trouble.",
+          "zh": "要是说出那种话，就会惹出大麻烦。",
+          "zh_TW": "要是說出那種話，就會惹出大麻煩。",
+          "items": [
+            "grammar:you-mono-nara"
+          ]
+        },
+        {
+          "ja": "そんな態度では、信頼を得られない。",
+          "reading": "そんなたいどでは、しんらいをえられない。",
+          "en": "With an attitude like that, you cannot earn trust.",
+          "zh": "那种态度是得不到信任的。",
+          "zh_TW": "那種態度是得不到信任的。",
+          "items": [
+            "grammar:you-de-wa"
+          ]
+        },
+        {
+          "ja": "もっと早く相談すればよかったものを。",
+          "reading": "もっとはやくそうだんすればよかったものを。",
+          "en": "If only you had consulted me sooner!",
+          "zh": "要是早点商量就好了，真遗憾。",
+          "zh_TW": "要是早點商量就好了，真遺憾。",
+          "items": [
+            "grammar:mono-o"
+          ]
+        },
+        {
+          "ja": "努力なくしては、成功は望めない。",
+          "reading": "どりょくなくしては、せいこうはのぞめない。",
+          "en": "Without effort, success cannot be hoped for.",
+          "zh": "没有努力，就无法期望成功。",
+          "zh_TW": "沒有努力，就無法期望成功。",
+          "items": [
+            "grammar:naku-shite-wa"
+          ]
+        },
+        {
+          "ja": "許可なしには、この部屋に入れない。",
+          "reading": "きょかなしには、このへやにはいれない。",
+          "en": "Without permission, you cannot enter this room.",
+          "zh": "没有许可，就不能进入这个房间。",
+          "zh_TW": "沒有許可，就不能進入這個房間。",
+          "items": [
+            "grammar:nashi-ni-wa"
+          ]
+        },
+        {
+          "ja": "生徒あっての学校だ。",
+          "reading": "せいとあってのがっこうだ。",
+          "en": "The school exists only because of its students.",
+          "zh": "有学生才有学校。",
+          "zh_TW": "有學生才有學校。",
+          "items": [
+            "grammar:atte-no"
+          ]
+        },
+        {
+          "ja": "結果は努力いかんで大きく変わる。",
+          "reading": "けっかはどりょくいかんでおおきくかわる。",
+          "en": "The outcome changes greatly depending on one's effort.",
+          "zh": "结果会因努力程度而有很大不同。",
+          "zh_TW": "結果會因努力程度而有很大不同。",
+          "items": [
+            "grammar:ikan-de"
+          ]
+        },
+        {
+          "ja": "子供ならまだしも、大人がこんな失敗をするとは。",
+          "reading": "こどもならまだしも、おとながこんなしっぱいをするとは。",
+          "en": "If it were a child, that would be one thing, but for an adult to make such a mistake...",
+          "zh": "如果是孩子还情有可原，大人犯这种错误就说不过去了。",
+          "zh_TW": "如果是孩子還情有可原，大人犯這種錯誤就說不過去了。",
+          "items": [
+            "grammar:nara-madashimo"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n1-11-01",
+          "item": "grammar:ba-sore-made-da",
+          "prompt": {
+            "en": "Which fills the blank: 命を失え＿＿。",
+            "zh": "填空：命を失え＿＿。",
+            "zh_TW": "填空：命を失え＿＿。"
+          },
+          "options": [
+            "ばそれまでだ",
+            "ばそれきりだ",
+            "ばそれからだ",
+            "ばそれほどだ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ばそれまでだ means 'if that happens, it is all over / everything else becomes meaningless'.",
+            "zh": "ばそれまでだ表示「一旦发生那种事，一切就都完了」。",
+            "zh_TW": "ばそれまでだ表示「一旦發生那種事，一切就都完了」。"
+          }
+        },
+        {
+          "id": "q:n1-11-02",
+          "item": "grammar:tara-ta-de",
+          "prompt": {
+            "en": "Which means 'even if it turns out to be a failure, that's fine too, I'll just try again'?",
+            "zh": "哪一个意思是「就算失败了也无所谓，再挑战一次就好」？",
+            "zh_TW": "哪一個意思是「就算失敗了也無所謂，再挑戰一次就好」？"
+          },
+          "options": [
+            "失敗したら失敗したで、また挑戦すればいい。",
+            "失敗したらそれまでで、また挑戦すればいい。",
+            "失敗しようがしまいが、また挑戦すればいい。",
+            "失敗してもしなくても、また挑戦すればいい。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "たら〜たで repeats the same verb to mean 'even if it turns out that way, I'll deal with it without much worry'.",
+            "zh": "たら〜たで重复同一动词，表示「即使变成那样也无所谓，见招拆招」。",
+            "zh_TW": "たら〜たで重複同一動詞，表示「即使變成那樣也無所謂，見招拆招」。"
+          }
+        },
+        {
+          "id": "q:n1-11-03",
+          "item": "grammar:ikan-da",
+          "prompt": {
+            "en": "Which fills the blank: 成功するかどうかは本人の努力＿＿。",
+            "zh": "填空：成功するかどうかは本人の努力＿＿。",
+            "zh_TW": "填空：成功するかどうかは本人の努力＿＿。"
+          },
+          "options": [
+            "いかんだ",
+            "いかんでは",
+            "いかんによらず",
+            "いかんかは"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "いかんだ at the end of a sentence means 'it all hinges on X'.",
+            "zh": "句末的いかんだ表示「一切都取决于…」。",
+            "zh_TW": "句末的いかんだ表示「一切都取決於…」。"
+          }
+        },
+        {
+          "id": "q:n1-11-04",
+          "item": "grammar:ikan-ni-yorazu",
+          "prompt": {
+            "en": "Which fills the blank: 理由の＿＿、規則は守らなければならない。",
+            "zh": "填空：理由の＿＿、規則は守らなければならない。",
+            "zh_TW": "填空：理由の＿＿、規則は守らなければならない。"
+          },
+          "options": [
+            "いかんによらず",
+            "いかんでは",
+            "いかんだ",
+            "いかんとして"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "いかんによらず means 'regardless of X', emphasizing that X makes no difference to the outcome.",
+            "zh": "いかんによらず表示「不管…如何」，强调该因素不影响结果。",
+            "zh_TW": "いかんによらず表示「不管…如何」，強調該因素不影響結果。"
+          }
+        },
+        {
+          "id": "q:n1-11-05",
+          "item": "grammar:nara-iza-shirazu",
+          "prompt": {
+            "en": "Which fills the blank: 昔＿＿、今はそんなことは通用しない。",
+            "zh": "填空：昔＿＿、今はそんなことは通用しない。",
+            "zh_TW": "填空：昔＿＿、今はそんなことは通用しない。"
+          },
+          "options": [
+            "ならいざ知らず",
+            "ならまだしも",
+            "であればこそ",
+            "であろうと"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ならいざ知らず means 'X might be a separate matter (I won't comment on that), but as for the present case...'.",
+            "zh": "ならいざ知らず表示「如果是…的话则另当别论，但如今…」。",
+            "zh_TW": "ならいざ知らず表示「如果是…的話則另當別論，但如今…」。"
+          }
+        },
+        {
+          "id": "q:n1-11-06",
+          "item": "grammar:you-mono-nara",
+          "prompt": {
+            "en": "Which fills the blank: そんなことを＿＿、大変なことになる。",
+            "zh": "填空：そんなことを＿＿、大変なことになる。",
+            "zh_TW": "填空：そんなことを＿＿、大変なことになる。"
+          },
+          "options": [
+            "言おうものなら",
+            "言うとしても",
+            "言うといえども",
+            "言うにしても"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "(よ)うものなら means 'if you were to dare do X, a bad result would surely follow'.",
+            "zh": "(よ)うものなら表示「要是胆敢做…的话，就会招致不良后果」。",
+            "zh_TW": "(よ)うものなら表示「要是膽敢做…的話，就會招致不良後果」。"
+          }
+        },
+        {
+          "id": "q:n1-11-07",
+          "item": "grammar:naku-shite-wa",
+          "prompt": {
+            "en": "Which fills the blank: 努力＿＿、成功は望めない。",
+            "zh": "填空：努力＿＿、成功は望めない。",
+            "zh_TW": "填空：努力＿＿、成功は望めない。"
+          },
+          "options": [
+            "なくしては",
+            "おいて",
+            "をもって",
+            "をよそに"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "なくして(は) attaches after a noun and means 'without X, Y would be impossible'.",
+            "zh": "なくして(は)接在名词后，表示「没有…就不可能有…」。",
+            "zh_TW": "なくして(は)接在名詞後，表示「沒有…就不可能有…」。"
+          }
+        },
+        {
+          "id": "q:n1-11-08",
+          "item": "grammar:nashi-ni-wa",
+          "prompt": {
+            "en": "Which fills the blank: 許可＿＿、この部屋に入れない。",
+            "zh": "填空：許可＿＿、この部屋に入れない。",
+            "zh_TW": "填空：許可＿＿、この部屋に入れない。"
+          },
+          "options": [
+            "なしには",
+            "なくしては",
+            "なければ",
+            "がなくて"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "なしに(は) attaches directly to a noun and means 'without doing/having X'.",
+            "zh": "なしに(は)直接接在名词后，表示「没有…」。",
+            "zh_TW": "なしに(は)直接接在名詞後，表示「沒有…」。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Write a warning about a risky action using 〜ものなら, then add a regret using 〜ものを.",
+        "zh": "用「〜ものなら」写一句关于危险行为的警告，再用「〜ものを」表达一句后悔。",
+        "zh_TW": "用「〜ものなら」寫一句關於危險行為的警告，再用「〜ものを」表達一句後悔。"
+      }
+    },
+    {
+      "id": "unit:n1-12",
+      "title": {
+        "en": "Setting things aside and extremes",
+        "zh": "暂且不论与极端程度",
+        "zh_TW": "暫且不論與極端程度"
+      },
+      "grammar": [
+        "grammar:wa-sateoki",
+        "grammar:mo-saru-koto-nagara",
+        "grammar:wa-oroka",
+        "grammar:sura",
+        "grammar:dani",
+        "grammar:kara-aru",
+        "grammar:kitte-no",
+        "grammar:mo-douzen",
+        "grammar:sono-mono",
+        "grammar:ga-sekinoyama"
+      ],
+      "vocab": [
+        "vocab:jm1377390",
+        "vocab:jm1240380",
+        "vocab:jm1494120",
+        "vocab:jm1377660",
+        "vocab:jm1223090",
+        "vocab:jm1311850",
+        "vocab:jm1414870",
+        "vocab:jm1240200",
+        "vocab:jm1294160",
+        "vocab:jm1345650",
+        "vocab:jm1370000",
+        "vocab:jm1486200",
+        "vocab:jm1544190",
+        "vocab:jm1491950",
+        "vocab:jm1496850",
+        "vocab:jm1501020",
+        "vocab:jm1501320",
+        "vocab:jm1501060"
+      ],
+      "sentences": [
+        {
+          "ja": "お金のことはさておき、まず健康が大事だ。",
+          "reading": "おかねのことはさておき、まずけんこうがだいじだ。",
+          "en": "Setting the question of money aside, health matters most.",
+          "zh": "钱的事先放一边，健康才是最重要的。",
+          "zh_TW": "錢的事先放一邊，健康才是最重要的。",
+          "items": [
+            "grammar:wa-sateoki"
+          ]
+        },
+        {
+          "ja": "能力もさることながら、努力も大切だ。",
+          "reading": "のうりょくもさることながら、どりょくもたいせつだ。",
+          "en": "Ability matters, but effort matters even more.",
+          "zh": "能力固然重要，但努力更重要。",
+          "zh_TW": "能力固然重要，但努力更重要。",
+          "items": [
+            "grammar:mo-saru-koto-nagara"
+          ]
+        },
+        {
+          "ja": "彼は返事はおろか、連絡さえしてこない。",
+          "reading": "かれはへんじはおろか、れんらくさえしてこない。",
+          "en": "He doesn't even contact me, let alone reply.",
+          "zh": "他连联系都不联系，更别说回复了。",
+          "zh_TW": "他連聯繫都不聯繫，更別說回覆了。",
+          "items": [
+            "grammar:wa-oroka"
+          ]
+        },
+        {
+          "ja": "学者ですら、その問題を解けない。",
+          "reading": "がくしゃですら、そのもんだいをとけない。",
+          "en": "Even an expert cannot solve that problem.",
+          "zh": "就连专家都解不开那个问题。",
+          "zh_TW": "就連專家都解不開那個問題。",
+          "items": [
+            "grammar:sura"
+          ]
+        },
+        {
+          "ja": "彼はもう三日から何も食べていない。",
+          "reading": "かれはもうみっかからなにもたべていない。",
+          "en": "He hasn't eaten anything for as much as three days now.",
+          "zh": "他已经整整三天没吃东西了。",
+          "zh_TW": "他已經整整三天沒吃東西了。",
+          "items": [
+            "grammar:kara-aru"
+          ]
+        },
+        {
+          "ja": "彼はこの町きっての医者だ。",
+          "reading": "かれはこのまちきってのいしゃだ。",
+          "en": "He is the finest doctor in this town.",
+          "zh": "他是这个镇上最好的医生。",
+          "zh_TW": "他是這個鎮上最好的醫生。",
+          "items": [
+            "grammar:kitte-no"
+          ]
+        },
+        {
+          "ja": "この結果は失敗も同然だ。",
+          "reading": "このけっかはしっぱいもどうぜんだ。",
+          "en": "This result is practically the same as failure.",
+          "zh": "这个结果几乎等同于失败。",
+          "zh_TW": "這個結果幾乎等同於失敗。",
+          "items": [
+            "grammar:mo-douzen"
+          ]
+        },
+        {
+          "ja": "この給料では貯金が関の山だ。",
+          "reading": "このきゅうりょうではちょきんがせきのやまだ。",
+          "en": "With this salary, saving a little is the most one can manage.",
+          "zh": "凭这点薪水，最多也就能存点钱而已。",
+          "zh_TW": "憑這點薪水，最多也就能存點錢而已。",
+          "items": [
+            "grammar:ga-sekinoyama"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n1-12-01",
+          "item": "grammar:dani",
+          "prompt": {
+            "en": "Which fills the blank: 彼はそのことを想像＿＿しなかった。",
+            "zh": "填空：彼はそのことを想像＿＿しなかった。",
+            "zh_TW": "填空：彼はそのことを想像＿＿しなかった。"
+          },
+          "options": [
+            "だに",
+            "すら",
+            "さえ",
+            "のみ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "だに (literary) after a noun meaning 'even just X' emphasizes that not even the smallest degree occurred.",
+            "zh": "だに（文语）接名词后表示「连…都（没有）」，强调连最小程度都没发生。",
+            "zh_TW": "だに（文語）接名詞後表示「連…都（沒有）」，強調連最小程度都沒發生。"
+          }
+        },
+        {
+          "id": "q:n1-12-02",
+          "item": "grammar:sono-mono",
+          "prompt": {
+            "en": "Which fills the blank: この味は本物＿＿だ。",
+            "zh": "填空：この味は本物＿＿だ。",
+            "zh_TW": "填空：この味は本物＿＿だ。"
+          },
+          "options": [
+            "そのもの",
+            "も同然",
+            "のみ",
+            "こそ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "そのものだ after a noun emphasizes 'X itself, the very embodiment of X'.",
+            "zh": "接在名词后的そのものだ强调「就是…本身，…的化身」。",
+            "zh_TW": "接在名詞後的そのものだ強調「就是…本身，…的化身」。"
+          }
+        },
+        {
+          "id": "q:n1-12-03",
+          "item": "grammar:wa-sateoki",
+          "prompt": {
+            "en": "Which fills the blank: お金のことは＿＿、まず健康が大事だ。",
+            "zh": "填空：お金のことは＿＿、まず健康が大事だ。",
+            "zh_TW": "填空：お金のことは＿＿、まず健康が大事だ。"
+          },
+          "options": [
+            "さておき",
+            "はおろか",
+            "もさることながら",
+            "ですら"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "はさておき means 'setting X aside for now', postponing a topic to focus on something else.",
+            "zh": "はさておき表示「暂且不谈…」，先搁置某话题，专注于别的事。",
+            "zh_TW": "はさておき表示「暫且不談…」，先擱置某話題，專注於別的事。"
+          }
+        },
+        {
+          "id": "q:n1-12-04",
+          "item": "grammar:mo-saru-koto-nagara",
+          "prompt": {
+            "en": "Which fills the blank: 能力＿＿、努力も大切だ。",
+            "zh": "填空：能力＿＿、努力も大切だ。",
+            "zh_TW": "填空：能力＿＿、努力も大切だ。"
+          },
+          "options": [
+            "もさることながら",
+            "はおろか",
+            "ですら",
+            "からある"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "もさることながら means 'X is certainly true, but Y is even more so', adding emphasis to a second point.",
+            "zh": "もさることながら表示「…固然如此，但…更是如此」，强调第二点。",
+            "zh_TW": "もさることながら表示「…固然如此，但…更是如此」，強調第二點。"
+          }
+        },
+        {
+          "id": "q:n1-12-05",
+          "item": "grammar:wa-oroka",
+          "prompt": {
+            "en": "Which fills the blank: 彼は返事＿＿、連絡さえしてこない。",
+            "zh": "填空：彼は返事＿＿、連絡さえしてこない。",
+            "zh_TW": "填空：彼は返事＿＿、連絡さえしてこない。"
+          },
+          "options": [
+            "はおろか",
+            "もさることながら",
+            "からある",
+            "きっての"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "はおろか means 'let alone X', introducing an even more basic thing that also fails to happen.",
+            "zh": "はおろか表示「别说…了」，引出连更基本的事情都做不到。",
+            "zh_TW": "はおろか表示「別說…了」，引出連更基本的事情都做不到。"
+          }
+        },
+        {
+          "id": "q:n1-12-06",
+          "item": "grammar:sura",
+          "prompt": {
+            "en": "Which fills the blank: 専門家＿＿、その問題を解けない。",
+            "zh": "填空：専門家＿＿、その問題を解けない。",
+            "zh_TW": "填空：専門家＿＿、その問題を解けない。"
+          },
+          "options": [
+            "ですら",
+            "のみ",
+            "だけ",
+            "さえも"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ですら (formal) means 'even X', emphasizing an extreme example.",
+            "zh": "ですら（正式）表示「就连…都」，强调一个极端的例子。",
+            "zh_TW": "ですら（正式）表示「就連…都」，強調一個極端的例子。"
+          }
+        },
+        {
+          "id": "q:n1-12-07",
+          "item": "grammar:kara-aru",
+          "prompt": {
+            "en": "Which fills the blank: 彼はもう三日＿＿何も食べていない。",
+            "zh": "填空：彼はもう三日＿＿何も食べていない。",
+            "zh_TW": "填空：彼はもう三日＿＿何も食べていない。"
+          },
+          "options": [
+            "から",
+            "ほど",
+            "ばかり",
+            "くらい"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "からある/からの after a quantity means 'as much as / no less than' that amount, emphasizing how large or long it is.",
+            "zh": "からある／からの接在数量后，表示「足有…之多」，强调数量或时长之大。",
+            "zh_TW": "からある／からの接在數量後，表示「足有…之多」，強調數量或時長之大。"
+          }
+        },
+        {
+          "id": "q:n1-12-08",
+          "item": "grammar:ga-sekinoyama",
+          "prompt": {
+            "en": "Which fills the blank: この給料では貯金が＿＿だ。",
+            "zh": "填空：この給料では貯金が＿＿だ。",
+            "zh_TW": "填空：この給料では貯金が＿＿だ。"
+          },
+          "options": [
+            "関の山",
+            "そのもの",
+            "も同然",
+            "からある"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "が関の山だ means 'that is the most one can hope to manage', implying a modest limit.",
+            "zh": "が関の山だ表示「顶多也就是…」，暗示一个不高的上限。",
+            "zh_TW": "が関の山だ表示「頂多也就是…」，暗示一個不高的上限。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Compare two things using 〜も同然だ and 〜が関の山だ.",
+        "zh": "用「〜も同然だ」和「〜が関の山だ」比较两件事。",
+        "zh_TW": "用「〜も同然だ」和「〜が関の山だ」比較兩件事。"
+      }
+    },
+    {
+      "id": "unit:n1-13",
+      "title": {
+        "en": "Extreme feelings and unbearable outcomes",
+        "zh": "极致的情感与难以忍受的结果",
+        "zh_TW": "極致的情感與難以忍受的結果"
+      },
+      "grammar": [
+        "grammar:shimatsu-da",
+        "grammar:te-made",
+        "grammar:to-omoikiya",
+        "grammar:kiwamarinai",
+        "grammar:no-itari",
+        "grammar:no-kiwami",
+        "grammar:te-yamanai",
+        "grammar:te-kanawanai",
+        "grammar:te-wa-irarenai",
+        "grammar:to-kitara",
+        "grammar:to-wa-surprise",
+        "grammar:to-itta-tokoro-da"
+      ],
+      "vocab": [
+        "vocab:jm1445670",
+        "vocab:jm1238380",
+        "vocab:jm1451630",
+        "vocab:jm1390810",
+        "vocab:jm1316820",
+        "vocab:jm1212310",
+        "vocab:jm1213000",
+        "vocab:jm1212620",
+        "vocab:jm1218440",
+        "vocab:jm1222120",
+        "vocab:jm1254160",
+        "vocab:jm1233280",
+        "vocab:jm1360820",
+        "vocab:jm1320280",
+        "vocab:jm1360720",
+        "vocab:jm1356210",
+        "vocab:jm1580510",
+        "vocab:jm1595560"
+      ],
+      "sentences": [
+        {
+          "ja": "彼は最後には仕事を辞める始末だ。",
+          "reading": "かれはさいごにはしごとをやめるしまつだ。",
+          "en": "In the end, things got to the point where he quit his job.",
+          "zh": "最后竟落到辞职的地步。",
+          "zh_TW": "最後竟落到辭職的地步。",
+          "items": [
+            "grammar:shimatsu-da"
+          ]
+        },
+        {
+          "ja": "彼は嘘をついてまで、自分を守ろうとした。",
+          "reading": "かれはうそをついてまで、じぶんをまもろうとした。",
+          "en": "He went so far as to lie in order to protect himself.",
+          "zh": "他甚至不惜撒谎来保护自己。",
+          "zh_TW": "他甚至不惜撒謊來保護自己。",
+          "items": [
+            "grammar:te-made"
+          ]
+        },
+        {
+          "ja": "合格したと思いきや、名前を間違えていた。",
+          "reading": "ごうかくしたとおもいきや、なまえをまちがえていた。",
+          "en": "I thought I had passed, but it turned out my name had been mixed up.",
+          "zh": "还以为自己合格了，没想到是弄错了名字。",
+          "zh_TW": "還以為自己合格了，沒想到是弄錯了名字。",
+          "items": [
+            "grammar:to-omoikiya"
+          ]
+        },
+        {
+          "ja": "彼の態度は無礼極まりない。",
+          "reading": "かれのたいどはぶれいきわまりない。",
+          "en": "His attitude is extremely rude.",
+          "zh": "他的态度极其无礼。",
+          "zh_TW": "他的態度極其無禮。",
+          "items": [
+            "grammar:kiwamarinai"
+          ]
+        },
+        {
+          "ja": "このような賞をいただき、名誉の至りです。",
+          "reading": "このようなしょうをいただき、めいよのいたりです。",
+          "en": "Receiving such an award is the utmost honor.",
+          "zh": "能获得这样的奖项，实在是无上的荣幸。",
+          "zh_TW": "能獲得這樣的獎項，實在是無上的榮幸。",
+          "items": [
+            "grammar:no-itari"
+          ]
+        },
+        {
+          "ja": "この景色はまさに贅沢の極みだ。",
+          "reading": "このけしきはまさにぜいたくのきわみだ。",
+          "en": "This view is truly the height of luxury.",
+          "zh": "这景色简直是奢华的极致。",
+          "zh_TW": "這景色簡直是奢華的極致。",
+          "items": [
+            "grammar:no-kiwami"
+          ]
+        },
+        {
+          "ja": "危険が迫っていて、じっとしてはいられない。",
+          "reading": "きけんがせまっていて、じっとしてはいられない。",
+          "en": "Danger is approaching, so I cannot just sit still.",
+          "zh": "危险迫在眉睫，无法安坐不动。",
+          "zh_TW": "危險迫在眉睫，無法安坐不動。",
+          "items": [
+            "grammar:te-wa-irarenai"
+          ]
+        },
+        {
+          "ja": "彼が優勝するとは、驚きだ。",
+          "reading": "かれがゆうしょうするとは、おどろきだ。",
+          "en": "To think that he would win the championship - what a surprise!",
+          "zh": "没想到他竟然会获胜，真是令人惊讶。",
+          "zh_TW": "沒想到他竟然會獲勝，真是令人驚訝。",
+          "items": [
+            "grammar:to-wa-surprise"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n1-13-01",
+          "item": "grammar:te-yamanai",
+          "prompt": {
+            "en": "Which fills the blank: 彼の幸せを願って＿＿。",
+            "zh": "填空：彼の幸せを願って＿＿。",
+            "zh_TW": "填空：彼の幸せを願って＿＿。"
+          },
+          "options": [
+            "やまない",
+            "かなわない",
+            "はいられない",
+            "きたら"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "てやまない means 'to feel X ceaselessly and sincerely', typically after verbs like 願う, 祈る, 信じる.",
+            "zh": "てやまない表示「一直…不止」，常接在願う、祈る、信じる等动词后，表达真挚持续的心情。",
+            "zh_TW": "てやまない表示「一直…不止」，常接在願う、祈る、信じる等動詞後，表達真摯持續的心情。"
+          }
+        },
+        {
+          "id": "q:n1-13-02",
+          "item": "grammar:te-kanawanai",
+          "prompt": {
+            "en": "Which fills the blank: 隣の騒音がうるさくて＿＿。",
+            "zh": "填空：隣の騒音がうるさくて＿＿。",
+            "zh_TW": "填空：隣の騒音がうるさくて＿＿。"
+          },
+          "options": [
+            "かなわない",
+            "やまない",
+            "はいられない",
+            "きたところだ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "てかなわない means 'it's unbearable, simply too much to stand'.",
+            "zh": "てかなわない表示「简直受不了，太…了」。",
+            "zh_TW": "てかなわない表示「簡直受不了，太…了」。"
+          }
+        },
+        {
+          "id": "q:n1-13-03",
+          "item": "grammar:to-kitara",
+          "prompt": {
+            "en": "Which fills the blank: あの店の店員＿＿、いつも態度が悪い。",
+            "zh": "填空：あの店の店員＿＿、いつも態度が悪い。",
+            "zh_TW": "填空：あの店の店員＿＿、いつも態度が悪い。"
+          },
+          "options": [
+            "ときたら",
+            "とみえて",
+            "とあって",
+            "とばかりに"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ときたら introduces a topic to complain about, often with an exasperated tone.",
+            "zh": "ときたら引出话题并加以抱怨，语气常带无奈或不满。",
+            "zh_TW": "ときたら引出話題並加以抱怨，語氣常帶無奈或不滿。"
+          }
+        },
+        {
+          "id": "q:n1-13-04",
+          "item": "grammar:to-itta-tokoro-da",
+          "prompt": {
+            "en": "Which fills the blank: この仕事にかかる時間は、まあ三日＿＿。",
+            "zh": "填空：この仕事にかかる時間は、まあ三日＿＿。",
+            "zh_TW": "填空：この仕事にかかる時間は、まあ三日＿＿。"
+          },
+          "options": [
+            "といったところだ",
+            "というものだ",
+            "とのことだ",
+            "というべきだ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "といったところだ means 'it is about X at most', giving a rough, modest estimate.",
+            "zh": "といったところだ表示「顶多也就是…」，给出一个大致而保守的估计。",
+            "zh_TW": "といったところだ表示「頂多也就是…」，給出一個大致而保守的估計。"
+          }
+        },
+        {
+          "id": "q:n1-13-05",
+          "item": "grammar:shimatsu-da",
+          "prompt": {
+            "en": "Which fills the blank: 彼は最後には仕事を＿＿始末だ。",
+            "zh": "填空：彼は最後には仕事を＿＿始末だ。",
+            "zh_TW": "填空：彼は最後には仕事を＿＿始末だ。"
+          },
+          "options": [
+            "辞める",
+            "辞めた",
+            "辞めて",
+            "辞めよう"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "始末だ at the end of a sentence, after a plain-form verb, describes an unfortunate outcome reached after a bad chain of events.",
+            "zh": "句末的始末だ接在动词简体形后，描述经过一连串不好的事情后落得的糟糕结果。",
+            "zh_TW": "句末的始末だ接在動詞簡體形後，描述經過一連串不好的事情後落得的糟糕結果。"
+          }
+        },
+        {
+          "id": "q:n1-13-06",
+          "item": "grammar:te-made",
+          "prompt": {
+            "en": "Which fills the blank: 彼は嘘をつい＿＿、自分を守ろうとした。",
+            "zh": "填空：彼は嘘をつい＿＿、自分を守ろうとした。",
+            "zh_TW": "填空：彼は噓をつい＿＿、自分を守ろうとした。"
+          },
+          "options": [
+            "てまで",
+            "ても",
+            "ては",
+            "てから"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜てまで means 'going so far as to do X', showing an extreme measure taken to achieve something.",
+            "zh": "〜てまで表示「甚至不惜做…」，说明为达成目的而采取的极端手段。",
+            "zh_TW": "〜てまで表示「甚至不惜做…」，說明為達成目的而採取的極端手段。"
+          }
+        },
+        {
+          "id": "q:n1-13-07",
+          "item": "grammar:kiwamarinai",
+          "prompt": {
+            "en": "Which fills the blank: 彼の態度は無礼＿＿。",
+            "zh": "填空：彼の態度は無礼＿＿。",
+            "zh_TW": "填空：彼の態度は無禮＿＿。"
+          },
+          "options": [
+            "極まりない",
+            "の至りだ",
+            "の極みだ",
+            "極める"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "極まりない attaches to a na-adjective stem and means 'extremely so, nothing could be more X'.",
+            "zh": "極まりない接在な形容词词干后，表示「极其…，没有比这更…的了」。",
+            "zh_TW": "極まりない接在な形容詞詞幹後，表示「極其…，沒有比這更…的了」。"
+          }
+        },
+        {
+          "id": "q:n1-13-08",
+          "item": "grammar:no-kiwami",
+          "prompt": {
+            "en": "Which fills the blank: この景色はまさに贅沢＿＿だ。",
+            "zh": "填空：この景色はまさに贅沢＿＿だ。",
+            "zh_TW": "填空：この景色はまさに贅沢＿＿だ。"
+          },
+          "options": [
+            "の極み",
+            "の至り",
+            "極まりない",
+            "も同然"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "の極み attaches to a noun and means 'the absolute extreme point of X'.",
+            "zh": "の極み接在名词后，表示「…的极致」。",
+            "zh_TW": "の極み接在名詞後，表示「…的極致」。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Describe something extreme using 〜極まりない or 〜の極み, then add a surprising twist using 〜と思いきや.",
+        "zh": "用「〜極まりない」或「〜の極み」描述一件极端的事，再用「〜と思いきや」加入一个意外的转折。",
+        "zh_TW": "用「〜極まりない」或「〜の極み」描述一件極端的事，再用「〜と思いきや」加入一個意外的轉折。"
+      }
+    },
+    {
+      "id": "unit:n1-14",
+      "title": {
+        "en": "Inevitability, possibility, and tendency",
+        "zh": "必然、可能与倾向",
+        "zh_TW": "必然、可能與傾向"
+      },
+      "grammar": [
+        "grammar:zu-ni-wa-okanai",
+        "grammar:zu-ni-wa-sumanai",
+        "grammar:nai-de-wa-sumanai",
+        "grammar:zu-jimai",
+        "grammar:made-no-koto-da",
+        "grammar:nai-made-mo",
+        "grammar:nai-mono-demo-nai",
+        "grammar:nai-demo-nai",
+        "grammar:nai-to-mo-kagiranai",
+        "grammar:te-shikarubeki",
+        "grammar:te-habakaranai",
+        "grammar:kirai-ga-aru"
+      ],
+      "vocab": [
+        "vocab:jm1409840",
+        "vocab:jm1200780",
+        "vocab:jm1587200",
+        "vocab:jm1249500",
+        "vocab:jm1451330",
+        "vocab:jm1487570",
+        "vocab:jm1604480",
+        "vocab:jm1545630",
+        "vocab:jm1214430",
+        "vocab:jm1214440",
+        "vocab:jm1214450",
+        "vocab:jm1605810",
+        "vocab:jm1546670",
+        "vocab:jm1546100",
+        "vocab:jm1546250",
+        "vocab:jm1605847",
+        "vocab:jm1546290",
+        "vocab:jm1545830"
+      ],
+      "sentences": [
+        {
+          "ja": "彼の話は聞く人を感動させずにはおかない。",
+          "reading": "かれのはなしはきくひとをかんどうさせずにはおかない。",
+          "en": "His story inevitably moves everyone who hears it.",
+          "zh": "他的话必然会打动每一个听众。",
+          "zh_TW": "他的話必然會打動每一個聽眾。",
+          "items": [
+            "grammar:zu-ni-wa-okanai"
+          ]
+        },
+        {
+          "ja": "これだけ迷惑をかけては、謝らずにはすまない。",
+          "reading": "これだけめいわくをかけては、あやまらずにはすまない。",
+          "en": "Having caused this much trouble, I cannot get away without apologizing.",
+          "zh": "造成了这么多麻烦，不道歉是说不过去的。",
+          "zh_TW": "造成了這麼多麻煩，不道歉是說不過去的。",
+          "items": [
+            "grammar:zu-ni-wa-sumanai"
+          ]
+        },
+        {
+          "ja": "結局、本当のことを聞かずじまいだった。",
+          "reading": "けっきょく、ほんとうのことをきかずじまいだった。",
+          "en": "In the end, I never got around to asking about the truth.",
+          "zh": "结果，最终也没能问出真相。",
+          "zh_TW": "結果，最終也沒能問出真相。",
+          "items": [
+            "grammar:zu-jimai"
+          ]
+        },
+        {
+          "ja": "努力すれば、成功しないものでもない。",
+          "reading": "どりょくすれば、せいこうしないものでもない。",
+          "en": "If you make an effort, success is not entirely out of the question.",
+          "zh": "只要努力，也并非不可能成功。",
+          "zh_TW": "只要努力，也並非不可能成功。",
+          "items": [
+            "grammar:nai-mono-demo-nai"
+          ]
+        },
+        {
+          "ja": "彼の気持ちが分からないでもない。",
+          "reading": "かれのきもちがわからないでもない。",
+          "en": "I don't entirely fail to understand his feelings.",
+          "zh": "他的心情也不是完全无法理解。",
+          "zh_TW": "他的心情也不是完全無法理解。",
+          "items": [
+            "grammar:nai-demo-nai"
+          ]
+        },
+        {
+          "ja": "この計画が失敗しないとも限らない。",
+          "reading": "このけいかくがしっぱいしないともかぎらない。",
+          "en": "It is not impossible that this plan could fail.",
+          "zh": "这个计划也不是没有可能失败。",
+          "zh_TW": "這個計劃也不是沒有可能失敗。",
+          "items": [
+            "grammar:nai-to-mo-kagiranai"
+          ]
+        },
+        {
+          "ja": "問題があれば、すぐに報告してしかるべきだ。",
+          "reading": "もんだいがあれば、すぐにほうこくしてしかるべきだ。",
+          "en": "If there is a problem, one ought to report it immediately.",
+          "zh": "如果有问题，理应立即报告。",
+          "zh_TW": "如果有問題，理應立即報告。",
+          "items": [
+            "grammar:te-shikarubeki"
+          ]
+        },
+        {
+          "ja": "彼は結論を急ぐきらいがある。",
+          "reading": "かれはけつろんをいそぐきらいがある。",
+          "en": "He has a tendency to rush to conclusions.",
+          "zh": "他有过早下结论的倾向。",
+          "zh_TW": "他有過早下結論的傾向。",
+          "items": [
+            "grammar:kirai-ga-aru"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n1-14-01",
+          "item": "grammar:nai-de-wa-sumanai",
+          "prompt": {
+            "en": "Which fills the blank: これだけの失敗をしては、責任を取らないでは＿＿。",
+            "zh": "填空：これだけの失敗をしては、責任を取らないでは＿＿。",
+            "zh_TW": "填空：これだけの失敗をしては、責任を取らないでは＿＿。"
+          },
+          "options": [
+            "すまない",
+            "おかない",
+            "しかるべきだ",
+            "かぎらない"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ないではすまない means 'it will not be settled/forgiven unless you do X'.",
+            "zh": "ないではすまない表示「不做…是不能了结/不被原谅的」。",
+            "zh_TW": "ないではすまない表示「不做…是不能了結/不被原諒的」。"
+          }
+        },
+        {
+          "id": "q:n1-14-02",
+          "item": "grammar:made-no-koto-da",
+          "prompt": {
+            "en": "Which fills the blank: だめなら、また挑戦する＿＿。",
+            "zh": "填空：だめなら、また挑戦する＿＿。",
+            "zh_TW": "填空：だめなら、また挑戦する＿＿。"
+          },
+          "options": [
+            "までのことだ",
+            "ものでもない",
+            "でもない",
+            "にすぎない"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "まで(のこと)だ means 'I will simply do X, that's all', showing a calm, unworried resolve.",
+            "zh": "まで(のこと)だ表示「大不了就…而已」，语气从容、不担心。",
+            "zh_TW": "まで(のこと)だ表示「大不了就…而已」，語氣從容、不擔心。"
+          }
+        },
+        {
+          "id": "q:n1-14-03",
+          "item": "grammar:nai-made-mo",
+          "prompt": {
+            "en": "Which fills the blank: 完璧とは＿＿、かなり良い結果だ。",
+            "zh": "填空：完璧とは＿＿、かなり良い結果だ。",
+            "zh_TW": "填空：完璧とは＿＿、かなり良い結果だ。"
+          },
+          "options": [
+            "言わないまでも",
+            "言わないでもない",
+            "言わずじまいで",
+            "言うまでもなく"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ないまでも means 'even if not fully X, at least Y', setting a lower but still positive bar.",
+            "zh": "ないまでも表示「即使没到…的程度，至少也…」。",
+            "zh_TW": "ないまでも表示「即使沒到…的程度，至少也…」。"
+          }
+        },
+        {
+          "id": "q:n1-14-04",
+          "item": "grammar:te-habakaranai",
+          "prompt": {
+            "en": "Which fills the blank: 彼は上司の前でも文句を言って＿＿。",
+            "zh": "填空：彼は上司の前でも文句を言って＿＿。",
+            "zh_TW": "填空：彼は上司の前でも文句を言って＿＿。"
+          },
+          "options": [
+            "はばからない",
+            "しかるべきだ",
+            "かぎらない",
+            "やまない"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "てはばからない means 'to say or do it without the slightest hesitation', often about something bold or brazen.",
+            "zh": "てはばからない表示「毫不顾忌地说／做…」，常用于形容大胆或放肆的言行。",
+            "zh_TW": "てはばからない表示「毫不顧忌地說／做…」，常用於形容大膽或放肆的言行。"
+          }
+        },
+        {
+          "id": "q:n1-14-05",
+          "item": "grammar:zu-ni-wa-okanai",
+          "prompt": {
+            "en": "Which fills the blank: 彼の話は聞く人を感動させ＿＿。",
+            "zh": "填空：彼の話は聞く人を感動させ＿＿。",
+            "zh_TW": "填空：彼の話は聞く人を感動させ＿＿。"
+          },
+          "options": [
+            "ずにはおかない",
+            "ずにはすまない",
+            "ないではすまない",
+            "ずじまいだ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ずにはおかない means 'it will inevitably bring about that result', showing something is bound to happen naturally.",
+            "zh": "ずにはおかない表示「必然会…」，说明某个结果自然而然、不可避免地会发生。",
+            "zh_TW": "ずにはおかない表示「必然會…」，說明某個結果自然而然、不可避免地會發生。"
+          }
+        },
+        {
+          "id": "q:n1-14-06",
+          "item": "grammar:zu-jimai",
+          "prompt": {
+            "en": "Which fills the blank: 結局、本当のことを聞か＿＿だった。",
+            "zh": "填空：結局、本当のことを聞か＿＿だった。",
+            "zh_TW": "填空：結局、本當のことを聞か＿＿だった。"
+          },
+          "options": [
+            "ずじまい",
+            "ずにはおかない",
+            "ないまでも",
+            "かぎらない"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ずじまい means 'ended up never doing X after all', expressing regret that an intended action never happened.",
+            "zh": "ずじまい表示「结果一直没能…」，表达原本打算做却始终未能实现的遗憾。",
+            "zh_TW": "ずじまい表示「結果一直沒能…」，表達原本打算做卻始終未能實現的遺憾。"
+          }
+        },
+        {
+          "id": "q:n1-14-07",
+          "item": "grammar:nai-to-mo-kagiranai",
+          "prompt": {
+            "en": "Which fills the blank: この計画が失敗し＿＿限らない。",
+            "zh": "填空：この計画が失敗し＿＿限らない。",
+            "zh_TW": "填空：この計畫が失敗し＿＿限らない。"
+          },
+          "options": [
+            "ないとも",
+            "ないでも",
+            "ないまでも",
+            "ずには"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ないとも限らない means 'it is not impossible that X happens', leaving room for an unlikely but possible outcome.",
+            "zh": "ないとも限らない表示「也不是没有…的可能」，为不太可能但仍存在的情况留有余地。",
+            "zh_TW": "ないとも限らない表示「也不是沒有…的可能」，為不太可能但仍存在的情況留有餘地。"
+          }
+        },
+        {
+          "id": "q:n1-14-08",
+          "item": "grammar:kirai-ga-aru",
+          "prompt": {
+            "en": "Which fills the blank: 彼は結論を急ぐ＿＿がある。",
+            "zh": "填空：彼は結論を急ぐ＿＿がある。",
+            "zh_TW": "填空：彼は結論を急ぐ＿＿がある。"
+          },
+          "options": [
+            "きらい",
+            "おそれ",
+            "つもり",
+            "はず"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "きらいがある means 'has an unfortunate tendency to do X', pointing out a recurring minor flaw.",
+            "zh": "きらいがある表示「有…的不良倾向」，指出反复出现的小毛病。",
+            "zh_TW": "きらいがある表示「有…的不良傾向」，指出反覆出現的小毛病。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Describe a minor flaw of yours using 〜きらいがある, then add a reassurance using 〜ないとも限らないが、大丈夫だ or similar.",
+        "zh": "用「〜きらいがある」描述自己的一个小毛病，再用「〜ないとも限らない」等表达来说明情况仍有转机。",
+        "zh_TW": "用「〜きらいがある」描述自己的一個小毛病，再用「〜ないとも限らない」等表達來說明情況仍有轉機。"
+      }
+    },
+    {
+      "id": "unit:n1-15",
+      "title": {
+        "en": "Listing complaints and polite register",
+        "zh": "列举牢骚与郑重语",
+        "zh_TW": "列舉牢騷與鄭重語"
+      },
+      "grammar": [
+        "grammar:tomo-sureba",
+        "grammar:zukume",
+        "grammar:gurumi",
+        "grammar:zanmai",
+        "grammar:meku",
+        "grammar:buru",
+        "grammar:dano-dano",
+        "grammar:to-ii-to-ii",
+        "grammar:to-iwazu",
+        "grammar:nari-nari",
+        "grammar:yara-yara",
+        "grammar:mono-to-omowareru",
+        "grammar:teichougo"
+      ],
+      "vocab": [
+        "vocab:jm1477350",
+        "vocab:jm1381180",
+        "vocab:jm1482660",
+        "vocab:jm1214300",
+        "vocab:jm1245170",
+        "vocab:jm1565120",
+        "vocab:jm1531060",
+        "vocab:jm1011850",
+        "vocab:jm1363030",
+        "vocab:jm1075920",
+        "vocab:jm1075990",
+        "vocab:jm1076000",
+        "vocab:jm1076010",
+        "vocab:jm1076090",
+        "vocab:jm1076130",
+        "vocab:jm1076460",
+        "vocab:jm1076470",
+        "vocab:jm1076980"
+      ],
+      "sentences": [
+        {
+          "ja": "疲れていると、ともすれば判断を誤りがちだ。",
+          "reading": "つかれていると、ともすればはんだんをあやまりがちだ。",
+          "en": "When tired, one easily slips into making wrong judgments.",
+          "zh": "疲惫的时候，很容易就做出错误的判断。",
+          "zh_TW": "疲憊的時候，很容易就做出錯誤的判斷。",
+          "items": [
+            "grammar:tomo-sureba"
+          ]
+        },
+        {
+          "ja": "今週は仕事ずくめで、休む暇もない。",
+          "reading": "こんしゅうはしごとずくめで、やすむひまもない。",
+          "en": "This week has been nothing but work, with no time to rest.",
+          "zh": "这周全是工作，连休息的时间都没有。",
+          "zh_TW": "這週全是工作，連休息的時間都沒有。",
+          "items": [
+            "grammar:zukume"
+          ]
+        },
+        {
+          "ja": "町ぐるみで環境問題に取り組んでいる。",
+          "reading": "まちぐるみでかんきょうもんだいにとりくんでいる。",
+          "en": "The whole town is working together to tackle environmental problems.",
+          "zh": "全镇齐心协力应对环境问题。",
+          "zh_TW": "全鎮齊心協力應對環境問題。",
+          "items": [
+            "grammar:gurumi"
+          ]
+        },
+        {
+          "ja": "彼は休みの日、読書三昧で過ごす。",
+          "reading": "かれはやすみのひ、どくしょざんまいですごす。",
+          "en": "On his days off, he spends his time doing nothing but reading.",
+          "zh": "他休息的日子就只顾着看书。",
+          "zh_TW": "他休息的日子就只顧著看書。",
+          "items": [
+            "grammar:zanmai"
+          ]
+        },
+        {
+          "ja": "味といい、香りといい、この料理は最高だ。",
+          "reading": "あじといい、かおりといい、このりょうりはさいこうだ。",
+          "en": "Both the taste and the aroma; this dish is wonderful in every way.",
+          "zh": "无论是味道还是香气，这道菜都堪称完美。",
+          "zh_TW": "無論是味道還是香氣，這道菜都堪稱完美。",
+          "items": [
+            "grammar:to-ii-to-ii"
+          ]
+        },
+        {
+          "ja": "昼と言わず夜と言わず、彼は働き続けている。",
+          "reading": "ひるといわずよるといわず、かれははたらきつづけている。",
+          "en": "Day or night, without distinction, he keeps on working.",
+          "zh": "不分昼夜，他一直在工作。",
+          "zh_TW": "不分晝夜，他一直在工作。",
+          "items": [
+            "grammar:to-iwazu"
+          ]
+        },
+        {
+          "ja": "電話なり手紙なり、都合のいい方法で連絡してください。",
+          "reading": "でんわなりてがみなり、つごうのいいほうほうでれんらくしてください。",
+          "en": "Please contact me by whichever method is convenient, whether by phone or letter.",
+          "zh": "打电话也好，写信也好，请用方便的方式联系我。",
+          "zh_TW": "打電話也好，寫信也好，請用方便的方式聯繫我。",
+          "items": [
+            "grammar:nari-nari"
+          ]
+        },
+        {
+          "ja": "掃除やら洗濯やらで、休む暇もなかった。",
+          "reading": "そうじやらせんたくやらで、やすむひまもなかった。",
+          "en": "What with cleaning and laundry, I had no time to rest.",
+          "zh": "又是打扫又是洗衣服，连休息的时间都没有。",
+          "zh_TW": "又是打掃又是洗衣服，連休息的時間都沒有。",
+          "items": [
+            "grammar:yara-yara"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n1-15-01",
+          "item": "grammar:meku",
+          "prompt": {
+            "en": "Which fills the blank: 三月になると、少し春＿＿くる。",
+            "zh": "填空：三月になると、少し春＿＿くる。",
+            "zh_TW": "填空：三月になると、少し春＿＿くる。"
+          },
+          "options": [
+            "めいて",
+            "ぶって",
+            "ずくめで",
+            "がてら"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "めく attaches to a noun and means 'to take on the air or quality of X', describing a gradual change in atmosphere.",
+            "zh": "めく接在名词后，表示「渐渐带有…的气息／样子」，描述气氛逐渐变化。",
+            "zh_TW": "めく接在名詞後，表示「漸漸帶有…的氣息／樣子」，描述氣氛逐漸變化。"
+          }
+        },
+        {
+          "id": "q:n1-15-02",
+          "item": "grammar:buru",
+          "prompt": {
+            "en": "Which fills the blank: 彼は学者＿＿、難しい話ばかりする。",
+            "zh": "填空：彼は学者＿＿、難しい話ばかりする。",
+            "zh_TW": "填空：彼は學者＿＿、難しい話ばかりする。"
+          },
+          "options": [
+            "ぶって",
+            "めいて",
+            "がてら",
+            "ずくめで"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ぶる attaches to a noun and means 'to put on airs of being X', implying a pretentious affectation.",
+            "zh": "ぶる接在名词后，表示「摆出…的架子」，带有做作、装腔作势的语气。",
+            "zh_TW": "ぶる接在名詞後，表示「擺出…的架子」，帶有做作、裝腔作勢的語氣。"
+          }
+        },
+        {
+          "id": "q:n1-15-03",
+          "item": "grammar:dano-dano",
+          "prompt": {
+            "en": "Which fills the blank: 眠い＿＿、寒い＿＿、彼はいつも文句ばかり言う。",
+            "zh": "填空：眠い＿＿、寒い＿＿、彼はいつも文句ばかり言う。",
+            "zh_TW": "填空：眠い＿＿、寒い＿＿、彼はいつも文句ばかり言う。"
+          },
+          "options": [
+            "だの〜だの",
+            "やら〜やら",
+            "なり〜なり",
+            "といい〜といい"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "だの〜だの lists complaints or gripes, often carrying a critical, fed-up tone.",
+            "zh": "だの〜だの用于列举牢骚或抱怨，常带不满、厌烦的语气。",
+            "zh_TW": "だの〜だの用於列舉牢騷或抱怨，常帶不滿、厭煩的語氣。"
+          }
+        },
+        {
+          "id": "q:n1-15-04",
+          "item": "grammar:mono-to-omowareru",
+          "prompt": {
+            "en": "Which fills the blank: この習慣は昔から続いてきた＿＿。",
+            "zh": "填空：この習慣は昔から続いてきた＿＿。",
+            "zh_TW": "填空：この習慣は昔から続いてきた＿＿。"
+          },
+          "options": [
+            "ものと思われる",
+            "ものでもない",
+            "ものを",
+            "ものなら"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ものと思われる is a formal, objective way of stating a conclusion in writing, meaning 'it is considered to be so'.",
+            "zh": "ものと思われる是书面语中客观陈述结论的说法，表示「据认为…」。",
+            "zh_TW": "ものと思われる是書面語中客觀陳述結論的說法，表示「據認為…」。"
+          }
+        },
+        {
+          "id": "q:n1-15-05",
+          "item": "grammar:teichougo",
+          "prompt": {
+            "en": "Which is a teichougo (humble-polite) verb that politely lowers the speaker's own action, regardless of the listener?",
+            "zh": "哪一个是丁重语动词，用来谦逊地叙述说话人自己的动作，与听话人身份无关？",
+            "zh_TW": "哪一個是丁重語動詞，用來謙遜地敘述說話人自己的動作，與聽話人身份無關？"
+          },
+          "options": [
+            "いたします",
+            "なさいます",
+            "されます",
+            "していただきます"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "いたす is a teichougo verb, the humble-polite form of する, used to lower the speaker's own action out of formality.",
+            "zh": "いたす是丁重语动词，是する的谦逊说法，用来郑重地表示说话人自己的动作。",
+            "zh_TW": "いたす是丁重語動詞，是する的謙遜說法，用來鄭重地表示說話人自己的動作。"
+          }
+        },
+        {
+          "id": "q:n1-15-06",
+          "item": "grammar:tomo-sureba",
+          "prompt": {
+            "en": "Which fills the blank: 疲れていると、＿＿判断を誤りがちだ。",
+            "zh": "填空：疲れていると、＿＿判断を誤りがちだ。",
+            "zh_TW": "填空：疲れていると、＿＿判斷を誤りがちだ。"
+          },
+          "options": [
+            "ともすれば",
+            "やらやら",
+            "だのだの",
+            "といい"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ともすれば (also ややもすると) means 'easily slips into X, given half a chance', warning of an undesirable tendency.",
+            "zh": "ともすれば（也作ややもすると）表示「动不动就容易…」，警示一种不好的倾向。",
+            "zh_TW": "ともすれば（也作ややもすると）表示「動不動就容易…」，警示一種不好的傾向。"
+          }
+        },
+        {
+          "id": "q:n1-15-07",
+          "item": "grammar:zukume",
+          "prompt": {
+            "en": "Which fills the blank: 今週は仕事＿＿で、休む暇もない。",
+            "zh": "填空：今週は仕事＿＿で、休む暇もない。",
+            "zh_TW": "填空：今週は仕事＿＿で、休む暇もない。"
+          },
+          "options": [
+            "ずくめ",
+            "ぐるみ",
+            "三昧",
+            "めいて"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ずくめ attaches to a noun and means 'nothing but X, from start to finish'.",
+            "zh": "ずくめ接在名词后，表示「清一色都是…，从头到尾全是…」。",
+            "zh_TW": "ずくめ接在名詞後，表示「清一色都是…，從頭到尾全是…」。"
+          }
+        },
+        {
+          "id": "q:n1-15-08",
+          "item": "grammar:zanmai",
+          "prompt": {
+            "en": "Which fills the blank: 彼は休みの日、読書＿＿で過ごす。",
+            "zh": "填空：彼は休みの日、読書＿＿で過ごす。",
+            "zh_TW": "填空：彼は休みの日、読書＿＿で過ごす。"
+          },
+          "options": [
+            "三昧",
+            "ずくめ",
+            "ぐるみ",
+            "がち"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "三昧 attaches to a noun and means 'indulging in nothing but X'.",
+            "zh": "三昧接在名词后，表示「尽情沉浸于…之中」。",
+            "zh_TW": "三昧接在名詞後，表示「盡情沉浸於…之中」。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "List two or three complaints using 〜だの〜だの or 〜やら〜やら, then close politely using a teichougo verb such as いたします.",
+        "zh": "用「〜だの〜だの」或「〜やら〜やら」列举两三件抱怨的事，再用いたします等丁重语动词礼貌收尾。",
+        "zh_TW": "用「〜だの〜だの」或「〜やら〜やら」列舉兩三件抱怨的事，再用いたします等丁重語動詞禮貌收尾。"
+      }
+    }
+  ]
+}

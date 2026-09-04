@@ -50,3 +50,7 @@ app.*.map.json
 **/*.keystore
 /tool/data/
 tool/content/drafts/
+
+# `.claude/agents/` is project tooling and is committed. Only this one file is
+# per-machine: it records the permissions this checkout was granted locally.
+.claude/settings.local.json
