@@ -6,7 +6,9 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
 import '../../../shared/services/auto_sync_service.dart';
+import '../models/learner_profile.dart';
 import '../models/study_record.dart';
+import 'sm2_scheduler.dart';
 
 /// The app's storage hub: the one place that knows where data lives on disk.
 ///
@@ -197,6 +199,109 @@ class NihongoStorage {
       }
     }
     await save(ProgressData(records: list, extraJson: data.extraJson));
+  }
+
+  /// Purpose: Record the answers to a batch of items and reschedule them.
+  /// Inputs: `answers` — item id to whether it was answered correctly; `now`
+  /// for tests.
+  /// Returns: None.
+  /// Side effects: Reads then rewrites the data file, and notifies auto-sync
+  /// exactly once.
+  /// Notes: The whole batch is one load and one save, so a quiz session costs
+  /// one write and one sync debounce rather than one per question. An item with
+  /// no record yet gets one — a record is created by the first answer, which is
+  /// what makes "new items started today" countable without storing a counter.
+  /// The learner's streak is touched here too, and only when the day changes,
+  /// so the profile record is written once a day rather than once an answer.
+  static Future<void> recordAnswers(
+    Map<String, bool> answers, {
+    DateTime? now,
+  }) async {
+    if (answers.isEmpty) return;
+    final stamp = (now ?? DateTime.now()).toUtc();
+    const scheduler = Sm2Scheduler();
+    final data = await load();
+    final list = List<StudyRecord>.of(data.records);
+
+    for (final entry in answers.entries) {
+      final idx = list.indexWhere((r) => r.id == entry.key);
+      final before = idx >= 0
+          ? list[idx]
+          : StudyRecord.create(entry.key, now: stamp);
+      final after = scheduler.apply(
+        before,
+        correct: entry.value,
+        now: stamp,
+      );
+      if (idx >= 0) {
+        list[idx] = after;
+      } else {
+        list.add(after);
+      }
+    }
+
+    final today = LearnerProfile.localDateKey(stamp.toLocal());
+    final profileIdx = list.indexWhere((r) => r.id == learnerProfileId);
+    final existing = profileIdx >= 0 ? list[profileIdx] : null;
+    final profile = LearnerProfile.fromRecord(existing);
+    final touched = profile.withStreakTouched(today);
+    if (!identical(touched, profile)) {
+      final record = touched.toRecord(existing, stamp);
+      if (profileIdx >= 0) {
+        list[profileIdx] = record;
+      } else {
+        list.add(record);
+      }
+    }
+
+    await save(ProgressData(records: list, extraJson: data.extraJson));
+  }
+
+  /// Purpose: Record one answer.
+  /// Inputs: `id`, `correct`; `now` for tests.
+  /// Returns: None.
+  /// Side effects: As [recordAnswers].
+  /// Notes: Quizzes call this per answer rather than batching a whole session,
+  /// so an app killed mid-session keeps what was already answered. The sync
+  /// scheduler debounces, so the extra saves do not become extra uploads.
+  static Future<void> recordAnswer(
+    String id,
+    bool correct, {
+    DateTime? now,
+  }) => recordAnswers({id: correct}, now: now);
+
+  /// Purpose: Read the learner profile out of the progress file.
+  /// Inputs: None.
+  /// Returns: `Future<LearnerProfile>` — defaults when there is none yet.
+  /// Side effects: Reads the data file.
+  /// Notes: Most callers read it from `learnerProfileProvider` instead, which
+  /// derives it from the already-loaded progress data.
+  static Future<LearnerProfile> loadProfile() async =>
+      LearnerProfile.fromRecord((await load()).recordById(learnerProfileId));
+
+  /// Purpose: Save the learner's settings.
+  /// Inputs: `profile` — the settings to write; `now` for tests.
+  /// Returns: None.
+  /// Side effects: Reads then rewrites the data file; notifies auto-sync.
+  /// Notes: **The streak is carried over from the stored profile, not taken
+  /// from the argument.** A streak is earned by answering, and the only thing
+  /// that writes it is [recordAnswers]; a settings screen that built a fresh
+  /// profile would otherwise reset it to zero, destroying real progress
+  /// through a control that says nothing about streaks. Unknown payload keys
+  /// survive too, so a field written by a newer build is not dropped by an
+  /// edit made by this one.
+  static Future<void> saveProfile(
+    LearnerProfile profile, {
+    DateTime? now,
+  }) async {
+    final stamp = (now ?? DateTime.now()).toUtc();
+    final existing = (await load()).recordById(learnerProfileId);
+    final stored = LearnerProfile.fromRecord(existing);
+    final merged = profile.copyWith(
+      streakDays: stored.streakDays,
+      streakLastDate: stored.streakLastDate,
+    );
+    await upsertRecords([merged.toRecord(existing, stamp)]);
   }
 
   // ── Config persistence ──

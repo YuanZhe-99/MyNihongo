@@ -74,12 +74,43 @@ void main() {
 
   test('an id with no known prefix is kept whole', () {
     final label = resolveStudyItemLabel(
-      'lesson:1',
+      'kanji:日',
       catalog: catalog,
       locale: en,
     );
     expect(label.kind, StudyKind.other);
-    expect(label.title, 'lesson:1');
+    expect(label.title, 'kanji:日');
+    expect(label.resolved, isFalse);
+  });
+
+  test('a lesson id is its own kind, and unnamed until a path is loaded', () {
+    final label = resolveStudyItemLabel(
+      'lesson:n5-1-1',
+      catalog: catalog,
+      locale: en,
+    );
+    expect(label.kind, StudyKind.lesson);
+    expect(label.title, 'lesson:n5-1-1');
+    expect(label.resolved, isFalse);
+  });
+
+  test('the learner profile is named rather than shown as a raw id', () {
+    // A sync conflict has to say what is in conflict, and "profile:me" does
+    // not. The caller supplies the wording because this layer has no l10n.
+    final label = resolveStudyItemLabel(
+      'profile:me',
+      catalog: catalog,
+      locale: en,
+      profileName: 'Your learning profile',
+    );
+    expect(label.kind, StudyKind.profile);
+    expect(label.title, 'Your learning profile');
+    expect(label.resolved, isTrue);
+  });
+
+  test('a profile with no name given falls back to its id', () {
+    final label = resolveStudyItemLabel('profile:me', locale: en);
+    expect(label.kind, StudyKind.profile);
     expect(label.resolved, isFalse);
   });
 

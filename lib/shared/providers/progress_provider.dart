@@ -13,6 +13,7 @@ library;
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../features/progress/models/learner_profile.dart';
 import '../../features/progress/models/study_record.dart';
 import '../../features/progress/services/nihongo_storage.dart';
 import '../services/auto_sync_service.dart';
@@ -44,6 +45,51 @@ class ProgressNotifier extends StateNotifier<AsyncValue<ProgressData>> {
     } catch (error, stack) {
       if (mounted) state = AsyncValue.error(error, stackTrace: stack);
     }
+  }
+
+  /// Purpose: Record one answer and refresh every page showing progress.
+  /// Inputs: `id`, `correct`; `now` for tests.
+  /// Returns: A future completing once the file is written and re-read.
+  /// Side effects: Writes the progress file, notifies auto-sync, reloads.
+  /// Notes: Write then reload, rather than patching the state in place. The
+  /// file is authoritative — a sync may have rewritten it under this notifier
+  /// between two answers — and re-reading it is cheap next to the write.
+  Future<void> recordAnswer(
+    String id,
+    bool correct, {
+    DateTime? now,
+  }) async {
+    await NihongoStorage.recordAnswer(id, correct, now: now);
+    await reload();
+  }
+
+  /// Purpose: Record a batch of answers in one write.
+  /// Inputs: `answers`; `now` for tests.
+  /// Returns: A future completing once the file is written and re-read.
+  /// Side effects: As [recordAnswer], but one save for the whole batch.
+  /// Notes: For a caller that already has every answer, such as a finished
+  /// lesson. A quiz records each answer as it happens instead, so an
+  /// interrupted session is not lost.
+  Future<void> recordAnswers(
+    Map<String, bool> answers, {
+    DateTime? now,
+  }) async {
+    await NihongoStorage.recordAnswers(answers, now: now);
+    await reload();
+  }
+
+  /// Purpose: Save the learner profile and refresh.
+  /// Inputs: `profile`; `now` for tests.
+  /// Returns: A future completing once the file is written and re-read.
+  /// Side effects: Writes the progress file, notifies auto-sync, reloads.
+  /// Notes: The profile is a record inside the same file, so this is an
+  /// ordinary progress write and syncs like any other.
+  Future<void> updateProfile(
+    LearnerProfile profile, {
+    DateTime? now,
+  }) async {
+    await NihongoStorage.saveProfile(profile, now: now);
+    await reload();
   }
 
   /// Purpose: React to a sync, restore, or import writing the progress file.

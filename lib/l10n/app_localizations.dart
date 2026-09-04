@@ -168,8 +168,68 @@ abstract class AppLocalizations {
   /// No description provided for @learnWelcomeBody.
   ///
   /// In en, this message translates to:
-  /// **'Kana, vocabulary and grammar to browse, everything read aloud, pronunciation practice and the sentence lab; lessons and reviews are on the way.'**
+  /// **'Reviews come back on a spaced-repetition schedule, so the words you nearly forgot arrive on the day you would have.'**
   String get learnWelcomeBody;
+
+  /// No description provided for @learnToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get learnToday;
+
+  /// No description provided for @learnStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'{count}-day streak'**
+  String learnStreak(int count);
+
+  /// No description provided for @learnStreakNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No streak yet — one answer starts it'**
+  String get learnStreakNone;
+
+  /// No description provided for @learnDueCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} due for review'**
+  String learnDueCount(int count);
+
+  /// No description provided for @learnDueNone.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing due'**
+  String get learnDueNone;
+
+  /// No description provided for @learnDueCapped.
+  ///
+  /// In en, this message translates to:
+  /// **'{shown} of {total} due today'**
+  String learnDueCapped(int shown, int total);
+
+  /// No description provided for @learnNewCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} new items available'**
+  String learnNewCount(int count);
+
+  /// No description provided for @learnNewNone.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s new items are done'**
+  String get learnNewNone;
+
+  /// No description provided for @learnAllDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing to do right now. Come back tomorrow, or browse.'**
+  String get learnAllDone;
+
+  /// No description provided for @learnReviewLimitReached.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s review limit is reached. Raise it in Settings if you want more.'**
+  String get learnReviewLimitReached;
 
   /// No description provided for @learnContentSummary.
   ///
@@ -216,8 +276,20 @@ abstract class AppLocalizations {
   /// No description provided for @learnNoProgress.
   ///
   /// In en, this message translates to:
-  /// **'Nothing tracked yet. Lessons and reviews arrive in a later release.'**
+  /// **'Nothing tracked yet. Answer anything and it starts being scheduled.'**
   String get learnNoProgress;
+
+  /// No description provided for @learnLevelProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{level} progress'**
+  String learnLevelProgress(Object level);
+
+  /// No description provided for @learnLevelStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {total} items started'**
+  String learnLevelStarted(int done, int total);
 
   /// No description provided for @learnQuickStart.
   ///
@@ -252,7 +324,7 @@ abstract class AppLocalizations {
   /// No description provided for @learnRoadmapSrs.
   ///
   /// In en, this message translates to:
-  /// **'Spaced-repetition reviews, quizzes and a step-by-step lesson path'**
+  /// **'Quizzes and a step-by-step lesson path'**
   String get learnRoadmapSrs;
 
   /// No description provided for @learnRoadmapJlpt.
@@ -591,6 +663,42 @@ abstract class AppLocalizations {
   /// **'Delete'**
   String get delete;
 
+  /// No description provided for @settingsLearning.
+  ///
+  /// In en, this message translates to:
+  /// **'Learning'**
+  String get settingsLearning;
+
+  /// No description provided for @settingsTargetLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Target level'**
+  String get settingsTargetLevel;
+
+  /// No description provided for @settingsTargetLevelBody.
+  ///
+  /// In en, this message translates to:
+  /// **'New words and grammar are introduced from this level.'**
+  String get settingsTargetLevelBody;
+
+  /// No description provided for @settingsDailyNew.
+  ///
+  /// In en, this message translates to:
+  /// **'New items a day'**
+  String get settingsDailyNew;
+
+  /// No description provided for @settingsDailyReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'Reviews a day'**
+  String get settingsDailyReviews;
+
+  /// No description provided for @settingsDailyLimitsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily limits are part of your profile, so they follow you to your other devices.'**
+  String get settingsDailyLimitsBody;
+
   /// No description provided for @settingsWebDAVSync.
   ///
   /// In en, this message translates to:
@@ -836,6 +944,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Streak: {count}'**
   String syncStreak(int count);
+
+  /// No description provided for @syncProfileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your learning profile'**
+  String get syncProfileTitle;
+
+  /// No description provided for @syncProfileLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Target level: {level}'**
+  String syncProfileLevel(Object level);
+
+  /// No description provided for @syncProfileDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'{newItems} new, {reviews} reviews a day'**
+  String syncProfileDaily(int newItems, int reviews);
+
+  /// No description provided for @syncProfileStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'{count}-day streak'**
+  String syncProfileStreak(int count);
 
   /// No description provided for @syncStage.
   ///

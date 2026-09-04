@@ -43,7 +43,47 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get learnWelcomeBody =>
-      'Kana, vocabulary and grammar to browse, everything read aloud, pronunciation practice and the sentence lab; lessons and reviews are on the way.';
+      'Reviews come back on a spaced-repetition schedule, so the words you nearly forgot arrive on the day you would have.';
+
+  @override
+  String get learnToday => 'Today';
+
+  @override
+  String learnStreak(int count) {
+    return '$count-day streak';
+  }
+
+  @override
+  String get learnStreakNone => 'No streak yet — one answer starts it';
+
+  @override
+  String learnDueCount(int count) {
+    return '$count due for review';
+  }
+
+  @override
+  String get learnDueNone => 'Nothing due';
+
+  @override
+  String learnDueCapped(int shown, int total) {
+    return '$shown of $total due today';
+  }
+
+  @override
+  String learnNewCount(int count) {
+    return '$count new items available';
+  }
+
+  @override
+  String get learnNewNone => 'Today\'s new items are done';
+
+  @override
+  String get learnAllDone =>
+      'Nothing to do right now. Come back tomorrow, or browse.';
+
+  @override
+  String get learnReviewLimitReached =>
+      'Today\'s review limit is reached. Raise it in Settings if you want more.';
 
   @override
   String get learnContentSummary => 'Content';
@@ -78,7 +118,17 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get learnNoProgress =>
-      'Nothing tracked yet. Lessons and reviews arrive in a later release.';
+      'Nothing tracked yet. Answer anything and it starts being scheduled.';
+
+  @override
+  String learnLevelProgress(Object level) {
+    return '$level progress';
+  }
+
+  @override
+  String learnLevelStarted(int done, int total) {
+    return '$done of $total items started';
+  }
 
   @override
   String get learnQuickStart => 'Quick start';
@@ -96,8 +146,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get learnRoadmap => 'Coming next';
 
   @override
-  String get learnRoadmapSrs =>
-      'Spaced-repetition reviews, quizzes and a step-by-step lesson path';
+  String get learnRoadmapSrs => 'Quizzes and a step-by-step lesson path';
 
   @override
   String get learnRoadmapJlpt => 'JLPT N5–N1 practice sets';
@@ -281,6 +330,26 @@ class AppLocalizationsEn extends AppLocalizations {
   String get delete => 'Delete';
 
   @override
+  String get settingsLearning => 'Learning';
+
+  @override
+  String get settingsTargetLevel => 'Target level';
+
+  @override
+  String get settingsTargetLevelBody =>
+      'New words and grammar are introduced from this level.';
+
+  @override
+  String get settingsDailyNew => 'New items a day';
+
+  @override
+  String get settingsDailyReviews => 'Reviews a day';
+
+  @override
+  String get settingsDailyLimitsBody =>
+      'Daily limits are part of your profile, so they follow you to your other devices.';
+
+  @override
   String get settingsWebDAVSync => 'WebDAV Sync';
 
   @override
@@ -422,6 +491,24 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String syncStreak(int count) {
     return 'Streak: $count';
+  }
+
+  @override
+  String get syncProfileTitle => 'Your learning profile';
+
+  @override
+  String syncProfileLevel(Object level) {
+    return 'Target level: $level';
+  }
+
+  @override
+  String syncProfileDaily(int newItems, int reviews) {
+    return '$newItems new, $reviews reviews a day';
+  }
+
+  @override
+  String syncProfileStreak(int count) {
+    return '$count-day streak';
   }
 
   @override

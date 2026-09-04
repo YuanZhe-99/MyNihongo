@@ -3,11 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../l10n/app_localizations.dart';
+import '../../../shared/providers/learner_profile_provider.dart';
 import '../../../shared/providers/progress_provider.dart';
 import '../../../shared/utils/adaptive_layout.dart';
 import '../../content/services/content_repository.dart';
 import '../../kana/models/kana.dart';
 import '../../progress/models/study_record.dart';
+import '../widgets/today_card.dart';
 
 class LearnPage extends ConsumerWidget {
   /// Purpose: Create a learn page instance.
@@ -22,9 +24,10 @@ class LearnPage extends ConsumerWidget {
   /// Inputs: `context`, `ref`.
   /// Returns: The widget tree for the current state.
   /// Side effects: Creates UI widgets from the current state.
-  /// Notes: Keep this method cheap because Flutter may call it often. Until
-  /// lessons and reviews exist this is a dashboard over the catalog and the
-  /// progress file; the cards flow one or two across by [ruleCardMinWidth],
+  /// Notes: Keep this method cheap because Flutter may call it often. The
+  /// today card spans the full width above the dashboard, because what to do
+  /// now is the one thing a returning learner should read without scrolling or
+  /// scanning; the cards below it flow one or two across by [ruleCardMinWidth],
   /// gated on [canSplitLayout] like every other split in the app.
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -32,6 +35,7 @@ class LearnPage extends ConsumerWidget {
     final theme = Theme.of(context);
     final catalog = ref.watch(contentCatalogProvider);
     final progress = ref.watch(progressDataProvider);
+    final profile = ref.watch(learnerProfileProvider);
 
     final screen = MediaQuery.sizeOf(context);
     final contentWidth = referenceContentWidth(screen.width);
@@ -66,12 +70,47 @@ class LearnPage extends ConsumerWidget {
       ),
       _card(
         theme,
+        Icons.trending_up_outlined,
+        l10n.learnLevelProgress(profile.targetLevel.label),
+        catalog.when(
+          loading: () => const LinearProgressIndicator(),
+          error: (_, _) => Text(l10n.contentLoadFailed),
+          data: (catalog) {
+            final ids = {
+              for (final entry in catalog.vocab)
+                if (entry.level == profile.targetLevel) entry.id,
+              for (final point in catalog.grammar)
+                if (point.level == profile.targetLevel) point.id,
+            };
+            final started = progress.value?.studyRecords
+                    .where((r) => ids.contains(r.id))
+                    .length ??
+                0;
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _line(theme, l10n.learnLevelStarted(started, ids.length)),
+                const SizedBox(height: 6),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(4),
+                  child: LinearProgressIndicator(
+                    value: ids.isEmpty ? 0 : started / ids.length,
+                    minHeight: 6,
+                  ),
+                ),
+              ],
+            );
+          },
+        ),
+      ),
+      _card(
+        theme,
         Icons.insights_outlined,
         l10n.learnProgressSummary,
         progress.when(
           loading: () => const LinearProgressIndicator(),
           error: (_, _) => Text(l10n.learnNoProgress),
-          data: (data) => data.records.isEmpty
+          data: (data) => data.studyRecords.isEmpty
               ? Text(
                   l10n.learnNoProgress,
                   style: theme.textTheme.bodyMedium?.copyWith(
@@ -81,11 +120,14 @@ class LearnPage extends ConsumerWidget {
               : Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _line(theme, l10n.learnTrackedItems(data.records.length)),
+                    _line(
+                      theme,
+                      l10n.learnTrackedItems(data.studyRecords.length),
+                    ),
                     _line(
                       theme,
                       l10n.learnMasteredItems(
-                        data.records
+                        data.studyRecords
                             .where((r) => r.stage == StudyStage.mastered)
                             .length,
                       ),
@@ -172,6 +214,8 @@ class LearnPage extends ConsumerWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
+                  const TodayCard(),
+                  const SizedBox(height: listTileGap),
                   Wrap(
                     spacing: listTileGap,
                     runSpacing: listTileGap,

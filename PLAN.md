@@ -5,7 +5,7 @@ says how to work here; `doc/en-us/` says what the code does; this file says **wh
 what order, why, and what is done**. Update the checklists in the same change that lands a
 milestone item.
 
-**Status as of 2026-09-03:** Phase 3 is in progress; M3.0 (device fixes) has landed. Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
+**Status as of 2026-09-03:** Phase 3 is in progress; M3.0 (device fixes) and M3.1 (spaced repetition core) have landed. Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
 (text-to-speech), M2.2 (speech recognition and pronunciation feedback), M2.3 (the sentence lab),
 M2.4 (on-device AI assist) and M2.5 (Traditional Chinese) have landed, along with the Windows and
 macOS projects the pronunciation work needs a machine for. `v0.2.1` is the current release; M2.5 is
@@ -451,16 +451,36 @@ below all depend on speech.
       choice, preview restores), `speech_settings_tiles_test.dart`, `ai_assist_service_test.dart`,
       `ai_ui_test.dart`, `preferences_test.dart`
 
-#### M3.1 Spaced repetition core
+#### M3.1 Spaced repetition core — **done 2026-09-03**
 
-- [ ] SM-2 over `StudyRecord` (`ease`, `intervalDays`, `dueAt`, `streak`); a pure Dart scheduler
-      with unit tests; FSRS considered later once there is real review data
-- [ ] Review queue: due items across kinds; daily new-item limit and review limit
-- [ ] Synced learner profile (target level, daily goals, streak) — design decision needed: a
-      `profile` record inside `nihongo_progress.json` with its own `modifiedAt` and the normal
-      conflict dialog, **or** a second module `nihongo_profile.json` with whole-file merge. Default
-      plan: the record, because it needs no engine change and keeps the conflict rule uniform
-- [ ] `recordAnswer(id, correct)` in `NihongoStorage`; every save notifies auto-sync
+- [x] SM-2 over `StudyRecord` (`ease`, `intervalDays`, `dueAt`, `streak`) in
+      `services/sm2_scheduler.dart`; pure, with unit tests; FSRS still deferred until there is real
+      review data. **Two departures from the textbook, both deliberate and both tested:** the 0–5
+      self-assessment is derived from a right-or-wrong answer (4, or 5 on a run of three), and a
+      wrong answer costs **0.20** of ease rather than 0.54 — under binary grading the textbook
+      penalty pins an item to the 1.3 floor after three mistakes, where it returns daily forever
+      however well the learner then does. Derived in `algorithms/spaced-repetition.md`
+- [x] Review queue (`services/review_queue.dart`): due items most-overdue-first, plus new items —
+      kana before words before grammar, common words first — both capped by the daily limits.
+      **Due is judged by local calendar day** while `dueAt` stays a UTC instant, so an item due at
+      23:00 is due from midnight on whichever device the learner picks up. **Today's counts are
+      derived from the records**, never stored: nothing to reset at midnight, no extra synced field,
+      and work done on another device counts against the same goal
+- [x] Synced learner profile — **the record, as planned**, id `profile:me`, payload under the
+      `profile` key of its `extraJson`. That needed no new `StudyRecord` field, no change to the five
+      places a field has to be added, and **no re-recorded goldens**; a top-level object would have
+      merged local-wins with no conflict detection at all. The conflict dialog gets its own block for
+      it, because "correct 0 · wrong 0, stage fresh" does not describe a target level
+- [x] `recordAnswer(id, correct)` and `recordAnswers(map)` in `NihongoStorage`: one load, one save,
+      one auto-sync notification per batch. **A record is created by its first answer**, which is what
+      makes "new items started today" countable without a counter. The streak is written once a day
+      rather than once an answer, and a settings write carries the earned streak through rather than
+      taking it from its caller — a foot-gun a test caught
+- [x] `learnerProfileProvider` and `reviewQueueProvider`, both plain `Provider`s derived from the
+      progress file and the catalog; Learn tab today card (streak, due, new, backlog) and level
+      progress card; Settings gains a **Learning** section, the first synced section in Settings
+- [x] Tests: `sm2_scheduler_test`, `review_queue_test`, `learner_profile_test`, `record_answer_test`
+      (through real files), `learn_today_ui_test` at all eight named geometries
 
 #### M3.2 Quiz modes (MojiTest-style)
 
@@ -629,6 +649,11 @@ catalog content, and never writes a progress record by itself — the learner's 
 | 2026-09-03 | The Traditional **content** is generated from the Simplified text and committed; the Traditional **UI** is hand-written | The content is 1,132 strings whose Simplified version is itself machine-authored and unreviewed — converting it changes nothing about how much it can be trusted. The UI is 274 strings a reader meets constantly, and Taiwan usage differs by vocabulary, which no conversion table can supply |
 | 2026-09-03 | The conversion is OpenCC's `s2tw` chain re-implemented in Dart, not `s2twp`, and not a character table | Phrases are what decide which Traditional character is right (干净 → 乾淨 but 干部 → 幹部), so a character table is wrong by construction; and `s2twp`'s Taiwan vocabulary table is mostly computing terms, which rewrote 连接 to 連線 and 对象 to 物件 inside a grammar note about which noun a particle connects |
 | 2026-09-03 | Japanese words quoted in the Chinese prose are listed in `preserve.txt` rather than detected | 来る is Japanese and must stay 来る, while 来 in the surrounding Chinese must become 來 — the same character, decided by which language the word belongs to, which no rule over adjacency can tell. The list is short, explicit, and a test fails when a shipped file contains the broken form |
+| 2026-09-03 | The learner profile is a `profile:me` **record**, with its payload inside the record's `extraJson` | A top-level object in the same file lands in the container's `extraJson`, where the merge is a key-by-key union with local always winning and no conflict detection. As a record it gets the ordinary three-way merge and the conflict dialog. Putting the payload in `extraJson` rather than in new `StudyRecord` fields meant no model change, no golden re-recording, and an older build carrying a newer one's fields through untouched |
+| 2026-09-03 | A wrong answer costs 0.20 of ease, not SM-2's 0.54 | The textbook value assumes a 0–5 self-assessment, so its worst penalty is reserved for genuinely blank answers. With binary grading every mistake takes it, and three mistakes drop an item to the 1.3 floor — daily review forever, regardless of later performance. At 0.20 the same three reach 1.9 and the item recovers |
+| 2026-09-03 | `dueAt` is stored as a UTC instant but "due" is judged by local calendar day | The instant compares identically on every device and needs no timezone arithmetic on disk; the learner expects anything due today to be available all day, in their own day. The scheduler stores instants, the queue reads days |
+| 2026-09-03 | Today's review and new-item counts are derived from the records, not stored | A stored counter needs resetting at midnight, adds a field two devices can disagree about, and misses work synced in from elsewhere — which a synced daily goal must not |
+| 2026-09-03 | The study streak is written once a day, and only by `recordAnswers` | Writing it per answer would make the profile the most-edited record in the file and turn every shared study day into a conflict. A streak is earned, so a settings write carries the stored value through rather than accepting one from its caller |
 | 2026-09-03 | `TtsService` awaits a queued plugin call as a probe before its first `setLanguage`, and re-applies language, voice and rate before every utterance | The Android plugin overwrites the language with the system default after its init callback and after every silent engine rebuild, with no event to listen for. The probe is the only ordering guarantee available; re-applying is the only defence against the rebuild. Three engine calls per utterance cost milliseconds, and the symptom they prevent — Japanese read as English — is invisible to the app |
 | 2026-09-03 | The app always selects a named Japanese voice, never only a language | An engine left to its own default falls back to whatever voice it was last on, which is how a language that was set correctly still produced English audio |
 | 2026-09-03 | Japanese voices are numbered over a total order rather than shown by engine name | `ja-jp-x-jab#male_1-local` says nothing about how a voice sounds and differs per engine. The order is total (installed, offline, quality, name) so the numbers cannot move between runs; the raw name is still shown small, because that is what a bug report needs |

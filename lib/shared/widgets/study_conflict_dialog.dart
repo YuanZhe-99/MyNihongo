@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../features/content/services/study_item_labels.dart';
+import '../../features/progress/models/learner_profile.dart';
 import '../../features/progress/models/study_record.dart';
 import '../../l10n/app_localizations.dart';
 import '../services/sync_merge.dart';
@@ -49,13 +50,20 @@ class StudyConflictDialog extends StatelessWidget {
   /// Returns: `Widget`.
   /// Side effects: None.
   /// Notes: Internal helper used within this file only. Both blocks show the
-  /// same fields in the same order so the difference is easy to spot.
+  /// same fields in the same order so the difference is easy to spot. The
+  /// learner profile shares this file and this merge but has none of these
+  /// fields, so it gets its own block: "correct 0 · wrong 0, stage fresh" is
+  /// not a description of a target level, and a conflict the learner cannot
+  /// read is a conflict they cannot resolve.
   Widget _version(
     BuildContext context,
     AppLocalizations l10n,
     String heading,
     StudyRecord record,
   ) {
+    if (record.kind == StudyKind.profile) {
+      return _profileVersion(l10n, heading, record);
+    }
     final stage = switch (record.stage) {
       StudyStage.fresh => l10n.stageFresh,
       StudyStage.learning => l10n.stageLearning,
@@ -76,6 +84,37 @@ class StudyConflictDialog extends StatelessWidget {
               ? l10n.syncNeverReviewed
               : l10n.syncLastReviewed(_formatTime(reviewed)),
         ),
+      ],
+    );
+  }
+
+  /// Purpose: Show one side of a learner-profile conflict.
+  /// Inputs: `l10n`, `heading`, `record`.
+  /// Returns: `Widget`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. Reads the payload
+  /// through `LearnerProfile.fromRecord`, so a profile written by a newer
+  /// build with fields this one cannot show still renders the ones it can.
+  Widget _profileVersion(
+    AppLocalizations l10n,
+    String heading,
+    StudyRecord record,
+  ) {
+    final profile = LearnerProfile.fromRecord(record);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(heading, style: const TextStyle(fontWeight: FontWeight.bold)),
+        Text(l10n.syncModifiedAt(_formatTime(record.modifiedAt))),
+        Text(l10n.syncProfileLevel(profile.targetLevel.label)),
+        Text(
+          l10n.syncProfileDaily(
+            profile.dailyNewLimit,
+            profile.dailyReviewLimit,
+          ),
+        ),
+        Text(l10n.syncProfileStreak(profile.streakDays)),
       ],
     );
   }

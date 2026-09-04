@@ -13,6 +13,7 @@ import '../../../shared/utils/platform_capabilities.dart';
 import '../../../shared/views/webdav_config_page.dart';
 import '../../ai/widgets/ai_settings_tiles.dart';
 import '../../progress/services/nihongo_storage.dart';
+import '../../learn/widgets/learning_settings_tiles.dart';
 import '../../speech/widgets/speech_settings_tiles.dart';
 import 'backup_page.dart';
 import 'license_page.dart' as app_license;
@@ -408,6 +409,12 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
             ),
           ),
         ]),
+
+        // ── Learning ──
+        // Above Speech because it is the section a learner returns to, and
+        // unlike every other section here its values are synced rather than
+        // device-local.
+        _buildSection(l10n.settingsLearning, const [LearningSettingsTiles()]),
 
         // ── Speech ──
         _buildSection(l10n.speechSection, const [SpeechSettingsTiles()]),

@@ -397,6 +397,7 @@ class _WebDAVConfigPageState extends ConsumerState<WebDAVConfigPage> {
     final resolutions = <String, StudyRecord>{};
     final catalog = ref.read(contentCatalogProvider).value;
     final locale = Localizations.localeOf(context);
+    final profileName = AppLocalizations.of(context)!.syncProfileTitle;
 
     for (final conflict in pending.allConflicts) {
       if (!mounted) return;
@@ -404,6 +405,7 @@ class _WebDAVConfigPageState extends ConsumerState<WebDAVConfigPage> {
         conflict.id,
         catalog: catalog,
         locale: locale,
+        profileName: profileName,
       );
       final chosen = await showStudyConflictDialog(context, conflict, label);
       if (chosen == null) {

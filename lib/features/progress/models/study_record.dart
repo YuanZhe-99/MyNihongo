@@ -40,7 +40,18 @@ const defaultStudyEase = 2.5;
 const masteredIntervalDays = 21;
 
 /// Which catalog a study record belongs to, derived from its id prefix.
-enum StudyKind { kana, vocab, grammar, other }
+///
+/// `profile` and `lesson` are not catalog items. They share the file, and the
+/// merge, because a second data module would mean a second remote file, a
+/// second backup entry and a second set of golden transcripts for state that
+/// is a handful of fields — see the decisions log in `PLAN.md`. The kinds that
+/// are studied are what [studiedKinds] names.
+
+enum StudyKind { kana, vocab, grammar, profile, lesson, other }
+
+/// The kinds the review queue schedules. The others live in the same file but
+/// are not items anybody studies.
+const studiedKinds = {StudyKind.kana, StudyKind.vocab, StudyKind.grammar};
 
 /// Where a record sits in its learning life, derived rather than stored.
 enum StudyStage { fresh, learning, mastered }
@@ -59,6 +70,8 @@ StudyKind studyKindOf(String id) {
     'kana' => StudyKind.kana,
     'vocab' => StudyKind.vocab,
     'grammar' => StudyKind.grammar,
+    'profile' => StudyKind.profile,
+    'lesson' => StudyKind.lesson,
     _ => StudyKind.other,
   };
 }
@@ -426,6 +439,14 @@ class ProgressData {
     json['records'] = [for (final record in records) record.toJson()];
     return json;
   }
+
+  /// Every record that tracks a studied catalog item.
+  ///
+  /// The learner profile and the lesson results share the file; neither is an
+  /// item, so neither belongs in a count of what has been studied or in the
+  /// review queue.
+  Iterable<StudyRecord> get studyRecords =>
+      records.where((record) => studiedKinds.contains(record.kind));
 
   /// Purpose: Look a record up by id.
   /// Inputs: `id`.

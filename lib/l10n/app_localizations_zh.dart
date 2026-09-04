@@ -42,8 +42,45 @@ class AppLocalizationsZh extends AppLocalizations {
   String get learnWelcome => '欢迎使用 MyNihongo!!!!!';
 
   @override
-  String get learnWelcomeBody =>
-      '可以浏览五十音、单词和语法，全部内容都可朗读，还有发音练习与句子实验室；课程与复习正在路上。';
+  String get learnWelcomeBody => '复习按间隔重复安排回来，让你快要忘记的词正好在快忘的那天出现。';
+
+  @override
+  String get learnToday => '今日';
+
+  @override
+  String learnStreak(int count) {
+    return '连续 $count 天';
+  }
+
+  @override
+  String get learnStreakNone => '还没有连续记录——答一题就开始';
+
+  @override
+  String learnDueCount(int count) {
+    return '$count 项待复习';
+  }
+
+  @override
+  String get learnDueNone => '没有待复习的内容';
+
+  @override
+  String learnDueCapped(int shown, int total) {
+    return '今日安排 $shown 项，共 $total 项到期';
+  }
+
+  @override
+  String learnNewCount(int count) {
+    return '$count 项新内容可学';
+  }
+
+  @override
+  String get learnNewNone => '今天的新内容已学完';
+
+  @override
+  String get learnAllDone => '现在没有要做的。明天再来，或者随便看看。';
+
+  @override
+  String get learnReviewLimitReached => '已达今日复习上限。想多复习可以在设置里调高。';
 
   @override
   String get learnContentSummary => '内容';
@@ -77,7 +114,17 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get learnNoProgress => '尚无学习记录。课程与复习功能将在后续版本提供。';
+  String get learnNoProgress => '还没有任何记录。答对答错都会开始安排复习。';
+
+  @override
+  String learnLevelProgress(Object level) {
+    return '$level 进度';
+  }
+
+  @override
+  String learnLevelStarted(int done, int total) {
+    return '已开始 $done / $total 项';
+  }
 
   @override
   String get learnQuickStart => '快速开始';
@@ -95,7 +142,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get learnRoadmap => '即将推出';
 
   @override
-  String get learnRoadmapSrs => '间隔重复复习、测验与循序渐进的课程路径';
+  String get learnRoadmapSrs => '测验与循序渐进的课程路径';
 
   @override
   String get learnRoadmapJlpt => 'JLPT N5–N1 练习';
@@ -272,6 +319,24 @@ class AppLocalizationsZh extends AppLocalizations {
   String get delete => '删除';
 
   @override
+  String get settingsLearning => '学习';
+
+  @override
+  String get settingsTargetLevel => '目标级别';
+
+  @override
+  String get settingsTargetLevelBody => '新的单词和语法从这个级别引入。';
+
+  @override
+  String get settingsDailyNew => '每日新内容';
+
+  @override
+  String get settingsDailyReviews => '每日复习量';
+
+  @override
+  String get settingsDailyLimitsBody => '每日上限属于你的学习档案，会跟随你同步到其他设备。';
+
+  @override
   String get settingsWebDAVSync => 'WebDAV 同步';
 
   @override
@@ -410,6 +475,24 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String syncStreak(int count) {
     return '连续答对：$count';
+  }
+
+  @override
+  String get syncProfileTitle => '你的学习档案';
+
+  @override
+  String syncProfileLevel(Object level) {
+    return '目标级别：$level';
+  }
+
+  @override
+  String syncProfileDaily(int newItems, int reviews) {
+    return '每天 $newItems 项新内容、$reviews 项复习';
+  }
+
+  @override
+  String syncProfileStreak(int count) {
+    return '连续 $count 天';
   }
 
   @override
@@ -995,8 +1078,45 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get learnWelcome => '歡迎使用 MyNihongo!!!!!';
 
   @override
-  String get learnWelcomeBody =>
-      '可以瀏覽五十音、單字和文法，全部內容都可朗讀，還有發音練習與句子實驗室；課程與複習正在路上。';
+  String get learnWelcomeBody => '複習按間隔重複安排回來，讓你快要忘記的單字正好在快忘的那天出現。';
+
+  @override
+  String get learnToday => '今日';
+
+  @override
+  String learnStreak(int count) {
+    return '連續 $count 天';
+  }
+
+  @override
+  String get learnStreakNone => '還沒有連續紀錄——答一題就開始';
+
+  @override
+  String learnDueCount(int count) {
+    return '$count 項待複習';
+  }
+
+  @override
+  String get learnDueNone => '沒有待複習的內容';
+
+  @override
+  String learnDueCapped(int shown, int total) {
+    return '今日安排 $shown 項，共 $total 項到期';
+  }
+
+  @override
+  String learnNewCount(int count) {
+    return '$count 項新內容可學';
+  }
+
+  @override
+  String get learnNewNone => '今天的新內容已學完';
+
+  @override
+  String get learnAllDone => '現在沒有要做的。明天再來，或者隨意瀏覽。';
+
+  @override
+  String get learnReviewLimitReached => '已達今日複習上限。想多複習可以在設定裡調高。';
 
   @override
   String get learnContentSummary => '內容';
@@ -1030,7 +1150,17 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   }
 
   @override
-  String get learnNoProgress => '尚無學習記錄。課程與複習功能將在後續版本提供。';
+  String get learnNoProgress => '還沒有任何紀錄。答對答錯都會開始安排複習。';
+
+  @override
+  String learnLevelProgress(Object level) {
+    return '$level 進度';
+  }
+
+  @override
+  String learnLevelStarted(int done, int total) {
+    return '已開始 $done / $total 項';
+  }
 
   @override
   String get learnQuickStart => '快速開始';
@@ -1048,7 +1178,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get learnRoadmap => '即將推出';
 
   @override
-  String get learnRoadmapSrs => '間隔重複複習、測驗與循序漸進的課程路徑';
+  String get learnRoadmapSrs => '測驗與循序漸進的課程路徑';
 
   @override
   String get learnRoadmapJlpt => 'JLPT N5–N1 練習';
@@ -1225,6 +1355,24 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get delete => '刪除';
 
   @override
+  String get settingsLearning => '學習';
+
+  @override
+  String get settingsTargetLevel => '目標級別';
+
+  @override
+  String get settingsTargetLevelBody => '新的單字和文法從這個級別引入。';
+
+  @override
+  String get settingsDailyNew => '每日新內容';
+
+  @override
+  String get settingsDailyReviews => '每日複習量';
+
+  @override
+  String get settingsDailyLimitsBody => '每日上限屬於你的學習檔案，會跟著你同步到其他裝置。';
+
+  @override
   String get settingsWebDAVSync => 'WebDAV 同步';
 
   @override
@@ -1363,6 +1511,24 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   @override
   String syncStreak(int count) {
     return '連續答對：$count';
+  }
+
+  @override
+  String get syncProfileTitle => '你的學習檔案';
+
+  @override
+  String syncProfileLevel(Object level) {
+    return '目標級別：$level';
+  }
+
+  @override
+  String syncProfileDaily(int newItems, int reviews) {
+    return '每天 $newItems 項新內容、$reviews 項複習';
+  }
+
+  @override
+  String syncProfileStreak(int count) {
+    return '連續 $count 天';
   }
 
   @override

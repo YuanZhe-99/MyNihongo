@@ -190,7 +190,7 @@ spaced-repetition state — and the catalog resolves the id to something readabl
   `correct / reviews`, 0 before the first review.
 - `streak` — consecutive correct answers, reset by a wrong one.
 
-### Spaced repetition (SM-2 fields, scheduled from Phase 3)
+### Spaced repetition (SM-2 fields, written from Phase 3)
 
 - `intervalDays` — current interval, 0 until the first review.
 - `ease` — ease factor, default `2.5` (`defaultStudyEase`).
@@ -232,6 +232,61 @@ it loses every merge rather than winning by accident.
 ```
 
 Nullable fields are omitted rather than written as `null`.
+
+### The learner profile, and other records that are not items
+
+Two record kinds share this file without naming a catalog item:
+
+- **`profile:me`** — the learner's target level, daily limits and study streak.
+- **`lesson:<id>`** — one lesson's result, from Phase 3 M3.3. Its counters mean passes and failures
+  rather than answers, and it is never scheduled.
+
+`ProgressData.studyRecords` is the subset that *is* studied, so a count of items tracked and the
+review queue both skip these.
+
+The profile's payload lives under the `profile` key of its record's `extraJson`:
+
+```json
+{
+  "id": "profile:me",
+  "correct": 0,
+  "wrong": 0,
+  "streak": 0,
+  "intervalDays": 0,
+  "ease": 2.5,
+  "createdAt": "2026-09-03T12:00:00.000Z",
+  "modifiedAt": "2026-09-03T12:00:00.000Z",
+  "profile": {
+    "targetLevel": "N5",
+    "dailyNewLimit": 10,
+    "dailyReviewLimit": 100,
+    "streakDays": 3,
+    "streakLastDate": "2026-09-03"
+  }
+}
+```
+
+**Why a record rather than a top-level object.** `ProgressData`'s only known key is `records`, so a
+top-level `"profile": {...}` would land in the container's `extraJson` — where the merge is a
+key-by-key union with **local always winning and no conflict detection at all**. As a record it gets
+the ordinary per-record three-way merge, keyed by `id` and compared by `modifiedAt`, and a genuine
+disagreement reaches the conflict dialog like any other.
+
+**Why inside `extraJson` rather than as new `StudyRecord` fields.** `extraJson` already round-trips
+unknown keys through load, save and merge, so the profile needed no change to the record model, no
+change to the five places a field has to be added, and no re-recording of the golden transcripts. An
+older build carries the whole payload through untouched, which is exactly the guarantee the pattern
+exists for.
+
+`streakLastDate` is a **local** calendar date, not UTC: a study streak is counted in the learner's own
+days, and comparing instants would break it for anyone who studies late at night. It is the one
+deliberate exception to the UTC rule, and it is a date rather than a timestamp so there is nothing to
+compare across zones.
+
+The streak is written **once a day**, not once an answer — a second answer on the same day leaves the
+record untouched. That is what keeps profile conflicts rare when two devices are used the same day.
+Settings writes carry the stored streak through rather than taking it from the caller, so changing a
+daily limit cannot reset progress the learner earned.
 
 ### Compatibility: unknown-JSON-field preservation (`extraJson`)
 

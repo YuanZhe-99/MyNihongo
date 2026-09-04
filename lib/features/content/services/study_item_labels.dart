@@ -42,18 +42,23 @@ class StudyItemLabel {
 }
 
 /// Purpose: Look up the display name for a progress record id.
-/// Inputs: `id` — a `kana:`, `vocab:` or `grammar:` id; `catalog` — the parsed
-/// content, or null when it has not loaded; `locale` — the UI locale, which
-/// picks the language of the meaning shown.
+/// Inputs: `id` — a `kana:`, `vocab:`, `grammar:`, `profile:` or `lesson:` id;
+/// `catalog` — the parsed content, or null when it has not loaded; `locale` —
+/// the UI locale, which picks the language of the meaning shown; `profileName`
+/// — what to call the learner profile in the UI language.
 /// Returns: `StudyItemLabel`; never null.
 /// Side effects: None.
 /// Notes: Vocabulary lookups go through `ContentCatalog.vocabById`, which is
 /// alias-aware, so an id retired in favour of a JMdict-keyed one still names
-/// its entry.
+/// its entry. The profile and lesson kinds share the progress file but name no
+/// catalog item, so they are resolved from their own sources rather than left
+/// to fall through to the raw id — a sync conflict has to say what is in
+/// conflict.
 StudyItemLabel resolveStudyItemLabel(
   String id, {
   ContentCatalog? catalog,
   required Locale locale,
+  String? profileName,
 }) {
   final kind = studyKindOf(id);
   switch (kind) {
@@ -90,6 +95,11 @@ StudyItemLabel resolveStudyItemLabel(
           kind: kind,
         );
       }
+    case StudyKind.profile:
+      if (profileName != null) {
+        return StudyItemLabel(title: profileName, kind: kind);
+      }
+    case StudyKind.lesson:
     case StudyKind.other:
       break;
   }

@@ -50,6 +50,10 @@ not be introduced for normal changes. Three providers exist:
 - `contentCatalogProvider` (`features/content/services/content_repository.dart`) — the parsed
   bundled content, a `FutureProvider` loaded once per run. Decoding runs on a background isolate;
   see [`features/content-catalog.md`](features/content-catalog.md).
+- `learnerProfileProvider` and `reviewQueueProvider`
+  (`shared/providers/learner_profile_provider.dart`) — the learner's goals and streak, and what to
+  study now. Both are plain `Provider`s derived from the progress file and the catalog: neither owns
+  state, so an answer or a sync recomputes them with no second source of truth to keep in step.
 - `progressDataProvider` (`shared/providers/progress_provider.dart`) — the progress file, a
   `StateNotifierProvider` pages reload after a save. It, not each page, registers
   `AutoSyncService.addOnLocalDataChanged`, so a sync, a backup restore or a ZIP import refreshes
@@ -240,6 +244,15 @@ Primary tests:
   refused).
 - `test/voice_ordering_test.dart` — the voice order the picker numbers against, which has to be
   total or the numbers move between runs.
+- `test/sm2_scheduler_test.dart` — the interval, ease and streak arithmetic, including the two
+  departures from textbook SM-2 and the guarantee that an item at the ease floor recovers.
+- `test/review_queue_test.dart` — what is due and what is new, including that due is a local calendar
+  day and that today's counts are derived from the records rather than stored.
+- `test/learner_profile_test.dart`, `test/record_answer_test.dart` — the profile round trip through a
+  real file, and the write path: one save per batch, a record created by its first answer, the streak
+  written once a day, and a newer build's fields surviving an edit by this one.
+- `test/learn_today_ui_test.dart` — the today card at every named geometry, and the Learning settings
+  writing a synced record rather than a device preference.
 
 ## Three kinds of data
 

@@ -88,6 +88,24 @@ void main() {
     await tester.pumpAndSettle();
   }
 
+  /// Purpose: Bring a settings row into view before asserting on it.
+  /// Inputs: `tester`, the row `title`.
+  /// Returns: None.
+  /// Side effects: Scrolls the settings list.
+  /// Notes: Internal helper used within this file only. General, Learning,
+  /// Speech and On-device AI together are taller than a phone screen, so the
+  /// Data section has to be scrolled to. The finder may legitimately match
+  /// nothing while the row is still unbuilt below the fold, which is why it is
+  /// a bare `find.text` rather than `.first`.
+  Future<void> scrollTo(WidgetTester tester, String title) async {
+    await tester.scrollUntilVisible(
+      find.text(title),
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.pumpAndSettle();
+  }
+
   Future<void> openRow(WidgetTester tester, String title) async {
     // Scroll with a finder that may match nothing: `scrollUntilVisible` asks
     // the finder whether it is empty on every step, and a `.first` finder
@@ -114,6 +132,7 @@ void main() {
     tester,
   ) async {
     await pumpAt(tester, 412, 915);
+    await scrollTo(tester, webdav);
     expect(find.text(webdav), findsOneWidget);
     expect(find.text(backup), findsOneWidget);
     expect(find.text('导出为 ZIP'), findsOneWidget);
@@ -171,6 +190,7 @@ void main() {
     // foundation debug variable is unset before tear-downs run.
     debugDefaultTargetPlatformOverride = TargetPlatform.android;
     await pumpAt(tester, 412, 915);
+    await scrollTo(tester, webdav);
     expect(find.text(storageLocation), findsNothing);
     expect(find.text(webdav), findsOneWidget);
     expect(tester.takeException(), isNull);

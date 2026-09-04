@@ -4,17 +4,17 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **586** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **618** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **603** documented declarations. The two counts are measured separately and
+The rows below sum to **630** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
-| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 110 |
-| Tier B (index row only) | 493 |
-| **Total** | **603** |
+| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 117 |
+| Tier B (index row only) | 513 |
+| **Total** | **630** |
 
 These totals were measured against the source tree at initialization (`PLAN.md` M1.0). If you
 change these numbers, measure them rather than adjusting them by hand:
@@ -69,9 +69,14 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/kana/models/kana_text.dart` | [features/kana/models/kana_text.md](features/kana/models/kana_text.md) | 5 | 2 |
 | `lib/features/kana/models/romaji.dart` | [features/kana/models/romaji.md](features/kana/models/romaji.md) | 3 | 1 |
 | `lib/features/kana/views/kana_page.dart` | [features/kana/views/kana_page.md](features/kana/views/kana_page.md) | 15 | 2 |
+| `lib/features/learn/widgets/learning_settings_tiles.dart` | [features/learn/widgets/learning_settings_tiles.md](features/learn/widgets/learning_settings_tiles.md) | 2 | 0 |
+| `lib/features/learn/widgets/today_card.dart` | [features/learn/widgets/today_card.md](features/learn/widgets/today_card.md) | 3 | 1 |
 | `lib/features/learn/views/learn_page.dart` | [features/learn/views/learn_page.md](features/learn/views/learn_page.md) | 5 | 0 |
 | `lib/features/progress/models/study_record.dart` | [features/progress/models/study_record.md](features/progress/models/study_record.md) | 23 | 5 |
+| `lib/features/progress/models/learner_profile.dart` | [features/progress/models/learner_profile.md](features/progress/models/learner_profile.md) | 7 | 2 |
 | `lib/features/progress/services/nihongo_storage.dart` | [features/progress/services/nihongo_storage.md](features/progress/services/nihongo_storage.md) | 43 | 3 |
+| `lib/features/progress/services/review_queue.dart` | [features/progress/services/review_queue.md](features/progress/services/review_queue.md) | 7 | 2 |
+| `lib/features/progress/services/sm2_scheduler.dart` | [features/progress/services/sm2_scheduler.md](features/progress/services/sm2_scheduler.md) | 5 | 2 |
 | `lib/features/settings/views/license_page.dart` | [features/settings/views/license_page.md](features/settings/views/license_page.md) | 2 | 0 |
 | `lib/features/settings/views/privacy_policy_page.dart` | [features/settings/views/privacy_policy_page.md](features/settings/views/privacy_policy_page.md) | 3 | 0 |
 | `lib/features/sentence/models/function_word.dart` | [features/sentence/models/function_word.md](features/sentence/models/function_word.md) | 7 | 1 |
@@ -110,6 +115,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 |---|---|---|---|
 | `lib/shared/providers/app_settings.dart` | [shared/providers/app_settings.md](shared/providers/app_settings.md) | 8 | 0 |
 | `lib/shared/providers/progress_provider.dart` | [shared/providers/progress_provider.md](shared/providers/progress_provider.md) | 5 | 0 |
+| `lib/shared/providers/learner_profile_provider.dart` | [shared/providers/learner_profile_provider.md](shared/providers/learner_profile_provider.md) | 3 | 0 |
 | `lib/shared/services/auto_sync_service.dart` | [shared/services/auto_sync_service.md](shared/services/auto_sync_service.md) | 18 | 0 |
 | `lib/shared/services/backup_service.dart` | [shared/services/backup_service.md](shared/services/backup_service.md) | 11 | 0 |
 | `lib/shared/services/import_export_service.dart` | [shared/services/import_export_service.md](shared/services/import_export_service.md) | 3 | 0 |

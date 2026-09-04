@@ -194,6 +194,10 @@ assets/icon/                     app_icon.png + generated iOS sources (not bundl
 - `test/genai_backend_test.dart` — 平台通道的回答如何变成状态，针对一个被 mock 的通道；关键用例是抛出异常的调用应为 `unreachable` 而非 `unavailable`，因为把两者合并会让一台装有 AICore 的手机无从诊断。
 - `test/tts_service_test.dart` — 语音引擎接缝：速度换算、语音过滤与排序、同一时刻一段朗读的规则，以及针对插件丢弃语言的三重防护（首次写入前探测、每次朗读前重新应用、日语被拒时重建一次）。
 - `test/voice_ordering_test.dart` — 选择面板据以编号的语音顺序，它必须完全确定，否则编号会在两次运行之间移动。
+- `test/sm2_scheduler_test.dart` — 间隔、难度系数与连对次数的算术，包括对教科书版 SM-2 的两处偏离，以及触底条目仍能回升的保证。
+- `test/review_queue_test.dart` — 哪些到期、哪些是新的，包括「到期」按本地日历日判断，以及今日计数由记录推导而非存储。
+- `test/learner_profile_test.dart`、`test/record_answer_test.dart` — 档案经真实文件的往返，以及写入路径：一批一次保存、记录由首次作答创建、连续天数每天写一次，以及新版本写入的字段能在本版本编辑后存活。
+- `test/learn_today_ui_test.dart` — 今日卡片在每个指定几何下的表现，以及学习设置写入的是同步记录而不是设备偏好。
 
 ## 三类数据
 
