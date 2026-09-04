@@ -5,7 +5,7 @@ says how to work here; `doc/en-us/` says what the code does; this file says **wh
 what order, why, and what is done**. Update the checklists in the same change that lands a
 milestone item.
 
-**Status as of 2026-09-04:** Phase 3 is in progress; M3.0 (device fixes), M3.1 (spaced repetition core), M3.2 (quiz modes) and M3.3 (kana over kanji) have landed. Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
+**Status as of 2026-09-04:** **Phase 3 is complete except for its two authored-content items** and is released as `v0.3.0`: M3.0 (device fixes), M3.1 (spaced repetition core), M3.2 (quiz modes), M3.3 (kana over kanji), M3.4 (the rest of the catalog), M3.5 (lesson path and reminders) and most of M3.6 (AI-assisted practice) have landed. Scenario lessons and writing practice are designed and not written; the catalog is filled to N3 for grammar and is still filling for glosses and example sentences, with the coverage stated in `version-history.md`. Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
 (text-to-speech), M2.2 (speech recognition and pronunciation feedback), M2.3 (the sentence lab),
 M2.4 (on-device AI assist) and M2.5 (Traditional Chinese) have landed, along with the Windows and
 macOS projects the pronunciation work needs a machine for. `v0.2.1` is the current release; M2.5 is
@@ -555,7 +555,81 @@ Japanese and would otherwise have to be revisited.
       at all eight geometries, four in `preferences_test`. `app_smoke_test` learnt to find Japanese
       by widget rather than by string, since a word with ruby is no longer one `Text`
 
-#### M3.4 Lesson path (Duolingo-style)
+#### M3.4 The rest of the catalog — **done 2026-09-04**
+
+Asked for during Phase 3: fill the knowledge base, in all three languages,
+using model agents in batches. What made it possible was building the loop
+first and being honest about what it can and cannot prove.
+
+- [x] **A pipeline, not a heroic session.** `draft_inputs.dart` writes a batch
+      that **is** the list of what is still missing, so two agents cannot
+      collide and a re-run after a merge simply produces fewer batches. An
+      agent writes a draft and never runs a build. `content_gate_test` judges
+      it and prints **every** problem at once — the alternative, merging and
+      running the suite, turns a fifty-word batch into fifty round trips.
+      `merge_drafts.dart` then folds it in and makes no judgements of its own
+- [x] Every gate rule is one a shipped test already enforces, moved earlier:
+      the sentence tokenizes against the app's own dictionary with no unknown
+      word, its reading aligns character by character, `en` and `zh` are both
+      there and `zh_TW` is not, ids are new and unique, a grammar point appears
+      in its own examples, four options are four distinct options
+- [x] **What the gate cannot check is whether the Japanese is natural.** No
+      test can. So every model-authored file says
+      `"source": "model-authored (Claude), unreviewed"`, every gloss keeps
+      `reviewed: false`, and `content-catalog.md`'s rule about Japanese being
+      checked by a person is rewritten from a claim into the aspiration it is.
+      The alternative was shipping N5 and nothing else
+- [x] **The gate's level rule was removed** after three rounds of narrowing it
+      took away every true positive it had. 使い方 segments into the rare noun
+      使い; これ is filed at N1 because that is the only JLPT list it appears
+      on. The invariant is still enforced on the merged file by
+      `content_links_test`. A gate that cries wolf is worse than no gate
+- [x] **The analyser had to learn N4 and N3 first.** The first grammar batch
+      came back with ら and れ unknown all through it: the voice system had
+      never parsed. Worse, some of it appeared to — 行かせます came out as
+      行 + か + せ + 増す, four real words and complete nonsense, with no
+      unknown token, so the gate passed it. **A wrong parse made of known words
+      is the failure mode no automated check here can see**, which is why the
+      N4 content was probed by hand before any of it was merged. About 130
+      function words later — the passive, potential, causative and
+      causative-passive as enumerated surfaces, the plain volitional with a new
+      o-stem, 〜んです, 〜べき, the keigo verbs, the spoken contractions — 20 of
+      21 N4 probe sentences parse
+- [x] A rare word now costs more in the lattice than a common one. 殊に, 生かす,
+      がる and よって are all real words, and all of them are what ことに, かしら,
+      たがる and によって look like to a search that weighs every entry the same
+- [x] Content landed: **N4 grammar, 100 points. N3 grammar, 150 points.** The
+      chips for both levels had been empty since Phase 1. Chinese glosses and
+      example sentences continue to fill in; the coverage as released is in
+      `version-history.md`, honestly, because it is not complete
+
+#### M3.5 Lesson path (Duolingo-style) — **done 2026-09-04**
+
+- [x] Content: `assets/content/lessons/n5.json` — nine units, each a topic with
+      the grammar and words it teaches, eight sentences and eight hand-written
+      questions. **Every one of the level's 81 grammar points is in exactly one
+      unit**, asserted against the shipped file: a point in no unit is a hole a
+      learner falls into
+- [x] `QuestionBank` builds a unit's whole pool and draws from it, which is what
+      makes a rare mode as likely as a common one rather than as likely as its
+      items are. Weighted by what the learner has not got right, **at most one
+      question per item** — twelve questions should be twelve different things
+- [x] A checkpoint is a gate rather than an item, so it writes a plain counter
+      rather than going through the scheduler. Seven in ten on first-try
+      accuracy, the same number the summary shows. **A locked unit's checkpoint
+      is still open**, because hiding the way to skip ahead behind the units it
+      would skip is circular
+- [x] Learn tab shows the path for the target level; a level with no unit file
+      says so in a line rather than showing an empty box
+- [ ] Scenario lessons — a dialogue with a speaker per line and a branch to pick
+      — designed, not written. Units 1 to 4 would gain them first
+- [x] Notifications: one local reminder a day, off by default, saying what is
+      actually due. **Permission is requested by the switch and nowhere else**,
+      asserted by a test, because M2.4 shipped a build that asked for the
+      microphone when Settings opened. `SCHEDULE_EXACT_ALARM` is deliberately
+      not requested. Written up in `features/reminders.md`
+
+#### M3.6 AICore-assisted practice — **partly done 2026-09-04**
 
 - [ ] Content: `assets/content/lessons/<level>.json` — units → lessons → ordered exercise
       templates referencing catalog ids; a lesson introduces ≤ 8 new items and mixes in due reviews
@@ -568,13 +642,34 @@ Japanese and would otherwise have to be revisited.
 - [ ] Notifications (optional, local only): daily reminder at a chosen time, like MyAnime's
       reminders; off by default
 
-#### M3.5 AICore-assisted practice (optional enhancement)
 
 Same policy as the Phase 2 enhancement: Android AICore / Gemini Nano through ML Kit GenAI, on-device
 only, off by default behind one switch shared with Phase 2, a capability check on every use, and a
 working baseline on devices without it. Generated text is always labelled as generated, never becomes
 catalog content, and never writes a progress record by itself — the learner's answer does.
 
+- [x] **"Why was this wrong"**: the catalog's own explanation is shown first and
+      always, because it is the app's answer and it is right. What it cannot say
+      is why *this* choice was wrong — it does not know what was picked — so the
+      question is handed over exactly as worded, with the catalog's note and an
+      instruction not to contradict it
+- [x] **Extra example sentences on demand**, drawn below the catalog's own,
+      labelled, never saved. Most of the catalog has no example
+- [x] **One model, one turn at a time.** `AiPracticeService` queues, and the
+      learner's request wins: interactive requests queue behind each other
+      rather than failing with "busy", while a background job waits, retries,
+      then gives up **silently** because nobody is waiting for it. It imports no
+      storage and no progress provider, and a test asserts that from the file's
+      own imports
+- [x] **Every parser refuses rather than guessing.** No `Rewrite:` line, no
+      feedback; a verdict that hedges into a paragraph is dropped and the
+      learner marks it themselves; an example line without exactly three fields
+      is dropped, because a generated sentence sits beside the catalog's own and
+      would otherwise look exactly as authoritative
+- [x] Guardrails: `assets/content/prompts/practice.json`, hand-written in all
+      three languages like the sentence lab's, output length limits, fixture
+      tests for the builders and parsers, and the fallback column in
+      `features/ai-assist.md`
 - [ ] Writing practice: prompts per level and unit ("write three sentences about your morning"
       using this unit's words); the learner types; the Phase 2 pipeline runs first for token, form
       and grammar checks; AICore adds a natural rewrite, per-sentence feedback (what reads
@@ -725,6 +820,18 @@ catalog content, and never writes a progress record by itself — the learner's 
 | 2026-09-03 | Japanese voices are numbered over a total order rather than shown by engine name | `ja-jp-x-jab#male_1-local` says nothing about how a voice sounds and differs per engine. The order is total (installed, offline, quality, name) so the numbers cannot move between runs; the raw name is still shown small, because that is what a bug report needs |
 | 2026-09-03 | Auditioning a voice restores the previous one in a `finally` | Hearing a voice and choosing it are different acts, and a sample that silently changed the app's voice would make the picker unusable for comparison |
 | 2026-09-03 | `GenAiStatus.unreachable` is separate from `unavailable`, and both carry the device's own answer | A phone with AICore installed reported having no on-device model, and nothing in the app could say whether AICore had refused, the call had thrown, or the package was invisible to the build. One sentence for four causes is not a diagnosis |
+| 2026-09-04 | The catalog beyond N5 is written by model agents against a gate, and every file says so | 600 grammar points, 7,000 glosses and 7,700 sentences is not hard work, it is large work. The gate proves a sentence parses against the app's own dictionary, stays readable at its level and is read the way its reading says; it cannot prove the Japanese is natural, and no test can. The alternative was shipping N5 and nothing else, so the honest course is to ship it with `source: model-authored (Claude), unreviewed` on every file |
+| 2026-09-04 | The authoring gate reports every problem in a batch at once | Merging a batch and running the suite turns a fifty-word batch into fifty round trips. The gate's whole value is that an author can trust the list it prints and fix the batch in one pass |
+| 2026-09-04 | The gate's level rule was deleted rather than narrowed a fourth time | Every finding it produced was about the parse rather than the sentence: 使い方 segments into the rare noun 使い, これ is filed at N1 because that is the only JLPT list it is on. `content_links_test` still enforces the invariant on the merged file. A gate that cries wolf is worse than no gate |
+| 2026-09-04 | The voice system is enumerated as combined surfaces rather than chained | The de-inflector recovers one stem behind one auxiliary and 食べられませんでした is four of them. Teaching the lattice to compose morphemes is a different algorithm, and one where a wrong path costs the whole sentence rather than one edge. A script writes the hundred surfaces; the cost is that an un-enumerated form is not recognised at all |
+| 2026-09-04 | A rare word costs more in the lattice than a common one | 殊に, 生かす, がる and よって are all real words, and all of them are what ことに, かしら, たがる and によって look like to a search that weighs every entry the same |
+| 2026-09-04 | A unit builds its whole question pool, then draws from it | Shuffling items and taking twenty makes a mode as likely as its items happen to be common. A topic is small enough to do it properly, and one question per item is what makes twelve questions twelve different things |
+| 2026-09-04 | A locked unit's checkpoint can still be attempted | It is how somebody who already knows the material skips ahead, and the only thing passing can do is unlock what they just demonstrated. Hiding it behind the units it would skip is circular |
+| 2026-09-04 | A checkpoint result is a plain counter, not a scheduled item | A unit is a gate, not something to be reviewed on a spacing curve. The items inside it were already recorded one answer at a time while they were answered |
+| 2026-09-04 | Reminder permission is requested by the switch and nowhere else, and a test asserts it | M2.4 shipped a build that asked for the microphone the moment Settings opened. The same mistake with a different permission is one line away, so it is written down rather than remembered |
+| 2026-09-04 | `SCHEDULE_EXACT_ALARM` is not requested | Android treats it as high-privilege and a study nudge does not deserve one. `inexactAllowWhileIdle` puts it within a few minutes of the hour, which is what a nudge is |
+| 2026-09-04 | The learner's AI request outranks a background one, and a background one fails silently | There is one model and one generation at a time. Somebody who taps two buttons quickly should get two answers; nobody is waiting for a question being written in the background, so there is nobody to tell when it does not arrive |
+| 2026-09-04 | Every practice parser refuses rather than half-reads | A model that ignored the format is a model whose content cannot be trusted either. A mangled generated sentence sits beside the catalog's own and looks exactly as authoritative |
 | 2026-09-04 | Furigana are aligned per kanji **run**, not per character | The catalog has one reading per word and none per character, so per-character ruby has no data behind it; and 東 alone is not とう in every word. A run is the finest granularity the content can actually support |
 | 2026-09-04 | An alignment that does not consume the whole reading is refused, not approximated | 母は against ははは has two candidate splits and only the one that uses every kana is right. Refusing costs a line of screen; guessing prints kana over the wrong character and teaches a reading that does not exist |
 | 2026-09-04 | Kana over kanji is stored only when **off** | It is the only preference in the app whose default is on, and inverting the storage is what makes an absent key mean on. A learner who has never opened Settings is the learner who most needs the readings |
@@ -739,8 +846,15 @@ catalog content, and never writes a progress record by itself — the learner's 
   `test/fixtures/sentence/allowed_unknown.json`. Adding them means changing the source lists and
   regenerating `vocab.json` — is that worth doing for a handful of words, or should the import tool
   gain a small hand-maintained supplement?
-- Chinese glosses for JMdict-scale vocabulary: N5 is machine-authored and unreviewed. Who reviews
-  it, and is the same approach acceptable for N4 and above?
+- **Who reviews the model-authored content?** This was an open question about
+  N5's Chinese glosses. It is now an open question about roughly 250 grammar
+  points, several thousand glosses and several hundred example sentences, all of
+  which pass the authoring gate and none of which a Japanese or Chinese speaker
+  has read. Every file says so. The gate can be tightened; it cannot be made to
+  judge whether a sentence is natural.
+- 母 and 父 are not in the catalog at all, because the JLPT lists it is generated
+  from do not contain them. This was a theoretical gap and is now a practical
+  one: two example batches had to be rewritten around it.
 - Grammar authoring throughput: ~80 N5 points is a few days of careful writing; who reviews?
 - Pitch accent: worth a Phase 3 item if an openly licensed accent dictionary is available.
 - Whether Phase 4 attempts belong in the progress module or their own module (decide on file size

@@ -1,7 +1,7 @@
 [Setup]
 AppId={{E7A41C92-5D3B-4F18-9A6C-2B8D7E015F44}
 AppName=MyNihongo!!!!!
-AppVersion=0.2.1
+AppVersion=0.3.0
 AppPublisher=yuanzhe
 AppPublisherURL=https://github.com/yuanzhe
 DefaultDirName={autopf}\MyNihongo!!!!!
@@ -13,11 +13,11 @@ OutputBaseFilename=MyNihongo_{#SetupSetting("AppVersion")}_arm64_Setup
 #else
 OutputBaseFilename=MyNihongo_{#SetupSetting("AppVersion")}_Setup
 #endif
-VersionInfoVersion=0.2.1.0
+VersionInfoVersion=0.3.0.0
 VersionInfoCompany=yuanzhe
 VersionInfoDescription=MyNihongo!!!!! Installer
 VersionInfoProductName=MyNihongo!!!!!
-VersionInfoProductVersion=0.2.1
+VersionInfoProductVersion=0.3.0
 Compression=lzma2
 SolidCompression=yes
 #ifdef ARM64

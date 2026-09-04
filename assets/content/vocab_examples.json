@@ -324,6 +324,436 @@
         }
       ]
     },
+    "vocab:jm1070790": {
+      "examples": [
+        {
+          "ja": "ストーブは大きいです。",
+          "reading": "すとーぶはおおきいです。",
+          "en": "The heater is big.",
+          "zh": "暖炉很大。"
+        }
+      ]
+    },
+    "vocab:jm1072590": {
+      "examples": [
+        {
+          "ja": "スプーンで食べます。",
+          "reading": "すぷーんでたべます。",
+          "en": "I eat with a spoon.",
+          "zh": "用勺子吃饭。"
+        }
+      ]
+    },
+    "vocab:jm1073210": {
+      "examples": [
+        {
+          "ja": "スポーツが好きです。",
+          "reading": "すぽーつがすきです。",
+          "en": "I like sports.",
+          "zh": "我喜欢运动。"
+        }
+      ]
+    },
+    "vocab:jm1073900": {
+      "examples": [
+        {
+          "ja": "スリッパを買います。",
+          "reading": "すりっぱをかいます。",
+          "en": "I buy slippers.",
+          "zh": "我买拖鞋。"
+        }
+      ]
+    },
+    "vocab:jm1074260": {
+      "examples": [
+        {
+          "ja": "ズボンを買います。",
+          "reading": "ずぼんをかいます。",
+          "en": "I buy trousers.",
+          "zh": "我买裤子。"
+        }
+      ]
+    },
+    "vocab:jm1074270": {
+      "examples": [
+        {
+          "ja": "セーターを買います。",
+          "reading": "せーたーをかいます。",
+          "en": "I buy a sweater.",
+          "zh": "我买毛衣。"
+        }
+      ]
+    },
+    "vocab:jm1076190": {
+      "examples": [
+        {
+          "ja": "タクシーを使います。",
+          "reading": "たくしーをつかいます。",
+          "en": "I use a taxi.",
+          "zh": "我使用出租车。"
+        }
+      ]
+    },
+    "vocab:jm1078630": {
+      "examples": [
+        {
+          "ja": "テーブルは大きいです。",
+          "reading": "てーぶるはおおきいです。",
+          "en": "The table is big.",
+          "zh": "桌子很大。"
+        }
+      ]
+    },
+    "vocab:jm1078750": {
+      "examples": [
+        {
+          "ja": "テープを買います。",
+          "reading": "てーぷをかいます。",
+          "en": "I buy tape.",
+          "zh": "我买磁带。"
+        }
+      ]
+    },
+    "vocab:jm1078810": {
+      "examples": [
+        {
+          "ja": "テープレコーダーを使います。",
+          "reading": "てーぷれこーだーをつかいます。",
+          "en": "I use a tape recorder.",
+          "zh": "我使用磁带录音机。"
+        }
+      ]
+    },
+    "vocab:jm1079760": {
+      "examples": [
+        {
+          "ja": "テストは難しいです。",
+          "reading": "てすとはむずかしいです。",
+          "en": "The test is difficult.",
+          "zh": "考试很难。"
+        }
+      ]
+    },
+    "vocab:jm1080510": {
+      "examples": [
+        {
+          "ja": "テレビを見ます。",
+          "reading": "てれびをみます。",
+          "en": "I watch TV.",
+          "zh": "我看电视。"
+        }
+      ]
+    },
+    "vocab:jm1083590": {
+      "examples": [
+        {
+          "ja": "デパートに行きます。",
+          "reading": "でぱーとにいきます。",
+          "en": "I go to the department store.",
+          "zh": "我去百货商店。"
+        }
+      ]
+    },
+    "vocab:jm1084810": {
+      "examples": [
+        {
+          "ja": "トイレに行きます。",
+          "reading": "といれにいきます。",
+          "en": "I go to the toilet.",
+          "zh": "我去厕所。"
+        }
+      ]
+    },
+    "vocab:jm1087820": {
+      "examples": [
+        {
+          "ja": "ドアを見ます。",
+          "reading": "どあをみます。",
+          "en": "I look at the door.",
+          "zh": "我看门。"
+        }
+      ]
+    },
+    "vocab:jm1089890": {
+      "examples": [
+        {
+          "ja": "ナイフを使います。",
+          "reading": "ないふをつかいます。",
+          "en": "I use a knife.",
+          "zh": "我使用刀子。"
+        }
+      ]
+    },
+    "vocab:jm1091500": {
+      "examples": [
+        {
+          "ja": "ニュースを見ます。",
+          "reading": "にゅーすをみます。",
+          "en": "I watch the news.",
+          "zh": "我看新闻。"
+        }
+      ]
+    },
+    "vocab:jm1092820": {
+      "examples": [
+        {
+          "ja": "ネクタイを買います。",
+          "reading": "ねくたいをかいます。",
+          "en": "I buy a tie.",
+          "zh": "我买领带。"
+        }
+      ]
+    },
+    "vocab:jm1093450": {
+      "examples": [
+        {
+          "ja": "ノートを買います。",
+          "reading": "のーとをかいます。",
+          "en": "I buy a notebook.",
+          "zh": "我买笔记本。"
+        }
+      ]
+    },
+    "vocab:jm1096420": {
+      "examples": [
+        {
+          "ja": "ハンカチを買います。",
+          "reading": "はんかちをかいます。",
+          "en": "I buy a handkerchief.",
+          "zh": "我买手帕。"
+        }
+      ]
+    },
+    "vocab:jm1098390": {
+      "examples": [
+        {
+          "ja": "バスを待ちます。",
+          "reading": "ばすをまちます。",
+          "en": "I wait for the bus.",
+          "zh": "我等公共汽车。"
+        }
+      ]
+    },
+    "vocab:jm1098620": {
+      "examples": [
+        {
+          "ja": "バターを買います。",
+          "reading": "ばたーをかいます。",
+          "en": "I buy butter.",
+          "zh": "我买黄油。"
+        }
+      ]
+    },
+    "vocab:jm1100760": {
+      "examples": [
+        {
+          "ja": "パーティーに行きます。",
+          "reading": "ぱーてぃーにいきます。",
+          "en": "I go to the party.",
+          "zh": "我去参加聚会。"
+        }
+      ]
+    },
+    "vocab:jm1103090": {
+      "examples": [
+        {
+          "ja": "パンを食べます。",
+          "reading": "ぱんをたべます。",
+          "en": "I eat bread.",
+          "zh": "我吃面包。"
+        }
+      ]
+    },
+    "vocab:jm1109380": {
+      "examples": [
+        {
+          "ja": "フィルムを買います。",
+          "reading": "ふぃるむをかいます。",
+          "en": "I buy film.",
+          "zh": "我买胶卷。"
+        }
+      ]
+    },
+    "vocab:jm1110110": {
+      "examples": [
+        {
+          "ja": "フォークで食べます。",
+          "reading": "ふぉーくでたべます。",
+          "en": "I eat with a fork.",
+          "zh": "用叉子吃饭。"
+        }
+      ]
+    },
+    "vocab:jm1115150": {
+      "examples": [
+        {
+          "ja": "プールに行きます。",
+          "reading": "ぷーるにいきます。",
+          "en": "I go to the pool.",
+          "zh": "我去游泳池。"
+        }
+      ]
+    },
+    "vocab:jm1119650": {
+      "examples": [
+        {
+          "ja": "ベッドで寝ます。",
+          "reading": "べっどでねます。",
+          "en": "I sleep in the bed.",
+          "zh": "我在床上睡觉。"
+        }
+      ]
+    },
+    "vocab:jm1120410": {
+      "examples": [
+        {
+          "ja": "ページを見ます。",
+          "reading": "ぺーじをみます。",
+          "en": "I look at the page.",
+          "zh": "我看这一页。"
+        }
+      ]
+    },
+    "vocab:jm1120990": {
+      "examples": [
+        {
+          "ja": "ペットが好きです。",
+          "reading": "ぺっとがすきです。",
+          "en": "I like pets.",
+          "zh": "我喜欢宠物。"
+        }
+      ]
+    },
+    "vocab:jm1121380": {
+      "examples": [
+        {
+          "ja": "ペンを買います。",
+          "reading": "ぺんをかいます。",
+          "en": "I buy a pen.",
+          "zh": "我买钢笔。"
+        }
+      ]
+    },
+    "vocab:jm1122650": {
+      "examples": [
+        {
+          "ja": "ホテルに行きます。",
+          "reading": "ほてるにいきます。",
+          "en": "I go to the hotel.",
+          "zh": "我去宾馆。"
+        }
+      ]
+    },
+    "vocab:jm1123590": {
+      "examples": [
+        {
+          "ja": "ボールペンを買います。",
+          "reading": "ぼーるぺんをかいます。",
+          "en": "I buy a ballpoint pen.",
+          "zh": "我买圆珠笔。"
+        }
+      ]
+    },
+    "vocab:jm1123880": {
+      "examples": [
+        {
+          "ja": "ボタンを見ます。",
+          "reading": "ぼたんをみます。",
+          "en": "I look at the button.",
+          "zh": "我看纽扣。"
+        }
+      ]
+    },
+    "vocab:jm1124970": {
+      "examples": [
+        {
+          "ja": "ポケットを見ます。",
+          "reading": "ぽけっとをみます。",
+          "en": "I look at the pocket.",
+          "zh": "我看口袋。"
+        }
+      ]
+    },
+    "vocab:jm1125150": {
+      "examples": [
+        {
+          "ja": "ポストを見ます。",
+          "reading": "ぽすとをみます。",
+          "en": "I look at the postbox.",
+          "zh": "我看邮筒。"
+        }
+      ]
+    },
+    "vocab:jm1132570": {
+      "examples": [
+        {
+          "ja": "メートルを使います。",
+          "reading": "めーとるをつかいます。",
+          "en": "I use meters.",
+          "zh": "我使用米。"
+        }
+      ]
+    },
+    "vocab:jm1138860": {
+      "examples": [
+        {
+          "ja": "ラジオを聞きます。",
+          "reading": "らじおをききます。",
+          "en": "I listen to the radio.",
+          "zh": "我听收音机。"
+        }
+      ]
+    },
+    "vocab:jm1138900": {
+      "examples": [
+        {
+          "ja": "ラジオカセットを使います。",
+          "reading": "らじおかせっとをつかいます。",
+          "en": "I use a radio-cassette player.",
+          "zh": "我使用收录机。"
+        }
+      ]
+    },
+    "vocab:jm1138960": {
+      "examples": [
+        {
+          "ja": "ラジカセを買います。",
+          "reading": "らじかせをかいます。",
+          "en": "I buy a radio-cassette player.",
+          "zh": "我买收录机。"
+        }
+      ]
+    },
+    "vocab:jm1144940": {
+      "examples": [
+        {
+          "ja": "レコードを聞きます。",
+          "reading": "れこーどをききます。",
+          "en": "I listen to a record.",
+          "zh": "我听唱片。"
+        }
+      ]
+    },
+    "vocab:jm1145310": {
+      "examples": [
+        {
+          "ja": "レストランに行きます。",
+          "reading": "れすとらんにいきます。",
+          "en": "I go to a restaurant.",
+          "zh": "我去餐厅。"
+        }
+      ]
+    },
+    "vocab:jm1148640": {
+      "examples": [
+        {
+          "ja": "ワイシャツを買います。",
+          "reading": "わいしゃつをかいます。",
+          "en": "I buy a dress shirt.",
+          "zh": "我买衬衫。"
+        }
+      ]
+    },
     "vocab:jm1153520": {
       "examples": [
         {
@@ -4464,6 +4894,16 @@
         }
       ]
     },
+    "vocab:jm2784220": {
+      "examples": [
+        {
+          "ja": "マッチを買います。",
+          "reading": "まっちをかいます。",
+          "en": "I buy matches.",
+          "zh": "我买火柴。"
+        }
+      ]
+    },
     "vocab:jm2820690": {
       "examples": [
         {
@@ -4471,6 +4911,16 @@
           "reading": "このほんはいいです。",
           "en": "This book is good.",
           "zh": "这本书很好。"
+        }
+      ]
+    },
+    "vocab:jm2839962": {
+      "examples": [
+        {
+          "ja": "これはゼロです。",
+          "reading": "これはぜろです。",
+          "en": "This is zero.",
+          "zh": "这是零。"
         }
       ]
     },

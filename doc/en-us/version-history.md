@@ -12,6 +12,83 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.3.0` — 2026-09-04. The learning engine: spaced repetition, quizzes, a lesson
+  path, kana over kanji, a daily reminder, and a catalog that finally reaches
+  past N5.
+
+  **Study, not just browse.** SM-2 over the record fields Phase 1 shipped and
+  nothing had ever written, with two departures from the textbook that are
+  derived rather than assumed. Thirteen ways of asking about the same catalog,
+  then three more. A learner profile, a review queue judged by local calendar
+  day, and a daily new-item allowance derived from the records rather than
+  stored.
+
+  **A lesson path.** Nine N5 units, each a topic. A unit builds its whole
+  question pool and draws twelve from it, weighted by what has not been got
+  right yet, at most one per item — which is what makes a rare mode as likely
+  as a common one rather than as likely as its items are. A checkpoint at seven
+  in ten opens the next unit, and **a locked unit's checkpoint can still be
+  taken**, because that is how somebody who already knows the material skips
+  ahead.
+
+  **Kana over kanji**, on by default. The catalog stores one reading per word
+  and none per character, so the alignment is recovered from the two strings —
+  and refused, rather than guessed, when nothing fits. A wrong alignment is not
+  an uglier layout; it prints kana over the wrong character.
+
+  **A daily reminder**, off until turned on, saying how many items are due or
+  which unit is next. Permission is requested by the switch and nowhere else, a
+  rule with a test behind it because M2.4 shipped a build that asked for the
+  microphone when Settings opened.
+
+  **On-device AI gains two more uses**: why a chosen answer was wrong, grounded
+  in the catalog's own explanation and forbidden to contradict it, and extra
+  example sentences on request. Both off unless the switch is on, both labelled,
+  neither stored.
+
+  **The catalog grew past N5, and how it grew is stated plainly.** N4 grammar
+  (100 points) and N3 grammar (150) fill chips that had been empty since Phase
+  1. Chinese now covers every word at N5, N4 and N3 — 2,947 of the 7,744 in the
+  catalog, against 669 before. 517 N5 words have an example sentence, against
+  24 before.
+
+  All of that beyond N5 was written by model agents against an authoring gate
+  and **has not been read by a Japanese or Chinese speaker**. The gate proves a
+  sentence parses against the app's own dictionary, is read the way its reading
+  says, and uses ids that exist; it cannot prove the Japanese is natural. Every
+  such file says `"source": "model-authored (Claude), unreviewed"`, every gloss
+  keeps `reviewed: false`, and `content-authoring.md` says what the checks
+  cannot promise. The alternative was shipping N5 and nothing else.
+
+  Making that content possible meant teaching the sentence analyser N4 and N3:
+  the passive, potential, causative and causative-passive had never parsed, and
+  some of them appeared to — 行かせます came out as four real words in a
+  nonsensical arrangement, which no automated check here can see. About 130
+  function words later, 20 of 21 N4 probe sentences parse, and a rare word now
+  costs more in the lattice than a common one.
+
+  **Coverage as released**, because a table is more honest than a claim:
+
+  | Level | Grammar points | Chinese glosses | Example sentences |
+  |---|---|---|---|
+  | N5 | 81 | 667 of 667 | 517 of 667 |
+  | N4 | 100 | 630 of 630 | 0 of 630 |
+  | N3 | 150 | 1,650 of 1,650 | 2 of 1,650 |
+  | N2 | 0 | 0 of 1,737 | 0 of 1,737 |
+  | N1 | 0 | 0 of 3,060 | 0 of 3,060 |
+
+  Also here: M2.5's Traditional Chinese, which was held back from `0.2.1` on
+  purpose, and three device fixes found on a Z Fold 8 — text-to-speech reading
+  Japanese in the device's own language, a voice picker with no way to hear
+  anything, and on-device AI reporting one sentence for four different causes.
+
+  Verified: 640 tests, `flutter analyze` clean, and a debug APK built to check
+  the manifest merge.
+
+  **Not verified on a device:** the reminder actually firing, the lesson path
+  and the checkpoint, kana over kanji rendered on a phone screen, and the two
+  new AI actions. Nothing in this release has been run on hardware.
+
 - `0.2.1` — 2026-09-03. On-device AI assistance for the sentence lab, and the first release verified
   on a real phone.
 

@@ -64,6 +64,10 @@ The shared WebDAV sync, backup, and ZIP engines are not in this repository. They
   shows, where it is reached from, and the limits it states.
 - [`features/content-authoring.md`](features/content-authoring.md) — how new catalog content is
   written, checked, and what the checks cannot promise.
+- [`features/lesson-path.md`](features/lesson-path.md) — the units a level is taught in, how a
+  unit's questions are chosen, and when the next one opens.
+- [`features/reminders.md`](features/reminders.md) — the daily reminder, what it says, and
+  when permission is asked for.
 - [`features/quizzes.md`](features/quizzes.md) — the thirteen ways of asking about the same
   catalog, and how a question is built or dropped.
 - [`algorithms/spaced-repetition.md`](algorithms/spaced-repetition.md) — the SM-2 schedule, the two

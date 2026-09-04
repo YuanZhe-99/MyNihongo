@@ -2,13 +2,13 @@
 
 这是 MyNihongo 仓库中 `lib/` 手写函数解释层文档的顶层索引。每行链接到 `doc/zh-cn/functions/` 下镜像 `lib/` 树的逐源文件页面（`.dart` 换成 `.md`）。
 
-**总计：** 仓库的 `/// Purpose:` 注释数为 **742**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **747** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
+**总计：** 仓库的 `/// Purpose:` 注释数为 **844**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **804** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
 
 | Tier | 计数 |
 |---|---|
-| Tier A（完整条目：Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes） | 138 |
-| Tier B（仅索引行） | 609 |
-| **总计** | **747** |
+| Tier A（完整条目：Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes） | 154 |
+| Tier B（仅索引行） | 650 |
+| **总计** | **804** |
 
 这些总计在初始化时（`PLAN.md` M1.0）对照源码树测得。若要改动这些数字，请测量而不要手工调整：
 
@@ -138,6 +138,27 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/shared/widgets/reference_widgets.dart` | [shared/widgets/reference_widgets.md](shared/widgets/reference_widgets.md) | 4 | 0 |
 | `lib/shared/widgets/shell_scaffold.dart` | [shared/widgets/shell_scaffold.md](shared/widgets/shell_scaffold.md) | 5 | 1 |
 | `lib/shared/widgets/study_conflict_dialog.dart` | [shared/widgets/study_conflict_dialog.md](shared/widgets/study_conflict_dialog.md) | 6 | 1 |
+
+### Phase 3 新增
+
+| 源文件 | 页面 | 声明数 | Tier A 数 |
+|---|---|---|---|
+| `lib/features/lessons/models/lesson_path.dart` | [features/lessons/models/lesson_path.md](features/lessons/models/lesson_path.md) | 12 | 2 |
+| `lib/features/lessons/services/lesson_repository.dart` | 未编写文档 | — | — |
+| `lib/features/lessons/services/lesson_rules.dart` | [features/lessons/services/lesson_rules.md](features/lessons/services/lesson_rules.md) | 9 | 3 |
+| `lib/features/lessons/widgets/lesson_path_view.dart` | 未编写文档 | — | — |
+| `lib/features/quiz/services/question_bank.dart` | [features/quiz/services/question_bank.md](features/quiz/services/question_bank.md) | 5 | 2 |
+| `lib/features/quiz/widgets/why_wrong.dart` | 未编写文档 | — | — |
+| `lib/features/reminders/services/reminder_backend.dart` | 未编写文档 | — | — |
+| `lib/features/reminders/services/reminder_planner.dart` | [features/reminders/services/reminder_planner.md](features/reminders/services/reminder_planner.md) | 3 | 1 |
+| `lib/features/reminders/services/reminder_service.dart` | [features/reminders/services/reminder_service.md](features/reminders/services/reminder_service.md) | 12 | 3 |
+| `lib/features/reminders/services/local_notifications_backend.dart` | 未编写文档 | — | — |
+| `lib/features/reminders/services/desktop_reminder_backend.dart` | 未编写文档 | — | — |
+| `lib/features/reminders/widgets/reminder_settings_tiles.dart` | 未编写文档 | — | — |
+| `lib/features/ai/services/ai_practice_service.dart` | [features/ai/services/ai_practice_service.md](features/ai/services/ai_practice_service.md) | 7 | 2 |
+| `lib/features/ai/services/practice_prompt_builder.dart` | 未编写文档 | — | — |
+| `lib/features/ai/services/practice_response_parser.dart` | [features/ai/services/practice_response_parser.md](features/ai/services/practice_response_parser.md) | 9 | 3 |
+| `lib/features/ai/widgets/generated_examples.dart` | 未编写文档 | — | — |
 
 ## l10n/
 

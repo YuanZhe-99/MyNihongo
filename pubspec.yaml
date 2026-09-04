@@ -2,7 +2,7 @@ name: my_nihongo
 description: "MyNihongo!!!!! — Your Japanese learning companion"
 publish_to: 'none'
 
-version: 0.2.1+3
+version: 0.3.0+4
 
 environment:
   sdk: ^3.11.3
@@ -95,7 +95,7 @@ msix_config:
   display_name: MyNihongo!!!!!
   publisher_display_name: yuanzhe
   identity_name: com.yuanzhe.mynihongo
-  msix_version: 0.2.1.0
+  msix_version: 0.3.0.0
   logo_path: assets/icon/app_icon.png
   capabilities: internetClient,microphone
   install_certificate: false

@@ -4,17 +4,17 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **742** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **844** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **747** documented declarations. The two counts are measured separately and
+The rows below sum to **804** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
-| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 138 |
-| Tier B (index row only) | 609 |
-| **Total** | **747** |
+| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 154 |
+| Tier B (index row only) | 650 |
+| **Total** | **804** |
 
 These totals were measured against the source tree at initialization (`PLAN.md` M1.0). If you
 change these numbers, measure them rather than adjusting them by hand:
@@ -146,6 +146,27 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/shared/widgets/reference_widgets.dart` | [shared/widgets/reference_widgets.md](shared/widgets/reference_widgets.md) | 4 | 0 |
 | `lib/shared/widgets/shell_scaffold.dart` | [shared/widgets/shell_scaffold.md](shared/widgets/shell_scaffold.md) | 5 | 1 |
 | `lib/shared/widgets/study_conflict_dialog.dart` | [shared/widgets/study_conflict_dialog.md](shared/widgets/study_conflict_dialog.md) | 6 | 1 |
+
+### Added in Phase 3
+
+| Source file | Page | Declarations | Tier A count |
+|---|---|---|---|
+| `lib/features/lessons/models/lesson_path.dart` | [features/lessons/models/lesson_path.md](features/lessons/models/lesson_path.md) | 12 | 2 |
+| `lib/features/lessons/services/lesson_repository.dart` | not documented | — | — |
+| `lib/features/lessons/services/lesson_rules.dart` | [features/lessons/services/lesson_rules.md](features/lessons/services/lesson_rules.md) | 9 | 3 |
+| `lib/features/lessons/widgets/lesson_path_view.dart` | not documented | — | — |
+| `lib/features/quiz/services/question_bank.dart` | [features/quiz/services/question_bank.md](features/quiz/services/question_bank.md) | 5 | 2 |
+| `lib/features/quiz/widgets/why_wrong.dart` | not documented | — | — |
+| `lib/features/reminders/services/reminder_backend.dart` | not documented | — | — |
+| `lib/features/reminders/services/reminder_planner.dart` | [features/reminders/services/reminder_planner.md](features/reminders/services/reminder_planner.md) | 3 | 1 |
+| `lib/features/reminders/services/reminder_service.dart` | [features/reminders/services/reminder_service.md](features/reminders/services/reminder_service.md) | 12 | 3 |
+| `lib/features/reminders/services/local_notifications_backend.dart` | not documented | — | — |
+| `lib/features/reminders/services/desktop_reminder_backend.dart` | not documented | — | — |
+| `lib/features/reminders/widgets/reminder_settings_tiles.dart` | not documented | — | — |
+| `lib/features/ai/services/ai_practice_service.dart` | [features/ai/services/ai_practice_service.md](features/ai/services/ai_practice_service.md) | 7 | 2 |
+| `lib/features/ai/services/practice_prompt_builder.dart` | not documented | — | — |
+| `lib/features/ai/services/practice_response_parser.dart` | [features/ai/services/practice_response_parser.md](features/ai/services/practice_response_parser.md) | 9 | 3 |
+| `lib/features/ai/widgets/generated_examples.dart` | not documented | — | — |
 
 ## l10n/
 
