@@ -46,6 +46,18 @@ dependencies:
   flutter_tts: ^4.2.5
   speech_to_text: 7.4.0
 
+  # Local reminders. Nothing here reaches a network: the notification is
+  # scheduled by the operating system on the device and its text is built from
+  # the progress file. Versions are pinned exactly to the ones MyAnime!!!!!
+  # resolved, because that app has the same Gradle state — android
+  # .builtInKotlin=false — and these plugins are where a Kotlin Gradle Plugin
+  # change would break the Android build without warning. See
+  # doc/en-us/platform-notes.md.
+  flutter_local_notifications: 19.5.0
+  timezone: 0.10.1
+  flutter_timezone: 5.1.0
+  local_notifier: 0.1.6
+
   # Utilities
   path: ^1.9.0
   path_provider: ^2.1.5

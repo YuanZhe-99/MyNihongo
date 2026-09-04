@@ -115,6 +115,37 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String get reminderTitle => 'MyNihongo!!!!!';
+
+  @override
+  String reminderDueBody(int count) {
+    return '今天有 $count 项到期。';
+  }
+
+  @override
+  String reminderUnitBody(String unit) {
+    return '接下来：$unit。';
+  }
+
+  @override
+  String get reminderPlainBody => '花几分钟学点日语？';
+
+  @override
+  String get reminderSection => '每日提醒';
+
+  @override
+  String get reminderEnable => '提醒我学习';
+
+  @override
+  String get reminderEnableSubtitle => '每天一条本地通知。不会有任何内容离开本机。';
+
+  @override
+  String get reminderTime => '提醒时间';
+
+  @override
+  String get reminderDenied => '本应用的通知已被系统关闭。请先在系统设置里打开。';
+
+  @override
   String get learnContentSummary => '内容';
 
   @override
@@ -1418,6 +1449,37 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String pathCheckpointFailed(int percent, int needed) {
     return '這次沒通過。正確率 $percent%，達到 $needed% 即可解鎖下一單元。';
   }
+
+  @override
+  String get reminderTitle => 'MyNihongo!!!!!';
+
+  @override
+  String reminderDueBody(int count) {
+    return '今天有 $count 項到期。';
+  }
+
+  @override
+  String reminderUnitBody(String unit) {
+    return '接下來：$unit。';
+  }
+
+  @override
+  String get reminderPlainBody => '花幾分鐘學點日語？';
+
+  @override
+  String get reminderSection => '每日提醒';
+
+  @override
+  String get reminderEnable => '提醒我學習';
+
+  @override
+  String get reminderEnableSubtitle => '每天一則本機通知。不會有任何內容離開本機。';
+
+  @override
+  String get reminderTime => '提醒時間';
+
+  @override
+  String get reminderDenied => '本應用程式的通知已被系統關閉。請先在系統設定裡開啟。';
 
   @override
   String get learnContentSummary => '內容';

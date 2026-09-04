@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../features/ai/services/ai_assist_service.dart';
+import '../../features/reminders/services/reminder_service.dart';
+import '../../l10n/app_localizations.dart';
 import '../../features/content/models/jlpt_level.dart';
 import '../../features/kana/models/kana.dart';
 import '../../features/progress/services/nihongo_storage.dart';
@@ -62,6 +64,9 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
         await NihongoStorage.getSpeechNetworkFallback();
     final aiAssistEnabled = await NihongoStorage.getAiAssistEnabled();
     final showFurigana = await NihongoStorage.getShowFurigana();
+    final reminderEnabled = await NihongoStorage.getReminderEnabled();
+    final (reminderHour, reminderMinute) =
+        await NihongoStorage.getReminderTime();
 
     final themeMode = switch (modeStr) {
       'light' => ThemeMode.light,
@@ -94,6 +99,9 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
       speechNetworkFallback: speechNetworkFallback,
       aiAssistEnabled: aiAssistEnabled,
       showFurigana: showFurigana,
+      reminderEnabled: reminderEnabled,
+      reminderHour: reminderHour,
+      reminderMinute: reminderMinute,
     );
 
     // The engine is configured from the same values the UI shows, once the
@@ -247,6 +255,43 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     NihongoStorage.setSpeechNetworkFallback(allowed);
   }
 
+  /// Purpose: Turn the daily reminder on or off.
+  /// Inputs: `enabled`, and `l10n` so the reminder text is in the learner's
+  /// own language.
+  /// Returns: `Future<bool>` — whether it ended up on.
+  /// Side effects: **Asks for notification permission** when turning it on;
+  /// persists the choice and rebuilds the schedule.
+  /// Notes: Permission is requested here and nowhere else. If it is refused
+  /// the switch stays off, because a switch that says on while the system says
+  /// no is a lie about what will happen. Turning it off cancels the schedule
+  /// immediately rather than letting a week of reminders run out.
+  Future<bool> setReminderEnabled(bool enabled, AppLocalizations l10n) async {
+    if (enabled && !await ReminderService.instance.requestPermission()) {
+      return false;
+    }
+    state = state.copyWith(reminderEnabled: enabled);
+    await NihongoStorage.setReminderEnabled(enabled);
+    await ReminderService.instance.reschedule(l10n);
+    return enabled;
+  }
+
+  /// Purpose: Choose what time the reminder fires.
+  /// Inputs: `hour`, `minute`, and `l10n` for the text.
+  /// Returns: A future completing once the schedule is rebuilt.
+  /// Side effects: Persists the time and reschedules.
+  /// Notes: The stored day of the last desktop reminder is cleared, so moving
+  /// the time earlier fires today rather than tomorrow.
+  Future<void> setReminderTime(
+    int hour,
+    int minute,
+    AppLocalizations l10n,
+  ) async {
+    state = state.copyWith(reminderHour: hour, reminderMinute: minute);
+    await NihongoStorage.setReminderTime(hour, minute);
+    await NihongoStorage.setLastReminderDate(null);
+    await ReminderService.instance.reschedule(l10n);
+  }
+
   /// Purpose: Turn on-device AI assistance on or off.
   /// Inputs: `enabled`.
   /// Returns: None.
@@ -347,6 +392,15 @@ class AppSettings {
   /// learner turned it off.
   final bool showFurigana;
 
+  /// Whether the daily reminder is on. Off unless the learner turned it on.
+  final bool reminderEnabled;
+
+  /// The hour the reminder fires, in the device's own time.
+  final int reminderHour;
+
+  /// The minute it fires.
+  final int reminderMinute;
+
   /// Purpose: Create an app settings instance.
   /// Inputs: All fields.
   /// Returns: A new `AppSettings` instance.
@@ -368,6 +422,9 @@ class AppSettings {
     this.speechNetworkFallback = false,
     this.aiAssistEnabled = false,
     this.showFurigana = true,
+    this.reminderEnabled = false,
+    this.reminderHour = 20,
+    this.reminderMinute = 0,
   });
 
   /// Purpose: Create a copy with selected fields replaced.
@@ -394,6 +451,9 @@ class AppSettings {
     bool? speechNetworkFallback,
     bool? aiAssistEnabled,
     bool? showFurigana,
+    bool? reminderEnabled,
+    int? reminderHour,
+    int? reminderMinute,
   }) {
     return AppSettings(
       themeMode: themeMode ?? this.themeMode,
@@ -412,6 +472,9 @@ class AppSettings {
           speechNetworkFallback ?? this.speechNetworkFallback,
       aiAssistEnabled: aiAssistEnabled ?? this.aiAssistEnabled,
       showFurigana: showFurigana ?? this.showFurigana,
+      reminderEnabled: reminderEnabled ?? this.reminderEnabled,
+      reminderHour: reminderHour ?? this.reminderHour,
+      reminderMinute: reminderMinute ?? this.reminderMinute,
     );
   }
 }

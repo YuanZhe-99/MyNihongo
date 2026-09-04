@@ -6,6 +6,15 @@
          install. Recognition is offline unless the learner turns the network
          fallback on in Settings. See doc/en-us/features/pronunciation.md. -->
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <!-- The daily study reminder. POST_NOTIFICATIONS is requested at the
+         moment the learner turns the switch on, never at startup.
+         RECEIVE_BOOT_COMPLETED is what makes a schedule survive a
+         restart; without it a phone that reboots stops reminding and
+         nothing says why. SCHEDULE_EXACT_ALARM is deliberately NOT
+         requested: a study nudge does not deserve a high-privilege
+         permission, and inexactAllowWhileIdle is close enough. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <application
         android:usesCleartextTraffic="true"
         android:label="MyNihongo!!!!!"
@@ -42,6 +51,23 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
+        <!-- flutter_local_notifications: the receiver that fires a scheduled
+             reminder, and the one that re-registers the schedule after a
+             reboot or an app update. -->
+        <receiver
+            android:exported="false"
+            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
+        <receiver
+            android:exported="false"
+            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and

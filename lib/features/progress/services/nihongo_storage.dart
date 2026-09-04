@@ -721,6 +721,73 @@ class NihongoStorage {
   static Future<void> setSpeechNetworkFallback(bool allowed) =>
       _setBool('speechNetworkFallback', allowed ? true : null);
 
+  /// Purpose: Read whether the daily reminder is on.
+  /// Inputs: None.
+  /// Returns: `Future<bool>` — false unless the learner turned it on.
+  /// Side effects: Reads the config file.
+  /// Notes: Off by default and stored as an absent key, so a device that never
+  /// touched this setting is never asked for notification permission and never
+  /// posts anything.
+  static Future<bool> getReminderEnabled() async =>
+      await _getBool('reminderEnabled') ?? false;
+
+  /// Purpose: Remember whether the daily reminder is on.
+  /// Inputs: `enabled`.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: Off is stored as an absent key, like every other default here.
+  static Future<void> setReminderEnabled(bool enabled) =>
+      _setBool('reminderEnabled', enabled ? true : null);
+
+  /// Purpose: Read what time the reminder is set for.
+  /// Inputs: None.
+  /// Returns: `Future<(int, int)>` — hour and minute, 20:00 by default.
+  /// Side effects: Reads the config file.
+  /// Notes: Stored as `"HH:mm"` rather than as two numbers, because that is
+  /// what a person reading the config file understands. Anything that does not
+  /// parse reads as the default rather than as midnight.
+  static Future<(int, int)> getReminderTime() async {
+    final raw = await _getString('reminderTime');
+    final parts = raw?.split(':') ?? const [];
+    if (parts.length != 2) return (20, 0);
+    final hour = int.tryParse(parts[0]);
+    final minute = int.tryParse(parts[1]);
+    if (hour == null || minute == null) return (20, 0);
+    if (hour < 0 || hour > 23 || minute < 0 || minute > 59) return (20, 0);
+    return (hour, minute);
+  }
+
+  /// Purpose: Remember what time the reminder is set for.
+  /// Inputs: `hour`, `minute`.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: The default, 20:00, is stored as an absent key like every other.
+  static Future<void> setReminderTime(int hour, int minute) => _setString(
+    'reminderTime',
+    hour == 20 && minute == 0
+        ? null
+        : '${hour.toString().padLeft(2, '0')}:'
+              '${minute.toString().padLeft(2, '0')}',
+  );
+
+  /// Purpose: Read the last day a desktop reminder was posted.
+  /// Inputs: None.
+  /// Returns: `Future<String?>` — a `YYYY-MM-DD` local date, or null.
+  /// Side effects: Reads the config file.
+  /// Notes: Desktop only. There is no system scheduler there, so the app posts
+  /// from a timer and this is what stops a machine left running from posting
+  /// every minute for an hour.
+  static Future<String?> getLastReminderDate() =>
+      _getString('lastReminderDate');
+
+  /// Purpose: Remember the last day a desktop reminder was posted.
+  /// Inputs: `date`.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: None.
+  static Future<void> setLastReminderDate(String? date) =>
+      _setString('lastReminderDate', date);
+
   /// Purpose: Read whether on-device AI assistance is turned on.
   /// Inputs: None.
   /// Returns: `Future<bool>` — false unless the user turned it on.

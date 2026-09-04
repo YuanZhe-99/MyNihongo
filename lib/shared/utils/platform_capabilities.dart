@@ -70,3 +70,28 @@ bool get platformMayHaveOnDeviceModel =>
 bool get platformMayRecognizeSpeech =>
     defaultTargetPlatform != TargetPlatform.linux &&
     defaultTargetPlatform != TargetPlatform.fuchsia;
+
+/// Purpose: Say whether the operating system will fire a reminder for us.
+/// Inputs: None; reads `defaultTargetPlatform`.
+/// Returns: `bool`.
+/// Side effects: None.
+/// Notes: Android and iOS schedule notifications themselves, so a reminder
+/// arrives whether or not the app is running. Everything else has to be
+/// reminded from inside a running process — see
+/// [platformRemindsFromInsideTheApp] — which is a genuinely weaker promise and
+/// is why the two are named separately rather than being one flag.
+bool get platformSchedulesReminders => isMobilePlatform;
+
+/// Purpose: Say whether reminders depend on the app being open.
+/// Inputs: None; reads `defaultTargetPlatform`.
+/// Returns: `bool`.
+/// Side effects: None.
+/// Notes: The desktop path posts a notification from a timer in this process,
+/// so a machine with the app closed is not reminded. The Settings subtitle
+/// says so on those platforms rather than promising something the app cannot
+/// deliver.
+bool get platformRemindsFromInsideTheApp =>
+    isDesktopPlatform &&
+    (defaultTargetPlatform == TargetPlatform.windows ||
+        defaultTargetPlatform == TargetPlatform.macOS ||
+        defaultTargetPlatform == TargetPlatform.linux);

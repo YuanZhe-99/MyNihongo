@@ -279,6 +279,60 @@ abstract class AppLocalizations {
   /// **'Not this time. {percent}% right; {needed}% opens the next unit.'**
   String pathCheckpointFailed(int percent, int needed);
 
+  /// No description provided for @reminderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'MyNihongo!!!!!'**
+  String get reminderTitle;
+
+  /// No description provided for @reminderDueBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} items are due today.'**
+  String reminderDueBody(int count);
+
+  /// No description provided for @reminderUnitBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Next up: {unit}.'**
+  String reminderUnitBody(String unit);
+
+  /// No description provided for @reminderPlainBody.
+  ///
+  /// In en, this message translates to:
+  /// **'A few minutes of Japanese?'**
+  String get reminderPlainBody;
+
+  /// No description provided for @reminderSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily reminder'**
+  String get reminderSection;
+
+  /// No description provided for @reminderEnable.
+  ///
+  /// In en, this message translates to:
+  /// **'Remind me to study'**
+  String get reminderEnable;
+
+  /// No description provided for @reminderEnableSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'One local notification a day. Nothing leaves the device.'**
+  String get reminderEnableSubtitle;
+
+  /// No description provided for @reminderTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder time'**
+  String get reminderTime;
+
+  /// No description provided for @reminderDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications are switched off for this app. Turn them on in the system settings first.'**
+  String get reminderDenied;
+
   /// No description provided for @learnContentSummary.
   ///
   /// In en, this message translates to:

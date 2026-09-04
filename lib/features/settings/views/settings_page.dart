@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import '../../../l10n/app_localizations.dart';
+import '../../reminders/widgets/reminder_settings_tiles.dart';
 import '../../../shared/providers/app_settings.dart';
 import '../../../shared/services/auto_sync_service.dart';
 import '../../../shared/services/import_export_service.dart';
@@ -429,6 +430,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
         // device-local.
         _buildSection(l10n.settingsLearning, [
           const LearningSettingsTiles(),
+          const ReminderSettingsTiles(),
           ListTile(
             leading: const Icon(Icons.quiz_outlined),
             title: Text(l10n.quizModesTitle),

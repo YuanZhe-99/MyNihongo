@@ -119,6 +119,39 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get reminderTitle => 'MyNihongo!!!!!';
+
+  @override
+  String reminderDueBody(int count) {
+    return '$count items are due today.';
+  }
+
+  @override
+  String reminderUnitBody(String unit) {
+    return 'Next up: $unit.';
+  }
+
+  @override
+  String get reminderPlainBody => 'A few minutes of Japanese?';
+
+  @override
+  String get reminderSection => 'Daily reminder';
+
+  @override
+  String get reminderEnable => 'Remind me to study';
+
+  @override
+  String get reminderEnableSubtitle =>
+      'One local notification a day. Nothing leaves the device.';
+
+  @override
+  String get reminderTime => 'Reminder time';
+
+  @override
+  String get reminderDenied =>
+      'Notifications are switched off for this app. Turn them on in the system settings first.';
+
+  @override
   String get learnContentSummary => 'Content';
 
   @override

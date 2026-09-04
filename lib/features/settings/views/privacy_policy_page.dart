@@ -106,9 +106,17 @@ One part of this does use the network, and only when you ask for it: the first t
 
 Generated text is always labelled as generated. It can be wrong, it never changes the app's own analysis, and it is never written into the app's dictionary or grammar content.
 
+Daily Reminder
+
+You can ask the app to remind you to study once a day, at a time you choose. It is off until you turn it on, and the notification permission is requested at that moment and not before — opening Settings asks for nothing.
+
+The reminder is composed on your device from your own progress file and shown by your device. What it says — how many items are due, or which unit is next — never leaves the phone or the computer it is shown on. No reminder is sent to a server, and nothing about whether you opened it is recorded.
+
+On a phone the operating system holds the schedule, so a reminder arrives whether or not the app is running. On a desktop the app posts it itself, which means it only arrives while the app is open.
+
 Changes to This Policy
 
-This privacy policy may be updated from time to time. Updated versions will be published within the app or on the relevant distribution channels. Text to speech, speech recognition and on-device AI assistance are described above. Any future feature that could send anything off the device will be described here before it ships, and will be off unless you turn it on.''';
+This privacy policy may be updated from time to time. Updated versions will be published within the app or on the relevant distribution channels. Text to speech, speech recognition, on-device AI assistance and the daily reminder are described above. Any future feature that could send anything off the device will be described here before it ships, and will be off unless you turn it on.''';
 
   static const _zh = '''隐私政策
 
@@ -168,9 +176,17 @@ MyNihongo!!!!! 仅在以下情况下访问互联网，且每一项都需要您�
 
 生成的文字始终带有「生成」标注。它可能有误，绝不会改变应用自身的分析结果，也绝不会写入应用的词典或语法内容。
 
+每日提醒
+
+你可以让应用每天在你选定的时间提醒你学习。它在你打开之前一直是关闭的，通知权限也正是在你打开的那一刻才请求——打开设置本身不会请求任何权限。
+
+提醒是在你的设备上、依据你自己的进度文件组装，并由你的设备显示的。它说了什么——有多少项到期，或者下一个单元是哪个——绝不会离开显示它的那台手机或电脑。没有任何提醒被发往服务器，你是否打开过它也不会被记录。
+
+在手机上，排程由操作系统保管，因此无论应用是否在运行，提醒都会到达。在桌面上，提醒由应用自己发布，也就是说只有应用开着时它才会出现。
+
 政策变更
 
-本隐私政策可能会不时更新。更新版本将在应用内或相关分发渠道发布。语音合成、语音识别与端侧 AI 辅助已在上文说明。今后任何可能把内容发出设备的功能，都会在发布前写入本政策，并且默认关闭，除非你自己打开。''';
+本隐私政策可能会不时更新。更新版本将在应用内或相关分发渠道发布。语音合成、语音识别、端侧 AI 辅助与每日提醒已在上文说明。今后任何可能把内容发出设备的功能，都会在发布前写入本政策，并且默认关闭，除非你自己打开。''';
 
   static const _zhTw = '''隱私政策
 
@@ -230,7 +246,15 @@ MyNihongo!!!!! 僅在以下情況下存取網際網路，且每一項都需要�
 
 生成的文字始終帶有「生成」標註。它可能有誤，絕不會改變應用程式自身的分析結果，也絕不會寫入應用程式的詞典或文法內容。
 
+每日提醒
+
+你可以讓應用程式每天在你選定的時間提醒你學習。它在你開啟之前一直是關閉的，通知權限也正是在你開啟的那一刻才請求——開啟設定本身不會請求任何權限。
+
+提醒是在你的裝置上、依據你自己的進度檔案組裝，並由你的裝置顯示的。它說了什麼——有多少項到期，或者下一個單元是哪個——絕不會離開顯示它的那台手機或電腦。沒有任何提醒被送往伺服器，你是否開啟過它也不會被記錄。
+
+在手機上，排程由作業系統保管，因此無論應用程式是否在執行，提醒都會抵達。在桌面上，提醒由應用程式自己發布，也就是說只有應用程式開著時它才會出現。
+
 政策變更
 
-本隱私政策可能會不時更新。更新版本將在應用程式內或相關發行管道發布。語音合成、語音辨識與裝置端 AI 輔助已在上文說明。今後任何可能把內容發出裝置的功能，都會在發布前寫入本政策，並且預設關閉，除非你自己開啟。''';
+本隱私政策可能會不時更新。更新版本將在應用程式內或相關發行管道發布。語音合成、語音辨識、裝置端 AI 輔助與每日提醒已在上文說明。今後任何可能把內容發出裝置的功能，都會在發布前寫入本政策，並且預設關閉，除非你自己開啟。''';
 }

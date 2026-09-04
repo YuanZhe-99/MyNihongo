@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'app/app.dart';
 import 'features/progress/services/nihongo_storage.dart';
+import 'features/reminders/services/reminder_service.dart';
 import 'shared/services/auto_sync_service.dart';
 import 'shared/services/backup_service.dart';
 import 'shared/widgets/shell_scaffold.dart';
@@ -26,6 +29,11 @@ void main() async {
 
   // Start the auto-sync lifecycle observer.
   AutoSyncService.instance.start();
+
+  // Prepare the notification machinery without asking the learner for
+  // anything. A device whose owner has never turned reminders on is never
+  // shown a permission dialog; the request lives in the Settings switch.
+  unawaited(ReminderService.instance.init());
 
   // Read the last tab before the first frame, so the app opens where the user
   // left it rather than showing Learn and jumping.
