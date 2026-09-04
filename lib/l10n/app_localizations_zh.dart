@@ -283,6 +283,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settingsLanguageSystem => '跟随系统';
 
   @override
+  String get settingsFurigana => '汉字上方显示假名';
+
+  @override
+  String get settingsFuriganaSubtitle => '在含汉字的词上方显示读音';
+
+  @override
   String get settingsData => '数据';
 
   @override
@@ -1530,6 +1536,12 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get settingsLanguageSystem => '跟隨系統';
+
+  @override
+  String get settingsFurigana => '漢字上方顯示假名';
+
+  @override
+  String get settingsFuriganaSubtitle => '在含漢字的詞上方顯示讀音';
 
   @override
   String get settingsData => '資料';

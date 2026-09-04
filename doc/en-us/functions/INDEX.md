@@ -4,17 +4,17 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **715** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **742** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **732** documented declarations. The two counts are measured separately and
+The rows below sum to **747** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
-| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 133 |
-| Tier B (index row only) | 599 |
-| **Total** | **732** |
+| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 138 |
+| Tier B (index row only) | 609 |
+| **Total** | **747** |
 
 These totals were measured against the source tree at initialization (`PLAN.md` M1.0). If you
 change these numbers, measure them rather than adjusting them by hand:
@@ -63,6 +63,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/content/services/content_repository.dart` | [features/content/services/content_repository.md](features/content/services/content_repository.md) | 5 | 0 |
 | `lib/features/content/services/study_item_labels.dart` | [features/content/services/study_item_labels.md](features/content/services/study_item_labels.md) | 3 | 1 |
 | `lib/features/content/services/content_links.dart` | [features/content/services/content_links.md](features/content/services/content_links.md) | 7 | 3 |
+| `lib/features/content/services/furigana_aligner.dart` | [features/content/services/furigana_aligner.md](features/content/services/furigana_aligner.md) | 10 | 4 |
 | `lib/features/grammar/views/grammar_page.dart` | [features/grammar/views/grammar_page.md](features/grammar/views/grammar_page.md) | 7 | 1 |
 | `lib/features/kana/models/kana.dart` | [features/kana/models/kana.md](features/kana/models/kana.md) | 9 | 0 |
 | `lib/features/kana/models/kana_note.dart` | [features/kana/models/kana_note.md](features/kana/models/kana_note.md) | 4 | 0 |
@@ -140,6 +141,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/shared/utils/platform_capabilities.dart` | [shared/utils/platform_capabilities.md](shared/utils/platform_capabilities.md) | 6 | 1 |
 | `lib/shared/widgets/adaptive_tile_grid.dart` | [shared/widgets/adaptive_tile_grid.md](shared/widgets/adaptive_tile_grid.md) | 3 | 0 |
 | `lib/shared/widgets/example_actions.dart` | [shared/widgets/example_actions.md](shared/widgets/example_actions.md) | 1 | 1 |
+| `lib/shared/widgets/furigana_text.dart` | [shared/widgets/furigana_text.md](shared/widgets/furigana_text.md) | 5 | 1 |
 | `lib/shared/widgets/content_sheets.dart` | [shared/widgets/content_sheets.md](shared/widgets/content_sheets.md) | 8 | 3 |
 | `lib/shared/widgets/reference_widgets.dart` | [shared/widgets/reference_widgets.md](shared/widgets/reference_widgets.md) | 4 | 0 |
 | `lib/shared/widgets/shell_scaffold.dart` | [shared/widgets/shell_scaffold.md](shared/widgets/shell_scaffold.md) | 5 | 1 |

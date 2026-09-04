@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../shared/utils/adaptive_layout.dart';
 import '../../speech/widgets/speak_button.dart';
+import '../../../shared/widgets/furigana_text.dart';
 import '../models/quiz_question.dart';
 import '../services/answer_checker.dart';
 import '../services/quiz_session.dart';
@@ -122,9 +123,7 @@ class _QuizRunnerState extends State<QuizRunner> {
         if (answered) _feedback(context, l10n, outcome),
         const SizedBox(height: 12),
         FilledButton(
-          onPressed: answered
-              ? _continue
-              : (_pending == null ? null : _submit),
+          onPressed: answered ? _continue : (_pending == null ? null : _submit),
           child: Text(answered ? l10n.quizContinue : l10n.quizCheck),
         ),
       ],
@@ -251,8 +250,9 @@ class _QuestionPane extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         if (showPrompt && question.prompt.isNotEmpty)
-          Text(
+          FuriganaText(
             question.prompt,
+            reading: question.promptReading,
             style: theme.textTheme.headlineSmall?.copyWith(
               fontWeight: FontWeight.w700,
             ),

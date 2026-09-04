@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:my_nihongo/shared/widgets/furigana_text.dart';
 import 'package:my_nihongo/app/app.dart';
 import 'package:my_nihongo/features/content/services/content_repository.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -25,6 +26,19 @@ class _FakePathProvider extends PathProviderPlatform {
   @override
   Future<String?> getApplicationDocumentsPath() async => documentsPath;
 }
+
+/// Purpose: Find Japanese text however it happens to be drawn.
+/// Inputs: `text` as the catalog spells it.
+/// Returns: `Finder`.
+/// Side effects: None.
+/// Notes: With kana printed over kanji the word is a `Text.rich` of several
+/// spans, so no single `Text` holds the whole string and `find.text` misses
+/// it. What is on screen is still the word.
+Finder japanese(String text) => find.byWidgetPredicate(
+  (widget) =>
+      (widget is Text && widget.data == text) ||
+      (widget is FuriganaText && widget.text == text),
+);
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -97,7 +111,7 @@ void main() {
     expect(tester.takeException(), isNull);
 
     await openTab(tester, 'Vocabulary');
-    expect(find.text('会う'), findsOneWidget, reason: 'the generated catalog');
+    expect(japanese('会う'), findsOneWidget, reason: 'the generated catalog');
     expect(tester.takeException(), isNull);
 
     await openTab(tester, 'Grammar');
@@ -132,7 +146,7 @@ void main() {
     await launch(tester, 412, 915);
     await openTab(tester, 'Vocabulary');
     await tester.runAsync(() async {
-      await tester.tap(find.text('会う'));
+      await tester.tap(japanese('会う'));
       for (var i = 0; i < 6; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
@@ -140,7 +154,7 @@ void main() {
     });
     await tester.pump();
     // The sheet repeats the headword, so it is on screen twice.
-    expect(find.text('会う'), findsNWidgets(2));
+    expect(japanese('会う'), findsNWidgets(2));
     expect(tester.takeException(), isNull);
   });
 }

@@ -35,6 +35,9 @@
 - [`features/reference-preferences.md`](features/reference-preferences.md) — 参考页面按设备记住的五个选择。
 - [`features/pronunciation.md`](features/pronunciation.md) — 一切发声与听声的部分：哪些内容会被朗读、速度与语音偏好，以及未安装日语语音时的表现。
 - [`features/sentence-lab.md`](features/sentence-lab.md) — 句子实验室页面：它显示什么、从哪里进入，以及它写明的限制。
+- [`features/quizzes.md`](features/quizzes.md) — 围绕同一个内容库的十三种提问方式，以及一道题如何被生成或被舍弃。
+- [`algorithms/spaced-repetition.md`](algorithms/spaced-repetition.md) — SM-2 的调度、与教科书的两处偏离，以及复习队列如何派生。
+- [`algorithms/furigana-alignment.md`](algorithms/furigana-alignment.md) — 读音如何与它所属的字对上，以及它在什么时候拒绝猜测。
 - [`algorithms/pronunciation-scoring.md`](algorithms/pronunciation-scoring.md) — 一次朗读尝试如何逐音拍地与读音作对照。
 - [`algorithms/sentence-analysis.md`](algorithms/sentence-analysis.md) — 输入的句子如何变成词、结构、语法点和可能的问题。
 - [`store-listing.md`](store-listing.md) — 发布与商店文案。

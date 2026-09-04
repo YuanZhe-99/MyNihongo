@@ -62,6 +62,12 @@ The shared WebDAV sync, backup, and ZIP engines are not in this repository. They
   what speaks, the speed and voice preferences, and what happens with no Japanese voice installed.
 - [`features/sentence-lab.md`](features/sentence-lab.md) — the sentence lab page: what it
   shows, where it is reached from, and the limits it states.
+- [`features/quizzes.md`](features/quizzes.md) — the thirteen ways of asking about the same
+  catalog, and how a question is built or dropped.
+- [`algorithms/spaced-repetition.md`](algorithms/spaced-repetition.md) — the SM-2 schedule, the two
+  departures from the textbook, and how the review queue is derived.
+- [`algorithms/furigana-alignment.md`](algorithms/furigana-alignment.md) — how a reading is matched
+  to the characters it belongs to, and when it refuses to guess.
 - [`algorithms/pronunciation-scoring.md`](algorithms/pronunciation-scoring.md) — how a spoken
   attempt is compared with a reading, mora by mora.
 - [`algorithms/sentence-analysis.md`](algorithms/sentence-analysis.md) — how a typed sentence

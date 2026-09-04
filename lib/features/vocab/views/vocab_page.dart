@@ -14,6 +14,8 @@ import '../../content/models/vocab_entry.dart';
 import '../../content/services/content_repository.dart';
 import '../../../shared/providers/app_settings.dart';
 import '../../../shared/widgets/content_sheets.dart';
+import '../../../shared/widgets/furigana_text.dart';
+import '../../content/services/furigana_aligner.dart';
 
 class VocabPage extends ConsumerStatefulWidget {
   /// Purpose: Create a vocabulary page instance.
@@ -258,8 +260,14 @@ class _VocabPageState extends ConsumerState<VocabPage> {
     Locale locale,
   ) {
     final theme = Theme.of(context);
+    final ruby =
+        ref.watch(appSettingsProvider).showFurigana &&
+        (alignFurigana(entry.headword, entry.reading)?.any((s) => s.isRuby) ??
+            false);
+    // With the reading printed over the kanji, repeating it underneath says
+    // nothing; the romaji is a different piece of information and stays.
     final reading = [
-      if (entry.hasKanji) entry.reading,
+      if (entry.hasKanji && !ruby) entry.reading,
       if (entry.romaji != null) entry.romaji!,
     ].join(' · ');
     return Card(
@@ -276,8 +284,9 @@ class _VocabPageState extends ConsumerState<VocabPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    FuriganaText(
                       entry.headword,
+                      reading: entry.reading,
                       style: theme.textTheme.titleLarge?.copyWith(
                         fontWeight: FontWeight.w700,
                       ),

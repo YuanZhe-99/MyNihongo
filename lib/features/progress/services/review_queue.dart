@@ -153,7 +153,7 @@ class ReviewQueue {
   /// ignore the level — they are not levelled, and the rest of the catalog is
   /// unreadable without them. Vocabulary comes before grammar, and common words
   /// before rare ones, so the first hundred items a learner meets are the ones
-  /// they will actually see again. Lesson order replaces this in M3.3; until
+  /// they will actually see again. Lesson order replaces this in M3.4; until
   /// then the catalog's own order is the best available answer.
   static List<String> _newItems({
     required ContentCatalog catalog,

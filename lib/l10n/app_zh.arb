@@ -104,6 +104,8 @@
   "settingsThemeDark": "深色",
   "settingsLanguage": "语言",
   "settingsLanguageSystem": "跟随系统",
+  "settingsFurigana": "汉字上方显示假名",
+  "settingsFuriganaSubtitle": "在含汉字的词上方显示读音",
   "settingsData": "数据",
   "settingsStorageLocation": "存储位置",
   "settingsSelectItem": "从左侧列表中选择一项",

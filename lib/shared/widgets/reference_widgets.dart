@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../features/content/models/jlpt_level.dart';
 import '../../features/content/models/localized_strings.dart';
 import '../../l10n/app_localizations.dart';
+import '../../features/content/services/furigana_aligner.dart';
+import '../providers/app_settings.dart';
 import 'example_actions.dart';
+import 'furigana_text.dart';
 
 /// Purpose: Render a small JLPT level badge.
 /// Inputs: `level`.
@@ -65,8 +69,9 @@ Widget levelFilterRow(
 /// Inputs: `examples`, `locale`.
 /// Returns: `Widget`; an empty box when there are no examples.
 /// Side effects: None.
-/// Notes: Shared by the vocabulary and grammar detail sheets. The reading line
-/// appears only when the content supplies one.
+/// Notes: Shared by the vocabulary and grammar detail sheets. The reading
+/// appears once: over the kanji when it aligns and the preference is on, on
+/// its own line otherwise.
 Widget exampleList(
   BuildContext context,
   List<ContentExample> examples,
@@ -87,38 +92,76 @@ Widget exampleList(
       ),
       const SizedBox(height: 8),
       for (final example in examples)
-        Padding(
-          padding: const EdgeInsets.only(bottom: 10),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(example.ja, style: theme.textTheme.bodyLarge),
-                    if (example.reading != null)
-                      Text(
-                        example.reading!,
-                        style: theme.textTheme.bodySmall?.copyWith(
-                          color: theme.colorScheme.onSurfaceVariant,
-                        ),
-                      ),
-                    Text(
-                      example.translations.resolveJoined(locale),
-                      style: theme.textTheme.bodyMedium?.copyWith(
-                        color: theme.colorScheme.onSurfaceVariant,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              ExampleActions(example: example),
-            ],
-          ),
-        ),
+        _ExampleTile(example: example, locale: locale),
     ],
   );
+}
+
+/// One example sentence with its reading and translation.
+class _ExampleTile extends ConsumerWidget {
+  /// Purpose: Show one example sentence.
+  /// Inputs: `example`, `locale`.
+  /// Returns: A new `_ExampleTile` instance.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. A widget rather than a
+  /// piece of [exampleList] because whether the reading gets its own line
+  /// depends on a preference, and reading a provider needs a build context of
+  /// its own.
+  const _ExampleTile({required this.example, required this.locale});
+
+  final ContentExample example;
+  final Locale locale;
+
+  @override
+  /// Purpose: Build the sentence, its reading and its translation.
+  /// Inputs: `context`, `ref`.
+  /// Returns: `Widget`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. **The reading appears
+  /// once or not at all.** With the kana printed over the kanji, a second copy
+  /// of the same kana underneath is noise; when the sentence cannot be aligned
+  /// the separate line is the only place the reading appears, so it stays.
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context);
+    final ruby =
+        ref.watch(appSettingsProvider).showFurigana &&
+        (alignFurigana(example.ja, example.reading)?.any((s) => s.isRuby) ??
+            false);
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                FuriganaText(
+                  example.ja,
+                  reading: example.reading,
+                  style: theme.textTheme.bodyLarge,
+                ),
+                if (example.reading != null && !ruby)
+                  Text(
+                    example.reading!,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                Text(
+                  example.translations.resolveJoined(locale),
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          ExampleActions(example: example),
+        ],
+      ),
+    );
+  }
 }
 
 /// Purpose: Render the empty-state line shown when a filter matches nothing.

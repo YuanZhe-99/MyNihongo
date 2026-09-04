@@ -6,6 +6,8 @@ import '../../content/models/content_catalog.dart';
 import '../../content/models/localized_strings.dart';
 import '../models/sentence_analysis.dart';
 import '../models/token.dart';
+import '../../../shared/widgets/furigana_text.dart';
+import '../../content/services/furigana_aligner.dart';
 import 'form_labels.dart';
 
 /// The sentence as a row of tappable word chips.
@@ -78,8 +80,12 @@ class TokenChips extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            FuriganaText(
               token.surface,
+              // Not `token.reading`: that is the **dictionary form's** reading,
+              // so 食べ carries たべる and printing it would show a る the
+              // sentence does not contain.
+              reading: surfaceReadingOfToken(token),
               style: theme.textTheme.titleMedium?.copyWith(color: colors.$2),
             ),
             if (forms != null)

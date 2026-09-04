@@ -22,12 +22,32 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     _loadPersisted();
   }
 
-  /// Purpose: Load the persisted theme mode and locale from disk.
+  /// Purpose: Load the persisted preferences from disk.
   /// Inputs: None.
   /// Returns: None.
   /// Side effects: Reads `storage_config.json` and replaces the state.
-  /// Notes: Internal helper used within this file only.
+  /// Notes: Internal helper used within this file only. **A storage failure
+  /// leaves every default in place rather than propagating.** This runs from
+  /// the constructor, so nothing is awaiting it and an exception would surface
+  /// as an unhandled asynchronous error while the app carried on with the
+  /// defaults anyway — the same outcome, reported as a crash. A device whose
+  /// documents directory is not available yet starts on defaults, which is
+  /// what it would do with an empty config file.
   Future<void> _loadPersisted() async {
+    try {
+      await _readPersisted();
+    } catch (_) {
+      // Defaults, already in `state` from the constructor.
+    }
+  }
+
+  /// Purpose: Read every persisted preference and apply it.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: Reads the config file, replaces the state, and configures
+  /// the speech and AI services from it.
+  /// Notes: Internal helper used within this file only.
+  Future<void> _readPersisted() async {
     final modeStr = await NihongoStorage.getThemeMode();
     final localeTag = await NihongoStorage.getLocaleTag();
     final vocabLevel = await NihongoStorage.getVocabLevel();
@@ -41,6 +61,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     final speechNetworkFallback =
         await NihongoStorage.getSpeechNetworkFallback();
     final aiAssistEnabled = await NihongoStorage.getAiAssistEnabled();
+    final showFurigana = await NihongoStorage.getShowFurigana();
 
     final themeMode = switch (modeStr) {
       'light' => ThemeMode.light,
@@ -72,6 +93,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
       quizModes: _parseQuizModes(quizModes),
       speechNetworkFallback: speechNetworkFallback,
       aiAssistEnabled: aiAssistEnabled,
+      showFurigana: showFurigana,
     );
 
     // The engine is configured from the same values the UI shows, once the
@@ -209,9 +231,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
   static Set<QuizMode> _parseQuizModes(String? stored) {
     if (stored == null || stored.isEmpty) return const {};
     final byName = {for (final mode in QuizMode.values) mode.name: mode};
-    return {
-      for (final name in stored.split(',')) ?byName[name.trim()],
-    };
+    return {for (final name in stored.split(',')) ?byName[name.trim()]};
   }
 
   /// Purpose: Allow or forbid a fallback to network speech recognition.
@@ -234,6 +254,18 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
   /// device what its models can do when switched on — and persists it.
   /// Notes: Off by default and stored as an absent key. Nothing in the app
   /// turns this on by itself; only this setter, from the switch in Settings.
+  /// Purpose: Turn the kana printed over kanji on or off.
+  /// Inputs: `show`.
+  /// Returns: None.
+  /// Side effects: Persists the choice.
+  /// Notes: On by default, so **off** is what gets stored — the one inverted
+  /// preference in the app, because a learner who has never opened Settings is
+  /// the learner who most needs the readings.
+  void setShowFurigana(bool show) {
+    state = state.copyWith(showFurigana: show);
+    NihongoStorage.setShowFurigana(show);
+  }
+
   void setAiAssistEnabled(bool enabled) {
     state = state.copyWith(aiAssistEnabled: enabled);
     unawaited(AiAssistService.instance.setEnabled(enabled));
@@ -311,6 +343,10 @@ class AppSettings {
   /// Whether the user turned on-device AI assistance on. Off unless they did.
   final bool aiAssistEnabled;
 
+  /// Whether kana are printed over the kanji that need them. On unless the
+  /// learner turned it off.
+  final bool showFurigana;
+
   /// Purpose: Create an app settings instance.
   /// Inputs: All fields.
   /// Returns: A new `AppSettings` instance.
@@ -331,6 +367,7 @@ class AppSettings {
     this.quizModes = const {},
     this.speechNetworkFallback = false,
     this.aiAssistEnabled = false,
+    this.showFurigana = true,
   });
 
   /// Purpose: Create a copy with selected fields replaced.
@@ -356,6 +393,7 @@ class AppSettings {
     Set<QuizMode>? quizModes,
     bool? speechNetworkFallback,
     bool? aiAssistEnabled,
+    bool? showFurigana,
   }) {
     return AppSettings(
       themeMode: themeMode ?? this.themeMode,
@@ -373,6 +411,7 @@ class AppSettings {
       speechNetworkFallback:
           speechNetworkFallback ?? this.speechNetworkFallback,
       aiAssistEnabled: aiAssistEnabled ?? this.aiAssistEnabled,
+      showFurigana: showFurigana ?? this.showFurigana,
     );
   }
 }

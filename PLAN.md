@@ -5,7 +5,7 @@ says how to work here; `doc/en-us/` says what the code does; this file says **wh
 what order, why, and what is done**. Update the checklists in the same change that lands a
 milestone item.
 
-**Status as of 2026-09-04:** Phase 3 is in progress; M3.0 (device fixes), M3.1 (spaced repetition core) and M3.2 (quiz modes) have landed. Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
+**Status as of 2026-09-04:** Phase 3 is in progress; M3.0 (device fixes), M3.1 (spaced repetition core), M3.2 (quiz modes) and M3.3 (kana over kanji) have landed. Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
 (text-to-speech), M2.2 (speech recognition and pronunciation feedback), M2.3 (the sentence lab),
 M2.4 (on-device AI assist) and M2.5 (Traditional Chinese) have landed, along with the Windows and
 macOS projects the pronunciation work needs a machine for. `v0.2.1` is the current release; M2.5 is
@@ -520,7 +520,42 @@ below all depend on speech.
       be asked at least one way; every generated question is answerable), `distractors_test`,
       `conjugator_test`, `answer`/`quiz_session_test`, `quiz_page_ui_test` at all eight geometries
 
-#### M3.3 Lesson path (Duolingo-style)
+#### M3.3 Kana over kanji — **done 2026-09-04**
+
+Asked for during Phase 3 and taken first, because every screen the milestones below add draws
+Japanese and would otherwise have to be revisited.
+
+- [x] A **furigana aligner**, because the catalog has no per-character mapping and never will: one
+      reading per word, one per sentence. Kana in the surface are anchors that must appear in the
+      reading in order; kanji runs take what is between them, shortest first, backtracking until
+      the reading is consumed **completely**. That last word is the whole difficulty — 母は/ははは
+      is 母 = はは while 花は/はなは is 花 = はな, and no local rule separates them. Derived in
+      `algorithms/furigana-alignment.md`
+- [x] **Failing is a result.** No reading, a reading belonging to another form, a sentence the
+      normalizer changed — all return null, and every caller falls back to the separate reading
+      line it drew before. A wrong alignment is not an uglier layout; it prints kana over the wrong
+      character and teaches a reading that does not exist
+- [x] Memoized on (run, position): without it the search is exponential in the number of kanji runs
+      and a sentence with a dozen of them hangs the frame drawing it. Found by a test, not by
+      reasoning — the widget test hung
+- [x] `FuriganaText` everywhere Japanese is drawn with a reading available: the vocabulary list and
+      sheet, word chips under a grammar point and under a kana, every example sentence, the quiz
+      prompt, and the sentence lab's chips. **The reading appears once** — over the kanji, or on
+      its own line, never both
+- [x] The sentence lab needed its own answer: `Token.reading` is the **dictionary form's** reading,
+      so 食べ carries たべる and printing it would show a る the sentence does not contain. The
+      kanji reading comes from the lemma's alignment and the kana tail from the surface. 来る is
+      decided by the recovered forms, and left unread when they do not decide it
+- [x] A blanked question blanks its reading at the same span, or the kana above the sentence would
+      answer it; a span that cuts a kanji run in half has no answer and the question loses its ruby
+- [x] Settings › General › **Kana over kanji**, on by default. **The one inverted preference in the
+      app**: `false` is what gets stored, because a learner who has never opened Settings is the one
+      who most needs the readings
+- [x] Tests: `furigana_aligner_test` (25, including the two performance guards), `furigana_text_test`
+      at all eight geometries, four in `preferences_test`. `app_smoke_test` learnt to find Japanese
+      by widget rather than by string, since a word with ruby is no longer one `Text`
+
+#### M3.4 Lesson path (Duolingo-style)
 
 - [ ] Content: `assets/content/lessons/<level>.json` — units → lessons → ordered exercise
       templates referencing catalog ids; a lesson introduces ≤ 8 new items and mixes in due reviews
@@ -533,7 +568,7 @@ below all depend on speech.
 - [ ] Notifications (optional, local only): daily reminder at a chosen time, like MyAnime's
       reminders; off by default
 
-#### M3.4 AICore-assisted practice (optional enhancement)
+#### M3.5 AICore-assisted practice (optional enhancement)
 
 Same policy as the Phase 2 enhancement: Android AICore / Gemini Nano through ML Kit GenAI, on-device
 only, off by default behind one switch shared with Phase 2, a capability check on every use, and a
@@ -548,7 +583,7 @@ catalog content, and never writes a progress record by itself — the learner's 
 - [ ] Free-response grading in quizzes: a typed translation or open answer is compared with the
       model answer — AICore judges meaning equivalence and explains the gap; fallback is
       normalized exact match with "mark it yourself"
-- [ ] Scenario dialogue partner: in M3.3 scenario lessons the learner's free reply is answered in
+- [ ] Scenario dialogue partner: in M3.4 scenario lessons the learner's free reply is answered in
       character within the lesson's vocabulary set; the scripted branches stay the graded path
       and the fallback
 - [ ] "Why was this wrong": a richer explanation on demand for a wrong answer, grounded in the
@@ -570,7 +605,7 @@ catalog content, and never writes a progress record by itself — the learner's 
 - [ ] Results history synced: one record per attempt (`exam:<uuid>`) — a new record kind in the
       same module, or a new module `nihongo_exams.json` if the file grows past a few hundred kB
 - [ ] Weakness report: per-section and per-grammar-point accuracy feeding review priorities
-- [ ] AICore enhancement (M3.4 policy, same switch): a supplementary 作文 writing section — a short
+- [ ] AICore enhancement (M3.5 policy, same switch): a supplementary 作文 writing section — a short
       composition per prompt with feedback against a rubric (task fulfilment, grammar range,
       vocabulary level), labelled supplementary because the JLPT has no writing section; 読解 help —
       paraphrase a hard sentence or explain why a chosen option contradicts the passage; 聴解
@@ -690,6 +725,11 @@ catalog content, and never writes a progress record by itself — the learner's 
 | 2026-09-03 | Japanese voices are numbered over a total order rather than shown by engine name | `ja-jp-x-jab#male_1-local` says nothing about how a voice sounds and differs per engine. The order is total (installed, offline, quality, name) so the numbers cannot move between runs; the raw name is still shown small, because that is what a bug report needs |
 | 2026-09-03 | Auditioning a voice restores the previous one in a `finally` | Hearing a voice and choosing it are different acts, and a sample that silently changed the app's voice would make the picker unusable for comparison |
 | 2026-09-03 | `GenAiStatus.unreachable` is separate from `unavailable`, and both carry the device's own answer | A phone with AICore installed reported having no on-device model, and nothing in the app could say whether AICore had refused, the call had thrown, or the package was invisible to the build. One sentence for four causes is not a diagnosis |
+| 2026-09-04 | Furigana are aligned per kanji **run**, not per character | The catalog has one reading per word and none per character, so per-character ruby has no data behind it; and 東 alone is not とう in every word. A run is the finest granularity the content can actually support |
+| 2026-09-04 | An alignment that does not consume the whole reading is refused, not approximated | 母は against ははは has two candidate splits and only the one that uses every kana is right. Refusing costs a line of screen; guessing prints kana over the wrong character and teaches a reading that does not exist |
+| 2026-09-04 | Kana over kanji is stored only when **off** | It is the only preference in the app whose default is on, and inverting the storage is what makes an absent key mean on. A learner who has never opened Settings is the learner who most needs the readings |
+| 2026-09-04 | A token's ruby comes from its lemma's alignment plus the surface's kana tail | `Token.reading` is the dictionary form's reading because that is what de-inflection matches against, so 食べ carries たべる. Printing it would show a る the sentence does not contain |
+| 2026-09-04 | `AppSettingsNotifier` starts on defaults when the config cannot be read | Nothing awaits the load, so a failure surfaced as an unhandled asynchronous error while the app carried on with the defaults regardless — the same outcome, reported as a crash |
 | 2026-09-03 | The sentence lab is a route outside the shell, not a sixth tab | The five tabs are the reference the app is built around; the lab is something done *to* a sentence you already have, and it is always entered with a purpose from somewhere else |
 
 ## 7. Open questions

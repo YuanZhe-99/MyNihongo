@@ -104,6 +104,8 @@
   "settingsThemeDark": "Dark",
   "settingsLanguage": "Language",
   "settingsLanguageSystem": "System",
+  "settingsFurigana": "Kana over kanji",
+  "settingsFuriganaSubtitle": "Show the reading above words that use kanji",
   "settingsData": "Data",
   "settingsStorageLocation": "Storage Location",
   "settingsSelectItem": "Select an item from the list",

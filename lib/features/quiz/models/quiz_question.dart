@@ -109,6 +109,7 @@ class QuizQuestion {
     required this.mode,
     required this.kind,
     required this.prompt,
+    this.promptReading,
     this.promptSubtitle,
     this.speakText,
     this.context,
@@ -133,6 +134,12 @@ class QuizQuestion {
   /// Empty for a listening question until it has been answered: the whole
   /// point is that the learner hears it rather than reads it.
   final String prompt;
+
+  /// The prompt's reading in kana, for printing over the kanji in it.
+  ///
+  /// Null for the modes where the reading **is** the answer, and for any
+  /// prompt whose reading could not be aligned with what is shown.
+  final String? promptReading;
 
   /// A smaller line under the prompt, such as a reading or a translation.
   final String? promptSubtitle;

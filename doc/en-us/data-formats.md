@@ -342,6 +342,7 @@ Settings shows the resolved path only on desktop; see `platform_capabilities.dar
 | Enabled quiz modes | `storage_config.json` | No | Comma-joined mode names, absent means every mode (`quizModes`) |
 | Network speech recognition | `storage_config.json` | No | `true` only if turned on; absent means offline-only (`speechNetworkFallback`) |
 | On-device AI assistance | `storage_config.json` | No | `true` only if turned on; absent means off (`aiAssistEnabled`) |
+| Kana over kanji | `storage_config.json` | No | `false` only if turned off; absent means on — the one inverted preference (`furigana`) |
 | WebDAV configuration | `webdav_config.json` | No | Local secret/config only |
 | Sync base snapshot | `.sync_base/nihongo_progress.json` | No | Local merge tracking |
 | Upload lock record | `.sync_base/upload_lock.json` | No | Detects an upload interrupted mid-flight |

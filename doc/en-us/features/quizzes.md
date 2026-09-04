@@ -140,6 +140,20 @@ same reason: it is something entered with a purpose and left when it is finished
 not a place to browse. Leaving mid-session asks first, but only once something
 has been answered.
 
+## Readings in a question
+
+A prompt carries furigana wherever the reading is not the thing being asked. Japanese to meaning
+prints the reading over the word; picking the grammar point prints the sentence's own reading; a
+fill-in-the-blank question blanks the reading at the same span it blanked the sentence, or the kana
+above the sentence would answer the question.
+
+**Written form to reading and typing the reading never do**, and neither does a listening question
+before it is answered. Printing the answer above the prompt is not a display choice.
+
+Where the reading cannot be aligned — see
+[`../algorithms/furigana-alignment.md`](../algorithms/furigana-alignment.md) — the prompt falls
+back to the subtitle line the quiz used before, so the reading is shown exactly once either way.
+
 ## Layout
 
 Question pane fixed on the left, answers on the right, when `canSplitLayout`

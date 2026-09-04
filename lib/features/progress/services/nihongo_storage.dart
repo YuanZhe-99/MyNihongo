@@ -616,6 +616,26 @@ class NihongoStorage {
   /// Notes: None.
   static Future<void> setQuizModes(String? modes) =>
       _setString('quizModes', modes);
+  /// Purpose: Read whether kana are printed over kanji.
+  /// Inputs: None.
+  /// Returns: `Future<bool>` — true unless the learner turned it off.
+  /// Side effects: Reads the config file.
+  /// Notes: **The default is on and `false` is what gets written**, which is
+  /// the opposite of every other boolean here. A learner who has never opened
+  /// Settings is a learner who most needs the readings, so an absent key has
+  /// to mean on. Device-local: whether furigana help depends on the reader,
+  /// not on the account.
+  static Future<bool> getShowFurigana() async =>
+      await _getBool('furigana') ?? true;
+
+  /// Purpose: Remember whether kana are printed over kanji.
+  /// Inputs: `show`.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: On is stored as an absent key, so the stored value is only ever
+  /// `false` — see [getShowFurigana] for why this one is inverted.
+  static Future<void> setShowFurigana(bool show) =>
+      _setBool('furigana', show ? null : false);
 
   /// Purpose: Read one boolean preference.
   /// Inputs: `key`.

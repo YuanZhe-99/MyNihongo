@@ -591,6 +591,18 @@ abstract class AppLocalizations {
   /// **'System'**
   String get settingsLanguageSystem;
 
+  /// No description provided for @settingsFurigana.
+  ///
+  /// In en, this message translates to:
+  /// **'Kana over kanji'**
+  String get settingsFurigana;
+
+  /// No description provided for @settingsFuriganaSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Show the reading above words that use kanji'**
+  String get settingsFuriganaSubtitle;
+
   /// No description provided for @settingsData.
   ///
   /// In en, this message translates to:

@@ -21,6 +21,7 @@ import '../../features/kana/models/kana_note.dart';
 import '../../features/speech/widgets/pronunciation_practice_sheet.dart';
 import '../../features/speech/widgets/speak_button.dart';
 import '../../l10n/app_localizations.dart';
+import 'furigana_text.dart';
 import 'reference_widgets.dart';
 
 /// Purpose: Render a section heading inside a sheet.
@@ -104,8 +105,9 @@ Future<void> showVocabDetailSheet(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: Text(
+              child: FuriganaText(
                 entry.headword,
+                reading: entry.reading,
                 style: theme.textTheme.headlineMedium?.copyWith(
                   fontWeight: FontWeight.w800,
                 ),
@@ -218,7 +220,7 @@ Future<void> showGrammarDetailSheet(
         _chipSection(context, l10n.grammarWordsUsed, [
           for (final word in words)
             ActionChip(
-              label: Text(word.headword),
+              label: FuriganaText(word.headword, reading: word.reading),
               onPressed: () =>
                   showVocabDetailSheet(context, catalog, word, locale),
             ),
@@ -309,7 +311,13 @@ Future<void> showKanaDetailSheet(
         _chipSection(context, l10n.kanaExampleWords, [
           for (final word in words)
             ActionChip(
-              label: Text('${word.headword} (${word.reading})'),
+              // The reading in brackets is what furigana replace; without an
+              // alignment it is still the only place the reading appears.
+              label: FuriganaText(
+                word.headword,
+                reading: word.reading,
+                bracketFallback: true,
+              ),
               onPressed: () =>
                   showVocabDetailSheet(context, catalog, word, locale),
             ),

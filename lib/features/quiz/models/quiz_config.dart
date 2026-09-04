@@ -88,7 +88,7 @@ class IdsSource extends QuizSource {
   /// Inputs: `ids`.
   /// Returns: A new `IdsSource` instance.
   /// Side effects: None.
-  /// Notes: What a lesson uses in M3.3.
+  /// Notes: What a lesson uses in M3.4.
   const IdsSource(this.ids);
 
   /// The catalog ids to ask about.

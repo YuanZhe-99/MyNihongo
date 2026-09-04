@@ -27,6 +27,7 @@ import '../../sentence/models/token.dart';
 import '../../sentence/services/conjugator.dart';
 import '../../sentence/services/lexicon.dart';
 import '../../sentence/services/sentence_analyzer.dart';
+import '../../content/services/furigana_aligner.dart';
 import '../models/quiz_question.dart';
 import 'distractors.dart';
 
@@ -181,7 +182,14 @@ class QuestionGenerator {
           itemId: entry.id,
           mode: mode,
           prompt: listening ? '' : entry.headword,
-          promptSubtitle: listening || entry.reading == entry.headword
+          // The reading is printed over the word when it aligns; the subtitle
+          // is the fallback for a word it cannot be aligned with, so the
+          // reading is shown exactly once either way.
+          promptReading: listening ? null : entry.reading,
+          promptSubtitle:
+              listening ||
+                  entry.reading == entry.headword ||
+                  alignFurigana(entry.headword, entry.reading) != null
               ? null
               : entry.reading,
           correct: meaning.first,
@@ -276,8 +284,18 @@ class QuestionGenerator {
     if (analysis == null) return null;
 
     return switch (mode) {
-      QuizMode.grammarParticle => _particle(point, analysis, translation),
-      QuizMode.grammarConjugation => _conjugation(point, analysis, translation),
+      QuizMode.grammarParticle => _particle(
+        point,
+        analysis,
+        example,
+        translation,
+      ),
+      QuizMode.grammarConjugation => _conjugation(
+        point,
+        analysis,
+        example,
+        translation,
+      ),
       QuizMode.grammarOrder => _order(point, analysis, translation),
       _ => null,
     };
@@ -295,6 +313,7 @@ class QuestionGenerator {
   QuizQuestion? _particle(
     GrammarPoint point,
     SentenceAnalysis analysis,
+    ContentExample example,
     String translation,
   ) {
     final particles = analysis.tokens
@@ -322,6 +341,12 @@ class QuestionGenerator {
       itemId: point.id,
       mode: QuizMode.grammarParticle,
       prompt: blanked,
+      promptReading: _blankedReading(
+        analysis,
+        example,
+        target.start,
+        target.end,
+      ),
       promptSubtitle: translation.isEmpty ? null : translation,
       correct: target.surface,
       wrong: wrong,
@@ -375,6 +400,7 @@ class QuestionGenerator {
   QuizQuestion? _conjugation(
     GrammarPoint point,
     SentenceAnalysis analysis,
+    ContentExample example,
     String translation,
   ) {
     for (var i = 0; i < analysis.tokens.length; i++) {
@@ -416,6 +442,12 @@ class QuestionGenerator {
         itemId: point.id,
         mode: QuizMode.grammarConjugation,
         prompt: blanked,
+        promptReading: _blankedReading(
+          analysis,
+          example,
+          head.start,
+          analysis.tokens[last].end,
+        ),
         promptSubtitle: translation.isEmpty ? null : translation,
         correct: match.value,
         wrong: wrong.take(distractorCount).toList(),
@@ -503,6 +535,7 @@ class QuestionGenerator {
       itemId: point.id,
       mode: QuizMode.grammarPattern,
       prompt: sentence,
+      promptReading: example.reading,
       promptSubtitle: translation.isEmpty ? null : translation,
       correct: point.pattern,
       wrong: [for (final other in wrong.take(distractorCount)) other.pattern],
@@ -511,6 +544,34 @@ class QuestionGenerator {
   }
 
   // ── Shared ──
+
+  /// Purpose: Blank the same span out of a sentence's reading as was blanked
+  /// out of the sentence.
+  /// Inputs: The parsed `analysis`, the `example` it came from, and the span
+  /// `start`–`end` that the blank replaced.
+  /// Returns: `String?` — the reading with the blank in it, or null.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. Furigana over a
+  /// fill-in-the-blank sentence needs the reading blanked at the same place,
+  /// or the kana above the sentence would answer the question. Returns null
+  /// whenever that cannot be done exactly — no reading in the content, a
+  /// sentence the normalizer changed, or a span that cuts a kanji run in half
+  /// — and the question is then shown without ruby, which is what it looked
+  /// like before furigana existed.
+  String? _blankedReading(
+    SentenceAnalysis analysis,
+    ContentExample example,
+    int start,
+    int end,
+  ) {
+    final reading = example.reading;
+    if (reading == null) return null;
+    final segments = alignFurigana(analysis.normalized, reading);
+    if (segments == null) return null;
+    final range = readingRangeFor(segments, start, end);
+    if (range == null) return null;
+    return reading.replaceRange(range.start, range.end, particleBlank);
+  }
 
   /// Purpose: Assemble a multiple-choice question with its options shuffled.
   /// Inputs: The item, mode, prompt, the correct option and the wrong ones.
@@ -525,6 +586,7 @@ class QuestionGenerator {
     required String prompt,
     required String correct,
     required List<String> wrong,
+    String? promptReading,
     String? promptSubtitle,
     String? speakText,
     String? formLabel,
@@ -538,6 +600,7 @@ class QuestionGenerator {
       mode: mode,
       kind: AnswerKind.choice,
       prompt: prompt,
+      promptReading: promptReading,
       promptSubtitle: promptSubtitle,
       speakText: speakText,
       options: options,

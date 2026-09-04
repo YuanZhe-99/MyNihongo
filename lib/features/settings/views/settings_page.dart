@@ -410,6 +410,17 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
               onChanged: (locale) => notifier.setLocale(locale),
             ),
           ),
+          // In General rather than in Learning: it changes how Japanese is
+          // drawn everywhere in the app, including the pages that teach
+          // nothing, and it is a device-local display choice rather than
+          // part of the synced learner profile.
+          SwitchListTile(
+            secondary: const Icon(Icons.format_size),
+            title: Text(l10n.settingsFurigana),
+            subtitle: Text(l10n.settingsFuriganaSubtitle),
+            value: settings.showFurigana,
+            onChanged: notifier.setShowFurigana,
+          ),
         ]),
 
         // ── Learning ──

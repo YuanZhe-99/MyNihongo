@@ -294,6 +294,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsLanguageSystem => 'System';
 
   @override
+  String get settingsFurigana => 'Kana over kanji';
+
+  @override
+  String get settingsFuriganaSubtitle =>
+      'Show the reading above words that use kanji';
+
+  @override
   String get settingsData => 'Data';
 
   @override

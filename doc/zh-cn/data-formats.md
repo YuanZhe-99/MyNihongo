@@ -264,6 +264,7 @@
 | 启用的测验模式 | `storage_config.json` | 否 | 逗号连接的模式名，缺失表示全部模式（`quizModes`） |
 | 网络语音识别 | `storage_config.json` | 否 | 仅在开启时为 `true`；缺失表示仅离线（`speechNetworkFallback`） |
 | 端侧 AI 辅助 | `storage_config.json` | 否 | 仅在开启时为 `true`；缺失表示关闭（`aiAssistEnabled`） |
+| 汉字上方显示假名 | `storage_config.json` | 否 | 仅在关闭时为 `false`；缺失表示开启——全应用唯一一个反向存储的偏好（`furigana`） |
 | WebDAV 配置 | `webdav_config.json` | 否 | 仅本地密钥 / 配置 |
 | 同步基线快照 | `.sync_base/nihongo_progress.json` | 否 | 本地合并跟踪 |
 | 上传锁记录 | `.sync_base/upload_lock.json` | 否 | 检测中途中断的上传 |

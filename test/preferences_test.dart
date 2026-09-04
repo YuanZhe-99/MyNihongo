@@ -145,6 +145,30 @@ void main() {
     expect(await NihongoStorage.getTtsVoice(), 'ja-jp-x-jab#male_1-local');
   });
 
+  test('kana over kanji is on before anything is stored', () async {
+    // The one inverted preference in the app: absent means on, because a
+    // learner who has never opened Settings is the one who needs the readings.
+    expect(await NihongoStorage.getShowFurigana(), isTrue);
+  });
+
+  test('turning kana over kanji off writes false', () async {
+    await NihongoStorage.setShowFurigana(false);
+    expect(await NihongoStorage.getShowFurigana(), isFalse);
+    expect((await config())['furigana'], isFalse);
+  });
+
+  test('turning it back on removes the key', () async {
+    await NihongoStorage.setShowFurigana(false);
+    await NihongoStorage.setShowFurigana(true);
+    expect((await config()).containsKey('furigana'), isFalse);
+    expect(await NihongoStorage.getShowFurigana(), isTrue);
+  });
+
+  test('a hand-edited string leaves kana over kanji on', () async {
+    await configFile.writeAsString('{"furigana": "false"}');
+    expect(await NihongoStorage.getShowFurigana(), isTrue);
+  });
+
   test('network speech recognition is off unless it was turned on', () async {
     expect(await NihongoStorage.getSpeechNetworkFallback(), isFalse);
     await NihongoStorage.setSpeechNetworkFallback(true);
