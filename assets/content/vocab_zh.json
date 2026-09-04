@@ -22,6 +22,21 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1000730": {
+      "zh": [
+        "不好；不对",
+        "不可以；不行",
+        "没用；不好"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1000920": {
+      "zh": [
+        "来；去；在",
+        "欢迎光临"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1000940": {
       "zh": [
         "来；去；在（敬语）",
@@ -48,6 +63,12 @@
         "在（敬语）",
         "来（敬语）",
         "去（敬语）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1001560": {
+      "zh": [
+        "哎呀；咦"
       ],
       "reviewed": false
     },
@@ -110,6 +131,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1002290": {
+      "zh": [
+        "你"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1002320": {
       "zh": [
         "爷爷；老爷爷"
@@ -133,6 +160,13 @@
     "vocab:jm1002430": {
       "zh": [
         "茶"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1002450": {
+      "zh": [
+        "闲聊；聊天",
+        "健谈的；话多"
       ],
       "reviewed": false
     },
@@ -162,11 +196,45 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1002970": {
+      "zh": [
+        "也许；说不定"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1003170": {
+      "zh": [
+        "失望；沮丧",
+        "感到疲惫；精疲力尽"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1003400": {
+      "zh": [
+        "准确；恰当",
+        "整洁；整齐"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1003430": {
       "zh": [
         "一定；肯定",
         "严厉地",
         "紧绷；僵直"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1003450": {
+      "zh": [
+        "严厉；严酷",
+        "坚强；果断",
+        "强烈；剧烈"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1004060": {
+      "zh": [
+        "酣睡；熟睡"
       ],
       "reviewed": false
     },
@@ -203,9 +271,21 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1004830": {
+      "zh": [
+        "这些"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1004880": {
       "zh": [
         "这样的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1004890": {
+      "zh": [
+        "这样；如此"
       ],
       "reviewed": false
     },
@@ -218,6 +298,43 @@
     "vocab:jm1005180": {
       "zh": [
         "刚才"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1005210": {
+      "zh": [
+        "爽快；轻松",
+        "干净；整洁",
+        "直爽；坦率"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1005390": {
+      "zh": [
+        "大致；大约",
+        "粗略；简要"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1005480": {
+      "zh": [
+        "频繁地；再三地",
+        "热切地；强烈地",
+        "非常；极其"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1005600": {
+      "zh": [
+        "糟糕！；哎呀！"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1005870": {
+      "zh": [
+        "一动不动地",
+        "目不转睛地；专注地",
+        "耐心地；忍耐地"
       ],
       "reviewed": false
     },
@@ -248,6 +365,14 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1006380": {
+      "zh": [
+        "一直；始终",
+        "……得多；远远",
+        "远方的；很久以前"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1006610": {
       "zh": [
         "好像；似乎"
@@ -272,9 +397,31 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1006790": {
+      "zh": [
+        "全部；完全",
+        "一模一样；极像"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1006810": {
+      "zh": [
+        "轻轻地；悄悄地",
+        "偷偷地；秘密地",
+        "不去理会；随它去"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1006830": {
       "zh": [
         "那个（后接名词）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1006930": {
+      "zh": [
+        "不久；改天",
+        "其中"
       ],
       "reviewed": false
     },
@@ -287,6 +434,12 @@
     "vocab:jm1007000": {
       "zh": [
         "因此；所以"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1007010": {
+      "zh": [
+        "或者；还是"
       ],
       "reviewed": false
     },
@@ -880,6 +1033,33 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1150110": {
+      "zh": [
+        "悲哀；怜悯",
+        "可怜；可悲",
+        "哎呀"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1150410": {
+      "zh": [
+        "爱；关怀",
+        "眷恋；渴望"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1150450": {
+      "zh": [
+        "爱"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1150860": {
+      "zh": [
+        "爱情；感情"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1151120": {
       "zh": [
         "问候；打招呼",
@@ -891,6 +1071,36 @@
     "vocab:jm1151260": {
       "zh": [
         "坏的；不好的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1151580": {
+      "zh": [
+        "恶作剧；捣蛋",
+        "淘气的",
+        "消遣；爱好"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1152510": {
+      "zh": [
+        "恶魔；魔鬼",
+        "撒旦"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1152730": {
+      "zh": [
+        "握手",
+        "和解；合作"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1153440": {
+      "zh": [
+        "对待",
+        "处理；办理",
+        "操作"
       ],
       "reviewed": false
     },
@@ -918,9 +1128,24 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1154120": {
+      "zh": [
+        "稳定；安定",
+        "稳定的"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1154330": {
       "zh": [
         "暗的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1154770": {
+      "zh": [
+        "方案；提案",
+        "草案；草稿",
+        "预料；意料"
       ],
       "reviewed": false
     },
@@ -955,9 +1180,64 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1155150": {
+      "zh": [
+        "以前；之前",
+        "过去；从前"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1155180": {
       "zh": [
         "以内"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1155210": {
+      "zh": [
+        "以来；此后",
+        "自从"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1155400": {
+      "zh": [
+        "王位；宝座",
+        "官位；官阶",
+        "社会地位；等级"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1155710": {
+      "zh": [
+        "委托；请求",
+        "依赖；依靠"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1155920": {
+      "zh": [
+        "伟大"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1155980": {
+      "zh": [
+        "包围；围绕",
+        "围攻",
+        "下（围棋等）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1156100": {
+      "zh": [
+        "委员"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1156410": {
+      "zh": [
+        "意外；出乎意料"
       ],
       "reviewed": false
     },
@@ -965,6 +1245,25 @@
       "zh": [
         "意见；看法",
         "责备；训斥"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1156560": {
+      "zh": [
+        "意志；意愿"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1156610": {
+      "zh": [
+        "意思；意图"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1156640": {
+      "zh": [
+        "意识",
+        "察觉；意识到"
       ],
       "reviewed": false
     },
@@ -1006,11 +1305,56 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1157510": {
+      "zh": [
+        "不同；相异"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1157760": {
+      "zh": [
+        "异常；反常"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1158160": {
+      "zh": [
+        "转移；搬动",
+        "推进；进入下一步",
+        "转移注意力"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1158210": {
       "zh": [
         "迁移；转移",
         "传染；蔓延",
         "转变；转移"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1158400": {
+      "zh": [
+        "移动；迁移",
+        "移动的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1158450": {
+      "zh": [
+        "维持；保持"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1158500": {
+      "zh": [
+        "胃"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1158810": {
+      "zh": [
+        "衣服；服装"
       ],
       "reviewed": false
     },
@@ -1020,15 +1364,39 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1158950": {
+      "zh": [
+        "违反；违规"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1159810": {
       "zh": [
         "医学"
       ],
       "reviewed": false
     },
+    "vocab:jm1159930": {
+      "zh": [
+        "医生；医师"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1159980": {
       "zh": [
         "医生"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1160140": {
+      "zh": [
+        "医疗"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1160540": {
+      "zh": [
+        "成长；长大"
       ],
       "reviewed": false
     },
@@ -1058,6 +1426,20 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1163170": {
+      "zh": [
+        "一种；一类",
+        "有几分…",
+        "有点；稍微"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1163340": {
+      "zh": [
+        "一瞬间；瞬间"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1163400": {
       "zh": [
         "一起"
@@ -1076,6 +1458,29 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1164340": {
+      "zh": [
+        "更加；越发",
+        "一层",
+        "最底层"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1164510": {
+      "zh": [
+        "到底；究竟",
+        "一体；一个整体",
+        "一种形式"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1164740": {
+      "zh": [
+        "一致；符合",
+        "团结；合作"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1165670": {
       "zh": [
         "一杯",
@@ -1084,9 +1489,50 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1165790": {
+      "zh": [
+        "一般；普遍",
+        "普通；平常"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1165970": {
       "zh": [
         "第一；最"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1166510": {
+      "zh": [
+        "一方；一边",
+        "一方面…另一方面",
+        "然而；不过"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1167820": {
+      "zh": [
+        "稻；水稻"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1168060": {
+      "zh": [
+        "记号；标志",
+        "象征；标记",
+        "徽章；标志物"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1168190": {
+      "zh": [
+        "印刷"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1168390": {
+      "zh": [
+        "印象"
       ],
       "reviewed": false
     },
@@ -1102,9 +1548,41 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1169610": {
+      "zh": [
+        "退休；引退"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1169660": {
+      "zh": [
+        "引用；引证"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1170650": {
+      "zh": [
+        "隐藏；藏匿"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1170660": {
+      "zh": [
+        "躲藏；隐藏",
+        "被遮住；隐没",
+        "隐居"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1171010": {
       "zh": [
         "右"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1171300": {
+      "zh": [
+        "宇宙；太空"
       ],
       "reviewed": false
     },
@@ -1119,6 +1597,18 @@
         "谎言；说谎",
         "错误",
         "失策；错误决定"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1172590": {
+      "zh": [
+        "谣言；传闻"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1172610": {
+      "zh": [
+        "运气；命运"
       ],
       "reviewed": false
     },
@@ -1158,6 +1648,26 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1173340": {
+      "zh": [
+        "饲料；食物",
+        "诱饵；圈套"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1173430": {
+      "zh": [
+        "营业；经营",
+        "销售"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1173660": {
+      "zh": [
+        "影响"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1173720": {
       "zh": [
         "电影"
@@ -1167,6 +1677,18 @@
     "vocab:jm1173750": {
       "zh": [
         "电影院"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1173990": {
+      "zh": [
+        "营养"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1174070": {
+      "zh": [
+        "永远；永恒"
       ],
       "reviewed": false
     },
@@ -1182,9 +1704,77 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1174760": {
+      "zh": [
+        "卫星；月亮",
+        "人造卫星"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1174890": {
+      "zh": [
+        "锋利的；尖的",
+        "剧烈的；尖锐的",
+        "敏锐的；犀利的"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1175140": {
       "zh": [
         "车站"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1175300": {
+      "zh": [
+        "翻越；越过",
+        "克服（困难）",
+        "度过（时光）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1175570": {
+      "zh": [
+        "日元",
+        "圆；圆形"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1176430": {
+      "zh": [
+        "延期；推迟"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1176660": {
+      "zh": [
+        "援助；支援"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1176820": {
+      "zh": [
+        "表演；演技"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1176960": {
+      "zh": [
+        "演说；演讲"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1177180": {
+      "zh": [
+        "烟；烟雾"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1177390": {
+      "zh": [
+        "猴子",
+        "狡猾的人",
+        "笨蛋；乡巴佬"
       ],
       "reviewed": false
     },
@@ -1229,9 +1819,29 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1179040": {
+      "zh": [
+        "污染"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1179320": {
+      "zh": [
+        "里面；深处",
+        "内室；后屋",
+        "内心深处"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1179330": {
       "zh": [
         "夫人；您太太"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1179830": {
+      "zh": [
+        "响应；答应"
       ],
       "reviewed": false
     },
@@ -1247,9 +1857,36 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1180900": {
+      "zh": [
+        "横穿；穿越",
+        "横贯；横渡",
+        "横切"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1181500": {
+      "zh": [
+        "王子"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1181700": {
+      "zh": [
+        "国王"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1182030": {
       "zh": [
         "黄色的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1182500": {
+      "zh": [
+        "海面；外海",
+        "冲绳（简称）"
       ],
       "reviewed": false
     },
@@ -1265,9 +1902,35 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1183090": {
+      "zh": [
+        "恩情；恩惠",
+        "仁慈；善意"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1183300": {
       "zh": [
         "温的；不冷不热"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1183480": {
+      "zh": [
+        "温暖；温和"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1183510": {
+      "zh": [
+        "温度"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1183590": {
+      "zh": [
+        "平静；温和",
+        "稳妥；平和"
       ],
       "reviewed": false
     },
@@ -1312,6 +1975,14 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1184370": {
+      "zh": [
+        "下行列车",
+        "下坡；向下",
+        "下行（远离东京方向）"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1185200": {
       "zh": [
         "不擅长"
@@ -1331,9 +2002,27 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1186760": {
+      "zh": [
+        "化学"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1188760": {
       "zh": [
         "什么时候"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1188790": {
+      "zh": [
+        "总有一天；改天"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1188880": {
+      "zh": [
+        "永远"
       ],
       "reviewed": false
     },
@@ -1361,11 +2050,67 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1189500": {
+      "zh": [
+        "价格"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1189600": {
+      "zh": [
+        "价值"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1189960": {
+      "zh": [
+        "加；添加；合计",
+        "增加；提高（速度等）",
+        "包括；算入"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1189980": {
+      "zh": [
+        "被添加；附加",
+        "加入（团体等）；参加",
+        "增加；增长"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1190080": {
+      "zh": [
+        "程度；分寸",
+        "身体状况",
+        "调节；调整"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1190710": {
+      "zh": [
+        "可以；允许",
+        "赞成；同意",
+        "及格；良"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1190740": {
+      "zh": [
+        "可爱；讨人喜欢"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1190860": {
       "zh": [
         "滑稽；好笑",
         "奇怪；反常",
         "不对劲；不合适"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1191060": {
+      "zh": [
+        "可能；可行"
       ],
       "reviewed": false
     },
@@ -1384,6 +2129,19 @@
     "vocab:jm1191730": {
       "zh": [
         "家；房子"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1191870": {
+      "zh": [
+        "家具"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1191980": {
+      "zh": [
+        "家务",
+        "家事；家里的事"
       ],
       "reviewed": false
     },
@@ -1425,9 +2183,21 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1193290": {
+      "zh": [
+        "歌手"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1193610": {
       "zh": [
         "火；火焰"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1193880": {
+      "zh": [
+        "火灾"
       ],
       "reviewed": false
     },
@@ -1437,9 +2207,23 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1194280": {
+      "zh": [
+        "星期二"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1194290": {
       "zh": [
         "星期二"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1194450": {
+      "zh": [
+        "赚钱；挣钱",
+        "争取；拖延时间",
+        "努力工作"
       ],
       "reviewed": false
     },
@@ -1474,6 +2258,20 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1195670": {
+      "zh": [
+        "点心；糖果"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1195710": {
+      "zh": [
+        "课；课文",
+        "科；处；科室",
+        "课（量词）"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1195840": {
       "zh": [
         "科长；课长"
@@ -1488,9 +2286,51 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1196000": {
+      "zh": [
+        "度过（时间）",
+        "过度（饮酒等）",
+        "照顾；扶养"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1196030": {
+      "zh": [
+        "过去；往昔",
+        "过去（隐情）",
+        "过去式"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1196970": {
+      "zh": [
+        "忍耐；耐心",
+        "自制；克制"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1197120": {
+      "zh": [
+        "画家"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1198170": {
+      "zh": [
+        "会议；集会",
+        "协会；团体"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1198180": {
       "zh": [
         "见面；遇见"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1198230": {
+      "zh": [
+        "会员"
       ],
       "reviewed": false
     },
@@ -1503,6 +2343,21 @@
     "vocab:jm1198380": {
       "zh": [
         "会议室"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1198430": {
+      "zh": [
+        "会计；财务",
+        "账单；结账",
+        "会计员"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1198530": {
+      "zh": [
+        "会议；聚会",
+        "结社；联合"
       ],
       "reviewed": false
     },
@@ -1524,6 +2379,33 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1198960": {
+      "zh": [
+        "解决"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1199010": {
+      "zh": [
+        "解释；理解"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1199330": {
+      "zh": [
+        "次（量词）",
+        "一次；一回",
+        "局；回合"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1199720": {
+      "zh": [
+        "恢复；复原",
+        "康复"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1199890": {
       "zh": [
         "弄坏；破坏",
@@ -1540,6 +2422,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1200120": {
+      "zh": [
+        "舒适；惬意"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1200220": {
       "zh": [
         "受伤；伤",
@@ -1547,9 +2435,21 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1200960": {
+      "zh": [
+        "改善；改进"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1201190": {
       "zh": [
         "海"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1201260": {
+      "zh": [
+        "海外；国外"
       ],
       "reviewed": false
     },
@@ -1583,6 +2483,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1202300": {
+      "zh": [
+        "绘画；画作"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1202440": {
       "zh": [
         "打开；开",
@@ -1594,6 +2500,12 @@
     "vocab:jm1202450": {
       "zh": [
         "打开（他动词）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1202760": {
+      "zh": [
+        "开始"
       ],
       "reviewed": false
     },
@@ -1615,6 +2527,13 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1203540": {
+      "zh": [
+        "外交",
+        "上门推销；游说"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1203620": {
       "zh": [
         "外国"
@@ -1627,15 +2546,103 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1203800": {
+      "zh": [
+        "外出"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1204300": {
+      "zh": [
+        "咳嗽"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1204330": {
+      "zh": [
+        "损害；伤害；恶劣影响"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1205200": {
+      "zh": [
+        "扩大；扩展",
+        "放大",
+        "升级；蔓延"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1205830": {
+      "zh": [
+        "确实；确定"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1205900": {
+      "zh": [
+        "确认"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1206050": {
       "zh": [
         "记住；学会"
       ],
       "reviewed": false
     },
+    "vocab:jm1206060": {
+      "zh": [
+        "唤醒",
+        "使清醒；使醒悟",
+        "使醒酒"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1206070": {
+      "zh": [
+        "醒；睡醒",
+        "醒酒；药效消退",
+        "清醒过来；醒悟"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1206080": {
+      "zh": [
+        "心理准备",
+        "决心；觉悟",
+        "听天由命"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1206110": {
       "zh": [
         "拐角"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1206650": {
+      "zh": [
+        "学期"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1206800": {
+      "zh": [
+        "学者",
+        "有学问的人"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1206820": {
+      "zh": [
+        "学习"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1207130": {
+      "zh": [
+        "学问；学识",
+        "学科；学问领域"
       ],
       "reviewed": false
     },
@@ -1659,6 +2666,13 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1207500": {
+      "zh": [
+        "镜框；画框",
+        "金额；数额"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1207590": {
       "zh": [
         "花费（时间、金钱）"
@@ -1679,6 +2693,25 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1208270": {
+      "zh": [
+        "活力；朝气"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1208360": {
+      "zh": [
+        "活动"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1208460": {
+      "zh": [
+        "活用；善用",
+        "（词形）活用"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1208640": {
       "zh": [
         "滑动；滑行",
@@ -1693,11 +2726,24 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1208920": {
+      "zh": [
+        "股票；股份",
+        "树桩"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1209240": {
       "zh": [
         "咬",
         "咀嚼；嚼",
         "说话结巴"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1209540": {
+      "zh": [
+        "割；剪"
       ],
       "reviewed": false
     },
@@ -1713,11 +2759,110 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1210590": {
+      "zh": [
+        "直觉；第六感"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1210750": {
+      "zh": [
+        "计算",
+        "账单；结账",
+        "考虑；顾及"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1211490": {
+      "zh": [
+        "完成"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1211510": {
+      "zh": [
+        "完全；完美"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1211630": {
+      "zh": [
+        "完成；完结",
+        "完成时（语法）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1212210": {
+      "zh": [
+        "患者；病人"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1212250": {
+      "zh": [
+        "感觉；印象"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1212260": {
+      "zh": [
+        "感到；感觉",
+        "感动；被打动",
+        "感染（疾病）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1212330": {
+      "zh": [
+        "感觉"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1212380": {
+      "zh": [
+        "感谢；感激"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1212410": {
+      "zh": [
+        "感情；情感"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1212450": {
+      "zh": [
+        "钦佩；佩服",
+        "令人钦佩",
+        "惊讶；愕然"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1212570": {
+      "zh": [
+        "感动"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1212670": {
       "zh": [
         "习惯；适应",
         "熟练；熟悉",
         "变得驯服"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1212960": {
+      "zh": [
+        "欢迎"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1213060": {
+      "zh": [
+        "汗；汗水",
+        "水汽；凝结水",
+        "哎呀"
       ],
       "reviewed": false
     },
@@ -1727,9 +2872,22 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1213280": {
+      "zh": [
+        "环境"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1213400": {
       "zh": [
         "甜的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1213720": {
+      "zh": [
+        "监督；管理",
+        "导演；主管"
       ],
       "reviewed": false
     },
@@ -1739,10 +2897,41 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1214200": {
+      "zh": [
+        "管理"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1214330": {
       "zh": [
         "简单；容易",
         "简略；简便"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1214540": {
+      "zh": [
+        "罐；听",
+        "罐头"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1214810": {
+      "zh": [
+        "观众"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1214840": {
+      "zh": [
+        "观光；旅游"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1214900": {
+      "zh": [
+        "观察"
       ],
       "reviewed": false
     },
@@ -1768,6 +2957,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1215790": {
+      "zh": [
+        "有关；涉及"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1215810": {
       "zh": [
         "关系；关联",
@@ -1776,10 +2971,41 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1215870": {
+      "zh": [
+        "关心；兴趣"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1216060": {
+      "zh": [
+        "关联；相关"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1217040": {
+      "zh": [
+        "岸；河岸；海岸"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1217070": {
       "zh": [
         "玩具",
         "玩物；消遣品"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1217270": {
+      "zh": [
+        "岩石；石头",
+        "峭壁；悬崖"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1218190": {
+      "zh": [
+        "企业；公司"
       ],
       "reviewed": false
     },
@@ -1804,6 +3030,25 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1218960": {
+      "zh": [
+        "灵巧；手巧",
+        "机灵；巧妙"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1219190": {
+      "zh": [
+        "基础；基本"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1219490": {
+      "zh": [
+        "奇怪；离奇"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1219510": {
       "zh": [
         "高兴；开心",
@@ -1816,6 +3061,13 @@
         "靠近；走近",
         "聚集；集合",
         "顺路去；顺便拜访"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1219910": {
+      "zh": [
+        "希望；愿望",
+        "前景；期待"
       ],
       "reviewed": false
     },
@@ -1837,9 +3089,59 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1220310": {
+      "zh": [
+        "已经",
+        "以前；此前",
+        "不容置疑地"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1220550": {
+      "zh": [
+        "期间；期限"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1220570": {
+      "zh": [
+        "期待；期望",
+        "有前途；被看好"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1220800": {
       "zh": [
         "机会"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1220810": {
+      "zh": [
+        "机器；机械",
+        "器具；仪器"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1220870": {
+      "zh": [
+        "发动机；引擎",
+        "机构；机关",
+        "系统；设施"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1220930": {
+      "zh": [
+        "情绪；心情",
+        "安危；健康",
+        "心情好；高兴"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1221130": {
+      "zh": [
+        "功能"
       ],
       "reviewed": false
     },
@@ -1855,6 +3157,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1221430": {
+      "zh": [
+        "回家"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1221520": {
       "zh": [
         "心；精神",
@@ -1863,9 +3171,41 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1221740": {
+      "zh": [
+        "喜欢；中意"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1221770": {
+      "zh": [
+        "可怜；不幸",
+        "过意不去；抱歉"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1221950": {
+      "zh": [
+        "气温"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1222170": {
+      "zh": [
+        "气候"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1222590": {
       "zh": [
         "心情；情绪"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1222640": {
+      "zh": [
+        "感觉",
+        "倾向；苗头"
       ],
       "reviewed": false
     },
@@ -1896,6 +3236,51 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1223150": {
+      "zh": [
+        "记忆；回忆",
+        "存储；记忆"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1223240": {
+      "zh": [
+        "文章；报道"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1223250": {
+      "zh": [
+        "记者"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1223330": {
+      "zh": [
+        "填写；登记"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1223340": {
+      "zh": [
+        "纪念；庆祝",
+        "纪念品；礼物"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1223440": {
+      "zh": [
+        "记录；档案",
+        "纪录（体育等）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1223520": {
+      "zh": [
+        "珍贵；宝贵"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1223615": {
       "zh": [
         "你"
@@ -1916,9 +3301,36 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1223680": {
+      "zh": [
+        "发生"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1224020": {
+      "zh": [
+        "闪耀；发光",
+        "容光焕发"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1224190": {
+      "zh": [
+        "鬼；恶魔",
+        "亡灵",
+        "凶狠的人"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1224880": {
       "zh": [
         "好；可以"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1225110": {
+      "zh": [
+        "工程师；技师"
       ],
       "reviewed": false
     },
@@ -1927,6 +3339,48 @@
         "技术；工程",
         "技巧；本领",
         "工艺"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1225510": {
+      "zh": [
+        "怀疑；猜疑"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1225630": {
+      "zh": [
+        "疑问；怀疑"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1225900": {
+      "zh": [
+        "义务；责任"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1226020": {
+      "zh": [
+        "议员；国会议员"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1226040": {
+      "zh": [
+        "议会；国会"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1226140": {
+      "zh": [
+        "议长；主席"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1226160": {
+      "zh": [
+        "议论；争论"
       ],
       "reviewed": false
     },
@@ -1951,6 +3405,20 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1226960": {
+      "zh": [
+        "相反；反过来",
+        "（假设的）逆命题",
+        "反函数"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1226990": {
+      "zh": [
+        "违抗；反抗"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1227370": {
       "zh": [
         "隔了好久",
@@ -1970,9 +3438,33 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1227610": {
+      "zh": [
+        "假期；休假"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1227720": {
+      "zh": [
+        "休息；休整"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1228180": {
+      "zh": [
+        "施加；造成"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1228260": {
       "zh": [
         "吸；抽（烟）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1228330": {
+      "zh": [
+        "吸收"
       ],
       "reviewed": false
     },
@@ -1990,10 +3482,35 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1228680": {
+      "zh": [
+        "急剧；骤然"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1228690": {
       "zh": [
         "急忙前往",
         "快车；特快"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1228890": {
+      "zh": [
+        "急速；迅速"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1229060": {
+      "zh": [
+        "拯救；救助",
+        "（宗教上）救赎"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1229200": {
+      "zh": [
+        "救助；营救"
       ],
       "reviewed": false
     },
@@ -2002,6 +3519,34 @@
         "哭；哭泣",
         "苦于；为难",
         "无奈接受；忍痛"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1229880": {
+      "zh": [
+        "球；球体",
+        "投球（棒球计数）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1230360": {
+      "zh": [
+        "工资；薪水"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1230380": {
+      "zh": [
+        "旧；从前",
+        "旧事物；旧习",
+        "往昔；昔日"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1231490": {
+      "zh": [
+        "牛",
+        "牛肉"
       ],
       "reviewed": false
     },
@@ -2017,9 +3562,53 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1231650": {
+      "zh": [
+        "离去；离开",
+        "流逝；过去",
+        "遥远"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1231690": {
       "zh": [
         "去年"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1231720": {
+      "zh": [
+        "起居室；客厅"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1231890": {
+      "zh": [
+        "打盹；打瞌睡"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1232180": {
+      "zh": [
+        "巨大"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1232880": {
+      "zh": [
+        "许可；批准"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1233630": {
+      "zh": [
+        "供给；供应"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1234080": {
+      "zh": [
+        "比赛；竞技"
       ],
       "reviewed": false
     },
@@ -2030,9 +3619,72 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1234700": {
+      "zh": [
+        "共通；共同",
+        "共有；共用",
+        "全……；……通用"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1235910": {
+      "zh": [
+        "呼喊；喊叫",
+        "呼吁；主张"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1235950": {
+      "zh": [
+        "边界；分界",
+        "转折点；分水岭",
+        "地区；地带"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1236070": {
       "zh": [
         "强的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1236470": {
+      "zh": [
+        "强调",
+        "突出；着重表现",
+        "行情坚挺"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1236500": {
+      "zh": [
+        "强盗；劫匪",
+        "抢劫"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1236600": {
+      "zh": [
+        "强大；有力"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1236650": {
+      "zh": [
+        "恐怕；大概"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1236690": {
+      "zh": [
+        "可怕；恐怖",
+        "惊人；出奇"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1236750": {
+      "zh": [
+        "恐惧；害怕"
       ],
       "reviewed": false
     },
@@ -2049,9 +3701,21 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1237020": {
+      "zh": [
+        "教科书；课本"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1237030": {
       "zh": [
         "教堂；教会"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1237130": {
+      "zh": [
+        "教师"
       ],
       "reviewed": false
     },
@@ -2061,9 +3725,24 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1237160": {
+      "zh": [
+        "教授",
+        "讲授；教导"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1237410": {
       "zh": [
         "桥"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1237510": {
+      "zh": [
+        "发疯；发狂",
+        "失灵；出故障",
+        "落空；出岔子"
       ],
       "reviewed": false
     },
@@ -2101,15 +3780,65 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1239560": {
+      "zh": [
+        "局；部门",
+        "台（广播电视等）；局",
+        "局面；事态"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1239730": {
       "zh": [
         "拐弯；弯曲"
       ],
       "reviewed": false
     },
+    "vocab:jm1240180": {
+      "zh": [
+        "非常；极其"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1240825": {
       "zh": [
         "工作；任职"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1241490": {
+      "zh": [
+        "戒烟",
+        "禁止吸烟",
+        "禁止吸烟（标语）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1241550": {
+      "zh": [
+        "禁止"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1241750": {
+      "zh": [
+        "肌肉；筋腱",
+        "血管",
+        "纤维；条纹"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1241810": {
+      "zh": [
+        "肌肉"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1241880": {
+      "zh": [
+        "紧张；紧绷",
+        "紧张局势",
+        "肌张力"
       ],
       "reviewed": false
     },
@@ -2131,9 +3860,69 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1242420": {
+      "zh": [
+        "近代；现代",
+        "近代（日本明治维新后）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1242590": {
+      "zh": [
+        "钱；金钱",
+        "金属"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1242600": {
+      "zh": [
+        "金；黄金",
+        "金色",
+        "金牌；第一名"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1242700": {
+      "zh": [
+        "金额"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1242850": {
+      "zh": [
+        "保险柜；金库",
+        "存放处；金库"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1242970": {
       "zh": [
         "有钱人；富翁"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1243020": {
+      "zh": [
+        "金钱；现金"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1243040": {
+      "zh": [
+        "金属"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1243290": {
+      "zh": [
+        "金融",
+        "金融的；信贷的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1243310": {
+      "zh": [
+        "星期五"
       ],
       "reviewed": false
     },
@@ -2161,11 +3950,74 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1243940": {
+      "zh": [
+        "段落；句子",
+        "短语",
+        "俳句诗节"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1244250": {
+      "zh": [
+        "区别；区分"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1244310": {
       "zh": [
         "苦（味道）",
         "愁苦；不悦",
         "痛苦；难堪"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1244320": {
+      "zh": [
+        "痛苦；难受",
+        "苦闷；心理上难受",
+        "拮据；经济困难"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1244350": {
+      "zh": [
+        "痛苦；烦恼"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1244560": {
+      "zh": [
+        "痛苦；折磨"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1244680": {
+      "zh": [
+        "辛苦；艰难",
+        "担心；忧虑"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1244960": {
+      "zh": [
+        "配备；装备",
+        "准备；防备",
+        "具备；兼备"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1245020": {
+      "zh": [
+        "具体；实体"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1245280": {
+      "zh": [
+        "空；空的",
+        "空手；两手空空",
+        "空头；作废"
       ],
       "reviewed": false
     },
@@ -2189,6 +4041,14 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1246270": {
+      "zh": [
+        "偶然；巧合",
+        "偶然地；意外地",
+        "偶然性"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1246440": {
       "zh": [
         "角落"
@@ -2207,6 +4067,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1247030": {
+      "zh": [
+        "反复；重复"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1247250": {
       "zh": [
         "你（对晚辈）",
@@ -2218,6 +4084,39 @@
       "zh": [
         "君（男性）",
         "君（女性）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1247470": {
+      "zh": [
+        "训练"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1247660": {
+      "zh": [
+        "军队",
+        "军方当局",
+        "队；团队"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1248710": {
+      "zh": [
+        "军队；部队"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1249470": {
+      "zh": [
+        "倾向；趋势"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1249660": {
+      "zh": [
+        "刑警；侦探",
+        "刑事案件"
       ],
       "reviewed": false
     },
@@ -2233,6 +4132,20 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1250090": {
+      "zh": [
+        "类型；样式",
+        "模具；模型",
+        "招式；套路"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1250190": {
+      "zh": [
+        "合同；契约"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1250220": {
       "zh": [
         "形状；样子",
@@ -2241,9 +4154,35 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1250620": {
+      "zh": [
+        "公告；布告"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1250720": {
+      "zh": [
+        "敬意；尊重"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1250830": {
+      "zh": [
+        "经济状况；行情",
+        "好景气；繁荣",
+        "活力；朝气"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1250870": {
       "zh": [
         "景色；风景"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1251130": {
+      "zh": [
+        "经营；管理"
       ],
       "reviewed": false
     },
@@ -2261,15 +4200,43 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1251670": {
+      "zh": [
+        "经由；途经"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1252050": {
+      "zh": [
+        "计划",
+        "仪表；计量器",
+        "共计；合计"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1252090": {
       "zh": [
         "计划；方案"
       ],
       "reviewed": false
     },
+    "vocab:jm1252140": {
+      "zh": [
+        "计算",
+        "考虑；盘算"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1252330": {
       "zh": [
         "警察"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1252360": {
+      "zh": [
+        "警告；告诫",
+        "警告（柔道罚则）"
       ],
       "reviewed": false
     },
@@ -2293,11 +4260,63 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1253060": {
+      "zh": [
+        "艺术"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1253190": {
       "zh": [
         "迎接；欢迎",
         "邀请；聘请",
         "迎娶；接纳"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1253310": {
+      "zh": [
+        "戏剧",
+        "烈性药"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1253410": {
+      "zh": [
+        "剧场；戏院"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1253570": {
+      "zh": [
+        "射击；开枪"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1253920": {
+      "zh": [
+        "缺损；破损",
+        "缺失；不见",
+        "欠缺；不足"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1253950": {
+      "zh": [
+        "缺陷；瑕疵"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1254020": {
+      "zh": [
+        "缺席"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1254050": {
+      "zh": [
+        "缺点；毛病",
+        "不及格；挂科"
       ],
       "reviewed": false
     },
@@ -2315,6 +4334,42 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1254340": {
+      "zh": [
+        "决心；下决心"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1254380": {
+      "zh": [
+        "决定"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1254480": {
+      "zh": [
+        "洞；孔",
+        "坑；穴",
+        "巢穴；洞穴"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1254690": {
+      "zh": [
+        "结果；成果",
+        "结果；因此",
+        "……的结果"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1254730": {
+      "zh": [
+        "终究；结果",
+        "结论；终结",
+        "对局结束（围棋等）"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1254760": {
       "zh": [
         "很好；不用了"
@@ -2324,6 +4379,12 @@
     "vocab:jm1254790": {
       "zh": [
         "结婚"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1255020": {
+      "zh": [
+        "结论"
       ],
       "reviewed": false
     },
@@ -2343,9 +4404,28 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1255880": {
+      "zh": [
+        "星期一"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1255890": {
       "zh": [
         "星期一"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1256170": {
+      "zh": [
+        "健康",
+        "健康的；结实的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1256730": {
+      "zh": [
+        "票；券"
       ],
       "reviewed": false
     },
@@ -2369,15 +4449,60 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1257250": {
+      "zh": [
+        "讨厌；厌恶",
+        "避开；回避",
+        "不顾及；无视"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1257330": {
       "zh": [
         "建造；建"
       ],
       "reviewed": false
     },
+    "vocab:jm1257420": {
+      "zh": [
+        "建设；兴建"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1257500": {
+      "zh": [
+        "建筑；建造"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1257540": {
       "zh": [
         "建筑物"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1257590": {
+      "zh": [
+        "宪法",
+        "规章；规则"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1257890": {
+      "zh": [
+        "检查；检验"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1258000": {
+      "zh": [
+        "讨论；研究"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1258200": {
+      "zh": [
+        "权利"
       ],
       "reviewed": false
     },
@@ -2407,6 +4532,18 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1258810": {
+      "zh": [
+        "县；省（行政区划）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1258950": {
+      "zh": [
+        "肩；肩膀"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1259140": {
       "zh": [
         "看得见",
@@ -2421,10 +4558,31 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1259390": {
+      "zh": [
+        "见解；看法"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1259930": {
+      "zh": [
+        "估计；猜测",
+        "方向；方位",
+        "对位标记（印刷）"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1260000": {
       "zh": [
         "观光；游览",
         "游客；观众"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1260260": {
+      "zh": [
+        "聪明；机灵",
+        "乖巧；听话"
       ],
       "reviewed": false
     },
@@ -2454,9 +4612,111 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1263490": {
+      "zh": [
+        "代表；象征",
+        "显示；表露",
+        "表达"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1263510": {
+      "zh": [
+        "出现；显现",
+        "表现出；显露"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1263550": {
+      "zh": [
+        "现金",
+        "现实；精明算计"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1263650": {
+      "zh": [
+        "现在；目前",
+        "截至",
+        "现在时态"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1263710": {
+      "zh": [
+        "现实"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1263750": {
+      "zh": [
+        "现象"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1263760": {
+      "zh": [
+        "现场（案发地等）",
+        "现场；一线",
+        "拍摄现场；片场"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1263770": {
+      "zh": [
+        "现状"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1263810": {
+      "zh": [
+        "当代；今日",
+        "现代；近代"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1264380": {
+      "zh": [
+        "可以说；打个比方"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1264420": {
+      "zh": [
+        "语言"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1264540": {
       "zh": [
         "语言；词语"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1264600": {
+      "zh": [
+        "谚语；俗语"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1264640": {
+      "zh": [
+        "限制；限定",
+        "仅限于",
+        "最好；最佳选择"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1264650": {
+      "zh": [
+        "界限；极限"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1264770": {
+      "zh": [
+        "个人",
+        "自然人"
       ],
       "reviewed": false
     },
@@ -2469,6 +4729,14 @@
     "vocab:jm1266440": {
       "zh": [
         "叫；呼唤"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1266470": {
+      "zh": [
+        "呼吸",
+        "诀窍；窍门",
+        "配合；默契"
       ],
       "reviewed": false
     },
@@ -2542,6 +4810,13 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1269720": {
+      "zh": [
+        "后者",
+        "后继者；子孙"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1270390": {
       "zh": [
         "您丈夫；她丈夫"
@@ -2561,11 +4836,71 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1270680": {
+      "zh": [
+        "对不起"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1270700": {
+      "zh": [
+        "恭喜；祝贺"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1270810": {
       "zh": [
         "感谢；谢意",
         "礼节；礼仪",
         "鞠躬"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1270910": {
+      "zh": [
+        "词语；单词",
+        "语言",
+        "话语"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1270990": {
+      "zh": [
+        "讲述；谈论",
+        "吟诵",
+        "表明；显示"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1271010": {
+      "zh": [
+        "外语学习",
+        "语言学"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1271290": {
+      "zh": [
+        "错误；差错"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1271310": {
+      "zh": [
+        "误解"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1271750": {
+      "zh": [
+        "交换"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1271990": {
+      "zh": [
+        "交往；交际",
+        "恋爱交往"
       ],
       "reviewed": false
     },
@@ -2583,6 +4918,13 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1272730": {
+      "zh": [
+        "候选人；候补",
+        "候选；候补资格"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1272780": {
       "zh": [
         "光；光线",
@@ -2597,15 +4939,34 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1272950": {
+      "zh": [
+        "景象；光景"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1273270": {
       "zh": [
         "公园"
       ],
       "reviewed": false
     },
+    "vocab:jm1274640": {
+      "zh": [
+        "公平；公正"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1274820": {
       "zh": [
         "公务员"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1275130": {
+      "zh": [
+        "效果；成效",
+        "（声音、视觉等）效果"
       ],
       "reviewed": false
     },
@@ -2627,15 +4988,63 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1277500": {
+      "zh": [
+        "喜好；爱好",
+        "愿望；心愿"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1277520": {
+      "zh": [
+        "喜欢；偏好"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1278040": {
       "zh": [
         "工业"
       ],
       "reviewed": false
     },
+    "vocab:jm1278380": {
+      "zh": [
+        "幸福；幸运",
+        "带来好结果",
+        "幸而；幸运的是"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1278400": {
+      "zh": [
+        "幸福"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1278410": {
       "zh": [
         "宽敞的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1278510": {
+      "zh": [
+        "广告",
+        "通告；公告"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1279170": {
+      "zh": [
+        "攻击；进攻",
+        "批评；指责",
+        "网络攻击"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1279310": {
+      "zh": [
+        "而且；进一步"
       ],
       "reviewed": false
     },
@@ -2653,9 +5062,22 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1279730": {
+      "zh": [
+        "构成；组成"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1279990": {
       "zh": [
         "港口"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1280530": {
+      "zh": [
+        "硬币",
+        "硬通货"
       ],
       "reviewed": false
     },
@@ -2665,11 +5087,49 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1281000": {
+      "zh": [
+        "想法；见解",
+        "主意；构思",
+        "打算；计划"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1281020": {
       "zh": [
         "思考；考虑",
         "顾及；斟酌",
         "认为；以为"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1281170": {
+      "zh": [
+        "考虑；斟酌"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1281270": {
+      "zh": [
+        "航空；飞行"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1281890": {
+      "zh": [
+        "举止；礼仪"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1282100": {
+      "zh": [
+        "行动；举动"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1282240": {
+      "zh": [
+        "演讲；讲座"
       ],
       "reviewed": false
     },
@@ -2682,6 +5142,13 @@
     "vocab:jm1282340": {
       "zh": [
         "礼堂；讲堂"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1282410": {
+      "zh": [
+        "贡献",
+        "进贡；朝贡"
       ],
       "reviewed": false
     },
@@ -2709,6 +5176,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1283300": {
+      "zh": [
+        "价格高；昂贵"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1283500": {
       "zh": [
         "高中"
@@ -2718,6 +5191,13 @@
     "vocab:jm1283510": {
       "zh": [
         "高中生"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1283700": {
+      "zh": [
+        "高速",
+        "高速公路"
       ],
       "reviewed": false
     },
@@ -2735,9 +5215,89 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1284480": {
+      "zh": [
+        "配合；调整",
+        "合并；结合",
+        "面对；对着"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1284600": {
+      "zh": [
+        "合格；通过（考试）",
+        "符合标准；合格"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1284740": {
+      "zh": [
+        "总计；合计"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1284930": {
+      "zh": [
+        "信号；示意"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1285520": {
+      "zh": [
+        "豪华；奢华"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1285790": {
+      "zh": [
+        "克服；战胜"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1286170": {
+      "zh": [
+        "国家"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1286240": {
+      "zh": [
+        "国会",
+        "帝国议会（旧称）",
+        "议会；国会（泛指）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1286320": {
+      "zh": [
+        "国境；国界"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1286370": {
+      "zh": [
+        "国语；本国语言",
+        "日语（作为科目）",
+        "母语"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1286400": {
       "zh": [
         "国际"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1287070": {
+      "zh": [
+        "国民；公民",
+        "国民民主党"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1287280": {
+      "zh": [
+        "谷物；粮食"
       ],
       "reviewed": false
     },
@@ -2753,6 +5313,25 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1288080": {
+      "zh": [
+        "黑板"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1288340": {
+      "zh": [
+        "腰；腰部",
+        "劲道；韧性（面条等）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1288640": {
+      "zh": [
+        "骨折"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1288810": {
       "zh": [
         "这里"
@@ -2765,9 +5344,33 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1288940": {
+      "zh": [
+        "不久；即将"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1288950": {
+      "zh": [
+        "马上；眼看就要"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1289070": {
+      "zh": [
+        "这次；这回"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1289100": {
       "zh": [
         "这个月"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1289140": {
+      "zh": [
+        "今后；以后"
       ],
       "reviewed": false
     },
@@ -2782,6 +5385,12 @@
         "这次；这回",
         "下次；改天",
         "最近；前些天"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1289400": {
+      "zh": [
+        "你好"
       ],
       "reviewed": false
     },
@@ -2803,9 +5412,49 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1289620": {
+      "zh": [
+        "困难；艰难",
+        "难以实行"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1289710": {
+      "zh": [
+        "订婚"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1290390": {
+      "zh": [
+        "拥挤；堵塞",
+        "混乱；纷乱"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1290560": {
+      "zh": [
+        "混乱"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1290800": {
       "zh": [
         "左"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1290810": {
+      "zh": [
+        "左右；左边和右边",
+        "支配；左右（影响）",
+        "随从；侍从"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1291070": {
+      "zh": [
+        "差；差异"
       ],
       "reviewed": false
     },
@@ -2823,6 +5472,13 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1291410": {
+      "zh": [
+        "区别；差异",
+        "歧视"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1291500": {
       "zh": [
         "沙子"
@@ -2835,9 +5491,21 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1291730": {
+      "zh": [
+        "锁链；链条"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1291800": {
       "zh": [
         "坐"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1291880": {
+      "zh": [
+        "座位"
       ],
       "reviewed": false
     },
@@ -2880,9 +5548,31 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1293850": {
+      "zh": [
+        "最好；极佳",
+        "最高；最多"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1293940": {
+      "zh": [
+        "最终；最后",
+        "末班车（末班航班等）"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1293990": {
       "zh": [
         "最初；开始"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1294220": {
+      "zh": [
+        "最低；最少",
+        "最差",
+        "糟糕透顶"
       ],
       "reviewed": false
     },
@@ -2891,6 +5581,20 @@
         "妻子",
         "配菜；装饰菜",
         "陪衬"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1294630": {
+      "zh": [
+        "才能；能力"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1295040": {
+      "zh": [
+        "办完；做完",
+        "将就；凑合",
+        "解决；了结"
       ],
       "reviewed": false
     },
@@ -2916,9 +5620,35 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1296120": {
+      "zh": [
+        "审判；裁判"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1296300": {
+      "zh": [
+        "……之时；……之际"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1296400": {
       "zh": [
         "有；在（无生命）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1296670": {
+      "zh": [
+        "材料；原料",
+        "素材（小说、实验等）",
+        "依据；证据"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1296820": {
+      "zh": [
+        "财产；资产"
       ],
       "reviewed": false
     },
@@ -2941,9 +5671,52 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1297510": {
+      "zh": [
+        "作家；作者"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1297540": {
+      "zh": [
+        "工作；作业"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1297650": {
+      "zh": [
+        "作曲"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1297910": {
+      "zh": [
+        "作品"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1297950": {
+      "zh": [
+        "农作物；作物"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1297960": {
       "zh": [
         "作文"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1297980": {
+      "zh": [
+        "礼节；礼仪",
+        "制作方法（诗文等）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1298200": {
+      "zh": [
+        "昨；去年；昨日"
       ],
       "reviewed": false
     },
@@ -2953,9 +5726,31 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1298960": {
+      "zh": [
+        "纸币；钞票"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1299030": {
+      "zh": [
+        "杀；杀害",
+        "抑制；阻碍",
+        "压抑（声音、感情等）"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1299400": {
       "zh": [
         "杂志"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1299680": {
+      "zh": [
+        "盘子；碟子",
+        "一道菜；一份",
+        "皿部（部首）"
       ],
       "reviewed": false
     },
@@ -2991,6 +5786,18 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1302090": {
+      "zh": [
+        "参加"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1302280": {
+      "zh": [
+        "参考"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1302680": {
       "zh": [
         "山"
@@ -3006,6 +5813,18 @@
     "vocab:jm1303770": {
       "zh": [
         "产业；工业"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1304200": {
+      "zh": [
+        "赞成；同意"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1304350": {
+      "zh": [
+        "氧气"
       ],
       "reviewed": false
     },
@@ -3035,6 +5854,14 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1305380": {
+      "zh": [
+        "结束；停止",
+        "关闭（店铺等）",
+        "收起；放好"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1305700": {
       "zh": [
         "拜访（谦语）",
@@ -3046,6 +5873,12 @@
     "vocab:jm1305990": {
       "zh": [
         "使用"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1306200": {
+      "zh": [
+        "使用；用"
       ],
       "reviewed": false
     },
@@ -3081,6 +5914,14 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1307710": {
+      "zh": [
+        "身姿；姿态",
+        "外貌；装扮",
+        "状态；样子"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1307770": {
       "zh": [
         "孩子",
@@ -3095,9 +5936,21 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1308080": {
+      "zh": [
+        "集市；市场"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1308090": {
       "zh": [
         "市"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1308300": {
+      "zh": [
+        "市场；集市"
       ],
       "reviewed": false
     },
@@ -3115,9 +5968,36 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1309460": {
+      "zh": [
+        "不由得；不禁"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1309560": {
+      "zh": [
+        "思想；观念；意识形态"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1309650": {
       "zh": [
         "手指；脚趾"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1309670": {
+      "zh": [
+        "指；指向",
+        "指定；提名",
+        "指出；指明"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1309950": {
+      "zh": [
+        "指导；领导；教导",
+        "柔道轻微犯规"
       ],
       "reviewed": false
     },
@@ -3127,9 +6007,48 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1310090": {
+      "zh": [
+        "支撑；支持",
+        "顶住；抵御"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1310130": {
+      "zh": [
+        "供给；发放；支付"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1310180": {
+      "zh": [
+        "支出；开销"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1310230": {
+      "zh": [
+        "分店；分公司"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1310260": {
       "zh": [
         "准备；预备"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1310270": {
+      "zh": [
+        "支配；统治；控制",
+        "管理；指导",
+        "影响；左右"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1310300": {
+      "zh": [
+        "支付；付款"
       ],
       "reviewed": false
     },
@@ -3179,6 +6098,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1310950": {
+      "zh": [
+        "死亡"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1311450": {
       "zh": [
         "线；丝线"
@@ -3188,6 +6113,20 @@
     "vocab:jm1311530": {
       "zh": [
         "纸"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1311870": {
+      "zh": [
+        "达到；到达",
+        "通向；到…",
+        "甚至；极端而言"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1312220": {
+      "zh": [
+        "诗人"
       ],
       "reviewed": false
     },
@@ -3204,6 +6143,24 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1312720": {
+      "zh": [
+        "资源"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1312780": {
+      "zh": [
+        "资金；资本"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1312970": {
+      "zh": [
+        "饲养"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1313000": {
       "zh": [
         "牙齿"
@@ -3216,10 +6173,43 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1313580": {
+      "zh": [
+        "事情；事物",
+        "事件；情况",
+        "情形；状况"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1313830": {
+      "zh": [
+        "事件；案件"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1313850": {
       "zh": [
         "事故；意外",
         "缘由；情况"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1313960": {
+      "zh": [
+        "事实；真相",
+        "实际上；事实上"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1314010": {
+      "zh": [
+        "情况；缘由"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1314270": {
+      "zh": [
+        "事务；文书工作"
       ],
       "reviewed": false
     },
@@ -3261,9 +6251,22 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1316040": {
+      "zh": [
+        "时期；时节"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1316140": {
       "zh": [
         "钟表；手表"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1316220": {
+      "zh": [
+        "时刻；时间",
+        "良机；时机"
       ],
       "reviewed": false
     },
@@ -3281,15 +6284,58 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1316680": {
+      "zh": [
+        "取决于……",
+        "一……就；立刻",
+        "随……而定"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1317110": {
+      "zh": [
+        "出示；展示",
+        "指出（用手指等）",
+        "表示；表明"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1317170": {
       "zh": [
         "耳朵"
       ],
       "reviewed": false
     },
+    "vocab:jm1317770": {
+      "zh": [
+        "自杀"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1318000": {
+      "zh": [
+        "自身；本人"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1318090": {
+      "zh": [
+        "自然",
+        "自然的；天然的",
+        "自然地；不知不觉地"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1318290": {
       "zh": [
         "自行车"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1318340": {
+      "zh": [
+        "自动的",
+        "（语法）不及物动词"
       ],
       "reviewed": false
     },
@@ -3305,6 +6351,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1318680": {
+      "zh": [
+        "自豪；夸耀"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1318720": {
       "zh": [
         "自由"
@@ -3314,6 +6366,14 @@
     "vocab:jm1318970": {
       "zh": [
         "词典"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1319060": {
+      "zh": [
+        "方式；样式",
+        "仪式；典礼",
+        "婚礼"
       ],
       "reviewed": false
     },
@@ -3329,15 +6389,100 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1319580": {
+      "zh": [
+        "责备；训斥"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1319750": {
+      "zh": [
+        "失去；丢失",
+        "错失；错过",
+        "丧失亲人"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1319860": {
+      "zh": [
+        "失业",
+        "丢掉工作"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1320140": {
       "zh": [
         "失败"
       ],
       "reviewed": false
     },
+    "vocab:jm1320170": {
+      "zh": [
+        "失望；绝望"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1320640": {
+      "zh": [
+        "质量；价值",
+        "本质；性质"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1320760": {
       "zh": [
         "问题；提问"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1320830": {
+      "zh": [
+        "其实；说实话"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1320970": {
+      "zh": [
+        "实验"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1321020": {
+      "zh": [
+        "实现"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1321040": {
+      "zh": [
+        "实行；实施",
+        "执行；运行（程序）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1321110": {
+      "zh": [
+        "实际；真实",
+        "实践（相对理论）",
+        "真的；实际上"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1321140": {
+      "zh": [
+        "实施；实行"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1321630": {
+      "zh": [
+        "戏剧；戏"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1321650": {
+      "zh": [
+        "草坪；草地"
       ],
       "reviewed": false
     },
@@ -3396,6 +6541,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1323940": {
+      "zh": [
+        "借款；欠债"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1324300": {
       "zh": [
         "年轻的"
@@ -3405,6 +6556,36 @@
     "vocab:jm1324520": {
       "zh": [
         "弱的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1324990": {
+      "zh": [
+        "主要；大多"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1325260": {
+      "zh": [
+        "主义；原则"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1325910": {
+      "zh": [
+        "主张；声称"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1326160": {
+      "zh": [
+        "主妇；家庭主妇"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1326320": {
+      "zh": [
+        "主要的；重要的"
       ],
       "reviewed": false
     },
@@ -3433,9 +6614,21 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1327790": {
+      "zh": [
+        "手术"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1328090": {
       "zh": [
         "手套"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1328110": {
+      "zh": [
+        "手段；方法"
       ],
       "reviewed": false
     },
@@ -3446,6 +6639,13 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1328890": {
+      "zh": [
+        "种类；类型",
+        "（量词）……种"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1329000": {
       "zh": [
         "爱好；兴趣",
@@ -3453,9 +6653,27 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1329010": {
+      "zh": [
+        "酒"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1329015": {
       "zh": [
         "酒"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1329300": {
+      "zh": [
+        "首相；总理"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1329340": {
+      "zh": [
+        "首都"
       ],
       "reviewed": false
     },
@@ -3467,9 +6685,76 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1329650": {
+      "zh": [
+        "收到；接受",
+        "理解；领会"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1330290": {
       "zh": [
         "课；上课"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1330450": {
+      "zh": [
+        "需求；需要"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1330510": {
+      "zh": [
+        "收获；收成",
+        "成果；收获",
+        "（渔猎）捕获量"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1330790": {
+      "zh": [
+        "收入；所得"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1331030": {
+      "zh": [
+        "周围；四周",
+        "周长"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1331400": {
+      "zh": [
+        "宗教；信仰",
+        "宗教活动"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1331670": {
+      "zh": [
+        "就业；找到工作"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1331840": {
+      "zh": [
+        "州（美、澳等）",
+        "洲；大陆",
+        "（日本古代）令制国"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1332130": {
+      "zh": [
+        "修正；修改"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1332400": {
+      "zh": [
+        "修理；维修"
       ],
       "reviewed": false
     },
@@ -3487,6 +6772,14 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1332760": {
+      "zh": [
+        "完成；结束",
+        "毕业",
+        "做完…"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1333070": {
       "zh": [
         "学习；跟人学"
@@ -3497,6 +6790,26 @@
       "zh": [
         "习惯",
         "风俗；惯例"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1333150": {
+      "zh": [
+        "臭；难闻",
+        "可疑；蹊跷",
+        "做作；夸张（表演）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1333450": {
+      "zh": [
+        "星期；周"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1333500": {
+      "zh": [
+        "星期；周"
       ],
       "reviewed": false
     },
@@ -3512,6 +6825,19 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1333730": {
+      "zh": [
+        "集体；团体"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1333750": {
+      "zh": [
+        "集中注意力",
+        "集中；聚集"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1334040": {
       "zh": [
         "居住"
@@ -3521,6 +6847,18 @@
     "vocab:jm1334080": {
       "zh": [
         "住址；地址"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1334150": {
+      "zh": [
+        "住宅；住房"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1334210": {
+      "zh": [
+        "居民；住户"
       ],
       "reviewed": false
     },
@@ -3538,9 +6876,36 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1335210": {
+      "zh": [
+        "遵从；服从；遵守",
+        "跟随；陪同",
+        "沿着；顺着"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1335230": {
+      "zh": [
+        "因此；所以"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1335290": {
+      "zh": [
+        "表兄弟；堂兄弟"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1335440": {
       "zh": [
         "柔道"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1335570": {
+      "zh": [
+        "（交通）拥堵",
+        "停滞；延迟"
       ],
       "reviewed": false
     },
@@ -3556,9 +6921,54 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1336260": {
+      "zh": [
+        "重视"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1336500": {
+      "zh": [
+        "重大的；严重的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1336820": {
+      "zh": [
+        "重要的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1337000": {
+      "zh": [
+        "枪；枪支"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1337270": {
       "zh": [
         "作业"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1337300": {
+      "zh": [
+        "住宿；留宿"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1337370": {
+      "zh": [
+        "祝贺；庆祝",
+        "贺礼；礼物"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1337390": {
+      "zh": [
+        "庆祝；祝贺",
+        "送贺礼；庆贺",
+        "祈愿；祝福"
       ],
       "reviewed": false
     },
@@ -3580,6 +6990,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1339260": {
+      "zh": [
+        "籍贯；出身"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1339460": {
       "zh": [
         "出席；到场"
@@ -3589,6 +7005,12 @@
     "vocab:jm1340000": {
       "zh": [
         "出发"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1340030": {
+      "zh": [
+        "出版"
       ],
       "reviewed": false
     },
@@ -3610,9 +7032,42 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1341210": {
+      "zh": [
+        "瞬间；刹那",
+        "那一瞬间",
+        "片刻；一瞬间"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1341670": {
       "zh": [
         "准备"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1342220": {
+      "zh": [
+        "顺序；次序",
+        "顺从的；温顺的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1342380": {
+      "zh": [
+        "顺利的；良好的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1342390": {
+      "zh": [
+        "顺序；轮流"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1342510": {
+      "zh": [
+        "处理；处置"
       ],
       "reviewed": false
     },
@@ -3634,15 +7089,52 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1343150": {
+      "zh": [
+        "所谓的"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1343460": {
       "zh": [
         "热的（天气）"
       ],
       "reviewed": false
     },
+    "vocab:jm1343640": {
+      "zh": [
+        "签名；署名"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1343950": {
       "zh": [
         "写"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1344030": {
+      "zh": [
+        "书房"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1344150": {
+      "zh": [
+        "书籍；书本"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1344200": {
+      "zh": [
+        "文件；文书"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1344650": {
+      "zh": [
+        "助手；帮手",
+        "（教授）助教"
       ],
       "reviewed": false
     },
@@ -3658,10 +7150,29 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1345020": {
+      "zh": [
+        "女王",
+        "王后"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1345140": {
+      "zh": [
+        "女子；女性"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1345250": {
       "zh": [
         "女性；女子",
         "阴性（语法）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1345430": {
+      "zh": [
+        "女演员"
       ],
       "reviewed": false
     },
@@ -3685,11 +7196,39 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1347200": {
+      "zh": [
+        "生意；买卖",
+        "职业；行业"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1347310": {
+      "zh": [
+        "商品；货品"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1347530": {
+      "zh": [
+        "奖学金",
+        "助学贷款"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1347710": {
       "zh": [
         "将来；前途",
         "引进；传入",
         "招致；带来"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1347830": {
+      "zh": [
+        "小屋；棚子",
+        "小剧场；临时戏棚",
+        "自己的家"
       ],
       "reviewed": false
     },
@@ -3711,15 +7250,34 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1348630": {
+      "zh": [
+        "小麦"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1348870": {
       "zh": [
         "一点；稍微"
       ],
       "reviewed": false
     },
+    "vocab:jm1348900": {
+      "zh": [
+        "（后接否定）一点也不"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1348910": {
       "zh": [
         "少的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1349170": {
+      "zh": [
+        "少年；男孩",
+        "青少年；孩子"
       ],
       "reviewed": false
     },
@@ -3734,6 +7292,12 @@
         "知道；知晓",
         "同意；答应",
         "宽恕；饶恕"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1349520": {
+      "zh": [
+        "承认；认可"
       ],
       "reviewed": false
     },
@@ -3761,6 +7325,19 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1350290": {
+      "zh": [
+        "消费；花费"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1350340": {
+      "zh": [
+        "消防",
+        "消防队；消防员"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1350600": {
       "zh": [
         "烧；焚烧",
@@ -3777,11 +7354,30 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1351030": {
+      "zh": [
+        "症状；病情"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1351270": {
+      "zh": [
+        "章；章节",
+        "勋章；徽章"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1351360": {
       "zh": [
         "笑",
         "微笑",
         "嘲笑；讥笑"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1351400": {
+      "zh": [
+        "笑脸；笑容"
       ],
       "reviewed": false
     },
@@ -3791,9 +7387,71 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1351560": {
+      "zh": [
+        "碰撞；相撞",
+        "冲突；纠纷"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1351680": {
+      "zh": [
+        "证明；证实"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1351730": {
+      "zh": [
+        "详细",
+        "精通；熟悉"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1351830": {
+      "zh": [
+        "大象"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1351910": {
+      "zh": [
+        "奖；奖赏"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1352060": {
+      "zh": [
+        "障碍；妨碍",
+        "残疾；障碍",
+        "障碍赛跑"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1352130": {
       "zh": [
         "上面"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1352140": {
+      "zh": [
+        "上；上部"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1352150": {
+      "zh": [
+        "上游",
+        "上部；上半身",
+        "从前；古时"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1352170": {
+      "zh": [
+        "从……角度看",
+        "上；上面",
+        "上等；一流"
       ],
       "reviewed": false
     },
@@ -3817,15 +7475,46 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1352980": {
+      "zh": [
+        "进京；去东京"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1353320": {
       "zh": [
         "擅长"
       ],
       "reviewed": false
     },
+    "vocab:jm1353850": {
+      "zh": [
+        "进步；提高"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1354030": {
+      "zh": [
+        "上等的；优质的",
+        "太好了！；来吧！"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1355120": {
       "zh": [
         "乘坐"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1355540": {
+      "zh": [
+        "玩笑；笑话"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1355710": {
+      "zh": [
+        "城堡"
       ],
       "reviewed": false
     },
@@ -3840,6 +7529,38 @@
         "地方；场所",
         "空间",
         "相扑赛会"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1356000": {
+      "zh": [
+        "常识"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1356370": {
+      "zh": [
+        "信息；情报",
+        "数据；信息",
+        "信息学（学科）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1356510": {
+      "zh": [
+        "条件；要求"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1356700": {
+      "zh": [
+        "状况；情况"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1356730": {
+      "zh": [
+        "状态；情况"
       ],
       "reviewed": false
     },
@@ -3862,6 +7583,26 @@
         "种植；栽种",
         "移植；插入",
         "接种；感染"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1357300": {
+      "zh": [
+        "植物"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1357480": {
+      "zh": [
+        "职业；工作",
+        "职责",
+        "技艺；手艺"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1357510": {
+      "zh": [
+        "职业；工作"
       ],
       "reviewed": false
     },
@@ -3892,15 +7633,91 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1358530": {
+      "zh": [
+        "餐桌"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1358550": {
       "zh": [
         "食堂"
       ],
       "reviewed": false
     },
+    "vocab:jm1358600": {
+      "zh": [
+        "食品"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1358620": {
+      "zh": [
+        "食物"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1358660": {
+      "zh": [
+        "食欲"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1358670": {
+      "zh": [
+        "食物；食品"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1358680": {
       "zh": [
         "食品；食材"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1358690": {
+      "zh": [
+        "粮食；口粮"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1358760": {
+      "zh": [
+        "屁股；臀部",
+        "底部；下面",
+        "末尾；最后"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1359040": {
+      "zh": [
+        "相信；信任"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1359150": {
+      "zh": [
+        "信仰；信奉"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1359240": {
+      "zh": [
+        "信号",
+        "红绿灯；交通信号"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1359620": {
+      "zh": [
+        "信任；信赖",
+        "信用；信誉"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1359730": {
+      "zh": [
+        "信赖；信任"
       ],
       "reviewed": false
     },
@@ -3917,6 +7734,14 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1360410": {
+      "zh": [
+        "裁判；判决",
+        "裁判员；裁判",
+        "（神的）审判"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1360480": {
       "zh": [
         "心；心灵",
@@ -3924,10 +7749,42 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1360770": {
+      "zh": [
+        "心脏",
+        "胆量；脸皮厚",
+        "核心；中心部分"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1360930": {
       "zh": [
         "担心；忧虑",
         "关照；照料"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1361000": {
+      "zh": [
+        "心理；心态"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1361110": {
+      "zh": [
+        "慎重的；谨慎的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1361510": {
+      "zh": [
+        "新的；崭新"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1362100": {
+      "zh": [
+        "新鲜的"
       ],
       "reviewed": false
     },
@@ -3958,6 +7815,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1362730": {
+      "zh": [
+        "严重的；深刻的"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1362950": {
       "zh": [
         "说（谦语）",
@@ -3972,10 +7835,31 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1363650": {
+      "zh": [
+        "认真的；正经的",
+        "真刀"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1364360": {
       "zh": [
         "认真；踏实",
         "老实；诚实"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1364440": {
+      "zh": [
+        "神；神明",
+        "神级；厉害"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1364520": {
+      "zh": [
+        "神经",
+        "神经质；敏感"
       ],
       "reviewed": false
     },
@@ -3993,9 +7877,41 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1365050": {
+      "zh": [
+        "亲密的；亲近的",
+        "熟悉的；广为人知",
+        "关系密切的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1365230": {
+      "zh": [
+        "亲戚"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1365250": {
       "zh": [
         "亲切；热心"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1365410": {
+      "zh": [
+        "密友；挚友"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1365460": {
+      "zh": [
+        "诊察；诊断"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1365770": {
+      "zh": [
+        "身高"
       ],
       "reviewed": false
     },
@@ -4009,6 +7925,26 @@
       "zh": [
         "前进；前行",
         "领先；先行",
+        "进步；进展"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1365990": {
+      "zh": [
+        "推进；使前进",
+        "推进（计划等）",
+        "提升；晋升"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1366010": {
+      "zh": [
+        "升学"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1366190": {
+      "zh": [
         "进步；进展"
       ],
       "reviewed": false
@@ -4027,6 +7963,39 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1367380": {
+      "zh": [
+        "人工的；人造的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1368020": {
+      "zh": [
+        "人种；种族",
+        "（某）类型的人"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1368370": {
+      "zh": [
+        "人生"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1369070": {
+      "zh": [
+        "人物；人",
+        "人品；性格",
+        "能人；人才"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1369530": {
+      "zh": [
+        "人类"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1369900": {
       "zh": [
         "垃圾"
@@ -4037,6 +8006,13 @@
       "zh": [
         "询问；打听",
         "寻找；查找"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1370320": {
+      "zh": [
+        "图；图画",
+        "情景；场面"
       ],
       "reviewed": false
     },
@@ -4052,9 +8028,22 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1371170": {
+      "zh": [
+        "推荐；举荐"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1371320": {
       "zh": [
         "游泳"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1371610": {
+      "zh": [
+        "水平；标准",
+        "水位"
       ],
       "reviewed": false
     },
@@ -4072,11 +8061,23 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1372370": {
+      "zh": [
+        "睡眠"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1372800": {
       "zh": [
         "非常；相当",
         "过分；恶劣",
         "非同寻常"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1372900": {
+      "zh": [
+        "数；计算"
       ],
       "reviewed": false
     },
@@ -4086,11 +8087,32 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1373060": {
+      "zh": [
+        "数字",
+        "数目；数量",
+        "寥寥数字"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1373860": {
       "zh": [
         "世界；社会",
         "领域；界",
         "世界闻名"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1373970": {
+      "zh": [
+        "世间；社会"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1373990": {
+      "zh": [
+        "世纪",
+        "时代"
       ],
       "reviewed": false
     },
@@ -4117,6 +8139,41 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1374700": {
+      "zh": [
+        "限制；限定"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1374880": {
+      "zh": [
+        "制度；体制"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1375040": {
+      "zh": [
+        "气势；力量",
+        "威势；权力",
+        "势头；冲力"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1375260": {
+      "zh": [
+        "本性；天性",
+        "性别",
+        "性；性欲"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1375290": {
+      "zh": [
+        "性格；个性",
+        "特性；性质"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1375610": {
       "zh": [
         "变成；成为"
@@ -4129,6 +8186,33 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1375690": {
+      "zh": [
+        "成功",
+        "（人生）发迹"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1375740": {
+      "zh": [
+        "成年人",
+        "成年；长大成人"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1375760": {
+      "zh": [
+        "成绩；成果"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1375790": {
+      "zh": [
+        "成长；发育",
+        "增长（经济等）"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1375820": {
       "zh": [
         "原来如此；的确"
@@ -4138,6 +8222,20 @@
     "vocab:jm1375970": {
       "zh": [
         "政治"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1376070": {
+      "zh": [
+        "政府"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1376250": {
+      "zh": [
+        "整理；归纳",
+        "清算；结算",
+        "裁减；精简"
       ],
       "reviewed": false
     },
@@ -4161,10 +8259,49 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1376590": {
+      "zh": [
+        "正确的；正规的",
+        "原本的；原版"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1376600": {
       "zh": [
         "正确；对",
         "正当；公正"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1376760": {
+      "zh": [
+        "准确的；正确的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1377080": {
+      "zh": [
+        "正午；中午"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1377290": {
+      "zh": [
+        "正式的；正规的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1377590": {
+      "zh": [
+        "诚实；正直",
+        "老实说；坦白说"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1378200": {
+      "zh": [
+        "清洁的；卫生的",
+        "纯洁的；高尚的"
       ],
       "reviewed": false
     },
@@ -4173,6 +8310,19 @@
         "活着；生存",
         "谋生",
         "有效；起作用"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1378590": {
+      "zh": [
+        "生物；动物"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1378650": {
+      "zh": [
+        "产生；引起",
+        "产生；发生"
       ],
       "reviewed": false
     },
@@ -4195,9 +8345,46 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1379210": {
+      "zh": [
+        "不巧；可惜"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1379330": {
+      "zh": [
+        "布料；面料",
+        "生面团；面糊",
+        "本性；真面目"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1379380": {
       "zh": [
         "学生（中小学）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1379430": {
+      "zh": [
+        "生物",
+        "生物学"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1379530": {
+      "zh": [
+        "生命",
+        "（职业）生涯",
+        "生命力；灵魂"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1379640": {
+      "zh": [
+        "旺季；全盛期",
+        "壮年；黄金时期",
+        "发情期"
       ],
       "reviewed": false
     },
@@ -4209,9 +8396,29 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1379950": {
+      "zh": [
+        "精神；心灵",
+        "态度；意志",
+        "精神；实质"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1380440": {
       "zh": [
         "声音"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1380690": {
+      "zh": [
+        "制造；生产"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1380760": {
+      "zh": [
+        "产品；制品"
       ],
       "reviewed": false
     },
@@ -4227,6 +8434,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1381320": {
+      "zh": [
+        "索取；要求；索赔"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1381380": {
       "zh": [
         "蓝色"
@@ -4239,9 +8452,21 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1381750": {
+      "zh": [
+        "青年；年轻人"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1381820": {
       "zh": [
         "安静的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1382100": {
+      "zh": [
+        "税金"
       ],
       "reviewed": false
     },
@@ -4274,11 +8499,44 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1382700": {
+      "zh": [
+        "煤炭"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1382830": {
+      "zh": [
+        "石油",
+        "煤油"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1382980": {
       "zh": [
         "打算；意图",
         "以为；自认为",
         "估计；预计"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1383030": {
+      "zh": [
+        "积极的；主动的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1383160": {
+      "zh": [
+        "责备；谴责",
+        "催促；逼迫",
+        "折磨；虐待"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1383180": {
+      "zh": [
+        "责任；职责"
       ],
       "reviewed": false
     },
@@ -4300,9 +8558,33 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1383680": {
+      "zh": [
+        "痕迹；踪迹",
+        "遗址；遗迹",
+        "伤疤"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1384830": {
       "zh": [
         "切；剪"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1384840": {
+      "zh": [
+        "块；片；条",
+        "布料",
+        "锋利"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1384860": {
+      "zh": [
+        "断；断开",
+        "受伤",
+        "用尽；磨损"
       ],
       "reviewed": false
     },
@@ -4334,6 +8616,32 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1386020": {
+      "zh": [
+        "设计"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1386070": {
+      "zh": [
+        "设备；设施"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1386350": {
+      "zh": [
+        "节约；节省"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1386370": {
+      "zh": [
+        "学说；理论",
+        "看法；意见",
+        "传闻；谣传"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1386460": {
       "zh": [
         "说明；解释"
@@ -4343,6 +8651,27 @@
     "vocab:jm1386500": {
       "zh": [
         "雪"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1386840": {
+      "zh": [
+        "绝对；一定",
+        "绝对的；无条件"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1386990": {
+      "zh": [
+        "灭绝；绝种",
+        "根除；消灭"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1387010": {
+      "zh": [
+        "舌头",
+        "舌状物；钟舌"
       ],
       "reviewed": false
     },
@@ -4372,6 +8701,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1388300": {
+      "zh": [
+        "前几天；日前"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1388410": {
       "zh": [
         "前辈；学长"
@@ -4381,6 +8716,20 @@
     "vocab:jm1388740": {
       "zh": [
         "千"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1389460": {
+      "zh": [
+        "占（比例）；占据",
+        "占据（位置、地位）",
+        "占据（心思）；牵挂"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1389780": {
+      "zh": [
+        "专业；专攻"
       ],
       "reviewed": false
     },
@@ -4394,6 +8743,12 @@
       "zh": [
         "战争",
         "争斗；激烈竞争"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1390780": {
+      "zh": [
+        "泉；泉水"
       ],
       "reviewed": false
     },
@@ -4425,9 +8780,39 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1392250": {
+      "zh": [
+        "选手；运动员"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1392290": {
+      "zh": [
+        "选择"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1392580": {
       "zh": [
         "前面；之前"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1393090": {
+      "zh": [
+        "前者"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1393350": {
+      "zh": [
+        "前进"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1394250": {
+      "zh": [
+        "善；善良"
       ],
       "reviewed": false
     },
@@ -4437,11 +8822,32 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1394770": {
+      "zh": [
+        "全部；整个",
+        "全（套）；共"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1394840": {
+      "zh": [
+        "全体人员；全体"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1395620": {
       "zh": [
         "完全不",
         "完全；彻底",
         "非常"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1395660": {
+      "zh": [
+        "整体；全体",
+        "首先；原本",
+        "究竟；到底"
       ],
       "reviewed": false
     },
@@ -4463,10 +8869,67 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1397100": {
+      "zh": [
+        "粗糙的；简陋的",
+        "怠慢的；不爱惜"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1397300": {
       "zh": [
         "极好；精彩",
         "惊人；出色"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1397350": {
+      "zh": [
+        "漂亮的；极好的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1397450": {
+      "zh": [
+        "班级",
+        "小组；团队",
+        "一套；一组"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1397590": {
+      "zh": [
+        "交叉（腿、臂）；挽（臂）",
+        "组装；搭建",
+        "编织；编结"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1397620": {
+      "zh": [
+        "工会；协会"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1397630": {
+      "zh": [
+        "组织",
+        "结构；构造",
+        "（铁路等）体系"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1397720": {
+      "zh": [
+        "提出；呼吁",
+        "诉诸；打动",
+        "抱怨；控诉"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1399610": {
+      "zh": [
+        "想象；猜想"
       ],
       "reviewed": false
     },
@@ -4476,9 +8939,46 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1400050": {
+      "zh": [
+        "操作；操纵",
+        "操控；暗中操纵"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1400390": {
+      "zh": [
+        "巢；窝",
+        "洞穴；巢穴",
+        "（罪犯的）老窝"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1401000": {
+      "zh": [
+        "伙伴；同伴",
+        "对方；对象",
+        "对手"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1401090": {
+      "zh": [
+        "继承"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1401210": {
       "zh": [
         "商量；商议"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1401240": {
+      "zh": [
+        "相当于",
+        "适当的；相称的",
+        "相当（程度深）"
       ],
       "reviewed": false
     },
@@ -4496,6 +8996,13 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1402360": {
+      "zh": [
+        "装置；设备",
+        "舞台布景"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1402540": {
       "zh": [
         "跑"
@@ -4510,6 +9017,19 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1402930": {
+      "zh": [
+        "霜",
+        "白发"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1403020": {
+      "zh": [
+        "骚乱；喧闹"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1403040": {
       "zh": [
         "吵闹；喧哗",
@@ -4518,9 +9038,44 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1403060": {
+      "zh": [
+        "噪音"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1403160": {
+      "zh": [
+        "增加；增长"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1403550": {
+      "zh": [
+        "赠送；馈赠",
+        "授予；颁发"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1403830": {
       "zh": [
         "旁边；附近"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1404100": {
+      "zh": [
+        "即；也就是说",
+        "恰恰；正是",
+        "那么；如果这样"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1404320": {
+      "zh": [
+        "呼吸；气息",
+        "默契；和谐",
+        "蒸气；热气"
       ],
       "reviewed": false
     },
@@ -4558,6 +9113,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1405050": {
+      "zh": [
+        "速度"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1405790": {
       "zh": [
         "继续；持续",
@@ -4581,9 +9142,68 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1406000": {
+      "zh": [
+        "袖子",
+        "（舞台等）侧翼",
+        "（书衣的）折口"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1406030": {
+      "zh": [
+        "照原样；不变",
+        "极其相似",
+        "立刻；随即"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1406050": {
       "zh": [
         "那么"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1406060": {
+      "zh": [
+        "但是；即便如此"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1406090": {
+      "zh": [
+        "于是；因此"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1406150": {
+      "zh": [
+        "存在"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1406400": {
+      "zh": [
+        "尊敬；敬重"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1406460": {
+      "zh": [
+        "尊重；重视"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1406660": {
+      "zh": [
+        "损失；损害",
+        "不利；吃亏"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1406710": {
+      "zh": [
+        "损害；损失"
       ],
       "reviewed": false
     },
@@ -4639,9 +9259,69 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1409200": {
+      "zh": [
+        "体育"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1409250": {
+      "zh": [
+        "体温"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1409800": {
+      "zh": [
+        "对；对抗",
+        "比（比分等）",
+        "朝向；对……"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1410120": {
+      "zh": [
+        "对象；目标"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1410410": {
+      "zh": [
+        "腰带；和服带",
+        "书腰纸",
+        "带子；带状物"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1410590": {
       "zh": [
         "等待"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1410780": {
+      "zh": [
+        "态度；举止",
+        "（对问题的）立场"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1410800": {
+      "zh": [
+        "我开动了"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1410930": {
+      "zh": [
+        "逗留；停留"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1411110": {
+      "zh": [
+        "借出；出借",
+        "人情；恩惠"
       ],
       "reviewed": false
     },
@@ -4663,9 +9343,35 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1412880": {
+      "zh": [
+        "非常；很"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1412890": {
       "zh": [
         "大的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1412960": {
+      "zh": [
+        "了不起的；重大的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1413140": {
+      "zh": [
+        "房东"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1413180": {
+      "zh": [
+        "大会；大规模集会",
+        "比赛；锦标赛",
+        "盛大活动"
       ],
       "reviewed": false
     },
@@ -4681,9 +9387,22 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1413330": {
+      "zh": [
+        "大气；空气",
+        "宽宏大量的"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1413660": {
       "zh": [
         "非常喜欢"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1413880": {
+      "zh": [
+        "大使"
       ],
       "reviewed": false
     },
@@ -4725,6 +9444,13 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1414360": {
+      "zh": [
+        "大战",
+        "世界大战"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1414470": {
       "zh": [
         "大致；大体上",
@@ -4756,6 +9482,13 @@
     "vocab:jm1415870": {
       "zh": [
         "很多"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1416340": {
+      "zh": [
+        "夺取；抢走",
+        "吸引；迷住"
       ],
       "reviewed": false
     },
@@ -4802,6 +9535,14 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1419570": {
+      "zh": [
+        "拒绝；谢绝",
+        "事先告知；请示",
+        "请假；请求谅解"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1419860": {
       "zh": [
         "暖气；供暖"
@@ -4820,10 +9561,23 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1420020": {
+      "zh": [
+        "男人"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1420160": {
       "zh": [
         "男性",
         "阳性"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1420400": {
+      "zh": [
+        "消息；通知",
+        "预兆；征兆"
       ],
       "reviewed": false
     },
@@ -4984,6 +9738,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1427510": {
+      "zh": [
+        "说话；聊天；闲谈"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1427900": {
       "zh": [
         "贴"
@@ -5026,11 +9786,33 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1430690": {
+      "zh": [
+        "直接地；亲自"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1431670": {
+      "zh": [
+        "下沉；沉没",
+        "落下（日落）",
+        "消沉；情绪低落"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1431850": {
       "zh": [
         "稀奇；罕见",
         "新奇；新颖",
         "难得；出色"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1432410": {
+      "zh": [
+        "追赶；追逐",
+        "遵循；跟随",
+        "驱逐；赶走"
       ],
       "reviewed": false
     },
@@ -5076,6 +9858,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1436050": {
+      "zh": [
+        "底部；底"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1436130": {
       "zh": [
         "院子；庭院"
@@ -5102,10 +9890,23 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1436730": {
+      "zh": [
+        "放弃；死心"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1437450": {
       "zh": [
         "适当；恰当",
         "敷衍；马虎"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1437560": {
+      "zh": [
+        "溺水；淹没",
+        "沉溺；沉迷"
       ],
       "reviewed": false
     },
@@ -5147,6 +9948,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1442730": {
+      "zh": [
+        "水田；稻田"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1442750": {
       "zh": [
         "乡下；农村",
@@ -5181,6 +9988,12 @@
     "vocab:jm1443840": {
       "zh": [
         "电话"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1443970": {
+      "zh": [
+        "兔子"
       ],
       "reviewed": false
     },
@@ -5237,6 +10050,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1446420": {
+      "zh": [
+        "刀；日本刀"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1446760": {
       "zh": [
         "岛",
@@ -5271,6 +10090,22 @@
         "热水",
         "温泉；澡堂",
         "铁水"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1448810": {
+      "zh": [
+        "击中；命中",
+        "接触；碰到",
+        "相当于；适用于"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1448860": {
+      "zh": [
+        "击中；命中",
+        "使…暴露",
+        "贴上；敷上"
       ],
       "reviewed": false
     },
@@ -5309,9 +10144,23 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1450890": {
+      "zh": [
+        "头痛"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1451150": {
       "zh": [
         "工作；劳动"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1451170": {
+      "zh": [
+        "移动；挪动",
+        "打动；感动",
+        "改变；变动"
       ],
       "reviewed": false
     },
@@ -5352,6 +10201,13 @@
         "工具；用具",
         "手段",
         "家具"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1454500": {
+      "zh": [
+        "能；可以",
+        "获得；取得"
       ],
       "reviewed": false
     },
@@ -5538,9 +10394,30 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1469890": {
+      "zh": [
+        "深（颜色）",
+        "浓烈（味道、气味）",
+        "浓稠；浓密"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1471560": {
+      "zh": [
+        "马",
+        "赛马"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1472270": {
       "zh": [
         "拜见；拜读"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1472650": {
+      "zh": [
+        "身高；个子"
       ],
       "reviewed": false
     },
@@ -5564,9 +10441,23 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1473460": {
+      "zh": [
+        "梅；梅子",
+        "下等（三级中）"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1473950": {
       "zh": [
         "卖"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1473960": {
+      "zh": [
+        "畅销；卖出",
+        "出名；受欢迎"
       ],
       "reviewed": false
     },
@@ -5631,6 +10522,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1477960": {
+      "zh": [
+        "头发"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1478750": {
       "zh": [
         "半；一半"
@@ -5647,6 +10544,14 @@
       "zh": [
         "反对",
         "相反；反方向"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1481350": {
+      "zh": [
+        "木板；板子",
+        "薄板；板材",
+        "砧板"
       ],
       "reviewed": false
     },
@@ -5707,6 +10612,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1483200": {
+      "zh": [
+        "悲伤；哀悼"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1483540": {
       "zh": [
         "比较",
@@ -5717,6 +10628,28 @@
     "vocab:jm1483740": {
       "zh": [
         "累"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1483800": {
+      "zh": [
+        "皮；皮肤",
+        "皮；壳",
+        "外皮；包装"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1483805": {
+      "zh": [
+        "皮革"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1484330": {
+      "zh": [
+        "戴；蒙上",
+        "沾满；被…覆盖",
+        "承担；背黑锅"
       ],
       "reviewed": false
     },
@@ -5768,6 +10701,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1487410": {
+      "zh": [
+        "不一定；未必"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1487660": {
       "zh": [
         "必要；需要",
@@ -5778,6 +10717,13 @@
     "vocab:jm1488000": {
       "zh": [
         "百"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1488840": {
+      "zh": [
+        "冰",
+        "刨冰"
       ],
       "reviewed": false
     },
@@ -5851,6 +10797,14 @@
         "普通；一般",
         "通常；一般来说",
         "普通列车"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1497800": {
+      "zh": [
+        "腐烂；变质",
+        "腐蚀；风化",
+        "变迟钝；生疏"
       ],
       "reviewed": false
     },
@@ -5938,6 +10892,13 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1504770": {
+      "zh": [
+        "面粉；粉末",
+        "海洛因"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1505120": {
       "zh": [
         "文化"
@@ -5965,6 +10926,28 @@
     "vocab:jm1505990": {
       "zh": [
         "但是；然而"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1506050": {
+      "zh": [
+        "而且；并且",
+        "然而；不过"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1508290": {
+      "zh": [
+        "柄；把手",
+        "茎；柄"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1508300": {
+      "zh": [
+        "花纹；图案",
+        "体格；身材",
+        "品性；性格"
       ],
       "reviewed": false
     },
@@ -5999,6 +10982,14 @@
         "墙；隔断",
         "障碍；阻碍",
         "石墙"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1509350": {
+      "zh": [
+        "习惯；癖好",
+        "特点；怪癖",
+        "褶皱；卷曲"
       ],
       "reviewed": false
     },
@@ -6047,6 +11038,14 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1512080": {
+      "zh": [
+        "附近；周围",
+        "大约；左右",
+        "比如；例如"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1512130": {
       "zh": [
         "归还"
@@ -6083,11 +11082,41 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1514930": {
+      "zh": [
+        "生活；生计"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1514940": {
+      "zh": [
+        "生活；过日子",
+        "谋生",
+        "度过时光"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1514950": {
+      "zh": [
+        "日暮；黄昏",
+        "结束；末尾",
+        "年末；岁末"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1514960": {
       "zh": [
         "天黑；日暮",
         "将尽；将结束",
         "沉浸；陷入"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1516310": {
+      "zh": [
+        "抱着；夹着",
+        "背负；承担",
+        "雇用"
       ],
       "reviewed": false
     },
@@ -6112,6 +11141,12 @@
     "vocab:jm1517480": {
       "zh": [
         "法律"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1517510": {
+      "zh": [
+        "泡沫；气泡"
       ],
       "reviewed": false
     },
@@ -6198,6 +11233,14 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1523450": {
+      "zh": [
+        "大约；大概",
+        "大体上；一般",
+        "完全；根本"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1523940": {
       "zh": [
         "刷；擦亮"
@@ -6243,6 +11286,14 @@
     "vocab:jm1524990": {
       "zh": [
         "或者"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1525250": {
+      "zh": [
+        "末端；尽头",
+        "（年月等）末",
+        "最小的孩子"
       ],
       "reviewed": false
     },
@@ -6324,6 +11375,13 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1531110": {
+      "zh": [
+        "雾",
+        "喷雾"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1531190": {
       "zh": [
         "女儿",
@@ -6334,6 +11392,21 @@
     "vocab:jm1531710": {
       "zh": [
         "名字"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1531940": {
+      "zh": [
+        "生命；性命",
+        "寿命",
+        "命根子；最重要的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1532310": {
+      "zh": [
+        "明显；显然",
+        "明亮"
       ],
       "reviewed": false
     },
@@ -6384,6 +11457,12 @@
     "vocab:jm1534890": {
       "zh": [
         "星期四"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1535140": {
+      "zh": [
+        "拜见；求见"
       ],
       "reviewed": false
     },
@@ -6462,6 +11541,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1538590": {
+      "zh": [
+        "油"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1538820": {
       "zh": [
         "出口；输出",
@@ -6482,9 +11567,23 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1539080": {
+      "zh": [
+        "优秀；出色"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1541620": {
       "zh": [
         "有名的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1541900": {
+      "zh": [
+        "邀请；约请",
+        "诱惑；引诱",
+        "引起（泪水、笑声等）"
       ],
       "reviewed": false
     },
@@ -6537,6 +11636,29 @@
         "预约；预订",
         "订立契约",
         "预设；设定"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1544730": {
+      "zh": [
+        "给予；赐予",
+        "提供",
+        "分配；指派"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1544990": {
+      "zh": [
+        "寄放；托付",
+        "委托；交由决定",
+        "倚靠"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1545110": {
+      "zh": [
+        "幼小；年幼",
+        "幼稚；不成熟"
       ],
       "reviewed": false
     },
@@ -6641,6 +11763,13 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1549340": {
+      "zh": [
+        "暴风雨",
+        "风波；骚动"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1549660": {
       "zh": [
         "利用"
@@ -6658,6 +11787,13 @@
         "背面；另一面",
         "背后；后面",
         "衬里；内里"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1550380": {
+      "zh": [
+        "背叛；出卖",
+        "辜负；令人失望"
       ],
       "reviewed": false
     },
@@ -6788,6 +11924,24 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1558400": {
+      "zh": [
+        "逊色；不如"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1558670": {
+      "zh": [
+        "恋爱"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1558920": {
+      "zh": [
+        "恋人；情人"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1559160": {
       "zh": [
         "练习"
@@ -6834,9 +11988,41 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1565300": {
+      "zh": [
+        "呻吟",
+        "咆哮；吼叫",
+        "嗡嗡作响"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1566210": {
+      "zh": [
+        "哪个；哪里；谁",
+        "全部；两者",
+        "反正；总之"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1567450": {
       "zh": [
         "扒手"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1573150": {
+      "zh": [
+        "奢侈；奢华",
+        "过奢侈的生活",
+        "大量使用；不吝惜"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1575940": {
+      "zh": [
+        "一家；一家人",
+        "自成一派",
+        "帮派；家族"
       ],
       "reviewed": false
     },
@@ -6852,9 +12038,24 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1576100": {
+      "zh": [
+        "一点钟",
+        "曾经；从前",
+        "暂时；一时"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1576150": {
       "zh": [
         "一个人"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1576200": {
+      "zh": [
+        "一生；一辈子",
+        "毕生；此生"
       ],
       "reviewed": false
     },
@@ -6868,6 +12069,12 @@
     "vocab:jm1576260": {
       "zh": [
         "一天；一日"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1576520": {
+      "zh": [
+        "永久；永恒"
       ],
       "reviewed": false
     },
@@ -6891,6 +12098,13 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1577040": {
+      "zh": [
+        "化妆；美容",
+        "装饰；粉饰"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1577100": {
       "zh": [
         "什么"
@@ -6900,6 +12114,13 @@
     "vocab:jm1577120": {
       "zh": [
         "为什么"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1577130": {
+      "zh": [
+        "总是；随时",
+        "任何时候"
       ],
       "reviewed": false
     },
@@ -6921,6 +12142,20 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1577650": {
+      "zh": [
+        "管子",
+        "管乐器",
+        "管道；导管"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1577660": {
+      "zh": [
+        "漱口"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1577670": {
       "zh": [
         "眼镜"
@@ -6930,6 +12165,14 @@
     "vocab:jm1577980": {
       "zh": [
         "有；在（有生命）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1577985": {
+      "zh": [
+        "在；存在",
+        "正在…",
+        "已经…"
       ],
       "reviewed": false
     },
@@ -6951,6 +12194,22 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1578790": {
+      "zh": [
+        "去程",
+        "开往…",
+        "去程票"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1579080": {
+      "zh": [
+        "……前后；……左右",
+        "适宜的时候",
+        "季节；时节"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1579100": {
       "zh": [
         "今天早上"
@@ -6960,6 +12219,12 @@
     "vocab:jm1579130": {
       "zh": [
         "今年"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1579210": {
+      "zh": [
+        "……正当中；……之际"
       ],
       "reviewed": false
     },
@@ -6981,6 +12246,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1579490": {
+      "zh": [
+        "姐妹"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1579630": {
       "zh": [
         "七号；七天"
@@ -6999,6 +12270,26 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1580260": {
+      "zh": [
+        "伤；伤口",
+        "裂痕；划痕",
+        "缺陷；瑕疵"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1580270": {
+      "zh": [
+        "商人"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1580290": {
+      "zh": [
+        "少女"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1580340": {
       "zh": [
         "外衣；上衣"
@@ -7008,6 +12299,12 @@
     "vocab:jm1580480": {
       "zh": [
         "结实；健康"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1580490": {
+      "zh": [
+        "乘客"
       ],
       "reviewed": false
     },
@@ -7023,9 +12320,45 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1580820": {
+      "zh": [
+        "数量；数目"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1580825": {
+      "zh": [
+        "若干；几个",
+        "数；数量",
+        "计算；数字"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1581180": {
+      "zh": [
+        "全国"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1581710": {
       "zh": [
         "白天"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1581730": {
+      "zh": [
+        "倒入；注入",
+        "浇；洒",
+        "流泪；落泪"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1581790": {
+      "zh": [
+        "马上；不久",
+        "附近；邻近",
+        "直接的"
       ],
       "reviewed": false
     },
@@ -7038,6 +12371,14 @@
     "vocab:jm1582120": {
       "zh": [
         "商店"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1582130": {
+      "zh": [
+        "跌倒；摔倒",
+        "变化；发展",
+        "改宗（弃基督教）"
       ],
       "reviewed": false
     },
@@ -7096,6 +12437,29 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1583260": {
+      "zh": [
+        "避开；回避",
+        "避开；挡开"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1583460": {
+      "zh": [
+        "画；描绘",
+        "描写；刻画",
+        "想象；设想"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1583470": {
+      "zh": [
+        "物品；东西",
+        "质量；品质",
+        "娇媚；妩媚"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1583720": {
       "zh": [
         "感冒"
@@ -7107,6 +12471,19 @@
         "包裹；包起来",
         "笼罩；覆盖",
         "隐藏（感情）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1584090": {
+      "zh": [
+        "拥抱；怀抱",
+        "怀有；心怀"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1584100": {
+      "zh": [
+        "诸位；各位"
       ],
       "reviewed": false
     },
@@ -7152,6 +12529,14 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1585060": {
+      "zh": [
+        "雷；雷电",
+        "雷神",
+        "大发雷霆"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1585310": {
       "zh": [
         "六"
@@ -7164,9 +12549,30 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1585460": {
+      "zh": [
+        "那么；且说"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1585650": {
       "zh": [
         "箱子；盒子"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1586210": {
+      "zh": [
+        "光；光亮",
+        "灯；灯光",
+        "证明清白"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1586250": {
+      "zh": [
+        "厌倦；腻烦",
+        "厌足；满足"
       ],
       "reviewed": false
     },
@@ -7195,6 +12601,39 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1586730": {
+      "zh": [
+        "鱼骨鱼杂",
+        "缺点；瑕疵"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1586780": {
+      "zh": [
+        "一切；所有"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1586840": {
+      "zh": [
+        "某个；某种"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1586850": {
+      "zh": [
+        "或者；或是",
+        "也许；或许",
+        "有的…有的…"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1586910": {
+      "zh": [
+        "背诵；记忆"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1587040": {
       "zh": [
         "说"
@@ -7209,9 +12648,29 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1587300": {
+      "zh": [
+        "疼痛；痛楚",
+        "损伤；磨损"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1587310": {
+      "zh": [
+        "位置；地点",
+        "地位；身份"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1587610": {
       "zh": [
         "讨厌；不愿意"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1587700": {
+      "zh": [
+        "焦躁；烦躁"
       ],
       "reviewed": false
     },
@@ -7255,6 +12714,33 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1588760": {
+      "zh": [
+        "获得；得到",
+        "理解；领会",
+        "遭受；患上"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1588810": {
+      "zh": [
+        "追上；赶上",
+        "弥补损失"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1588840": {
+      "zh": [
+        "覆盖；遮盖"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1588920": {
+      "zh": [
+        "小山；丘陵"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1589030": {
       "zh": [
         "礼物"
@@ -7275,9 +12761,23 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1589090": {
+      "zh": [
+        "收纳；放入",
+        "收录；收入",
+        "取得；获得"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1589110": {
       "zh": [
         "壁橱"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1589200": {
+      "zh": [
+        "害怕；恐惧"
       ],
       "reviewed": false
     },
@@ -7286,6 +12786,12 @@
         "掉落；丢失",
         "去除；卸掉",
         "淘汰；刷掉"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1589340": {
+      "zh": [
+        "回忆；往事"
       ],
       "reviewed": false
     },
@@ -7300,6 +12806,14 @@
     "vocab:jm1589500": {
       "zh": [
         "下（山、车）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1589580": {
+      "zh": [
+        "放下；降下",
+        "卸下；让…下车",
+        "取（钱）"
       ],
       "reviewed": false
     },
@@ -7322,6 +12836,49 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1589780": {
+      "zh": [
+        "更换；替换",
+        "交换；调换",
+        "替补；替换（人）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1589820": {
+      "zh": [
+        "香气；香味"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1589840": {
+      "zh": [
+        "负责人；专员",
+        "关联；联系"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1590145": {
+      "zh": [
+        "影子；身影",
+        "倒影",
+        "不祥之兆"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1590150": {
+      "zh": [
+        "阴凉；阴影",
+        "背后；另一面",
+        "幕后；背地里"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1590200": {
+      "zh": [
+        "篮子；笼子"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1590480": {
       "zh": [
         "形状；样子",
@@ -7330,11 +12887,38 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1590560": {
+      "zh": [
+        "相当；颇为"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1590600": {
+      "zh": [
+        "科目；课程",
+        "项目；条目"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1590740": {
+      "zh": [
+        "可怜"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1590770": {
       "zh": [
         "代替；替代",
         "替身；代理人",
         "补偿；回报"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1591100": {
+      "zh": [
+        "有效；奏效",
+        "运转良好",
+        "能够；可以"
       ],
       "reviewed": false
     },
@@ -7349,6 +12933,19 @@
         "听得见；听到",
         "听起来",
         "闻名；著名"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1591330": {
+      "zh": [
+        "注意到；察觉",
+        "恢复知觉；苏醒"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1591400": {
+      "zh": [
+        "捐款；捐赠"
       ],
       "reviewed": false
     },
@@ -7368,9 +12965,30 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1591660": {
+      "zh": [
+        "合作；协作",
+        "共有；公用"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1591720": {
+      "zh": [
+        "协力；合作"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1591900": {
       "zh": [
         "漂亮的；干净的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1592100": {
+      "zh": [
+        "吃",
+        "生活；谋生",
+        "咬；叮咬"
       ],
       "reviewed": false
     },
@@ -7402,9 +13020,34 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1592930": {
+      "zh": [
+        "幸运"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1592970": {
       "zh": [
         "十字路口"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1593070": {
+      "zh": [
+        "越过；穿过",
+        "超过；超越"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1593100": {
+      "zh": [
+        "结冰；冻结"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1593290": {
+      "zh": [
+        "包裹"
       ],
       "reviewed": false
     },
@@ -7443,9 +13086,43 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1593710": {
+      "zh": [
+        "樱花；樱树",
+        "淡粉色",
+        "假买主；托儿"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1593800": {
+      "zh": [
+        "沙漠"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1593830": {
+      "zh": [
+        "各种各样"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1594060": {
+      "zh": [
+        "幸福；幸运"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1594110": {
       "zh": [
         "方法；办法"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1594190": {
+      "zh": [
+        "刺激",
+        "诱因；推动力",
+        "兴奋；刺激感"
       ],
       "reviewed": false
     },
@@ -7457,15 +13134,89 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1594480": {
+      "zh": [
+        "支付；付款"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1594530": {
+      "zh": [
+        "结束；终了"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1594930": {
+      "zh": [
+        "少许；一点",
+        "片刻；一会儿"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1595020": {
       "zh": [
         "酱油"
       ],
       "reviewed": false
     },
+    "vocab:jm1595090": {
+      "zh": [
+        "银；白银",
+        "银色",
+        "银牌"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1595240": {
+      "zh": [
+        "事态；局势"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1595270": {
       "zh": [
         "词典；辞典"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1595480": {
+      "zh": [
+        "逐渐地；渐渐地"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1595680": {
+      "zh": [
+        "劝告；建议",
+        "推荐",
+        "敬（茶、烟等）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1595730": {
+      "zh": [
+        "一切；全部",
+        "完全地；彻底地"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1596050": {
+      "zh": [
+        "至多；顶多",
+        "尽量；尽可能"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1596690": {
+      "zh": [
+        "各自；分别"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1596750": {
+      "zh": [
+        "无聊的；乏味的",
+        "感到无聊；厌倦"
       ],
       "reviewed": false
     },
@@ -7826,6 +13577,86 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1607520": {
+      "zh": [
+        "演奏"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1609010": {
+      "zh": [
+        "空隙；空间",
+        "空位；空缺",
+        "空闲时间"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1609050": {
+      "zh": [
+        "聚会；集会"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1609210": {
+      "zh": [
+        "一次性；一下子"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1609350": {
+      "zh": [
+        "出生；出身",
+        "…出生的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1609500": {
+      "zh": [
+        "患（病）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1609560": {
+      "zh": [
+        "胜利"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1609660": {
+      "zh": [
+        "规则；规定",
+        "结束；了结",
+        "习惯；惯例"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1610040": {
+      "zh": [
+        "缘故；原因"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1610160": {
+      "zh": [
+        "面对；相对",
+        "针对；对应",
+        "接待（客人）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1610550": {
+      "zh": [
+        "体现；表现"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1612620": {
+      "zh": [
+        "到处；各处",
+        "杂乱；颠倒"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1612770": {
       "zh": [
         "祝贺；庆祝",
@@ -7839,6 +13670,12 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1613570": {
+      "zh": [
+        "游泳"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1621470": {
       "zh": [
         "都（东京都）",
@@ -7847,9 +13684,39 @@
       ],
       "reviewed": false
     },
+    "vocab:jm1629200": {
+      "zh": [
+        "国王；君主",
+        "大王；巨头"
+      ],
+      "reviewed": false
+    },
     "vocab:jm1634500": {
       "zh": [
         "偶尔；偶然"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1643510": {
+      "zh": [
+        "衰老；老年",
+        "老人"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1660100": {
+      "zh": [
+        "午饭",
+        "中午",
+        "白天"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1919590": {
+      "zh": [
+        "年级；班级",
+        "等级；级别",
+        "级（武道等段位下）"
       ],
       "reviewed": false
     },
@@ -7862,6 +13729,45 @@
     "vocab:jm1929050": {
       "zh": [
         "非洲"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1929950": {
+      "zh": [
+        "诗；诗歌",
+        "汉诗"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1949190": {
+      "zh": [
+        "其他；别的"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1955900": {
+      "zh": [
+        "学问；学识",
+        "……学；……学科"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1956150": {
+      "zh": [
+        "训读",
+        "教训；教诲"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1979930": {
+      "zh": [
+        "彼此；互相"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm1981450": {
+      "zh": [
+        "那么；那样"
       ],
       "reviewed": false
     },
@@ -7895,9 +13801,61 @@
       ],
       "reviewed": false
     },
+    "vocab:jm2078590": {
+      "zh": [
+        "栋（建筑量词）",
+        "……轩（笔名后缀）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm2080200": {
+      "zh": [
+        "低劣；下等",
+        "下卷（书籍）"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm2080210": {
+      "zh": [
+        "下游",
+        "下部；底部",
+        "下半身；大小便"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm2081570": {
+      "zh": [
+        "税；税金"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm2083540": {
+      "zh": [
+        "小；小的东西",
+        "小月（不满31天）",
+        "小便"
+      ],
+      "reviewed": false
+    },
     "vocab:jm2085080": {
       "zh": [
         "那样"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm2088240": {
+      "zh": [
+        "生命；人生",
+        "我（自称）",
+        "学生"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm2101130": {
+      "zh": [
+        "……先生；……女士",
+        "氏族",
+        "他"
       ],
       "reviewed": false
     },
@@ -7907,9 +13865,29 @@
       ],
       "reviewed": false
     },
+    "vocab:jm2137720": {
+      "zh": [
+        "那样；如此",
+        "是的；没错",
+        "是吗？"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm2147630": {
+      "zh": [
+        "之后"
+      ],
+      "reviewed": false
+    },
     "vocab:jm2147990": {
       "zh": [
         "身高；背"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm2179090": {
+      "zh": [
+        "反复地；再三地"
       ],
       "reviewed": false
     },
@@ -7944,6 +13922,14 @@
       ],
       "reviewed": false
     },
+    "vocab:jm2234080": {
+      "zh": [
+        "吝啬；小气",
+        "寒酸；破旧",
+        "卑鄙；小心眼"
+      ],
+      "reviewed": false
+    },
     "vocab:jm2261490": {
       "zh": [
         "叔叔；伯伯"
@@ -7956,10 +13942,24 @@
       ],
       "reviewed": false
     },
+    "vocab:jm2269050": {
+      "zh": [
+        "迅速；飞快",
+        "突然；忽然",
+        "陡峭；急剧"
+      ],
+      "reviewed": false
+    },
     "vocab:jm2394370": {
       "zh": [
         "啊；哦",
         "喂"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm2396190": {
+      "zh": [
+        "还有；此外"
       ],
       "reviewed": false
     },
@@ -8003,6 +14003,24 @@
       ],
       "reviewed": false
     },
+    "vocab:jm2820720": {
+      "zh": [
+        "实在；确实"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm2826528": {
+      "zh": [
+        "敬语前缀"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm2830705": {
+      "zh": [
+        "身体"
+      ],
+      "reviewed": false
+    },
     "vocab:jm2839962": {
       "zh": [
         "零"
@@ -8041,9 +14059,29 @@
       ],
       "reviewed": false
     },
+    "vocab:jm2853884": {
+      "zh": [
+        "故乡；家乡"
+      ],
+      "reviewed": false
+    },
     "vocab:jm2853889": {
       "zh": [
         "但是；不过"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm2857380": {
+      "zh": [
+        "不；不是"
+      ],
+      "reviewed": false
+    },
+    "vocab:jm2859161": {
+      "zh": [
+        "声音；响声",
+        "语音",
+        "音读"
       ],
       "reviewed": false
     }
