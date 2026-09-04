@@ -333,6 +333,18 @@ abstract class AppLocalizations {
   /// **'Notifications are switched off for this app. Turn them on in the system settings first.'**
   String get reminderDenied;
 
+  /// No description provided for @calendarTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Study calendar'**
+  String get calendarTitle;
+
+  /// No description provided for @calendarSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} days studied in the last twelve weeks'**
+  String calendarSummary(int days);
+
   /// No description provided for @learnContentSummary.
   ///
   /// In en, this message translates to:
@@ -426,7 +438,7 @@ abstract class AppLocalizations {
   /// No description provided for @learnRoadmapSrs.
   ///
   /// In en, this message translates to:
-  /// **'Quizzes and a step-by-step lesson path'**
+  /// **'Scenario lessons and writing practice'**
   String get learnRoadmapSrs;
 
   /// No description provided for @learnRoadmapJlpt.
@@ -698,6 +710,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Kana over kanji'**
   String get settingsFurigana;
+
+  /// No description provided for @settingsAutoSpeak.
+  ///
+  /// In en, this message translates to:
+  /// **'Read the question aloud'**
+  String get settingsAutoSpeak;
+
+  /// No description provided for @settingsAutoSpeakSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Speak a word or sentence when the question appears, where there is audio'**
+  String get settingsAutoSpeakSubtitle;
 
   /// No description provided for @settingsFuriganaSubtitle.
   ///
@@ -1754,6 +1778,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Continue'**
   String get quizContinue;
+
+  /// No description provided for @quizAcceptedByAi.
+  ///
+  /// In en, this message translates to:
+  /// **'Accepted by the on-device model: {comment}'**
+  String quizAcceptedByAi(String comment);
 
   /// No description provided for @quizWhyWrong.
   ///

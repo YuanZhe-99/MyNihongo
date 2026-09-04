@@ -146,6 +146,14 @@ class AppLocalizationsZh extends AppLocalizations {
   String get reminderDenied => '本应用的通知已被系统关闭。请先在系统设置里打开。';
 
   @override
+  String get calendarTitle => '学习日历';
+
+  @override
+  String calendarSummary(int days) {
+    return '最近十二周学习了 $days 天';
+  }
+
+  @override
   String get learnContentSummary => '内容';
 
   @override
@@ -205,7 +213,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get learnRoadmap => '即将推出';
 
   @override
-  String get learnRoadmapSrs => '测验与循序渐进的课程路径';
+  String get learnRoadmapSrs => '情景课与写作练习';
 
   @override
   String get learnRoadmapJlpt => 'JLPT N5–N1 练习';
@@ -347,6 +355,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get settingsFurigana => '汉字上方显示假名';
+
+  @override
+  String get settingsAutoSpeak => '自动朗读题目';
+
+  @override
+  String get settingsAutoSpeakSubtitle => '题目出现时自动读出单词或句子（有发音时）';
 
   @override
   String get settingsFuriganaSubtitle => '在含汉字的词上方显示读音';
@@ -928,6 +942,11 @@ class AppLocalizationsZh extends AppLocalizations {
   String get quizContinue => '继续';
 
   @override
+  String quizAcceptedByAi(String comment) {
+    return '端侧模型判为正确：$comment';
+  }
+
+  @override
   String get quizWhyWrong => '为什么这样不对？';
 
   @override
@@ -1488,6 +1507,14 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get reminderDenied => '本應用程式的通知已被系統關閉。請先在系統設定裡開啟。';
 
   @override
+  String get calendarTitle => '學習日曆';
+
+  @override
+  String calendarSummary(int days) {
+    return '最近十二週學習了 $days 天';
+  }
+
+  @override
   String get learnContentSummary => '內容';
 
   @override
@@ -1547,7 +1574,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get learnRoadmap => '即將推出';
 
   @override
-  String get learnRoadmapSrs => '測驗與循序漸進的課程路徑';
+  String get learnRoadmapSrs => '情景課與寫作練習';
 
   @override
   String get learnRoadmapJlpt => 'JLPT N5–N1 練習';
@@ -1689,6 +1716,12 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get settingsFurigana => '漢字上方顯示假名';
+
+  @override
+  String get settingsAutoSpeak => '自動朗讀題目';
+
+  @override
+  String get settingsAutoSpeakSubtitle => '題目出現時自動讀出單字或句子（有發音時）';
 
   @override
   String get settingsFuriganaSubtitle => '在含漢字的詞上方顯示讀音';
@@ -2268,6 +2301,11 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get quizContinue => '繼續';
+
+  @override
+  String quizAcceptedByAi(String comment) {
+    return '裝置端模型判為正確：$comment';
+  }
 
   @override
   String get quizWhyWrong => '為什麼這樣不對？';

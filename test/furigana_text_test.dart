@@ -94,6 +94,40 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
+  testWidgets('every character of the word sits on one line', (tester) async {
+    // The bug this pins down shipped in the first build and was found on a
+    // phone, not here. Ruby used to be a `WidgetSpan` holding a two-line
+    // column, and a span reports its child's baseline as its own — which for
+    // a column is the **first** child's, the reading. So the kana between the
+    // kanji were laid out level with the furigana and the kanji dropped to a
+    // second line: one word rendered as two rows of unrelated text.
+    //
+    // Nothing about that throws, so every geometry test below passed it. What
+    // catches it is the invariant a reader would state: the word is on one
+    // line.
+    await pump(tester, const FuriganaText('私は学生です', reading: 'わたしはがくせいです'));
+
+    double bottomOf(String piece) => tester.getBottomLeft(find.text(piece)).dy;
+
+    final base = bottomOf('私');
+    for (final piece in const ['は', '学生', 'で', 'す']) {
+      expect(
+        bottomOf(piece),
+        closeTo(base, 0.5),
+        reason: '"$piece" is not on the same line as 私',
+      );
+    }
+    // And the readings sit above them rather than beside them.
+    for (final ruby in const ['わたし', 'がくせい']) {
+      expect(
+        tester.getBottomLeft(find.text(ruby)).dy,
+        lessThan(base),
+        reason: '"$ruby" should be above the word, not on its line',
+      );
+    }
+    expect(tester.takeException(), isNull);
+  });
+
   testWidgets('a word with no kanji is drawn plainly', (tester) async {
     await pump(tester, const FuriganaText('ひらがな', reading: 'ひらがな'));
     expect(find.text('ひらがな'), findsOneWidget);

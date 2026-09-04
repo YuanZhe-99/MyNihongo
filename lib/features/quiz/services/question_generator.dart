@@ -253,6 +253,8 @@ class QuestionGenerator {
           itemId: entry.id,
           mode: mode,
           prompt: meaning.first,
+          correctReading: entry.reading,
+          wrongReadings: [for (final other in wrong) other.reading],
           correct: entry.headword,
           wrong: [for (final other in wrong) other.headword],
           speakText: entry.reading,
@@ -701,7 +703,9 @@ class QuestionGenerator {
       mode: mode,
       prompt: translation,
       correct: example.ja,
+      correctReading: example.reading,
       wrong: [for (final other in wrong) other.ja],
+      wrongReadings: [for (final other in wrong) other.reading],
     );
   }
 
@@ -748,6 +752,8 @@ class QuestionGenerator {
     required String prompt,
     required String correct,
     required List<String> wrong,
+    String? correctReading,
+    List<String?> wrongReadings = const [],
     String? promptReading,
     String? promptSubtitle,
     String? speakText,
@@ -756,7 +762,25 @@ class QuestionGenerator {
     final options = [correct, ...wrong];
     if (options.toSet().length != options.length) return null;
     if (options.any((o) => o.isEmpty)) return null;
-    options.shuffle(_random);
+
+    // Shuffle the options **with** their readings, so an index into one is
+    // still an index into the other. Shuffling the two lists separately would
+    // print one word's reading over another's, which is worse than none.
+    final readings = <String?>[
+      correctReading,
+      for (var i = 0; i < wrong.length; i++)
+        i < wrongReadings.length ? wrongReadings[i] : null,
+    ];
+    final pairs = [
+      for (var i = 0; i < options.length; i++) (options[i], readings[i]),
+    ]..shuffle(_random);
+    options
+      ..clear()
+      ..addAll(pairs.map((pair) => pair.$1));
+    final shuffledReadings = pairs.any((pair) => pair.$2 != null)
+        ? [for (final pair in pairs) pair.$2]
+        : const <String?>[];
+
     return QuizQuestion(
       itemId: itemId,
       mode: mode,
@@ -766,6 +790,7 @@ class QuestionGenerator {
       promptSubtitle: promptSubtitle,
       speakText: speakText,
       options: options,
+      optionReadings: shuffledReadings,
       answerIndex: options.indexOf(correct),
       formLabel: formLabel,
     );

@@ -1,6 +1,6 @@
 # Android AICore and the ML Kit GenAI APIs
 
-**Last verified: 2026-09-03.** See [How to refresh this page](#how-to-refresh-this-page) at the
+**Last verified: 2026-09-04**, on a Pixel 10 (Android 17) and, through a user report, a Galaxy Z Fold 8. See [How to refresh this page](#how-to-refresh-this-page) at the
 bottom — an agent that checks the sources must update the date in **both** language versions in the
 same commit, even when nothing else changed.
 
@@ -265,6 +265,25 @@ of it is guaranteed to generalise.
 - **Both English and Simplified Chinese output were correct and idiomatic** when the prompt asked for
   them, on `nano-v3`. The Prompt API publishes no language list; this is one data point, not a
   guarantee.
+- **Samsung Galaxy Z Fold 8, 2026-09-04: the instrumentation answered the question.** The device
+  reports `AICore 0.release.qc.prod_aicore_20260723.00_RC11 · samsung SM-F971U1` — note the `qc`,
+  a Qualcomm build — and the two rows now differ:
+
+  | Feature | Status |
+  |---|---|
+  | Explanations (Prompt) | `GenAiException: [ErrorCode 606] AICore failed with error type 3-PREPARATION_ERROR and error code 606-FEATURE_NOT_FOUND: Feature 636 is not available.` |
+  | Correction suggestions (Proofreading) | Ready |
+
+  **This is the expected answer on this hardware, not a fault.** `FEATURE_NOT_FOUND` is AICore
+  saying the Prompt feature does not exist on this device at all — not that a model needs
+  downloading, not that the call went wrong. It is the published device list, observed at runtime,
+  and it confirms what the paragraph below had to guess at a day earlier. Proofreading is available
+  on the same phone, which is exactly the split the API lists predict.
+
+  What this changes for the app: nothing, and that is the point. The row says what the device said,
+  the other row still works, and **Check again** re-asks without toggling the switch. What it
+  changes for a reader of this page: the guess below is now a measurement.
+
 - **Samsung Galaxy Z Fold 8, reported 2026-09-03: AICore installed, both features "not available".**
   Not reproduced here — there is no Samsung device on this host — and recorded because the *shape* of
   the report is the useful part. The two most likely causes are ordinary rather than broken: the

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../l10n/app_localizations.dart';
+import '../../../shared/widgets/furigana_text.dart';
 import '../models/quiz_question.dart';
 import '../services/answer_checker.dart';
 
@@ -147,8 +148,16 @@ class _ChoicePaneState extends State<_ChoicePane> {
       ),
       child: Align(
         alignment: Alignment.centerLeft,
-        child: Text(
+        // An option gets its reading over it wherever the catalog knows one,
+        // **except** when the reading is what the question is asking for.
+        child: FuriganaText(
           widget.question.options[index],
+          reading: index < widget.question.optionReadings.length
+              ? widget.question.optionReadings[index]
+              : null,
+          forceOff:
+              widget.question.mode == QuizMode.vocabKanjiToReading ||
+              widget.question.mode == QuizMode.vocabReadingToKanji,
           style: theme.textTheme.titleMedium,
         ),
       ),

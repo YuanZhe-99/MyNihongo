@@ -422,6 +422,13 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
             value: settings.showFurigana,
             onChanged: notifier.setShowFurigana,
           ),
+          SwitchListTile(
+            secondary: const Icon(Icons.volume_up_outlined),
+            title: Text(l10n.settingsAutoSpeak),
+            subtitle: Text(l10n.settingsAutoSpeakSubtitle),
+            value: settings.autoSpeak,
+            onChanged: notifier.setAutoSpeak,
+          ),
         ]),
 
         // ── Learning ──

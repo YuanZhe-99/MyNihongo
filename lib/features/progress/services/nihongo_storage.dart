@@ -721,6 +721,25 @@ class NihongoStorage {
   static Future<void> setSpeechNetworkFallback(bool allowed) =>
       _setBool('speechNetworkFallback', allowed ? true : null);
 
+  /// Purpose: Read whether a question speaks itself when it appears.
+  /// Inputs: None.
+  /// Returns: `Future<bool>` — true unless the learner turned it off.
+  /// Side effects: Reads the config file.
+  /// Notes: On by default, so `false` is what gets written — the same
+  /// inversion `furigana` uses and for the same reason: hearing the word is
+  /// most of the point of a listening question, and a learner who has never
+  /// opened Settings should not have to find a button to get it.
+  static Future<bool> getAutoSpeak() async =>
+      await _getBool('autoSpeak') ?? true;
+
+  /// Purpose: Remember whether a question speaks itself.
+  /// Inputs: `speak`.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: On is stored as an absent key; see [getAutoSpeak].
+  static Future<void> setAutoSpeak(bool speak) =>
+      _setBool('autoSpeak', speak ? null : false);
+
   /// Purpose: Read whether the daily reminder is on.
   /// Inputs: None.
   /// Returns: `Future<bool>` — false unless the learner turned it on.

@@ -72,11 +72,9 @@ class QuizSession extends ChangeNotifier {
   /// answer to an item reaches it: SM-2 grades how well something was recalled,
   /// and an item answered right on the third attempt within one minute was not
   /// recalled at all.
-  QuizSession({
-    required List<QuizQuestion> questions,
-    this.onFirstAnswer,
-  }) : _queue = List.of(questions),
-       _total = questions.length;
+  QuizSession({required List<QuizQuestion> questions, this.onFirstAnswer})
+    : _queue = List.of(questions),
+      _total = questions.length;
 
   /// Called with an item id and whether its first answer was right.
   final void Function(String itemId, bool correct)? onFirstAnswer;
@@ -138,12 +136,21 @@ class QuizSession extends ChangeNotifier {
   /// listeners.
   /// Notes: The question stays on screen after this: the learner has to see
   /// what the right answer was, so [next] is a separate step.
-  QuizOutcome answer(QuizAnswer answer) {
+  ///
+  /// `acceptedAnyway` only ever raises the verdict, never lowers it.
+  QuizOutcome answer(QuizAnswer answer, {bool? acceptedAnyway}) {
     final question = current;
     if (question == null) {
       return const QuizOutcome(correct: false);
     }
-    final correct = _checker.check(question, answer);
+    // `acceptedAnyway` is the on-device model's second opinion on a typed
+    // answer, and it can only ever **raise** a verdict. The deterministic
+    // check owns "correct": if the answer matches what the catalog says, no
+    // model is asked and none can take that away. What a model can do is
+    // recognise that a different wording means the same thing, which a string
+    // comparison cannot — see `ai-assist.md`.
+    final correct =
+        _checker.check(question, answer) || (acceptedAnyway ?? false);
     _answered++;
 
     if (!_firstResults.containsKey(question.itemId)) {

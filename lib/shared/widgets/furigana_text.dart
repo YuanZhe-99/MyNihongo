@@ -91,72 +91,152 @@ class FuriganaText extends ConsumerWidget {
       color: base.color?.withValues(alpha: 0.85),
     );
 
+    // Every piece is the same shape — a reserved ruby line over one run of
+    // base text — so aligning their bottoms aligns their baselines. That is
+    // the whole reason this is a `Wrap` of boxes rather than a `Text.rich` of
+    // `WidgetSpan`s: a span holding a two-line column reports the **ruby**
+    // line's baseline as its own, so the plain kana between the kanji were
+    // laid out level with the furigana instead of with the word. It looks
+    // like two rows of text that do not belong together, and it is invisible
+    // to a test that only asserts no exception was thrown. Found on a Pixel.
+    final rubyHeight = (size * rubyScale) * 1.15;
+    final lineHeight = size * (base.height ?? 1.35);
     return Semantics(
       label: text,
       excludeSemantics: true,
-      child: Text.rich(
-        TextSpan(
-          children: [
-            for (final segment in segments)
-              if (segment.isRuby)
-                WidgetSpan(
-                  alignment: PlaceholderAlignment.baseline,
-                  baseline: TextBaseline.ideographic,
-                  child: _Ruby(
-                    text: segment.text,
-                    reading: segment.reading!,
-                    style: base,
-                    rubyStyle: rubyStyle,
-                  ),
-                )
-              else
-                TextSpan(text: segment.text),
-          ],
-        ),
-        style: base,
-        textAlign: textAlign,
-        maxLines: maxLines,
-        overflow: overflow ?? TextOverflow.clip,
+      child: Wrap(
+        // **Top-aligned, not bottom.** Every box starts with a ruby line of the
+        // same reserved height, so aligning tops puts every base character at
+        // the same y whatever its glyphs measure. Bottom alignment made that
+        // depend on the text height instead, and a kanji box and a kana box
+        // do not measure the same.
+        crossAxisAlignment: WrapCrossAlignment.start,
+        alignment: textAlign == TextAlign.center
+            ? WrapAlignment.center
+            : WrapAlignment.start,
+        children: [
+          for (final piece in _pieces(segments))
+            _RubyBox(
+              text: piece.text,
+              reading: piece.reading,
+              style: base,
+              rubyStyle: rubyStyle,
+              rubyHeight: rubyHeight,
+              lineHeight: lineHeight,
+            ),
+        ],
       ),
     );
   }
 }
 
-/// One kanji run with its kana above it.
-class _Ruby extends StatelessWidget {
-  /// Purpose: Stack one reading over one run of characters.
-  /// Inputs: `text`, `reading`, and the two styles.
-  /// Returns: A new `_Ruby` instance.
+/// Purpose: Split the alignment into the boxes a line is laid out from.
+/// Inputs: The aligned `segments`.
+/// Returns: `List<FuriganaSegment>` — the same runs, with the anchor runs
+/// broken into single characters.
+/// Side effects: None.
+/// Notes: Internal helper used within this file only. A kanji run has to stay
+/// whole, because its reading covers all of it. An anchor run must not: a
+/// sentence whose kana runs are long would otherwise be one unbreakable box
+/// and would run off the screen instead of wrapping. Japanese wraps between
+/// characters anyway, so splitting there is what the text wanted.
+List<FuriganaSegment> _pieces(List<FuriganaSegment> segments) {
+  final out = <FuriganaSegment>[];
+  for (final segment in segments) {
+    if (segment.isRuby) {
+      out.add(segment);
+      continue;
+    }
+    for (var i = 0; i < segment.text.length; i++) {
+      out.add(
+        FuriganaSegment(
+          text: segment.text[i],
+          surfaceStart: segment.surfaceStart + i,
+          surfaceEnd: segment.surfaceStart + i + 1,
+          readingStart: segment.readingStart + i,
+          readingEnd: segment.readingStart + i + 1,
+        ),
+      );
+    }
+  }
+  return out;
+}
+
+/// One run of characters with room above it for a reading.
+class _RubyBox extends StatelessWidget {
+  /// Purpose: Draw one run under a fixed-height ruby line.
+  /// Inputs: `text`, its `reading` or null, the two styles, and the height
+  /// reserved for the ruby.
+  /// Returns: A new `_RubyBox` instance.
   /// Side effects: None.
   /// Notes: Internal helper used within this file only.
-  const _Ruby({
+  const _RubyBox({
     required this.text,
     required this.reading,
     required this.style,
     required this.rubyStyle,
+    required this.rubyHeight,
+    required this.lineHeight,
   });
 
   final String text;
-  final String reading;
+  final String? reading;
   final TextStyle style;
   final TextStyle rubyStyle;
+  final double rubyHeight;
+  final double lineHeight;
 
   @override
-  /// Purpose: Build the two-line stack.
+  /// Purpose: Build the box.
   /// Inputs: `context`.
   /// Returns: `Widget`.
   /// Side effects: None.
-  /// Notes: Internal helper used within this file only. The ruby sits in its
-  /// own line box above the base text, so a run whose reading is wider than
-  /// its kanji makes the run wider rather than overlapping its neighbour.
+  /// Notes: Internal helper used within this file only. **The ruby line is
+  /// reserved even when there is nothing to put in it.** Every box is then
+  /// the same height, so aligning the row's bottoms puts every base character
+  /// on one line — which is what went wrong when this was a paragraph of
+  /// placeholder spans.
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text(reading, style: rubyStyle, textHeightBehavior: _tight),
-        Text(text, style: style.copyWith(height: 1.0)),
-      ],
+    // **Every box is exactly this tall**, whatever it holds. Both slots are
+    // fixed, so the base character sits at the same height in every box and
+    // the row reads as one line — rather than depending on whether a kanji
+    // glyph measures the same as a kana one, which it does not.
+    return SizedBox(
+      height: rubyHeight + lineHeight,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          // **No `Center` here.** `Align` expands to fill whatever width it
+          // is offered, and `Wrap` offers every child the whole line — so a
+          // centred slot made each box full width, which put one character on
+          // each line and centred it. The `Text` shrink-wraps on its own; the
+          // column's cross alignment is what centres the narrower of the two.
+          SizedBox(
+            height: rubyHeight,
+            child: reading == null
+                ? null
+                : Text(
+                    reading!,
+                    style: rubyStyle,
+                    maxLines: 1,
+                    textHeightBehavior: _tight,
+                  ),
+          ),
+          SizedBox(
+            height: lineHeight,
+            child: Text(
+              text,
+              style: style,
+              strutStyle: StrutStyle.fromTextStyle(
+                style,
+                forceStrutHeight: true,
+              ),
+              maxLines: 1,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

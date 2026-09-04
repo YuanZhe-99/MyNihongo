@@ -10,6 +10,7 @@ import '../../content/services/content_repository.dart';
 import '../../kana/models/kana.dart';
 import '../../progress/models/study_record.dart';
 import '../../lessons/widgets/lesson_path_view.dart';
+import '../widgets/study_calendar.dart';
 import '../widgets/today_card.dart';
 
 class LearnPage extends ConsumerWidget {
@@ -217,6 +218,7 @@ class LearnPage extends ConsumerWidget {
                   const SizedBox(height: 16),
                   const TodayCard(),
                   const LessonPathView(),
+                  const StudyCalendar(),
                   const SizedBox(height: listTileGap),
                   Wrap(
                     spacing: listTileGap,

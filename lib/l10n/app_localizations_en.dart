@@ -152,6 +152,14 @@ class AppLocalizationsEn extends AppLocalizations {
       'Notifications are switched off for this app. Turn them on in the system settings first.';
 
   @override
+  String get calendarTitle => 'Study calendar';
+
+  @override
+  String calendarSummary(int days) {
+    return '$days days studied in the last twelve weeks';
+  }
+
+  @override
   String get learnContentSummary => 'Content';
 
   @override
@@ -212,7 +220,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get learnRoadmap => 'Coming next';
 
   @override
-  String get learnRoadmapSrs => 'Quizzes and a step-by-step lesson path';
+  String get learnRoadmapSrs => 'Scenario lessons and writing practice';
 
   @override
   String get learnRoadmapJlpt => 'JLPT N5–N1 practice sets';
@@ -361,6 +369,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsFurigana => 'Kana over kanji';
+
+  @override
+  String get settingsAutoSpeak => 'Read the question aloud';
+
+  @override
+  String get settingsAutoSpeakSubtitle =>
+      'Speak a word or sentence when the question appears, where there is audio';
 
   @override
   String get settingsFuriganaSubtitle =>
@@ -959,6 +974,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get quizContinue => 'Continue';
+
+  @override
+  String quizAcceptedByAi(String comment) {
+    return 'Accepted by the on-device model: $comment';
+  }
 
   @override
   String get quizWhyWrong => 'Why was this wrong?';

@@ -37,6 +37,7 @@ Six rules, and each one is enforced in code rather than by convention:
 | **Suggest a correction** | below the issues | Proofreading | nothing; the checks already say what looks unusual |
 | **Why was this wrong** | under a wrong quiz answer | Prompt | the catalog's own explanation of the grammar point, or the question's own note, which is always shown first |
 | **More examples** | in a word's detail sheet | Prompt | the catalog's own examples, which most words do not have |
+| **A second opinion on a typed answer** | after Check, on a typed question the string comparison rejected | Prompt | the string comparison alone, which is what marked it before |
 
 Every row of that last column is the point: **the fallback is the app**. Removing the AI removes
 three buttons, not a feature the learner depends on.
@@ -128,6 +129,30 @@ so a model is not left working on an answer nobody will read.
 With the switch on but no model downloaded, the actions are replaced by one line pointing at
 Settings. A button that always fails teaches the learner to distrust the feature rather than to fix
 it. On a device that simply cannot run a model, there is no line either — there is nothing to fix.
+
+## Marking a typed answer
+
+This is the one place a model's output reaches the progress file, and it is
+worth being exact about how.
+
+The deterministic check runs first and **owns the word "correct"**. If the
+answer matches what the catalog says — the kana, the romaji, either — no model
+is asked and none could take that away.
+
+Only when that check says no, and only for a typed answer, and only with the
+switch on, is the model asked whether the two mean the same thing. **A yes
+raises the verdict; a no changes nothing**, because the answer was already
+wrong. A reply that hedges rather than starting with SAME or DIFFERENT is
+refused by the parser and the answer stays wrong.
+
+So the model can turn a wrong into a right and never the reverse, and the
+learner is told which happened: the comment appears under the verdict, prefixed
+to say the on-device model accepted it.
+
+This is a deliberate exception to "generated text never writes a progress
+record", and the reason it is safe is the asymmetry. The failure mode of a
+string comparison is marking a correct answer wrong, which teaches the learner
+that the app is not listening. The failure mode of this is being generous once.
 
 ## Taking turns
 

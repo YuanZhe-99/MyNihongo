@@ -64,6 +64,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
         await NihongoStorage.getSpeechNetworkFallback();
     final aiAssistEnabled = await NihongoStorage.getAiAssistEnabled();
     final showFurigana = await NihongoStorage.getShowFurigana();
+    final autoSpeak = await NihongoStorage.getAutoSpeak();
     final reminderEnabled = await NihongoStorage.getReminderEnabled();
     final (reminderHour, reminderMinute) =
         await NihongoStorage.getReminderTime();
@@ -99,6 +100,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
       speechNetworkFallback: speechNetworkFallback,
       aiAssistEnabled: aiAssistEnabled,
       showFurigana: showFurigana,
+      autoSpeak: autoSpeak,
       reminderEnabled: reminderEnabled,
       reminderHour: reminderHour,
       reminderMinute: reminderMinute,
@@ -306,6 +308,18 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
   /// Notes: On by default, so **off** is what gets stored — the one inverted
   /// preference in the app, because a learner who has never opened Settings is
   /// the learner who most needs the readings.
+  /// Purpose: Turn the automatic reading of a question on or off.
+  /// Inputs: `speak`.
+  /// Returns: None.
+  /// Side effects: Persists the choice.
+  /// Notes: On by default, so off is what gets stored. A listening question
+  /// is unanswerable in silence, so this speaks it the moment it appears
+  /// rather than waiting to be asked.
+  void setAutoSpeak(bool speak) {
+    state = state.copyWith(autoSpeak: speak);
+    NihongoStorage.setAutoSpeak(speak);
+  }
+
   void setShowFurigana(bool show) {
     state = state.copyWith(showFurigana: show);
     NihongoStorage.setShowFurigana(show);
@@ -392,6 +406,10 @@ class AppSettings {
   /// learner turned it off.
   final bool showFurigana;
 
+  /// Whether a question with audio speaks itself when it appears. On unless
+  /// the learner turned it off.
+  final bool autoSpeak;
+
   /// Whether the daily reminder is on. Off unless the learner turned it on.
   final bool reminderEnabled;
 
@@ -422,6 +440,7 @@ class AppSettings {
     this.speechNetworkFallback = false,
     this.aiAssistEnabled = false,
     this.showFurigana = true,
+    this.autoSpeak = true,
     this.reminderEnabled = false,
     this.reminderHour = 20,
     this.reminderMinute = 0,
@@ -451,6 +470,7 @@ class AppSettings {
     bool? speechNetworkFallback,
     bool? aiAssistEnabled,
     bool? showFurigana,
+    bool? autoSpeak,
     bool? reminderEnabled,
     int? reminderHour,
     int? reminderMinute,
@@ -472,6 +492,7 @@ class AppSettings {
           speechNetworkFallback ?? this.speechNetworkFallback,
       aiAssistEnabled: aiAssistEnabled ?? this.aiAssistEnabled,
       showFurigana: showFurigana ?? this.showFurigana,
+      autoSpeak: autoSpeak ?? this.autoSpeak,
       reminderEnabled: reminderEnabled ?? this.reminderEnabled,
       reminderHour: reminderHour ?? this.reminderHour,
       reminderMinute: reminderMinute ?? this.reminderMinute,

@@ -138,6 +138,7 @@ class QuizQuestion {
     this.speakText,
     this.context,
     this.options = const [],
+    this.optionReadings = const [],
     this.answerIndex,
     this.acceptedAnswers = const {},
     this.answerOrder = const [],
@@ -181,6 +182,13 @@ class QuizQuestion {
 
   /// The options for a choice question, or the fragments for an order one.
   final List<String> options;
+
+  /// The reading of each option, where one is known.
+  ///
+  /// Empty when no option has one, and never partly filled: it is either the
+  /// same length as [options] or empty, so an index into one is an index into
+  /// the other. An entry may still be null for an option that is already kana.
+  final List<String?> optionReadings;
 
   /// Which option is correct, for a choice question.
   final int? answerIndex;
