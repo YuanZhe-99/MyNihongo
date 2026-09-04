@@ -107,6 +107,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pathCheckpoint => 'Checkpoint';
 
   @override
+  String get pathWriting => 'Write about this';
+
+  @override
+  String get pathScenario => 'Conversation';
+
+  @override
+  String get scenarioChoose => 'What do you say?';
+
+  @override
+  String get scenarioNext => 'Next';
+
+  @override
+  String scenarioDone(int right, int total) {
+    return '$right of $total replies were the expected one';
+  }
+
+  @override
   String get pathCheckpointAgain => 'Checkpoint again';
 
   @override

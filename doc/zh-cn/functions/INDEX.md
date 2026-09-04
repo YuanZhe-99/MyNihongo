@@ -2,13 +2,13 @@
 
 这是 MyNihongo 仓库中 `lib/` 手写函数解释层文档的顶层索引。每行链接到 `doc/zh-cn/functions/` 下镜像 `lib/` 树的逐源文件页面（`.dart` 换成 `.md`）。
 
-**总计：** 仓库的 `/// Purpose:` 注释数为 **844**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **804** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
+**总计：** 仓库的 `/// Purpose:` 注释数为 **877**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **833** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
 
 | Tier | 计数 |
 |---|---|
-| Tier A（完整条目：Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes） | 154 |
-| Tier B（仅索引行） | 650 |
-| **总计** | **804** |
+| Tier A（完整条目：Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes） | 158 |
+| Tier B（仅索引行） | 675 |
+| **总计** | **833** |
 
 这些总计在初始化时（`PLAN.md` M1.0）对照源码树测得。若要改动这些数字，请测量而不要手工调整：
 
@@ -159,6 +159,10 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/ai/services/practice_prompt_builder.dart` | 未编写文档 | — | — |
 | `lib/features/ai/services/practice_response_parser.dart` | [features/ai/services/practice_response_parser.md](features/ai/services/practice_response_parser.md) | 9 | 3 |
 | `lib/features/ai/widgets/generated_examples.dart` | 未编写文档 | — | — |
+| `lib/features/lessons/models/scenario.dart` | [features/lessons/models/scenario.md](features/lessons/models/scenario.md) | 14 | 1 |
+| `lib/features/lessons/views/scenario_page.dart` | [features/lessons/views/scenario_page.md](features/lessons/views/scenario_page.md) | 8 | 1 |
+| `lib/features/quiz/services/ai_question_generator.dart` | [features/quiz/services/ai_question_generator.md](features/quiz/services/ai_question_generator.md) | 7 | 2 |
+| `lib/features/writing/views/writing_practice_page.dart` | 未编写文档 | — | — |
 
 ## l10n/
 

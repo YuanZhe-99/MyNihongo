@@ -221,6 +221,25 @@ Not copied to the other repos — no other app has these.
 | Learn tab | 学习标签页 | 首页 |
 | dashboard | 仪表盘 | 学习标签页的卡片总览 |
 | roadmap | 路线图 | `PLAN.md` |
+| furigana / ruby | 注音 / 振假名 | 汉字上方的小假名；开关名用「注音」 |
+| alignment (of a reading) | 对齐 | 读音与表面串的逐段对应；对不上就不显示 |
+| unit | 单元 | 课程路径的一节，是一个主题 |
+| topic | 主题 | 单元教的内容；题池按它分组 |
+| question bank / pool | 题池 | 一个单元能出的全部题目 |
+| checkpoint | 单元测验 | 通过它才解锁下一单元 |
+| skip ahead | 跳级 | 未解锁单元的测验也可直接尝试 |
+| authored question | 手写题 | 内容文件里写好的题，不是生成的 |
+| generated question | 生成的题 | 由设备端模型出的题；不进调度器 |
+| scenario lesson | 情景课 | 单元末尾的脚本对话 |
+| dialogue line | 台词 | 情景课的一行 |
+| branch | 分支 | 情景课里让学习者选择说什么的位置 |
+| reminder | 提醒 | 每日通知；默认关闭 |
+| study calendar | 学习日历 | 最近 12 周的学习天数格子 |
+| writing practice | 写作练习 | 单元的写作题 |
+| self-assessment | 自评 | 没有模型时由学习者自己判定 |
+| overlay | 叠加层 | 折进生成词表的中文与例句文件 |
+| content gate | 内容门禁 | 合并草稿前跑的检查 |
+| auto-speak | 自动发音 | 题目出现时自动朗读；默认开启 |
 
 ## 6. Review checklist (run before committing a Chinese page)
 

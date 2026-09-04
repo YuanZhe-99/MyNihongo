@@ -376,6 +376,30 @@ class _QuestionPaneState extends ConsumerState<_QuestionPane> {
             color: theme.colorScheme.onSurfaceVariant,
           ),
         ),
+        // A generated question says so before it is read, not after it is
+        // answered: the learner is entitled to know that this one was written
+        // by a model on their phone and is not part of the catalog.
+        if (question.generated) ...[
+          const SizedBox(height: 6),
+          Row(
+            children: [
+              Icon(
+                Icons.auto_awesome_outlined,
+                size: 14,
+                color: theme.colorScheme.primary,
+              ),
+              const SizedBox(width: 4),
+              Flexible(
+                child: Text(
+                  l10n.aiGeneratedLabel,
+                  style: theme.textTheme.labelSmall?.copyWith(
+                    color: theme.colorScheme.primary,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
         const SizedBox(height: 8),
         Text(
           _instruction(l10n),

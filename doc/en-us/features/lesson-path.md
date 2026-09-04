@@ -88,9 +88,35 @@ failure.
 How the files are written is in
 [`content-authoring.md`](content-authoring.md).
 
-## What is not built
+## Scenario lessons
 
-Scenario lessons — a short dialogue with a speaker per line, and a branch the
-learner picks — are designed and not written. They are what units 1 to 4 would
-gain first. The AI dialogue partner in
-[`ai-assist.md`](ai-assist.md) is written against them.
+A unit may end with a **scripted conversation**: six to eight lines with a
+speaker each, and one or two points where the script stops and asks the learner
+what to say. It runs on its own route (`/scenario`), opened from the unit card
+next to Practise and Checkpoint, and every line and every candidate reply can be
+read aloud.
+
+Three rules make it a lesson rather than a quiz:
+
+- **A wrong reply does not end the conversation.** The script is linear; what
+  the learner said changes the tally shown at the end and nothing else. A
+  conversation that stops when you say the wrong thing teaches nothing about
+  what to say instead.
+- **The script does not fork per choice either.** Every fork would have to be
+  written and gated, which is a content cost paid on every unit, for a lesson
+  whose point is reading a real exchange.
+- **Nothing reaches the scheduler.** Choosing a reply from three is not recall;
+  the unit's own practice session is where recall is measured.
+
+Six are written: N5 units 1 to 4 and N4 units 1 and 2. A unit without one shows
+no button, so the rest of the path is unaffected.
+
+## Writing practice
+
+A unit's `writingPrompt` opens `/writing`, where the learner writes a few
+sentences and the app parses them: which of the unit's words were used (counted
+from the **parse**, so 食べました counts as 食べる), how each sentence was
+understood, and anything unusual. That is the whole exercise without a model.
+With on-device AI on it also offers a natural rewrite — see
+[`ai-assist.md`](ai-assist.md). Nothing is recorded either way: a paragraph is
+not an item with a recall interval.

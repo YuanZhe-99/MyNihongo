@@ -104,6 +104,23 @@ class AppLocalizationsZh extends AppLocalizations {
   String get pathCheckpoint => '单元测验';
 
   @override
+  String get pathWriting => '写一段';
+
+  @override
+  String get pathScenario => '情景对话';
+
+  @override
+  String get scenarioChoose => '你要说什么？';
+
+  @override
+  String get scenarioNext => '下一句';
+
+  @override
+  String scenarioDone(int right, int total) {
+    return '$total 次选择里答对了 $right 次';
+  }
+
+  @override
   String get pathCheckpointAgain => '再测一次';
 
   @override
@@ -1480,6 +1497,23 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get pathCheckpoint => '單元測驗';
+
+  @override
+  String get pathWriting => '寫一段';
+
+  @override
+  String get pathScenario => '情景對話';
+
+  @override
+  String get scenarioChoose => '你要說什麼？';
+
+  @override
+  String get scenarioNext => '下一句';
+
+  @override
+  String scenarioDone(int right, int total) {
+    return '$total 次選擇裡答對了 $right 次';
+  }
 
   @override
   String get pathCheckpointAgain => '再測一次';

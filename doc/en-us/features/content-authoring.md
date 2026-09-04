@@ -63,6 +63,12 @@ two slugs for the same point, is the one mistake that cannot be fixed later.
 makes the path a path is that every grammar point of the level belongs to exactly
 one unit. Batches that cannot see each other cannot satisfy that.
 
+**A scenario is written into a unit that already exists**, not merged as a draft
+of its own: `merge_drafts units` writes a whole level's file, so re-running it
+would be a bigger change than adding one conversation. To gate a scenario added
+that way, turn the shipped file back into a draft — strip the generated `zh_TW`
+and wrap it as `{"kind": "units", ...}` — and run the gate on that.
+
 ## What the gate checks
 
 Each rule is one a shipped test already enforces on the catalog, moved earlier so
@@ -85,6 +91,10 @@ a batch fails before it is merged rather than after:
   match it and the quiz cannot ask about it.
 - **A question has four distinct options and a valid answer index**, because two
   identical options are two right answers.
+- **A scenario's branch lands inside its own script** — `after` is a count of
+  lines shown, so it has to be between 1 and the length of the conversation —
+  **and exactly one of its choices is marked correct**, because the tally at the
+  end counts exactly one.
 - **A gloss is Chinese**: no kana, no leftover English, short enough for a list
   row.
 

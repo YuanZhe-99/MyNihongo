@@ -261,6 +261,36 @@ abstract class AppLocalizations {
   /// **'Checkpoint'**
   String get pathCheckpoint;
 
+  /// No description provided for @pathWriting.
+  ///
+  /// In en, this message translates to:
+  /// **'Write about this'**
+  String get pathWriting;
+
+  /// No description provided for @pathScenario.
+  ///
+  /// In en, this message translates to:
+  /// **'Conversation'**
+  String get pathScenario;
+
+  /// No description provided for @scenarioChoose.
+  ///
+  /// In en, this message translates to:
+  /// **'What do you say?'**
+  String get scenarioChoose;
+
+  /// No description provided for @scenarioNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get scenarioNext;
+
+  /// No description provided for @scenarioDone.
+  ///
+  /// In en, this message translates to:
+  /// **'{right} of {total} replies were the expected one'**
+  String scenarioDone(int right, int total);
+
   /// No description provided for @pathCheckpointAgain.
   ///
   /// In en, this message translates to:

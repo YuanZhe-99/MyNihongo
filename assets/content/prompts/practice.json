@@ -7,7 +7,8 @@
     "maxWritingChars": 600,
     "maxVocabInPrompt": 12,
     "maxExamples": 3,
-    "maxAnswerChars": 200
+    "maxAnswerChars": 200,
+    "maxQuizQuestions": 3
   },
   "labels": {
     "en": {
@@ -21,7 +22,9 @@
       "vocabulary": "Words this unit teaches",
       "question": "The question",
       "chosen": "What the learner chose",
-      "correct": "The right answer"
+      "correct": "The right answer",
+      "options": "Options",
+      "topic": "What this unit teaches"
     },
     "zh": {
       "sentence": "句子",
@@ -34,7 +37,9 @@
       "vocabulary": "本单元教的词",
       "question": "题目",
       "chosen": "学习者选的",
-      "correct": "正确答案"
+      "correct": "正确答案",
+      "options": "选项",
+      "topic": "本单元教的内容"
     },
     "zh_TW": {
       "sentence": "句子",
@@ -47,7 +52,9 @@
       "vocabulary": "本單元教的詞",
       "question": "題目",
       "chosen": "學習者選的",
-      "correct": "正確答案"
+      "correct": "正確答案",
+      "options": "選項",
+      "topic": "本單元教的內容"
     }
   },
   "tasks": {
@@ -176,6 +183,38 @@
           "每行恰好用兩個豎線。",
           "句中其餘的詞都要簡單到符合這個級別。",
           "使用敬體。行內不要寫別的東西。"
+        ]
+      }
+    },
+    "quiz": {
+      "en": {
+        "instruction": "Write one multiple-choice question that tests the grammar point below, for a learner at this level.",
+        "rules": [
+          "A line beginning 'Q: ' holding the Japanese sentence with the tested part replaced by ＿＿.",
+          "Then four lines beginning 'A: ', 'B: ', 'C: ' and 'D: ', one candidate each, all four different.",
+          "Then a line beginning 'Answer: ' holding only A, B, C or D.",
+          "Then a line beginning 'Why: ' with one sentence in English.",
+          "Use only words at or below this level. Nothing else in the reply."
+        ]
+      },
+      "zh": {
+        "instruction": "请就下面这个语法点，为这个级别的学习者出一道四选一的题。",
+        "rules": [
+          "第一行以「Q: 」开头，写日文句子，被考的部分用 ＿＿ 代替。",
+          "接着四行分别以「A: 」「B: 」「C: 」「D: 」开头，每行一个选项，四个各不相同。",
+          "再写一行以「Answer: 」开头，只写 A、B、C 或 D。",
+          "最后一行以「Why: 」开头，用一句中文说明。",
+          "只用不超过这个级别的词。回复里不要写别的东西。"
+        ]
+      },
+      "zh_TW": {
+        "instruction": "請就下面這個文法點，為這個程度的學習者出一道四選一的題。",
+        "rules": [
+          "第一行以「Q: 」開頭，寫日文句子，被考的部分用 ＿＿ 代替。",
+          "接著四行分別以「A: 」「B: 」「C: 」「D: 」開頭，每行一個選項，四個各不相同。",
+          "再寫一行以「Answer: 」開頭，只寫 A、B、C 或 D。",
+          "最後一行以「Why: 」開頭，用一句中文說明。",
+          "只用不超過這個程度的詞。回覆裡不要寫別的東西。"
         ]
       }
     }

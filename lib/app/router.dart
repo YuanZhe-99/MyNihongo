@@ -3,11 +3,13 @@ import 'package:go_router/go_router.dart';
 import '../features/grammar/views/grammar_page.dart';
 import '../features/kana/views/kana_page.dart';
 import '../features/learn/views/learn_page.dart';
+import '../features/lessons/views/scenario_page.dart';
 import '../features/quiz/models/quiz_config.dart';
 import '../features/quiz/views/quiz_page.dart';
 import '../features/sentence/views/sentence_lab_page.dart';
 import '../features/settings/views/settings_page.dart';
 import '../features/vocab/views/vocab_page.dart';
+import '../features/writing/views/writing_practice_page.dart';
 import '../shared/widgets/shell_scaffold.dart';
 
 /// Purpose: Build the app's router.
@@ -48,6 +50,18 @@ GoRouter buildAppRouter({String initialLocation = '/learn'}) => GoRouter(
       path: '/quiz',
       builder: (context, state) =>
           QuizPage(config: state.extra! as QuizConfig),
+    ),
+    // Writing is entered from a unit and left when it is finished, the
+    // way a quiz is, so it is a full-window route rather than a tab.
+    GoRoute(
+      path: '/scenario',
+      builder: (context, state) =>
+          ScenarioPage(args: state.extra! as ScenarioArgs),
+    ),
+    GoRoute(
+      path: '/writing',
+      builder: (context, state) =>
+          WritingPracticePage(prompt: state.extra! as WritingPrompt),
     ),
     GoRoute(
       path: '/lab',

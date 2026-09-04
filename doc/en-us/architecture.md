@@ -20,8 +20,11 @@ rules.
   - Grammar (`/grammar`, `grammar_page.dart`)
   - Settings (`/settings`, `settings_page.dart`)
 
-  There are no non-tab routes yet. Second-level settings pages (privacy policy, license) are pushed
-  on the root navigator on a narrow window and hosted in a detail pane on a wide one.
+  Four routes sit **outside** the shell, because each is entered with a purpose and left when it is
+  finished rather than browsed: `/quiz` (a session), `/lab` (the sentence analyser), `/scenario`
+  (a scripted conversation, opened from a unit) and `/writing` (a writing exercise, likewise).
+  Second-level settings pages (privacy policy, license) are pushed on the root navigator on a
+  narrow window and hosted in a detail pane on a wide one.
 - `lib/app/theme.dart` — the visual system, built on Material 3 via `flex_color_scheme`, seeded
   with `FlexScheme.sakura` so the app is told apart from its siblings at a glance.
 - `lib/app/flavor.dart` — build flavor logic (see below).

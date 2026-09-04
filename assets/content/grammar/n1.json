@@ -1,0 +1,5569 @@
+{
+  "schemaVersion": 2,
+  "source": "model-authored (Claude), unreviewed",
+  "license": "GPL-3.0 with the app.",
+  "level": "N1",
+  "points": [
+    {
+      "id": "grammar:de-aru-tai",
+      "level": "N1",
+      "pattern": "〜である体",
+      "structure": "名詞・な形容詞 + である（〜であった／〜であろう）",
+      "match": [
+        "である",
+        "であった"
+      ],
+      "meaning": {
+        "en": "the plain written style used in essays and reports",
+        "zh": "论文、报告等书面文体中的判断说法",
+        "zh_TW": "論文、報告等書面文體中的判斷說法"
+      },
+      "explanation": {
+        "en": "である is the written-register counterpart of だ and です. Essays, reports, newspaper columns and academic papers are normally written entirely in this style, which sounds detached and impersonal; using it in conversation sounds like reading a document aloud. Once you start a text in である体, you keep it to the end.",
+        "zh": "である是だ、です的书面语形式。论文、报告、社论、学术文章通常整篇使用这种文体，语气客观、不带说话人的情绪；用在口语里就像在朗读文件。一旦以である体开头，全文都要贯彻到底。",
+        "zh_TW": "である是だ、です的書面語形式。論文、報告、社論、學術文章通常整篇使用這種文體，語氣客觀、不帶說話人的情緒；用在口語裡就像在朗讀文件。一旦以である體開頭，全文都要貫徹到底。"
+      },
+      "examples": [
+        {
+          "ja": "これは重要な問題である。",
+          "reading": "これはじゅうようなもんだいである。",
+          "en": "This is an important problem.",
+          "zh": "这是一个重要的问题。",
+          "zh_TW": "這是一個重要的問題。"
+        },
+        {
+          "ja": "その結果は明らかであると言える。",
+          "reading": "そのけっかはあきらかであるといえる。",
+          "en": "One can say that the result is clear.",
+          "zh": "可以说，那个结果是明确的。",
+          "zh_TW": "可以說，那個結果是明確的。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:renyou-chuushi",
+      "level": "N1",
+      "pattern": "連用中止法（〜し、）",
+      "structure": "動詞ます形の語幹 + 、（〜し、／〜い、／〜り、）",
+      "match": [
+        "し、",
+        "い、"
+      ],
+      "meaning": {
+        "en": "joining clauses with the masu-stem instead of て",
+        "zh": "用动词连用形（ます形词干）连接前后分句",
+        "zh_TW": "用動詞連用形（ます形詞幹）連接前後分句"
+      },
+      "explanation": {
+        "en": "In written Japanese, clauses are joined by the masu-stem plus a comma rather than by 〜て. する becomes し、行う becomes 行い、and so on. It is a mark of formal prose — reports, news writing, official documents — and gives the sentence a level, unhurried rhythm that 〜て does not.",
+        "zh": "书面日语常用动词连用形加逗号来连接分句，而不用〜て。する变成し、行う变成行い。这是报告、新闻、公文等正式文章的标志，语气比〜て更平稳、更端正。",
+        "zh_TW": "書面日語常用動詞連用形加逗號來連接分句，而不用〜て。する變成し、行う變成行い。這是報告、新聞、公文等正式文章的標誌，語氣比〜て更平穩、更端正。"
+      },
+      "examples": [
+        {
+          "ja": "経済は成長し、社会も変わった。",
+          "reading": "けいざいはせいちょうし、しゃかいもかわった。",
+          "en": "The economy grew, and society changed as well.",
+          "zh": "经济增长了，社会也发生了变化。",
+          "zh_TW": "經濟增長了，社會也發生了變化。"
+        },
+        {
+          "ja": "政府は調査を行い、結果を発表した。",
+          "reading": "せいふはちょうさをおこない、けっかをはっぴょうした。",
+          "en": "The government conducted a survey and announced the results.",
+          "zh": "政府进行了调查，并公布了结果。",
+          "zh_TW": "政府進行了調查，並公佈了結果。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nu-negative",
+      "level": "N1",
+      "pattern": "〜ぬ / 〜ん",
+      "structure": "動詞ない形の語幹 + ぬ（する → せぬ、来る → 来ぬ）",
+      "match": [
+        "ぬ"
+      ],
+      "meaning": {
+        "en": "the classical negative ending, used in writing",
+        "zh": "古典否定形，用于书面语",
+        "zh_TW": "古典否定形，用於書面語"
+      },
+      "explanation": {
+        "en": "ぬ is the classical ancestor of ない and survives in written and literary Japanese, in set phrases, and in some regional speech. する takes the irregular form せぬ. It sounds weighty and old-fashioned, so it belongs in essays, proverbs and fiction rather than ordinary conversation.",
+        "zh": "ぬ是ない的古典形式，保留在书面语、文学作品、固定说法以及部分方言中。する的形式不规则，为せぬ。语气庄重古雅，适合文章、谚语和小说，而不用于日常会话。",
+        "zh_TW": "ぬ是ない的古典形式，保留在書面語、文學作品、固定說法以及部分方言中。する的形式不規則，為せぬ。語氣莊重古雅，適合文章、諺語和小說，而不用於日常會話。"
+      },
+      "examples": [
+        {
+          "ja": "理由は分からぬままである。",
+          "reading": "りゆうはわからぬままである。",
+          "en": "The reason remains unknown.",
+          "zh": "理由至今不明。",
+          "zh_TW": "理由至今不明。"
+        },
+        {
+          "ja": "何も知らぬ者に成功はない。",
+          "reading": "なにもしらぬものにせいこうはない。",
+          "en": "There is no success for one who makes no effort.",
+          "zh": "不努力的人不会成功。",
+          "zh_TW": "不努力的人不會成功。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:zaru-negative",
+      "level": "N1",
+      "pattern": "〜ざる＋名詞",
+      "structure": "動詞ない形の語幹 + ざる + 名詞（する → せざる）",
+      "match": [
+        "ざる"
+      ],
+      "meaning": {
+        "en": "classical negative form modifying a noun",
+        "zh": "古典否定形用于修饰名词",
+        "zh_TW": "古典否定形用於修飾名詞"
+      },
+      "explanation": {
+        "en": "ざる is the form ぬ takes before a noun, so 変わらざる事実 is literary for 変わらない事実. You meet it in written Japanese, in headlines and in fixed expressions; it makes the noun sound formal and slightly solemn. It never modifies anything but a noun.",
+        "zh": "ざる是ぬ用于修饰名词时的形式，变わらざる事実相当于文言化的変わらない事実。多见于书面语、标题和固定说法，使名词显得正式而庄重。它只能修饰名词。",
+        "zh_TW": "ざる是ぬ用於修飾名詞時的形式，變わらざる事実相當於文言化的変わらない事実。多見於書面語、標題和固定說法，使名詞顯得正式而莊重。它只能修飾名詞。"
+      },
+      "examples": [
+        {
+          "ja": "これは変わらざる事実である。",
+          "reading": "これはかわらざるじじつである。",
+          "en": "This is an unchanging fact.",
+          "zh": "这是不会改变的事实。",
+          "zh_TW": "這是不會改變的事實。"
+        },
+        {
+          "ja": "許さざる態度が問題になった。",
+          "reading": "ゆるさざるたいどがもんだいになった。",
+          "en": "An unacceptable attitude became an issue.",
+          "zh": "不能被认可的态度成了问题。",
+          "zh_TW": "不能被認可的態度成了問題。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:zu-shite",
+      "level": "N1",
+      "pattern": "〜ずして",
+      "structure": "動詞ない形の語幹 + ずして（する → せずして）",
+      "match": [
+        "ずして"
+      ],
+      "meaning": {
+        "en": "without doing X; literary negative clause",
+        "zh": "不做某事而……（文言否定分句）",
+        "zh_TW": "不做某事而……（文言否定分句）"
+      },
+      "explanation": {
+        "en": "ずして is a literary version of 〜ないで or 〜せずに, often used to say that a result cannot be reached without the first action. It carries a rhetorical, almost aphoristic tone and appears mainly in writing and formal speeches.",
+        "zh": "ずして是〜ないで、〜せずに的文言形式，常用来表示不做前项就得不到后项的结果。带有格言式的修辞语气，主要用于文章和正式演讲。",
+        "zh_TW": "ずして是〜ないで、〜せずに的文言形式，常用來表示不做前項就得不到後項的結果。帶有格言式的修辭語氣，主要用於文章和正式演講。"
+      },
+      "examples": [
+        {
+          "ja": "努力せずして成功はあり得ない。",
+          "reading": "どりょくせずしてせいこうはありえない。",
+          "en": "Success is impossible without effort.",
+          "zh": "不努力就不可能成功。",
+          "zh_TW": "不努力就不可能成功。"
+        },
+        {
+          "ja": "彼は何も言わずして立場を示した。",
+          "reading": "かれはなにもいわずしてたちばをしめした。",
+          "en": "He made his position clear without saying a word.",
+          "zh": "他一句话也没说，就表明了自己的立场。",
+          "zh_TW": "他一句話也沒說，就表明了自己的立場。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nomi",
+      "level": "N1",
+      "pattern": "〜のみ",
+      "structure": "名詞・動詞普通形 + のみ",
+      "match": [
+        "のみ"
+      ],
+      "meaning": {
+        "en": "only; the written-register form of だけ",
+        "zh": "只、仅（だけ的书面语形式）",
+        "zh_TW": "只、僅（だけ的書面語形式）"
+      },
+      "explanation": {
+        "en": "のみ means the same as だけ but belongs to formal written Japanese: notices, contracts, reports and academic prose. Spoken use sounds stiff except in set phrases. It attaches to nouns and to plain verb forms alike.",
+        "zh": "のみ的意思与だけ相同，但属于正式书面语，多见于告示、合同、报告和学术文章。除固定说法外，用在口语中显得生硬。可接名词，也可接动词简体形。",
+        "zh_TW": "のみ的意思與だけ相同，但屬於正式書面語，多見於告示、合同、報告和學術文章。除固定說法外，用在口語中顯得生硬。可接名詞，也可接動詞簡體形。"
+      },
+      "examples": [
+        {
+          "ja": "会議に出るのは学生のみである。",
+          "reading": "かいぎにでるのはがくせいのみである。",
+          "en": "Only students attend the meeting.",
+          "zh": "出席会议的只有学生。",
+          "zh_TW": "出席會議的只有學生。"
+        },
+        {
+          "ja": "事実のみを述べる必要がある。",
+          "reading": "じじつのみをのべるひつようがある。",
+          "en": "It is necessary to state only the facts.",
+          "zh": "必须只陈述事实。",
+          "zh_TW": "必須只陳述事實。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nomi-narazu",
+      "level": "N1",
+      "pattern": "〜のみならず",
+      "structure": "名詞・普通形 + のみならず",
+      "match": [
+        "のみならず"
+      ],
+      "meaning": {
+        "en": "not only X but also Y (formal)",
+        "zh": "不仅……而且……（正式）",
+        "zh_TW": "不僅……而且……（正式）"
+      },
+      "explanation": {
+        "en": "のみならず is the written-register equivalent of 〜だけでなく. It is used in reports and argumentative prose to widen the scope of a claim, and the second clause usually carries も or さえ. In speech people say だけでなく instead.",
+        "zh": "のみならず是〜だけでなく的书面语形式，常见于报告和论说文，用来扩大论述的范围，后项多带も或さえ。口语中一般说だけでなく。",
+        "zh_TW": "のみならず是〜だけでなく的書面語形式，常見於報告和論說文，用來擴大論述的範圍，後項多帶も或さえ。口語中一般說だけでなく。"
+      },
+      "examples": [
+        {
+          "ja": "経済のみならず社会にも影響が出た。",
+          "reading": "けいざいのみならずしゃかいにもえいきょうがでた。",
+          "en": "There were effects not only on the economy but on society too.",
+          "zh": "不仅经济，社会也受到了影响。",
+          "zh_TW": "不僅經濟，社會也受到了影響。"
+        },
+        {
+          "ja": "この問題は日本のみならず世界の問題だ。",
+          "reading": "このもんだいはにほんのみならずせかいのもんだいだ。",
+          "en": "This is a problem not only for Japan but for the world.",
+          "zh": "这个问题不仅是日本的，也是世界的问题。",
+          "zh_TW": "這個問題不僅是日本的，也是世界的問題。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:hitori-nomi-narazu",
+      "level": "N1",
+      "pattern": "ひとり〜のみならず",
+      "structure": "ひとり + 名詞 + のみならず",
+      "match": [
+        "のみならず",
+        "ひとり"
+      ],
+      "meaning": {
+        "en": "not merely X; the matter reaches further",
+        "zh": "不单是……，还涉及更广的范围",
+        "zh_TW": "不單是……，還涉及更廣的範圍"
+      },
+      "explanation": {
+        "en": "Adding ひとり in front strengthens のみならず: it insists that the matter is not confined to one person, place or field. This is high written register, typical of editorials and formal argument, where the writer wants to make a claim sound larger than it first appears.",
+        "zh": "在のみならず前加上ひとり，语气更强，强调事情并不局限于某一个人、某一地或某一领域。属于很正式的书面语，多见于社论和论说文，用来把问题提升到更大的范围。",
+        "zh_TW": "在のみならず前加上ひとり，語氣更強，強調事情並不侷限於某一個人、某一地或某一領域。屬於很正式的書面語，多見於社論和論說文，用來把問題提升到更大的範圍。"
+      },
+      "examples": [
+        {
+          "ja": "これはひとり政府のみならず社会の責任だ。",
+          "reading": "これはひとりせいふのみならずしゃかいのせきにんだ。",
+          "en": "This is the responsibility not merely of the government but of society.",
+          "zh": "这不单是政府的责任，也是社会的责任。",
+          "zh_TW": "這不單是政府的責任，也是社會的責任。"
+        },
+        {
+          "ja": "ひとり彼のみならず、多くの人が失敗した。",
+          "reading": "ひとりかれのみならず、おおくのひとがしっぱいした。",
+          "en": "It was not merely he who failed; many people did.",
+          "zh": "失败的不单是他，还有很多人。",
+          "zh_TW": "失敗的不單是他，還有很多人。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:gotoki",
+      "level": "N1",
+      "pattern": "〜ごとき / 〜ごとく",
+      "structure": "名詞の + ごとき／ごとく、動詞普通形 + ごとき／ごとく",
+      "match": [
+        "ごとき",
+        "ごとく"
+      ],
+      "meaning": {
+        "en": "like; as if — the literary form of ような／ように",
+        "zh": "如同……（ような、ように的文言形式）",
+        "zh_TW": "如同……（ような、ように的文言形式）"
+      },
+      "explanation": {
+        "en": "ごとき modifies a noun and ごとく modifies a verb, exactly as ような and ように do, but in classical written register. It appears in literature, formal writing and set phrases. After a person's name it can also sound self-deprecating or contemptuous, so use it carefully.",
+        "zh": "ごとき修饰名词，ごとく修饰动词，用法与ような、ように相同，但属于文言书面语，多见于文学作品、正式文章和固定说法。接在人名后面还可能带有自谦或轻蔑的语气，使用时需注意。",
+        "zh_TW": "ごとき修飾名詞，ごとく修飾動詞，用法與ような、ように相同，但屬於文言書面語，多見於文學作品、正式文章和固定說法。接在人名後面還可能帶有自謙或輕蔑的語氣，使用時需注意。"
+      },
+      "examples": [
+        {
+          "ja": "先生のごとき態度が必要である。",
+          "reading": "せんせいのごときたいどがひつようである。",
+          "en": "An attitude like a teacher's is what is needed.",
+          "zh": "需要的是像老师那样的态度。",
+          "zh_TW": "需要的是像老師那樣的態度。"
+        },
+        {
+          "ja": "事実は先に述べたごとくである。",
+          "reading": "じじつはさきにのべたごとくである。",
+          "en": "The facts are as stated above.",
+          "zh": "事实正如前面所述。",
+          "zh_TW": "事實正如前面所述。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:taru",
+      "level": "N1",
+      "pattern": "〜たる",
+      "structure": "名詞 + たる + 名詞（〜たる者）",
+      "match": [
+        "たる"
+      ],
+      "meaning": {
+        "en": "being X; in one's capacity as X",
+        "zh": "身为……、作为……",
+        "zh_TW": "身為……、作為……"
+      },
+      "explanation": {
+        "en": "たる is the classical attributive of である, so 学生たる者 means \"one who is a student\". It is used in formal writing and speeches to invoke the duties that come with a role, and is almost always followed by a statement of what such a person ought to do.",
+        "zh": "たる是である的文言连体形，学生たる者即“身为学生的人”。多用于正式文章和演讲，强调某种身份所应尽的责任，后面几乎总接“应当怎样做”的内容。",
+        "zh_TW": "たる是である的文言連體形，學生たる者即“身為學生的人”。多用於正式文章和演講，強調某種身份所應盡的責任，後面幾乎總接“應當怎樣做”的內容。"
+      },
+      "examples": [
+        {
+          "ja": "学生たる者、努力すべきである。",
+          "reading": "がくせいたるもの、どりょくすべきである。",
+          "en": "One who is a student ought to make an effort.",
+          "zh": "身为学生，就应当努力。",
+          "zh_TW": "身為學生，就應當努力。"
+        },
+        {
+          "ja": "先生たる立場を忘れてはならない。",
+          "reading": "せんせいたるたちばをわすれてはならない。",
+          "en": "One must not forget one's position as a teacher.",
+          "zh": "不能忘记自己身为老师的立场。",
+          "zh_TW": "不能忘記自己身為老師的立場。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:taru-ya",
+      "level": "N1",
+      "pattern": "〜たるや",
+      "structure": "名詞 + たるや + 程度を述べる文",
+      "match": [
+        "たるや"
+      ],
+      "meaning": {
+        "en": "as for X — introducing something extreme",
+        "zh": "说到……那可真是（引出极端的程度）",
+        "zh_TW": "說到……那可真是（引出極端的程度）"
+      },
+      "explanation": {
+        "en": "たるや takes up a topic the way は does, but announces that what follows will be striking in degree. It is a literary, somewhat theatrical device found in essays and reportage, and the sentence after it normally expresses surprise or emphasis.",
+        "zh": "たるや像は一样提示话题，但预告后面要讲的程度非同一般。属于文言而略带夸张的修辞手法，多见于随笔和报道，后句通常表达惊讶或强调。",
+        "zh_TW": "たるや像は一樣提示話題，但預告後面要講的程度非同一般。屬於文言而略帶誇張的修辭手法，多見於隨筆和報道，後句通常表達驚訝或強調。"
+      },
+      "examples": [
+        {
+          "ja": "その影響たるや、実に大きかった。",
+          "reading": "そのえいきょうたるや、じつにおおきかった。",
+          "en": "As for its influence, it was truly enormous.",
+          "zh": "说到它的影响，那真是非常之大。",
+          "zh_TW": "說到它的影響，那真是非常之大。"
+        },
+        {
+          "ja": "結果たるや誰も考えなかったものだ。",
+          "reading": "けっかたるやだれもかんがえなかったものだ。",
+          "en": "As for the result, it was something nobody had imagined.",
+          "zh": "说到那个结果，是谁都没想到的。",
+          "zh_TW": "說到那個結果，是誰都沒想到的。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:beku-purpose",
+      "level": "N1",
+      "pattern": "〜べく",
+      "structure": "動詞辞書形 + べく（する → すべく）",
+      "match": [
+        "べく"
+      ],
+      "meaning": {
+        "en": "in order to; formal purpose clause",
+        "zh": "为了……（正式的目的从句）",
+        "zh_TW": "為了……（正式的目的從句）"
+      },
+      "explanation": {
+        "en": "べく is a written-register 〜ために. It marks a deliberate purpose and is common in news writing, company announcements and reports; する contracts to すべく. The main clause must describe a conscious action taken toward that purpose.",
+        "zh": "べく是〜ために的书面语形式，表示有意识的目的，常见于新闻、企业公告和报告；する要缩合为すべく。主句必须是为达成该目的而采取的自觉行动。",
+        "zh_TW": "べく是〜ために的書面語形式，表示有意識的目的，常見於新聞、企業公告和報告；する要縮合為すべく。主句必須是為達成該目的而採取的自覺行動。"
+      },
+      "examples": [
+        {
+          "ja": "問題を解決すべく調査を行った。",
+          "reading": "もんだいをかいけつすべくちょうさをおこなった。",
+          "en": "A survey was carried out in order to solve the problem.",
+          "zh": "为了解决问题，进行了调查。",
+          "zh_TW": "為了解決問題，進行了調查。"
+        },
+        {
+          "ja": "会社は新しい技術を示すべく努力している。",
+          "reading": "かいしゃはあたらしいぎじゅつをしめすべくどりょくしている。",
+          "en": "The company is working to demonstrate its new technology.",
+          "zh": "公司正在努力展示新技术。",
+          "zh_TW": "公司正在努力展示新技術。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:beku-shite",
+      "level": "N1",
+      "pattern": "〜べくして",
+      "structure": "動詞辞書形 + べくして + 同じ動詞のた形",
+      "match": [
+        "べくして"
+      ],
+      "meaning": {
+        "en": "it happened exactly as it was bound to",
+        "zh": "该发生的果然发生了",
+        "zh_TW": "該發生的果然發生了"
+      },
+      "explanation": {
+        "en": "The same verb is repeated on both sides — 起こるべくして起こった — to say the outcome was inevitable given the conditions. It belongs to written and commentary register, where a writer looks back and judges an event as no accident at all.",
+        "zh": "前后重复同一个动词，如起こるべくして起こった，表示在当时的条件下这个结果必然会出现。属于书面语和评论语体，用于事后评说某事绝非偶然。",
+        "zh_TW": "前後重複同一個動詞，如起こるべくして起こった，表示在當時的條件下這個結果必然會出現。屬於書面語和評論語體，用於事後評說某事絕非偶然。"
+      },
+      "examples": [
+        {
+          "ja": "この失敗は起こるべくして起こった。",
+          "reading": "このしっぱいはおこるべくしておこった。",
+          "en": "This failure was bound to happen, and it did.",
+          "zh": "这次失败是必然会发生的。",
+          "zh_TW": "這次失敗是必然會發生的。"
+        },
+        {
+          "ja": "彼は勝つべくして勝ったのである。",
+          "reading": "かれはかつべくしてかったのである。",
+          "en": "He won exactly as he was bound to win.",
+          "zh": "他是理所当然地赢了。",
+          "zh_TW": "他是理所當然地贏了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:beku-mo-nai",
+      "level": "N1",
+      "pattern": "〜べくもない",
+      "structure": "動詞辞書形 + べくもない",
+      "match": [
+        "べくもない"
+      ],
+      "meaning": {
+        "en": "there is no way one could possibly do it",
+        "zh": "根本不可能……",
+        "zh_TW": "根本不可能……"
+      },
+      "explanation": {
+        "en": "べくもない denies even the possibility of the action, going further than 〜ことができない. It is literary and rather formal, appearing with a small set of verbs such as 知る, 疑う and 望む in written Japanese.",
+        "zh": "べくもない否定的是可能性本身，语气比〜ことができない更强。属于文言、正式的书面语，多与知る、疑う、望む等少数动词搭配。",
+        "zh_TW": "べくもない否定的是可能性本身，語氣比〜ことができない更強。屬於文言、正式的書面語，多與知る、疑う、望む等少數動詞搭配。"
+      },
+      "examples": [
+        {
+          "ja": "結果は今、知るべくもない。",
+          "reading": "けっかはいま、しるべくもない。",
+          "en": "There is no way of knowing the result now.",
+          "zh": "现在根本无从知道结果。",
+          "zh_TW": "現在根本無從知道結果。"
+        },
+        {
+          "ja": "彼の努力は疑うべくもない。",
+          "reading": "かれのどりょくはうたがうべくもない。",
+          "en": "His effort is beyond any possible doubt.",
+          "zh": "他的努力是毋庸置疑的。",
+          "zh_TW": "他的努力是毋庸置疑的。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:bekarazu",
+      "level": "N1",
+      "pattern": "〜べからず",
+      "structure": "動詞辞書形 + べからず（する → すべからず）",
+      "match": [
+        "べからず"
+      ],
+      "meaning": {
+        "en": "must not; prohibition on signs and notices",
+        "zh": "禁止……（用于告示、标语）",
+        "zh_TW": "禁止……（用於告示、標語）"
+      },
+      "explanation": {
+        "en": "べからず is the classical prohibition, still alive on signs, notices and in proverbs and mottoes. It ends the sentence flatly, with no politeness and no addressee, which is why it suits public warnings rather than speech directed at a person.",
+        "zh": "べからず是古典的禁止表达，如今仍用于告示、标语、谚语和格言。它直接结句，没有敬语色彩，也不针对具体的听话人，因此适合公共警示而不适合对人当面说。",
+        "zh_TW": "べからず是古典的禁止表達，如今仍用於告示、標語、諺語和格言。它直接結句，沒有敬語色彩，也不針對具體的聽話人，因此適合公共警示而不適合對人當面說。"
+      },
+      "examples": [
+        {
+          "ja": "ここに入るべからず。",
+          "reading": "ここにはいるべからず。",
+          "en": "Do not enter here.",
+          "zh": "此处禁止入内。",
+          "zh_TW": "此處禁止入內。"
+        },
+        {
+          "ja": "学生はこの事実を忘れるべからず。",
+          "reading": "がくせいはこのじじつをわすれるべからず。",
+          "en": "Students must not forget this fact.",
+          "zh": "学生不可忘记这一事实。",
+          "zh_TW": "學生不可忘記這一事實。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:bekarazaru",
+      "level": "N1",
+      "pattern": "〜べからざる＋名詞",
+      "structure": "動詞辞書形 + べからざる + 名詞",
+      "match": [
+        "べからざる"
+      ],
+      "meaning": {
+        "en": "a thing that must not be done or allowed",
+        "zh": "不可……的（修饰名词）",
+        "zh_TW": "不可……的（修飾名詞）"
+      },
+      "explanation": {
+        "en": "べからざる is the noun-modifying form of べからず, used in written Japanese for things that are impermissible or indispensable — 許すべからざる, 欠くべからざる. It is stiff, formal and normally confined to essays, editorials and set expressions.",
+        "zh": "べからざる是べからず修饰名词的形式，用于书面语，表示不可容许或不可或缺，如許すべからざる、欠くべからざる。语气生硬正式，一般只见于文章、社论和固定说法。",
+        "zh_TW": "べからざる是べからず修飾名詞的形式，用於書面語，表示不可容許或不可或缺，如許すべからざる、欠くべからざる。語氣生硬正式，一般只見於文章、社論和固定說法。"
+      },
+      "examples": [
+        {
+          "ja": "それは許すべからざる態度である。",
+          "reading": "それはゆるすべからざるたいどである。",
+          "en": "That is an attitude which must not be tolerated.",
+          "zh": "那是不可容许的态度。",
+          "zh_TW": "那是不可容許的態度。"
+        },
+        {
+          "ja": "忘れるべからざる歴史がある。",
+          "reading": "わすれるべからざるれきしがある。",
+          "en": "There is a history that must not be forgotten.",
+          "zh": "有一段不可忘记的历史。",
+          "zh_TW": "有一段不可忘記的歷史。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:majiki",
+      "level": "N1",
+      "pattern": "〜まじき",
+      "structure": "動詞辞書形 + まじき + 名詞（〜にあるまじき）",
+      "match": [
+        "まじき"
+      ],
+      "meaning": {
+        "en": "unbecoming; not befitting one's position",
+        "zh": "不该有的、有失身份的",
+        "zh_TW": "不該有的、有失身份的"
+      },
+      "explanation": {
+        "en": "まじき condemns behaviour as unworthy of the person's role, most often in the frame 〜にあるまじき. It is a classical form kept alive in written criticism, news reports and formal complaints, and always carries a note of moral censure.",
+        "zh": "まじき用来指责某种行为有失其身份，最常见的形式是〜にあるまじき。这是保留在书面批评、新闻报道和正式申斥中的文言形式，始终带有道德谴责的意味。",
+        "zh_TW": "まじき用來指責某種行為有失其身份，最常見的形式是〜にあるまじき。這是保留在書面批評、新聞報道和正式申斥中的文言形式，始終帶有道德譴責的意味。"
+      },
+      "examples": [
+        {
+          "ja": "先生にあるまじき態度である。",
+          "reading": "せんせいにあるまじきたいどである。",
+          "en": "It is an attitude unbecoming of a teacher.",
+          "zh": "这是身为老师不该有的态度。",
+          "zh_TW": "這是身為老師不該有的態度。"
+        },
+        {
+          "ja": "言うまじきことを言ってしまった。",
+          "reading": "いうまじきことをいってしまった。",
+          "en": "I said something that should never have been said.",
+          "zh": "我说了不该说的话。",
+          "zh_TW": "我說了不該說的話。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:mai-n1",
+      "level": "N1",
+      "pattern": "〜まい",
+      "structure": "動詞辞書形 + まい（一段動詞は語幹 + まい）",
+      "match": [
+        "まい"
+      ],
+      "meaning": {
+        "en": "surely not; I will not (written form)",
+        "zh": "大概不会……；决不……（书面语）",
+        "zh_TW": "大概不會……；決不……（書面語）"
+      },
+      "explanation": {
+        "en": "まい has two uses: a negative guess, \"probably will not\", and a negative resolve, \"I will not\". Both belong to written and formal register — ないだろう and 〜ないつもりだ are the everyday equivalents. It is common in novels and in formal declarations.",
+        "zh": "まい有两种用法：表示否定的推测“大概不会”，和表示否定的意志“决不”。两者都属于书面、正式语体，日常口语用ないだろう和〜ないつもりだ。多见于小说和正式表态。",
+        "zh_TW": "まい有兩種用法：表示否定的推測“大概不會”，和表示否定的意志“決不”。兩者都屬於書面、正式語體，日常口語用ないだろう和〜ないつもりだ。多見於小說和正式表態。"
+      },
+      "examples": [
+        {
+          "ja": "彼はもう来るまい。",
+          "reading": "かれはもうくるまい。",
+          "en": "He will surely not come any more.",
+          "zh": "他大概不会再来了。",
+          "zh_TW": "他大概不會再來了。"
+        },
+        {
+          "ja": "二度と失敗はするまいと決めた。",
+          "reading": "にどとしっぱいはするまいときめた。",
+          "en": "I resolved never to fail again.",
+          "zh": "我决心不再失败第二次。",
+          "zh_TW": "我決心不再失敗第二次。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:you-ka-mai-ka",
+      "level": "N1",
+      "pattern": "〜(よ)うか〜まいか",
+      "structure": "動詞意向形 + か + 同じ動詞辞書形 + まいか",
+      "match": [
+        "まいか"
+      ],
+      "meaning": {
+        "en": "wondering whether to do it or not",
+        "zh": "犹豫做还是不做",
+        "zh_TW": "猶豫做還是不做"
+      },
+      "explanation": {
+        "en": "The volitional and まい are paired to express genuine hesitation between doing and not doing. It is the formal written counterpart of 〜ようかどうしようか and normally precedes verbs of thinking, worrying or deciding.",
+        "zh": "意向形与まい成对使用，表示在做与不做之间犹豫不决。这是〜ようかどうしようか的正式书面形式，后面通常接表示思考、烦恼或决定的动词。",
+        "zh_TW": "意向形與まい成對使用，表示在做與不做之間猶豫不決。這是〜ようかどうしようか的正式書面形式，後面通常接表示思考、煩惱或決定的動詞。"
+      },
+      "examples": [
+        {
+          "ja": "参加しようかするまいか考えている。",
+          "reading": "さんかしようかするまいかかんがえている。",
+          "en": "I am thinking about whether to take part or not.",
+          "zh": "我在考虑是参加还是不参加。",
+          "zh_TW": "我在考慮是參加還是不參加。"
+        },
+        {
+          "ja": "行こうか行くまいか、まだ決められない。",
+          "reading": "いこうかいくまいか、まだきめられない。",
+          "en": "I still cannot decide whether to go or not.",
+          "zh": "去还是不去，我还是决定不了。",
+          "zh_TW": "去還是不去，我還是決定不了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:you-ga-mai-ga",
+      "level": "N1",
+      "pattern": "〜(よ)うが〜まいが",
+      "structure": "動詞意向形 + が + 同じ動詞辞書形 + まいが",
+      "match": [
+        "まいが"
+      ],
+      "meaning": {
+        "en": "whether or not one does it",
+        "zh": "无论做还是不做",
+        "zh_TW": "無論做還是不做"
+      },
+      "explanation": {
+        "en": "Unlike 〜うか〜まいか, this pattern dismisses the choice: whichever way it goes, the main clause holds. It is formal written register, common in argument and commentary, where the writer wants to declare something unaffected by circumstances.",
+        "zh": "与〜うか〜まいか不同，这个句型是把两种可能一并撇开：无论哪一种，后项都成立。属于正式书面语，多用于论说和评论，用来宣告某事不受情况左右。",
+        "zh_TW": "與〜うか〜まいか不同，這個句型是把兩種可能一併撇開：無論哪一種，後項都成立。屬於正式書面語，多用於論說和評論，用來宣告某事不受情況左右。"
+      },
+      "examples": [
+        {
+          "ja": "参加しようがしまいが結果は同じだ。",
+          "reading": "さんかしようがしまいがけっかはおなじだ。",
+          "en": "Whether you take part or not, the result is the same.",
+          "zh": "无论参加与否，结果都一样。",
+          "zh_TW": "無論參加與否，結果都一樣。"
+        },
+        {
+          "ja": "彼が来ようが来るまいが、私は行く。",
+          "reading": "かれがこようがくるまいが、わたしはいく。",
+          "en": "Whether he comes or not, I am going.",
+          "zh": "不管他来不来，我都要去。",
+          "zh_TW": "不管他來不來，我都要去。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:de-wa-arumai-ka",
+      "level": "N1",
+      "pattern": "〜ではあるまいか",
+      "structure": "名詞・普通形 + ではあるまいか",
+      "match": [
+        "ではあるまいか"
+      ],
+      "meaning": {
+        "en": "might it not be that ...? (formal)",
+        "zh": "难道不是……吗？（正式）",
+        "zh_TW": "難道不是……嗎？（正式）"
+      },
+      "explanation": {
+        "en": "This is a formal written way of advancing a guess as a rhetorical question, equivalent to 〜のではないだろうか. Essayists and editorial writers use it to put forward an opinion without asserting it outright.",
+        "zh": "这是以反问形式提出推测的正式书面说法，相当于〜のではないだろうか。随笔和社论作者常用它来委婉地提出看法，而不直接断言。",
+        "zh_TW": "這是以反問形式提出推測的正式書面說法，相當於〜のではないだろうか。隨筆和社論作者常用它來委婉地提出看法，而不直接斷言。"
+      },
+      "examples": [
+        {
+          "ja": "それは大きな問題ではあるまいか。",
+          "reading": "それはおおきなもんだいではあるまいか。",
+          "en": "Might that not be a serious problem?",
+          "zh": "那难道不是个大问题吗？",
+          "zh_TW": "那難道不是個大問題嗎？"
+        },
+        {
+          "ja": "彼の判断は正しかったのではあるまいか。",
+          "reading": "かれのはんだんはただしかったのではあるまいか。",
+          "en": "Might his judgement not have been right after all?",
+          "zh": "他的判断难道不是正确的吗？",
+          "zh_TW": "他的判斷難道不是正確的嗎？"
+        }
+      ]
+    },
+    {
+      "id": "grammar:n-ga-tame",
+      "level": "N1",
+      "pattern": "〜んがため(に)",
+      "structure": "動詞ない形の語幹 + んがため（する → せんがため）",
+      "match": [
+        "んがため"
+      ],
+      "meaning": {
+        "en": "in order to; strong formal purpose",
+        "zh": "为了……（强烈而正式的目的）",
+        "zh_TW": "為了……（強烈而正式的目的）"
+      },
+      "explanation": {
+        "en": "んがため is a classical purpose form, stronger and more emphatic than ために. It suggests a single-minded aim and belongs to written Japanese — editorials, literature, formal speeches. する becomes せんがため.",
+        "zh": "んがため是古典的目的表达，语气比ために更强烈，暗示一心一意的目标。属于书面语，多见于社论、文学作品和正式演讲。する变为せんがため。",
+        "zh_TW": "んがため是古典的目的表達，語氣比ために更強烈，暗示一心一意的目標。屬於書面語，多見於社論、文學作品和正式演講。する變為せんがため。"
+      },
+      "examples": [
+        {
+          "ja": "成功せんがために努力を続けた。",
+          "reading": "せいこうせんがためにどりょくをつづけた。",
+          "en": "He kept up his efforts in order to succeed.",
+          "zh": "为了成功，他一直努力下去。",
+          "zh_TW": "為了成功，他一直努力下去。"
+        },
+        {
+          "ja": "生きんがための仕事である。",
+          "reading": "いきんがためのしごとである。",
+          "en": "It is work done in order to live.",
+          "zh": "这是为了活下去而做的工作。",
+          "zh_TW": "這是為了活下去而做的工作。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:n-to-suru",
+      "level": "N1",
+      "pattern": "〜んとする",
+      "structure": "動詞ない形の語幹 + んとする（する → せんとする）",
+      "match": [
+        "んとする",
+        "んとして"
+      ],
+      "meaning": {
+        "en": "on the verge of; about to (literary)",
+        "zh": "正要……、即将……（文言）",
+        "zh_TW": "正要……、即將……（文言）"
+      },
+      "explanation": {
+        "en": "んとする marks the moment just before something happens, or a strong intention to do it. It is a literary form, the classical ancestor of 〜ようとする, and today survives almost entirely in written narrative and formal description.",
+        "zh": "んとする表示某事即将发生的瞬间，或表示强烈的意图。这是〜ようとする的文言前身，如今几乎只保留在书面叙述和正式描写中。",
+        "zh_TW": "んとする表示某事即將發生的瞬間，或表示強烈的意圖。這是〜ようとする的文言前身，如今幾乎只保留在書面敘述和正式描寫中。"
+      },
+      "examples": [
+        {
+          "ja": "会議が始まらんとするときに彼が来た。",
+          "reading": "かいぎがはじまらんとするときにかれがきた。",
+          "en": "He arrived just as the meeting was about to begin.",
+          "zh": "会议正要开始的时候他来了。",
+          "zh_TW": "會議正要開始的時候他來了。"
+        },
+        {
+          "ja": "時代が変わらんとしている。",
+          "reading": "じだいがかわらんとしている。",
+          "en": "The times are on the verge of changing.",
+          "zh": "时代正要发生改变。",
+          "zh_TW": "時代正要發生改變。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:yue-ni-formal",
+      "level": "N1",
+      "pattern": "〜(が)ゆえに",
+      "structure": "名詞の・普通形 + (が)ゆえに",
+      "match": [
+        "ゆえに"
+      ],
+      "meaning": {
+        "en": "because of; owing to (formal cause)",
+        "zh": "因为……、由于……（正式的原因）",
+        "zh_TW": "因為……、由於……（正式的原因）"
+      },
+      "explanation": {
+        "en": "ゆえに states a cause in formal written Japanese, where speech would use から or ので. It is the standard connective of academic argument and legal prose, and often the が before it is kept as a classical flourish.",
+        "zh": "ゆえに用于正式书面语表示原因，口语中相当于から、ので。它是学术论证和法律文书的标准连接词，前面常保留文言的が。",
+        "zh_TW": "ゆえに用於正式書面語表示原因，口語中相當於から、ので。它是學術論證和法律文書的標準連接詞，前面常保留文言的が。"
+      },
+      "examples": [
+        {
+          "ja": "経験がないがゆえに失敗した。",
+          "reading": "けいけんがないがゆえにしっぱいした。",
+          "en": "He failed because he had no experience.",
+          "zh": "因为没有经验，所以失败了。",
+          "zh_TW": "因為沒有經驗，所以失敗了。"
+        },
+        {
+          "ja": "重要であるがゆえに時間がかかる。",
+          "reading": "じゅうようであるがゆえにじかんがかかる。",
+          "en": "Precisely because it is important, it takes time.",
+          "zh": "正因为重要，所以才费时间。",
+          "zh_TW": "正因為重要，所以才費時間。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kototote",
+      "level": "N1",
+      "pattern": "〜こととて",
+      "structure": "名詞の・な形容詞な・普通形 + こととて",
+      "match": [
+        "こととて"
+      ],
+      "meaning": {
+        "en": "since it is X, please excuse it",
+        "zh": "因为是……，还请见谅",
+        "zh_TW": "因為是……，還請見諒"
+      },
+      "explanation": {
+        "en": "こととて gives a reason while asking for indulgence, so it is followed by an apology or a request for understanding. It is old-fashioned formal register, found in letters, business correspondence and polite written apologies.",
+        "zh": "こととて在说明理由的同时请求对方谅解，后面接道歉或请求体谅的内容。属于略显古旧的正式语体，多见于书信、商务往来和书面致歉。",
+        "zh_TW": "こととて在說明理由的同時請求對方諒解，後面接道歉或請求體諒的內容。屬於略顯古舊的正式語體，多見於書信、商務往來和書面致歉。"
+      },
+      "examples": [
+        {
+          "ja": "慣れぬこととて、失敗も多い。",
+          "reading": "なれぬこととて、しっぱいもおおい。",
+          "en": "As I am not used to it, I make many mistakes.",
+          "zh": "因为还不习惯，失误也多，请见谅。",
+          "zh_TW": "因為還不習慣，失誤也多，請見諒。"
+        },
+        {
+          "ja": "急なこととて、準備ができなかった。",
+          "reading": "きゅうなこととて、じゅんびができなかった。",
+          "en": "As it was so sudden, I was unable to prepare.",
+          "zh": "因为事出突然，未能做好准备。",
+          "zh_TW": "因為事出突然，未能做好準備。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:temae",
+      "level": "N1",
+      "pattern": "〜手前",
+      "structure": "動詞普通形・名詞の + 手前",
+      "match": [
+        "手前"
+      ],
+      "meaning": {
+        "en": "having said it, one must follow through",
+        "zh": "既然说了（在别人面前），就不得不……",
+        "zh_TW": "既然說了（在別人面前），就不得不……"
+      },
+      "explanation": {
+        "en": "手前 gives a reason rooted in appearances: because others heard you say it, or because they are watching, you cannot now back out. It is formal written and careful spoken register, and the main clause always states an obligation or something one cannot do.",
+        "zh": "手前表示的理由与面子有关：因为话已经说出口，或因为有人在场，所以不能反悔。属于正式书面语和慎重的口语，后句必须是不得不做或不能做的内容。",
+        "zh_TW": "手前表示的理由與面子有關：因為話已經說出口，或因為有人在場，所以不能反悔。屬於正式書面語和慎重的口語，後句必須是不得不做或不能做的內容。"
+      },
+      "examples": [
+        {
+          "ja": "やると言った手前、やめられない。",
+          "reading": "やるといったてまえ、やめられない。",
+          "en": "Having said I would do it, I cannot back out now.",
+          "zh": "既然说了要做，就不能中途放弃。",
+          "zh_TW": "既然說了要做，就不能中途放棄。"
+        },
+        {
+          "ja": "先生の手前、静かにしていた。",
+          "reading": "せんせいのてまえ、しずかにしていた。",
+          "en": "With the teacher there, I kept quiet.",
+          "zh": "当着老师的面，我一直保持安静。",
+          "zh_TW": "當著老師的面，我一直保持安靜。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-atte",
+      "level": "N1",
+      "pattern": "〜とあって",
+      "structure": "名詞・普通形 + とあって",
+      "match": [
+        "とあって"
+      ],
+      "meaning": {
+        "en": "because it is such a special occasion",
+        "zh": "因为是（特殊的）……场合",
+        "zh_TW": "因為是（特殊的）……場合"
+      },
+      "explanation": {
+        "en": "とあって introduces a special situation that naturally produces the result described. It is the register of news reports and written description — an observer explaining a scene — so it is not used about one's own private affairs.",
+        "zh": "とあって引出一个特殊情况，说明由此自然产生了后面的结果。多用于新闻报道和书面描写，是旁观者说明场面的语气，因此不用于讲述自己的私事。",
+        "zh_TW": "とあって引出一個特殊情況，說明由此自然產生了後面的結果。多用於新聞報道和書面描寫，是旁觀者說明場面的語氣，因此不用於講述自己的私事。"
+      },
+      "examples": [
+        {
+          "ja": "有名な先生が来るとあって、人が多い。",
+          "reading": "ゆうめいなせんせいがくるとあって、ひとがおおい。",
+          "en": "As a famous teacher is coming, there is a big crowd.",
+          "zh": "因为有名的老师要来，人很多。",
+          "zh_TW": "因為有名的老師要來，人很多。"
+        },
+        {
+          "ja": "今日は日曜日とあって、店は忙しい。",
+          "reading": "きょうはにちようびとあって、みせはいそがしい。",
+          "en": "Being a Sunday, the shop is busy.",
+          "zh": "因为今天是星期天，店里很忙。",
+          "zh_TW": "因為今天是星期天，店裡很忙。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-areba",
+      "level": "N1",
+      "pattern": "〜とあれば",
+      "structure": "名詞・普通形 + とあれば",
+      "match": [
+        "とあれば"
+      ],
+      "meaning": {
+        "en": "if it is for X, then of course",
+        "zh": "如果是为了……，那就（当然）",
+        "zh_TW": "如果是為了……，那就（當然）"
+      },
+      "explanation": {
+        "en": "とあれば sets up a condition important enough to override everything else: if that is the case, the speaker will act without hesitation. It is formal written register, and the main clause usually expresses willingness or determination.",
+        "zh": "とあれば提出一个重要到足以压倒其他考虑的条件：只要是这种情况，说话人就毫不犹豫地行动。属于正式书面语，后句通常表示愿意或决心。",
+        "zh_TW": "とあれば提出一個重要到足以壓倒其他考慮的條件：只要是這種情況，說話人就毫不猶豫地行動。屬於正式書面語，後句通常表示願意或決心。"
+      },
+      "examples": [
+        {
+          "ja": "子供のためとあれば、何でもする。",
+          "reading": "こどものためとあれば、なんでもする。",
+          "en": "If it is for my child, I will do anything.",
+          "zh": "如果是为了孩子，我什么都愿意做。",
+          "zh_TW": "如果是為了孩子，我什麼都願意做。"
+        },
+        {
+          "ja": "必要とあれば、私が行きます。",
+          "reading": "ひつようとあれば、わたしがいきます。",
+          "en": "If it is necessary, I will go.",
+          "zh": "如果有必要，我去。",
+          "zh_TW": "如果有必要，我去。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:shidai-da-reason",
+      "level": "N1",
+      "pattern": "〜次第だ",
+      "structure": "動詞普通形 + 次第だ／次第です",
+      "match": [
+        "次第です",
+        "次第だ"
+      ],
+      "meaning": {
+        "en": "such is how the situation came about",
+        "zh": "事情就是这样（说明原委）",
+        "zh_TW": "事情就是這樣（說明原委）"
+      },
+      "explanation": {
+        "en": "This 次第 closes an explanation by saying \"that is how things stand\". It is business and formal written register, typical of reports, apologies and letters, where the writer lays out the circumstances and then sums them up with 次第です.",
+        "zh": "这里的次第用于收束前面的说明，意为“事情就是这样”。属于商务和正式书面语，常见于报告、致歉和书信：先陈述来龙去脉，最后用次第です作结。",
+        "zh_TW": "這裡的次第用於收束前面的說明，意為“事情就是這樣”。屬於商務和正式書面語，常見於報告、致歉和書信：先陳述來龍去脈，最後用次第です作結。"
+      },
+      "examples": [
+        {
+          "ja": "そこで先生に相談した次第です。",
+          "reading": "そこでせんせいにそうだんしたしだいです。",
+          "en": "And that is why I consulted my teacher.",
+          "zh": "于是我就找老师商量了，事情就是这样。",
+          "zh_TW": "於是我就找老師商量了，事情就是這樣。"
+        },
+        {
+          "ja": "以上のような理由で、参加を決めた次第だ。",
+          "reading": "いじょうのようなりゆうで、さんかをきめたしだいだ。",
+          "en": "For the reasons above, that is how I decided to take part.",
+          "zh": "出于以上理由，我才决定参加。",
+          "zh_TW": "出於以上理由，我才決定參加。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:koto-naku-n1",
+      "level": "N1",
+      "pattern": "〜ことなく",
+      "structure": "動詞辞書形 + ことなく",
+      "match": [
+        "ことなく"
+      ],
+      "meaning": {
+        "en": "without ever doing it (formal)",
+        "zh": "不……地、始终没有……（正式）",
+        "zh_TW": "不……地、始終沒有……（正式）"
+      },
+      "explanation": {
+        "en": "ことなく is the written-register form of 〜ないで, used when an action continues without interruption over time. Reports and formal narration use it; in conversation 〜ないで or 〜ずに is normal.",
+        "zh": "ことなく是〜ないで的书面语形式，多用于表示某种状态长时间持续、中间不曾中断。报告和正式叙述中常用，口语一般说〜ないで或〜ずに。",
+        "zh_TW": "ことなく是〜ないで的書面語形式，多用於表示某種狀態長時間持續、中間不曾中斷。報告和正式敘述中常用，口語一般說〜ないで或〜ずに。"
+      },
+      "examples": [
+        {
+          "ja": "彼は休むことなく働き続けた。",
+          "reading": "かれはやすむことなくはたらきつづけた。",
+          "en": "He went on working without a break.",
+          "zh": "他不休息地一直工作。",
+          "zh_TW": "他不休息地一直工作。"
+        },
+        {
+          "ja": "一度も失敗することなく成功した。",
+          "reading": "いちどもしっぱいすることなくせいこうした。",
+          "en": "He succeeded without failing even once.",
+          "zh": "一次也没失败就成功了。",
+          "zh_TW": "一次也沒失敗就成功了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:koto-nashi-ni",
+      "level": "N1",
+      "pattern": "〜ことなしに",
+      "structure": "動詞辞書形 + ことなしに + 否定・不可能",
+      "match": [
+        "ことなしに"
+      ],
+      "meaning": {
+        "en": "without doing X, Y cannot happen",
+        "zh": "不做……就不能……",
+        "zh_TW": "不做……就不能……"
+      },
+      "explanation": {
+        "en": "ことなしに looks like ことなく but is usually followed by a negative or impossibility: X is the necessary condition for Y. It is stiff written register found in argument and academic prose.",
+        "zh": "ことなしに形式上与ことなく相似，但后面通常接否定或不可能的说法：X是Y的必要条件。属于生硬的书面语，多见于论说和学术文章。",
+        "zh_TW": "ことなしに形式上與ことなく相似，但後面通常接否定或不可能的說法：X是Y的必要條件。屬於生硬的書面語，多見於論說和學術文章。"
+      },
+      "examples": [
+        {
+          "ja": "努力することなしに成功はない。",
+          "reading": "どりょくすることなしにせいこうはない。",
+          "en": "There is no success without effort.",
+          "zh": "不努力就没有成功。",
+          "zh_TW": "不努力就沒有成功。"
+        },
+        {
+          "ja": "調査することなしに判断はできない。",
+          "reading": "ちょうさすることなしにはんだんはできない。",
+          "en": "One cannot judge without investigating.",
+          "zh": "不进行调查就无法作出判断。",
+          "zh_TW": "不進行調查就無法作出判斷。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ga-hayai-ka",
+      "level": "N1",
+      "pattern": "〜が早いか",
+      "structure": "動詞辞書形・た形 + が早いか",
+      "match": [
+        "が早いか"
+      ],
+      "meaning": {
+        "en": "the instant one did it, the next thing came",
+        "zh": "刚一……就（立刻）……",
+        "zh_TW": "剛一……就（立刻）……"
+      },
+      "explanation": {
+        "en": "が早いか marks two actions treated as one instant, with the second following on the heels of the first. It is written narrative register, common in fiction and reportage, and the second clause must be a past-tense fact, never a plan or request.",
+        "zh": "が早いか把两个动作看作同一瞬间，后项紧接着前项发生。属于书面叙述语体，多见于小说和报道，后句必须是过去发生的事实，不能是计划或请求。",
+        "zh_TW": "が早いか把兩個動作看作同一瞬間，後項緊接著前項發生。屬於書面敘述語體，多見於小說和報道，後句必須是過去發生的事實，不能是計劃或請求。"
+      },
+      "examples": [
+        {
+          "ja": "彼は座るが早いか、話を始めた。",
+          "reading": "かれはすわるがはやいか、はなしをはじめた。",
+          "en": "The moment he sat down, he began to talk.",
+          "zh": "他刚一坐下就开始说话了。",
+          "zh_TW": "他剛一坐下就開始說話了。"
+        },
+        {
+          "ja": "家に着くが早いか、寝てしまった。",
+          "reading": "いえにつくがはやいか、ねてしまった。",
+          "en": "The instant I got home, I fell asleep.",
+          "zh": "刚到家就睡着了。",
+          "zh_TW": "剛到家就睡著了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ya-inaya",
+      "level": "N1",
+      "pattern": "〜や否や",
+      "structure": "動詞辞書形 + や否や",
+      "match": [
+        "や否や"
+      ],
+      "meaning": {
+        "en": "no sooner had one done it than ...",
+        "zh": "刚一……就……",
+        "zh_TW": "剛一……就……"
+      },
+      "explanation": {
+        "en": "や否や is the most literary of the \"immediately after\" patterns, at home in novels and written accounts. Like が早いか it describes real past events and cannot be used for one's own intentions or commands.",
+        "zh": "や否や是表示“刚一……就……”诸句型中最具文言色彩的一个，多见于小说和书面记述。与が早いか一样，它描述已经发生的事实，不能用于自己的意志或命令。",
+        "zh_TW": "や否や是表示“剛一……就……”諸句型中最具文言色彩的一個，多見於小說和書面記述。與が早いか一樣，它描述已經發生的事實，不能用於自己的意志或命令。"
+      },
+      "examples": [
+        {
+          "ja": "電話を切るや否や、また鳴った。",
+          "reading": "でんわをきるやいなや、またなった。",
+          "en": "No sooner had I hung up than the phone rang again.",
+          "zh": "刚挂断电话，电话又响了。",
+          "zh_TW": "剛掛斷電話，電話又響了。"
+        },
+        {
+          "ja": "結果を聞くや否や、彼は部屋を出た。",
+          "reading": "けっかをきくやいなや、かれはへやをでた。",
+          "en": "The moment he heard the result, he left the room.",
+          "zh": "他一听到结果就走出了房间。",
+          "zh_TW": "他一聽到結果就走出了房間。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nari-immediate",
+      "level": "N1",
+      "pattern": "〜なり",
+      "structure": "動詞辞書形 + なり",
+      "match": [
+        "なり"
+      ],
+      "meaning": {
+        "en": "right on doing it, did something unexpected",
+        "zh": "刚一……就（做出意外的举动）",
+        "zh_TW": "剛一……就（做出意外的舉動）"
+      },
+      "explanation": {
+        "en": "This なり is a literary form marking an immediate, often surprising action by someone else. Its flavour is narrative and written; the subject is normally a third person, and the second clause reports behaviour the observer did not expect.",
+        "zh": "这个なり是文言形式，表示紧接着前项发生的、往往出人意料的动作。语感偏向书面叙述，主语通常是第三者，后句描写旁观者没有预料到的行为。",
+        "zh_TW": "這個なり是文言形式，表示緊接著前項發生的、往往出人意料的動作。語感偏向書面敘述，主語通常是第三者，後句描寫旁觀者沒有預料到的行為。"
+      },
+      "examples": [
+        {
+          "ja": "彼は家に帰るなり寝てしまった。",
+          "reading": "かれはいえにかえるなりねてしまった。",
+          "en": "The moment he got home, he fell asleep.",
+          "zh": "他一回到家就睡着了。",
+          "zh_TW": "他一回到家就睡著了。"
+        },
+        {
+          "ja": "彼女は私を見るなり泣いた。",
+          "reading": "かのじょはわたしをみるなりないた。",
+          "en": "The instant she saw me, she fell silent.",
+          "zh": "她一看到我就什么都不说了。",
+          "zh_TW": "她一看到我就什麼都不說了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:soba-kara",
+      "level": "N1",
+      "pattern": "〜そばから",
+      "structure": "動詞辞書形・た形 + そばから",
+      "match": [
+        "そばから"
+      ],
+      "meaning": {
+        "en": "as fast as you do it, it comes undone",
+        "zh": "刚……就又……（反复发生）",
+        "zh_TW": "剛……就又……（反覆發生）"
+      },
+      "explanation": {
+        "en": "そばから describes something that keeps undoing itself: no matter how often you do X, Y follows straight away. It is used in writing and in emphatic speech, and always carries a note of exasperation at the repetition.",
+        "zh": "そばから表示做了又白做的反复情形：无论做多少次X，Y都马上跟着发生。用于书面语和带强调语气的口语，总是含有对这种反复的无奈或不满。",
+        "zh_TW": "そばから表示做了又白做的反覆情形：無論做多少次X，Y都馬上跟著發生。用於書面語和帶強調語氣的口語，總是含有對這種反覆的無奈或不滿。"
+      },
+      "examples": [
+        {
+          "ja": "覚えるそばから忘れてしまう。",
+          "reading": "おぼえるそばからわすれてしまう。",
+          "en": "No sooner do I learn it than I forget it.",
+          "zh": "刚记住就又忘了。",
+          "zh_TW": "剛記住就又忘了。"
+        },
+        {
+          "ja": "教えるそばから、彼はまた同じ失敗をする。",
+          "reading": "おしえるそばから、かれはまたおなじしっぱいをする。",
+          "en": "As fast as I teach him, he makes the same mistake again.",
+          "zh": "刚教过，他又犯同样的错误。",
+          "zh_TW": "剛教過，他又犯同樣的錯誤。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ga-saigo",
+      "level": "N1",
+      "pattern": "〜が最後",
+      "structure": "動詞た形 + が最後",
+      "match": [
+        "が最後"
+      ],
+      "meaning": {
+        "en": "once that happens, there is no going back",
+        "zh": "一旦……就（再也无法挽回）",
+        "zh_TW": "一旦……就（再也無法挽回）"
+      },
+      "explanation": {
+        "en": "が最後 warns that once the first action occurs, an unwelcome consequence is unavoidable. It is emphatic written register, common in warnings and commentary, and the second clause is always negative in tone.",
+        "zh": "が最後警告说，前项一旦发生，不好的结果就无可避免。属于带强调的书面语，多见于警示和评论，后句在语气上总是消极的。",
+        "zh_TW": "が最後警告說，前項一旦發生，不好的結果就無可避免。屬於帶強調的書面語，多見於警示和評論，後句在語氣上總是消極的。"
+      },
+      "examples": [
+        {
+          "ja": "彼が話し始めたが最後、止まらない。",
+          "reading": "かれがはなしはじめたがさいご、とまらない。",
+          "en": "Once he starts talking, he never stops.",
+          "zh": "他一旦开口就停不下来。",
+          "zh_TW": "他一旦開口就停不下來。"
+        },
+        {
+          "ja": "一度使ったが最後、返してくれない。",
+          "reading": "いちどつかったがさいご、かえしてくれない。",
+          "en": "Once he has used it, he never gives it back.",
+          "zh": "一旦用过，他就不还了。",
+          "zh_TW": "一旦用過，他就不還了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tara-saigo",
+      "level": "N1",
+      "pattern": "〜たら最後",
+      "structure": "動詞た形 + ら最後",
+      "match": [
+        "たら最後",
+        "だら最後"
+      ],
+      "meaning": {
+        "en": "once you do it, the bad result is certain",
+        "zh": "如果一旦……，后果就无法收拾",
+        "zh_TW": "如果一旦……，後果就無法收拾"
+      },
+      "explanation": {
+        "en": "たら最後 is the conditional twin of が最後: it treats the action as a hypothesis and declares the consequence inescapable. It is slightly more colloquial than が最後 but still emphatic, and belongs to warnings rather than neutral description.",
+        "zh": "たら最後是が最後的条件形式：把前项当作假设，宣告后果无可避免。语气比が最後稍口语化，但仍带强调，属于警告的说法，而非中性描述。",
+        "zh_TW": "たら最後是が最後的條件形式：把前項當作假設，宣告後果無可避免。語氣比が最後稍口語化，但仍帶強調，屬於警告的說法，而非中性描述。"
+      },
+      "examples": [
+        {
+          "ja": "寝たら最後、朝まで起きない。",
+          "reading": "ねたらさいご、あさまでおきない。",
+          "en": "Once he falls asleep, he won't wake till morning.",
+          "zh": "他一旦睡着，到早上都醒不了。",
+          "zh_TW": "他一旦睡著，到早上都醒不了。"
+        },
+        {
+          "ja": "この道を選んだら最後、後には戻れない。",
+          "reading": "このみちをえらんだらさいご、あとにはもどれない。",
+          "en": "Once you choose this path, there is no turning back.",
+          "zh": "一旦选择了这条路，就再也回不了头。",
+          "zh_TW": "一旦選擇了這條路，就再也回不了頭。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-kara-to-iu-mono-n1",
+      "level": "N1",
+      "pattern": "〜てからというもの",
+      "structure": "動詞て形 + からというもの",
+      "match": [
+        "てからというもの"
+      ],
+      "meaning": {
+        "en": "ever since then, things have stayed changed",
+        "zh": "自从……以来，就一直……",
+        "zh_TW": "自從……以來，就一直……"
+      },
+      "explanation": {
+        "en": "てからというもの marks a turning point after which a state has continued unchanged to the present. It is emphatic written register, more weighty than plain 〜てから, and is used when the speaker looks back on a lasting change.",
+        "zh": "てからというもの标示一个转折点，此后某种状态一直持续到现在。属于带强调的书面语，语气比单纯的〜てから更重，用于回顾持久的变化。",
+        "zh_TW": "てからというもの標示一個轉折點，此後某種狀態一直持續到現在。屬於帶強調的書面語，語氣比單純的〜てから更重，用於回顧持久的變化。"
+      },
+      "examples": [
+        {
+          "ja": "働き始めてからというもの、時間がない。",
+          "reading": "はたらきはじめてからというもの、じかんがない。",
+          "en": "Ever since I started working, I have had no time.",
+          "zh": "自从开始工作以来，就一直没有时间。",
+          "zh_TW": "自從開始工作以來，就一直沒有時間。"
+        },
+        {
+          "ja": "彼が来てからというもの、会社は変わった。",
+          "reading": "かれがきてからというもの、かいしゃはかわった。",
+          "en": "Ever since he arrived, the company has been different.",
+          "zh": "自从他来了以后，公司就变了。",
+          "zh_TW": "自從他來了以後，公司就變了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-iu-mono-duration",
+      "level": "N1",
+      "pattern": "〜というもの",
+      "structure": "期間を表す名詞 + というもの",
+      "match": [
+        "というもの"
+      ],
+      "meaning": {
+        "en": "for that whole stretch of time",
+        "zh": "整整……这段时间里",
+        "zh_TW": "整整……這段時間裡"
+      },
+      "explanation": {
+        "en": "After a length of time, というもの stresses how long that period felt to the speaker. It is written and emphatic register, typically followed by a statement of something that continued or never happened throughout.",
+        "zh": "接在表示期间的词后面，というもの强调这段时间在说话人感受中之长。属于书面而带强调的语体，后面通常说明这段时间里一直持续或始终没有发生的事。",
+        "zh_TW": "接在表示期間的詞後面，というもの強調這段時間在說話人感受中之長。屬於書面而帶強調的語體，後面通常說明這段時間裡一直持續或始終沒有發生的事。"
+      },
+      "examples": [
+        {
+          "ja": "この一年というもの、彼に会っていない。",
+          "reading": "このいちねんというもの、かれにあっていない。",
+          "en": "For this whole year I have not seen him.",
+          "zh": "这一整年，我都没见过他。",
+          "zh_TW": "這一整年，我都沒見過他。"
+        },
+        {
+          "ja": "ここ一か月というもの、雨が続いている。",
+          "reading": "ここいっかげつというもの、あめがつづいている。",
+          "en": "For this whole past month it has kept raining.",
+          "zh": "这一个月来，雨一直下个不停。",
+          "zh_TW": "這一個月來，雨一直下個不停。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-kawakiri-ni",
+      "level": "N1",
+      "pattern": "〜を皮切りに",
+      "structure": "名詞 + を皮切りに（して）",
+      "match": [
+        "を皮切りに"
+      ],
+      "meaning": {
+        "en": "starting with X, a whole series followed",
+        "zh": "以……为开端，接连不断",
+        "zh_TW": "以……為開端，接連不斷"
+      },
+      "explanation": {
+        "en": "を皮切りに names the first item in a series that then expands. It is news and formal written register, used for tours, campaigns, openings and waves of events, and the following clause must describe continued spread or growth.",
+        "zh": "を皮切りに指出一连串事件中的第一件，此后不断扩展。属于新闻和正式书面语，多用于巡演、活动、开业和接连发生的事，后句必须表示持续扩大或延续。",
+        "zh_TW": "を皮切りに指出一連串事件中的第一件，此後不斷擴展。屬於新聞和正式書面語，多用於巡演、活動、開業和接連發生的事，後句必須表示持續擴大或延續。"
+      },
+      "examples": [
+        {
+          "ja": "日本を皮切りに、発表が続いた。",
+          "reading": "にほんをかわきりに、はっぴょうがつづいた。",
+          "en": "Beginning in Tokyo, the announcements continued.",
+          "zh": "以东京为开端，发布会接连举行。",
+          "zh_TW": "以東京為開端，發佈會接連舉行。"
+        },
+        {
+          "ja": "この研究を皮切りに、多くの調査が行われた。",
+          "reading": "このけんきゅうをかわきりに、おおくのちょうさがおこなわれた。",
+          "en": "Starting with this study, many surveys were carried out.",
+          "zh": "以这项研究为开端，进行了许多调查。",
+          "zh_TW": "以這項研究為開端，進行了許多調查。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-ki-ni",
+      "level": "N1",
+      "pattern": "〜を機に",
+      "structure": "名詞・動詞たの + を機に（して）",
+      "match": [
+        "を機に"
+      ],
+      "meaning": {
+        "en": "taking X as the occasion for a change",
+        "zh": "以……为契机",
+        "zh_TW": "以……為契機"
+      },
+      "explanation": {
+        "en": "を機に presents an event as the opportunity that prompted a deliberate change. It is formal written register — announcements, essays, biographies — and the main clause must describe a chosen action, not something that merely happened.",
+        "zh": "を機に把某个事件作为促成有意改变的契机。属于正式书面语，多见于公告、随笔和人物介绍，后句必须是主动选择的行为，而不是自然发生的事。",
+        "zh_TW": "を機に把某個事件作為促成有意改變的契機。屬於正式書面語，多見於公告、隨筆和人物介紹，後句必須是主動選擇的行為，而不是自然發生的事。"
+      },
+      "examples": [
+        {
+          "ja": "大学を出たのを機に、日本へ来た。",
+          "reading": "だいがくをでたのをきに、にほんへきた。",
+          "en": "Taking my graduation as the occasion, I came to Tokyo.",
+          "zh": "以大学毕业为契机，我来到了东京。",
+          "zh_TW": "以大學畢業為契機，我來到了東京。"
+        },
+        {
+          "ja": "この失敗を機に、会社は方法を変えた。",
+          "reading": "このしっぱいをきに、かいしゃはほうほうをかえた。",
+          "en": "Taking this failure as a turning point, the company changed its methods.",
+          "zh": "以这次失败为契机，公司改变了做法。",
+          "zh_TW": "以這次失敗為契機，公司改變了做法。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-sakai-ni",
+      "level": "N1",
+      "pattern": "〜を境に",
+      "structure": "名詞 + を境に（して）",
+      "match": [
+        "を境に"
+      ],
+      "meaning": {
+        "en": "with X as the dividing line, things changed",
+        "zh": "以……为分界线，情况发生变化",
+        "zh_TW": "以……為分界線，情況發生變化"
+      },
+      "explanation": {
+        "en": "を境に marks a point in time as a boundary between a before and an after. Unlike を機に it does not imply anyone chose to act; it simply describes the change, which makes it common in written analysis and reporting.",
+        "zh": "を境に把某个时间点当作前后的分界线。与を機に不同，它不含有人主动采取行动的意思，只是客观描述变化，因此常见于书面分析和报道。",
+        "zh_TW": "を境に把某個時間點當作前後的分界線。與を機に不同，它不含有人主動採取行動的意思，只是客觀描述變化，因此常見於書面分析和報道。"
+      },
+      "examples": [
+        {
+          "ja": "去年を境に、人が減り始めた。",
+          "reading": "きょねんをさかいに、ひとがへりはじめた。",
+          "en": "From last year on, the numbers began to fall.",
+          "zh": "以去年为界，人数开始减少。",
+          "zh_TW": "以去年為界，人數開始減少。"
+        },
+        {
+          "ja": "その日を境に、彼の態度が変わった。",
+          "reading": "そのひをさかいに、かれのたいどがかわった。",
+          "en": "From that day on, his attitude changed.",
+          "zh": "以那天为界，他的态度变了。",
+          "zh_TW": "以那天為界，他的態度變了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-kagiri-ni",
+      "level": "N1",
+      "pattern": "〜を限りに",
+      "structure": "時を表す名詞 + を限りに",
+      "match": [
+        "を限りに"
+      ],
+      "meaning": {
+        "en": "as of X, doing it for the last time",
+        "zh": "以……为最后一次、到……为止",
+        "zh_TW": "以……為最後一次、到……為止"
+      },
+      "explanation": {
+        "en": "を限りに sets a final date after which something that has been going on will stop. It is formal written and announcement register — notices, farewell speeches, business statements — and the main clause always says the thing ends.",
+        "zh": "を限りに设定一个最后期限，此后一直进行的事情就此结束。属于正式书面语和公告语体，多见于告示、告别致辞和企业声明，后句必然表示终止。",
+        "zh_TW": "を限りに設定一個最後期限，此後一直進行的事情就此結束。屬於正式書面語和公告語體，多見於告示、告別致辭和企業聲明，後句必然表示終止。"
+      },
+      "examples": [
+        {
+          "ja": "今日を限りに、この仕事をやめる。",
+          "reading": "きょうをかぎりに、このしごとをやめる。",
+          "en": "As of today, I am quitting this job.",
+          "zh": "从今天起，我不再做这份工作。",
+          "zh_TW": "從今天起，我不再做這份工作。"
+        },
+        {
+          "ja": "今年を限りに店を閉めることになった。",
+          "reading": "ことしをかぎりにみせをしめることになった。",
+          "en": "The shop will close at the end of this year.",
+          "zh": "决定今年为止关闭这家店。",
+          "zh_TW": "決定今年為止關閉這家店。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:katawara",
+      "level": "N1",
+      "pattern": "〜かたわら",
+      "structure": "動詞辞書形・名詞の + かたわら",
+      "match": [
+        "かたわら"
+      ],
+      "meaning": {
+        "en": "while mainly doing X, also does Y",
+        "zh": "一边从事……，一边还做……",
+        "zh_TW": "一邊從事……，一邊還做……"
+      },
+      "explanation": {
+        "en": "かたわら pairs a main occupation with a long-running side activity. It is formal written register used for careers and sustained pursuits, not for two things done in the same moment — that would be 〜ながら.",
+        "zh": "かたわら把主业与长期兼做的副业并列。属于正式书面语，用于职业和长期从事的事情，不能表示同一瞬间进行的两个动作，那要用〜ながら。",
+        "zh_TW": "かたわら把主業與長期兼做的副業並列。屬於正式書面語，用於職業和長期從事的事情，不能表示同一瞬間進行的兩個動作，那要用〜ながら。"
+      },
+      "examples": [
+        {
+          "ja": "彼は働くかたわら、研究を続けている。",
+          "reading": "かれははたらくかたわら、けんきゅうをつづけている。",
+          "en": "Alongside his job, he continues his research.",
+          "zh": "他一边工作，一边继续做研究。",
+          "zh_TW": "他一邊工作，一邊繼續做研究。"
+        },
+        {
+          "ja": "仕事のかたわら、学生に教えている。",
+          "reading": "しごとのかたわら、がくせいにおしえている。",
+          "en": "Alongside her work, she teaches students.",
+          "zh": "她在工作之余还教学生。",
+          "zh_TW": "她在工作之餘還教學生。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:katagata",
+      "level": "N1",
+      "pattern": "〜かたがた",
+      "structure": "動作性の名詞 + かたがた",
+      "match": [
+        "かたがた"
+      ],
+      "meaning": {
+        "en": "doing Y and serving as X at once (formal)",
+        "zh": "顺便也算是……（正式）",
+        "zh_TW": "順便也算是……（正式）"
+      },
+      "explanation": {
+        "en": "かたがた attaches to a formal action noun such as お礼 or 報告 and says that one visit or letter serves two purposes at once. It belongs to polite written correspondence and set greetings, and sounds archaic in casual speech.",
+        "zh": "かたがた接在お礼、報告等正式的动作名词后，表示一次拜访或一封书信同时兼具两个目的。属于礼节性书面往来和固定寒暄用语，用在日常口语中显得古板。",
+        "zh_TW": "かたがた接在お禮、報告等正式的動作名詞後，表示一次拜訪或一封書信同時兼具兩個目的。屬於禮節性書面往來和固定寒暄用語，用在日常口語中顯得古板。"
+      },
+      "examples": [
+        {
+          "ja": "お礼かたがた、報告に行きました。",
+          "reading": "おれいかたがた、ほうこくにいきました。",
+          "en": "I have come to report, and to thank you as well.",
+          "zh": "我来汇报，顺便也向您道谢。",
+          "zh_TW": "我來彙報，順便也向您道謝。"
+        },
+        {
+          "ja": "相談かたがた先生の家を訪ねた。",
+          "reading": "そうだんかたがたせんせいのいえをたずねた。",
+          "en": "I visited my teacher's home, partly to consult him.",
+          "zh": "我去老师家拜访，顺便也是为了商量事情。",
+          "zh_TW": "我去老師家拜訪，順便也是為了商量事情。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:gatera",
+      "level": "N1",
+      "pattern": "〜がてら",
+      "structure": "動作性の名詞・動詞ます形 + がてら",
+      "match": [
+        "がてら"
+      ],
+      "meaning": {
+        "en": "while doing X, take the chance to do Y",
+        "zh": "趁着做……，顺便做……",
+        "zh_TW": "趁著做……，順便做……"
+      },
+      "explanation": {
+        "en": "がてら is the everyday cousin of かたがた: while you are out doing one thing, you use the chance to do another. It is still somewhat written and old-fashioned, but it attaches to ordinary activities like walks and shopping.",
+        "zh": "がてら是かたがた的日常版：趁着做一件事的机会顺便做另一件。语感仍偏书面、略显古旧，但可以接散步、购物等普通活动。",
+        "zh_TW": "がてら是かたがた的日常版：趁著做一件事的機會順便做另一件。語感仍偏書面、略顯古舊，但可以接散步、購物等普通活動。"
+      },
+      "examples": [
+        {
+          "ja": "散歩がてら、本を買いに行った。",
+          "reading": "さんぽがてら、ほんをかいにいった。",
+          "en": "While out for a walk, I went to buy a book.",
+          "zh": "散步的时候顺便去买了书。",
+          "zh_TW": "散步的時候順便去買了書。"
+        },
+        {
+          "ja": "買い物がてら友達の家に寄った。",
+          "reading": "かいものがてらともだちのいえによった。",
+          "en": "While out shopping, I dropped by a friend's house.",
+          "zh": "买东西时顺便去了朋友家。",
+          "zh_TW": "買東西時順便去了朋友家。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nagara-ni",
+      "level": "N1",
+      "pattern": "〜ながらに(して)",
+      "structure": "名詞・動詞ます形 + ながらに（して）",
+      "match": [
+        "ながらに",
+        "ながらにして"
+      ],
+      "meaning": {
+        "en": "while staying just as one is; from birth",
+        "zh": "就那样地、生来就……",
+        "zh_TW": "就那樣地、生來就……"
+      },
+      "explanation": {
+        "en": "This ながら does not mean \"while doing\" but \"remaining in that state\": 生まれながらに means from birth, 家にいながらにして means without leaving home. It is a literary fixed pattern, limited to a handful of set phrases.",
+        "zh": "这里的ながら不表示“一边……一边”，而表示“保持那种状态”：生まれながらに指与生俱来，家にいながらにして指足不出户。属于文言固定说法，只用于少数几个搭配。",
+        "zh_TW": "這裡的ながら不表示“一邊……一邊”，而表示“保持那種狀態”：生まれながらに指與生俱來，家にいながらにして指足不出戶。屬於文言固定說法，只用於少數幾個搭配。"
+      },
+      "examples": [
+        {
+          "ja": "彼は生まれながらに強い体を持っている。",
+          "reading": "かれはうまれながらにつよいからだをもっている。",
+          "en": "He has had a strong body from birth.",
+          "zh": "他生来就有强健的身体。",
+          "zh_TW": "他生來就有強健的身體。"
+        },
+        {
+          "ja": "家にいながらにして世界の様子が分かる。",
+          "reading": "いえにいながらにしてせかいのようすがわかる。",
+          "en": "Without leaving home, one can know what the world is like.",
+          "zh": "足不出户就能了解世界的情况。",
+          "zh_TW": "足不出戶就能瞭解世界的情況。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tsu-tsu",
+      "level": "N1",
+      "pattern": "〜つ〜つ",
+      "structure": "動詞ます形の語幹 + つ + 対になる動詞 + つ",
+      "match": [
+        "行きつ戻りつ",
+        "追いつ追われつ"
+      ],
+      "meaning": {
+        "en": "doing one and the other alternately",
+        "zh": "时而……时而……（交替进行）",
+        "zh_TW": "時而……時而……（交替進行）"
+      },
+      "explanation": {
+        "en": "Two paired verbs, often an active and a passive, are joined by つ to show the two alternating. It is a classical form surviving only in a small set of fixed expressions such as 行きつ戻りつ and 追いつ追われつ, all clearly literary.",
+        "zh": "两个成对的动词（常为主动与被动）用つ连接，表示二者交替出现。这是只保留在行きつ戻りつ、追いつ追われつ等少数固定说法中的文言形式，文学色彩明显。",
+        "zh_TW": "兩個成對的動詞（常為主動與被動）用つ連接，表示二者交替出現。這是隻保留在行きつ戻りつ、追いつ追われつ等少數固定說法中的文言形式，文學色彩明顯。"
+      },
+      "examples": [
+        {
+          "ja": "彼は行きつ戻りつ考えていた。",
+          "reading": "かれはいきつもどりつかんがえていた。",
+          "en": "He paced back and forth, thinking.",
+          "zh": "他走来走去地思考着。",
+          "zh_TW": "他走來走去地思考著。"
+        },
+        {
+          "ja": "彼は駅の前で行きつ戻りつ待っていた。",
+          "reading": "かれはえきのまえでいきつもどりつまっていた。",
+          "en": "The two kept running, now chasing, now chased.",
+          "zh": "两人你追我赶地一直跑着。",
+          "zh_TW": "兩人你追我趕地一直跑著。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:n-bakari",
+      "level": "N1",
+      "pattern": "〜んばかり",
+      "structure": "動詞ない形の語幹 + んばかり（だ／に／の）",
+      "match": [
+        "んばかり"
+      ],
+      "meaning": {
+        "en": "as if about to; looking ready to burst",
+        "zh": "几乎要……的样子",
+        "zh_TW": "幾乎要……的樣子"
+      },
+      "explanation": {
+        "en": "んばかり describes something that looks on the point of happening but does not actually happen. It is a literary exaggeration used in written description, and it modifies with の, adverbially with に, or ends the sentence with だ.",
+        "zh": "んばかり形容某事看上去马上就要发生，实际却并未发生。属于书面描写中的文学化夸张说法，可用の修饰名词、用に作状语，或用だ结句。",
+        "zh_TW": "んばかり形容某事看上去馬上就要發生，實際卻並未發生。屬於書面描寫中的文學化誇張說法，可用の修飾名詞、用に作狀語，或用だ結句。"
+      },
+      "examples": [
+        {
+          "ja": "彼は泣かんばかりの声で話した。",
+          "reading": "かれはなかんばかりのこえではなした。",
+          "en": "He had a look on his face as if about to cry.",
+          "zh": "他一脸几乎要哭出来的表情。",
+          "zh_TW": "他一臉幾乎要哭出來的表情。"
+        },
+        {
+          "ja": "その花は今にも咲かんばかりである。",
+          "reading": "そのはなはいまにもさかんばかりである。",
+          "en": "The flower looks as if it is about to open.",
+          "zh": "那朵花几乎马上就要开了。",
+          "zh_TW": "那朵花幾乎馬上就要開了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-bakari-ni",
+      "level": "N1",
+      "pattern": "〜とばかりに",
+      "structure": "引用の内容 + とばかりに",
+      "match": [
+        "とばかりに"
+      ],
+      "meaning": {
+        "en": "as if to say; with that very attitude",
+        "zh": "仿佛在说……似的",
+        "zh_TW": "彷彿在說……似的"
+      },
+      "explanation": {
+        "en": "とばかりに reports an unspoken message read off someone's manner: they did not say it, but they might as well have. It is written narrative register, describing a third person's behaviour rather than one's own.",
+        "zh": "とばかりに把从对方举止中读出的、并未说出口的意思表达出来：虽然没说，但态度分明如此。属于书面叙述语体，用于描写第三者的行为，而非自己的行为。",
+        "zh_TW": "とばかりに把從對方舉止中讀出的、並未說出口的意思表達出來：雖然沒說，但態度分明如此。屬於書面敘述語體，用於描寫第三者的行為，而非自己的行為。"
+      },
+      "examples": [
+        {
+          "ja": "彼は待っていたとばかりに話し始めた。",
+          "reading": "かれはまっていたとばかりにはなしはじめた。",
+          "en": "He began to speak as if to say he had been waiting for this.",
+          "zh": "他仿佛在说“等的就是这个”，开口讲了起来。",
+          "zh_TW": "他彷彿在說“等的就是這個”，開口講了起來。"
+        },
+        {
+          "ja": "もう帰るとばかりに、先生は立った。",
+          "reading": "もうかえるとばかりに、せんせいはたった。",
+          "en": "The teacher stood up as if to say we should go home.",
+          "zh": "老师站了起来，仿佛在说“该回去了”。",
+          "zh_TW": "老師站了起來，彷彿在說“該回去了”。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-mo-naku",
+      "level": "N1",
+      "pattern": "〜ともなく / 〜ともなしに",
+      "structure": "動詞辞書形 + ともなく／ともなしに + 同じ動詞",
+      "match": [
+        "ともなく",
+        "ともなしに"
+      ],
+      "meaning": {
+        "en": "doing it absent-mindedly, without intent",
+        "zh": "无意识地、漫不经心地做",
+        "zh_TW": "無意識地、漫不經心地做"
+      },
+      "explanation": {
+        "en": "The same verb is repeated around ともなく to say the action was done without paying attention. It is a literary, descriptive form used mostly with 見る, 聞く and 考える in written narration; ともなしに is the slightly longer variant.",
+        "zh": "在ともなく前后重复同一个动词，表示这个动作是无意中做出的。属于文学性的描写形式，多与見る、聞く、考える搭配，用于书面叙述；ともなしに是稍长的变体。",
+        "zh_TW": "在ともなく前後重複同一個動詞，表示這個動作是無意中做出的。屬於文學性的描寫形式，多與見る、聞く、考える搭配，用於書面敘述；ともなしに是稍長的變體。"
+      },
+      "examples": [
+        {
+          "ja": "見るともなく外を見ていた。",
+          "reading": "みるともなくそとをみていた。",
+          "en": "I was gazing out of the window without really looking.",
+          "zh": "我漫不经心地望着外面。",
+          "zh_TW": "我漫不經心地望著外面。"
+        },
+        {
+          "ja": "聞くともなしに彼の話を聞いた。",
+          "reading": "きくともなしにかれのはなしをきいた。",
+          "en": "I overheard his story without meaning to listen.",
+          "zh": "我无意中听了他的话。",
+          "zh_TW": "我無意中聽了他的話。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:sube-o-shiranai",
+      "level": "N1",
+      "pattern": "〜すべを知らない",
+      "structure": "動詞辞書形 + すべを知らない",
+      "match": [
+        "すべを知らない",
+        "すべを知らなかった"
+      ],
+      "meaning": {
+        "en": "has no idea how to do it at all",
+        "zh": "完全不知道该怎么做",
+        "zh_TW": "完全不知道該怎麼做"
+      },
+      "explanation": {
+        "en": "すべ is a classical noun meaning \"means, way\", so 〜すべを知らない says one has no method at all. It is literary written register, stronger and more resigned in tone than 方法が分からない, and appears mainly in essays and fiction.",
+        "zh": "すべ是文言名词，意为“办法、手段”，〜すべを知らない即完全没有办法。属于文学性书面语，语气比方法が分からない更强、更带无奈，多见于随笔和小说。",
+        "zh_TW": "すべ是文言名詞，意為“辦法、手段”，〜すべを知らない即完全沒有辦法。屬於文學性書面語，語氣比方法が分からない更強、更帶無奈，多見於隨筆和小說。"
+      },
+      "examples": [
+        {
+          "ja": "彼は自分を守るすべを知らない。",
+          "reading": "かれはじぶんをまもるすべをしらない。",
+          "en": "He has no idea how to protect himself.",
+          "zh": "他完全不知道该怎么保护自己。",
+          "zh_TW": "他完全不知道該怎麼保護自己。"
+        },
+        {
+          "ja": "学生たちは調べるすべを知らなかった。",
+          "reading": "がくせいたちはしらべるすべをしらなかった。",
+          "en": "The students had no idea how to look it up.",
+          "zh": "学生们完全不知道该怎么去查。",
+          "zh_TW": "學生們完全不知道該怎麼去查。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:mo-kaerimizu",
+      "level": "N1",
+      "pattern": "〜も顧みず",
+      "structure": "名詞 + も顧みず",
+      "match": [
+        "も顧みず"
+      ],
+      "meaning": {
+        "en": "without any regard for X",
+        "zh": "不顾……",
+        "zh_TW": "不顧……"
+      },
+      "explanation": {
+        "en": "顧みる means to look back on or care about, so も顧みず says someone acted with no regard for danger, family or their own safety. It is formal written register, typical of news accounts and admiring or critical description.",
+        "zh": "顧みる意为回顾、顾及，も顧みず即不顾危险、家人或自身安危而行动。属于正式书面语，多见于新闻记述以及带有褒扬或批评意味的描写。",
+        "zh_TW": "顧みる意為回顧、顧及，も顧みず即不顧危險、家人或自身安危而行動。屬於正式書面語，多見於新聞記述以及帶有褒揚或批評意味的描寫。"
+      },
+      "examples": [
+        {
+          "ja": "彼は危険も顧みず、川に入った。",
+          "reading": "かれはきけんもかえりみず、かわにはいった。",
+          "en": "Heedless of the danger, he went into the river.",
+          "zh": "他不顾危险，跳进了河里。",
+          "zh_TW": "他不顧危險，跳進了河裡。"
+        },
+        {
+          "ja": "家族も顧みず働き続けた。",
+          "reading": "かぞくもかえりみずはたらきつづけた。",
+          "en": "He kept working with no regard for his family.",
+          "zh": "他不顾家人，一直工作下去。",
+          "zh_TW": "他不顧家人，一直工作下去。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-oshite",
+      "level": "N1",
+      "pattern": "〜を押して",
+      "structure": "名詞 + を押して",
+      "match": [
+        "を押して"
+      ],
+      "meaning": {
+        "en": "pushing ahead in spite of X",
+        "zh": "不顾……而强行",
+        "zh_TW": "不顧……而強行"
+      },
+      "explanation": {
+        "en": "を押して means acting in the face of an obstacle — illness, opposition, bad weather — pushing it aside rather than removing it. It is formal written register and takes only a small set of nouns naming the obstacle.",
+        "zh": "を押して表示不顾疾病、反对、恶劣天气等障碍而强行去做，是把障碍推开而不是消除它。属于正式书面语，只能接少数表示障碍的名词。",
+        "zh_TW": "を押して表示不顧疾病、反對、惡劣天氣等障礙而強行去做，是把障礙推開而不是消除它。屬於正式書面語，只能接少數表示障礙的名詞。"
+      },
+      "examples": [
+        {
+          "ja": "彼は病気を押して会議に出た。",
+          "reading": "かれはびょうきをおしてかいぎにでた。",
+          "en": "He attended the meeting despite being ill.",
+          "zh": "他抱病出席了会议。",
+          "zh_TW": "他抱病出席了會議。"
+        },
+        {
+          "ja": "反対を押して、計画を進めた。",
+          "reading": "はんたいをおして、けいかくをすすめた。",
+          "en": "They pushed the plan forward over the objections.",
+          "zh": "他们不顾反对，推进了计划。",
+          "zh_TW": "他們不顧反對，推進了計劃。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-atte",
+      "level": "N1",
+      "pattern": "〜にあって",
+      "structure": "場所・時・状況を表す名詞 + にあって",
+      "match": [
+        "にあって"
+      ],
+      "meaning": {
+        "en": "in the special circumstance of X",
+        "zh": "处于……的情况下",
+        "zh_TW": "處於……的情況下"
+      },
+      "explanation": {
+        "en": "にあって sets a special time, place or position as the background for what follows. It is high formal written register, used in essays and speeches where で would be too plain, and it usually frames a difficult or notable situation.",
+        "zh": "にあって把某个特殊的时间、场所或立场作为后文的背景。属于较高的正式书面语，多用于随笔和演讲中で显得太平淡的场合，通常用来提示困难或值得注意的情境。",
+        "zh_TW": "にあって把某個特殊的時間、場所或立場作為後文的背景。屬於較高的正式書面語，多用於隨筆和演講中で顯得太平淡的場合，通常用來提示困難或值得注意的情境。"
+      },
+      "examples": [
+        {
+          "ja": "この難しい状況にあって、努力を続けた。",
+          "reading": "このむずかしいじょうきょうにあって、どりょくをつづけた。",
+          "en": "In this difficult situation, he kept up his efforts.",
+          "zh": "在这种困难的情况下，他依然坚持努力。",
+          "zh_TW": "在這種困難的情況下，他依然堅持努力。"
+        },
+        {
+          "ja": "彼は先生という立場にあって、責任が重い。",
+          "reading": "かれはせんせいというたちばにあって、せきにんがおもい。",
+          "en": "Being in the position of a teacher, his responsibility is heavy.",
+          "zh": "他身处教师的立场，责任重大。",
+          "zh_TW": "他身處教師的立場，責任重大。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-shite",
+      "level": "N1",
+      "pattern": "〜にして",
+      "structure": "名詞 + にして",
+      "match": [
+        "にして"
+      ],
+      "meaning": {
+        "en": "only at X; even X (formal)",
+        "zh": "到了……才；即使是……也",
+        "zh_TW": "到了……才；即使是……也"
+      },
+      "explanation": {
+        "en": "にして singles out a point — an age, a number of attempts, a person of high standing — and says the result was reached only there, or that even there it holds. It is formal written register and is often reinforced by 初めて or こそ.",
+        "zh": "にして提示某一个点——年龄、次数、地位很高的人——表示到了这一点才出现某结果，或即使是这样的人也如此。属于正式书面语，常与初めて、こそ搭配加强语气。",
+        "zh_TW": "にして提示某一個點——年齡、次數、地位很高的人——表示到了這一點才出現某結果，或即使是這樣的人也如此。屬於正式書面語，常與初めて、こそ搭配加強語氣。"
+      },
+      "examples": [
+        {
+          "ja": "先生にして初めて分かることだ。",
+          "reading": "せんせいにしてはじめてわかることだ。",
+          "en": "It is something only a teacher can understand.",
+          "zh": "只有身为老师才能明白的事。",
+          "zh_TW": "只有身為老師才能明白的事。"
+        },
+        {
+          "ja": "三度目にして成功した。",
+          "reading": "さんどめにしてせいこうした。",
+          "en": "It succeeded only on the third attempt.",
+          "zh": "到第三次才成功。",
+          "zh_TW": "到第三次才成功。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-itaru",
+      "level": "N1",
+      "pattern": "〜に至る",
+      "structure": "名詞・動詞辞書形 + に至る",
+      "match": [
+        "に至る",
+        "に至った"
+      ],
+      "meaning": {
+        "en": "to finally reach that point or state",
+        "zh": "终于达到……的地步",
+        "zh_TW": "終於達到……的地步"
+      },
+      "explanation": {
+        "en": "に至る says that a long process finally arrived at some end point, whether a place or an outcome. It is formal written register found in reports, histories and legal prose, where 〜になる would sound too ordinary.",
+        "zh": "に至る表示漫长的过程最终到达某个终点，可以是地点，也可以是结果。属于正式书面语，多见于报告、史书和法律文书，用〜になる会显得过于平常。",
+        "zh_TW": "に至る表示漫長的過程最終到達某個終點，可以是地點，也可以是結果。屬於正式書面語，多見於報告、史書和法律文書，用〜になる會顯得過於平常。"
+      },
+      "examples": [
+        {
+          "ja": "二人は結局、結婚に至った。",
+          "reading": "ふたりはけっきょく、けっこんにいたった。",
+          "en": "In the end the two came to be married.",
+          "zh": "两人最终走到了结婚这一步。",
+          "zh_TW": "兩人最終走到了結婚這一步。"
+        },
+        {
+          "ja": "この道は海に至る。",
+          "reading": "このみちはうみにいたる。",
+          "en": "This road leads all the way to the sea.",
+          "zh": "这条路一直通到海边。",
+          "zh_TW": "這條路一直通到海邊。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-itatte-wa",
+      "level": "N1",
+      "pattern": "〜に至っては",
+      "structure": "名詞 + に至っては",
+      "match": [
+        "に至っては"
+      ],
+      "meaning": {
+        "en": "when it comes to this extreme case",
+        "zh": "至于……那就更是",
+        "zh_TW": "至於……那就更是"
+      },
+      "explanation": {
+        "en": "に至っては picks out the most extreme member of a set already under discussion and comments on it, usually with dismay. It is formal written register, common in criticism and commentary, and rarely used about anything positive.",
+        "zh": "に至っては从已经在谈的一组事物中挑出最极端的一个加以评论，多带惊讶或不满。属于正式书面语，常见于批评和评论，很少用于正面的事。",
+        "zh_TW": "に至っては從已經在談的一組事物中挑出最極端的一個加以評論，多帶驚訝或不滿。屬於正式書面語，常見於批評和評論，很少用於正面的事。"
+      },
+      "examples": [
+        {
+          "ja": "彼に至っては、報告さえしなかった。",
+          "reading": "かれにいたっては、ほうこくさえしなかった。",
+          "en": "As for him, he did not even file a report.",
+          "zh": "至于他，连报告都没交。",
+          "zh_TW": "至於他，連報告都沒交。"
+        },
+        {
+          "ja": "この問題に至っては、答えが見えない。",
+          "reading": "このもんだいにいたっては、こたえがみえない。",
+          "en": "When it comes to this problem, no answer is in sight.",
+          "zh": "至于这个问题，更是看不到答案。",
+          "zh_TW": "至於這個問題，更是看不到答案。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-itaru-made",
+      "level": "N1",
+      "pattern": "〜に至るまで",
+      "structure": "名詞 + に至るまで（〜から〜に至るまで）",
+      "match": [
+        "に至るまで"
+      ],
+      "meaning": {
+        "en": "everything right down to X",
+        "zh": "一直到……为止（无一例外）",
+        "zh_TW": "一直到……為止（無一例外）"
+      },
+      "explanation": {
+        "en": "に至るまで stresses the full extent of a range, often paired with から, right down to the smallest item. It is formal written register used to insist that nothing was left out.",
+        "zh": "に至るまで强调范围之广，常与から搭配，一直涵盖到最细微的部分。属于正式书面语，用来强调没有任何遗漏。",
+        "zh_TW": "に至るまで強調範圍之廣，常與から搭配，一直涵蓋到最細微的部分。屬於正式書面語，用來強調沒有任何遺漏。"
+      },
+      "examples": [
+        {
+          "ja": "学生から先生に至るまで、全員が参加した。",
+          "reading": "がくせいからせんせいにいたるまで、ぜんいんがさんかした。",
+          "en": "Everyone from students right up to teachers took part.",
+          "zh": "从学生到老师，所有人都参加了。",
+          "zh_TW": "從學生到老師，所有人都參加了。"
+        },
+        {
+          "ja": "服から靴に至るまで、全部新しい。",
+          "reading": "ふくからくつにいたるまで、ぜんぶあたらしい。",
+          "en": "From clothes right down to shoes, everything is new.",
+          "zh": "从衣服到鞋子，全都是新的。",
+          "zh_TW": "從衣服到鞋子，全都是新的。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-oyonde",
+      "level": "N1",
+      "pattern": "〜に及んで",
+      "structure": "名詞・動詞辞書形 + に及んで",
+      "match": [
+        "に及んで"
+      ],
+      "meaning": {
+        "en": "now that things have come to this",
+        "zh": "事到如今、到了……的地步才",
+        "zh_TW": "事到如今、到了……的地步才"
+      },
+      "explanation": {
+        "en": "に及んで marks the late stage at which someone finally acts or admits something. It is formal written register with a critical edge: the writer implies the response came far too late.",
+        "zh": "に及んで标示事情发展到很晚的阶段，某人才终于行动或承认。属于正式书面语，带有批评意味：暗示反应来得太迟。",
+        "zh_TW": "に及んで標示事情發展到很晚的階段，某人才終於行動或承認。屬於正式書面語，帶有批評意味：暗示反應來得太遲。"
+      },
+      "examples": [
+        {
+          "ja": "ここに及んで、彼は事実を認めた。",
+          "reading": "ここにおよんで、かれはじじつをみとめた。",
+          "en": "Only now that it had come to this did he admit the facts.",
+          "zh": "事到如今，他才承认了事实。",
+          "zh_TW": "事到如今，他才承認了事實。"
+        },
+        {
+          "ja": "問題が大きくなるに及んで、政府が動いた。",
+          "reading": "もんだいがおおきくなるにおよんで、せいふがうごいた。",
+          "en": "Only when the problem had grown big did the government act.",
+          "zh": "直到问题闹大了，政府才行动起来。",
+          "zh_TW": "直到問題鬧大了，政府才行動起來。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-oyobanai",
+      "level": "N1",
+      "pattern": "〜には及ばない",
+      "structure": "動詞辞書形・名詞 + には及ばない",
+      "match": [
+        "には及ばない"
+      ],
+      "meaning": {
+        "en": "no need to; also, not a match for X",
+        "zh": "不必……；比不上……",
+        "zh_TW": "不必……；比不上……"
+      },
+      "explanation": {
+        "en": "には及ばない has two readings: after a verb it politely says there is no need to do it, and after a noun it says one cannot match that thing. Both are formal register, common in business speech and written comparison.",
+        "zh": "には及ばない有两种用法：接动词时委婉地表示不必如此，接名词时表示比不上对方。两者都属正式语体，常见于商务场合的措辞和书面比较。",
+        "zh_TW": "には及ばない有兩種用法：接動詞時委婉地表示不必如此，接名詞時表示比不上對方。兩者都屬正式語體，常見於商務場合的措辭和書面比較。"
+      },
+      "examples": [
+        {
+          "ja": "心配するには及ばない。",
+          "reading": "しんぱいするにはおよばない。",
+          "en": "There is no need to worry.",
+          "zh": "不必担心。",
+          "zh_TW": "不必擔心。"
+        },
+        {
+          "ja": "私の力は彼には及ばない。",
+          "reading": "わたしのちからはかれにはおよばない。",
+          "en": "My ability is no match for his.",
+          "zh": "我的能力比不上他。",
+          "zh_TW": "我的能力比不上他。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-taru",
+      "level": "N1",
+      "pattern": "〜に足る",
+      "structure": "動詞辞書形・名詞 + に足る + 名詞",
+      "match": [
+        "に足る"
+      ],
+      "meaning": {
+        "en": "worthy of; enough to deserve it",
+        "zh": "值得……的",
+        "zh_TW": "值得……的"
+      },
+      "explanation": {
+        "en": "に足る says something has enough value to deserve the action — trust, respect, publication. It is a classical attributive form kept in formal written Japanese and usually modifies a noun directly.",
+        "zh": "に足る表示某事物具有足够的价值，值得信任、尊敬或发表。这是保留在正式书面语中的文言连体形，通常直接修饰名词。",
+        "zh_TW": "に足る表示某事物具有足夠的價值，值得信任、尊敬或發表。這是保留在正式書面語中的文言連體形，通常直接修飾名詞。"
+      },
+      "examples": [
+        {
+          "ja": "彼は信じるに足る学生である。",
+          "reading": "かれはしんじるにたるがくせいである。",
+          "en": "He is a student worthy of trust.",
+          "zh": "他是一个值得信赖的学生。",
+          "zh_TW": "他是一個值得信賴的學生。"
+        },
+        {
+          "ja": "この結果は発表するに足るものだ。",
+          "reading": "このけっかははっぴょうするにたるものだ。",
+          "en": "This result is worth announcing.",
+          "zh": "这个结果值得发表。",
+          "zh_TW": "這個結果值得發表。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-taeru",
+      "level": "N1",
+      "pattern": "〜に堪える",
+      "structure": "動詞辞書形・名詞 + に堪える",
+      "match": [
+        "に堪える"
+      ],
+      "meaning": {
+        "en": "worth doing; able to withstand it",
+        "zh": "值得……；经得起……",
+        "zh_TW": "值得……；經得起……"
+      },
+      "explanation": {
+        "en": "に堪える means either that something is good enough to be worth reading, watching or listening to, or that it can withstand a strain. It is formal written register, most often used in criticism and evaluation.",
+        "zh": "に堪える表示某物好到值得一读、一看、一听，或表示能够承受某种压力。属于正式书面语，多用于评论和评价。",
+        "zh_TW": "に堪える表示某物好到值得一讀、一看、一聽，或表示能夠承受某種壓力。屬於正式書面語，多用於評論和評價。"
+      },
+      "examples": [
+        {
+          "ja": "この本は読むに堪える内容だ。",
+          "reading": "このほんはよむにたえるないようだ。",
+          "en": "This book has content worth reading.",
+          "zh": "这本书的内容值得一读。",
+          "zh_TW": "這本書的內容值得一讀。"
+        },
+        {
+          "ja": "その作品は見るに堪えるものである。",
+          "reading": "そのさくひんはみるにたえるものである。",
+          "en": "That work is worth looking at.",
+          "zh": "那件作品是值得一看的。",
+          "zh_TW": "那件作品是值得一看的。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-taenai",
+      "level": "N1",
+      "pattern": "〜に堪えない",
+      "structure": "動詞辞書形・感情を表す名詞 + に堪えない",
+      "match": [
+        "に堪えない"
+      ],
+      "meaning": {
+        "en": "too awful to bear; or deeply filled with",
+        "zh": "不堪……；不胜……",
+        "zh_TW": "不堪……；不勝……"
+      },
+      "explanation": {
+        "en": "After a verb like 見る or 聞く, に堪えない means something is too painful or dreadful to endure. After an emotion noun in formal speech it means the opposite — being filled with that feeling. Both uses are stiff written or ceremonial register.",
+        "zh": "接在見る、聞く等动词后，に堪えない表示惨不忍睹、不堪入耳。接在表示感情的名词后（正式致辞中）则相反，表示不胜感激之类。两种用法都属于生硬的书面语或致辞语体。",
+        "zh_TW": "接在見る、聞く等動詞後，に堪えない表示慘不忍睹、不堪入耳。接在表示感情的名詞後（正式致辭中）則相反，表示不勝感激之類。兩種用法都屬於生硬的書面語或致辭語體。"
+      },
+      "examples": [
+        {
+          "ja": "その話は聞くに堪えない。",
+          "reading": "そのはなしはきくにたえない。",
+          "en": "That story is unbearable to listen to.",
+          "zh": "那种话不堪入耳。",
+          "zh_TW": "那種話不堪入耳。"
+        },
+        {
+          "ja": "彼の態度は見るに堪えないものだった。",
+          "reading": "かれのたいどはみるにたえないものだった。",
+          "en": "His behaviour was painful to watch.",
+          "zh": "他的态度让人不忍直视。",
+          "zh_TW": "他的態度讓人不忍直視。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-katakunai",
+      "level": "N1",
+      "pattern": "〜に難くない",
+      "structure": "想像・理解などの名詞 + に難くない",
+      "match": [
+        "に難くない"
+      ],
+      "meaning": {
+        "en": "it is not hard to imagine",
+        "zh": "不难想象、不难理解",
+        "zh_TW": "不難想像、不難理解"
+      },
+      "explanation": {
+        "en": "に難くない takes a small set of nouns — 想像, 理解, 察する — and says the thing is easy to grasp even without being told. It is formal written register, common in editorials where the writer invites the reader to draw the obvious conclusion.",
+        "zh": "に難くない只与想像、理解、察する等少数词搭配，表示不用明说也不难体会。属于正式书面语，社论中常用，引导读者自行得出显而易见的结论。",
+        "zh_TW": "に難くない只與想像、理解、察する等少數詞搭配，表示不用明說也不難體會。屬於正式書面語，社論中常用，引導讀者自行得出顯而易見的結論。"
+      },
+      "examples": [
+        {
+          "ja": "彼の気持ちは想像に難くない。",
+          "reading": "かれのきもちはそうぞうにかたくない。",
+          "en": "His feelings are not hard to imagine.",
+          "zh": "他的心情不难想象。",
+          "zh_TW": "他的心情不難想像。"
+        },
+        {
+          "ja": "何が起こるかは想像に難くない。",
+          "reading": "なにがおこるかはそうぞうにかたくない。",
+          "en": "It is not hard to imagine what will happen.",
+          "zh": "会发生什么，不难想象。",
+          "zh_TW": "會發生什麼，不難想像。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-todomarazu",
+      "level": "N1",
+      "pattern": "〜にとどまらず",
+      "structure": "名詞・普通形 + にとどまらず",
+      "match": [
+        "にとどまらず"
+      ],
+      "meaning": {
+        "en": "not stopping at X; reaching further",
+        "zh": "不仅限于……，还波及……",
+        "zh_TW": "不僅限於……，還波及……"
+      },
+      "explanation": {
+        "en": "にとどまらず says the matter did not stay within one area but spread beyond it. It is formal written register used in analysis and reporting, and the second clause names the wider field that was reached.",
+        "zh": "にとどまらず表示事情没有停留在某一范围内，而是扩散到更广的领域。属于正式书面语，多用于分析和报道，后句点出波及到的更大范围。",
+        "zh_TW": "にとどまらず表示事情沒有停留在某一範圍內，而是擴散到更廣的領域。屬於正式書面語，多用於分析和報道，後句點出波及到的更大範圍。"
+      },
+      "examples": [
+        {
+          "ja": "影響は経済にとどまらず社会にも及んだ。",
+          "reading": "えいきょうはけいざいにとどまらずしゃかいにもおよんだ。",
+          "en": "The effects did not stop at the economy but reached society too.",
+          "zh": "影响不仅限于经济，还波及了社会。",
+          "zh_TW": "影響不僅限於經濟，還波及了社會。"
+        },
+        {
+          "ja": "問題は一つの会社にとどまらず、広がった。",
+          "reading": "もんだいはひとつのかいしゃにとどまらず、ひろがった。",
+          "en": "The problem did not stay within one company; it spread.",
+          "zh": "问题不仅限于一家公司，而是扩散开来。",
+          "zh_TW": "問題不僅限於一家公司，而是擴散開來。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-sokushite",
+      "level": "N1",
+      "pattern": "〜に即して",
+      "structure": "事実・規則などの名詞 + に即して",
+      "match": [
+        "に即して"
+      ],
+      "meaning": {
+        "en": "in line with the facts or the rules",
+        "zh": "依照事实、按照规定",
+        "zh_TW": "依照事實、按照規定"
+      },
+      "explanation": {
+        "en": "に即して means keeping closely to something concrete — the facts, the rules, actual conditions — rather than to theory. It is formal written and official register, at home in reports, regulations and administrative language.",
+        "zh": "に即して表示紧扣具体的事实、规定或实际情况，而不是空谈理论。属于正式书面语和公文语体，多见于报告、规章和行政文书。",
+        "zh_TW": "に即して表示緊扣具體的事實、規定或實際情況，而不是空談理論。屬於正式書面語和公文語體，多見於報告、規章和行政文書。"
+      },
+      "examples": [
+        {
+          "ja": "事実に即して報告する必要がある。",
+          "reading": "じじつにそくしてほうこくするひつようがある。",
+          "en": "It is necessary to report in accordance with the facts.",
+          "zh": "必须依照事实进行报告。",
+          "zh_TW": "必須依照事實進行報告。"
+        },
+        {
+          "ja": "規則に即して判断が行われた。",
+          "reading": "きそくにそくしてはんだんがおこなわれた。",
+          "en": "The decision was made in accordance with the rules.",
+          "zh": "判断是按照规定作出的。",
+          "zh_TW": "判斷是按照規定作出的。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-terashite",
+      "level": "N1",
+      "pattern": "〜に照らして",
+      "structure": "基準を表す名詞 + に照らして",
+      "match": [
+        "に照らして"
+      ],
+      "meaning": {
+        "en": "judged in the light of X",
+        "zh": "对照……来看、根据……判断",
+        "zh_TW": "對照……來看、根據……判斷"
+      },
+      "explanation": {
+        "en": "に照らして means holding something up against a standard — a law, a precedent, experience — and judging by it. It is formal written and legal register, and the main clause is always an evaluation or decision.",
+        "zh": "に照らして表示拿某事对照法律、先例、经验等标准来加以判断。属于正式书面语和法律语体，后句必然是评价或结论。",
+        "zh_TW": "に照らして表示拿某事對照法律、先例、經驗等標準來加以判斷。屬於正式書面語和法律語體，後句必然是評價或結論。"
+      },
+      "examples": [
+        {
+          "ja": "法律に照らして、これは問題である。",
+          "reading": "ほうりつにてらして、これはもんだいである。",
+          "en": "In the light of the law, this is a problem.",
+          "zh": "对照法律来看，这是有问题的。",
+          "zh_TW": "對照法律來看，這是有問題的。"
+        },
+        {
+          "ja": "経験に照らして考えると、難しい。",
+          "reading": "けいけんにてらしてかんがえると、むずかしい。",
+          "en": "Judging in the light of experience, it is difficult.",
+          "zh": "根据经验来看，这很难。",
+          "zh_TW": "根據經驗來看，這很難。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-kakotsukete",
+      "level": "N1",
+      "pattern": "〜にかこつけて",
+      "structure": "名詞 + にかこつけて",
+      "match": [
+        "にかこつけて"
+      ],
+      "meaning": {
+        "en": "using X as a convenient pretext",
+        "zh": "以……为借口",
+        "zh_TW": "以……為藉口"
+      },
+      "explanation": {
+        "en": "にかこつけて says someone used a plausible reason as cover for what they really wanted to do. It is formal written register and always critical: the speaker does not accept the stated reason.",
+        "zh": "にかこつけて表示某人拿一个说得过去的理由作幌子，去做自己真正想做的事。属于正式书面语，且总带批评意味：说话人并不认可那个理由。",
+        "zh_TW": "にかこつけて表示某人拿一個說得過去的理由作幌子，去做自己真正想做的事。屬於正式書面語，且總帶批評意味：說話人並不認可那個理由。"
+      },
+      "examples": [
+        {
+          "ja": "仕事にかこつけて、旅行に行った。",
+          "reading": "しごとにかこつけて、りょこうにいった。",
+          "en": "Using work as a pretext, he went travelling.",
+          "zh": "他以工作为借口去旅行了。",
+          "zh_TW": "他以工作為藉口去旅行了。"
+        },
+        {
+          "ja": "病気にかこつけて会議に出なかった。",
+          "reading": "びょうきにかこつけてかいぎにでなかった。",
+          "en": "He used illness as an excuse not to attend the meeting.",
+          "zh": "他以生病为借口没有出席会议。",
+          "zh_TW": "他以生病為藉口沒有出席會議。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-kakatte-iru",
+      "level": "N1",
+      "pattern": "〜にかかっている",
+      "structure": "名詞・疑問句 + にかかっている",
+      "match": [
+        "にかかっている"
+      ],
+      "meaning": {
+        "en": "it all depends on X",
+        "zh": "取决于……",
+        "zh_TW": "取決於……"
+      },
+      "explanation": {
+        "en": "にかかっている names the single factor on which an outcome hangs. It is formal written and speech register, weightier than 〜次第だ, and is used when the writer wants to place the whole weight of a result on one thing.",
+        "zh": "にかかっている点出决定结果的唯一因素。属于正式的书面语和口语，语气比〜次第だ更重，用于把结果的全部分量压在某一件事上。",
+        "zh_TW": "にかかっている點出決定結果的唯一因素。屬於正式的書面語和口語，語氣比〜次第だ更重，用於把結果的全部分量壓在某一件事上。"
+      },
+      "examples": [
+        {
+          "ja": "成功は君の努力にかかっている。",
+          "reading": "せいこうはきみのどりょくにかかっている。",
+          "en": "Success depends on your effort.",
+          "zh": "成功取决于你的努力。",
+          "zh_TW": "成功取決於你的努力。"
+        },
+        {
+          "ja": "会社の未来はこの決定にかかっている。",
+          "reading": "かいしゃのみらいはこのけっていにかかっている。",
+          "en": "The company's future rests on this decision.",
+          "zh": "公司的未来取决于这个决定。",
+          "zh_TW": "公司的未來取決於這個決定。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-hoka-naranai",
+      "level": "N1",
+      "pattern": "〜にほかならない",
+      "structure": "名詞・こと + にほかならない",
+      "match": [
+        "にほかならない"
+      ],
+      "meaning": {
+        "en": "it is nothing other than X",
+        "zh": "无非就是……、正是……",
+        "zh_TW": "無非就是……、正是……"
+      },
+      "explanation": {
+        "en": "にほかならない rules out every other explanation and asserts one. It is formal written register, the standard move of essays and editorials for driving a conclusion home after the argument has been laid out.",
+        "zh": "にほかならない排除其他一切解释，断定只有这一种。属于正式书面语，是随笔和社论在论证之后一锤定音的惯用手法。",
+        "zh_TW": "にほかならない排除其他一切解釋，斷定只有這一種。屬於正式書面語，是隨筆和社論在論證之後一錘定音的慣用手法。"
+      },
+      "examples": [
+        {
+          "ja": "成功は努力の結果にほかならない。",
+          "reading": "せいこうはどりょくのけっかにほかならない。",
+          "en": "Success is nothing other than the result of effort.",
+          "zh": "成功无非是努力的结果。",
+          "zh_TW": "成功無非是努力的結果。"
+        },
+        {
+          "ja": "それは事実を認めないことにほかならない。",
+          "reading": "それはじじつをみとめないことにほかならない。",
+          "en": "That is nothing other than a refusal to admit the facts.",
+          "zh": "那无非就是不承认事实。",
+          "zh_TW": "那無非就是不承認事實。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-soui-nai",
+      "level": "N1",
+      "pattern": "〜に相違ない",
+      "structure": "名詞・普通形 + に相違ない",
+      "match": [
+        "に相違ない"
+      ],
+      "meaning": {
+        "en": "there is no doubt about it (formal)",
+        "zh": "肯定是……、毫无疑问（正式）",
+        "zh_TW": "肯定是……、毫無疑問（正式）"
+      },
+      "explanation": {
+        "en": "に相違ない is the formal written twin of に違いない, expressing a confident conclusion. It belongs to legal documents, official reports and literary prose; in conversation に違いない is the natural choice.",
+        "zh": "に相違ない是に違いない的正式书面对应形式，表示有把握的推断。多见于法律文书、正式报告和文学作品；口语中自然的说法是に違いない。",
+        "zh_TW": "に相違ない是に違いない的正式書面對應形式，表示有把握的推斷。多見於法律文書、正式報告和文學作品；口語中自然的說法是に違いない。"
+      },
+      "examples": [
+        {
+          "ja": "彼が言ったことは事実に相違ない。",
+          "reading": "かれがいったことはじじつにそういない。",
+          "en": "What he said is beyond doubt the truth.",
+          "zh": "他说的话肯定是事实。",
+          "zh_TW": "他說的話肯定是事實。"
+        },
+        {
+          "ja": "この判断は正しいに相違ない。",
+          "reading": "このはんだんはただしいにそういない。",
+          "en": "This judgement is doubtless correct.",
+          "zh": "这个判断毫无疑问是正确的。",
+          "zh_TW": "這個判斷毫無疑問是正確的。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-kagitta-koto-de-wa-nai",
+      "level": "N1",
+      "pattern": "〜に限ったことではない",
+      "structure": "名詞 + に限ったことではない",
+      "match": [
+        "に限ったことではない"
+      ],
+      "meaning": {
+        "en": "this is not limited to X alone",
+        "zh": "不只是……才这样",
+        "zh_TW": "不只是……才這樣"
+      },
+      "explanation": {
+        "en": "に限ったことではない denies that something is peculiar to one time, place or person: it happens elsewhere too. It is formal written and careful spoken register, often used to resist an unfair singling-out.",
+        "zh": "に限ったことではない否定某事只发生在特定的时间、地点或人身上：别处同样如此。属于正式书面语和慎重的口语，常用来反驳不公平的单独指责。",
+        "zh_TW": "に限ったことではない否定某事只發生在特定的時間、地點或人身上：別處同樣如此。屬於正式書面語和慎重的口語，常用來反駁不公平的單獨指責。"
+      },
+      "examples": [
+        {
+          "ja": "これは今日に限ったことではない。",
+          "reading": "これはきょうにかぎったことではない。",
+          "en": "This is not something that only happens today.",
+          "zh": "这并不是只有今天才这样。",
+          "zh_TW": "這並不是只有今天才這樣。"
+        },
+        {
+          "ja": "この問題は日本に限ったことではない。",
+          "reading": "このもんだいはにほんにかぎったことではない。",
+          "en": "This problem is not limited to Japan.",
+          "zh": "这个问题并不只限于日本。",
+          "zh_TW": "這個問題並不只限於日本。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-koshita-koto-wa-nai-n1",
+      "level": "N1",
+      "pattern": "〜に越したことはない",
+      "structure": "動詞辞書形・い形容詞・名詞 + に越したことはない",
+      "match": [
+        "に越したことはない"
+      ],
+      "meaning": {
+        "en": "nothing beats doing it that way",
+        "zh": "最好还是……、莫过于……",
+        "zh_TW": "最好還是……、莫過於……"
+      },
+      "explanation": {
+        "en": "に越したことはない offers general advice: the stated option is best, other things being equal. It is formal written register but common in careful advice, and it recommends rather than commands.",
+        "zh": "に越したことはない用于提出一般性的建议：在其他条件相同时，这样做最好。属于正式书面语，但在慎重的劝告中也常用，语气是建议而非命令。",
+        "zh_TW": "に越したことはない用於提出一般性的建議：在其他條件相同時，這樣做最好。屬於正式書面語，但在慎重的勸告中也常用，語氣是建議而非命令。"
+      },
+      "examples": [
+        {
+          "ja": "早く始めるに越したことはない。",
+          "reading": "はやくはじめるにこしたことはない。",
+          "en": "There is nothing better than starting early.",
+          "zh": "还是早点开始为好。",
+          "zh_TW": "還是早點開始為好。"
+        },
+        {
+          "ja": "準備は多いに越したことはない。",
+          "reading": "じゅんびはおおいにこしたことはない。",
+          "en": "The more preparation, the better.",
+          "zh": "准备当然是越多越好。",
+          "zh_TW": "準備當然是越多越好。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-hikikae",
+      "level": "N1",
+      "pattern": "〜にひきかえ",
+      "structure": "名詞・普通形の + にひきかえ",
+      "match": [
+        "にひきかえ"
+      ],
+      "meaning": {
+        "en": "in sharp contrast with X",
+        "zh": "与……形成鲜明对照",
+        "zh_TW": "與……形成鮮明對照"
+      },
+      "explanation": {
+        "en": "にひきかえ sets two things side by side and stresses how opposite they are, usually with the speaker's own evaluation attached. It is formal written register, more subjective than the neutral 〜に対して.",
+        "zh": "にひきかえ把两者并列，强调二者的对立，通常带有说话人的评价。属于正式书面语，比中性的〜に対して更带主观色彩。",
+        "zh_TW": "にひきかえ把兩者並列，強調二者的對立，通常帶有說話人的評價。屬於正式書面語，比中性的〜に対して更帶主觀色彩。"
+      },
+      "examples": [
+        {
+          "ja": "彼にひきかえ、私は何もできない。",
+          "reading": "かれにひきかえ、わたしはなにもできない。",
+          "en": "In contrast to him, I can do nothing.",
+          "zh": "和他相比，我什么都做不了。",
+          "zh_TW": "和他相比，我什麼都做不了。"
+        },
+        {
+          "ja": "去年にひきかえ、今年は結果が良い。",
+          "reading": "きょねんにひきかえ、ことしはけっかがよい。",
+          "en": "In contrast with last year, this year's results are good.",
+          "zh": "与去年相比，今年的结果很好。",
+          "zh_TW": "與去年相比，今年的結果很好。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ni-mo-mashite",
+      "level": "N1",
+      "pattern": "〜にもまして",
+      "structure": "名詞 + にもまして",
+      "match": [
+        "にもまして"
+      ],
+      "meaning": {
+        "en": "even more than X, more than ever",
+        "zh": "比……更加、比以往更",
+        "zh_TW": "比……更加、比以往更"
+      },
+      "explanation": {
+        "en": "にもまして singles out a point of comparison and says the present case exceeds even that. It is formal written register, common in essays when the writer wants to intensify a comparison beyond the usual どれよりも.",
+        "zh": "にもまして举出一个比较基准，表示现在的情况比那还要更甚。属于正式书面语，常见于随笔中用来加强比较，比どれよりも语气更强。",
+        "zh_TW": "にもまして舉出一個比較基準，表示現在的情況比那還要更甚。屬於正式書面語，常見於隨筆中用來加強比較，比どれよりも語氣更強。"
+      },
+      "examples": [
+        {
+          "ja": "今年は去年にもまして忙しい。",
+          "reading": "ことしはきょねんにもましていそがしい。",
+          "en": "This year is even busier than last year.",
+          "zh": "今年比去年更忙。",
+          "zh_TW": "今年比去年更忙。"
+        },
+        {
+          "ja": "彼は誰にもまして努力した。",
+          "reading": "かれはだれにもましてどりょくした。",
+          "en": "He worked harder than anyone else.",
+          "zh": "他比任何人都更努力。",
+          "zh_TW": "他比任何人都更努力。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-motte",
+      "level": "N1",
+      "pattern": "〜をもって",
+      "structure": "名詞 + をもって",
+      "match": [
+        "をもって"
+      ],
+      "meaning": {
+        "en": "by means of X; as of X (formal notice)",
+        "zh": "以……；自……起（正式通知）",
+        "zh_TW": "以……；自……起（正式通知）"
+      },
+      "explanation": {
+        "en": "をもって marks the means by which something is done, or the exact time from which a change takes effect. It is formal written register, standard in official announcements and ceremonial closings.",
+        "zh": "をもって表示做某事所凭借的手段，或表示变化生效的确切时间。属于正式书面语，常见于官方通知和仪式性的结语。",
+        "zh_TW": "をもって表示做某事所憑藉的手段，或表示變化生效的確切時間。屬於正式書面語，常見於官方通知和儀式性的結語。"
+      },
+      "examples": [
+        {
+          "ja": "本日をもって会議を終える。",
+          "reading": "ほんじつをもってかいぎをおえる。",
+          "en": "As of today, the meeting is concluded.",
+          "zh": "会议自今日起结束。",
+          "zh_TW": "會議自今日起結束。"
+        },
+        {
+          "ja": "彼の努力をもって、計画は成功した。",
+          "reading": "かれのどりょくをもって、けいかくはせいこうした。",
+          "en": "By means of his effort, the plan succeeded.",
+          "zh": "凭借他的努力，计划成功了。",
+          "zh_TW": "憑藉他的努力，計劃成功了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-motte-shitemo",
+      "level": "N1",
+      "pattern": "〜をもってしても",
+      "structure": "名詞 + をもってしても",
+      "match": [
+        "をもってしても"
+      ],
+      "meaning": {
+        "en": "even with X, it was still not enough",
+        "zh": "即使凭借……也（不）……",
+        "zh_TW": "即使憑藉……也（不）……"
+      },
+      "explanation": {
+        "en": "をもってしても adds しても to をもって to say that even with a strong means, the result still fell short. It is formal written register, used to emphasize how difficult something was.",
+        "zh": "をもってしても在をもって后加しても，表示即使凭借强大的手段，结果依然不理想。属于正式书面语，用来强调事情之困难。",
+        "zh_TW": "をもってしても在をもって後加しても，表示即使憑藉強大的手段，結果依然不理想。屬於正式書面語，用來強調事情之困難。"
+      },
+      "examples": [
+        {
+          "ja": "彼の力をもってしても、問題は解決しなかった。",
+          "reading": "かれのちからをもってしても、もんだいはかいけつしなかった。",
+          "en": "Even with his ability, the problem was not solved.",
+          "zh": "即使凭借他的能力，问题也没能解决。",
+          "zh_TW": "即使憑藉他的能力，問題也沒能解決。"
+        },
+        {
+          "ja": "全員の努力をもってしても、結果は変わらなかった。",
+          "reading": "ぜんいんのどりょくをもってしても、けっかはかわらなかった。",
+          "en": "Even with everyone's effort, the result did not change.",
+          "zh": "即使凭借大家的努力，结果也没有改变。",
+          "zh_TW": "即使憑藉大家的努力，結果也沒有改變。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-fumaete",
+      "level": "N1",
+      "pattern": "〜を踏まえて",
+      "structure": "名詞 + を踏まえて",
+      "match": [
+        "を踏まえて"
+      ],
+      "meaning": {
+        "en": "on the basis of X, taking X into account",
+        "zh": "根据……、在……基础上",
+        "zh_TW": "根據……、在……基礎上"
+      },
+      "explanation": {
+        "en": "を踏まえて means taking some fact, result or opinion as the foundation before doing the next thing. It is formal written register common in reports and academic writing.",
+        "zh": "を踏まえて表示以某个事实、结果或意见为基础去做下一步。属于正式书面语，常见于报告和学术写作。",
+        "zh_TW": "を踏まえて表示以某個事實、結果或意見為基礎去做下一步。屬於正式書面語，常見於報告和學術寫作。"
+      },
+      "examples": [
+        {
+          "ja": "この結果を踏まえて、計画を考え直した。",
+          "reading": "このけっかをふまえて、けいかくをかんがえなおした。",
+          "en": "Taking this result into account, we reconsidered the plan.",
+          "zh": "根据这个结果，重新考虑了计划。",
+          "zh_TW": "根據這個結果，重新考慮了計劃。"
+        },
+        {
+          "ja": "発表の内容を踏まえて、質問した。",
+          "reading": "はっぴょうのないようをふまえて、しつもんした。",
+          "en": "Based on the content of the presentation, I asked a question.",
+          "zh": "根据发表的内容提出了问题。",
+          "zh_TW": "根據發表的內容提出了問題。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-oite",
+      "level": "N1",
+      "pattern": "〜をおいて",
+      "structure": "名詞 + をおいて + 否定",
+      "match": [
+        "をおいて"
+      ],
+      "meaning": {
+        "en": "there is no one/nothing but X",
+        "zh": "除了……之外没有",
+        "zh_TW": "除了……之外沒有"
+      },
+      "explanation": {
+        "en": "をおいて is followed by a negative and says nothing else could possibly qualify except the item named. It is formal written register, used to praise someone as truly irreplaceable.",
+        "zh": "をおいて后接否定，表示除了所提到的对象之外别无他选。属于正式书面语，用来称赞某人真正无可替代。",
+        "zh_TW": "をおいて後接否定，表示除了所提到的對象之外別無他選。屬於正式書面語，用來稱讚某人真正無可替代。"
+      },
+      "examples": [
+        {
+          "ja": "彼をおいて、この問題を解決できる人はいない。",
+          "reading": "かれをおいて、このもんだいをかいけつできるひとはいない。",
+          "en": "There is no one who can solve this problem but him.",
+          "zh": "除了他，没有人能解决这个问题。",
+          "zh_TW": "除了他，沒有人能解決這個問題。"
+        },
+        {
+          "ja": "この学生をおいて、発表できる人はいない。",
+          "reading": "このがくせいをおいて、はっぴょうできるひとはいない。",
+          "en": "There is no one who can give the presentation but this student.",
+          "zh": "除了这个学生，没有人能做这个发表。",
+          "zh_TW": "除了這個學生，沒有人能做這個發表。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-yoso-ni",
+      "level": "N1",
+      "pattern": "〜をよそに",
+      "structure": "名詞 + をよそに",
+      "match": [
+        "をよそに"
+      ],
+      "meaning": {
+        "en": "paying no attention to X at all; ignoring X",
+        "zh": "不顾……、对……不理会",
+        "zh_TW": "不顧……、對……不理會"
+      },
+      "explanation": {
+        "en": "をよそに says someone acted while completely ignoring a worry, warning or expectation directed at them. It is formal written register with a critical or admiring nuance depending on context.",
+        "zh": "をよそに表示某人完全无视旁人的担心、警告或期待而行动。属于正式书面语，语气可带批评，也可带钦佩，视语境而定。",
+        "zh_TW": "をよそに表示某人完全無視旁人的擔心、警告或期待而行動。屬於正式書面語，語氣可帶批評，也可帶欽佩，視語境而定。"
+      },
+      "examples": [
+        {
+          "ja": "彼は家族の心配をよそに、旅行に行った。",
+          "reading": "かれはかぞくのしんぱいをよそに、りょこうにいった。",
+          "en": "Ignoring his family's worry, he went travelling.",
+          "zh": "他不顾家人的担心去旅行了。",
+          "zh_TW": "他不顧家人的擔心去旅行了。"
+        },
+        {
+          "ja": "学生たちは反対をよそに、計画を進めた。",
+          "reading": "がくせいたちははんたいをよそに、けいかくをすすめた。",
+          "en": "The students pushed the plan forward, ignoring the objections.",
+          "zh": "学生们不顾反对，推进了计划。",
+          "zh_TW": "學生們不顧反對，推進了計劃。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-mono-tomo-sezu",
+      "level": "N1",
+      "pattern": "〜をものともせず(に)",
+      "structure": "名詞 + をものともせず(に)",
+      "match": [
+        "をものともせず"
+      ],
+      "meaning": {
+        "en": "undaunted by X; making light of X",
+        "zh": "不顾……、不把……放在眼里",
+        "zh_TW": "不顧……、不把……放在眼裡"
+      },
+      "explanation": {
+        "en": "をものともせず means treating an obstacle as if it were nothing and pushing through it anyway. It is formal written register, common in admiring accounts of perseverance.",
+        "zh": "をものともせず表示把困难当作不算什么，依然勇往直前。属于正式书面语，常见于赞扬坚韧不拔的叙述。",
+        "zh_TW": "をものともせず表示把困難當作不算什麼，依然勇往直前。屬於正式書面語，常見於讚揚堅韌不拔的敘述。"
+      },
+      "examples": [
+        {
+          "ja": "彼は危険をものともせず、川に入った。",
+          "reading": "かれはきけんをものともせず、かわにはいった。",
+          "en": "Undaunted by the danger, he went into the river.",
+          "zh": "他不顾危险，跳进了河里。",
+          "zh_TW": "他不顧危險，跳進了河裡。"
+        },
+        {
+          "ja": "学生たちは困難をものともせず、続けた。",
+          "reading": "がくせいたちはこんなんをものともせず、つづけた。",
+          "en": "The students kept going, undaunted by the difficulty.",
+          "zh": "学生们不顾困难，坚持了下去。",
+          "zh_TW": "學生們不顧困難，堅持了下去。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-yoginaku-sareru",
+      "level": "N1",
+      "pattern": "〜を余儀なくされる",
+      "structure": "名詞 + を余儀なくされる",
+      "match": [
+        "を余儀なくされる",
+        "を余儀なくされた"
+      ],
+      "meaning": {
+        "en": "be forced into X with no other choice",
+        "zh": "被迫……、不得不……",
+        "zh_TW": "被迫……、不得不……"
+      },
+      "explanation": {
+        "en": "を余儀なくされる is the passive form meaning one was left with no choice but to accept an unwanted change. It is formal written register typical of news reporting.",
+        "zh": "を余儀なくされる是被动形式，表示被迫接受一个不情愿的变化，别无选择。属于正式书面语，是新闻报道的常见说法。",
+        "zh_TW": "を餘儀なくされる是被動形式，表示被迫接受一個不情願的變化，別無選擇。屬於正式書面語，是新聞報道的常見說法。"
+      },
+      "examples": [
+        {
+          "ja": "彼は計画の変更を余儀なくされた。",
+          "reading": "かれはけいかくのへんこうをよぎなくされた。",
+          "en": "He was forced to change the plan.",
+          "zh": "他被迫更改了计划。",
+          "zh_TW": "他被迫更改了計劃。"
+        },
+        {
+          "ja": "会議の中止を余儀なくされた。",
+          "reading": "かいぎのちゅうしをよぎなくされた。",
+          "en": "The meeting was forced to be cancelled.",
+          "zh": "会议被迫取消了。",
+          "zh_TW": "會議被迫取消了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:o-kinjienai",
+      "level": "N1",
+      "pattern": "〜を禁じ得ない",
+      "structure": "感情を表す名詞 + を禁じ得ない",
+      "match": [
+        "を禁じ得ない"
+      ],
+      "meaning": {
+        "en": "cannot suppress/help feeling X",
+        "zh": "禁不住……、不禁……",
+        "zh_TW": "禁不住……、不禁……"
+      },
+      "explanation": {
+        "en": "を禁じ得ない means an emotion is so strong it cannot be held back. It is formal written register, mostly seen with 驚き, 怒り and other emotion nouns in essays and editorials.",
+        "zh": "を禁じ得ない表示某种情感强烈到无法压抑。属于正式书面语，多与驚き、怒り等感情名词搭配，常见于随笔和社论。",
+        "zh_TW": "を禁じ得ない表示某種情感強烈到無法壓抑。屬於正式書面語，多與驚き、怒り等感情名詞搭配，常見於隨筆和社論。"
+      },
+      "examples": [
+        {
+          "ja": "その結果に驚きを禁じ得ない。",
+          "reading": "そのけっかにおどろきをきんじえない。",
+          "en": "I cannot help feeling shocked at the result.",
+          "zh": "对这个结果不禁感到震惊。",
+          "zh_TW": "對這個結果不禁感到震驚。"
+        },
+        {
+          "ja": "彼の態度に怒りを禁じ得ない。",
+          "reading": "かれのたいどにいかりをきんじえない。",
+          "en": "I cannot suppress my anger at his attitude.",
+          "zh": "对他的态度不禁感到愤怒。",
+          "zh_TW": "對他的態度不禁感到憤怒。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-aimatte",
+      "level": "N1",
+      "pattern": "〜と相まって",
+      "structure": "名詞 + と相まって",
+      "match": [
+        "と相まって"
+      ],
+      "meaning": {
+        "en": "combined with X, the effect grows",
+        "zh": "与……相结合、加上……",
+        "zh_TW": "與……相結合、加上……"
+      },
+      "explanation": {
+        "en": "と相まって says two factors combine so that their joint effect is stronger than either alone. It is formal written register used in analysis of causes.",
+        "zh": "と相まって表示两个因素相互结合，产生比单独一方更强的效果。属于正式书面语，常用于分析原因。",
+        "zh_TW": "と相まって表示兩個因素相互結合，產生比單獨一方更強的效果。屬於正式書面語，常用於分析原因。"
+      },
+      "examples": [
+        {
+          "ja": "努力と相まって、結果が良くなった。",
+          "reading": "どりょくとあいまって、けっかがよくなった。",
+          "en": "Combined with the effort, the result improved.",
+          "zh": "加上努力，结果变好了。",
+          "zh_TW": "加上努力，結果變好了。"
+        },
+        {
+          "ja": "新しい方法と相まって、問題は解決した。",
+          "reading": "あたらしいほうほうとあいまって、もんだいはかいけつした。",
+          "en": "Combined with the new method, the problem was solved.",
+          "zh": "加上新方法，问题得以解决。",
+          "zh_TW": "加上新方法，問題得以解決。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:naradewa",
+      "level": "N1",
+      "pattern": "〜ならでは",
+      "structure": "名詞 + ならでは(の)",
+      "match": [
+        "ならでは"
+      ],
+      "meaning": {
+        "en": "uniquely possible only for X",
+        "zh": "只有……才有的、独特的",
+        "zh_TW": "只有……才有的、獨特的"
+      },
+      "explanation": {
+        "en": "ならでは praises something as possible only because of the special qualities of the person or thing named. It is formal written register, common in advertising copy and reviews.",
+        "zh": "ならでは称赞某事只有凭借所提对象的特殊之处才能实现。属于正式书面语，常见于广告文案和评论。",
+        "zh_TW": "ならでは稱讚某事只有憑藉所提對象的特殊之處才能實現。屬於正式書面語，常見於廣告文案和評論。"
+      },
+      "examples": [
+        {
+          "ja": "これは彼ならではの発表だ。",
+          "reading": "これはかれならではのはっぴょうだ。",
+          "en": "This is a presentation only he could give.",
+          "zh": "这是只有他才能做出的发表。",
+          "zh_TW": "這是隻有他才能做出的發表。"
+        },
+        {
+          "ja": "この結果は学生ならではの考えだ。",
+          "reading": "このけっかはがくせいならではのかんがえだ。",
+          "en": "This result reflects an idea unique to students.",
+          "zh": "这个结果是只有学生才有的想法。",
+          "zh_TW": "這個結果是隻有學生才有的想法。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-mo-naru-to",
+      "level": "N1",
+      "pattern": "〜ともなると / 〜ともなれば",
+      "structure": "名詞・動詞辞書形 + ともなると",
+      "match": [
+        "ともなると",
+        "ともなれば"
+      ],
+      "meaning": {
+        "en": "once you reach that level, naturally ...",
+        "zh": "一旦到了……的地步，就自然……",
+        "zh_TW": "一旦到了……的地步，就自然……"
+      },
+      "explanation": {
+        "en": "ともなると sets a high threshold and says that once it is reached, a natural consequence follows. It is formal written and speech register, stronger than になると.",
+        "zh": "ともなると设定一个较高的门槛，表示一旦达到，自然会产生某种结果。属于正式的书面语和口语，语气比になると更重。",
+        "zh_TW": "ともなると設定一個較高的門檻，表示一旦達到，自然會產生某種結果。屬於正式的書面語和口語，語氣比になると更重。"
+      },
+      "examples": [
+        {
+          "ja": "会議ともなると、準備が大変だ。",
+          "reading": "かいぎともなると、じゅんびがたいへんだ。",
+          "en": "Once it is a real meeting, the preparation is a lot of work.",
+          "zh": "一旦是正式会议，准备起来就很辛苦。",
+          "zh_TW": "一旦是正式會議，準備起來就很辛苦。"
+        },
+        {
+          "ja": "先生ともなれば、責任も重くなる。",
+          "reading": "せんせいともなれば、せきにんもおもくなる。",
+          "en": "Once you become a teacher, the responsibility naturally grows heavier.",
+          "zh": "一旦当了老师，责任自然也会变重。",
+          "zh_TW": "一旦當了老師，責任自然也會變重。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-mo-arou",
+      "level": "N1",
+      "pattern": "〜ともあろう",
+      "structure": "名詞 + ともあろう + 名詞",
+      "match": [
+        "ともあろう"
+      ],
+      "meaning": {
+        "en": "someone as important as X, of all people",
+        "zh": "身为……的人（竟然）",
+        "zh_TW": "身為……的人（竟然）"
+      },
+      "explanation": {
+        "en": "ともあろう precedes a noun for a person or organization of high standing and criticizes them for acting beneath that standing. It is formal written register, always disapproving.",
+        "zh": "ともあろう接在表示身份很高的人或组织的名词前，批评其行为不符身份。属于正式书面语，总带不满语气。",
+        "zh_TW": "ともあろう接在表示身份很高的人或組織的名詞前，批評其行為不符身份。屬於正式書面語，總帶不滿語氣。"
+      },
+      "examples": [
+        {
+          "ja": "先生ともあろう人が、そんな態度を取るのか。",
+          "reading": "せんせいともあろうひとが、そんなたいどをとるのか。",
+          "en": "How could someone as respected as a teacher act like that?",
+          "zh": "身为老师的人，怎么能有那种态度呢。",
+          "zh_TW": "身為老師的人，怎麼能有那種態度呢。"
+        },
+        {
+          "ja": "会社ともあろうものが、約束を守らない。",
+          "reading": "かいしゃともあろうものが、やくそくをまもらない。",
+          "en": "An organization as reputable as this company, yet it does not keep its promise.",
+          "zh": "身为这样的公司，竟然不守约定。",
+          "zh_TW": "身為這樣的公司，竟然不守約定。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:de-are",
+      "level": "N1",
+      "pattern": "〜であれ",
+      "structure": "名詞 + であれ（〜であれ〜であれ）",
+      "match": [
+        "であれ"
+      ],
+      "meaning": {
+        "en": "no matter what it is",
+        "zh": "无论是……",
+        "zh_TW": "無論是……"
+      },
+      "explanation": {
+        "en": "であれ is the formal conditional form of だ, usually doubled to say the result holds no matter which of two or more things is the case. It is formal written register found in rules and generalizations.",
+        "zh": "であれ是だ的正式假定形，常常重复使用，表示无论是哪一种情况结果都一样。属于正式书面语，多见于规定和概括性的陈述。",
+        "zh_TW": "であれ是だ的正式假定形，常常重複使用，表示無論是哪一種情況結果都一樣。屬於正式書面語，多見於規定和概括性的陳述。"
+      },
+      "examples": [
+        {
+          "ja": "学生であれ先生であれ、規則を守るべきだ。",
+          "reading": "がくせいであれせんせいであれ、きそくをまもるべきだ。",
+          "en": "Whether student or teacher, one should follow the rules.",
+          "zh": "无论是学生还是老师，都应该遵守规则。",
+          "zh_TW": "無論是學生還是老師，都應該遵守規則。"
+        },
+        {
+          "ja": "大きい問題であれ、小さい問題であれ、考える必要がある。",
+          "reading": "おおきいもんだいであれ、ちいさいもんだいであれ、かんがえるひつようがある。",
+          "en": "Whether it is a big problem or a small one, it needs to be thought about.",
+          "zh": "无论是大问题还是小问题，都有必要考虑。",
+          "zh_TW": "無論是大問題還是小問題，都有必要考慮。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:de-arou-to",
+      "level": "N1",
+      "pattern": "〜であろうと",
+      "structure": "名詞 + であろうと",
+      "match": [
+        "であろうと"
+      ],
+      "meaning": {
+        "en": "whatever it may be (formal)",
+        "zh": "无论是……（正式）",
+        "zh_TW": "無論是……（正式）"
+      },
+      "explanation": {
+        "en": "であろうと is a slightly softer, more literary variant of であれ, used with question words to mean whatever the case may be. It is formal written register.",
+        "zh": "であろうと是であれ稍柔和、更文学化的变体，常与疑问词搭配表示不论情况如何。属于正式书面语。",
+        "zh_TW": "であろうと是であれ稍柔和、更文學化的變體，常與疑問詞搭配表示不論情況如何。屬於正式書面語。"
+      },
+      "examples": [
+        {
+          "ja": "どんな問題であろうと、彼は解決する。",
+          "reading": "どんなもんだいであろうと、かれはかいけつする。",
+          "en": "Whatever the problem may be, he will solve it.",
+          "zh": "无论是什么问题，他都会解决。",
+          "zh_TW": "無論是什麼問題，他都會解決。"
+        },
+        {
+          "ja": "忙しい時であろうと、時間を作るべきだ。",
+          "reading": "いそがしいときであろうと、じかんをつくるべきだ。",
+          "en": "Even in a busy time, one should make time.",
+          "zh": "即使是繁忙的时候，也应该挤出时间。",
+          "zh_TW": "即使是繁忙的時候，也應該擠出時間。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:you-to-mo",
+      "level": "N1",
+      "pattern": "〜(よ)うとも",
+      "structure": "動詞意向形・形容詞意向形 + とも",
+      "match": [
+        "うとも"
+      ],
+      "meaning": {
+        "en": "even if; no matter how (literary)",
+        "zh": "无论怎样……也（文学性）",
+        "zh_TW": "無論怎樣……也（文學性）"
+      },
+      "explanation": {
+        "en": "〜(よ)うとも attaches to the volitional form to mean even if that happens, the outcome stays the same. It is literary written register, stronger and more dramatic than 〜ても.",
+        "zh": "〜(よ)うとも接在意向形后，表示即使发生那种情况，结果也不变。属于文学性书面语，语气比〜ても更强烈、更具戏剧性。",
+        "zh_TW": "〜(よ)うとも接在意向形後，表示即使發生那種情況，結果也不變。屬於文學性書面語，語氣比〜ても更強烈、更具戲劇性。"
+      },
+      "examples": [
+        {
+          "ja": "何が起ころうとも、計画は続ける。",
+          "reading": "なにがおころうとも、けいかくはつづける。",
+          "en": "No matter what happens, the plan will continue.",
+          "zh": "无论发生什么，计划都会继续下去。",
+          "zh_TW": "無論發生什麼，計劃都會繼續下去。"
+        },
+        {
+          "ja": "どんなに大変だろうとも、努力を続ける。",
+          "reading": "どんなにたいへんだろうとも、どりょくをつづける。",
+          "en": "No matter how busy it may be, the effort will continue.",
+          "zh": "无论多忙，都会继续努力。",
+          "zh_TW": "無論多忙，都會繼續努力。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:taritomo",
+      "level": "N1",
+      "pattern": "〜たりとも",
+      "structure": "数量詞（一+助数詞）+ たりとも + 否定",
+      "match": [
+        "たりとも"
+      ],
+      "meaning": {
+        "en": "not even one; not even for a moment",
+        "zh": "哪怕……也（不）、一……也（不）",
+        "zh_TW": "哪怕……也（不）、一……也（不）"
+      },
+      "explanation": {
+        "en": "たりとも attaches to a smallest possible unit — one second, one person — and is followed by a negative to say not even that much is allowed. It is classical written register found in formal warnings.",
+        "zh": "たりとも接在最小的单位之后——一秒、一人——后接否定，表示连这么一点都不被允许。属于文言书面语，常见于正式的告诫。",
+        "zh_TW": "たりとも接在最小的單位之後——一秒、一人——後接否定，表示連這麼一點都不被允許。屬於文言書面語，常見於正式的告誡。"
+      },
+      "examples": [
+        {
+          "ja": "一秒たりとも無駄にできない。",
+          "reading": "いちびょうたりともむだにできない。",
+          "en": "Not even a single second can be wasted.",
+          "zh": "一秒钟也不能浪费。",
+          "zh_TW": "一秒鐘也不能浪費。"
+        },
+        {
+          "ja": "一日たりとも休まなかった。",
+          "reading": "いちにちたりともやすまなかった。",
+          "en": "He did not rest for even a single day.",
+          "zh": "一天也没有休息过。",
+          "zh_TW": "一天也沒有休息過。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-iedomo",
+      "level": "N1",
+      "pattern": "〜といえども",
+      "structure": "名詞・普通形 + といえども",
+      "match": [
+        "といえども"
+      ],
+      "meaning": {
+        "en": "even though it is X",
+        "zh": "即使是……也、虽说是……但",
+        "zh_TW": "即使是……也、雖說是……但"
+      },
+      "explanation": {
+        "en": "といえども is a classical concessive meaning even though something holds a certain status, an exception still applies. It is literary written register, formal and slightly old-fashioned.",
+        "zh": "といえども是文言让步表达，表示即使某事物具有某种身份，例外依然成立。属于文学性书面语，语体正式且略带古风。",
+        "zh_TW": "といえども是文言讓步表達，表示即使某事物具有某種身份，例外依然成立。屬於文學性書面語，語體正式且略帶古風。"
+      },
+      "examples": [
+        {
+          "ja": "先生といえども、間違うことがある。",
+          "reading": "せんせいといえども、まちがうことがある。",
+          "en": "Even a teacher can make mistakes.",
+          "zh": "即使是老师，也会有出错的时候。",
+          "zh_TW": "即使是老師，也會有出錯的時候。"
+        },
+        {
+          "ja": "子供といえども、責任は感じるべきだ。",
+          "reading": "こどもといえども、せきにんはかんじるべきだ。",
+          "en": "Even a child should feel a sense of responsibility.",
+          "zh": "即使是孩子，也应该有责任感。",
+          "zh_TW": "即使是孩子，也應該有責任感。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-wa-iu-mono-no",
+      "level": "N1",
+      "pattern": "〜とはいうものの",
+      "structure": "普通形 + とはいうものの",
+      "match": [
+        "とはいうものの"
+      ],
+      "meaning": {
+        "en": "although that is true, in reality ...",
+        "zh": "话虽如此……、虽说……但实际上",
+        "zh_TW": "話雖如此……、雖說……但實際上"
+      },
+      "explanation": {
+        "en": "とはいうものの concedes something stated is technically true but then reveals a gap with reality. It is formal written register, slightly more hesitant in tone than とはいえ.",
+        "zh": "とはいうものの承认前面所说在道理上成立，随后揭示与现实的落差。属于正式书面语，语气比とはいえ更显犹豫。",
+        "zh_TW": "とはいうものの承認前面所說在道理上成立，隨後揭示與現實的落差。屬於正式書面語，語氣比とはいえ更顯猶豫。"
+      },
+      "examples": [
+        {
+          "ja": "分かったとはいうものの、まだ不安が残る。",
+          "reading": "わかったとはいうものの、まだふあんがのこる。",
+          "en": "I said I understood, but some unease still remains.",
+          "zh": "话虽说明白了，但仍然感到不安。",
+          "zh_TW": "話雖說明白了，但仍然感到不安。"
+        },
+        {
+          "ja": "準備したとはいうものの、時間が足りない。",
+          "reading": "じゅんびしたとはいうものの、じかんがたりない。",
+          "en": "I did prepare, but there still is not enough time.",
+          "zh": "话虽说准备好了，但时间还是不够。",
+          "zh_TW": "話雖說準備好了，但時間還是不夠。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nagara-mo-advanced",
+      "level": "N1",
+      "pattern": "〜ながらも（書き言葉）",
+      "structure": "動詞ます形・い形容詞 + ながらも",
+      "match": [
+        "ながらも"
+      ],
+      "meaning": {
+        "en": "literary concessive: though it is X",
+        "zh": "虽然……但是（书面语）",
+        "zh_TW": "雖然……但是（書面語）"
+      },
+      "explanation": {
+        "en": "ながらも is the literary concessive form of ながら, meaning although one state holds, another unexpected one follows. It is formal written register found in essays and narrative prose.",
+        "zh": "ながらも是ながら的文学性让步形式，表示虽然处于某种状态，却出现了出乎意料的另一面。属于正式书面语，常见于随笔和叙事性文章。",
+        "zh_TW": "ながらも是ながら的文學性讓步形式，表示雖然處於某種狀態，卻出現了出乎意料的另一面。屬於正式書面語，常見於隨筆和敘事性文章。"
+      },
+      "examples": [
+        {
+          "ja": "忙しいながらも、彼は毎日本を読む。",
+          "reading": "いそがしいながらも、かれはまいにちほんをよむ。",
+          "en": "Busy as he is, he reads a book every day.",
+          "zh": "虽然忙，他还是每天读书。",
+          "zh_TW": "雖然忙，他還是每天讀書。"
+        },
+        {
+          "ja": "小さいながらも、この問題は重要だ。",
+          "reading": "ちいさいながらも、このもんだいはじゅうようだ。",
+          "en": "Small as it is, this problem is important.",
+          "zh": "这个问题虽小，却很重要。",
+          "zh_TW": "這個問題雖小，卻很重要。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:koso-are",
+      "level": "N1",
+      "pattern": "〜こそあれ",
+      "structure": "名詞 + こそあれ、〜ない",
+      "match": [
+        "こそあれ"
+      ],
+      "meaning": {
+        "en": "there is X, but nothing of the other",
+        "zh": "虽有……但绝无……（文学性）",
+        "zh_TW": "雖有……但絕無……（文學性）"
+      },
+      "explanation": {
+        "en": "こそあれ is a classical pattern that admits one thing is present but denies its opposite entirely. It is literary written register, rare outside formal essays.",
+        "zh": "こそあれ是文言句式，承认某事存在，却完全否定与之相反的另一面。属于文学性书面语，多见于正式随笔，其他场合少用。",
+        "zh_TW": "こそあれ是文言句式，承認某事存在，卻完全否定與之相反的另一面。屬於文學性書面語，多見於正式隨筆，其他場合少用。"
+      },
+      "examples": [
+        {
+          "ja": "問題こそあれ、彼の態度は変わらない。",
+          "reading": "もんだいこそあれ、かれのたいどはかわらない。",
+          "en": "There may be problems, but his attitude never changes.",
+          "zh": "虽然有问题，但他的态度丝毫未变。",
+          "zh_TW": "雖然有問題，但他的態度絲毫未變。"
+        },
+        {
+          "ja": "責任こそあれ、後悔はない。",
+          "reading": "せきにんこそあれ、こうかいはない。",
+          "en": "There is responsibility, but no regret.",
+          "zh": "虽然有责任，却毫无后悔。",
+          "zh_TW": "雖然有責任，卻毫無後悔。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:koso-sure",
+      "level": "N1",
+      "pattern": "〜こそすれ",
+      "structure": "動詞ます形 + こそすれ、〜ない",
+      "match": [
+        "こそすれ"
+      ],
+      "meaning": {
+        "en": "it will only do X, never the opposite",
+        "zh": "只会……而绝不会……",
+        "zh_TW": "只會……而絕不會……"
+      },
+      "explanation": {
+        "en": "こそすれ is the classical counterpart of こそあれ used with verbs: it says an action will only ever go one way, never the reverse. It is literary written register.",
+        "zh": "こそすれ是こそあれ用于动词的文言对应形式，表示动作只会朝一个方向发展，绝不会相反。属于文学性书面语。",
+        "zh_TW": "こそすれ是こそあれ用於動詞的文言對應形式，表示動作只會朝一個方向發展，絕不會相反。屬於文學性書面語。"
+      },
+      "examples": [
+        {
+          "ja": "彼は感謝こそすれ、怒ることはない。",
+          "reading": "かれはかんしゃこそすれ、おこることはない。",
+          "en": "He will only feel gratitude, never anger.",
+          "zh": "他只会感激，绝不会生气。",
+          "zh_TW": "他只會感激，絕不會生氣。"
+        },
+        {
+          "ja": "結果は良くなりこそすれ、悪くはならない。",
+          "reading": "けっかはよくなりこそすれ、わるくはならない。",
+          "en": "The result will only get better, never worse.",
+          "zh": "结果只会变好，绝不会变差。",
+          "zh_TW": "結果只會變好，絕不會變差。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ba-koso",
+      "level": "N1",
+      "pattern": "〜ばこそ",
+      "structure": "動詞・形容詞仮定形 + こそ",
+      "match": [
+        "ばこそ"
+      ],
+      "meaning": {
+        "en": "precisely because of X",
+        "zh": "正因为……才",
+        "zh_TW": "正因為……才"
+      },
+      "explanation": {
+        "en": "ばこそ attaches to the conditional form and singles out the true, sole reason behind an action. It is formal written and rhetorical spoken register, stronger than から.",
+        "zh": "ばこそ接在假定形后，点明某个行为背后唯一真正的原因。属于正式书面语和带修辞色彩的口语，语气比から更强。",
+        "zh_TW": "ばこそ接在假定形後，點明某個行為背後唯一真正的原因。屬於正式書面語和帶修辭色彩的口語，語氣比から更強。"
+      },
+      "examples": [
+        {
+          "ja": "努力すればこそ、成功する。",
+          "reading": "どりょくすればこそ、せいこうする。",
+          "en": "It is precisely because of the effort that one succeeds.",
+          "zh": "正因为努力，才能成功。",
+          "zh_TW": "正因為努力，才能成功。"
+        },
+        {
+          "ja": "心配すればこそ、注意する。",
+          "reading": "しんぱいすればこそ、ちゅういする。",
+          "en": "It is precisely because I worry that I give warnings.",
+          "zh": "正因为担心，才会提醒。",
+          "zh_TW": "正因為擔心，才會提醒。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:you-mono-nara",
+      "level": "N1",
+      "pattern": "〜(よ)うものなら",
+      "structure": "動詞意向形 + ものなら",
+      "match": [
+        "ものなら"
+      ],
+      "meaning": {
+        "en": "if you were to do it, disaster follows",
+        "zh": "要是……的话，后果不堪设想",
+        "zh_TW": "要是……的話，後果不堪設想"
+      },
+      "explanation": {
+        "en": "〜(よ)うものなら attaches to the volitional form to warn that if the stated action were ever attempted, a serious consequence would follow. It is formal written and cautionary spoken register.",
+        "zh": "〜(よ)うものなら接在意向形后，警告说如果真做了那件事，就会招致严重后果。属于正式书面语和带警示意味的口语。",
+        "zh_TW": "〜(よ)うものなら接在意向形後，警告說如果真做了那件事，就會招致嚴重後果。屬於正式書面語和帶警示意味的口語。"
+      },
+      "examples": [
+        {
+          "ja": "遅刻しようものなら、先生に注意される。",
+          "reading": "ちこくしようものなら、せんせいにちゅういされる。",
+          "en": "If you were to be late, the teacher would scold you.",
+          "zh": "要是迟到了，会被老师骂的。",
+          "zh_TW": "要是遲到了，會被老師罵的。"
+        },
+        {
+          "ja": "一つ間違えようものなら、大きい問題になる。",
+          "reading": "ひとつまちがえようものなら、おおきいもんだいになる。",
+          "en": "If even one thing were to go wrong, it would become a big problem.",
+          "zh": "要是弄错一点，就会变成大问题。",
+          "zh_TW": "要是弄錯一點，就會變成大問題。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:you-de-wa",
+      "level": "N1",
+      "pattern": "〜ようでは",
+      "structure": "普通形 + ようでは",
+      "match": [
+        "ようでは"
+      ],
+      "meaning": {
+        "en": "if things are like that, it is hopeless",
+        "zh": "照这样……的话，就完了",
+        "zh_TW": "照這樣……的話，就完了"
+      },
+      "explanation": {
+        "en": "ようでは points at an ongoing state and says that if things continue like that, a bad outcome is unavoidable. It is formal written and admonishing spoken register.",
+        "zh": "ようでは指出一种持续的状态，表示照这样下去，不好的结果是无法避免的。属于正式书面语和带告诫意味的口语。",
+        "zh_TW": "ようでは指出一種持續的狀態，表示照這樣下去，不好的結果是無法避免的。屬於正式書面語和帶告誡意味的口語。"
+      },
+      "examples": [
+        {
+          "ja": "そんな態度でいるようでは、成功しない。",
+          "reading": "そんなたいどでいるようでは、せいこうしない。",
+          "en": "If you keep that attitude, you will not succeed.",
+          "zh": "要是一直那种态度，是不会成功的。",
+          "zh_TW": "要是一直那種態度，是不會成功的。"
+        },
+        {
+          "ja": "毎日忘れるようでは、覚えられない。",
+          "reading": "まいにちわすれるようでは、おぼえられない。",
+          "en": "If you forget every day like that, you will never learn it.",
+          "zh": "要是每天都这样忘记，就记不住了。",
+          "zh_TW": "要是每天都這樣忘記，就記不住了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ba-sore-made-da",
+      "level": "N1",
+      "pattern": "〜ばそれまでだ",
+      "structure": "動詞仮定形 + それまでだ",
+      "match": [
+        "ばそれまでだ"
+      ],
+      "meaning": {
+        "en": "if that happens, it is all over",
+        "zh": "如果……那就全完了",
+        "zh_TW": "如果……那就全完了"
+      },
+      "explanation": {
+        "en": "ばそれまでだ attaches to the conditional and says that once the stated thing happens, everything else becomes pointless. It is formal written and reflective spoken register.",
+        "zh": "ばそれまでだ接在假定形后，表示一旦发生所说的事，其他一切都变得毫无意义。属于正式书面语和带感慨意味的口语。",
+        "zh_TW": "ばそれまでだ接在假定形後，表示一旦發生所說的事，其他一切都變得毫無意義。屬於正式書面語和帶感慨意味的口語。"
+      },
+      "examples": [
+        {
+          "ja": "彼が帰ればそれまでだ。",
+          "reading": "かれがかえればそれまでだ。",
+          "en": "If the car breaks down, that's the end of it.",
+          "zh": "车要是坏了，那就全完了。",
+          "zh_TW": "車要是壞了，那就全完了。"
+        },
+        {
+          "ja": "断ればそれまでだ。",
+          "reading": "ことわればそれまでだ。",
+          "en": "If you give up, that's the end of it.",
+          "zh": "要是放弃了，那就全完了。",
+          "zh_TW": "要是放棄了，那就全完了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:mono-o",
+      "level": "N1",
+      "pattern": "〜ものを",
+      "structure": "普通形（仮定形・た形） + ものを",
+      "match": [
+        "ものを"
+      ],
+      "meaning": {
+        "en": "if only ... — regret and reproach",
+        "zh": "本来……可是（遗憾、责备）",
+        "zh_TW": "本來……可是（遺憾、責備）"
+      },
+      "explanation": {
+        "en": "ものを attaches to the conditional or past form to express regret or mild reproach that things did not go the better way that was available. It is formal written and emotional spoken register.",
+        "zh": "ものを接在假定形或过去形后，表示遗憾或轻微的责备，惋惜本可以有更好的结果却没有。属于正式书面语和带感情色彩的口语。",
+        "zh_TW": "ものを接在假定形或過去形後，表示遺憾或輕微的責備，惋惜本可以有更好的結果卻沒有。屬於正式書面語和帶感情色彩的口語。"
+      },
+      "examples": [
+        {
+          "ja": "早く言えばいいものを、黙っていた。",
+          "reading": "はやくいえばいいものを、だまっていた。",
+          "en": "He could have just said it sooner, but he stayed silent.",
+          "zh": "本来早说就好了，可他却一直不说。",
+          "zh_TW": "本來早說就好了，可他卻一直不說。"
+        },
+        {
+          "ja": "手伝えばよかったものを、何もしなかった。",
+          "reading": "てつだえばよかったものを、なにもしなかった。",
+          "en": "He could have helped, but he did nothing.",
+          "zh": "本来帮个忙就好了，可他什么也没做。",
+          "zh_TW": "本來幫個忙就好了，可他什麼也沒做。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tara-ta-de",
+      "level": "N1",
+      "pattern": "〜たら〜たで",
+      "structure": "動詞・形容詞のたら形 + 同じ語のた形 + で",
+      "match": [
+        "忙しかったら忙しかったで",
+        "来たら来たで"
+      ],
+      "meaning": {
+        "en": "even if it turns out that way, still ...",
+        "zh": "即使……到时候也自有办法",
+        "zh_TW": "即使……到時候也自有辦法"
+      },
+      "explanation": {
+        "en": "たら〜たで repeats the same verb or adjective to say that whichever way things turn out, there is still something to deal with or some consolation. It is formal written and conversational spoken register.",
+        "zh": "たら〜たで重复同一个动词或形容词，表示无论事情如何发展，总还有需要面对的情况或可取之处。属于正式书面语和日常口语。",
+        "zh_TW": "たら〜たで重複同一個動詞或形容詞，表示無論事情如何發展，總還有需要面對的情況或可取之處。屬於正式書面語和日常口語。"
+      },
+      "examples": [
+        {
+          "ja": "忙しかったら忙しかったで、それも悪くない。",
+          "reading": "いそがしかったらいそがしかったで、それもわるくない。",
+          "en": "Even if it turns out busy, that isn't so bad either.",
+          "zh": "就算忙起来，那样也不错。",
+          "zh_TW": "就算忙起來，那樣也不錯。"
+        },
+        {
+          "ja": "彼が来たら来たで、問題が起きる。",
+          "reading": "かれがきたらきたで、もんだいがおきる。",
+          "en": "If he does come after all, a problem will arise then.",
+          "zh": "他要是来了，到时候又会出问题。",
+          "zh_TW": "他要是來了，到時候又會出問題。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:naku-shite-wa",
+      "level": "N1",
+      "pattern": "〜なくして(は)",
+      "structure": "名詞 + なくして(は) + 否定",
+      "match": [
+        "なくしては",
+        "なくして"
+      ],
+      "meaning": {
+        "en": "without X, it would be impossible",
+        "zh": "没有……就不可能……",
+        "zh_TW": "沒有……就不可能……"
+      },
+      "explanation": {
+        "en": "なくして(は) attaches to a noun and, followed by a negative, says that without it the stated result would be impossible. It is formal written register, common in speeches and essays.",
+        "zh": "なくして(は)接在名词后，后接否定，表示没有它就不可能出现所说的结果。属于正式书面语，常见于演讲和随笔。",
+        "zh_TW": "なくして(は)接在名詞後，後接否定，表示沒有它就不可能出現所說的結果。屬於正式書面語，常見於演講和隨筆。"
+      },
+      "examples": [
+        {
+          "ja": "努力なくしては、成功はない。",
+          "reading": "どりょくなくしては、せいこうはない。",
+          "en": "Without effort, there is no success.",
+          "zh": "没有努力就没有成功。",
+          "zh_TW": "沒有努力就沒有成功。"
+        },
+        {
+          "ja": "信頼なくして、良い関係は続かない。",
+          "reading": "しんらいなくして、よいかんけいはつづかない。",
+          "en": "Without trust, a good relationship cannot continue.",
+          "zh": "没有信任，良好的关系就无法持续。",
+          "zh_TW": "沒有信任，良好的關係就無法持續。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nashi-ni-wa",
+      "level": "N1",
+      "pattern": "〜なしに(は)",
+      "structure": "名詞 + なしに(は) + 否定",
+      "match": [
+        "なしには",
+        "なしに"
+      ],
+      "meaning": {
+        "en": "without doing X (formal)",
+        "zh": "没有……就（不）……（正式）",
+        "zh_TW": "沒有……就（不）……（正式）"
+      },
+      "explanation": {
+        "en": "なしに(は) is close to なくして but focuses more on an action being skipped, meaning without doing X first, Y does not happen. It is formal written register.",
+        "zh": "なしに(は)与なくして意思相近，但更侧重某个步骤被省略，表示不先做X就不会有Y。属于正式书面语。",
+        "zh_TW": "なしに(は)與なくして意思相近，但更側重某個步驟被省略，表示不先做X就不會有Y。屬於正式書面語。"
+      },
+      "examples": [
+        {
+          "ja": "許可なしには、車を使えない。",
+          "reading": "きょかなしには、くるまをつかえない。",
+          "en": "Without permission, you cannot use the car.",
+          "zh": "没有许可就不能使用车。",
+          "zh_TW": "沒有許可就不能使用車。"
+        },
+        {
+          "ja": "説明なしに、結果だけ伝えた。",
+          "reading": "せつめいなしに、けっかだけつたえた。",
+          "en": "Without any explanation, only the result was conveyed.",
+          "zh": "没有说明，只传达了结果。",
+          "zh_TW": "沒有說明，只傳達了結果。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:atte-no",
+      "level": "N1",
+      "pattern": "〜あっての",
+      "structure": "名詞 + あっての + 名詞",
+      "match": [
+        "あっての"
+      ],
+      "meaning": {
+        "en": "X exists only thanks to Y",
+        "zh": "有了……才有……",
+        "zh_TW": "有了……才有……"
+      },
+      "explanation": {
+        "en": "あっての says the second noun exists only because the first one does; remove the first and the second collapses. It is formal written and rhetorical spoken register.",
+        "zh": "あっての表示后面的名词之所以存在，全靠前面的名词；没有前者，后者就不成立。属于正式书面语和带修辞意味的口语。",
+        "zh_TW": "あっての表示後面的名詞之所以存在，全靠前面的名詞；沒有前者，後者就不成立。屬於正式書面語和帶修辭意味的口語。"
+      },
+      "examples": [
+        {
+          "ja": "学生あっての学校だ。",
+          "reading": "がくせいあってのがっこうだ。",
+          "en": "A school exists only thanks to its students.",
+          "zh": "有了学生才有学校。",
+          "zh_TW": "有了學生才有學校。"
+        },
+        {
+          "ja": "信頼あっての関係だ。",
+          "reading": "しんらいあってのかんけいだ。",
+          "en": "A relationship exists only thanks to trust.",
+          "zh": "有了信任才有关系。",
+          "zh_TW": "有了信任才有關係。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ikan-da",
+      "level": "N1",
+      "pattern": "〜いかんだ",
+      "structure": "名詞 + いかんだ",
+      "match": [
+        "いかんだ"
+      ],
+      "meaning": {
+        "en": "it all hinges on X",
+        "zh": "取决于……如何",
+        "zh_TW": "取決於……如何"
+      },
+      "explanation": {
+        "en": "いかんだ attaches to a noun and says the outcome is entirely determined by that factor. It is formal written register, terse and impersonal in tone.",
+        "zh": "いかんだ接在名词后，表示结果完全由该因素决定。属于正式书面语，语气简洁、客观。",
+        "zh_TW": "いかんだ接在名詞後，表示結果完全由該因素決定。屬於正式書面語，語氣簡潔、客觀。"
+      },
+      "examples": [
+        {
+          "ja": "成功は努力いかんだ。",
+          "reading": "せいこうはどりょくいかんだ。",
+          "en": "Success all hinges on the effort.",
+          "zh": "成功取决于努力如何。",
+          "zh_TW": "成功取決於努力如何。"
+        },
+        {
+          "ja": "結果は準備いかんだ。",
+          "reading": "けっかはじゅんびいかんだ。",
+          "en": "The result all hinges on the preparation.",
+          "zh": "结果取决于准备如何。",
+          "zh_TW": "結果取決於準備如何。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ikan-de",
+      "level": "N1",
+      "pattern": "〜いかんで(は)",
+      "structure": "名詞 + いかんで(は)",
+      "match": [
+        "いかんでは",
+        "いかんで"
+      ],
+      "meaning": {
+        "en": "depending on X, the outcome changes",
+        "zh": "根据……的不同，结果也会不同",
+        "zh_TW": "根據……的不同，結果也會不同"
+      },
+      "explanation": {
+        "en": "いかんで(は) is the conjunctive form of いかんだ, meaning depending on that factor, the result may change. It is formal written register common in official explanations.",
+        "zh": "いかんで(は)是いかんだ的连接形式，表示视该因素而定，结果可能改变。属于正式书面语，常见于官方说明。",
+        "zh_TW": "いかんで(は)是いかんだ的連接形式，表示視該因素而定，結果可能改變。屬於正式書面語，常見於官方說明。"
+      },
+      "examples": [
+        {
+          "ja": "結果は準備いかんで変わる。",
+          "reading": "けっかはじゅんびいかんでかわる。",
+          "en": "The result changes depending on the preparation.",
+          "zh": "结果会根据准备的不同而变化。",
+          "zh_TW": "結果會根據準備的不同而變化。"
+        },
+        {
+          "ja": "態度いかんでは、許されないこともある。",
+          "reading": "たいどいかんでは、ゆるされないこともある。",
+          "en": "Depending on the attitude, it may not be forgiven.",
+          "zh": "根据态度的不同，也有不被原谅的情况。",
+          "zh_TW": "根據態度的不同，也有不被原諒的情況。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ikan-ni-yorazu",
+      "level": "N1",
+      "pattern": "〜いかんによらず",
+      "structure": "名詞（の） + いかんによらず",
+      "match": [
+        "いかんによらず"
+      ],
+      "meaning": {
+        "en": "regardless of X",
+        "zh": "无论……如何、不管……",
+        "zh_TW": "無論……如何、不管……"
+      },
+      "explanation": {
+        "en": "いかんによらず attaches after のに-marked or bare noun with の and means regardless of that factor, the same rule applies. It is formal written and legal register.",
+        "zh": "いかんによらず表示不论该因素如何，同一规则都适用。属于正式书面语和法律语体。",
+        "zh_TW": "いかんによらず表示不論該因素如何，同一規則都適用。屬於正式書面語和法律語體。"
+      },
+      "examples": [
+        {
+          "ja": "理由のいかんによらず、規則は守るべきだ。",
+          "reading": "りゆうのいかんによらず、きそくはまもるべきだ。",
+          "en": "Regardless of the reason, the rules should be followed.",
+          "zh": "无论理由如何，都应该遵守规则。",
+          "zh_TW": "無論理由如何，都應該遵守規則。"
+        },
+        {
+          "ja": "結果のいかんによらず、努力を続ける。",
+          "reading": "けっかのいかんによらず、どりょくをつづける。",
+          "en": "Regardless of the result, the effort will continue.",
+          "zh": "无论结果如何，都会继续努力。",
+          "zh_TW": "無論結果如何，都會繼續努力。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nara-iza-shirazu",
+      "level": "N1",
+      "pattern": "〜ならいざ知らず",
+      "structure": "名詞 + ならいざ知らず",
+      "match": [
+        "ならいざ知らず"
+      ],
+      "meaning": {
+        "en": "X might be another matter, but ...",
+        "zh": "如果是……还另当别论，但是……",
+        "zh_TW": "如果是……還另當別論，但是……"
+      },
+      "explanation": {
+        "en": "ならいざ知らず sets aside one case as possibly acceptable and then criticizes a second case that clearly is not. It is formal written and pointed spoken register.",
+        "zh": "ならいざ知らず先把一种情况搁置为或许可以接受，再批评明显说不过去的另一种情况。属于正式书面语和带指责意味的口语。",
+        "zh_TW": "ならいざ知らず先把一種情況擱置為或許可以接受，再批評明顯說不過去的另一種情況。屬於正式書面語和帶指責意味的口語。"
+      },
+      "examples": [
+        {
+          "ja": "学生ならいざ知らず、先生がそれを知らないのは問題だ。",
+          "reading": "がくせいならいざしらず、せんせいがそれをしらないのはもんだいだ。",
+          "en": "A student might be one thing, but it is a problem that a teacher does not know that.",
+          "zh": "学生的话还另当别论，可老师不知道那件事就有问题了。",
+          "zh_TW": "學生的話還另當別論，可老師不知道那件事就有問題了。"
+        },
+        {
+          "ja": "昔ならいざ知らず、今は状況が違う。",
+          "reading": "むかしならいざしらず、いまはじょうきょうがちがう。",
+          "en": "The past might be another matter, but the situation is different now.",
+          "zh": "过去的话还另当别论，现在情况不同了。",
+          "zh_TW": "過去的話還另當別論，現在情況不同了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nara-madashimo",
+      "level": "N1",
+      "pattern": "〜ならまだしも",
+      "structure": "名詞 + ならまだしも",
+      "match": [
+        "ならまだしも"
+      ],
+      "meaning": {
+        "en": "X would be tolerable, but this is not",
+        "zh": "如果是……还说得过去，可是……",
+        "zh_TW": "如果是……還說得過去，可是……"
+      },
+      "explanation": {
+        "en": "ならまだしも is close to ならいざ知らず but softer, saying one case would be tolerable while the actual case is not. It is formal written and complaining spoken register.",
+        "zh": "ならまだしも与ならいざ知らず相近但语气更柔和，表示某种情况还说得过去，而实际情况却不然。属于正式书面语和带抱怨意味的口语。",
+        "zh_TW": "ならまだしも與ならいざ知らず相近但語氣更柔和，表示某種情況還說得過去，而實際情況卻不然。屬於正式書面語和帶抱怨意味的口語。"
+      },
+      "examples": [
+        {
+          "ja": "一度ならまだしも、何度も同じ間違いをする。",
+          "reading": "いちどならまだしも、なんどもおなじまちがいをする。",
+          "en": "Once would be tolerable, but he makes the same mistake again and again.",
+          "zh": "要是一次还说得过去，可是同样的错误却犯了好几次。",
+          "zh_TW": "要是一次還說得過去，可是同樣的錯誤卻犯了好幾次。"
+        },
+        {
+          "ja": "学生ならまだしも、先生がそれを知らない。",
+          "reading": "がくせいならまだしも、せんせいがそれをしらない。",
+          "en": "A student would be tolerable, but a teacher does not know that.",
+          "zh": "要是学生还说得过去，可是老师却不知道那件事。",
+          "zh_TW": "要是學生還說得過去，可是老師卻不知道那件事。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:wa-sateoki",
+      "level": "N1",
+      "pattern": "〜はさておき",
+      "structure": "名詞 + はさておき",
+      "match": [
+        "はさておき"
+      ],
+      "meaning": {
+        "en": "setting X aside for the moment",
+        "zh": "……先放一边、暂且不谈……",
+        "zh_TW": "……先放一邊、暫且不談……"
+      },
+      "explanation": {
+        "en": "はさておき sets a topic aside for the moment to move on to something more pressing. It is formal written and meeting-room spoken register.",
+        "zh": "はさておき把某个话题暂时搁置，转向更紧迫的事。属于正式书面语和会议场合的口语。",
+        "zh_TW": "はさておき把某個話題暫時擱置，轉向更緊迫的事。屬於正式書面語和會議場合的口語。"
+      },
+      "examples": [
+        {
+          "ja": "その問題はさておき、会議を続けよう。",
+          "reading": "そのもんだいはさておき、かいぎをつづけよう。",
+          "en": "Setting that problem aside for now, let's continue the meeting.",
+          "zh": "那个问题先放一边，继续开会吧。",
+          "zh_TW": "那個問題先放一邊，繼續開會吧。"
+        },
+        {
+          "ja": "結果はさておき、彼の努力は認められる。",
+          "reading": "けっかはさておき、かれのどりょくはみとめられる。",
+          "en": "Setting the result aside, his effort is recognized.",
+          "zh": "结果先不谈，他的努力值得认可。",
+          "zh_TW": "結果先不談，他的努力值得認可。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:mo-saru-koto-nagara",
+      "level": "N1",
+      "pattern": "〜もさることながら",
+      "structure": "名詞 + もさることながら",
+      "match": [
+        "もさることながら"
+      ],
+      "meaning": {
+        "en": "X is true, but Y even more so",
+        "zh": "……固然如此，……更是",
+        "zh_TW": "……固然如此，……更是"
+      },
+      "explanation": {
+        "en": "もさることながら admits the first item is indeed true or important, then says the second is even more so. It is formal written register common in reviews and analysis.",
+        "zh": "もさることながら承认前一项确实属实或重要，再指出后一项更是如此。属于正式书面语，常见于评论和分析文章。",
+        "zh_TW": "もさることながら承認前一項確實屬實或重要，再指出後一項更是如此。屬於正式書面語，常見於評論和分析文章。"
+      },
+      "examples": [
+        {
+          "ja": "結果もさることながら、過程も重要だ。",
+          "reading": "けっかもさることながら、かていもじゅうようだ。",
+          "en": "The result matters, but the process matters just as much, if not more.",
+          "zh": "结果固然重要，过程也同样重要。",
+          "zh_TW": "結果固然重要，過程也同樣重要。"
+        },
+        {
+          "ja": "努力もさることながら、才能も必要だ。",
+          "reading": "どりょくもさることながら、さいのうもひつようだ。",
+          "en": "Effort matters, but talent is needed just as much.",
+          "zh": "努力固然重要，才能也同样必要。",
+          "zh_TW": "努力固然重要，才能也同樣必要。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:wa-oroka",
+      "level": "N1",
+      "pattern": "〜はおろか",
+      "structure": "名詞 + はおろか、〜も",
+      "match": [
+        "はおろか"
+      ],
+      "meaning": {
+        "en": "let alone X, not even Y",
+        "zh": "别说……了，连……都……",
+        "zh_TW": "別說……了，連……都……"
+      },
+      "explanation": {
+        "en": "はおろか names an expected item and dismisses it as not even worth mentioning before pointing to something far more basic that is also lacking. It is formal written register with a strong emphatic tone.",
+        "zh": "はおろか点出一个预期中的项目，说它根本不值一提，再指出连更基本的东西都没有。属于正式书面语，语气强调。",
+        "zh_TW": "はおろか點出一個預期中的項目，說它根本不值一提，再指出連更基本的東西都沒有。屬於正式書面語，語氣強調。"
+      },
+      "examples": [
+        {
+          "ja": "車はおろか、自転車も持っていない。",
+          "reading": "くるまはおろか、じてんしゃももっていない。",
+          "en": "Let alone a car, he doesn't even have a bicycle.",
+          "zh": "别说车了，连自行车都没有。",
+          "zh_TW": "別說車了，連自行車都沒有。"
+        },
+        {
+          "ja": "本を読むことはおろか、字も読めない。",
+          "reading": "ほんをよむことはおろか、じもよめない。",
+          "en": "Let alone reading books, he cannot even read letters.",
+          "zh": "别说读书了，连字都不认识。",
+          "zh_TW": "別說讀書了，連字都不認識。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:sura",
+      "level": "N1",
+      "pattern": "〜すら",
+      "structure": "名詞 + すら",
+      "match": [
+        "すら"
+      ],
+      "meaning": {
+        "en": "even X (formal equivalent of さえ)",
+        "zh": "连……都（正式，同さえ）",
+        "zh_TW": "連……都（正式，同さえ）"
+      },
+      "explanation": {
+        "en": "すら is the formal written equivalent of さえ, marking an extreme example to emphasize how surprising or serious a statement is. It is formal written register.",
+        "zh": "すら是さえ的正式书面对应词，用来举出极端的例子以强调陈述的意外或严重程度。属于正式书面语。",
+        "zh_TW": "すら是さえ的正式書面對應詞，用來舉出極端的例子以強調陳述的意外或嚴重程度。屬於正式書面語。"
+      },
+      "examples": [
+        {
+          "ja": "彼は自分の名前すら忘れた。",
+          "reading": "かれはじぶんのなまえすらわすれた。",
+          "en": "He even forgot his own name.",
+          "zh": "他连自己的名字都忘了。",
+          "zh_TW": "他連自己的名字都忘了。"
+        },
+        {
+          "ja": "子供すらその問題が分かる。",
+          "reading": "こどもすらそのもんだいがわかる。",
+          "en": "Even a child understands that problem.",
+          "zh": "连孩子都懂那个问题。",
+          "zh_TW": "連孩子都懂那個問題。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:dani",
+      "level": "N1",
+      "pattern": "〜だに",
+      "structure": "動詞辞書形・名詞 + だに",
+      "match": [
+        "だに"
+      ],
+      "meaning": {
+        "en": "even just doing it (literary)",
+        "zh": "连……都（文学性）",
+        "zh_TW": "連……都（文學性）"
+      },
+      "explanation": {
+        "en": "だに is a classical particle meaning even the mere act of doing something, let alone doing it fully, produces the stated effect. It is literary written register, rare outside set phrases like 想像だに.",
+        "zh": "だに是文言助词，表示光是做某事这一点，就足以产生所说的效果，更不用说做到底。属于文学性书面语，除想像だに等固定说法外少用。",
+        "zh_TW": "だに是文言助詞，表示光是做某事這一點，就足以產生所說的效果，更不用說做到底。屬於文學性書面語，除想像だに等固定說法外少用。"
+      },
+      "examples": [
+        {
+          "ja": "そんな結果は考えるだに恐ろしい。",
+          "reading": "そんなけっかはかんがえるだにおそろしい。",
+          "en": "Even just thinking about such a result is frightening.",
+          "zh": "那样的结果光是想想都可怕。",
+          "zh_TW": "那樣的結果光是想想都可怕。"
+        },
+        {
+          "ja": "それは想像だにしなかった結果だ。",
+          "reading": "それはそうぞうだにしなかったけっかだ。",
+          "en": "That is a result I hadn't even imagined.",
+          "zh": "那是连想象都没有想到的结果。",
+          "zh_TW": "那是連想像都沒有想到的結果。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kara-aru",
+      "level": "N1",
+      "pattern": "〜からある / 〜からの",
+      "structure": "数量詞 + からある／からの",
+      "match": [
+        "からある",
+        "からの"
+      ],
+      "meaning": {
+        "en": "as much as; no less than that amount",
+        "zh": "多达……、足有……",
+        "zh_TW": "多達……、足有……"
+      },
+      "explanation": {
+        "en": "からある / からの attaches to a quantity to stress that the amount is at least that large, often larger than expected. It is formal written register used to emphasize scale.",
+        "zh": "からある／からの接在数量后，强调数量至少有那么多，往往超出预期。属于正式书面语，用来强调规模之大。",
+        "zh_TW": "からある／からの接在數量後，強調數量至少有那麼多，往往超出預期。屬於正式書面語，用來強調規模之大。"
+      },
+      "examples": [
+        {
+          "ja": "十時間からある会議だった。",
+          "reading": "じゅうじかんからあるかいぎだった。",
+          "en": "It was a meeting that lasted as much as ten hours.",
+          "zh": "那是一场长达十小时的会议。",
+          "zh_TW": "那是一場長達十小時的會議。"
+        },
+        {
+          "ja": "百人からの学生が参加した。",
+          "reading": "ひゃくにんからのがくせいがさんかした。",
+          "en": "As many as a hundred students took part.",
+          "zh": "多达一百名学生参加了。",
+          "zh_TW": "多達一百名學生參加了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kitte-no",
+      "level": "N1",
+      "pattern": "〜きっての",
+      "structure": "名詞 + きっての + 名詞",
+      "match": [
+        "きっての"
+      ],
+      "meaning": {
+        "en": "the very finest within X",
+        "zh": "……当中首屈一指的",
+        "zh_TW": "……當中首屈一指的"
+      },
+      "explanation": {
+        "en": "きっての attaches to a group noun and singles out the very best member within it. It is formal written register common in profiles and introductions.",
+        "zh": "きっての接在表示范围的名词后，从中挑出最出色的一个。属于正式书面语，常见于人物介绍。",
+        "zh_TW": "きっての接在表示範圍的名詞後，從中挑出最出色的一個。屬於正式書面語，常見於人物介紹。"
+      },
+      "examples": [
+        {
+          "ja": "彼は学校きっての学生だ。",
+          "reading": "かれはがっこうきってのがくせいだ。",
+          "en": "He is the finest student in the whole school.",
+          "zh": "他是全校首屈一指的学生。",
+          "zh_TW": "他是全校首屈一指的學生。"
+        },
+        {
+          "ja": "この会社きっての人材だ。",
+          "reading": "このかいしゃきってのじんざいだ。",
+          "en": "He is the finest talent in this company.",
+          "zh": "他是这家公司首屈一指的人才。",
+          "zh_TW": "他是這家公司首屈一指的人才。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:mo-douzen",
+      "level": "N1",
+      "pattern": "〜も同然だ",
+      "structure": "名詞・普通形 + も同然だ",
+      "match": [
+        "も同然だ",
+        "も同然の"
+      ],
+      "meaning": {
+        "en": "practically the same as X",
+        "zh": "几乎等同于……、和……差不多",
+        "zh_TW": "幾乎等同於……、和……差不多"
+      },
+      "explanation": {
+        "en": "も同然だ says something falls just short of being the real thing but is close enough to count as it. It is formal written and evaluative spoken register.",
+        "zh": "も同然だ表示某事物虽未完全达到，但已经接近到可以算作是。属于正式书面语和带评价意味的口语。",
+        "zh_TW": "も同然だ表示某事物雖未完全達到，但已經接近到可以算作是。屬於正式書面語和帶評價意味的口語。"
+      },
+      "examples": [
+        {
+          "ja": "この車は新しいも同然だ。",
+          "reading": "このくるまはあたらしいもどうぜんだ。",
+          "en": "This car is practically as good as new.",
+          "zh": "这辆车几乎和新的一样。",
+          "zh_TW": "這輛車幾乎和新的一樣。"
+        },
+        {
+          "ja": "彼は家族も同然の存在だ。",
+          "reading": "かれはかぞくもどうぜんのそんざいだ。",
+          "en": "He is practically like family to us.",
+          "zh": "他几乎就像家人一样的存在。",
+          "zh_TW": "他幾乎就像家人一樣的存在。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:sono-mono",
+      "level": "N1",
+      "pattern": "〜そのものだ",
+      "structure": "名詞 + そのものだ",
+      "match": [
+        "そのものだ"
+      ],
+      "meaning": {
+        "en": "X itself; the very embodiment of X",
+        "zh": "……本身、……的典型",
+        "zh_TW": "……本身、……的典型"
+      },
+      "explanation": {
+        "en": "そのものだ attaches to a noun to say something is the very embodiment of that quality, with nothing added or diluted. It is formal written and descriptive spoken register.",
+        "zh": "そのものだ接在名词后，表示某事物正是该性质的化身，毫无稀释或掺杂。属于正式书面语和带描写意味的口语。",
+        "zh_TW": "そのものだ接在名詞後，表示某事物正是該性質的化身，毫無稀釋或摻雜。屬於正式書面語和帶描寫意味的口語。"
+      },
+      "examples": [
+        {
+          "ja": "彼の態度は誠実そのものだ。",
+          "reading": "かれのたいどはせいじつそのものだ。",
+          "en": "His attitude is sincerity itself.",
+          "zh": "他的态度就是诚实的化身。",
+          "zh_TW": "他的態度就是誠實的化身。"
+        },
+        {
+          "ja": "この歴史は驚きそのものだ。",
+          "reading": "このれきしはおどろきそのものだ。",
+          "en": "This history is astonishment itself.",
+          "zh": "这段历史本身就充满惊奇。",
+          "zh_TW": "這段歷史本身就充滿驚奇。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:ga-sekinoyama",
+      "level": "N1",
+      "pattern": "〜が関の山だ",
+      "structure": "動詞辞書形 + のが関の山だ",
+      "match": [
+        "が関の山だ"
+      ],
+      "meaning": {
+        "en": "X is the very most one can manage",
+        "zh": "最多也就是……、顶多是……",
+        "zh_TW": "最多也就是……、頂多是……"
+      },
+      "explanation": {
+        "en": "が関の山だ names the most that could realistically be achieved, implying it still falls short of what is hoped for. It is formal written and slightly dismissive spoken register.",
+        "zh": "が関の山だ点出现实中能达到的最高限度，暗示这仍然不及期望。属于正式书面语和略带轻视意味的口语。",
+        "zh_TW": "が関の山だ點出現實中能達到的最高限度，暗示這仍然不及期望。屬於正式書面語和略帶輕視意味的口語。"
+      },
+      "examples": [
+        {
+          "ja": "今から始めても、半分終わるのが関の山だ。",
+          "reading": "いまからはじめても、はんぶんおわるのがせきのやまだ。",
+          "en": "Even starting now, finishing half of it is the most we can manage.",
+          "zh": "即使现在开始，顶多也就能完成一半。",
+          "zh_TW": "即使現在開始，頂多也就能完成一半。"
+        },
+        {
+          "ja": "手伝うのが関の山だ。",
+          "reading": "てつだうのがせきのやまだ。",
+          "en": "The most he can do is help out, at best.",
+          "zh": "他能做的顶多也就是帮帮忙。",
+          "zh_TW": "他能做的頂多也就是幫幫忙。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:shimatsu-da",
+      "level": "N1",
+      "pattern": "〜始末だ",
+      "structure": "動詞普通形（多くはた形） + 始末だ",
+      "match": [
+        "始末だ",
+        "始末だった"
+      ],
+      "meaning": {
+        "en": "things ended up in that sorry state after a bad chain of events",
+        "zh": "落得……的下场",
+        "zh_TW": "落得……的下場"
+      },
+      "explanation": {
+        "en": "始末だ closes off a description of a chain of bad events with the poor outcome they led to. It is formal written and spoken register, always critical or exasperated, common in complaints about how badly something turned out.",
+        "zh": "始末だ在讲完一连串糟糕的经过后，点出由此落得的下场。属于正式的书面语和口语，语气总是带批评或无奈，常用于抱怨事情最终变得多么糟糕。",
+        "zh_TW": "始末だ在講完一連串糟糕的經過後，點出由此落得的下場。屬於正式的書面語和口語，語氣總是帶批評或無奈，常用於抱怨事情最終變得多麼糟糕。"
+      },
+      "examples": [
+        {
+          "ja": "彼は何度も遅刻し、ついに会議に出られない始末だ。",
+          "reading": "かれはなんどもちこくし、ついにかいぎにでられないしまつだ。",
+          "en": "He was late again and again, and in the end he couldn't even attend the meeting.",
+          "zh": "他一再迟到，最后落得连会议都无法出席的下场。",
+          "zh_TW": "他一再遲到，最後落得連會議都無法出席的下場。"
+        },
+        {
+          "ja": "準備を怠って、発表が中止になる始末だった。",
+          "reading": "じゅんびをおこたって、はっぴょうがちゅうしになるしまつだった。",
+          "en": "He neglected the preparations, and it ended with the presentation being cancelled.",
+          "zh": "疏于准备，落得发表被取消的下场。",
+          "zh_TW": "疏於準備，落得發表被取消的下場。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-made",
+      "level": "N1",
+      "pattern": "〜てまで / 〜までして",
+      "structure": "動詞て形 + まで／動詞普通形 + までして",
+      "match": [
+        "てまで",
+        "までして"
+      ],
+      "meaning": {
+        "en": "going so far as to do X to achieve something",
+        "zh": "甚至不惜……",
+        "zh_TW": "甚至不惜……"
+      },
+      "explanation": {
+        "en": "てまで and までして say someone goes to an extreme, often disapproving, length to get a result. It is formal written and spoken register; てまで attaches before the next verb while までして is used clause-finally.",
+        "zh": "てまで和までして表示某人为了达到目的甚至做到某种极端的地步，语气常带不认同。属于正式的书面语和口语；てまで用在后续动词之前，までして则用于句末。",
+        "zh_TW": "てまで和までして表示某人為了達到目的甚至做到某種極端的地步，語氣常帶不認同。屬於正式的書面語和口語；てまで用在後續動詞之前，までして則用於句末。"
+      },
+      "examples": [
+        {
+          "ja": "彼は無理をしてまで会議に出た。",
+          "reading": "かれはむりをしてまでかいぎにでた。",
+          "en": "He forced himself to attend the meeting even at the cost of pushing too hard.",
+          "zh": "他甚至勉强自己也要出席会议。",
+          "zh_TW": "他甚至勉強自己也要出席會議。"
+        },
+        {
+          "ja": "彼は借金までして車を買った。",
+          "reading": "かれはしゃっきんまでしてくるまをかった。",
+          "en": "He went so far as to take on debt to buy a car.",
+          "zh": "他甚至借钱买了车。",
+          "zh_TW": "他甚至借錢買了車。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-omoikiya",
+      "level": "N1",
+      "pattern": "〜と思いきや",
+      "structure": "普通形 + と思いきや",
+      "match": [
+        "と思いきや"
+      ],
+      "meaning": {
+        "en": "I thought X, but in fact the opposite happened",
+        "zh": "原以为……，没想到……",
+        "zh_TW": "原以為……，沒想到……"
+      },
+      "explanation": {
+        "en": "と思いきや sets up an expectation and then overturns it with a contrary result. It is literary written and spoken narrative register, common in essays and storytelling to create a small surprise.",
+        "zh": "と思いきや先说出一个预想，再用相反的结果将其推翻。属于文学性的书面语和叙述性口语，常见于随笔和讲故事，用来制造小小的意外。",
+        "zh_TW": "と思いきや先說出一個預想，再用相反的結果將其推翻。屬於文學性的書面語和敘述性口語，常見於隨筆和講故事，用來製造小小的意外。"
+      },
+      "examples": [
+        {
+          "ja": "簡単だと思いきや、問題は難しかった。",
+          "reading": "かんたんだとおもいきや、もんだいはむずかしかった。",
+          "en": "I thought it would be easy, but the problem turned out to be difficult.",
+          "zh": "原以为很简单，没想到问题却很难。",
+          "zh_TW": "原以為很簡單，沒想到問題卻很難。"
+        },
+        {
+          "ja": "雨が降ると思いきや、天気は良かった。",
+          "reading": "あめがふるとおもいきや、てんきはよかった。",
+          "en": "I thought it would rain, but the weather turned out fine.",
+          "zh": "原以为会下雨，没想到天气很好。",
+          "zh_TW": "原以為會下雨，沒想到天氣很好。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kiwamarinai",
+      "level": "N1",
+      "pattern": "〜極まりない / 〜極まる",
+      "structure": "な形容詞語幹・い形容詞語幹 + 極まりない／極まる",
+      "match": [
+        "極まりない",
+        "極まる"
+      ],
+      "meaning": {
+        "en": "extremely so, nothing could be more X",
+        "zh": "极其……、……至极",
+        "zh_TW": "極其……、……至極"
+      },
+      "explanation": {
+        "en": "極まりない and 極まる intensify an adjective stem to its highest degree. It is formal written register, usually attached to adjectives with a negative judgement such as 失礼 or 危険.",
+        "zh": "極まりない和極まる把形容词词干的程度推到极致。属于正式书面语，多接失礼、危険等带负面评价的形容词。",
+        "zh_TW": "極まりない和極まる把形容詞詞幹的程度推到極致。屬於正式書面語，多接失禮、危険等帶負面評價的形容詞。"
+      },
+      "examples": [
+        {
+          "ja": "その話は危険極まりない。",
+          "reading": "そのはなしはきけんきわまりない。",
+          "en": "That attitude is extremely rude.",
+          "zh": "那种态度极其失礼。",
+          "zh_TW": "那種態度極其失禮。"
+        },
+        {
+          "ja": "彼の行動は危険極まる。",
+          "reading": "かれのこうどうはきけんきわまる。",
+          "en": "His actions are extremely dangerous.",
+          "zh": "他的行为极其危险。",
+          "zh_TW": "他的行為極其危險。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:no-itari",
+      "level": "N1",
+      "pattern": "〜の至り",
+      "structure": "感情を表す名詞 + の至り",
+      "match": [
+        "の至り"
+      ],
+      "meaning": {
+        "en": "the utmost degree of a feeling",
+        "zh": "……之至（正式致辞用语）",
+        "zh_TW": "……之至（正式致辭用語）"
+      },
+      "explanation": {
+        "en": "の至り expresses that a feeling such as honour or shame has reached its utmost degree. It is highly formal ceremonial written and spoken register, standard in speeches of thanks or apology.",
+        "zh": "の至り表示光荣、羞愧等感情已经到了极点。属于高度正式的致辞书面语和口语，常见于致谢或致歉的场合。",
+        "zh_TW": "の至り表示光榮、羞愧等感情已經到了極點。屬於高度正式的致辭書面語和口語，常見於致謝或致歉的場合。"
+      },
+      "examples": [
+        {
+          "ja": "このような賞をいただき、感謝の至りです。",
+          "reading": "このようなしょうをいただき、かんしゃのいたりです。",
+          "en": "Receiving such an award is the height of honour for me.",
+          "zh": "能获得这样的奖项，深感荣幸之至。",
+          "zh_TW": "能獲得這樣的獎項，深感榮幸之至。"
+        },
+        {
+          "ja": "発表の準備を忘れるとは、恥の至りだ。",
+          "reading": "はっぴょうのじゅんびをわすれるとは、はじのいたりだ。",
+          "en": "Forgetting to prepare for the presentation is utterly shameful.",
+          "zh": "竟然忘了准备发表，真是羞愧之至。",
+          "zh_TW": "竟然忘了準備發表，真是羞愧之至。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:no-kiwami",
+      "level": "N1",
+      "pattern": "〜の極み",
+      "structure": "名詞 + の極み",
+      "match": [
+        "の極み"
+      ],
+      "meaning": {
+        "en": "the absolute extreme point of X",
+        "zh": "……的极致、……至极",
+        "zh_TW": "……的極致、……至極"
+      },
+      "explanation": {
+        "en": "の極み marks a noun as having reached its absolute extreme, not limited to emotion. It is formal literary written register, common in descriptive prose about states like luxury or exhaustion.",
+        "zh": "の極み表示某个名词所代表的状态达到了顶点，不局限于感情。属于正式的文学性书面语，常用于描写奢侈、疲惫等状态。",
+        "zh_TW": "の極み表示某個名詞所代表的狀態達到了頂點，不侷限於感情。屬於正式的文學性書面語，常用於描寫奢侈、疲憊等狀態。"
+      },
+      "examples": [
+        {
+          "ja": "彼の生活は贅沢の極みだ。",
+          "reading": "かれのせいかつはぜいたくのきわみだ。",
+          "en": "His lifestyle is the height of extravagance.",
+          "zh": "他的生活奢侈至极。",
+          "zh_TW": "他的生活奢侈至極。"
+        },
+        {
+          "ja": "疲労の極みだ。",
+          "reading": "ひろうのきわみだ。",
+          "en": "At the height of exhaustion, he could not think about anything.",
+          "zh": "疲惫至极，他什么都无法思考。",
+          "zh_TW": "疲憊至極，他什麼都無法思考。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-yamanai",
+      "level": "N1",
+      "pattern": "〜てやまない",
+      "structure": "動詞て形（感情動詞） + やまない",
+      "match": [
+        "てやまない"
+      ],
+      "meaning": {
+        "en": "to feel something ceaselessly, sincerely",
+        "zh": "……不已、衷心……",
+        "zh_TW": "……不已、衷心……"
+      },
+      "explanation": {
+        "en": "てやまない attaches to emotion verbs like 願う or 尊敬する to say the feeling never stops. It is formal written register, common in prefaces and speeches expressing a sincere, ongoing wish or respect.",
+        "zh": "てやまない接在願う、尊敬する等感情动词后，表示这种感情持续不断。属于正式书面语，常见于序言和致辞中表达衷心且不间断的愿望或敬意。",
+        "zh_TW": "てやまない接在願う、尊敬する等感情動詞後，表示這種感情持續不斷。屬於正式書面語，常見於序言和致辭中表達衷心且不間斷的願望或敬意。"
+      },
+      "examples": [
+        {
+          "ja": "彼らの幸せを願ってやまない。",
+          "reading": "かれらのしあわせをねがってやまない。",
+          "en": "I sincerely wish for their happiness without end.",
+          "zh": "衷心祝愿他们幸福。",
+          "zh_TW": "衷心祝願他們幸福。"
+        },
+        {
+          "ja": "学生たちは先生を尊敬してやまない。",
+          "reading": "がくせいたちはせんせいをそんけいしてやまない。",
+          "en": "The students respect their teacher endlessly.",
+          "zh": "学生们对老师敬佩不已。",
+          "zh_TW": "學生們對老師敬佩不已。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-kanawanai",
+      "level": "N1",
+      "pattern": "〜てかなわない",
+      "structure": "い形容詞・動詞て形 + かなわない",
+      "match": [
+        "てかなわない"
+      ],
+      "meaning": {
+        "en": "it is unbearable, simply too much",
+        "zh": "……得受不了",
+        "zh_TW": "……得受不了"
+      },
+      "explanation": {
+        "en": "てかなわない complains that a persistent state has become unbearable. It is spoken-leaning written register, standard in essays and casual complaints about heat, length or other discomforts.",
+        "zh": "てかなわない抱怨某种持续的状态已经令人受不了。属于偏口语的书面语，常见于随笔或日常抱怨中，用于炎热、冗长等让人难以忍受的状态。",
+        "zh_TW": "てかなわない抱怨某種持續的狀態已經令人受不了。屬於偏口語的書面語，常見於隨筆或日常抱怨中，用於炎熱、冗長等讓人難以忍受的狀態。"
+      },
+      "examples": [
+        {
+          "ja": "毎日暑くてかなわない。",
+          "reading": "まいにちあつくてかなわない。",
+          "en": "It is unbearably hot every day.",
+          "zh": "每天热得受不了。",
+          "zh_TW": "每天熱得受不了。"
+        },
+        {
+          "ja": "会議が長くてかなわない。",
+          "reading": "かいぎがながくてかなわない。",
+          "en": "The meeting is unbearably long.",
+          "zh": "会议长得让人受不了。",
+          "zh_TW": "會議長得讓人受不了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-wa-irarenai",
+      "level": "N1",
+      "pattern": "〜てはいられない",
+      "structure": "動詞て形 + はいられない",
+      "match": [
+        "てはいられない",
+        "ではいられない"
+      ],
+      "meaning": {
+        "en": "cannot afford to stay like this",
+        "zh": "不能再……、不能一直……",
+        "zh_TW": "不能再……、不能一直……"
+      },
+      "explanation": {
+        "en": "てはいられない says the current state cannot go on given the urgency of the situation. It is written and spoken register, used to push oneself or others toward action.",
+        "zh": "てはいられない表示鉴于情况紧迫，不能再继续目前的状态。属于书面语和口语，常用于催促自己或他人采取行动。",
+        "zh_TW": "てはいられない表示鑑於情況緊迫，不能再繼續目前的狀態。屬於書面語和口語，常用於催促自己或他人採取行動。"
+      },
+      "examples": [
+        {
+          "ja": "忙しくて、休んではいられない。",
+          "reading": "いそがしくて、やすんではいられない。",
+          "en": "I'm too busy to keep resting.",
+          "zh": "太忙了，不能一直休息下去。",
+          "zh_TW": "太忙了，不能一直休息下去。"
+        },
+        {
+          "ja": "問題が大きくて、黙ってはいられない。",
+          "reading": "もんだいがおおきくて、だまってはいられない。",
+          "en": "The problem is so big that I cannot stay silent.",
+          "zh": "问题太大了，不能保持沉默。",
+          "zh_TW": "問題太大了，不能保持沉默。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-kitara",
+      "level": "N1",
+      "pattern": "〜ときたら",
+      "structure": "名詞 + ときたら",
+      "match": [
+        "ときたら"
+      ],
+      "meaning": {
+        "en": "as for X, and I am fed up with it",
+        "zh": "说到……真是（带不满）",
+        "zh_TW": "說到……真是（帶不滿）"
+      },
+      "explanation": {
+        "en": "ときたら marks a familiar topic to complain about, followed by a critical comment. It is colloquial spoken register, used only with things or people the speaker knows well.",
+        "zh": "ときたら把熟悉的话题提出来加以抱怨，后面接批评性的评论。属于口语，只用于说话人熟悉的人或事物。",
+        "zh_TW": "ときたら把熟悉的話題提出來加以抱怨，後面接批評性的評論。屬於口語，只用於說話人熟悉的人或事物。"
+      },
+      "examples": [
+        {
+          "ja": "彼ときたら、いつも遅刻する。",
+          "reading": "かれときたら、いつもちこくする。",
+          "en": "As for him, he is always late.",
+          "zh": "说到他呀，总是迟到。",
+          "zh_TW": "說到他呀，總是遲到。"
+        },
+        {
+          "ja": "この車ときたら、すぐに壊れる。",
+          "reading": "このくるまときたら、すぐにこわれる。",
+          "en": "As for this car, it breaks down right away.",
+          "zh": "说到这辆车，动不动就坏。",
+          "zh_TW": "說到這輛車，動不動就壞。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-wa-surprise",
+      "level": "N1",
+      "pattern": "〜とは（驚き）",
+      "structure": "普通形 + とは",
+      "match": [
+        "とは"
+      ],
+      "meaning": {
+        "en": "to think that X! shock or admiration",
+        "zh": "竟然……、没想到……",
+        "zh_TW": "竟然……、沒想到……"
+      },
+      "explanation": {
+        "en": "とは trails off after stating a fact to express strong surprise or admiration, the sentence often ending right there. It is written and spoken exclamatory register.",
+        "zh": "とは说出一个事实后戛然而止，表示强烈的惊讶或赞叹，句子常常就此结束。属于带感叹语气的书面语和口语。",
+        "zh_TW": "とは說出一個事實後戛然而止，表示強烈的驚訝或讚歎，句子常常就此結束。屬於帶感嘆語氣的書面語和口語。"
+      },
+      "examples": [
+        {
+          "ja": "彼がそんな結果を出すとは。",
+          "reading": "かれがそんなけっかをだすとは。",
+          "en": "To think that he would produce such a result!",
+          "zh": "没想到他竟会拿出这样的结果。",
+          "zh_TW": "沒想到他竟會拿出這樣的結果。"
+        },
+        {
+          "ja": "この問題がこんなに難しいとは。",
+          "reading": "このもんだいがこんなにむずかしいとは。",
+          "en": "To think this problem would be this difficult!",
+          "zh": "没想到这个问题会这么难。",
+          "zh_TW": "沒想到這個問題會這麼難。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-itta-tokoro-da",
+      "level": "N1",
+      "pattern": "〜といったところだ",
+      "structure": "名詞・数量 + といったところだ",
+      "match": [
+        "といったところだ"
+      ],
+      "meaning": {
+        "en": "it is about X at most",
+        "zh": "顶多也就是……、大概是……",
+        "zh_TW": "頂多也就是……、大概是……"
+      },
+      "explanation": {
+        "en": "といったところだ gives a modest estimate, implying the true figure is no more than this. It is written and spoken register used when assessing results or amounts.",
+        "zh": "といったところだ给出一个保守的估计，暗示实际数值最多也就如此。属于书面语和口语，多用于评估结果或数量。",
+        "zh_TW": "といったところだ給出一個保守的估計，暗示實際數值最多也就如此。屬於書面語和口語，多用於評估結果或數量。"
+      },
+      "examples": [
+        {
+          "ja": "今回の結果は五十点といったところだ。",
+          "reading": "こんかいのけっかはごじゅうてんといったところだ。",
+          "en": "This time's result is about fifty points, at best.",
+          "zh": "这次的结果顶多也就五十分。",
+          "zh_TW": "這次的結果頂多也就五十分。"
+        },
+        {
+          "ja": "参加者は十人といったところだ。",
+          "reading": "さんかしゃはじゅうにんといったところだ。",
+          "en": "The participants number about ten, at most.",
+          "zh": "参加者大概也就十个人。",
+          "zh_TW": "參加者大概也就十個人。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:zu-ni-wa-okanai",
+      "level": "N1",
+      "pattern": "〜ずにはおかない",
+      "structure": "動詞ない形（ず） + にはおかない",
+      "match": [
+        "ずにはおかない"
+      ],
+      "meaning": {
+        "en": "it will inevitably provoke that result",
+        "zh": "必然会……、不能不……",
+        "zh_TW": "必然會……、不能不……"
+      },
+      "explanation": {
+        "en": "ずにはおかない says a situation is bound to bring about a strong reaction, as if it will not let things end otherwise. It is formal literary written register, common in criticism.",
+        "zh": "ずにはおかない表示某种情况必然会引发强烈的反应，仿佛不这样就不会罢休。属于正式的文学性书面语，常见于评论文章。",
+        "zh_TW": "ずにはおかない表示某種情況必然會引發強烈的反應，彷彿不這樣就不會罷休。屬於正式的文學性書面語，常見於評論文章。"
+      },
+      "examples": [
+        {
+          "ja": "その事件は彼を変えずにはおかない。",
+          "reading": "そのじけんはかれをかえずにはおかない。",
+          "en": "That presentation will inevitably astonish people.",
+          "zh": "那次发表必然会让人们感到惊讶。",
+          "zh_TW": "那次發表必然會讓人們感到驚訝。"
+        },
+        {
+          "ja": "彼の態度は問題を起こさずにはおかない。",
+          "reading": "かれのたいどはもんだいをおこさずにはおかない。",
+          "en": "His attitude is bound to cause a problem.",
+          "zh": "他的态度必然会引发问题。",
+          "zh_TW": "他的態度必然會引發問題。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:zu-ni-wa-sumanai",
+      "level": "N1",
+      "pattern": "〜ずにはすまない",
+      "structure": "動詞ない形（ず） + にはすまない",
+      "match": [
+        "ずにはすまない"
+      ],
+      "meaning": {
+        "en": "one cannot get away without doing it",
+        "zh": "不……不行、必须……",
+        "zh_TW": "不……不行、必須……"
+      },
+      "explanation": {
+        "en": "ずにはすまない says social or moral pressure makes an action unavoidable. It is formal written register, common when discussing an obligation to apologize or compensate.",
+        "zh": "ずにはすまない表示出于道义或社会压力，某个行为是无法逃避的。属于正式书面语，常见于讨论道歉、赔偿等义务。",
+        "zh_TW": "ずにはすまない表示出於道義或社會壓力，某個行為是無法逃避的。屬於正式書面語，常見於討論道歉、賠償等義務。"
+      },
+      "examples": [
+        {
+          "ja": "これだけの問題を起こしたら、謝らずにはすまない。",
+          "reading": "これだけのもんだいをおこしたら、あやまらずにはすまない。",
+          "en": "Having caused this much trouble, he cannot get away without apologizing.",
+          "zh": "闹出这么大的问题，不道歉是不行的。",
+          "zh_TW": "鬧出這麼大的問題，不道歉是不行的。"
+        },
+        {
+          "ja": "車を壊したのだから、弁償せずにはすまない。",
+          "reading": "くるまをこわしたのだから、べんしょうせずにはすまない。",
+          "en": "Since he broke the car, he cannot avoid compensating for it.",
+          "zh": "既然把车弄坏了，不赔偿是不行的。",
+          "zh_TW": "既然把車弄壞了，不賠償是不行的。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nai-de-wa-sumanai",
+      "level": "N1",
+      "pattern": "〜ないではすまない",
+      "structure": "動詞ない形 + ではすまない",
+      "match": [
+        "ないではすまない"
+      ],
+      "meaning": {
+        "en": "it will not be settled unless you do it",
+        "zh": "不……是不行的",
+        "zh_TW": "不……是不行的"
+      },
+      "explanation": {
+        "en": "ないではすまない is a written and spoken colloquial equivalent of ずにはすまない, expressing the same sense that an obligation cannot be avoided.",
+        "zh": "ないではすまない是ずにはすまない偏口语的书面语和口语说法，同样表示某种义务无法回避。",
+        "zh_TW": "ないではすまない是ずにはすまない偏口語的書面語和口語說法，同樣表示某種義務無法迴避。"
+      },
+      "examples": [
+        {
+          "ja": "約束を破ったのだから、説明しないではすまない。",
+          "reading": "やくそくをやぶったのだから、せつめいしないではすまない。",
+          "en": "Since he broke the promise, he cannot get away without explaining.",
+          "zh": "既然违背了约定，不解释是不行的。",
+          "zh_TW": "既然違背了約定，不解釋是不行的。"
+        },
+        {
+          "ja": "これほど大きな問題は、話し合わないではすまない。",
+          "reading": "これほどおおきなもんだいは、はなしあわないではすまない。",
+          "en": "A problem this big cannot go without being discussed.",
+          "zh": "这么大的问题，不商量是不行的。",
+          "zh_TW": "這麼大的問題，不商量是不行的。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:zu-jimai",
+      "level": "N1",
+      "pattern": "〜ずじまい",
+      "structure": "動詞ない形（ず） + じまい",
+      "match": [
+        "ずじまい"
+      ],
+      "meaning": {
+        "en": "ended up never doing it after all",
+        "zh": "结果没能……、终究没……",
+        "zh_TW": "結果沒能……、終究沒……"
+      },
+      "explanation": {
+        "en": "ずじまい expresses regret that an intended action was never carried out. It is written and spoken register, common when looking back on a missed opportunity.",
+        "zh": "ずじまい表示原本打算做的事最终没有实现，带有遗憾的语气。属于书面语和口语，常用于回顾错过的机会。",
+        "zh_TW": "ずじまい表示原本打算做的事最終沒有實現，帶有遺憾的語氣。屬於書面語和口語，常用於回顧錯過的機會。"
+      },
+      "examples": [
+        {
+          "ja": "忙しくて、本を読まずじまいだった。",
+          "reading": "いそがしくて、ほんをよまずじまいだった。",
+          "en": "I was so busy that I ended up never reading the book.",
+          "zh": "太忙了，结果那本书终究没读成。",
+          "zh_TW": "太忙了，結果那本書終究沒讀成。"
+        },
+        {
+          "ja": "彼に会いに行くつもりが、行かずじまいだった。",
+          "reading": "かれにあいにいくつもりが、いかずじまいだった。",
+          "en": "I meant to go see him, but in the end I never went.",
+          "zh": "本打算去见他，结果终究没去成。",
+          "zh_TW": "本打算去見他，結果終究沒去成。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:made-no-koto-da",
+      "level": "N1",
+      "pattern": "〜まで（のこと）だ",
+      "structure": "動詞辞書形・た形 + まで（のこと）だ",
+      "match": [
+        "までだ",
+        "までのことだ"
+      ],
+      "meaning": {
+        "en": "I will simply do X, that is all",
+        "zh": "大不了……而已、只是……罢了",
+        "zh_TW": "大不了……而已、只是……罷了"
+      },
+      "explanation": {
+        "en": "まで（のこと）だ states a plain fallback action taken without hesitation if the main plan fails. It is written and spoken register, common after a conditional clause to sound resolute but unbothered.",
+        "zh": "まで（のこと）だ表示如果主要计划行不通，就干脆采取一个简单的备用行动。属于书面语和口语，常接在假设句之后，语气坚定又显得毫不在意。",
+        "zh_TW": "まで（のこと）だ表示如果主要計劃行不通，就乾脆採取一個簡單的備用行動。屬於書面語和口語，常接在假設句之後，語氣堅定又顯得毫不在意。"
+      },
+      "examples": [
+        {
+          "ja": "だめなら、もう一度やるまでだ。",
+          "reading": "だめなら、もういちどやるまでだ。",
+          "en": "If it doesn't work, I will simply try again.",
+          "zh": "不行的话，大不了再做一次而已。",
+          "zh_TW": "不行的話，大不了再做一次而已。"
+        },
+        {
+          "ja": "反対されたら、諦めるまでのことだ。",
+          "reading": "はんたいされたら、あきらめるまでのことだ。",
+          "en": "If I'm opposed, I will simply give up, that's all.",
+          "zh": "如果遭到反对，那大不了放弃罢了。",
+          "zh_TW": "如果遭到反對，那大不了放棄罷了。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nai-made-mo",
+      "level": "N1",
+      "pattern": "〜ないまでも",
+      "structure": "動詞ない形 + までも",
+      "match": [
+        "ないまでも"
+      ],
+      "meaning": {
+        "en": "even if not fully X, at least Y",
+        "zh": "即使不……，至少也……",
+        "zh_TW": "即使不……，至少也……"
+      },
+      "explanation": {
+        "en": "ないまでも sets a lower, more realistic bar than the ideal case named first. It is formal written register, common in advice or in a speaker's own moderated expectations.",
+        "zh": "ないまでも先说出理想情况，再退一步定出更现实的最低标准。属于正式书面语，常用于劝告或说话人自我调整期望值。",
+        "zh_TW": "ないまでも先說出理想情況，再退一步定出更現實的最低標準。屬於正式書面語，常用於勸告或說話人自我調整期望值。"
+      },
+      "examples": [
+        {
+          "ja": "毎日とは言わないまでも、時間を作って本を読みたい。",
+          "reading": "まいにちとはいわないまでも、じかんをつくってほんをよみたい。",
+          "en": "Even if not every day, I want to make time to read.",
+          "zh": "即使不是每天，我也想抽出时间看书。",
+          "zh_TW": "即使不是每天，我也想抽出時間看書。"
+        },
+        {
+          "ja": "完璧ではないまでも、結果には満足している。",
+          "reading": "かんぺきではないまでも、けっかにはまんぞくしている。",
+          "en": "Even if it's not perfect, I am satisfied with the result.",
+          "zh": "即使算不上完美，我对结果还是满意的。",
+          "zh_TW": "即使算不上完美，我對結果還是滿意的。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nai-mono-demo-nai",
+      "level": "N1",
+      "pattern": "〜ないものでもない",
+      "structure": "動詞ない形 + ものでもない",
+      "match": [
+        "ないものでもない"
+      ],
+      "meaning": {
+        "en": "it is not entirely out of the question",
+        "zh": "也并非不……、也不是不可能……",
+        "zh_TW": "也並非不……、也不是不可能……"
+      },
+      "explanation": {
+        "en": "ないものでもない is a cautious double negative expressing weak possibility. It is formal written register, common in careful discussion where a flat yes or no would sound too strong.",
+        "zh": "ないものでもない是谨慎的双重否定，表示一种较弱的可能性。属于正式书面语，常用于慎重讨论中，避免直接说是或不是显得太绝对。",
+        "zh_TW": "ないものでもない是謹慎的雙重否定，表示一種較弱的可能性。屬於正式書面語，常用於慎重討論中，避免直接說是或不是顯得太絕對。"
+      },
+      "examples": [
+        {
+          "ja": "時間があれば、行けないものでもない。",
+          "reading": "じかんがあれば、いけないものでもない。",
+          "en": "If there is time, it's not impossible for me to go.",
+          "zh": "如果有时间，也不是不能去。",
+          "zh_TW": "如果有時間，也不是不能去。"
+        },
+        {
+          "ja": "難しいが、聞けば分からないものでもない。",
+          "reading": "むずかしいが、きけばわからないものでもない。",
+          "en": "It's difficult, but if you think about it, it's not entirely incomprehensible.",
+          "zh": "虽然很难，但仔细想想也并非不能理解。",
+          "zh_TW": "雖然很難，但仔細想想也並非不能理解。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nai-demo-nai",
+      "level": "N1",
+      "pattern": "〜ないでもない",
+      "structure": "動詞ない形 + でもない",
+      "match": [
+        "ないでもない"
+      ],
+      "meaning": {
+        "en": "I do feel it, to some extent",
+        "zh": "也不是不……、多少……",
+        "zh_TW": "也不是不……、多少……"
+      },
+      "explanation": {
+        "en": "ないでもない softens an affirmation through double negation, saying a feeling or possibility is present but weak. It is written and spoken register, close in nuance to ないものでもない but often used with feelings.",
+        "zh": "ないでもない用双重否定委婉地表示某种感受或可能性确实存在，只是程度不强。属于书面语和口语，语感上接近ないものでもない，但更常用于表达感受。",
+        "zh_TW": "ないでもない用雙重否定委婉地表示某種感受或可能性確實存在，只是程度不強。屬於書面語和口語，語感上接近ないものでもない，但更常用於表達感受。"
+      },
+      "examples": [
+        {
+          "ja": "彼の気持ちは分からないでもない。",
+          "reading": "かれのきもちはわからないでもない。",
+          "en": "I don't entirely fail to understand his feelings.",
+          "zh": "他的心情也不是不能理解。",
+          "zh_TW": "他的心情也不是不能理解。"
+        },
+        {
+          "ja": "少し心配しないでもない。",
+          "reading": "すこししんぱいしないでもない。",
+          "en": "I am a little worried, to some extent.",
+          "zh": "多少还是有点担心的。",
+          "zh_TW": "多少還是有點擔心的。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nai-to-mo-kagiranai",
+      "level": "N1",
+      "pattern": "〜ないとも限らない",
+      "structure": "普通形（ない形） + とも限らない",
+      "match": [
+        "ないとも限らない"
+      ],
+      "meaning": {
+        "en": "it is not impossible that it happens",
+        "zh": "也不见得不……、说不定会……",
+        "zh_TW": "也不見得不……、說不定會……"
+      },
+      "explanation": {
+        "en": "ないとも限らない hedges against ruling out an unlikely-but-possible event. It is formal written register, common in warnings about accidents or other things that could still happen.",
+        "zh": "ないとも限らない用来避免把一种虽然不常见但仍有可能发生的事情完全排除。属于正式书面语，常见于关于事故等的警示性说法。",
+        "zh_TW": "ないとも限らない用來避免把一種雖然不常見但仍有可能發生的事情完全排除。屬於正式書面語，常見於關於事故等的警示性說法。"
+      },
+      "examples": [
+        {
+          "ja": "事故が起こらないとも限らない。",
+          "reading": "じこがおこらないともかぎらない。",
+          "en": "It cannot be ruled out that an accident will happen.",
+          "zh": "说不定会发生事故。",
+          "zh_TW": "說不定會發生事故。"
+        },
+        {
+          "ja": "明日雨が降らないとも限らない。",
+          "reading": "あしたあめがふらないともかぎらない。",
+          "en": "It's not impossible that it will rain tomorrow.",
+          "zh": "明天说不定会下雨。",
+          "zh_TW": "明天說不定會下雨。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-shikarubeki",
+      "level": "N1",
+      "pattern": "〜てしかるべきだ",
+      "structure": "動詞て形 + しかるべきだ",
+      "match": [
+        "てしかるべきだ"
+      ],
+      "meaning": {
+        "en": "it ought properly to be done",
+        "zh": "理应……、按理应该……",
+        "zh_TW": "理應……、按理應該……"
+      },
+      "explanation": {
+        "en": "てしかるべきだ states what should reasonably be the case given the circumstances. It is formal written register, common in argumentative and opinion writing.",
+        "zh": "てしかるべきだ表示按照道理，某事理应如此。属于正式书面语，常见于议论性和评论性的文章。",
+        "zh_TW": "てしかるべきだ表示按照道理，某事理應如此。屬於正式書面語，常見於議論性和評論性的文章。"
+      },
+      "examples": [
+        {
+          "ja": "この結果は発表されてしかるべきだ。",
+          "reading": "このけっかははっぴょうされてしかるべきだ。",
+          "en": "This result ought properly to be announced.",
+          "zh": "这个结果理应被公布。",
+          "zh_TW": "這個結果理應被公佈。"
+        },
+        {
+          "ja": "問題が起きたら、先生に伝えてしかるべきだ。",
+          "reading": "もんだいがおきたら、せんせいにつたえてしかるべきだ。",
+          "en": "If a problem occurs, it ought properly to be reported to the teacher.",
+          "zh": "如果出了问题，理应告知老师。",
+          "zh_TW": "如果出了問題，理應告知老師。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:te-habakaranai",
+      "level": "N1",
+      "pattern": "〜てはばからない",
+      "structure": "動詞て形（言う・主張する等） + はばからない",
+      "match": [
+        "てはばからない"
+      ],
+      "meaning": {
+        "en": "says or does it without the slightest hesitation",
+        "zh": "毫不顾忌地……、毫不犹豫地……",
+        "zh_TW": "毫不顧忌地……、毫不猶豫地……"
+      },
+      "explanation": {
+        "en": "てはばからない describes someone stating an opinion boldly with no reserve at all. It is formal written register, often carrying a critical nuance from the writer about the boldness.",
+        "zh": "てはばからない描写某人毫无顾忌地大胆表达意见。属于正式书面语，常带有作者对这种大胆态度的批评意味。",
+        "zh_TW": "てはばからない描寫某人毫無顧忌地大膽表達意見。屬於正式書面語，常帶有作者對這種大膽態度的批評意味。"
+      },
+      "examples": [
+        {
+          "ja": "彼は自分が正しいと言ってはばからない。",
+          "reading": "かれはじぶんがただしいといってはばからない。",
+          "en": "He says without the slightest hesitation that he is right.",
+          "zh": "他毫不顾忌地说自己是对的。",
+          "zh_TW": "他毫不顧忌地說自己是對的。"
+        },
+        {
+          "ja": "学生たちはその考えを批判してはばからない。",
+          "reading": "がくせいたちはそのかんがえをひはんしてはばからない。",
+          "en": "The students criticize that idea without any hesitation.",
+          "zh": "学生们毫不顾忌地批评那个想法。",
+          "zh_TW": "學生們毫不顧忌地批評那個想法。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:kirai-ga-aru",
+      "level": "N1",
+      "pattern": "〜きらいがある",
+      "structure": "動詞辞書形・普通形 + きらいがある",
+      "match": [
+        "きらいがある"
+      ],
+      "meaning": {
+        "en": "has an unfortunate tendency to do it",
+        "zh": "有……的倾向（不好的方面）",
+        "zh_TW": "有……的傾向（不好的方面）"
+      },
+      "explanation": {
+        "en": "きらいがある points out a mild but persistent negative tendency, softer than an outright criticism. It is formal written register, common in evaluations of a person's habits or a work's flaws.",
+        "zh": "きらいがある指出一种轻微但持续存在的不良倾向，语气比直接批评温和。属于正式书面语，常用于评价一个人的习惯或作品的缺点。",
+        "zh_TW": "きらいがある指出一種輕微但持續存在的不良傾向，語氣比直接批評溫和。屬於正式書面語，常用於評價一個人的習慣或作品的缺點。"
+      },
+      "examples": [
+        {
+          "ja": "彼は考えすぎるきらいがある。",
+          "reading": "かれはかんがえすぎるきらいがある。",
+          "en": "He has a tendency to overthink things.",
+          "zh": "他有想太多的倾向。",
+          "zh_TW": "他有想太多的傾向。"
+        },
+        {
+          "ja": "この結果は誇張されるきらいがある。",
+          "reading": "このけっかはこちょうされるきらいがある。",
+          "en": "This result tends to be exaggerated.",
+          "zh": "这个结果有被夸大的倾向。",
+          "zh_TW": "這個結果有被誇大的傾向。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:tomo-sureba",
+      "level": "N1",
+      "pattern": "〜ともすれば / ややもすると",
+      "structure": "文中 + ともすれば／ややもすると",
+      "match": [
+        "ともすれば",
+        "ややもすると"
+      ],
+      "meaning": {
+        "en": "easily slips into X, given half a chance",
+        "zh": "动不动就……、稍不留神就……",
+        "zh_TW": "動不動就……、稍不留神就……"
+      },
+      "explanation": {
+        "en": "ともすれば and ややもすると warn that under normal conditions a situation easily drifts toward an undesirable state. It is formal written register, common in cautionary observations.",
+        "zh": "ともすれば和ややもすると提醒在通常情况下，事情很容易滑向不理想的状态。属于正式书面语，常用于带告诫意味的观察。",
+        "zh_TW": "ともすれば和ややもすると提醒在通常情況下，事情很容易滑向不理想的狀態。屬於正式書面語，常用於帶告誡意味的觀察。"
+      },
+      "examples": [
+        {
+          "ja": "忙しいと、ともすれば食事を忘れがちだ。",
+          "reading": "いそがしいと、ともすればしょくじをわすれがちだ。",
+          "en": "When busy, one tends to easily forget to eat.",
+          "zh": "一忙起来，动不动就容易忘记吃饭。",
+          "zh_TW": "一忙起來，動不動就容易忘記吃飯。"
+        },
+        {
+          "ja": "子どもはややもすると、遊びに夢中になる。",
+          "reading": "こどもはややもすると、あそびにむちゅうになる。",
+          "en": "Children easily get absorbed in play, given the chance.",
+          "zh": "孩子动不动就沉迷于玩耍。",
+          "zh_TW": "孩子動不動就沉迷於玩耍。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:zukume",
+      "level": "N1",
+      "pattern": "〜ずくめ",
+      "structure": "名詞 + ずくめ",
+      "match": [
+        "ずくめ"
+      ],
+      "meaning": {
+        "en": "nothing but X from start to finish",
+        "zh": "净是……、清一色……",
+        "zh_TW": "淨是……、清一色……"
+      },
+      "explanation": {
+        "en": "ずくめ says a situation was made up entirely of one thing, often good news or a single colour. It is written and spoken register used to stress uniformity.",
+        "zh": "ずくめ表示某种情况自始至终都是同一件事，常用于好事连连或某种颜色。属于书面语和口语，用来强调清一色。",
+        "zh_TW": "ずくめ表示某種情況自始至終都是同一件事，常用於好事連連或某種顏色。屬於書面語和口語，用來強調清一色。"
+      },
+      "examples": [
+        {
+          "ja": "今年は良いことずくめだった。",
+          "reading": "ことしはよいことずくめだった。",
+          "en": "This year was nothing but good things.",
+          "zh": "今年净是好事。",
+          "zh_TW": "今年淨是好事。"
+        },
+        {
+          "ja": "彼は黒ずくめの服を着ていた。",
+          "reading": "かれはくろずくめのふくをきていた。",
+          "en": "He was dressed entirely in black.",
+          "zh": "他穿着一身黑。",
+          "zh_TW": "他穿著一身黑。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:gurumi",
+      "level": "N1",
+      "pattern": "〜ぐるみ",
+      "structure": "名詞 + ぐるみ",
+      "match": [
+        "ぐるみ"
+      ],
+      "meaning": {
+        "en": "the whole of X taking part together",
+        "zh": "全……（一起）、整个……",
+        "zh_TW": "全……（一起）、整個……"
+      },
+      "explanation": {
+        "en": "ぐるみ means an entire group acts or is involved together, as in 家族ぐるみ or 会社ぐるみ. It is written and spoken register, common in describing collective efforts.",
+        "zh": "ぐるみ表示某个整体一起参与或行动，如家族ぐるみ、会社ぐるみ。属于书面语和口语，常用于描写集体行动。",
+        "zh_TW": "ぐるみ表示某個整體一起參與或行動，如家族ぐるみ、會社ぐるみ。屬於書面語和口語，常用於描寫集體行動。"
+      },
+      "examples": [
+        {
+          "ja": "家族ぐるみで問題に取り組んだ。",
+          "reading": "かぞくぐるみでもんだいにとりくんだ。",
+          "en": "The whole family worked together on the problem.",
+          "zh": "全家一起解决了问题。",
+          "zh_TW": "全家一起解決了問題。"
+        },
+        {
+          "ja": "会社ぐるみで新しい計画を進めた。",
+          "reading": "かいしゃぐるみであたらしいけいかくをすすめた。",
+          "en": "The whole company worked together to push the new plan forward.",
+          "zh": "全公司一起推进了新计划。",
+          "zh_TW": "全公司一起推進了新計劃。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:zanmai",
+      "level": "N1",
+      "pattern": "〜三昧",
+      "structure": "名詞 + 三昧",
+      "match": [
+        "三昧"
+      ],
+      "meaning": {
+        "en": "indulging in nothing but X",
+        "zh": "尽情……、沉迷于……",
+        "zh_TW": "盡情……、沉迷於……"
+      },
+      "explanation": {
+        "en": "三昧 describes spending a stretch of time doing nothing but one enjoyable activity. It is written and spoken register, common when describing how a holiday or free time was spent.",
+        "zh": "三昧描写一段时间里心无旁骛地只做一件让人乐在其中的事。属于书面语和口语，常用于描述假期或空闲时间的度过方式。",
+        "zh_TW": "三昧描寫一段時間裡心無旁騖地只做一件讓人樂在其中的事。屬於書面語和口語，常用於描述假期或空閒時間的度過方式。"
+      },
+      "examples": [
+        {
+          "ja": "休みの間、読書三昧の生活を送った。",
+          "reading": "やすみのあいだ、どくしょざんまいのせいかつをおくった。",
+          "en": "During the break, he spent his days doing nothing but reading.",
+          "zh": "假期期间，他过着尽是读书的生活。",
+          "zh_TW": "假期期間，他過著盡是讀書的生活。"
+        },
+        {
+          "ja": "彼は毎日遊び三昧だ。",
+          "reading": "かれはまいにちあそびざんまいだ。",
+          "en": "He spends every day doing nothing but playing.",
+          "zh": "他每天尽是玩乐。",
+          "zh_TW": "他每天盡是玩樂。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:meku",
+      "level": "N1",
+      "pattern": "〜めく",
+      "structure": "名詞 + めく",
+      "match": [
+        "めく",
+        "めいて",
+        "めいた"
+      ],
+      "meaning": {
+        "en": "to take on the air or quality of X",
+        "zh": "带有……的样子、有点……的味道",
+        "zh_TW": "帶有……的樣子、有點……的味道"
+      },
+      "explanation": {
+        "en": "めく turns a noun into a verb meaning to take on the air or quality of that noun, as in 皮肉めく or 春めく. It is literary written register, common in descriptive fiction.",
+        "zh": "めく把名词变成动词，表示带上该名词所指的气息或样子，如皮肉めく、春めく。属于文学性书面语，常见于描写性的小说文字。",
+        "zh_TW": "めく把名詞變成動詞，表示帶上該名詞所指的氣息或樣子，如皮肉めく、春めく。屬於文學性書面語，常見於描寫性的小說文字。"
+      },
+      "examples": [
+        {
+          "ja": "彼の言葉は皮肉めいていた。",
+          "reading": "かれのことばはひにくめいていた。",
+          "en": "His words had a sarcastic ring to them.",
+          "zh": "他的话带着讽刺的意味。",
+          "zh_TW": "他的話帶著諷刺的意味。"
+        },
+        {
+          "ja": "街の空気が春めいてきた。",
+          "reading": "まちのくうきがはるめいてきた。",
+          "en": "The air in town started to take on the feel of spring.",
+          "zh": "街上的空气渐渐有了春天的气息。",
+          "zh_TW": "街上的空氣漸漸有了春天的氣息。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:buru",
+      "level": "N1",
+      "pattern": "〜ぶる",
+      "structure": "名詞・な形容詞語幹 + ぶる",
+      "match": [
+        "ぶる",
+        "ぶった",
+        "ぶって"
+      ],
+      "meaning": {
+        "en": "to put on airs of being X",
+        "zh": "装出……的样子、摆出……架子",
+        "zh_TW": "裝出……的樣子、擺出……架子"
+      },
+      "explanation": {
+        "en": "ぶる says someone is putting on a false show of being something, as in 偉ぶる or 上品ぶる. It is written and spoken register, always carrying a critical, mildly mocking tone.",
+        "zh": "ぶる表示某人装出并非真实的样子，如偉ぶる、上品ぶる。属于书面语和口语，总带一点批评或嘲讽的语气。",
+        "zh_TW": "ぶる表示某人裝出並非真實的樣子，如偉ぶる、上品ぶる。屬於書面語和口語，總帶一點批評或嘲諷的語氣。"
+      },
+      "examples": [
+        {
+          "ja": "彼はいつも先生ぶっている。",
+          "reading": "かれはいつもせんせいぶっている。",
+          "en": "He always puts on airs of being important.",
+          "zh": "他总是摆出一副了不起的架子。",
+          "zh_TW": "他總是擺出一副了不起的架子。"
+        },
+        {
+          "ja": "彼女は上品ぶった話し方をする。",
+          "reading": "かのじょはじょうひんぶったはなしかたをする。",
+          "en": "She speaks in a way that puts on airs of refinement.",
+          "zh": "她说话装出一副高雅的样子。",
+          "zh_TW": "她說話裝出一副高雅的樣子。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:dano-dano",
+      "level": "N1",
+      "pattern": "〜だの〜だの",
+      "structure": "名詞・普通形 + だの〜だの",
+      "match": [
+        "だの"
+      ],
+      "meaning": {
+        "en": "listing gripes: X and Y and the rest",
+        "zh": "又是……又是……（带不满地列举）",
+        "zh_TW": "又是……又是……（帶不滿地列舉）"
+      },
+      "explanation": {
+        "en": "だの〜だの lists examples with an exasperated, complaining tone, more critical than とか. It is colloquial spoken register, common when grumbling about a string of complaints.",
+        "zh": "だの〜だの带着无奈或不满地列举例子，语气比とか更带批评意味。属于口语，常用于抱怨一连串的问题。",
+        "zh_TW": "だの〜だの帶著無奈或不滿地列舉例子，語氣比とか更帶批評意味。屬於口語，常用於抱怨一連串的問題。"
+      },
+      "examples": [
+        {
+          "ja": "高いだの、遠いだの、彼は文句ばかり言う。",
+          "reading": "たかいだの、とおいだの、かれはもんくばかりいう。",
+          "en": "Too expensive, too far — he does nothing but complain.",
+          "zh": "又是太贵又是太远，他净是抱怨。",
+          "zh_TW": "又是太貴又是太遠，他淨是抱怨。"
+        },
+        {
+          "ja": "忙しいだの、時間がないだの、いつも言い訳ばかりだ。",
+          "reading": "いそがしいだの、じかんがないだの、いつもいいわけばかりだ。",
+          "en": "Too busy, no time — it's always the same excuses.",
+          "zh": "又是太忙又是没时间，总是找借口。",
+          "zh_TW": "又是太忙又是沒時間，總是找藉口。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-ii-to-ii",
+      "level": "N1",
+      "pattern": "〜といい〜といい",
+      "structure": "名詞 + といい〜といい",
+      "match": [
+        "といい"
+      ],
+      "meaning": {
+        "en": "both X and Y, every way you look",
+        "zh": "不论是……还是……、……也好……也好",
+        "zh_TW": "不論是……還是……、……也好……也好"
+      },
+      "explanation": {
+        "en": "といい〜といい picks two aspects of the same thing and says both confirm one evaluation. It is written register, common in appreciative or critical description.",
+        "zh": "といい〜といい从同一事物中挑出两个方面，说明两者都印证了同一个评价。属于书面语，常用于带赞赏或批评意味的描写。",
+        "zh_TW": "といい〜といい從同一事物中挑出兩個方面，說明兩者都印證了同一個評價。屬於書面語，常用於帶讚賞或批評意味的描寫。"
+      },
+      "examples": [
+        {
+          "ja": "色といい形といい、この花は美しい。",
+          "reading": "いろといいかたちといい、このはなはうつくしい。",
+          "en": "Both the colour and the shape, this flower is beautiful in every way.",
+          "zh": "不论是颜色还是形状，这朵花都很美。",
+          "zh_TW": "不論是顏色還是形狀，這朵花都很美。"
+        },
+        {
+          "ja": "味といい値段といい、この店は満足できる。",
+          "reading": "あじといいねだんといい、このみせはまんぞくできる。",
+          "en": "Both the taste and the price, this shop is satisfying in every way.",
+          "zh": "不论是味道还是价格，这家店都令人满意。",
+          "zh_TW": "不論是味道還是價格，這家店都令人滿意。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:to-iwazu",
+      "level": "N1",
+      "pattern": "〜といわず〜といわず",
+      "structure": "名詞 + といわず〜といわず",
+      "match": [
+        "といわず"
+      ],
+      "meaning": {
+        "en": "X, Y, everywhere without distinction",
+        "zh": "不论是……还是……，到处都……",
+        "zh_TW": "不論是……還是……，到處都……"
+      },
+      "explanation": {
+        "en": "といわず〜といわず lists two representative parts or places to say a state applies everywhere without exception. It is written register, common in descriptive prose.",
+        "zh": "といわず〜といわず列举两个具有代表性的部分或地方，表示某种状态无一例外地遍及各处。属于书面语，常见于描写性的文字。",
+        "zh_TW": "といわず〜といわず列舉兩個具有代表性的部分或地方，表示某種狀態無一例外地遍及各處。屬於書面語，常見於描寫性的文字。"
+      },
+      "examples": [
+        {
+          "ja": "家の中といわず外といわず、花でいっぱいだ。",
+          "reading": "いえのなかといわずそとといわず、はなでいっぱいだ。",
+          "en": "Inside the house or outside, it's full of flowers everywhere.",
+          "zh": "不论是屋里还是屋外，到处都开满了花。",
+          "zh_TW": "不論是屋裡還是屋外，到處都開滿了花。"
+        },
+        {
+          "ja": "手といわず服といわず、泥だらけになった。",
+          "reading": "てといわずふくといわず、どろだらけになった。",
+          "en": "Hands or clothes, everything got covered in mud.",
+          "zh": "不论是手还是衣服，全都沾满了泥。",
+          "zh_TW": "不論是手還是衣服，全都沾滿了泥。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:nari-nari",
+      "level": "N1",
+      "pattern": "〜なり〜なり",
+      "structure": "動詞辞書形・名詞 + なり〜なり",
+      "match": [
+        "なり"
+      ],
+      "meaning": {
+        "en": "either X or Y, whichever you like",
+        "zh": "……也好……也好、……或……都行",
+        "zh_TW": "……也好……也好、……或……都行"
+      },
+      "explanation": {
+        "en": "なり〜なり suggests two or more options and leaves the choice open, implying any one is acceptable. It is written and spoken register, common in giving advice.",
+        "zh": "なり〜なり提出两个或多个选项，让对方自由选择，暗示哪一个都可以。属于书面语和口语，常用于提建议时。",
+        "zh_TW": "なり〜なり提出兩個或多個選項，讓對方自由選擇，暗示哪一個都可以。屬於書面語和口語，常用於提建議時。"
+      },
+      "examples": [
+        {
+          "ja": "分からなければ、先生に聞くなり、本で調べるなりすればいい。",
+          "reading": "わからなければ、せんせいにきくなり、ほんでしらべるなりすればいい。",
+          "en": "If you don't understand, you can either ask the teacher or look it up in a book.",
+          "zh": "不明白的话，问老师也好，查书也好，都可以。",
+          "zh_TW": "不明白的話，問老師也好，查書也好，都可以。"
+        },
+        {
+          "ja": "車を売るなり、使い続けるなり、好きに決めていい。",
+          "reading": "くるまをうるなり、つかいつづけるなり、すきにきめていい。",
+          "en": "You can decide freely whether to sell the car or keep using it.",
+          "zh": "卖车也好，继续用也好，你可以自己决定。",
+          "zh_TW": "賣車也好，繼續用也好，你可以自己決定。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:yara-yara",
+      "level": "N1",
+      "pattern": "〜やら〜やら",
+      "structure": "名詞・普通形 + やら〜やら",
+      "match": [
+        "やら"
+      ],
+      "meaning": {
+        "en": "what with X and Y, all mixed together",
+        "zh": "又是……又是……（心情复杂地列举）",
+        "zh_TW": "又是……又是……（心情複雜地列舉）"
+      },
+      "explanation": {
+        "en": "やら〜やら lists things happening together that create a confused or overwhelmed feeling, often emotional. It is written and spoken register, common in describing a hectic experience.",
+        "zh": "やら〜やら列举同时发生、让人心情复杂或应接不暇的事情，常带感情色彩。属于书面语和口语，常用于描写忙乱的经历。",
+        "zh_TW": "やら〜やら列舉同時發生、讓人心情複雜或應接不暇的事情，常帶感情色彩。屬於書面語和口語，常用於描寫忙亂的經歷。"
+      },
+      "examples": [
+        {
+          "ja": "行くやら帰るやら、人が集まった。",
+          "reading": "いくやらかえるやら、ひとがあつまった。",
+          "en": "What with relief and surprise, he was at a loss for words.",
+          "zh": "又是安心又是惊讶，他一时说不出话来。",
+          "zh_TW": "又是安心又是驚訝，他一時說不出話來。"
+        },
+        {
+          "ja": "寒いやら暗いやらで、今日は大変だった。",
+          "reading": "さむいやらくらいやらで、きょうはたいへんだった。",
+          "en": "What with being busy and tired, today was tough.",
+          "zh": "又忙又累，今天真是够呛。",
+          "zh_TW": "又忙又累，今天真是夠嗆。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:mono-to-omowareru",
+      "level": "N1",
+      "pattern": "〜ものと思われる",
+      "structure": "普通形 + ものと思われる",
+      "match": [
+        "ものと思われる"
+      ],
+      "meaning": {
+        "en": "it is considered to be so (formal writing)",
+        "zh": "被认为是……、据推测……",
+        "zh_TW": "被認為是……、據推測……"
+      },
+      "explanation": {
+        "en": "ものと思われる states an inference objectively without naming who thinks so. It is formal written register, standard in reports, news articles and academic writing.",
+        "zh": "ものと思われる客观地陈述一种推测，而不点明是谁这样认为。属于正式书面语，常见于报告、新闻报道和学术文章。",
+        "zh_TW": "ものと思われる客觀地陳述一種推測，而不點明是誰這樣認為。屬於正式書面語，常見於報告、新聞報道和學術文章。"
+      },
+      "examples": [
+        {
+          "ja": "この結果は事実に基づくものと思われる。",
+          "reading": "このけっかはじじつにもとづくものとおもわれる。",
+          "en": "This result is thought to be based on fact.",
+          "zh": "据推测，这个结果是基于事实的。",
+          "zh_TW": "據推測，這個結果是基於事實的。"
+        },
+        {
+          "ja": "会議は来週行われるものと思われる。",
+          "reading": "かいぎはらいしゅうおこなわれるものとおもわれる。",
+          "en": "The meeting is expected to be held next week.",
+          "zh": "据推测，会议将在下周举行。",
+          "zh_TW": "據推測，會議將在下週舉行。"
+        }
+      ]
+    },
+    {
+      "id": "grammar:teichougo",
+      "level": "N1",
+      "pattern": "丁重語（いたす・まいる・申す）",
+      "structure": "動詞→丁重語（する→いたす、言う→申す）",
+      "match": [
+        "いたします",
+        "申した"
+      ],
+      "meaning": {
+        "en": "teichougo, humble-polite verbs that politely lower the speaker's own action",
+        "zh": "丁重语——恭敬地降低己方动作的谦让语",
+        "zh_TW": "丁重語——恭敬地降低己方動作的謙讓語"
+      },
+      "explanation": {
+        "en": "Teichougo verbs like いたす and 申す politely lower the speaker's own action to show respect to the listener in general, regardless of whether the listener is directly involved. It is highly formal written and spoken register, standard in business and ceremonial Japanese.",
+        "zh": "いたす、申す等丁重语把说话人自己的动作恭敬地放低，用来向听话人表示敬意，而不论对方是否直接涉及该动作。属于高度正式的书面语和口语，常见于商务和致辞场合。",
+        "zh_TW": "いたす、申す等丁重語把說話人自己的動作恭敬地放低，用來向聽話人表示敬意，而不論對方是否直接涉及該動作。屬於高度正式的書面語和口語，常見於商務和致辭場合。"
+      },
+      "examples": [
+        {
+          "ja": "詳しくは私が説明いたします。",
+          "reading": "くわしくはわたしがせつめいいたします。",
+          "en": "I will explain the details myself.",
+          "zh": "详细情况由我来说明。",
+          "zh_TW": "詳細情況由我來說明。"
+        },
+        {
+          "ja": "先ほど申した通り、結果に問題はなかった。",
+          "reading": "さきほどもうしたとおり、けっかにもんだいはなかった。",
+          "en": "As I mentioned earlier, there was no problem with the result.",
+          "zh": "正如我刚才所说，结果没有问题。",
+          "zh_TW": "正如我剛才所說，結果沒有問題。"
+        }
+      ]
+    }
+  ]
+}

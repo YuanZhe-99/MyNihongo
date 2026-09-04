@@ -11,6 +11,7 @@
 library;
 
 import '../../content/models/localized_strings.dart';
+import 'scenario.dart';
 
 /// One level's path.
 class LessonPath {
@@ -73,6 +74,7 @@ class LessonUnit {
     this.sentences = const [],
     this.questions = const [],
     this.writingPrompt,
+    this.scenario,
   });
 
   /// `unit:n5-1`. A compatibility contract: the pass record is keyed by it.
@@ -95,6 +97,9 @@ class LessonUnit {
 
   /// What a writing exercise asks for, when there is one.
   final LocalizedStrings? writingPrompt;
+
+  /// The scripted conversation this unit ends with, when it has one.
+  final Scenario? scenario;
 
   /// Every catalog id this unit teaches, grammar first.
   List<String> get items => [...grammar, ...vocab];
@@ -124,6 +129,7 @@ class LessonUnit {
       writingPrompt: json['writingPrompt'] == null
           ? null
           : LocalizedStrings.fromJson(json['writingPrompt']),
+      scenario: Scenario.fromJson(json['scenario']),
     );
   }
 }

@@ -10,8 +10,10 @@ import '../../../shared/utils/adaptive_layout.dart';
 import '../../quiz/models/quiz_config.dart';
 import '../../content/models/jlpt_level.dart';
 import '../models/lesson_path.dart';
+import '../views/scenario_page.dart';
 import '../services/lesson_repository.dart';
 import '../services/lesson_rules.dart';
+import '../../writing/views/writing_practice_page.dart';
 
 /// The target level's units, as a path.
 ///
@@ -190,6 +192,34 @@ class _UnitCard extends ConsumerWidget {
                     passed ? l10n.pathCheckpointAgain : l10n.pathCheckpoint,
                   ),
                 ),
+                // Writing is offered on the same terms as practice: it is
+                // about this unit's words, so it waits until the unit opens.
+                if (unit.scenario case final scenario?)
+                  TextButton(
+                    onPressed: locked
+                        ? null
+                        : () => context.push(
+                            '/scenario',
+                            extra: ScenarioArgs(
+                              scenario: scenario,
+                              unit: unit,
+                            ),
+                          ),
+                    child: Text(l10n.pathScenario),
+                  ),
+                if (unit.writingPrompt case final prompt?)
+                  TextButton(
+                    onPressed: locked
+                        ? null
+                        : () => context.push(
+                            '/writing',
+                            extra: WritingPrompt(
+                              prompt: prompt.resolveJoined(locale),
+                              unit: unit,
+                            ),
+                          ),
+                    child: Text(l10n.pathWriting),
+                  ),
               ],
             ),
           ],

@@ -1,0 +1,3747 @@
+{
+  "schemaVersion": 1,
+  "source": "model-authored (Claude), unreviewed",
+  "license": "GPL-3.0 with the app.",
+  "level": "N4",
+  "units": [
+    {
+      "id": "unit:n4-1",
+      "title": {
+        "en": "Clauses that describe nouns",
+        "zh": "修饰名词的句子",
+        "zh_TW": "修飾名詞的句子"
+      },
+      "grammar": [
+        "grammar:relative-clause",
+        "grammar:koto-nominalizer",
+        "grammar:no-nominalizer",
+        "grammar:no-wa-da",
+        "grammar:no-ga-jouzu",
+        "grammar:koto-ga-aru",
+        "grammar:sa-nominalizer",
+        "grammar:kata"
+      ],
+      "vocab": [
+        "vocab:jm1329000",
+        "vocab:jm2005990",
+        "vocab:jm1594110",
+        "vocab:jm1310460",
+        "vocab:jm1207270",
+        "vocab:jm1207250",
+        "vocab:jm1348430",
+        "vocab:jm1526920",
+        "vocab:jm1281020",
+        "vocab:jm1589350",
+        "vocab:jm1238410",
+        "vocab:jm1429060",
+        "vocab:jm1593670",
+        "vocab:jm1486360",
+        "vocab:jm1362640",
+        "vocab:jm1554820",
+        "vocab:jm1538440",
+        "vocab:jm1546880"
+      ],
+      "sentences": [
+        {
+          "ja": "私が昨日読んだ小説はとてもおもしろいです。",
+          "reading": "わたしがきのうよんだしょうせつはとてもおもしろいです。",
+          "en": "The novel I read yesterday is very interesting.",
+          "zh": "我昨天读的小说非常有意思。",
+          "zh_TW": "我昨天讀的小說非常有意思。",
+          "items": [
+            "grammar:relative-clause"
+          ]
+        },
+        {
+          "ja": "毎日日本語を話すことが大切です。",
+          "reading": "まいにちにほんごをはなすことがたいせつです。",
+          "en": "Speaking Japanese every day is important.",
+          "zh": "每天说日语很重要。",
+          "zh_TW": "每天說日語很重要。",
+          "items": [
+            "grammar:koto-nominalizer"
+          ]
+        },
+        {
+          "ja": "音楽を聞くのが好きです。",
+          "reading": "おんがくをきくのがすきです。",
+          "en": "I like listening to music.",
+          "zh": "我喜欢听音乐。",
+          "zh_TW": "我喜歡聽音樂。",
+          "items": [
+            "grammar:no-nominalizer"
+          ]
+        },
+        {
+          "ja": "私が探しているのは新しい辞書です。",
+          "reading": "わたしがさがしているのはあたらしいじしょです。",
+          "en": "What I am looking for is a new dictionary.",
+          "zh": "我在找的是一本新词典。",
+          "zh_TW": "我在找的是一本新詞典。",
+          "items": [
+            "grammar:no-wa-da",
+            "grammar:relative-clause"
+          ]
+        },
+        {
+          "ja": "彼は踊るのが上手です。",
+          "reading": "かれはおどるのがじょうずです。",
+          "en": "He is good at dancing.",
+          "zh": "他很会跳舞。",
+          "zh_TW": "他很會跳舞。",
+          "items": [
+            "grammar:no-ga-jouzu"
+          ]
+        },
+        {
+          "ja": "朝早く起きることがあります。",
+          "reading": "あさはやくおきることがあります。",
+          "en": "There are times when I get up early in the morning.",
+          "zh": "我有时会早上很早起床。",
+          "zh_TW": "我有時會早上很早起床。",
+          "items": [
+            "grammar:koto-ga-aru"
+          ]
+        },
+        {
+          "ja": "冬の天気は厳しいです。",
+          "reading": "ふゆのてんきはきびしいです。",
+          "en": "The cold of winter is severe.",
+          "zh": "冬天的寒冷很严酷。",
+          "zh_TW": "冬天的寒冷很嚴酷。",
+          "items": [
+            "grammar:sa-nominalizer"
+          ]
+        },
+        {
+          "ja": "泳ぎ方を教えてください。",
+          "reading": "およぎかたをおしえてください。",
+          "en": "Please teach me how to swim.",
+          "zh": "请教我游泳的方法。",
+          "zh_TW": "請教我游泳的方法。",
+          "items": [
+            "grammar:kata"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n4-1-01",
+          "item": "grammar:relative-clause",
+          "prompt": {
+            "en": "Which phrase means \"the book I read yesterday\"?",
+            "zh": "哪个短语意思是「我昨天读的书」？",
+            "zh_TW": "哪個短語意思是「我昨天讀的書」？"
+          },
+          "options": [
+            "私が昨日読んだ本",
+            "私が昨日読むだ本",
+            "本が昨日読んだ私",
+            "私は昨日読んだの本"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A plain-form clause sits directly in front of the noun, and the subject inside it takes が, not は.",
+            "zh": "简体句直接放在名词前作修饰，句中主语用が而不用は。",
+            "zh_TW": "簡體句直接放在名詞前作修飾，句中主語用が而不用は。"
+          }
+        },
+        {
+          "id": "q:n4-1-02",
+          "item": "grammar:koto-nominalizer",
+          "prompt": {
+            "en": "Which turns 走る into a noun with こと?",
+            "zh": "哪一个用こと把「走る」变成名词？",
+            "zh_TW": "哪一個用こと把「走る」變成名詞？"
+          },
+          "options": [
+            "走ること",
+            "走るのこと",
+            "走りこと",
+            "走ってこと"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "こと attaches to the plain form of the verb: 走る＋こと.",
+            "zh": "こと接在动词简体形后：走る＋こと。",
+            "zh_TW": "こと接在動詞簡體形後：走る＋こと。"
+          }
+        },
+        {
+          "id": "q:n4-1-03",
+          "item": "grammar:no-nominalizer",
+          "prompt": {
+            "en": "Which sentence says \"I like listening to music\"?",
+            "zh": "哪一句是「我喜欢听音乐」？",
+            "zh_TW": "哪一句是「我喜歡聽音樂」？"
+          },
+          "options": [
+            "音楽を聞くのが好きです。",
+            "音楽を聞くこと好きです。",
+            "音楽を聞くのを好きです。",
+            "音楽を聞きのが好きです。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "の nominalizes the clause and 好き takes が, not を.",
+            "zh": "の把小句名词化，「好き」的对象用が而不用を。",
+            "zh_TW": "の把小句名詞化，「好き」的對象用が而不用を。"
+          }
+        },
+        {
+          "id": "q:n4-1-04",
+          "item": "grammar:no-wa-da",
+          "prompt": {
+            "en": "Which sentence means \"What I am looking for is a new dictionary\"?",
+            "zh": "哪一句意思是「我在找的是一本新词典」？",
+            "zh_TW": "哪一句意思是「我在找的是一本新詞典」？"
+          },
+          "options": [
+            "私が探しているのは新しい辞書です。",
+            "私が探しているのを新しい辞書です。",
+            "私は探しているのが新しい辞書です。",
+            "私が探しているこそ新しい辞書です。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜のは〜です puts the identified thing at the end; the clause before の keeps が for its subject.",
+            "zh": "「〜のは〜です」把要说明的事物放在句尾；の前小句的主语仍用が。",
+            "zh_TW": "「〜のは〜です」把要說明的事物放在句尾；の前小句的主語仍用が。"
+          }
+        },
+        {
+          "id": "q:n4-1-05",
+          "item": "grammar:no-ga-jouzu",
+          "prompt": {
+            "en": "Which particle fits: 彼は踊るの＿上手です。",
+            "zh": "填空：彼は踊るの＿上手です。",
+            "zh_TW": "填空：彼は踴るの＿上手です。"
+          },
+          "options": [
+            "が",
+            "を",
+            "に",
+            "で"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "上手です and 下手です mark the skill with が.",
+            "zh": "「上手です」「下手です」用が标示所擅长的事。",
+            "zh_TW": "「上手です」「下手です」用が標示所擅長的事。"
+          }
+        },
+        {
+          "id": "q:n4-1-06",
+          "item": "grammar:koto-ga-aru",
+          "prompt": {
+            "en": "Which fills the blank: 朝早く起きる＿＿＿あります。",
+            "zh": "填空：朝早く起きる＿＿＿あります。",
+            "zh_TW": "填空：朝早く起きる＿＿＿あります。"
+          },
+          "options": [
+            "ことが",
+            "ことを",
+            "のが",
+            "ときが"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ことがあります with a plain non-past verb means \"there are times when\".",
+            "zh": "简体非过去形＋「ことがあります」表示「有时候会…」。",
+            "zh_TW": "簡體非過去形＋「ことがあります」表示「有時候會…」。"
+          }
+        },
+        {
+          "id": "q:n4-1-07",
+          "item": "grammar:sa-nominalizer",
+          "prompt": {
+            "en": "Which is the noun form of 寒い?",
+            "zh": "「寒い」的名词形是哪一个？",
+            "zh_TW": "「寒い」的名詞形是哪一個？"
+          },
+          "options": [
+            "寒さ",
+            "寒み",
+            "寒く",
+            "寒いさ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Drop the final い of an i-adjective and add さ to make a noun of degree.",
+            "zh": "去掉い形容词词尾的い，加さ构成表示程度的名词。",
+            "zh_TW": "去掉い形容詞詞尾的い，加さ構成表示程度的名詞。"
+          }
+        },
+        {
+          "id": "q:n4-1-08",
+          "item": "grammar:kata",
+          "prompt": {
+            "en": "Which means \"how to swim\"?",
+            "zh": "哪一个意思是「游泳的方法」？",
+            "zh_TW": "哪一個意思是「游泳的方法」？"
+          },
+          "options": [
+            "泳ぎ方",
+            "泳ぶ方",
+            "泳んで方",
+            "泳きかた"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "方 attaches to the ます-stem: 泳ぎ＋方.",
+            "zh": "「方」接在动词ます形词干后：泳ぎ＋方。",
+            "zh_TW": "「方」接在動詞ます形詞幹後：泳ぎ＋方。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Write two sentences about something you enjoy, using a noun-modifying clause and 〜のが好きです.",
+        "zh": "用连体修饰句和「〜のが好きです」写两句关于你喜欢的事。",
+        "zh_TW": "用連體修飾句和「〜のが好きです」寫兩句關於你喜歡的事。"
+      },
+      "scenario": {
+        "title": {
+          "en": "Talking about hobbies",
+          "zh": "聊爱好",
+          "zh_TW": "聊愛好"
+        },
+        "dialogue": [
+          {
+            "speaker": "A",
+            "ja": "何をするのが好きですか。",
+            "reading": "なにをするのがすきですか。",
+            "en": "What do you like doing?",
+            "zh": "你喜欢做什么？",
+            "zh_TW": "你喜歡做什麼？"
+          },
+          {
+            "speaker": "B",
+            "ja": "音楽を聞くのが好きです。踊るのも好きです。",
+            "reading": "おんがくをきくのがすきです。おどるのもすきです。",
+            "en": "I like listening to music. I also like dancing.",
+            "zh": "我喜欢听音乐。我也喜欢跳舞。",
+            "zh_TW": "我喜歡聽音樂。我也喜歡跳舞。"
+          },
+          {
+            "speaker": "A",
+            "ja": "彼は踊るのが上手ですか。",
+            "reading": "かれはおどるのがじょうずですか。",
+            "en": "Is he good at dancing?",
+            "zh": "他很会跳舞吗？",
+            "zh_TW": "他很會跳舞嗎？"
+          },
+          {
+            "speaker": "B",
+            "ja": "はい、とても上手です。",
+            "reading": "はい、とてもじょうずです。",
+            "en": "Yes, he is very skilled.",
+            "zh": "是的，非常擅长。",
+            "zh_TW": "是的，非常擅長。"
+          },
+          {
+            "speaker": "A",
+            "ja": "私が先週読んだ小説はとても面白いです。",
+            "reading": "わたしがせんしゅうよんだしょうせつはとてもおもしろいです。",
+            "en": "The novel I read last week is very interesting.",
+            "zh": "我上周读的小说非常有趣。",
+            "zh_TW": "我上週讀的小說非常有趣。"
+          },
+          {
+            "speaker": "B",
+            "ja": "毎日本を読むことが大切ですね。",
+            "reading": "まいにちほんをよむことがたいせつですね。",
+            "en": "Reading a book every day is important, isn't it.",
+            "zh": "每天读书很重要呢。",
+            "zh_TW": "每天讀書很重要呢。"
+          }
+        ],
+        "branches": [
+          {
+            "after": 2,
+            "choices": [
+              {
+                "ja": "音楽を聞くのが好きです。",
+                "reading": "おんがくをきくのがすきです。",
+                "en": "I like listening to music.",
+                "zh": "我喜欢听音乐。",
+                "zh_TW": "我喜歡聽音樂。",
+                "correct": true
+              },
+              {
+                "ja": "音楽を聞くのを好きです。",
+                "reading": "おんがくをきくのをすきです。",
+                "en": "I like-wrong-particle listening to music.",
+                "zh": "我喜欢（助词错误）听音乐。",
+                "zh_TW": "我喜歡（助詞錯誤）聽音樂。"
+              },
+              {
+                "ja": "音楽を聞くこと好きです。",
+                "reading": "おんがくをきくことすきです。",
+                "en": "I missing-particle like listening to music.",
+                "zh": "我（缺助词）喜欢听音乐。",
+                "zh_TW": "我（缺助詞）喜歡聽音樂。"
+              }
+            ]
+          },
+          {
+            "after": 4,
+            "choices": [
+              {
+                "ja": "はい、とても上手です。",
+                "reading": "はい、とてもじょうずです。",
+                "en": "Yes, he is very skilled.",
+                "zh": "是的，非常擅长。",
+                "zh_TW": "是的，非常擅長。",
+                "correct": true
+              },
+              {
+                "ja": "はい、とても上手いです。",
+                "reading": "はい、とてもうまいです。",
+                "en": "Yes, quite tasty.",
+                "zh": "是的，很好吃。",
+                "zh_TW": "是的，很好吃。"
+              },
+              {
+                "ja": "いいえ、彼は踊りません。",
+                "reading": "いいえ、かれはおどりません。",
+                "en": "No, he does not dance.",
+                "zh": "不，他不跳舞。",
+                "zh_TW": "不，他不跳舞。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "unit:n4-2",
+      "title": {
+        "en": "Being able to do things",
+        "zh": "能力与可能形",
+        "zh_TW": "能力與可能形"
+      },
+      "grammar": [
+        "grammar:potential",
+        "grammar:mieru-kikoeru",
+        "grammar:you-ni-naru",
+        "grammar:you-ni-suru",
+        "grammar:you-ni-purpose",
+        "grammar:yasui",
+        "grammar:nikui",
+        "grammar:zurai"
+      ],
+      "vocab": [
+        "vocab:jm1591150",
+        "vocab:jm1259140",
+        "vocab:jm1212670",
+        "vocab:jm1195970",
+        "vocab:jm1214330",
+        "vocab:jm1501350",
+        "vocab:jm1487400",
+        "vocab:jm1375620",
+        "vocab:jm1340460",
+        "vocab:jm1500800",
+        "vocab:jm1543070",
+        "vocab:jm1477170",
+        "vocab:jm1315130",
+        "vocab:jm1295530",
+        "vocab:jm1605630",
+        "vocab:jm1250870",
+        "vocab:jm1576900",
+        "vocab:jm1484930"
+      ],
+      "sentences": [
+        {
+          "ja": "私は漢字が読めるようになりました。",
+          "reading": "わたしはかんじがよめるようになりました。",
+          "en": "I have come to be able to read kanji.",
+          "zh": "我变得会读汉字了。",
+          "zh_TW": "我變得會讀漢字了。",
+          "items": [
+            "grammar:potential",
+            "grammar:you-ni-naru"
+          ]
+        },
+        {
+          "ja": "ここから海がよく見えます。",
+          "reading": "ここからうみがよくみえます。",
+          "en": "You can see the sea well from here.",
+          "zh": "从这里能清楚地看到海。",
+          "zh_TW": "從這裡能清楚地看到海。",
+          "items": [
+            "grammar:mieru-kikoeru"
+          ]
+        },
+        {
+          "ja": "隣の部屋から音が聞こえます。",
+          "reading": "となりのへやからおとがきこえます。",
+          "en": "A sound can be heard from the next room.",
+          "zh": "从隔壁房间能听到声音。",
+          "zh_TW": "從隔壁房間能聽到聲音。",
+          "items": [
+            "grammar:mieru-kikoeru"
+          ]
+        },
+        {
+          "ja": "毎日早く寝るようにしています。",
+          "reading": "まいにちはやくねるようにしています。",
+          "en": "I make an effort to go to bed early every day.",
+          "zh": "我尽量每天早睡。",
+          "zh_TW": "我儘量每天早睡。",
+          "items": [
+            "grammar:you-ni-suru"
+          ]
+        },
+        {
+          "ja": "忘れないように紙に書きます。",
+          "reading": "わすれないようにかみにかきます。",
+          "en": "I write it on paper so that I won't forget.",
+          "zh": "为了不忘记，我写在纸上。",
+          "zh_TW": "為了不忘記，我寫在紙上。",
+          "items": [
+            "grammar:you-ni-purpose"
+          ]
+        },
+        {
+          "ja": "この字は細かくて読みにくいです。",
+          "reading": "このじはこまかくてよみにくいです。",
+          "en": "These letters are small and hard to read.",
+          "zh": "这些字很小，难以阅读。",
+          "zh_TW": "這些字很小，難以閱讀。",
+          "items": [
+            "grammar:nikui"
+          ]
+        },
+        {
+          "ja": "この本は字が大きくて読みやすいです。",
+          "reading": "このほんはじがおおきくてよみやすいです。",
+          "en": "This book has large letters and is easy to read.",
+          "zh": "这本书字大，容易读。",
+          "zh_TW": "這本書字大，容易讀。",
+          "items": [
+            "grammar:yasui"
+          ]
+        },
+        {
+          "ja": "足が痛くて歩きづらいです。",
+          "reading": "あしがいたくてあるきづらいです。",
+          "en": "My foot hurts, so walking is uncomfortable.",
+          "zh": "脚疼，走起来很难受。",
+          "zh_TW": "腳疼，走起來很難受。",
+          "items": [
+            "grammar:zurai"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n4-2-01",
+          "item": "grammar:potential",
+          "prompt": {
+            "en": "Which is the potential form of 書く?",
+            "zh": "「書く」的可能形是哪一个？",
+            "zh_TW": "「書く」的可能形是哪一個？"
+          },
+          "options": [
+            "書ける",
+            "書かれる",
+            "書こう",
+            "書かせる"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Godan verbs change the final -u to -eru: 書く → 書ける.",
+            "zh": "五段动词把词尾u段变成e段再加る：書く→書ける。",
+            "zh_TW": "五段動詞把詞尾u段變成e段再加る：書く→書ける。"
+          }
+        },
+        {
+          "id": "q:n4-2-02",
+          "item": "grammar:mieru-kikoeru",
+          "prompt": {
+            "en": "Which says the mountain is simply visible?",
+            "zh": "哪一句表示山「自然而然地看得见」？",
+            "zh_TW": "哪一句表示山「自然而然地看得見」？"
+          },
+          "options": [
+            "山が見えます。",
+            "山を見えます。",
+            "山が見ます。",
+            "山に見えます。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "見えます is intransitive and takes が; it describes what naturally comes into view.",
+            "zh": "「見えます」是自动词，用が；表示自然映入眼中。",
+            "zh_TW": "「見えます」是自動詞，用が；表示自然映入眼中。"
+          }
+        },
+        {
+          "id": "q:n4-2-03",
+          "item": "grammar:mieru-kikoeru",
+          "prompt": {
+            "en": "Which fills the blank: 隣の部屋から音が＿＿＿＿。",
+            "zh": "填空：隣の部屋から音が＿＿＿＿。",
+            "zh_TW": "填空：隣の部屋から音が＿＿＿＿。"
+          },
+          "options": [
+            "聞こえます",
+            "聞けます",
+            "聞きます",
+            "聞かれます"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "聞こえます is for sound that reaches your ears by itself; 聞けます means you have the chance to listen.",
+            "zh": "「聞こえます」指声音自然传入耳中；「聞けます」表示有机会去听。",
+            "zh_TW": "「聞こえます」指聲音自然傳入耳中；「聞けます」表示有機會去聽。"
+          }
+        },
+        {
+          "id": "q:n4-2-04",
+          "item": "grammar:you-ni-naru",
+          "prompt": {
+            "en": "Which means \"I came to be able to read kanji\"?",
+            "zh": "哪一句意思是「我变得会读汉字了」？",
+            "zh_TW": "哪一句意思是「我變得會讀漢字了」？"
+          },
+          "options": [
+            "漢字が読めるようになりました。",
+            "漢字が読めるようにしました。",
+            "漢字を読むことになりました。",
+            "漢字が読めそうになりました。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ようになる describes a change that has happened to you; 〜ようにする is a deliberate effort.",
+            "zh": "「〜ようになる」表示自身发生的变化；「〜ようにする」是有意识的努力。",
+            "zh_TW": "「〜ようになる」表示自身發生的變化；「〜ようにする」是有意識的努力。"
+          }
+        },
+        {
+          "id": "q:n4-2-05",
+          "item": "grammar:you-ni-suru",
+          "prompt": {
+            "en": "Which means \"I make an effort to sleep early\"?",
+            "zh": "哪一句意思是「我尽量早睡」？",
+            "zh_TW": "哪一句意思是「我儘量早睡」？"
+          },
+          "options": [
+            "早く寝るようにしています。",
+            "早く寝るようになっています。",
+            "早く寝ることにしました。",
+            "早く寝るようです。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ようにしています expresses an ongoing effort to keep doing something.",
+            "zh": "「〜ようにしています」表示持续努力做某事。",
+            "zh_TW": "「〜ようにしています」表示持續努力做某事。"
+          }
+        },
+        {
+          "id": "q:n4-2-06",
+          "item": "grammar:you-ni-purpose",
+          "prompt": {
+            "en": "Which fills the blank: 忘れない＿＿＿紙に書きます。",
+            "zh": "填空：忘れない＿＿＿紙に書きます。",
+            "zh_TW": "填空：忘れない＿＿＿紙に書きます。"
+          },
+          "options": [
+            "ように",
+            "ために",
+            "ので",
+            "のに"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ように is used after a potential or negative verb to give a purpose you cannot control directly.",
+            "zh": "ように接在可能形或否定形后，表示无法直接控制的目的。",
+            "zh_TW": "ように接在可能形或否定形後，表示無法直接控制的目的。"
+          }
+        },
+        {
+          "id": "q:n4-2-07",
+          "item": "grammar:nikui",
+          "prompt": {
+            "en": "Which means \"hard to read\"?",
+            "zh": "哪一个意思是「难读」？",
+            "zh_TW": "哪一個意思是「難讀」？"
+          },
+          "options": [
+            "読みにくい",
+            "読みやすい",
+            "読みすぎる",
+            "読みたい"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "にくい attaches to the ます-stem and means the action is difficult.",
+            "zh": "「にくい」接在ます形词干后，表示动作难以进行。",
+            "zh_TW": "「にくい」接在ます形詞幹後，表示動作難以進行。"
+          }
+        },
+        {
+          "id": "q:n4-2-08",
+          "item": "grammar:zurai",
+          "prompt": {
+            "en": "Which means walking is difficult because it is painful?",
+            "zh": "哪一个表示因为难受而不便行走？",
+            "zh_TW": "哪一個表示因為難受而不便行走？"
+          },
+          "options": [
+            "歩きづらい",
+            "歩きやすい",
+            "歩きたい",
+            "歩かない"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "づらい is like にくい but adds the feeling that the action is unpleasant or painful.",
+            "zh": "「づらい」与「にくい」相近，但带有难受、痛苦的感觉。",
+            "zh_TW": "「づらい」與「にくい」相近，但帶有難受、痛苦的感覺。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Write about something you could not do a year ago but can do now, using 〜ようになりました.",
+        "zh": "用「〜ようになりました」写一件你一年前做不到、现在能做到的事。",
+        "zh_TW": "用「〜ようになりました」寫一件你一年前做不到、現在能做到的事。"
+      },
+      "scenario": {
+        "title": {
+          "en": "Learning kanji",
+          "zh": "学汉字",
+          "zh_TW": "學漢字"
+        },
+        "dialogue": [
+          {
+            "speaker": "A",
+            "ja": "この字は細かくて読みにくいですね。",
+            "reading": "このじはこまかくてよみにくいですね。",
+            "en": "These characters are small and hard to read, aren't they.",
+            "zh": "这些字很小，很难读吧。",
+            "zh_TW": "這些字很小，很難讀吧。"
+          },
+          {
+            "speaker": "B",
+            "ja": "そうですね。でも私は漢字が読めるようになりました。",
+            "reading": "そうですね。でもわたしはかんじがよめるようになりました。",
+            "en": "That's true. But I have come to be able to read kanji.",
+            "zh": "确实。不过我变得会读汉字了。",
+            "zh_TW": "確實。不過我變得會讀漢字了。"
+          },
+          {
+            "speaker": "A",
+            "ja": "どうやって覚えましたか。",
+            "reading": "どうやっておぼえましたか。",
+            "en": "How did you learn it?",
+            "zh": "你是怎么学会的？",
+            "zh_TW": "你是怎麼學會的？"
+          },
+          {
+            "speaker": "B",
+            "ja": "忘れないように紙に書きます。",
+            "reading": "わすれないようにかみにかきます。",
+            "en": "I write it on paper so that I won't forget.",
+            "zh": "为了不忘记，我写在纸上。",
+            "zh_TW": "為了不忘記，我寫在紙上。"
+          },
+          {
+            "speaker": "A",
+            "ja": "毎日早く寝るようにしていますか。",
+            "reading": "まいにちはやくねるようにしていますか。",
+            "en": "Do you make an effort to go to bed early every day?",
+            "zh": "你每天都尽量早睡吗？",
+            "zh_TW": "你每天都儘量早睡嗎？"
+          },
+          {
+            "speaker": "B",
+            "ja": "はい、そうしています。よく休むことが大切です。",
+            "reading": "はい、そうしています。よくやすむことがたいせつです。",
+            "en": "Yes, I do. Resting well is important.",
+            "zh": "是的。好好休息很重要。",
+            "zh_TW": "是的。好好休息很重要。"
+          }
+        ],
+        "branches": [
+          {
+            "after": 2,
+            "choices": [
+              {
+                "ja": "私は漢字が読めるようになりました。",
+                "reading": "わたしはかんじがよめるようになりました。",
+                "en": "I have come to be able to read kanji.",
+                "zh": "我变得会读汉字了。",
+                "zh_TW": "我變得會讀漢字了。",
+                "correct": true
+              },
+              {
+                "ja": "私は漢字が読めるようにしました。",
+                "reading": "わたしはかんじがよめるようにしました。",
+                "en": "I made an effort to be able to read kanji.",
+                "zh": "我努力做到能读汉字。",
+                "zh_TW": "我努力做到能讀漢字。"
+              },
+              {
+                "ja": "私は漢字を読むことになりました。",
+                "reading": "わたしはかんじをよむことになりました。",
+                "en": "It was decided that I read kanji.",
+                "zh": "决定了由我来读汉字。",
+                "zh_TW": "決定了由我來讀漢字。"
+              }
+            ]
+          },
+          {
+            "after": 4,
+            "choices": [
+              {
+                "ja": "忘れないように紙に書きます。",
+                "reading": "わすれないようにかみにかきます。",
+                "en": "I write it on paper so that I won't forget.",
+                "zh": "为了不忘记，我写在纸上。",
+                "zh_TW": "為了不忘記，我寫在紙上。",
+                "correct": true
+              },
+              {
+                "ja": "忘れないために紙に書きます。",
+                "reading": "わすれないためにかみにかきます。",
+                "en": "I write it on paper for the purpose of not forgetting.",
+                "zh": "为了不忘记的目的，我写在纸上。",
+                "zh_TW": "為了不忘記的目的，我寫在紙上。"
+              },
+              {
+                "ja": "忘れないので紙に書きます。",
+                "reading": "わすれないのでかみにかきます。",
+                "en": "Since I won't forget, I write on paper.",
+                "zh": "因为不会忘记，所以写在纸上。",
+                "zh_TW": "因為不會忘記，所以寫在紙上。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "unit:n4-3",
+      "title": {
+        "en": "Plans and decisions",
+        "zh": "打算与决定",
+        "zh_TW": "打算與決定"
+      },
+      "grammar": [
+        "grammar:volitional",
+        "grammar:you-to-omou",
+        "grammar:you-to-suru",
+        "grammar:yotei",
+        "grammar:nai-tsumori",
+        "grammar:koto-ni-suru",
+        "grammar:koto-ni-naru",
+        "grammar:koto-ni-shiteiru"
+      ],
+      "vocab": [
+        "vocab:jm1543240",
+        "vocab:jm1382980",
+        "vocab:jm1254180",
+        "vocab:jm1591420",
+        "vocab:jm1252090",
+        "vocab:jm1538130",
+        "vocab:jm1405890",
+        "vocab:jm1347710",
+        "vocab:jm1341670",
+        "vocab:jm1546220",
+        "vocab:jm1310260",
+        "vocab:jm1340000",
+        "vocab:jm1289370",
+        "vocab:jm1004790",
+        "vocab:jm1333090",
+        "vocab:jm1420410",
+        "vocab:jm1559900",
+        "vocab:jm1463930"
+      ],
+      "sentences": [
+        {
+          "ja": "今日は早く帰ろう。",
+          "reading": "きょうははやくかえろう。",
+          "en": "Let's go home early today.",
+          "zh": "今天早点回家吧。",
+          "zh_TW": "今天早點回家吧。",
+          "items": [
+            "grammar:volitional"
+          ]
+        },
+        {
+          "ja": "来年から大学で経済を勉強しようと思います。",
+          "reading": "らいねんからだいがくでけいざいをべんきょうしようとおもいます。",
+          "en": "I am thinking of studying economics at university from next year.",
+          "zh": "我打算明年起在大学学经济。",
+          "zh_TW": "我打算明年起在大學學經濟。",
+          "items": [
+            "grammar:you-to-omou"
+          ]
+        },
+        {
+          "ja": "急いで電車に乗ろうとしました。",
+          "reading": "いそいででんしゃにのろうとしました。",
+          "en": "I hurried and tried to get on the train.",
+          "zh": "我急忙想要赶上电车。",
+          "zh_TW": "我急忙想要趕上電車。",
+          "items": [
+            "grammar:you-to-suru"
+          ]
+        },
+        {
+          "ja": "来週の水曜日に出発する予定です。",
+          "reading": "らいしゅうのすいようびにしゅっぱつするよていです。",
+          "en": "I am scheduled to depart next Wednesday.",
+          "zh": "我预定下周三出发。",
+          "zh_TW": "我預定下週三出發。",
+          "items": [
+            "grammar:yotei"
+          ]
+        },
+        {
+          "ja": "今年は車を買わないつもりです。",
+          "reading": "ことしはくるまをかわないつもりです。",
+          "en": "I intend not to buy a car this year.",
+          "zh": "今年我不打算买车。",
+          "zh_TW": "今年我不打算買車。",
+          "items": [
+            "grammar:nai-tsumori"
+          ]
+        },
+        {
+          "ja": "毎朝早く起きることにしました。",
+          "reading": "まいあさはやくおきることにしました。",
+          "en": "I have decided to get up early every morning.",
+          "zh": "我决定每天早上早起。",
+          "zh_TW": "我決定每天早上早起。",
+          "items": [
+            "grammar:koto-ni-suru"
+          ]
+        },
+        {
+          "ja": "来月から工場で働くことになりました。",
+          "reading": "らいげつからこうじょうではたらくことになりました。",
+          "en": "It has been decided that I will work at the factory from next month.",
+          "zh": "决定了我从下个月起在工厂工作。",
+          "zh_TW": "決定了我從下個月起在工廠工作。",
+          "items": [
+            "grammar:koto-ni-naru"
+          ]
+        },
+        {
+          "ja": "私は毎日日記を書くことにしています。",
+          "reading": "わたしはまいにちにっきをかくことにしています。",
+          "en": "I make a habit of writing a diary every day.",
+          "zh": "我坚持每天写日记。",
+          "zh_TW": "我堅持每天寫日記。",
+          "items": [
+            "grammar:koto-ni-shiteiru"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n4-3-01",
+          "item": "grammar:volitional",
+          "prompt": {
+            "en": "Which is the volitional (plain) form of 帰る?",
+            "zh": "「帰る」的意向形（简体）是哪一个？",
+            "zh_TW": "「帰る」的意向形（簡體）是哪一個？"
+          },
+          "options": [
+            "帰ろう",
+            "帰れる",
+            "帰られる",
+            "帰りよう"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Godan verbs change the final -u to -ou: 帰る → 帰ろう.",
+            "zh": "五段动词把词尾变成o段再加う：帰る→帰ろう。",
+            "zh_TW": "五段動詞把詞尾變成o段再加う：帰る→帰ろう。"
+          }
+        },
+        {
+          "id": "q:n4-3-02",
+          "item": "grammar:you-to-omou",
+          "prompt": {
+            "en": "Which says \"I am thinking of studying economics\"?",
+            "zh": "哪一句是「我打算学经济」？",
+            "zh_TW": "哪一句是「我打算學經濟」？"
+          },
+          "options": [
+            "経済を勉強しようと思います。",
+            "経済を勉強すると思います。",
+            "経済を勉強しようと思うます。",
+            "経済を勉強したいと思うです。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The volitional plus と思います states your own intention; 〜すると思います is only a prediction.",
+            "zh": "意向形＋と思います表示自己的意图；「〜すると思います」只是推测。",
+            "zh_TW": "意向形＋と思います表示自己的意圖；「〜すると思います」只是推測。"
+          }
+        },
+        {
+          "id": "q:n4-3-03",
+          "item": "grammar:you-to-suru",
+          "prompt": {
+            "en": "Which fills the blank: 電車に乗＿＿としました。",
+            "zh": "填空：電車に乗＿＿としました。",
+            "zh_TW": "填空：電車に乗＿＿としました。"
+          },
+          "options": [
+            "ろう",
+            "る",
+            "った",
+            "り"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜(よ)うとする uses the volitional form and means you tried or were about to do it.",
+            "zh": "「〜(よ)うとする」用意向形，表示试图做或正要做。",
+            "zh_TW": "「〜(よ)うとする」用意向形，表示試圖做或正要做。"
+          }
+        },
+        {
+          "id": "q:n4-3-04",
+          "item": "grammar:yotei",
+          "prompt": {
+            "en": "Which says \"I am scheduled to depart on Wednesday\"?",
+            "zh": "哪一句是「我预定星期三出发」？",
+            "zh_TW": "哪一句是「我預定星期三出發」？"
+          },
+          "options": [
+            "水曜日に出発する予定です。",
+            "水曜日に出発した予定です。",
+            "水曜日に出発する予定します。",
+            "水曜日に出発の予定する。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "予定です follows a plain non-past verb and states an arranged schedule.",
+            "zh": "「予定です」接在简体非过去形后，表示已安排好的计划。",
+            "zh_TW": "「予定です」接在簡體非過去形後，表示已安排好的計劃。"
+          }
+        },
+        {
+          "id": "q:n4-3-05",
+          "item": "grammar:nai-tsumori",
+          "prompt": {
+            "en": "Which says \"I intend not to buy a car\"?",
+            "zh": "哪一句是「我不打算买车」？",
+            "zh_TW": "哪一句是「我不打算買車」？"
+          },
+          "options": [
+            "車を買わないつもりです。",
+            "車を買うつもりないです。",
+            "車を買いないつもりです。",
+            "車を買わなくつもりです。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "つもり follows the plain negative ない form directly.",
+            "zh": "「つもり」直接接在简体否定形ない之后。",
+            "zh_TW": "「つもり」直接接在簡體否定形ない之後。"
+          }
+        },
+        {
+          "id": "q:n4-3-06",
+          "item": "grammar:koto-ni-suru",
+          "prompt": {
+            "en": "Which shows a decision you made yourself?",
+            "zh": "哪一句表示自己做出的决定？",
+            "zh_TW": "哪一句表示自己做出的決定？"
+          },
+          "options": [
+            "早く起きることにしました。",
+            "早く起きることになりました。",
+            "早く起きるようになりました。",
+            "早く起きる予定になりました。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ことにする is your own decision; 〜ことになる is decided by circumstances or others.",
+            "zh": "「〜ことにする」是自己决定；「〜ことになる」是外部或他人决定。",
+            "zh_TW": "「〜ことにする」是自己決定；「〜ことになる」是外部或他人決定。"
+          }
+        },
+        {
+          "id": "q:n4-3-07",
+          "item": "grammar:koto-ni-naru",
+          "prompt": {
+            "en": "Which says the workplace was decided for you?",
+            "zh": "哪一句表示工作地点是别人替你决定的？",
+            "zh_TW": "哪一句表示工作地點是別人替你決定的？"
+          },
+          "options": [
+            "工場で働くことになりました。",
+            "工場で働くことにしました。",
+            "工場で働くようにしました。",
+            "工場で働くつもりでした。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "なる presents the outcome as something that came about rather than something you chose.",
+            "zh": "なる把结果呈现为自然形成，而非自己选择。",
+            "zh_TW": "なる把結果呈現為自然形成，而非自己選擇。"
+          }
+        },
+        {
+          "id": "q:n4-3-08",
+          "item": "grammar:koto-ni-shiteiru",
+          "prompt": {
+            "en": "Which means \"I make a habit of writing a diary\"?",
+            "zh": "哪一句意思是「我习惯写日记」？",
+            "zh_TW": "哪一句意思是「我習慣寫日記」？"
+          },
+          "options": [
+            "日記を書くことにしています。",
+            "日記を書くことにしました。",
+            "日記を書くことになっています。",
+            "日記を書くようでした。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The ています form turns the decision into a continuing personal habit.",
+            "zh": "用ています形使这个决定变成持续的个人习惯。",
+            "zh_TW": "用ています形使這個決定變成持續的個人習慣。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Write about next month using 〜予定です and 〜(よ)うと思います.",
+        "zh": "用「〜予定です」和「〜(よ)うと思います」写你下个月的安排。",
+        "zh_TW": "用「〜予定です」和「〜(よ)うと思います」寫你下個月的安排。"
+      }
+    },
+    {
+      "id": "unit:n4-4",
+      "title": {
+        "en": "Verb pairs and te-form helpers",
+        "zh": "自他动词与て形补助动词",
+        "zh_TW": "自他動詞與て形補助動詞"
+      },
+      "grammar": [
+        "grammar:jidoushi-tadoushi",
+        "grammar:te-aru",
+        "grammar:te-oku",
+        "grammar:te-shimau",
+        "grammar:chau",
+        "grammar:te-miru",
+        "grammar:te-iku",
+        "grammar:te-kuru",
+        "grammar:mama"
+      ],
+      "vocab": [
+        "vocab:jm1199890",
+        "vocab:jm1199900",
+        "vocab:jm1510650",
+        "vocab:jm1510790",
+        "vocab:jm1333550",
+        "vocab:jm1333560",
+        "vocab:jm1548550",
+        "vocab:jm1589260",
+        "vocab:jm1385910",
+        "vocab:jm1385920",
+        "vocab:jm1511790",
+        "vocab:jm1357210",
+        "vocab:jm1495740",
+        "vocab:jm1310670",
+        "vocab:jm1322320",
+        "vocab:jm1444270",
+        "vocab:jm1416700",
+        "vocab:jm1509290"
+      ],
+      "sentences": [
+        {
+          "ja": "弟が窓を壊しました。",
+          "reading": "おとうとがまどをこわしました。",
+          "en": "My little brother broke the window.",
+          "zh": "弟弟把窗户弄坏了。",
+          "zh_TW": "弟弟把窗戶弄壞了。",
+          "items": [
+            "grammar:jidoushi-tadoushi"
+          ]
+        },
+        {
+          "ja": "壁に絵が飾ってあります。",
+          "reading": "かべにえがかざってあります。",
+          "en": "A picture has been hung on the wall.",
+          "zh": "墙上装饰着一幅画。",
+          "zh_TW": "牆上裝飾著一幅畫。",
+          "items": [
+            "grammar:te-aru"
+          ]
+        },
+        {
+          "ja": "会議の前に部屋を片付けておきます。",
+          "reading": "かいぎのまえにへやをかたづけておきます。",
+          "en": "I will tidy the room in advance, before the meeting.",
+          "zh": "开会前我先把房间收拾好。",
+          "zh_TW": "開會前我先把房間收拾好。",
+          "items": [
+            "grammar:te-oku"
+          ]
+        },
+        {
+          "ja": "財布を落としちゃった。",
+          "reading": "さいふをおとしちゃった。",
+          "en": "I went and dropped my wallet.",
+          "zh": "我把钱包弄丢了。",
+          "zh_TW": "我把錢包弄丟了。",
+          "items": [
+            "grammar:chau"
+          ]
+        },
+        {
+          "ja": "新しい店の料理を食べてみます。",
+          "reading": "あたらしいみせのりょうりをたべてみます。",
+          "en": "I will try the food at the new restaurant.",
+          "zh": "我要尝尝新店的菜。",
+          "zh_TW": "我要嚐嚐新店的菜。",
+          "items": [
+            "grammar:te-miru"
+          ]
+        },
+        {
+          "ja": "これからも日本語を勉強していきます。",
+          "reading": "これからもにほんごをべんきょうしていきます。",
+          "en": "I will go on studying Japanese from now on too.",
+          "zh": "今后我也会继续学日语。",
+          "zh_TW": "今後我也會繼續學日語。",
+          "items": [
+            "grammar:te-iku"
+          ]
+        },
+        {
+          "ja": "だんだん寒くなってきました。",
+          "reading": "だんだんさむくなってきました。",
+          "en": "It has gradually become cold.",
+          "zh": "天气渐渐变冷了。",
+          "zh_TW": "天氣漸漸變冷了。",
+          "items": [
+            "grammar:te-kuru"
+          ]
+        },
+        {
+          "ja": "電気をつけたまま寝てしまいました。",
+          "reading": "でんきをつけたままねてしまいました。",
+          "en": "I fell asleep with the light still on.",
+          "zh": "我开着灯就睡着了。",
+          "zh_TW": "我開著燈就睡著了。",
+          "items": [
+            "grammar:mama",
+            "grammar:te-shimau"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n4-4-01",
+          "item": "grammar:jidoushi-tadoushi",
+          "prompt": {
+            "en": "Which sentence says the window broke, with nobody named?",
+            "zh": "哪一句表示窗户坏了，没有点明是谁弄的？",
+            "zh_TW": "哪一句表示窗戶壞了，沒有點明是誰弄的？"
+          },
+          "options": [
+            "窓が壊れました。",
+            "窓を壊しました。",
+            "窓が壊しました。",
+            "窓を壊れました。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The intransitive 壊れる takes が; the transitive 壊す takes を and needs a doer.",
+            "zh": "自动词「壊れる」用が；他动词「壊す」用を，需要动作主体。",
+            "zh_TW": "自動詞「壊れる」用が；他動詞「壊す」用を，需要動作主體。"
+          }
+        },
+        {
+          "id": "q:n4-4-02",
+          "item": "grammar:te-aru",
+          "prompt": {
+            "en": "Which says a picture has been hung on purpose and left there?",
+            "zh": "哪一句表示画是有意挂上并保持那样的？",
+            "zh_TW": "哪一句表示畫是有意掛上並保持那樣的？"
+          },
+          "options": [
+            "壁に絵が飾ってあります。",
+            "壁に絵が飾っています。",
+            "壁に絵を飾ってあります。",
+            "壁に絵が飾りてあります。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜てあります uses the te-form of a transitive verb and marks the object with が.",
+            "zh": "「〜てあります」用他动词的て形，对象用が标示。",
+            "zh_TW": "「〜てあります」用他動詞的て形，對象用が標示。"
+          }
+        },
+        {
+          "id": "q:n4-4-03",
+          "item": "grammar:te-oku",
+          "prompt": {
+            "en": "Which means \"I will tidy the room in advance\"?",
+            "zh": "哪一句意思是「我事先把房间收拾好」？",
+            "zh_TW": "哪一句意思是「我事先把房間收拾好」？"
+          },
+          "options": [
+            "部屋を片付けておきます。",
+            "部屋を片付けてあります。",
+            "部屋を片付けてみます。",
+            "部屋を片付けてしまいます。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ておきます is preparation done ahead of time for a later need.",
+            "zh": "「〜ておきます」表示为以后做准备而事先完成。",
+            "zh_TW": "「〜ておきます」表示為以後做準備而事先完成。"
+          }
+        },
+        {
+          "id": "q:n4-4-04",
+          "item": "grammar:te-shimau",
+          "prompt": {
+            "en": "Which fills the blank to show regret: 傘をなくして＿＿＿＿。",
+            "zh": "填空以表示懊悔：傘をなくして＿＿＿＿。",
+            "zh_TW": "填空以表示懊悔：傘をなくして＿＿＿＿。"
+          },
+          "options": [
+            "しまいました",
+            "おきました",
+            "みました",
+            "いきました"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜てしまいました often carries regret at something done by mistake.",
+            "zh": "「〜てしまいました」常带有对失误的懊悔语气。",
+            "zh_TW": "「〜てしまいました」常帶有對失誤的懊悔語氣。"
+          }
+        },
+        {
+          "id": "q:n4-4-05",
+          "item": "grammar:chau",
+          "prompt": {
+            "en": "Which is the casual contraction of 落としてしまった?",
+            "zh": "「落としてしまった」的口语缩略形是哪一个？",
+            "zh_TW": "「落としてしまった」的口語縮略形是哪一個？"
+          },
+          "options": [
+            "落としちゃった",
+            "落としじゃった",
+            "落としちゃいた",
+            "落としてじゃった"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "てしまう becomes ちゃう; でしまう (after ん, ぐ, ぶ, む) becomes じゃう.",
+            "zh": "てしまう变成ちゃう；でしまう（接ぐ、ぶ、む后）变成じゃう。",
+            "zh_TW": "てしまう變成ちゃう；でしまう（接ぐ、ぶ、む後）變成じゃう。"
+          }
+        },
+        {
+          "id": "q:n4-4-06",
+          "item": "grammar:te-miru",
+          "prompt": {
+            "en": "Which means \"I'll try eating it and see\"?",
+            "zh": "哪一句意思是「我吃吃看」？",
+            "zh_TW": "哪一句意思是「我吃吃看」？"
+          },
+          "options": [
+            "食べてみます",
+            "食べておきます",
+            "食べてしまいます",
+            "食べてあります"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜てみます means to do something as an experiment to find out the result.",
+            "zh": "「〜てみます」表示尝试做某事看看结果。",
+            "zh_TW": "「〜てみます」表示嘗試做某事看看結果。"
+          }
+        },
+        {
+          "id": "q:n4-4-07",
+          "item": "grammar:te-kuru",
+          "prompt": {
+            "en": "Which fills the blank: だんだん寒くなって＿＿＿＿。",
+            "zh": "填空：だんだん寒くなって＿＿＿＿。",
+            "zh_TW": "填空：だんだん寒くなって＿＿＿＿。"
+          },
+          "options": [
+            "きました",
+            "いきました",
+            "おきました",
+            "みました"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜てきました describes a change that has moved up to the present moment.",
+            "zh": "「〜てきました」表示变化一直发展到现在。",
+            "zh_TW": "「〜てきました」表示變化一直髮展到現在。"
+          }
+        },
+        {
+          "id": "q:n4-4-08",
+          "item": "grammar:mama",
+          "prompt": {
+            "en": "Which fills the blank: 電気をつけた＿＿寝ました。",
+            "zh": "填空：電気をつけた＿＿寝ました。",
+            "zh_TW": "填空：電気をつけた＿＿寢ました。"
+          },
+          "options": [
+            "まま",
+            "ながら",
+            "ところ",
+            "ばかり"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "まま after a past-tense verb means the state was left unchanged.",
+            "zh": "「まま」接过去形，表示保持原状没有改变。",
+            "zh_TW": "「まま」接過去形，表示保持原狀沒有改變。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Describe your room using 〜てあります and 〜ておきます.",
+        "zh": "用「〜てあります」和「〜ておきます」描写你的房间。",
+        "zh_TW": "用「〜てあります」和「〜ておきます」描寫你的房間。"
+      }
+    },
+    {
+      "id": "unit:n4-5",
+      "title": {
+        "en": "Doing things for each other",
+        "zh": "授受与请求",
+        "zh_TW": "授受與請求"
+      },
+      "grammar": [
+        "grammar:te-ageru",
+        "grammar:te-kureru",
+        "grammar:te-morau",
+        "grammar:te-kuremasen-ka",
+        "grammar:te-moraemasen-ka",
+        "grammar:te-hoshii",
+        "grammar:you-ni-iu",
+        "grammar:nasai"
+      ],
+      "vocab": [
+        "vocab:jm1269130",
+        "vocab:jm1535910",
+        "vocab:jm1291270",
+        "vocab:jm1587290",
+        "vocab:jm1184280",
+        "vocab:jm1589030",
+        "vocab:jm1116840",
+        "vocab:jm1002500",
+        "vocab:jm1270810",
+        "vocab:jm1328190",
+        "vocab:jm1441870",
+        "vocab:jm1420410",
+        "vocab:jm1178450",
+        "vocab:jm1323010",
+        "vocab:jm1349610",
+        "vocab:jm1351430",
+        "vocab:jm1156530",
+        "vocab:jm1247250"
+      ],
+      "sentences": [
+        {
+          "ja": "私は友達の宿題を手伝ってあげました。",
+          "reading": "わたしはともだちのしゅくだいをてつだってあげました。",
+          "en": "I helped my friend with the homework.",
+          "zh": "我帮朋友做了作业。",
+          "zh_TW": "我幫朋友做了作業。",
+          "items": [
+            "grammar:te-ageru"
+          ]
+        },
+        {
+          "ja": "先生が本を貸してくれました。",
+          "reading": "せんせいがほんをかしてくれました。",
+          "en": "My teacher lent me a book.",
+          "zh": "老师借给了我一本书。",
+          "zh_TW": "老師借給了我一本書。",
+          "items": [
+            "grammar:te-kureru"
+          ]
+        },
+        {
+          "ja": "友達に空港まで送ってもらいました。",
+          "reading": "ともだちにくうこうまでおくってもらいました。",
+          "en": "I had my friend take me to the airport.",
+          "zh": "我请朋友送我到机场。",
+          "zh_TW": "我請朋友送我到機場。",
+          "items": [
+            "grammar:te-morau"
+          ]
+        },
+        {
+          "ja": "ちょっと写真を撮ってくれませんか。",
+          "reading": "ちょっとしゃしんをとってくれませんか。",
+          "en": "Would you take a picture for me?",
+          "zh": "能帮我拍张照片吗？",
+          "zh_TW": "能幫我拍張照片嗎？",
+          "items": [
+            "grammar:te-kuremasen-ka"
+          ]
+        },
+        {
+          "ja": "この言葉の意味を教えてもらえませんか。",
+          "reading": "このことばのいみをおしえてもらえませんか。",
+          "en": "Could I have you tell me what this word means?",
+          "zh": "能请你告诉我这个词的意思吗？",
+          "zh_TW": "能請你告訴我這個詞的意思嗎？",
+          "items": [
+            "grammar:te-moraemasen-ka"
+          ]
+        },
+        {
+          "ja": "君にもっと自分の意見を言ってほしいです。",
+          "reading": "きみにもっとじぶんのいけんをいってほしいです。",
+          "en": "I want you to say more of your own opinions.",
+          "zh": "我希望你多说说自己的意见。",
+          "zh_TW": "我希望你多說說自己的意見。",
+          "items": [
+            "grammar:te-hoshii"
+          ]
+        },
+        {
+          "ja": "先生は学生に早く帰るように言いました。",
+          "reading": "せんせいはがくせいにはやくかえるようにいいました。",
+          "en": "The teacher told the students to go home early.",
+          "zh": "老师叫学生们早点回家。",
+          "zh_TW": "老師叫學生們早點回家。",
+          "items": [
+            "grammar:you-ni-iu"
+          ]
+        },
+        {
+          "ja": "もっとよく考えなさい。",
+          "reading": "もっとよくかんがえなさい。",
+          "en": "Think about it more carefully.",
+          "zh": "再好好想一想。",
+          "zh_TW": "再好好想一想。",
+          "items": [
+            "grammar:nasai"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n4-5-01",
+          "item": "grammar:te-ageru",
+          "prompt": {
+            "en": "Which says you did your friend the favour of helping?",
+            "zh": "哪一句表示你帮了朋友这个忙？",
+            "zh_TW": "哪一句表示你幫了朋友這個忙？"
+          },
+          "options": [
+            "友達を手伝ってあげました。",
+            "友達を手伝ってくれました。",
+            "友達を手伝ってもらいました。",
+            "友達が手伝ってあげました。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜てあげます is used when you do something for someone else.",
+            "zh": "「〜てあげます」用于自己为别人做事。",
+            "zh_TW": "「〜てあげます」用於自己為別人做事。"
+          }
+        },
+        {
+          "id": "q:n4-5-02",
+          "item": "grammar:te-kureru",
+          "prompt": {
+            "en": "Which fills the blank: 先生が本を貸して＿＿＿＿。",
+            "zh": "填空：先生が本を貸して＿＿＿＿。",
+            "zh_TW": "填空：先生が本を貸して＿＿＿＿。"
+          },
+          "options": [
+            "くれました",
+            "あげました",
+            "もらいました",
+            "いたしました"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜てくれます is used when someone else does something for me, and the doer takes が.",
+            "zh": "「〜てくれます」表示别人为我做事，动作者用が。",
+            "zh_TW": "「〜てくれます」表示別人為我做事，動作者用が。"
+          }
+        },
+        {
+          "id": "q:n4-5-03",
+          "item": "grammar:te-morau",
+          "prompt": {
+            "en": "Which means \"I had my friend drive me to the airport\"?",
+            "zh": "哪一句意思是「我请朋友送我到机场」？",
+            "zh_TW": "哪一句意思是「我請朋友送我到機場」？"
+          },
+          "options": [
+            "友達に送ってもらいました。",
+            "友達が送ってもらいました。",
+            "友達に送ってあげました。",
+            "友達に送ってくれました。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "With 〜てもらいます the person who acts is marked with に.",
+            "zh": "「〜てもらいます」中，做事的人用に标示。",
+            "zh_TW": "「〜てもらいます」中，做事的人用に標示。"
+          }
+        },
+        {
+          "id": "q:n4-5-04",
+          "item": "grammar:te-kuremasen-ka",
+          "prompt": {
+            "en": "Which fills the blank: 写真を撮って＿＿＿＿＿か。",
+            "zh": "填空：写真を撮って＿＿＿＿＿か。",
+            "zh_TW": "填空：寫真を撮って＿＿＿＿＿か。"
+          },
+          "options": [
+            "くれません",
+            "くれます",
+            "もらいます",
+            "あげません"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The negative question 〜てくれませんか makes the request polite.",
+            "zh": "否定疑问「〜てくれませんか」使请求更礼貌。",
+            "zh_TW": "否定疑問「〜てくれませんか」使請求更禮貌。"
+          }
+        },
+        {
+          "id": "q:n4-5-05",
+          "item": "grammar:te-moraemasen-ka",
+          "prompt": {
+            "en": "Which is the softest, most polite request?",
+            "zh": "哪一个是最委婉礼貌的请求？",
+            "zh_TW": "哪一個是最委婉禮貌的請求？"
+          },
+          "options": [
+            "教えてもらえませんか。",
+            "教えてください。",
+            "教えて。",
+            "教えなさい。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜てもらえませんか uses the potential of もらう and is softer than ください.",
+            "zh": "「〜てもらえませんか」用もらう的可能形，比ください更委婉。",
+            "zh_TW": "「〜てもらえませんか」用もらう的可能形，比ください更委婉。"
+          }
+        },
+        {
+          "id": "q:n4-5-06",
+          "item": "grammar:te-hoshii",
+          "prompt": {
+            "en": "Which fills the blank: 意見を言って＿＿＿です。",
+            "zh": "填空：意見を言って＿＿＿です。",
+            "zh_TW": "填空：意見を言って＿＿＿です。"
+          },
+          "options": [
+            "ほしい",
+            "たい",
+            "ください",
+            "みたい"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜てほしいです says you want someone else to act; 〜たいです is what you want to do yourself.",
+            "zh": "「〜てほしいです」是希望别人做；「〜たいです」是自己想做。",
+            "zh_TW": "「〜てほしいです」是希望別人做；「〜たいです」是自己想做。"
+          }
+        },
+        {
+          "id": "q:n4-5-07",
+          "item": "grammar:you-ni-iu",
+          "prompt": {
+            "en": "Which reports \"the teacher told the students to go home early\"?",
+            "zh": "哪一句转述「老师叫学生早点回家」？",
+            "zh_TW": "哪一句轉述「老師叫學生早點回家」？"
+          },
+          "options": [
+            "先生は学生に早く帰るように言いました。",
+            "先生は学生に早く帰ると言いました。",
+            "先生は学生に早く帰れように言いました。",
+            "先生は学生を早く帰るように言いました。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ように＋言う reports an instruction indirectly; the person told takes に.",
+            "zh": "「ように＋言う」间接转述指示，被告知的人用に。",
+            "zh_TW": "「ように＋言う」間接轉述指示，被告知的人用に。"
+          }
+        },
+        {
+          "id": "q:n4-5-08",
+          "item": "grammar:nasai",
+          "prompt": {
+            "en": "Which is a firm instruction an adult gives a child?",
+            "zh": "哪一句是大人对孩子的严厉指示？",
+            "zh_TW": "哪一句是大人對孩子的嚴厲指示？"
+          },
+          "options": [
+            "もっとよく考えなさい。",
+            "もっとよく考えましょう。",
+            "もっとよく考えたいです。",
+            "もっとよく考えられます。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "なさい attaches to the ます-stem and is used downward, to children or students.",
+            "zh": "「なさい」接ます形词干，用于对孩子或学生等下位者。",
+            "zh_TW": "「なさい」接ます形詞幹，用於對孩子或學生等下位者。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Write about a time someone did something kind for you, using 〜てくれました or 〜てもらいました.",
+        "zh": "用「〜てくれました」或「〜てもらいました」写别人为你做过的一件好事。",
+        "zh_TW": "用「〜てくれました」或「〜てもらいました」寫別人為你做過的一件好事。"
+      }
+    },
+    {
+      "id": "unit:n4-6",
+      "title": {
+        "en": "If and when",
+        "zh": "各种条件句",
+        "zh_TW": "各種條件句"
+      },
+      "grammar": [
+        "grammar:to-conditional",
+        "grammar:tara",
+        "grammar:ba-conditional",
+        "grammar:nara",
+        "grammar:tara-dou",
+        "grammar:ba-ii",
+        "grammar:ba-yokatta",
+        "grammar:nakucha",
+        "grammar:te-mo"
+      ],
+      "vocab": [
+        "vocab:jm2607730",
+        "vocab:jm1006280",
+        "vocab:jm1550140",
+        "vocab:jm1355810",
+        "vocab:jm1596930",
+        "vocab:jm1414580",
+        "vocab:jm1634500",
+        "vocab:jm1522050",
+        "vocab:jm1436510",
+        "vocab:jm1602440",
+        "vocab:jm1184160",
+        "vocab:jm1352290",
+        "vocab:jm1220800",
+        "vocab:jm1218560",
+        "vocab:jm1153930",
+        "vocab:jm1487400",
+        "vocab:jm1254130",
+        "vocab:jm1007310"
+      ],
+      "sentences": [
+        {
+          "ja": "春になると花がたくさん咲きます。",
+          "reading": "はるになるとはながたくさんさきます。",
+          "en": "When spring comes, many flowers bloom.",
+          "zh": "一到春天就开很多花。",
+          "zh_TW": "一到春天就開很多花。",
+          "items": [
+            "grammar:to-conditional"
+          ]
+        },
+        {
+          "ja": "雨が降ったら山へ行きません。",
+          "reading": "あめがふったらやまへいきません。",
+          "en": "If it rains, I won't go to the mountain.",
+          "zh": "如果下雨我就不去山上了。",
+          "zh_TW": "如果下雨我就不去山上了。",
+          "items": [
+            "grammar:tara"
+          ]
+        },
+        {
+          "ja": "日本語を習うなら辞書が必要です。",
+          "reading": "にほんごをならうならじしょがひつようです。",
+          "en": "If you are going to learn Japanese, you need a dictionary.",
+          "zh": "要学日语的话就需要词典。",
+          "zh_TW": "要學日語的話就需要詞典。",
+          "items": [
+            "grammar:nara"
+          ]
+        },
+        {
+          "ja": "気分が悪いなら早く帰ったらどうですか。",
+          "reading": "きぶんがわるいならはやくかえったらどうですか。",
+          "en": "If you feel unwell, why don't you go home early?",
+          "zh": "如果不舒服，早点回家怎么样？",
+          "zh_TW": "如果不舒服，早點回家怎麼樣？",
+          "items": [
+            "grammar:tara-dou",
+            "grammar:nara"
+          ]
+        },
+        {
+          "ja": "この漢字はどう読めばいいですか。",
+          "reading": "このかんじはどうよめばいいですか。",
+          "en": "How should I read this kanji?",
+          "zh": "这个汉字该怎么读呢？",
+          "zh_TW": "這個漢字該怎麼讀呢？",
+          "items": [
+            "grammar:ba-ii",
+            "grammar:ba-conditional"
+          ]
+        },
+        {
+          "ja": "もっと早く連絡すればよかったです。",
+          "reading": "もっとはやくれんらくすればよかったです。",
+          "en": "I should have contacted you sooner.",
+          "zh": "早点联系你就好了。",
+          "zh_TW": "早點聯繫你就好了。",
+          "items": [
+            "grammar:ba-yokatta"
+          ]
+        },
+        {
+          "ja": "もう帰らなくちゃ。",
+          "reading": "もうかえらなくちゃ。",
+          "en": "I have to go home now.",
+          "zh": "我得回家了。",
+          "zh_TW": "我得回家了。",
+          "items": [
+            "grammar:nakucha"
+          ]
+        },
+        {
+          "ja": "雨が降っても出かけます。",
+          "reading": "あめがふってもでかけます。",
+          "en": "Even if it rains, I will go out.",
+          "zh": "就算下雨我也要出门。",
+          "zh_TW": "就算下雨我也要出門。",
+          "items": [
+            "grammar:te-mo"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n4-6-01",
+          "item": "grammar:to-conditional",
+          "prompt": {
+            "en": "Which word makes \"whenever spring comes, flowers bloom\" an automatic result?",
+            "zh": "哪个词能表达「一到春天花就开」这种必然结果？",
+            "zh_TW": "哪個詞能表達「一到春天花就開」這種必然結果？"
+          },
+          "options": [
+            "と",
+            "なら",
+            "のに",
+            "ので"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "と joins a plain non-past clause and states a result that always follows.",
+            "zh": "と接简体非过去形，表示必然随之发生的结果。",
+            "zh_TW": "と接簡體非過去形，表示必然隨之發生的結果。"
+          }
+        },
+        {
+          "id": "q:n4-6-02",
+          "item": "grammar:tara",
+          "prompt": {
+            "en": "Which fills the blank: 雨が降っ＿＿山へ行きません。",
+            "zh": "填空：雨が降っ＿＿山へ行きません。",
+            "zh_TW": "填空：雨が降っ＿＿山へ行きません。"
+          },
+          "options": [
+            "たら",
+            "たり",
+            "ては",
+            "ても"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "たら is built from the past form and is the most general \"if / when\".",
+            "zh": "「たら」由过去形构成，是最通用的「如果／当…时」。",
+            "zh_TW": "「たら」由過去形構成，是最通用的「如果／當…時」。"
+          }
+        },
+        {
+          "id": "q:n4-6-03",
+          "item": "grammar:ba-conditional",
+          "prompt": {
+            "en": "Which is the ば-form of 飲む?",
+            "zh": "「飲む」的ば形是哪一个？",
+            "zh_TW": "「飲む」的ば形是哪一個？"
+          },
+          "options": [
+            "飲めば",
+            "飲むば",
+            "飲まば",
+            "飲んば"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Godan verbs change the final -u to -eba: 飲む → 飲めば.",
+            "zh": "五段动词把词尾u段变e段再加ば：飲む→飲めば。",
+            "zh_TW": "五段動詞把詞尾u段變e段再加ば：飲む→飲めば。"
+          }
+        },
+        {
+          "id": "q:n4-6-04",
+          "item": "grammar:nara",
+          "prompt": {
+            "en": "Which word picks up a topic the other person has just raised?",
+            "zh": "哪个词用来承接对方刚提到的话题？",
+            "zh_TW": "哪個詞用來承接對方剛提到的話題？"
+          },
+          "options": [
+            "なら",
+            "と",
+            "ば",
+            "ても"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "なら means \"if that is the case\" and responds to what was just said.",
+            "zh": "「なら」表示「如果是那样的话」，回应对方刚说的内容。",
+            "zh_TW": "「なら」表示「如果是那樣的話」，回應對方剛說的內容。"
+          }
+        },
+        {
+          "id": "q:n4-6-05",
+          "item": "grammar:tara-dou",
+          "prompt": {
+            "en": "Which suggests \"why don't you go home early?\"",
+            "zh": "哪一句是建议「早点回家怎么样？」",
+            "zh_TW": "哪一句是建議「早點回家怎麼樣？」"
+          },
+          "options": [
+            "早く帰ったらどうですか。",
+            "早く帰るとどうですか。",
+            "早く帰ればどうしますか。",
+            "早く帰ってどうですか。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜たらどうですか offers advice using the たら form.",
+            "zh": "「〜たらどうですか」用たら形提出建议。",
+            "zh_TW": "「〜たらどうですか」用たら形提出建議。"
+          }
+        },
+        {
+          "id": "q:n4-6-06",
+          "item": "grammar:ba-ii",
+          "prompt": {
+            "en": "Which asks \"how should I read this kanji?\"",
+            "zh": "哪一句在问「这个汉字该怎么读？」",
+            "zh_TW": "哪一句在問「這個漢字該怎麼讀？」"
+          },
+          "options": [
+            "どう読めばいいですか。",
+            "どう読んでいいですか。",
+            "どう読むばいいですか。",
+            "どう読めばいましたか。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ばいいですか asks for instructions about what to do.",
+            "zh": "「〜ばいいですか」用来询问该怎么做。",
+            "zh_TW": "「〜ばいいですか」用來詢問該怎麼做。"
+          }
+        },
+        {
+          "id": "q:n4-6-07",
+          "item": "grammar:ba-yokatta",
+          "prompt": {
+            "en": "Which expresses regret about not acting sooner?",
+            "zh": "哪一句表达没有早点行动的后悔？",
+            "zh_TW": "哪一句表達沒有早點行動的後悔？"
+          },
+          "options": [
+            "もっと早く連絡すればよかったです。",
+            "もっと早く連絡すればいいです。",
+            "もっと早く連絡したらどうですか。",
+            "もっと早く連絡してもいいです。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ばよかった looks back and says you should have done it.",
+            "zh": "「〜ばよかった」回顾过去，表示当时那样做就好了。",
+            "zh_TW": "「〜ばよかった」回顧過去，表示當時那樣做就好了。"
+          }
+        },
+        {
+          "id": "q:n4-6-08",
+          "item": "grammar:nakucha",
+          "prompt": {
+            "en": "Which is the casual form of 帰らなければなりません?",
+            "zh": "「帰らなければなりません」的口语形是哪一个？",
+            "zh_TW": "「帰らなければなりません」的口語形是哪一個？"
+          },
+          "options": [
+            "帰らなくちゃ",
+            "帰らなくても",
+            "帰らないで",
+            "帰れなくちゃ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "なければ shortens to なきゃ and なくては shortens to なくちゃ.",
+            "zh": "なければ缩略成なきゃ，なくては缩略成なくちゃ。",
+            "zh_TW": "なければ縮略成なきゃ，なくては縮略成なくちゃ。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Give advice to a friend who has a cold, using 〜たら and 〜たらどうですか.",
+        "zh": "用「〜たら」和「〜たらどうですか」给感冒的朋友提建议。",
+        "zh_TW": "用「〜たら」和「〜たらどうですか」給感冒的朋友提建議。"
+      }
+    },
+    {
+      "id": "unit:n4-7",
+      "title": {
+        "en": "Reasons and connections",
+        "zh": "原因与连接",
+        "zh_TW": "原因與連接"
+      },
+      "grammar": [
+        "grammar:node",
+        "grammar:noni",
+        "grammar:shi",
+        "grammar:tame-ni",
+        "grammar:tame-reason",
+        "grammar:te-reason",
+        "grammar:ni-tsuite",
+        "grammar:toori-ni"
+      ],
+      "vocab": [
+        "vocab:jm1261190",
+        "vocab:jm1538330",
+        "vocab:jm1157080",
+        "vocab:jm1007040",
+        "vocab:jm1007000",
+        "vocab:jm2853889",
+        "vocab:jm1480670",
+        "vocab:jm1401210",
+        "vocab:jm1386460",
+        "vocab:jm1313850",
+        "vocab:jm1193950",
+        "vocab:jm1267180",
+        "vocab:jm1320140",
+        "vocab:jm1304680",
+        "vocab:jm1360930",
+        "vocab:jm1153890",
+        "vocab:jm1215810",
+        "vocab:jm1556370"
+      ],
+      "sentences": [
+        {
+          "ja": "事故があったので電車が遅れました。",
+          "reading": "じこがあったのででんしゃがおくれました。",
+          "en": "The train was late because there was an accident.",
+          "zh": "因为发生了事故，电车晚点了。",
+          "zh_TW": "因為發生了事故，電車晚點了。",
+          "items": [
+            "grammar:node"
+          ]
+        },
+        {
+          "ja": "たくさん勉強したのに試験に落ちました。",
+          "reading": "たくさんべんきょうしたのにしけんにおちました。",
+          "en": "Even though I studied a lot, I failed the exam.",
+          "zh": "虽然学了很多，考试还是没通过。",
+          "zh_TW": "雖然學了很多，考試還是沒通過。",
+          "items": [
+            "grammar:noni"
+          ]
+        },
+        {
+          "ja": "この店は安いし料理もおいしいです。",
+          "reading": "このみせはやすいしりょうりもおいしいです。",
+          "en": "This restaurant is cheap, and the food is delicious too.",
+          "zh": "这家店又便宜，菜也好吃。",
+          "zh_TW": "這家店又便宜，菜也好吃。",
+          "items": [
+            "grammar:shi"
+          ]
+        },
+        {
+          "ja": "家族のために働いています。",
+          "reading": "かぞくのためにはたらいています。",
+          "en": "I work for the sake of my family.",
+          "zh": "我为了家人而工作。",
+          "zh_TW": "我為了家人而工作。",
+          "items": [
+            "grammar:tame-ni"
+          ]
+        },
+        {
+          "ja": "火事のため道が通れません。",
+          "reading": "かじのためみちがとおれません。",
+          "en": "Because of a fire, the road cannot be used.",
+          "zh": "由于火灾，这条路无法通行。",
+          "zh_TW": "由於火災，這條路無法通行。",
+          "items": [
+            "grammar:tame-reason"
+          ]
+        },
+        {
+          "ja": "友達に会えてうれしかったです。",
+          "reading": "ともだちにあえてうれしかったです。",
+          "en": "I was happy because I could meet my friend.",
+          "zh": "能见到朋友我很高兴。",
+          "zh_TW": "能見到朋友我很高興。",
+          "items": [
+            "grammar:te-reason"
+          ]
+        },
+        {
+          "ja": "この国の文化について研究しています。",
+          "reading": "このくにのぶんかについてけんきゅうしています。",
+          "en": "I am doing research about this country's culture.",
+          "zh": "我在研究这个国家的文化。",
+          "zh_TW": "我在研究這個國家的文化。",
+          "items": [
+            "grammar:ni-tsuite"
+          ]
+        },
+        {
+          "ja": "説明のとおりに車を止めました。",
+          "reading": "せつめいのとおりにくるまをとめました。",
+          "en": "I parked the car just as the explanation said.",
+          "zh": "我照着说明把车停好了。",
+          "zh_TW": "我照著說明把車停好了。",
+          "items": [
+            "grammar:toori-ni"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n4-7-01",
+          "item": "grammar:node",
+          "prompt": {
+            "en": "Which gives a soft, objective reason?",
+            "zh": "哪一句给出的是柔和客观的理由？",
+            "zh_TW": "哪一句給出的是柔和客觀的理由？"
+          },
+          "options": [
+            "事故があったので電車が遅れました。",
+            "事故があったのに電車が遅れました。",
+            "事故があったし電車が遅れました。",
+            "事故があってので電車が遅れました。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ので follows the plain form and states a reason more softly than から.",
+            "zh": "ので接简体形，语气比から更柔和客观。",
+            "zh_TW": "ので接簡體形，語氣比から更柔和客觀。"
+          }
+        },
+        {
+          "id": "q:n4-7-02",
+          "item": "grammar:noni",
+          "prompt": {
+            "en": "Which fills the blank: たくさん勉強した＿＿試験に落ちました。",
+            "zh": "填空：たくさん勉強した＿＿試験に落ちました。",
+            "zh_TW": "填空：たくさん勉強した＿＿試験に落ちました。"
+          },
+          "options": [
+            "のに",
+            "ので",
+            "から",
+            "し"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "のに means \"even though\" and adds surprise or disappointment.",
+            "zh": "「のに」表示「明明…却」，带有意外或遗憾的语气。",
+            "zh_TW": "「のに」表示「明明…卻」，帶有意外或遺憾的語氣。"
+          }
+        },
+        {
+          "id": "q:n4-7-03",
+          "item": "grammar:shi",
+          "prompt": {
+            "en": "Which fills the blank: この店は安い＿料理もおいしいです。",
+            "zh": "填空：この店は安い＿料理もおいしいです。",
+            "zh_TW": "填空：この店は安い＿料理もおいしいです。"
+          },
+          "options": [
+            "し",
+            "て",
+            "が",
+            "の"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "し lists several reasons or good points side by side.",
+            "zh": "「し」用来并列列举几个理由或优点。",
+            "zh_TW": "「し」用來並列列舉幾個理由或優點。"
+          }
+        },
+        {
+          "id": "q:n4-7-04",
+          "item": "grammar:tame-ni",
+          "prompt": {
+            "en": "Which means \"I work for my family\"?",
+            "zh": "哪一句意思是「我为了家人工作」？",
+            "zh_TW": "哪一句意思是「我為了家人工作」？"
+          },
+          "options": [
+            "家族のために働いています。",
+            "家族のように働いています。",
+            "家族のためで働いています。",
+            "家族にために働いています。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Noun＋のために gives the person or goal you act for.",
+            "zh": "名词＋のために表示为谁或为何而行动。",
+            "zh_TW": "名詞＋のために表示為誰或為何而行動。"
+          }
+        },
+        {
+          "id": "q:n4-7-05",
+          "item": "grammar:tame-reason",
+          "prompt": {
+            "en": "Which fills the blank: 火事＿＿＿道が通れません。",
+            "zh": "填空：火事＿＿＿道が通れません。",
+            "zh_TW": "填空：火事＿＿＿道が通れません。"
+          },
+          "options": [
+            "のため",
+            "ように",
+            "ながら",
+            "ばかり"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ため after a noun gives a formal cause, common in announcements.",
+            "zh": "名词＋ため表示正式的原因，常见于通知公告。",
+            "zh_TW": "名詞＋ため表示正式的原因，常見於通知公告。"
+          }
+        },
+        {
+          "id": "q:n4-7-06",
+          "item": "grammar:te-reason",
+          "prompt": {
+            "en": "Which links a cause to a feeling with the te-form?",
+            "zh": "哪一句用て形把原因和感情连接起来？",
+            "zh_TW": "哪一句用て形把原因和感情連接起來？"
+          },
+          "options": [
+            "友達に会えてうれしかったです。",
+            "友達に会うてうれしかったです。",
+            "友達に会えたでうれしかったです。",
+            "友達に会えてもうれしかったです。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The te-form can join a cause to a feeling word such as うれしい or 悲しい.",
+            "zh": "て形可以把原因与「うれしい」「悲しい」等表示感情的词连接起来。",
+            "zh_TW": "て形可以把原因與「うれしい」「悲しい」等表示感情的詞連接起來。"
+          }
+        },
+        {
+          "id": "q:n4-7-07",
+          "item": "grammar:ni-tsuite",
+          "prompt": {
+            "en": "Which fills the blank: この国の文化＿＿＿＿研究しています。",
+            "zh": "填空：この国の文化＿＿＿＿研究しています。",
+            "zh_TW": "填空：この國の文化＿＿＿＿研究しています。"
+          },
+          "options": [
+            "について",
+            "にとって",
+            "によって",
+            "にたいして"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "について marks the topic you speak, write or research about.",
+            "zh": "「について」标示谈论、书写或研究的主题。",
+            "zh_TW": "「について」標示談論、書寫或研究的主題。"
+          }
+        },
+        {
+          "id": "q:n4-7-08",
+          "item": "grammar:toori-ni",
+          "prompt": {
+            "en": "Which means \"just as the explanation says\"?",
+            "zh": "哪一个意思是「照着说明」？",
+            "zh_TW": "哪一個意思是「照著說明」？"
+          },
+          "options": [
+            "説明のとおりに",
+            "説明のとおりで",
+            "説明のとおりを",
+            "説明とおりのに"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Noun＋のとおりに means to follow something exactly.",
+            "zh": "名词＋のとおりに表示完全按照某事去做。",
+            "zh_TW": "名詞＋のとおりに表示完全按照某事去做。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Explain why you were late, using 〜ので and 〜のに.",
+        "zh": "用「〜ので」和「〜のに」说明你迟到的原因。",
+        "zh_TW": "用「〜ので」和「〜のに」說明你遲到的原因。"
+      }
+    },
+    {
+      "id": "unit:n4-8",
+      "title": {
+        "en": "Questions inside sentences",
+        "zh": "间接疑问句",
+        "zh_TW": "間接疑問句"
+      },
+      "grammar": [
+        "grammar:kadouka",
+        "grammar:embedded-question",
+        "grammar:kana",
+        "grammar:question-demo",
+        "grammar:question-mo-nai"
+      ],
+      "vocab": [
+        "vocab:jm1449530",
+        "vocab:jm1369940",
+        "vocab:jm1593570",
+        "vocab:jm1349480",
+        "vocab:jm1594400",
+        "vocab:jm1599420",
+        "vocab:jm1006110",
+        "vocab:jm1007130",
+        "vocab:jm1000590",
+        "vocab:jm1004310",
+        "vocab:jm1387240",
+        "vocab:jm1524990",
+        "vocab:jm1535780",
+        "vocab:jm1012800",
+        "vocab:jm1215330",
+        "vocab:jm1376600",
+        "vocab:jm1595270"
+      ],
+      "sentences": [
+        {
+          "ja": "彼が来るかどうかわかりません。",
+          "reading": "かれがくるかどうかわかりません。",
+          "en": "I don't know whether he is coming or not.",
+          "zh": "我不知道他来不来。",
+          "zh_TW": "我不知道他來不來。",
+          "items": [
+            "grammar:kadouka"
+          ]
+        },
+        {
+          "ja": "会議がいつ始まるか教えてください。",
+          "reading": "かいぎがいつはじまるかおしえてください。",
+          "en": "Please tell me when the meeting starts.",
+          "zh": "请告诉我会议什么时候开始。",
+          "zh_TW": "請告訴我會議什麼時候開始。",
+          "items": [
+            "grammar:embedded-question"
+          ]
+        },
+        {
+          "ja": "この答えが正しいかどうか調べます。",
+          "reading": "このこたえがただしいかどうかしらべます。",
+          "en": "I will check whether this answer is correct.",
+          "zh": "我来查一下这个答案对不对。",
+          "zh_TW": "我來查一下這個答案對不對。",
+          "items": [
+            "grammar:kadouka"
+          ]
+        },
+        {
+          "ja": "先生はどこにいらっしゃるか尋ねました。",
+          "reading": "せんせいはどこにいらっしゃるかたずねました。",
+          "en": "I asked where the teacher was.",
+          "zh": "我问了老师在哪里。",
+          "zh_TW": "我問了老師在哪裡。",
+          "items": [
+            "grammar:embedded-question"
+          ]
+        },
+        {
+          "ja": "明日は雨が降るのかな。",
+          "reading": "あしたはあめがふるのかな。",
+          "en": "I wonder if it will rain tomorrow.",
+          "zh": "明天会下雨吧，不知道呢。",
+          "zh_TW": "明天會下雨吧，不知道呢。",
+          "items": [
+            "grammar:kana"
+          ]
+        },
+        {
+          "ja": "何でも好きな物を選んでください。",
+          "reading": "なんでもすきなものをえらんでください。",
+          "en": "Please choose anything you like.",
+          "zh": "请随便选你喜欢的东西。",
+          "zh_TW": "請隨便選你喜歡的東西。",
+          "items": [
+            "grammar:question-demo"
+          ]
+        },
+        {
+          "ja": "部屋には誰もいませんでした。",
+          "reading": "へやにはだれもいませんでした。",
+          "en": "There was nobody in the room.",
+          "zh": "房间里一个人也没有。",
+          "zh_TW": "房間裡一個人也沒有。",
+          "items": [
+            "grammar:question-mo-nai"
+          ]
+        },
+        {
+          "ja": "今日はどこへも行きませんでした。",
+          "reading": "きょうはどこへもいきませんでした。",
+          "en": "I did not go anywhere today.",
+          "zh": "今天我哪里都没去。",
+          "zh_TW": "今天我哪裡都沒去。",
+          "items": [
+            "grammar:question-mo-nai"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n4-8-01",
+          "item": "grammar:kadouka",
+          "prompt": {
+            "en": "Which fills the blank: 彼が来る＿＿＿＿わかりません。",
+            "zh": "填空：彼が来る＿＿＿＿わかりません。",
+            "zh_TW": "填空：彼が来る＿＿＿＿わかりません。"
+          },
+          "options": [
+            "かどうか",
+            "かどうかに",
+            "どうか",
+            "かどうかを"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "かどうか embeds a yes-no question and needs no extra particle.",
+            "zh": "「かどうか」用于内嵌是非疑问，后面不再加助词。",
+            "zh_TW": "「かどうか」用於內嵌是非疑問，後面不再加助詞。"
+          }
+        },
+        {
+          "id": "q:n4-8-02",
+          "item": "grammar:embedded-question",
+          "prompt": {
+            "en": "Which correctly embeds \"when does the meeting start\"?",
+            "zh": "哪一句正确地内嵌了「会议什么时候开始」？",
+            "zh_TW": "哪一句正確地內嵌了「會議什麼時候開始」？"
+          },
+          "options": [
+            "会議がいつ始まるか教えてください。",
+            "会議はいつ始まりますか教えてください。",
+            "会議がいつ始まるかどうか教えてください。",
+            "会議がいつ始まるを教えてください。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "An embedded question uses the plain form plus か; かどうか is only for yes-no questions.",
+            "zh": "间接疑问用简体形＋か；「かどうか」只用于是非疑问。",
+            "zh_TW": "間接疑問用簡體形＋か；「かどうか」只用於是非疑問。"
+          }
+        },
+        {
+          "id": "q:n4-8-03",
+          "item": "grammar:kana",
+          "prompt": {
+            "en": "Which is a soft \"I wonder\" said to yourself?",
+            "zh": "哪一句是自言自语的「不知道会不会…」？",
+            "zh_TW": "哪一句是自言自語的「不知道會不會…」？"
+          },
+          "options": [
+            "明日は雨が降るのかな。",
+            "明日は雨が降るのですか。",
+            "明日は雨が降るかどうかです。",
+            "明日は雨が降りますか。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "かな is a casual ending used when you are wondering to yourself.",
+            "zh": "「かな」是自言自语时使用的随意语尾。",
+            "zh_TW": "「かな」是自言自語時使用的隨意語尾。"
+          }
+        },
+        {
+          "id": "q:n4-8-04",
+          "item": "grammar:question-demo",
+          "prompt": {
+            "en": "Which fills the blank: ＿＿＿好きな物を選んでください。",
+            "zh": "填空：＿＿＿好きな物を選んでください。",
+            "zh_TW": "填空：＿＿＿好きな物を選んでください。"
+          },
+          "options": [
+            "何でも",
+            "何も",
+            "何か",
+            "何が"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Question word＋でも means \"any ... at all\" in a positive sentence.",
+            "zh": "疑问词＋でも在肯定句中表示「任何…都可以」。",
+            "zh_TW": "疑問詞＋でも在肯定句中表示「任何…都可以」。"
+          }
+        },
+        {
+          "id": "q:n4-8-05",
+          "item": "grammar:question-mo-nai",
+          "prompt": {
+            "en": "Which fills the blank: 部屋には誰＿いませんでした。",
+            "zh": "填空：部屋には誰＿いませんでした。",
+            "zh_TW": "填空：部屋には誰＿いませんでした。"
+          },
+          "options": [
+            "も",
+            "か",
+            "でも",
+            "が"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Question word＋も with a negative verb means \"nobody / nothing at all\".",
+            "zh": "疑问词＋も接否定，表示「一个也没有／什么都没有」。",
+            "zh_TW": "疑問詞＋も接否定，表示「一個也沒有／什麼都沒有」。"
+          }
+        },
+        {
+          "id": "q:n4-8-06",
+          "item": "grammar:question-mo-nai",
+          "prompt": {
+            "en": "Which says \"I didn't go anywhere today\"?",
+            "zh": "哪一句是「今天我哪里都没去」？",
+            "zh_TW": "哪一句是「今天我哪裡都沒去」？"
+          },
+          "options": [
+            "今日はどこへも行きませんでした。",
+            "今日はどこへでも行きませんでした。",
+            "今日はどこかへ行きませんでした。",
+            "今日はどこへも行きました。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The particle stays between the question word and も: どこ＋へ＋も.",
+            "zh": "助词夹在疑问词和も之间：どこ＋へ＋も。",
+            "zh_TW": "助詞夾在疑問詞和も之間：どこ＋へ＋も。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Write three things you would like to ask a Japanese friend, using 〜かどうか and embedded questions.",
+        "zh": "用「〜かどうか」和间接疑问句写三个你想问日本朋友的问题。",
+        "zh_TW": "用「〜かどうか」和間接疑問句寫三個你想問日本朋友的問題。"
+      }
+    },
+    {
+      "id": "unit:n4-9",
+      "title": {
+        "en": "Guessing and hearsay",
+        "zh": "推测与传闻",
+        "zh_TW": "推測與傳聞"
+      },
+      "grammar": [
+        "grammar:kamoshirenai",
+        "grammar:hazu",
+        "grammar:hazu-ga-nai",
+        "grammar:darou-to-omou",
+        "grammar:sou-appearance",
+        "grammar:sou-ni-nai",
+        "grammar:sou-hearsay",
+        "grammar:you-da",
+        "grammar:mitai",
+        "grammar:rashii",
+        "grammar:garu"
+      ],
+      "vocab": [
+        "vocab:jm1476430",
+        "vocab:jm1003430",
+        "vocab:jm1414470",
+        "vocab:jm1414920",
+        "vocab:jm1372800",
+        "vocab:jm1602060",
+        "vocab:jm1374550",
+        "vocab:jm1397300",
+        "vocab:jm1431850",
+        "vocab:jm1593480",
+        "vocab:jm1483190",
+        "vocab:jm1219510",
+        "vocab:jm1539040",
+        "vocab:jm1173100",
+        "vocab:jm1376310",
+        "vocab:jm1438770",
+        "vocab:jm1596780",
+        "vocab:jm1467710",
+        "vocab:jm1592500"
+      ],
+      "sentences": [
+        {
+          "ja": "明日は雨が降るかもしれません。",
+          "reading": "あしたはあめがふるかもしれません。",
+          "en": "It might rain tomorrow.",
+          "zh": "明天可能会下雨。",
+          "zh_TW": "明天可能會下雨。",
+          "items": [
+            "grammar:kamoshirenai"
+          ]
+        },
+        {
+          "ja": "彼はもう空港に着いたはずです。",
+          "reading": "かれはもうくうこうについたはずです。",
+          "en": "He should have arrived at the airport already.",
+          "zh": "他应该已经到机场了。",
+          "zh_TW": "他應該已經到機場了。",
+          "items": [
+            "grammar:hazu"
+          ]
+        },
+        {
+          "ja": "そんな話が本当のはずがありません。",
+          "reading": "そんなはなしがほんとうのはずがありません。",
+          "en": "There is no way such a story is true.",
+          "zh": "那种事不可能是真的。",
+          "zh_TW": "那種事不可能是真的。",
+          "items": [
+            "grammar:hazu-ga-nai"
+          ]
+        },
+        {
+          "ja": "空が暗くて雨が降りそうです。",
+          "reading": "そらがくらくてあめがふりそうです。",
+          "en": "The sky is dark and it looks like it will rain.",
+          "zh": "天空很暗，看样子要下雨了。",
+          "zh_TW": "天空很暗，看樣子要下雨了。",
+          "items": [
+            "grammar:sou-appearance"
+          ]
+        },
+        {
+          "ja": "この仕事は今日終わりそうにありません。",
+          "reading": "このしごとはきょうおわりそうにありません。",
+          "en": "This work does not look like it will finish today.",
+          "zh": "这份工作今天看来做不完。",
+          "zh_TW": "這份工作今天看來做不完。",
+          "items": [
+            "grammar:sou-ni-nai"
+          ]
+        },
+        {
+          "ja": "天気予報では明日は雪が降るそうです。",
+          "reading": "てんきよほうではあしたはゆきがふるそうです。",
+          "en": "According to the forecast, they say it will snow tomorrow.",
+          "zh": "天气预报说明天会下雪。",
+          "zh_TW": "天氣預報說明天會下雪。",
+          "items": [
+            "grammar:sou-hearsay"
+          ]
+        },
+        {
+          "ja": "彼は熱があるようです。",
+          "reading": "かれはねつがあるようです。",
+          "en": "It appears that he has a fever.",
+          "zh": "他好像发烧了。",
+          "zh_TW": "他好像發燒了。",
+          "items": [
+            "grammar:you-da"
+          ]
+        },
+        {
+          "ja": "子供が新しいおもちゃをほしがっています。",
+          "reading": "こどもがあたらしいおもちゃをほしがっています。",
+          "en": "The child is showing that he wants a new toy.",
+          "zh": "孩子一副想要新玩具的样子。",
+          "zh_TW": "孩子一副想要新玩具的樣子。",
+          "items": [
+            "grammar:garu"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n4-9-01",
+          "item": "grammar:kamoshirenai",
+          "prompt": {
+            "en": "Which fills the blank: 明日は雨が降る＿＿＿＿＿＿。",
+            "zh": "填空：明日は雨が降る＿＿＿＿＿＿。",
+            "zh_TW": "填空：明日は雨が降る＿＿＿＿＿＿。"
+          },
+          "options": [
+            "かもしれません",
+            "かもしります",
+            "かもわかりません",
+            "かもしれます"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "かもしれません is a fixed phrase meaning \"might\"; it never changes shape.",
+            "zh": "「かもしれません」是固定说法，表示「可能」，形态不变。",
+            "zh_TW": "「かもしれません」是固定說法，表示「可能」，形態不變。"
+          }
+        },
+        {
+          "id": "q:n4-9-02",
+          "item": "grammar:hazu",
+          "prompt": {
+            "en": "Which says \"he should have arrived already\" based on what you know?",
+            "zh": "哪一句根据已知情况表示「他应该已经到了」？",
+            "zh_TW": "哪一句根據已知情況表示「他應該已經到了」？"
+          },
+          "options": [
+            "もう着いたはずです。",
+            "もう着いたようです。",
+            "もう着くはずでした。",
+            "もう着いたそうです。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "はずです states an expectation drawn from facts you already know.",
+            "zh": "「はずです」表示根据已知事实作出的推断。",
+            "zh_TW": "「はずです」表示根據已知事實作出的推斷。"
+          }
+        },
+        {
+          "id": "q:n4-9-03",
+          "item": "grammar:hazu-ga-nai",
+          "prompt": {
+            "en": "Which says \"there is no way that is true\"?",
+            "zh": "哪一句是「那不可能是真的」？",
+            "zh_TW": "哪一句是「那不可能是真的」？"
+          },
+          "options": [
+            "本当のはずがありません。",
+            "本当のはずです。",
+            "本当かもしれません。",
+            "本当らしいです。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "はずがありません strongly denies a possibility.",
+            "zh": "「はずがありません」强烈否定某种可能性。",
+            "zh_TW": "「はずがありません」強烈否定某種可能性。"
+          }
+        },
+        {
+          "id": "q:n4-9-04",
+          "item": "grammar:sou-appearance",
+          "prompt": {
+            "en": "Which fills the blank: 空が暗くて雨が降り＿＿＿＿。",
+            "zh": "填空：空が暗くて雨が降り＿＿＿＿。",
+            "zh_TW": "填空：空が暗くて雨が降り＿＿＿＿。"
+          },
+          "options": [
+            "そうです",
+            "るそうです",
+            "ようです",
+            "みたいです"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "そうです for appearance attaches to the ます-stem: 降り＋そうです.",
+            "zh": "表示样态的「そうです」接ます形词干：降り＋そうです。",
+            "zh_TW": "表示樣態的「そうです」接ます形詞幹：降り＋そうです。"
+          }
+        },
+        {
+          "id": "q:n4-9-05",
+          "item": "grammar:sou-hearsay",
+          "prompt": {
+            "en": "Which reports what the weather forecast said?",
+            "zh": "哪一句是转述天气预报的内容？",
+            "zh_TW": "哪一句是轉述天氣預報的內容？"
+          },
+          "options": [
+            "雨が降るそうです。",
+            "雨が降りそうです。",
+            "雨が降るようです。",
+            "雨が降るはずです。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Hearsay そうです follows the plain form; appearance そうです follows the ます-stem.",
+            "zh": "传闻的「そうです」接简体形；样态的「そうです」接ます形词干。",
+            "zh_TW": "傳聞的「そうです」接簡體形；樣態的「そうです」接ます形詞幹。"
+          }
+        },
+        {
+          "id": "q:n4-9-06",
+          "item": "grammar:mitai",
+          "prompt": {
+            "en": "Which is the casual equivalent of 寒いようです?",
+            "zh": "「寒いようです」的口语说法是哪一个？",
+            "zh_TW": "「寒いようです」的口語說法是哪一個？"
+          },
+          "options": [
+            "寒いみたいです。",
+            "寒いそうです。",
+            "寒いらしいです。",
+            "寒いはずです。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "みたいです is the casual version of ようです, based on what you observe.",
+            "zh": "「みたいです」是「ようです」的口语形式，基于自己的观察。",
+            "zh_TW": "「みたいです」是「ようです」的口語形式，基於自己的觀察。"
+          }
+        },
+        {
+          "id": "q:n4-9-07",
+          "item": "grammar:rashii",
+          "prompt": {
+            "en": "Which fills the blank: 彼女は来月国へ帰る＿＿＿です。",
+            "zh": "填空：彼女は来月国へ帰る＿＿＿です。",
+            "zh_TW": "填空：彼女は來月國へ帰る＿＿＿です。"
+          },
+          "options": [
+            "らしい",
+            "そうな",
+            "ような",
+            "みたいな"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "らしい reports something you gathered from others, and behaves like an i-adjective.",
+            "zh": "「らしい」表示从别人处听来的内容，活用如い形容词。",
+            "zh_TW": "「らしい」表示從別人處聽來的內容，活用如い形容詞。"
+          }
+        },
+        {
+          "id": "q:n4-9-08",
+          "item": "grammar:garu",
+          "prompt": {
+            "en": "Which describes a third person showing that they want a toy?",
+            "zh": "哪一句描写第三人表现出想要玩具？",
+            "zh_TW": "哪一句描寫第三人表現出想要玩具？"
+          },
+          "options": [
+            "子供がおもちゃをほしがっています。",
+            "子供がおもちゃがほしいです。",
+            "子供がおもちゃをほしいです。",
+            "子供におもちゃをほしがります。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "がる turns a feeling adjective into a verb for other people, and the object takes を.",
+            "zh": "「がる」把表示感情的形容词变成描写他人的动词，宾语用を。",
+            "zh_TW": "「がる」把表示感情的形容詞變成描寫他人的動詞，賓語用を。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Look out of the window and write what the weather seems like, using 〜そうです and 〜ようです.",
+        "zh": "看看窗外，用「〜そうです」和「〜ようです」写天气看起来怎么样。",
+        "zh_TW": "看看窗外，用「〜そうです」和「〜ようです」寫天氣看起來怎麼樣。"
+      }
+    },
+    {
+      "id": "unit:n4-10",
+      "title": {
+        "en": "Passive and causative",
+        "zh": "被动与使役",
+        "zh_TW": "被動與使役"
+      },
+      "grammar": [
+        "grammar:passive",
+        "grammar:indirect-passive",
+        "grammar:passive-ni-yotte",
+        "grammar:causative",
+        "grammar:sasete-kudasai",
+        "grammar:sasete-morau",
+        "grammar:causative-passive"
+      ],
+      "vocab": [
+        "vocab:jm1448440",
+        "vocab:jm1195140",
+        "vocab:jm1445690",
+        "vocab:jm1394730",
+        "vocab:jm1497980",
+        "vocab:jm1346150",
+        "vocab:jm1234140",
+        "vocab:jm1252390",
+        "vocab:jm1567450",
+        "vocab:jm1599340",
+        "vocab:jm1447000",
+        "vocab:jm1408810",
+        "vocab:jm1209240",
+        "vocab:jm1426680",
+        "vocab:jm1160570",
+        "vocab:jm1225130",
+        "vocab:jm1378990",
+        "vocab:jm1523400",
+        "vocab:jm1467620"
+      ],
+      "sentences": [
+        {
+          "ja": "私は電車の中で財布を盗まれました。",
+          "reading": "わたしはでんしゃのなかでさいふをぬすまれました。",
+          "en": "I had my wallet stolen on the train.",
+          "zh": "我在电车里钱包被偷了。",
+          "zh_TW": "我在電車裡錢包被偷了。",
+          "items": [
+            "grammar:passive"
+          ]
+        },
+        {
+          "ja": "弟におもちゃを壊されました。",
+          "reading": "おとうとにおもちゃをこわされました。",
+          "en": "My little brother broke my toy on me.",
+          "zh": "玩具被弟弟弄坏了。",
+          "zh_TW": "玩具被弟弟弄壞了。",
+          "items": [
+            "grammar:indirect-passive"
+          ]
+        },
+        {
+          "ja": "昨日は雨に降られて服がぬれました。",
+          "reading": "きのうはあめにふられてふくがぬれました。",
+          "en": "Yesterday I got rained on and my clothes got wet.",
+          "zh": "昨天被雨淋了，衣服湿了。",
+          "zh_TW": "昨天被雨淋了，衣服溼了。",
+          "items": [
+            "grammar:indirect-passive"
+          ]
+        },
+        {
+          "ja": "この小説は学生によって翻訳されました。",
+          "reading": "このしょうせつはがくせいによってほんやくされました。",
+          "en": "This novel was translated by a student.",
+          "zh": "这本小说是由一名学生翻译的。",
+          "zh_TW": "這本小說是由一名學生翻譯的。",
+          "items": [
+            "grammar:passive-ni-yotte"
+          ]
+        },
+        {
+          "ja": "先生は学生に本を読ませました。",
+          "reading": "せんせいはがくせいにほんをよませました。",
+          "en": "The teacher made the students read the book.",
+          "zh": "老师让学生们读了那本书。",
+          "zh_TW": "老師讓學生們讀了那本書。",
+          "items": [
+            "grammar:causative"
+          ]
+        },
+        {
+          "ja": "その仕事は私にさせてください。",
+          "reading": "そのしごとはわたしにさせてください。",
+          "en": "Please let me do that work.",
+          "zh": "那份工作请让我来做。",
+          "zh_TW": "那份工作請讓我來做。",
+          "items": [
+            "grammar:sasete-kudasai"
+          ]
+        },
+        {
+          "ja": "今日は早く帰らせてもらいます。",
+          "reading": "きょうははやくかえらせてもらいます。",
+          "en": "I will take the liberty of going home early today.",
+          "zh": "今天请允许我早点回去。",
+          "zh_TW": "今天請允許我早點回去。",
+          "items": [
+            "grammar:sasete-morau"
+          ]
+        },
+        {
+          "ja": "子供のとき野菜を食べさせられました。",
+          "reading": "こどものときやさいをたべさせられました。",
+          "en": "When I was a child I was made to eat vegetables.",
+          "zh": "小时候我被迫吃蔬菜。",
+          "zh_TW": "小時候我被迫吃蔬菜。",
+          "items": [
+            "grammar:causative-passive"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n4-10-01",
+          "item": "grammar:passive",
+          "prompt": {
+            "en": "What is the passive form of 盗む?",
+            "zh": "「盗む」的被动形是哪一个？",
+            "zh_TW": "「盜む」的被動形是哪一個？"
+          },
+          "options": [
+            "盗まれる",
+            "盗ませる",
+            "盗まされる",
+            "盗める"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Godan verbs take -areru: 盗む → 盗まれる.",
+            "zh": "五段动词的被动形为「-areru」：盗む→盗まれる。",
+            "zh_TW": "五段動詞的被動形為「-areru」：盜む→盜まれる。"
+          }
+        },
+        {
+          "id": "q:n4-10-02",
+          "item": "grammar:passive",
+          "prompt": {
+            "en": "Which says \"my wallet was stolen\"?",
+            "zh": "哪一句是「我的钱包被偷了」？",
+            "zh_TW": "哪一句是「我的錢包被偷了」？"
+          },
+          "options": [
+            "財布を盗まれました。",
+            "財布が盗みました。",
+            "財布を盗ませました。",
+            "財布に盗まれました。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "When something of yours is affected, you are the subject and the thing keeps を.",
+            "zh": "当受影响的是自己的所有物时，主语是自己，该物仍用を。",
+            "zh_TW": "當受影響的是自己的所有物時，主語是自己，該物仍用を。"
+          }
+        },
+        {
+          "id": "q:n4-10-03",
+          "item": "grammar:indirect-passive",
+          "prompt": {
+            "en": "Which says you were rained on and inconvenienced?",
+            "zh": "哪一句表示被雨淋而感到困扰？",
+            "zh_TW": "哪一句表示被雨淋而感到困擾？"
+          },
+          "options": [
+            "雨に降られました。",
+            "雨が降りました。",
+            "雨を降らせました。",
+            "雨に降らせました。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The adversative passive uses に for the cause and shows the speaker suffered.",
+            "zh": "受害被动用に标示原因，表示说话人受到了困扰。",
+            "zh_TW": "受害被動用に標示原因，表示說話人受到了困擾。"
+          }
+        },
+        {
+          "id": "q:n4-10-04",
+          "item": "grammar:passive-ni-yotte",
+          "prompt": {
+            "en": "Which fills the blank: この小説は学生＿＿＿＿翻訳されました。",
+            "zh": "填空：この小説は学生＿＿＿＿翻訳されました。",
+            "zh_TW": "填空：この小説は學生＿＿＿＿翻訳されました。"
+          },
+          "options": [
+            "によって",
+            "にとって",
+            "について",
+            "にたいして"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "によって names the agent when something is created, discovered or translated.",
+            "zh": "「によって」用于说明创作、发现、翻译等行为的施动者。",
+            "zh_TW": "「によって」用於說明創作、發現、翻譯等行為的施動者。"
+          }
+        },
+        {
+          "id": "q:n4-10-05",
+          "item": "grammar:causative",
+          "prompt": {
+            "en": "What is the causative form of 読む?",
+            "zh": "「読む」的使役形是哪一个？",
+            "zh_TW": "「読む」的使役形是哪一個？"
+          },
+          "options": [
+            "読ませる",
+            "読まれる",
+            "読める",
+            "読ませられる"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Godan verbs take -aseru: 読む → 読ませる.",
+            "zh": "五段动词的使役形为「-aseru」：読む→読ませる。",
+            "zh_TW": "五段動詞的使役形為「-aseru」：読む→読ませる。"
+          }
+        },
+        {
+          "id": "q:n4-10-06",
+          "item": "grammar:sasete-kudasai",
+          "prompt": {
+            "en": "Which asks \"please let me do it\"?",
+            "zh": "哪一句是「请让我来做」？",
+            "zh_TW": "哪一句是「請讓我來做」？"
+          },
+          "options": [
+            "させてください。",
+            "してください。",
+            "させられてください。",
+            "しさせてください。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The causative te-form plus ください asks for permission to act.",
+            "zh": "使役形的て形＋ください表示请求允许自己去做。",
+            "zh_TW": "使役形的て形＋ください表示請求允許自己去做。"
+          }
+        },
+        {
+          "id": "q:n4-10-07",
+          "item": "grammar:sasete-morau",
+          "prompt": {
+            "en": "Which humbly says you will go home early with permission?",
+            "zh": "哪一句谦逊地表示得到允许后早点回家？",
+            "zh_TW": "哪一句謙遜地表示得到允許後早點回家？"
+          },
+          "options": [
+            "早く帰らせてもらいます。",
+            "早く帰らせてあげます。",
+            "早く帰られてもらいます。",
+            "早く帰してもらいます。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜(さ)せてもらいます means you receive permission to do something.",
+            "zh": "「〜(さ)せてもらいます」表示得到许可去做某事。",
+            "zh_TW": "「〜(さ)せてもらいます」表示得到許可去做某事。"
+          }
+        },
+        {
+          "id": "q:n4-10-08",
+          "item": "grammar:causative-passive",
+          "prompt": {
+            "en": "Which means \"I was made to eat vegetables\"?",
+            "zh": "哪一句意思是「我被迫吃蔬菜」？",
+            "zh_TW": "哪一句意思是「我被迫吃蔬菜」？"
+          },
+          "options": [
+            "野菜を食べさせられました。",
+            "野菜を食べさせました。",
+            "野菜を食べられました。",
+            "野菜を食べさせてもらいました。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The causative passive combines させる and られる and shows you did it unwillingly.",
+            "zh": "使役被动结合させる和られる，表示不情愿地被迫去做。",
+            "zh_TW": "使役被動結合させる和られる，表示不情願地被迫去做。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Write about something annoying that happened to you, using the passive.",
+        "zh": "用被动形写一件让你困扰的事。",
+        "zh_TW": "用被動形寫一件讓你困擾的事。"
+      }
+    },
+    {
+      "id": "unit:n4-11",
+      "title": {
+        "en": "Honorific and humble language",
+        "zh": "尊敬语与谦让语",
+        "zh_TW": "尊敬語與謙讓語"
+      },
+      "grammar": [
+        "grammar:sonkeigo",
+        "grammar:o-ni-naru",
+        "grammar:rareru-honorific",
+        "grammar:o-kudasai",
+        "grammar:kenjougo",
+        "grammar:o-suru",
+        "grammar:o-go-prefix",
+        "grammar:gozaimasu"
+      ],
+      "vocab": [
+        "vocab:jm1000940",
+        "vocab:jm1238840",
+        "vocab:jm1346370",
+        "vocab:jm2217040",
+        "vocab:jm1001180",
+        "vocab:jm1302070",
+        "vocab:jm1363090",
+        "vocab:jm1362950",
+        "vocab:jm1421900",
+        "vocab:jm1305700",
+        "vocab:jm1472270",
+        "vocab:jm1157090",
+        "vocab:jm1224880",
+        "vocab:jm1002400",
+        "vocab:jm1270390",
+        "vocab:jm1002170",
+        "vocab:jm1440670",
+        "vocab:jm1226630",
+        "vocab:jm1588060",
+        "vocab:jm1427360"
+      ],
+      "sentences": [
+        {
+          "ja": "社長は今会議室にいらっしゃいます。",
+          "reading": "しゃちょうはいまかいぎしつにいらっしゃいます。",
+          "en": "The company president is in the meeting room now.",
+          "zh": "社长现在在会议室。",
+          "zh_TW": "社長現在在會議室。",
+          "items": [
+            "grammar:sonkeigo"
+          ]
+        },
+        {
+          "ja": "課長はもうお帰りになりました。",
+          "reading": "かちょうはもうおかえりになりました。",
+          "en": "The section manager has already gone home.",
+          "zh": "科长已经回去了。",
+          "zh_TW": "科長已經回去了。",
+          "items": [
+            "grammar:o-ni-naru"
+          ]
+        },
+        {
+          "ja": "部長は昨日この本を読まれました。",
+          "reading": "ぶちょうはきのうこのほんをよまれました。",
+          "en": "The department head read this book yesterday.",
+          "zh": "部长昨天读了这本书。",
+          "zh_TW": "部長昨天讀了這本書。",
+          "items": [
+            "grammar:rareru-honorific"
+          ]
+        },
+        {
+          "ja": "こちらの席にお座りください。",
+          "reading": "こちらのせきにおすわりください。",
+          "en": "Please have a seat here.",
+          "zh": "请坐这边的座位。",
+          "zh_TW": "請坐這邊的座位。",
+          "items": [
+            "grammar:o-kudasai"
+          ]
+        },
+        {
+          "ja": "私が荷物をお持ちします。",
+          "reading": "わたしがにもつをおもちします。",
+          "en": "I will carry your luggage.",
+          "zh": "行李我来拿吧。",
+          "zh_TW": "行李我來拿吧。",
+          "items": [
+            "grammar:o-suru",
+            "grammar:kenjougo"
+          ]
+        },
+        {
+          "ja": "明日そちらへ伺います。",
+          "reading": "あしたそちらへうかがいます。",
+          "en": "I will visit you there tomorrow.",
+          "zh": "明天我去您那里拜访。",
+          "zh_TW": "明天我去您那裡拜訪。",
+          "items": [
+            "grammar:kenjougo"
+          ]
+        },
+        {
+          "ja": "お宅のご主人はお元気ですか。",
+          "reading": "おたくのごしゅじんはおげんきですか。",
+          "en": "Is your husband well?",
+          "zh": "您先生身体好吗？",
+          "zh_TW": "您先生身體好嗎？",
+          "items": [
+            "grammar:o-go-prefix"
+          ]
+        },
+        {
+          "ja": "品物は二つございます。",
+          "reading": "しなものはふたつございます。",
+          "en": "There are two items.",
+          "zh": "商品有两件。",
+          "zh_TW": "商品有兩件。",
+          "items": [
+            "grammar:gozaimasu"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n4-11-01",
+          "item": "grammar:sonkeigo",
+          "prompt": {
+            "en": "Which is the honorific form of います?",
+            "zh": "「います」的尊敬语是哪一个？",
+            "zh_TW": "「います」的尊敬語是哪一個？"
+          },
+          "options": [
+            "いらっしゃいます",
+            "おります",
+            "いたします",
+            "まいります"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "いらっしゃいます raises the other person; おります is the humble form for yourself.",
+            "zh": "「いらっしゃいます」抬高对方；「おります」是自谦语。",
+            "zh_TW": "「いらっしゃいます」抬高對方；「おります」是自謙語。"
+          }
+        },
+        {
+          "id": "q:n4-11-02",
+          "item": "grammar:sonkeigo",
+          "prompt": {
+            "en": "Which is the honorific form of 言います?",
+            "zh": "「言います」的尊敬语是哪一个？",
+            "zh_TW": "「言います」的尊敬語是哪一個？"
+          },
+          "options": [
+            "おっしゃいます",
+            "申します",
+            "申し上げます",
+            "いたします"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "おっしゃいます is honorific; 申します and 申し上げます are humble.",
+            "zh": "「おっしゃいます」是尊敬语；「申します」「申し上げます」是谦让语。",
+            "zh_TW": "「おっしゃいます」是尊敬語；「申します」「申し上げます」是謙讓語。"
+          }
+        },
+        {
+          "id": "q:n4-11-03",
+          "item": "grammar:o-ni-naru",
+          "prompt": {
+            "en": "Which is the honorific of 帰りました using the お〜になる pattern?",
+            "zh": "用「お〜になる」句型表达「帰りました」的尊敬说法是哪一个？",
+            "zh_TW": "用「お〜になる」句型表達「帰りました」的尊敬說法是哪一個？"
+          },
+          "options": [
+            "お帰りになりました",
+            "お帰りしました",
+            "ご帰りになりました",
+            "お帰りいたしました"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "お＋ます-stem＋になる is honorific; お＋ます-stem＋する is humble.",
+            "zh": "「お＋ます形词干＋になる」是尊敬语；「お＋ます形词干＋する」是谦让语。",
+            "zh_TW": "「お＋ます形詞幹＋になる」是尊敬語；「お＋ます形詞幹＋する」是謙讓語。"
+          }
+        },
+        {
+          "id": "q:n4-11-04",
+          "item": "grammar:rareru-honorific",
+          "prompt": {
+            "en": "Which fills the blank as a light honorific: 部長がこの本を読＿＿＿＿。",
+            "zh": "填空，构成轻度尊敬语：部長がこの本を読＿＿＿＿。",
+            "zh_TW": "填空，構成輕度尊敬語：部長がこの本を読＿＿＿＿。"
+          },
+          "options": [
+            "まれました",
+            "ませました",
+            "めました",
+            "みました"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The passive form doubles as a lighter honorific than お〜になる.",
+            "zh": "被动形可作为比「お〜になる」更轻的尊敬语。",
+            "zh_TW": "被動形可作為比「お〜になる」更輕的尊敬語。"
+          }
+        },
+        {
+          "id": "q:n4-11-05",
+          "item": "grammar:o-kudasai",
+          "prompt": {
+            "en": "Which politely invites a guest to sit?",
+            "zh": "哪一句礼貌地请客人就座？",
+            "zh_TW": "哪一句禮貌地請客人就座？"
+          },
+          "options": [
+            "こちらにお座りください。",
+            "こちらに座りなさい。",
+            "こちらにお座りしてください。",
+            "こちらにお座りになってあげてください。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "お＋ます-stem＋ください is the honorific request form.",
+            "zh": "「お＋ます形词干＋ください」是尊敬语的请求形式。",
+            "zh_TW": "「お＋ます形詞幹＋ください」是尊敬語的請求形式。"
+          }
+        },
+        {
+          "id": "q:n4-11-06",
+          "item": "grammar:o-suru",
+          "prompt": {
+            "en": "Which humbly says \"I will carry your luggage\"?",
+            "zh": "哪一句谦逊地表示「我来拿行李」？",
+            "zh_TW": "哪一句謙遜地表示「我來拿行李」？"
+          },
+          "options": [
+            "荷物をお持ちします。",
+            "荷物をお持ちになります。",
+            "荷物を持ってあげます。",
+            "荷物をお持ちください。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "お〜します lowers your own action when you do something for a superior.",
+            "zh": "「お〜します」用于为上位者做事时降低自己的动作。",
+            "zh_TW": "「お〜します」用於為上位者做事時降低自己的動作。"
+          }
+        },
+        {
+          "id": "q:n4-11-07",
+          "item": "grammar:kenjougo",
+          "prompt": {
+            "en": "Which is the humble form of 行きます when visiting a client?",
+            "zh": "拜访客户时，「行きます」的谦让语是哪一个？",
+            "zh_TW": "拜訪客戶時，「行きます」的謙讓語是哪一個？"
+          },
+          "options": [
+            "伺います",
+            "いらっしゃいます",
+            "おいでになります",
+            "ごらんになります"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "伺います is humble; the other three are honorific forms for the other person.",
+            "zh": "「伺います」是谦让语；其余三个是抬高对方的尊敬语。",
+            "zh_TW": "「伺います」是謙讓語；其餘三個是抬高對方的尊敬語。"
+          }
+        },
+        {
+          "id": "q:n4-11-08",
+          "item": "grammar:gozaimasu",
+          "prompt": {
+            "en": "Which is the most formal way to say あります?",
+            "zh": "「あります」最郑重的说法是哪一个？",
+            "zh_TW": "「あります」最鄭重的說法是哪一個？"
+          },
+          "options": [
+            "ございます",
+            "いらっしゃいます",
+            "おります",
+            "いたします"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ございます is the very formal form of あります, common in shops and hotels.",
+            "zh": "「ございます」是「あります」的郑重说法，常见于商店和酒店。",
+            "zh_TW": "「ございます」是「あります」的鄭重說法，常見於商店和酒店。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Write a short polite message to your teacher, using いらっしゃいます and お〜します.",
+        "zh": "用「いらっしゃいます」和「お〜します」给老师写一段礼貌的留言。",
+        "zh_TW": "用「いらっしゃいます」和「お〜します」給老師寫一段禮貌的留言。"
+      }
+    },
+    {
+      "id": "unit:n4-12",
+      "title": {
+        "en": "Timing, stages and degree",
+        "zh": "时间、阶段与程度",
+        "zh_TW": "時間、階段與程度"
+      },
+      "grammar": [
+        "grammar:aida-ni",
+        "grammar:uchi-ni",
+        "grammar:made-ni",
+        "grammar:tokoro-da",
+        "grammar:ta-bakari",
+        "grammar:hajimeru",
+        "grammar:tsuzukeru",
+        "grammar:owaru",
+        "grammar:naosu",
+        "grammar:sugiru",
+        "grammar:bakari"
+      ],
+      "vocab": [
+        "vocab:jm1215230",
+        "vocab:jm1457730",
+        "vocab:jm1307550",
+        "vocab:jm1405800",
+        "vocab:jm1405790",
+        "vocab:jm1589590",
+        "vocab:jm1599390",
+        "vocab:jm1582200",
+        "vocab:jm1005180",
+        "vocab:jm1004690",
+        "vocab:jm1004710",
+        "vocab:jm1293780",
+        "vocab:jm1293810",
+        "vocab:jm1293990",
+        "vocab:jm1345605",
+        "vocab:jm1449890",
+        "vocab:jm1304420",
+        "vocab:jm1227370",
+        "vocab:jm1581710",
+        "vocab:jm1426290"
+      ],
+      "sentences": [
+        {
+          "ja": "子供が寝ている間に本を読みます。",
+          "reading": "こどもがねているあいだにほんをよみます。",
+          "en": "I read a book while the child is sleeping.",
+          "zh": "趁孩子睡觉的时候我看书。",
+          "zh_TW": "趁孩子睡覺的時候我看書。",
+          "items": [
+            "grammar:aida-ni"
+          ]
+        },
+        {
+          "ja": "若いうちにいろいろな国へ行きたいです。",
+          "reading": "わかいうちにいろいろなくにへいきたいです。",
+          "en": "I want to visit many countries while I am still young.",
+          "zh": "我想趁年轻去很多国家。",
+          "zh_TW": "我想趁年輕去很多國家。",
+          "items": [
+            "grammar:uchi-ni"
+          ]
+        },
+        {
+          "ja": "金曜日までにこの仕事を終わらせます。",
+          "reading": "きんようびまでにこのしごとをおわらせます。",
+          "en": "I will finish this work by Friday.",
+          "zh": "我会在星期五之前完成这项工作。",
+          "zh_TW": "我會在星期五之前完成這項工作。",
+          "items": [
+            "grammar:made-ni"
+          ]
+        },
+        {
+          "ja": "今から出かけるところです。",
+          "reading": "いまからでかけるところです。",
+          "en": "I am just about to go out.",
+          "zh": "我正要出门。",
+          "zh_TW": "我正要出門。",
+          "items": [
+            "grammar:tokoro-da"
+          ]
+        },
+        {
+          "ja": "今駅に着いたばかりです。",
+          "reading": "いまえきについたばかりです。",
+          "en": "I have just arrived at the station.",
+          "zh": "我刚到车站。",
+          "zh_TW": "我剛到車站。",
+          "items": [
+            "grammar:ta-bakari"
+          ]
+        },
+        {
+          "ja": "三時間走り続けてとても疲れました。",
+          "reading": "さんじかんはしりつづけてとてもつかれました。",
+          "en": "I kept running for three hours and got very tired.",
+          "zh": "连续跑了三个小时，非常累。",
+          "zh_TW": "連續跑了三個小時，非常累。",
+          "items": [
+            "grammar:tsuzukeru"
+          ]
+        },
+        {
+          "ja": "昨日はお酒を飲みすぎました。",
+          "reading": "きのうはおさけをのみすぎました。",
+          "en": "I drank too much sake yesterday.",
+          "zh": "昨天酒喝多了。",
+          "zh_TW": "昨天酒喝多了。",
+          "items": [
+            "grammar:sugiru"
+          ]
+        },
+        {
+          "ja": "弟は漫画ばかり読んでいます。",
+          "reading": "おとうとはまんがばかりよんでいます。",
+          "en": "My little brother reads nothing but comics.",
+          "zh": "弟弟光看漫画。",
+          "zh_TW": "弟弟光看漫畫。",
+          "items": [
+            "grammar:bakari"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n4-12-01",
+          "item": "grammar:aida-ni",
+          "prompt": {
+            "en": "Which fills the blank: 子供が寝ている＿＿＿本を読みます。",
+            "zh": "填空：子供が寝ている＿＿＿本を読みます。",
+            "zh_TW": "填空：子供が寢ている＿＿＿本を読みます。"
+          },
+          "options": [
+            "間に",
+            "間",
+            "うちで",
+            "ながら"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "間に marks a point inside a period when a single action happens.",
+            "zh": "「間に」表示在某段时间内发生一次性的动作。",
+            "zh_TW": "「間に」表示在某段時間內發生一次性的動作。"
+          }
+        },
+        {
+          "id": "q:n4-12-02",
+          "item": "grammar:uchi-ni",
+          "prompt": {
+            "en": "Which means \"while you are still young\"?",
+            "zh": "哪一个意思是「趁年轻的时候」？",
+            "zh_TW": "哪一個意思是「趁年輕的時候」？"
+          },
+          "options": [
+            "若いうちに",
+            "若い間で",
+            "若いときで",
+            "若いうちで"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "うちに stresses that the situation will not last, so act now.",
+            "zh": "「うちに」强调状况不会持续，要趁现在去做。",
+            "zh_TW": "「うちに」強調狀況不會持續，要趁現在去做。"
+          }
+        },
+        {
+          "id": "q:n4-12-03",
+          "item": "grammar:made-ni",
+          "prompt": {
+            "en": "Which fills the blank: 金曜日＿＿＿仕事を終わらせます。",
+            "zh": "填空：金曜日＿＿＿仕事を終わらせます。",
+            "zh_TW": "填空：金曜日＿＿＿仕事を終わらせます。"
+          },
+          "options": [
+            "までに",
+            "まで",
+            "から",
+            "までも"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "までに is a deadline; まで means the action continues up to that time.",
+            "zh": "「までに」表示期限；「まで」表示动作持续到那个时刻。",
+            "zh_TW": "「までに」表示期限；「まで」表示動作持續到那個時刻。"
+          }
+        },
+        {
+          "id": "q:n4-12-04",
+          "item": "grammar:tokoro-da",
+          "prompt": {
+            "en": "Which means \"I am just about to go out\"?",
+            "zh": "哪一句意思是「我正要出门」？",
+            "zh_TW": "哪一句意思是「我正要出門」？"
+          },
+          "options": [
+            "今から出かけるところです。",
+            "今から出かけたところです。",
+            "今出かけているところです。",
+            "今から出かけたばかりです。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The plain non-past before ところ means the action has not started yet.",
+            "zh": "ところ前用简体非过去形，表示动作还未开始。",
+            "zh_TW": "ところ前用簡體非過去形，表示動作還未開始。"
+          }
+        },
+        {
+          "id": "q:n4-12-05",
+          "item": "grammar:ta-bakari",
+          "prompt": {
+            "en": "Which means \"I have just arrived\"?",
+            "zh": "哪一句意思是「我刚到」？",
+            "zh_TW": "哪一句意思是「我剛到」？"
+          },
+          "options": [
+            "着いたばかりです。",
+            "着くばかりです。",
+            "着いてばかりです。",
+            "着いたところでした。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜たばかりです follows the past form and means very little time has passed.",
+            "zh": "「〜たばかりです」接过去形，表示刚刚过去不久。",
+            "zh_TW": "「〜たばかりです」接過去形，表示剛剛過去不久。"
+          }
+        },
+        {
+          "id": "q:n4-12-06",
+          "item": "grammar:hajimeru",
+          "prompt": {
+            "en": "Which means \"started writing\"?",
+            "zh": "哪一个意思是「开始写」？",
+            "zh_TW": "哪一個意思是「開始寫」？"
+          },
+          "options": [
+            "書き始めました",
+            "書いて始めました",
+            "書くを始めました",
+            "書き始まりました"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "始める joins the ます-stem: 書き＋始める.",
+            "zh": "「始める」接ます形词干：書き＋始める。",
+            "zh_TW": "「始める」接ます形詞幹：書き＋始める。"
+          }
+        },
+        {
+          "id": "q:n4-12-07",
+          "item": "grammar:owaru",
+          "prompt": {
+            "en": "Which means \"when I finish reading\"?",
+            "zh": "哪一个意思是「读完之后」？",
+            "zh_TW": "哪一個意思是「讀完之後」？"
+          },
+          "options": [
+            "読み終わったら",
+            "読んで終わったら",
+            "読み終わりたら",
+            "読むと終わったら"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "終わる also joins the ます-stem, then takes normal verb endings.",
+            "zh": "「終わる」同样接ます形词干，之后照常变化。",
+            "zh_TW": "「終わる」同樣接ます形詞幹，之後照常變化。"
+          }
+        },
+        {
+          "id": "q:n4-12-08",
+          "item": "grammar:sugiru",
+          "prompt": {
+            "en": "Which fills the blank: お酒を飲み＿＿＿＿。",
+            "zh": "填空：お酒を飲み＿＿＿＿。",
+            "zh_TW": "填空：お酒を飲み＿＿＿＿。"
+          },
+          "options": [
+            "すぎました",
+            "すぎりました",
+            "すごしました",
+            "すぎるました"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "すぎる joins the ます-stem and conjugates as an ichidan verb.",
+            "zh": "「すぎる」接ます形词干，按一段动词变化。",
+            "zh_TW": "「すぎる」接ます形詞幹，按一段動詞變化。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Describe your morning from waking up to leaving home, using 〜始めます, 〜ところです and 〜たばかりです.",
+        "zh": "用「〜始めます」「〜ところです」「〜たばかりです」描写你从起床到出门的早晨。",
+        "zh_TW": "用「〜始めます」「〜ところです」「〜たばかりです」描寫你從起床到出門的早晨。"
+      }
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import '../../content/models/content_catalog.dart';
 import '../../content/models/localized_strings.dart';
+import '../../content/models/grammar_point.dart';
 import '../../content/models/vocab_entry.dart';
 import 'prompt_builder.dart';
 
@@ -131,6 +132,36 @@ class PracticePromptBuilder {
       ..writeln('${labels['expected'] ?? 'Meaning'}: '
           '${entry.meanings.resolveJoined(locale)}')
       ..writeln('JLPT: ${entry.level.label}');
+  });
+
+  /// Purpose: Ask for one extra multiple-choice question about a unit.
+  /// Inputs: The grammar `point` to test, the unit's `words`, and the `locale`.
+  /// Returns: `String?`.
+  /// Side effects: None.
+  /// Notes: The point's own pattern, meaning and first example go into the
+  /// prompt, so a generated question tests what the app teaches rather than
+  /// whatever the model associates with the pattern. The word list is capped
+  /// the same way the writing prompt caps it.
+  String? forQuiz(
+    GrammarPoint point, {
+    List<VocabEntry> words = const [],
+    required Locale locale,
+  }) => _build('quiz', locale, (labels, out) {
+    out
+      ..writeln('${labels['topic'] ?? 'Grammar point'}: ${point.pattern}')
+      ..writeln('${labels['expected'] ?? 'Meaning'}: '
+          '${point.meaning.resolveJoined(locale)}')
+      ..writeln('JLPT: ${point.level.label}');
+    if (point.examples.firstOrNull case final example?) {
+      out.writeln('${labels['sentence'] ?? 'Example'}: ${example.ja}');
+    }
+    if (words.isNotEmpty) {
+      final capped = words
+          .take(templates.limit('maxVocabInPrompt', 12))
+          .map((word) => word.headword)
+          .join('、');
+      out.writeln('${labels['vocabulary'] ?? 'Words'}: $capped');
+    }
   });
 
   /// Purpose: Assemble one prompt from a task template.

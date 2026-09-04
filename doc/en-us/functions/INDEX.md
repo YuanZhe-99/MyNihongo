@@ -4,17 +4,17 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **844** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **877** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **804** documented declarations. The two counts are measured separately and
+The rows below sum to **833** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
-| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 154 |
-| Tier B (index row only) | 650 |
-| **Total** | **804** |
+| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 158 |
+| Tier B (index row only) | 675 |
+| **Total** | **833** |
 
 These totals were measured against the source tree at initialization (`PLAN.md` M1.0). If you
 change these numbers, measure them rather than adjusting them by hand:
@@ -167,6 +167,10 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/ai/services/practice_prompt_builder.dart` | not documented | — | — |
 | `lib/features/ai/services/practice_response_parser.dart` | [features/ai/services/practice_response_parser.md](features/ai/services/practice_response_parser.md) | 9 | 3 |
 | `lib/features/ai/widgets/generated_examples.dart` | not documented | — | — |
+| `lib/features/lessons/models/scenario.dart` | [features/lessons/models/scenario.md](features/lessons/models/scenario.md) | 14 | 1 |
+| `lib/features/lessons/views/scenario_page.dart` | [features/lessons/views/scenario_page.md](features/lessons/views/scenario_page.md) | 8 | 1 |
+| `lib/features/quiz/services/ai_question_generator.dart` | [features/quiz/services/ai_question_generator.md](features/quiz/services/ai_question_generator.md) | 7 | 2 |
+| `lib/features/writing/views/writing_practice_page.dart` | not documented | — | — |
 
 ## l10n/
 

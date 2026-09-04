@@ -496,6 +496,54 @@ void main() {
             );
           }
         }
+
+        // A branch stops the script and asks the learner what to say. Both
+        // halves of that have to hold: the stop has to be inside the script,
+        // and the question has to have exactly one expected answer.
+        for (final row in scenario['branches'] as List? ?? const []) {
+          if (row is! Map) {
+            need(false, '$id scenario: a branch that is not an object');
+            continue;
+          }
+          final after = row['after'];
+          need(
+            after is int && after >= 1 && after <= lines.length,
+            '$id scenario: "after" is $after, which is not a line of a '
+            '${lines.length}-line conversation.',
+          );
+          final choices = row['choices'] as List? ?? const [];
+          need(
+            choices.length >= 2,
+            '$id scenario after $after: ${choices.length} choices; one choice '
+            'is not a choice.',
+          );
+          var right = 0;
+          for (var i = 0; i < choices.length; i++) {
+            final choice = choices[i];
+            if (choice is! Map) {
+              need(false, '$id scenario after $after: choice#$i not an object');
+              continue;
+            }
+            if (choice['correct'] == true) right++;
+            sentence(
+              '$id scenario after $after choice#$i',
+              '${choice['ja']}',
+              choice['reading'] as String?,
+              level,
+            );
+            for (final language in const ['en', 'zh']) {
+              need(
+                '${choice[language] ?? ''}'.trim().isNotEmpty,
+                '$id scenario after $after choice#$i: no "$language"',
+              );
+            }
+          }
+          need(
+            right == 1,
+            '$id scenario after $after: $right choices are marked correct; '
+            'the tally at the end counts exactly one.',
+          );
+        }
       }
     }
 

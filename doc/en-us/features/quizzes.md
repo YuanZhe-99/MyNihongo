@@ -124,6 +124,19 @@ The answer is recorded as it happens rather than at the end, so an app killed
 mid-session keeps what was already answered. The sync scheduler debounces, so the
 extra saves do not become extra uploads.
 
+### Questions that arrive mid-session
+
+`QuizSession.append` adds a question to a running session and grows the total, so
+the progress line stays honest. Two things use it, and both are optional extras:
+a unit session asks the on-device model for up to three questions once it is
+already on screen (see [`ai-assist.md`](ai-assist.md)), and any such question is
+`generated`.
+
+**A generated question never calls `onFirstAnswer`.** It may be wrong, and a
+wrong question must not be allowed to move a real review interval — see
+[`learning-progress.md`](learning-progress.md). It is also labelled above the
+prompt, before it is read.
+
 ## Where a quiz starts
 
 | From | Asks about |

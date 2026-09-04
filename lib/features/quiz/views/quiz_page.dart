@@ -18,6 +18,13 @@ import '../../lessons/services/lesson_repository.dart';
 import '../../lessons/services/lesson_rules.dart';
 import '../services/question_bank.dart';
 import '../services/question_generator.dart';
+import 'dart:async';
+
+import '../../ai/services/ai_assist_service.dart';
+import '../../ai/services/ai_practice_service.dart';
+import '../../ai/services/practice_prompt_builder.dart';
+import '../../lessons/models/lesson_path.dart';
+import '../services/ai_question_generator.dart';
 import '../services/quiz_session.dart';
 import '../widgets/quiz_runner.dart';
 
@@ -121,19 +128,64 @@ class _QuizPageState extends ConsumerState<QuizPage> {
     }
 
     if (!mounted) return;
+    final session = questions.isEmpty
+        ? null
+        : QuizSession(
+            questions: questions,
+            onFirstAnswer: widget.config.recordProgress
+                ? (id, correct) => ref
+                      .read(progressDataProvider.notifier)
+                      .recordAnswer(id, correct)
+                : null,
+          );
     setState(() {
       _building = false;
-      _session = questions.isEmpty
-          ? null
-          : QuizSession(
-              questions: questions,
-              onFirstAnswer: widget.config.recordProgress
-                  ? (id, correct) => ref
-                        .read(progressDataProvider.notifier)
-                        .recordAnswer(id, correct)
-                  : null,
-            );
+      _session = session;
     });
+    // Extra questions are asked for only once the session is on screen, and
+    // only for a unit: a generated question is about a grammar point this unit
+    // teaches, and there is no such point outside one.
+    if (session != null && unit != null) {
+      unawaited(
+        _generate(
+          session,
+          unit,
+          catalog,
+          {for (final question in questions) question.prompt},
+        ),
+      );
+    }
+  }
+
+  /// Purpose: Ask the model for a few extra questions, in the background.
+  /// Inputs: The `session` to append to, the `unit`, and the `catalog`.
+  /// Returns: None.
+  /// Side effects: Runs a model on the device; appends to the session.
+  /// Notes: Internal helper used within this file only. Started **after** the
+  /// session exists, so the learner is already answering question one while
+  /// this waits on a model. Nothing here can fail loudly: no switch, no
+  /// templates, no reply, or a reply that does not parse all end the same way,
+  /// with the session the learner already has.
+  Future<void> _generate(
+    QuizSession session,
+    LessonUnit unit,
+    ContentCatalog catalog,
+    Set<String> avoid,
+  ) async {
+    if (!ref.read(aiAssistServiceProvider).canExplain) return;
+    final templates = ref.read(practicePromptTemplatesProvider).value;
+    if (templates == null || !mounted) return;
+    final generator = AiQuestionGenerator(
+      unit: unit,
+      catalog: catalog,
+      builder: PracticePromptBuilder(templates),
+      locale: Localizations.localeOf(context),
+      service: AiPracticeService.instance,
+    );
+    await for (final question in generator.generate(avoid: avoid)) {
+      if (!mounted) return;
+      session.append(question);
+    }
   }
 
   /// Purpose: Write the checkpoint result, when this session was one.

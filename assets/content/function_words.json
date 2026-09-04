@@ -3626,6 +3626,1742 @@
         "zh": "显得……的样子",
         "zh_TW": "顯得……的樣子"
       }
+    },
+    {
+      "id": "fw:ni-oite",
+      "surface": "において",
+      "category": "particle-case",
+      "lemma": "において",
+      "forms": [],
+      "gloss": {
+        "en": "in, at, regarding",
+        "zh": "在……方面",
+        "zh_TW": "在……方面"
+      }
+    },
+    {
+      "id": "fw:ni-okeru",
+      "surface": "における",
+      "category": "particle-case",
+      "lemma": "における",
+      "forms": [],
+      "gloss": {
+        "en": "in, at, regarding",
+        "zh": "在……的",
+        "zh_TW": "在……的"
+      }
+    },
+    {
+      "id": "fw:ni-oujite",
+      "surface": "に応じて",
+      "category": "particle-case",
+      "lemma": "に応じて",
+      "forms": [],
+      "gloss": {
+        "en": "according to",
+        "zh": "根据",
+        "zh_TW": "根據"
+      }
+    },
+    {
+      "id": "fw:ni-oujita",
+      "surface": "に応じた",
+      "category": "particle-case",
+      "lemma": "に応じた",
+      "forms": [],
+      "gloss": {
+        "en": "according to",
+        "zh": "根据",
+        "zh_TW": "根據"
+      }
+    },
+    {
+      "id": "fw:ni-kotaete",
+      "surface": "に応えて",
+      "category": "particle-case",
+      "lemma": "に応えて",
+      "forms": [],
+      "gloss": {
+        "en": "in response to",
+        "zh": "回应",
+        "zh_TW": "回應"
+      }
+    },
+    {
+      "id": "fw:ni-kotaeru",
+      "surface": "に応える",
+      "category": "particle-case",
+      "lemma": "に応える",
+      "forms": [],
+      "gloss": {
+        "en": "to respond to",
+        "zh": "回应",
+        "zh_TW": "回應"
+      }
+    },
+    {
+      "id": "fw:ni-sotte",
+      "surface": "に沿って",
+      "category": "particle-case",
+      "lemma": "に沿って",
+      "forms": [],
+      "gloss": {
+        "en": "along, in line with",
+        "zh": "沿着、按照",
+        "zh_TW": "沿著、按照"
+      }
+    },
+    {
+      "id": "fw:ni-watatte",
+      "surface": "にわたって",
+      "category": "particle-case",
+      "lemma": "にわたって",
+      "forms": [],
+      "gloss": {
+        "en": "over, throughout",
+        "zh": "历经、遍及",
+        "zh_TW": "歷經、遍及"
+      }
+    },
+    {
+      "id": "fw:ni-wataru",
+      "surface": "にわたる",
+      "category": "particle-case",
+      "lemma": "にわたる",
+      "forms": [],
+      "gloss": {
+        "en": "over, throughout",
+        "zh": "历经、遍及",
+        "zh_TW": "歷經、遍及"
+      }
+    },
+    {
+      "id": "fw:wo-megutte",
+      "surface": "をめぐって",
+      "category": "particle-case",
+      "lemma": "をめぐって",
+      "forms": [],
+      "gloss": {
+        "en": "concerning, over",
+        "zh": "围绕",
+        "zh_TW": "圍繞"
+      }
+    },
+    {
+      "id": "fw:wo-meguru",
+      "surface": "をめぐる",
+      "category": "particle-case",
+      "lemma": "をめぐる",
+      "forms": [],
+      "gloss": {
+        "en": "concerning, over",
+        "zh": "围绕",
+        "zh_TW": "圍繞"
+      }
+    },
+    {
+      "id": "fw:wo-moto-ni",
+      "surface": "をもとに",
+      "category": "particle-case",
+      "lemma": "をもとに",
+      "forms": [],
+      "gloss": {
+        "en": "based on",
+        "zh": "以……为基础",
+        "zh_TW": "以……為基礎"
+      }
+    },
+    {
+      "id": "fw:wo-tsuujite",
+      "surface": "を通じて",
+      "category": "particle-case",
+      "lemma": "を通じて",
+      "forms": [],
+      "gloss": {
+        "en": "through, via",
+        "zh": "通过",
+        "zh_TW": "通過"
+      }
+    },
+    {
+      "id": "fw:wo-tooshite",
+      "surface": "を通して",
+      "category": "particle-case",
+      "lemma": "を通して",
+      "forms": [],
+      "gloss": {
+        "en": "through, via",
+        "zh": "通过",
+        "zh_TW": "通過"
+      }
+    },
+    {
+      "id": "fw:ni-motozuite",
+      "surface": "に基づいて",
+      "category": "particle-case",
+      "lemma": "に基づいて",
+      "forms": [],
+      "gloss": {
+        "en": "based on",
+        "zh": "基于",
+        "zh_TW": "基於"
+      }
+    },
+    {
+      "id": "fw:ni-motozuku",
+      "surface": "に基づく",
+      "category": "particle-case",
+      "lemma": "に基づく",
+      "forms": [],
+      "gloss": {
+        "en": "based on",
+        "zh": "基于",
+        "zh_TW": "基於"
+      }
+    },
+    {
+      "id": "fw:ni-kakawarazu",
+      "surface": "に関わらず",
+      "category": "particle-case",
+      "lemma": "に関わらず",
+      "forms": [],
+      "gloss": {
+        "en": "regardless of",
+        "zh": "不论",
+        "zh_TW": "不論"
+      }
+    },
+    {
+      "id": "fw:ni-kakawarazu-kana",
+      "surface": "にかかわらず",
+      "category": "particle-case",
+      "lemma": "にかかわらず",
+      "forms": [],
+      "gloss": {
+        "en": "regardless of",
+        "zh": "不论",
+        "zh_TW": "不論"
+      }
+    },
+    {
+      "id": "fw:ni-kakawaru",
+      "surface": "に関わる",
+      "category": "particle-case",
+      "lemma": "に関わる",
+      "forms": [],
+      "gloss": {
+        "en": "to do with, affecting",
+        "zh": "关系到",
+        "zh_TW": "關係到"
+      }
+    },
+    {
+      "id": "fw:ni-kakawaru-kana",
+      "surface": "にかかわる",
+      "category": "particle-case",
+      "lemma": "にかかわる",
+      "forms": [],
+      "gloss": {
+        "en": "to do with, affecting",
+        "zh": "关系到",
+        "zh_TW": "關係到"
+      }
+    },
+    {
+      "id": "fw:nimo-kakawarazu",
+      "surface": "にもかかわらず",
+      "category": "particle-case",
+      "lemma": "にもかかわらず",
+      "forms": [],
+      "gloss": {
+        "en": "in spite of",
+        "zh": "尽管",
+        "zh_TW": "儘管"
+      }
+    },
+    {
+      "id": "fw:ni-kagirazu",
+      "surface": "に限らず",
+      "category": "particle-case",
+      "lemma": "に限らず",
+      "forms": [],
+      "gloss": {
+        "en": "not only",
+        "zh": "不限于",
+        "zh_TW": "不限於"
+      }
+    },
+    {
+      "id": "fw:ni-kagitte",
+      "surface": "に限って",
+      "category": "particle-case",
+      "lemma": "に限って",
+      "forms": [],
+      "gloss": {
+        "en": "only, of all things",
+        "zh": "偏偏",
+        "zh_TW": "偏偏"
+      }
+    },
+    {
+      "id": "fw:ni-kagiri",
+      "surface": "に限り",
+      "category": "particle-case",
+      "lemma": "に限り",
+      "forms": [],
+      "gloss": {
+        "en": "only, limited to",
+        "zh": "仅限",
+        "zh_TW": "僅限"
+      }
+    },
+    {
+      "id": "fw:ni-tsurete",
+      "surface": "につれて",
+      "category": "particle-case",
+      "lemma": "につれて",
+      "forms": [],
+      "gloss": {
+        "en": "as, along with",
+        "zh": "随着",
+        "zh_TW": "隨著"
+      }
+    },
+    {
+      "id": "fw:ni-tomonatte",
+      "surface": "に伴って",
+      "category": "particle-case",
+      "lemma": "に伴って",
+      "forms": [],
+      "gloss": {
+        "en": "accompanying",
+        "zh": "伴随",
+        "zh_TW": "伴隨"
+      }
+    },
+    {
+      "id": "fw:ni-tomonau",
+      "surface": "に伴う",
+      "category": "particle-case",
+      "lemma": "に伴う",
+      "forms": [],
+      "gloss": {
+        "en": "accompanying",
+        "zh": "伴随",
+        "zh_TW": "伴隨"
+      }
+    },
+    {
+      "id": "fw:ni-shitagatte",
+      "surface": "に従って",
+      "category": "particle-case",
+      "lemma": "に従って",
+      "forms": [],
+      "gloss": {
+        "en": "in accordance with",
+        "zh": "按照",
+        "zh_TW": "按照"
+      }
+    },
+    {
+      "id": "fw:ni-taishite2",
+      "surface": "に対して",
+      "category": "particle-case",
+      "lemma": "に対して",
+      "forms": [],
+      "gloss": {
+        "en": "towards, in contrast to",
+        "zh": "对于、相对",
+        "zh_TW": "對於、相對"
+      }
+    },
+    {
+      "id": "fw:ni-taisuru",
+      "surface": "に対する",
+      "category": "particle-case",
+      "lemma": "に対する",
+      "forms": [],
+      "gloss": {
+        "en": "towards",
+        "zh": "对于",
+        "zh_TW": "對於"
+      }
+    },
+    {
+      "id": "fw:ni-totte",
+      "surface": "にとって",
+      "category": "particle-case",
+      "lemma": "にとって",
+      "forms": [],
+      "gloss": {
+        "en": "for, to",
+        "zh": "对……来说",
+        "zh_TW": "對……來說"
+      }
+    },
+    {
+      "id": "fw:to-tomo-ni",
+      "surface": "とともに",
+      "category": "particle-case",
+      "lemma": "とともに",
+      "forms": [],
+      "gloss": {
+        "en": "together with",
+        "zh": "与……一起",
+        "zh_TW": "與……一起"
+      }
+    },
+    {
+      "id": "fw:ni-saishite",
+      "surface": "に際して",
+      "category": "particle-case",
+      "lemma": "に際して",
+      "forms": [],
+      "gloss": {
+        "en": "on the occasion of",
+        "zh": "值此之际",
+        "zh_TW": "值此之際"
+      }
+    },
+    {
+      "id": "fw:ni-sakidatte",
+      "surface": "に先立って",
+      "category": "particle-case",
+      "lemma": "に先立って",
+      "forms": [],
+      "gloss": {
+        "en": "prior to",
+        "zh": "在……之前",
+        "zh_TW": "在……之前"
+      }
+    },
+    {
+      "id": "fw:wo-hajime",
+      "surface": "をはじめ",
+      "category": "particle-case",
+      "lemma": "をはじめ",
+      "forms": [],
+      "gloss": {
+        "en": "starting with",
+        "zh": "以……为首",
+        "zh_TW": "以……為首"
+      }
+    },
+    {
+      "id": "fw:wo-chuushin-ni",
+      "surface": "を中心に",
+      "category": "particle-case",
+      "lemma": "を中心に",
+      "forms": [],
+      "gloss": {
+        "en": "centring on",
+        "zh": "以……为中心",
+        "zh_TW": "以……為中心"
+      }
+    },
+    {
+      "id": "fw:ni-kuwaete",
+      "surface": "に加えて",
+      "category": "particle-case",
+      "lemma": "に加えて",
+      "forms": [],
+      "gloss": {
+        "en": "in addition to",
+        "zh": "加上",
+        "zh_TW": "加上"
+      }
+    },
+    {
+      "id": "fw:ni-hanshite",
+      "surface": "に反して",
+      "category": "particle-case",
+      "lemma": "に反して",
+      "forms": [],
+      "gloss": {
+        "en": "contrary to",
+        "zh": "与……相反",
+        "zh_TW": "與……相反"
+      }
+    },
+    {
+      "id": "fw:ni-kurabete",
+      "surface": "に比べて",
+      "category": "particle-case",
+      "lemma": "に比べて",
+      "forms": [],
+      "gloss": {
+        "en": "compared with",
+        "zh": "与……相比",
+        "zh_TW": "與……相比"
+      }
+    },
+    {
+      "id": "fw:ni-kawatte",
+      "surface": "に代わって",
+      "category": "particle-case",
+      "lemma": "に代わって",
+      "forms": [],
+      "gloss": {
+        "en": "on behalf of",
+        "zh": "代替",
+        "zh_TW": "代替"
+      }
+    },
+    {
+      "id": "fw:wo-kikkake-ni",
+      "surface": "をきっかけに",
+      "category": "particle-case",
+      "lemma": "をきっかけに",
+      "forms": [],
+      "gloss": {
+        "en": "prompted by",
+        "zh": "以……为契机",
+        "zh_TW": "以……為契機"
+      }
+    },
+    {
+      "id": "fw:wo-keiki-ni",
+      "surface": "を契機に",
+      "category": "particle-case",
+      "lemma": "を契機に",
+      "forms": [],
+      "gloss": {
+        "en": "prompted by",
+        "zh": "以……为契机",
+        "zh_TW": "以……為契機"
+      }
+    },
+    {
+      "id": "fw:ni-atatte",
+      "surface": "に当たって",
+      "category": "particle-case",
+      "lemma": "に当たって",
+      "forms": [],
+      "gloss": {
+        "en": "at the time of",
+        "zh": "在……之际",
+        "zh_TW": "在……之際"
+      }
+    },
+    {
+      "id": "fw:ni-atatte-kana",
+      "surface": "にあたって",
+      "category": "particle-case",
+      "lemma": "にあたって",
+      "forms": [],
+      "gloss": {
+        "en": "at the time of",
+        "zh": "在……之际",
+        "zh_TW": "在……之際"
+      }
+    },
+    {
+      "id": "fw:wo-komete",
+      "surface": "をこめて",
+      "category": "particle-case",
+      "lemma": "をこめて",
+      "forms": [],
+      "gloss": {
+        "en": "filled with",
+        "zh": "满怀",
+        "zh_TW": "滿懷"
+      }
+    },
+    {
+      "id": "fw:wo-komete-kanji",
+      "surface": "を込めて",
+      "category": "particle-case",
+      "lemma": "を込めて",
+      "forms": [],
+      "gloss": {
+        "en": "filled with",
+        "zh": "满怀",
+        "zh_TW": "滿懷"
+      }
+    },
+    {
+      "id": "fw:ni-watari",
+      "surface": "にわたり",
+      "category": "particle-case",
+      "lemma": "にわたり",
+      "forms": [],
+      "gloss": {
+        "en": "over, throughout",
+        "zh": "历经、遍及",
+        "zh_TW": "歷經、遍及"
+      }
+    },
+    {
+      "id": "fw:wo-towazu",
+      "surface": "を問わず",
+      "category": "particle-case",
+      "lemma": "を問わず",
+      "forms": [],
+      "gloss": {
+        "en": "regardless of",
+        "zh": "不问、无论",
+        "zh_TW": "不問、無論"
+      }
+    },
+    {
+      "id": "fw:wa-mochiron",
+      "surface": "はもちろん",
+      "category": "particle-case",
+      "lemma": "はもちろん",
+      "forms": [],
+      "gloss": {
+        "en": "not to mention",
+        "zh": "自不必说",
+        "zh_TW": "自不必說"
+      }
+    },
+    {
+      "id": "fw:wa-motoyori",
+      "surface": "はもとより",
+      "category": "particle-case",
+      "lemma": "はもとより",
+      "forms": [],
+      "gloss": {
+        "en": "not to mention",
+        "zh": "自不必说",
+        "zh_TW": "自不必說"
+      }
+    },
+    {
+      "id": "fw:nominarazu",
+      "surface": "のみならず",
+      "category": "particle-case",
+      "lemma": "のみならず",
+      "forms": [],
+      "gloss": {
+        "en": "not only",
+        "zh": "不仅",
+        "zh_TW": "不僅"
+      }
+    },
+    {
+      "id": "fw:bakari-ka2",
+      "surface": "ばかりか",
+      "category": "particle-case",
+      "lemma": "ばかりか",
+      "forms": [],
+      "gloss": {
+        "en": "not only",
+        "zh": "不仅",
+        "zh_TW": "不僅"
+      }
+    },
+    {
+      "id": "fw:dokoro-ka2",
+      "surface": "どころか",
+      "category": "particle-case",
+      "lemma": "どころか",
+      "forms": [],
+      "gloss": {
+        "en": "far from",
+        "zh": "岂止",
+        "zh_TW": "豈止"
+      }
+    },
+    {
+      "id": "fw:ni-chigainai",
+      "surface": "に違いない",
+      "category": "particle-case",
+      "lemma": "に違いない",
+      "forms": [],
+      "gloss": {
+        "en": "must be",
+        "zh": "一定是",
+        "zh_TW": "一定是"
+      }
+    },
+    {
+      "id": "fw:ni-kimatteiru",
+      "surface": "に決まっている",
+      "category": "particle-case",
+      "lemma": "に決まっている",
+      "forms": [],
+      "gloss": {
+        "en": "is certainly",
+        "zh": "肯定是",
+        "zh_TW": "肯定是"
+      }
+    },
+    {
+      "id": "fw:wake-ga-nai",
+      "surface": "わけがない",
+      "category": "particle-case",
+      "lemma": "わけがない",
+      "forms": [],
+      "gloss": {
+        "en": "there is no way",
+        "zh": "不可能",
+        "zh_TW": "不可能"
+      }
+    },
+    {
+      "id": "fw:wake-dewa-nai",
+      "surface": "わけではない",
+      "category": "particle-case",
+      "lemma": "わけではない",
+      "forms": [],
+      "gloss": {
+        "en": "it is not that",
+        "zh": "并不是",
+        "zh_TW": "並不是"
+      }
+    },
+    {
+      "id": "fw:wake-niwa-ikanai",
+      "surface": "わけにはいかない",
+      "category": "particle-case",
+      "lemma": "わけにはいかない",
+      "forms": [],
+      "gloss": {
+        "en": "cannot afford to",
+        "zh": "不能",
+        "zh_TW": "不能"
+      }
+    },
+    {
+      "id": "fw:to-iu-mono-da",
+      "surface": "というものだ",
+      "category": "particle-case",
+      "lemma": "というものだ",
+      "forms": [],
+      "gloss": {
+        "en": "that is what it is",
+        "zh": "就是……",
+        "zh_TW": "就是……"
+      }
+    },
+    {
+      "id": "fw:to-iu-yori",
+      "surface": "というより",
+      "category": "particle-case",
+      "lemma": "というより",
+      "forms": [],
+      "gloss": {
+        "en": "rather than",
+        "zh": "与其说",
+        "zh_TW": "與其說"
+      }
+    },
+    {
+      "id": "fw:to-ittemo",
+      "surface": "といっても",
+      "category": "particle-case",
+      "lemma": "といっても",
+      "forms": [],
+      "gloss": {
+        "en": "although you say",
+        "zh": "虽说",
+        "zh_TW": "雖說"
+      }
+    },
+    {
+      "id": "fw:to-wa-ie",
+      "surface": "とはいえ",
+      "category": "particle-case",
+      "lemma": "とはいえ",
+      "forms": [],
+      "gloss": {
+        "en": "even so",
+        "zh": "虽说如此",
+        "zh_TW": "雖說如此"
+      }
+    },
+    {
+      "id": "fw:monono",
+      "surface": "ものの",
+      "category": "particle-case",
+      "lemma": "ものの",
+      "forms": [],
+      "gloss": {
+        "en": "although",
+        "zh": "虽然",
+        "zh_TW": "雖然"
+      }
+    },
+    {
+      "id": "fw:nagara-mo2",
+      "surface": "ながらも",
+      "category": "particle-case",
+      "lemma": "ながらも",
+      "forms": [],
+      "gloss": {
+        "en": "although",
+        "zh": "虽然",
+        "zh_TW": "雖然"
+      }
+    },
+    {
+      "id": "fw:kara-koso",
+      "surface": "からこそ",
+      "category": "particle-case",
+      "lemma": "からこそ",
+      "forms": [],
+      "gloss": {
+        "en": "precisely because",
+        "zh": "正因为",
+        "zh_TW": "正因為"
+      }
+    },
+    {
+      "id": "fw:kara-niwa",
+      "surface": "からには",
+      "category": "particle-case",
+      "lemma": "からには",
+      "forms": [],
+      "gloss": {
+        "en": "now that",
+        "zh": "既然",
+        "zh_TW": "既然"
+      }
+    },
+    {
+      "id": "fw:dake-atte",
+      "surface": "だけあって",
+      "category": "particle-case",
+      "lemma": "だけあって",
+      "forms": [],
+      "gloss": {
+        "en": "as one would expect",
+        "zh": "不愧是",
+        "zh_TW": "不愧是"
+      }
+    },
+    {
+      "id": "fw:ni-suginai",
+      "surface": "に過ぎない",
+      "category": "particle-case",
+      "lemma": "に過ぎない",
+      "forms": [],
+      "gloss": {
+        "en": "no more than",
+        "zh": "只不过",
+        "zh_TW": "只不過"
+      }
+    },
+    {
+      "id": "fw:ni-suginai-kana",
+      "surface": "にすぎない",
+      "category": "particle-case",
+      "lemma": "にすぎない",
+      "forms": [],
+      "gloss": {
+        "en": "no more than",
+        "zh": "只不过",
+        "zh_TW": "只不過"
+      }
+    },
+    {
+      "id": "fw:yoginaku-sareru",
+      "surface": "を余儀なくされる",
+      "category": "particle-case",
+      "lemma": "を余儀なくされる",
+      "forms": [],
+      "gloss": {
+        "en": "be forced to",
+        "zh": "被迫",
+        "zh_TW": "被迫"
+      }
+    },
+    {
+      "id": "fw:zaru-wo-enai",
+      "surface": "ざるを得ない",
+      "category": "particle-case",
+      "lemma": "ざるを得ない",
+      "forms": [],
+      "gloss": {
+        "en": "cannot help but",
+        "zh": "不得不",
+        "zh_TW": "不得不"
+      }
+    },
+    {
+      "id": "fw:wo-kinjienai",
+      "surface": "を禁じ得ない",
+      "category": "particle-case",
+      "lemma": "を禁じ得ない",
+      "forms": [],
+      "gloss": {
+        "en": "cannot suppress",
+        "zh": "禁不住",
+        "zh_TW": "禁不住"
+      }
+    },
+    {
+      "id": "fw:ni-taru",
+      "surface": "に足る",
+      "category": "particle-case",
+      "lemma": "に足る",
+      "forms": [],
+      "gloss": {
+        "en": "worth",
+        "zh": "值得",
+        "zh_TW": "值得"
+      }
+    },
+    {
+      "id": "fw:ni-taenai",
+      "surface": "に堪えない",
+      "category": "particle-case",
+      "lemma": "に堪えない",
+      "forms": [],
+      "gloss": {
+        "en": "unbearable",
+        "zh": "不堪",
+        "zh_TW": "不堪"
+      }
+    },
+    {
+      "id": "fw:wo-kawakiri-ni",
+      "surface": "を皮切りに",
+      "category": "particle-case",
+      "lemma": "を皮切りに",
+      "forms": [],
+      "gloss": {
+        "en": "starting from",
+        "zh": "以……为开端",
+        "zh_TW": "以……為開端"
+      }
+    },
+    {
+      "id": "fw:wo-mono-tomo-sezu",
+      "surface": "をものともせず",
+      "category": "particle-case",
+      "lemma": "をものともせず",
+      "forms": [],
+      "gloss": {
+        "en": "undaunted by",
+        "zh": "不顾",
+        "zh_TW": "不顧"
+      }
+    },
+    {
+      "id": "fw:wo-yoso-ni",
+      "surface": "をよそに",
+      "category": "particle-case",
+      "lemma": "をよそに",
+      "forms": [],
+      "gloss": {
+        "en": "ignoring",
+        "zh": "不顾",
+        "zh_TW": "不顧"
+      }
+    },
+    {
+      "id": "fw:naradewa",
+      "surface": "ならでは",
+      "category": "particle-case",
+      "lemma": "ならでは",
+      "forms": [],
+      "gloss": {
+        "en": "unique to",
+        "zh": "独有的",
+        "zh_TW": "獨有的"
+      }
+    },
+    {
+      "id": "fw:ni-hikikae",
+      "surface": "にひきかえ",
+      "category": "particle-case",
+      "lemma": "にひきかえ",
+      "forms": [],
+      "gloss": {
+        "en": "in contrast to",
+        "zh": "与之相反",
+        "zh_TW": "與之相反"
+      }
+    },
+    {
+      "id": "fw:nimo-mashite",
+      "surface": "にもまして",
+      "category": "particle-case",
+      "lemma": "にもまして",
+      "forms": [],
+      "gloss": {
+        "en": "more than",
+        "zh": "更胜于",
+        "zh_TW": "更勝於"
+      }
+    },
+    {
+      "id": "fw:to-aimatte",
+      "surface": "と相まって",
+      "category": "particle-case",
+      "lemma": "と相まって",
+      "forms": [],
+      "gloss": {
+        "en": "coupled with",
+        "zh": "与……相结合",
+        "zh_TW": "與……相結合"
+      }
+    },
+    {
+      "id": "fw:buri",
+      "surface": "ぶり",
+      "category": "formal-noun",
+      "lemma": "ぶり",
+      "forms": [],
+      "gloss": {
+        "en": "after an interval of",
+        "zh": "时隔",
+        "zh_TW": "時隔"
+      }
+    },
+    {
+      "id": "fw:buri-ni",
+      "surface": "ぶりに",
+      "category": "formal-noun",
+      "lemma": "ぶりに",
+      "forms": [],
+      "gloss": {
+        "en": "after an interval of",
+        "zh": "时隔",
+        "zh_TW": "時隔"
+      }
+    },
+    {
+      "id": "fw:buri-no",
+      "surface": "ぶりの",
+      "category": "formal-noun",
+      "lemma": "ぶりの",
+      "forms": [],
+      "gloss": {
+        "en": "after an interval of",
+        "zh": "时隔",
+        "zh_TW": "時隔"
+      }
+    },
+    {
+      "id": "fw:ppanashi",
+      "surface": "っぱなし",
+      "category": "auxiliary",
+      "lemma": "っぱなし",
+      "needs": "masuStem",
+      "forms": [],
+      "gloss": {
+        "en": "left as it is",
+        "zh": "一直……着",
+        "zh_TW": "一直……著"
+      }
+    },
+    {
+      "id": "fw:ppanashi-ni",
+      "surface": "っぱなしに",
+      "category": "auxiliary",
+      "lemma": "っぱなしに",
+      "needs": "masuStem",
+      "forms": [],
+      "gloss": {
+        "en": "left as it is",
+        "zh": "一直……着",
+        "zh_TW": "一直……著"
+      }
+    },
+    {
+      "id": "fw:ageku",
+      "surface": "あげく",
+      "category": "formal-noun",
+      "lemma": "あげく",
+      "forms": [],
+      "gloss": {
+        "en": "after all that",
+        "zh": "结果、到头来",
+        "zh_TW": "結果、到頭來"
+      }
+    },
+    {
+      "id": "fw:ageku-ni",
+      "surface": "あげくに",
+      "category": "formal-noun",
+      "lemma": "あげくに",
+      "forms": [],
+      "gloss": {
+        "en": "after all that",
+        "zh": "结果、到头来",
+        "zh_TW": "結果、到頭來"
+      }
+    },
+    {
+      "id": "fw:sue-ni",
+      "surface": "末に",
+      "category": "formal-noun",
+      "lemma": "末に",
+      "forms": [],
+      "gloss": {
+        "en": "after, in the end",
+        "zh": "经过……之后",
+        "zh_TW": "經過……之後"
+      }
+    },
+    {
+      "id": "fw:sura",
+      "surface": "すら",
+      "category": "particle-binding",
+      "lemma": "すら",
+      "forms": [],
+      "gloss": {
+        "en": "even",
+        "zh": "连……都",
+        "zh_TW": "連……都"
+      }
+    },
+    {
+      "id": "fw:dani",
+      "surface": "だに",
+      "category": "particle-binding",
+      "lemma": "だに",
+      "forms": [],
+      "gloss": {
+        "en": "even",
+        "zh": "连……都",
+        "zh_TW": "連……都"
+      }
+    },
+    {
+      "id": "fw:beku",
+      "surface": "べく",
+      "category": "formal-noun",
+      "lemma": "べく",
+      "forms": [],
+      "gloss": {
+        "en": "in order to",
+        "zh": "为了",
+        "zh_TW": "為了"
+      }
+    },
+    {
+      "id": "fw:bekarazu",
+      "surface": "べからず",
+      "category": "formal-noun",
+      "lemma": "べからず",
+      "forms": [],
+      "gloss": {
+        "en": "must not",
+        "zh": "不得",
+        "zh_TW": "不得"
+      }
+    },
+    {
+      "id": "fw:mai",
+      "surface": "まい",
+      "category": "auxiliary",
+      "lemma": "まい",
+      "needs": "dictionary",
+      "forms": [],
+      "gloss": {
+        "en": "will not, surely not",
+        "zh": "不会、不打算",
+        "zh_TW": "不會、不打算"
+      }
+    },
+    {
+      "id": "fw:tsutsu",
+      "surface": "つつ",
+      "category": "particle-conjunctive",
+      "lemma": "つつ",
+      "needs": "masuStem",
+      "forms": [],
+      "gloss": {
+        "en": "while",
+        "zh": "一边……一边",
+        "zh_TW": "一邊……一邊"
+      }
+    },
+    {
+      "id": "fw:tsutsu-aru",
+      "surface": "つつある",
+      "category": "auxiliary",
+      "lemma": "つつある",
+      "needs": "masuStem",
+      "forms": [],
+      "gloss": {
+        "en": "in the process of",
+        "zh": "正在……中",
+        "zh_TW": "正在……中"
+      }
+    },
+    {
+      "id": "fw:gatai",
+      "surface": "がたい",
+      "category": "auxiliary",
+      "lemma": "がたい",
+      "needs": "masuStem",
+      "forms": [],
+      "gloss": {
+        "en": "hard to",
+        "zh": "难以",
+        "zh_TW": "難以"
+      }
+    },
+    {
+      "id": "fw:kaneru",
+      "surface": "かねる",
+      "category": "auxiliary",
+      "lemma": "かねる",
+      "needs": "masuStem",
+      "forms": [],
+      "gloss": {
+        "en": "cannot bring oneself to",
+        "zh": "难以",
+        "zh_TW": "難以"
+      }
+    },
+    {
+      "id": "fw:kanenai",
+      "surface": "かねない",
+      "category": "auxiliary",
+      "lemma": "かねない",
+      "needs": "masuStem",
+      "forms": [],
+      "gloss": {
+        "en": "might well",
+        "zh": "有可能",
+        "zh_TW": "有可能"
+      }
+    },
+    {
+      "id": "fw:uru",
+      "surface": "得る",
+      "category": "auxiliary",
+      "lemma": "得る",
+      "needs": "masuStem",
+      "forms": [],
+      "gloss": {
+        "en": "can, may",
+        "zh": "可能",
+        "zh_TW": "可能"
+      }
+    },
+    {
+      "id": "fw:enai",
+      "surface": "得ない",
+      "category": "auxiliary",
+      "lemma": "得ない",
+      "needs": "masuStem",
+      "forms": [],
+      "gloss": {
+        "en": "cannot",
+        "zh": "不可能",
+        "zh_TW": "不可能"
+      }
+    },
+    {
+      "id": "fw:kiri",
+      "surface": "きり",
+      "category": "formal-noun",
+      "lemma": "きり",
+      "forms": [],
+      "gloss": {
+        "en": "only, since",
+        "zh": "只、自从",
+        "zh_TW": "只、自從"
+      }
+    },
+    {
+      "id": "fw:zukume",
+      "surface": "ずくめ",
+      "category": "formal-noun",
+      "lemma": "ずくめ",
+      "forms": [],
+      "gloss": {
+        "en": "entirely",
+        "zh": "清一色",
+        "zh_TW": "清一色"
+      }
+    },
+    {
+      "id": "fw:mamire",
+      "surface": "まみれ",
+      "category": "formal-noun",
+      "lemma": "まみれ",
+      "forms": [],
+      "gloss": {
+        "en": "covered in",
+        "zh": "沾满",
+        "zh_TW": "沾滿"
+      }
+    },
+    {
+      "id": "fw:gimi",
+      "surface": "気味",
+      "category": "formal-noun",
+      "lemma": "気味",
+      "forms": [],
+      "gloss": {
+        "en": "a touch of",
+        "zh": "有点",
+        "zh_TW": "有點"
+      }
+    },
+    {
+      "id": "fw:muke",
+      "surface": "向け",
+      "category": "formal-noun",
+      "lemma": "向け",
+      "forms": [],
+      "gloss": {
+        "en": "aimed at",
+        "zh": "面向",
+        "zh_TW": "面向"
+      }
+    },
+    {
+      "id": "fw:muki",
+      "surface": "向き",
+      "category": "formal-noun",
+      "lemma": "向き",
+      "forms": [],
+      "gloss": {
+        "en": "suited to",
+        "zh": "适合",
+        "zh_TW": "適合"
+      }
+    },
+    {
+      "id": "fw:nuki-de",
+      "surface": "ぬきで",
+      "category": "formal-noun",
+      "lemma": "ぬきで",
+      "forms": [],
+      "gloss": {
+        "en": "without",
+        "zh": "不要、去掉",
+        "zh_TW": "不要、去掉"
+      }
+    },
+    {
+      "id": "fw:mono-ga-aru",
+      "surface": "ものがある",
+      "category": "formal-noun",
+      "lemma": "ものがある",
+      "forms": [],
+      "gloss": {
+        "en": "there is something",
+        "zh": "有一种……",
+        "zh_TW": "有一種……"
+      }
+    },
+    {
+      "id": "fw:koto-ka",
+      "surface": "ことか",
+      "category": "formal-noun",
+      "lemma": "ことか",
+      "forms": [],
+      "gloss": {
+        "en": "how very",
+        "zh": "多么",
+        "zh_TW": "多麼"
+      }
+    },
+    {
+      "id": "fw:hoka-nai",
+      "surface": "ほかない",
+      "category": "formal-noun",
+      "lemma": "ほかない",
+      "forms": [],
+      "gloss": {
+        "en": "have no choice but",
+        "zh": "只好",
+        "zh_TW": "只好"
+      }
+    },
+    {
+      "id": "fw:yori-hoka-nai",
+      "surface": "よりほかない",
+      "category": "formal-noun",
+      "lemma": "よりほかない",
+      "forms": [],
+      "gloss": {
+        "en": "have no choice but",
+        "zh": "只好",
+        "zh_TW": "只好"
+      }
+    },
+    {
+      "id": "fw:kkonai",
+      "surface": "っこない",
+      "category": "auxiliary",
+      "lemma": "っこない",
+      "needs": "masuStem",
+      "forms": [],
+      "gloss": {
+        "en": "there is no way it will",
+        "zh": "不可能",
+        "zh_TW": "不可能"
+      }
+    },
+    {
+      "id": "fw:kkoarimasen",
+      "surface": "っこありません",
+      "category": "auxiliary",
+      "lemma": "っこありません",
+      "needs": "masuStem",
+      "forms": [],
+      "gloss": {
+        "en": "there is no way it will",
+        "zh": "不可能",
+        "zh_TW": "不可能"
+      }
+    },
+    {
+      "id": "fw:nu-neg",
+      "surface": "ぬ",
+      "category": "auxiliary",
+      "lemma": "ぬ",
+      "needs": "naiStem",
+      "forms": [],
+      "gloss": {
+        "en": "not (literary)",
+        "zh": "不（文言）",
+        "zh_TW": "不（文言）"
+      }
+    },
+    {
+      "id": "fw:nu-neg-n",
+      "surface": "ん",
+      "category": "auxiliary",
+      "lemma": "ん",
+      "needs": "naiStem",
+      "forms": [],
+      "gloss": {
+        "en": "not (literary)",
+        "zh": "不（文言）",
+        "zh_TW": "不（文言）"
+      }
+    },
+    {
+      "id": "fw:zaru",
+      "surface": "ざる",
+      "category": "auxiliary",
+      "lemma": "ざる",
+      "needs": "naiStem",
+      "forms": [],
+      "gloss": {
+        "en": "not (literary)",
+        "zh": "不……的",
+        "zh_TW": "不……的"
+      }
+    },
+    {
+      "id": "fw:zaru-wo",
+      "surface": "ざるを",
+      "category": "auxiliary",
+      "lemma": "ざるを",
+      "needs": "naiStem",
+      "forms": [],
+      "gloss": {
+        "en": "not (literary)",
+        "zh": "不……的",
+        "zh_TW": "不……的"
+      }
+    },
+    {
+      "id": "fw:bekarazaru",
+      "surface": "べからざる",
+      "category": "formal-noun",
+      "lemma": "べからざる",
+      "forms": [],
+      "gloss": {
+        "en": "must not",
+        "zh": "不可……的",
+        "zh_TW": "不可……的"
+      }
+    },
+    {
+      "id": "fw:n-to-suru",
+      "surface": "んとする",
+      "category": "formal-noun",
+      "lemma": "んとする",
+      "forms": [],
+      "gloss": {
+        "en": "about to",
+        "zh": "正要",
+        "zh_TW": "正要"
+      }
+    },
+    {
+      "id": "fw:n-to-shita",
+      "surface": "んとした",
+      "category": "formal-noun",
+      "lemma": "んとした",
+      "forms": [],
+      "gloss": {
+        "en": "about to",
+        "zh": "正要",
+        "zh_TW": "正要"
+      }
+    },
+    {
+      "id": "fw:n-bakari",
+      "surface": "んばかり",
+      "category": "auxiliary",
+      "lemma": "んばかり",
+      "needs": "naiStem",
+      "forms": [],
+      "gloss": {
+        "en": "as if about to",
+        "zh": "几乎要",
+        "zh_TW": "幾乎要"
+      }
+    },
+    {
+      "id": "fw:n-bakari-ni",
+      "surface": "んばかりに",
+      "category": "auxiliary",
+      "lemma": "んばかりに",
+      "needs": "naiStem",
+      "forms": [],
+      "gloss": {
+        "en": "as if about to",
+        "zh": "几乎要",
+        "zh_TW": "幾乎要"
+      }
+    },
+    {
+      "id": "fw:n-bakari-no",
+      "surface": "んばかりの",
+      "category": "auxiliary",
+      "lemma": "んばかりの",
+      "needs": "naiStem",
+      "forms": [],
+      "gloss": {
+        "en": "as if about to",
+        "zh": "几乎要",
+        "zh_TW": "幾乎要"
+      }
+    },
+    {
+      "id": "fw:tsu-paired",
+      "surface": "つ",
+      "category": "auxiliary",
+      "lemma": "つ",
+      "needs": "masuStem",
+      "forms": [],
+      "gloss": {
+        "en": "now this, now that",
+        "zh": "时而",
+        "zh_TW": "時而"
+      }
+    },
+    {
+      "id": "fw:sube",
+      "surface": "すべ",
+      "category": "formal-noun",
+      "lemma": "すべ",
+      "forms": [],
+      "gloss": {
+        "en": "a way, a means",
+        "zh": "办法",
+        "zh_TW": "辦法"
+      }
+    },
+    {
+      "id": "fw:ya-inaya",
+      "surface": "や否や",
+      "category": "particle-conjunctive",
+      "lemma": "や否や",
+      "forms": [],
+      "gloss": {
+        "en": "as soon as",
+        "zh": "刚一……就",
+        "zh_TW": "剛一……就"
+      }
+    },
+    {
+      "id": "fw:kototote",
+      "surface": "こととて",
+      "category": "particle-conjunctive",
+      "lemma": "こととて",
+      "forms": [],
+      "gloss": {
+        "en": "since, as",
+        "zh": "因为",
+        "zh_TW": "因為"
+      }
+    },
+    {
+      "id": "fw:ni-sokushite",
+      "surface": "に即して",
+      "category": "particle-case",
+      "lemma": "に即して",
+      "forms": [],
+      "gloss": {
+        "en": "in accordance with",
+        "zh": "按照",
+        "zh_TW": "按照"
+      }
+    },
+    {
+      "id": "fw:ni-sokushita",
+      "surface": "に即した",
+      "category": "particle-case",
+      "lemma": "に即した",
+      "forms": [],
+      "gloss": {
+        "en": "in accordance with",
+        "zh": "按照",
+        "zh_TW": "按照"
+      }
+    },
+    {
+      "id": "fw:ni-taeru",
+      "surface": "に堪える",
+      "category": "particle-case",
+      "lemma": "に堪える",
+      "forms": [],
+      "gloss": {
+        "en": "worth doing",
+        "zh": "值得",
+        "zh_TW": "值得"
+      }
+    },
+    {
+      "id": "fw:ni-itaru-made",
+      "surface": "に至るまで",
+      "category": "particle-case",
+      "lemma": "に至るまで",
+      "forms": [],
+      "gloss": {
+        "en": "all the way to",
+        "zh": "直到",
+        "zh_TW": "直到"
+      }
+    },
+    {
+      "id": "fw:kiwamarinai",
+      "surface": "極まりない",
+      "category": "formal-noun",
+      "lemma": "極まりない",
+      "forms": [],
+      "gloss": {
+        "en": "utterly, in the extreme",
+        "zh": "极其",
+        "zh_TW": "極其"
+      }
+    },
+    {
+      "id": "fw:kiwamaru",
+      "surface": "極まる",
+      "category": "formal-noun",
+      "lemma": "極まる",
+      "forms": [],
+      "gloss": {
+        "en": "utterly, in the extreme",
+        "zh": "极其",
+        "zh_TW": "極其"
+      }
+    },
+    {
+      "id": "fw:kiwami",
+      "surface": "極み",
+      "category": "formal-noun",
+      "lemma": "極み",
+      "forms": [],
+      "gloss": {
+        "en": "the height of",
+        "zh": "……的极致",
+        "zh_TW": "……的極致"
+      }
+    },
+    {
+      "id": "fw:itari",
+      "surface": "至り",
+      "category": "formal-noun",
+      "lemma": "至り",
+      "forms": [],
+      "gloss": {
+        "en": "the height of",
+        "zh": "……之至",
+        "zh_TW": "……之至"
+      }
+    },
+    {
+      "id": "fw:douzen",
+      "surface": "同然",
+      "category": "formal-noun",
+      "lemma": "同然",
+      "forms": [],
+      "gloss": {
+        "en": "as good as",
+        "zh": "如同",
+        "zh_TW": "如同"
+      }
+    },
+    {
+      "id": "fw:sekinoyama",
+      "surface": "関の山",
+      "category": "formal-noun",
+      "lemma": "関の山",
+      "forms": [],
+      "gloss": {
+        "en": "the most one can do",
+        "zh": "顶多",
+        "zh_TW": "頂多"
+      }
+    },
+    {
+      "id": "fw:gurumi",
+      "surface": "ぐるみ",
+      "category": "formal-noun",
+      "lemma": "ぐるみ",
+      "forms": [],
+      "gloss": {
+        "en": "the whole of",
+        "zh": "全体",
+        "zh_TW": "全體"
+      }
+    },
+    {
+      "id": "fw:zanmai",
+      "surface": "三昧",
+      "category": "formal-noun",
+      "lemma": "三昧",
+      "forms": [],
+      "gloss": {
+        "en": "absorbed in",
+        "zh": "沉溺于",
+        "zh_TW": "沉溺於"
+      }
+    },
+    {
+      "id": "fw:yara",
+      "surface": "やら",
+      "category": "particle-binding",
+      "lemma": "やら",
+      "forms": [],
+      "gloss": {
+        "en": "what with, and",
+        "zh": "又……又",
+        "zh_TW": "又……又"
+      }
+    },
+    {
+      "id": "fw:yoginaku-sareta",
+      "surface": "を余儀なくされた",
+      "category": "particle-case",
+      "lemma": "を余儀なくされた",
+      "forms": [],
+      "gloss": {
+        "en": "be forced to",
+        "zh": "被迫",
+        "zh_TW": "被迫"
+      }
+    },
+    {
+      "id": "fw:yoginaku-saseru",
+      "surface": "を余儀なくさせる",
+      "category": "particle-case",
+      "lemma": "を余儀なくさせる",
+      "forms": [],
+      "gloss": {
+        "en": "be forced to",
+        "zh": "被迫",
+        "zh_TW": "被迫"
+      }
     }
   ],
   "sets": {

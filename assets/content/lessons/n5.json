@@ -306,6 +306,92 @@
         "en": "Write two sentences introducing yourself: say your name and what you do.",
         "zh": "写两句自我介绍：说出你的名字和你的身份。",
         "zh_TW": "寫兩句自我介紹：說出你的名字和你的身份。"
+      },
+      "scenario": {
+        "title": {
+          "en": "First day of class",
+          "zh": "开学第一天",
+          "zh_TW": "開學第一天"
+        },
+        "dialogue": [
+          {
+            "speaker": "A",
+            "ja": "あなたは大学の学生ですか。",
+            "reading": "あなたはだいがくのがくせいですか。",
+            "en": "Are you a university student?",
+            "zh": "你是大学生吗？",
+            "zh_TW": "你是大學生嗎？"
+          },
+          {
+            "speaker": "B",
+            "ja": "はい、そうです。私は留学生です。",
+            "reading": "はい、そうです。わたしはりゅうがくせいです。",
+            "en": "Yes, that's right. I am an exchange student.",
+            "zh": "是的。我是留学生。",
+            "zh_TW": "是的。我是留學生。"
+          },
+          {
+            "speaker": "A",
+            "ja": "こちらは私の友達です。",
+            "reading": "こちらはわたしのともだちです。",
+            "en": "This is my friend.",
+            "zh": "这位是我的朋友。",
+            "zh_TW": "這位是我的朋友。"
+          },
+          {
+            "speaker": "B",
+            "ja": "その人も学生ですか。",
+            "reading": "そのひともがくせいですか。",
+            "en": "Is that person a student too?",
+            "zh": "那个人也是学生吗？",
+            "zh_TW": "那個人也是學生嗎？"
+          },
+          {
+            "speaker": "A",
+            "ja": "はい、そうです。彼も留学生ですよ。",
+            "reading": "はい、そうです。かれもりゅうがくせいですよ。",
+            "en": "Yes, that's right. He is an exchange student too.",
+            "zh": "是的。他也是留学生哦。",
+            "zh_TW": "是的。他也是留學生哦。"
+          },
+          {
+            "speaker": "B",
+            "ja": "そうですか。よろしくお願いします。",
+            "reading": "そうですか。よろしくおねがいします。",
+            "en": "I see. Nice to meet you.",
+            "zh": "是这样啊。请多关照。",
+            "zh_TW": "是這樣啊。請多關照。"
+          }
+        ],
+        "branches": [
+          {
+            "after": 4,
+            "choices": [
+              {
+                "ja": "はい、そうです。",
+                "reading": "はい、そうです。",
+                "en": "Yes, that's right.",
+                "zh": "是的。",
+                "zh_TW": "是的。",
+                "correct": true
+              },
+              {
+                "ja": "いいえ、先生です。",
+                "reading": "いいえ、せんせいです。",
+                "en": "No, they are a teacher.",
+                "zh": "不，是老师。",
+                "zh_TW": "不，是老師。"
+              },
+              {
+                "ja": "私の名前ですか。",
+                "reading": "わたしのなまえですか。",
+                "en": "Is it my name?",
+                "zh": "是我的名字吗？",
+                "zh_TW": "是我的名字嗎？"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -615,6 +701,119 @@
         "en": "Write three sentences about your day: where you go, how you get there, and what you do there.",
         "zh": "写三句关于你一天的事：去哪里、怎么去、在那里做什么。",
         "zh_TW": "寫三句關於你一天的事：去哪裡、怎麼去、在那裡做什麼。"
+      },
+      "scenario": {
+        "title": {
+          "en": "Going to the library",
+          "zh": "去图书馆",
+          "zh_TW": "去圖書館"
+        },
+        "dialogue": [
+          {
+            "speaker": "A",
+            "ja": "今日はどこへ行きますか。",
+            "reading": "きょうはどこへいきますか。",
+            "en": "Where are you going today?",
+            "zh": "你今天要去哪里？",
+            "zh_TW": "你今天要去哪裡？"
+          },
+          {
+            "speaker": "B",
+            "ja": "図書館へ行きます。本を読みます。",
+            "reading": "としょかんへいきます。ほんをよみます。",
+            "en": "I am going to the library. I will read a book.",
+            "zh": "我要去图书馆。我要看书。",
+            "zh_TW": "我要去圖書館。我要看書。"
+          },
+          {
+            "speaker": "A",
+            "ja": "電車で行きますか。",
+            "reading": "でんしゃでいきますか。",
+            "en": "Are you going by train?",
+            "zh": "你坐电车去吗？",
+            "zh_TW": "你坐電車去嗎？"
+          },
+          {
+            "speaker": "B",
+            "ja": "はい、電車で行きます。",
+            "reading": "はい、でんしゃでいきます。",
+            "en": "Yes, I go by train.",
+            "zh": "是的，我坐电车去。",
+            "zh_TW": "是的，我坐電車去。"
+          },
+          {
+            "speaker": "A",
+            "ja": "友達と一緒に行きますか。",
+            "reading": "ともだちといっしょにいきますか。",
+            "en": "Are you going together with a friend?",
+            "zh": "你和朋友一起去吗？",
+            "zh_TW": "你和朋友一起去嗎？"
+          },
+          {
+            "speaker": "B",
+            "ja": "いいえ、一人で行きます。",
+            "reading": "いいえ、ひとりでいきます。",
+            "en": "No, I go alone.",
+            "zh": "不，我一个人去。",
+            "zh_TW": "不，我一個人去。"
+          }
+        ],
+        "branches": [
+          {
+            "after": 2,
+            "choices": [
+              {
+                "ja": "電車で行きます。",
+                "reading": "でんしゃでいきます。",
+                "en": "I go by train.",
+                "zh": "我坐电车去。",
+                "zh_TW": "我坐電車去。",
+                "correct": true
+              },
+              {
+                "ja": "電車を行きます。",
+                "reading": "でんしゃをいきます。",
+                "en": "I go train.",
+                "zh": "我去电车。",
+                "zh_TW": "我去電車。"
+              },
+              {
+                "ja": "電車に読みます。",
+                "reading": "でんしゃによみます。",
+                "en": "I read at train.",
+                "zh": "我在电车读。",
+                "zh_TW": "我在電車讀。"
+              }
+            ]
+          },
+          {
+            "after": 5,
+            "choices": [
+              {
+                "ja": "いいえ、一人で行きます。",
+                "reading": "いいえ、ひとりでいきます。",
+                "en": "No, I go alone.",
+                "zh": "不，我一个人去。",
+                "zh_TW": "不，我一個人去。",
+                "correct": true
+              },
+              {
+                "ja": "はい、図書館は静かです。",
+                "reading": "はい、としょかんはしずかです。",
+                "en": "Yes, the library is quiet.",
+                "zh": "是的，图书馆很安静。",
+                "zh_TW": "是的，圖書館很安靜。"
+              },
+              {
+                "ja": "いいえ、電車で読みます。",
+                "reading": "いいえ、でんしゃでよみます。",
+                "en": "No, I read by train.",
+                "zh": "不，我用电车读。",
+                "zh_TW": "不，我用電車讀。"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -922,6 +1121,92 @@
         "en": "Describe your room: name three things in it and say where they are.",
         "zh": "描述你的房间：说出里面的三样东西以及它们的位置。",
         "zh_TW": "描述你的房間：說出裡面的三樣東西以及它們的位置。"
+      },
+      "scenario": {
+        "title": {
+          "en": "In the classroom",
+          "zh": "在教室里",
+          "zh_TW": "在教室裡"
+        },
+        "dialogue": [
+          {
+            "speaker": "A",
+            "ja": "机の上に何がありますか。",
+            "reading": "つくえのうえになにがありますか。",
+            "en": "What is on the desk?",
+            "zh": "桌子上有什么？",
+            "zh_TW": "桌子上有什麼？"
+          },
+          {
+            "speaker": "B",
+            "ja": "机の上に本やかばんがあります。",
+            "reading": "つくえのうえにほんやかばんがあります。",
+            "en": "There are books and bags, among other things, on the desk.",
+            "zh": "桌子上有书和包等等。",
+            "zh_TW": "桌子上有書和包等等。"
+          },
+          {
+            "speaker": "A",
+            "ja": "これはあなたの本ですか。",
+            "reading": "これはあなたのほんですか。",
+            "en": "Is this your book?",
+            "zh": "这是你的书吗？",
+            "zh_TW": "這是你的書嗎？"
+          },
+          {
+            "speaker": "B",
+            "ja": "はい、その本は私のです。",
+            "reading": "はい、そのほんはわたしのです。",
+            "en": "Yes, that book is mine.",
+            "zh": "是的，那本书是我的。",
+            "zh_TW": "是的，那本書是我的。"
+          },
+          {
+            "speaker": "A",
+            "ja": "教室に学生がいますか。",
+            "reading": "きょうしつにがくせいがいますか。",
+            "en": "Are there students in the classroom?",
+            "zh": "教室里有学生吗？",
+            "zh_TW": "教室裡有學生嗎？"
+          },
+          {
+            "speaker": "B",
+            "ja": "はい、教室に学生が二人います。",
+            "reading": "はい、きょうしつにがくせいがふたりいます。",
+            "en": "Yes, there are two students in the classroom.",
+            "zh": "是的，教室里有两个学生。",
+            "zh_TW": "是的，教室裡有兩個學生。"
+          }
+        ],
+        "branches": [
+          {
+            "after": 1,
+            "choices": [
+              {
+                "ja": "机の上に本やかばんがあります。",
+                "reading": "つくえのうえにほんやかばんがあります。",
+                "en": "There are books and bags, among other things, on the desk.",
+                "zh": "桌子上有书和包等等。",
+                "zh_TW": "桌子上有書和包等等。",
+                "correct": true
+              },
+              {
+                "ja": "机の上に本やかばんがいます。",
+                "reading": "つくえのうえにほんやかばんがいます。",
+                "en": "There is books and bags (living).",
+                "zh": "桌子上活着书和包。",
+                "zh_TW": "桌子上活著書和包。"
+              },
+              {
+                "ja": "机の上に本だけいます。",
+                "reading": "つくえのうえにほんだけいます。",
+                "en": "Only a book lives on the desk.",
+                "zh": "只有书活在桌子上。",
+                "zh_TW": "只有書活在桌子上。"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -1209,6 +1494,119 @@
         "en": "Describe your town in three sentences, using one i-adjective and one na-adjective.",
         "zh": "用三句话描述你所在的城镇，其中要用到一个い形容词和一个形容动词。",
         "zh_TW": "用三句話描述你所在的城鎮，其中要用到一個い形容詞和一個形容動詞。"
+      },
+      "scenario": {
+        "title": {
+          "en": "Choosing a room",
+          "zh": "选房间",
+          "zh_TW": "選房間"
+        },
+        "dialogue": [
+          {
+            "speaker": "A",
+            "ja": "この部屋はどうですか。",
+            "reading": "このへやはどうですか。",
+            "en": "How is this room?",
+            "zh": "这个房间怎么样？",
+            "zh_TW": "這個房間怎麼樣？"
+          },
+          {
+            "speaker": "B",
+            "ja": "この部屋は広くて明るいです。",
+            "reading": "このへやはひろくてあかるいです。",
+            "en": "This room is spacious and bright.",
+            "zh": "这个房间又宽敞又明亮。",
+            "zh_TW": "這個房間又寬敞又明亮。"
+          },
+          {
+            "speaker": "A",
+            "ja": "この町はどんな町ですか。",
+            "reading": "このまちはどんなまちですか。",
+            "en": "What kind of town is this?",
+            "zh": "这是个什么样的城镇？",
+            "zh_TW": "這是個什麼樣的城鎮？"
+          },
+          {
+            "speaker": "B",
+            "ja": "この町は静かで便利です。",
+            "reading": "このまちはしずかでべんりです。",
+            "en": "This town is quiet and convenient.",
+            "zh": "这个城镇又安静又方便。",
+            "zh_TW": "這個城鎮又安靜又方便。"
+          },
+          {
+            "speaker": "A",
+            "ja": "家賃はあまり高くないですか。",
+            "reading": "やちんはあまりたかくないですか。",
+            "en": "Isn't the rent very high?",
+            "zh": "房租不太贵吗？",
+            "zh_TW": "房租不太貴嗎？"
+          },
+          {
+            "speaker": "B",
+            "ja": "はい、あまり高くないです。とても安いです。",
+            "reading": "はい、あまりたかくないです。とてもやすいです。",
+            "en": "Yes, it is not very expensive. It is very cheap.",
+            "zh": "是的，不太贵，非常便宜。",
+            "zh_TW": "是的，不太貴，非常便宜。"
+          }
+        ],
+        "branches": [
+          {
+            "after": 2,
+            "choices": [
+              {
+                "ja": "この部屋は広くて明るいです。",
+                "reading": "このへやはひろくてあかるいです。",
+                "en": "This room is spacious and bright.",
+                "zh": "这个房间又宽敞又明亮。",
+                "zh_TW": "這個房間又寬敞又明亮。",
+                "correct": true
+              },
+              {
+                "ja": "この部屋は広いで明るいです。",
+                "reading": "このへやはひろいであかるいです。",
+                "en": "This room spacious-de bright (wrong form).",
+                "zh": "这个房间宽敞（错误接续）又明亮。",
+                "zh_TW": "這個房間寬敞（錯誤接續）又明亮。"
+              },
+              {
+                "ja": "この部屋は広いくて狭いです。",
+                "reading": "このへやはひろいくてせまいです。",
+                "en": "This room is spacious-wrong-form and narrow.",
+                "zh": "这个房间宽敞（错误）又窄。",
+                "zh_TW": "這個房間寬敞（錯誤）又窄。"
+              }
+            ]
+          },
+          {
+            "after": 5,
+            "choices": [
+              {
+                "ja": "はい、あまり高くないです。",
+                "reading": "はい、あまりたかくないです。",
+                "en": "Yes, it is not very expensive.",
+                "zh": "是的，不太贵。",
+                "zh_TW": "是的，不太貴。",
+                "correct": true
+              },
+              {
+                "ja": "はい、あまり高いです。",
+                "reading": "はい、あまりたかいです。",
+                "en": "Yes, it is very expensive.",
+                "zh": "是的，非常贵。",
+                "zh_TW": "是的，非常貴。"
+              },
+              {
+                "ja": "いいえ、とても高くないです。",
+                "reading": "いいえ、とてもたかくないです。",
+                "en": "No, it is not very expensive (wrong marker).",
+                "zh": "不，不太贵（用词错误）。",
+                "zh_TW": "不，不太貴（用詞錯誤）。"
+              }
+            ]
+          }
+        ]
       }
     },
     {

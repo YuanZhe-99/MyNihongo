@@ -629,19 +629,7 @@ first and being honest about what it can and cannot prove.
       microphone when Settings opened. `SCHEDULE_EXACT_ALARM` is deliberately
       not requested. Written up in `features/reminders.md`
 
-#### M3.6 AICore-assisted practice — **partly done 2026-09-04**
-
-- [ ] Content: `assets/content/lessons/<level>.json` — units → lessons → ordered exercise
-      templates referencing catalog ids; a lesson introduces ≤ 8 new items and mixes in due reviews
-- [ ] Progression: a lesson unlocks when the previous one is passed; a unit checkpoint quiz;
-      review lessons appear when the queue is large
-- [ ] Learn tab becomes the path: today's lesson, due reviews, streak, level progress; the current
-      dashboard cards move below the fold
-- [ ] Scenario lessons ("at the station", "ordering food") built from catalog items plus short
-      dialogues with TTS; each dialogue line is a `ContentExample` with a speaker
-- [ ] Notifications (optional, local only): daily reminder at a chosen time, like MyAnime's
-      reminders; off by default
-
+#### M3.6 AICore-assisted practice — **done 2026-09-04**
 
 Same policy as the Phase 2 enhancement: Android AICore / Gemini Nano through ML Kit GenAI, on-device
 only, off by default behind one switch shared with Phase 2, a capability check on every use, and a
@@ -670,25 +658,64 @@ catalog content, and never writes a progress record by itself — the learner's 
       three languages like the sentence lab's, output length limits, fixture
       tests for the builders and parsers, and the fallback column in
       `features/ai-assist.md`
-- [ ] Writing practice: prompts per level and unit ("write three sentences about your morning"
-      using this unit's words); the learner types; the Phase 2 pipeline runs first for token, form
-      and grammar checks; AICore adds a natural rewrite, per-sentence feedback (what reads
-      unnaturally and why) and one catalog grammar point to review. Without AICore: pipeline
-      checks plus a self-assessment rubric
-- [ ] Free-response grading in quizzes: a typed translation or open answer is compared with the
-      model answer — AICore judges meaning equivalence and explains the gap; fallback is
-      normalized exact match with "mark it yourself"
-- [ ] Scenario dialogue partner: in M3.4 scenario lessons the learner's free reply is answered in
-      character within the lesson's vocabulary set; the scripted branches stay the graded path
-      and the fallback
-- [ ] "Why was this wrong": a richer explanation on demand for a wrong answer, grounded in the
-      catalog's own grammar explanation passed as context, never contradicting it
-- [ ] Extra example sentences on demand for a word or grammar point at the learner's level,
-      marked "generated", not saved into the catalog
-- [ ] Guardrails: prompt templates versioned in `assets/content/prompts/`, output length limits,
-      fixture tests for the prompt builders and response parsers (the model itself is not unit
-      tested), and a per-feature fallback table in `doc/en-us/features/ai-assist.md`; the privacy
-      policy states that AICore runs on the device and sends nothing out
+- [x] **A second opinion on a typed answer.** The deterministic check runs
+      first and owns "correct"; only when it says no is the model asked whether
+      the two mean the same, and only a yes counts. A model can never take a
+      right answer away
+- [ ] Free-response grading as its own quiz mode (a typed translation of a whole
+      sentence) — the grading half exists and is what the second opinion uses;
+      the mode does not
+- [ ] Scenario dialogue partner: a free reply answered in character at the end
+      of a scenario. The scripted half now exists (M3.7), which is what this
+      would attach to
+
+#### M3.7 Scenario lessons, writing practice, generated questions — **done 2026-09-04**
+
+The three things Phase 3 had designed and not written, plus the rest of the
+catalog. Taken together because they are the same shape: a unit is the thing
+they all hang off.
+
+- [x] **Scenario lessons.** A unit may end with a scripted conversation: six to
+      eight lines with a speaker each, and one or two points where the script
+      stops and asks what to say. Written for N5 units 1–4 and N4 units 1–2
+- [x] **A wrong reply does not end the conversation, and the script does not
+      fork.** What the learner said changes the tally at the end and nothing
+      else. A conversation that stops when you say the wrong thing teaches
+      nothing about what to say instead; and a per-choice fork is a content cost
+      paid on every unit, for a lesson whose point is reading a real exchange.
+      Nothing here reaches the scheduler — picking one of three is not recall
+- [x] **Writing practice is routed.** The page existed since M3.6 and nothing
+      opened it; a unit's `writingPrompt` now does. The deterministic half — the
+      unit's words counted from the **parse**, so 食べました counts as 食べる —
+      is the whole exercise without a model
+- [x] **AI-generated questions.** With the switch on, a unit session asks for up
+      to three extra questions **after** it is already on screen, so waiting on
+      a model never delays the first question. They are `generated`, so they
+      never reach SM-2 — a question that may be wrong must not move a real
+      review interval — and they are labelled above the prompt, before reading,
+      rather than after answering
+- [x] **The generator refuses six ways**: no `Q:` line, no blank in the
+      sentence, not four options, a blank option, two identical options, an
+      `Answer:` naming none of them. A guessed question is worse than no
+      question, because on screen it looks exactly as authoritative as an
+      authored one
+- [x] **N2 grammar, 170 points. N1 grammar, 158 points.** Every level's chips
+      are now full. Twenty-six N1 points were **dropped rather than renamed**
+      when their slug collided with an N2 point: renaming would have kept the
+      count at the price of teaching the same pattern twice under two ids, which
+      is what a learner would actually notice
+- [x] **The analyser had to learn the classical layer.** ぬ, ざる, べからざる,
+      べからず, んとする, んばかり, や否や, すべ, こととて, 〜つ〜つ, 極まりない,
+      極み, の至り, 同然, 関の山, ぐるみ, 三昧, やら〜やら — every one of them
+      **is** an N1 grammar point, so the sentence cannot avoid it and the table
+      had to grow. Ordinary words the dictionary happens to lack (東京, 顔, 皆)
+      were handled the other way round, by rewriting the sentence
+- [x] `needs` on a function word means "attach me to a **stem**", so it is wrong
+      for a form that follows a finished dictionary form. すべ, べからざる and
+      んとする all silently lost their edge to it, and `particle-conj` — not a
+      category name the loader knows — dropped や否や entirely. Both were
+      invisible: the sentence simply failed to parse, with no error
+- [x] Chinese glosses reach **100% of all 7,744 words**, at every level
 
 ### Phase 4 — JLPT N5–N1 practice
 
@@ -836,7 +863,14 @@ catalog content, and never writes a progress record by itself — the learner's 
 | 2026-09-04 | An alignment that does not consume the whole reading is refused, not approximated | 母は against ははは has two candidate splits and only the one that uses every kana is right. Refusing costs a line of screen; guessing prints kana over the wrong character and teaches a reading that does not exist |
 | 2026-09-04 | Kana over kanji is stored only when **off** | It is the only preference in the app whose default is on, and inverting the storage is what makes an absent key mean on. A learner who has never opened Settings is the learner who most needs the readings |
 | 2026-09-04 | A token's ruby comes from its lemma's alignment plus the surface's kana tail | `Token.reading` is the dictionary form's reading because that is what de-inflection matches against, so 食べ carries たべる. Printing it would show a る the sentence does not contain |
-| 2026-09-04 | `AppSettingsNotifier` starts on defaults when the config cannot be read | Nothing awaits the load, so a failure surfaced as an unhandled asynchronous error while the app carried on with the defaults regardless — the same outcome, reported as a crash |
+| 2026-09-04 | `AppSettingsNotifier` starts on defaults when the config cannot be read | Nothing awaits the load, so a failure surfaced as an unhandled asynchronous error while the app carried on with the defaults regardless — the same outcome, reported as a crash || 2026-09-04 | A scenario is linear: a wrong reply neither ends it nor forks it | A conversation that stops when you say the wrong thing teaches nothing about what to say instead. A per-choice fork would have to be written and gated on every unit, for a lesson whose whole point is reading one real exchange end to end |
+| 2026-09-04 | A scenario writes nothing to the scheduler | Picking one of three replies is not recall, and the unit's own practice session already measures recall against the same items |
+| 2026-09-04 | Generated quiz questions are asked for **after** the session is on screen | The alternative is a session that waits on a model before its first question. Three extra questions are worth nothing if they cost the learner a visible pause to reach question one |
+| 2026-09-04 | A generated question never calls `onFirstAnswer` | It may be wrong. A wrong question moving a real review interval is a corruption of the progress file that no later correction can undo, and the learner cannot tell it happened |
+| 2026-09-04 | The question parser refuses six ways rather than repairing anything | On screen a generated question looks exactly as authoritative as an authored one, so a guessed one is worse than none. None of the six — no `Q:`, no blank, not four options, a blank option, a duplicate option, an `Answer:` naming none — can be repaired without inventing content |
+| 2026-09-04 | Twenty-six N1 grammar points were dropped, not renamed, when their slug collided with N2 | Renaming keeps the count at the price of teaching the same pattern twice under two ids. The count is a number in a table; the duplicate is what a learner would actually meet |
+| 2026-09-04 | The classical layer went into `function_words.json`; missing ordinary words went into rewritten sentences | ぬ, ざる, べからざる, 極まりない and the rest **are** the N1 grammar points, so no example can avoid them. 東京, 顔 and 皆 are only scenery, and widening the dictionary for scenery widens everything downstream that reads it |
+| 2026-09-04 | A scenario added to a shipped lessons file is gated by turning that file back into a draft | `merge_drafts units` rewrites a whole level, so re-running it to add one conversation would be a far larger change than the conversation. Stripping the generated `zh_TW` is the only difference between the two shapes |
 | 2026-09-03 | The sentence lab is a route outside the shell, not a sixth tab | The five tabs are the reference the app is built around; the lab is something done *to* a sentence you already have, and it is always entered with a purpose from somewhere else |
 
 ## 7. Open questions

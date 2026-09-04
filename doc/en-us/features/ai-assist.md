@@ -38,6 +38,8 @@ Six rules, and each one is enforced in code rather than by convention:
 | **Why was this wrong** | under a wrong quiz answer | Prompt | the catalog's own explanation of the grammar point, or the question's own note, which is always shown first |
 | **More examples** | in a word's detail sheet | Prompt | the catalog's own examples, which most words do not have |
 | **A second opinion on a typed answer** | after Check, on a typed question the string comparison rejected | Prompt | the string comparison alone, which is what marked it before |
+| **A rewrite of what you wrote** | in writing practice | Prompt | the parse: which unit words were used, how each sentence was read, what looked unusual |
+| **An extra question** | inside a unit practice session, labelled | Prompt | the question bank itself, which is a full session on its own |
 
 Every row of that last column is the point: **the fallback is the app**. Removing the AI removes
 three buttons, not a feature the learner depends on.
@@ -215,9 +217,24 @@ and Settings raising the microphone prompt on open (see
 [`pronunciation.md`](pronunciation.md)). Both are written up in
 [`../android-aicore.md`](../android-aicore.md).
 
+## Generated questions
+
+With the switch on, a **unit practice session** asks the model for up to three extra questions
+about the unit's own grammar points. Four things bound what that can cost:
+
+- The session is built and shown first; generation runs after it, through
+  `AiPracticeService.runInBackground`, which yields to any interactive request. **Waiting on a
+  model never delays the first question.**
+- A generated question is `QuizQuestion.generated`, so answering it **never reaches the SM-2
+  scheduler**. It cannot move a review interval, right or wrong.
+- Every reply is checked before it becomes a question: a blank must be present, four distinct
+  non-empty options, and an `Answer:` that names one of them. Anything else is dropped in silence.
+  See [`ai_question_generator.md`](../functions/features/quiz/services/ai_question_generator.md).
+- The question carries the generated label **above it**, before it is read, not after it is
+  answered.
+
 ## Not built
 
-The rest of the AICore work in `PLAN.md` — writing practice, free-response grading, a scenario
-dialogue partner, "why was this wrong" (M3.4), and the Phase 4 drill helpers — is Phase 3 and later.
-The pieces here are the ones those will reuse: the service and its switch, the prompt asset, the
-parser, and the labelled card.
+The free-response translation mode and the scenario dialogue partner in `PLAN.md` are not written.
+The scripted half of a scenario is — see [`lesson-path.md`](lesson-path.md) — and a partner would
+attach to the end of it. The Phase 4 drill helpers are Phase 4.

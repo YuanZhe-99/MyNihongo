@@ -13,7 +13,7 @@
   - 语法（`/grammar`，`grammar_page.dart`）
   - 设置（`/settings`，`settings_page.dart`）
 
-  目前没有非标签路由。二级设置页面（隐私政策、许可证）在窄窗口上压栈到根导航器，在宽窗口上承载在详情窗格（pane）中。
+  有四条路由在外壳**之外**，因为它们都是带着目的进入、做完就离开，而不是用来浏览的：`/quiz`（一次会话）、`/lab`（句子分析器）、`/scenario`（从单元打开的情景对话）和 `/writing`（同样从单元打开的写作练习）。二级设置页面（隐私政策、许可证）在窄窗口上压栈到根导航器，在宽窗口上承载在详情窗格（pane）中。
 - `lib/app/theme.dart` — 基于 `flex_color_scheme` 的 Material 3 视觉体系，以 `FlexScheme.sakura` 为种子，一眼就能与兄弟应用区分开。
 - `lib/app/flavor.dart` — 构建风味逻辑（见下文）。
 - `lib/app/data_modules.dart` — 与共享引擎的接缝（见下文）。

@@ -1,0 +1,3658 @@
+{
+  "schemaVersion": 1,
+  "source": "model-authored (Claude), unreviewed",
+  "license": "GPL-3.0 with the app.",
+  "level": "N3",
+  "units": [
+    {
+      "id": "unit:n3-1",
+      "title": {
+        "en": "Explaining and quoting",
+        "zh": "说明与引用",
+        "zh_TW": "說明與引用"
+      },
+      "grammar": [
+        "grammar:n-desu",
+        "grammar:n-desu-ga",
+        "grammar:to-iu-noun",
+        "grammar:to-iu-koto",
+        "grammar:to-iu-no-wa",
+        "grammar:to-iu-koto-da",
+        "grammar:tte-casual",
+        "grammar:to-iwarete-iru",
+        "grammar:to-ka",
+        "grammar:nante-nanka",
+        "grammar:na-prohibition",
+        "grammar:kke"
+      ],
+      "vocab": [
+        "vocab:jm1169660",
+        "vocab:jm1562400",
+        "vocab:jm1489510",
+        "vocab:jm1313960",
+        "vocab:jm1459400",
+        "vocab:jm1264420",
+        "vocab:jm1417330",
+        "vocab:jm1386370",
+        "vocab:jm1168390",
+        "vocab:jm1223240",
+        "vocab:jm1325910",
+        "vocab:jm1477840"
+      ],
+      "sentences": [
+        {
+          "ja": "昨日は仕事があったんです。",
+          "reading": "きのうはしごとがあったんです。",
+          "en": "The thing is, I had work yesterday.",
+          "zh": "其实我昨天有工作。",
+          "zh_TW": "其實我昨天有工作。",
+          "items": [
+            "grammar:n-desu"
+          ]
+        },
+        {
+          "ja": "少し聞きたいことがあるんですが。",
+          "reading": "すこしききたいことがあるんですが。",
+          "en": "There is something I would like to ask you.",
+          "zh": "我有点事想问一下。",
+          "zh_TW": "我有點事想問一下。",
+          "items": [
+            "grammar:n-desu-ga"
+          ]
+        },
+        {
+          "ja": "梅という花が好きです。",
+          "reading": "うめというはながすきです。",
+          "en": "I like the flower called ume.",
+          "zh": "我喜欢叫做梅的花。",
+          "zh_TW": "我喜歡叫做梅的花。",
+          "items": [
+            "grammar:to-iu-noun"
+          ]
+        },
+        {
+          "ja": "約束を守るということが大切だ。",
+          "reading": "やくそくをまもるということがたいせつだ。",
+          "en": "Keeping your promises is what matters.",
+          "zh": "遵守约定这件事很重要。",
+          "zh_TW": "遵守約定這件事很重要。",
+          "items": [
+            "grammar:to-iu-koto"
+          ]
+        },
+        {
+          "ja": "常識というのは国で変わる。",
+          "reading": "じょうしきというのはくにでかわる。",
+          "en": "What we call common sense changes from country to country.",
+          "zh": "所谓常识会因国家而异。",
+          "zh_TW": "所謂常識會因國家而異。",
+          "items": [
+            "grammar:to-iu-no-wa"
+          ]
+        },
+        {
+          "ja": "日本は安全だと言われている。",
+          "reading": "にほんはあんぜんだといわれている。",
+          "en": "Japan is said to be safe.",
+          "zh": "据说日本很安全。",
+          "zh_TW": "據說日本很安全。",
+          "items": [
+            "grammar:to-iwarete-iru"
+          ]
+        },
+        {
+          "ja": "休みには本とか映画とかを楽しむ。",
+          "reading": "やすみにはほんとかえいがとかをたのしむ。",
+          "en": "On my days off I enjoy things like books and films.",
+          "zh": "休息日我享受看书、看电影之类的。",
+          "zh_TW": "休息日我享受看書、看電影之類的。",
+          "items": [
+            "grammar:to-ka"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n3-1-01",
+          "item": "grammar:n-desu",
+          "prompt": {
+            "en": "Which ending explains the background behind what you just said?",
+            "zh": "哪个句尾用来说明前因后果？",
+            "zh_TW": "哪個句尾用來說明前因後果？"
+          },
+          "options": [
+            "電車が止まったんです。",
+            "電車が止まったです。",
+            "電車が止まりんです。",
+            "電車が止まるんでした。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The plain form plus んです presents the fact as an explanation.",
+            "zh": "简体形＋んです把事实作为说明提示出来。",
+            "zh_TW": "簡體形＋んです把事實作為說明提示出來。"
+          }
+        },
+        {
+          "id": "q:n3-1-02",
+          "item": "grammar:n-desu-ga",
+          "prompt": {
+            "en": "Which sentence softly opens a request?",
+            "zh": "哪一句是委婉地引出请求？",
+            "zh_TW": "哪一句是委婉地引出請求？"
+          },
+          "options": [
+            "すみません、道を聞きたいんですが。",
+            "すみません、道を聞きたいですが。",
+            "すみません、道を聞きたいんですか。",
+            "すみません、道を聞きたいんだが。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜んですが sets up the request and leaves the rest unsaid.",
+            "zh": "〜んですが用来铺垫请求，后半句留白。",
+            "zh_TW": "〜んですが用來鋪墊請求，後半句留白。"
+          }
+        },
+        {
+          "id": "q:n3-1-03",
+          "item": "grammar:to-iu-noun",
+          "prompt": {
+            "en": "Fill the blank: 「桜」＿花を知っていますか。",
+            "zh": "填空：「桜」＿花を知っていますか。",
+            "zh_TW": "填空：「桜」＿花を知っていますか。"
+          },
+          "options": [
+            "という",
+            "といって",
+            "というのは",
+            "ということ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "という links a name to the noun it names.",
+            "zh": "という把名称和它所指的名词连接起来。",
+            "zh_TW": "という把名稱和它所指的名詞連接起來。"
+          }
+        },
+        {
+          "id": "q:n3-1-04",
+          "item": "grammar:to-iu-koto",
+          "prompt": {
+            "en": "Which turns a whole statement into a noun?",
+            "zh": "哪个把整句话变成名词？",
+            "zh_TW": "哪個把整句話變成名詞？"
+          },
+          "options": [
+            "ということ",
+            "というの",
+            "というのは",
+            "といい"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ということ nominalises the clause before it.",
+            "zh": "〜ということ把前面的句子名词化。",
+            "zh_TW": "〜ということ把前面的句子名詞化。"
+          }
+        },
+        {
+          "id": "q:n3-1-05",
+          "item": "grammar:to-iu-no-wa",
+          "prompt": {
+            "en": "Which sentence defines a word?",
+            "zh": "哪一句是在给词下定义？",
+            "zh_TW": "哪一句是在給詞下定義？"
+          },
+          "options": [
+            "自由というのは難しい言葉だ。",
+            "自由ということは難しい言葉だ。",
+            "自由というと難しい言葉だ。",
+            "自由というのが難しい言葉だ。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜というのは introduces the term being explained.",
+            "zh": "〜というのは引出要解释的词语。",
+            "zh_TW": "〜というのは引出要解釋的詞語。"
+          }
+        },
+        {
+          "id": "q:n3-1-06",
+          "item": "grammar:to-iwarete-iru",
+          "prompt": {
+            "en": "Which says \"it is said that\"?",
+            "zh": "哪个表示「据说」？",
+            "zh_TW": "哪個表示「據說」？"
+          },
+          "options": [
+            "と言われている",
+            "と言っている",
+            "と言わせている",
+            "と言えている"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The passive 言われている reports what people in general say.",
+            "zh": "被动的言われている表示一般人的说法。",
+            "zh_TW": "被動的言われている表示一般人的說法。"
+          }
+        },
+        {
+          "id": "q:n3-1-07",
+          "item": "grammar:na-prohibition",
+          "prompt": {
+            "en": "Which is a blunt \"don't do it\"?",
+            "zh": "哪一句是生硬的禁止？",
+            "zh_TW": "哪一句是生硬的禁止？"
+          },
+          "options": [
+            "ここで遊ぶな。",
+            "ここで遊ぶね。",
+            "ここで遊ぶな？",
+            "ここで遊ばな。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The dictionary form plus な forbids the action outright.",
+            "zh": "辞书形＋な直接表示禁止。",
+            "zh_TW": "辭書形＋な直接表示禁止。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Explain in two sentences why you were late, using 〜んです and 〜と言われている.",
+        "zh": "用〜んです和〜と言われている写两句话，说明你迟到的原因。",
+        "zh_TW": "用〜んです和〜と言われている寫兩句話，說明你遲到的原因。"
+      }
+    },
+    {
+      "id": "unit:n3-2",
+      "title": {
+        "en": "Rules, duty and advice",
+        "zh": "规则、义务与建议",
+        "zh_TW": "規則、義務與建議"
+      },
+      "grammar": [
+        "grammar:koto-rule",
+        "grammar:koto-ni-natteiru",
+        "grammar:mono-da",
+        "grammar:mono-dakara",
+        "grammar:koto-da",
+        "grammar:koto-wa-nai",
+        "grammar:beki",
+        "grammar:beki-de-wa-nai",
+        "grammar:hitsuyou-ga-aru",
+        "grammar:suru-shika-nai",
+        "grammar:you-ga-nai",
+        "grammar:ta-hou-ga-ii"
+      ],
+      "vocab": [
+        "vocab:jm1609660",
+        "vocab:jm1225900",
+        "vocab:jm1383180",
+        "vocab:jm1241550",
+        "vocab:jm1232880",
+        "vocab:jm1374700",
+        "vocab:jm1374880",
+        "vocab:jm1436410",
+        "vocab:jm1422050",
+        "vocab:jm1254020",
+        "vocab:jm1302090",
+        "vocab:jm1344200"
+      ],
+      "sentences": [
+        {
+          "ja": "教室では静かにすること。",
+          "reading": "きょうしつではしずかにすること。",
+          "en": "Be quiet in the classroom.",
+          "zh": "教室内保持安静。",
+          "zh_TW": "教室內保持安靜。",
+          "items": [
+            "grammar:koto-rule"
+          ]
+        },
+        {
+          "ja": "学校は八時に始まることになっている。",
+          "reading": "がっこうははちじにはじまることになっている。",
+          "en": "The school is set to start at eight.",
+          "zh": "学校规定八点开始。",
+          "zh_TW": "學校規定八點開始。",
+          "items": [
+            "grammar:koto-ni-natteiru"
+          ]
+        },
+        {
+          "ja": "昔はよくここで遊んだものだ。",
+          "reading": "むかしはよくここであそんだものだ。",
+          "en": "We used to play here a lot.",
+          "zh": "以前我们常在这里玩。",
+          "zh_TW": "以前我們常在這裡玩。",
+          "items": [
+            "grammar:mono-da"
+          ]
+        },
+        {
+          "ja": "頭が痛いものだから、早く帰ります。",
+          "reading": "あたまがいたいものだから、はやくかえります。",
+          "en": "My head hurts, so I am going home early.",
+          "zh": "因为头疼，我要早点回去。",
+          "zh_TW": "因為頭疼，我要早點回去。",
+          "items": [
+            "grammar:mono-dakara"
+          ]
+        },
+        {
+          "ja": "毎日少しずつ続けることだ。",
+          "reading": "まいにちすこしずつつづけることだ。",
+          "en": "The thing to do is to keep at it a little every day.",
+          "zh": "关键是每天坚持一点点。",
+          "zh_TW": "關鍵是每天堅持一點點。",
+          "items": [
+            "grammar:koto-da"
+          ]
+        },
+        {
+          "ja": "そんなに心配することはない。",
+          "reading": "そんなにしんぱいすることはない。",
+          "en": "There is no need to worry that much.",
+          "zh": "没必要那么担心。",
+          "zh_TW": "沒必要那麼擔心。",
+          "items": [
+            "grammar:koto-wa-nai"
+          ]
+        },
+        {
+          "ja": "人の悪口を言うべきではない。",
+          "reading": "ひとのわるくちをいうべきではない。",
+          "en": "You ought not to speak ill of people.",
+          "zh": "不应该说别人的坏话。",
+          "zh_TW": "不應該說別人的壞話。",
+          "items": [
+            "grammar:beki-de-wa-nai"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n3-2-01",
+          "item": "grammar:koto-rule",
+          "prompt": {
+            "en": "Which ending states a written rule?",
+            "zh": "哪个句尾表示书面规定？",
+            "zh_TW": "哪個句尾表示書面規定？"
+          },
+          "options": [
+            "八時までに集まること。",
+            "八時までに集まるもの。",
+            "八時までに集まるの。",
+            "八時までに集まるとき。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "A notice ends in こと to state what people are to do.",
+            "zh": "告示用こと结尾说明应做的事。",
+            "zh_TW": "告示用こと結尾說明應做的事。"
+          }
+        },
+        {
+          "id": "q:n3-2-02",
+          "item": "grammar:koto-ni-natteiru",
+          "prompt": {
+            "en": "Which says an arrangement has been made?",
+            "zh": "哪个表示已经定好的安排？",
+            "zh_TW": "哪個表示已經定好的安排？"
+          },
+          "options": [
+            "ことになっている",
+            "ことにしている",
+            "ことがある",
+            "ことにする"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ことになっている reports a rule or plan already settled.",
+            "zh": "〜ことになっている表示既定的规则或安排。",
+            "zh_TW": "〜ことになっている表示既定的規則或安排。"
+          }
+        },
+        {
+          "id": "q:n3-2-03",
+          "item": "grammar:mono-da",
+          "prompt": {
+            "en": "Which recalls a past habit?",
+            "zh": "哪一句是回忆过去的习惯？",
+            "zh_TW": "哪一句是回憶過去的習慣？"
+          },
+          "options": [
+            "よく川で泳いだものだ。",
+            "よく川で泳ぐものだ。",
+            "よく川で泳いだことだ。",
+            "よく川で泳いだものか。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The past form plus ものだ looks back on what one used to do.",
+            "zh": "过去形＋ものだ表示回忆当年常做的事。",
+            "zh_TW": "過去形＋ものだ表示回憶當年常做的事。"
+          }
+        },
+        {
+          "id": "q:n3-2-04",
+          "item": "grammar:beki",
+          "prompt": {
+            "en": "Fill the blank: 約束は守る＿だ。",
+            "zh": "填空：約束は守る＿だ。",
+            "zh_TW": "填空：約束は守る＿だ。"
+          },
+          "options": [
+            "べき",
+            "はず",
+            "つもり",
+            "わけ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "べき says what is right to do, not what is expected.",
+            "zh": "べき表示理应如此，而非预料如此。",
+            "zh_TW": "べき表示理應如此，而非預料如此。"
+          }
+        },
+        {
+          "id": "q:n3-2-05",
+          "item": "grammar:hitsuyou-ga-aru",
+          "prompt": {
+            "en": "Which says something must be done?",
+            "zh": "哪个表示有必要做？",
+            "zh_TW": "哪個表示有必要做？"
+          },
+          "options": [
+            "必要がある",
+            "必要がない",
+            "必要にする",
+            "必要になる"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜必要がある states that the action is needed.",
+            "zh": "〜必要がある表示有做这件事的必要。",
+            "zh_TW": "〜必要がある表示有做這件事的必要。"
+          }
+        },
+        {
+          "id": "q:n3-2-06",
+          "item": "grammar:suru-shika-nai",
+          "prompt": {
+            "en": "Which says there is no other choice?",
+            "zh": "哪个表示别无选择？",
+            "zh_TW": "哪個表示別無選擇？"
+          },
+          "options": [
+            "歩いて帰るしかない。",
+            "歩いて帰るだけない。",
+            "歩いて帰るほかない？",
+            "歩いて帰るしかある。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜しかない leaves exactly one option open.",
+            "zh": "〜しかない表示只剩这一个选择。",
+            "zh_TW": "〜しかない表示只剩這一個選擇。"
+          }
+        },
+        {
+          "id": "q:n3-2-07",
+          "item": "grammar:ta-hou-ga-ii",
+          "prompt": {
+            "en": "Which gives advice?",
+            "zh": "哪一句是提建议？",
+            "zh_TW": "哪一句是提建議？"
+          },
+          "options": [
+            "早く休んだほうがいい。",
+            "早く休むほうがいい？",
+            "早く休んだほうがある。",
+            "早く休んだべきがいい。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "The past form plus ほうがいい is the usual way to advise.",
+            "zh": "过去形＋ほうがいい是常见的劝告说法。",
+            "zh_TW": "過去形＋ほうがいい是常見的勸告說法。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Write three house rules for a shared room using 〜こと, 〜べきだ and 〜ないほうがいい.",
+        "zh": "用〜こと、〜べきだ和〜ないほうがいい写三条合住房间的规则。",
+        "zh_TW": "用〜こと、〜べきだ和〜ないほうがいい寫三條合住房間的規則。"
+      }
+    },
+    {
+      "id": "unit:n3-3",
+      "title": {
+        "en": "Reasoning and certainty",
+        "zh": "推理与肯定",
+        "zh_TW": "推理與肯定"
+      },
+      "grammar": [
+        "grammar:wake-da",
+        "grammar:wake-ga-nai",
+        "grammar:wake-de-wa-nai",
+        "grammar:wake-ni-wa-ikanai",
+        "grammar:hazu-datta",
+        "grammar:ni-chigainai",
+        "grammar:ni-kimatteiru",
+        "grammar:no-de-wa-nai-ka",
+        "grammar:kanousei-ga-aru",
+        "grammar:kesshite-nai",
+        "grammar:mettani-nai",
+        "grammar:nakanaka-nai",
+        "grammar:kanarazushimo-nai"
+      ],
+      "vocab": [
+        "vocab:jm1478620",
+        "vocab:jm1549910",
+        "vocab:jm1314010",
+        "vocab:jm1550020",
+        "vocab:jm1255020",
+        "vocab:jm1225630",
+        "vocab:jm1205900",
+        "vocab:jm1205830",
+        "vocab:jm1351680",
+        "vocab:jm1470080",
+        "vocab:jm1543200",
+        "vocab:jm1313960"
+      ],
+      "sentences": [
+        {
+          "ja": "窓が開いている。だから寒いわけだ。",
+          "reading": "まどがあいている。だからさむいわけだ。",
+          "en": "The window is open, so that is why it is cold.",
+          "zh": "窗户开着，怪不得冷。",
+          "zh_TW": "窗戶開著，怪不得冷。",
+          "items": [
+            "grammar:wake-da"
+          ]
+        },
+        {
+          "ja": "あの人がそんな嘘を言うわけがない。",
+          "reading": "あのひとがそんなうそをいうわけがない。",
+          "en": "There is no way that person tells such a lie.",
+          "zh": "那个人不可能说那种谎。",
+          "zh_TW": "那個人不可能說那種謊。",
+          "items": [
+            "grammar:wake-ga-nai"
+          ]
+        },
+        {
+          "ja": "嫌いなわけではないが、食べない。",
+          "reading": "きらいなわけではないが、たべない。",
+          "en": "It isn't that I dislike it, but I won't eat it.",
+          "zh": "并不是讨厌，只是不吃。",
+          "zh_TW": "並不是討厭，只是不吃。",
+          "items": [
+            "grammar:wake-de-wa-nai"
+          ]
+        },
+        {
+          "ja": "今日は休むわけにはいかない。",
+          "reading": "きょうはやすむわけにはいかない。",
+          "en": "I can't afford to take today off.",
+          "zh": "今天我不能休息。",
+          "zh_TW": "今天我不能休息。",
+          "items": [
+            "grammar:wake-ni-wa-ikanai"
+          ]
+        },
+        {
+          "ja": "三時に着くはずだったのに、遅れた。",
+          "reading": "さんじにつくはずだったのに、おくれた。",
+          "en": "I was supposed to arrive at three, but I was late.",
+          "zh": "本该三点到，却迟到了。",
+          "zh_TW": "本該三點到，卻遲到了。",
+          "items": [
+            "grammar:hazu-datta"
+          ]
+        },
+        {
+          "ja": "彼は事実を知っているに違いない。",
+          "reading": "かれはじじつをしっているにちがいない。",
+          "en": "He must know the truth.",
+          "zh": "他一定知道事实。",
+          "zh_TW": "他一定知道事實。",
+          "items": [
+            "grammar:ni-chigainai"
+          ]
+        },
+        {
+          "ja": "彼なら事情を知っているに決まっている。",
+          "reading": "かれならじじょうをしっているにきまっている。",
+          "en": "He is bound to know the situation.",
+          "zh": "他肯定知道情况。",
+          "zh_TW": "他肯定知道情況。",
+          "items": [
+            "grammar:ni-kimatteiru"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n3-3-01",
+          "item": "grammar:wake-da",
+          "prompt": {
+            "en": "Which draws a conclusion from what was just said?",
+            "zh": "哪个是由前句推出的结论？",
+            "zh_TW": "哪個是由前句推出的結論？"
+          },
+          "options": [
+            "わけだ",
+            "わけがない",
+            "わけにはいかない",
+            "わけではない"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜わけだ says the fact follows naturally from the reason.",
+            "zh": "〜わけだ表示由前提自然得出的结论。",
+            "zh_TW": "〜わけだ表示由前提自然得出的結論。"
+          }
+        },
+        {
+          "id": "q:n3-3-02",
+          "item": "grammar:wake-ga-nai",
+          "prompt": {
+            "en": "Which denies a possibility outright?",
+            "zh": "哪个断然否定可能性？",
+            "zh_TW": "哪個斷然否定可能性？"
+          },
+          "options": [
+            "そんなわけがない。",
+            "そんなわけではない。",
+            "そんなわけだ。",
+            "そんなわけにはいかない。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜わけがない says the thing cannot possibly be true.",
+            "zh": "〜わけがない表示绝无可能。",
+            "zh_TW": "〜わけがない表示絕無可能。"
+          }
+        },
+        {
+          "id": "q:n3-3-03",
+          "item": "grammar:wake-de-wa-nai",
+          "prompt": {
+            "en": "Which softens a denial?",
+            "zh": "哪个是部分否定？",
+            "zh_TW": "哪個是部分否定？"
+          },
+          "options": [
+            "わけではない",
+            "わけがない",
+            "わけにはいかない",
+            "わけだ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜わけではない denies only part of what was assumed.",
+            "zh": "〜わけではない只否定其中一部分。",
+            "zh_TW": "〜わけではない只否定其中一部分。"
+          }
+        },
+        {
+          "id": "q:n3-3-04",
+          "item": "grammar:hazu-datta",
+          "prompt": {
+            "en": "Which says a plan did not come off?",
+            "zh": "哪个表示计划落空了？",
+            "zh_TW": "哪個表示計劃落空了？"
+          },
+          "options": [
+            "はずだった",
+            "はずだ",
+            "はずがない",
+            "はずになる"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜はずだった looks back on what should have happened.",
+            "zh": "〜はずだった表示本该如此却没实现。",
+            "zh_TW": "〜はずだった表示本該如此卻沒實現。"
+          }
+        },
+        {
+          "id": "q:n3-3-05",
+          "item": "grammar:ni-chigainai",
+          "prompt": {
+            "en": "Which expresses the speaker's certainty?",
+            "zh": "哪个表示说话人的确信？",
+            "zh_TW": "哪個表示說話人的確信？"
+          },
+          "options": [
+            "に違いない",
+            "に決まる",
+            "に限らない",
+            "に過ぎない"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜に違いない states a strong inference.",
+            "zh": "〜に違いない表示强烈的推断。",
+            "zh_TW": "〜に違いない表示強烈的推斷。"
+          }
+        },
+        {
+          "id": "q:n3-3-06",
+          "item": "grammar:kesshite-nai",
+          "prompt": {
+            "en": "Fill the blank: ＿忘れません。",
+            "zh": "填空：＿忘れません。",
+            "zh_TW": "填空：＿忘れません。"
+          },
+          "options": [
+            "決して",
+            "たまに",
+            "たぶん",
+            "かなり"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "決して pairs with a negative to mean \"never\".",
+            "zh": "決して与否定呼应，表示绝不。",
+            "zh_TW": "決して與否定呼應，表示絕不。"
+          }
+        },
+        {
+          "id": "q:n3-3-07",
+          "item": "grammar:kanarazushimo-nai",
+          "prompt": {
+            "en": "Which says \"not necessarily\"?",
+            "zh": "哪个表示「未必」？",
+            "zh_TW": "哪個表示「未必」？"
+          },
+          "options": [
+            "必ずしも安くない。",
+            "必ず安くない。",
+            "決して安い。",
+            "めったに安い。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "必ずしも〜ない denies that the rule always holds.",
+            "zh": "必ずしも〜ない否定「总是如此」。",
+            "zh_TW": "必ずしも〜ない否定「總是如此」。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Someone is late. Write three guesses using 〜に違いない, 〜わけがない and 〜可能性がある.",
+        "zh": "有人迟到了。用〜に違いない、〜わけがない和〜可能性がある写三种推测。",
+        "zh_TW": "有人遲到了。用〜に違いない、〜わけがない和〜可能性がある寫三種推測。"
+      }
+    },
+    {
+      "id": "unit:n3-4",
+      "title": {
+        "en": "Impressions and appearances",
+        "zh": "印象与外表",
+        "zh_TW": "印象與外表"
+      },
+      "grammar": [
+        "grammar:sou-mo-nai",
+        "grammar:you-ni-mieru",
+        "grammar:mitai-na",
+        "grammar:rashii-typical",
+        "grammar:furi-o-suru",
+        "grammar:you-na-ki-ga-suru",
+        "grammar:janai-ka",
+        "grammar:tsumori-datta",
+        "grammar:gimi",
+        "grammar:ppoi",
+        "grammar:ge"
+      ],
+      "vocab": [
+        "vocab:jm1168390",
+        "vocab:jm1545820",
+        "vocab:jm1489700",
+        "vocab:jm1351400",
+        "vocab:jm1410780",
+        "vocab:jm1505070",
+        "vocab:jm1500970",
+        "vocab:jm1375290",
+        "vocab:jm1314680",
+        "vocab:jm1363740",
+        "vocab:jm1307710",
+        "vocab:jm1212250"
+      ],
+      "sentences": [
+        {
+          "ja": "今日は雨が降りそうもない。",
+          "reading": "きょうはあめがふりそうもない。",
+          "en": "There is no sign of rain today.",
+          "zh": "今天看样子不会下雨。",
+          "zh_TW": "今天看樣子不會下雨。",
+          "items": [
+            "grammar:sou-mo-nai"
+          ]
+        },
+        {
+          "ja": "彼女は元気なように見える。",
+          "reading": "かのじょはげんきなようにみえる。",
+          "en": "She looks well.",
+          "zh": "她看起来很精神。",
+          "zh_TW": "她看起來很精神。",
+          "items": [
+            "grammar:you-ni-mieru"
+          ]
+        },
+        {
+          "ja": "子供みたいな笑顔で笑った。",
+          "reading": "こどもみたいなえがおでわらった。",
+          "en": "He smiled like a child.",
+          "zh": "他露出孩子般的笑容。",
+          "zh_TW": "他露出孩子般的笑容。",
+          "items": [
+            "grammar:mitai-na"
+          ]
+        },
+        {
+          "ja": "今日は春らしい天気ですね。",
+          "reading": "きょうははるらしいてんきですね。",
+          "en": "The weather today is properly spring-like.",
+          "zh": "今天真是春天该有的天气。",
+          "zh_TW": "今天真是春天該有的天氣。",
+          "items": [
+            "grammar:rashii-typical"
+          ]
+        },
+        {
+          "ja": "彼は知らないふりをした。",
+          "reading": "かれはしらないふりをした。",
+          "en": "He pretended not to know.",
+          "zh": "他装作不知道。",
+          "zh_TW": "他裝作不知道。",
+          "items": [
+            "grammar:furi-o-suru"
+          ]
+        },
+        {
+          "ja": "どこかで会ったような気がする。",
+          "reading": "どこかであったようなきがする。",
+          "en": "I get the feeling we have met somewhere.",
+          "zh": "我觉得好像在哪儿见过。",
+          "zh_TW": "我覺得好像在哪兒見過。",
+          "items": [
+            "grammar:you-na-ki-ga-suru"
+          ]
+        },
+        {
+          "ja": "今日は少し風邪気味です。",
+          "reading": "きょうはすこしかぜぎみです。",
+          "en": "I feel a touch of a cold today.",
+          "zh": "今天有点感冒的感觉。",
+          "zh_TW": "今天有點感冒的感覺。",
+          "items": [
+            "grammar:gimi"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n3-4-01",
+          "item": "grammar:sou-mo-nai",
+          "prompt": {
+            "en": "Which says something shows no sign of happening?",
+            "zh": "哪个表示毫无发生的迹象？",
+            "zh_TW": "哪個表示毫無發生的跡象？"
+          },
+          "options": [
+            "終わりそうもない",
+            "終わりそうだ",
+            "終わるらしい",
+            "終わるようだ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜そうもない denies even the appearance of it happening.",
+            "zh": "〜そうもない连发生的样子都否定。",
+            "zh_TW": "〜そうもない連發生的樣子都否定。"
+          }
+        },
+        {
+          "id": "q:n3-4-02",
+          "item": "grammar:you-ni-mieru",
+          "prompt": {
+            "en": "Which reports how something looks?",
+            "zh": "哪个描述看上去的样子？",
+            "zh_TW": "哪個描述看上去的樣子？"
+          },
+          "options": [
+            "ように見える",
+            "ように見せる",
+            "ように見る",
+            "ように見られる"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ように見える describes the impression a thing gives.",
+            "zh": "〜ように見える描述事物给人的印象。",
+            "zh_TW": "〜ように見える描述事物給人的印象。"
+          }
+        },
+        {
+          "id": "q:n3-4-03",
+          "item": "grammar:mitai-na",
+          "prompt": {
+            "en": "Fill the blank: 夢＿話ですね。",
+            "zh": "填空：夢＿話ですね。",
+            "zh_TW": "填空：夢＿話ですね。"
+          },
+          "options": [
+            "みたいな",
+            "みたいに",
+            "みたいだ",
+            "みたいで"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "みたいな comes before a noun; みたいに comes before a verb.",
+            "zh": "みたいな接名词，みたいに接动词。",
+            "zh_TW": "みたいな接名詞，みたいに接動詞。"
+          }
+        },
+        {
+          "id": "q:n3-4-04",
+          "item": "grammar:rashii-typical",
+          "prompt": {
+            "en": "Which means \"behaving as a typical example\"?",
+            "zh": "哪个表示「有其典型的样子」？",
+            "zh_TW": "哪個表示「有其典型的樣子」？"
+          },
+          "options": [
+            "男らしい",
+            "男みたい",
+            "男そうだ",
+            "男のよう"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "らしい after a noun says the thing is true to type.",
+            "zh": "名词＋らしい表示很有那种样子。",
+            "zh_TW": "名詞＋らしい表示很有那種樣子。"
+          }
+        },
+        {
+          "id": "q:n3-4-05",
+          "item": "grammar:furi-o-suru",
+          "prompt": {
+            "en": "Which means \"to pretend\"?",
+            "zh": "哪个表示「假装」？",
+            "zh_TW": "哪個表示「假裝」？"
+          },
+          "options": [
+            "ふりをする",
+            "ふうにする",
+            "ままにする",
+            "ようにする"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ふりをする is to act as if, without meaning it.",
+            "zh": "〜ふりをする表示装作某样。",
+            "zh_TW": "〜ふりをする表示裝作某樣。"
+          }
+        },
+        {
+          "id": "q:n3-4-06",
+          "item": "grammar:ppoi",
+          "prompt": {
+            "en": "Which says a colour is \"reddish\"?",
+            "zh": "哪个表示「发红的」？",
+            "zh_TW": "哪個表示「發紅的」？"
+          },
+          "options": [
+            "赤っぽい",
+            "赤らしい",
+            "赤みたい",
+            "赤そう"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜っぽい adds \"-ish\" to a noun or adjective stem.",
+            "zh": "〜っぽい相当于「有点…的」。",
+            "zh_TW": "〜っぽい相當於「有點…的」。"
+          }
+        },
+        {
+          "id": "q:n3-4-07",
+          "item": "grammar:tsumori-datta",
+          "prompt": {
+            "en": "Which says an intention went wrong?",
+            "zh": "哪个表示本来的打算落空？",
+            "zh_TW": "哪個表示本來的打算落空？"
+          },
+          "options": [
+            "つもりだった",
+            "つもりだ",
+            "つもりがない",
+            "つもりになる"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜つもりだった says you meant to, but it turned out otherwise.",
+            "zh": "〜つもりだった表示本来打算，结果并非如此。",
+            "zh_TW": "〜つもりだった表示本來打算，結果並非如此。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Describe a person you saw today in three sentences using 〜ように見える, 〜っぽい and 〜みたいな.",
+        "zh": "用〜ように見える、〜っぽい和〜みたいな写三句话描述你今天看到的人。",
+        "zh_TW": "用〜ように見える、〜っぽい和〜みたいな寫三句話描述你今天看到的人。"
+      }
+    },
+    {
+      "id": "unit:n3-5",
+      "title": {
+        "en": "Timing and sequence",
+        "zh": "时间与先后",
+        "zh_TW": "時間與先後"
+      },
+      "grammar": [
+        "grammar:nai-uchi-ni",
+        "grammar:tabi-ni",
+        "grammar:saichuu-ni",
+        "grammar:shidai",
+        "grammar:ta-tokoro",
+        "grammar:te-kara-de-nai-to",
+        "grammar:to-doujini",
+        "grammar:to-tomo-ni",
+        "grammar:ue-de",
+        "grammar:tsuide-ni",
+        "grammar:oki-ni",
+        "grammar:goto-ni",
+        "grammar:chuu-juu",
+        "grammar:zutsu"
+      ],
+      "vocab": [
+        "vocab:jm1341210",
+        "vocab:jm1220550",
+        "vocab:jm1610870",
+        "vocab:jm1342390",
+        "vocab:jm1579210",
+        "vocab:jm1435490",
+        "vocab:jm1316040",
+        "vocab:jm1163340",
+        "vocab:jm1289140",
+        "vocab:jm1449090",
+        "vocab:jm1468380",
+        "vocab:jm1597850"
+      ],
+      "sentences": [
+        {
+          "ja": "暗くならないうちに帰ろう。",
+          "reading": "くらくならないうちにかえろう。",
+          "en": "Let's go home before it gets dark.",
+          "zh": "趁天还没黑回去吧。",
+          "zh_TW": "趁天還沒黑回去吧。",
+          "items": [
+            "grammar:nai-uchi-ni"
+          ]
+        },
+        {
+          "ja": "彼は会うたびに背が高くなる。",
+          "reading": "かれはあうたびにせがたかくなる。",
+          "en": "He is taller every time I meet him.",
+          "zh": "每次见到他，他都长高了。",
+          "zh_TW": "每次見到他，他都長高了。",
+          "items": [
+            "grammar:tabi-ni"
+          ]
+        },
+        {
+          "ja": "食事の最中に電話が来た。",
+          "reading": "しょくじのさいちゅうにでんわがきた。",
+          "en": "The phone rang right in the middle of the meal.",
+          "zh": "正吃饭的时候来了电话。",
+          "zh_TW": "正吃飯的時候來了電話。",
+          "items": [
+            "grammar:saichuu-ni"
+          ]
+        },
+        {
+          "ja": "用意ができ次第、出発します。",
+          "reading": "よういができしだい、しゅっぱつします。",
+          "en": "We will leave as soon as we are ready.",
+          "zh": "准备好就出发。",
+          "zh_TW": "準備好就出發。",
+          "items": [
+            "grammar:shidai"
+          ]
+        },
+        {
+          "ja": "店に行ったところ、休みだった。",
+          "reading": "みせにいったところ、やすみだった。",
+          "en": "I went to the shop, and it was closed.",
+          "zh": "去了店里，结果休息。",
+          "zh_TW": "去了店裡，結果休息。",
+          "items": [
+            "grammar:ta-tokoro"
+          ]
+        },
+        {
+          "ja": "よく考えた上で決めます。",
+          "reading": "よくかんがえたうえできめます。",
+          "en": "I will decide after thinking it over.",
+          "zh": "仔细考虑之后再决定。",
+          "zh_TW": "仔細考慮之後再決定。",
+          "items": [
+            "grammar:ue-de"
+          ]
+        },
+        {
+          "ja": "薬は四時間おきに飲んでください。",
+          "reading": "くすりはよじかんおきにのんでください。",
+          "en": "Take the medicine every four hours.",
+          "zh": "请每隔四小时吃一次药。",
+          "zh_TW": "請每隔四小時吃一次藥。",
+          "items": [
+            "grammar:oki-ni"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n3-5-01",
+          "item": "grammar:nai-uchi-ni",
+          "prompt": {
+            "en": "Which says \"before it gets cold\"?",
+            "zh": "哪个表示「趁还没变冷」？",
+            "zh_TW": "哪個表示「趁還沒變冷」？"
+          },
+          "options": [
+            "冷めないうちに",
+            "冷めるうちに",
+            "冷めてから",
+            "冷めた後で"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ないうちに sets the action before the change happens.",
+            "zh": "〜ないうちに表示趁变化发生之前。",
+            "zh_TW": "〜ないうちに表示趁變化發生之前。"
+          }
+        },
+        {
+          "id": "q:n3-5-02",
+          "item": "grammar:tabi-ni",
+          "prompt": {
+            "en": "Which means \"every time\"?",
+            "zh": "哪个表示「每当」？",
+            "zh_TW": "哪個表示「每當」？"
+          },
+          "options": [
+            "たびに",
+            "ためだ",
+            "たとえ",
+            "ところが"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜たびに marks a repeated occasion.",
+            "zh": "〜たびに表示每一次都如此。",
+            "zh_TW": "〜たびに表示每一次都如此。"
+          }
+        },
+        {
+          "id": "q:n3-5-03",
+          "item": "grammar:saichuu-ni",
+          "prompt": {
+            "en": "Fill the blank: 会議の＿に電話が鳴った。",
+            "zh": "填空：会議の＿に電話が鳴った。",
+            "zh_TW": "填空：會議の＿に電話が鳴った。"
+          },
+          "options": [
+            "最中",
+            "最後",
+            "最初",
+            "最高"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "最中 is the middle of an action in progress.",
+            "zh": "最中表示正在进行的当中。",
+            "zh_TW": "最中表示正在進行的當中。"
+          }
+        },
+        {
+          "id": "q:n3-5-04",
+          "item": "grammar:shidai",
+          "prompt": {
+            "en": "Which means \"as soon as it is done\"?",
+            "zh": "哪个表示「一…就…」？",
+            "zh_TW": "哪個表示「一…就…」？"
+          },
+          "options": [
+            "終わり次第",
+            "終わる次第",
+            "終わった次第",
+            "終わって次第"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "次第 follows the masu-stem of the verb.",
+            "zh": "次第接在动词ます形词干后。",
+            "zh_TW": "次第接在動詞ます形詞幹後。"
+          }
+        },
+        {
+          "id": "q:n3-5-05",
+          "item": "grammar:te-kara-de-nai-to",
+          "prompt": {
+            "en": "Which says one thing must come first?",
+            "zh": "哪个表示必须先做某事？",
+            "zh_TW": "哪個表示必須先做某事？"
+          },
+          "options": [
+            "読んでからでないと",
+            "読んでからでも",
+            "読んでからには",
+            "読んでからこそ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜てからでないと says nothing else works until it is done.",
+            "zh": "〜てからでないと表示不先做就不行。",
+            "zh_TW": "〜てからでないと表示不先做就不行。"
+          }
+        },
+        {
+          "id": "q:n3-5-06",
+          "item": "grammar:to-tomo-ni",
+          "prompt": {
+            "en": "Which means \"as one thing changes, so does the other\"?",
+            "zh": "哪个表示「随着…而…」？",
+            "zh_TW": "哪個表示「隨著…而…」？"
+          },
+          "options": [
+            "とともに",
+            "とすれば",
+            "といっても",
+            "とばかり"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜とともに links two changes that move together.",
+            "zh": "〜とともに把同时变化的两件事连起来。",
+            "zh_TW": "〜とともに把同時變化的兩件事連起來。"
+          }
+        },
+        {
+          "id": "q:n3-5-07",
+          "item": "grammar:zutsu",
+          "prompt": {
+            "en": "Fill the blank: 一つ＿取ってください。",
+            "zh": "填空：一つ＿取ってください。",
+            "zh_TW": "填空：一つ＿取ってください。"
+          },
+          "options": [
+            "ずつ",
+            "だけ",
+            "でも",
+            "ほど"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ずつ says how many each person or time gets.",
+            "zh": "ずつ表示每人或每次各多少。",
+            "zh_TW": "ずつ表示每人或每次各多少。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Describe your morning in three sentences using 〜ないうちに, 〜たびに and 〜次第.",
+        "zh": "用〜ないうちに、〜たびに和〜次第写三句话描述你的早晨。",
+        "zh_TW": "用〜ないうちに、〜たびに和〜次第寫三句話描述你的早晨。"
+      }
+    },
+    {
+      "id": "unit:n3-6",
+      "title": {
+        "en": "Cause, effect and change",
+        "zh": "原因、结果与变化",
+        "zh_TW": "原因、結果與變化"
+      },
+      "grammar": [
+        "grammar:ni-tsurete",
+        "grammar:ni-shitagatte",
+        "grammar:sei-de",
+        "grammar:sei-ka",
+        "grammar:okage-de",
+        "grammar:amari",
+        "grammar:ni-yotte-means",
+        "grammar:ni-yoru-noun",
+        "grammar:ni-yotte-vary"
+      ],
+      "vocab": [
+        "vocab:jm1173660",
+        "vocab:jm1254690",
+        "vocab:jm1275130",
+        "vocab:jm1510890",
+        "vocab:jm1477720",
+        "vocab:jm1403160",
+        "vocab:jm1249470",
+        "vocab:jm1366190",
+        "vocab:jm1484350",
+        "vocab:jm1406710",
+        "vocab:jm1445130",
+        "vocab:jm1198960"
+      ],
+      "sentences": [
+        {
+          "ja": "春になるにつれて花が増える。",
+          "reading": "はるになるにつれてはながふえる。",
+          "en": "As spring comes on, more flowers appear.",
+          "zh": "随着春天到来，花越来越多。",
+          "zh_TW": "隨著春天到來，花越來越多。",
+          "items": [
+            "grammar:ni-tsurete"
+          ]
+        },
+        {
+          "ja": "説明に従って機械を動かした。",
+          "reading": "せつめいにしたがってきかいをうごかした。",
+          "en": "I operated the machine according to the instructions.",
+          "zh": "按照说明操作了机器。",
+          "zh_TW": "按照說明操作了機器。",
+          "items": [
+            "grammar:ni-shitagatte"
+          ]
+        },
+        {
+          "ja": "大雨のせいで電車が止まった。",
+          "reading": "おおあめのせいででんしゃがとまった。",
+          "en": "The trains stopped because of the heavy rain.",
+          "zh": "因为大雨电车停了。",
+          "zh_TW": "因為大雨電車停了。",
+          "items": [
+            "grammar:sei-de"
+          ]
+        },
+        {
+          "ja": "寒いせいか、人が少ない。",
+          "reading": "さむいせいか、ひとがすくない。",
+          "en": "Perhaps because it is cold, there are few people.",
+          "zh": "也许因为冷，人很少。",
+          "zh_TW": "也許因為冷，人很少。",
+          "items": [
+            "grammar:sei-ka"
+          ]
+        },
+        {
+          "ja": "先生のおかげで合格しました。",
+          "reading": "せんせいのおかげでごうかくしました。",
+          "en": "Thanks to my teacher, I passed.",
+          "zh": "多亏老师，我合格了。",
+          "zh_TW": "多虧老師，我合格了。",
+          "items": [
+            "grammar:okage-de"
+          ]
+        },
+        {
+          "ja": "心配のあまり眠れなかった。",
+          "reading": "しんぱいのあまりねむれなかった。",
+          "en": "I was so worried that I could not sleep.",
+          "zh": "因为太担心而睡不着。",
+          "zh_TW": "因為太擔心而睡不著。",
+          "items": [
+            "grammar:amari"
+          ]
+        },
+        {
+          "ja": "人によって考えが違う。",
+          "reading": "ひとによってかんがえがちがう。",
+          "en": "Ideas differ from person to person.",
+          "zh": "想法因人而异。",
+          "zh_TW": "想法因人而異。",
+          "items": [
+            "grammar:ni-yotte-vary"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n3-6-01",
+          "item": "grammar:ni-tsurete",
+          "prompt": {
+            "en": "Which says two things change together?",
+            "zh": "哪个表示两者同步变化？",
+            "zh_TW": "哪個表示兩者同步變化？"
+          },
+          "options": [
+            "につれて",
+            "にとって",
+            "にたいして",
+            "において"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜につれて ties a gradual change to another.",
+            "zh": "〜につれて把两种渐进的变化连起来。",
+            "zh_TW": "〜につれて把兩種漸進的變化連起來。"
+          }
+        },
+        {
+          "id": "q:n3-6-02",
+          "item": "grammar:sei-de",
+          "prompt": {
+            "en": "Which blames a bad result on something?",
+            "zh": "哪个把坏结果归咎于某事？",
+            "zh_TW": "哪個把壞結果歸咎於某事？"
+          },
+          "options": [
+            "雨のせいで中止した。",
+            "雨のおかげで中止した。",
+            "雨のせいか中止した。",
+            "雨によって中止した。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜せいで names the cause of an unwanted result.",
+            "zh": "〜せいで指出造成坏结果的原因。",
+            "zh_TW": "〜せいで指出造成壞結果的原因。"
+          }
+        },
+        {
+          "id": "q:n3-6-03",
+          "item": "grammar:okage-de",
+          "prompt": {
+            "en": "Which credits a good result?",
+            "zh": "哪个表示好结果的功劳？",
+            "zh_TW": "哪個表示好結果的功勞？"
+          },
+          "options": [
+            "おかげで",
+            "せいで",
+            "くせに",
+            "ばかりに"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜おかげで thanks the cause for a welcome result.",
+            "zh": "〜おかげで表示多亏某事带来好结果。",
+            "zh_TW": "〜おかげで表示多虧某事帶來好結果。"
+          }
+        },
+        {
+          "id": "q:n3-6-04",
+          "item": "grammar:sei-ka",
+          "prompt": {
+            "en": "Which hedges the cause?",
+            "zh": "哪个是不确定的原因？",
+            "zh_TW": "哪個是不確定的原因？"
+          },
+          "options": [
+            "せいか",
+            "せいで",
+            "おかげで",
+            "ために"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜せいか says the cause is only a guess.",
+            "zh": "〜せいか表示原因只是推测。",
+            "zh_TW": "〜せいか表示原因只是推測。"
+          }
+        },
+        {
+          "id": "q:n3-6-05",
+          "item": "grammar:amari",
+          "prompt": {
+            "en": "Fill the blank: 驚きの＿、声が出なかった。",
+            "zh": "填空：驚きの＿、声が出なかった。",
+            "zh_TW": "填空：驚きの＿、聲が出なかった。"
+          },
+          "options": [
+            "あまり",
+            "うちに",
+            "ために",
+            "ように"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜あまり says the feeling was so strong it caused something.",
+            "zh": "〜あまり表示感情过度而导致某结果。",
+            "zh_TW": "〜あまり表示感情過度而導致某結果。"
+          }
+        },
+        {
+          "id": "q:n3-6-06",
+          "item": "grammar:ni-yotte-means",
+          "prompt": {
+            "en": "Which says \"by means of\"?",
+            "zh": "哪个表示「通过…手段」？",
+            "zh_TW": "哪個表示「通過…手段」？"
+          },
+          "options": [
+            "話し合いによって",
+            "話し合いにとって",
+            "話し合いに対して",
+            "話し合いにおいて"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜によって marks the means or the cause.",
+            "zh": "〜によって表示手段或原因。",
+            "zh_TW": "〜によって表示手段或原因。"
+          }
+        },
+        {
+          "id": "q:n3-6-07",
+          "item": "grammar:ni-yoru-noun",
+          "prompt": {
+            "en": "Which form comes before a noun?",
+            "zh": "哪个形式接在名词前？",
+            "zh_TW": "哪個形式接在名詞前？"
+          },
+          "options": [
+            "地震による被害",
+            "地震によって被害",
+            "地震によれば被害",
+            "地震にとって被害"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜による modifies the noun that follows.",
+            "zh": "〜による用来修饰后面的名词。",
+            "zh_TW": "〜による用來修飾後面的名詞。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Explain a result you got, using 〜せいで, 〜おかげで and 〜によって.",
+        "zh": "用〜せいで、〜おかげで和〜によって说明你得到的一个结果。",
+        "zh_TW": "用〜せいで、〜おかげで和〜によって說明你得到的一個結果。"
+      }
+    },
+    {
+      "id": "unit:n3-7",
+      "title": {
+        "en": "Contrast and concession",
+        "zh": "对比与让步",
+        "zh_TW": "對比與讓步"
+      },
+      "grammar": [
+        "grammar:kuse-ni",
+        "grammar:wari-ni",
+        "grammar:nagara-mo",
+        "grammar:tsutsu",
+        "grammar:dokoro-ka",
+        "grammar:bakari-ka",
+        "grammar:dake-de-naku",
+        "grammar:to-shitemo",
+        "grammar:tatoe-temo",
+        "grammar:donnani-temo",
+        "grammar:te-mo-kamawanai"
+      ],
+      "vocab": [
+        "vocab:jm1226960",
+        "vocab:jm1483420",
+        "vocab:jm1196970",
+        "vocab:jm1244680",
+        "vocab:jm1494970",
+        "vocab:jm1158870",
+        "vocab:jm1483560",
+        "vocab:jm1507670",
+        "vocab:jm1401000",
+        "vocab:jm1410780",
+        "vocab:jm1480380",
+        "vocab:jm1490010"
+      ],
+      "sentences": [
+        {
+          "ja": "子供のくせに大人のことを言う。",
+          "reading": "こどものくせにおとなのことをいう。",
+          "en": "He talks like an adult, though he is only a child.",
+          "zh": "明明是小孩却说大人话。",
+          "zh_TW": "明明是小孩卻說大人話。",
+          "items": [
+            "grammar:kuse-ni"
+          ]
+        },
+        {
+          "ja": "値段のわりに味がいい。",
+          "reading": "ねだんのわりにあじがいい。",
+          "en": "It tastes good for the price.",
+          "zh": "就价格而言，味道不错。",
+          "zh_TW": "就價格而言，味道不錯。",
+          "items": [
+            "grammar:wari-ni"
+          ]
+        },
+        {
+          "ja": "悪いと知りながらも続けた。",
+          "reading": "わるいとしりながらもつづけた。",
+          "en": "He kept on, though he knew it was wrong.",
+          "zh": "明知不好还是继续做了。",
+          "zh_TW": "明知不好還是繼續做了。",
+          "items": [
+            "grammar:nagara-mo"
+          ]
+        },
+        {
+          "ja": "忙しいと言いつつ、遊んでいる。",
+          "reading": "いそがしいといいつつ、あそんでいる。",
+          "en": "He says he is busy, and yet he is playing.",
+          "zh": "嘴上说忙，其实在玩。",
+          "zh_TW": "嘴上說忙，其實在玩。",
+          "items": [
+            "grammar:tsutsu"
+          ]
+        },
+        {
+          "ja": "安いどころか、とても高いです。",
+          "reading": "やすいどころか、とてもたかいです。",
+          "en": "Far from cheap, it is very expensive.",
+          "zh": "别说便宜了，反而很贵。",
+          "zh_TW": "別說便宜了，反而很貴。",
+          "items": [
+            "grammar:dokoro-ka"
+          ]
+        },
+        {
+          "ja": "兄だけでなく、姉も来た。",
+          "reading": "あにだけでなく、あねもきた。",
+          "en": "Not only my brother but my sister came too.",
+          "zh": "不只哥哥，姐姐也来了。",
+          "zh_TW": "不只哥哥，姐姐也來了。",
+          "items": [
+            "grammar:dake-de-naku"
+          ]
+        },
+        {
+          "ja": "たとえ雨が降っても行きます。",
+          "reading": "たとえあめがふってもいきます。",
+          "en": "I will go even if it rains.",
+          "zh": "即使下雨我也去。",
+          "zh_TW": "即使下雨我也去。",
+          "items": [
+            "grammar:tatoe-temo"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n3-7-01",
+          "item": "grammar:kuse-ni",
+          "prompt": {
+            "en": "Which carries reproach?",
+            "zh": "哪个带有责备语气？",
+            "zh_TW": "哪個帶有責備語氣？"
+          },
+          "options": [
+            "くせに",
+            "のに",
+            "ながら",
+            "ものの"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜くせに blames the person for the contradiction.",
+            "zh": "〜くせに带有指责对方的语气。",
+            "zh_TW": "〜くせに帶有指責對方的語氣。"
+          }
+        },
+        {
+          "id": "q:n3-7-02",
+          "item": "grammar:wari-ni",
+          "prompt": {
+            "en": "Which means \"considering how ... it is\"?",
+            "zh": "哪个表示「就…而言意外地」？",
+            "zh_TW": "哪個表示「就…而言意外地」？"
+          },
+          "options": [
+            "わりに",
+            "かわりに",
+            "ばかりに",
+            "ように"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜わりに compares the result with what the first part suggests.",
+            "zh": "〜わりに把结果与前提相比，表示出乎意料。",
+            "zh_TW": "〜わりに把結果與前提相比，表示出乎意料。"
+          }
+        },
+        {
+          "id": "q:n3-7-03",
+          "item": "grammar:nagara-mo",
+          "prompt": {
+            "en": "Which means \"although\"?",
+            "zh": "哪个表示「虽然」？",
+            "zh_TW": "哪個表示「雖然」？"
+          },
+          "options": [
+            "知りながらも",
+            "知りながら",
+            "知ってからも",
+            "知るながらも"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ながらも adds も to ながら and turns it into a concession.",
+            "zh": "ながらも在ながら上加も，表示让步。",
+            "zh_TW": "ながらも在ながら上加も，表示讓步。"
+          }
+        },
+        {
+          "id": "q:n3-7-04",
+          "item": "grammar:dokoro-ka",
+          "prompt": {
+            "en": "Which corrects the listener strongly?",
+            "zh": "哪个强烈纠正对方？",
+            "zh_TW": "哪個強烈糾正對方？"
+          },
+          "options": [
+            "どころか",
+            "ところが",
+            "どころで",
+            "ところで"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜どころか says the truth is the opposite, and more so.",
+            "zh": "〜どころか表示事实恰恰相反，程度更甚。",
+            "zh_TW": "〜どころか表示事實恰恰相反，程度更甚。"
+          }
+        },
+        {
+          "id": "q:n3-7-05",
+          "item": "grammar:bakari-ka",
+          "prompt": {
+            "en": "Which means \"not only that\"?",
+            "zh": "哪个表示「不仅如此」？",
+            "zh_TW": "哪個表示「不僅如此」？"
+          },
+          "options": [
+            "ばかりか",
+            "ばかりに",
+            "ばかりで",
+            "ばかりの"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ばかりか adds a second, stronger fact.",
+            "zh": "〜ばかりか再加上更进一层的事实。",
+            "zh_TW": "〜ばかりか再加上更進一層的事實。"
+          }
+        },
+        {
+          "id": "q:n3-7-06",
+          "item": "grammar:donnani-temo",
+          "prompt": {
+            "en": "Fill the blank: ＿急いでも間に合わない。",
+            "zh": "填空：＿急いでも間に合わない。",
+            "zh_TW": "填空：＿急いでも間に合わない。"
+          },
+          "options": [
+            "どんなに",
+            "たとえ",
+            "もしも",
+            "せっかく"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "どんなに pairs with 〜ても to mean \"no matter how much\".",
+            "zh": "どんなに与〜ても呼应，表示无论多么。",
+            "zh_TW": "どんなに與〜ても呼應，表示無論多麼。"
+          }
+        },
+        {
+          "id": "q:n3-7-07",
+          "item": "grammar:te-mo-kamawanai",
+          "prompt": {
+            "en": "Which grants permission?",
+            "zh": "哪个表示允许？",
+            "zh_TW": "哪個表示允許？"
+          },
+          "options": [
+            "帰ってもかまいません。",
+            "帰ってはかまいません。",
+            "帰ってもかまいます。",
+            "帰ってもかまいましょう。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜てもかまわない says the speaker does not mind.",
+            "zh": "〜てもかまわない表示说话人不介意。",
+            "zh_TW": "〜てもかまわない表示說話人不介意。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Contrast two things you own using 〜わりに, 〜どころか and 〜だけでなく.",
+        "zh": "用〜わりに、〜どころか和〜だけでなく比较你拥有的两样东西。",
+        "zh_TW": "用〜わりに、〜どころか和〜だけでなく比較你擁有的兩樣東西。"
+      }
+    },
+    {
+      "id": "unit:n3-8",
+      "title": {
+        "en": "Conditions and limits",
+        "zh": "条件与限度",
+        "zh_TW": "條件與限度"
+      },
+      "grammar": [
+        "grammar:ijou",
+        "grammar:kagiri",
+        "grammar:kagiri-de-wa",
+        "grammar:nai-kagiri",
+        "grammar:baai-wa",
+        "grammar:to-shitara",
+        "grammar:shidai-de",
+        "grammar:sae-ba",
+        "grammar:nai-to",
+        "grammar:tara-discovery",
+        "grammar:noni-purpose"
+      ],
+      "vocab": [
+        "vocab:jm1356510",
+        "vocab:jm1264650",
+        "vocab:jm1481890",
+        "vocab:jm1191060",
+        "vocab:jm1392290",
+        "vocab:jm1254340",
+        "vocab:jm1383180",
+        "vocab:jm1205830",
+        "vocab:jm1328110",
+        "vocab:jm1517090",
+        "vocab:jm1535560",
+        "vocab:jm1206080"
+      ],
+      "sentences": [
+        {
+          "ja": "約束した以上、必ず守ります。",
+          "reading": "やくそくしたいじょう、かならずまもります。",
+          "en": "Now that I have promised, I will certainly keep it.",
+          "zh": "既然答应了，就一定遵守。",
+          "zh_TW": "既然答應了，就一定遵守。",
+          "items": [
+            "grammar:ijou"
+          ]
+        },
+        {
+          "ja": "私が知る限り、彼は正直だ。",
+          "reading": "わたしがしるかぎり、かれはしょうじきだ。",
+          "en": "As far as I know, he is honest.",
+          "zh": "据我所知，他很诚实。",
+          "zh_TW": "據我所知，他很誠實。",
+          "items": [
+            "grammar:kagiri"
+          ]
+        },
+        {
+          "ja": "私が見た限りでは、問題はない。",
+          "reading": "わたしがみたかぎりでは、もんだいはない。",
+          "en": "As far as I saw, there is no problem.",
+          "zh": "就我所见，没有问题。",
+          "zh_TW": "就我所見，沒有問題。",
+          "items": [
+            "grammar:kagiri-de-wa"
+          ]
+        },
+        {
+          "ja": "練習しない限り、上手にならない。",
+          "reading": "れんしゅうしないかぎり、じょうずにならない。",
+          "en": "Unless you practise, you will not get good.",
+          "zh": "不练习就不会变好。",
+          "zh_TW": "不練習就不會變好。",
+          "items": [
+            "grammar:nai-kagiri"
+          ]
+        },
+        {
+          "ja": "雨の場合は中止します。",
+          "reading": "あめのばあいはちゅうしします。",
+          "en": "In case of rain we will cancel.",
+          "zh": "下雨的话就取消。",
+          "zh_TW": "下雨的話就取消。",
+          "items": [
+            "grammar:baai-wa"
+          ]
+        },
+        {
+          "ja": "時間さえあれば、手伝います。",
+          "reading": "じかんさえあれば、てつだいます。",
+          "en": "If only I had time, I would help.",
+          "zh": "只要有时间，我就帮忙。",
+          "zh_TW": "只要有時間，我就幫忙。",
+          "items": [
+            "grammar:sae-ba"
+          ]
+        },
+        {
+          "ja": "早く出ないと、遅れますよ。",
+          "reading": "はやくでないと、おくれますよ。",
+          "en": "If you don't leave soon, you will be late.",
+          "zh": "不早点出发就要迟到了。",
+          "zh_TW": "不早點出發就要遲到了。",
+          "items": [
+            "grammar:nai-to"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n3-8-01",
+          "item": "grammar:ijou",
+          "prompt": {
+            "en": "Which says \"now that it is so, act on it\"?",
+            "zh": "哪个表示「既然如此就要…」？",
+            "zh_TW": "哪個表示「既然如此就要…」？"
+          },
+          "options": [
+            "以上は",
+            "以内は",
+            "以外は",
+            "以下は"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜以上（は） draws a duty from a settled fact.",
+            "zh": "〜以上（は）从既定事实引出应尽的责任。",
+            "zh_TW": "〜以上（は）從既定事實引出應盡的責任。"
+          }
+        },
+        {
+          "id": "q:n3-8-02",
+          "item": "grammar:kagiri",
+          "prompt": {
+            "en": "Which limits a claim to what the speaker knows?",
+            "zh": "哪个把断言限定在说话人所知范围？",
+            "zh_TW": "哪個把斷言限定在說話人所知範圍？"
+          },
+          "options": [
+            "知る限り",
+            "知るだけ",
+            "知るほど",
+            "知るまで"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜限り marks the boundary the statement holds within.",
+            "zh": "〜限り表示该说法成立的范围。",
+            "zh_TW": "〜限り表示該說法成立的範圍。"
+          }
+        },
+        {
+          "id": "q:n3-8-03",
+          "item": "grammar:nai-kagiri",
+          "prompt": {
+            "en": "Which means \"unless\"?",
+            "zh": "哪个表示「除非」？",
+            "zh_TW": "哪個表示「除非」？"
+          },
+          "options": [
+            "謝らない限り",
+            "謝る限り",
+            "謝らない場合",
+            "謝るながら"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ない限り says nothing changes until it happens.",
+            "zh": "〜ない限り表示不发生就不会改变。",
+            "zh_TW": "〜ない限り表示不發生就不會改變。"
+          }
+        },
+        {
+          "id": "q:n3-8-04",
+          "item": "grammar:to-shitara",
+          "prompt": {
+            "en": "Which supposes something?",
+            "zh": "哪个表示假设？",
+            "zh_TW": "哪個表示假設？"
+          },
+          "options": [
+            "としたら",
+            "とすると思う",
+            "とばかり",
+            "としても"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜としたら supposes a case and asks what follows.",
+            "zh": "〜としたら假设一种情况并推论。",
+            "zh_TW": "〜としたら假設一種情況並推論。"
+          }
+        },
+        {
+          "id": "q:n3-8-05",
+          "item": "grammar:shidai-de",
+          "prompt": {
+            "en": "Which says the result depends on something?",
+            "zh": "哪个表示结果取决于某事？",
+            "zh_TW": "哪個表示結果取決於某事？"
+          },
+          "options": [
+            "天気次第で",
+            "天気次第に",
+            "天気次第から",
+            "天気次第は"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜次第で says the outcome varies with it.",
+            "zh": "〜次第で表示结果随之而变。",
+            "zh_TW": "〜次第で表示結果隨之而變。"
+          }
+        },
+        {
+          "id": "q:n3-8-06",
+          "item": "grammar:tara-discovery",
+          "prompt": {
+            "en": "Which reports a discovery?",
+            "zh": "哪个表示发现？",
+            "zh_TW": "哪個表示發現？"
+          },
+          "options": [
+            "帰ったら、手紙が来ていた。",
+            "帰れば、手紙が来ていた。",
+            "帰ると、手紙が来るだろう。",
+            "帰るなら、手紙が来ていた。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜たら〜た reports what you found on doing something.",
+            "zh": "〜たら〜た表示做了之后发现的事。",
+            "zh_TW": "〜たら〜た表示做了之後發現的事。"
+          }
+        },
+        {
+          "id": "q:n3-8-07",
+          "item": "grammar:noni-purpose",
+          "prompt": {
+            "en": "Which says what a tool is for?",
+            "zh": "哪个说明工具的用途？",
+            "zh_TW": "哪個說明工具的用途？"
+          },
+          "options": [
+            "切るのに使う",
+            "切るように使う",
+            "切るために使う道具ではない",
+            "切るのを使う"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "Verb plus のに names the use a thing is put to.",
+            "zh": "动词＋のに表示某物的用途。",
+            "zh_TW": "動詞＋のに表示某物的用途。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Write the rules of a club in three sentences using 〜以上は, 〜ない限り and 〜場合は.",
+        "zh": "用〜以上は、〜ない限り和〜場合は写三句社团规则。",
+        "zh_TW": "用〜以上は、〜ない限り和〜場合は寫三句社團規則。"
+      }
+    },
+    {
+      "id": "unit:n3-9",
+      "title": {
+        "en": "Comparison, degree and emphasis",
+        "zh": "比较、程度与强调",
+        "zh_TW": "比較、程度與強調"
+      },
+      "grammar": [
+        "grammar:ni-kurabete",
+        "grammar:kawari-ni",
+        "grammar:ippou-de",
+        "grammar:sae",
+        "grammar:koso",
+        "grammar:made-extreme",
+        "grammar:demo-example",
+        "grammar:kurai-extent",
+        "grammar:hodo-extent",
+        "grammar:hodo-nai",
+        "grammar:ba-hodo",
+        "grammar:to-onaji-kurai"
+      ],
+      "vocab": [
+        "vocab:jm1483560",
+        "vocab:jm1436540",
+        "vocab:jm1583870",
+        "vocab:jm1293850",
+        "vocab:jm1294220",
+        "vocab:jm1291070",
+        "vocab:jm1403120",
+        "vocab:jm1263110",
+        "vocab:jm1554640",
+        "vocab:jm1551200",
+        "vocab:jm1449330",
+        "vocab:jm1490010"
+      ],
+      "sentences": [
+        {
+          "ja": "去年に比べて客が増えた。",
+          "reading": "きょねんにくらべてきゃくがふえた。",
+          "en": "Compared with last year, we have more customers.",
+          "zh": "与去年相比，客人增加了。",
+          "zh_TW": "與去年相比，客人增加了。",
+          "items": [
+            "grammar:ni-kurabete"
+          ]
+        },
+        {
+          "ja": "肉の代わりに魚を使う。",
+          "reading": "にくのかわりにさかなをつかう。",
+          "en": "We use fish instead of meat.",
+          "zh": "用鱼代替肉。",
+          "zh_TW": "用魚代替肉。",
+          "items": [
+            "grammar:kawari-ni"
+          ]
+        },
+        {
+          "ja": "この店は安い一方で、味もいい。",
+          "reading": "このみせはやすいいっぽうで、あじもいい。",
+          "en": "This shop is cheap, and on top of that the food is good.",
+          "zh": "这家店便宜，另一方面味道也好。",
+          "zh_TW": "這家店便宜，另一方面味道也好。",
+          "items": [
+            "grammar:ippou-de"
+          ]
+        },
+        {
+          "ja": "子供でさえ答えを知っている。",
+          "reading": "こどもでさえこたえをしっている。",
+          "en": "Even a child knows the answer.",
+          "zh": "连小孩都知道答案。",
+          "zh_TW": "連小孩都知道答案。",
+          "items": [
+            "grammar:sae"
+          ]
+        },
+        {
+          "ja": "今日こそ最後までやります。",
+          "reading": "きょうこそさいごまでやります。",
+          "en": "Today of all days I will see it through.",
+          "zh": "就在今天，我一定做到最后。",
+          "zh_TW": "就在今天，我一定做到最後。",
+          "items": [
+            "grammar:koso"
+          ]
+        },
+        {
+          "ja": "今年は去年ほど暑くない。",
+          "reading": "ことしはきょねんほどあつくない。",
+          "en": "This year is not as hot as last year.",
+          "zh": "今年没有去年那么热。",
+          "zh_TW": "今年沒有去年那麼熱。",
+          "items": [
+            "grammar:hodo-nai"
+          ]
+        },
+        {
+          "ja": "読めば読むほど面白くなる。",
+          "reading": "よめばよむほどおもしろくなる。",
+          "en": "The more you read it, the more interesting it gets.",
+          "zh": "越读越有意思。",
+          "zh_TW": "越讀越有意思。",
+          "items": [
+            "grammar:ba-hodo"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n3-9-01",
+          "item": "grammar:ni-kurabete",
+          "prompt": {
+            "en": "Which introduces a comparison?",
+            "zh": "哪个引出比较的对象？",
+            "zh_TW": "哪個引出比較的對象？"
+          },
+          "options": [
+            "去年に比べて",
+            "去年に対して",
+            "去年について",
+            "去年において"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜に比べて names what the new fact is measured against.",
+            "zh": "〜に比べて指出比较的基准。",
+            "zh_TW": "〜に比べて指出比較的基準。"
+          }
+        },
+        {
+          "id": "q:n3-9-02",
+          "item": "grammar:kawari-ni",
+          "prompt": {
+            "en": "Which means \"instead of\"?",
+            "zh": "哪个表示「代替」？",
+            "zh_TW": "哪個表示「代替」？"
+          },
+          "options": [
+            "かわりに",
+            "ついでに",
+            "うえで",
+            "わりに"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜かわりに puts one thing in another's place.",
+            "zh": "〜かわりに表示以此代彼。",
+            "zh_TW": "〜かわりに表示以此代彼。"
+          }
+        },
+        {
+          "id": "q:n3-9-03",
+          "item": "grammar:ippou-de",
+          "prompt": {
+            "en": "Which balances two sides of one thing?",
+            "zh": "哪个表示一件事的两个方面？",
+            "zh_TW": "哪個表示一件事的兩個方面？"
+          },
+          "options": [
+            "一方で",
+            "一方的",
+            "一方から",
+            "一方まで"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜一方（で） sets one side against the other.",
+            "zh": "〜一方（で）把两个方面并列起来。",
+            "zh_TW": "〜一方（で）把兩個方面並列起來。"
+          }
+        },
+        {
+          "id": "q:n3-9-04",
+          "item": "grammar:koso",
+          "prompt": {
+            "en": "Which singles one thing out above all?",
+            "zh": "哪个特别强调某一个？",
+            "zh_TW": "哪個特別強調某一個？"
+          },
+          "options": [
+            "今度こそ",
+            "今度さえ",
+            "今度でも",
+            "今度なんて"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "こそ says \"this one, precisely\".",
+            "zh": "こそ表示「正是这个」。",
+            "zh_TW": "こそ表示「正是這個」。"
+          }
+        },
+        {
+          "id": "q:n3-9-05",
+          "item": "grammar:demo-example",
+          "prompt": {
+            "en": "Which offers an example lightly?",
+            "zh": "哪个是随意举例？",
+            "zh_TW": "哪個是隨意舉例？"
+          },
+          "options": [
+            "お茶でも飲みませんか。",
+            "お茶さえ飲みませんか。",
+            "お茶こそ飲みませんか。",
+            "お茶ほど飲みませんか。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜でも offers one example without insisting on it.",
+            "zh": "〜でも举一个例子，并不限定。",
+            "zh_TW": "〜でも舉一個例子，並不限定。"
+          }
+        },
+        {
+          "id": "q:n3-9-06",
+          "item": "grammar:hodo-extent",
+          "prompt": {
+            "en": "Which shows the degree of something?",
+            "zh": "哪个表示程度？",
+            "zh_TW": "哪個表示程度？"
+          },
+          "options": [
+            "歩けないほど疲れた。",
+            "歩けないさえ疲れた。",
+            "歩けないこそ疲れた。",
+            "歩けないなんて疲れた。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ほど measures how far the situation went.",
+            "zh": "〜ほど表示达到的程度。",
+            "zh_TW": "〜ほど表示達到的程度。"
+          }
+        },
+        {
+          "id": "q:n3-9-07",
+          "item": "grammar:to-onaji-kurai",
+          "prompt": {
+            "en": "Which says two things are about equal?",
+            "zh": "哪个表示两者大致相同？",
+            "zh_TW": "哪個表示兩者大致相同？"
+          },
+          "options": [
+            "兄と同じくらい",
+            "兄と同じほど高い山",
+            "兄より同じくらい",
+            "兄に同じくらい"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜と同じくらい compares two things as roughly equal.",
+            "zh": "〜と同じくらい表示两者大致相当。",
+            "zh_TW": "〜と同じくらい表示兩者大致相當。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Compare two cities you know using 〜に比べて, 〜ほど〜ない and 〜と同じくらい.",
+        "zh": "用〜に比べて、〜ほど〜ない和〜と同じくらい比较你熟悉的两座城市。",
+        "zh_TW": "用〜に比べて、〜ほど〜ない和〜と同じくらい比較你熟悉的兩座城市。"
+      }
+    },
+    {
+      "id": "unit:n3-10",
+      "title": {
+        "en": "Formal relations",
+        "zh": "正式表达中的关系",
+        "zh_TW": "正式表達中的關係"
+      },
+      "grammar": [
+        "grammar:ni-kanshite",
+        "grammar:ni-taishite",
+        "grammar:ni-taisuru",
+        "grammar:ni-oite",
+        "grammar:ni-okeru",
+        "grammar:to-shite",
+        "grammar:ni-totte",
+        "grammar:ni-yoreba",
+        "grammar:muke-muki",
+        "grammar:teki",
+        "grammar:toori-noun"
+      ],
+      "vocab": [
+        "vocab:jm1410120",
+        "vocab:jm1215870",
+        "vocab:jm1551710",
+        "vocab:jm1538000",
+        "vocab:jm1535560",
+        "vocab:jm1263650",
+        "vocab:jm1286170",
+        "vocab:jm1376070",
+        "vocab:jm1218190",
+        "vocab:jm1504330",
+        "vocab:jm1429120",
+        "vocab:jm1312720"
+      ],
+      "sentences": [
+        {
+          "ja": "この問題に関して考えを書く。",
+          "reading": "このもんだいにかんしてかんがえをかく。",
+          "en": "I will write my thoughts on this problem.",
+          "zh": "就这个问题写下想法。",
+          "zh_TW": "就這個問題寫下想法。",
+          "items": [
+            "grammar:ni-kanshite"
+          ]
+        },
+        {
+          "ja": "子供に対する愛は深い。",
+          "reading": "こどもにたいするあいはふかい。",
+          "en": "Love for a child runs deep.",
+          "zh": "对孩子的爱很深。",
+          "zh_TW": "對孩子的愛很深。",
+          "items": [
+            "grammar:ni-taisuru"
+          ]
+        },
+        {
+          "ja": "大会は日本において開かれた。",
+          "reading": "たいかいはにほんにおいてひらかれた。",
+          "en": "The tournament was held in Japan.",
+          "zh": "大会在日本举行。",
+          "zh_TW": "大會在日本舉行。",
+          "items": [
+            "grammar:ni-oite"
+          ]
+        },
+        {
+          "ja": "私は医師として働いている。",
+          "reading": "わたしはいしとしてはたらいている。",
+          "en": "I work as a doctor.",
+          "zh": "我作为医生工作。",
+          "zh_TW": "我作為醫生工作。",
+          "items": [
+            "grammar:to-shite"
+          ]
+        },
+        {
+          "ja": "私にとって家族は大切だ。",
+          "reading": "わたしにとってかぞくはたいせつだ。",
+          "en": "For me, family matters.",
+          "zh": "对我来说家人很重要。",
+          "zh_TW": "對我來說家人很重要。",
+          "items": [
+            "grammar:ni-totte"
+          ]
+        },
+        {
+          "ja": "新聞によれば、明日は雨だ。",
+          "reading": "しんぶんによれば、あしたはあめだ。",
+          "en": "According to the paper, it will rain tomorrow.",
+          "zh": "据报纸说，明天下雨。",
+          "zh_TW": "據報紙說，明天下雨。",
+          "items": [
+            "grammar:ni-yoreba"
+          ]
+        },
+        {
+          "ja": "これは子供向けの本です。",
+          "reading": "これはこどもむけのほんです。",
+          "en": "This is a book aimed at children.",
+          "zh": "这是面向儿童的书。",
+          "zh_TW": "這是面向兒童的書。",
+          "items": [
+            "grammar:muke-muki"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n3-10-01",
+          "item": "grammar:ni-kanshite",
+          "prompt": {
+            "en": "Which is the formal \"concerning\"?",
+            "zh": "哪个是正式的「关于」？",
+            "zh_TW": "哪個是正式的「關於」？"
+          },
+          "options": [
+            "に関して",
+            "にとって",
+            "にわたって",
+            "につれて"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜に関して introduces the topic in formal writing.",
+            "zh": "〜に関して在正式文体中提出话题。",
+            "zh_TW": "〜に関して在正式文體中提出話題。"
+          }
+        },
+        {
+          "id": "q:n3-10-02",
+          "item": "grammar:ni-taishite",
+          "prompt": {
+            "en": "Which marks the person an action is aimed at?",
+            "zh": "哪个表示动作的对象？",
+            "zh_TW": "哪個表示動作的對象？"
+          },
+          "options": [
+            "先生に対して",
+            "先生に関して",
+            "先生において",
+            "先生によって"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜に対して points the action or attitude at someone.",
+            "zh": "〜に対して表示动作或态度针对的对象。",
+            "zh_TW": "〜に対して表示動作或態度針對的對象。"
+          }
+        },
+        {
+          "id": "q:n3-10-03",
+          "item": "grammar:ni-taisuru",
+          "prompt": {
+            "en": "Which form comes before a noun?",
+            "zh": "哪个形式接在名词前？",
+            "zh_TW": "哪個形式接在名詞前？"
+          },
+          "options": [
+            "に対する態度",
+            "に対して態度",
+            "に対しても態度",
+            "に対され態度"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜に対する modifies the noun that follows it.",
+            "zh": "〜に対する用来修饰后面的名词。",
+            "zh_TW": "〜に対する用來修飾後面的名詞。"
+          }
+        },
+        {
+          "id": "q:n3-10-04",
+          "item": "grammar:ni-okeru",
+          "prompt": {
+            "en": "Which modifies a noun with a place or field?",
+            "zh": "哪个用场所或领域修饰名词？",
+            "zh_TW": "哪個用場所或領域修飾名詞？"
+          },
+          "options": [
+            "日本における研究",
+            "日本において研究",
+            "日本によって研究",
+            "日本にとって研究"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜における is the noun-modifying form of 〜において.",
+            "zh": "〜における是〜において的连体形。",
+            "zh_TW": "〜における是〜において的連體形。"
+          }
+        },
+        {
+          "id": "q:n3-10-05",
+          "item": "grammar:ni-totte",
+          "prompt": {
+            "en": "Which gives someone's standpoint?",
+            "zh": "哪个表示某人的立场？",
+            "zh_TW": "哪個表示某人的立場？"
+          },
+          "options": [
+            "にとって",
+            "に対して",
+            "に関して",
+            "において"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜にとって says how things look from that person's side.",
+            "zh": "〜にとって表示从某人的角度来看。",
+            "zh_TW": "〜にとって表示從某人的角度來看。"
+          }
+        },
+        {
+          "id": "q:n3-10-06",
+          "item": "grammar:teki",
+          "prompt": {
+            "en": "Which turns a noun into an adjective?",
+            "zh": "哪个把名词变成形容词？",
+            "zh_TW": "哪個把名詞變成形容詞？"
+          },
+          "options": [
+            "科学的",
+            "科学らしい",
+            "科学ふう",
+            "科学っぽい"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜的 makes a noun behave like a na-adjective.",
+            "zh": "〜的把名词变成な形容词。",
+            "zh_TW": "〜的把名詞變成な形容詞。"
+          }
+        },
+        {
+          "id": "q:n3-10-07",
+          "item": "grammar:toori-noun",
+          "prompt": {
+            "en": "Which means \"just as planned\"?",
+            "zh": "哪个表示「按计划」？",
+            "zh_TW": "哪個表示「按計劃」？"
+          },
+          "options": [
+            "予定どおりに",
+            "予定のように見え",
+            "予定みたいに",
+            "予定らしく"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜どおり(に) says the result matched what was stated.",
+            "zh": "〜どおり(に)表示与所说的一致。",
+            "zh_TW": "〜どおり(に)表示與所說的一致。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Write three formal sentences about your field using 〜に関して, 〜として and 〜によれば.",
+        "zh": "用〜に関して、〜として和〜によれば写三句关于你专业的正式句子。",
+        "zh_TW": "用〜に関して、〜として和〜によれば寫三句關於你專業的正式句子。"
+      }
+    },
+    {
+      "id": "unit:n3-11",
+      "title": {
+        "en": "Compound verbs",
+        "zh": "复合动词",
+        "zh_TW": "複合動詞"
+      },
+      "grammar": [
+        "grammar:dasu",
+        "grammar:kiru",
+        "grammar:kirenai",
+        "grammar:nuku",
+        "grammar:au-compound",
+        "grammar:kake",
+        "grammar:te-bakari-iru",
+        "grammar:tagaru"
+      ],
+      "vocab": [
+        "vocab:jm1894690",
+        "vocab:jm1247030",
+        "vocab:jm1445130",
+        "vocab:jm1211490",
+        "vocab:jm1211630",
+        "vocab:jm1365990",
+        "vocab:jm1436730",
+        "vocab:jm1432900",
+        "vocab:jm1478190",
+        "vocab:jm1295040",
+        "vocab:jm1432410",
+        "vocab:jm1451040"
+      ],
+      "sentences": [
+        {
+          "ja": "子供が急に泣き出した。",
+          "reading": "こどもがきゅうになきだした。",
+          "en": "The child suddenly burst into tears.",
+          "zh": "孩子突然哭了起来。",
+          "zh_TW": "孩子突然哭了起來。",
+          "items": [
+            "grammar:dasu"
+          ]
+        },
+        {
+          "ja": "この本を一日で読み切った。",
+          "reading": "このほんをいちにちでよみきった。",
+          "en": "I read this book right through in one day.",
+          "zh": "这本书我一天就读完了。",
+          "zh_TW": "這本書我一天就讀完了。",
+          "items": [
+            "grammar:kiru"
+          ]
+        },
+        {
+          "ja": "多くて食べ切れない。",
+          "reading": "おおくてたべきれない。",
+          "en": "There is too much to finish.",
+          "zh": "太多了吃不完。",
+          "zh_TW": "太多了吃不完。",
+          "items": [
+            "grammar:kirenai"
+          ]
+        },
+        {
+          "ja": "最後まで走り抜いた。",
+          "reading": "さいごまではしりぬいた。",
+          "en": "He ran it through to the end.",
+          "zh": "他坚持跑到了最后。",
+          "zh_TW": "他堅持跑到了最後。",
+          "items": [
+            "grammar:nuku"
+          ]
+        },
+        {
+          "ja": "二人は駅で助け合った。",
+          "reading": "ふたりはえきでたすけあった。",
+          "en": "The two helped each other at the station.",
+          "zh": "两人在车站互相帮助。",
+          "zh_TW": "兩人在車站互相幫助。",
+          "items": [
+            "grammar:au-compound"
+          ]
+        },
+        {
+          "ja": "書きかけの手紙が残っている。",
+          "reading": "かきかけのてがみがのこっている。",
+          "en": "A half-written letter is still there.",
+          "zh": "写了一半的信还留着。",
+          "zh_TW": "寫了一半的信還留著。",
+          "items": [
+            "grammar:kake"
+          ]
+        },
+        {
+          "ja": "弟は遊んでばかりいる。",
+          "reading": "おとうとはあそんでばかりいる。",
+          "en": "My little brother does nothing but play.",
+          "zh": "弟弟只知道玩。",
+          "zh_TW": "弟弟只知道玩。",
+          "items": [
+            "grammar:te-bakari-iru"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n3-11-01",
+          "item": "grammar:dasu",
+          "prompt": {
+            "en": "Which means \"suddenly began\"?",
+            "zh": "哪个表示「突然开始」？",
+            "zh_TW": "哪個表示「突然開始」？"
+          },
+          "options": [
+            "笑い出した",
+            "笑い切った",
+            "笑い抜いた",
+            "笑い合った"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜出す marks the sudden start of an action.",
+            "zh": "〜出す表示动作突然开始。",
+            "zh_TW": "〜出す表示動作突然開始。"
+          }
+        },
+        {
+          "id": "q:n3-11-02",
+          "item": "grammar:kiru",
+          "prompt": {
+            "en": "Which means \"finished completely\"?",
+            "zh": "哪个表示「彻底做完」？",
+            "zh_TW": "哪個表示「徹底做完」？"
+          },
+          "options": [
+            "使い切った",
+            "使い出した",
+            "使いかけた",
+            "使い合った"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜切る says the action was carried right to the end.",
+            "zh": "〜切る表示做到彻底完成。",
+            "zh_TW": "〜切る表示做到徹底完成。"
+          }
+        },
+        {
+          "id": "q:n3-11-03",
+          "item": "grammar:kirenai",
+          "prompt": {
+            "en": "Which means \"too much to finish\"?",
+            "zh": "哪个表示「多得做不完」？",
+            "zh_TW": "哪個表示「多得做不完」？"
+          },
+          "options": [
+            "数え切れない",
+            "数え出せない",
+            "数え合えない",
+            "数えかけない"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜切れない says the amount defeats the action.",
+            "zh": "〜切れない表示数量太大做不完。",
+            "zh_TW": "〜切れない表示數量太大做不完。"
+          }
+        },
+        {
+          "id": "q:n3-11-04",
+          "item": "grammar:nuku",
+          "prompt": {
+            "en": "Which means \"saw it through despite hardship\"?",
+            "zh": "哪个表示「克服困难坚持到底」？",
+            "zh_TW": "哪個表示「克服困難堅持到底」？"
+          },
+          "options": [
+            "やり抜く",
+            "やり出す",
+            "やりかける",
+            "やり合う"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜抜く carries the sense of enduring to the end.",
+            "zh": "〜抜く含有坚持到底的意思。",
+            "zh_TW": "〜抜く含有堅持到底的意思。"
+          }
+        },
+        {
+          "id": "q:n3-11-05",
+          "item": "grammar:au-compound",
+          "prompt": {
+            "en": "Which means \"to each other\"?",
+            "zh": "哪个表示「互相」？",
+            "zh_TW": "哪個表示「互相」？"
+          },
+          "options": [
+            "話し合う",
+            "話し出す",
+            "話し切る",
+            "話しかける"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜合う makes the action mutual.",
+            "zh": "〜合う表示动作是相互的。",
+            "zh_TW": "〜合う表示動作是相互的。"
+          }
+        },
+        {
+          "id": "q:n3-11-06",
+          "item": "grammar:kake",
+          "prompt": {
+            "en": "Which means \"half-done\"?",
+            "zh": "哪个表示「做了一半」？",
+            "zh_TW": "哪個表示「做了一半」？"
+          },
+          "options": [
+            "読みかけの本",
+            "読み切った本",
+            "読み抜いた本",
+            "読み合った本"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜かけ says the action was begun and left unfinished.",
+            "zh": "〜かけ表示开始了但没做完。",
+            "zh_TW": "〜かけ表示開始了但沒做完。"
+          }
+        },
+        {
+          "id": "q:n3-11-07",
+          "item": "grammar:tagaru",
+          "prompt": {
+            "en": "Which reports someone else's wish?",
+            "zh": "哪个表示别人的愿望？",
+            "zh_TW": "哪個表示別人的願望？"
+          },
+          "options": [
+            "妹は行きたがっている。",
+            "妹は行きたいでいる。",
+            "妹は行きたそうする。",
+            "妹は行きたいがる。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜たがる describes a wish shown by a third person.",
+            "zh": "〜たがる描述第三人表现出的愿望。",
+            "zh_TW": "〜たがる描述第三人表現出的願望。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Describe a task you finished using 〜出す, 〜切る and 〜かけ.",
+        "zh": "用〜出す、〜切る和〜かけ描述你完成的一件事。",
+        "zh_TW": "用〜出す、〜切る和〜かけ描述你完成的一件事。"
+      }
+    },
+    {
+      "id": "unit:n3-12",
+      "title": {
+        "en": "Tendencies and strong feelings",
+        "zh": "倾向与强烈情感",
+        "zh_TW": "傾向與強烈情感"
+      },
+      "grammar": [
+        "grammar:gachi",
+        "grammar:darake",
+        "grammar:te-tamaranai",
+        "grammar:te-shikata-ga-nai",
+        "grammar:zu-ni",
+        "grammar:naide-manner",
+        "grammar:you-ni-wish"
+      ],
+      "vocab": [
+        "vocab:jm1483730",
+        "vocab:jm1244320",
+        "vocab:jm1469870",
+        "vocab:jm1555930",
+        "vocab:jm1212410",
+        "vocab:jm1196970",
+        "vocab:jm1217950",
+        "vocab:jm1529500",
+        "vocab:jm1532800",
+        "vocab:jm1533550",
+        "vocab:jm1596750",
+        "vocab:jm1213060"
+      ],
+      "sentences": [
+        {
+          "ja": "彼は最近休みがちだ。",
+          "reading": "かれはさいきんやすみがちだ。",
+          "en": "He tends to take days off lately.",
+          "zh": "他最近老是请假。",
+          "zh_TW": "他最近老是請假。",
+          "items": [
+            "grammar:gachi"
+          ]
+        },
+        {
+          "ja": "部屋は本だらけだった。",
+          "reading": "へやはほんだらけだった。",
+          "en": "The room was covered in books.",
+          "zh": "房间里全是书。",
+          "zh_TW": "房間裡全是書。",
+          "items": [
+            "grammar:darake"
+          ]
+        },
+        {
+          "ja": "国へ帰りたくてたまらない。",
+          "reading": "くにへかえりたくてたまらない。",
+          "en": "I want to go home so badly I can't stand it.",
+          "zh": "我非常想回国。",
+          "zh_TW": "我非常想回國。",
+          "items": [
+            "grammar:te-tamaranai"
+          ]
+        },
+        {
+          "ja": "試験の結果が気になって仕方がない。",
+          "reading": "しけんのけっかがきになってしかたがない。",
+          "en": "I can't stop worrying about the exam result.",
+          "zh": "考试结果让我担心得不得了。",
+          "zh_TW": "考試結果讓我擔心得不得了。",
+          "items": [
+            "grammar:te-shikata-ga-nai"
+          ]
+        },
+        {
+          "ja": "何も言わずに出て行った。",
+          "reading": "なにもいわずにでていった。",
+          "en": "He left without saying anything.",
+          "zh": "他什么也没说就出去了。",
+          "zh_TW": "他什麼也沒說就出去了。",
+          "items": [
+            "grammar:zu-ni"
+          ]
+        },
+        {
+          "ja": "傘を持たないで出かけた。",
+          "reading": "かさをもたないででかけた。",
+          "en": "I went out without taking an umbrella.",
+          "zh": "我没带伞就出门了。",
+          "zh_TW": "我沒帶傘就出門了。",
+          "items": [
+            "grammar:naide-manner"
+          ]
+        },
+        {
+          "ja": "早く元気になりますように。",
+          "reading": "はやくげんきになりますように。",
+          "en": "I hope you get well soon.",
+          "zh": "希望你早日康复。",
+          "zh_TW": "希望你早日康復。",
+          "items": [
+            "grammar:you-ni-wish"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n3-12-01",
+          "item": "grammar:gachi",
+          "prompt": {
+            "en": "Which says something tends to happen?",
+            "zh": "哪个表示「往往会」？",
+            "zh_TW": "哪個表示「往往會」？"
+          },
+          "options": [
+            "遅れがちだ",
+            "遅れそうだ",
+            "遅れっぽい",
+            "遅れ気味る"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜がち attaches to the masu-stem and reports an unwelcome tendency.",
+            "zh": "〜がち接ます形词干，表示不好的倾向。",
+            "zh_TW": "〜がち接ます形詞幹，表示不好的傾向。"
+          }
+        },
+        {
+          "id": "q:n3-12-02",
+          "item": "grammar:darake",
+          "prompt": {
+            "en": "Which means \"covered in\"?",
+            "zh": "哪个表示「满是」？",
+            "zh_TW": "哪個表示「滿是」？"
+          },
+          "options": [
+            "泥だらけ",
+            "泥がち",
+            "泥っぽい",
+            "泥気味"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜だらけ says the thing is full of something unpleasant.",
+            "zh": "〜だらけ表示满是不好的东西。",
+            "zh_TW": "〜だらけ表示滿是不好的東西。"
+          }
+        },
+        {
+          "id": "q:n3-12-03",
+          "item": "grammar:te-tamaranai",
+          "prompt": {
+            "en": "Which is the strongest \"I can't stand it\"?",
+            "zh": "哪个语气最强，表示「受不了」？",
+            "zh_TW": "哪個語氣最強，表示「受不了」？"
+          },
+          "options": [
+            "痛くてたまらない",
+            "痛くてもかまわない",
+            "痛いらしい",
+            "痛そうだ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜てたまらない says the feeling is beyond bearing.",
+            "zh": "〜てたまらない表示这种感觉无法忍受。",
+            "zh_TW": "〜てたまらない表示這種感覺無法忍受。"
+          }
+        },
+        {
+          "id": "q:n3-12-04",
+          "item": "grammar:te-shikata-ga-nai",
+          "prompt": {
+            "en": "Which means \"there is no helping it\"?",
+            "zh": "哪个表示「没办法控制」？",
+            "zh_TW": "哪個表示「沒辦法控制」？"
+          },
+          "options": [
+            "気になって仕方がない",
+            "気になって間違いない",
+            "気になっても仕方だ",
+            "気になる仕方がない"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜てしかたがない says the feeling cannot be held back.",
+            "zh": "〜てしかたがない表示这种感觉压不下去。",
+            "zh_TW": "〜てしかたがない表示這種感覺壓不下去。"
+          }
+        },
+        {
+          "id": "q:n3-12-05",
+          "item": "grammar:zu-ni",
+          "prompt": {
+            "en": "Which is the written \"without doing\"?",
+            "zh": "哪个是书面语的「不做…就」？",
+            "zh_TW": "哪個是書面語的「不做…就」？"
+          },
+          "options": [
+            "食べずに",
+            "食べなくて",
+            "食べないと",
+            "食べなければ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ずに is the written form of 〜ないで.",
+            "zh": "〜ずに是〜ないで的书面形式。",
+            "zh_TW": "〜ずに是〜ないで的書面形式。"
+          }
+        },
+        {
+          "id": "q:n3-12-06",
+          "item": "grammar:naide-manner",
+          "prompt": {
+            "en": "Fill the blank: 何も買わ＿帰った。",
+            "zh": "填空：何も買わ＿帰った。",
+            "zh_TW": "填空：何も買わ＿帰った。"
+          },
+          "options": [
+            "ないで",
+            "なくて",
+            "ないと",
+            "なければ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ないで says how the second action was done.",
+            "zh": "〜ないで说明后一动作是在什么状态下进行的。",
+            "zh_TW": "〜ないで說明後一動作是在什麼狀態下進行的。"
+          }
+        },
+        {
+          "id": "q:n3-12-07",
+          "item": "grammar:you-ni-wish",
+          "prompt": {
+            "en": "Which expresses a wish or prayer?",
+            "zh": "哪个表示祈愿？",
+            "zh_TW": "哪個表示祈願？"
+          },
+          "options": [
+            "合格しますように",
+            "合格するように見える",
+            "合格するようにする",
+            "合格したようだ"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ますように is used for wishes and prayers.",
+            "zh": "〜ますように用于祈愿。",
+            "zh_TW": "〜ますように用於祈願。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Write three wishes for the coming year using 〜ますように, 〜たくてたまらない and 〜がち.",
+        "zh": "用〜ますように、〜たくてたまらない和〜がち写三个新年的愿望。",
+        "zh_TW": "用〜ますように、〜たくてたまらない和〜がち寫三個新年的願望。"
+      }
+    },
+    {
+      "id": "unit:n3-13",
+      "title": {
+        "en": "Honorific and humble speech",
+        "zh": "尊敬语与谦让语",
+        "zh_TW": "尊敬語與謙讓語"
+      },
+      "grammar": [
+        "grammar:passive-general-statement",
+        "grammar:causative-passive-short",
+        "grammar:teineigo",
+        "grammar:special-honorific-verbs",
+        "grammar:special-humble-verbs",
+        "grammar:te-irassharu",
+        "grammar:te-oru",
+        "grammar:o-itashimasu",
+        "grammar:kudasaru-itadaku",
+        "grammar:sasete-itadaku",
+        "grammar:te-itadakemasenka"
+      ],
+      "vocab": [
+        "vocab:jm1406400",
+        "vocab:jm1250720",
+        "vocab:jm1557470",
+        "vocab:jm1518120",
+        "vocab:jm1401000",
+        "vocab:jm1154770",
+        "vocab:jm1198530",
+        "vocab:jm1477840",
+        "vocab:jm1325910",
+        "vocab:jm1410780",
+        "vocab:jm1591720",
+        "vocab:jm1232880"
+      ],
+      "sentences": [
+        {
+          "ja": "この薬は広く使われている。",
+          "reading": "このくすりはひろくつかわれている。",
+          "en": "This medicine is widely used.",
+          "zh": "这种药被广泛使用。",
+          "zh_TW": "這種藥被廣泛使用。",
+          "items": [
+            "grammar:passive-general-statement"
+          ]
+        },
+        {
+          "ja": "先生は今いらっしゃいますか。",
+          "reading": "せんせいはいまいらっしゃいますか。",
+          "en": "Is the teacher here now?",
+          "zh": "老师现在在吗？",
+          "zh_TW": "老師現在在嗎？",
+          "items": [
+            "grammar:special-honorific-verbs"
+          ]
+        },
+        {
+          "ja": "明日、私が伺います。",
+          "reading": "あした、わたしがうかがいます。",
+          "en": "I will call on you tomorrow.",
+          "zh": "明天我去拜访。",
+          "zh_TW": "明天我去拜訪。",
+          "items": [
+            "grammar:special-humble-verbs"
+          ]
+        },
+        {
+          "ja": "先生は本を読んでいらっしゃる。",
+          "reading": "せんせいはほんをよんでいらっしゃる。",
+          "en": "The teacher is reading a book.",
+          "zh": "老师正在看书。",
+          "zh_TW": "老師正在看書。",
+          "items": [
+            "grammar:te-irassharu"
+          ]
+        },
+        {
+          "ja": "私は日本に住んでおります。",
+          "reading": "わたしはにほんにすんでおります。",
+          "en": "I live in Japan.",
+          "zh": "我住在日本。",
+          "zh_TW": "我住在日本。",
+          "items": [
+            "grammar:te-oru"
+          ]
+        },
+        {
+          "ja": "先生が本をくださった。",
+          "reading": "せんせいがほんをくださった。",
+          "en": "The teacher gave me a book.",
+          "zh": "老师给了我一本书。",
+          "zh_TW": "老師給了我一本書。",
+          "items": [
+            "grammar:kudasaru-itadaku"
+          ]
+        },
+        {
+          "ja": "少し待っていただけませんか。",
+          "reading": "すこしまっていただけませんか。",
+          "en": "Could you please wait a moment?",
+          "zh": "能请您稍等一下吗？",
+          "zh_TW": "能請您稍等一下嗎？",
+          "items": [
+            "grammar:te-itadakemasenka"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n3-13-01",
+          "item": "grammar:teineigo",
+          "prompt": {
+            "en": "Which is plain polite style, not honorific?",
+            "zh": "哪个是丁宁语，而非尊敬语？",
+            "zh_TW": "哪個是丁寧語，而非尊敬語？"
+          },
+          "options": [
+            "先生は本を読みます。",
+            "先生は本を読まれます。",
+            "先生は本をお読みになります。",
+            "先生は本を読んでいらっしゃいます。"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "丁寧語 only makes the sentence polite; the other three raise the subject.",
+            "zh": "丁宁语只是把句子变礼貌，其余三个抬高主语。",
+            "zh_TW": "丁寧語只是把句子變禮貌，其餘三個抬高主語。"
+          }
+        },
+        {
+          "id": "q:n3-13-02",
+          "item": "grammar:special-honorific-verbs",
+          "prompt": {
+            "en": "Which is the honorific of 言う?",
+            "zh": "哪个是言う的尊敬语？",
+            "zh_TW": "哪個是言う的尊敬語？"
+          },
+          "options": [
+            "おっしゃる",
+            "申す",
+            "伺う",
+            "いたす"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "おっしゃる raises the speaker; 申す lowers oneself.",
+            "zh": "おっしゃる抬高对方，申す是谦让自己。",
+            "zh_TW": "おっしゃる抬高對方，申す是謙讓自己。"
+          }
+        },
+        {
+          "id": "q:n3-13-03",
+          "item": "grammar:special-humble-verbs",
+          "prompt": {
+            "en": "Which is the humble of 行く?",
+            "zh": "哪个是行く的谦让语？",
+            "zh_TW": "哪個是行く的謙讓語？"
+          },
+          "options": [
+            "伺う",
+            "いらっしゃる",
+            "なさる",
+            "ご覧になる"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "伺う is used for one's own visiting or asking.",
+            "zh": "伺う用于自己去拜访或询问。",
+            "zh_TW": "伺う用於自己去拜訪或詢問。"
+          }
+        },
+        {
+          "id": "q:n3-13-04",
+          "item": "grammar:te-irassharu",
+          "prompt": {
+            "en": "Which is the honorific progressive?",
+            "zh": "哪个是尊敬语的进行形？",
+            "zh_TW": "哪個是尊敬語的進行形？"
+          },
+          "options": [
+            "読んでいらっしゃる",
+            "読んでおる",
+            "読んでいる",
+            "読んでいたす"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ていらっしゃる raises the person who is doing it.",
+            "zh": "〜ていらっしゃる抬高动作者。",
+            "zh_TW": "〜ていらっしゃる抬高動作者。"
+          }
+        },
+        {
+          "id": "q:n3-13-05",
+          "item": "grammar:te-oru",
+          "prompt": {
+            "en": "Which is the humble progressive?",
+            "zh": "哪个是谦让语的进行形？",
+            "zh_TW": "哪個是謙讓語的進行形？"
+          },
+          "options": [
+            "おります",
+            "いらっしゃいます",
+            "なさいます",
+            "くださいます"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜ております lowers the speaker's own action.",
+            "zh": "〜ております谦称自己的动作。",
+            "zh_TW": "〜ております謙稱自己的動作。"
+          }
+        },
+        {
+          "id": "q:n3-13-06",
+          "item": "grammar:o-itashimasu",
+          "prompt": {
+            "en": "Which is the most humble offer to help?",
+            "zh": "哪个是最谦逊的帮忙说法？",
+            "zh_TW": "哪個是最謙遜的幫忙說法？"
+          },
+          "options": [
+            "お持ちいたします",
+            "お持ちします",
+            "持ちます",
+            "持っています"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "お〜いたします is one step humbler than お〜します.",
+            "zh": "お〜いたします比お〜します更谦逊。",
+            "zh_TW": "お〜いたします比お〜します更謙遜。"
+          }
+        },
+        {
+          "id": "q:n3-13-07",
+          "item": "grammar:sasete-itadaku",
+          "prompt": {
+            "en": "Which humbly asks to be allowed to do something?",
+            "zh": "哪个是谦逊地请求允许？",
+            "zh_TW": "哪個是謙遜地請求允許？"
+          },
+          "options": [
+            "休ませていただきます",
+            "休んでいただきます",
+            "休ませてくださいます",
+            "休まれていただきます"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "〜させていただく asks permission while lowering oneself.",
+            "zh": "〜させていただく在谦让自己的同时请求许可。",
+            "zh_TW": "〜させていただく在謙讓自己的同時請求許可。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Write a short message to a teacher using 〜ていただけませんか and 〜ております.",
+        "zh": "用〜ていただけませんか和〜ております给老师写一段简短的留言。",
+        "zh_TW": "用〜ていただけませんか和〜ております給老師寫一段簡短的留言。"
+      }
+    },
+    {
+      "id": "unit:n3-14",
+      "title": {
+        "en": "Connectives in writing",
+        "zh": "书面语的连接词",
+        "zh_TW": "書面語的連接詞"
+      },
+      "grammar": [
+        "grammar:shikashi-tokoroga",
+        "grammar:soreni-sonoue",
+        "grammar:sarani-shikamo",
+        "grammar:sorede-sokode",
+        "grammar:tsumari",
+        "grammar:tadashi-nao",
+        "grammar:mataha-aruiwa",
+        "grammar:tokorode"
+      ],
+      "vocab": [
+        "vocab:jm1505090",
+        "vocab:jm1459400",
+        "vocab:jm1255020",
+        "vocab:jm1561840",
+        "vocab:jm1489510",
+        "vocab:jm1386370",
+        "vocab:jm1223240",
+        "vocab:jm1505260",
+        "vocab:jm1562400",
+        "vocab:jm1302280",
+        "vocab:jm1546820",
+        "vocab:jm1633690"
+      ],
+      "sentences": [
+        {
+          "ja": "雨が降った。しかし、彼は来た。",
+          "reading": "あめがふった。しかし、かれはきた。",
+          "en": "It rained. However, he came.",
+          "zh": "下雨了。但是他来了。",
+          "zh_TW": "下雨了。但是他來了。",
+          "items": [
+            "grammar:shikashi-tokoroga"
+          ]
+        },
+        {
+          "ja": "この店は安い。それに、近い。",
+          "reading": "このみせはやすい。それに、ちかい。",
+          "en": "This shop is cheap. Besides, it is close.",
+          "zh": "这家店便宜。而且很近。",
+          "zh_TW": "這家店便宜。而且很近。",
+          "items": [
+            "grammar:soreni-sonoue"
+          ]
+        },
+        {
+          "ja": "値段が高い。しかも、味も悪い。",
+          "reading": "ねだんがたかい。しかも、あじもわるい。",
+          "en": "It is expensive. What's more, it tastes bad.",
+          "zh": "价格贵。而且味道也差。",
+          "zh_TW": "價格貴。而且味道也差。",
+          "items": [
+            "grammar:sarani-shikamo"
+          ]
+        },
+        {
+          "ja": "電車が止まった。それで遅れた。",
+          "reading": "でんしゃがとまった。それでおくれた。",
+          "en": "The train stopped. That is why I was late.",
+          "zh": "电车停了。所以我迟到了。",
+          "zh_TW": "電車停了。所以我遲到了。",
+          "items": [
+            "grammar:sorede-sokode"
+          ]
+        },
+        {
+          "ja": "つまり、答えは一つだけだ。",
+          "reading": "つまり、こたえはひとつだけだ。",
+          "en": "In other words, there is only one answer.",
+          "zh": "也就是说，答案只有一个。",
+          "zh_TW": "也就是說，答案只有一個。",
+          "items": [
+            "grammar:tsumari"
+          ]
+        },
+        {
+          "ja": "参加は自由です。ただし、予約が必要です。",
+          "reading": "さんかはじゆうです。ただし、よやくがひつようです。",
+          "en": "Taking part is free. Note, however, that booking is required.",
+          "zh": "参加自由。但是需要预约。",
+          "zh_TW": "參加自由。但是需要預約。",
+          "items": [
+            "grammar:tadashi-nao"
+          ]
+        },
+        {
+          "ja": "ところで、明日の予定は何ですか。",
+          "reading": "ところで、あしたのよていはなんですか。",
+          "en": "By the way, what are your plans for tomorrow?",
+          "zh": "对了，你明天有什么安排？",
+          "zh_TW": "對了，你明天有什麼安排？",
+          "items": [
+            "grammar:tokorode"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "q:n3-14-01",
+          "item": "grammar:shikashi-tokoroga",
+          "prompt": {
+            "en": "Which marks a result contrary to expectation?",
+            "zh": "哪个表示出乎意料的结果？",
+            "zh_TW": "哪個表示出乎意料的結果？"
+          },
+          "options": [
+            "ところが",
+            "ところで",
+            "それで",
+            "つまり"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ところが introduces what happened against expectation.",
+            "zh": "ところが引出与预期相反的结果。",
+            "zh_TW": "ところが引出與預期相反的結果。"
+          }
+        },
+        {
+          "id": "q:n3-14-02",
+          "item": "grammar:soreni-sonoue",
+          "prompt": {
+            "en": "Which adds a further point?",
+            "zh": "哪个用来补充一点？",
+            "zh_TW": "哪個用來補充一點？"
+          },
+          "options": [
+            "それに",
+            "それで",
+            "それとも",
+            "ところが"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "それに adds one more fact of the same kind.",
+            "zh": "それに再补充一个同类的事实。",
+            "zh_TW": "それに再補充一個同類的事實。"
+          }
+        },
+        {
+          "id": "q:n3-14-03",
+          "item": "grammar:sarani-shikamo",
+          "prompt": {
+            "en": "Which adds a stronger point?",
+            "zh": "哪个补充更进一层的内容？",
+            "zh_TW": "哪個補充更進一層的內容？"
+          },
+          "options": [
+            "しかも",
+            "しかし",
+            "したがって",
+            "しばらく"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "しかも adds something that makes the case stronger.",
+            "zh": "しかも补充使论点更强的内容。",
+            "zh_TW": "しかも補充使論點更強的內容。"
+          }
+        },
+        {
+          "id": "q:n3-14-04",
+          "item": "grammar:sorede-sokode",
+          "prompt": {
+            "en": "Which links a cause to what the speaker then did?",
+            "zh": "哪个连接原因与随后的行动？",
+            "zh_TW": "哪個連接原因與隨後的行動？"
+          },
+          "options": [
+            "そこで",
+            "ところで",
+            "それとも",
+            "ただし"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "そこで says what the speaker did because of it.",
+            "zh": "そこで表示因此说话人采取了行动。",
+            "zh_TW": "そこで表示因此說話人採取了行動。"
+          }
+        },
+        {
+          "id": "q:n3-14-05",
+          "item": "grammar:tsumari",
+          "prompt": {
+            "en": "Which restates the point more briefly?",
+            "zh": "哪个用来简要重述？",
+            "zh_TW": "哪個用來簡要重述？"
+          },
+          "options": [
+            "要するに",
+            "ところが",
+            "それとも",
+            "なお"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "要するに sums the point up in fewer words.",
+            "zh": "要するに用更少的话总结要点。",
+            "zh_TW": "要するに用更少的話總結要點。"
+          }
+        },
+        {
+          "id": "q:n3-14-06",
+          "item": "grammar:tadashi-nao",
+          "prompt": {
+            "en": "Which adds a proviso to a notice?",
+            "zh": "哪个在通知中加上但书？",
+            "zh_TW": "哪個在通知中加上但書？"
+          },
+          "options": [
+            "ただし",
+            "つまり",
+            "そこで",
+            "または"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "ただし adds the exception a notice has to state.",
+            "zh": "ただし用来补充通知中的例外条件。",
+            "zh_TW": "ただし用來補充通知中的例外條件。"
+          }
+        },
+        {
+          "id": "q:n3-14-07",
+          "item": "grammar:mataha-aruiwa",
+          "prompt": {
+            "en": "Which is the formal \"or\"?",
+            "zh": "哪个是正式文体的「或」？",
+            "zh_TW": "哪個是正式文體的「或」？"
+          },
+          "options": [
+            "または",
+            "それとも",
+            "でも",
+            "そして"
+          ],
+          "answer": 0,
+          "explanation": {
+            "en": "または offers a choice in formal writing.",
+            "zh": "または在正式文体中表示选择。",
+            "zh_TW": "または在正式文體中表示選擇。"
+          }
+        }
+      ],
+      "writingPrompt": {
+        "en": "Write a short notice of four sentences using しかし, それに, ただし and または.",
+        "zh": "用しかし、それに、ただし和または写一则四句话的通知。",
+        "zh_TW": "用しかし、それに、ただし和または寫一則四句話的通知。"
+      }
+    }
+  ]
+}
