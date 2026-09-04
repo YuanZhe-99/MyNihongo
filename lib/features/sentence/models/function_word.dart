@@ -36,6 +36,10 @@ enum StemShape {
   /// 食べれ, 行け — the stem ば attaches to.
   eStem,
 
+  /// 行こ, 飲も — the godan stem the plain volitional う attaches to. An
+  /// ichidan verb has none: 食べよう is the ない-stem plus よう.
+  oStem,
+
   /// 高, 忙し — an i-adjective minus its final い, which every adjective
   /// ending attaches to: く, くて, かった, くない, ければ.
   adjectiveStem,
@@ -161,6 +165,7 @@ class FunctionWord {
     'teStem' => StemShape.teStem,
     'teStemVoiced' => StemShape.teStemVoiced,
     'eStem' => StemShape.eStem,
+    'oStem' => StemShape.oStem,
     'adjectiveStem' => StemShape.adjectiveStem,
     'plain' => StemShape.plain,
     'dictionary' => StemShape.dictionary,

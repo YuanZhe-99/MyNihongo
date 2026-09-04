@@ -71,6 +71,9 @@ class Deinflector {
         _teStemGodan(stem, voiced: true, accept: accept);
       case StemShape.adjectiveStem:
         return adjectiveStemsFor(stem);
+      case StemShape.oStem:
+        // 行こ → 行く. Godan only, and う takes お: 買おう, never 買わう.
+        _godanFromRow(stem, godanORow, accept);
       case StemShape.eStem:
         // 食べれ → 食べる; 行け → 行く (e-row → u-row).
         if (stem.endsWith('れ')) {

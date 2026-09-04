@@ -79,3 +79,21 @@ const godanClasses = {
   ConjClass.godanMu,
   ConjClass.godanRu,
 };
+
+/// The o-row, which the plain volitional attaches to: 行こ, 話そ, 飲も.
+///
+/// Added with the N4 content, which is where the plain volitional first
+/// appears: ましょう is polite and is one function word, but 帰ろう has to be
+/// taken apart. An ichidan verb has no o-row — 食べよう is the ない-stem plus
+/// よう — which is why the table is godan only, like every other row here.
+const godanORow = {
+  ConjClass.godanU: 'お',
+  ConjClass.godanKu: 'こ',
+  ConjClass.godanGu: 'ご',
+  ConjClass.godanSu: 'そ',
+  ConjClass.godanTsu: 'と',
+  ConjClass.godanNu: 'の',
+  ConjClass.godanBu: 'ぼ',
+  ConjClass.godanMu: 'も',
+  ConjClass.godanRu: 'ろ',
+};

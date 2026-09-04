@@ -1160,6 +1160,1691 @@
         "zh": "缘由、道理",
         "zh_TW": "緣由、道理"
       }
+    },
+    {
+      "id": "fw:reru-ru",
+      "surface": "れる",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "naiStem",
+      "forms": [
+        "passive"
+      ],
+      "gloss": {
+        "en": "passive",
+        "zh": "被动",
+        "zh_TW": "被動"
+      }
+    },
+    {
+      "id": "fw:reru-masu",
+      "surface": "れます",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "polite"
+      ],
+      "gloss": {
+        "en": "passive, polite",
+        "zh": "被动敬体",
+        "zh_TW": "被動敬體"
+      }
+    },
+    {
+      "id": "fw:reru-mashita",
+      "surface": "れました",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "polite",
+        "past"
+      ],
+      "gloss": {
+        "en": "passive, polite past",
+        "zh": "被动敬体过去",
+        "zh_TW": "被動敬體過去"
+      }
+    },
+    {
+      "id": "fw:reru-masen",
+      "surface": "れません",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "polite",
+        "negative"
+      ],
+      "gloss": {
+        "en": "passive, polite negative",
+        "zh": "被动敬体否定",
+        "zh_TW": "被動敬體否定"
+      }
+    },
+    {
+      "id": "fw:reru-masendeshita",
+      "surface": "れませんでした",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "polite",
+        "negative",
+        "past"
+      ],
+      "gloss": {
+        "en": "passive, polite negative past",
+        "zh": "被动敬体否定过去",
+        "zh_TW": "被動敬體否定過去"
+      }
+    },
+    {
+      "id": "fw:reru-nai",
+      "surface": "れない",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "negative"
+      ],
+      "gloss": {
+        "en": "passive, negative",
+        "zh": "被动否定",
+        "zh_TW": "被動否定"
+      }
+    },
+    {
+      "id": "fw:reru-nakatta",
+      "surface": "れなかった",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "negative",
+        "past"
+      ],
+      "gloss": {
+        "en": "passive, negative past",
+        "zh": "被动否定过去",
+        "zh_TW": "被動否定過去"
+      }
+    },
+    {
+      "id": "fw:reru-ta",
+      "surface": "れた",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "past"
+      ],
+      "gloss": {
+        "en": "passive, past",
+        "zh": "被动过去",
+        "zh_TW": "被動過去"
+      }
+    },
+    {
+      "id": "fw:reru-te",
+      "surface": "れて",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "te"
+      ],
+      "gloss": {
+        "en": "passive, te-form",
+        "zh": "被动て形",
+        "zh_TW": "被動て形"
+      }
+    },
+    {
+      "id": "fw:reru-ba",
+      "surface": "れれば",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "conditionalBa"
+      ],
+      "gloss": {
+        "en": "passive, conditional",
+        "zh": "被动条件形",
+        "zh_TW": "被動條件形"
+      }
+    },
+    {
+      "id": "fw:reru-tara",
+      "surface": "れたら",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "conditionalTara"
+      ],
+      "gloss": {
+        "en": "passive, conditional",
+        "zh": "被动条件形",
+        "zh_TW": "被動條件形"
+      }
+    },
+    {
+      "id": "fw:rareru-ru",
+      "surface": "られる",
+      "category": "auxiliary",
+      "lemma": "られる",
+      "needs": "naiStem",
+      "forms": [
+        "passive"
+      ],
+      "gloss": {
+        "en": "passive or potential",
+        "zh": "被动或可能",
+        "zh_TW": "被動或可能"
+      }
+    },
+    {
+      "id": "fw:rareru-masu",
+      "surface": "られます",
+      "category": "auxiliary",
+      "lemma": "られる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "polite"
+      ],
+      "gloss": {
+        "en": "passive or potential, polite",
+        "zh": "被动或可能敬体",
+        "zh_TW": "被動或可能敬體"
+      }
+    },
+    {
+      "id": "fw:rareru-mashita",
+      "surface": "られました",
+      "category": "auxiliary",
+      "lemma": "られる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "polite",
+        "past"
+      ],
+      "gloss": {
+        "en": "passive or potential, polite past",
+        "zh": "被动或可能敬体过去",
+        "zh_TW": "被動或可能敬體過去"
+      }
+    },
+    {
+      "id": "fw:rareru-masen",
+      "surface": "られません",
+      "category": "auxiliary",
+      "lemma": "られる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "polite",
+        "negative"
+      ],
+      "gloss": {
+        "en": "passive or potential, polite negative",
+        "zh": "被动或可能敬体否定",
+        "zh_TW": "被動或可能敬體否定"
+      }
+    },
+    {
+      "id": "fw:rareru-masendeshita",
+      "surface": "られませんでした",
+      "category": "auxiliary",
+      "lemma": "られる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "polite",
+        "negative",
+        "past"
+      ],
+      "gloss": {
+        "en": "passive or potential, polite negative past",
+        "zh": "被动或可能敬体否定过去",
+        "zh_TW": "被動或可能敬體否定過去"
+      }
+    },
+    {
+      "id": "fw:rareru-nai",
+      "surface": "られない",
+      "category": "auxiliary",
+      "lemma": "られる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "negative"
+      ],
+      "gloss": {
+        "en": "passive or potential, negative",
+        "zh": "被动或可能否定",
+        "zh_TW": "被動或可能否定"
+      }
+    },
+    {
+      "id": "fw:rareru-nakatta",
+      "surface": "られなかった",
+      "category": "auxiliary",
+      "lemma": "られる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "negative",
+        "past"
+      ],
+      "gloss": {
+        "en": "passive or potential, negative past",
+        "zh": "被动或可能否定过去",
+        "zh_TW": "被動或可能否定過去"
+      }
+    },
+    {
+      "id": "fw:rareru-ta",
+      "surface": "られた",
+      "category": "auxiliary",
+      "lemma": "られる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "past"
+      ],
+      "gloss": {
+        "en": "passive or potential, past",
+        "zh": "被动或可能过去",
+        "zh_TW": "被動或可能過去"
+      }
+    },
+    {
+      "id": "fw:rareru-te",
+      "surface": "られて",
+      "category": "auxiliary",
+      "lemma": "られる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "te"
+      ],
+      "gloss": {
+        "en": "passive or potential, te-form",
+        "zh": "被动或可能て形",
+        "zh_TW": "被動或可能て形"
+      }
+    },
+    {
+      "id": "fw:rareru-ba",
+      "surface": "られれば",
+      "category": "auxiliary",
+      "lemma": "られる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "conditionalBa"
+      ],
+      "gloss": {
+        "en": "passive or potential, conditional",
+        "zh": "被动或可能条件形",
+        "zh_TW": "被動或可能條件形"
+      }
+    },
+    {
+      "id": "fw:rareru-tara",
+      "surface": "られたら",
+      "category": "auxiliary",
+      "lemma": "られる",
+      "needs": "naiStem",
+      "forms": [
+        "passive",
+        "conditionalTara"
+      ],
+      "gloss": {
+        "en": "passive or potential, conditional",
+        "zh": "被动或可能条件形",
+        "zh_TW": "被動或可能條件形"
+      }
+    },
+    {
+      "id": "fw:seru-ru",
+      "surface": "せる",
+      "category": "auxiliary",
+      "lemma": "せる",
+      "needs": "naiStem",
+      "forms": [
+        "causative"
+      ],
+      "gloss": {
+        "en": "causative",
+        "zh": "使役",
+        "zh_TW": "使役"
+      }
+    },
+    {
+      "id": "fw:seru-masu",
+      "surface": "せます",
+      "category": "auxiliary",
+      "lemma": "せる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "polite"
+      ],
+      "gloss": {
+        "en": "causative, polite",
+        "zh": "使役敬体",
+        "zh_TW": "使役敬體"
+      }
+    },
+    {
+      "id": "fw:seru-mashita",
+      "surface": "せました",
+      "category": "auxiliary",
+      "lemma": "せる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "polite",
+        "past"
+      ],
+      "gloss": {
+        "en": "causative, polite past",
+        "zh": "使役敬体过去",
+        "zh_TW": "使役敬體過去"
+      }
+    },
+    {
+      "id": "fw:seru-masen",
+      "surface": "せません",
+      "category": "auxiliary",
+      "lemma": "せる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "polite",
+        "negative"
+      ],
+      "gloss": {
+        "en": "causative, polite negative",
+        "zh": "使役敬体否定",
+        "zh_TW": "使役敬體否定"
+      }
+    },
+    {
+      "id": "fw:seru-masendeshita",
+      "surface": "せませんでした",
+      "category": "auxiliary",
+      "lemma": "せる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "polite",
+        "negative",
+        "past"
+      ],
+      "gloss": {
+        "en": "causative, polite negative past",
+        "zh": "使役敬体否定过去",
+        "zh_TW": "使役敬體否定過去"
+      }
+    },
+    {
+      "id": "fw:seru-nai",
+      "surface": "せない",
+      "category": "auxiliary",
+      "lemma": "せる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "negative"
+      ],
+      "gloss": {
+        "en": "causative, negative",
+        "zh": "使役否定",
+        "zh_TW": "使役否定"
+      }
+    },
+    {
+      "id": "fw:seru-nakatta",
+      "surface": "せなかった",
+      "category": "auxiliary",
+      "lemma": "せる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "negative",
+        "past"
+      ],
+      "gloss": {
+        "en": "causative, negative past",
+        "zh": "使役否定过去",
+        "zh_TW": "使役否定過去"
+      }
+    },
+    {
+      "id": "fw:seru-ta",
+      "surface": "せた",
+      "category": "auxiliary",
+      "lemma": "せる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "past"
+      ],
+      "gloss": {
+        "en": "causative, past",
+        "zh": "使役过去",
+        "zh_TW": "使役過去"
+      }
+    },
+    {
+      "id": "fw:seru-te",
+      "surface": "せて",
+      "category": "auxiliary",
+      "lemma": "せる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "te"
+      ],
+      "gloss": {
+        "en": "causative, te-form",
+        "zh": "使役て形",
+        "zh_TW": "使役て形"
+      }
+    },
+    {
+      "id": "fw:seru-ba",
+      "surface": "せれば",
+      "category": "auxiliary",
+      "lemma": "せる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "conditionalBa"
+      ],
+      "gloss": {
+        "en": "causative, conditional",
+        "zh": "使役条件形",
+        "zh_TW": "使役條件形"
+      }
+    },
+    {
+      "id": "fw:seru-tara",
+      "surface": "せたら",
+      "category": "auxiliary",
+      "lemma": "せる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "conditionalTara"
+      ],
+      "gloss": {
+        "en": "causative, conditional",
+        "zh": "使役条件形",
+        "zh_TW": "使役條件形"
+      }
+    },
+    {
+      "id": "fw:saseru-ru",
+      "surface": "させる",
+      "category": "auxiliary",
+      "lemma": "させる",
+      "needs": "naiStem",
+      "forms": [
+        "causative"
+      ],
+      "gloss": {
+        "en": "causative",
+        "zh": "使役",
+        "zh_TW": "使役"
+      }
+    },
+    {
+      "id": "fw:saseru-masu",
+      "surface": "させます",
+      "category": "auxiliary",
+      "lemma": "させる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "polite"
+      ],
+      "gloss": {
+        "en": "causative, polite",
+        "zh": "使役敬体",
+        "zh_TW": "使役敬體"
+      }
+    },
+    {
+      "id": "fw:saseru-mashita",
+      "surface": "させました",
+      "category": "auxiliary",
+      "lemma": "させる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "polite",
+        "past"
+      ],
+      "gloss": {
+        "en": "causative, polite past",
+        "zh": "使役敬体过去",
+        "zh_TW": "使役敬體過去"
+      }
+    },
+    {
+      "id": "fw:saseru-masen",
+      "surface": "させません",
+      "category": "auxiliary",
+      "lemma": "させる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "polite",
+        "negative"
+      ],
+      "gloss": {
+        "en": "causative, polite negative",
+        "zh": "使役敬体否定",
+        "zh_TW": "使役敬體否定"
+      }
+    },
+    {
+      "id": "fw:saseru-masendeshita",
+      "surface": "させませんでした",
+      "category": "auxiliary",
+      "lemma": "させる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "polite",
+        "negative",
+        "past"
+      ],
+      "gloss": {
+        "en": "causative, polite negative past",
+        "zh": "使役敬体否定过去",
+        "zh_TW": "使役敬體否定過去"
+      }
+    },
+    {
+      "id": "fw:saseru-nai",
+      "surface": "させない",
+      "category": "auxiliary",
+      "lemma": "させる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "negative"
+      ],
+      "gloss": {
+        "en": "causative, negative",
+        "zh": "使役否定",
+        "zh_TW": "使役否定"
+      }
+    },
+    {
+      "id": "fw:saseru-nakatta",
+      "surface": "させなかった",
+      "category": "auxiliary",
+      "lemma": "させる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "negative",
+        "past"
+      ],
+      "gloss": {
+        "en": "causative, negative past",
+        "zh": "使役否定过去",
+        "zh_TW": "使役否定過去"
+      }
+    },
+    {
+      "id": "fw:saseru-ta",
+      "surface": "させた",
+      "category": "auxiliary",
+      "lemma": "させる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "past"
+      ],
+      "gloss": {
+        "en": "causative, past",
+        "zh": "使役过去",
+        "zh_TW": "使役過去"
+      }
+    },
+    {
+      "id": "fw:saseru-te",
+      "surface": "させて",
+      "category": "auxiliary",
+      "lemma": "させる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "te"
+      ],
+      "gloss": {
+        "en": "causative, te-form",
+        "zh": "使役て形",
+        "zh_TW": "使役て形"
+      }
+    },
+    {
+      "id": "fw:saseru-ba",
+      "surface": "させれば",
+      "category": "auxiliary",
+      "lemma": "させる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "conditionalBa"
+      ],
+      "gloss": {
+        "en": "causative, conditional",
+        "zh": "使役条件形",
+        "zh_TW": "使役條件形"
+      }
+    },
+    {
+      "id": "fw:saseru-tara",
+      "surface": "させたら",
+      "category": "auxiliary",
+      "lemma": "させる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "conditionalTara"
+      ],
+      "gloss": {
+        "en": "causative, conditional",
+        "zh": "使役条件形",
+        "zh_TW": "使役條件形"
+      }
+    },
+    {
+      "id": "fw:serareru-ru",
+      "surface": "せられる",
+      "category": "auxiliary",
+      "lemma": "せられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive"
+      ],
+      "gloss": {
+        "en": "causative-passive",
+        "zh": "使役被动",
+        "zh_TW": "使役被動"
+      }
+    },
+    {
+      "id": "fw:serareru-masu",
+      "surface": "せられます",
+      "category": "auxiliary",
+      "lemma": "せられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "polite"
+      ],
+      "gloss": {
+        "en": "causative-passive, polite",
+        "zh": "使役被动敬体",
+        "zh_TW": "使役被動敬體"
+      }
+    },
+    {
+      "id": "fw:serareru-mashita",
+      "surface": "せられました",
+      "category": "auxiliary",
+      "lemma": "せられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "polite",
+        "past"
+      ],
+      "gloss": {
+        "en": "causative-passive, polite past",
+        "zh": "使役被动敬体过去",
+        "zh_TW": "使役被動敬體過去"
+      }
+    },
+    {
+      "id": "fw:serareru-masen",
+      "surface": "せられません",
+      "category": "auxiliary",
+      "lemma": "せられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "polite",
+        "negative"
+      ],
+      "gloss": {
+        "en": "causative-passive, polite negative",
+        "zh": "使役被动敬体否定",
+        "zh_TW": "使役被動敬體否定"
+      }
+    },
+    {
+      "id": "fw:serareru-masendeshita",
+      "surface": "せられませんでした",
+      "category": "auxiliary",
+      "lemma": "せられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "polite",
+        "negative",
+        "past"
+      ],
+      "gloss": {
+        "en": "causative-passive, polite negative past",
+        "zh": "使役被动敬体否定过去",
+        "zh_TW": "使役被動敬體否定過去"
+      }
+    },
+    {
+      "id": "fw:serareru-nai",
+      "surface": "せられない",
+      "category": "auxiliary",
+      "lemma": "せられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "negative"
+      ],
+      "gloss": {
+        "en": "causative-passive, negative",
+        "zh": "使役被动否定",
+        "zh_TW": "使役被動否定"
+      }
+    },
+    {
+      "id": "fw:serareru-nakatta",
+      "surface": "せられなかった",
+      "category": "auxiliary",
+      "lemma": "せられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "negative",
+        "past"
+      ],
+      "gloss": {
+        "en": "causative-passive, negative past",
+        "zh": "使役被动否定过去",
+        "zh_TW": "使役被動否定過去"
+      }
+    },
+    {
+      "id": "fw:serareru-ta",
+      "surface": "せられた",
+      "category": "auxiliary",
+      "lemma": "せられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "past"
+      ],
+      "gloss": {
+        "en": "causative-passive, past",
+        "zh": "使役被动过去",
+        "zh_TW": "使役被動過去"
+      }
+    },
+    {
+      "id": "fw:serareru-te",
+      "surface": "せられて",
+      "category": "auxiliary",
+      "lemma": "せられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "te"
+      ],
+      "gloss": {
+        "en": "causative-passive, te-form",
+        "zh": "使役被动て形",
+        "zh_TW": "使役被動て形"
+      }
+    },
+    {
+      "id": "fw:serareru-ba",
+      "surface": "せられれば",
+      "category": "auxiliary",
+      "lemma": "せられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "conditionalBa"
+      ],
+      "gloss": {
+        "en": "causative-passive, conditional",
+        "zh": "使役被动条件形",
+        "zh_TW": "使役被動條件形"
+      }
+    },
+    {
+      "id": "fw:serareru-tara",
+      "surface": "せられたら",
+      "category": "auxiliary",
+      "lemma": "せられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "conditionalTara"
+      ],
+      "gloss": {
+        "en": "causative-passive, conditional",
+        "zh": "使役被动条件形",
+        "zh_TW": "使役被動條件形"
+      }
+    },
+    {
+      "id": "fw:saserareru-ru",
+      "surface": "させられる",
+      "category": "auxiliary",
+      "lemma": "させられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive"
+      ],
+      "gloss": {
+        "en": "causative-passive",
+        "zh": "使役被动",
+        "zh_TW": "使役被動"
+      }
+    },
+    {
+      "id": "fw:saserareru-masu",
+      "surface": "させられます",
+      "category": "auxiliary",
+      "lemma": "させられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "polite"
+      ],
+      "gloss": {
+        "en": "causative-passive, polite",
+        "zh": "使役被动敬体",
+        "zh_TW": "使役被動敬體"
+      }
+    },
+    {
+      "id": "fw:saserareru-mashita",
+      "surface": "させられました",
+      "category": "auxiliary",
+      "lemma": "させられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "polite",
+        "past"
+      ],
+      "gloss": {
+        "en": "causative-passive, polite past",
+        "zh": "使役被动敬体过去",
+        "zh_TW": "使役被動敬體過去"
+      }
+    },
+    {
+      "id": "fw:saserareru-masen",
+      "surface": "させられません",
+      "category": "auxiliary",
+      "lemma": "させられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "polite",
+        "negative"
+      ],
+      "gloss": {
+        "en": "causative-passive, polite negative",
+        "zh": "使役被动敬体否定",
+        "zh_TW": "使役被動敬體否定"
+      }
+    },
+    {
+      "id": "fw:saserareru-masendeshita",
+      "surface": "させられませんでした",
+      "category": "auxiliary",
+      "lemma": "させられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "polite",
+        "negative",
+        "past"
+      ],
+      "gloss": {
+        "en": "causative-passive, polite negative past",
+        "zh": "使役被动敬体否定过去",
+        "zh_TW": "使役被動敬體否定過去"
+      }
+    },
+    {
+      "id": "fw:saserareru-nai",
+      "surface": "させられない",
+      "category": "auxiliary",
+      "lemma": "させられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "negative"
+      ],
+      "gloss": {
+        "en": "causative-passive, negative",
+        "zh": "使役被动否定",
+        "zh_TW": "使役被動否定"
+      }
+    },
+    {
+      "id": "fw:saserareru-nakatta",
+      "surface": "させられなかった",
+      "category": "auxiliary",
+      "lemma": "させられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "negative",
+        "past"
+      ],
+      "gloss": {
+        "en": "causative-passive, negative past",
+        "zh": "使役被动否定过去",
+        "zh_TW": "使役被動否定過去"
+      }
+    },
+    {
+      "id": "fw:saserareru-ta",
+      "surface": "させられた",
+      "category": "auxiliary",
+      "lemma": "させられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "past"
+      ],
+      "gloss": {
+        "en": "causative-passive, past",
+        "zh": "使役被动过去",
+        "zh_TW": "使役被動過去"
+      }
+    },
+    {
+      "id": "fw:saserareru-te",
+      "surface": "させられて",
+      "category": "auxiliary",
+      "lemma": "させられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "te"
+      ],
+      "gloss": {
+        "en": "causative-passive, te-form",
+        "zh": "使役被动て形",
+        "zh_TW": "使役被動て形"
+      }
+    },
+    {
+      "id": "fw:saserareru-ba",
+      "surface": "させられれば",
+      "category": "auxiliary",
+      "lemma": "させられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "conditionalBa"
+      ],
+      "gloss": {
+        "en": "causative-passive, conditional",
+        "zh": "使役被动条件形",
+        "zh_TW": "使役被動條件形"
+      }
+    },
+    {
+      "id": "fw:saserareru-tara",
+      "surface": "させられたら",
+      "category": "auxiliary",
+      "lemma": "させられる",
+      "needs": "naiStem",
+      "forms": [
+        "causative",
+        "passive",
+        "conditionalTara"
+      ],
+      "gloss": {
+        "en": "causative-passive, conditional",
+        "zh": "使役被动条件形",
+        "zh_TW": "使役被動條件形"
+      }
+    },
+    {
+      "id": "fw:kattara",
+      "surface": "かったら",
+      "category": "particle-conjunctive",
+      "lemma": "たら",
+      "needs": "adjectiveStem",
+      "forms": [
+        "past",
+        "conditionalTara"
+      ],
+      "gloss": {
+        "en": "if it is",
+        "zh": "如果……的话",
+        "zh_TW": "如果……的話"
+      }
+    },
+    {
+      "id": "fw:nara",
+      "surface": "なら",
+      "category": "particle-conjunctive",
+      "lemma": "なら",
+      "needs": "any",
+      "forms": [],
+      "gloss": {
+        "en": "if it is the case that",
+        "zh": "如果是……的话",
+        "zh_TW": "如果是……的話"
+      }
+    },
+    {
+      "id": "fw:nakya",
+      "surface": "なきゃ",
+      "category": "auxiliary",
+      "lemma": "なければ",
+      "needs": "naiStem",
+      "forms": [
+        "negative",
+        "conditionalBa"
+      ],
+      "gloss": {
+        "en": "have to (spoken)",
+        "zh": "必须（口语）",
+        "zh_TW": "必須（口語）"
+      }
+    },
+    {
+      "id": "fw:nakucha",
+      "surface": "なくちゃ",
+      "category": "auxiliary",
+      "lemma": "なくては",
+      "needs": "naiStem",
+      "forms": [
+        "negative",
+        "conditionalBa"
+      ],
+      "gloss": {
+        "en": "have to (spoken)",
+        "zh": "必须（口语）",
+        "zh_TW": "必須（口語）"
+      }
+    },
+    {
+      "id": "fw:nakutewa",
+      "surface": "なくては",
+      "category": "auxiliary",
+      "lemma": "なくては",
+      "needs": "naiStem",
+      "forms": [
+        "negative"
+      ],
+      "gloss": {
+        "en": "if not",
+        "zh": "如果不……",
+        "zh_TW": "如果不……"
+      }
+    },
+    {
+      "id": "fw:nakutemoii",
+      "surface": "なくてもいい",
+      "category": "auxiliary",
+      "lemma": "なくてもいい",
+      "needs": "naiStem",
+      "forms": [
+        "negative"
+      ],
+      "gloss": {
+        "en": "need not",
+        "zh": "不必",
+        "zh_TW": "不必"
+      }
+    },
+    {
+      "id": "fw:rashii",
+      "surface": "らしい",
+      "category": "formal-noun",
+      "lemma": "らしい",
+      "forms": [],
+      "gloss": {
+        "en": "apparently, it seems",
+        "zh": "好像、似乎",
+        "zh_TW": "好像、似乎"
+      }
+    },
+    {
+      "id": "fw:rashii-desu",
+      "surface": "らしいです",
+      "category": "formal-noun",
+      "lemma": "らしい",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "apparently, it seems",
+        "zh": "好像、似乎",
+        "zh_TW": "好像、似乎"
+      }
+    },
+    {
+      "id": "fw:kamoshirenai",
+      "surface": "かもしれない",
+      "category": "formal-noun",
+      "lemma": "かもしれない",
+      "forms": [],
+      "gloss": {
+        "en": "might, perhaps",
+        "zh": "也许、可能",
+        "zh_TW": "也許、可能"
+      }
+    },
+    {
+      "id": "fw:kamoshiremasen",
+      "surface": "かもしれません",
+      "category": "formal-noun",
+      "lemma": "かもしれない",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "might, perhaps",
+        "zh": "也许、可能",
+        "zh_TW": "也許、可能"
+      }
+    },
+    {
+      "id": "fw:mitai",
+      "surface": "みたい",
+      "category": "formal-noun",
+      "lemma": "みたい",
+      "forms": [],
+      "gloss": {
+        "en": "like, seems",
+        "zh": "好像、像是",
+        "zh_TW": "好像、像是"
+      }
+    },
+    {
+      "id": "fw:mitai-desu",
+      "surface": "みたいです",
+      "category": "formal-noun",
+      "lemma": "みたい",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "like, seems",
+        "zh": "好像、像是",
+        "zh_TW": "好像、像是"
+      }
+    },
+    {
+      "id": "fw:mashou-ka",
+      "surface": "ましょうか",
+      "category": "auxiliary",
+      "lemma": "ます",
+      "needs": "masuStem",
+      "forms": [
+        "polite",
+        "volitional"
+      ],
+      "gloss": {
+        "en": "shall I?",
+        "zh": "我来……吧？",
+        "zh_TW": "我來……吧？"
+      }
+    },
+    {
+      "id": "fw:tagaru",
+      "surface": "たがる",
+      "category": "auxiliary",
+      "lemma": "たがる",
+      "needs": "masuStem",
+      "forms": [
+        "tai"
+      ],
+      "gloss": {
+        "en": "shows signs of wanting to",
+        "zh": "（第三人称）想要",
+        "zh_TW": "（第三人稱）想要"
+      }
+    },
+    {
+      "id": "fw:sugiru",
+      "surface": "すぎる",
+      "category": "auxiliary",
+      "lemma": "すぎる",
+      "needs": "masuStem",
+      "forms": [],
+      "gloss": {
+        "en": "too much",
+        "zh": "过于",
+        "zh_TW": "過於"
+      }
+    },
+    {
+      "id": "fw:sugimasu",
+      "surface": "すぎます",
+      "category": "auxiliary",
+      "lemma": "すぎる",
+      "needs": "masuStem",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "too much",
+        "zh": "过于",
+        "zh_TW": "過於"
+      }
+    },
+    {
+      "id": "fw:yasui",
+      "surface": "やすい",
+      "category": "auxiliary",
+      "lemma": "やすい",
+      "needs": "masuStem",
+      "forms": [],
+      "gloss": {
+        "en": "easy to",
+        "zh": "容易……",
+        "zh_TW": "容易……"
+      }
+    },
+    {
+      "id": "fw:nikui",
+      "surface": "にくい",
+      "category": "auxiliary",
+      "lemma": "にくい",
+      "needs": "masuStem",
+      "forms": [],
+      "gloss": {
+        "en": "hard to",
+        "zh": "难以……",
+        "zh_TW": "難以……"
+      }
+    },
+    {
+      "id": "fw:potential-ru",
+      "surface": "る",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "eStem",
+      "forms": [
+        "potential"
+      ],
+      "gloss": {
+        "en": "potential",
+        "zh": "可能",
+        "zh_TW": "可能"
+      }
+    },
+    {
+      "id": "fw:potential-masu",
+      "surface": "ます",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "eStem",
+      "forms": [
+        "potential",
+        "polite"
+      ],
+      "gloss": {
+        "en": "potential, polite",
+        "zh": "可能敬体",
+        "zh_TW": "可能敬體"
+      }
+    },
+    {
+      "id": "fw:potential-mashita",
+      "surface": "ました",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "eStem",
+      "forms": [
+        "potential",
+        "polite",
+        "past"
+      ],
+      "gloss": {
+        "en": "potential, polite past",
+        "zh": "可能敬体过去",
+        "zh_TW": "可能敬體過去"
+      }
+    },
+    {
+      "id": "fw:potential-masen",
+      "surface": "ません",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "eStem",
+      "forms": [
+        "potential",
+        "polite",
+        "negative"
+      ],
+      "gloss": {
+        "en": "potential, polite negative",
+        "zh": "可能敬体否定",
+        "zh_TW": "可能敬體否定"
+      }
+    },
+    {
+      "id": "fw:potential-masenka",
+      "surface": "ませんか",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "eStem",
+      "forms": [
+        "potential",
+        "polite",
+        "negative"
+      ],
+      "gloss": {
+        "en": "potential, polite question",
+        "zh": "可能敬体疑问",
+        "zh_TW": "可能敬體疑問"
+      }
+    },
+    {
+      "id": "fw:potential-masendeshita",
+      "surface": "ませんでした",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "eStem",
+      "forms": [
+        "potential",
+        "polite",
+        "negative",
+        "past"
+      ],
+      "gloss": {
+        "en": "potential, polite negative past",
+        "zh": "可能敬体否定过去",
+        "zh_TW": "可能敬體否定過去"
+      }
+    },
+    {
+      "id": "fw:potential-nai",
+      "surface": "ない",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "eStem",
+      "forms": [
+        "potential",
+        "negative"
+      ],
+      "gloss": {
+        "en": "potential, negative",
+        "zh": "可能否定",
+        "zh_TW": "可能否定"
+      }
+    },
+    {
+      "id": "fw:potential-nakatta",
+      "surface": "なかった",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "eStem",
+      "forms": [
+        "potential",
+        "negative",
+        "past"
+      ],
+      "gloss": {
+        "en": "potential, negative past",
+        "zh": "可能否定过去",
+        "zh_TW": "可能否定過去"
+      }
+    },
+    {
+      "id": "fw:potential-ta",
+      "surface": "た",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "eStem",
+      "forms": [
+        "potential",
+        "past"
+      ],
+      "gloss": {
+        "en": "potential, past",
+        "zh": "可能过去",
+        "zh_TW": "可能過去"
+      }
+    },
+    {
+      "id": "fw:potential-te",
+      "surface": "て",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "eStem",
+      "forms": [
+        "potential",
+        "te"
+      ],
+      "gloss": {
+        "en": "potential, te-form",
+        "zh": "可能て形",
+        "zh_TW": "可能て形"
+      }
+    },
+    {
+      "id": "fw:potential-tara",
+      "surface": "たら",
+      "category": "auxiliary",
+      "lemma": "れる",
+      "needs": "eStem",
+      "forms": [
+        "potential",
+        "conditionalTara"
+      ],
+      "gloss": {
+        "en": "potential, conditional",
+        "zh": "可能条件形",
+        "zh_TW": "可能條件形"
+      }
+    },
+    {
+      "id": "fw:volitional-u",
+      "surface": "う",
+      "category": "auxiliary",
+      "lemma": "う",
+      "needs": "oStem",
+      "forms": [
+        "volitional"
+      ],
+      "gloss": {
+        "en": "let us, I think I will",
+        "zh": "意志、劝诱",
+        "zh_TW": "意志、勸誘"
+      }
+    },
+    {
+      "id": "fw:volitional-you",
+      "surface": "よう",
+      "category": "auxiliary",
+      "lemma": "よう",
+      "needs": "naiStem",
+      "forms": [
+        "volitional"
+      ],
+      "gloss": {
+        "en": "let us, I think I will",
+        "zh": "意志、劝诱",
+        "zh_TW": "意志、勸誘"
+      }
+    },
+    {
+      "id": "fw:chau",
+      "surface": "ちゃう",
+      "category": "auxiliary",
+      "lemma": "てしまう",
+      "needs": "teStem",
+      "forms": [],
+      "gloss": {
+        "en": "end up (spoken)",
+        "zh": "（口语）不小心……了",
+        "zh_TW": "（口語）不小心……了"
+      }
+    },
+    {
+      "id": "fw:chatta",
+      "surface": "ちゃった",
+      "category": "auxiliary",
+      "lemma": "てしまう",
+      "needs": "teStem",
+      "forms": [
+        "past"
+      ],
+      "gloss": {
+        "en": "ended up (spoken)",
+        "zh": "（口语）不小心……了",
+        "zh_TW": "（口語）不小心……了"
+      }
+    },
+    {
+      "id": "fw:chaimasu",
+      "surface": "ちゃいます",
+      "category": "auxiliary",
+      "lemma": "てしまう",
+      "needs": "teStem",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "end up (spoken)",
+        "zh": "（口语）不小心……了",
+        "zh_TW": "（口語）不小心……了"
+      }
+    },
+    {
+      "id": "fw:chaimashita",
+      "surface": "ちゃいました",
+      "category": "auxiliary",
+      "lemma": "てしまう",
+      "needs": "teStem",
+      "forms": [
+        "polite",
+        "past"
+      ],
+      "gloss": {
+        "en": "ended up (spoken)",
+        "zh": "（口语）不小心……了",
+        "zh_TW": "（口語）不小心……了"
+      }
+    },
+    {
+      "id": "fw:jau",
+      "surface": "じゃう",
+      "category": "auxiliary",
+      "lemma": "でしまう",
+      "needs": "teStemVoiced",
+      "forms": [],
+      "gloss": {
+        "en": "end up (spoken)",
+        "zh": "（口语）不小心……了",
+        "zh_TW": "（口語）不小心……了"
+      }
+    },
+    {
+      "id": "fw:jatta",
+      "surface": "じゃった",
+      "category": "auxiliary",
+      "lemma": "でしまう",
+      "needs": "teStemVoiced",
+      "forms": [
+        "past"
+      ],
+      "gloss": {
+        "en": "ended up (spoken)",
+        "zh": "（口语）不小心……了",
+        "zh_TW": "（口語）不小心……了"
+      }
+    },
+    {
+      "id": "fw:jaimasu",
+      "surface": "じゃいます",
+      "category": "auxiliary",
+      "lemma": "でしまう",
+      "needs": "teStemVoiced",
+      "forms": [
+        "polite"
+      ],
+      "gloss": {
+        "en": "end up (spoken)",
+        "zh": "（口语）不小心……了",
+        "zh_TW": "（口語）不小心……了"
+      }
+    },
+    {
+      "id": "fw:jaimashita",
+      "surface": "じゃいました",
+      "category": "auxiliary",
+      "lemma": "でしまう",
+      "needs": "teStemVoiced",
+      "forms": [
+        "polite",
+        "past"
+      ],
+      "gloss": {
+        "en": "ended up (spoken)",
+        "zh": "（口语）不小心……了",
+        "zh_TW": "（口語）不小心……了"
+      }
     }
   ],
   "sets": {

@@ -77,11 +77,39 @@ word**, so the rules can be generous.
 | te-stem | ichidan +る; っ → う/つ/る **and く** (行って); し → す; い → く | 買っ → 買う |
 | te-stem (voiced) | ん → ぬ/ぶ/む; い → ぐ | 飲ん → 飲ぬ, 飲ぶ, 飲む → only 飲む is a word |
 | e-stem | ichidan; godan e-row → u-row | 行け → 行く |
+| o-stem | godan o-row → u-row | 帰ろ → 帰る |
 | adjective stem | the lemma minus い; いい inflects from よ- | 忙し → 忙しい |
 
 する and 来る have no row, so they are matched from an exact stem list. **Exact** matters: an earlier
 version tested `endsWith`, and 映画を見まし then de-inflected to する — one edge swallowing half the
 sentence at the price of one verb, which the shortest path duly preferred.
+
+### The voice system arrives as surfaces, not as a chain
+
+Passive, potential, causative and causative-passive are **enumerated in the
+function-word table**, one entry per combined surface: られます, させました,
+せられて, and sixty more. It looks redundant beside the row tables above, and
+it is the right shape anyway.
+
+The reason is that this de-inflector recovers *one* stem behind *one*
+auxiliary. It has no notion of an auxiliary that itself takes an auxiliary,
+and 食べられませんでした is four of them. Teaching the lattice to chain would
+mean modelling られる as a verb in its own right and letting the search compose
+morphemes — a different algorithm, and one where a wrong path costs the whole
+sentence rather than one edge.
+
+Enumerating is the other end of the same trade. The table grows by a hundred
+rows that a script writes; each row still says exactly which stem shape it
+attaches to, so nothing else changes; and the forms a token reports are the
+whole chain, because the entry names them. What it costs is that a form nobody
+enumerated is not recognised at all rather than being assembled from parts.
+
+**How this was found:** 行かせます parsed with no unknown token before any of
+this, as 行 + か + せ + 増す — four real words and complete nonsense. The
+authoring gate only rejects unknown tokens, so it passed. A wrong parse made of
+known words is the failure mode neither the gate nor
+`sentence_analyzer_test` can see, and it is why the N4 content was probed by
+hand before it was merged.
 
 A noun tagged `suru-verb` followed by し is **not** looked up here. The catalog has 勉強, not
 勉強する, so inventing the compound would put a word in the lexicon the catalog cannot open; the
@@ -150,6 +178,14 @@ to be that wrong.
   catalog is generated from, so example sentences using them keep an unknown token. They are listed
   in `test/fixtures/sentence/allowed_unknown.json`, capped at 20, each citing the example that needs
   it. Fixing one means adding the word to the source lists and regenerating `vocab.json`.
+- **Nothing above N4.** The table covers what N5 and N4 teach. N3 and above
+  add forms — 〜ざるを得ない, 〜ようがない, the humble and honorific paradigms
+  in full — that are not enumerated and will arrive as unknown tokens.
+- **A wrong parse is not a failed parse.** Every automated check here asks
+  whether a sentence produced an unknown token. A sentence that parsed into
+  four real words in a nonsensical arrangement passes all of them. The only
+  defence is reading the token chips, which is one reason the sentence lab
+  exists.
 - **No morphological analyser model.** `PLAN.md` M2.3 proposed a TinySegmenter port for boundary
   hints. It was not needed: at 7,700 entries plus the function-word table, the lattice reaches every
   shipped example sentence on its own, and the port would have added a model to maintain for a
