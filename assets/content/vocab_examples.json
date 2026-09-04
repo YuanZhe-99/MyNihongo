@@ -154,6 +154,96 @@
         }
       ]
     },
+    "vocab:jm1004500": {
+      "examples": [
+        {
+          "ja": "こちらは先生です。",
+          "reading": "こちらはせんせいです。",
+          "en": "This is the teacher.",
+          "zh": "这位是老师。"
+        }
+      ]
+    },
+    "vocab:jm1004880": {
+      "examples": [
+        {
+          "ja": "こんな日本語は難しいです。",
+          "reading": "こんなにほんごはむずかしいです。",
+          "en": "This kind of Japanese is difficult.",
+          "zh": "这样的日语很难。"
+        }
+      ]
+    },
+    "vocab:jm1005110": {
+      "examples": [
+        {
+          "ja": "さあ、学校へ行きます。",
+          "reading": "さあ、がっこうへいきます。",
+          "en": "Come on, I'm going to school.",
+          "zh": "来吧，我要去学校了。"
+        }
+      ]
+    },
+    "vocab:jm1005900": {
+      "examples": [
+        {
+          "ja": "じゃ、行きます。",
+          "reading": "じゃ、いきます。",
+          "en": "Well then, I'll go.",
+          "zh": "那么，我走了。"
+        }
+      ]
+    },
+    "vocab:jm1006670": {
+      "examples": [
+        {
+          "ja": "そこは学校です。",
+          "reading": "そこはがっこうです。",
+          "en": "That place is a school.",
+          "zh": "那里是学校。"
+        }
+      ]
+    },
+    "vocab:jm1006730": {
+      "examples": [
+        {
+          "ja": "本を読みます。そして、寝ます。",
+          "reading": "ほんをよみます。そして、ねます。",
+          "en": "I read a book. And then I sleep.",
+          "zh": "我看书，然后睡觉。"
+        }
+      ]
+    },
+    "vocab:jm1006780": {
+      "examples": [
+        {
+          "ja": "そちらは先生です。",
+          "reading": "そちらはせんせいです。",
+          "en": "That is the teacher.",
+          "zh": "那位是老师。"
+        }
+      ]
+    },
+    "vocab:jm1006830": {
+      "examples": [
+        {
+          "ja": "その本は面白いです。",
+          "reading": "そのほんはおもしろいです。",
+          "en": "That book is interesting.",
+          "zh": "那本书很有趣。"
+        }
+      ]
+    },
+    "vocab:jm1006980": {
+      "examples": [
+        {
+          "ja": "朝、ご飯を食べます。それから、学校へ行きます。",
+          "reading": "あさ、ごはんをたべます。それから、がっこうへいきます。",
+          "en": "In the morning I eat a meal. After that I go to school.",
+          "zh": "早上吃饭，然后去学校。"
+        }
+      ]
+    },
     "vocab:jm1153520": {
       "examples": [
         {
@@ -161,6 +251,16 @@
           "reading": "こどもがあめをたべます。",
           "en": "The child eats candy.",
           "zh": "孩子吃糖果。"
+        }
+      ]
+    },
+    "vocab:jm1154330": {
+      "examples": [
+        {
+          "ja": "部屋は暗いです。",
+          "reading": "へやはくらいです。",
+          "en": "The room is dark.",
+          "zh": "房间很暗。"
         }
       ]
     },
@@ -181,6 +281,16 @@
           "reading": "いすにすわります。",
           "en": "I sit on the chair.",
           "zh": "我坐在椅子上。"
+        }
+      ]
+    },
+    "vocab:jm1157170": {
+      "examples": [
+        {
+          "ja": "仕事をします。",
+          "reading": "しごとをします。",
+          "en": "I do work.",
+          "zh": "我工作。"
         }
       ]
     },
@@ -294,6 +404,16 @@
         }
       ]
     },
+    "vocab:jm1178940": {
+      "examples": [
+        {
+          "ja": "部屋は汚いです。",
+          "reading": "へやはきたないです。",
+          "en": "The room is dirty.",
+          "zh": "房间很脏。"
+        }
+      ]
+    },
     "vocab:jm1179330": {
       "examples": [
         {
@@ -314,6 +434,16 @@
         }
       ]
     },
+    "vocab:jm1182030": {
+      "examples": [
+        {
+          "ja": "花は黄色いです。",
+          "reading": "はなはきいろいです。",
+          "en": "The flower is yellow.",
+          "zh": "花是黄色的。"
+        }
+      ]
+    },
     "vocab:jm1183720": {
       "examples": [
         {
@@ -321,6 +451,26 @@
           "reading": "おんがくをききます。",
           "en": "I listen to music.",
           "zh": "我听音乐。"
+        }
+      ]
+    },
+    "vocab:jm1184140": {
+      "examples": [
+        {
+          "ja": "本は車の下です。",
+          "reading": "ほんはくるまのしたです。",
+          "en": "The book is under the car.",
+          "zh": "书在车下面。"
+        }
+      ]
+    },
+    "vocab:jm1184270": {
+      "examples": [
+        {
+          "ja": "水をください。",
+          "reading": "みずをください。",
+          "en": "Please give me water.",
+          "zh": "请给我水。"
         }
       ]
     },
@@ -371,6 +521,16 @@
           "reading": "しずかなかていがすきです。",
           "en": "I like a quiet home.",
           "zh": "我喜欢安静的家庭。"
+        }
+      ]
+    },
+    "vocab:jm1193060": {
+      "examples": [
+        {
+          "ja": "果物を買います。",
+          "reading": "くだものをかいます。",
+          "en": "I buy fruit.",
+          "zh": "我买水果。"
         }
       ]
     },
@@ -464,6 +624,36 @@
         }
       ]
     },
+    "vocab:jm1203250": {
+      "examples": [
+        {
+          "ja": "外は寒いです。",
+          "reading": "そとはさむいです。",
+          "en": "It's cold outside.",
+          "zh": "外面很冷。"
+        }
+      ]
+    },
+    "vocab:jm1203620": {
+      "examples": [
+        {
+          "ja": "友達は外国に行きます。",
+          "reading": "ともだちはがいこくにいきます。",
+          "en": "My friend goes to a foreign country.",
+          "zh": "朋友要去外国。"
+        }
+      ]
+    },
+    "vocab:jm1203650": {
+      "examples": [
+        {
+          "ja": "先生は外国人です。",
+          "reading": "せんせいはがいこくじんです。",
+          "en": "The teacher is a foreigner.",
+          "zh": "老师是外国人。"
+        }
+      ]
+    },
     "vocab:jm1206050": {
       "examples": [
         {
@@ -511,6 +701,26 @@
           "reading": "かばんのなかにほんがあります。",
           "en": "There is a book in the bag.",
           "zh": "包里有一本书。"
+        }
+      ]
+    },
+    "vocab:jm1210360": {
+      "examples": [
+        {
+          "ja": "今日は寒いです。",
+          "reading": "きょうはさむいです。",
+          "en": "Today is cold.",
+          "zh": "今天很冷。"
+        }
+      ]
+    },
+    "vocab:jm1213170": {
+      "examples": [
+        {
+          "ja": "漢字を書きます。",
+          "reading": "かんじをかきます。",
+          "en": "I write kanji.",
+          "zh": "我写汉字。"
         }
       ]
     },
@@ -584,6 +794,56 @@
         }
       ]
     },
+    "vocab:jm1226440": {
+      "examples": [
+        {
+          "ja": "喫茶店でお茶を飲みます。",
+          "reading": "きっさてんでおちゃをのみます。",
+          "en": "I drink tea at the coffee shop.",
+          "zh": "我在咖啡馆喝茶。"
+        }
+      ]
+    },
+    "vocab:jm1228260": {
+      "examples": [
+        {
+          "ja": "花が水を吸います。",
+          "reading": "はながみずをすいます。",
+          "en": "The flower absorbs water.",
+          "zh": "花吸水。"
+        }
+      ]
+    },
+    "vocab:jm1231580": {
+      "examples": [
+        {
+          "ja": "牛肉を食べます。",
+          "reading": "ぎゅうにくをたべます。",
+          "en": "I eat beef.",
+          "zh": "我吃牛肉。"
+        }
+      ]
+    },
+    "vocab:jm1231590": {
+      "examples": [
+        {
+          "ja": "牛乳を飲みます。",
+          "reading": "ぎゅうにゅうをのみます。",
+          "en": "I drink milk.",
+          "zh": "我喝牛奶。"
+        }
+      ]
+    },
+    "vocab:jm1231690": {
+      "examples": [
+        {
+          "ja": "去年は忙しかったです。",
+          "reading": "きょねんはいそがしかったです。",
+          "en": "Last year was busy.",
+          "zh": "去年很忙。"
+        }
+      ]
+    },
     "vocab:jm1236900": {
       "examples": [
         {
@@ -594,6 +854,96 @@
         }
       ]
     },
+    "vocab:jm1237150": {
+      "examples": [
+        {
+          "ja": "学生は教室に行きます。",
+          "reading": "がくせいはきょうしつにいきます。",
+          "en": "The student goes to the classroom.",
+          "zh": "学生去教室。"
+        }
+      ]
+    },
+    "vocab:jm1237680": {
+      "examples": [
+        {
+          "ja": "部屋は狭いです。",
+          "reading": "へやはせまいです。",
+          "en": "The room is narrow.",
+          "zh": "房间很窄。"
+        }
+      ]
+    },
+    "vocab:jm1243320": {
+      "examples": [
+        {
+          "ja": "金曜日に学校へ行きます。",
+          "reading": "きんようびにがっこうへいきます。",
+          "en": "I go to school on Friday.",
+          "zh": "星期五我去学校。"
+        }
+      ]
+    },
+    "vocab:jm1243490": {
+      "examples": [
+        {
+          "ja": "銀行へ行きます。",
+          "reading": "ぎんこうへいきます。",
+          "en": "I go to the bank.",
+          "zh": "我去银行。"
+        }
+      ]
+    },
+    "vocab:jm1243600": {
+      "examples": [
+        {
+          "ja": "花を九つ買います。",
+          "reading": "はなをここのつかいます。",
+          "en": "I buy nine flowers.",
+          "zh": "我买九朵花。"
+        }
+      ]
+    },
+    "vocab:jm1243850": {
+      "examples": [
+        {
+          "ja": "九日に会社へ行きます。",
+          "reading": "ここのかにかいしゃへいきます。",
+          "en": "I go to the company on the 9th.",
+          "zh": "九号我去公司。"
+        }
+      ]
+    },
+    "vocab:jm1245290": {
+      "examples": [
+        {
+          "ja": "空は青いです。",
+          "reading": "そらはあおいです。",
+          "en": "The sky is blue.",
+          "zh": "天空是蓝色的。"
+        }
+      ]
+    },
+    "vocab:jm1246700": {
+      "examples": [
+        {
+          "ja": "靴は新しいです。",
+          "reading": "くつはあたらしいです。",
+          "en": "The shoes are new.",
+          "zh": "鞋子是新的。"
+        }
+      ]
+    },
+    "vocab:jm1246740": {
+      "examples": [
+        {
+          "ja": "靴下は白いです。",
+          "reading": "くつしたはしろいです。",
+          "en": "The socks are white.",
+          "zh": "袜子是白色的。"
+        }
+      ]
+    },
     "vocab:jm1249900": {
       "examples": [
         {
@@ -601,6 +951,76 @@
           "reading": "あにはせんせいです。",
           "en": "My older brother is a teacher.",
           "zh": "我哥哥是老师。"
+        }
+      ]
+    },
+    "vocab:jm1249960": {
+      "examples": [
+        {
+          "ja": "兄弟は元気です。",
+          "reading": "きょうだいはげんきです。",
+          "en": "My siblings are doing well.",
+          "zh": "兄弟姐妹很健康。"
+        }
+      ]
+    },
+    "vocab:jm1252330": {
+      "examples": [
+        {
+          "ja": "警官は忙しいです。",
+          "reading": "けいかんはいそがしいです。",
+          "en": "The police officer is busy.",
+          "zh": "警察很忙。"
+        }
+      ]
+    },
+    "vocab:jm1252560": {
+      "examples": [
+        {
+          "ja": "この本は軽いです。",
+          "reading": "このほんはかるいです。",
+          "en": "This book is light.",
+          "zh": "这本书很轻。"
+        }
+      ]
+    },
+    "vocab:jm1254760": {
+      "examples": [
+        {
+          "ja": "これで結構です。",
+          "reading": "これでけっこうです。",
+          "en": "This is fine.",
+          "zh": "这样就可以了。"
+        }
+      ]
+    },
+    "vocab:jm1254790": {
+      "examples": [
+        {
+          "ja": "友達は結婚します。",
+          "reading": "ともだちはけっこんします。",
+          "en": "My friend is getting married.",
+          "zh": "朋友要结婚了。"
+        }
+      ]
+    },
+    "vocab:jm1255890": {
+      "examples": [
+        {
+          "ja": "月曜日に会社へ行きます。",
+          "reading": "げつようびにかいしゃへいきます。",
+          "en": "I go to the company on Monday.",
+          "zh": "星期一我去公司。"
+        }
+      ]
+    },
+    "vocab:jm1257240": {
+      "examples": [
+        {
+          "ja": "雨が嫌いです。",
+          "reading": "あめがきらいです。",
+          "en": "I dislike rain.",
+          "zh": "我讨厌下雨。"
         }
       ]
     },
@@ -624,6 +1044,36 @@
         }
       ]
     },
+    "vocab:jm1263400": {
+      "examples": [
+        {
+          "ja": "玄関は大きいです。",
+          "reading": "げんかんはおおきいです。",
+          "en": "The entrance is big.",
+          "zh": "玄关很大。"
+        }
+      ]
+    },
+    "vocab:jm1264540": {
+      "examples": [
+        {
+          "ja": "日本語の言葉を書きます。",
+          "reading": "にほんごのことばをかきます。",
+          "en": "I write Japanese words.",
+          "zh": "我写日语单词。"
+        }
+      ]
+    },
+    "vocab:jm1268060": {
+      "examples": [
+        {
+          "ja": "これは五です。",
+          "reading": "これはごです。",
+          "en": "This is five.",
+          "zh": "这是五。"
+        }
+      ]
+    },
     "vocab:jm1268070": {
       "examples": [
         {
@@ -641,6 +1091,26 @@
           "reading": "いつかやすみます。",
           "en": "I will rest for five days.",
           "zh": "我休息五天。"
+        }
+      ]
+    },
+    "vocab:jm1268990": {
+      "examples": [
+        {
+          "ja": "午後に学校へ行きます。",
+          "reading": "ごごにがっこうへいきます。",
+          "en": "I go to school in the afternoon.",
+          "zh": "下午我去学校。"
+        }
+      ]
+    },
+    "vocab:jm1269060": {
+      "examples": [
+        {
+          "ja": "午前に本を読みます。",
+          "reading": "ごぜんにほんをよみます。",
+          "en": "I read a book in the morning.",
+          "zh": "上午我看书。"
         }
       ]
     },
@@ -664,6 +1134,36 @@
         }
       ]
     },
+    "vocab:jm1270590": {
+      "examples": [
+        {
+          "ja": "御飯を食べます。",
+          "reading": "ごはんをたべます。",
+          "en": "I eat a meal.",
+          "zh": "我吃饭。"
+        }
+      ]
+    },
+    "vocab:jm1272500": {
+      "examples": [
+        {
+          "ja": "交番へ行きます。",
+          "reading": "こうばんへいきます。",
+          "en": "I go to the police box.",
+          "zh": "我去派出所。"
+        }
+      ]
+    },
+    "vocab:jm1273270": {
+      "examples": [
+        {
+          "ja": "公園で犬と歩きます。",
+          "reading": "こうえんでいぬとあるきます。",
+          "en": "I walk with my dog in the park.",
+          "zh": "我在公园和狗一起散步。"
+        }
+      ]
+    },
     "vocab:jm1275320": {
       "examples": [
         {
@@ -671,6 +1171,56 @@
           "reading": "このほんはあついです。",
           "en": "This book is thick.",
           "zh": "这本书很厚。"
+        }
+      ]
+    },
+    "vocab:jm1275640": {
+      "examples": [
+        {
+          "ja": "口は大きいです。",
+          "reading": "くちはおおきいです。",
+          "en": "My mouth is big.",
+          "zh": "嘴很大。"
+        }
+      ]
+    },
+    "vocab:jm1280770": {
+      "examples": [
+        {
+          "ja": "紅茶を飲みます。",
+          "reading": "こうちゃをのみます。",
+          "en": "I drink black tea.",
+          "zh": "我喝红茶。"
+        }
+      ]
+    },
+    "vocab:jm1287410": {
+      "examples": [
+        {
+          "ja": "猫は黒です。",
+          "reading": "ねこはくろです。",
+          "en": "The cat is black.",
+          "zh": "猫是黑色的。"
+        }
+      ]
+    },
+    "vocab:jm1287420": {
+      "examples": [
+        {
+          "ja": "犬は黒いです。",
+          "reading": "いぬはくろいです。",
+          "en": "The dog is black.",
+          "zh": "狗是黑色的。"
+        }
+      ]
+    },
+    "vocab:jm1288810": {
+      "examples": [
+        {
+          "ja": "ここは学校です。",
+          "reading": "ここはがっこうです。",
+          "en": "Here is a school.",
+          "zh": "这里是学校。"
         }
       ]
     },
@@ -684,6 +1234,86 @@
         }
       ]
     },
+    "vocab:jm1289100": {
+      "examples": [
+        {
+          "ja": "今月は忙しいです。",
+          "reading": "こんげつはいそがしいです。",
+          "en": "This month is busy.",
+          "zh": "这个月很忙。"
+        }
+      ]
+    },
+    "vocab:jm1289220": {
+      "examples": [
+        {
+          "ja": "今週は忙しいです。",
+          "reading": "こんしゅうはいそがしいです。",
+          "en": "This week is busy.",
+          "zh": "这周很忙。"
+        }
+      ]
+    },
+    "vocab:jm1289470": {
+      "examples": [
+        {
+          "ja": "今晩はご飯を食べます。",
+          "reading": "こんばんはごはんをたべます。",
+          "en": "I will eat dinner tonight.",
+          "zh": "今晚我要吃饭。"
+        }
+      ]
+    },
+    "vocab:jm1289590": {
+      "examples": [
+        {
+          "ja": "私は困ります。",
+          "reading": "わたしはこまります。",
+          "en": "I am troubled.",
+          "zh": "我很为难。"
+        }
+      ]
+    },
+    "vocab:jm1291330": {
+      "examples": [
+        {
+          "ja": "花を差します。",
+          "reading": "はなをさします。",
+          "en": "I arrange the flowers.",
+          "zh": "我插花。"
+        }
+      ]
+    },
+    "vocab:jm1291600": {
+      "examples": [
+        {
+          "ja": "砂糖を買います。",
+          "reading": "さとうをかいます。",
+          "en": "I buy sugar.",
+          "zh": "我买糖。"
+        }
+      ]
+    },
+    "vocab:jm1291800": {
+      "examples": [
+        {
+          "ja": "ここに座ります。",
+          "reading": "ここにすわります。",
+          "en": "I sit here.",
+          "zh": "我坐在这里。"
+        }
+      ]
+    },
+    "vocab:jm1293660": {
+      "examples": [
+        {
+          "ja": "再来年、日本語を話します。",
+          "reading": "さらいねん、にほんごをはなします。",
+          "en": "I will speak Japanese the year after next.",
+          "zh": "后年我要说日语。"
+        }
+      ]
+    },
     "vocab:jm1296400": {
       "examples": [
         {
@@ -691,6 +1321,46 @@
           "reading": "つくえのうえにほんがあります。",
           "en": "There is a book on the desk.",
           "zh": "桌子上有一本书。"
+        }
+      ]
+    },
+    "vocab:jm1296970": {
+      "examples": [
+        {
+          "ja": "財布を買います。",
+          "reading": "さいふをかいます。",
+          "en": "I buy a wallet.",
+          "zh": "我买钱包。"
+        }
+      ]
+    },
+    "vocab:jm1297210": {
+      "examples": [
+        {
+          "ja": "花が咲きます。",
+          "reading": "はながさきます。",
+          "en": "The flower blooms.",
+          "zh": "花开了。"
+        }
+      ]
+    },
+    "vocab:jm1297960": {
+      "examples": [
+        {
+          "ja": "作文を書きます。",
+          "reading": "さくぶんをかきます。",
+          "en": "I write a composition.",
+          "zh": "我写作文。"
+        }
+      ]
+    },
+    "vocab:jm1299400": {
+      "examples": [
+        {
+          "ja": "雑誌を読みます。",
+          "reading": "ざっしをよみます。",
+          "en": "I read a magazine.",
+          "zh": "我看杂志。"
         }
       ]
     },
@@ -714,6 +1384,26 @@
         }
       ]
     },
+    "vocab:jm1303620": {
+      "examples": [
+        {
+          "ja": "犬と散歩します。",
+          "reading": "いぬとさんぽします。",
+          "en": "I take a walk with my dog.",
+          "zh": "我和狗一起散步。"
+        }
+      ]
+    },
+    "vocab:jm1304970": {
+      "examples": [
+        {
+          "ja": "仕事は忙しいです。",
+          "reading": "しごとはいそがしいです。",
+          "en": "My work is busy.",
+          "zh": "工作很忙。"
+        }
+      ]
+    },
     "vocab:jm1307630": {
       "examples": [
         {
@@ -721,6 +1411,26 @@
           "reading": "あねはいしゃです。",
           "en": "My older sister is a doctor.",
           "zh": "我姐姐是医生。"
+        }
+      ]
+    },
+    "vocab:jm1307850": {
+      "examples": [
+        {
+          "ja": "子供は元気です。",
+          "reading": "こどもはげんきです。",
+          "en": "The child is energetic.",
+          "zh": "孩子很有精神。"
+        }
+      ]
+    },
+    "vocab:jm1310730": {
+      "examples": [
+        {
+          "ja": "犬が死にます。",
+          "reading": "いぬがしにます。",
+          "en": "The dog dies.",
+          "zh": "狗要死了。"
         }
       ]
     },
@@ -734,6 +1444,106 @@
         }
       ]
     },
+    "vocab:jm1315140": {
+      "examples": [
+        {
+          "ja": "字引を使います。",
+          "reading": "じびきをつかいます。",
+          "en": "I use a dictionary.",
+          "zh": "我用字典。"
+        }
+      ]
+    },
+    "vocab:jm1318290": {
+      "examples": [
+        {
+          "ja": "自転車で学校へ行きます。",
+          "reading": "じてんしゃでがっこうへいきます。",
+          "en": "I go to school by bicycle.",
+          "zh": "我骑自行车去学校。"
+        }
+      ]
+    },
+    "vocab:jm1318400": {
+      "examples": [
+        {
+          "ja": "自動車を買います。",
+          "reading": "じどうしゃをかいます。",
+          "en": "I buy a car.",
+          "zh": "我买汽车。"
+        }
+      ]
+    },
+    "vocab:jm1318610": {
+      "examples": [
+        {
+          "ja": "自分で作ります。",
+          "reading": "じぶんでつくります。",
+          "en": "I make it myself.",
+          "zh": "我自己做。"
+        }
+      ]
+    },
+    "vocab:jm1318970": {
+      "examples": [
+        {
+          "ja": "辞書を使います。",
+          "reading": "じしょをつかいます。",
+          "en": "I use a dictionary.",
+          "zh": "我用词典。"
+        }
+      ]
+    },
+    "vocab:jm1319210": {
+      "examples": [
+        {
+          "ja": "これは七です。",
+          "reading": "これはしちです。",
+          "en": "This is seven.",
+          "zh": "这是七。"
+        }
+      ]
+    },
+    "vocab:jm1320760": {
+      "examples": [
+        {
+          "ja": "先生に質問します。",
+          "reading": "せんせいにしつもんします。",
+          "en": "I ask the teacher a question.",
+          "zh": "我向老师提问。"
+        }
+      ]
+    },
+    "vocab:jm1321900": {
+      "examples": [
+        {
+          "ja": "写真を見ます。",
+          "reading": "しゃしんをみます。",
+          "en": "I look at the photo.",
+          "zh": "我看照片。"
+        }
+      ]
+    },
+    "vocab:jm1323080": {
+      "examples": [
+        {
+          "ja": "車を買います。",
+          "reading": "くるまをかいます。",
+          "en": "I buy a car.",
+          "zh": "我买车。"
+        }
+      ]
+    },
+    "vocab:jm1323560": {
+      "examples": [
+        {
+          "ja": "友達に本を借ります。",
+          "reading": "ともだちにほんをかります。",
+          "en": "I borrow a book from my friend.",
+          "zh": "我向朋友借书。"
+        }
+      ]
+    },
     "vocab:jm1329015": {
       "examples": [
         {
@@ -741,6 +1551,16 @@
           "reading": "おさけをのみます。",
           "en": "I drink alcohol.",
           "zh": "我喝酒。"
+        }
+      ]
+    },
+    "vocab:jm1330290": {
+      "examples": [
+        {
+          "ja": "授業は面白いです。",
+          "reading": "じゅぎょうはおもしろいです。",
+          "en": "The class is interesting.",
+          "zh": "课很有趣。"
         }
       ]
     },
@@ -754,6 +1574,16 @@
         }
       ]
     },
+    "vocab:jm1334040": {
+      "examples": [
+        {
+          "ja": "家に住みます。",
+          "reading": "いえにすみます。",
+          "en": "I live in a house.",
+          "zh": "我住在家里。"
+        }
+      ]
+    },
     "vocab:jm1335750": {
       "examples": [
         {
@@ -761,6 +1591,16 @@
           "reading": "このかばんはおもいです。",
           "en": "This bag is heavy.",
           "zh": "这个包很重。"
+        }
+      ]
+    },
+    "vocab:jm1337270": {
+      "examples": [
+        {
+          "ja": "宿題をします。",
+          "reading": "しゅくだいをします。",
+          "en": "I do homework.",
+          "zh": "我做作业。"
         }
       ]
     },
@@ -804,6 +1644,46 @@
         }
       ]
     },
+    "vocab:jm1348870": {
+      "examples": [
+        {
+          "ja": "少し休みます。",
+          "reading": "すこしやすみます。",
+          "en": "I will rest a little.",
+          "zh": "我休息一下。"
+        }
+      ]
+    },
+    "vocab:jm1348910": {
+      "examples": [
+        {
+          "ja": "学生が少ないです。",
+          "reading": "がくせいがすくないです。",
+          "en": "There are few students.",
+          "zh": "学生很少。"
+        }
+      ]
+    },
+    "vocab:jm1350040": {
+      "examples": [
+        {
+          "ja": "これは消えます。",
+          "reading": "これはきえます。",
+          "en": "This disappears.",
+          "zh": "这个会消失。"
+        }
+      ]
+    },
+    "vocab:jm1350110": {
+      "examples": [
+        {
+          "ja": "これを消します。",
+          "reading": "これをけします。",
+          "en": "I turn this off.",
+          "zh": "我把这个关掉。"
+        }
+      ]
+    },
     "vocab:jm1352130": {
       "examples": [
         {
@@ -824,6 +1704,16 @@
         }
       ]
     },
+    "vocab:jm1353320": {
+      "examples": [
+        {
+          "ja": "日本語が上手です。",
+          "reading": "にほんごがじょうずです。",
+          "en": "My Japanese is good.",
+          "zh": "我的日语很好。"
+        }
+      ]
+    },
     "vocab:jm1357600": {
       "examples": [
         {
@@ -831,6 +1721,26 @@
           "reading": "すきないろはあおです。",
           "en": "My favorite color is blue.",
           "zh": "我喜欢的颜色是蓝色。"
+        }
+      ]
+    },
+    "vocab:jm1358550": {
+      "examples": [
+        {
+          "ja": "食堂でご飯を食べます。",
+          "reading": "しょくどうでごはんをたべます。",
+          "en": "I eat a meal at the cafeteria.",
+          "zh": "我在食堂吃饭。"
+        }
+      ]
+    },
+    "vocab:jm1362360": {
+      "examples": [
+        {
+          "ja": "新聞を読みます。",
+          "reading": "しんぶんをよみます。",
+          "en": "I read the newspaper.",
+          "zh": "我看报纸。"
         }
       ]
     },
@@ -844,6 +1754,16 @@
         }
       ]
     },
+    "vocab:jm1372190": {
+      "examples": [
+        {
+          "ja": "水曜日に学校へ行きます。",
+          "reading": "すいようびにがっこうへいきます。",
+          "en": "I go to school on Wednesday.",
+          "zh": "星期三我去学校。"
+        }
+      ]
+    },
     "vocab:jm1378690": {
       "examples": [
         {
@@ -851,6 +1771,26 @@
           "reading": "こどもがうまれました。",
           "en": "The child was born.",
           "zh": "孩子出生了。"
+        }
+      ]
+    },
+    "vocab:jm1379380": {
+      "examples": [
+        {
+          "ja": "生徒は元気です。",
+          "reading": "せいとはげんきです。",
+          "en": "The student is doing well.",
+          "zh": "学生很有精神。"
+        }
+      ]
+    },
+    "vocab:jm1380440": {
+      "examples": [
+        {
+          "ja": "先生の声は大きいです。",
+          "reading": "せんせいのこえはおおきいです。",
+          "en": "The teacher's voice is loud.",
+          "zh": "老师的声音很大。"
         }
       ]
     },
@@ -874,6 +1814,26 @@
         }
       ]
     },
+    "vocab:jm1381820": {
+      "examples": [
+        {
+          "ja": "部屋は静かです。",
+          "reading": "へやはしずかです。",
+          "en": "The room is quiet.",
+          "zh": "房间很安静。"
+        }
+      ]
+    },
+    "vocab:jm1382590": {
+      "examples": [
+        {
+          "ja": "せっけんを使います。",
+          "reading": "せっけんをつかいます。",
+          "en": "I use soap.",
+          "zh": "我用肥皂。"
+        }
+      ]
+    },
     "vocab:jm1383240": {
       "examples": [
         {
@@ -881,6 +1841,86 @@
           "reading": "あのくるまはあかいです。",
           "en": "That car is red.",
           "zh": "那辆车是红色的。"
+        }
+      ]
+    },
+    "vocab:jm1384830": {
+      "examples": [
+        {
+          "ja": "花を切ります。",
+          "reading": "はなをきります。",
+          "en": "I cut the flower.",
+          "zh": "我剪花。"
+        }
+      ]
+    },
+    "vocab:jm1385070": {
+      "examples": [
+        {
+          "ja": "切手を買います。",
+          "reading": "きってをかいます。",
+          "en": "I buy a stamp.",
+          "zh": "我买邮票。"
+        }
+      ]
+    },
+    "vocab:jm1385170": {
+      "examples": [
+        {
+          "ja": "駅で切符を買います。",
+          "reading": "えきできっぷをかいます。",
+          "en": "I buy a ticket at the station.",
+          "zh": "我在车站买票。"
+        }
+      ]
+    },
+    "vocab:jm1387210": {
+      "examples": [
+        {
+          "ja": "私が先に行きます。",
+          "reading": "わたしがさきにいきます。",
+          "en": "I will go ahead first.",
+          "zh": "我先走。"
+        }
+      ]
+    },
+    "vocab:jm1387500": {
+      "examples": [
+        {
+          "ja": "先月は忙しかったです。",
+          "reading": "せんげつはいそがしかったです。",
+          "en": "Last month was busy.",
+          "zh": "上个月很忙。"
+        }
+      ]
+    },
+    "vocab:jm1387870": {
+      "examples": [
+        {
+          "ja": "先週は忙しかったです。",
+          "reading": "せんしゅうはいそがしかったです。",
+          "en": "Last week was busy.",
+          "zh": "上周很忙。"
+        }
+      ]
+    },
+    "vocab:jm1388740": {
+      "examples": [
+        {
+          "ja": "これは千です。",
+          "reading": "これはせんです。",
+          "en": "This is a thousand.",
+          "zh": "这是一千。"
+        }
+      ]
+    },
+    "vocab:jm1390020": {
+      "examples": [
+        {
+          "ja": "川を見ます。",
+          "reading": "かわをみます。",
+          "en": "I look at the river.",
+          "zh": "我看河流。"
         }
       ]
     },
@@ -894,6 +1934,46 @@
         }
       ]
     },
+    "vocab:jm1390980": {
+      "examples": [
+        {
+          "ja": "洗濯をします。",
+          "reading": "せんたくをします。",
+          "en": "I do the laundry.",
+          "zh": "我洗衣服。"
+        }
+      ]
+    },
+    "vocab:jm1396130": {
+      "examples": [
+        {
+          "ja": "全部食べます。",
+          "reading": "ぜんぶたべます。",
+          "en": "I eat all of it.",
+          "zh": "我全部吃掉。"
+        }
+      ]
+    },
+    "vocab:jm1399790": {
+      "examples": [
+        {
+          "ja": "部屋を掃除します。",
+          "reading": "へやをそうじします。",
+          "en": "I clean the room.",
+          "zh": "我打扫房间。"
+        }
+      ]
+    },
+    "vocab:jm1403830": {
+      "examples": [
+        {
+          "ja": "駅のそばに住みます。",
+          "reading": "えきのそばにすみます。",
+          "en": "I live near the station.",
+          "zh": "我住在车站附近。"
+        }
+      ]
+    },
     "vocab:jm1404630": {
       "examples": [
         {
@@ -904,6 +1984,16 @@
         }
       ]
     },
+    "vocab:jm1406050": {
+      "examples": [
+        {
+          "ja": "それでは、行きます。",
+          "reading": "それでは、いきます。",
+          "en": "Well then, I'll go.",
+          "zh": "那么，我走了。"
+        }
+      ]
+    },
     "vocab:jm1407460": {
       "examples": [
         {
@@ -911,6 +2001,16 @@
           "reading": "がくせいがおおいです。",
           "en": "There are many students.",
           "zh": "学生很多。"
+        }
+      ]
+    },
+    "vocab:jm1409140": {
+      "examples": [
+        {
+          "ja": "私の体は大きいです。",
+          "reading": "わたしのからだはおおきいです。",
+          "en": "My body is big.",
+          "zh": "我的身体很大。"
         }
       ]
     },
@@ -931,6 +2031,16 @@
           "reading": "おおきないぬがいます。",
           "en": "There is a big dog.",
           "zh": "有一只大狗。"
+        }
+      ]
+    },
+    "vocab:jm1413890": {
+      "examples": [
+        {
+          "ja": "大使館へ行きます。",
+          "reading": "たいしかんへいきます。",
+          "en": "I go to the embassy.",
+          "zh": "我去大使馆。"
         }
       ]
     },
@@ -974,6 +2084,16 @@
         }
       ]
     },
+    "vocab:jm1420470": {
+      "examples": [
+        {
+          "ja": "私は知りません。",
+          "reading": "わたしはしりません。",
+          "en": "I don't know.",
+          "zh": "我不知道。"
+        }
+      ]
+    },
     "vocab:jm1421700": {
       "examples": [
         {
@@ -1004,6 +2124,16 @@
         }
       ]
     },
+    "vocab:jm1423000": {
+      "examples": [
+        {
+          "ja": "これを着ます。",
+          "reading": "これをきます。",
+          "en": "I wear this.",
+          "zh": "我穿这个。"
+        }
+      ]
+    },
     "vocab:jm1428280": {
       "examples": [
         {
@@ -1011,6 +2141,16 @@
           "reading": "あさはさむいです。",
           "en": "Mornings are cold.",
           "zh": "早上很冷。"
+        }
+      ]
+    },
+    "vocab:jm1430620": {
+      "examples": [
+        {
+          "ja": "すぐに行きます。",
+          "reading": "すぐにいきます。",
+          "en": "I will go right away.",
+          "zh": "我马上去。"
         }
       ]
     },
@@ -1024,6 +2164,36 @@
         }
       ]
     },
+    "vocab:jm1436560": {
+      "examples": [
+        {
+          "ja": "学校は閉まります。",
+          "reading": "がっこうはしまります。",
+          "en": "The school closes.",
+          "zh": "学校要关门了。"
+        }
+      ]
+    },
+    "vocab:jm1436570": {
+      "examples": [
+        {
+          "ja": "これを締めます。",
+          "reading": "これをしめます。",
+          "en": "I fasten this.",
+          "zh": "我系紧这个。"
+        }
+      ]
+    },
+    "vocab:jm1449540": {
+      "examples": [
+        {
+          "ja": "先生に答えます。",
+          "reading": "せんせいにこたえます。",
+          "en": "I answer the teacher.",
+          "zh": "我回答老师。"
+        }
+      ]
+    },
     "vocab:jm1451750": {
       "examples": [
         {
@@ -1031,6 +2201,16 @@
           "reading": "わたしとおなじほんです。",
           "en": "It's the same book as mine.",
           "zh": "和我的书一样。"
+        }
+      ]
+    },
+    "vocab:jm1457560": {
+      "examples": [
+        {
+          "ja": "空が曇ります。",
+          "reading": "そらがくもります。",
+          "en": "The sky becomes cloudy.",
+          "zh": "天空变阴。"
         }
       ]
     },
@@ -1054,6 +2234,16 @@
         }
       ]
     },
+    "vocab:jm1472740": {
+      "examples": [
+        {
+          "ja": "背広を買います。",
+          "reading": "せびろをかいます。",
+          "en": "I buy a suit.",
+          "zh": "我买西装。"
+        }
+      ]
+    },
     "vocab:jm1473950": {
       "examples": [
         {
@@ -1061,6 +2251,26 @@
           "reading": "ほんをうります。",
           "en": "I sell the book.",
           "zh": "我卖书。"
+        }
+      ]
+    },
+    "vocab:jm1474900": {
+      "examples": [
+        {
+          "ja": "猫は白です。",
+          "reading": "ねこはしろです。",
+          "en": "The cat is white.",
+          "zh": "猫是白色的。"
+        }
+      ]
+    },
+    "vocab:jm1474910": {
+      "examples": [
+        {
+          "ja": "犬は白いです。",
+          "reading": "いぬはしろいです。",
+          "en": "The dog is white.",
+          "zh": "狗是白色的。"
         }
       ]
     },
@@ -1114,6 +2324,26 @@
         }
       ]
     },
+    "vocab:jm1505990": {
+      "examples": [
+        {
+          "ja": "今日は寒いです。しかし、元気です。",
+          "reading": "きょうはさむいです。しかし、げんきです。",
+          "en": "Today is cold. However, I am fine.",
+          "zh": "今天很冷。但是我很好。"
+        }
+      ]
+    },
+    "vocab:jm1508590": {
+      "examples": [
+        {
+          "ja": "本を閉めます。",
+          "reading": "ほんをしめます。",
+          "en": "I close the book.",
+          "zh": "我合上书。"
+        }
+      ]
+    },
     "vocab:jm1512130": {
       "examples": [
         {
@@ -1164,6 +2394,16 @@
         }
       ]
     },
+    "vocab:jm1520670": {
+      "examples": [
+        {
+          "ja": "北へ行きます。",
+          "reading": "きたへいきます。",
+          "en": "I go to the north.",
+          "zh": "我往北走。"
+        }
+      ]
+    },
     "vocab:jm1524590": {
       "examples": [
         {
@@ -1194,6 +2434,26 @@
         }
       ]
     },
+    "vocab:jm1534520": {
+      "examples": [
+        {
+          "ja": "木は大きいです。",
+          "reading": "きはおおきいです。",
+          "en": "The tree is big.",
+          "zh": "树很大。"
+        }
+      ]
+    },
+    "vocab:jm1538160": {
+      "examples": [
+        {
+          "ja": "薬を飲みます。",
+          "reading": "くすりをのみます。",
+          "en": "I take medicine.",
+          "zh": "我吃药。"
+        }
+      ]
+    },
     "vocab:jm1542160": {
       "examples": [
         {
@@ -1211,6 +2471,16 @@
           "reading": "みずをあびます。",
           "en": "I pour water over myself.",
           "zh": "我用水冲身体。"
+        }
+      ]
+    },
+    "vocab:jm1554370": {
+      "examples": [
+        {
+          "ja": "今日は涼しいです。",
+          "reading": "きょうはすずしいです。",
+          "en": "Today is cool.",
+          "zh": "今天很凉爽。"
         }
       ]
     },
@@ -1244,6 +2514,36 @@
         }
       ]
     },
+    "vocab:jm1576630": {
+      "examples": [
+        {
+          "ja": "塩を使います。",
+          "reading": "しおをつかいます。",
+          "en": "I use salt.",
+          "zh": "我用盐。"
+        }
+      ]
+    },
+    "vocab:jm1576760": {
+      "examples": [
+        {
+          "ja": "花は黄色です。",
+          "reading": "はなはきいろです。",
+          "en": "The flower is yellow.",
+          "zh": "花是黄色的。"
+        }
+      ]
+    },
+    "vocab:jm1577200": {
+      "examples": [
+        {
+          "ja": "猫はかわいいです。",
+          "reading": "ねこはかわいいです。",
+          "en": "The cat is cute.",
+          "zh": "猫很可爱。"
+        }
+      ]
+    },
     "vocab:jm1577980": {
       "examples": [
         {
@@ -1254,6 +2554,86 @@
         }
       ]
     },
+    "vocab:jm1578010": {
+      "examples": [
+        {
+          "ja": "魚を食べます。",
+          "reading": "さかなをたべます。",
+          "en": "I eat fish.",
+          "zh": "我吃鱼。"
+        }
+      ]
+    },
+    "vocab:jm1578150": {
+      "examples": [
+        {
+          "ja": "これは九です。",
+          "reading": "これはきゅうです。",
+          "en": "This is nine.",
+          "zh": "这是九。"
+        }
+      ]
+    },
+    "vocab:jm1579100": {
+      "examples": [
+        {
+          "ja": "今朝はご飯を食べました。",
+          "reading": "けさはごはんをたべました。",
+          "en": "I ate rice this morning.",
+          "zh": "今天早上我吃了饭。"
+        }
+      ]
+    },
+    "vocab:jm1579130": {
+      "examples": [
+        {
+          "ja": "今年は忙しいです。",
+          "reading": "ことしはいそがしいです。",
+          "en": "This year is busy.",
+          "zh": "今年很忙。"
+        }
+      ]
+    },
+    "vocab:jm1579260": {
+      "examples": [
+        {
+          "ja": "昨日は忙しかったです。",
+          "reading": "きのうはいそがしかったです。",
+          "en": "Yesterday was busy.",
+          "zh": "昨天很忙。"
+        }
+      ]
+    },
+    "vocab:jm1579350": {
+      "examples": [
+        {
+          "ja": "これは三です。",
+          "reading": "これはさんです。",
+          "en": "This is three.",
+          "zh": "这是三。"
+        }
+      ]
+    },
+    "vocab:jm1579470": {
+      "examples": [
+        {
+          "ja": "これは四です。",
+          "reading": "これはしです。",
+          "en": "This is four.",
+          "zh": "这是四。"
+        }
+      ]
+    },
+    "vocab:jm1579840": {
+      "examples": [
+        {
+          "ja": "これは十です。",
+          "reading": "これはじゅうです。",
+          "en": "This is ten.",
+          "zh": "这是十。"
+        }
+      ]
+    },
     "vocab:jm1580340": {
       "examples": [
         {
@@ -1261,6 +2641,16 @@
           "reading": "うわぎをきます。",
           "en": "I put on a jacket.",
           "zh": "我穿上外套。"
+        }
+      ]
+    },
+    "vocab:jm1580480": {
+      "examples": [
+        {
+          "ja": "体が丈夫です。",
+          "reading": "からだがじょうぶです。",
+          "en": "My body is strong.",
+          "zh": "身体很健康。"
         }
       ]
     },
@@ -1291,6 +2681,16 @@
           "reading": "いりぐちはあちらです。",
           "en": "The entrance is that way.",
           "zh": "入口在那边。"
+        }
+      ]
+    },
+    "vocab:jm1582920": {
+      "examples": [
+        {
+          "ja": "この本は面白いです。",
+          "reading": "このほんはおもしろいです。",
+          "en": "This book is interesting.",
+          "zh": "这本书很有趣。"
         }
       ]
     },
@@ -1434,6 +2834,76 @@
         }
       ]
     },
+    "vocab:jm1591110": {
+      "examples": [
+        {
+          "ja": "日本語を聞きます。",
+          "reading": "にほんごをききます。",
+          "en": "I listen to Japanese.",
+          "zh": "我听日语。"
+        }
+      ]
+    },
+    "vocab:jm1591900": {
+      "examples": [
+        {
+          "ja": "花はきれいです。",
+          "reading": "はなはきれいです。",
+          "en": "The flower is pretty.",
+          "zh": "花很漂亮。"
+        }
+      ]
+    },
+    "vocab:jm1592250": {
+      "examples": [
+        {
+          "ja": "私の国は大きいです。",
+          "reading": "わたしのくにはおおきいです。",
+          "en": "My country is big.",
+          "zh": "我的国家很大。"
+        }
+      ]
+    },
+    "vocab:jm1592340": {
+      "examples": [
+        {
+          "ja": "今日は曇りです。",
+          "reading": "きょうはくもりです。",
+          "en": "Today is cloudy.",
+          "zh": "今天是阴天。"
+        }
+      ]
+    },
+    "vocab:jm1592970": {
+      "examples": [
+        {
+          "ja": "交差点で車を見ます。",
+          "reading": "こうさてんでくるまをみます。",
+          "en": "I see a car at the intersection.",
+          "zh": "我在十字路口看到车。"
+        }
+      ]
+    },
+    "vocab:jm1595020": {
+      "examples": [
+        {
+          "ja": "しょうゆを使います。",
+          "reading": "しょうゆをつかいます。",
+          "en": "I use soy sauce.",
+          "zh": "我用酱油。"
+        }
+      ]
+    },
+    "vocab:jm1612860": {
+      "examples": [
+        {
+          "ja": "朝、起きます。そうして、学校へ行きます。",
+          "reading": "あさ、おきます。そうして、がっこうへいきます。",
+          "en": "I wake up in the morning. And then I go to school.",
+          "zh": "早上起床，然后去学校。"
+        }
+      ]
+    },
     "vocab:jm2013900": {
       "examples": [
         {
@@ -1441,6 +2911,36 @@
           "reading": "あかがすきです。",
           "en": "I like red.",
           "zh": "我喜欢红色。"
+        }
+      ]
+    },
+    "vocab:jm2147990": {
+      "examples": [
+        {
+          "ja": "背が高いです。",
+          "reading": "せがたかいです。",
+          "en": "I am tall.",
+          "zh": "个子很高。"
+        }
+      ]
+    },
+    "vocab:jm2216120": {
+      "examples": [
+        {
+          "ja": "これ、水を飲みますか。",
+          "reading": "これ、みずをのみますか。",
+          "en": "Hey, will you drink some water?",
+          "zh": "喂，你要喝水吗？"
+        }
+      ]
+    },
+    "vocab:jm2216210": {
+      "examples": [
+        {
+          "ja": "それ、犬です。",
+          "reading": "それ、いぬです。",
+          "en": "There! It's a dog.",
+          "zh": "那儿！是狗。"
         }
       ]
     },
