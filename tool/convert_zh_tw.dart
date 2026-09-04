@@ -38,10 +38,17 @@ Future<void> main(List<String> args) async {
   final others = <File>[
     File('$assets/kana_notes.json'),
     File('$assets/function_words.json'),
-    ...Directory('$assets/grammar')
-        .listSync()
-        .whereType<File>()
-        .where((file) => file.path.endsWith('.json')),
+    // Every directory of catalog content, so a new level's grammar or units
+    // are converted the first time the tool runs after they land rather than
+    // the first time somebody notices. **Not `prompts/`**: those templates are
+    // instructions a model follows, hand-written in each language the way the
+    // ARB files are, and this tool would delete a Traditional block it cannot
+    // regenerate from a Simplified sibling.
+    for (final name in const ['grammar', 'lessons'])
+      if (Directory('$assets/$name').existsSync())
+        ...Directory('$assets/$name').listSync().whereType<File>().where(
+          (file) => file.path.endsWith('.json'),
+        ),
   ]..sort((a, b) => a.path.compareTo(b.path));
   for (final file in others) {
     if (!file.existsSync()) {
@@ -70,7 +77,8 @@ bool _rewriteCatalog(File file, OpenCcConverter converter) {
   final json = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
   final entries = <Map<String, Object?>>[
     for (final entry in json['entries'] as List)
-      (withTraditional(entry, converter.convert) as Map).cast<String, Object?>(),
+      (withTraditional(entry, converter.convert) as Map)
+          .cast<String, Object?>(),
   ];
   final inputs = json['inputs'] as Map?;
   return _writeIfChanged(

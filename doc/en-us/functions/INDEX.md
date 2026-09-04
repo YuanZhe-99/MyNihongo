@@ -159,4 +159,7 @@ Offline build scripts, outside `lib/` and outside the totals above.
 |---|---|---|---|
 | `tool/import_vocab.dart` | [tool/import_vocab.md](tool/import_vocab.md) | 7 | 1 |
 | `tool/src/vocab_import_core.dart` | [tool/src/vocab_import_core.md](tool/src/vocab_import_core.md) | 14 | 3 |
+| `tool/convert_zh_tw.dart` | not documented | — | — |
+| `tool/draft_inputs.dart` | not documented | — | — |
+| `tool/merge_drafts.dart` | not documented | — | — |
 | `tool/generate_ios_icons.dart` | not documented | — | — |

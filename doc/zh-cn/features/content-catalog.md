@@ -97,7 +97,9 @@ dart run tool/convert_zh_tw.dart
 5. **只使用已知的词性标签。**
 6. **每个语法点都有两种语言**、有例句，句中含汉字处附读音。
 7. **假名注释指向存在的假名**，且两种语言齐全。
-8. **日语由人校对。** 错误的例句会教错东西。
+8. **日语能对着目录自己的词汇解析**，且读音与之对齐。这正是 `test/sentence_analyzer_test.dart`、`test/content_links_test.dart` 与撰写门禁所检查的，也是测试能做到的极限。
+
+**「由人阅读日语」是这份目录没有做到的一条规则。** N5 语法是手写的；其余部分——见 [`content-authoring.md`](content-authoring.md)——由模型撰写并由机器检查。每个这样的文件都在 `source` 字段里写明这一点，每条机器生成的释义都带着 `reviewed: false`。错误的例句依然会教错东西；这里没有任何地方声称相反。
 
 属于约定而非测试的规则：
 
@@ -111,6 +113,7 @@ dart run tool/convert_zh_tw.dart
 | 来源 | 许可 | 状态 |
 |---|---|---|
 | 语法、例句、假名注释、中文释义、种子词 | GPL-3.0（随应用） | 已发布 |
+| 模型撰写的语法、释义、例句与单元（`"source": "model-authored (Claude), unreviewed"`） | GPL-3.0（随应用） | 已发布 |
 | OpenCC 转换词典（Carbo Kuo 及贡献者） | Apache-2.0 | 构建输入；其生成的文本随应用发布 |
 | JMdict / EDICT（EDRDG，莫纳什大学） | CC BY-SA 4.0 | 已发布 |
 | JLPT 词表（stephenmk/yomitan-jlpt-vocab；底层词表来自 Jonathan Waller，CC BY） | CC BY-SA 4.0 | 已发布 |

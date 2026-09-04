@@ -27,12 +27,13 @@ const _jmdictRelease =
     'https://github.com/scriptin/jmdict-simplified/releases/latest';
 
 /// Purpose: Run the import.
-/// Inputs: `args` — `--data`, `--out`, `--overlay`, `--seed`, `--overlay-only`.
+/// Inputs: `args` — `--data`, `--out`, `--overlay`, `--examples`, `--seed`,
+/// `--overlay-only`.
 /// Returns: None; sets the exit code.
 /// Side effects: File I/O and console output.
-/// Notes: `--overlay-only` rewrites the existing catalog's Chinese glosses from
-/// the overlay without touching JMdict, so authoring Chinese level by level
-/// never needs the 117 MB download.
+/// Notes: `--overlay-only` rewrites the existing catalog's Chinese glosses and
+/// example sentences from the two overlays without touching JMdict, so
+/// authoring either of them level by level never needs the 117 MB download.
 Future<void> main(List<String> args) async {
   final options = _parseArgs(args);
 
@@ -44,8 +45,13 @@ Future<void> main(List<String> args) async {
     stderr.writeln('No overlay at ${options.overlay}; English glosses only.');
   }
 
+  final examplesFile = File(options.examples);
+  final examples = examplesFile.existsSync()
+      ? _readExamples(examplesFile.readAsStringSync())
+      : <String, List<Object?>>{};
+
   if (options.overlayOnly) {
-    _applyOverlayOnly(options.out, overlay);
+    _applyOverlayOnly(options.out, overlay, examples);
     return;
   }
 
@@ -114,6 +120,8 @@ Future<void> main(List<String> args) async {
     return;
   }
 
+  _applyExamples(result.entries, examples);
+
   _write(
     options.out,
     entries: result.entries,
@@ -128,6 +136,7 @@ typedef _Options = ({
   String data,
   String out,
   String overlay,
+  String examples,
   String seed,
   bool overlayOnly,
 });
@@ -142,6 +151,7 @@ _Options _parseArgs(List<String> args) {
   var data = 'tool/data';
   var out = 'assets/content/vocab.json';
   var overlay = 'assets/content/vocab_zh.json';
+  var examples = 'assets/content/vocab_examples.json';
   var seed = 'tool/content/vocab_seed.json';
   var overlayOnly = false;
   for (var i = 0; i < args.length; i++) {
@@ -153,6 +163,8 @@ _Options _parseArgs(List<String> args) {
         out = next;
       case '--overlay' when next != null:
         overlay = next;
+      case '--examples' when next != null:
+        examples = next;
       case '--seed' when next != null:
         seed = next;
       case '--overlay-only':
@@ -163,6 +175,7 @@ _Options _parseArgs(List<String> args) {
     data: data,
     out: out,
     overlay: overlay,
+    examples: examples,
     seed: seed,
     overlayOnly: overlayOnly,
   );
@@ -215,7 +228,11 @@ Map<String, Map<String, Object?>> _readOverlay(String raw) {
 /// hand-written seed gloss is left exactly as the full import wrote it. An
 /// overlay row naming an id the catalog no longer has is reported, not
 /// dropped silently.
-void _applyOverlayOnly(String out, Map<String, Map<String, Object?>> overlay) {
+void _applyOverlayOnly(
+  String out,
+  Map<String, Map<String, Object?>> overlay,
+  Map<String, List<Object?>> examples,
+) {
   final file = File(out);
   if (!file.existsSync()) {
     stderr.writeln('No catalog at $out; run a full import first.');
@@ -244,13 +261,22 @@ void _applyOverlayOnly(String out, Map<String, Map<String, Object?>> overlay) {
       stderr.writeln('  overlay id $id is not in the catalog any more');
     }
   }
+  final withExamples = _applyExamples(entries, examples);
+  for (final id in examples.keys) {
+    if (!known.contains(id)) {
+      stderr.writeln('  example id $id is not in the catalog any more');
+    }
+  }
   _write(
     out,
     entries: entries,
     jmdictVersion: '${(json['inputs'] as Map?)?['jmdictVersion']}',
     jmdictDate: '${(json['inputs'] as Map?)?['jmdictDate']}',
   );
-  stdout.writeln('Applied $applied Chinese glosses to $out.');
+  stdout.writeln(
+    'Applied $applied Chinese glosses and examples for $withExamples '
+    'entries to $out.',
+  );
 }
 
 /// Purpose: Write the catalog file.
@@ -270,7 +296,8 @@ void _write(
   final converter = OpenCcConverter.load(openCcDirectory);
   final translated = <Map<String, Object?>>[
     for (final entry in entries)
-      (withTraditional(entry, converter.convert) as Map).cast<String, Object?>(),
+      (withTraditional(entry, converter.convert) as Map)
+          .cast<String, Object?>(),
   ];
   File(path).writeAsStringSync(
     encodeCatalog(
@@ -279,4 +306,60 @@ void _write(
       jmdictDate: jmdictDate,
     ),
   );
+}
+
+/// Purpose: Parse the example-sentence overlay file.
+/// Inputs: `raw`.
+/// Returns: `Map<String, List<Object?>>` — catalog id to its examples.
+/// Side effects: None.
+/// Notes: Internal helper. Same shape as the Chinese overlay and the same
+/// reason: `vocab.json` is generated, so anything hand-written about a word
+/// lives beside it and is folded in by this tool. A malformed row is skipped
+/// rather than fatal; the gate test is where a draft is judged.
+Map<String, List<Object?>> _readExamples(String raw) {
+  final json = jsonDecode(raw);
+  if (json is! Map || json['entries'] is! Map) return {};
+  return {
+    for (final entry in (json['entries'] as Map).entries)
+      if (entry.value is Map && (entry.value as Map)['examples'] is List)
+        entry.key.toString(): ((entry.value as Map)['examples'] as List),
+  };
+}
+
+/// Purpose: Fold the example overlay into the catalog entries.
+/// Inputs: `entries` — the catalog rows, modified in place; `examples`.
+/// Returns: `int` — how many entries gained an example.
+/// Side effects: Mutates `entries`.
+/// Notes: Internal helper. The 24 hand-written seed words already carry
+/// examples and keep them, first: a sentence somebody wrote and checked
+/// outranks one that was generated. Overlay sentences are appended and
+/// de-duplicated by their Japanese, so re-running the tool is idempotent.
+int _applyExamples(
+  List<Map<String, Object?>> entries,
+  Map<String, List<Object?>> examples,
+) {
+  var touched = 0;
+  for (final entry in entries) {
+    final rows = examples['${entry['id']}'];
+    if (rows == null || rows.isEmpty) continue;
+    final existing = <Map<String, Object?>>[
+      if (entry['examples'] is List)
+        for (final e in entry['examples'] as List)
+          if (e is Map) e.cast<String, Object?>(),
+    ];
+    final seen = {for (final e in existing) '${e['ja']}'};
+    var added = 0;
+    for (final row in rows) {
+      if (row is! Map) continue;
+      final example = row.cast<String, Object?>();
+      final ja = '${example['ja']}';
+      if (ja.isEmpty || !seen.add(ja)) continue;
+      existing.add(example);
+      added++;
+    }
+    if (added == 0) continue;
+    entry['examples'] = existing;
+    touched++;
+  }
+  return touched;
 }

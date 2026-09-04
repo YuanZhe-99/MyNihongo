@@ -18,12 +18,23 @@ import '../tool/src/zh_tw.dart';
 /// stays behind. Editing a `zh_TW` string by hand fails here too, which is
 /// deliberate — the fix is to edit the `zh` and re-run the tool.
 void main() {
-  const paths = [
+  // Enumerated rather than listed. A hard-coded list means a new level's
+  // grammar file is converted by the tool and never checked by this test,
+  // which is the failure mode this test exists to prevent. `prompts/` is not
+  // here for the same reason it is not in the tool: its Traditional text is
+  // hand-written, not generated.
+  final paths = [
     'assets/content/vocab.json',
-    'assets/content/grammar/n5.json',
     'assets/content/kana_notes.json',
     'assets/content/function_words.json',
-  ];
+    for (final name in const ['grammar', 'lessons'])
+      if (Directory('assets/content/$name').existsSync())
+        for (final file in Directory('assets/content/$name')
+            .listSync()
+            .whereType<File>())
+          if (file.path.endsWith('.json'))
+            file.path.replaceAll(r'\', '/'),
+  ]..sort();
 
   late OpenCcConverter converter;
 

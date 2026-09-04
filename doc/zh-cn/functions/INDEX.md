@@ -151,4 +151,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 |---|---|---|---|
 | `tool/import_vocab.dart` | [tool/import_vocab.md](tool/import_vocab.md) | 7 | 1 |
 | `tool/src/vocab_import_core.dart` | [tool/src/vocab_import_core.md](tool/src/vocab_import_core.md) | 14 | 3 |
+| `tool/convert_zh_tw.dart` | 未编写文档 | — | — |
+| `tool/draft_inputs.dart` | 未编写文档 | — | — |
+| `tool/merge_drafts.dart` | 未编写文档 | — | — |
 | `tool/generate_ios_icons.dart` | 未编写文档 | — | — |

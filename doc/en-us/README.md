@@ -62,6 +62,8 @@ The shared WebDAV sync, backup, and ZIP engines are not in this repository. They
   what speaks, the speed and voice preferences, and what happens with no Japanese voice installed.
 - [`features/sentence-lab.md`](features/sentence-lab.md) — the sentence lab page: what it
   shows, where it is reached from, and the limits it states.
+- [`features/content-authoring.md`](features/content-authoring.md) — how new catalog content is
+  written, checked, and what the checks cannot promise.
 - [`features/quizzes.md`](features/quizzes.md) — the thirteen ways of asking about the same
   catalog, and how a question is built or dropped.
 - [`algorithms/spaced-repetition.md`](algorithms/spaced-repetition.md) — the SM-2 schedule, the two

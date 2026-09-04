@@ -137,7 +137,15 @@ Enforced by `test/content_catalog_test.dart`:
 6. **Both languages on every grammar point**, with examples, and readings where the sentence
    contains kanji.
 7. **Kana notes name kana that exist**, in both languages.
-8. **Japanese checked by a person.** A wrong example teaches the wrong thing.
+8. **The Japanese parses against the catalog's own vocabulary**, and its reading lines up with
+   it. That is what `test/sentence_analyzer_test.dart`, `test/content_links_test.dart` and the
+   authoring gate check, and it is as far as a test can go.
+
+**A person reading the Japanese is the rule this catalog does not meet.** The N5 grammar was
+written by hand; everything beyond it — see
+[`content-authoring.md`](content-authoring.md) — was written by a model and checked mechanically.
+Every such file says so in its `source` field, and every machine-authored gloss carries
+`reviewed: false`. A wrong example still teaches the wrong thing; nothing here claims otherwise.
 
 Rules that are policy rather than test:
 
@@ -153,6 +161,7 @@ license and attribution recorded here and on the in-app license page:
 | Source | License | Status |
 |---|---|---|
 | Grammar, examples, kana notes, Chinese glosses, seed words | GPL-3.0 (with the app) | Shipped |
+| Model-authored grammar, glosses, examples and units (`"source": "model-authored (Claude), unreviewed"`) | GPL-3.0 (with the app) | Shipped |
 | OpenCC conversion dictionaries (Carbo Kuo and contributors) | Apache-2.0 | Build input; the text they generate ships |
 | JMdict / EDICT (EDRDG, Monash University) | CC BY-SA 4.0 | Shipped |
 | JLPT lists (stephenmk/yomitan-jlpt-vocab; underlying lists by Jonathan Waller, CC BY) | CC BY-SA 4.0 | Shipped |
