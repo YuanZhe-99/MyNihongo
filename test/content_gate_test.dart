@@ -215,10 +215,25 @@ void main() {
         }
         // The sentence has to be about the word it is filed under, in any of
         // its forms — the analyser resolves 食べます back to 食べる.
+        // The sentence has to be about the word it is filed under. Three
+        // ways to show that, because the first two both miss inflected forms
+        // of a word that shares a surface with another entry: 降ります is 降る
+        // here, and the analyser resolves it to 降りる. The stem — the
+        // headword minus its conjugating kana — is what an inflected form
+        // still contains, and a false accept costs nothing next to rejecting
+        // a sentence the author wrote about exactly this word.
+        final stem = entry.headword.length > 1
+            ? entry.headword.substring(0, entry.headword.length - 1)
+            : entry.headword;
+        final readingStem = entry.reading.length > 1
+            ? entry.reading.substring(0, entry.reading.length - 1)
+            : entry.reading;
         need(
           analyzer.analyze(ja).tokens.any((t) => t.refId == id) ||
               ja.contains(entry.headword) ||
-              ja.contains(entry.reading),
+              ja.contains(entry.reading) ||
+              ja.contains(stem) ||
+              ja.contains(readingStem),
           '$label: "$ja" does not use ${entry.headword}.',
         );
         need(

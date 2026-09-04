@@ -1370,6 +1370,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aiSuggestCorrection => 'Suggest a correction';
 
   @override
+  String get writingTitle => 'Writing practice';
+
+  @override
+  String get writingHint => 'Write a few sentences in Japanese';
+
+  @override
+  String get writingCheck => 'Check my sentences';
+
+  @override
+  String get writingRewrite => 'Rewrite naturally';
+
+  @override
+  String writingWordsUsed(int used, int target) {
+    return '$used of $target of this unit\'s words used';
+  }
+
+  @override
   String get aiMoreExamples => 'More examples';
 
   @override

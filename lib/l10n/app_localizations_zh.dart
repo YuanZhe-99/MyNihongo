@@ -1329,6 +1329,23 @@ class AppLocalizationsZh extends AppLocalizations {
   String get aiSuggestCorrection => '给出改写建议';
 
   @override
+  String get writingTitle => '写作练习';
+
+  @override
+  String get writingHint => '用日语写几句话';
+
+  @override
+  String get writingCheck => '检查我的句子';
+
+  @override
+  String get writingRewrite => '改写得更自然';
+
+  @override
+  String writingWordsUsed(int used, int target) {
+    return '已用本单元的 $used / $target 个词';
+  }
+
+  @override
   String get aiMoreExamples => '更多例句';
 
   @override
@@ -2688,6 +2705,23 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get aiSuggestCorrection => '給出改寫建議';
+
+  @override
+  String get writingTitle => '寫作練習';
+
+  @override
+  String get writingHint => '用日語寫幾句話';
+
+  @override
+  String get writingCheck => '檢查我的句子';
+
+  @override
+  String get writingRewrite => '改寫得更自然';
+
+  @override
+  String writingWordsUsed(int used, int target) {
+    return '已用本單元的 $used / $target 個字詞';
+  }
 
   @override
   String get aiMoreExamples => '更多例句';

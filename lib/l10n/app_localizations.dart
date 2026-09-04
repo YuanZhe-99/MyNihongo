@@ -2505,6 +2505,36 @@ abstract class AppLocalizations {
   /// **'Suggest a correction'**
   String get aiSuggestCorrection;
 
+  /// No description provided for @writingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Writing practice'**
+  String get writingTitle;
+
+  /// No description provided for @writingHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Write a few sentences in Japanese'**
+  String get writingHint;
+
+  /// No description provided for @writingCheck.
+  ///
+  /// In en, this message translates to:
+  /// **'Check my sentences'**
+  String get writingCheck;
+
+  /// No description provided for @writingRewrite.
+  ///
+  /// In en, this message translates to:
+  /// **'Rewrite naturally'**
+  String get writingRewrite;
+
+  /// No description provided for @writingWordsUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'{used} of {target} of this unit\'s words used'**
+  String writingWordsUsed(int used, int target);
+
   /// No description provided for @aiMoreExamples.
   ///
   /// In en, this message translates to:
