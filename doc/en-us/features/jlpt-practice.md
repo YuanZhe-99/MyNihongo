@@ -126,13 +126,37 @@ exist or they have not found it.
   hear has no answer, which is the same rule the app's own listening quiz modes
   follow.
 
+## The results history
+
+Every finished practice section is recorded as an attempt: which level, which
+section, how many questions, how many right, and what the first answer to each
+question was. **Only that.** The question text, its options and its explanation
+are read back from the shipped files when the results are shown, so a content
+update that corrects an answer key corrects the history with it. A question the
+files no longer have says so in one line rather than quietly disappearing from
+the attempt.
+
+The history rides in the progress file, so an attempt on one device is in the
+history on another, and deleting one deletes it everywhere on the next sync.
+Forty mock attempts and eighty practice attempts are kept; the caps are separate
+so a learner who practises daily and mocks monthly does not lose every mock.
+
+**A score there is not a JLPT score**, and the page says so at the top rather
+than leaving it to be inferred: it is over the questions this app asked.
+
+The attempt history is also what stops the sampler repeating itself. `asked` and
+`lastAsked` are derived from the **synced** attempts, so two devices avoid each
+other's questions rather than each grinding through the same first twenty. The
+cap on how many attempts are kept is therefore also the point at which a
+question becomes askable again, which is a reasonable definition of forgetting
+it.
+
 ## What is not built yet
 
-The card's **Mock exam** and **Results** buttons are present and disabled, with
-a line saying they come in the next update. A timed paper and a results history
-are the next two milestones. They are shown rather than hidden because the
-alternative is a card that quietly grows two buttons and a learner who never
-finds out they arrived.
+The card's **Mock exam** button is present and disabled, with a line saying it
+comes in the next update. It is shown rather than hidden because the alternative
+is a card that quietly grows a button and a learner who never finds out it
+arrived.
 
 ## Content
 

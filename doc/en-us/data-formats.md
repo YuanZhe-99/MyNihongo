@@ -394,6 +394,67 @@ history, and it only ever removes history records. A deletion is real rather tha
 three-way merge treats a record deleted on one side and untouched on the other as deleted, so
 forgetting a sentence forgets it everywhere.
 
+### The exam history
+
+One sitting of a JLPT paper is a record whose payload sits under the `exam` key of its `extraJson`,
+the same pattern the profile and the sentence history use, and for the same reason: a record gets the
+per-record three-way merge, the conflict dialog, sync and backup for free, while a second data module
+would mean a second remote file, a second backup entry and eleven golden transcripts re-recorded.
+
+```json
+{
+  "id": "exam:20260905T101500Z-3f2a",
+  "correct": 48, "wrong": 19,
+  "streak": 0, "intervalDays": 0, "ease": 2.5,
+  "createdAt": "2026-09-05T11:42:10.000Z",
+  "modifiedAt": "2026-09-05T11:42:10.000Z",
+  "extraJson": {
+    "exam": {
+      "v": 1, "level": "N5", "mode": "practice", "scale": "short",
+      "startedAt": "2026-09-05T10:15:00.000Z",
+      "finishedAt": "2026-09-05T11:42:10.000Z",
+      "sections": {
+        "vocab": { "asked": 7, "right": 5, "secs": 300, "limitSecs": 420 },
+        "reading": { "asked": 2, "right": 1 }
+      },
+      "q": { "q:n5-v-012": 1, "q:n5-v-003": 0, "q:n5-r-007": -1 }
+    }
+  }
+}
+```
+
+**Only the input is stored.** Which questions were asked and what the first answer to each was:
+`1` right, `0` wrong, `-1` never answered because the clock ran out. The question text, its options
+and its explanation are all read back from the shipped drill files when the results are shown, so a
+content update that corrects an answer key corrects the history with it rather than leaving a frozen
+score the files no longer agree with. A question the shipped files no longer have says so in one
+line rather than vanishing from the attempt.
+
+`-1` is deliberately its own value. An unanswered question is neither right nor wrong: calling it
+wrong would make every timed score look worse than the learner did, and dropping it would make every
+timed score look better.
+
+The **id is timestamped and salted**, not content-addressed. The timestamp sorts the ids the way the
+attempts happened, which makes a file diff readable; the four-hex suffix is what keeps two attempts
+started in the same second on two devices from merging. That is the opposite of the sentence
+history's rule, and deliberately: re-analysing one sentence should update one record, while two
+sittings of one paper are genuinely two things.
+
+The **section keys are plain strings**, so `progress/` imports nothing from `drills/`. A section a
+later release adds still round-trips through an older build rather than costing it the rest of the
+attempt.
+
+`correct` and `wrong` carry the paper's totals even though the payload holds them too. They are what
+an older build's sync conflict dialog reads, and an attempt that showed "correct 0 · wrong 0" there
+would be telling that build something false about a record it cannot otherwise interpret.
+`studiedKinds` does **not** gain `exam`, so an attempt is never scheduled, never counted as an item,
+and never enters the review queue — the questions it asked already moved their own items' intervals,
+one at a time, as they were answered.
+
+**Pruning is per mode**: 40 mock attempts and 80 practice attempts. A learner who practises daily
+and sits a mock once a month would otherwise lose every mock to the practice runs, and the mocks are
+the ones worth looking back at.
+
 ### Compatibility: unknown-JSON-field preservation (`extraJson`)
 
 `StudyRecord` and `ProgressData` (the top-level `{records: [...]}` container) each carry an
@@ -433,6 +494,7 @@ Settings shows the resolved path only on desktop; see `platform_capabilities.dar
 | --- | --- | --- | --- |
 | Learning progress | `nihongo_progress.json` | Yes | Per-record by `id` and `modifiedAt`; unknown fields preserved |
 | Sentence lab and writing history | `nihongo_progress.json` | Yes | `lab:`/`writing:` records, content-addressed ids, 100 per kind; only the input text is stored |
+| JLPT attempt history | `nihongo_progress.json` | Yes | `exam:` records, timestamped ids, 40 mock and 80 practice; only which questions were asked and what was answered |
 | Theme mode | `storage_config.json` | No | Device-specific preference (`themeMode`: `light`/`dark`; absent means system) |
 | Locale | `storage_config.json` | No | Device-specific preference (`locale`: `en`/`zh`/`zh_TW`; absent means system) |
 | Storage path override | `storage_config.json` | No | Device-specific path (`storagePath`) |

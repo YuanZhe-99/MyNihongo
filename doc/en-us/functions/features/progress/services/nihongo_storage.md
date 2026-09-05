@@ -28,6 +28,7 @@ because neither a voice name nor an engine package means anything on another dev
 | [`NihongoStorage.save`](#save) | static method | A | Write the progress data file atomically and notify auto-sync. |
 | `NihongoStorage.upsertRecords` | static method | B | Insert or replace study records by id, carrying the container's `extraJson` through. |
 | [`NihongoStorage.recordHistory`](#recordhistory) | static method | A | Remember one analysed sentence, and prune the oldest past the cap. |
+| [`NihongoStorage.recordExam`](#recordexam) | static method | A | Remember one sitting of a JLPT paper, and prune the oldest past the cap for that mode. |
 | [`NihongoStorage.deleteRecords`](#deleterecords) | static method | A | Forget records the learner deleted. |
 | `NihongoStorage.readConfig` | static method | B | Read `storage_config.json`; empty when absent or blank. |
 | `NihongoStorage.writeConfig` | static method | B | Write `storage_config.json` atomically. |
@@ -122,6 +123,23 @@ and [`../../../../features/ai-assist.md`](../../../../features/ai-assist.md).
   emptying the writing history, and only history records are ever removed. Both callers swallow a
   failure here: remembering is a convenience, and the analysis on screen is the feature.
 
+### `static Future<void> recordExam(ExamAttempt attempt, {DateTime? now})` <a id="recordexam"></a>
+
+- **Kind:** static method
+- **Purpose:** Remember one sitting of a JLPT paper.
+- **Inputs:** The `attempt`; `now` for tests.
+- **Returns:** None.
+- **Side effects:** Reads then rewrites the data file; notifies auto-sync once.
+- **Algorithm:** Upsert by the attempt's id, then collect that **mode's** attempts and remove
+  everything past its cap — `examMaxMockEntries` for a mock, `examMaxPracticeEntries` for practice —
+  oldest first. One load and one save.
+- **Usage:** `ProgressNotifier.recordExam`, from the quiz page when a paper is submitted.
+- **Notes:** Shaped on `recordHistory`, with one difference that matters: **pruning is per mode**. A
+  learner who practises daily and sits a mock once a month would otherwise lose every mock to the
+  practice runs, and the mocks are the ones worth looking back at. The id is timestamped and salted
+  rather than content-addressed, because two sittings of the same paper are genuinely two attempts
+  and must not collapse into one the way two analyses of the same sentence should.
+
 ### `static Future<void> deleteRecords(Iterable<String> ids)` <a id="deleterecords"></a>
 
 - **Kind:** static method
@@ -131,7 +149,7 @@ and [`../../../../features/ai-assist.md`](../../../../features/ai-assist.md).
 - **Side effects:** Reads then rewrites the data file; notifies auto-sync.
 - **Algorithm:** Drop every record whose id is named. Returns without writing when the set is empty
   or nothing matched.
-- **Usage:** The delete button on a history row.
+- **Usage:** The delete button on a history row, and the one on an exam-history tile.
 - **Notes:** A real deletion rather than a tombstone: the three-way merge treats a record deleted on
   one side and untouched on the other as deleted, so forgetting a sentence forgets it on the
   learner's other devices too. That is the behaviour a delete button has to have — an entry that came

@@ -18,7 +18,7 @@ Consumers: `reviewQueueProvider`, and through it the Learn tab's today card.
 | `reviewLimitReached` | getter | B | Whether the day's allowance is used up while items remain due. |
 | [`isDue`](#isdue) | static method | A | Decide whether a record is due. |
 | [`build`](#build) | static method | A | Build the queue for right now. |
-| `_newItems` | static method | B | Choose the next unstudied catalog items. |
+| `_newItems` | static method | B | Choose the next unstudied catalog items; the switch over `StudyKind` breaks on `profile`, `lesson`, `history`, `exam` and `other`. |
 | `_dayOf` | static method | B | Reduce an instant to its calendar day. |
 
 ## Documentation
@@ -60,3 +60,9 @@ Consumers: `reviewQueueProvider`, and through it the Learn tab's today card.
   synced in from another device — which a shared daily goal must not. `overdueTotal` is reported
   separately from `due.length` so the UI can say "20 of 300 today" rather than pretending the backlog
   is smaller than it is.
+
+  `_newItems` switches exhaustively over `StudyKind`, so every kind that is not a catalog item has to
+  name itself and break. `exam` is one of them: an attempt is a record of something that happened,
+  not an item anybody studies, and it never enters the queue — the questions it asked already moved
+  their own items' intervals as they were answered. Exhaustiveness is the point of the switch; a new
+  kind is a compile error rather than a silent entry in the queue.

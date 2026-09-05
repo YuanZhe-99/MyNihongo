@@ -13,6 +13,7 @@ library;
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../features/progress/models/exam_attempt.dart';
 import '../../features/progress/models/learner_profile.dart';
 import '../../features/progress/models/study_record.dart';
 import '../../features/progress/services/nihongo_storage.dart';
@@ -71,6 +72,19 @@ class ProgressNotifier extends StateNotifier<AsyncValue<ProgressData>> {
     DateTime? now,
   }) async {
     await NihongoStorage.recordLessonResult(recordId, passed, now: now);
+    await reload();
+  }
+
+  /// Purpose: Record one sitting of a JLPT paper.
+  /// Inputs: The `attempt`; `now` for tests.
+  /// Returns: A future completing once the file is written and re-read.
+  /// Side effects: Writes the progress file and reloads it.
+  /// Notes: An attempt is a record of something that happened, so it does not
+  /// go through the scheduler — the questions it asked already moved their own
+  /// items' intervals, one at a time, as they were answered. Written once at
+  /// the end rather than per answer, because half an exam is not an attempt.
+  Future<void> recordExam(ExamAttempt attempt, {DateTime? now}) async {
+    await NihongoStorage.recordExam(attempt, now: now);
     await reload();
   }
 

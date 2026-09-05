@@ -1,6 +1,6 @@
 # lib/app/router.dart
 
-声明 `appRouter`，即应用的 `GoRouter`：`initialLocation: '/learn'`，以及一个 `ShellRoute`，其 builder 把每个标签包在 `ShellScaffold` 中，按显示顺序持有五个标签路由——`/learn`、`/kana`、`/vocab`、`/grammar`、`/settings`。`ShellScaffold.routes` 持有同一列表；两者靠人工保持同步。目前没有非标签路由。见 [../../architecture.md](../../architecture.md)。
+声明 `appRouter`，即应用的 `GoRouter`：`initialLocation: '/learn'`，以及一个 `ShellRoute`，其 builder 把每个标签包在 `ShellScaffold` 中，按显示顺序持有五个标签路由——`/learn`、`/kana`、`/vocab`、`/grammar`、`/settings`。`ShellScaffold.routes` 持有同一列表；两者靠人工保持同步。整窗路由位于该 shell 之外；见下文。见 [../../architecture.md](../../architecture.md)。
 
 ## 声明
 
@@ -14,3 +14,7 @@
 **之前**从设备偏好读取上次所在的标签并传入此处，因此应用直接在用户离开的位置打开，而不是先显示“学习”再跳转。
 根组件只构建一次路由器并保存在其状态中：`GoRouter` 拥有导航历史，若在主题或语言变化时重建，会把用户在会话中途
 送回初始标签。
+
+整窗路由位于 shell **之外**、与它并列——`/quiz`、`/scenario`、`/writing`、`/lab`，以及构建 `ExamHistoryPage`
+且不接收 `extra` 的 `/exam-history`。放在 shell 之外的理由和测验一样：JLPT 结果是带着目的从学习标签页进入、
+看完就离开的，因此它们下面的标签栏提供的会是另一个可去之处，而不是一条回去的路。

@@ -6,6 +6,7 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
 import '../../../shared/services/auto_sync_service.dart';
+import '../models/exam_attempt.dart';
 import '../models/history_entry.dart';
 import '../models/learner_profile.dart';
 import '../models/study_record.dart';
@@ -371,6 +372,42 @@ class NihongoStorage {
       final doomed = {
         for (final old in ofKind.skip(historyMaxEntries)) old.id,
       };
+      list.removeWhere((record) => doomed.contains(record.id));
+    }
+
+    await save(ProgressData(records: list, extraJson: data.extraJson));
+  }
+
+  /// Purpose: Remember one sitting of a JLPT paper.
+  /// Inputs: `attempt`; `now` for tests.
+  /// Returns: None.
+  /// Side effects: Reads then rewrites the data file; notifies auto-sync.
+  /// Notes: Shaped on [recordHistory], with one difference that matters:
+  /// **pruning is per mode**. A learner who practises daily and sits a mock
+  /// once a month would otherwise lose every mock to the practice runs, and
+  /// the mocks are the ones worth looking back at.
+  ///
+  /// The id is timestamped and salted rather than content-addressed, because
+  /// two sittings of the same paper are genuinely two attempts and must not
+  /// collapse into one the way two analyses of the same sentence should.
+  static Future<void> recordExam(ExamAttempt attempt, {DateTime? now}) async {
+    final stamp = (now ?? DateTime.now()).toUtc();
+    final data = await load();
+    final list = List<StudyRecord>.of(data.records);
+    final index = list.indexWhere((record) => record.id == attempt.id);
+    final written = attempt.toRecord(index >= 0 ? list[index] : null, stamp);
+    if (index >= 0) {
+      list[index] = written;
+    } else {
+      list.add(written);
+    }
+
+    final cap = attempt.mode == ExamMode.mock
+        ? examMaxMockEntries
+        : examMaxPracticeEntries;
+    final ofMode = examAttempts(list, mode: attempt.mode);
+    if (ofMode.length > cap) {
+      final doomed = {for (final old in ofMode.skip(cap)) old.id};
       list.removeWhere((record) => doomed.contains(record.id));
     }
 

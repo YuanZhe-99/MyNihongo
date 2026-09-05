@@ -14,7 +14,7 @@ id 已不在当前构建内容库中的记录。
 ### `resolveStudyItemLabel`
 
 - **Purpose:** 查找进度记录 id 的显示名称。
-- **Inputs:** `id` —— `kana:`、`vocab:`、`grammar:`、`profile:`、`lesson:`、`lab:` 或 `writing:` id；`historyRecord` —— 记录本身，用于被记住的句子；`historyName` —— 该页面在界面语言中的名称；`catalog` —— 已解析的内容，未加载时为 null；
+- **Inputs:** `id` —— `kana:`、`vocab:`、`grammar:`、`profile:`、`lesson:`、`lab:`、`writing:` 或 `exam:` id；`record` —— 记录本身，用于被记住的句子或一次考试作答；`profileName` 与 `historyName` —— 学习者档案与历史记录在界面语言中的名称；`examPracticeName` 与 `examMockName` —— 两种考试模式在界面语言中的名称；`catalog` —— 已解析的内容，未加载时为 null；
   `locale` —— 界面语言，决定释义使用哪种语言。
 - **Returns:** `StudyItemLabel`；永不为 null。
 - **Side effects:** 无。
@@ -27,4 +27,6 @@ id 已不在当前构建内容库中的记录。
   “未知项”说明显示，而不是被隐藏 —— 进度 id 的寿命长于内容库，记录绝不能悄悄消失。
 
 **历史**记录（`lab:` 或 `writing:`）以它所记住的文本命名，下方是该页面的名称。记录由调用方传入而不是在此查找，因为本函数拿到的是一个 id，而只有它的调用方持有文件——并且与其他每一种不同，历史记录的身份就是它自己的内容，而不是目录中的某个条目。
+
+**考试**记录（`exam:`）出于同样的理由遵循同一条规则：它没有指名任何目录条目，能标识它的只有它自己的载荷，而它是从历史记录那一支本来就需要的 `record` 参数里读出来的。标题是级别加模式词——`N3 模拟考试`——副标题是本地的开始日期与得分，`2026-09-04 · 48/67`。两个模式词由调用方传入，因为本文件没有自己的本地化资源，这也是 `examPracticeName` 与 `examMockName` 是参数而不是常量的原因；如今有两种类别都要读它，携带记录的那个参数便由 `historyRecord` 改名为 `record`。
 

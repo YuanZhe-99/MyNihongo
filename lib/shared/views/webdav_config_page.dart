@@ -407,8 +407,10 @@ class _WebDAVConfigPageState extends ConsumerState<WebDAVConfigPage> {
         catalog: catalog,
         locale: locale,
         profileName: profileName,
-        historyRecord: conflict.localRecord,
+        record: conflict.localRecord,
         historyName: historyName,
+        examPracticeName: AppLocalizations.of(context)!.jlptModePractice,
+        examMockName: AppLocalizations.of(context)!.jlptMock,
       );
       final chosen = await showStudyConflictDialog(context, conflict, label);
       if (chosen == null) {

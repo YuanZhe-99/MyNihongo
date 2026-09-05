@@ -1555,6 +1555,44 @@ class AppLocalizationsEn extends AppLocalizations {
   String get jlptHistory => 'Results';
 
   @override
-  String get jlptComingNext =>
-      'Timed mock exams and a results history come in the next update.';
+  String get jlptComingNext => 'Timed mock exams come in the next update.';
+
+  @override
+  String get jlptModePractice => 'Practice';
+
+  @override
+  String jlptScore(int right, int asked) {
+    return '$right of $asked correct';
+  }
+
+  @override
+  String get jlptHistoryTitle => 'JLPT results';
+
+  @override
+  String get jlptHistoryEmpty =>
+      'Nothing here yet. Finish a practice section and it is recorded on this device and synced with your progress.';
+
+  @override
+  String jlptHistorySection(String section, int right, int asked) {
+    return '$section: $right/$asked';
+  }
+
+  @override
+  String get jlptHistoryDelete => 'Delete';
+
+  @override
+  String get jlptHistoryDeleted => 'Attempt deleted.';
+
+  @override
+  String get jlptHistoryWrong => 'Got wrong';
+
+  @override
+  String get jlptHistoryUnanswered => 'Not answered';
+
+  @override
+  String get jlptHistoryGone => 'This question is no longer in the app.';
+
+  @override
+  String get jlptHistoryNote =>
+      'A score here is over the questions this app asked. It is not a JLPT score.';
 }

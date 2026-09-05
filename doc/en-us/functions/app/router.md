@@ -3,7 +3,7 @@
 Declares `appRouter`, the app's `GoRouter`: `initialLocation: '/learn'` and one `ShellRoute` whose
 builder wraps every tab in `ShellScaffold`, holding the five tab routes in display order — `/learn`,
 `/kana`, `/vocab`, `/grammar`, `/settings`. `ShellScaffold.routes` holds the same list; the two are
-kept in step by hand. There are no non-tab routes yet. See
+kept in step by hand. The full-window routes sit outside that shell; see below. See
 [../../architecture.md](../../architecture.md).
 
 ## Declarations
@@ -20,3 +20,9 @@ reads the last tab from the device preferences **before** `runApp` and passes it
 opens where the user left it rather than showing Learn and jumping. The root widget builds the
 router once and keeps it in its state: a `GoRouter` owns navigation history, so rebuilding one on a
 theme or locale change would send the user back to the initial tab mid-session.
+
+Full-window routes sit **outside** the shell beside it — `/quiz`, `/scenario`, `/writing`, `/lab`,
+and `/exam-history`, which builds `ExamHistoryPage` and takes no `extra`. Outside the
+shell for the reason the quiz is: the JLPT results are entered with a purpose from the Learn tab and
+left when they are finished, so a tab bar under them would be offering somewhere else to go rather
+than a way back.

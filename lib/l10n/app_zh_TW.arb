@@ -532,5 +532,18 @@
   "jlptNoVoice": "需要裝置上有日語語音。",
   "jlptMock": "模擬考試",
   "jlptHistory": "成績紀錄",
-  "jlptComingNext": "計時模擬考試與成績紀錄將於下次更新推出。"
+  "jlptComingNext": "計時模擬考試將於下次更新推出。",
+"jlptModePractice": "練習",
+  "jlptScore": "{asked} 題答對 {right} 題",
+  "@jlptScore": { "placeholders": { "right": { "type": "int" }, "asked": { "type": "int" } } },
+  "jlptHistoryTitle": "JLPT 成績紀錄",
+  "jlptHistoryEmpty": "這裡還是空的。做完一個部分的練習後會記錄在本裝置上，並隨學習進度同步。",
+  "jlptHistorySection": "{section}：{right}/{asked}",
+  "@jlptHistorySection": { "placeholders": { "section": { "type": "String" }, "right": { "type": "int" }, "asked": { "type": "int" } } },
+  "jlptHistoryDelete": "刪除",
+  "jlptHistoryDeleted": "已刪除該次紀錄。",
+  "jlptHistoryWrong": "答錯",
+  "jlptHistoryUnanswered": "未作答",
+  "jlptHistoryGone": "這道題已不在應用程式中。",
+  "jlptHistoryNote": "這裡的分數只針對本應用程式出的題，不是 JLPT 成績。"
 }

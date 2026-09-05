@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../l10n/app_localizations.dart';
+import '../../../shared/providers/exam_provider.dart';
 import '../../../shared/providers/learner_profile_provider.dart';
 import '../../../shared/providers/progress_provider.dart';
 import '../../../shared/utils/adaptive_layout.dart';
@@ -9,6 +10,7 @@ import '../../content/models/content_catalog.dart';
 import '../../content/services/content_repository.dart';
 import '../../content/services/study_item_labels.dart';
 import '../../kana/models/kana.dart';
+import '../../progress/models/exam_attempt.dart';
 import '../../progress/models/study_record.dart';
 import '../../sentence/services/sentence_analyzer.dart';
 import '../../speech/services/tts_service.dart';
@@ -67,6 +69,17 @@ class _QuizPageState extends ConsumerState<QuizPage> {
   /// files are already parsed by the time the session exists, and a build
   /// method that re-read them would re-read them for every keystroke.
   Map<String, DrillPassage> _passages = const {};
+
+  /// Which section each drill question on this paper belongs to.
+  ///
+  /// The results are reported per section and the outcomes come back keyed by
+  /// question id, so the join has to be kept from the moment the paper was
+  /// drawn. Re-deriving it afterwards would mean re-reading four files to
+  /// answer a question the page already knew.
+  Map<String, DrillSection> _sectionOf = const {};
+
+  /// When this paper was started, for the attempt it will be recorded as.
+  DateTime? _startedAt;
 
   @override
   void initState() {
@@ -204,8 +217,13 @@ class _QuizPageState extends ConsumerState<QuizPage> {
       wanted = wanted.difference({DrillSection.listening});
     }
 
+    // What the learner has already been asked, across every synced attempt.
+    // Read once here rather than per section, so one paper sees one snapshot.
+    final history = ref.read(askedQuestionsProvider);
+
     final questions = <QuizQuestion>[];
     final passages = <String, DrillPassage>{};
+    final sections = <String, DrillSection>{};
     for (final section in DrillSection.values) {
       if (!wanted.contains(section)) continue;
       final file = files[section];
@@ -216,15 +234,86 @@ class _QuizPageState extends ConsumerState<QuizPage> {
           for (final entry in composition.entries)
             if (entry.key.section == section) entry.key: entry.value,
         },
+        asked: history.asked,
+        lastAsked: history.lastAsked,
       );
       for (final question in drawn) {
         questions.add(question.toQuizQuestion(locale));
+        sections[question.id] = section;
         final passage = file.passageById(question.passageId);
         if (passage != null) passages[passage.id] = passage;
       }
     }
     _passages = passages;
+    _sectionOf = sections;
+    _startedAt = DateTime.now().toUtc();
     return questions;
+  }
+
+  /// Purpose: Write the finished paper into the progress file.
+  /// Inputs: The finished `session`.
+  /// Returns: None.
+  /// Side effects: Writes an `exam:` record and reloads the progress file.
+  /// Notes: Internal helper used within this file only. Only a drill session
+  /// writes one, and only when it finished: half a paper is not an attempt,
+  /// and the leave dialog already says the rest of the session is discarded.
+  ///
+  /// **Only the input is stored** — which questions were asked and what the
+  /// first answer to each was. Everything a results screen shows is joined back
+  /// from the shipped files, so a content update that corrected an answer key
+  /// corrects the history with it.
+  ///
+  /// The suffix is derived from the question ids rather than from a random
+  /// number: two devices that started the same paper in the same second are
+  /// vanishingly unlikely, and where it happens two different papers still get
+  /// two ids while one paper resumed twice gets one.
+  void _recordAttempt(QuizSession session) {
+    final source = widget.config.source;
+    if (source is! DrillSource) return;
+    if (!widget.config.recordProgress) return;
+    final outcomes = session.outcomes;
+    if (outcomes.isEmpty) return;
+
+    final tallies = <String, (int asked, int right)>{};
+    final answers = <String, int>{};
+    for (final outcome in outcomes) {
+      final section = _sectionOf[outcome.key];
+      if (section == null) continue;
+      final current = tallies[section.name] ?? (0, 0);
+      tallies[section.name] = (
+        current.$1 + 1,
+        current.$2 + (outcome.correct ? 1 : 0),
+      );
+      answers[outcome.key] = outcome.answered
+          ? (outcome.correct ? 1 : 0)
+          : examUnanswered;
+    }
+    if (answers.isEmpty) return;
+
+    final startedAt = _startedAt ?? DateTime.now().toUtc();
+    final suffix = (answers.keys.join().hashCode & 0xffff)
+        .toRadixString(16)
+        .padLeft(4, '0');
+    ref
+        .read(progressDataProvider.notifier)
+        .recordExam(
+          ExamAttempt(
+            id: ExamAttempt.buildId(startedAt, suffix),
+            level: source.level.label,
+            mode: ExamMode.practice,
+            scale: source.scale.name,
+            startedAt: startedAt,
+            finishedAt: DateTime.now().toUtc(),
+            sections: {
+              for (final entry in tallies.entries)
+                entry.key: ExamSectionResult(
+                  asked: entry.value.$1,
+                  right: entry.value.$2,
+                ),
+            },
+            answers: answers,
+          ),
+        );
   }
 
   /// Purpose: Show whatever the question on screen is about.
@@ -452,6 +541,7 @@ class _QuizPageState extends ConsumerState<QuizPage> {
                     : quizQuestionPaneWidth,
                 onFinished: () {
                   _recordCheckpoint(s);
+                  _recordAttempt(s);
                   setState(() => _finished = true);
                 },
               ),

@@ -100,7 +100,7 @@ class JlptPracticeCard extends ConsumerWidget {
                   label: Text(l10n.jlptMock),
                 ),
                 OutlinedButton.icon(
-                  onPressed: null,
+                  onPressed: () => context.push('/exam-history'),
                   icon: const Icon(Icons.history_outlined, size: 18),
                   label: Text(l10n.jlptHistory),
                 ),

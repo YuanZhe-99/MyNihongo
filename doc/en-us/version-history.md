@@ -12,6 +12,54 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.4.5` — 2026-09-05. Every JLPT section you finish is now recorded, synced,
+  and — the part that matters more — used to stop the app asking you the same
+  questions again.
+
+  **An attempt is a record in the progress file**, not a second data module. It
+  gets the per-record three-way merge, the conflict dialog, sync and backup for
+  free, where a module of its own would have meant a second remote file, a
+  second backup entry and eleven golden transcripts re-recorded.
+
+  **Only the input is stored.** Which questions were asked and what the first
+  answer to each was: right, wrong, or never answered. Not the question text,
+  not the options, not the explanation — all of that is read back from the
+  shipped files when the results are opened, so a content update that corrects
+  an answer key corrects the history with it rather than leaving a frozen score
+  the files no longer agree with. A question the files no longer have says so in
+  one line instead of quietly disappearing from the attempt it was part of.
+
+  Unanswered is its own value rather than a wrong answer. Calling it wrong would
+  make every timed score look worse than the learner did; dropping it would make
+  every timed score look better. Nothing in this release is timed yet — that is
+  the next one — but the record has to be able to say it before the clock exists.
+
+  **The no-repeat rule now has something to read.** The sampler's asked and
+  least-recently-asked tiers were pure functions with nothing in them; they now
+  draw on the **synced** attempts, so two devices avoid each other's questions
+  rather than each grinding through the same first twenty. The cap on how many
+  attempts are kept is therefore also the point at which a question becomes
+  askable again, which is a reasonable definition of forgetting it.
+
+  Pruning is **per mode** — forty mock attempts, eighty practice — because a
+  learner who practises daily and sits a mock once a month would otherwise lose
+  every mock to the practice runs, and the mocks are the ones worth looking back
+  at.
+
+  The results page lists every attempt newest first with its per-section score,
+  opens into what was got wrong with the right answer and the explanation, and
+  deletes for real: the merge treats a record deleted on one side and untouched
+  on the other as deleted, so an attempt removed here is removed everywhere on
+  the next sync. It says at the top, in words, that a score there is over the
+  questions this app asked and is not a JLPT score — a screen showing "48 of 67"
+  beside those four letters will be read as one otherwise.
+
+  Two things the sync layer had to learn: the conflict dialog describes an
+  attempt by its paper — level, mode, when it was sat, what it scored — rather
+  than by counters that would say the same thing twice; and an attempt counts as
+  a study day on the calendar, which is the clearest case there is of a day
+  something was studied. 891 tests.
+
 - `0.4.4` — 2026-09-05. The JLPT practice the Learn tab has been promising since
   the first release, at N5, one section at a time.
 

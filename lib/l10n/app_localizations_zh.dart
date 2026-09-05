@@ -1500,7 +1500,44 @@ class AppLocalizationsZh extends AppLocalizations {
   String get jlptHistory => '成绩记录';
 
   @override
-  String get jlptComingNext => '计时模拟考试与成绩记录将在下次更新中推出。';
+  String get jlptComingNext => '计时模拟考试将在下次更新中推出。';
+
+  @override
+  String get jlptModePractice => '练习';
+
+  @override
+  String jlptScore(int right, int asked) {
+    return '$asked 题答对 $right 题';
+  }
+
+  @override
+  String get jlptHistoryTitle => 'JLPT 成绩记录';
+
+  @override
+  String get jlptHistoryEmpty => '这里还是空的。做完一个部分的练习后会记录在本设备上，并随学习进度同步。';
+
+  @override
+  String jlptHistorySection(String section, int right, int asked) {
+    return '$section：$right/$asked';
+  }
+
+  @override
+  String get jlptHistoryDelete => '删除';
+
+  @override
+  String get jlptHistoryDeleted => '已删除该次记录。';
+
+  @override
+  String get jlptHistoryWrong => '答错';
+
+  @override
+  String get jlptHistoryUnanswered => '未作答';
+
+  @override
+  String get jlptHistoryGone => '这道题已不在应用中。';
+
+  @override
+  String get jlptHistoryNote => '这里的分数只针对本应用出的题，不是 JLPT 成绩。';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -2999,5 +3036,42 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get jlptHistory => '成績紀錄';
 
   @override
-  String get jlptComingNext => '計時模擬考試與成績紀錄將於下次更新推出。';
+  String get jlptComingNext => '計時模擬考試將於下次更新推出。';
+
+  @override
+  String get jlptModePractice => '練習';
+
+  @override
+  String jlptScore(int right, int asked) {
+    return '$asked 題答對 $right 題';
+  }
+
+  @override
+  String get jlptHistoryTitle => 'JLPT 成績紀錄';
+
+  @override
+  String get jlptHistoryEmpty => '這裡還是空的。做完一個部分的練習後會記錄在本裝置上，並隨學習進度同步。';
+
+  @override
+  String jlptHistorySection(String section, int right, int asked) {
+    return '$section：$right/$asked';
+  }
+
+  @override
+  String get jlptHistoryDelete => '刪除';
+
+  @override
+  String get jlptHistoryDeleted => '已刪除該次紀錄。';
+
+  @override
+  String get jlptHistoryWrong => '答錯';
+
+  @override
+  String get jlptHistoryUnanswered => '未作答';
+
+  @override
+  String get jlptHistoryGone => '這道題已不在應用程式中。';
+
+  @override
+  String get jlptHistoryNote => '這裡的分數只針對本應用程式出的題，不是 JLPT 成績。';
 }

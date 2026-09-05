@@ -15,9 +15,15 @@ not each page — registers. See
 | library header | `library` | B | Expose the user's progress file to the widget tree and keep it current. |
 | `ProgressNotifier` | constructor | B | Create the notifier and start the first read. |
 | `ProgressNotifier.reload` | method | B | Re-read the progress file and publish the result. |
+| `ProgressNotifier.recordExam` | method | B | Record one sitting of a JLPT paper, then reload. |
 | `ProgressNotifier._onLocalDataChanged` | method | B | React to a sync, restore, or import writing the file. |
 | `ProgressNotifier.dispose` | method | B | Release the service callback. |
 | `progressDataProvider` | top-level `final` | — | The user's progress file, read from disk and kept current. |
 
 Reload never returns the state to `loading` after the first read, so a background sync does not
 blank a page that is already showing data.
+
+`recordExam` is a thin wrapper over `NihongoStorage.recordExam`, like the other write methods here:
+write, then reload. An attempt does not go through the scheduler — the questions it asked already
+moved their own items' intervals, one at a time, as they were answered — and it is written once at
+the end rather than per answer, because half an exam is not an attempt.

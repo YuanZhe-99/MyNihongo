@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 
+import '../features/drills/views/exam_history_page.dart';
 import '../features/grammar/views/grammar_page.dart';
 import '../features/kana/views/kana_page.dart';
 import '../features/learn/views/learn_page.dart';
@@ -62,6 +63,10 @@ GoRouter buildAppRouter({String initialLocation = '/learn'}) => GoRouter(
       path: '/writing',
       builder: (context, state) =>
           WritingPracticePage(prompt: state.extra! as WritingPrompt),
+    ),
+    GoRoute(
+      path: '/exam-history',
+      builder: (context, state) => const ExamHistoryPage(),
     ),
     GoRoute(
       path: '/lab',

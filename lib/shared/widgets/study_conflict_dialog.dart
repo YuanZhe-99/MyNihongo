@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../features/content/services/study_item_labels.dart';
+import '../../features/progress/models/exam_attempt.dart';
 import '../../features/progress/models/history_entry.dart';
 import '../../features/progress/models/learner_profile.dart';
 import '../../features/progress/models/study_record.dart';
@@ -68,6 +69,9 @@ class StudyConflictDialog extends StatelessWidget {
     if (record.kind == StudyKind.history) {
       return _historyVersion(l10n, heading, record);
     }
+    if (record.kind == StudyKind.exam) {
+      return _examVersion(l10n, heading, record);
+    }
     final stage = switch (record.stage) {
       StudyStage.fresh => l10n.stageFresh,
       StudyStage.learning => l10n.stageLearning,
@@ -114,6 +118,41 @@ class StudyConflictDialog extends StatelessWidget {
         Text(heading, style: const TextStyle(fontWeight: FontWeight.bold)),
         Text(l10n.syncModifiedAt(_formatTime(record.modifiedAt))),
         if (entry != null) Text(entry.text),
+      ],
+    );
+  }
+
+  /// Purpose: Show one side of an exam-attempt conflict.
+  /// Inputs: `l10n`, `heading`, `record`.
+  /// Returns: `Widget`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. An attempt has the
+  /// counter fields — they are written so an older build's dialog says
+  /// something true — but they are not what distinguishes two versions of one.
+  /// What does is the paper: which level, practice or timed, when it was sat
+  /// and what it scored. The counters are deliberately **not** repeated here,
+  /// because "correct 48 · wrong 19" alongside "48 / 67" is the same fact
+  /// twice in two shapes.
+  Widget _examVersion(
+    AppLocalizations l10n,
+    String heading,
+    StudyRecord record,
+  ) {
+    final attempt = ExamAttempt.fromRecord(record);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(heading, style: const TextStyle(fontWeight: FontWeight.bold)),
+        Text(l10n.syncModifiedAt(_formatTime(record.modifiedAt))),
+        if (attempt != null) ...[
+          Text(
+            '${attempt.level} · '
+            '${attempt.mode == ExamMode.mock ? l10n.jlptMock : l10n.jlptModePractice}',
+          ),
+          Text(l10n.jlptScore(attempt.right, attempt.asked)),
+          Text(l10n.syncModifiedAt(_formatTime(attempt.startedAt))),
+        ],
       ],
     );
   }

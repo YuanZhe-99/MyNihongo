@@ -156,6 +156,10 @@ class StudyCalendar extends ConsumerWidget {
 /// studied on. The sentence history is skipped for the same reason: looking a
 /// sentence up is not answering anything, and a calendar that filled in on the
 /// strength of it would overstate what the learner did.
+///
+/// An **exam attempt does** count. Its `createdAt` is the moment it was
+/// recorded, which is the moment the learner finished sitting a paper — the
+/// clearest case there is of a day something was studied.
 Set<String> studiedDays(ProgressData progress) => {
   for (final record in progress.records)
     if (studyKindOf(record.id) != StudyKind.profile &&

@@ -11,6 +11,7 @@ library;
 import 'dart:ui';
 
 import '../../kana/models/kana.dart';
+import '../../progress/models/exam_attempt.dart';
 import '../../progress/models/history_entry.dart';
 import '../../progress/models/study_record.dart';
 import '../models/content_catalog.dart';
@@ -64,8 +65,10 @@ StudyItemLabel resolveStudyItemLabel(
   ContentCatalog? catalog,
   required Locale locale,
   String? profileName,
-  StudyRecord? historyRecord,
+  StudyRecord? record,
   String? historyName,
+  String? examPracticeName,
+  String? examMockName,
 }) {
   final kind = studyKindOf(id);
   switch (kind) {
@@ -107,11 +110,28 @@ StudyItemLabel resolveStudyItemLabel(
         return StudyItemLabel(title: profileName, kind: kind);
       }
     case StudyKind.history:
-      final entry = HistoryEntry.fromRecord(historyRecord);
+      final entry = HistoryEntry.fromRecord(record);
       if (entry != null) {
         return StudyItemLabel(
           title: entry.text,
           subtitle: historyName,
+          kind: kind,
+        );
+      }
+    case StudyKind.exam:
+      // An exam record names no catalog item either. Its own payload is the
+      // only thing identifying it, so — like a history record — the record is
+      // passed in rather than looked up. The two mode words come from the
+      // caller, because this file has no localizations of its own.
+      final attempt = ExamAttempt.fromRecord(record);
+      if (attempt != null) {
+        final name = attempt.mode == ExamMode.mock
+            ? examMockName
+            : examPracticeName;
+        final day = attempt.startedAt.toLocal().toIso8601String().split('T')[0];
+        return StudyItemLabel(
+          title: [attempt.level, ?name].join(' '),
+          subtitle: '$day · ${attempt.right}/${attempt.asked}',
           kind: kind,
         );
       }

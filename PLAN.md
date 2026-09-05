@@ -967,10 +967,62 @@ The paper the Learn tab has been promising since the first release, at N5, one s
       line originally proposed, so `pubspec.yaml` gains one asset entry and the two hard-coded
       directory lists gain one each; original questions with answers and explanations in en/zh.
       **N5 landed with M4.1**; the other four levels follow, one per milestone
+
+#### M4.2 Exam records and results history — **done 2026-09-05**, released as `v0.4.5`
+
+- [x] **An attempt is an `exam:` record in the progress file**, payload under `extraJson['exam']`, id
+      `exam:<startedAt UTC compact>-<4 hex>`. A record rather than a second module: it gets the
+      per-record three-way merge, the conflict dialog, sync and backup for free, where a module of
+      its own costs a second remote file, a second backup entry and eleven golden re-recordings
+- [x] **Only the input is stored** — which questions were asked and what the first answer to each
+      was, as `1` / `0` / `-1`. Everything the results screen shows is joined back from the shipped
+      files at read time, so a content update that corrects an answer key corrects the history with
+      it. A question the files no longer have says so in one line rather than vanishing
+- [x] `-1` is its own value. Calling an unanswered question wrong makes every timed score look worse
+      than the learner did; dropping it makes every timed score look better. Nothing is timed until
+      M4.3, but the record has to be able to say it before the clock exists
+- [x] The id is **timestamped and salted, not content-addressed** — the opposite of the sentence
+      history's rule, and deliberately: re-analysing one sentence should update one record, while two
+      sittings of one paper are genuinely two things
+- [x] Section keys are plain strings, so `progress/` imports nothing from `drills/` and a section a
+      later release adds still round-trips through this build
+- [x] `StudyKind.exam` and the five sites it forces: the review queue (never scheduled), the item
+      label (level · mode, date, score — the record is passed in, as a history record's is), the
+      conflict dialog (`_examVersion`, describing the paper rather than repeating the counters), the
+      study calendar (an attempt **does** count as a study day), and the WebDAV page that passes the
+      two localized mode words in
+- [x] `NihongoStorage.recordExam` with **per-mode pruning**, 40 mock and 80 practice: a learner who
+      practises daily and mocks monthly would otherwise lose every mock to the practice runs
+- [x] `examAttemptsProvider`, and `askedQuestionsProvider` — which is what finally gives
+      `DrillSampler`'s asked and least-recently-asked tiers something to read. Derived from the
+      **synced** attempts, so two devices avoid each other's questions rather than each grinding
+      through the same first twenty
+- [x] Every finished practice section writes a `mode: practice` attempt. Nothing is written on
+      leaving: half a paper is not an attempt, and the leave dialog already says so
+- [x] `ExamHistoryPage` at `/exam-history`, newest first, expanding into what was got wrong with the
+      right answer and the explanation; delete is a real deletion. It says **in words** at the top
+      that a score there is not a JLPT score — "4 of 8" beside those four letters reads as one
+      otherwise. The Learn card's Results button is live and its footnote now promises only the mock
+- [x] Two test hazards worth recording, both of which hang rather than fail: `dart:io` inside a
+      `testWidgets` fake-async zone never completes, so the fixture write goes through `runAsync`;
+      and an indeterminate `LinearProgressIndicator` never settles, so the loading state inside an
+      `ExpansionTile` — which builds its children before they are ever shown — became a plain empty
+      box instead
+- [x] **Verified on the Pixel 10** in a release build: a vocabulary paper answered end to end
+      appears in the results as `N5 · Practice`, 4 of 8, `Vocabulary: 4/8`, and opens into the four
+      questions it got wrong with their answers and explanations read back from the content files
+- [x] Docs: `data-formats.md` (the exam record and an inventory row), `features/jlpt-practice.md`
+      (the results history and the no-repeat rule it feeds), four new `functions/` pages — including
+      `study_calendar.md`, which had never been written — and ten corrected ones, in both trees.
+      891 tests
+
 - [ ] Practice mode (untimed, explanation after each) and mock mode (timed per section, results at
       the end); question bank sampling avoids repeats until exhausted
-- [ ] Results history synced: one record per attempt (`exam:<uuid>`) — a new record kind in the
-      same module, or a new module `nihongo_exams.json` if the file grows past a few hundred kB
+- [x] Results history synced: one record per attempt — `exam:<startedAt>-<4 hex>` rather than the
+      `exam:<uuid>` this line proposed, because a timestamped id sorts the way the attempts happened
+      and `uuid` is only a transitive dependency here. A new record kind in the same module, not a
+      new file: the size argument never bit, and a module of its own costs a second remote file, a
+      second backup entry and eleven golden re-recordings. **Landed with M4.2**
 - [ ] Weakness report: per-section and per-grammar-point accuracy feeding review priorities
 - [ ] AICore enhancement (M3.5 policy, same switch): a supplementary 作文 writing section — a short
       composition per prompt with feedback against a rubric (task fulfilment, grammar range,
@@ -1125,6 +1177,15 @@ The paper the Learn tab has been promising since the first release, at N5, one s
 | 2026-09-04 | A display bug is verified by screenshot on a device, not by widget test alone | The widget-test font has 1.0 em metrics, so the font that causes this one is not present in the suite. Every existing test passed for the whole time it shipped |
 | 2026-09-04 | Every model variant is probed, not only those before the first success | Whether the learner has a choice of model size is itself a fact to report, and a loop that returns early cannot know it. The cost is three extra status calls on a deliberate refresh; a generation still trusts the variant already serving and pays one |
 | 2026-09-04 | The model-size switch is hidden on a device that serves one size | A control that cannot change what is serving is worse than no control: it teaches the learner that the page is decorative. The Z Fold 8 serves only the faster model |
+| 2026-09-05 | An exam attempt is an `exam:` record in the progress file, not a second data module | A record gets the per-record three-way merge, the conflict dialog, sync and backup for free. A module of its own costs a second remote file, a second backup entry and eleven golden transcripts re-recorded, for state that is a few fields and a map of answers |
+| 2026-09-05 | An attempt stores only which questions were asked and what was answered — never the question, the options or the explanation | All of that is a pure function of the shipped files, so storing it would freeze an answer key the next release corrects. Reading it back also means a question the files no longer have can say so, rather than silently shrinking the attempt it was part of |
+| 2026-09-05 | "Unanswered" is its own value, not a wrong answer | Calling it wrong makes every timed score look worse than the learner did; dropping it makes every timed score look better. The record has to be able to say it before the clock that produces it exists |
+| 2026-09-05 | An attempt id is timestamped and salted, not content-addressed | The exact opposite of the sentence history's rule, and for the exact opposite reason: re-analysing one sentence should update one record, while two sittings of one paper are two things. The timestamp also sorts the ids the way the attempts happened, which makes a file diff readable |
+| 2026-09-05 | The exam record's section keys are plain strings | So `progress/` imports nothing from `drills/`, and a section a later release adds still round-trips through an older build rather than costing it the rest of the attempt |
+| 2026-09-05 | Attempt pruning is per mode — 40 mock, 80 practice — rather than one overall cap | A learner who practises daily and sits a mock once a month would lose every mock to the practice runs, and the mocks are the ones worth looking back at. The same reasoning as pruning the sentence history per kind |
+| 2026-09-05 | The no-repeat sets are derived from the **synced** attempts, so the attempt cap is also the point at which a question becomes askable again | Two devices then avoid each other's questions instead of each grinding through the same first twenty, and "the oldest attempt we still keep" is a reasonable definition of having forgotten a question |
+| 2026-09-05 | The results page states in words that its score is not a JLPT score | A screen showing "4 of 8" beside the letters JLPT will be read as a JLPT score unless it says otherwise. The same rule the readiness estimate will need |
+| 2026-09-05 | A practice attempt is written on finishing, never on leaving | Half a paper is not an attempt, and the leave dialog already says the rest of the session is discarded. Answers already given are kept — they went through the scheduler one at a time as they happened |
 | 2026-09-05 | The JLPT paper's composition and timings are one content asset with a `source` field, not constants in Dart | JEES publishes them and says they vary from session to session, so they are somebody else's changing fact rather than this app's rule. A revision is then a content change, and every screen that shows a number can say whose it is |
 | 2026-09-05 | Drill files are flat — `drills/n5-reading.json`, not `drills/n5/reading.json` | One `pubspec.yaml` asset line for the whole of Phase 4, and one new entry each in `convert_zh_tw.dart` and `content_zh_tw_test.dart`, both of which hold non-recursive hard-coded directory lists. The nested path in PLAN's own wording would have cost five of each |
 | 2026-09-05 | A drill question is scored under its own id; the review schedule still hears about each item once | A paper asks several genuinely different questions about one word. Scored by item — which is right for every question the app invents — the second and third would never have counted. But SM-2 grades one recall, and the second question about a word was primed by the first, so the scheduler must not hear it twice |

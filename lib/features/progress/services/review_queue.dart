@@ -187,9 +187,13 @@ class ReviewQueue {
           take(
             catalog.grammar.where((g) => g.level == level).map((g) => g.id),
           );
+        // An exam attempt is a record of something that happened, not an
+        // item anybody studies. It never enters the queue — the questions
+        // it asked already moved their own items' intervals.
         case StudyKind.profile:
         case StudyKind.lesson:
         case StudyKind.history:
+        case StudyKind.exam:
         case StudyKind.other:
           break;
       }

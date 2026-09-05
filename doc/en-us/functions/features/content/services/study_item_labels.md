@@ -15,11 +15,12 @@ no longer ships.
 ### `resolveStudyItemLabel`
 
 - **Purpose:** Look up the display name for a progress record id.
-- **Inputs:** `id` — a `kana:`, `vocab:`, `grammar:`, `profile:`, `lesson:`, `lab:` or `writing:` id;
-  `catalog` — the parsed content, or null when it has not loaded; `locale` — the UI locale, which
-  picks the language of the meaning shown; `profileName` and `historyName` — what to call the learner
-  profile and the history in the UI language; `historyRecord` — the record itself, for a remembered
-  sentence.
+- **Inputs:** `id` — a `kana:`, `vocab:`, `grammar:`, `profile:`, `lesson:`, `lab:`, `writing:` or
+  `exam:` id; `catalog` — the parsed content, or null when it has not loaded; `locale` — the UI
+  locale, which picks the language of the meaning shown; `profileName` and `historyName` — what to
+  call the learner profile and the history in the UI language; `examPracticeName` and `examMockName`
+  — what to call the two exam modes in the UI language; `record` — the record itself, for a
+  remembered sentence or an exam attempt.
 - **Returns:** `StudyItemLabel`; never null.
 - **Side effects:** None.
 - **Algorithm:** Switch on `studyKindOf(id)`. `kana:` resolves through `kanaEntryById` to a title of
@@ -36,4 +37,12 @@ A **history** record (`lab:` or `writing:`) is named by the text it remembers, w
 beneath it. The record is passed in rather than looked up, because this function is given an id and
 only its caller has the file — and unlike every other kind, a history record's identity is its own
 content rather than an entry in the catalog.
+
+An **exam** record (`exam:`) follows the same rule for the same reason: it names no catalog item, its
+own payload is the only thing identifying it, and it is read out of the `record` parameter the
+history arm already needed. The title is the level and the mode word — `N3 Mock` — and the subtitle
+is the local start day and the score, `2026-09-04 · 48/67`. The two mode words come from the caller
+because this file has no localizations of its own, which is why `examPracticeName` and `examMockName`
+are parameters rather than constants; the parameter that carries the record is named `record` rather
+than `historyRecord` now that two kinds read it.
 

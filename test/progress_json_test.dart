@@ -70,6 +70,7 @@ void main() {
     expect(studyKindOf('kana:あ'), StudyKind.kana);
     expect(studyKindOf('vocab:watashi'), StudyKind.vocab);
     expect(studyKindOf('grammar:desu'), StudyKind.grammar);
+    expect(studyKindOf('exam:20260905T101500Z-3f2a'), StudyKind.exam);
     expect(studyKindOf('kanji:日'), StudyKind.other);
     expect(studyKindOf('no-prefix'), StudyKind.other);
   });

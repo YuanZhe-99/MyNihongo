@@ -2808,8 +2808,74 @@ abstract class AppLocalizations {
   /// No description provided for @jlptComingNext.
   ///
   /// In en, this message translates to:
-  /// **'Timed mock exams and a results history come in the next update.'**
+  /// **'Timed mock exams come in the next update.'**
   String get jlptComingNext;
+
+  /// No description provided for @jlptModePractice.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice'**
+  String get jlptModePractice;
+
+  /// No description provided for @jlptScore.
+  ///
+  /// In en, this message translates to:
+  /// **'{right} of {asked} correct'**
+  String jlptScore(int right, int asked);
+
+  /// No description provided for @jlptHistoryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'JLPT results'**
+  String get jlptHistoryTitle;
+
+  /// No description provided for @jlptHistoryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing here yet. Finish a practice section and it is recorded on this device and synced with your progress.'**
+  String get jlptHistoryEmpty;
+
+  /// No description provided for @jlptHistorySection.
+  ///
+  /// In en, this message translates to:
+  /// **'{section}: {right}/{asked}'**
+  String jlptHistorySection(String section, int right, int asked);
+
+  /// No description provided for @jlptHistoryDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get jlptHistoryDelete;
+
+  /// No description provided for @jlptHistoryDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Attempt deleted.'**
+  String get jlptHistoryDeleted;
+
+  /// No description provided for @jlptHistoryWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Got wrong'**
+  String get jlptHistoryWrong;
+
+  /// No description provided for @jlptHistoryUnanswered.
+  ///
+  /// In en, this message translates to:
+  /// **'Not answered'**
+  String get jlptHistoryUnanswered;
+
+  /// No description provided for @jlptHistoryGone.
+  ///
+  /// In en, this message translates to:
+  /// **'This question is no longer in the app.'**
+  String get jlptHistoryGone;
+
+  /// No description provided for @jlptHistoryNote.
+  ///
+  /// In en, this message translates to:
+  /// **'A score here is over the questions this app asked. It is not a JLPT score.'**
+  String get jlptHistoryNote;
 }
 
 class _AppLocalizationsDelegate

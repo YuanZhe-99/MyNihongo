@@ -255,20 +255,30 @@ void main() {
       expect(find.text('需要设备上有日语语音。'), findsOneWidget);
     });
 
-    testWidgets('the two unbuilt buttons are shown disabled and explained', (
+    testWidgets('the unbuilt button is shown disabled and explained', (
       tester,
     ) async {
       await pumpAt(tester, 412, 2400, home: const JlptPracticeCard());
       final mock = find.widgetWithText(OutlinedButton, '模拟考试');
-      final history = find.widgetWithText(OutlinedButton, '成绩记录');
       expect(mock, findsOneWidget);
-      expect(history, findsOneWidget);
       expect(tester.widget<OutlinedButton>(mock).onPressed, isNull);
-      expect(tester.widget<OutlinedButton>(history).onPressed, isNull);
       expect(
-        find.text('计时模拟考试与成绩记录将在下次更新中推出。'),
+        find.text('计时模拟考试将在下次更新中推出。'),
         findsOneWidget,
         reason: 'a disabled button with no reason is just a broken button',
+      );
+    });
+
+    testWidgets('the results button is live now that there is a history', (
+      tester,
+    ) async {
+      await pumpAt(tester, 412, 2400, home: const JlptPracticeCard());
+      final history = find.widgetWithText(OutlinedButton, '成绩记录');
+      expect(history, findsOneWidget);
+      expect(
+        tester.widget<OutlinedButton>(history).onPressed,
+        isNotNull,
+        reason: 'the line beside it no longer promises it for later',
       );
     });
 

@@ -36,12 +36,12 @@
 
 - **类型：** 顶层函数
 - **Purpose：** 推导记录 id 所属的目录。
-- **Inputs：** `id`——`kana:あ`、`vocab:watashi`、`grammar:desu`、`lab:<hash>`……
-- **Returns：** `kana`、`vocab`、`grammar`、`profile`、`lesson`、`history` 或 `other`。
+- **Inputs：** `id`——`kana:あ`、`vocab:watashi`、`grammar:desu`、`lab:<hash>`、`exam:<stamp>-<suffix>`……
+- **Returns：** `kana`、`vocab`、`grammar`、`profile`、`lesson`、`history`、`exam` 或 `other`。
 - **Side effects：** 无。
 - **Algorithm：** 取第一个 `:` 之前的子串（没有时取整个 id）并对其 switch。
-- **Usage：** `StudyRecord.kind`；内容测试断言每个目录 id 映射到其类别。
-- **Notes：** 类别刻意不存储：推导它使没有任何东西会与 id 脱节，而新版构建带新前缀的记录加载为 `other` 并仍能合并。`lab:` 与 `writing:` 都映射到同一个 `history` 类别：两个页面各自保留列表，但任何对类别做 switch 的地方都不需要区分它们。只有 `studiedKinds`——假名、词汇、语法——才算作学习者学过的东西，因此档案、课程结果与历史记录都在复习队列之外，也不计入已记录条目数。
+- **Usage：** `StudyRecord.kind`；`ExamAttempt.fromRecord`；内容测试断言每个目录 id 映射到其类别。
+- **Notes：** 类别刻意不存储：推导它使没有任何东西会与 id 脱节，而新版构建带新前缀的记录加载为 `other` 并仍能合并。`lab:` 与 `writing:` 都映射到同一个 `history` 类别：两个页面各自保留列表，但任何对类别做 switch 的地方都不需要区分它们。`exam:` 有它自己的类别，因为一次作答与一个被记住的句子是形状不同的东西，读其中一个的代码绝不能去读另一个。`studiedKinds` 刻意**不因此改变**——它仍然是假名、词汇与语法，因此档案、课程结果、历史记录，以及现在的考试作答，都在复习队列之外，也不计入已记录条目数。一次卷子的作答是学习者做过的事情，不是一个要调度的条目。
 
 ### `factory StudyRecord.fromJson(Map<String, dynamic> json)` <a id="fromjson"></a>
 

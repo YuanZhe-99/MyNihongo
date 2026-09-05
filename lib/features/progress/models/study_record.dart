@@ -41,13 +41,13 @@ const masteredIntervalDays = 21;
 
 /// Which catalog a study record belongs to, derived from its id prefix.
 ///
-/// `profile`, `lesson` and `history` are not catalog items. They share the
+/// `profile`, `lesson`, `history` and `exam` are not catalog items. They share the
 /// file, and the merge, because a second data module would mean a second remote
 /// file, a second backup entry and a second set of golden transcripts for state
 /// that is a handful of fields — see the decisions log in `PLAN.md`. The kinds
 /// that are studied are what [studiedKinds] names.
 
-enum StudyKind { kana, vocab, grammar, profile, lesson, history, other }
+enum StudyKind { kana, vocab, grammar, profile, lesson, history, exam, other }
 
 /// The kinds the review queue schedules. The others live in the same file but
 /// are not items anybody studies.
@@ -74,6 +74,7 @@ StudyKind studyKindOf(String id) {
     'profile' => StudyKind.profile,
     'lesson' => StudyKind.lesson,
     'lab' || 'writing' => StudyKind.history,
+    'exam' => StudyKind.exam,
     _ => StudyKind.other,
   };
 }

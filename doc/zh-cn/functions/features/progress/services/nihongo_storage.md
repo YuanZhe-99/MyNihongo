@@ -20,6 +20,7 @@ M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地�
 | [`NihongoStorage.save`](#save) | 静态方法 | A | 原子写入进度数据文件并通知自动同步。 |
 | `NihongoStorage.upsertRecords` | 静态方法 | B | 按 id 插入或替换学习记录，把容器的 `extraJson` 带过去。 |
 | [`NihongoStorage.recordHistory`](#recordhistory) | 静态方法 | A | 记住一条分析过的句子，并裁掉超出上限的最旧条目。 |
+| [`NihongoStorage.recordExam`](#recordexam) | 静态方法 | A | 记住一次 JLPT 卷子的作答，并按该模式的上限裁掉最旧的条目。 |
 | [`NihongoStorage.deleteRecords`](#deleterecords) | 静态方法 | A | 忘掉学习者删除的记录。 |
 | `NihongoStorage.readConfig` | 静态方法 | B | 读取 `storage_config.json`；缺失或空白时为空。 |
 | `NihongoStorage.writeConfig` | 静态方法 | B | 原子写入 `storage_config.json`。 |
@@ -90,6 +91,17 @@ M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地�
 - **用法：** 句子实验室在分析之后；写作练习在检查之后。
 - **注意：** id 由内容决定，所以同一个句子再分析一次会更新已在那里的记录并把它移到最前，而不是新增一条。裁剪发生在同一次写入里——进度文件每次同步都被整份上传，无上限的日志最终会比它所搭载的进度还贵。**按种类**裁剪，使繁忙的句子实验室不会把写作历史清空，而且只会移除历史记录。两个调用方都会吞掉这里的失败：记住是便利，屏幕上的分析才是功能本身。
 
+### `static Future<void> recordExam(ExamAttempt attempt, {DateTime? now})` <a id="recordexam"></a>
+
+- **种类：** 静态方法
+- **用途：** 记住一次 JLPT 卷子的作答。
+- **输入：** `attempt`；`now` 供测试使用。
+- **返回：** 无。
+- **副作用：** 读取并重写数据文件；只通知自动同步一次。
+- **算法：** 按该次作答的 id upsert，然后取出该**模式**的全部作答，把超出它的上限的部分——模拟考试用 `examMaxMockEntries`，练习用 `examMaxPracticeEntries`——从最旧的开始移除。一次加载、一次保存。
+- **用法：** `ProgressNotifier.recordExam`，由测验页在提交卷子时调用。
+- **注意：** 形状仿照 `recordHistory`，但有一处重要的差别：**裁剪按模式进行**。一个每天练习、每月模拟考试一次的学习者，否则会把每一次模拟考试都输给练习，而值得回头看的正是那些模拟考试。id 带时间戳并加盐而不是由内容推导，因为同一份卷子的两次作答确实是两次作答，绝不能像同一个句子的两次分析那样合并成一条。
+
 ### `static Future<void> deleteRecords(Iterable<String> ids)` <a id="deleterecords"></a>
 
 - **种类：** 静态方法
@@ -98,6 +110,6 @@ M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地�
 - **返回：** 无。
 - **副作用：** 读取并重写数据文件；通知自动同步。
 - **算法：** 丢弃每一条被点名 id 的记录。集合为空或没有命中时直接返回，不做写入。
-- **用法：** 历史记录行上的删除按钮。
+- **用法：** 历史记录行上的删除按钮，以及考试历史记录条目卡片上的那个。
 - **注意：** 是真删除而不是墓碑：三方合并把「一侧删除、另一侧未改动」的记录视为已删除，所以忘掉一个句子也会在学习者的其他设备上忘掉它。删除按钮必须具备这种行为——一个下次同步又回来的条目，比没有这个按钮更糟。没有改动时不写入，可以避免一次无效删除去碰文件并唤醒同步。
 

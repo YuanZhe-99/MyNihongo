@@ -532,5 +532,18 @@
   "jlptNoVoice": "Needs a Japanese voice on this device.",
   "jlptMock": "Mock exam",
   "jlptHistory": "Results",
-  "jlptComingNext": "Timed mock exams and a results history come in the next update."
+  "jlptComingNext": "Timed mock exams come in the next update.",
+"jlptModePractice": "Practice",
+  "jlptScore": "{right} of {asked} correct",
+  "@jlptScore": { "placeholders": { "right": { "type": "int" }, "asked": { "type": "int" } } },
+  "jlptHistoryTitle": "JLPT results",
+  "jlptHistoryEmpty": "Nothing here yet. Finish a practice section and it is recorded on this device and synced with your progress.",
+  "jlptHistorySection": "{section}: {right}/{asked}",
+  "@jlptHistorySection": { "placeholders": { "section": { "type": "String" }, "right": { "type": "int" }, "asked": { "type": "int" } } },
+  "jlptHistoryDelete": "Delete",
+  "jlptHistoryDeleted": "Attempt deleted.",
+  "jlptHistoryWrong": "Got wrong",
+  "jlptHistoryUnanswered": "Not answered",
+  "jlptHistoryGone": "This question is no longer in the app.",
+  "jlptHistoryNote": "A score here is over the questions this app asked. It is not a JLPT score."
 }

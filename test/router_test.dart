@@ -97,6 +97,16 @@ void main() {
     ]);
   });
 
+  testWidgets('the results history opens outside the shell too', (
+    tester,
+  ) async {
+    await pumpAt(tester, '/exam-history');
+    expect(find.text('JLPT 成绩记录'), findsOneWidget);
+    expect(find.byType(NavigationBar), findsNothing);
+    expect(find.byType(NavigationRail), findsNothing);
+    expect(tester.takeException(), isNull);
+  });
+
   testWidgets('the sentence lab opens on its own route, outside the shell', (
     tester,
   ) async {
