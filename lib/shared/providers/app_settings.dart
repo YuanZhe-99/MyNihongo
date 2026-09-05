@@ -63,6 +63,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     final speechNetworkFallback =
         await NihongoStorage.getSpeechNetworkFallback();
     final aiAssistEnabled = await NihongoStorage.getAiAssistEnabled();
+    final preferFastModel = await NihongoStorage.getPreferFastModel();
     final showFurigana = await NihongoStorage.getShowFurigana();
     final autoSpeak = await NihongoStorage.getAutoSpeak();
     final reminderEnabled = await NihongoStorage.getReminderEnabled();
@@ -99,6 +100,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
       quizModes: _parseQuizModes(quizModes),
       speechNetworkFallback: speechNetworkFallback,
       aiAssistEnabled: aiAssistEnabled,
+      preferFastModel: preferFastModel,
       showFurigana: showFurigana,
       autoSpeak: autoSpeak,
       reminderEnabled: reminderEnabled,
@@ -119,6 +121,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     // Same reason it is not awaited: switching the AI on asks the device what
     // its models can do, which must not delay the first frame — and on a
     // device that was left switched off it does nothing at all.
+    unawaited(AiAssistService.instance.setPreferFast(state.preferFastModel));
     unawaited(AiAssistService.instance.setEnabled(state.aiAssistEnabled));
   }
 
@@ -331,6 +334,18 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     NihongoStorage.setAiAssistEnabled(enabled);
   }
 
+  /// Purpose: Choose the larger or the faster on-device model.
+  /// Inputs: `fast`.
+  /// Returns: None.
+  /// Side effects: Re-probes the device and persists the choice.
+  /// Notes: The service re-probes rather than waiting for the next launch, so
+  /// the row under the switch names the newly chosen model straight away.
+  void setPreferFastModel(bool fast) {
+    state = state.copyWith(preferFastModel: fast);
+    unawaited(AiAssistService.instance.setPreferFast(fast));
+    NihongoStorage.setPreferFastModel(fast);
+  }
+
   /// Purpose: Update theme mode with the provided value.
   /// Inputs: `mode`.
   /// Returns: None.
@@ -402,6 +417,10 @@ class AppSettings {
   /// Whether the user turned on-device AI assistance on. Off unless they did.
   final bool aiAssistEnabled;
 
+  /// Whether the smaller, faster on-device model is preferred where a device
+  /// serves both sizes.
+  final bool preferFastModel;
+
   /// Whether kana are printed over the kanji that need them. On unless the
   /// learner turned it off.
   final bool showFurigana;
@@ -439,6 +458,7 @@ class AppSettings {
     this.quizModes = const {},
     this.speechNetworkFallback = false,
     this.aiAssistEnabled = false,
+    this.preferFastModel = false,
     this.showFurigana = true,
     this.autoSpeak = true,
     this.reminderEnabled = false,
@@ -469,6 +489,7 @@ class AppSettings {
     Set<QuizMode>? quizModes,
     bool? speechNetworkFallback,
     bool? aiAssistEnabled,
+    bool? preferFastModel,
     bool? showFurigana,
     bool? autoSpeak,
     bool? reminderEnabled,
@@ -491,6 +512,7 @@ class AppSettings {
       speechNetworkFallback:
           speechNetworkFallback ?? this.speechNetworkFallback,
       aiAssistEnabled: aiAssistEnabled ?? this.aiAssistEnabled,
+      preferFastModel: preferFastModel ?? this.preferFastModel,
       showFurigana: showFurigana ?? this.showFurigana,
       autoSpeak: autoSpeak ?? this.autoSpeak,
       reminderEnabled: reminderEnabled ?? this.reminderEnabled,

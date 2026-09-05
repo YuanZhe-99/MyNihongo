@@ -71,6 +71,12 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
     /** The variants AICore refused, in the order they were tried. */
     private var refusedVariants: List<String> = emptyList()
 
+    /** The variants AICore served, in the order they were tried. */
+    private var servedVariants: List<String> = emptyList()
+
+    /** The size preference the last probe ran with; null before any probe. */
+    private var probedPreferFast: Boolean? = null
+
     private var proofreader: Proofreader? = null
 
     /**
@@ -101,6 +107,8 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
         runCatching { proofreader?.close() }
         proofreader = null
         refusedVariants = emptyList()
+        servedVariants = emptyList()
+        probedPreferFast = null
     }
 
     /**
@@ -114,7 +122,13 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
      */
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
         when (call.method) {
-            "status" -> run(result) { status(call.argument<String>("feature")) }
+            "status" -> run(result) {
+                status(
+                    call.argument<String>("feature"),
+                    call.argument<Boolean>("preferFast") ?: false,
+                    call.argument<Boolean>("force") ?: false,
+                )
+            }
             "aicore" -> run(result) { aiCoreInfo() }
             "download" -> run(result) { download(call.argument<String>("feature")) }
             "explain" -> run(result) {
@@ -168,12 +182,15 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
 
     /**
      * Purpose: Report whether a feature can be used, downloaded, or not at all.
-     * Inputs: `feature` — `prompt` or `proofread`.
+     * Inputs: `feature` — `prompt` or `proofread`; `preferFast` — ask for the
+     * smaller model first; `force` — re-probe rather than trust a variant that
+     * is already serving.
      * Returns: A map of `status` (`available`, `downloadable`, `downloading`,
      * `unavailable`, `unknown` or `unreachable`), the raw `code`, and for the
-     * Prompt API the `variant` that answered, the ones that `refused`, and the
-     * model's `baseModelName` and `tokenLimit` when it is ready; plus a
-     * `detail` line when there is something to explain.
+     * Prompt API the `variant` that answered, every variant that `served`, the
+     * ones that `refused`, and the model's `baseModelName` and `tokenLimit`
+     * when it is ready; plus a `detail` line when there is something to
+     * explain.
      * Side effects: Queries AICore, and may build and close model clients.
      * Notes: Internal helper used within this file only. Asked before every
      * use rather than once: the system can remove a model between two
@@ -184,7 +201,11 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
      * for a single variant and reporting its refusal as the device's answer is
      * what produced two wrong diagnoses in a row; see [probePrompt].
      */
-    private suspend fun status(feature: String?): Map<String, Any?> {
+    private suspend fun status(
+        feature: String?,
+        preferFast: Boolean,
+        force: Boolean,
+    ): Map<String, Any?> {
         if (feature == FEATURE_PROOFREAD) {
             val code = try {
                 proofreader().checkFeatureStatus().await()
@@ -200,7 +221,7 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
             )
         }
 
-        val probe = probePrompt()
+        val probe = probePrompt(preferFast, force)
         probe.error?.let { return unreachable("prompt", it) }
         val name = nameFor(probe.code)
         val ready = name == "available"
@@ -209,6 +230,10 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
             "status" to name,
             "code" to probe.code,
             "variant" to probe.variant?.label,
+            // Every variant that answered, not only the chosen one: whether
+            // there is a choice to offer is decided on the Dart side, and it
+            // cannot be decided from the winner alone.
+            "served" to servedVariants.joinToString(", ").ifEmpty { null },
             "refused" to refusedVariants.joinToString(", ").ifEmpty { null },
             // Only when a model is actually ready: on a refusing device these
             // two calls throw, and a diagnostic that throws is worse than one
@@ -217,7 +242,14 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
                 if (ready) runCatching { model?.getBaseModelName() }.getOrNull() else null,
             "tokenLimit" to
                 if (ready) runCatching { model?.getTokenLimit() }.getOrNull() else null,
-            "detail" to if (ready) null else detail(probe.code),
+            // Only on a row that cannot serve. "refused: …" printed under
+            // "Not downloaded yet" reads as a fault beside a perfectly normal
+            // state, and a downloadable feature has nothing to diagnose.
+            "detail" to if (name == "unavailable" || name == "unknown") {
+                detail(probe.code)
+            } else {
+                null
+            },
         )
     }
 
@@ -426,7 +458,7 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
      */
     private suspend fun promptModel(): GenerativeModel {
         model?.let { return it }
-        probePrompt()
+        probePrompt(probedPreferFast ?: false, force = false)
         return model ?: throw IllegalStateException(
             "the Prompt API is not available on this device " +
                 "(refused: ${refusedVariants.joinToString(", ").ifEmpty { "none" }})",
@@ -434,10 +466,12 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
     }
 
     /**
-     * Purpose: Find a Prompt API model variant this device will actually serve.
-     * Inputs: None.
-     * Returns: [Probe] — the status of the variant that answered, or the error
-     * when none of them could be asked.
+     * Purpose: Find every Prompt API model variant this device serves, and
+     * choose one.
+     * Inputs: `preferFast` — try the smaller model first at each release
+     * stage; `force` — re-probe even when a variant is already serving.
+     * Returns: [Probe] — the status of the variant that was chosen, or the
+     * error when none of them could be asked.
      * Side effects: Builds AICore clients, keeps at most one, closes the rest.
      * Notes: Internal helper used within this file only.
      *
@@ -448,21 +482,29 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
      * `UNAVAILABLE` from `checkStatus()` is *that variant's* answer rather than
      * the device's, and that an app must implement a fallback. Without one, a
      * Galaxy Z Fold8 with a working AICore reported "no on-device model"
-     * through two releases, and both attempts to explain it were wrong.
+     * through two releases, and both attempts to explain it were wrong. On that
+     * device the stable full-size model is refused and the stable fast one
+     * serves `nano-v4-fast`.
      *
-     * So the variants are tried in order and the first that is not
-     * `UNAVAILABLE` wins. Nothing here names a device, a client version or a
-     * model: a variant this list does not yet know is one line, and a model
-     * AICore begins serving tomorrow is picked up with no change at all.
+     * Every variant is probed, not only the ones before the first success:
+     * **whether the learner has a choice is itself a fact to report**, and it
+     * cannot be known from a loop that stops early. The first that serves in
+     * the current order is kept; the others are closed straight away, since an
+     * open client holds an AICore session.
+     *
+     * Nothing here names a device, a client version or a model: a variant this
+     * list does not yet know is one line, and a model AICore begins serving
+     * tomorrow is picked up with no change at all.
      *
      * A variant already serving is kept rather than re-probed, because a probe
      * costs one round trip per variant and this runs before every generation.
-     * It is re-probed the moment that variant stops serving.
+     * It is re-probed when it stops serving, when the preference changes, or
+     * when the learner asks — which is what `force` is for.
      */
-    private suspend fun probePrompt(): Probe {
+    private suspend fun probePrompt(preferFast: Boolean, force: Boolean): Probe {
         val chosen = promptVariant
         val current = model
-        if (chosen != null && current != null) {
+        if (!force && chosen != null && current != null && probedPreferFast == preferFast) {
             val code = runCatching { current.checkStatus() }.getOrNull()
             if (code != null && code != FeatureStatus.UNAVAILABLE) {
                 return Probe(code, chosen, null)
@@ -471,9 +513,12 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
         closePrompt()
 
         val refused = ArrayList<String>()
+        val served = ArrayList<String>()
         var refusal: Int? = null
         var lastError: Throwable? = null
-        for (variant in VARIANTS) {
+        var winner: Variant? = null
+        var winnerCode = -1
+        for (variant in if (preferFast) VARIANTS_FAST_FIRST else VARIANTS) {
             val client = try {
                 Generation.getClient(
                     GenerationConfig.Builder().apply {
@@ -505,13 +550,23 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
                 runCatching { client.close() }
                 continue
             }
-            Log.i(TAG, "serving ${variant.label}, FeatureStatus=$code")
-            model = client
-            promptVariant = variant
-            refusedVariants = refused
-            return Probe(code, variant, null)
+            Log.i(TAG, "${variant.label} serves, FeatureStatus=$code")
+            served.add(variant.label)
+            if (winner == null) {
+                winner = variant
+                winnerCode = code
+                model = client
+            } else {
+                runCatching { client.close() }
+            }
         }
         refusedVariants = refused
+        servedVariants = served
+        probedPreferFast = preferFast
+        if (winner != null) {
+            promptVariant = winner
+            return Probe(winnerCode, winner, null)
+        }
         // One refusal means AICore was reachable and said no, which is
         // `unavailable`. Only a device where every variant threw is
         // `unreachable`, and that is a different problem with a different fix.
@@ -546,6 +601,7 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
 
     /** What one round of probing found: a status, or the reason there is none. */
     private class Probe(val code: Int, val variant: Variant?, val error: Throwable?)
+
 
     /**
      * Purpose: Get the proofreading client, creating it once.
@@ -671,6 +727,21 @@ class GenAiChannel(private val activity: MainActivity) : MethodChannel.MethodCal
             Variant(ModelReleaseStage.STABLE, ModelPreference.FAST, "stable/fast"),
             Variant(ModelReleaseStage.PREVIEW, ModelPreference.FULL, "preview/full"),
             Variant(ModelReleaseStage.PREVIEW, ModelPreference.FAST, "preview/fast"),
+        )
+
+        /**
+         * The same variants, smaller model first at each stage.
+         *
+         * Used when the learner has asked for the faster model on a device
+         * that serves both sizes. The release stage stays the outer key: a
+         * stable model is preferred over a preview one whatever the size,
+         * because preview models come and go with the device's enrolment.
+         */
+        private val VARIANTS_FAST_FIRST = listOf(
+            Variant(ModelReleaseStage.STABLE, ModelPreference.FAST, "stable/fast"),
+            Variant(ModelReleaseStage.STABLE, ModelPreference.FULL, "stable/full"),
+            Variant(ModelReleaseStage.PREVIEW, ModelPreference.FAST, "preview/fast"),
+            Variant(ModelReleaseStage.PREVIEW, ModelPreference.FULL, "preview/full"),
         )
     }
 }

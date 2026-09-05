@@ -126,6 +126,27 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
             GenAiFeature.proofread,
             l10n.aiStatusProofread,
           ),
+          // Only where the device actually served both sizes. A device that
+          // serves one — the Galaxy Z Fold 8 serves the faster model and
+          // refuses the larger one — gets no control, because a switch that
+          // cannot change what is serving teaches the learner to distrust the
+          // page.
+          if (MethodChannelGenAiBackend.hasSizeChoice(
+            service.reportOf(GenAiFeature.prompt).served,
+          ))
+            SwitchListTile(
+              secondary: const Icon(Icons.speed_outlined),
+              title: Text(l10n.aiPreferFast),
+              subtitle: Text(
+                l10n.aiPreferFastBody,
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
+              ),
+              isThreeLine: true,
+              value: settings.preferFastModel,
+              onChanged: service.busy ? null : notifier.setPreferFastModel,
+            ),
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
             child: Column(
@@ -135,6 +156,22 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
                   l10n.aiDownloadNote,
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ),
+                // Said here because the obvious next question, once a model
+                // has been downloaded, is how to remove it — and the honest
+                // answer is that this app cannot. AICore owns the file and
+                // shares it with every app that asks for the same model;
+                // neither ML Kit client exposes any way to delete one. A
+                // Remove button here would either do nothing or delete
+                // something another app is using.
+                Padding(
+                  padding: const EdgeInsets.only(top: 8),
+                  child: Text(
+                    l10n.aiModelStorageNote,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
                   ),
                 ),
                 // Which AICore build is installed is the other half of the

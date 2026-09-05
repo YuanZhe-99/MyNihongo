@@ -794,6 +794,25 @@ class NihongoStorage {
   static Future<void> setAutoSpeak(bool speak) =>
       _setBool('autoSpeak', speak ? null : false);
 
+  /// Purpose: Read whether the smaller, faster on-device model is preferred.
+  /// Inputs: None.
+  /// Returns: `Future<bool>` — false unless the learner asked for it.
+  /// Side effects: Reads the config file.
+  /// Notes: Off by default, because the larger model gives the better
+  /// explanation and that is what these features are for. On a device that
+  /// serves only one size this changes nothing, which is why Settings hides
+  /// the control there rather than showing one that cannot switch anything.
+  static Future<bool> getPreferFastModel() async =>
+      await _getBool('preferFastModel') ?? false;
+
+  /// Purpose: Remember which on-device model size is preferred.
+  /// Inputs: `fast`.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: Off is stored as an absent key; see [getPreferFastModel].
+  static Future<void> setPreferFastModel(bool fast) =>
+      _setBool('preferFastModel', fast ? true : null);
+
   /// Purpose: Read whether the daily reminder is on.
   /// Inputs: None.
   /// Returns: `Future<bool>` — false unless the learner turned it on.

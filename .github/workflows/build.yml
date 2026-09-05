@@ -11,6 +11,16 @@ on:
 permissions:
   contents: write
 
+# A release pushes the commit and then the tag, which is two pushes and was
+# two full runs of the same job on the same commit: analyze, test, APK and AAB,
+# twice. Keying the group on the commit rather than the ref makes the tag run
+# supersede the branch run, and the tag run is the one worth keeping — it does
+# everything the branch run does and then creates the Release. On an ordinary
+# push, where no tag follows, nothing is cancelled and this changes nothing.
+concurrency:
+  group: build-${{ github.sha }}
+  cancel-in-progress: true
+
 env:
   FLUTTER_VERSION: '3.44.2'
 

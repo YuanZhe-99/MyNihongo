@@ -12,6 +12,67 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.4.1` — 2026-09-04. The Z Fold 8 serves a model, and answering that raised
+  three more questions: which models does it serve, can you pick one, and where
+  does the downloaded one live.
+
+  **`0.4.0` worked.** On the device the model downloaded and the Prompt API
+  serves `stable/fast`, `nano-v4-fast`. The probe was the fix; the beta4 bump
+  alone was not, and `0.3.2` said otherwise.
+
+  **The probe now asks every variant instead of stopping at the first.**
+  Whether a learner has a choice of model size is itself a fact to report, and a
+  loop that returns at the first success cannot know it. All four are tried, the
+  first that serves is kept, the rest are closed at once, and the reply carries
+  the whole served list. Re-probing happens on a deliberate refresh — the switch
+  going on, Settings opening, Check again — while a generation trusts the model
+  already serving, so the extra round trips are never paid mid-sentence.
+
+  **A model-size switch, on the devices that have something to switch.** Where a
+  device serves both a larger and a faster model, Settings offers *Prefer the
+  faster model*: the larger one writes better explanations and stays the
+  default, the faster one answers sooner. Changing it re-probes immediately, so
+  the line underneath names the model serving now rather than promising one at
+  the next launch. Where a device serves one size — the Z Fold 8 offers only the
+  faster model — **no switch appears**, because a control that cannot change
+  what is serving teaches the learner to distrust the page.
+
+  **No Remove button, and a line saying why.** The obvious question after a
+  download is how to undo it. The model belongs to the Android AICore system
+  service, is shared with every app that uses the same model, and neither ML Kit
+  client exposes any way to delete one — checked with `javap`, not assumed. A
+  Remove button could only do nothing or take away a model another app is using,
+  so Settings says where the model actually lives and points at Android's own
+  settings for AICore.
+
+  **A release stopped building itself twice.** Pushing the commit and then the
+  tag ran the same analyze, test, APK and AAB twice on the same tree. The tag
+  run now supersedes the branch run; an ordinary push is unaffected.
+
+  **A release build could not download the model, and only a device could say
+  so.** On a Pixel 10, tapping Download threw `NoSuchMethodError` for
+  `kotlinx.coroutines.Job.cancel$default` from inside ML Kit. Kotlin compiles a
+  call that omits a default argument into a synthetic bridge; ML Kit calls the
+  one on `Job`, this app never does, so R8 removed it. The download completed
+  anyway — AICore does that work — but the app reported a failure. This is the
+  second R8 failure in this one feature, and the same lesson as the first: keep
+  what the library calls, not what your own code calls.
+
+  **The refusal line stopped appearing where nothing was refused.** A model that
+  simply has not been downloaded is a normal state, and `refused: …` printed
+  under "Not downloaded yet" reads as a fault. It now appears only on a row that
+  cannot serve at all.
+
+  Measured on the Pixel 10: it serves `stable/full` and refuses the other three
+  — the exact mirror of the Z Fold 8, which serves `stable/fast` and refuses
+  `stable/full`. No single fixed variant could have served both phones, which is
+  the whole argument for probing. Neither is offered the size switch, because
+  neither serves two sizes.
+
+  Docs: `android-aicore.md` gains who owns a downloaded model and why an app
+  cannot delete one, the probe section says why it enumerates, and three field
+  notes record what the Pixel 10 answered. Both language trees. 751 tests.
+
 - `0.4.0` — 2026-09-04. The device answered again, and the answer was no: the
   app was asking for one model out of four and reporting the refusal as the
   device's.

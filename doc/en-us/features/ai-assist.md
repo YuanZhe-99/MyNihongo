@@ -122,7 +122,31 @@ A row that cannot offer the feature says which of two different things happened:
 | The device reported a status this version does not recognise | AICore answered something newer than this build | the raw value |
 
 A **working** row carries a line too: the variant serving it, the model behind it and its token
-limit. "Ready" alone does not say what is ready, and the answer differs per device.
+limit. "Ready" alone does not say what is ready, and the answer differs per device. On a Galaxy
+Z Fold 8 that reads `stable/fast · nano-v4-fast`; on a Pixel 10 it may name a different model
+entirely.
+
+### Choosing the model, where there is a choice
+
+The Prompt API serves up to four model variants and a device may offer none, one or several. From
+`v0.4.1` the app probes all of them rather than stopping at the first that answers, because that is
+the only way to know whether there is a choice to offer.
+
+When a device serves **both** a larger and a faster model, Settings shows one switch: *Prefer the
+faster model*. The larger model writes the better explanation, so it is the default; the faster one
+answers sooner and uses less memory. Changing it re-probes at once, so the row underneath names the
+model that is serving **now** rather than promising one at the next launch.
+
+When a device serves one size — the Z Fold 8 offers only the faster model — **no switch appears at
+all**. A control that cannot change what is serving teaches the learner to distrust the page.
+
+### The model is not the app's to delete
+
+The download note is followed by one more line, because the obvious next question is how to remove
+what was downloaded. The model belongs to the Android AICore system service, is shared with every
+app that uses the same model, and neither ML Kit client exposes any way to delete one. There is
+therefore no Remove button: it could only lie or take away a model another app is using. Android's
+own settings for AICore are where that is done.
 
 The diagnostic line is deliberately untranslated: it is an identifier to quote in a bug report, not
 prose to read. Under the section, one more line names the installed AICore build, the device, and whether AICore

@@ -2,13 +2,13 @@
 
 这是 MyNihongo 仓库中 `lib/` 手写函数解释层文档的顶层索引。每行链接到 `doc/zh-cn/functions/` 下镜像 `lib/` 树的逐源文件页面（`.dart` 换成 `.md`）。
 
-**总计：** 仓库的 `/// Purpose:` 注释数为 **917**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **888** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
+**总计：** 仓库的 `/// Purpose:` 注释数为 **922**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **895** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
 
 | Tier | 计数 |
 |---|---|
 | Tier A（完整条目：Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes） | 173 |
-| Tier B（仅索引行） | 715 |
-| **总计** | **888** |
+| Tier B（仅索引行） | 722 |
+| **总计** | **895** |
 
 这些总计在初始化时（`PLAN.md` M1.0）对照源码树测得。若要改动这些数字，请测量而不要手工调整：
 
@@ -39,9 +39,9 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 
 | 源文件 | 页面 | 声明数 | Tier A 计数 |
 |---|---|---|---|
-| `lib/features/ai/services/ai_assist_service.dart` | [features/ai/services/ai_assist_service.md](features/ai/services/ai_assist_service.md) | 18 | 4 |
+| `lib/features/ai/services/ai_assist_service.dart` | [features/ai/services/ai_assist_service.md](features/ai/services/ai_assist_service.md) | 20 | 4 |
 | `lib/features/ai/services/aicore_sentence_enhancer.dart` | [features/ai/services/aicore_sentence_enhancer.md](features/ai/services/aicore_sentence_enhancer.md) | 4 | 3 |
-| `lib/features/ai/services/genai_backend.dart` | [features/ai/services/genai_backend.md](features/ai/services/genai_backend.md) | 25 | 2 |
+| `lib/features/ai/services/genai_backend.dart` | [features/ai/services/genai_backend.md](features/ai/services/genai_backend.md) | 26 | 2 |
 | `lib/features/ai/services/prompt_builder.dart` | [features/ai/services/prompt_builder.md](features/ai/services/prompt_builder.md) | 15 | 4 |
 | `lib/features/ai/services/response_parser.dart` | [features/ai/services/response_parser.md](features/ai/services/response_parser.md) | 9 | 2 |
 | `lib/features/ai/services/writing_rewrite.dart` | [features/ai/services/writing_rewrite.md](features/ai/services/writing_rewrite.md) | 2 | 1 |
@@ -69,7 +69,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/progress/models/study_record.dart` | [features/progress/models/study_record.md](features/progress/models/study_record.md) | 23 | 5 |
 | `lib/features/progress/models/learner_profile.dart` | [features/progress/models/learner_profile.md](features/progress/models/learner_profile.md) | 7 | 2 |
 | `lib/features/progress/models/history_entry.dart` | [features/progress/models/history_entry.md](features/progress/models/history_entry.md) | 12 | 4 |
-| `lib/features/progress/services/nihongo_storage.dart` | [features/progress/services/nihongo_storage.md](features/progress/services/nihongo_storage.md) | 43 | 3 |
+| `lib/features/progress/services/nihongo_storage.dart` | [features/progress/services/nihongo_storage.md](features/progress/services/nihongo_storage.md) | 45 | 3 |
 | `lib/features/progress/services/review_queue.dart` | [features/progress/services/review_queue.md](features/progress/services/review_queue.md) | 7 | 2 |
 | `lib/features/progress/services/sm2_scheduler.dart` | [features/progress/services/sm2_scheduler.md](features/progress/services/sm2_scheduler.md) | 5 | 2 |
 | `lib/features/settings/views/license_page.dart` | [features/settings/views/license_page.md](features/settings/views/license_page.md) | 2 | 0 |
@@ -122,7 +122,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 
 | 源文件 | 页面 | 声明数 | Tier A 计数 |
 |---|---|---|---|
-| `lib/shared/providers/app_settings.dart` | [shared/providers/app_settings.md](shared/providers/app_settings.md) | 8 | 0 |
+| `lib/shared/providers/app_settings.dart` | [shared/providers/app_settings.md](shared/providers/app_settings.md) | 10 | 0 |
 | `lib/shared/providers/progress_provider.dart` | [shared/providers/progress_provider.md](shared/providers/progress_provider.md) | 5 | 0 |
 | `lib/shared/providers/learner_profile_provider.dart` | [shared/providers/learner_profile_provider.md](shared/providers/learner_profile_provider.md) | 3 | 0 |
 | `lib/shared/providers/history_provider.dart` | [shared/providers/history_provider.md](shared/providers/history_provider.md) | 3 | 2 |

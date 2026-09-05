@@ -10,6 +10,8 @@ M3.0 把原本合成一个的答案拆成了两部分。`statusReport` 在状态
 
 M4.0 又把这份报告加宽了，因为那次拆分仍然不足以诊断一台 Z Fold 8。Prompt API 提供四个模型变体，平台侧会把它们全部探测一遍，于是报告现在带上了应答的 `variant`、被拒绝的 `refused`，以及真正在服务的那个模型的 `baseModelName` 与 `tokenLimit`。`GenAiStatus.unknown` 表示本次构建没有名字可给的状态值——按原样报告，绝不折叠成一次拒绝，因为这个枚举以前扩充过。`GenAiCoreInfo.compatible` 回答 AICore 是否认为这台设备根本可以被服务。这些字段全部按「缺失」而不是「错误」来解码，所以更旧的平台侧、以及只有一个模型的校对功能，都能原样继续工作。
 
+M4.0a 又加上了 `served`，以及两个反方向传过去的参数。探测不再在第一个应答的变体处停下，因为学习者是否*有得选*，无法从一个提前返回的循环里知道；`statusReport` 接受 `force`（重新探测，而不是信任已经在服务的那个）与 `preferFast`（先试较小的模型），而 `hasSizeChoice` 回答设置里那个控件唯一需要知道的问题。它放在这里而不是部件里，因为它是关于平台回复的事实。
+
 ## 声明
 
 | 声明 | 种类 | 层级 | 用途 |
@@ -37,6 +39,7 @@ M4.0 又把这份报告加宽了，因为那次拆分仍然不足以诊断一台
 | `MethodChannelGenAiBackend.cancel` | 方法 | B | 尽力取消。 |
 | `MethodChannelGenAiBackend.statusReport` | 方法 | B | 解码平台的状态回复，容忍缺失字段。 |
 | `MethodChannelGenAiBackend.coreInfo` | 方法 | B | 读取 AICore 的安装情况。 |
+| `MethodChannelGenAiBackend.hasSizeChoice` | 静态方法 | B | 已服务的变体中是否同时有较大和较快的模型。 |
 | `_handlePlatformCall` | 方法 | B | 接收来自平台的下载进度。 |
 | `_failureFor` | 静态方法 | B | 把平台错误码映射为失败原因。 |
 

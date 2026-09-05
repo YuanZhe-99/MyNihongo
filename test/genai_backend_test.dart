@@ -238,4 +238,80 @@ void main() {
     ).explain('why', maxOutputTokens: 320);
     expect(sent, 320);
   });
+  test(
+    'every variant that serves is reported, not only the chosen one',
+    () async {
+      mock(
+        (_) => {
+          'status': 'available',
+          'code': 3,
+          'variant': 'stable/full',
+          'served': 'stable/full, stable/fast',
+          'refused': null,
+          'baseModelName': 'nano-v4',
+          'tokenLimit': 4096,
+        },
+      );
+      final report = await MethodChannelGenAiBackend(
+        channel,
+      ).statusReport(GenAiFeature.prompt);
+      expect(report.served, 'stable/full, stable/fast');
+      expect(
+        MethodChannelGenAiBackend.hasSizeChoice(report.served),
+        isTrue,
+        reason: 'both sizes served, so the learner has something to choose',
+      );
+    },
+  );
+
+  test('a device that serves one size offers no choice', () async {
+    // The Galaxy Z Fold 8: the larger model is refused, the faster one serves.
+    mock(
+      (_) => {
+        'status': 'available',
+        'code': 3,
+        'variant': 'stable/fast',
+        'served': 'stable/fast',
+        'refused': 'stable/full',
+        'baseModelName': 'nano-v4-fast',
+      },
+    );
+    final report = await MethodChannelGenAiBackend(
+      channel,
+    ).statusReport(GenAiFeature.prompt);
+    expect(MethodChannelGenAiBackend.hasSizeChoice(report.served), isFalse);
+    expect(MethodChannelGenAiBackend.hasSizeChoice(null), isFalse);
+  });
+
+  test(
+    'the size preference and a forced re-probe reach the platform',
+    () async {
+      Map<Object?, Object?>? sent;
+      mock((call) {
+        sent = call.arguments as Map<Object?, Object?>;
+        return {'status': 'available', 'code': 3};
+      });
+      await MethodChannelGenAiBackend(
+        channel,
+      ).statusReport(GenAiFeature.prompt, force: true, preferFast: true);
+      expect(sent?['force'], isTrue);
+      expect(sent?['preferFast'], isTrue);
+    },
+  );
+
+  test(
+    'an ordinary status request neither forces nor changes the size',
+    () async {
+      Map<Object?, Object?>? sent;
+      mock((call) {
+        sent = call.arguments as Map<Object?, Object?>;
+        return {'status': 'available', 'code': 3};
+      });
+      await MethodChannelGenAiBackend(
+        channel,
+      ).statusReport(GenAiFeature.prompt);
+      expect(sent?['force'], isFalse);
+      expect(sent?['preferFast'], isFalse);
+    },
+  );
 }

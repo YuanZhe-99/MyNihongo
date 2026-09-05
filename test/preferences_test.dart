@@ -207,6 +207,28 @@ void main() {
     expect(await NihongoStorage.getAiAssistEnabled(), isFalse);
   });
 
+  test(
+    'the faster on-device model is not preferred until it is asked for',
+    () async {
+      expect(await NihongoStorage.getPreferFastModel(), isFalse);
+      await NihongoStorage.setPreferFastModel(true);
+      expect(await NihongoStorage.getPreferFastModel(), isTrue);
+      expect((await config())['preferFastModel'], isTrue);
+    },
+  );
+
+  test('going back to the larger model removes the key', () async {
+    await NihongoStorage.setPreferFastModel(true);
+    await NihongoStorage.setPreferFastModel(false);
+    expect((await config()).containsKey('preferFastModel'), isFalse);
+    expect(await NihongoStorage.getPreferFastModel(), isFalse);
+  });
+
+  test('a hand-edited string does not switch the faster model on', () async {
+    await configFile.writeAsString('{"preferFastModel": "true"}');
+    expect(await NihongoStorage.getPreferFastModel(), isFalse);
+  });
+
   test('a locale with a country round trips', () async {
     // Traditional and Simplified Chinese differ only by the country here, so
     // a tag written without one would move a reader to the other language.

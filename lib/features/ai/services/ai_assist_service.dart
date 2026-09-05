@@ -56,6 +56,7 @@ class AiAssistService extends ChangeNotifier {
   bool _enabled = false;
   final Map<GenAiFeature, GenAiStatusReport> _status = {};
   GenAiCoreInfo? _coreInfo;
+  bool _preferFast = false;
   GenAiDownload? _download;
   GenAiFeature? _downloading;
   bool _busy = false;
@@ -88,6 +89,31 @@ class AiAssistService extends ChangeNotifier {
   /// not on a published support list; [statusOf] is the same answer without it.
   GenAiStatusReport reportOf(GenAiFeature feature) =>
       _status[feature] ?? GenAiStatusReport.unsupported;
+
+  /// Whether the smaller, faster model is preferred where a device serves both.
+  ///
+  /// Only meaningful on a device that serves more than one size; everywhere
+  /// else the probe finds the same single variant either way.
+  bool get preferFast => _preferFast;
+
+  /// Purpose: Choose the larger or the faster model, and re-probe.
+  /// Inputs: `value` — true for the faster model.
+  /// Returns: None.
+  /// Side effects: Re-probes the device; notifies listeners.
+  /// Notes: A full re-probe rather than a stored preference applied later: the
+  /// point of the switch is to change which model is serving now, and a
+  /// preference that takes effect at the next launch is one the learner cannot
+  /// verify. Persisting the choice is `AppSettingsNotifier`'s job, as it is for
+  /// every other preference.
+  Future<void> setPreferFast(bool value) async {
+    if (_preferFast == value) return;
+    _preferFast = value;
+    if (_enabled) {
+      await refreshStatus();
+    } else {
+      notifyListeners();
+    }
+  }
 
   /// What AICore is installed on this device, once [refreshStatus] has asked.
   GenAiCoreInfo? get coreInfo => _coreInfo;
@@ -152,7 +178,14 @@ class AiAssistService extends ChangeNotifier {
       return;
     }
     for (final feature in GenAiFeature.values) {
-      _status[feature] = await _backend.statusReport(feature);
+      // Forced: this is the deliberate refresh — Settings opening, the switch
+      // going on, the Check again button — and it is the only path that probes
+      // every model variant rather than trusting the one already serving.
+      _status[feature] = await _backend.statusReport(
+        feature,
+        force: true,
+        preferFast: _preferFast,
+      );
     }
     _coreInfo = await _backend.coreInfo();
     notifyListeners();
@@ -209,6 +242,7 @@ class AiAssistService extends ChangeNotifier {
     if (_busy) throw const GenAiException(GenAiFailure.busy);
     _status[GenAiFeature.prompt] = await _backend.statusReport(
       GenAiFeature.prompt,
+      preferFast: _preferFast,
     );
     if (statusOf(GenAiFeature.prompt) != GenAiStatus.available) {
       notifyListeners();

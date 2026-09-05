@@ -25,6 +25,13 @@ before. `GenAiCoreInfo.compatible` answers whether AICore considers the device s
 Every one of these fields decodes as absent rather than wrong, so an older platform side, and the
 proofreading feature that has only one model, keep working unchanged.
 
+M4.0a added `served` and the two arguments that go the other way. The probe no longer stops at the
+first variant that answers, because whether the learner has a *choice* of model size cannot be known
+from a loop that returns early; `statusReport` takes `force` (re-probe rather than trust the variant
+already serving) and `preferFast` (try the smaller model first), and `hasSizeChoice` answers the one
+question the Settings control needs. It lives here rather than in the widget because it is a fact
+about the platform's reply.
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |
@@ -52,6 +59,7 @@ proofreading feature that has only one model, keep working unchanged.
 | `MethodChannelGenAiBackend.cancel` | method | B | Cancel, best-effort. |
 | `MethodChannelGenAiBackend.statusReport` | method | B | Decode the platform's status reply, tolerating missing fields. |
 | `MethodChannelGenAiBackend.coreInfo` | method | B | Read the AICore installation. |
+| `MethodChannelGenAiBackend.hasSizeChoice` | static method | B | Whether the served variants include both a larger and a faster model. |
 | `_handlePlatformCall` | method | B | Receive download progress from the platform. |
 | `_failureFor` | static method | B | Map a platform error code to a failure. |
 

@@ -102,6 +102,7 @@ class GenAiStatusReport {
     this.code = -1,
     this.detail,
     this.variant,
+    this.served,
     this.refused,
     this.baseModelName,
     this.tokenLimit,
@@ -119,6 +120,13 @@ class GenAiStatusReport {
   /// Which model variant answered, such as `stable/full`; null when none did
   /// and on every feature that has only one.
   final String? variant;
+
+  /// Every variant the device served, in the order they were tried, or null.
+  ///
+  /// More than one means the learner has a real choice between a larger and
+  /// a faster model. One, or none, means there is nothing to offer, and
+  /// offering it anyway would be a control that cannot change anything.
+  final String? served;
 
   /// The variants the device refused, in the order they were tried, or null.
   ///
@@ -243,13 +251,19 @@ abstract class GenAiBackend {
   Future<void> cancel();
 
   /// Purpose: Ask what a feature can do, and what the device said about it.
-  /// Inputs: `feature`.
+  /// Inputs: `feature`, `force` and `preferFast`.
   /// Returns: `Future<GenAiStatusReport>`.
   /// Side effects: Queries the platform.
   /// Notes: Given a body rather than left abstract so a backend that has
   /// nothing to add — every test fake — keeps working unchanged. Never throws.
-  Future<GenAiStatusReport> statusReport(GenAiFeature feature) async =>
-      GenAiStatusReport(await status(feature));
+  /// `force` re-probes rather than trusting a model that is already serving,
+  /// and `preferFast` asks for the smaller of two models where a device
+  /// serves both; a backend with one model ignores both.
+  Future<GenAiStatusReport> statusReport(
+    GenAiFeature feature, {
+    bool force = false,
+    bool preferFast = false,
+  }) async => GenAiStatusReport(await status(feature));
 
   /// Purpose: Describe the device's AICore installation.
   /// Inputs: None.
@@ -270,6 +284,17 @@ class MethodChannelGenAiBackend implements GenAiBackend {
 
   /// The channel name, matched by `GenAiChannel.CHANNEL` in Kotlin.
   static const channelName = 'com.yuanzhe.my_nihongo/genai';
+
+  /// Purpose: Say whether the served variants include both model sizes.
+  /// Inputs: `served` — the platform's list, or null.
+  /// Returns: `bool`.
+  /// Side effects: None.
+  /// Notes: The one question the Settings control needs answered. It lives
+  /// here rather than in the widget because it is a fact about the platform's
+  /// reply, and because a control offered where there is nothing to switch to
+  /// is worse than no control at all.
+  static bool hasSizeChoice(String? served) =>
+      served != null && served.contains('/full') && served.contains('/fast');
 
   final MethodChannel _channel;
 
@@ -294,11 +319,17 @@ class MethodChannelGenAiBackend implements GenAiBackend {
   /// phone with AICore installed reporting it had no on-device model, with
   /// nothing anywhere to say which of the two had happened.
   @override
-  Future<GenAiStatusReport> statusReport(GenAiFeature feature) async {
+  Future<GenAiStatusReport> statusReport(
+    GenAiFeature feature, {
+    bool force = false,
+    bool preferFast = false,
+  }) async {
     if (!platformMayHaveOnDeviceModel) return GenAiStatusReport.unsupported;
     try {
       final answer = await _channel.invokeMapMethod<String, Object?>('status', {
         'feature': feature.name,
+        'force': force,
+        'preferFast': preferFast,
       });
       final name = answer?['status']?.toString();
       final status = switch (name) {
@@ -316,6 +347,7 @@ class MethodChannelGenAiBackend implements GenAiBackend {
         // Absent rather than wrong: an older platform side, or the
         // proofreading feature, simply sends none of these.
         variant: answer?['variant']?.toString(),
+        served: answer?['served']?.toString(),
         refused: answer?['refused']?.toString(),
         baseModelName: answer?['baseModelName']?.toString(),
         tokenLimit: answer?['tokenLimit'] is int

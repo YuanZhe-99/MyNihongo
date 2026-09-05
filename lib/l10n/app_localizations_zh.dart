@@ -1335,6 +1335,17 @@ class AppLocalizationsZh extends AppLocalizations {
       '下载由 Android AICore 系统服务完成，模型从 Google 获取。只有你点击「下载」后才会开始。';
 
   @override
+  String get aiPreferFast => '优先使用更快的模型';
+
+  @override
+  String get aiPreferFastBody =>
+      '本设备提供两种规格的模型。较大的那个解释写得更好；较快的那个回答更早，占用内存更少。修改后会立即重新检查设备。';
+
+  @override
+  String get aiModelStorageNote =>
+      '模型属于 Android AICore 系统服务，不属于本应用，并且与所有使用同一模型的应用共享。无法从这里移除；请使用 Android 自带的 AICore 设置。';
+
+  @override
   String get aiDownloading => '下载中…';
 
   @override
@@ -2754,6 +2765,17 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   @override
   String get aiDownloadNote =>
       '下載由 Android AICore 系統服務完成，模型從 Google 取得。只有你點選「下載」後才會開始。';
+
+  @override
+  String get aiPreferFast => '優先使用較快的模型';
+
+  @override
+  String get aiPreferFastBody =>
+      '本裝置提供兩種規格的模型。較大的那個解釋寫得更好；較快的那個回答更早，佔用記憶體更少。修改後會立即重新檢查裝置。';
+
+  @override
+  String get aiModelStorageNote =>
+      '模型屬於 Android AICore 系統服務，不屬於本應用程式，並且與所有使用同一模型的應用程式共用。無法從這裡移除；請使用 Android 內建的 AICore 設定。';
 
   @override
   String get aiDownloading => '下載中…';

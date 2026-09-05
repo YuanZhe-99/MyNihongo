@@ -20,6 +20,8 @@ Consumers: `aicore_sentence_enhancer.dart`, `ai_settings_tiles.dart`, `sentence_
 | `setInstanceForTest` | static method | B | Replace the singleton for a test. |
 | `AiAssistService.timeout` | constant | B | How long one generation may take. |
 | `AiAssistService.defaultMaxOutputTokens` | constant | B | How long an answer may be when the caller names no budget. |
+| `AiAssistService.preferFast` | getter | B | Whether the smaller, faster model is preferred where a device serves both. |
+| `AiAssistService.setPreferFast` | method | B | Choose the larger or the faster model, and re-probe at once. |
 | `statusOf` | method | B | What a feature can do, as last asked. |
 | `canExplain`, `canProofread` | getters | B | Whether each action can be offered right now. |
 | [`needsDownload`](#needsdownload) | getter | A | Whether the hint pointing at Settings applies. |

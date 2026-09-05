@@ -135,13 +135,34 @@ answer rather than the device's, and an app should always implement a fallback s
 
 So the shape that works is a probe, not a configuration:
 
-1. Try the variants in preference order.
-2. Keep the first whose `checkStatus()` is anything but `UNAVAILABLE`.
-3. **Report which variant answered, and which ones refused.**
+1. Try **every** variant, not only those before the first success.
+2. Keep the first whose `checkStatus()` is anything but `UNAVAILABLE`; close the rest at once, since
+   an open client holds an AICore session.
+3. **Report which variant answered, which ones served, and which ones refused.**
 
-Step 3 is not a nicety. Without it, "not available on this device" is one sentence covering four
-different requests, and no field report can tell them apart. This app prints
-`FeatureStatus=0 · refused: stable/full, stable/fast, preview/full, preview/fast` under the row.
+Step 1 is why the loop does not stop early: **whether the user has a choice of model size is itself
+a fact**, and a loop that returns at the first success cannot know it. Step 3 is not a nicety —
+without it, "not available on this device" is one sentence covering four different requests, and no
+field report can tell them apart. This app prints
+`FeatureStatus=0 · refused: stable/full, stable/fast, preview/full, preview/fast` under a refused
+row, and `stable/fast · nano-v4-fast · 4096 tok` under a working one.
+
+Re-probing all four costs one round trip each, so it is done on a deliberate refresh — the switch
+going on, Settings opening, **Check again** — while a generation trusts the variant already serving.
+
+### Who owns the downloaded model
+
+AICore does, and this is worth being exact about because the obvious next question after a download
+is how to remove it.
+
+The model file belongs to the `com.google.android.aicore` system service and is **shared with every
+app that asks for the same model**: a second app requesting it does not download it again. An app's
+own storage does not grow. And **neither ML Kit client exposes any way to delete one** — `javap` over
+`genai-prompt` and `genai-proofreading` shows `download`, `close`, `clearImplicitCaches` and nothing
+else; `close()` releases the inference session, not the file.
+
+So an app must not offer a Remove button. It would either do nothing or, if it somehow succeeded,
+take away a model another app is using. Point the user at Android's own settings for AICore instead.
 
 `ModelReleaseStage.PREVIEW` is worth trying and worth understanding. It reaches a model only on a
 device enrolled in the **AICore developer preview**, and an app cannot enrol a device: nothing it
@@ -418,6 +439,45 @@ of it is guaranteed to generalise.
   current enough to ask the question. And **the plausible explanation is the dangerous one**: "this
   hardware is off the list" fitted every fact available, was written down here as settled, and closed
   the investigation for a day.
+
+- **Pixel 10, `v0.4.1` release build, 2026-09-04: the two devices serve opposite variants, which is
+  the whole argument for probing.** The probe reports:
+
+  | Variant | Pixel 10 | Galaxy Z Fold 8 |
+  |---|---|---|
+  | `stable/full` | **serves** (`nano-v3`) | refused |
+  | `stable/fast` | refused | **serves** (`nano-v4-fast`) |
+  | `preview/full` | refused | refused |
+  | `preview/fast` | refused | refused |
+
+  No fixed choice of variant could have served both phones, and either one alone would have made the
+  other look unsupported. That is exactly what happened for two releases.
+
+  Neither device is offered the size switch, because neither serves two sizes.
+
+- **The model outlives the app, which is how you can tell whose it is.** Uninstalling and reinstalling
+  the app — which wipes its data and reset the AI switch to off — left the Prompt model
+  `AVAILABLE`. AICore had kept it. This is the observation behind the app refusing to offer a Remove
+  button.
+
+- **R8 removed a coroutines bridge ML Kit needs, and only the release build noticed.** Tapping
+  Download on the Pixel 10 threw
+
+  ```
+  java.lang.NoSuchMethodError: No static method cancel$default(
+      Lkotlinx/coroutines/Job;Ljava/util/concurrent/CancellationException;
+      ILjava/lang/Object;)V in class Lkotlinx/coroutines/Job;
+  ```
+
+  from inside `mlkit_genai_prompt`. Kotlin compiles a call that omits a default argument into a
+  synthetic static `…$default` bridge; ML Kit's dexed code calls the one on `Job`, this app never
+  does, so R8 dropped it. The download still completed — AICore does that work — but the app was told
+  it had failed.
+
+  This is the **second** R8 failure in this one feature, after the `LazyInstanceMap` one above, and
+  the same lesson applies: keep what the library calls, not what your own code calls. The rule is
+  `-keep class kotlinx.coroutines.** { *; }`, kept whole because these bridges are generated and
+  there is no published list to enumerate. It costs about 0.2 MB of APK.
 
 - **Samsung Galaxy Z Fold 8, `v0.3.2` installed, 2026-09-04: beta4 was not the fix either.** The
   bump changed the symptom and not the outcome. `checkStatus()` no longer throws; it returns `0`,

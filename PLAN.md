@@ -804,6 +804,44 @@ serves no model, and because the same phone had now been misdiagnosed twice.
       `unknown` is not `unavailable`, the refusal line reaches the UI, and the answer budget reaches
       the platform. 740 pass
 
+#### M4.0a Which models, which one, and whose file — **done 2026-09-04**, released as `v0.4.1`
+
+`v0.4.0` worked on the Z Fold 8: the model downloaded, `stable/fast` serves, `nano-v4-fast`. Three
+follow-ups came straight out of that answer, plus one CI annoyance.
+
+- [x] **The probe enumerates instead of stopping early.** Whether the learner has a *choice* of model
+      size is itself a fact to report, and a loop that returns at the first success cannot know it.
+      All four variants are tried, the first that serves is kept, the rest are closed at once, and
+      the reply carries `served`. `status` gained `preferFast` (fast-first ordering) and `force`
+      (re-probe rather than trust the variant already serving); the channel remembers the preference
+      so `explain` and `download` follow it. A generation still pays one round trip, not four
+- [x] **A model-size switch, only where the device serves both sizes.** New preference
+      `preferFastModel` through the documented touch points; `AiAssistService.setPreferFast`
+      re-probes at once so the row names the model serving now rather than promising one at the next
+      launch. The Z Fold 8 serves one size and is shown no control — a switch that cannot change what
+      is serving teaches the learner to distrust the page
+- [x] **No Remove button for the model, and a line saying why.** `javap` over both AARs: the clients
+      expose `download`, `close` and `clearImplicitCaches` and nothing that deletes. The file is
+      AICore's and is shared with every app that uses the same model, so a Remove button could only
+      do nothing or take away a model another app is using. Settings says where the model lives and
+      points at Android's own AICore settings
+- [x] **A release stopped building itself twice.** Pushing the commit and then the tag ran the same
+      analyze/test/APK/AAB twice on the same tree; `concurrency` keyed on the commit makes the tag
+      run supersede the branch run, and an ordinary push is unaffected
+- [x] **Two more things only the Pixel 10 could find.** A release build threw `NoSuchMethodError`
+      for `kotlinx.coroutines.Job.cancel$default` from inside ML Kit when the model was
+      downloaded — R8 had removed a synthetic default-argument bridge the library calls and this
+      app does not. Second R8 failure in this one feature; `proguard-rules.pro` keeps
+      `kotlinx.coroutines.**` and says why. And `refused: …` was printing under "Not downloaded
+      yet", which reads as a fault beside a normal state; the diagnostic line is now shown only on
+      a row that cannot serve
+- [x] **Measured on the Pixel 10:** it serves `stable/full` and refuses the other three — the exact
+      mirror of the Z Fold 8. No fixed variant could have served both phones. Neither device is
+      offered the size switch, because neither serves two sizes. Uninstalling the app left the
+      model `AVAILABLE`, which is the evidence behind refusing to offer a Remove button
+- [x] Three ARB keys ×3; eleven new tests across `genai_backend_test`, `ai_ui_test`,
+      `ai_assist_service_test` and `preferences_test`. 751 pass
+
 - [ ] Drill content per level and section: 文字・語彙, 文法, 読解, 聴解 (TTS-read passages),
       as `assets/content/drills/<level>/*.json`; original or openly licensed questions with
       answers and explanations in en/zh
@@ -958,6 +996,10 @@ serves no model, and because the same phone had now been misdiagnosed twice.
 | 2026-09-04 | Twenty-six N1 grammar points were dropped, not renamed, when their slug collided with N2 | Renaming keeps the count at the price of teaching the same pattern twice under two ids. The count is a number in a table; the duplicate is what a learner would actually meet |
 | 2026-09-04 | The classical layer went into `function_words.json`; missing ordinary words went into rewritten sentences | ぬ, ざる, べからざる, 極まりない and the rest **are** the N1 grammar points, so no example can avoid them. 東京, 顔 and 皆 are only scenery, and widening the dictionary for scenery widens everything downstream that reads it |
 | 2026-09-04 | A scenario added to a shipped lessons file is gated by turning that file back into a draft | `merge_drafts units` rewrites a whole level, so re-running it to add one conversation would be a far larger change than the conversation. Stripping the generated `zh_TW` is the only difference between the two shapes |
+| 2026-09-04 | Every model variant is probed, not only those before the first success | Whether the learner has a choice of model size is itself a fact to report, and a loop that returns early cannot know it. The cost is three extra status calls on a deliberate refresh; a generation still trusts the variant already serving and pays one |
+| 2026-09-04 | The model-size switch is hidden on a device that serves one size | A control that cannot change what is serving is worse than no control: it teaches the learner that the page is decorative. The Z Fold 8 serves only the faster model |
+| 2026-09-04 | No Remove button for a downloaded model | AICore owns the file and shares it with every app that uses the same model, and neither ML Kit client exposes a delete — checked with `javap`. The button could only lie or take away something another app is using |
+| 2026-09-04 | CI `concurrency` is keyed on the commit, so a tag run supersedes the branch run | A release pushes the commit and then the tag, which ran the same analyze/test/build twice on the same tree. The tag run is the one that also creates the Release |
 | 2026-09-04 | The Prompt API client is chosen by probing model variants in preference order, never by device, client version or model name | ML Kit serves four combinations of release stage and size preference, no API says which a device offers, and `getClient()` with no configuration silently asks for one of them. Reporting that one variant's refusal as the device's answer produced two wrong diagnoses in a row on the same phone. A probe also means a model AICore begins serving later is picked up with no code change |
 | 2026-09-04 | A `FeatureStatus` value the build does not know is `unknown`, not `unavailable` | The enumeration has grown before. Reading a future value as a refusal is the same class of mistake as reading one variant's refusal as the device's, and it fails in the direction that tells a working device it is broken |
 | 2026-09-04 | `genai-prompt` is pinned to `1.0.0-beta4`, and a beta bump is treated as a possible bug fix rather than only a feature release | An older client throws `FEATURE_NOT_FOUND` from `checkStatus()` on every Gemini Nano v4 device, which is what a Z Fold 8 reported and what M3.0 wrote down as "this hardware is off the list". The device was on the list; the client could not ask. The release notes had said so a month before the report |

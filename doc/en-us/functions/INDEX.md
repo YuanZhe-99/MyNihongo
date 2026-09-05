@@ -4,17 +4,17 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **917** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **922** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **888** documented declarations. The two counts are measured separately and
+The rows below sum to **895** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
 | Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 173 |
-| Tier B (index row only) | 715 |
-| **Total** | **888** |
+| Tier B (index row only) | 722 |
+| **Total** | **895** |
 
 These totals were measured against the source tree at initialization (`PLAN.md` M1.0). If you
 change these numbers, measure them rather than adjusting them by hand:
@@ -47,9 +47,9 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 
 | Source file | Page | Declarations | Tier A count |
 |---|---|---|---|
-| `lib/features/ai/services/ai_assist_service.dart` | [features/ai/services/ai_assist_service.md](features/ai/services/ai_assist_service.md) | 18 | 4 |
+| `lib/features/ai/services/ai_assist_service.dart` | [features/ai/services/ai_assist_service.md](features/ai/services/ai_assist_service.md) | 20 | 4 |
 | `lib/features/ai/services/aicore_sentence_enhancer.dart` | [features/ai/services/aicore_sentence_enhancer.md](features/ai/services/aicore_sentence_enhancer.md) | 4 | 3 |
-| `lib/features/ai/services/genai_backend.dart` | [features/ai/services/genai_backend.md](features/ai/services/genai_backend.md) | 25 | 2 |
+| `lib/features/ai/services/genai_backend.dart` | [features/ai/services/genai_backend.md](features/ai/services/genai_backend.md) | 26 | 2 |
 | `lib/features/ai/services/prompt_builder.dart` | [features/ai/services/prompt_builder.md](features/ai/services/prompt_builder.md) | 15 | 4 |
 | `lib/features/ai/services/response_parser.dart` | [features/ai/services/response_parser.md](features/ai/services/response_parser.md) | 9 | 2 |
 | `lib/features/ai/services/writing_rewrite.dart` | [features/ai/services/writing_rewrite.md](features/ai/services/writing_rewrite.md) | 2 | 1 |
@@ -77,7 +77,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/progress/models/study_record.dart` | [features/progress/models/study_record.md](features/progress/models/study_record.md) | 23 | 5 |
 | `lib/features/progress/models/learner_profile.dart` | [features/progress/models/learner_profile.md](features/progress/models/learner_profile.md) | 7 | 2 |
 | `lib/features/progress/models/history_entry.dart` | [features/progress/models/history_entry.md](features/progress/models/history_entry.md) | 12 | 4 |
-| `lib/features/progress/services/nihongo_storage.dart` | [features/progress/services/nihongo_storage.md](features/progress/services/nihongo_storage.md) | 43 | 3 |
+| `lib/features/progress/services/nihongo_storage.dart` | [features/progress/services/nihongo_storage.md](features/progress/services/nihongo_storage.md) | 45 | 3 |
 | `lib/features/progress/services/review_queue.dart` | [features/progress/services/review_queue.md](features/progress/services/review_queue.md) | 7 | 2 |
 | `lib/features/progress/services/sm2_scheduler.dart` | [features/progress/services/sm2_scheduler.md](features/progress/services/sm2_scheduler.md) | 5 | 2 |
 | `lib/features/settings/views/license_page.dart` | [features/settings/views/license_page.md](features/settings/views/license_page.md) | 2 | 0 |
@@ -130,7 +130,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 
 | Source file | Page | Declarations | Tier A count |
 |---|---|---|---|
-| `lib/shared/providers/app_settings.dart` | [shared/providers/app_settings.md](shared/providers/app_settings.md) | 8 | 0 |
+| `lib/shared/providers/app_settings.dart` | [shared/providers/app_settings.md](shared/providers/app_settings.md) | 10 | 0 |
 | `lib/shared/providers/progress_provider.dart` | [shared/providers/progress_provider.md](shared/providers/progress_provider.md) | 5 | 0 |
 | `lib/shared/providers/learner_profile_provider.dart` | [shared/providers/learner_profile_provider.md](shared/providers/learner_profile_provider.md) | 3 | 0 |
 | `lib/shared/providers/history_provider.dart` | [shared/providers/history_provider.md](shared/providers/history_provider.md) | 3 | 2 |

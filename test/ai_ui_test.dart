@@ -30,6 +30,8 @@ class _FakeGenAiBackend extends GenAiBackend {
     this.core,
     this.perFeature = const {},
     this.variant,
+    this.fastVariant,
+    this.served,
     this.refused,
     this.baseModelName,
     this.tokenLimit,
@@ -48,6 +50,10 @@ class _FakeGenAiBackend extends GenAiBackend {
   /// What the probe found: the variant serving, the ones refused, and the
   /// model behind the one that answered.
   final String? variant;
+
+  /// What the probe reports when the faster model is asked for instead.
+  final String? fastVariant;
+  final String? served;
   final String? refused;
   final String? baseModelName;
   final int? tokenLimit;
@@ -60,15 +66,19 @@ class _FakeGenAiBackend extends GenAiBackend {
   }
 
   @override
-  Future<GenAiStatusReport> statusReport(GenAiFeature feature) async =>
-      GenAiStatusReport(
-        await status(feature),
-        detail: detail,
-        variant: variant,
-        refused: refused,
-        baseModelName: baseModelName,
-        tokenLimit: tokenLimit,
-      );
+  Future<GenAiStatusReport> statusReport(
+    GenAiFeature feature, {
+    bool force = false,
+    bool preferFast = false,
+  }) async => GenAiStatusReport(
+    await status(feature),
+    detail: detail,
+    variant: preferFast ? fastVariant ?? variant : variant,
+    served: served,
+    refused: refused,
+    baseModelName: baseModelName,
+    tokenLimit: tokenLimit,
+  );
 
   @override
   Future<GenAiCoreInfo?> coreInfo() async => core;
@@ -203,7 +213,7 @@ void main() {
     expect(find.text('Correction suggestions'), findsOneWidget);
     expect(find.text('Ready'), findsNWidgets(2));
     expect(
-      find.textContaining('AICore system service'),
+      find.textContaining('The download is performed by the Android AICore'),
       findsOneWidget,
       reason: 'who performs the download is stated where the button is',
     );
@@ -595,4 +605,104 @@ void main() {
       debugDefaultTargetPlatformOverride = null;
     },
   );
+  testWidgets('a device serving both sizes offers the choice, and uses it', (
+    tester,
+  ) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.android;
+    await useService(
+      _FakeGenAiBackend(
+        variant: 'stable/full',
+        fastVariant: 'stable/fast',
+        served: 'stable/full, stable/fast',
+        baseModelName: 'nano-v4',
+      ),
+      enabled: true,
+    );
+
+    await pumpSettings(tester);
+    await tester.tap(find.byType(SwitchListTile));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Prefer the faster model'), findsOneWidget);
+    expect(find.textContaining('stable/full · nano-v4'), findsNWidgets(2));
+
+    await tester.tap(find.text('Prefer the faster model'));
+    await tester.pumpAndSettle();
+
+    // The switch is not a note for next launch: the row names the model that
+    // is serving now.
+    expect(find.textContaining('stable/fast · nano-v4'), findsNWidgets(2));
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
+  testWidgets('a device serving one size is offered no choice', (tester) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.android;
+    // The Galaxy Z Fold 8: the larger model is refused, the faster one serves.
+    await useService(
+      _FakeGenAiBackend(
+        variant: 'stable/fast',
+        served: 'stable/fast',
+        refused: 'stable/full',
+        baseModelName: 'nano-v4-fast',
+      ),
+      enabled: true,
+    );
+
+    await pumpSettings(tester);
+    await tester.tap(find.byType(SwitchListTile));
+    await tester.pumpAndSettle();
+
+    expect(
+      find.text('Prefer the faster model'),
+      findsNothing,
+      reason: 'a switch that cannot change what is serving is worse than none',
+    );
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
+  testWidgets('the page says where the model lives and that it stays there', (
+    tester,
+  ) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.android;
+    await useService(_FakeGenAiBackend(), enabled: true);
+
+    await pumpSettings(tester);
+    await tester.tap(find.byType(SwitchListTile));
+    await tester.pumpAndSettle();
+
+    // No Remove button anywhere: neither ML Kit client exposes a way to delete
+    // a model, and the file is AICore's, shared with every app that uses it.
+    expect(
+      find.textContaining('It cannot be removed from here'),
+      findsOneWidget,
+    );
+    expect(find.widgetWithText(FilledButton, 'Remove'), findsNothing);
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+  testWidgets('a downloadable feature is not decorated with a refusal line', (
+    tester,
+  ) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.android;
+    // The Pixel 10 on first run: the model is not fetched yet, and three
+    // variants were refused on the way to finding the one that serves. Saying
+    // so under "Not downloaded yet" reads as a fault beside a perfectly normal
+    // state, so the platform sends no detail for it and none is shown.
+    await useService(
+      _FakeGenAiBackend(status_: GenAiStatus.downloadable),
+      enabled: true,
+    );
+
+    await pumpSettings(tester);
+    await tester.tap(find.byType(SwitchListTile));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Not downloaded yet'), findsNWidgets(2));
+    expect(find.textContaining('refused'), findsNothing);
+    expect(find.widgetWithText(FilledButton, 'Download'), findsNWidgets(2));
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
 }

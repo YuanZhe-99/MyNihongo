@@ -52,6 +52,9 @@ class _FakeGenAiBackend extends GenAiBackend {
   /// The answer length the last `explain` asked for.
   int? lastMaxOutputTokens;
 
+  /// The model size the last status request asked for.
+  bool? lastPreferFast;
+
   @override
   Future<GenAiStatus> status(GenAiFeature feature) async {
     calls.add('status:${feature.name}');
@@ -59,8 +62,14 @@ class _FakeGenAiBackend extends GenAiBackend {
   }
 
   @override
-  Future<GenAiStatusReport> statusReport(GenAiFeature feature) async =>
-      GenAiStatusReport(await status(feature), detail: detail);
+  Future<GenAiStatusReport> statusReport(
+    GenAiFeature feature, {
+    bool force = false,
+    bool preferFast = false,
+  }) async {
+    lastPreferFast = preferFast;
+    return GenAiStatusReport(await status(feature), detail: detail);
+  }
 
   @override
   Future<GenAiCoreInfo?> coreInfo() async {

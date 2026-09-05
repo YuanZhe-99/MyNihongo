@@ -1376,6 +1376,17 @@ class AppLocalizationsEn extends AppLocalizations {
       'The download is performed by the Android AICore system service, which fetches the model from Google. It starts only when you tap Download.';
 
   @override
+  String get aiPreferFast => 'Prefer the faster model';
+
+  @override
+  String get aiPreferFastBody =>
+      'This device serves two model sizes. The larger one writes better explanations; the faster one answers sooner and uses less memory. Changing this re-checks the device straight away.';
+
+  @override
+  String get aiModelStorageNote =>
+      'The model belongs to the Android AICore system service, not to this app, and is shared with every app that uses the same model. It cannot be removed from here; use Android\'s own settings for AICore.';
+
+  @override
   String get aiDownloading => 'Downloading…';
 
   @override

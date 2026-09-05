@@ -11,7 +11,9 @@
 | `AppSettingsNotifier.setThemeMode` | 方法 | B | 更新并持久化主题模式；`system` 存为缺失的键。 |
 | `AppSettingsNotifier.setLocale` | 方法 | B | 以 `language` 或 `language_COUNTRY` 更新并持久化语言；null 跟随系统。承载 `zh_TW` 的正是国家代码。 |
 | `AppSettingsNotifier.setAiAssistEnabled` | 方法 | B | 打开或关闭端侧 AI；应用到 `AiAssistService` 并持久化，关闭存为缺失键。 |
+| `AppSettingsNotifier.setPreferFastModel` | 方法 | B | 选择较大或较快的端侧模型；重新探测并持久化。 |
 | `AppSettings.aiAssistEnabled` | 字段 | B | 用户是否打开了端侧 AI。未打开则为 false。 |
+| `AppSettings.preferFastModel` | 字段 | B | 设备同时提供两种规格时，是否优先使用较快的端侧模型。 |
 | `AppSettings.new` | 构造函数 | B | 创建应用设置实例。 |
 | `AppSettings.copyWith` | 方法 | B | 创建替换了选定字段的副本；`clearLocale` 存在是因为 null 已经表示「保留」。 |
 

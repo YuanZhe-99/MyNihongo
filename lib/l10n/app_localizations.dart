@@ -2517,6 +2517,24 @@ abstract class AppLocalizations {
   /// **'The download is performed by the Android AICore system service, which fetches the model from Google. It starts only when you tap Download.'**
   String get aiDownloadNote;
 
+  /// No description provided for @aiPreferFast.
+  ///
+  /// In en, this message translates to:
+  /// **'Prefer the faster model'**
+  String get aiPreferFast;
+
+  /// No description provided for @aiPreferFastBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This device serves two model sizes. The larger one writes better explanations; the faster one answers sooner and uses less memory. Changing this re-checks the device straight away.'**
+  String get aiPreferFastBody;
+
+  /// No description provided for @aiModelStorageNote.
+  ///
+  /// In en, this message translates to:
+  /// **'The model belongs to the Android AICore system service, not to this app, and is shared with every app that uses the same model. It cannot be removed from here; use Android\'s own settings for AICore.'**
+  String get aiModelStorageNote;
+
   /// No description provided for @aiDownloading.
   ///
   /// In en, this message translates to:

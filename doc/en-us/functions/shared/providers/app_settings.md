@@ -15,7 +15,9 @@ Device-local UI preferences as Riverpod state: `AppSettings` (theme mode, locale
 | `AppSettingsNotifier.setThemeMode` | method | B | Update and persist the theme mode; `system` is stored as an absent key. |
 | `AppSettingsNotifier.setLocale` | method | B | Update and persist the locale as `language` or `language_COUNTRY`; null follows the system. The country is what carries `zh_TW`. |
 | `AppSettingsNotifier.setAiAssistEnabled` | method | B | Turn on-device AI on or off; applies it to `AiAssistService` and persists it, off as an absent key. |
+| `AppSettingsNotifier.setPreferFastModel` | method | B | Choose the larger or the faster on-device model; re-probes and persists it. |
 | `AppSettings.aiAssistEnabled` | field | B | Whether the user turned on-device AI on. False unless they did. |
+| `AppSettings.preferFastModel` | field | B | Whether the faster on-device model is preferred where a device serves both sizes. |
 | `AppSettings.new` | constructor | B | Create an app settings instance. |
 | `AppSettings.copyWith` | method | B | Create a copy with selected fields replaced; `clearLocale` exists because null already means "keep". |
 
