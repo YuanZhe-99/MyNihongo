@@ -1,10 +1,23 @@
 # lib/features/settings/views/settings_page.dart
 
-`SettingsPage` is the fifth tab. It shows three sections — General (theme segmented button,
+`SettingsPage` is the fifth tab. It shows sections — General (theme segmented button,
 language dropdown: system, English, 简体中文, 繁體中文), Data, About (version, privacy policy, license, open-source
 licenses) — and lays itself out in one or two panes by `canSplitLayout`. Data now holds the WebDAV sync row (with a live status subtitle), the backup row, ZIP export and
 import, and the storage location. The private `_SettingsDetail` enum names the four rows that lead
 to a second-level page: `webdav`, `backup`, `privacy`, `license`. Export and import act in place. See [../../../../adaptive-layout.md](../../../../adaptive-layout.md).
+
+Since v0.4.6 the version row in About is tappable. Eight taps unlock developer options — the
+top-level `_debugUnlockTaps` constant, eight because that is what Android itself asks for. Copying
+the gesture exactly is the point: somebody who needs the diagnostics already knows how to do it, and
+nobody else will find it by accident. `_versionTaps` counts the run; it lives in the state object,
+so it resets when the page is rebuilt from scratch and the count is a deliberate run of taps rather
+than something a learner accumulates over weeks. Once unlocked, a **Developer options**
+`SwitchListTile` appears in About, below the version row — and only once it is on, because an "off"
+row there would be an invitation, and the point of hiding diagnostics is that they are not for the
+learner who has not gone looking for them. Turning it off through that switch also resets
+`_versionTaps`. The flag itself lives in `AppSettings.debugMode`
+([../../../shared/providers/app_settings.md](../../../shared/providers/app_settings.md)) and is read
+by [../../ai/widgets/ai_settings_tiles.md](../../ai/widgets/ai_settings_tiles.md).
 
 ## Declarations
 
@@ -16,6 +29,8 @@ to a second-level page: `webdav`, `backup`, `privacy`, `license`. Export and imp
 | `_SettingsPageState._loadVersion` | method | B | Read the app version from `PackageInfo.fromPlatform()` for the About section. |
 | `_SettingsPageState._refreshSyncStatus` | method | B | Redraw the WebDAV row when background sync status changes. |
 | `_SettingsPageState.dispose` | method | B | Drop the sync status listener. |
+| [`_SettingsPageState._onVersionTapped`](#onversiontapped) | method | A | Count taps on the version row, and unlock developer options at eight. |
+| `_SettingsPageState._debugCountdown` | method | B | Say how many taps are left, once the run is clearly deliberate; null while there is nothing to say. |
 | `_SettingsPageState._loadStoragePath` | method | B | Read the active storage directory for display. |
 | `_SettingsPageState._syncSubtitle` | method | B | Summarize sync health for the WebDAV row's subtitle. |
 | `_SettingsPageState._exportZip` | method | B | Write every data module to a ZIP in a folder the user picks. |
@@ -28,6 +43,26 @@ to a second-level page: `webdav`, `backup`, `privacy`, `license`. Export and imp
 | `_SettingsPageState._buildSettingsList` | method (widget helper) | B | Build the scrolling list of settings sections. |
 
 ## Documentation
+
+### `void _onVersionTapped()` <a id="onversiontapped"></a>
+
+- **Kind:** method of `_SettingsPageState`
+- **Purpose:** Count taps on the version row, and unlock developer options at eight.
+- **Inputs:** None.
+- **Returns:** None.
+- **Side effects:** `setState` on the counter; at eight, `setDebugMode(true)` — which persists the
+  preference — and a snack bar saying developer options are on.
+- **Algorithm:** Return immediately when `debugMode` is already on, so a second run does nothing;
+  otherwise increment `_versionTaps`, and on reaching `_debugUnlockTaps` (8) reset the counter, set
+  the flag and show the snack bar.
+- **Usage:** The version row's `onTap`.
+- **Notes:** Eight taps on the version is Android's own gesture, and copying it exactly is the point:
+  somebody who needs this already knows how to do it, and nobody else will find it by accident. The
+  countdown is `_debugCountdown`, shown as the version row's **own subtitle** rather than as a snack
+  bar — not a style choice: a snack bar sits at the bottom of the screen, About is at the bottom of a
+  long list, and the countdown would have covered the row the next tap has to land on. It stays quiet
+  until three taps out, so an accidental double-tap says nothing while a deliberate run tells the
+  person doing it that it is working.
 
 ### `void _open(_SettingsDetail detail)` <a id="open"></a>
 

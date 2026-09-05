@@ -113,18 +113,42 @@ the client can name, keeps the first that answers, and shows which ones refused 
 sentence that fits four different requests. Nothing here names a device or a client version. The
 story, including two wrong diagnoses, is in [`../android-aicore.md`](../android-aicore.md).
 
-A row that cannot offer the feature says which of two different things happened:
+A row that cannot offer the feature says so, and offers a **re-check** — availability changes
+without the app doing anything, because AICore provisions itself after setup and sometimes only
+after a restart.
 
-| Row | Meaning | Diagnostic line under it |
-|---|---|---|
-| Not available on this device | AICore was asked and refused every variant | the raw `FeatureStatus` value and the variants refused |
-| The AI service could not be reached | the call itself failed | the exception class and message |
-| The device reported a status this version does not recognise | AICore answered something newer than this build | the raw value |
+What it does **not** say, by default, is why. That is the change in `v0.4.6`, made because the page
+had drifted into being written for whoever had to debug it:
 
-A **working** row carries a line too: the variant serving it, the model behind it and its token
-limit. "Ready" alone does not say what is ready, and the answer differs per device. On a Galaxy
-Z Fold 8 that reads `stable/fast · nano-v4-fast`; on a Pixel 10 it may name a different model
-entirely.
+| Row, as a learner sees it | What it means underneath |
+|---|---|
+| Not available on this device | AICore was asked and refused every variant — **or** it answered something newer than this build recognises |
+| The AI service could not be reached | the call itself failed |
+
+The distinction in the first row is real, and getting it wrong is exactly the class of mistake that
+produced two wrong diagnoses: reading an unrecognised status as a refusal tells a working device it
+is broken. But it is not a distinction a learner can act on, and both lead to the same next step.
+
+### Developer options
+
+Everything the old page showed inline now lives behind a debug mode, unlocked by tapping the version
+row in **Settings › About** eight times — Android's own gesture, copied exactly, because somebody
+who needs this already knows how to do it and nobody else will find it by accident. The countdown
+appears as the row's own subtitle from three taps out; a snack bar would have covered the row the
+next tap has to land on.
+
+With it on, the section adds:
+
+| Line | Where it comes from |
+|---|---|
+| `stable/full · nano-v4 · 4096 tok` under a working feature | the variant that answered, the model behind it, its token limit |
+| `FeatureStatus=0 · refused: stable/full, stable/fast, …` under a refused one | the raw status and every variant tried |
+| `AICore aicore_20260723.00_RC11 · Pixel 10 · AICore can serve models on this device` | the AICore build, the device, and whether ML Kit could be asked at all |
+| The device reported a status this version does not recognise | the unrecognised-status row, told apart from a refusal |
+
+The preference is in `storage_config.json` and is **not synced**. What it reveals is the diagnosis of
+*this* phone; carrying it to another would turn diagnostics on where nobody asked and where every
+number would be about a different device.
 
 ### Choosing the model, where there is a choice
 

@@ -1315,13 +1315,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aiEnableBody =>
-      'Off by default. When on, the sentence lab can explain a finding in more words and suggest a correction, using a model that runs on this device. Generated text is always labelled and never changes the analysis.';
+      'Off by default. When it is on, the app can explain an answer in more detail, suggest a correction, and write extra practice questions. Everything runs on this phone — nothing you write is sent anywhere.';
 
   @override
   String get aiUnsupportedPlatform => 'This platform has no on-device model.';
 
   @override
-  String get aiStatusPrompt => 'Explanations';
+  String get aiStatusPrompt => 'Explanations and extra questions';
 
   @override
   String get aiStatusProofread => 'Correction suggestions';
@@ -1337,10 +1337,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'The device reported a status this version does not recognise';
 
   @override
-  String get aiStatusDownloadable => 'Not downloaded yet';
+  String get aiStatusDownloadable => 'Needs a one-time download';
 
   @override
-  String get aiStatusDownloading => 'The system is downloading it';
+  String get aiStatusDownloading => 'Downloading…';
 
   @override
   String get aiStatusAvailable => 'Ready';
@@ -1367,18 +1367,18 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aiDownloadNote =>
-      'The download is performed by the Android AICore system service, which fetches the model from Google. It starts only when you tap Download.';
+      'Android downloads the model, not this app, and only when you tap Download.';
 
   @override
-  String get aiPreferFast => 'Prefer the faster model';
+  String get aiPreferFast => 'Use the faster model';
 
   @override
   String get aiPreferFastBody =>
-      'This device serves two model sizes. The larger one writes better explanations; the faster one answers sooner and uses less memory. Changing this re-checks the device straight away.';
+      'Answers come sooner, and are usually shorter.';
 
   @override
   String get aiModelStorageNote =>
-      'The model belongs to the Android AICore system service, not to this app, and is shared with every app that uses the same model. It cannot be removed from here; use Android\'s own settings for AICore.';
+      'The model belongs to Android and is shared with other apps that use it, so it cannot be removed from here.';
 
   @override
   String get aiDownloading => 'Downloading…';
@@ -1595,4 +1595,25 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get jlptHistoryNote =>
       'A score here is over the questions this app asked. It is not a JLPT score.';
+
+  @override
+  String get settingsDebugMode => 'Developer options';
+
+  @override
+  String get settingsDebugModeBody =>
+      'Shows technical detail about the on-device AI: which model this phone is using and why it is or is not available. Useful in a bug report; nothing here changes how the app works.';
+
+  @override
+  String get settingsDebugUnlocked => 'Developer options are on.';
+
+  @override
+  String settingsDebugStepsLeft(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n more taps for developer options',
+      one: '1 more tap for developer options',
+    );
+    return '$_temp0';
+  }
 }

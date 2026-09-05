@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -8,7 +10,9 @@ import 'package:my_nihongo/features/ai/widgets/ai_explanation_card.dart';
 import 'package:my_nihongo/features/ai/widgets/ai_settings_tiles.dart';
 import 'package:my_nihongo/features/content/services/content_repository.dart';
 import 'package:my_nihongo/features/sentence/views/sentence_lab_page.dart';
+import 'package:my_nihongo/features/progress/services/nihongo_storage.dart';
 import 'package:my_nihongo/l10n/app_localizations.dart';
+import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
 
 /// Purpose: Test what the learner can see and reach, with and without an
 /// on-device model.
@@ -110,13 +114,35 @@ class _FakeGenAiBackend extends GenAiBackend {
   Future<void> cancel() async => calls.add('cancel');
 }
 
+/// A documents directory the test owns, so a written preference does not
+/// escape into the developer's own config file.
+class _FakePathProvider extends PathProviderPlatform {
+  _FakePathProvider(this.documentsPath);
+  final String documentsPath;
+  @override
+  Future<String?> getApplicationDocumentsPath() async => documentsPath;
+}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+
+  // Only the tests that unlock developer options need real storage. Giving
+  // every test a path provider made the settings notifier load a config that
+  // said AI was off, which switched the service back off underneath the lab
+  // tests that had just turned it on.
+  Directory? temp;
 
   setUpAll(() => ContentRepository.parseInIsolate = false);
   tearDownAll(() {
     ContentRepository.parseInIsolate = true;
     AiAssistService.setInstanceForTest(AiAssistService());
+  });
+
+  tearDown(() async {
+    if (temp != null && temp!.existsSync()) {
+      await temp!.delete(recursive: true);
+    }
+    temp = null;
   });
 
   /// Install a service the test controls, and put the singleton back after.
@@ -131,22 +157,51 @@ void main() {
     return service;
   }
 
-  Future<void> pumpSettings(WidgetTester tester, {Locale? locale}) async {
+  /// Purpose: Show the AI settings section, optionally with developer options
+  /// already unlocked.
+  /// Inputs: The `tester`, a `locale`, and `debug`.
+  /// Returns: None.
+  /// Side effects: Writes `storage_config.json` in a temporary directory when
+  /// `debug` is set; pumps the widget.
+  /// Notes: The preference is written to the real config file rather than
+  /// injected, so what these tests exercise is the path the eight-tap unlock
+  /// actually takes. Writing it needs `runAsync`, because `testWidgets` runs
+  /// its body in a fake-async zone where a `dart:io` write never completes.
+  Future<void> pumpSettings(
+    WidgetTester tester, {
+    Locale? locale,
+    bool debug = false,
+  }) async {
     tester.view.devicePixelRatio = 1.0;
     tester.view.physicalSize = const Size(412, 915);
     addTearDown(tester.view.reset);
-    await tester.pumpWidget(
-      ProviderScope(
-        child: MaterialApp(
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          supportedLocales: AppLocalizations.supportedLocales,
-          locale: locale ?? const Locale('en'),
-          home: const Scaffold(
-            body: SingleChildScrollView(child: AiSettingsTiles()),
+    if (debug) {
+      await tester.runAsync(() async {
+        temp = await Directory.systemTemp.createTemp('mynihongo_aiui_');
+        PathProviderPlatform.instance = _FakePathProvider(temp!.path);
+        await NihongoStorage.setDebugMode(true);
+      });
+    }
+    await tester.runAsync(() async {
+      await tester.pumpWidget(
+        ProviderScope(
+          child: MaterialApp(
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
+            locale: locale ?? const Locale('en'),
+            home: const Scaffold(
+              body: SingleChildScrollView(child: AiSettingsTiles()),
+            ),
           ),
         ),
-      ),
-    );
+      );
+      // The settings notifier reads the config file on construction, so the
+      // first frame is drawn before the preference has arrived.
+      for (var i = 0; i < 6; i++) {
+        await Future<void>.delayed(const Duration(milliseconds: 20));
+        await tester.pump();
+      }
+    });
     await tester.pumpAndSettle();
   }
 
@@ -209,11 +264,11 @@ void main() {
     await tester.tap(find.byType(SwitchListTile));
     await tester.pumpAndSettle();
 
-    expect(find.text('Explanations'), findsOneWidget);
+    expect(find.text('Explanations and extra questions'), findsOneWidget);
     expect(find.text('Correction suggestions'), findsOneWidget);
     expect(find.text('Ready'), findsNWidgets(2));
     expect(
-      find.textContaining('The download is performed by the Android AICore'),
+      find.textContaining('Android downloads the model, not this app'),
       findsOneWidget,
       reason: 'who performs the download is stated where the button is',
     );
@@ -232,7 +287,7 @@ void main() {
     await tester.tap(find.byType(SwitchListTile));
     await tester.pumpAndSettle();
 
-    expect(find.text('Not downloaded yet'), findsNWidgets(2));
+    expect(find.text('Needs a one-time download'), findsNWidgets(2));
     expect(find.text('Download'), findsNWidgets(2));
 
     await tester.tap(find.text('Download').first);
@@ -449,7 +504,7 @@ void main() {
     );
     await useService(backend, enabled: true);
 
-    await pumpSettings(tester);
+    await pumpSettings(tester, debug: true);
     await tester.tap(find.byType(SwitchListTile));
     await tester.pumpAndSettle();
 
@@ -483,7 +538,7 @@ void main() {
       enabled: true,
     );
 
-    await pumpSettings(tester);
+    await pumpSettings(tester, debug: true);
     await tester.tap(find.byType(SwitchListTile));
     await tester.pumpAndSettle();
 
@@ -533,7 +588,7 @@ void main() {
       enabled: true,
     );
 
-    await pumpSettings(tester);
+    await pumpSettings(tester, debug: true);
     await tester.tap(find.byType(SwitchListTile));
     await tester.pumpAndSettle();
 
@@ -565,7 +620,7 @@ void main() {
       enabled: true,
     );
 
-    await pumpSettings(tester);
+    await pumpSettings(tester, debug: true);
     await tester.tap(find.byType(SwitchListTile));
     await tester.pumpAndSettle();
 
@@ -589,7 +644,7 @@ void main() {
         enabled: true,
       );
 
-      await pumpSettings(tester);
+      await pumpSettings(tester, debug: true);
       await tester.tap(find.byType(SwitchListTile));
       await tester.pumpAndSettle();
 
@@ -619,14 +674,14 @@ void main() {
       enabled: true,
     );
 
-    await pumpSettings(tester);
+    await pumpSettings(tester, debug: true);
     await tester.tap(find.byType(SwitchListTile));
     await tester.pumpAndSettle();
 
-    expect(find.text('Prefer the faster model'), findsOneWidget);
+    expect(find.text('Use the faster model'), findsOneWidget);
     expect(find.textContaining('stable/full · nano-v4'), findsNWidgets(2));
 
-    await tester.tap(find.text('Prefer the faster model'));
+    await tester.tap(find.text('Use the faster model'));
     await tester.pumpAndSettle();
 
     // The switch is not a note for next launch: the row names the model that
@@ -654,7 +709,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(
-      find.text('Prefer the faster model'),
+      find.text('Use the faster model'),
       findsNothing,
       reason: 'a switch that cannot change what is serving is worse than none',
     );
@@ -674,10 +729,7 @@ void main() {
 
     // No Remove button anywhere: neither ML Kit client exposes a way to delete
     // a model, and the file is AICore's, shared with every app that uses it.
-    expect(
-      find.textContaining('It cannot be removed from here'),
-      findsOneWidget,
-    );
+    expect(find.textContaining('cannot be removed from here'), findsOneWidget);
     expect(find.widgetWithText(FilledButton, 'Remove'), findsNothing);
     expect(tester.takeException(), isNull);
     debugDefaultTargetPlatformOverride = null;
@@ -688,7 +740,7 @@ void main() {
     debugDefaultTargetPlatformOverride = TargetPlatform.android;
     // The Pixel 10 on first run: the model is not fetched yet, and three
     // variants were refused on the way to finding the one that serves. Saying
-    // so under "Not downloaded yet" reads as a fault beside a perfectly normal
+    // so under "Needs a one-time download" reads as a fault beside a perfectly normal
     // state, so the platform sends no detail for it and none is shown.
     await useService(
       _FakeGenAiBackend(status_: GenAiStatus.downloadable),
@@ -699,10 +751,150 @@ void main() {
     await tester.tap(find.byType(SwitchListTile));
     await tester.pumpAndSettle();
 
-    expect(find.text('Not downloaded yet'), findsNWidgets(2));
+    expect(find.text('Needs a one-time download'), findsNWidgets(2));
     expect(find.textContaining('refused'), findsNothing);
     expect(find.widgetWithText(FilledButton, 'Download'), findsNWidgets(2));
     expect(tester.takeException(), isNull);
     debugDefaultTargetPlatformOverride = null;
+  });
+
+  group('developer options', () {
+    // The report that produced this: the AI rows were long, written from the
+    // implementation's point of view, and full of things a learner has no way
+    // to act on. Every one of them was there for a reason — two wrong
+    // diagnoses came from a Settings page that could not say why a device said
+    // no — but that audience is one person with a cable, not the learner.
+
+    testWidgets('a working feature says only that it is ready', (tester) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.android;
+      await useService(
+        _FakeGenAiBackend(
+          variant: 'stable/full',
+          served: 'stable/full',
+          baseModelName: 'nano-v4',
+          tokenLimit: 4096,
+        ),
+        enabled: true,
+      );
+
+      await pumpSettings(tester);
+      await tester.tap(find.byType(SwitchListTile));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Ready'), findsNWidgets(2));
+      expect(
+        find.textContaining('stable/full'),
+        findsNothing,
+        reason: 'a learner cannot act on a model variant',
+      );
+      expect(find.textContaining('nano-v4'), findsNothing);
+      expect(find.textContaining('4096 tok'), findsNothing);
+      expect(tester.takeException(), isNull);
+      debugDefaultTargetPlatformOverride = null;
+    });
+
+    testWidgets('a refused feature does not show the raw status either', (
+      tester,
+    ) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.android;
+      await useService(
+        _FakeGenAiBackend(
+          status_: GenAiStatus.unavailable,
+          detail: 'FeatureStatus=0 · refused: stable/full, stable/fast',
+          core: const GenAiCoreInfo(
+            installed: true,
+            versionName: 'aicore_20260723.00_RC11',
+            sdk: 36,
+            device: 'Pixel 10',
+          ),
+        ),
+        enabled: true,
+      );
+
+      await pumpSettings(tester);
+      await tester.tap(find.byType(SwitchListTile));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Not available on this device'), findsNWidgets(2));
+      expect(find.textContaining('FeatureStatus'), findsNothing);
+      expect(find.textContaining('aicore_'), findsNothing);
+      // The re-check button stays. Availability changes without the app doing
+      // anything, and that is something a learner can act on.
+      expect(find.byIcon(Icons.refresh), findsNWidgets(2));
+      expect(tester.takeException(), isNull);
+      debugDefaultTargetPlatformOverride = null;
+    });
+
+    testWidgets('an unrecognised status reads as unavailable to a learner', (
+      tester,
+    ) async {
+      // The distinction is real and worth keeping — reading an unknown status
+      // as a refusal is exactly the mistake that produced two wrong diagnoses
+      // — but it is not a distinction a learner can act on.
+      debugDefaultTargetPlatformOverride = TargetPlatform.android;
+      await useService(
+        _FakeGenAiBackend(status_: GenAiStatus.unknown, detail: 'raw=7'),
+        enabled: true,
+      );
+
+      await pumpSettings(tester);
+      await tester.tap(find.byType(SwitchListTile));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Not available on this device'), findsNWidgets(2));
+      expect(
+        find.textContaining('does not recognise'),
+        findsNothing,
+        reason: 'that sentence is for whoever has to work out why',
+      );
+      expect(tester.takeException(), isNull);
+      debugDefaultTargetPlatformOverride = null;
+    });
+
+    testWidgets('unlocked, the same device shows the whole diagnosis', (
+      tester,
+    ) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.android;
+      await useService(
+        _FakeGenAiBackend(status_: GenAiStatus.unknown, detail: 'raw=7'),
+        enabled: true,
+      );
+
+      await pumpSettings(tester, debug: true);
+      await tester.tap(find.byType(SwitchListTile));
+      await tester.pumpAndSettle();
+
+      expect(
+        find.text(
+          'The device reported a status this version does not '
+          'recognise',
+        ),
+        findsNWidgets(2),
+      );
+      expect(find.text('raw=7'), findsNWidgets(2));
+      expect(tester.takeException(), isNull);
+      debugDefaultTargetPlatformOverride = null;
+    });
+
+    testWidgets('the plain copy names no internal machinery', (tester) async {
+      // The specific complaint. "AICore", "system service" and "model variant"
+      // are words the app knows and the learner does not.
+      debugDefaultTargetPlatformOverride = TargetPlatform.android;
+      await useService(_FakeGenAiBackend(), enabled: true);
+
+      await pumpSettings(tester);
+      await tester.tap(find.byType(SwitchListTile));
+      await tester.pumpAndSettle();
+
+      for (final jargon in const ['AICore', 'system service', 'variant']) {
+        expect(
+          find.textContaining(jargon),
+          findsNothing,
+          reason: '"$jargon" is a word the app knows, not the learner',
+        );
+      }
+      expect(tester.takeException(), isNull);
+      debugDefaultTargetPlatformOverride = null;
+    });
   });
 }

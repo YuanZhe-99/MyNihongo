@@ -13,6 +13,17 @@ button, because AICore provisions itself after setup and sometimes only after a 
 the section names the installed AICore build and the device. See
 [`../../../../features/ai-assist.md`](../../../../features/ai-assist.md).
 
+Since v0.4.6 every one of those diagnostic lines is behind developer options. What a learner sees is
+the status sentence and nothing else: the untranslated `_diagnostic` line names a model variant and a
+token limit, the AICore line names a package version, and a learner can act on none of it — "Ready"
+is the whole of what they need. Behind the flag the lines are still the first thing a bug report
+needs, which is why none of them were deleted. `_featureRow` takes the flag as a required `debug`
+parameter and `_statusLabel` as an optional one, so a caller cannot leak a diagnostic line by
+forgetting to pass it; the AICore line is gated on `settings.debugMode` at the call site. The flag
+is `AppSettings.debugMode`, unlocked by tapping the version row eight times — see
+[`../../../shared/providers/app_settings.md`](../../../shared/providers/app_settings.md) and
+[`../../settings/views/settings_page.md`](../../settings/views/settings_page.md).
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |
@@ -22,9 +33,10 @@ the section names the installed AICore build and the device. See
 | `dispose` | method | B | Stop following the service. |
 | `_onServiceChanged` | method | B | Rebuild when a status or a download changes. |
 | [`build`](#build) | method | A | Build the switch and the rows. |
-| [`_featureRow`](#featurerow) | method | A | Build one feature's status row. |
-| `_statusLabel` | static method | B | Name a status in the learner's language. |
+| [`_featureRow`](#featurerow) | method | A | Build one feature's status row; the diagnostic line only when `debug` is set. |
+| `_statusLabel` | static method | B | Name a status in the learner's language; `unknown` reads as unavailable unless `debug` is set. |
 | `_diagnostic` | static method | B | The untranslated line under a row: what serves it, or what refused. |
+| `_coreLine` | static method | B | Name the AICore installation behind these features — version, device, whether it can serve models. |
 | `_progressLabel` | static method | B | Say how far a download has got. |
 | `_iconFor` | static method | B | Pick the icon for a status. |
 
@@ -58,19 +70,30 @@ the section names the installed AICore build and the device. See
   safety net for any other caller rather than something a user normally sees. The download note under
   the buttons is not a footnote: downloading a model is the only thing this feature does over the
   network, it is done by the system rather than by the app, and it happens only on a tap. Saying all
-  three where the button is is what makes the switch an informed choice.
+  three where the button is is what makes the switch an informed choice. The AICore line under that
+  note is built only `if (settings.debugMode)`: which AICore build is installed is the other half of
+  the diagnosis — the feature APIs and the Prompt API are served by the same package at different
+  versions — but it is diagnosis rather than information, so it waits behind developer options with
+  the rest. `settings.debugMode` is also what each `_featureRow` is handed as its `debug`.
 
-### `Widget _featureRow(BuildContext, AiAssistService, GenAiFeature, String label)` <a id="featurerow"></a>
+### `Widget _featureRow(BuildContext, AiAssistService, GenAiFeature, String label, {required bool debug})` <a id="featurerow"></a>
 
 - **Kind:** method
 - **Purpose:** Show one feature's status, and offer its download.
-- **Inputs:** The context, service, feature and its label.
+- **Inputs:** The context, service, feature and its label, plus `debug` — required, and passed
+  `settings.debugMode` by both call sites.
 - **Returns:** `Widget`.
 - **Side effects:** None until Download is used.
 - **Algorithm:** Icon and subtitle from the status or the running download; a Download button only
-  when the system says the model can be fetched.
+  when the system says the model can be fetched. `_diagnostic` is called **only** when `debug` is
+  set, and the row is three-line only when that produced a line.
 - **Usage:** `build`, twice.
-- **Notes:** Internal helper used within this file only. Two rows rather than one because the two
+- **Notes:** Internal helper used within this file only. `debug` is required rather than defaulted
+  because forgetting it should be a compile error, not a diagnostic line shown to a learner. The
+  line it gates is untranslated on purpose: it is an identifier to quote in a bug report, not prose.
+  Without it "not available on this device" is the same sentence whether the device is off a
+  published support list, one model variant was refused and three were never tried, or the call
+  threw — and those have different fixes. Two rows rather than one because the two
   features have separate models and separate downloads — a device can end up with explanations and no
   proofreading, and a single "AI: ready" line would be a lie on that phone. The button is disabled
   while anything is downloading, because AICore serves one at a time and two spinners would imply

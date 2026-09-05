@@ -119,12 +119,14 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
             service,
             GenAiFeature.prompt,
             l10n.aiStatusPrompt,
+            debug: settings.debugMode,
           ),
           _featureRow(
             context,
             service,
             GenAiFeature.proofread,
             l10n.aiStatusProofread,
+            debug: settings.debugMode,
           ),
           // Only where the device actually served both sizes. A device that
           // serves one — the Galaxy Z Fold 8 serves the faster model and
@@ -176,17 +178,21 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
                 ),
                 // Which AICore build is installed is the other half of the
                 // diagnosis: the feature APIs and the Prompt API are served by
-                // the same package at different versions.
-                if (_coreLine(l10n, service.coreInfo) case final line?)
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8),
-                    child: Text(
-                      line,
-                      style: theme.textTheme.labelSmall?.copyWith(
-                        color: theme.colorScheme.onSurfaceVariant,
+                // the same package at different versions. It is diagnosis
+                // rather than information, though — a learner told their
+                // AICore version has learnt nothing they can use — so it waits
+                // behind developer options with the rest.
+                if (settings.debugMode)
+                  if (_coreLine(l10n, service.coreInfo) case final line?)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: Text(
+                        line,
+                        style: theme.textTheme.labelSmall?.copyWith(
+                          color: theme.colorScheme.onSurfaceVariant,
+                        ),
                       ),
                     ),
-                  ),
               ],
             ),
           ),
@@ -207,15 +213,22 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
     BuildContext context,
     AiAssistService service,
     GenAiFeature feature,
-    String label,
-  ) {
+    String label, {
+    required bool debug,
+  }) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final status = service.statusOf(feature);
     final downloadingThis = service.downloadingFeature == feature;
     final progress = service.downloadProgress;
 
-    final detail = _diagnostic(status, service.reportOf(feature));
+    // Only where somebody has asked for it. The line names a model variant and
+    // a token limit; a learner can act on neither, and "Ready" is the whole of
+    // what they need. Behind the flag it is still the first thing a bug report
+    // needs, which is why it has not been deleted.
+    final detail = debug
+        ? _diagnostic(status, service.reportOf(feature))
+        : null;
 
     return ListTile(
       leading: Icon(_iconFor(status)),
@@ -226,7 +239,7 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
           Text(
             downloadingThis
                 ? _progressLabel(l10n, progress)
-                : _statusLabel(l10n, status),
+                : _statusLabel(l10n, status, debug: debug),
             style: theme.textTheme.bodySmall?.copyWith(
               color: theme.colorScheme.onSurfaceVariant,
             ),
@@ -281,16 +294,25 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
   /// Notes: Internal helper used within this file only. `unsupported` and
   /// `unavailable` share a line: from where the learner stands, a platform
   /// with no AICore and a device AICore will not serve are the same fact.
-  static String _statusLabel(AppLocalizations l10n, GenAiStatus status) =>
-      switch (status) {
-        GenAiStatus.available => l10n.aiStatusAvailable,
-        GenAiStatus.downloadable => l10n.aiStatusDownloadable,
-        GenAiStatus.downloading => l10n.aiStatusDownloading,
-        GenAiStatus.unavailable => l10n.aiStatusUnavailable,
-        GenAiStatus.unknown => l10n.aiStatusUnknown,
-        GenAiStatus.unsupported => l10n.aiStatusUnavailable,
-        GenAiStatus.unreachable => l10n.aiStatusUnreachable,
-      };
+  static String _statusLabel(
+    AppLocalizations l10n,
+    GenAiStatus status, {
+    bool debug = false,
+  }) => switch (status) {
+    GenAiStatus.available => l10n.aiStatusAvailable,
+    GenAiStatus.downloadable => l10n.aiStatusDownloadable,
+    GenAiStatus.downloading => l10n.aiStatusDownloading,
+    GenAiStatus.unavailable => l10n.aiStatusUnavailable,
+    // A learner cannot act on "a status this version does not recognise"
+    // any differently from "not available", and the distinction only means
+    // something to whoever has to work out why. It stays separate behind
+    // the flag, because reading an unknown status as a refusal is exactly
+    // the class of mistake that produced two wrong diagnoses.
+    GenAiStatus.unknown =>
+      debug ? l10n.aiStatusUnknown : l10n.aiStatusUnavailable,
+    GenAiStatus.unsupported => l10n.aiStatusUnavailable,
+    GenAiStatus.unreachable => l10n.aiStatusUnreachable,
+  };
 
   /// Purpose: Build the untranslated diagnostic line under a feature.
   /// Inputs: `status` and its `report`.

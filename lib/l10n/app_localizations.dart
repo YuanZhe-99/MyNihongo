@@ -2406,7 +2406,7 @@ abstract class AppLocalizations {
   /// No description provided for @aiEnableBody.
   ///
   /// In en, this message translates to:
-  /// **'Off by default. When on, the sentence lab can explain a finding in more words and suggest a correction, using a model that runs on this device. Generated text is always labelled and never changes the analysis.'**
+  /// **'Off by default. When it is on, the app can explain an answer in more detail, suggest a correction, and write extra practice questions. Everything runs on this phone — nothing you write is sent anywhere.'**
   String get aiEnableBody;
 
   /// No description provided for @aiUnsupportedPlatform.
@@ -2418,7 +2418,7 @@ abstract class AppLocalizations {
   /// No description provided for @aiStatusPrompt.
   ///
   /// In en, this message translates to:
-  /// **'Explanations'**
+  /// **'Explanations and extra questions'**
   String get aiStatusPrompt;
 
   /// No description provided for @aiStatusProofread.
@@ -2448,13 +2448,13 @@ abstract class AppLocalizations {
   /// No description provided for @aiStatusDownloadable.
   ///
   /// In en, this message translates to:
-  /// **'Not downloaded yet'**
+  /// **'Needs a one-time download'**
   String get aiStatusDownloadable;
 
   /// No description provided for @aiStatusDownloading.
   ///
   /// In en, this message translates to:
-  /// **'The system is downloading it'**
+  /// **'Downloading…'**
   String get aiStatusDownloading;
 
   /// No description provided for @aiStatusAvailable.
@@ -2502,25 +2502,25 @@ abstract class AppLocalizations {
   /// No description provided for @aiDownloadNote.
   ///
   /// In en, this message translates to:
-  /// **'The download is performed by the Android AICore system service, which fetches the model from Google. It starts only when you tap Download.'**
+  /// **'Android downloads the model, not this app, and only when you tap Download.'**
   String get aiDownloadNote;
 
   /// No description provided for @aiPreferFast.
   ///
   /// In en, this message translates to:
-  /// **'Prefer the faster model'**
+  /// **'Use the faster model'**
   String get aiPreferFast;
 
   /// No description provided for @aiPreferFastBody.
   ///
   /// In en, this message translates to:
-  /// **'This device serves two model sizes. The larger one writes better explanations; the faster one answers sooner and uses less memory. Changing this re-checks the device straight away.'**
+  /// **'Answers come sooner, and are usually shorter.'**
   String get aiPreferFastBody;
 
   /// No description provided for @aiModelStorageNote.
   ///
   /// In en, this message translates to:
-  /// **'The model belongs to the Android AICore system service, not to this app, and is shared with every app that uses the same model. It cannot be removed from here; use Android\'s own settings for AICore.'**
+  /// **'The model belongs to Android and is shared with other apps that use it, so it cannot be removed from here.'**
   String get aiModelStorageNote;
 
   /// No description provided for @aiDownloading.
@@ -2876,6 +2876,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'A score here is over the questions this app asked. It is not a JLPT score.'**
   String get jlptHistoryNote;
+
+  /// No description provided for @settingsDebugMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Developer options'**
+  String get settingsDebugMode;
+
+  /// No description provided for @settingsDebugModeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Shows technical detail about the on-device AI: which model this phone is using and why it is or is not available. Useful in a bug report; nothing here changes how the app works.'**
+  String get settingsDebugModeBody;
+
+  /// No description provided for @settingsDebugUnlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Developer options are on.'**
+  String get settingsDebugUnlocked;
+
+  /// No description provided for @settingsDebugStepsLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{1 more tap for developer options} other{{n} more taps for developer options}}'**
+  String settingsDebugStepsLeft(int n);
 }
 
 class _AppLocalizationsDelegate

@@ -512,6 +512,7 @@ Settings shows the resolved path only on desktop; see `platform_capabilities.dar
 | Network speech recognition | `storage_config.json` | No | `true` only if turned on; absent means offline-only (`speechNetworkFallback`) |
 | On-device AI assistance | `storage_config.json` | No | `true` only if turned on; absent means off (`aiAssistEnabled`) |
 | Faster on-device model | `storage_config.json` | No | `true` only if chosen; absent means the larger model (`preferFastModel`). Meaningless on a device that serves one size |
+| Developer options | `storage_config.json` | No | `true` once the version row has been tapped eight times; absent means off (`debugMode`). Deliberately not synced — it reveals the diagnosis of this device, and every number in it would be about a different phone elsewhere |
 | Kana over kanji | `storage_config.json` | No | `false` only if turned off; absent means on — the one inverted preference (`furigana`) |
 | WebDAV configuration | `webdav_config.json` | No | Local secret/config only |
 | Sync base snapshot | `.sync_base/nihongo_progress.json` | No | Local merge tracking |

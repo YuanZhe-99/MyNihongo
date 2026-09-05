@@ -1023,6 +1023,51 @@ The paper the Learn tab has been promising since the first release, at N5, one s
       and `uuid` is only a transitive dependency here. A new record kind in the same module, not a
       new file: the size argument never bit, and a module of its own costs a second remote file, a
       second backup entry and eleven golden re-recordings. **Landed with M4.2**
+
+#### M4.2a Settings a learner can read — **done 2026-09-05**, released as `v0.4.6`
+
+Reported by the user, and correct: the Settings explanations — the on-device AI ones above all —
+were too long and were not written for the person reading them. They had drifted into being written
+for whoever had to debug the feature.
+
+- [x] **The AI copy rewritten for a learner.** The switch body now says what the feature does and
+      where it runs; the size switch says "Answers come sooner, and are usually shorter" instead of
+      explaining what a model variant is; the download and storage notes lost the words "AICore" and
+      "system service", which are things the app knows and the learner does not
+- [x] **Developer options, unlocked by eight taps on the version row.** Android's own gesture,
+      copied exactly: somebody who needs the diagnostics already knows how to do it, and nobody else
+      finds it by accident. Preference `debugMode` through the documented touch points, **device
+      local and not synced** — what it reveals is the diagnosis of *this* phone
+- [x] **The countdown is the version row's own subtitle**, from three taps out. A snack bar was
+      tried first and was wrong: the About section is at the bottom of a long list and the snack bar
+      covered the row the next tap had to land on — the device found that, not the test suite
+- [x] Moved behind the flag, not deleted: the `variant · model · N tok` line, the raw
+      `FeatureStatus` and refused-variant line, and the AICore build and compatibility line. They
+      are still the first thing a bug report needs, and `android-aicore.md`'s diagnosis procedure
+      gains a step 0 telling the reader to turn them on first
+- [x] **One thing genuinely changed rather than moved**: an unrecognised `FeatureStatus` now reads
+      as "Not available on this device" unless developer options are on. The distinction matters —
+      reading a status this build has never seen as a refusal is how a working device gets told it
+      is broken — but it is not one a learner can act on, and both lead to the same next step
+- [x] Tests: five on the plain view (a working feature says only "Ready"; a refused one shows no raw
+      status; an unrecognised status reads as unavailable; unlocked, the whole diagnosis returns; and
+      the plain copy contains none of "AICore", "system service" or "variant"), six on the unlock
+      itself, and the preference trio. The AI settings harness now writes the real preference through
+      `NihongoStorage` rather than injecting it, so what the tests exercise is the path the gesture
+      takes
+- [x] Two test hazards found and written down: the settings harness may not give every test a path
+      provider, because a config that says AI is off switches the service back off underneath the
+      lab tests that had just turned it on; and a fire-and-forget write started inside `testWidgets`'
+      fake-async zone never completes there, so the "it was written to the file" assertion is a plain
+      test rather than a widget one
+- [x] **Verified on the Pixel 10** in a release build: the rewritten rows, no developer row, the
+      countdown appearing under the version at two taps out, the unlock and its confirmation, the
+      full diagnosis with it on (`stable/full · nano-v3 · 8192 tok`, the AICore build, Google Pixel
+      10), and the plain view again once switched off
+- [x] Docs: `features/ai-assist.md` (the two-row learner table and a Developer options subsection),
+      `android-aicore.md` (step 0), `data-formats.md` (inventory row), four `functions/` pages and
+      the INDEX totals, in both trees. 905 tests
+
 - [ ] Weakness report: per-section and per-grammar-point accuracy feeding review priorities
 - [ ] AICore enhancement (M3.5 policy, same switch): a supplementary 作文 writing section — a short
       composition per prompt with feedback against a rubric (task fulfilment, grammar range,
@@ -1177,6 +1222,11 @@ The paper the Learn tab has been promising since the first release, at N5, one s
 | 2026-09-04 | A display bug is verified by screenshot on a device, not by widget test alone | The widget-test font has 1.0 em metrics, so the font that causes this one is not present in the suite. Every existing test passed for the whole time it shipped |
 | 2026-09-04 | Every model variant is probed, not only those before the first success | Whether the learner has a choice of model size is itself a fact to report, and a loop that returns early cannot know it. The cost is three extra status calls on a deliberate refresh; a generation still trusts the variant already serving and pays one |
 | 2026-09-04 | The model-size switch is hidden on a device that serves one size | A control that cannot change what is serving is worse than no control: it teaches the learner that the page is decorative. The Z Fold 8 serves only the faster model |
+| 2026-09-05 | Settings explains the choice, not the implementation; the diagnosis moves behind developer options | Reported by the user. Every diagnostic line was added for a real reason — two wrong diagnoses came from a page that could not say why a device refused — but that audience is one person with a cable and the page was being read by everybody else. Hiding is not deleting: the lines are still there, one gesture away |
+| 2026-09-05 | Developer options are unlocked by eight taps on the version row, Android's own gesture | Copying it exactly is the point: somebody who needs the diagnostics already knows how, and nobody else finds it by accident. An "off" row in Settings would have been an invitation to the learner it is meant to spare |
+| 2026-09-05 | The unlock countdown is the version row's own subtitle, not a snack bar | The About section sits at the bottom of a long list, and a snack bar covered the row the next tap had to land on. The device found that; the widget test had passed |
+| 2026-09-05 | `debugMode` is device-local and never synced | What it reveals is the diagnosis of *this* phone — which variant it served, which AICore build it has. Carrying it to another device would turn diagnostics on where nobody asked and every number in them would be about a different device |
+| 2026-09-05 | An unrecognised `FeatureStatus` reads as "not available" to a learner and stays distinct behind the flag | The distinction is how a working device avoids being told it is broken, so it must not be lost. But a learner cannot act on it differently, and both cases lead to the same next step |
 | 2026-09-05 | An exam attempt is an `exam:` record in the progress file, not a second data module | A record gets the per-record three-way merge, the conflict dialog, sync and backup for free. A module of its own costs a second remote file, a second backup entry and eleven golden transcripts re-recorded, for state that is a few fields and a map of answers |
 | 2026-09-05 | An attempt stores only which questions were asked and what was answered — never the question, the options or the explanation | All of that is a pure function of the shipped files, so storing it would freeze an answer key the next release corrects. Reading it back also means a question the files no longer have can say so, rather than silently shrinking the attempt it was part of |
 | 2026-09-05 | "Unanswered" is its own value, not a wrong answer | Calling it wrong makes every timed score look worse than the learner did; dropping it makes every timed score look better. The record has to be able to say it before the clock that produces it exists |

@@ -325,6 +325,10 @@ installed over it. The updated one is what serves requests, so read the higher `
 This is the failure that needs a procedure, because it is what the app reports for at least four
 unrelated causes. Work down the list; the first two need no cable.
 
+0. **Turn on developer options first.** From `v0.4.6` the diagnostic lines are hidden by default:
+   the Settings page had drifted into being written for whoever was debugging it rather than for the
+   learner reading it. Tap the version row in **Settings › About** eight times — Android's own
+   gesture — and every line described below comes back. Without it, step 1 has nothing to read.
 1. **Read the app's own status rows.** Each carries the raw answer under it — `FeatureStatus=0` when
    AICore was asked and said no, or an exception class and message when the call could not be made
    at all. A working row instead names the variant and the model serving it. A version line under

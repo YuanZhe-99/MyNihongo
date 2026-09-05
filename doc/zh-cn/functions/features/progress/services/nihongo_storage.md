@@ -80,6 +80,12 @@ M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地�
 
 后两对值得在这里点名，因为它们各自把守着一件要么会离开设备、要么会运行模型的事：每一个都**在用户打开之前为 false**，并且把「关闭」存为缺失键而不是 `false`。手工写入的 `"true"` 字符串按未设置读取，与本文件中其他类型不对的值一样——字符串不是布尔值，而这种分量的设置不应该被一个笔误打开。见 [`../../../../features/pronunciation.md`](../../../../features/pronunciation.md) 与 [`../../../../features/ai-assist.md`](../../../../features/ai-assist.md)。
 
+## 开发者选项（v0.4.6）
+
+`_getBool`/`_setBool` 之上又多了一对，遵循同样的两条规则：`getDebugMode` 在没有人解锁开发者选项时返回 false，而 `setDebugMode` 把「关闭」存为缺失的键而不是 `false`。
+
+它位于 `storage_config.json`，并且与这里几乎所有其他偏好不同，它**不同步**。它控制的是*这一台*设备的诊断信息——它服务的是哪个模型变体、装的是哪个 AICore 版本——所以把它带到另一台设备，等于在没人要求的地方打开诊断信息，而那些数字讲的都是另一台手机。它只从一个地方写入，即 `AppSettingsNotifier.setDebugMode`；见 [`../../../shared/providers/app_settings.md`](../../../shared/providers/app_settings.md)。
+
 ### `static Future<void> recordHistory(HistoryEntry entry, {DateTime? now})` <a id="recordhistory"></a>
 
 - **种类：** 静态方法

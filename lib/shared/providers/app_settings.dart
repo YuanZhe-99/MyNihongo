@@ -64,6 +64,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
         await NihongoStorage.getSpeechNetworkFallback();
     final aiAssistEnabled = await NihongoStorage.getAiAssistEnabled();
     final preferFastModel = await NihongoStorage.getPreferFastModel();
+    final debugMode = await NihongoStorage.getDebugMode();
     final showFurigana = await NihongoStorage.getShowFurigana();
     final autoSpeak = await NihongoStorage.getAutoSpeak();
     final reminderEnabled = await NihongoStorage.getReminderEnabled();
@@ -101,6 +102,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
       speechNetworkFallback: speechNetworkFallback,
       aiAssistEnabled: aiAssistEnabled,
       preferFastModel: preferFastModel,
+      debugMode: debugMode,
       showFurigana: showFurigana,
       autoSpeak: autoSpeak,
       reminderEnabled: reminderEnabled,
@@ -346,6 +348,18 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     NihongoStorage.setPreferFastModel(fast);
   }
 
+  /// Purpose: Unlock or re-hide developer options.
+  /// Inputs: `enabled`.
+  /// Returns: None.
+  /// Side effects: Persists the choice on this device.
+  /// Notes: Device-local and not synced: what it reveals is the diagnosis of
+  /// *this* phone, and carrying it to another would turn diagnostics on where
+  /// nobody asked and where every number would be about a different device.
+  void setDebugMode(bool enabled) {
+    state = state.copyWith(debugMode: enabled);
+    NihongoStorage.setDebugMode(enabled);
+  }
+
   /// Purpose: Update theme mode with the provided value.
   /// Inputs: `mode`.
   /// Returns: None.
@@ -421,6 +435,14 @@ class AppSettings {
   /// serves both sizes.
   final bool preferFastModel;
 
+  /// Whether developer options are unlocked on this device.
+  ///
+  /// Off until somebody taps the version row eight times. What it reveals is
+  /// diagnosis — which model variant this phone served, which AICore build it
+  /// has — none of which a learner can act on, and all of which is the first
+  /// thing a bug report needs.
+  final bool debugMode;
+
   /// Whether kana are printed over the kanji that need them. On unless the
   /// learner turned it off.
   final bool showFurigana;
@@ -459,6 +481,7 @@ class AppSettings {
     this.speechNetworkFallback = false,
     this.aiAssistEnabled = false,
     this.preferFastModel = false,
+    this.debugMode = false,
     this.showFurigana = true,
     this.autoSpeak = true,
     this.reminderEnabled = false,
@@ -490,6 +513,7 @@ class AppSettings {
     bool? speechNetworkFallback,
     bool? aiAssistEnabled,
     bool? preferFastModel,
+    bool? debugMode,
     bool? showFurigana,
     bool? autoSpeak,
     bool? reminderEnabled,
@@ -513,6 +537,7 @@ class AppSettings {
           speechNetworkFallback ?? this.speechNetworkFallback,
       aiAssistEnabled: aiAssistEnabled ?? this.aiAssistEnabled,
       preferFastModel: preferFastModel ?? this.preferFastModel,
+      debugMode: debugMode ?? this.debugMode,
       showFurigana: showFurigana ?? this.showFurigana,
       autoSpeak: autoSpeak ?? this.autoSpeak,
       reminderEnabled: reminderEnabled ?? this.reminderEnabled,

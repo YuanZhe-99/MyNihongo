@@ -850,6 +850,26 @@ class NihongoStorage {
   static Future<void> setPreferFastModel(bool fast) =>
       _setBool('preferFastModel', fast ? true : null);
 
+  /// Purpose: Read whether developer options have been unlocked.
+  /// Inputs: None.
+  /// Returns: `Future<bool>` — false unless somebody unlocked them.
+  /// Side effects: Reads the config file.
+  /// Notes: In `storage_config.json` and **not synced**, unlike almost every
+  /// other preference. What it controls is the diagnosis of *this* device —
+  /// which model variant it served, which AICore build it has — so carrying it
+  /// to another device would turn diagnostics on where nobody asked for them
+  /// and where the numbers would be about a different phone.
+  static Future<bool> getDebugMode() async =>
+      await _getBool('debugMode') ?? false;
+
+  /// Purpose: Remember whether developer options are unlocked.
+  /// Inputs: `enabled`.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: Off is stored as an absent key; see [getDebugMode].
+  static Future<void> setDebugMode(bool enabled) =>
+      _setBool('debugMode', enabled ? true : null);
+
   /// Purpose: Read whether the daily reminder is on.
   /// Inputs: None.
   /// Returns: `Future<bool>` — false unless the learner turned it on.

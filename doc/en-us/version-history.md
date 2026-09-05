@@ -12,6 +12,44 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.4.6` — 2026-09-05. Settings written for the person reading it, with the
+  diagnosis moved behind a door.
+
+  **Reported plainly: the explanations were too long and not aimed at a
+  learner.** They were right. The on-device AI section had drifted into being
+  written for whoever had to debug it — `stable/full · nano-v4 · 4096 tok` under
+  a working feature, `FeatureStatus=0 · refused: …` under a broken one, an
+  AICore build number, and a row that said "the device reported a status this
+  version does not recognise". Every one of those was added for a reason, and
+  the reason was real: two wrong diagnoses in a row came from a Settings page
+  that could not say *why* a device had said no. But that audience is one person
+  with a cable, and the page was being read by everybody else.
+
+  So the rows now say what the feature does, whether it works, and what to do
+  next. "Off by default. When it is on, the app can explain an answer in more
+  detail, suggest a correction, and write extra practice questions. Everything
+  runs on this phone — nothing you write is sent anywhere." The size switch,
+  which used to explain what a model variant is, now says "Answers come sooner,
+  and are usually shorter."
+
+  **The diagnosis is not gone, it is behind eight taps on the version row** in
+  Settings › About — Android's own gesture, copied exactly, because somebody who
+  needs it already knows how to do it and nobody else will find it by accident.
+  The countdown appears as the version row's own subtitle from three taps out. A
+  snack bar was tried first and was wrong: the About section sits at the bottom
+  of a long list, and the snack bar covered the row the next tap had to land on.
+
+  One thing genuinely changed rather than moved. An unrecognised status now
+  reads as "Not available on this device" unless developer options are on. The
+  distinction matters — treating a status this build has never seen as a refusal
+  is exactly how a working device gets told it is broken — but it is not a
+  distinction a learner can act on, and both lead to the same next step.
+
+  The preference is device-local and **not synced**. What it reveals is the
+  diagnosis of *this* phone; carrying it to another would turn diagnostics on
+  where nobody asked, and every number in them would be about a different
+  device. 905 tests.
+
 - `0.4.5` — 2026-09-05. Every JLPT section you finish is now recorded, synced,
   and — the part that matters more — used to stop the app asking you the same
   questions again.

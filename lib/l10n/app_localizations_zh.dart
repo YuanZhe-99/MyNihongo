@@ -1275,13 +1275,13 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get aiEnableBody =>
-      '默认关闭。打开后，句子实验室可以用更多文字解释一处发现，并给出一个改写建议，模型在本设备上运行。生成的文字始终带有标注，且绝不会改变分析结果。';
+      '默认关闭。打开后，应用可以更详细地解释答案、给出修改建议，并额外出一些练习题。全部在这台手机上运行——你写的内容不会发送到任何地方。';
 
   @override
   String get aiUnsupportedPlatform => '此平台没有端侧模型。';
 
   @override
-  String get aiStatusPrompt => '解释';
+  String get aiStatusPrompt => '解释与额外练习题';
 
   @override
   String get aiStatusProofread => '改写建议';
@@ -1296,10 +1296,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get aiStatusUnknown => '设备返回了本版本无法识别的状态';
 
   @override
-  String get aiStatusDownloadable => '尚未下载';
+  String get aiStatusDownloadable => '需要下载一次';
 
   @override
-  String get aiStatusDownloading => '系统正在下载';
+  String get aiStatusDownloading => '正在下载…';
 
   @override
   String get aiStatusAvailable => '可以使用';
@@ -1325,19 +1325,16 @@ class AppLocalizationsZh extends AppLocalizations {
   String get aiDownload => '下载';
 
   @override
-  String get aiDownloadNote =>
-      '下载由 Android AICore 系统服务完成，模型从 Google 获取。只有你点击「下载」后才会开始。';
+  String get aiDownloadNote => '模型由 Android 下载，不是本应用，并且只在你点「下载」时才开始。';
 
   @override
-  String get aiPreferFast => '优先使用更快的模型';
+  String get aiPreferFast => '使用更快的模型';
 
   @override
-  String get aiPreferFastBody =>
-      '本设备提供两种规格的模型。较大的那个解释写得更好；较快的那个回答更早，占用内存更少。修改后会立即重新检查设备。';
+  String get aiPreferFastBody => '回答来得更快，通常也更简短。';
 
   @override
-  String get aiModelStorageNote =>
-      '模型属于 Android AICore 系统服务，不属于本应用，并且与所有使用同一模型的应用共享。无法从这里移除；请使用 Android 自带的 AICore 设置。';
+  String get aiModelStorageNote => '模型属于 Android，与使用它的其他应用共用，因此无法在这里删除。';
 
   @override
   String get aiDownloading => '下载中…';
@@ -1538,6 +1535,26 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get jlptHistoryNote => '这里的分数只针对本应用出的题，不是 JLPT 成绩。';
+
+  @override
+  String get settingsDebugMode => '开发者选项';
+
+  @override
+  String get settingsDebugModeBody =>
+      '显示端侧 AI 的技术细节：这台手机在用哪个模型，以及它为什么可用或不可用。写故障报告时有用；这里的内容不会改变应用的行为。';
+
+  @override
+  String get settingsDebugUnlocked => '开发者选项已开启。';
+
+  @override
+  String settingsDebugStepsLeft(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '再点 $n 次开启开发者选项',
+    );
+    return '$_temp0';
+  }
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -2811,13 +2828,13 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get aiEnableBody =>
-      '預設關閉。開啟後，句子實驗室可以用更多文字解釋一處發現，並給出一個改寫建議，模型在本裝置上執行。生成的文字始終帶有標註，且絕不會改變分析結果。';
+      '預設關閉。開啟後，應用程式可以更詳細地解釋答案、提供修改建議，並額外出一些練習題。全部在這支手機上執行——你寫的內容不會傳送到任何地方。';
 
   @override
   String get aiUnsupportedPlatform => '此平台沒有裝置端模型。';
 
   @override
-  String get aiStatusPrompt => '解釋';
+  String get aiStatusPrompt => '解釋與額外練習題';
 
   @override
   String get aiStatusProofread => '改寫建議';
@@ -2832,10 +2849,10 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get aiStatusUnknown => '裝置回報了本版本無法辨識的狀態';
 
   @override
-  String get aiStatusDownloadable => '尚未下載';
+  String get aiStatusDownloadable => '需要下載一次';
 
   @override
-  String get aiStatusDownloading => '系統正在下載';
+  String get aiStatusDownloading => '正在下載…';
 
   @override
   String get aiStatusAvailable => '可以使用';
@@ -2861,19 +2878,16 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get aiDownload => '下載';
 
   @override
-  String get aiDownloadNote =>
-      '下載由 Android AICore 系統服務完成，模型從 Google 取得。只有你點選「下載」後才會開始。';
+  String get aiDownloadNote => '模型由 Android 下載，不是本應用程式，而且只在你點「下載」時才開始。';
 
   @override
-  String get aiPreferFast => '優先使用較快的模型';
+  String get aiPreferFast => '使用較快的模型';
 
   @override
-  String get aiPreferFastBody =>
-      '本裝置提供兩種規格的模型。較大的那個解釋寫得更好；較快的那個回答更早，佔用記憶體更少。修改後會立即重新檢查裝置。';
+  String get aiPreferFastBody => '回答來得更快，通常也更簡短。';
 
   @override
-  String get aiModelStorageNote =>
-      '模型屬於 Android AICore 系統服務，不屬於本應用程式，並且與所有使用同一模型的應用程式共用。無法從這裡移除；請使用 Android 內建的 AICore 設定。';
+  String get aiModelStorageNote => '模型屬於 Android，與使用它的其他應用程式共用，因此無法在這裡刪除。';
 
   @override
   String get aiDownloading => '下載中…';
@@ -3074,4 +3088,24 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get jlptHistoryNote => '這裡的分數只針對本應用程式出的題，不是 JLPT 成績。';
+
+  @override
+  String get settingsDebugMode => '開發者選項';
+
+  @override
+  String get settingsDebugModeBody =>
+      '顯示端側 AI 的技術細節：這支手機在用哪個模型，以及它為什麼可用或不可用。寫故障報告時有用；這裡的內容不會改變應用程式的行為。';
+
+  @override
+  String get settingsDebugUnlocked => '開發者選項已開啟。';
+
+  @override
+  String settingsDebugStepsLeft(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '再點 $n 次開啟開發者選項',
+    );
+    return '$_temp0';
+  }
 }

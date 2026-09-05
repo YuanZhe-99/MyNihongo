@@ -2,15 +2,15 @@
 
 这是 MyNihongo 仓库中 `lib/` 手写函数解释层文档的顶层索引。每行链接到 `doc/zh-cn/functions/` 下镜像 `lib/` 树的逐源文件页面（`.dart` 换成 `.md`）。
 
-**总计：** 仓库的 `/// Purpose:` 注释数为 **1014**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **1051** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
+**总计：** 仓库的 `/// Purpose:` 注释数为 **1019**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **1058** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
 
 | Tier | 计数 |
 |---|---|
-| Tier A（完整条目：用途/输入/返回/副作用/算法/使用/说明） | 218 |
-| Tier B（仅索引行） | 833 |
-| **总计** | **1051** |
+| Tier A（完整条目：用途/输入/返回/副作用/算法/使用/说明） | 219 |
+| Tier B（仅索引行） | 839 |
+| **总计** | **1058** |
 
-这些总计上次是在新增 JLPT 考试历史记录页面时对照源码树测得的。若要改动这些数字，请测量而不要手工调整：
+这些总计上次是在 `v0.4.6` 把诊断信息移到开发者选项之后时对照源码树测得的。若要改动这些数字，请测量而不要手工调整：
 
 ```bash
 find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' | wc -l
@@ -46,7 +46,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/ai/services/response_parser.dart` | [features/ai/services/response_parser.md](features/ai/services/response_parser.md) | 9 | 2 |
 | `lib/features/ai/services/writing_rewrite.dart` | [features/ai/services/writing_rewrite.md](features/ai/services/writing_rewrite.md) | 2 | 1 |
 | `lib/features/ai/widgets/ai_explanation_card.dart` | [features/ai/widgets/ai_explanation_card.md](features/ai/widgets/ai_explanation_card.md) | 3 | 2 |
-| `lib/features/ai/widgets/ai_settings_tiles.dart` | [features/ai/widgets/ai_settings_tiles.md](features/ai/widgets/ai_settings_tiles.md) | 10 | 3 |
+| `lib/features/ai/widgets/ai_settings_tiles.dart` | [features/ai/widgets/ai_settings_tiles.md](features/ai/widgets/ai_settings_tiles.md) | 11 | 3 |
 | `lib/features/content/models/content_catalog.dart` | [features/content/models/content_catalog.md](features/content/models/content_catalog.md) | 7 | 0 |
 | `lib/features/content/models/grammar_point.dart` | [features/content/models/grammar_point.md](features/content/models/grammar_point.md) | 3 | 0 |
 | `lib/features/content/models/jlpt_level.dart` | [features/content/models/jlpt_level.md](features/content/models/jlpt_level.md) | 2 | 0 |
@@ -72,7 +72,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/progress/models/learner_profile.dart` | [features/progress/models/learner_profile.md](features/progress/models/learner_profile.md) | 7 | 2 |
 | `lib/features/progress/models/history_entry.dart` | [features/progress/models/history_entry.md](features/progress/models/history_entry.md) | 12 | 4 |
 | `lib/features/progress/models/exam_attempt.dart` | [features/progress/models/exam_attempt.md](features/progress/models/exam_attempt.md) | 19 | 4 |
-| `lib/features/progress/services/nihongo_storage.dart` | [features/progress/services/nihongo_storage.md](features/progress/services/nihongo_storage.md) | 46 | 4 |
+| `lib/features/progress/services/nihongo_storage.dart` | [features/progress/services/nihongo_storage.md](features/progress/services/nihongo_storage.md) | 48 | 4 |
 | `lib/features/progress/services/review_queue.dart` | [features/progress/services/review_queue.md](features/progress/services/review_queue.md) | 7 | 2 |
 | `lib/features/progress/services/sm2_scheduler.dart` | [features/progress/services/sm2_scheduler.md](features/progress/services/sm2_scheduler.md) | 5 | 2 |
 | `lib/features/settings/views/license_page.dart` | [features/settings/views/license_page.md](features/settings/views/license_page.md) | 2 | 0 |
@@ -117,7 +117,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/speech/widgets/speech_settings_tiles.dart` | [features/speech/widgets/speech_settings_tiles.md](features/speech/widgets/speech_settings_tiles.md) | 5 | 2 |
 | `lib/features/speech/widgets/voice_labels.dart` | [features/speech/widgets/voice_labels.md](features/speech/widgets/voice_labels.md) | 4 | 1 |
 | `lib/features/speech/widgets/voice_picker_sheet.dart` | [features/speech/widgets/voice_picker_sheet.md](features/speech/widgets/voice_picker_sheet.md) | 4 | 1 |
-| `lib/features/settings/views/settings_page.dart` | [features/settings/views/settings_page.md](features/settings/views/settings_page.md) | 16 | 2 |
+| `lib/features/settings/views/settings_page.dart` | [features/settings/views/settings_page.md](features/settings/views/settings_page.md) | 18 | 3 |
 | `lib/features/settings/views/backup_page.dart` | [features/settings/views/backup_page.md](features/settings/views/backup_page.md) | 17 | 1 |
 | `lib/features/vocab/views/vocab_page.dart` | [features/vocab/views/vocab_page.md](features/vocab/views/vocab_page.md) | 7 | 1 |
 
@@ -137,7 +137,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 
 | 源文件 | 页面 | 声明数 | Tier A 计数 |
 |---|---|---|---|
-| `lib/shared/providers/app_settings.dart` | [shared/providers/app_settings.md](shared/providers/app_settings.md) | 10 | 0 |
+| `lib/shared/providers/app_settings.dart` | [shared/providers/app_settings.md](shared/providers/app_settings.md) | 12 | 0 |
 | `lib/shared/providers/progress_provider.dart` | [shared/providers/progress_provider.md](shared/providers/progress_provider.md) | 6 | 0 |
 | `lib/shared/providers/learner_profile_provider.dart` | [shared/providers/learner_profile_provider.md](shared/providers/learner_profile_provider.md) | 3 | 0 |
 | `lib/shared/providers/history_provider.dart` | [shared/providers/history_provider.md](shared/providers/history_provider.md) | 3 | 2 |

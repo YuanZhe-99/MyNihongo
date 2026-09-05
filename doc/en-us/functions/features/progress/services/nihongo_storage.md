@@ -106,6 +106,19 @@ wrong-typed value in this file — the string is not a boolean, and a setting th
 not be switchable by a typo. See [`../../../../features/pronunciation.md`](../../../../features/pronunciation.md)
 and [`../../../../features/ai-assist.md`](../../../../features/ai-assist.md).
 
+## Developer options (v0.4.6)
+
+One more pair over `_getBool`/`_setBool`, following the same two rules: `getDebugMode` returns false
+unless somebody unlocked developer options, and `setDebugMode` stores "off" as an absent key rather
+than as `false`.
+
+It sits in `storage_config.json` and is **not synced**, unlike almost every other preference. What
+it controls is the diagnosis of *this* device — which model variant it served, which AICore build it
+has — so carrying it to another device would turn diagnostics on where nobody asked for them and
+where the numbers would be about a different phone. It is written from exactly one place,
+`AppSettingsNotifier.setDebugMode`; see
+[`../../../shared/providers/app_settings.md`](../../../shared/providers/app_settings.md).
+
 ### `static Future<void> recordHistory(HistoryEntry entry, {DateTime? now})` <a id="recordhistory"></a>
 
 - **Kind:** static method

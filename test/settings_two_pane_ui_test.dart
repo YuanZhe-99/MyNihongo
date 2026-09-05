@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:my_nihongo/features/settings/views/settings_page.dart';
+import 'package:my_nihongo/features/progress/services/nihongo_storage.dart';
 import 'package:my_nihongo/l10n/app_localizations.dart';
 import 'package:my_nihongo/shared/services/backup_service.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -223,5 +224,105 @@ void main() {
     expect(find.text(storageLocation), findsOneWidget);
     expect(tester.takeException(), isNull);
     debugDefaultTargetPlatformOverride = null;
+  });
+
+  group('the eight-tap unlock', () {
+    // Android's own gesture, copied exactly on purpose: somebody who needs the
+    // diagnostics already knows how to do this, and nobody else finds it by
+    // accident. What it reveals — model variants, AICore builds — is the first
+    // thing a bug report needs and the last thing a learner wants to read.
+
+    /// Purpose: Tap the version row a number of times.
+    /// Inputs: `tester` and how many `times`.
+    /// Returns: None.
+    /// Side effects: Pumps frames; may write the preference.
+    /// Notes: Internal helper used within this test file only.
+    Future<void> tapVersion(WidgetTester tester, int times) async {
+      await scrollTo(tester, '版本');
+      for (var i = 0; i < times; i++) {
+        await tester.tap(find.text('版本'));
+        await tester.pump();
+      }
+      await tester.pumpAndSettle();
+    }
+
+    setUp(() async {
+      await NihongoStorage.setDebugMode(false);
+    });
+
+    tearDown(() async {
+      await NihongoStorage.setDebugMode(false);
+    });
+
+    testWidgets('is not offered until it has been unlocked', (tester) async {
+      await pumpAt(tester, 412, 915);
+      await scrollTo(tester, '版本');
+      expect(
+        find.text('开发者选项'),
+        findsNothing,
+        reason: 'a row that says "off" is an invitation',
+      );
+    });
+
+    testWidgets('seven taps are not enough', (tester) async {
+      await pumpAt(tester, 412, 915);
+      await tapVersion(tester, 7);
+      expect(find.text('开发者选项'), findsNothing);
+    });
+
+    testWidgets('the eighth tap unlocks it and says so', (tester) async {
+      await pumpAt(tester, 412, 915);
+      await tapVersion(tester, 8);
+      expect(find.text('开发者选项已开启。'), findsOneWidget);
+      await scrollTo(tester, '开发者选项');
+      expect(find.text('开发者选项'), findsOneWidget);
+    });
+
+    testWidgets('the countdown starts three taps out, not at the first', (
+      tester,
+    ) async {
+      // An accidental double-tap should say nothing; a deliberate run should
+      // tell the person doing it that it is working.
+      await pumpAt(tester, 412, 915);
+      await tapVersion(tester, 2);
+      expect(find.textContaining('再点'), findsNothing);
+
+      await tapVersion(tester, 3);
+      expect(find.textContaining('再点'), findsWidgets);
+    });
+
+    testWidgets('once unlocked it can be turned off again', (tester) async {
+      await pumpAt(tester, 412, 915);
+      await tapVersion(tester, 8);
+      await scrollTo(tester, '开发者选项');
+      await tester.tap(find.byType(SwitchListTile).last);
+      await tester.pumpAndSettle();
+      expect(find.text('开发者选项'), findsNothing);
+    });
+
+    test('the preference lives in the device-local config file', () async {
+      // Device-local, unlike almost every other preference: what it reveals is
+      // the diagnosis of *this* phone, and carrying it to another would turn
+      // diagnostics on where nobody asked and where every number would be
+      // about a different device. `storage_config.json` is the file that does
+      // not sync.
+      //
+      // A plain test rather than a widget one: the notifier starts the write
+      // and does not await it, and a future created inside `testWidgets`'
+      // fake-async zone never completes there — so a widget test asserting
+      // that the file had been written would be asserting something it cannot
+      // observe.
+      await NihongoStorage.setDebugMode(true);
+      expect(await NihongoStorage.getDebugMode(), isTrue);
+      expect((await NihongoStorage.readConfig())['debugMode'], true);
+
+      await NihongoStorage.setDebugMode(false);
+      expect(await NihongoStorage.getDebugMode(), isFalse);
+      expect(
+        (await NihongoStorage.readConfig()).containsKey('debugMode'),
+        isFalse,
+        reason: 'off is an absent key, like every other default',
+      );
+    });
   });
 }

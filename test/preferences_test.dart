@@ -239,4 +239,23 @@ void main() {
     await NihongoStorage.setLocaleTag(null);
     expect((await config()).containsKey('locale'), isFalse);
   });
+
+  test('developer options are off until they are unlocked', () async {
+    expect(await NihongoStorage.getDebugMode(), isFalse);
+    await NihongoStorage.setDebugMode(true);
+    expect(await NihongoStorage.getDebugMode(), isTrue);
+    expect((await config())['debugMode'], isTrue);
+  });
+
+  test('turning developer options off removes the key', () async {
+    await NihongoStorage.setDebugMode(true);
+    await NihongoStorage.setDebugMode(false);
+    expect((await config()).containsKey('debugMode'), isFalse);
+    expect(await NihongoStorage.getDebugMode(), isFalse);
+  });
+
+  test('a hand-edited string does not unlock developer options', () async {
+    await configFile.writeAsString('{"debugMode": "true"}');
+    expect(await NihongoStorage.getDebugMode(), isFalse);
+  });
 }

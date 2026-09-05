@@ -4,21 +4,20 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **1014** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **1019** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **1051** documented declarations. The two counts are measured separately and
+The rows below sum to **1058** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
-| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 218 |
-| Tier B (index row only) | 833 |
-| **Total** | **1051** |
+| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 219 |
+| Tier B (index row only) | 839 |
+| **Total** | **1058** |
 
-These totals were last measured against the source tree when the JLPT exam-history pages were added.
-If you
-change these numbers, measure them rather than adjusting them by hand:
+These totals were last measured against the source tree when v0.4.6 moved the diagnostics behind
+developer options. If you change these numbers, measure them rather than adjusting them by hand:
 
 ```bash
 find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' | wc -l
@@ -55,7 +54,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/ai/services/response_parser.dart` | [features/ai/services/response_parser.md](features/ai/services/response_parser.md) | 9 | 2 |
 | `lib/features/ai/services/writing_rewrite.dart` | [features/ai/services/writing_rewrite.md](features/ai/services/writing_rewrite.md) | 2 | 1 |
 | `lib/features/ai/widgets/ai_explanation_card.dart` | [features/ai/widgets/ai_explanation_card.md](features/ai/widgets/ai_explanation_card.md) | 3 | 2 |
-| `lib/features/ai/widgets/ai_settings_tiles.dart` | [features/ai/widgets/ai_settings_tiles.md](features/ai/widgets/ai_settings_tiles.md) | 10 | 3 |
+| `lib/features/ai/widgets/ai_settings_tiles.dart` | [features/ai/widgets/ai_settings_tiles.md](features/ai/widgets/ai_settings_tiles.md) | 11 | 3 |
 | `lib/features/content/models/content_catalog.dart` | [features/content/models/content_catalog.md](features/content/models/content_catalog.md) | 7 | 0 |
 | `lib/features/content/models/grammar_point.dart` | [features/content/models/grammar_point.md](features/content/models/grammar_point.md) | 3 | 0 |
 | `lib/features/content/models/jlpt_level.dart` | [features/content/models/jlpt_level.md](features/content/models/jlpt_level.md) | 2 | 0 |
@@ -81,7 +80,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/progress/models/learner_profile.dart` | [features/progress/models/learner_profile.md](features/progress/models/learner_profile.md) | 7 | 2 |
 | `lib/features/progress/models/history_entry.dart` | [features/progress/models/history_entry.md](features/progress/models/history_entry.md) | 12 | 4 |
 | `lib/features/progress/models/exam_attempt.dart` | [features/progress/models/exam_attempt.md](features/progress/models/exam_attempt.md) | 19 | 4 |
-| `lib/features/progress/services/nihongo_storage.dart` | [features/progress/services/nihongo_storage.md](features/progress/services/nihongo_storage.md) | 46 | 4 |
+| `lib/features/progress/services/nihongo_storage.dart` | [features/progress/services/nihongo_storage.md](features/progress/services/nihongo_storage.md) | 48 | 4 |
 | `lib/features/progress/services/review_queue.dart` | [features/progress/services/review_queue.md](features/progress/services/review_queue.md) | 7 | 2 |
 | `lib/features/progress/services/sm2_scheduler.dart` | [features/progress/services/sm2_scheduler.md](features/progress/services/sm2_scheduler.md) | 5 | 2 |
 | `lib/features/settings/views/license_page.dart` | [features/settings/views/license_page.md](features/settings/views/license_page.md) | 2 | 0 |
@@ -126,7 +125,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/speech/widgets/speech_settings_tiles.dart` | [features/speech/widgets/speech_settings_tiles.md](features/speech/widgets/speech_settings_tiles.md) | 5 | 2 |
 | `lib/features/speech/widgets/voice_labels.dart` | [features/speech/widgets/voice_labels.md](features/speech/widgets/voice_labels.md) | 4 | 1 |
 | `lib/features/speech/widgets/voice_picker_sheet.dart` | [features/speech/widgets/voice_picker_sheet.md](features/speech/widgets/voice_picker_sheet.md) | 4 | 1 |
-| `lib/features/settings/views/settings_page.dart` | [features/settings/views/settings_page.md](features/settings/views/settings_page.md) | 16 | 2 |
+| `lib/features/settings/views/settings_page.dart` | [features/settings/views/settings_page.md](features/settings/views/settings_page.md) | 18 | 3 |
 | `lib/features/settings/views/backup_page.dart` | [features/settings/views/backup_page.md](features/settings/views/backup_page.md) | 17 | 1 |
 | `lib/features/vocab/views/vocab_page.dart` | [features/vocab/views/vocab_page.md](features/vocab/views/vocab_page.md) | 7 | 1 |
 
@@ -146,7 +145,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 
 | Source file | Page | Declarations | Tier A count |
 |---|---|---|---|
-| `lib/shared/providers/app_settings.dart` | [shared/providers/app_settings.md](shared/providers/app_settings.md) | 10 | 0 |
+| `lib/shared/providers/app_settings.dart` | [shared/providers/app_settings.md](shared/providers/app_settings.md) | 12 | 0 |
 | `lib/shared/providers/progress_provider.dart` | [shared/providers/progress_provider.md](shared/providers/progress_provider.md) | 6 | 0 |
 | `lib/shared/providers/learner_profile_provider.dart` | [shared/providers/learner_profile_provider.md](shared/providers/learner_profile_provider.md) | 3 | 0 |
 | `lib/shared/providers/history_provider.dart` | [shared/providers/history_provider.md](shared/providers/history_provider.md) | 3 | 2 |

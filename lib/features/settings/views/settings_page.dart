@@ -27,6 +27,13 @@ import 'privacy_policy_page.dart';
 /// is an inline control (the ZIP export and import rows act in place).
 enum _SettingsDetail { quizModes, webdav, backup, privacy, license }
 
+/// How many taps on the version row unlock developer options.
+///
+/// Eight, because that is what Android itself asks for. Copying the gesture
+/// exactly is the point: somebody who needs the diagnostics already knows how
+/// to do this, and nobody else will find it by accident.
+const _debugUnlockTaps = 8;
+
 class SettingsPage extends ConsumerStatefulWidget {
   /// Purpose: Create a settings page instance.
   /// Inputs: None.
@@ -47,6 +54,12 @@ class SettingsPage extends ConsumerStatefulWidget {
 class _SettingsPageState extends ConsumerState<SettingsPage> {
   String _version = '';
   String _storagePath = '';
+
+  /// How many times the version row has been tapped this visit.
+  ///
+  /// Reset when the page is rebuilt from scratch, so the count is a deliberate
+  /// run of taps rather than something a learner accumulates over weeks.
+  int _versionTaps = 0;
 
   // Which second-level page the detail pane is showing, when there is one.
   // Kept when the window narrows back to one pane rather than cleared, so
@@ -98,6 +111,49 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
     if (mounted) {
       setState(() => _version = '${info.version}+${info.buildNumber}');
     }
+  }
+
+  /// Purpose: Count taps on the version row, and unlock developer options at
+  /// eight.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: May persist the preference; shows a snack bar.
+  /// Notes: Internal helper used within this file only. Eight taps on the
+  /// version is Android's own gesture, and copying it exactly is the point:
+  /// somebody who needs this already knows how to do it, and nobody else will
+  /// find it by accident.
+  ///
+  /// The countdown starts at three taps out rather than at the first, so an
+  /// accidental double-tap says nothing while a deliberate run tells the
+  /// person doing it that it is working.
+  void _onVersionTapped() {
+    final l10n = AppLocalizations.of(context)!;
+    final messenger = ScaffoldMessenger.of(context);
+    if (ref.read(appSettingsProvider).debugMode) return;
+
+    setState(() => _versionTaps++);
+    if (_versionTaps < _debugUnlockTaps) return;
+    setState(() => _versionTaps = 0);
+    ref.read(appSettingsProvider.notifier).setDebugMode(true);
+    messenger.showSnackBar(SnackBar(content: Text(l10n.settingsDebugUnlocked)));
+  }
+
+  /// Purpose: Say how many taps are left, once the run is clearly deliberate.
+  /// Inputs: `l10n`.
+  /// Returns: `String?` — null while there is nothing to say.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. Shown as the version
+  /// row's own subtitle rather than as a snack bar, which is not a style
+  /// choice: a snack bar sits at the bottom of the screen, the About section
+  /// is at the bottom of a long list, and the countdown would have covered the
+  /// row the next tap has to land on.
+  ///
+  /// It stays quiet until three taps out, so an accidental double-tap says
+  /// nothing while a deliberate run tells the person doing it that it works.
+  String? _debugCountdown(AppLocalizations l10n) {
+    final left = _debugUnlockTaps - _versionTaps;
+    if (_versionTaps == 0 || left > 3 || left <= 0) return null;
+    return l10n.settingsDebugStepsLeft(left);
   }
 
   /// Purpose: Read the active storage directory for display.
@@ -515,13 +571,43 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
           ListTile(
             leading: const Icon(Icons.info_outline),
             title: Text(l10n.settingsVersion),
+            subtitle: switch (_debugCountdown(l10n)) {
+              final line? => Text(
+                line,
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: theme.colorScheme.primary,
+                ),
+              ),
+              _ => null,
+            },
             trailing: Text(
               _version,
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: theme.colorScheme.onSurfaceVariant,
               ),
             ),
+            onTap: _onVersionTapped,
           ),
+          // Only once it is on. An "off" row here would be an invitation, and
+          // the point of hiding diagnostics is that they are not for the
+          // learner who has not gone looking for them.
+          if (settings.debugMode)
+            SwitchListTile(
+              secondary: const Icon(Icons.bug_report_outlined),
+              title: Text(l10n.settingsDebugMode),
+              subtitle: Text(
+                l10n.settingsDebugModeBody,
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
+              ),
+              isThreeLine: true,
+              value: true,
+              onChanged: (_) {
+                setState(() => _versionTaps = 0);
+                ref.read(appSettingsProvider.notifier).setDebugMode(false);
+              },
+            ),
           ListTile(
             leading: const Icon(Icons.privacy_tip_outlined),
             title: Text(l10n.settingsPrivacyPolicy),
