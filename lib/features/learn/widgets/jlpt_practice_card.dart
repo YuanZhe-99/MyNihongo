@@ -8,6 +8,9 @@ import '../../content/models/jlpt_level.dart';
 import '../../drills/models/drill_file.dart';
 import '../../drills/models/drill_section.dart';
 import '../../drills/services/drill_repository.dart';
+import '../../drills/views/exam_page.dart';
+import '../../progress/services/nihongo_storage.dart';
+import '../../../shared/providers/exam_provider.dart';
 import '../../quiz/models/quiz_config.dart';
 import '../../speech/services/tts_service.dart';
 
@@ -43,7 +46,35 @@ class JlptPracticeCard extends ConsumerWidget {
     final theme = Theme.of(context);
     final level = ref.watch(learnerProfileProvider).targetLevel;
     final files = ref.watch(drillLevelProvider(level)).value;
-    final hasVoice = TtsService.instance.hasJapaneseVoice;
+
+    return ValueListenableBuilder<bool>(
+      // Rebuilt when the speech engine has actually been asked. Reading
+      // `hasJapaneseVoice` at first build says "no" on every device, because
+      // the probe has not run — and this card would then tell a Pixel it
+      // cannot practise listening and never take it back.
+      valueListenable: TtsService.instance.ready,
+      builder: (context, ready, _) =>
+          _card(context, ref, l10n, theme, level, files, ready),
+    );
+  }
+
+  /// Purpose: Build the card itself, once the speech probe has answered.
+  /// Inputs: `context`, `ref`, `l10n`, `theme`, the `level`, its `files`, and
+  /// whether the engine has been `ready` asked.
+  /// Returns: `Widget`.
+  /// Side effects: None until a control is used.
+  /// Notes: Internal helper used within this file only. Split out only so the
+  /// listenable wraps it; the reasoning is all in `build`.
+  Widget _card(
+    BuildContext context,
+    WidgetRef ref,
+    AppLocalizations l10n,
+    ThemeData theme,
+    JlptLevel level,
+    Map<DrillSection, DrillFile>? files,
+    bool ready,
+  ) {
+    final hasVoice = !ready || TtsService.instance.hasJapaneseVoice;
 
     return Card(
       margin: EdgeInsets.zero,
@@ -86,18 +117,56 @@ class JlptPracticeCard extends ConsumerWidget {
                 level: level,
                 section: section,
                 file: files?[section],
-                loading: files == null,
+                // Listening is 'still loading' until the speech engine has
+                // answered, so the row makes no claim it has not checked.
+                loading:
+                    files == null ||
+                    (!ready && section == DrillSection.listening),
                 hasVoice: hasVoice,
               ),
             const Divider(height: 24),
+            // A saved paper is offered before a new one. Starting a fresh mock
+            // is one tap away either way, but a learner who put one down half
+            // an hour ago should not have to remember it exists.
+            if (ref.watch(savedExamProvider).value case final saved?) ...[
+              Text(
+                l10n.examContinueBody(
+                  saved.level,
+                  saved.blockIndex + 1,
+                  saved.remaining.inMinutes,
+                ),
+                style: theme.textTheme.bodyMedium,
+              ),
+              const SizedBox(height: 8),
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: [
+                  FilledButton.tonalIcon(
+                    onPressed: () =>
+                        context.push('/exam', extra: const ExamConfig.resume()),
+                    icon: const Icon(Icons.play_arrow_outlined, size: 18),
+                    label: Text(l10n.examContinue),
+                  ),
+                  OutlinedButton.icon(
+                    onPressed: () => _discard(context, ref, l10n),
+                    icon: const Icon(Icons.delete_outline, size: 18),
+                    label: Text(l10n.examDiscard),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 12),
+            ],
             Wrap(
               spacing: 8,
               runSpacing: 8,
               children: [
                 OutlinedButton.icon(
-                  onPressed: null,
+                  onPressed: files == null
+                      ? null
+                      : () => _startMock(context, ref, l10n, level),
                   icon: const Icon(Icons.timer_outlined, size: 18),
-                  label: Text(l10n.jlptMock),
+                  label: Text(l10n.examStartNew),
                 ),
                 OutlinedButton.icon(
                   onPressed: () => context.push('/exam-history'),
@@ -106,17 +175,87 @@ class JlptPracticeCard extends ConsumerWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 6),
-            Text(
-              l10n.jlptComingNext,
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
-            ),
           ],
         ),
       ),
     );
+  }
+
+  /// Purpose: Start a new mock, asking first if one is already saved.
+  /// Inputs: `context`, `ref`, `l10n`, the `level`.
+  /// Returns: None.
+  /// Side effects: May clear the saved paper; navigates.
+  /// Notes: Internal helper used within this file only. One saved paper per
+  /// device, so starting a second has to replace the first. That is worth
+  /// asking about: the learner may have forgotten a paper is half-sat, and it
+  /// is the only thing here that cannot be recovered.
+  Future<void> _startMock(
+    BuildContext context,
+    WidgetRef ref,
+    AppLocalizations l10n,
+    JlptLevel level,
+  ) async {
+    final router = GoRouter.of(context);
+    if (ref.read(savedExamProvider).value != null) {
+      final replace = await showDialog<bool>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text(l10n.examReplaceTitle),
+          content: Text(l10n.examReplaceBody),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text(l10n.cancel),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text(l10n.examStartNew),
+            ),
+          ],
+        ),
+      );
+      if (replace != true) return;
+      await NihongoStorage.clearExamInProgress();
+      ref.refresh(savedExamProvider);
+    }
+    // Through the router, not the local navigator: `/exam` is registered
+    // outside the tab shell, and pushing a `MaterialPageRoute` here would put
+    // a running clock above a navigation bar inviting the learner to leave.
+    router.push('/exam', extra: ExamConfig(level));
+  }
+
+  /// Purpose: Throw away the saved paper.
+  /// Inputs: `context`, `ref`, `l10n`.
+  /// Returns: None.
+  /// Side effects: Deletes the save file; refreshes the card.
+  /// Notes: Internal helper used within this file only. The dialog says what
+  /// survives: every answer already given went through the scheduler as it
+  /// happened, so discarding the paper loses the paper, not the study.
+  Future<void> _discard(
+    BuildContext context,
+    WidgetRef ref,
+    AppLocalizations l10n,
+  ) async {
+    final discard = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.examDiscardTitle),
+        content: Text(l10n.examDiscardBody),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text(l10n.cancel),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(l10n.examDiscard),
+          ),
+        ],
+      ),
+    );
+    if (discard != true) return;
+    await NihongoStorage.clearExamInProgress();
+    ref.refresh(savedExamProvider);
   }
 
   /// Purpose: Render one section's practise row.

@@ -414,6 +414,63 @@ class NihongoStorage {
     await save(ProgressData(records: list, extraJson: data.extraJson));
   }
 
+  /// The file a paper in progress is written to.
+  static const _examFileName = 'exam_in_progress.json';
+
+  /// Purpose: Read the paper the learner put down, if there is one.
+  /// Inputs: None.
+  /// Returns: `Future<Map<String, dynamic>?>` — null when there is none.
+  /// Side effects: Reads a file in the app directory.
+  /// Notes: A file of its own rather than a record, and **not synced, not
+  /// backed up, not exported**: an unfinished exam on another device is
+  /// meaningless — the clock belongs to the sitting, and half a paper is not a
+  /// result. The backup and ZIP engines only see registry modules, so leaving
+  /// it out of the registry is all that takes.
+  ///
+  /// A file that will not parse is treated as no saved paper. The alternative
+  /// is refusing to start a new one because an old one is corrupt.
+  static Future<Map<String, dynamic>?> loadExamInProgress() async {
+    try {
+      final file = await _getFile(_examFileName);
+      if (!await file.exists()) return null;
+      final raw = await file.readAsString();
+      if (raw.trim().isEmpty) return null;
+      return jsonDecode(raw) as Map<String, dynamic>;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /// Purpose: Write the paper down so it can be picked up later.
+  /// Inputs: `json`.
+  /// Returns: None.
+  /// Side effects: Atomically writes a file in the app directory.
+  /// Notes: Atomic, like every other write here: this is called on every
+  /// answer, and a phone killed mid-write must leave the previous save intact
+  /// rather than a truncated one. Auto-sync is deliberately **not** notified —
+  /// nothing about this file goes anywhere.
+  static Future<void> saveExamInProgress(Map<String, dynamic> json) async {
+    final file = await _getFile(_examFileName);
+    await atomicWriteString(
+      file,
+      const JsonEncoder.withIndent('  ').convert(json),
+    );
+  }
+
+  /// Purpose: Throw away the saved paper.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: Deletes the file if it is there.
+  /// Notes: Called when a paper is finished and when the learner discards one.
+  /// A finished paper is already an `exam:` record; leaving the save behind
+  /// would offer to resume something that has been marked.
+  static Future<void> clearExamInProgress() async {
+    try {
+      final file = await _getFile(_examFileName);
+      if (await file.exists()) await file.delete();
+    } catch (_) {}
+  }
+
   /// Purpose: Forget records the learner deleted.
   /// Inputs: `ids`.
   /// Returns: None.

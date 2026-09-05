@@ -22,7 +22,10 @@ router once and keeps it in its state: a `GoRouter` owns navigation history, so 
 theme or locale change would send the user back to the initial tab mid-session.
 
 Full-window routes sit **outside** the shell beside it — `/quiz`, `/scenario`, `/writing`, `/lab`,
-and `/exam-history`, which builds `ExamHistoryPage` and takes no `extra`. Outside the
-shell for the reason the quiz is: the JLPT results are entered with a purpose from the Learn tab and
-left when they are finished, so a tab bar under them would be offering somewhere else to go rather
-than a way back.
+`/exam`, which builds `ExamPage` from an `ExamConfig` passed as `extra`, and `/exam-history`, which
+builds `ExamHistoryPage` and takes no `extra`. Outside the shell for the reason the quiz is: the
+JLPT results are entered with a purpose from the Learn tab and left when they are finished, so a tab
+bar under them would be offering somewhere else to go rather than a way back. `/exam` has a sharper
+version of the same reason — a navigation bar under a running exam clock is an invitation to leave —
+which is why the Learn card pushes it through the router rather than through the shell's own
+navigator.

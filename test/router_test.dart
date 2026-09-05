@@ -5,6 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:my_nihongo/app/router.dart';
 import 'package:my_nihongo/features/content/services/content_repository.dart';
+import 'package:my_nihongo/features/content/models/jlpt_level.dart';
+import 'package:my_nihongo/features/drills/views/exam_page.dart';
 import 'package:my_nihongo/l10n/app_localizations.dart';
 import 'package:my_nihongo/shared/widgets/shell_scaffold.dart';
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
@@ -42,7 +44,11 @@ void main() {
     if (temp.existsSync()) temp.deleteSync(recursive: true);
   });
 
-  Future<void> pumpAt(WidgetTester tester, String location) async {
+  Future<void> pumpAt(
+    WidgetTester tester,
+    String location, {
+    Object? extra,
+  }) async {
     tester.view.devicePixelRatio = 1.0;
     tester.view.physicalSize = const Size(412, 915);
     addTearDown(tester.view.reset);
@@ -55,7 +61,10 @@ void main() {
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
             locale: const Locale('zh'),
-            routerConfig: buildAppRouter(initialLocation: location),
+            // `go` after building, because a route whose page needs an `extra`
+            // cannot be reached by initial location alone.
+            routerConfig: buildAppRouter(initialLocation: location)
+              ..go(location, extra: extra),
           ),
         ),
       );
@@ -95,6 +104,16 @@ void main() {
       '/grammar',
       '/settings',
     ]);
+  });
+
+  testWidgets('a mock exam opens outside the shell, with no way out but back', (
+    tester,
+  ) async {
+    // A running clock above a navigation bar is an invitation to leave.
+    await pumpAt(tester, '/exam', extra: const ExamConfig(JlptLevel.n5));
+    expect(find.text('模拟考试'), findsWidgets);
+    expect(find.byType(NavigationBar), findsNothing);
+    expect(find.byType(NavigationRail), findsNothing);
   });
 
   testWidgets('the results history opens outside the shell too', (

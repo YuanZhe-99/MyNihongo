@@ -12,6 +12,57 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.4.7` — 2026-09-05. The paper on a clock, and N4.
+
+  **A mock exam you can put down.** Three blocks for N5, each opening on a start
+  card that names the part, its sections, its minutes and its question count —
+  because starting a clock somebody has not looked at is not a test of Japanese,
+  and the real thing has a break between parts. Nothing is marked until the
+  paper is in: no verdict, no explanation, no Continue button. Answering
+  advances. A listening item plays once, which is the exam's rule and not a
+  design choice.
+
+  **The clock measures attention, not hours.** Time counts only while the block
+  is on screen and the app is in the foreground. A learner who takes a phone
+  call has not spent that time on the paper; one who leaves it overnight has not
+  lost the paper. Leaving writes it down and coming back picks it up with the
+  same time left — after re-checking the deadline, because a phone that slept
+  past it has to find out on waking rather than resume a block that ended hours
+  ago.
+
+  Started and running turned out to be different states, and the device is what
+  said so. The clock stops whenever a dialog opens, and the first version fell
+  back to the start card each time — so leaving the exam looked, for the second
+  the dialog took to appear, exactly like losing it. The widget test had passed.
+
+  **One saved paper, and it stays on this phone.** Not synced, not backed up,
+  not exported: an unfinished exam on another device is meaningless, because the
+  clock belongs to the sitting. The save holds question **ids** and what was
+  chosen, never the questions, so resuming re-marks against the files as they
+  are now and a content fix corrects the resumed paper too. Ids the shipped
+  files no longer have are dropped and the paper is that many questions shorter,
+  rather than refusing to open; a save from a newer build is refused outright
+  rather than half-read.
+
+  The Learn card offers **Continue** — level, part, minutes left — before it
+  offers a new one, and asks before replacing it, because there is one saved
+  paper per device and it is the only thing here that cannot be recovered.
+  Discarding says what survives: every answer already given went through the
+  review schedule as it happened.
+
+  A block that runs out of time is handed in with whatever is left recorded as
+  **unanswered**, not wrong. A block whose questions are all answered is handed
+  in early, and the recorded time is the time actually spent.
+
+  **N4 ships complete** at the official composition — 85 questions and 35
+  passages across all four sections.
+
+  One more thing the device found: the Learn card read the speech engine before
+  it had been asked, so a fresh install said listening needed a Japanese voice
+  on a phone that has one, and never took it back. `TtsService` now says when it
+  has actually checked, and the card waits for that rather than reporting a
+  limitation it has not verified. 948 tests.
+
 - `0.4.6` — 2026-09-05. Settings written for the person reading it, with the
   diagnosis moved behind a door.
 

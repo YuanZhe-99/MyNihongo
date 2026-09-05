@@ -45,6 +45,15 @@ class TtsService {
   /// one of them can show its stop icon.
   final ValueNotifier<String?> speaking = ValueNotifier<String?>(null);
 
+  /// Whether the engine has been asked what voices it has.
+  ///
+  /// False until [init] finishes. Widgets that decide something from
+  /// [hasJapaneseVoice] watch this, because the answer before the probe has
+  /// run is "no" and that is not the same as "this device has no Japanese
+  /// voice" — a card that read it at first build would tell a Pixel it cannot
+  /// do listening practice, and never take it back.
+  final ValueNotifier<bool> ready = ValueNotifier<bool>(false);
+
   bool _initialized = false;
   bool _hasJapaneseVoice = false;
   bool _japaneseSeen = false;
@@ -126,6 +135,10 @@ class TtsService {
     }
     if (voiceName != null) _voiceName = _resolveVoiceName(voiceName);
     await _applyEngineState();
+    // Last, and unconditionally: a device whose probe threw has still been
+    // asked, and the answer — no Japanese voice — is now a fact rather than a
+    // not-yet.
+    ready.value = true;
   }
 
   /// Purpose: Change the speaking rate.

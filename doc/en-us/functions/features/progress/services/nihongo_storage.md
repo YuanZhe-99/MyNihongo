@@ -30,6 +30,10 @@ because neither a voice name nor an engine package means anything on another dev
 | [`NihongoStorage.recordHistory`](#recordhistory) | static method | A | Remember one analysed sentence, and prune the oldest past the cap. |
 | [`NihongoStorage.recordExam`](#recordexam) | static method | A | Remember one sitting of a JLPT paper, and prune the oldest past the cap for that mode. |
 | [`NihongoStorage.deleteRecords`](#deleterecords) | static method | A | Forget records the learner deleted. |
+| `NihongoStorage._examFileName` | static constant | B | `exam_in_progress.json` — the file a paper in progress is written to. |
+| [`NihongoStorage.loadExamInProgress`](#loadexam) | static method | A | Read the paper the learner put down, if there is one. |
+| `NihongoStorage.saveExamInProgress` | static method | B | Atomically write the paper down so it can be picked up later; auto-sync is deliberately not notified. |
+| `NihongoStorage.clearExamInProgress` | static method | B | Throw away the saved paper, when it is finished or discarded. |
 | `NihongoStorage.readConfig` | static method | B | Read `storage_config.json`; empty when absent or blank. |
 | `NihongoStorage.writeConfig` | static method | B | Write `storage_config.json` atomically. |
 | `NihongoStorage.getThemeMode` | static method | B | Read the persisted theme mode (`light`, `dark`, or null for system). |
@@ -168,4 +172,30 @@ where the numbers would be about a different phone. It is written from exactly o
   learner's other devices too. That is the behaviour a delete button has to have — an entry that came
   back on the next sync would be worse than no button. Not writing when nothing changed keeps an
   idle delete from touching the file and waking a sync.
+
+### `static Future<Map<String, dynamic>?> loadExamInProgress()` <a id="loadexam"></a>
+
+- **Kind:** static method
+- **Purpose:** Read the paper the learner put down, if there is one.
+- **Inputs:** None.
+- **Returns:** `Future<Map<String, dynamic>?>` — null when there is none.
+- **Side effects:** Reads `exam_in_progress.json` in the app directory.
+- **Algorithm:** Missing, blank or unparseable file reads as null; otherwise the decoded map.
+- **Usage:** `savedExamProvider` for the Learn card, and `exam_page.dart` when resuming.
+- **Notes:** A file of its own rather than a record, and **not synced, not backed up, not exported**.
+  An unfinished exam on another device is meaningless — the clock belongs to the sitting, and half a
+  paper is not a result. The backup and ZIP engines only see registry modules, so leaving this file
+  out of the registry is all that takes; the sibling writer skips `notifySaved()` for the same reason,
+  because nothing about this file goes anywhere.
+
+  A file that will not parse is treated as no saved paper rather than throwing, unlike `load` above.
+  The alternative is refusing to start a new paper because an old one is corrupt, and there is nothing
+  here worth protecting from being overwritten — a half-sat exam is not a record of study, and every
+  answer in it already reached the scheduler as it was given.
+
+  `saveExamInProgress` is atomic like every other write here, because it is called on every answer and
+  a phone killed mid-write must leave the previous save intact rather than a truncated one.
+  `clearExamInProgress` runs when a paper is finished and when the learner discards one: a finished
+  paper is already an `exam:` record, and leaving the save behind would offer to resume something that
+  has been marked.
 

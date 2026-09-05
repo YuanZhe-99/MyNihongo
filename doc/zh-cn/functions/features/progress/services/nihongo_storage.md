@@ -22,6 +22,10 @@ M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地�
 | [`NihongoStorage.recordHistory`](#recordhistory) | 静态方法 | A | 记住一条分析过的句子，并裁掉超出上限的最旧条目。 |
 | [`NihongoStorage.recordExam`](#recordexam) | 静态方法 | A | 记住一次 JLPT 卷子的作答，并按该模式的上限裁掉最旧的条目。 |
 | [`NihongoStorage.deleteRecords`](#deleterecords) | 静态方法 | A | 忘掉学习者删除的记录。 |
+| `NihongoStorage._examFileName` | 静态常量 | B | `exam_in_progress.json`——进行中的卷子写入的那个文件。 |
+| [`NihongoStorage.loadExamInProgress`](#loadexam) | 静态方法 | A | 读取学习者放下的那份卷子，如果有的话。 |
+| `NihongoStorage.saveExamInProgress` | 静态方法 | B | 原子地把卷子写下来，好让它之后能被接着做；刻意不通知自动同步。 |
+| `NihongoStorage.clearExamInProgress` | 静态方法 | B | 在卷子做完或被放弃时，扔掉保存的考试。 |
 | `NihongoStorage.readConfig` | 静态方法 | B | 读取 `storage_config.json`；缺失或空白时为空。 |
 | `NihongoStorage.writeConfig` | 静态方法 | B | 原子写入 `storage_config.json`。 |
 | `NihongoStorage.getThemeMode` | 静态方法 | B | 读取持久化的主题模式（`light`、`dark`，或表示跟随系统的 null）。 |
@@ -119,3 +123,18 @@ M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地�
 - **用法：** 历史记录行上的删除按钮，以及考试历史记录条目卡片上的那个。
 - **注意：** 是真删除而不是墓碑：三方合并把「一侧删除、另一侧未改动」的记录视为已删除，所以忘掉一个句子也会在学习者的其他设备上忘掉它。删除按钮必须具备这种行为——一个下次同步又回来的条目，比没有这个按钮更糟。没有改动时不写入，可以避免一次无效删除去碰文件并唤醒同步。
 
+
+### `static Future<Map<String, dynamic>?> loadExamInProgress()` <a id="loadexam"></a>
+
+- **种类：** 静态方法
+- **用途：** 读取学习者放下的那份卷子，如果有的话。
+- **输入：** 无。
+- **返回：** `Future<Map<String, dynamic>?>`——没有时为 null。
+- **副作用：** 读取应用目录下的 `exam_in_progress.json`。
+- **算法：** 文件缺失、空白或解析不了时读作 null；否则给出解码后的 map。
+- **用法：** 供 Learn 卡片使用的 `savedExamProvider`，以及继续作答时的 `exam_page.dart`。
+- **注意：** 它是一个自己的文件而不是一条记录，而且**不同步、不备份、不导出**。另一台设备上的一场未完成的考试没有意义——计时属于这一次作答，而半份卷子不是一个结果。备份与 ZIP 引擎只看得见注册表模块，所以把这个文件留在注册表之外就是全部所需；与它成对的写入方出于同样的理由跳过 `notifySaved()`，因为这个文件的任何内容都不会去往别处。
+
+  与上面的 `load` 不同，解析不了的文件会被当作没有保存的考试，而不是抛出异常。另一种做法是因为一份旧卷子损坏就拒绝开始一份新的，而这里也没有什么值得保护、不让它被覆盖的东西——一场做了一半的考试不是一份学习记录，而其中的每一次作答在当时就已经到达调度器了。
+
+  `saveExamInProgress` 和这里的其他每一次写入一样是原子的，因为它在每一次作答时都会被调用，而一部在写入中途被杀掉的手机必须留下完好的上一份保存，而不是一份被截断的。`clearExamInProgress` 在一份卷子做完时以及学习者放弃一份时运行：做完的卷子已经是一条 `exam:` 记录了，而把保存留在那里会提出继续做一份已经判过分的东西。

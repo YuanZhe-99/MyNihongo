@@ -1616,4 +1616,85 @@ class AppLocalizationsEn extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String examBlockTitle(int n, int total) {
+    return 'Part $n of $total';
+  }
+
+  @override
+  String examBlockMinutes(int minutes) {
+    return '$minutes minutes';
+  }
+
+  @override
+  String examQuestionCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n questions',
+      one: '1 question',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examStartBlock => 'Start this part';
+
+  @override
+  String get examLeaveTitle => 'Leave the exam?';
+
+  @override
+  String get examLeaveBody =>
+      'The exam is saved with the time you have left. Continue it from the Learn tab.';
+
+  @override
+  String get examLeaveConfirm => 'Leave';
+
+  @override
+  String get examResultsTitle => 'Mock exam results';
+
+  @override
+  String examUnansweredCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n not answered',
+      one: '1 not answered',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examBlockTime(String sections, int used, int limit) {
+    return '$sections: $used of $limit minutes used';
+  }
+
+  @override
+  String get examContinue => 'Continue the exam';
+
+  @override
+  String examContinueBody(String level, int block, int minutes) {
+    return '$level mock, part $block, $minutes minutes left';
+  }
+
+  @override
+  String get examDiscard => 'Discard';
+
+  @override
+  String get examDiscardTitle => 'Discard the saved exam?';
+
+  @override
+  String get examDiscardBody =>
+      'The answers you have given are kept in your progress. The exam itself is not recorded.';
+
+  @override
+  String get examStartNew => 'Start a mock exam';
+
+  @override
+  String get examReplaceTitle => 'Start a new exam?';
+
+  @override
+  String get examReplaceBody =>
+      'There is a saved exam. Starting a new one discards it.';
 }

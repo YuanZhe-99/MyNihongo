@@ -15,6 +15,8 @@
 根组件只构建一次路由器并保存在其状态中：`GoRouter` 拥有导航历史，若在主题或语言变化时重建，会把用户在会话中途
 送回初始标签。
 
-整窗路由位于 shell **之外**、与它并列——`/quiz`、`/scenario`、`/writing`、`/lab`，以及构建 `ExamHistoryPage`
-且不接收 `extra` 的 `/exam-history`。放在 shell 之外的理由和测验一样：JLPT 结果是带着目的从学习标签页进入、
-看完就离开的，因此它们下面的标签栏提供的会是另一个可去之处，而不是一条回去的路。
+整窗路由位于 shell **之外**、与它并列——`/quiz`、`/scenario`、`/writing`、`/lab`、由作为 `extra` 传入的
+`ExamConfig` 构建 `ExamPage` 的 `/exam`，以及构建 `ExamHistoryPage` 且不接收 `extra` 的 `/exam-history`。
+放在 shell 之外的理由和测验一样：JLPT 结果是带着目的从学习标签页进入、看完就离开的，因此它们下面的标签栏
+提供的会是另一个可去之处，而不是一条回去的路。`/exam` 有一个更强烈的同类理由——一个走着考试计时的界面下方
+还摆着导航栏，等于是在邀请人离开——这也正是 Learn 卡片经由路由器而不是经由 shell 自己的 navigator 压入它的原因。

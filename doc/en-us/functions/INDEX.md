@@ -4,20 +4,20 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **1019** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **1060** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **1058** documented declarations. The two counts are measured separately and
+The rows below sum to **1120** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
-| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 219 |
-| Tier B (index row only) | 839 |
-| **Total** | **1058** |
+| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 241 |
+| Tier B (index row only) | 879 |
+| **Total** | **1120** |
 
-These totals were last measured against the source tree when v0.4.6 moved the diagnostics behind
-developer options. If you change these numbers, measure them rather than adjusting them by hand:
+These totals were last measured against the source tree when v0.4.7 added the timed mock exam with
+save and resume. If you change these numbers, measure them rather than adjusting them by hand:
 
 ```bash
 find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' | wc -l
@@ -73,14 +73,14 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/kana/views/kana_page.dart` | [features/kana/views/kana_page.md](features/kana/views/kana_page.md) | 15 | 2 |
 | `lib/features/learn/widgets/learning_settings_tiles.dart` | [features/learn/widgets/learning_settings_tiles.md](features/learn/widgets/learning_settings_tiles.md) | 2 | 0 |
 | `lib/features/learn/widgets/today_card.dart` | [features/learn/widgets/today_card.md](features/learn/widgets/today_card.md) | 3 | 1 |
-| `lib/features/learn/widgets/jlpt_practice_card.dart` | [features/learn/widgets/jlpt_practice_card.md](features/learn/widgets/jlpt_practice_card.md) | 6 | 2 |
+| `lib/features/learn/widgets/jlpt_practice_card.dart` | [features/learn/widgets/jlpt_practice_card.md](features/learn/widgets/jlpt_practice_card.md) | 9 | 4 |
 | `lib/features/learn/widgets/study_calendar.dart` | [features/learn/widgets/study_calendar.md](features/learn/widgets/study_calendar.md) | 5 | 2 |
 | `lib/features/learn/views/learn_page.dart` | [features/learn/views/learn_page.md](features/learn/views/learn_page.md) | 5 | 0 |
 | `lib/features/progress/models/study_record.dart` | [features/progress/models/study_record.md](features/progress/models/study_record.md) | 23 | 5 |
 | `lib/features/progress/models/learner_profile.dart` | [features/progress/models/learner_profile.md](features/progress/models/learner_profile.md) | 7 | 2 |
 | `lib/features/progress/models/history_entry.dart` | [features/progress/models/history_entry.md](features/progress/models/history_entry.md) | 12 | 4 |
 | `lib/features/progress/models/exam_attempt.dart` | [features/progress/models/exam_attempt.md](features/progress/models/exam_attempt.md) | 19 | 4 |
-| `lib/features/progress/services/nihongo_storage.dart` | [features/progress/services/nihongo_storage.md](features/progress/services/nihongo_storage.md) | 48 | 4 |
+| `lib/features/progress/services/nihongo_storage.dart` | [features/progress/services/nihongo_storage.md](features/progress/services/nihongo_storage.md) | 52 | 5 |
 | `lib/features/progress/services/review_queue.dart` | [features/progress/services/review_queue.md](features/progress/services/review_queue.md) | 7 | 2 |
 | `lib/features/progress/services/sm2_scheduler.dart` | [features/progress/services/sm2_scheduler.md](features/progress/services/sm2_scheduler.md) | 5 | 2 |
 | `lib/features/settings/views/license_page.dart` | [features/settings/views/license_page.md](features/settings/views/license_page.md) | 2 | 0 |
@@ -90,7 +90,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/quiz/services/answer_checker.dart` | [features/quiz/services/answer_checker.md](features/quiz/services/answer_checker.md) | 8 | 0 |
 | `lib/features/quiz/services/distractors.dart` | [features/quiz/services/distractors.md](features/quiz/services/distractors.md) | 8 | 2 |
 | `lib/features/quiz/services/question_generator.dart` | [features/quiz/services/question_generator.md](features/quiz/services/question_generator.md) | 15 | 3 |
-| `lib/features/quiz/services/quiz_session.dart` | [features/quiz/services/quiz_session.md](features/quiz/services/quiz_session.md) | 18 | 7 |
+| `lib/features/quiz/services/quiz_session.dart` | [features/quiz/services/quiz_session.md](features/quiz/services/quiz_session.md) | 22 | 7 |
 | `lib/features/quiz/views/quiz_modes_page.dart` | [features/quiz/views/quiz_modes_page.md](features/quiz/views/quiz_modes_page.md) | 3 | 1 |
 | `lib/features/quiz/views/quiz_page.dart` | [features/quiz/views/quiz_page.md](features/quiz/views/quiz_page.md) | 15 | 4 |
 | `lib/features/quiz/widgets/answer_panes.dart` | [features/quiz/widgets/answer_panes.md](features/quiz/widgets/answer_panes.md) | 6 | 1 |
@@ -119,7 +119,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/speech/services/speech_backend.dart` | [features/speech/services/speech_backend.md](features/speech/services/speech_backend.md) | 13 | 1 |
 | `lib/features/speech/services/speech_recognition_service.dart` | [features/speech/services/speech_recognition_service.md](features/speech/services/speech_recognition_service.md) | 10 | 2 |
 | `lib/features/speech/services/tts_backend.dart` | [features/speech/services/tts_backend.md](features/speech/services/tts_backend.md) | 15 | 1 |
-| `lib/features/speech/services/tts_service.dart` | [features/speech/services/tts_service.md](features/speech/services/tts_service.md) | 8 | 3 |
+| `lib/features/speech/services/tts_service.dart` | [features/speech/services/tts_service.md](features/speech/services/tts_service.md) | 9 | 3 |
 | `lib/features/speech/widgets/pronunciation_practice_sheet.dart` | [features/speech/widgets/pronunciation_practice_sheet.md](features/speech/widgets/pronunciation_practice_sheet.md) | 12 | 2 |
 | `lib/features/speech/widgets/speak_button.dart` | [features/speech/widgets/speak_button.md](features/speech/widgets/speak_button.md) | 1 | 1 |
 | `lib/features/speech/widgets/speech_settings_tiles.dart` | [features/speech/widgets/speech_settings_tiles.md](features/speech/widgets/speech_settings_tiles.md) | 5 | 2 |
@@ -137,9 +137,12 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/drills/models/drill_file.dart` | [features/drills/models/drill_file.md](features/drills/models/drill_file.md) | 32 | 6 |
 | `lib/features/drills/services/drill_repository.dart` | [features/drills/services/drill_repository.md](features/drills/services/drill_repository.md) | 9 | 2 |
 | `lib/features/drills/services/drill_sampler.dart` | [features/drills/services/drill_sampler.md](features/drills/services/drill_sampler.md) | 8 | 3 |
+| `lib/features/drills/services/exam_session.dart` | [features/drills/services/exam_session.md](features/drills/services/exam_session.md) | 27 | 8 |
 | `lib/features/drills/widgets/drill_passage_view.dart` | [features/drills/widgets/drill_passage_view.md](features/drills/widgets/drill_passage_view.md) | 3 | 1 |
+| `lib/features/drills/widgets/exam_results_view.dart` | [features/drills/widgets/exam_results_view.md](features/drills/widgets/exam_results_view.md) | 4 | 1 |
 | `lib/features/drills/widgets/listening_script_player.dart` | [features/drills/widgets/listening_script_player.md](features/drills/widgets/listening_script_player.md) | 5 | 3 |
 | `lib/features/drills/views/exam_history_page.dart` | [features/drills/views/exam_history_page.md](features/drills/views/exam_history_page.md) | 6 | 3 |
+| `lib/features/drills/views/exam_page.dart` | [features/drills/views/exam_page.md](features/drills/views/exam_page.md) | 18 | 9 |
 
 ## shared/
 
@@ -149,7 +152,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/shared/providers/progress_provider.dart` | [shared/providers/progress_provider.md](shared/providers/progress_provider.md) | 6 | 0 |
 | `lib/shared/providers/learner_profile_provider.dart` | [shared/providers/learner_profile_provider.md](shared/providers/learner_profile_provider.md) | 3 | 0 |
 | `lib/shared/providers/history_provider.dart` | [shared/providers/history_provider.md](shared/providers/history_provider.md) | 3 | 2 |
-| `lib/shared/providers/exam_provider.dart` | [shared/providers/exam_provider.md](shared/providers/exam_provider.md) | 3 | 2 |
+| `lib/shared/providers/exam_provider.dart` | [shared/providers/exam_provider.md](shared/providers/exam_provider.md) | 4 | 3 |
 | `lib/shared/services/auto_sync_service.dart` | [shared/services/auto_sync_service.md](shared/services/auto_sync_service.md) | 18 | 0 |
 | `lib/shared/services/backup_service.dart` | [shared/services/backup_service.md](shared/services/backup_service.md) | 11 | 0 |
 | `lib/shared/services/import_export_service.dart` | [shared/services/import_export_service.md](shared/services/import_export_service.md) | 3 | 0 |

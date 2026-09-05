@@ -9,6 +9,8 @@ import 'package:my_nihongo/features/content/services/content_repository.dart';
 import 'package:my_nihongo/features/learn/views/learn_page.dart';
 import 'package:my_nihongo/features/learn/widgets/jlpt_practice_card.dart';
 import 'package:my_nihongo/features/learn/widgets/learning_settings_tiles.dart';
+import 'package:my_nihongo/features/speech/services/tts_backend.dart';
+import 'package:my_nihongo/features/speech/services/tts_service.dart';
 import 'package:my_nihongo/l10n/app_localizations.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
@@ -242,12 +244,32 @@ void main() {
       expect(find.textContaining('题'), findsWidgets);
     });
 
-    testWidgets('listening is disabled with a reason, not hidden', (
+    testWidgets('listening claims nothing until the engine has answered', (
       tester,
     ) async {
-      // The development host has no Japanese voice, which is exactly the
-      // device this rule is for: a question nobody can hear has no answer,
-      // and a missing row would look like a bug rather than a limitation.
+      // Before the probe runs, `hasJapaneseVoice` is false on every device.
+      // A card that read it at first build would tell a Pixel it cannot
+      // practise listening, and never take it back — which is what the device
+      // showed after v0.4.7 was installed.
+      await pumpAt(tester, 412, 2400, home: const JlptPracticeCard());
+      final listening = find.widgetWithText(ListTile, '听力');
+      expect(listening, findsOneWidget);
+      expect(find.text('需要设备上有日语语音。'), findsNothing);
+    });
+
+    testWidgets('listening is disabled with a reason once it has', (
+      tester,
+    ) async {
+      // A question nobody can hear has no answer, and a missing row would
+      // look like a bug rather than a limitation.
+      await tester.runAsync(() async {
+        final service = TtsService(_SilentBackend());
+        await service.init();
+        TtsService.setInstanceForTesting(service);
+      });
+      addTearDown(
+        () => TtsService.setInstanceForTesting(TtsService(_SilentBackend())),
+      );
       await pumpAt(tester, 412, 2400, home: const JlptPracticeCard());
       final listening = find.widgetWithText(ListTile, '听力');
       expect(listening, findsOneWidget);
@@ -255,31 +277,27 @@ void main() {
       expect(find.text('需要设备上有日语语音。'), findsOneWidget);
     });
 
-    testWidgets('the unbuilt button is shown disabled and explained', (
+    testWidgets('both exam buttons are live, and nothing is promised', (
       tester,
     ) async {
       await pumpAt(tester, 412, 2400, home: const JlptPracticeCard());
-      final mock = find.widgetWithText(OutlinedButton, '模拟考试');
+      final mock = find.widgetWithText(OutlinedButton, '开始模拟考试');
+      final history = find.widgetWithText(OutlinedButton, '成绩记录');
       expect(mock, findsOneWidget);
-      expect(tester.widget<OutlinedButton>(mock).onPressed, isNull);
+      expect(history, findsOneWidget);
+      expect(tester.widget<OutlinedButton>(mock).onPressed, isNotNull);
+      expect(tester.widget<OutlinedButton>(history).onPressed, isNotNull);
       expect(
-        find.text('计时模拟考试将在下次更新中推出。'),
-        findsOneWidget,
-        reason: 'a disabled button with no reason is just a broken button',
+        find.textContaining('下次更新'),
+        findsNothing,
+        reason: 'the card promised these two; both have now shipped',
       );
     });
 
-    testWidgets('the results button is live now that there is a history', (
-      tester,
-    ) async {
+    testWidgets('no saved paper means no Continue button', (tester) async {
       await pumpAt(tester, 412, 2400, home: const JlptPracticeCard());
-      final history = find.widgetWithText(OutlinedButton, '成绩记录');
-      expect(history, findsOneWidget);
-      expect(
-        tester.widget<OutlinedButton>(history).onPressed,
-        isNotNull,
-        reason: 'the line beside it no longer promises it for later',
-      );
+      expect(find.text('继续考试'), findsNothing);
+      expect(find.text('放弃'), findsNothing);
     });
 
     testWidgets('the Learn tab shows it in place of the roadmap card', (
@@ -291,4 +309,32 @@ void main() {
       expect(tester.takeException(), isNull);
     });
   });
+}
+
+/// A speech engine that has been asked and has no Japanese voice.
+///
+/// The state most desktops and many phones are actually in, and the one the
+/// "needs a Japanese voice" row exists for. Distinct from *not yet asked*,
+/// which is what the card must not mistake it for.
+class _SilentBackend implements TtsBackend {
+  @override
+  Future<bool> setLanguage(String language) async => false;
+  @override
+  Future<bool> isLanguageAvailable(String language) async => false;
+  @override
+  Future<void> setSpeechRate(double rate) async {}
+  @override
+  Future<List<Map<String, String>>> voices() async => const [];
+  @override
+  Future<bool> setVoice(Map<String, String> voice) async => true;
+  @override
+  Future<List<String>> engines() async => const [];
+  @override
+  Future<String?> defaultEngine() async => null;
+  @override
+  Future<bool> setEngine(String engine) async => true;
+  @override
+  Future<void> speak(String text) async {}
+  @override
+  Future<void> stop() async {}
 }

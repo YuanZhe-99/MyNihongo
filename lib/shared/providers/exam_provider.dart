@@ -12,7 +12,9 @@ library;
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../features/drills/services/exam_session.dart';
 import '../../features/progress/models/exam_attempt.dart';
+import '../../features/progress/services/nihongo_storage.dart';
 import 'progress_provider.dart';
 
 /// Every JLPT attempt, newest first.
@@ -29,6 +31,20 @@ final examAttemptsProvider = Provider<List<ExamAttempt>>((ref) {
   if (progress == null) return const [];
   return examAttempts(progress.records);
 });
+
+/// The paper this device has half-sat, if there is one.
+///
+/// Read straight from the save file rather than from the progress file: a
+/// paper in progress is device-local, and an unfinished exam on another device
+/// is meaningless — the clock belongs to the sitting.
+///
+/// A `FutureProvider` so the Learn card can render before the file has been
+/// read, and `invalidate`d rather than watched for changes: the file is written
+/// by the exam page and deleted by this card, both of which know when they did
+/// it.
+final savedExamProvider = FutureProvider<SavedExam?>(
+  (ref) async => SavedExam.fromJson(await NihongoStorage.loadExamInProgress()),
+);
 
 /// What every drill question the learner has already been asked, and when.
 ///

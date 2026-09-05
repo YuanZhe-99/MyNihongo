@@ -15,6 +15,7 @@
 | `TtsService` | 类 | B | 通过设备自身的引擎朗读日语。 |
 | `setInstanceForTesting` | 静态方法 | B | 在测试中替换全局实例。 |
 | [`engineRate`](#enginerate) | 静态方法 | A | 把用户面的速度倍数换算成引擎单位。 |
+| `ready` | 字段 | B | 引擎是否已经被问过它有哪些语音；`init` 完成之前为 false。 |
 | [`init`](#init) | 方法 | A | 准备引擎并了解它是否有日语语音。 |
 | `setRate` | 方法 | B | 应用朗读速度，并夹到所提供的范围内。 |
 | `setVoiceByName` | 方法 | B | 按引擎名称选择日语语音；未知名称回退到可用的最佳语音。 |
@@ -54,8 +55,11 @@
   2. **await 一次 `isLanguageAvailable` 作为探测。** 其返回值被丢弃；await 到它本身才是目的。
   3. 读取语音，保留日语的，按优先顺序排序，取其中已安装的第一个作为默认语音。
   4. 用该列表解析持久化的语音名称，然后 `_applyEngineState`。
+  5. 最后，无条件地把 `ready` 置为 true。
 - **使用：** `AppSettingsNotifier._loadPersisted`，在偏好已知之后。
 - **说明：** **第 2 步是关键，顺序本身就是这次修复。** 平台引擎启动期间，插件会把方法调用排队并在其 init 回调中重放，*然后*把语言覆盖成系统默认。在此之前发出的 `setLanguage` 会被应用并立刻丢弃——这正是引擎把日语按设备自身语言读出来的原因，且时好时坏，取决于哪一边先完成。await 任意一个被排队的调用，就意味着覆盖已经发生。每次引擎调用都有保护：没有语音引擎的设备会从平台通道抛出异常而不是返回 false，`flutter_test` 运行则返回 `MissingPluginException`；两者都不能阻止应用启动。调用方不会 await 它——缺失的引擎不得拖慢首帧。
+
+  **第 5 步之所以存在，是因为没有人 await 第 1 到第 4 步。** 在探测跑完之前 `hasJapaneseVoice` 是 false，而这与「这台设备没有日语语音」并不是同一个回答：一个在首次构建时读它的组件告诉一台 Pixel 它做不了听力练习，而且再也没有收回这句话。`ready` 是一个 `ValueNotifier`，好让那些组件可以改为等待真正的回答——见 [`../../learn/widgets/jlpt_practice_card.md`](../../learn/widgets/jlpt_practice_card.md)。它是最后被设置的，而且是无条件的，包括在探测抛出异常的那条路径上：一台探测失败的设备也已经被问过了，而那个回答——没有日语语音——现在是一个事实，而不是一个「还没有」。
 
 ### `Future<void> speak(String text)` <a id="speak"></a>
 

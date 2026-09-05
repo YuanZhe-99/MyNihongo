@@ -2900,6 +2900,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{n, plural, =1{1 more tap for developer options} other{{n} more taps for developer options}}'**
   String settingsDebugStepsLeft(int n);
+
+  /// No description provided for @examBlockTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Part {n} of {total}'**
+  String examBlockTitle(int n, int total);
+
+  /// No description provided for @examBlockMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes} minutes'**
+  String examBlockMinutes(int minutes);
+
+  /// No description provided for @examQuestionCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{1 question} other{{n} questions}}'**
+  String examQuestionCount(int n);
+
+  /// No description provided for @examStartBlock.
+  ///
+  /// In en, this message translates to:
+  /// **'Start this part'**
+  String get examStartBlock;
+
+  /// No description provided for @examLeaveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave the exam?'**
+  String get examLeaveTitle;
+
+  /// No description provided for @examLeaveBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The exam is saved with the time you have left. Continue it from the Learn tab.'**
+  String get examLeaveBody;
+
+  /// No description provided for @examLeaveConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave'**
+  String get examLeaveConfirm;
+
+  /// No description provided for @examResultsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mock exam results'**
+  String get examResultsTitle;
+
+  /// No description provided for @examUnansweredCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{1 not answered} other{{n} not answered}}'**
+  String examUnansweredCount(int n);
+
+  /// No description provided for @examBlockTime.
+  ///
+  /// In en, this message translates to:
+  /// **'{sections}: {used} of {limit} minutes used'**
+  String examBlockTime(String sections, int used, int limit);
+
+  /// No description provided for @examContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue the exam'**
+  String get examContinue;
+
+  /// No description provided for @examContinueBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{level} mock, part {block}, {minutes} minutes left'**
+  String examContinueBody(String level, int block, int minutes);
+
+  /// No description provided for @examDiscard.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard'**
+  String get examDiscard;
+
+  /// No description provided for @examDiscardTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard the saved exam?'**
+  String get examDiscardTitle;
+
+  /// No description provided for @examDiscardBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The answers you have given are kept in your progress. The exam itself is not recorded.'**
+  String get examDiscardBody;
+
+  /// No description provided for @examStartNew.
+  ///
+  /// In en, this message translates to:
+  /// **'Start a mock exam'**
+  String get examStartNew;
+
+  /// No description provided for @examReplaceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Start a new exam?'**
+  String get examReplaceTitle;
+
+  /// No description provided for @examReplaceBody.
+  ///
+  /// In en, this message translates to:
+  /// **'There is a saved exam. Starting a new one discards it.'**
+  String get examReplaceBody;
 }
 
 class _AppLocalizationsDelegate

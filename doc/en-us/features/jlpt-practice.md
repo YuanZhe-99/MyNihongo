@@ -126,6 +126,62 @@ exist or they have not found it.
   hear has no answer, which is the same rule the app's own listening quiz modes
   follow.
 
+## The mock exam
+
+The same questions, on a clock, marked at the end. Three things separate it from
+practice, and each is the paper's own rule rather than a design choice:
+
+- **A block starts when the learner says so.** A paper opens on a start card
+  naming the part, its sections, its minutes and its question count. Starting a
+  clock somebody has not looked at is not a test of Japanese, and the real thing
+  has a break between parts.
+- **Nothing is marked until the paper is in.** No verdict, no explanation, no
+  Continue button — answering advances. Being told after each question is how
+  practice teaches and is the thing a real exam most conspicuously does not do.
+- **A listening item plays once.** Practice plays it as often as the learner
+  likes; a mock does not, because the exam does not.
+
+A block that runs out of time is handed in with whatever is left recorded as
+**unanswered** — not wrong. A block whose questions all get answered is handed
+in early, and the recorded time is then the time actually spent.
+
+### The clock measures attention, not hours
+
+Time is counted only while the block is on screen and the app is in the
+foreground. A learner who takes a phone call has not spent that time on the
+paper; one who leaves it overnight has not lost the paper. Leaving the page or
+backgrounding the app stops the clock and writes the paper down; coming back
+picks it up with the same time left — and re-checks the deadline first, because
+a phone that slept past it has to find out on waking rather than resume a block
+that ended hours ago.
+
+**Started and running are different states.** The clock stops every time a
+dialog opens, and a block that fell back to its start card each time would look
+to the learner as though the paper had been thrown away. That is a bug this
+feature had, found on the device and not by the suite.
+
+### One saved paper, and it stays on this device
+
+`exam_in_progress.json` in the app directory — **not synced, not backed up, not
+exported**. An unfinished exam on another device is meaningless: the clock
+belongs to the sitting, and half a paper is not a result. The backup and ZIP
+engines only see registry modules, so staying out of the registry is the whole
+of what keeps it local.
+
+The save holds the question **ids** and what was chosen, never the questions
+themselves. Resuming re-marks the answers against the files as they are now, so
+a content update that corrected an answer key corrects the resumed paper too;
+question ids the shipped files no longer have are dropped, and the paper is
+that many questions shorter rather than refusing to open. A save written by a
+newer build is refused outright rather than half-read.
+
+The Learn card offers **Continue** — naming the level, the part and the time
+left — before it offers a new one. Starting a second mock asks first, because
+there is one saved paper per device and it is the only thing here that cannot
+be recovered. Discarding says what survives: every answer already given went
+through the review schedule as it happened, so discarding loses the paper, not
+the study.
+
 ## The results history
 
 Every finished practice section is recorded as an attempt: which level, which
@@ -150,13 +206,6 @@ other's questions rather than each grinding through the same first twenty. The
 cap on how many attempts are kept is therefore also the point at which a
 question becomes askable again, which is a reasonable definition of forgetting
 it.
-
-## What is not built yet
-
-The card's **Mock exam** button is present and disabled, with a line saying it
-comes in the next update. It is shown rather than hidden because the alternative
-is a card that quietly grows a button and a learner who never finds out it
-arrived.
 
 ## Content
 

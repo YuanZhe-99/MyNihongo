@@ -6,6 +6,16 @@ re-queueing and the score.
 Writing progress is a **callback**, not a dependency, so this file imports no
 storage and a test can watch exactly what it would have written.
 
+Three getters exist for the timed mock, over a `_answers` / `_all` field pair the practice quiz never
+reads. `_answers` holds the **first** answer to each question by `scoreKey` — the one that scored —
+and `chosen` publishes it: a saved paper is written from what was chosen rather than from the verdict
+it was given, so replaying it through [`restore`](#restore) re-marks it against the content files as
+they are now. `_all` is every question the session was built with, including anything `append` added,
+and `allQuestions` publishes it because a results screen needs the questions themselves — the
+outcomes say which ones went wrong but not what they were, and re-reading the content files to find
+out would be re-answering a question the session already knows. `remainingKeys` is the other half of
+a save: the questions still to come, in order, beside the ones `outcomes` says were answered.
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |
@@ -19,6 +29,10 @@ storage and a test can watch exactly what it would have written.
 | [`QuizSession`](#session) | class | A | Run one quiz, with or without re-queueing. |
 | `current`, `lastOutcome`, `isFinished`, `total`, `answeredCount`, `attempts` | getters | B | The queue's state, as the runner reads it. |
 | `outcomes` | getter | B | What happened to each question, in the order they were asked. |
+| `_answers`, `_all` | fields | B | The first answer to each question by score key, and every question the session was built with. |
+| `chosen` | getter | B | What the learner actually chose, by score key — what a save is written from. |
+| `allQuestions` | getter | B | Every question the session was built with, in the order it asked them. |
+| `remainingKeys` | getter | B | The score keys still waiting to be asked, in order. |
 | [`scoreKey`](#scorekey) | static method | A | Name the key a question is scored under. |
 | `append` | method | B | Add a question to a session already running, and grow the total with it. |
 | [`answer`](#answer) | method | A | Mark the current question and hold the result. |

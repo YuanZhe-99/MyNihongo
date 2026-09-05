@@ -1,0 +1,417 @@
+{
+  "schemaVersion": 1,
+  "source": "model-authored (Claude), unreviewed",
+  "license": "GPL-3.0 with the app.",
+  "level": "N4",
+  "section": "reading",
+  "passages": [
+    {
+      "id": "p:n4-r-001",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "私は去年から、家で小さな花を育てています。",
+          "reading": "わたしはきょねんから、いえでちいさなはなをそだてています。"
+        },
+        {
+          "ja": "はじめは世話が下手で、花が元気になりませんでした。",
+          "reading": "はじめはせわがへたで、はながげんきになりませんでした。"
+        },
+        {
+          "ja": "お母さんが水のやり方を丁寧に教えてくれました。",
+          "reading": "おかあさんがみずのやりかたをていねいにおしえてくれました。"
+        },
+        {
+          "ja": "今は毎朝、花を見るのを楽しんでいます。",
+          "reading": "いまはまいあさ、はなをみるのをたのしんでいます。"
+        }
+      ],
+      "en": "Since last year I have been growing small flowers at home. At first I was bad at looking after them, and the flowers did not do well. My mother taught me carefully how to water them. Now I enjoy looking at the flowers every morning.",
+      "zh": "从去年开始，我在家里养小花。一开始我不太会照顾，花长得不精神。妈妈很耐心地教了我浇水的方法。现在我每天早上都很享受看花的时间。",
+      "zh_TW": "從去年開始，我在家裡養小花。一開始我不太會照顧，花長得不精神。媽媽很耐心地教了我澆水的方法。現在我每天早上都很享受看花的時間。"
+    },
+    {
+      "id": "p:n4-r-002",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "今朝、雪のため電車が三十分遅れました。",
+          "reading": "けさ、ゆきのためでんしゃがさんじゅっぷんおくれました。"
+        },
+        {
+          "ja": "会社に着いたのは九時半でした。",
+          "reading": "かいしゃについたのはくじはんでした。"
+        },
+        {
+          "ja": "会議は十時から始まる予定でしたが、ほかの人も遅れたので、十時半に始まりました。",
+          "reading": "かいぎはじゅうじからはじまるよていでしたが、ほかのひともおくれたので、じゅうじはんにはじまりました。"
+        },
+        {
+          "ja": "その間に、私は会議の説明の準備をすることができました。",
+          "reading": "そのあいだに、わたしはかいぎのせつめいのじゅんびをすることができました。"
+        }
+      ],
+      "en": "This morning the train was thirty minutes late because of snow. I arrived at the office at half past nine. The meeting was scheduled to start at ten, but other people were late too, so it started at half past ten. In the meantime I was able to prepare my explanation for the meeting.",
+      "zh": "今天早上因为下雪，电车晚了三十分钟。我到公司时是九点半。会议原定十点开始，但其他人也迟到了，所以十点半才开始。在这段时间里，我得以准备好会上要讲的说明。",
+      "zh_TW": "今天早上因為下雪，電車晚了三十分鐘。我到公司時是九點半。會議原定十點開始，但其他人也遲到了，所以十點半才開始。在這段時間裡，我得以準備好會上要講的說明。"
+    },
+    {
+      "id": "p:n4-r-003",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "先週の日曜日、公園を散歩していたとき、小さな女の子が一人で泣いていました。",
+          "reading": "せんしゅうのにちようび、こうえんをさんぽしていたとき、ちいさなおんなのこがひとりでないていました。"
+        },
+        {
+          "ja": "お母さんが見えなかったので、私はいっしょに公園の事務所へ行きました。",
+          "reading": "おかあさんがみえなかったので、わたしはいっしょにこうえんのじむしょへいきました。"
+        },
+        {
+          "ja": "十分ぐらいあとで、お母さんが来て、何度もありがとうと言いました。",
+          "reading": "じゅっぷんぐらいあとで、おかあさんがきて、なんどもありがとうといいました。"
+        },
+        {
+          "ja": "女の子が笑ったとき、私もうれしくなりました。",
+          "reading": "おんなのこがわらったとき、わたしもうれしくなりました。"
+        }
+      ],
+      "en": "Last Sunday, while I was walking in the park, a little girl was crying by herself. I could not see her mother, so I went with her to the park office. About ten minutes later her mother came and thanked me many times. When the girl smiled, I felt happy too.",
+      "zh": "上周日我在公园散步时，看到一个小女孩独自在哭。因为看不到她妈妈，我就陪她去了公园的办公室。大约十分钟后，她妈妈来了，一再向我道谢。当小女孩笑起来时，我也很开心。",
+      "zh_TW": "上週日我在公園散步時，看到一個小女孩獨自在哭。因為看不到她媽媽，我就陪她去了公園的辦公室。大約十分鐘後，她媽媽來了，一再向我道謝。當小女孩笑起來時，我也很開心。"
+    },
+    {
+      "id": "p:n4-r-004",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "私は大学に通いながら、駅の前の花の店で働いています。",
+          "reading": "わたしはだいがくにかよいながら、えきのまえのはなのみせではたらいています。"
+        },
+        {
+          "ja": "仕事は花に水をやることと、店の中をきれいにすることです。",
+          "reading": "しごとははなにみずをやることと、みせのなかをきれいにすることです。"
+        },
+        {
+          "ja": "はじめは花の名前を覚えるのが大変でした。",
+          "reading": "はじめははなのなまえをおぼえるのがたいへんでした。"
+        },
+        {
+          "ja": "店の人は忙しいときでも、私の質問に丁寧に答えてくれます。",
+          "reading": "みせのひとはいそがしいときでも、わたしのしつもんにていねいにこたえてくれます。"
+        },
+        {
+          "ja": "先月はとても忙しくて、夜おそくまで店を開けていました。",
+          "reading": "せんげつはとてもいそがしくて、よるおそくまでみせをあけていました。"
+        },
+        {
+          "ja": "疲れましたが、客が花を見て喜ぶのを見ると、私もうれしくなります。",
+          "reading": "つかれましたが、きゃくがはなをみてよろこぶのをみると、わたしもうれしくなります。"
+        },
+        {
+          "ja": "将来は自分の店を持ちたいと思っています。",
+          "reading": "しょうらいはじぶんのみせをもちたいとおもっています。"
+        }
+      ],
+      "en": "While going to university, I work at a flower shop in front of the station. My job is watering the flowers and keeping the inside of the shop clean. At first it was hard to learn the names of the flowers. Even when the shop staff are busy, they answer my questions politely. Last month was very busy and we kept the shop open until late at night. I was tired, but when I see customers looking at the flowers and being delighted, I feel happy too. In the future I want to have a shop of my own.",
+      "zh": "我一边上大学，一边在车站前的花店打工。工作内容是给花浇水和把店里打扫干净。刚开始记花的名字很辛苦。店里的人即使很忙，也会耐心地回答我的问题。上个月非常忙，店一直开到深夜。虽然很累，但看到客人看着花很高兴的样子，我也会开心起来。将来我想拥有自己的店。",
+      "zh_TW": "我一邊上大學，一邊在車站前的花店打工。工作內容是給花澆水和把店裡打掃乾淨。剛開始記花的名字很辛苦。店裡的人即使很忙，也會耐心地回答我的問題。上個月非常忙，店一直開到深夜。雖然很累，但看到客人看著花很高興的樣子，我也會開心起來。將來我想擁有自己的店。"
+    },
+    {
+      "id": "p:n4-r-005",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "料理教室のお知らせ",
+          "reading": "りょうりきょうしつのおしらせ"
+        },
+        {
+          "ja": "十月十日の土曜日、午後一時から四時まで行います。",
+          "reading": "じゅうがつとおかのどようび、ごごいちじからよじまでおこないます。"
+        },
+        {
+          "ja": "場所は二階の台所です。",
+          "reading": "ばしょはにかいのだいどころです。"
+        },
+        {
+          "ja": "使う物はこちらで用意しますから、持ってこなくてもいいです。",
+          "reading": "つかうものはこちらでよういしますから、もってこなくてもいいです。"
+        },
+        {
+          "ja": "入りたい人は、十月五日までに一階の受付で名前を書いてください。",
+          "reading": "はいりたいひとは、じゅうがついつかまでにいっかいのうけつけでなまえをかいてください。"
+        },
+        {
+          "ja": "二十人まで入ることができます。",
+          "reading": "にじゅうにんまではいることができます。"
+        },
+        {
+          "ja": "飲み物は自分で持ってきてください。",
+          "reading": "のみものはじぶんでもってきてください。"
+        }
+      ],
+      "en": "Cooking class notice. It will be held on Saturday, October 10th, from one to four in the afternoon. The place is the kitchen on the second floor. The things you will use are prepared here, so you do not need to bring any. If you want to join, write your name at the reception desk on the first floor by October 5th. Up to twenty people can join. Please bring your own drink.",
+      "zh": "烹饪教室通知。时间为十月十日（周六）下午一点到四点。地点是二楼的厨房。所需用品由我们准备，不必自带。想参加的人请在十月五日之前到一楼服务台写下姓名。名额限二十人。饮料请自行带来。",
+      "zh_TW": "烹飪教室通知。時間為十月十日（週六）下午一點到四點。地點是二樓的廚房。所需用品由我們準備，不必自帶。想參加的人請在十月五日之前到一樓服務檯寫下姓名。名額限二十人。飲料請自行帶來。"
+    },
+    {
+      "id": "p:n4-r-006",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "図書館からのお知らせ",
+          "reading": "としょかんからのおしらせ"
+        },
+        {
+          "ja": "今月の二十日から二十五日まで、二階の部屋は使うことができません。",
+          "reading": "こんげつのはつかからにじゅうごにちまで、にかいのへやはつかうことができません。"
+        },
+        {
+          "ja": "一階の部屋は、いつものように利用することができます。",
+          "reading": "いっかいのへやは、いつものようにりようすることができます。"
+        },
+        {
+          "ja": "本を借りるときも返すときも、一階の受付へ来てください。",
+          "reading": "ほんをかりるときもかえすときも、いっかいのうけつけへきてください。"
+        },
+        {
+          "ja": "二階の新聞と雑誌は、一階に運んであります。",
+          "reading": "にかいのしんぶんとざっしは、いっかいにはこんであります。"
+        },
+        {
+          "ja": "二十六日から、二階も利用できるようになります。",
+          "reading": "にじゅうろくにちから、にかいもりようできるようになります。"
+        },
+        {
+          "ja": "みなさん、注意してください。",
+          "reading": "みなさん、ちゅういしてください。"
+        }
+      ],
+      "en": "Notice from the library. From the 20th to the 25th of this month, the rooms on the second floor cannot be used. The rooms on the first floor can be used as usual. Please come to the reception desk on the first floor both to borrow and to return books. The newspapers and magazines from the second floor have been moved to the first floor. From the 26th the second floor can be used again. Everyone, please take note.",
+      "zh": "图书馆通知。本月二十日至二十五日，二楼的房间不能使用。一楼的房间可以照常使用。借书和还书都请到一楼的服务台。二楼的报纸和杂志已搬到一楼。从二十六日起，二楼也可以使用了。请大家留意。",
+      "zh_TW": "圖書館通知。本月二十日至二十五日，二樓的房間不能使用。一樓的房間可以照常使用。借書和還書都請到一樓的服務檯。二樓的報紙和雜誌已搬到一樓。從二十六日起，二樓也可以使用了。請大家留意。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q:n4-r-001",
+      "type": "short",
+      "items": [
+        "vocab:jm1374300",
+        "vocab:jm1160570",
+        "vocab:jm1207270"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-001",
+      "prompt": {
+        "en": "Why did the flowers not do well at first?",
+        "zh": "为什么一开始花长得不好？",
+        "zh_TW": "為什麼一開始花長得不好？"
+      },
+      "options": [
+        "世話が下手だったからです。",
+        "花が高かったからです。",
+        "家に水がなかったからです。",
+        "母が忙しかったからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second sentence gives the reason directly: the writer was bad at looking after the flowers, so they did not do well. The price of the flowers, a lack of water and the mother's schedule are never mentioned.",
+        "zh": "第二句直接说明了原因：作者不擅长照顾花，所以花长得不精神。文中没有提到花的价钱、家里没有水，也没有说妈妈很忙。",
+        "zh_TW": "第二句直接說明了原因：作者不擅長照顧花，所以花長得不精神。文中沒有提到花的價錢、家裡沒有水，也沒有說媽媽很忙。"
+      }
+    },
+    {
+      "id": "q:n4-r-002",
+      "type": "short",
+      "items": [
+        "vocab:jm1198360",
+        "vocab:jm1589040",
+        "vocab:jm1543240"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-002",
+      "prompt": {
+        "en": "What time did the meeting actually start?",
+        "zh": "会议实际上是几点开始的？",
+        "zh_TW": "會議實際上是幾點開始的？"
+      },
+      "options": [
+        "九時半です。",
+        "十時です。",
+        "十時半です。",
+        "十一時です。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "Ten o'clock was only the plan; because other people were late as well, the meeting began at half past ten. Half past nine is when the writer reached the office.",
+        "zh": "十点只是原定的时间，因为其他人也迟到了，会议在十点半才开始。九点半是作者到公司的时间。",
+        "zh_TW": "十點只是原定的時間，因為其他人也遲到了，會議在十點半才開始。九點半是作者到公司的時間。"
+      }
+    },
+    {
+      "id": "q:n4-r-003",
+      "type": "short",
+      "items": [
+        "vocab:jm1314400",
+        "vocab:jm1229840"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-003",
+      "prompt": {
+        "en": "What did the writer do for the girl?",
+        "zh": "作者为那个女孩做了什么？",
+        "zh_TW": "作者為那個女孩做了什麼？"
+      },
+      "options": [
+        "いっしょに公園の事務所へ行きました。",
+        "女の子を病院へ連れて行きました。",
+        "女の子の家へ電話をかけました。",
+        "お母さんが来るまで公園で走りました。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Because the mother was nowhere to be seen, the writer went with the girl to the park office. The girl was not hurt, no phone call is mentioned, and it was the mother who came running.",
+        "zh": "因为看不到女孩的妈妈，作者陪她去了公园的办公室。女孩并没有受伤，文中也没有打电话的情节，跑过来的是她妈妈。",
+        "zh_TW": "因為看不到女孩的媽媽，作者陪她去了公園的辦公室。女孩並沒有受傷，文中也沒有打電話的情節，跑過來的是她媽媽。"
+      }
+    },
+    {
+      "id": "q:n4-r-004",
+      "type": "mid",
+      "items": [
+        "vocab:jm1432850",
+        "vocab:jm1226630"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-004",
+      "prompt": {
+        "en": "What kind of work does the writer do at the shop?",
+        "zh": "作者在店里做的是什么样的工作？",
+        "zh_TW": "作者在店裡做的是什麼樣的工作？"
+      },
+      "options": [
+        "花に水をやって、店の中をきれいにする仕事です。",
+        "花の名前を客に説明する仕事です。",
+        "駅の前で花を運ぶ仕事です。",
+        "大学で花を育てる仕事です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second sentence states the job exactly: watering the flowers and keeping the inside of the shop clean. The writer is the one still learning the flower names, and the university is where the writer studies, not works.",
+        "zh": "第二句明确说明了工作内容：给花浇水和把店里打扫干净。记花名的是作者自己还在学的事，大学是上学的地方，不是工作的地方。",
+        "zh_TW": "第二句明確說明了工作內容：給花澆水和把店裡打掃乾淨。記花名的是作者自己還在學的事，大學是上學的地方，不是工作的地方。"
+      }
+    },
+    {
+      "id": "q:n4-r-005",
+      "type": "mid",
+      "items": [
+        "vocab:jm1427360",
+        "vocab:jm1386460"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-004",
+      "prompt": {
+        "en": "What are the people at the shop like?",
+        "zh": "店里的人是什么样的人？",
+        "zh_TW": "店裡的人是什麼樣的人？"
+      },
+      "options": [
+        "忙しいときでも、丁寧に質問に答えてくれる人です。",
+        "忙しいときは、何も教えてくれない人です。",
+        "夜おそくまで店の中で休んでいる人です。",
+        "花の名前を覚えるのが下手な人です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The fourth sentence says that even when they are busy they answer the writer's questions politely, so being busy does not stop them helping. Staying open late is about the shop's hours, not about resting.",
+        "zh": "第四句说他们即使很忙也会耐心回答作者的问题，可见忙碌并不影响他们帮忙。营业到深夜说的是店的营业时间，不是在休息。",
+        "zh_TW": "第四句說他們即使很忙也會耐心回答作者的問題，可見忙碌並不影響他們幫忙。營業到深夜說的是店的營業時間，不是在休息。"
+      }
+    },
+    {
+      "id": "q:n4-r-006",
+      "type": "mid",
+      "items": [
+        "vocab:jm1347710",
+        "vocab:jm1218760"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-004",
+      "prompt": {
+        "en": "What does the writer want to do in the future?",
+        "zh": "作者将来想做什么？",
+        "zh_TW": "作者將來想做什麼？"
+      },
+      "options": [
+        "自分の店を持ちたいと思っています。",
+        "もっと大きな大学に通いたいと思っています。",
+        "花の名前の本を書きたいと思っています。",
+        "夜おそくまで働きたいと思っています。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last sentence says plainly that the writer wants a shop of their own. University and the late hours belong to the writer's present life, and writing a book is never mentioned.",
+        "zh": "最后一句明确说作者想拥有自己的店。上大学和工作到很晚是现在的生活，写书在文中从未提及。",
+        "zh_TW": "最後一句明確說作者想擁有自己的店。上大學和工作到很晚是現在的生活，寫書在文中從未提及。"
+      }
+    },
+    {
+      "id": "q:n4-r-007",
+      "type": "info",
+      "items": [
+        "vocab:jm1588060",
+        "vocab:jm1546220",
+        "vocab:jm1355850"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-005",
+      "prompt": {
+        "en": "What must someone who wants to join the class do?",
+        "zh": "想参加这个教室的人必须做什么？",
+        "zh_TW": "想參加這個教室的人必須做什麼？"
+      },
+      "options": [
+        "十月五日までに一階の受付で名前を書きます。",
+        "十月十日の朝、二階の台所で待ちます。",
+        "使う物を自分で用意して持って行きます。",
+        "二十人集まるまで飲み物を届けます。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The notice says to write your name at the first-floor reception desk by October 5th. The equipment is prepared for you, the class itself begins at one in the afternoon, and twenty is only the limit on numbers.",
+        "zh": "通知写明要在十月五日之前到一楼服务台写下姓名。用品由主办方准备，教室下午一点才开始，二十人只是人数上限。",
+        "zh_TW": "通知寫明要在十月五日之前到一樓服務檯寫下姓名。用品由主辦方準備，教室下午一點才開始，二十人只是人數上限。"
+      }
+    },
+    {
+      "id": "q:n4-r-008",
+      "type": "info",
+      "items": [
+        "vocab:jm1549660",
+        "vocab:jm1588060",
+        "vocab:jm1172660"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-006",
+      "prompt": {
+        "en": "Someone wants to return a book on the 22nd of this month. What should that person do?",
+        "zh": "有人想在本月二十二日还书，应该怎么做？",
+        "zh_TW": "有人想在本月二十二日還書，應該怎麼做？"
+      },
+      "options": [
+        "一階の受付へ持って行きます。",
+        "二階の部屋へ持って行きます。",
+        "二十六日まで待ちます。",
+        "新聞といっしょに二階へ運びます。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The 22nd falls inside the period when the second floor is closed, and the notice says to come to the first-floor reception desk both to borrow and to return books. Waiting until the 26th is unnecessary, and it is the newspapers that were moved down, not the books being returned.",
+        "zh": "二十二日正处于二楼停用的期间，通知说借书和还书都要到一楼服务台。没有必要等到二十六日，被搬到楼下的是报纸，不是要还的书。",
+        "zh_TW": "二十二日正處於二樓停用的期間，通知說借書和還書都要到一樓服務檯。沒有必要等到二十六日，被搬到樓下的是報紙，不是要還的書。"
+      }
+    }
+  ]
+}

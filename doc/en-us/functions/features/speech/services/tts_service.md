@@ -25,6 +25,7 @@ startup).
 | `TtsService` | class | B | Speak Japanese through the device's own engine. |
 | `setInstanceForTesting` | static method | B | Replace the app-wide instance in a test. |
 | [`engineRate`](#enginerate) | static method | A | Convert a user-facing rate multiple to the engine's units. |
+| `ready` | field | B | Whether the engine has been asked what voices it has; false until `init` finishes. |
 | [`init`](#init) | method | A | Prepare the engine and learn whether it has a Japanese voice. |
 | `setRate` | method | B | Apply a speaking rate, clamped to the offered range. |
 | `setVoiceByName` | method | B | Select a Japanese voice by engine name; an unknown name falls back to the best one. |
@@ -68,6 +69,7 @@ startup).
   3. Read the voices, keep the Japanese ones, sort them best-first, and take the best installed one
      as the default.
   4. Resolve the persisted voice name against that list, then `_applyEngineState`.
+  5. Last, and unconditionally, set `ready` to true.
 - **Usage:** `AppSettingsNotifier._loadPersisted`, once the preferences are known.
 - **Notes:** **Step 2 is load-bearing, and the order is the whole fix.** While the platform engine is
   still starting, the plugin queues method calls and replays them from its init callback — and then
@@ -78,6 +80,14 @@ startup).
   from the platform channel rather than answering false, and a `flutter_test` run answers
   `MissingPluginException`; neither may stop the app from starting. The caller does not await it — a
   missing engine must not delay the first frame.
+
+  **Step 5 exists because nobody awaits step 1 through 4.** `hasJapaneseVoice` is false before the
+  probe has run, and that is not the same answer as "this device has no Japanese voice": a widget that
+  read it at first build told a Pixel it could not do listening practice and never took it back.
+  `ready` is a `ValueNotifier` so those widgets can watch for the real answer instead — see
+  [`../../learn/widgets/jlpt_practice_card.md`](../../learn/widgets/jlpt_practice_card.md). It is set
+  last and unconditionally, including on the path where the probe threw: a device whose probe failed
+  has still been asked, and the answer — no Japanese voice — is now a fact rather than a not-yet.
 
 ### `Future<void> speak(String text)` <a id="speak"></a>
 

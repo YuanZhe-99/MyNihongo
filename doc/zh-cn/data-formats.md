@@ -365,6 +365,7 @@
 | 学习进度 | `nihongo_progress.json` | 是 | 按 `id` 和 `modifiedAt` 逐记录；保留未知字段 |
 | 句子实验室与写作历史 | `nihongo_progress.json` | 是 | `lab:`/`writing:` 记录，id 由内容推导，每种 100 条；只保存输入文本 |
 | JLPT 作答历史记录 | `nihongo_progress.json` | 是 | `exam:` 记录，id 带时间戳，模拟考试 40 次、练习 80 次；只保存问了哪些题以及作答是什么 |
+| 进行中的模拟考试 | `exam_in_progress.json` | 否 | 每台设备一份保存的考试：题目 id、当时选了什么，以及每个计时部分已经用掉的时间。刻意置于同步、备份与导出注册表之外——计时属于这一次作答，而半份卷子不是一个结果 |
 | 主题模式 | `storage_config.json` | 否 | 设备特定偏好（`themeMode`：`light`/`dark`；缺失表示跟随系统） |
 | 语言 | `storage_config.json` | 否 | 设备特定偏好（`locale`：`en`/`zh`/`zh_TW`；缺失表示跟随系统） |
 | 存储路径覆盖 | `storage_config.json` | 否 | 设备特定路径（`storagePath`） |

@@ -8,15 +8,19 @@ the state and these are functions of it, so an attempt written here, restored fr
 synced in from another device all reach the list the same way, with no second source of truth to keep
 in step.
 
-Consumers: `exam_history_page.dart`, and the drill sampler's no-repeat rule through
-`askedQuestionsProvider`.
+`savedExamProvider` is the exception, and deliberately so: a paper in progress is device-local, so it
+is read from its own file rather than derived from the synced progress record.
+
+Consumers: `exam_history_page.dart`, `jlpt_practice_card.dart`, `exam_page.dart`, and the drill
+sampler's no-repeat rule through `askedQuestionsProvider`.
 
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |
 |---|---|---|---|
-| library header | library doc | B | Two derived views of the progress file's exam records. |
+| library header | library doc | B | Two derived views of the progress file's exam records, plus the device-local paper in progress. |
 | [`examAttemptsProvider`](#examattemptsprovider) | provider | A | Every JLPT attempt, newest first. |
+| [`savedExamProvider`](#savedexamprovider) | provider | A | The paper this device has half-sat, if there is one. |
 | [`askedQuestionsProvider`](#askedquestionsprovider) | provider | A | Which drill questions have already been asked, and when. |
 
 ## Documentation
@@ -34,6 +38,31 @@ Consumers: `exam_history_page.dart`, and the drill sampler's no-repeat rule thro
   progress file could not be loaded, which would take down every page that shows the history instead
   of showing an empty one. Empty while the file is still loading is also what a learner who has never
   sat a paper sees, so nothing on screen has to tell "not loaded" apart from "nothing yet".
+
+### `savedExamProvider` <a id="savedexamprovider"></a>
+
+- **Kind:** `FutureProvider<SavedExam?>`
+- **Purpose:** Report the paper this device has half-sat, if there is one.
+- **Inputs:** None; it reads the save file directly.
+- **Returns:** The `SavedExam` parsed from `NihongoStorage.loadExamInProgress()`, or null when there
+  is no save or this build cannot resume it.
+- **Side effects:** Reads a file in the app directory.
+- **Algorithm:** `SavedExam.fromJson(await NihongoStorage.loadExamInProgress())`.
+- **Usage:** `JlptPracticeCard` — to offer to continue, to ask before replacing, and to discard — and
+  `exam_page.dart`, which refreshes it after every save.
+- **Notes:** Read straight from the save file rather than from the progress file, unlike everything
+  else on this page: a paper in progress is **device-local**, and an unfinished exam on another device
+  is meaningless — the clock belongs to the sitting. It is therefore outside the sync and backup
+  registries entirely; see
+  [`../../features/progress/services/nihongo_storage.md`](../../features/progress/services/nihongo_storage.md).
+
+  A `FutureProvider` so the Learn card can render before the file has been read, and **`invalidate`d
+  rather than watched**: the file is written by the exam page and deleted by the card, both of which
+  know exactly when they did it. That refresh is not optional — without it the card holds the future
+  it resolved before the paper existed and shows nothing where it should be offering to continue.
+
+  `SavedExam` is read without touching the content files, which is what lets the card say "N5 mock,
+  block 2, 18 minutes left" without parsing four drill files to do it.
 
 ### `askedQuestionsProvider` <a id="askedquestionsprovider"></a>
 

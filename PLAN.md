@@ -1016,8 +1016,10 @@ The paper the Learn tab has been promising since the first release, at N5, one s
       `study_calendar.md`, which had never been written — and ten corrected ones, in both trees.
       891 tests
 
-- [ ] Practice mode (untimed, explanation after each) and mock mode (timed per section, results at
-      the end); question bank sampling avoids repeats until exhausted
+- [x] Practice mode (untimed, explanation after each) with M4.1 and mock mode (timed per **block**
+      rather than per section, because the clock is a property of the block — N2 examines three
+      sections in one 105-minute block) with M4.3; sampling avoids repeats until exhausted, reading
+      the synced attempt history from M4.2
 - [x] Results history synced: one record per attempt — `exam:<startedAt>-<4 hex>` rather than the
       `exam:<uuid>` this line proposed, because a timestamped id sorts the way the attempts happened
       and `uuid` is only a transitive dependency here. A new record kind in the same module, not a
@@ -1067,6 +1069,70 @@ for whoever had to debug the feature.
 - [x] Docs: `features/ai-assist.md` (the two-row learner table and a Developer options subsection),
       `android-aicore.md` (step 0), `data-formats.md` (inventory row), four `functions/` pages and
       the INDEX totals, in both trees. 905 tests
+
+
+#### M4.3 The mock exam, save and resume, N4 content — **done 2026-09-05**, released as `v0.4.7`
+
+- [x] `ExamSession` and `ExamBlock` with an **injected clock**, so a test that
+      watches a block expire does not have to wait real minutes. Blocks in order,
+      a start card before each, `resumeClock` / `pauseClock` accumulating into
+      `usedBefore`, a one-second tick that also checks the deadline, and
+      `finishBlockEarly` for a block whose questions run out
+- [x] **Started and running are separate states**, and the device is what said
+      so. The clock stops whenever a dialog opens; the first version keyed
+      `betweenBlocks` on the clock, so opening the leave dialog dropped the page
+      back to the start card and leaving an exam looked exactly like losing it.
+      The widget suite had been green throughout
+- [x] `ExamPage` at `/exam`, **outside the tab shell** — a running clock above a
+      navigation bar is an invitation to leave. The first version pushed a
+      `MaterialPageRoute` from the Learn card onto the shell's own navigator and
+      got the bar anyway; the router entry was already there
+- [x] `QuizRunner(showFeedback: false)` and the header slot carry the whole
+      difference from practice: no verdict, no explanation, no Continue button,
+      and the section names beside a countdown in tabular figures that turns red
+      in the last minute
+- [x] **The clock measures attention, not hours.** Counted only while the block
+      is on screen and the app is in the foreground, so a phone call costs
+      nothing and a night away loses nothing. `didChangeAppLifecycleState`
+      pauses and saves on the way out and re-checks the deadline on the way back
+      in — a phone that slept past it has to find out on waking
+- [x] `exam_in_progress.json` through `NihongoStorage`, written atomically on
+      every change and **outside the sync, backup and export registries**: an
+      unfinished exam on another device is meaningless. A test asserts the
+      registry does not name it, because staying out of the registry is the
+      whole of what keeps it local
+- [x] The save holds question **ids** and what was chosen, never the questions.
+      Resuming re-marks against the shipped files as they are now; ids the files
+      no longer have are dropped and the paper is that many questions shorter; a
+      save from a newer build is refused outright rather than half-read
+- [x] `savedExamProvider`, and the Learn card's **Continue / Discard** pair
+      before the Start button. Starting a second mock asks first — one saved
+      paper per device, and it is the only thing here that cannot be recovered.
+      Discarding says what survives, because every answer already given went
+      through the scheduler as it happened
+- [x] **A second device-found bug in the same release**: the Learn card read
+      `TtsService.hasJapaneseVoice` before the engine had been asked, so a fresh
+      install told a Pixel it needed a Japanese voice and never took it back.
+      `TtsService.ready` now says when the probe has actually run, and the card
+      claims nothing until it has. Two tests, one for each state
+- [x] **N4 complete at the official composition**: 85 questions and 35 passages.
+      Four gate rounds, all four for the same cause — 父 and 母 are not catalog
+      entries (only お父さん and お母さん ship) and 来られる segments into ら/れ
+- [x] Tests: `exam_session_test` (21 — the clock, the deadline, the save, the
+      read-back, and the started/running split), the storage six, and
+      `exam_page_ui_test` at the eight geometries. A flake worth recording: the
+      exam page reads five files through real `dart:io`, and a fixed pump count
+      passed alone and failed in a full run, so the harness now pumps **until a
+      condition** instead of counting frames
+- [x] **Verified on the Pixel 10** in a release build: the start card, the
+      running clock, a question answered with no feedback, the leave dialog over
+      a paper that stayed put, the Learn card offering "N5 mock, part 1, 6
+      minutes left", and a resume that came back to question 2 of 8 with the
+      time already spent deducted
+- [x] Docs: `features/jlpt-practice.md` (the mock, its clock, its save),
+      `data-formats.md` (inventory row), `adaptive-layout.md` (the header row),
+      four new `functions/` pages and six corrected ones, in both trees.
+      948 tests
 
 - [ ] Weakness report: per-section and per-grammar-point accuracy feeding review priorities
 - [ ] AICore enhancement (M3.5 policy, same switch): a supplementary 作文 writing section — a short
@@ -1222,6 +1288,14 @@ for whoever had to debug the feature.
 | 2026-09-04 | A display bug is verified by screenshot on a device, not by widget test alone | The widget-test font has 1.0 em metrics, so the font that causes this one is not present in the suite. Every existing test passed for the whole time it shipped |
 | 2026-09-04 | Every model variant is probed, not only those before the first success | Whether the learner has a choice of model size is itself a fact to report, and a loop that returns early cannot know it. The cost is three extra status calls on a deliberate refresh; a generation still trusts the variant already serving and pays one |
 | 2026-09-04 | The model-size switch is hidden on a device that serves one size | A control that cannot change what is serving is worse than no control: it teaches the learner that the page is decorative. The Z Fold 8 serves only the faster model |
+| 2026-09-05 | The exam clock counts only while the block is on screen and the app is in the foreground | It measures attention, not wall-clock hours. A learner who takes a phone call has not spent that time on the paper, and one who leaves it overnight has not lost the paper. The alternative — a deadline fixed at the moment the block began — would make the app unusable on a phone |
+| 2026-09-05 | "Started" and "the clock is running" are separate states on a block | The clock stops whenever a dialog opens or the app is backgrounded. Keying the start card on the clock meant opening the leave dialog dropped the page back to the start card, so leaving an exam looked exactly like losing it. Found on the device with the widget suite green |
+| 2026-09-05 | A paper in progress is a device-local file outside every registry, not a record | An unfinished exam on another device is meaningless: the clock belongs to the sitting, and half a paper is not a result. The backup and ZIP engines only see registry modules, so staying out of the registry is the whole of what keeps it local — and a test asserts that, because it is an absence and absences rot quietly |
+| 2026-09-05 | A save holds question ids and what was chosen, never the questions or their verdicts | Resuming then re-marks against the shipped files as they are now, so a content update that corrected an answer key corrects the resumed paper too. It is the same rule the exam record follows, for the same reason |
+| 2026-09-05 | A save from a newer build is refused outright; ids the files no longer have are merely dropped | The two failures are different sizes. A partly-understood save would score a paper against questions it could not reconstruct; a renumbered question just makes the paper one shorter, and the results already say how many were asked |
+| 2026-09-05 | A mock is written to the attempt history only when it finishes; practice writes on finishing a section | Half a paper is not an attempt either way, but a mock can be put down and picked up, so "finished" is the only moment that means anything. Answers already given have moved their own review intervals regardless |
+| 2026-09-05 | `TtsService` says when it has actually asked the engine, and callers wait for that | `hasJapaneseVoice` is false before the probe runs, which is not the same fact as "this device has no Japanese voice". The Learn card told a Pixel it could not practise listening and never took it back. This is the same class of bug as the AI status one in v0.4.3, and now has a signal rather than a convention |
+| 2026-09-05 | A UI test for a page that reads several files pumps **until a condition**, never a fixed number of frames | The exam page reads five files through real `dart:io`. A fixed count passed alone and failed in a full run, where eight suites share the machine — a flake that says nothing about the code |
 | 2026-09-05 | Settings explains the choice, not the implementation; the diagnosis moves behind developer options | Reported by the user. Every diagnostic line was added for a real reason — two wrong diagnoses came from a page that could not say why a device refused — but that audience is one person with a cable and the page was being read by everybody else. Hiding is not deleting: the lines are still there, one gesture away |
 | 2026-09-05 | Developer options are unlocked by eight taps on the version row, Android's own gesture | Copying it exactly is the point: somebody who needs the diagnostics already knows how, and nobody else finds it by accident. An "off" row in Settings would have been an invitation to the learner it is meant to spare |
 | 2026-09-05 | The unlock countdown is the version row's own subtitle, not a snack bar | The About section sits at the bottom of a long list, and a snack bar covered the row the next tap had to land on. The device found that; the widget test had passed |

@@ -1555,6 +1555,78 @@ class AppLocalizationsZh extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String examBlockTitle(int n, int total) {
+    return '第 $n 部分，共 $total 部分';
+  }
+
+  @override
+  String examBlockMinutes(int minutes) {
+    return '$minutes 分钟';
+  }
+
+  @override
+  String examQuestionCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '$n 题');
+    return '$_temp0';
+  }
+
+  @override
+  String get examStartBlock => '开始本部分';
+
+  @override
+  String get examLeaveTitle => '离开考试？';
+
+  @override
+  String get examLeaveBody => '考试会连同剩余时间一起保存。可以从 Learn 页继续。';
+
+  @override
+  String get examLeaveConfirm => '离开';
+
+  @override
+  String get examResultsTitle => '模拟考试结果';
+
+  @override
+  String examUnansweredCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n 题未作答',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examBlockTime(String sections, int used, int limit) {
+    return '$sections：$limit 分钟中用了 $used 分钟';
+  }
+
+  @override
+  String get examContinue => '继续考试';
+
+  @override
+  String examContinueBody(String level, int block, int minutes) {
+    return '$level 模拟考试，第 $block 部分，还剩 $minutes 分钟';
+  }
+
+  @override
+  String get examDiscard => '放弃';
+
+  @override
+  String get examDiscardTitle => '放弃已保存的考试？';
+
+  @override
+  String get examDiscardBody => '已作答的题目仍会保留在学习进度里。这次考试本身不会被记录。';
+
+  @override
+  String get examStartNew => '开始模拟考试';
+
+  @override
+  String get examReplaceTitle => '开始新的考试？';
+
+  @override
+  String get examReplaceBody => '已有一场保存的考试。开始新的会放弃它。';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -3108,4 +3180,76 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
     );
     return '$_temp0';
   }
+
+  @override
+  String examBlockTitle(int n, int total) {
+    return '第 $n 部分，共 $total 部分';
+  }
+
+  @override
+  String examBlockMinutes(int minutes) {
+    return '$minutes 分鐘';
+  }
+
+  @override
+  String examQuestionCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '$n 題');
+    return '$_temp0';
+  }
+
+  @override
+  String get examStartBlock => '開始本部分';
+
+  @override
+  String get examLeaveTitle => '離開考試？';
+
+  @override
+  String get examLeaveBody => '考試會連同剩餘時間一起儲存。可以從 Learn 頁繼續。';
+
+  @override
+  String get examLeaveConfirm => '離開';
+
+  @override
+  String get examResultsTitle => '模擬考試結果';
+
+  @override
+  String examUnansweredCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n 題未作答',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examBlockTime(String sections, int used, int limit) {
+    return '$sections：$limit 分鐘中用了 $used 分鐘';
+  }
+
+  @override
+  String get examContinue => '繼續考試';
+
+  @override
+  String examContinueBody(String level, int block, int minutes) {
+    return '$level 模擬考試，第 $block 部分，還剩 $minutes 分鐘';
+  }
+
+  @override
+  String get examDiscard => '放棄';
+
+  @override
+  String get examDiscardTitle => '放棄已儲存的考試？';
+
+  @override
+  String get examDiscardBody => '已作答的題目仍會保留在學習進度裡。這次考試本身不會被記錄。';
+
+  @override
+  String get examStartNew => '開始模擬考試';
+
+  @override
+  String get examReplaceTitle => '開始新的考試？';
+
+  @override
+  String get examReplaceBody => '已有一場儲存的考試。開始新的會放棄它。';
 }

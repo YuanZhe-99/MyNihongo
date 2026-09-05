@@ -1,0 +1,711 @@
+{
+  "schemaVersion": 1,
+  "source": "model-authored (Claude), unreviewed",
+  "license": "GPL-3.0 with the app.",
+  "level": "N4",
+  "section": "grammar",
+  "passages": [
+    {
+      "id": "p:n4-g-001",
+      "type": "text-grammar",
+      "lines": [
+        {
+          "ja": "私は去年、静かな町に引っ越しました。",
+          "reading": "わたしはきょねん、しずかなまちにひっこしました。"
+        },
+        {
+          "ja": "前の家は駅から近くて便利でしたが、部屋がとても狭かったです。",
+          "reading": "まえのいえはえきからちかくてべんりでしたが、へやがとてもせまかったです。"
+        },
+        {
+          "ja": "今の家は駅から遠いので、毎朝自転車で駅まで行きます。",
+          "reading": "いまのいえはえきからとおいので、まいあさじてんしゃでえきまでいきます。"
+        },
+        {
+          "ja": "最初は少し不便だと思いました。",
+          "reading": "さいしょはすこしふべんだとおもいました。"
+        },
+        {
+          "ja": "でも、近所に大きな公園があって、朝の散歩がとても楽しいです。",
+          "reading": "でも、きんじょにおおきなこうえんがあって、あさのさんぽがとてもたのしいです。"
+        },
+        {
+          "ja": "住んでいるうちに、この町が好きになりました。",
+          "reading": "すんでいるうちに、このまちがすきになりました。"
+        },
+        {
+          "ja": "最近は近所の人と日本語で話せるようになりました。",
+          "reading": "さいきんはきんじょのひととにほんごではなせるようになりました。"
+        },
+        {
+          "ja": "来月、町でお祭りがあります。",
+          "reading": "らいげつ、まちでおまつりがあります。"
+        },
+        {
+          "ja": "私も近所の人に頼まれて、朝から手伝うことになりました。",
+          "reading": "わたしもきんじょのひとにたのまれて、あさからてつだうことになりました。"
+        },
+        {
+          "ja": "今から、その日がとても楽しみです。",
+          "reading": "いまから、そのひがとてもたのしみです。"
+        }
+      ],
+      "en": "Last year I moved to a quiet town. My old place was close to the station and convenient, but the room was very small. My house now is far from the station, so every morning I ride my bicycle to the station. At first I thought it was a little inconvenient. But there is a big park in the neighbourhood, and a morning walk is very pleasant. While I was living here, I came to like this town. Lately I have become able to talk with the neighbours in Japanese. Next month there is a festival in the town. The neighbours asked me to help, and it has been decided that I will help from the morning. I am already looking forward to that day very much.",
+      "zh": "去年我搬到了一个安静的小镇。以前住的地方离车站近、很方便，可是房间非常窄。现在的家离车站远，所以每天早上我都骑自行车去车站。一开始我觉得有点不方便。不过附近有个大公园，早上散步非常舒服。住着住着，我就喜欢上了这个小镇。最近我已经能用日语和邻居聊天了。下个月镇上有庙会。邻居拜托了我，于是决定由我从早上开始帮忙。现在我就已经很期待那一天了。",
+      "zh_TW": "去年我搬到了一個安靜的小鎮。以前住的地方離車站近、很方便，可是房間非常窄。現在的家離車站遠，所以每天早上我都騎自行車去車站。一開始我覺得有點不方便。不過附近有個大公園，早上散步非常舒服。住著住著，我就喜歡上了這個小鎮。最近我已經能用日語和鄰居聊天了。下個月鎮上有廟會。鄰居拜託了我，於是決定由我從早上開始幫忙。現在我就已經很期待那一天了。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q:n4-g-001",
+      "type": "form-selection",
+      "items": [
+        "grammar:potential",
+        "vocab:jm1446760",
+        "vocab:jm1602800"
+      ],
+      "kind": "choice",
+      "ja": "この島までは船で行けます。",
+      "reading": "このしままではふねでいけます。",
+      "blank": "行けます",
+      "prompt": {
+        "en": "Which form of 行く fits the gap?",
+        "zh": "空格里应该填「行く」的哪个形式？",
+        "zh_TW": "空格里應該填「行く」的哪個形式？"
+      },
+      "options": [
+        "行きます",
+        "行けます",
+        "行っています",
+        "行きたいです"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The sentence says the island can be reached, and ability is said with the potential form: 行く becomes 行けます.",
+        "zh": "句子说的是能到那个岛，表示能力要用可能形，「行く」变成「行けます」。",
+        "zh_TW": "句子說的是能到那個島，表示能力要用可能形，「行く」變成「行けます」。"
+      }
+    },
+    {
+      "id": "q:n4-g-002",
+      "type": "form-selection",
+      "items": [
+        "grammar:te-oku",
+        "vocab:jm1226630",
+        "vocab:jm1511790"
+      ],
+      "kind": "choice",
+      "ja": "客が来る前に部屋を片付けておきます。",
+      "reading": "きゃくがくるまえにへやをかたづけておきます。",
+      "blank": "片付けて",
+      "prompt": {
+        "en": "Which form of 片付ける fits the gap before おきます?",
+        "zh": "「おきます」前面的空格里应该填「片付ける」的哪个形式？",
+        "zh_TW": "「おきます」前面的空格里應該填「片付ける」的哪個形式？"
+      },
+      "options": [
+        "片付ける",
+        "片付けた",
+        "片付けて",
+        "片付けます"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "おきます needs the te-form in front of it, and 片付けておきます means tidying up in advance, before the guest arrives.",
+        "zh": "「おきます」前面要接て形，「片付けておきます」表示在客人来之前事先收拾好。",
+        "zh_TW": "「おきます」前面要接て形，「片付けておきます」表示在客人來之前事先收拾好。"
+      }
+    },
+    {
+      "id": "q:n4-g-003",
+      "type": "form-selection",
+      "items": [
+        "grammar:te-shimau",
+        "vocab:jm1002500",
+        "vocab:jm1521400"
+      ],
+      "kind": "choice",
+      "ja": "妹が僕のお土産を食べてしまいました。",
+      "reading": "いもうとがぼくのおみやげをたべてしまいました。",
+      "blank": "食べて",
+      "prompt": {
+        "en": "Which form of 食べる fits the gap before しまいました?",
+        "zh": "「しまいました」前面的空格里应该填「食べる」的哪个形式？",
+        "zh_TW": "「しまいました」前面的空格里應該填「食べる」的哪個形式？"
+      },
+      "options": [
+        "食べた",
+        "食べて",
+        "食べる",
+        "食べ"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "てしまいました attaches to the te-form and adds the feeling that the souvenir is all gone, which was not what the speaker wanted.",
+        "zh": "「てしまいました」接在て形后面，表示纪念品被吃光了，而且说话人觉得可惜。",
+        "zh_TW": "「てしまいました」接在て形後面，表示紀念品被吃光了，而且說話人覺得可惜。"
+      }
+    },
+    {
+      "id": "q:n4-g-004",
+      "type": "form-selection",
+      "items": [
+        "grammar:tara",
+        "vocab:jm1486460"
+      ],
+      "kind": "choice",
+      "ja": "時間があったら、美術館へ行きましょう。",
+      "reading": "じかんがあったら、びじゅつかんへいきましょう。",
+      "blank": "あったら",
+      "prompt": {
+        "en": "Which form fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个形式？",
+        "zh_TW": "這個句子的空格里應該填哪個形式？"
+      },
+      "options": [
+        "あるので",
+        "あっても",
+        "あったら",
+        "あったのに"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The second half is a suggestion that depends on a condition, and たら is the conditional that leads into 行きましょう.",
+        "zh": "后半句是有条件才成立的提议，表示条件用「たら」，后面才能接「行きましょう」。",
+        "zh_TW": "後半句是有條件才成立的提議，表示條件用「たら」，後面才能接「行きましょう」。"
+      }
+    },
+    {
+      "id": "q:n4-g-005",
+      "type": "form-selection",
+      "items": [
+        "grammar:shi",
+        "vocab:jm1600160"
+      ],
+      "kind": "choice",
+      "ja": "この店はねだんも安いし、料理もおいしいです。",
+      "reading": "このみせはねだんもやすいし、りょうりもおいしいです。",
+      "blank": "し",
+      "prompt": {
+        "en": "Which word fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个词？",
+        "zh_TW": "這個句子的空格里應該填哪個詞？"
+      },
+      "options": [
+        "し",
+        "で",
+        "けれど",
+        "ながら"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The two halves are two good points about the same shop, and し is what lists reasons or qualities that add up.",
+        "zh": "前后两句都是这家店的优点，「し」正是用来并列几个理由或优点的。",
+        "zh_TW": "前後兩句都是這家店的優點，「し」正是用來並列幾個理由或優點的。"
+      }
+    },
+    {
+      "id": "q:n4-g-006",
+      "type": "form-selection",
+      "items": [
+        "grammar:noni",
+        "vocab:jm1538130",
+        "vocab:jm1483070"
+      ],
+      "kind": "choice",
+      "ja": "約束したのに、彼は来ませんでした。",
+      "reading": "やくそくしたのに、かれはきませんでした。",
+      "blank": "のに",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "ので",
+        "のに",
+        "ために",
+        "ばかり"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "A promise was made and yet he did not come, so the two halves clash: のに joins them and carries the speaker's disappointment.",
+        "zh": "明明约好了他却没来，前后是相反的，用「のに」连接，还带有说话人失望的语气。",
+        "zh_TW": "明明約好了他卻沒來，前後是相反的，用「のに」連接，還帶有說話人失望的語氣。"
+      }
+    },
+    {
+      "id": "q:n4-g-007",
+      "type": "form-selection",
+      "items": [
+        "grammar:sou-appearance",
+        "vocab:jm1416700",
+        "vocab:jm1548550"
+      ],
+      "kind": "choice",
+      "ja": "棚の上の箱が落ちそうです。",
+      "reading": "たなのうえのはこがおちそうです。",
+      "blank": "落ちそう",
+      "prompt": {
+        "en": "Which form says the box looks about to fall?",
+        "zh": "哪个形式表示箱子看起来快要掉下来了？",
+        "zh_TW": "哪個形式表示箱子看起來快要掉下來了？"
+      },
+      "options": [
+        "落ちそう",
+        "落ちるそう",
+        "落ちたそう",
+        "落ちてそう"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "For how something looks right now, そうです attaches to the ます-stem, so 落ちる becomes 落ちそうです.",
+        "zh": "表示眼前看到的样子时，「そうです」接在ます形词干后面，「落ちる」变成「落ちそうです」。",
+        "zh_TW": "表示眼前看到的樣子時，「そうです」接在ます形詞幹後面，「落ちる」變成「落ちそうです」。"
+      }
+    },
+    {
+      "id": "q:n4-g-008",
+      "type": "form-selection",
+      "items": [
+        "grammar:sou-hearsay",
+        "vocab:jm1438770",
+        "vocab:jm1596780"
+      ],
+      "kind": "choice",
+      "ja": "天気予報によると、明日は台風が来るそうです。",
+      "reading": "てんきよほうによると、あしたはたいふうがくるそうです。",
+      "blank": "来るそう",
+      "prompt": {
+        "en": "Which form fits the gap after によると?",
+        "zh": "「によると」后面的空格里应该填哪个形式？",
+        "zh_TW": "「によると」後面的空格里應該填哪個形式？"
+      },
+      "options": [
+        "来そう",
+        "来てそう",
+        "来るそう",
+        "来たそう"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "によると marks reported information, and hearsay そうです takes the plain form in front of it: 来るそうです.",
+        "zh": "「によると」表示消息来源，表示传闻的「そうです」前面要用简体形：「来るそうです」。",
+        "zh_TW": "「によると」表示消息來源，表示傳聞的「そうです」前面要用簡體形：「来るそうです」。"
+      }
+    },
+    {
+      "id": "q:n4-g-009",
+      "type": "form-selection",
+      "items": [
+        "grammar:passive",
+        "vocab:jm1450270"
+      ],
+      "kind": "choice",
+      "ja": "昨日、電車の中で足を踏まれました。",
+      "reading": "きのう、でんしゃのなかであしをふまれました。",
+      "blank": "踏まれました",
+      "prompt": {
+        "en": "Which form of 踏む fits the gap?",
+        "zh": "空格里应该填「踏む」的哪个形式？",
+        "zh_TW": "空格里應該填「踏む」的哪個形式？"
+      },
+      "options": [
+        "踏みました",
+        "踏まれました",
+        "踏ませました",
+        "踏んでいました"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Someone else stepped on the speaker's foot, so the speaker is the one it happened to: the passive 踏まれました.",
+        "zh": "是别人踩了说话人的脚，说话人是承受者，所以用被动形「踏まれました」。",
+        "zh_TW": "是別人踩了說話人的腳，說話人是承受者，所以用被動形「踏まれました」。"
+      }
+    },
+    {
+      "id": "q:n4-g-010",
+      "type": "form-selection",
+      "items": [
+        "grammar:causative",
+        "vocab:jm1463930"
+      ],
+      "kind": "choice",
+      "ja": "お父さんは私に毎日日記を書かせます。",
+      "reading": "おとうさんはわたしにまいにちにっきをかかせます。",
+      "blank": "書かせます",
+      "prompt": {
+        "en": "Which form of 書く fits the gap?",
+        "zh": "空格里应该填「書く」的哪个形式？",
+        "zh_TW": "空格里應該填「書く」的哪個形式？"
+      },
+      "options": [
+        "書けます",
+        "書かれます",
+        "書かせます",
+        "書きます"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "父 is the one who makes the writing happen and 私に marks who does it, so the verb is the causative 書かせます.",
+        "zh": "「父」是让人做的一方，「私に」表示动作者，所以动词用使役形「書かせます」。",
+        "zh_TW": "「父」是讓人做的一方，「私に」表示動作者，所以動詞用使役形「書かせます」。"
+      }
+    },
+    {
+      "id": "q:n4-g-011",
+      "type": "form-selection",
+      "items": [
+        "grammar:o-ni-naru",
+        "vocab:jm1322920"
+      ],
+      "kind": "choice",
+      "ja": "社長はもう新聞をお読みになりました。",
+      "reading": "しゃちょうはもうしんぶんをおよみになりました。",
+      "blank": "お読みに",
+      "prompt": {
+        "en": "Which words fit the gap in this honorific sentence?",
+        "zh": "这个尊敬语句子的空格里应该填什么？",
+        "zh_TW": "這個尊敬語句子的空格里應該填什麼？"
+      },
+      "options": [
+        "お読みに",
+        "ご読みに",
+        "お読んで",
+        "お読みを"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The honorific pattern is お + the ます-stem + になります, so 読みます becomes お読みになりました.",
+        "zh": "尊敬语的固定形式是「お＋ます形词干＋になります」，「読みます」变成「お読みになりました」。",
+        "zh_TW": "尊敬語的固定形式是「お＋ます形詞幹＋になります」，「読みます」變成「お読みになりました」。"
+      }
+    },
+    {
+      "id": "q:n4-g-012",
+      "type": "form-selection",
+      "items": [
+        "grammar:o-suru",
+        "vocab:jm1457210"
+      ],
+      "kind": "choice",
+      "ja": "先生の傘は私がお届けします。",
+      "reading": "せんせいのかさはわたしがおとどけします。",
+      "blank": "お届けします",
+      "prompt": {
+        "en": "Which words fit the gap when you speak humbly about your own action?",
+        "zh": "谦虚地说自己的动作时，空格里应该填什么？",
+        "zh_TW": "謙虛地說自己的動作時，空格里應該填什麼？"
+      },
+      "options": [
+        "お届けになります",
+        "ご届けします",
+        "お届けします",
+        "お届けです"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The speaker is doing it for the teacher, so the humble お + ます-stem + します is used: お届けします.",
+        "zh": "是说话人为老师做这件事，所以用谦让语「お＋ます形词干＋します」：「お届けします」。",
+        "zh_TW": "是說話人為老師做這件事，所以用謙讓語「お＋ます形詞幹＋します」：「お屆けします」。"
+      }
+    },
+    {
+      "id": "q:n4-g-013",
+      "type": "form-selection",
+      "items": [
+        "grammar:nikui",
+        "vocab:jm1315130"
+      ],
+      "kind": "choice",
+      "ja": "この字は小さくて読みにくいです。",
+      "reading": "このじはちいさくてよみにくいです。",
+      "blank": "読みにくい",
+      "prompt": {
+        "en": "Which form fits the gap after 小さくて?",
+        "zh": "「小さくて」后面的空格里应该填哪个形式？",
+        "zh_TW": "「小さくて」後面的空格里應該填哪個形式？"
+      },
+      "options": [
+        "読みやすい",
+        "読みにくい",
+        "読みすぎ",
+        "読みそう"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "小さくて gives the reason it is hard, and \"hard to do\" is the ます-stem plus にくいです.",
+        "zh": "「小さくて」说明难读的原因，表示「不容易做」用「ます形词干＋にくいです」。",
+        "zh_TW": "「小さくて」說明難讀的原因，表示「不容易做」用「ます形詞幹＋にくいです」。"
+      }
+    },
+    {
+      "id": "q:n4-g-014",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:you-to-omou",
+        "vocab:jm1405890"
+      ],
+      "kind": "order",
+      "ja": "卒業したら、国へ帰って働こうと思っています。",
+      "reading": "そつぎょうしたら、くにへかえってはたらこうとおもっています。",
+      "frame": {
+        "before": "卒業したら、",
+        "after": "思っています。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "働こう",
+        "と",
+        "国へ",
+        "帰って"
+      ],
+      "answerOrder": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "explanation": {
+        "en": "国へ帰って comes first as the earlier action, then the volitional 働こう plus と goes in front of 思っています to state the plan.",
+        "zh": "先发生的动作「国へ帰って」放在前面，然后意向形「働こう」加「と」接「思っています」，表示打算。",
+        "zh_TW": "先發生的動作「國へ帰って」放在前面，然後意向形「働こう」加「と」接「思っています」，表示打算。"
+      }
+    },
+    {
+      "id": "q:n4-g-015",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:te-morau",
+        "vocab:jm1599390"
+      ],
+      "kind": "order",
+      "ja": "友達に古い自転車をきれいに直してもらいました。",
+      "reading": "ともだちにふるいじてんしゃをきれいになおしてもらいました。",
+      "frame": {
+        "before": "友達に",
+        "after": "もらいました。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "きれいに",
+        "古い",
+        "直して",
+        "自転車を"
+      ],
+      "answerOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "explanation": {
+        "en": "古い describes 自転車, きれいに describes how it was fixed, and もらいました needs the te-form 直して right before it.",
+        "zh": "「古い」修饰「自転車」，「きれいに」修饰修理的方式，「もらいました」前面必须是て形「直して」。",
+        "zh_TW": "「古い」修飾「自転車」，「きれいに」修飾修理的方式，「もらいました」前面必須是て形「直して」。"
+      }
+    },
+    {
+      "id": "q:n4-g-016",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:koto-ni-suru",
+        "vocab:jm1310680"
+      ],
+      "kind": "order",
+      "ja": "来月から、甘いものをやめることにしました。",
+      "reading": "らいげつから、あまいものをやめることにしました。",
+      "frame": {
+        "before": "来月から、",
+        "after": "しました。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "やめる",
+        "こと",
+        "甘いものを",
+        "に"
+      ],
+      "answerOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "explanation": {
+        "en": "A decision you make yourself is the dictionary form plus ことにしました, so やめる comes before こと and に.",
+        "zh": "自己做的决定用「辞書形＋ことにしました」，所以「やめる」在「こと」「に」的前面。",
+        "zh_TW": "自己做的決定用「辭書形＋ことにしました」，所以「やめる」在「こと」「に」的前面。"
+      }
+    },
+    {
+      "id": "q:n4-g-017",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:tame-ni",
+        "vocab:jm1164010"
+      ],
+      "kind": "order",
+      "ja": "妹は医者になるために毎日一生懸命勉強しています。",
+      "reading": "いもうとはいしゃになるためにまいにちいっしょうけんめいべんきょうしています。",
+      "frame": {
+        "before": "妹は",
+        "after": "勉強しています。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "なるために",
+        "医者に",
+        "一生懸命",
+        "毎日"
+      ],
+      "answerOrder": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "explanation": {
+        "en": "ために follows the dictionary form and states the purpose, so 医者になるために comes first; 毎日 and 一生懸命 then describe the studying.",
+        "zh": "「ために」接辞書形表示目的，所以「医者になるために」放在最前面，「毎日」「一生懸命」再修饰学习。",
+        "zh_TW": "「ために」接辭書形表示目的，所以「醫者になるために」放在最前面，「毎日」「一生懸命」再修飾學習。"
+      }
+    },
+    {
+      "id": "q:n4-g-018",
+      "type": "text-grammar",
+      "items": [
+        "grammar:node",
+        "vocab:jm1169340"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-g-001",
+      "ja": "今の家は駅から遠いので、毎朝自転車で駅まで行きます。",
+      "reading": "いまのいえはえきからとおいので、まいあさじてんしゃでえきまでいきます。",
+      "blank": "ので",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "のに",
+        "ので",
+        "ように",
+        "ために"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Being far from the station is the plain reason for cycling there, and ので states a reason calmly.",
+        "zh": "离车站远是骑自行车去的原因，「ので」用来客观地说明理由。",
+        "zh_TW": "離車站遠是騎自行車去的原因，「ので」用來客觀地說明理由。"
+      }
+    },
+    {
+      "id": "q:n4-g-019",
+      "type": "text-grammar",
+      "items": [
+        "grammar:uchi-ni"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-g-001",
+      "ja": "住んでいるうちに、この町が好きになりました。",
+      "reading": "すんでいるうちに、このまちがすきになりました。",
+      "blank": "うちに",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "までに",
+        "あとに",
+        "うちに",
+        "ほどに"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The liking grew little by little while the writer went on living there, and that gradual change during a state is 〜ているうちに.",
+        "zh": "在一直住着的过程中慢慢喜欢上了这里，这种在持续状态中发生的变化用「〜ているうちに」。",
+        "zh_TW": "在一直住著的過程中慢慢喜歡上了這裡，這種在持續狀態中發生的變化用「〜ているうちに」。"
+      }
+    },
+    {
+      "id": "q:n4-g-020",
+      "type": "text-grammar",
+      "items": [
+        "grammar:you-ni-naru",
+        "vocab:jm1293780",
+        "vocab:jm1242350"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-g-001",
+      "ja": "最近は近所の人と日本語で話せるようになりました。",
+      "reading": "さいきんはきんじょのひととにほんごではなせるようになりました。",
+      "blank": "話せる",
+      "prompt": {
+        "en": "Read the passage, then choose the form that fits this gap.",
+        "zh": "读完短文后，选择适合这个空格的形式。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的形式。"
+      },
+      "options": [
+        "話した",
+        "話して",
+        "話す",
+        "話せる"
+      ],
+      "answer": 3,
+      "explanation": {
+        "en": "ようになりました says a new ability has appeared, so the potential form 話せる goes in front of it.",
+        "zh": "「ようになりました」表示产生了新的能力，前面要用可能形「話せる」。",
+        "zh_TW": "「ようになりました」表示產生了新的能力，前面要用可能形「話せる」。"
+      }
+    },
+    {
+      "id": "q:n4-g-021",
+      "type": "text-grammar",
+      "items": [
+        "grammar:koto-ni-naru",
+        "vocab:jm1328190"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-g-001",
+      "ja": "私も近所の人に頼まれて、朝から手伝うことになりました。",
+      "reading": "わたしもきんじょのひとにたのまれて、あさからてつだうことになりました。",
+      "blank": "ことに",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "ように",
+        "ことに",
+        "ために",
+        "そうに"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The neighbours asked, so the writer did not decide alone: ことになりました says the arrangement was settled by others.",
+        "zh": "是邻居拜托的，不是自己一个人决定的，「ことになりました」表示事情是由外部安排决定的。",
+        "zh_TW": "是鄰居拜託的，不是自己一個人決定的，「ことになりました」表示事情是由外部安排決定的。"
+      }
+    }
+  ]
+}

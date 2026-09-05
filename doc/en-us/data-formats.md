@@ -495,6 +495,7 @@ Settings shows the resolved path only on desktop; see `platform_capabilities.dar
 | Learning progress | `nihongo_progress.json` | Yes | Per-record by `id` and `modifiedAt`; unknown fields preserved |
 | Sentence lab and writing history | `nihongo_progress.json` | Yes | `lab:`/`writing:` records, content-addressed ids, 100 per kind; only the input text is stored |
 | JLPT attempt history | `nihongo_progress.json` | Yes | `exam:` records, timestamped ids, 40 mock and 80 practice; only which questions were asked and what was answered |
+| A mock exam in progress | `exam_in_progress.json` | No | One saved paper per device: question ids, what was chosen, and the time each block has used. Deliberately outside the sync, backup and export registries — the clock belongs to the sitting, and half a paper is not a result |
 | Theme mode | `storage_config.json` | No | Device-specific preference (`themeMode`: `light`/`dark`; absent means system) |
 | Locale | `storage_config.json` | No | Device-specific preference (`locale`: `en`/`zh`/`zh_TW`; absent means system) |
 | Storage path override | `storage_config.json` | No | Device-specific path (`storagePath`) |

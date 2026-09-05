@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:my_nihongo/app/data_modules.dart';
 import 'package:my_nihongo/features/progress/models/exam_attempt.dart';
 import 'package:my_nihongo/features/progress/models/study_record.dart';
 import 'package:my_nihongo/features/progress/services/nihongo_storage.dart';
@@ -321,6 +322,65 @@ void main() {
       final records = json['records'] as List;
       expect(records, hasLength(1));
       expect((records.single as Map)['id'], 'exam:20260905T101500Z-3f2a');
+    });
+  });
+
+  group('a paper in progress', () {
+    // A file of its own rather than a record, and deliberately outside the
+    // sync and backup registries: an unfinished exam on another device is
+    // meaningless, because the clock belongs to the sitting.
+
+    test('is absent until one is saved', () async {
+      expect(await NihongoStorage.loadExamInProgress(), isNull);
+    });
+
+    test('round-trips', () async {
+      await NihongoStorage.saveExamInProgress({
+        'v': 1,
+        'level': 'N5',
+        'blocks': [
+          {'questionIds': ['q:n5-v-001']},
+        ],
+      });
+      final read = await NihongoStorage.loadExamInProgress();
+      expect(read?['level'], 'N5');
+      expect((read?['blocks'] as List).length, 1);
+    });
+
+    test('is cleared when the paper is finished or discarded', () async {
+      await NihongoStorage.saveExamInProgress({'v': 1});
+      await NihongoStorage.clearExamInProgress();
+      expect(await NihongoStorage.loadExamInProgress(), isNull);
+    });
+
+    test('clearing one that is not there is not an error', () async {
+      await NihongoStorage.clearExamInProgress();
+      await NihongoStorage.clearExamInProgress();
+      expect(await NihongoStorage.loadExamInProgress(), isNull);
+    });
+
+    test('a file that will not parse reads as no saved paper', () async {
+      // The alternative is refusing to start a new exam because an old one is
+      // corrupt, which is a worse answer to the same accident.
+      final dir = await NihongoStorage.getAppDir();
+      await File(p.join(dir.path, 'exam_in_progress.json')).writeAsString('{');
+      expect(await NihongoStorage.loadExamInProgress(), isNull);
+    });
+
+    test('it is not in the progress file, and not in the data registry',
+        () async {
+      // The backup and ZIP engines only see registry modules, so staying out
+      // of the registry is the whole of what keeps this file local.
+      await NihongoStorage.saveExamInProgress({'v': 1, 'level': 'N5'});
+      final data = await NihongoStorage.load();
+      expect(data.records, isEmpty);
+      expect(
+        nihongoModuleRegistry.modules.any(
+          (m) => m.fileName.contains('exam'),
+        ),
+        isFalse,
+        reason: 'a registered module is synced, backed up and exported',
+      );
     });
   });
 }

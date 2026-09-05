@@ -117,6 +117,7 @@ class QuizSession extends ChangeNotifier {
     this.onFirstAnswer,
     this.requeue = true,
   }) : _queue = List.of(questions),
+       _all = List.of(questions),
        _total = questions.length;
 
   /// Called with an item id and whether its first answer was right.
@@ -126,6 +127,7 @@ class QuizSession extends ChangeNotifier {
   final bool requeue;
 
   final List<QuizQuestion> _queue;
+  final List<QuizQuestion> _all;
   int _total;
   final AnswerChecker _checker = const AnswerChecker();
   final Map<String, bool> _firstResults = {};
@@ -133,6 +135,7 @@ class QuizSession extends ChangeNotifier {
   final List<String> _wrongOrder = [];
   final Set<String> _recordedItems = {};
   final List<QuestionOutcome> _outcomes = [];
+  final Map<String, QuizAnswer> _answers = {};
 
   QuizOutcome? _lastOutcome;
   int _answered = 0;
@@ -155,6 +158,30 @@ class QuizSession extends ChangeNotifier {
   /// answer, which is the only reading of "what happened" that survives
   /// re-queueing.
   List<QuestionOutcome> get outcomes => List.unmodifiable(_outcomes);
+
+  /// What the learner actually chose, by [scoreKey].
+  ///
+  /// The **first** answer to each question, which is the one that scored. A
+  /// saved paper is written from this and replayed through [restore], so what
+  /// comes back is what was chosen rather than the verdict it was given — a
+  /// content update that corrected an answer key then corrects the resumed
+  /// paper too.
+  Map<String, QuizAnswer> get chosen => Map.unmodifiable(_answers);
+
+  /// Every question the session was built with, in the order it asked them.
+  ///
+  /// What a results screen needs: the outcomes say which questions went wrong
+  /// but not what they were, and re-reading the content files to find out
+  /// would be re-answering a question the session already knows.
+  List<QuizQuestion> get allQuestions => List.unmodifiable(_all);
+
+  /// The score keys still waiting to be asked, in order.
+  ///
+  /// What a save needs alongside [outcomes] to write down the whole paper: the
+  /// questions already answered and the ones still to come.
+  List<String> get remainingKeys => [
+    for (final question in _queue) scoreKey(question),
+  ];
 
   /// Purpose: Name the key a question is scored under.
   /// Inputs: The `question`.
@@ -179,6 +206,7 @@ class QuizSession extends ChangeNotifier {
   /// honest about how much is left.
   void append(QuizQuestion question) {
     _queue.add(question);
+    _all.add(question);
     _total++;
     notifyListeners();
   }
@@ -300,6 +328,7 @@ class QuizSession extends ChangeNotifier {
     final key = scoreKey(question);
     if (!_firstResults.containsKey(key)) {
       _firstResults[key] = correct;
+      _answers[key] = answer;
       _outcomes.add(
         QuestionOutcome(key: key, itemId: question.itemId, correct: correct),
       );
