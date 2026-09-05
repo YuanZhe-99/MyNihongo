@@ -36,10 +36,12 @@ listed at the end with what adding each involves.
   plugin because each is a small surface, and every extra Flutter plugin is another one that may
   apply the Kotlin Gradle Plugin — the constraint that already pins `file_picker` and
   `speech_to_text`.
-- **On-device AI dependencies:** `com.google.mlkit:genai-prompt:1.0.0-beta2`,
+- **On-device AI dependencies:** `com.google.mlkit:genai-prompt:1.0.0-beta4`,
   `com.google.mlkit:genai-proofreading:1.0.0-beta1` and
   `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2`, all pinned exactly because the ML Kit
-  GenAI APIs are beta with no deprecation policy. See [`android-aicore.md`](android-aicore.md).
+  GenAI APIs are beta with no deprecation policy. The `genai-prompt` pin is a floor for what the
+  app can *ask* — a named model variant — and says nothing about what any device answers; that is
+  probed at run time. See [`android-aicore.md`](android-aicore.md).
 - **`android/app/proguard-rules.pro` exists only for ML Kit GenAI.** R8 shrinks it into a runtime
   `NullPointerException` that reads, from the app, as "this device does not support AI" — and only in
   a release build, so the debug build hides it. The rules keep `com.google.mlkit.**` and

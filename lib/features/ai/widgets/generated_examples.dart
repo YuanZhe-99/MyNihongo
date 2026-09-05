@@ -158,7 +158,10 @@ class _GeneratedExamplesState extends ConsumerState<GeneratedExamples> {
       _failure = null;
     });
     try {
-      final raw = await AiPracticeService.instance.run(prompt);
+      final raw = await AiPracticeService.instance.run(
+        prompt,
+        maxOutputTokens: builder.maxOutputTokens,
+      );
       if (!mounted) return;
       final parsed = PracticeResponseParser.examples(
         raw,

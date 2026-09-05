@@ -129,7 +129,9 @@ class _WritingPracticePageState extends ConsumerState<WritingPracticePage> {
 
     final result = <Widget>[
       if (_analyses.isNotEmpty) ..._deterministic(context, l10n),
-      if (_asking || _feedback != null || _rewriteOnly != null ||
+      if (_asking ||
+          _feedback != null ||
+          _rewriteOnly != null ||
           _failure != null)
         AiExplanationCard(
           title: _feedback != null || _canExplain
@@ -470,7 +472,10 @@ class _WritingPracticePageState extends ConsumerState<WritingPracticePage> {
       _rewriteOnly = null;
     });
     try {
-      final raw = await AiPracticeService.instance.run(prompt);
+      final raw = await AiPracticeService.instance.run(
+        prompt,
+        maxOutputTokens: builder.maxOutputTokens,
+      );
       if (!mounted) return;
       final parsed = PracticeResponseParser.writing(raw);
       setState(() {

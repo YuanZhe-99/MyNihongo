@@ -51,20 +51,23 @@ class AiPracticeService {
   bool get canRun => _assist.canExplain;
 
   /// Purpose: Run one prompt the learner is waiting for.
-  /// Inputs: The `prompt`.
+  /// Inputs: The `prompt`, and `maxOutputTokens` — the budget from the prompt
+  /// asset, so a task that needs a longer answer can say so.
   /// Returns: `Future<String>` — throws [GenAiException] on failure.
   /// Side effects: Runs a model on the device.
   /// Notes: Interactive requests queue behind each other rather than failing
   /// with "busy": a learner who taps two buttons quickly should get two
   /// answers, not an error. Background jobs get out of the way instead.
-  Future<String> run(String prompt) {
+  Future<String> run(String prompt, {int? maxOutputTokens}) {
     final previous = _interactive;
     final completer = Completer<String>();
     _interactive = completer.future.then((_) {}, onError: (_) {});
     Future<void>(() async {
       if (previous != null) await previous;
       try {
-        completer.complete(await _assist.explain(prompt));
+        completer.complete(
+          await _assist.explain(prompt, maxOutputTokens: maxOutputTokens),
+        );
       } catch (error, stack) {
         completer.completeError(error, stack);
       }
@@ -73,18 +76,18 @@ class AiPracticeService {
   }
 
   /// Purpose: Run one prompt nobody is waiting for.
-  /// Inputs: The `prompt`.
+  /// Inputs: The `prompt`, and `maxOutputTokens`.
   /// Returns: `Future<String?>` — null when it never got a turn.
   /// Side effects: Runs a model on the device, possibly after a wait.
   /// Notes: Yields to interactive work. If the model is busy, this waits and
   /// tries again a few times, and gives up quietly rather than surfacing an
   /// error — nothing is waiting for it, so there is nobody to tell.
-  Future<String?> runInBackground(String prompt) async {
+  Future<String?> runInBackground(String prompt, {int? maxOutputTokens}) async {
     for (var attempt = 0; attempt < maxRetries; attempt++) {
       final interactive = _interactive;
       if (interactive != null) await interactive;
       try {
-        return await _assist.explain(prompt);
+        return await _assist.explain(prompt, maxOutputTokens: maxOutputTokens);
       } on GenAiException catch (error) {
         if (error.failure != GenAiFailure.busy) return null;
         await Future<void>.delayed(retryDelay);

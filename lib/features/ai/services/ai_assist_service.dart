@@ -196,14 +196,15 @@ class AiAssistService extends ChangeNotifier {
   }
 
   /// Purpose: Generate one explanation.
-  /// Inputs: The `prompt`.
+  /// Inputs: The `prompt`, and `maxOutputTokens` — how long the answer may
+  /// be, from the prompt asset rather than from here.
   /// Returns: `Future<String>` — throws [GenAiException] instead of returning
   /// a failure.
   /// Side effects: Runs a model on the device.
   /// Notes: The gate order matters: off is refused before the status is even
   /// asked, so a device with a model present still does nothing while the
   /// switch is off. Nothing generated is stored anywhere.
-  Future<String> explain(String prompt) async {
+  Future<String> explain(String prompt, {int? maxOutputTokens}) async {
     _requireEnabled();
     if (_busy) throw const GenAiException(GenAiFailure.busy);
     _status[GenAiFeature.prompt] = await _backend.statusReport(
@@ -217,7 +218,10 @@ class AiAssistService extends ChangeNotifier {
     notifyListeners();
     try {
       return await _backend
-          .explain(prompt)
+          .explain(
+            prompt,
+            maxOutputTokens: maxOutputTokens ?? defaultMaxOutputTokens,
+          )
           .timeout(
             timeout,
             onTimeout: () => throw const GenAiException(GenAiFailure.timeout),
@@ -227,6 +231,13 @@ class AiAssistService extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+  /// How long an answer may be when the caller names no limit.
+  ///
+  /// The prompt asset carries the real budget per task; this is the floor for
+  /// a caller that has no asset loaded, and matches what the platform side
+  /// used to assume.
+  static const defaultMaxOutputTokens = 256;
 
   /// Purpose: Ask for corrected versions of one short sentence.
   /// Inputs: `sentence`.

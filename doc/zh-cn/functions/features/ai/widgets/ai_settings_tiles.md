@@ -18,6 +18,7 @@
 | `_onServiceChanged` | 方法 | B | 状态或下载变化时重建。 |
 | [`build`](#build) | 方法 | A | 构建开关与各行。 |
 | [`_featureRow`](#featurerow) | 方法 | A | 构建某项功能的状态行。 |
+| `_diagnostic` | 静态方法 | B | 状态行下面那行不翻译的文字：是什么在服务，或者什么被拒绝了。 |
 | `_statusLabel` | 静态方法 | B | 用学习者的语言命名一种状态。 |
 | `_progressLabel` | 静态方法 | B | 说明一次下载进行到哪里。 |
 | `_iconFor` | 静态方法 | B | 为一种状态挑选图标。 |

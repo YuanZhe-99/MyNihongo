@@ -139,7 +139,10 @@ class _WhyWrongState extends ConsumerState<WhyWrong> {
       _failure = null;
     });
     try {
-      final raw = await AiPracticeService.instance.run(prompt);
+      final raw = await AiPracticeService.instance.run(
+        prompt,
+        maxOutputTokens: builder.maxOutputTokens,
+      );
       if (!mounted) return;
       setState(() {
         _generated = PracticeResponseParser.explanation(raw, prompt: prompt);

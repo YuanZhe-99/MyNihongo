@@ -8,26 +8,35 @@
 
 M3.0 把原本合成一个的答案拆成了两部分。`statusReport` 在状态之外**还**返回平台的原始值或其背后的异常，而 `GenAiStatus.unreachable` 表示调用根本没能发出——这与 AICore 拒绝是两回事，修法也不同。`coreInfo` 读取已安装的 AICore 版本。两者都带有默认实现而非保持抽象，这样无需补充信息的后端可以原样继续工作。
 
+M4.0 又把这份报告加宽了，因为那次拆分仍然不足以诊断一台 Z Fold 8。Prompt API 提供四个模型变体，平台侧会把它们全部探测一遍，于是报告现在带上了应答的 `variant`、被拒绝的 `refused`，以及真正在服务的那个模型的 `baseModelName` 与 `tokenLimit`。`GenAiStatus.unknown` 表示本次构建没有名字可给的状态值——按原样报告，绝不折叠成一次拒绝，因为这个枚举以前扩充过。`GenAiCoreInfo.compatible` 回答 AICore 是否认为这台设备根本可以被服务。这些字段全部按「缺失」而不是「错误」来解码，所以更旧的平台侧、以及只有一个模型的校对功能，都能原样继续工作。
+
 ## 声明
 
 | 声明 | 种类 | 层级 | 用途 |
 |---|---|---|---|
 | `GenAiFeature` | 枚举 | B | 一次调用针对两个端侧模型中的哪一个。 |
-| `GenAiStatus` | 枚举 | B | 某项功能此刻在本设备上能做什么。 |
+| `GenAiStatus` | 枚举 | B | 某项功能此刻在本设备上能做什么，包括表示「回答比本次构建更新」的 `unknown`。 |
 | `GenAiFailure` | 枚举 | B | 一次尝试为何没有产出答案。 |
 | `GenAiException` | 类 | B | 调用无法产出结果时抛出。 |
+| `GenAiStatusReport` | 类 | B | 某项功能的状态、服务它的变体，以及被拒绝的那些。 |
+| `GenAiCoreInfo` | 类 | B | 已安装的 AICore 版本，以及它能否在此提供模型。 |
+| `GenAiCoreInfo.fromJson` | 静态方法 | B | 读取通道送来的映射。 |
 | `GenAiBackend` | 抽象类 | B | 接缝本身。 |
 | `GenAiBackend.status` | 方法 | B | 询问某项功能能做什么。 |
 | [`GenAiBackend.download`](#download) | 方法 | A | 请求系统获取某项功能的模型。 |
 | `GenAiBackend.explain` | 方法 | B | 生成一个回答。 |
 | `GenAiBackend.proofread` | 方法 | B | 为一个句子索取修改后的写法。 |
 | `GenAiBackend.cancel` | 方法 | B | 停止正在进行的操作。 |
+| `GenAiBackend.statusReport` | 方法 | B | 状态，外加设备就此说过的一切。 |
+| `GenAiBackend.coreInfo` | 方法 | B | 描述 AICore 的安装情况。 |
 | `MethodChannelGenAiBackend` | 类 | B | 基于方法通道的真实后端。 |
 | [`MethodChannelGenAiBackend.status`](#status) | 方法 | A | 询问平台，或不经平台直接作答。 |
 | `MethodChannelGenAiBackend.download` | 方法 | B | 启动下载并转发进度。 |
 | `MethodChannelGenAiBackend.explain` | 方法 | B | 把一个提示词送过通道。 |
 | `MethodChannelGenAiBackend.proofread` | 方法 | B | 把一个句子送过通道。 |
 | `MethodChannelGenAiBackend.cancel` | 方法 | B | 尽力取消。 |
+| `MethodChannelGenAiBackend.statusReport` | 方法 | B | 解码平台的状态回复，容忍缺失字段。 |
+| `MethodChannelGenAiBackend.coreInfo` | 方法 | B | 读取 AICore 的安装情况。 |
 | `_handlePlatformCall` | 方法 | B | 接收来自平台的下载进度。 |
 | `_failureFor` | 静态方法 | B | 把平台错误码映射为失败原因。 |
 
@@ -51,6 +60,6 @@ M3.0 把原本合成一个的答案拆成了两部分。`statusReport` 在状态
 - **输入：** `feature`。
 - **返回：** `Future<GenAiStatus>`。
 - **副作用：** 一次通道调用，仅在 Android 上。
-- **算法：** 在不可能有端侧模型的平台上直接短路为 `unsupported`；否则把平台的四个字符串、以及任何错误，映射到枚举上。
+- **算法：** 委托给 `statusReport` 并丢掉诊断信息。后者在不可能有端侧模型的平台上直接短路为 `unsupported`；否则把平台的状态字符串、以及任何错误，映射到枚举上。
 - **使用：** `AiAssistService.refreshStatus`，以及每次生成之前。
-- **说明：** 平台错误回答 `unavailable` 而不是抛出：问不出来**就是**「本设备不能」这个答案，而在这里抛异常只会迫使每个调用方捕获后说同一句话。`unsupported` 短路则保证了在 Windows、macOS 和 iOS 上根本不触碰通道——那里没有这个通道，任何调用都会抛 `MissingPluginException`。
+- **说明：** 平台错误回答 `unreachable`，既不抛出，也不说成 `unavailable`：问不出来和被拒绝不是同一件事，而在这里抛异常只会迫使每个调用方捕获后说其中一句。本次构建不认识的状态字符串回答 `unknown`，理由相同。`unsupported` 短路则保证了在 Windows、macOS 和 iOS 上根本不触碰通道——那里没有这个通道，任何调用都会抛 `MissingPluginException`。

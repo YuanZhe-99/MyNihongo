@@ -11,7 +11,7 @@ Android 是第一阶段唯一发布的平台。代码是平台中立的；其他
 - **权限：** 仅 `INTERNET`（WebDAV 同步）。`RECORD_AUDIO` 随第二阶段的语音识别到来，在首次使用时附说明请求，绝不在安装时请求。端侧 AI **不需要**任何权限：其背后用到网络的是 AICore 系统服务，不是应用。
 - **`minSdk` 为 26，而非 `flutter.minSdkVersion`**（24）。ML Kit GenAI 库需要 API 26，应用中别无他物需要；该值在 `android/app/build.gradle.kts` 中显式设置，理由就写在旁边。
 - **两个方法通道**，都由 `MainActivity` 注册：`com.yuanzhe.my_nihongo/system`（打开系统语音设置）和 `com.yuanzhe.my_nihongo/genai`（`GenAiChannel`，通往 AICore 的桥）。两者都用自写通道而不用插件，因为各自接口面都很小，而每多一个 Flutter 插件就多一个可能应用 Kotlin Gradle 插件的插件——正是这条约束已经锁定了 `file_picker` 与 `speech_to_text`。
-- **端侧 AI 依赖：** `com.google.mlkit:genai-prompt:1.0.0-beta2`、`com.google.mlkit:genai-proofreading:1.0.0-beta1` 与 `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2`，全部精确锁定，因为 ML Kit GenAI API 处于 beta 且没有弃用政策。见 [`android-aicore.md`](android-aicore.md)。
+- **端侧 AI 依赖：** `com.google.mlkit:genai-prompt:1.0.0-beta4`、`com.google.mlkit:genai-proofreading:1.0.0-beta1` 与 `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2`，全部精确锁定，因为 ML Kit GenAI API 处于 beta 且没有弃用政策。`genai-prompt` 这个锁定是应用*能问出什么*的下限——即指名一个模型变体——它不代表任何设备会怎么回答；那是运行时探测出来的。见 [`android-aicore.md`](android-aicore.md)。
 - **`android/app/proguard-rules.pro` 只为 ML Kit GenAI 而存在。** R8 会把它压缩成一个运行时 `NullPointerException`，从应用看上去就是「本设备不支持 AI」——而且只出现在 release 构建，debug 构建会把它藏起来。规则保留 `com.google.mlkit.**` 与 `com.google.android.gms.internal.mlkit_**`；只保留 `genai` 那几个包是不够的，因为出错帧在 ML Kit 的共享 SDK 内部。在 Pixel 10 上发现，推理过程写在 `android-aicore.md`。
 - **折叠：** activity 的 `configChanges` 包含 `screenLayout|screenSize|smallestScreenSize|density`，因此展开时窗口调整大小而不重建 activity。见 [`adaptive-layout.md`](adaptive-layout.md)。
 - 允许**明文流量**（`usesCleartextTraffic="true"`），使家庭网络上走纯 HTTP 的 WebDAV 服务器可用，与兄弟应用相同。

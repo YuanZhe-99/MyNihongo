@@ -4,17 +4,17 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **916** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **917** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **879** documented declarations. The two counts are measured separately and
+The rows below sum to **888** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
 | Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 173 |
-| Tier B (index row only) | 706 |
-| **Total** | **879** |
+| Tier B (index row only) | 715 |
+| **Total** | **888** |
 
 These totals were measured against the source tree at initialization (`PLAN.md` M1.0). If you
 change these numbers, measure them rather than adjusting them by hand:
@@ -47,14 +47,14 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 
 | Source file | Page | Declarations | Tier A count |
 |---|---|---|---|
-| `lib/features/ai/services/ai_assist_service.dart` | [features/ai/services/ai_assist_service.md](features/ai/services/ai_assist_service.md) | 17 | 4 |
+| `lib/features/ai/services/ai_assist_service.dart` | [features/ai/services/ai_assist_service.md](features/ai/services/ai_assist_service.md) | 18 | 4 |
 | `lib/features/ai/services/aicore_sentence_enhancer.dart` | [features/ai/services/aicore_sentence_enhancer.md](features/ai/services/aicore_sentence_enhancer.md) | 4 | 3 |
-| `lib/features/ai/services/genai_backend.dart` | [features/ai/services/genai_backend.md](features/ai/services/genai_backend.md) | 18 | 2 |
+| `lib/features/ai/services/genai_backend.dart` | [features/ai/services/genai_backend.md](features/ai/services/genai_backend.md) | 25 | 2 |
 | `lib/features/ai/services/prompt_builder.dart` | [features/ai/services/prompt_builder.md](features/ai/services/prompt_builder.md) | 15 | 4 |
 | `lib/features/ai/services/response_parser.dart` | [features/ai/services/response_parser.md](features/ai/services/response_parser.md) | 9 | 2 |
 | `lib/features/ai/services/writing_rewrite.dart` | [features/ai/services/writing_rewrite.md](features/ai/services/writing_rewrite.md) | 2 | 1 |
 | `lib/features/ai/widgets/ai_explanation_card.dart` | [features/ai/widgets/ai_explanation_card.md](features/ai/widgets/ai_explanation_card.md) | 3 | 2 |
-| `lib/features/ai/widgets/ai_settings_tiles.dart` | [features/ai/widgets/ai_settings_tiles.md](features/ai/widgets/ai_settings_tiles.md) | 9 | 3 |
+| `lib/features/ai/widgets/ai_settings_tiles.dart` | [features/ai/widgets/ai_settings_tiles.md](features/ai/widgets/ai_settings_tiles.md) | 10 | 3 |
 | `lib/features/content/models/content_catalog.dart` | [features/content/models/content_catalog.md](features/content/models/content_catalog.md) | 7 | 0 |
 | `lib/features/content/models/grammar_point.dart` | [features/content/models/grammar_point.md](features/content/models/grammar_point.md) | 3 | 0 |
 | `lib/features/content/models/jlpt_level.dart` | [features/content/models/jlpt_level.md](features/content/models/jlpt_level.md) | 2 | 0 |

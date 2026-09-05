@@ -1339,6 +1339,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aiStatusUnreachable => 'The AI service could not be reached';
 
   @override
+  String get aiStatusUnknown =>
+      'The device reported a status this version does not recognise';
+
+  @override
   String get aiStatusDownloadable => 'Not downloaded yet';
 
   @override
@@ -1357,6 +1361,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aiCoreMissing => 'AICore is not installed on this device.';
+
+  @override
+  String get aiCoreCompatible => 'AICore can serve models on this device';
+
+  @override
+  String get aiCoreIncompatible => 'AICore cannot serve models on this device';
 
   @override
   String get aiDownload => 'Download';

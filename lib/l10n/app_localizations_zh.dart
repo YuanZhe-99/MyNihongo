@@ -1299,6 +1299,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get aiStatusUnreachable => '无法访问 AI 服务';
 
   @override
+  String get aiStatusUnknown => '设备返回了本版本无法识别的状态';
+
+  @override
   String get aiStatusDownloadable => '尚未下载';
 
   @override
@@ -1317,6 +1320,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get aiCoreMissing => '本设备未安装 AICore。';
+
+  @override
+  String get aiCoreCompatible => 'AICore 可以在本设备上提供模型';
+
+  @override
+  String get aiCoreIncompatible => 'AICore 无法在本设备上提供模型';
 
   @override
   String get aiDownload => '下载';
@@ -2711,6 +2720,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get aiStatusUnreachable => '無法存取 AI 服務';
 
   @override
+  String get aiStatusUnknown => '裝置回報了本版本無法辨識的狀態';
+
+  @override
   String get aiStatusDownloadable => '尚未下載';
 
   @override
@@ -2729,6 +2741,12 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get aiCoreMissing => '本裝置未安裝 AICore。';
+
+  @override
+  String get aiCoreCompatible => 'AICore 可以在本裝置上提供模型';
+
+  @override
+  String get aiCoreIncompatible => 'AICore 無法在本裝置上提供模型';
 
   @override
   String get aiDownload => '下載';

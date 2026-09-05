@@ -127,7 +127,10 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
 
     setState(() => _grading = true);
     try {
-      final raw = await AiPracticeService.instance.run(prompt);
+      final raw = await AiPracticeService.instance.run(
+        prompt,
+        maxOutputTokens: builder.maxOutputTokens,
+      );
       return PracticeResponseParser.grade(raw);
     } catch (_) {
       return null;

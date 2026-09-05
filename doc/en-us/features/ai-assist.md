@@ -104,21 +104,29 @@ writing practice were both hidden whenever explanations were unavailable. A Gala
 had proofreading ready, was shown no AI at all while Settings correctly reported one feature as
 usable. Each button now appears with its own feature.
 
-`v0.3.2` also raised `genai-prompt` to `1.0.0-beta4`, which is what the Prompt API needs to run on a
-Gemini Nano v4 device — the Z Fold8 family among them. An older client throws `FEATURE_NOT_FOUND`
-there, which reads as an unsupported device and is not one. The story is in
-[`../android-aicore.md`](../android-aicore.md).
+`v0.3.2` also raised `genai-prompt` to `1.0.0-beta4`, which is what the Prompt API needs even to ask
+a Gemini Nano v4 device — the Z Fold8 family among them. **That was necessary and not the fix.**
+On the Fold 8 the exception became a plain refusal, because a client with no configuration asks for
+exactly one model variant: the stable, full-size model. From `v0.4.0` the app tries every variant
+the client can name, keeps the first that answers, and shows which ones refused — so the row reads
+`FeatureStatus=0 · refused: stable/full, stable/fast, preview/full, preview/fast` rather than a
+sentence that fits four different requests. Nothing here names a device or a client version. The
+story, including two wrong diagnoses, is in [`../android-aicore.md`](../android-aicore.md).
 
 A row that cannot offer the feature says which of two different things happened:
 
 | Row | Meaning | Diagnostic line under it |
 |---|---|---|
-| Not available on this device | AICore was asked and refused | the raw `FeatureStatus` value |
+| Not available on this device | AICore was asked and refused every variant | the raw `FeatureStatus` value and the variants refused |
 | The AI service could not be reached | the call itself failed | the exception class and message |
+| The device reported a status this version does not recognise | AICore answered something newer than this build | the raw value |
+
+A **working** row carries a line too: the variant serving it, the model behind it and its token
+limit. "Ready" alone does not say what is ready, and the answer differs per device.
 
 The diagnostic line is deliberately untranslated: it is an identifier to quote in a bug report, not
-prose to read. Under the section, one more line names the installed AICore build and the device, or
-says AICore is not installed at all.
+prose to read. Under the section, one more line names the installed AICore build, the device, and whether AICore
+reports itself able to serve models here at all — or says AICore is not installed.
 
 Both failing rows carry a **Check again** button, because availability changes without the app doing
 anything: AICore provisions itself after device setup or an update, sometimes only after a restart.

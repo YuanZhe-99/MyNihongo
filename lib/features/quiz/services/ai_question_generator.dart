@@ -71,7 +71,10 @@ class AiQuestionGenerator {
       if (point == null) continue;
       final prompt = builder.forQuiz(point, words: _words, locale: locale);
       if (prompt == null) continue;
-      final raw = await service.runInBackground(prompt);
+      final raw = await service.runInBackground(
+        prompt,
+        maxOutputTokens: builder.maxOutputTokens,
+      );
       if (raw == null) continue;
       final question = parse(raw, point: point);
       if (question == null || !seen.add(question.prompt)) continue;

@@ -29,6 +29,9 @@ class _FakeBackend extends GenAiBackend {
 
   String reply = 'ok';
   int calls = 0;
+
+  /// The answer length the last call asked the platform for.
+  int? lastMaxOutputTokens;
   int busyFor = 0;
   final order = <String>[];
 
@@ -45,6 +48,7 @@ class _FakeBackend extends GenAiBackend {
   @override
   Future<String> explain(String prompt, {int maxOutputTokens = 256}) async {
     calls++;
+    lastMaxOutputTokens = maxOutputTokens;
     order.add(prompt.split('\n').first);
     if (busyFor > 0) {
       busyFor--;
@@ -134,12 +138,7 @@ void main() {
       expect(empty.forWriting('あ', locale: en), isNull);
       expect(empty.forGrading('あ', 'い', locale: en), isNull);
       expect(
-        empty.forWhyWrong(
-          question: 'q',
-          chosen: 'a',
-          correct: 'b',
-          locale: en,
-        ),
+        empty.forWhyWrong(question: 'q', chosen: 'a', correct: 'b', locale: en),
         isNull,
       );
     });
@@ -263,17 +262,39 @@ void main() {
       expect(backend.calls, 2);
     });
 
-    test('a background job gives up quietly rather than failing loudly',
-        () async {
-      final backend = _FakeBackend()..busyFor = 99;
+    test(
+      'a background job gives up quietly rather than failing loudly',
+      () async {
+        final backend = _FakeBackend()..busyFor = 99;
+        final assist = AiAssistService(backend: backend);
+        await assist.setEnabled(true);
+        final practice = AiPracticeService(assist: assist);
+        expect(
+          await practice.runInBackground('bg\nbody'),
+          isNull,
+          reason: 'nobody is waiting for it, so there is nobody to tell',
+        );
+      },
+    );
+  });
+
+  group('the answer budget', () {
+    test('the prompt asset decides how long an answer may be', () async {
+      final backend = _FakeBackend();
       final assist = AiAssistService(backend: backend);
       await assist.setEnabled(true);
       final practice = AiPracticeService(assist: assist);
-      expect(
-        await practice.runInBackground('bg\nbody'),
-        isNull,
-        reason: 'nobody is waiting for it, so there is nobody to tell',
-      );
+      await practice.run('ask', maxOutputTokens: 320);
+      expect(backend.lastMaxOutputTokens, 320);
+    });
+
+    test('a background job carries the same budget', () async {
+      final backend = _FakeBackend();
+      final assist = AiAssistService(backend: backend);
+      await assist.setEnabled(true);
+      final practice = AiPracticeService(assist: assist);
+      await practice.runInBackground('ask', maxOutputTokens: 320);
+      expect(backend.lastMaxOutputTokens, 320);
     });
   });
 }

@@ -4,6 +4,7 @@ import '../../content/models/content_catalog.dart';
 import '../../content/models/localized_strings.dart';
 import '../../content/models/grammar_point.dart';
 import '../../content/models/vocab_entry.dart';
+import 'ai_assist_service.dart';
 import 'prompt_builder.dart';
 
 /// Where `assets/content/prompts/practice.json` lives.
@@ -28,6 +29,16 @@ class PracticePromptBuilder {
 
   /// The parsed templates.
   final PromptTemplates templates;
+
+  /// How long an answer to any of these prompts may be.
+  ///
+  /// It comes from the asset because the tasks are written there: a task
+  /// reworded to ask for four sentences instead of two needs a longer budget,
+  /// and needing a code change for that would mean the two drift apart.
+  int get maxOutputTokens => templates.limit(
+    'maxOutputTokens',
+    AiAssistService.defaultMaxOutputTokens,
+  );
 
   /// Purpose: Ask for a rewrite of what the learner wrote.
   /// Inputs: The learner's `text`, the `unitWords` the exercise is built on,
@@ -67,11 +78,7 @@ class PracticePromptBuilder {
   /// Side effects: None.
   /// Notes: Both sides are capped, because a free answer this long is not the
   /// kind of question this grades.
-  String? forGrading(
-    String answer,
-    String expected, {
-    required Locale locale,
-  }) {
+  String? forGrading(String answer, String expected, {required Locale locale}) {
     final limit = templates.limit('maxAnswerChars', 200);
     if (answer.trim().isEmpty || expected.trim().isEmpty) return null;
     if (answer.length > limit || expected.length > limit) return null;
@@ -127,10 +134,14 @@ class PracticePromptBuilder {
     required Locale locale,
   }) => _build('examples', locale, (labels, out) {
     out
-      ..writeln('${labels['sentence'] ?? 'Word'}: ${entry.headword}'
-          '（${entry.reading}）')
-      ..writeln('${labels['expected'] ?? 'Meaning'}: '
-          '${entry.meanings.resolveJoined(locale)}')
+      ..writeln(
+        '${labels['sentence'] ?? 'Word'}: ${entry.headword}'
+        '（${entry.reading}）',
+      )
+      ..writeln(
+        '${labels['expected'] ?? 'Meaning'}: '
+        '${entry.meanings.resolveJoined(locale)}',
+      )
       ..writeln('JLPT: ${entry.level.label}');
   });
 
@@ -149,8 +160,10 @@ class PracticePromptBuilder {
   }) => _build('quiz', locale, (labels, out) {
     out
       ..writeln('${labels['topic'] ?? 'Grammar point'}: ${point.pattern}')
-      ..writeln('${labels['expected'] ?? 'Meaning'}: '
-          '${point.meaning.resolveJoined(locale)}')
+      ..writeln(
+        '${labels['expected'] ?? 'Meaning'}: '
+        '${point.meaning.resolveJoined(locale)}',
+      )
       ..writeln('JLPT: ${point.level.label}');
     if (point.examples.firstOrNull case final example?) {
       out.writeln('${labels['sentence'] ?? 'Example'}: ${example.ja}');

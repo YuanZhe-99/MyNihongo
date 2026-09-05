@@ -49,6 +49,9 @@ class _FakeGenAiBackend extends GenAiBackend {
 
   int cancels = 0;
 
+  /// The answer length the last `explain` asked for.
+  int? lastMaxOutputTokens;
+
   @override
   Future<GenAiStatus> status(GenAiFeature feature) async {
     calls.add('status:${feature.name}');
@@ -80,6 +83,7 @@ class _FakeGenAiBackend extends GenAiBackend {
   @override
   Future<String> explain(String prompt, {int maxOutputTokens = 256}) async {
     calls.add('explain');
+    lastMaxOutputTokens = maxOutputTokens;
     if (hang) return release.future;
     if (failure != null) throw GenAiException(failure!);
     return answer;
@@ -294,23 +298,26 @@ void main() {
     );
   });
 
-  test('a status the device could not be asked for is not "unavailable"', () async {
-    final backend = _FakeGenAiBackend(
-      promptStatus: GenAiStatus.unreachable,
-      proofreadStatus: GenAiStatus.available,
-    )..detail = 'GenAiException: AICore is out of date';
-    final service = AiAssistService(backend: backend);
-    await service.setEnabled(true);
+  test(
+    'a status the device could not be asked for is not "unavailable"',
+    () async {
+      final backend = _FakeGenAiBackend(
+        promptStatus: GenAiStatus.unreachable,
+        proofreadStatus: GenAiStatus.available,
+      )..detail = 'GenAiException: AICore is out of date';
+      final service = AiAssistService(backend: backend);
+      await service.setEnabled(true);
 
-    // The two used to share one answer, and a phone with AICore installed then
-    // reported that it had no on-device model at all.
-    expect(service.statusOf(GenAiFeature.prompt), GenAiStatus.unreachable);
-    expect(service.statusOf(GenAiFeature.proofread), GenAiStatus.available);
-    expect(
-      service.reportOf(GenAiFeature.prompt).detail,
-      'GenAiException: AICore is out of date',
-    );
-  });
+      // The two used to share one answer, and a phone with AICore installed then
+      // reported that it had no on-device model at all.
+      expect(service.statusOf(GenAiFeature.prompt), GenAiStatus.unreachable);
+      expect(service.statusOf(GenAiFeature.proofread), GenAiStatus.available);
+      expect(
+        service.reportOf(GenAiFeature.prompt).detail,
+        'GenAiException: AICore is out of date',
+      );
+    },
+  );
 
   test('one feature can be unavailable while the other is ready', () async {
     final backend = _FakeGenAiBackend(
@@ -337,18 +344,44 @@ void main() {
     expect(service.coreInfo?.device, 'samsung SM-F978B');
   });
 
-  test('a device that reports no AICore info does not break the page', () async {
-    final service = AiAssistService(backend: _FakeGenAiBackend());
-    await service.setEnabled(true);
-    expect(service.coreInfo, isNull);
-  });
+  test(
+    'a device that reports no AICore info does not break the page',
+    () async {
+      final service = AiAssistService(backend: _FakeGenAiBackend());
+      await service.setEnabled(true);
+      expect(service.coreInfo, isNull);
+    },
+  );
 
-  test('turning the switch off asks the device nothing, diagnostics included',
-      () async {
+  test(
+    'turning the switch off asks the device nothing, diagnostics included',
+    () async {
+      final backend = _FakeGenAiBackend();
+      final service = AiAssistService(backend: backend);
+      expect(backend.calls, isEmpty);
+      expect(
+        service.reportOf(GenAiFeature.prompt).status,
+        GenAiStatus.unsupported,
+      );
+    },
+  );
+
+  test(
+    'an answer length asked for by the caller reaches the backend',
+    () async {
+      final backend = _FakeGenAiBackend();
+      final service = AiAssistService(backend: backend);
+      await service.setEnabled(true);
+      await service.explain('why', maxOutputTokens: 320);
+      expect(backend.lastMaxOutputTokens, 320);
+    },
+  );
+
+  test('a caller that names no length gets the documented default', () async {
     final backend = _FakeGenAiBackend();
     final service = AiAssistService(backend: backend);
-    expect(backend.calls, isEmpty);
-    expect(service.reportOf(GenAiFeature.prompt).status,
-        GenAiStatus.unsupported);
+    await service.setEnabled(true);
+    await service.explain('why');
+    expect(backend.lastMaxOutputTokens, AiAssistService.defaultMaxOutputTokens);
   });
 }

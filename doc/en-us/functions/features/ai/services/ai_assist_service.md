@@ -19,6 +19,7 @@ Consumers: `aicore_sentence_enhancer.dart`, `ai_settings_tiles.dart`, `sentence_
 | `AiAssistService.instance` | field | B | The app-wide instance. |
 | `setInstanceForTest` | static method | B | Replace the singleton for a test. |
 | `AiAssistService.timeout` | constant | B | How long one generation may take. |
+| `AiAssistService.defaultMaxOutputTokens` | constant | B | How long an answer may be when the caller names no budget. |
 | `statusOf` | method | B | What a feature can do, as last asked. |
 | `canExplain`, `canProofread` | getters | B | Whether each action can be offered right now. |
 | [`needsDownload`](#needsdownload) | getter | A | Whether the hint pointing at Settings applies. |

@@ -16,26 +16,42 @@ made at all — a different fact from AICore refusing, with a different fix. `co
 installed AICore build. Both were added with bodies rather than left abstract so a backend with
 nothing to add keeps working unchanged.
 
+M4.0 widened the report again, because the split was still not fine enough to diagnose a Z Fold 8.
+The Prompt API serves four model variants and the platform side probes all of them, so a report now
+carries the `variant` that answered, the ones that `refused`, and the `baseModelName` and
+`tokenLimit` of whatever is actually serving. `GenAiStatus.unknown` is a status value this build has
+no name for — reported as itself, never folded into a refusal, because that enumeration has grown
+before. `GenAiCoreInfo.compatible` answers whether AICore considers the device serviceable at all.
+Every one of these fields decodes as absent rather than wrong, so an older platform side, and the
+proofreading feature that has only one model, keep working unchanged.
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |
 |---|---|---|---|
 | `GenAiFeature` | enum | B | Which of the two on-device models a call is about. |
-| `GenAiStatus` | enum | B | What a feature can do on this device right now. |
+| `GenAiStatus` | enum | B | What a feature can do on this device right now, including `unknown` for an answer newer than this build. |
 | `GenAiFailure` | enum | B | Why an attempt produced no answer. |
 | `GenAiException` | class | B | Thrown when a call cannot produce a result. |
+| `GenAiStatusReport` | class | B | One feature's status, the variant serving it, and the ones refused. |
+| `GenAiCoreInfo` | class | B | The AICore build installed, and whether it can serve models here. |
+| `GenAiCoreInfo.fromJson` | static method | B | Read the map the channel sends. |
 | `GenAiBackend` | abstract class | B | The seam itself. |
 | `GenAiBackend.status` | method | B | Ask what a feature can do. |
 | [`GenAiBackend.download`](#download) | method | A | Ask the system to fetch a feature's model. |
 | `GenAiBackend.explain` | method | B | Generate one answer. |
 | `GenAiBackend.proofread` | method | B | Ask for corrected versions of one sentence. |
 | `GenAiBackend.cancel` | method | B | Stop whatever is running. |
+| `GenAiBackend.statusReport` | method | B | Status plus everything the device said about it. |
+| `GenAiBackend.coreInfo` | method | B | Describe the AICore installation. |
 | `MethodChannelGenAiBackend` | class | B | The real backend, over the method channel. |
 | [`MethodChannelGenAiBackend.status`](#status) | method | A | Ask the platform, or answer without it. |
 | `MethodChannelGenAiBackend.download` | method | B | Start a download and forward its progress. |
 | `MethodChannelGenAiBackend.explain` | method | B | Send one prompt across the channel. |
 | `MethodChannelGenAiBackend.proofread` | method | B | Send one sentence across the channel. |
 | `MethodChannelGenAiBackend.cancel` | method | B | Cancel, best-effort. |
+| `MethodChannelGenAiBackend.statusReport` | method | B | Decode the platform's status reply, tolerating missing fields. |
+| `MethodChannelGenAiBackend.coreInfo` | method | B | Read the AICore installation. |
 | `_handlePlatformCall` | method | B | Receive download progress from the platform. |
 | `_failureFor` | static method | B | Map a platform error code to a failure. |
 
@@ -63,10 +79,13 @@ nothing to add keeps working unchanged.
 - **Inputs:** The `feature`.
 - **Returns:** `Future<GenAiStatus>`.
 - **Side effects:** One channel call, on Android only.
-- **Algorithm:** Short-circuits to `unsupported` where no on-device model can exist; otherwise maps
-  the platform's four strings, and any error, onto the enum.
+- **Algorithm:** Delegates to `statusReport` and drops the diagnostics. That short-circuits to
+  `unsupported` where no on-device model can exist; otherwise it maps the platform's status strings,
+  and any error, onto the enum.
 - **Usage:** `AiAssistService.refreshStatus`, and before every generation.
-- **Notes:** A platform error answers `unavailable` rather than throwing: failing to ask *is* the
-  answer "this device cannot", and a thrown exception here would have to be caught by every caller to
-  say the same thing. The `unsupported` short-circuit is what keeps the channel untouched on Windows,
-  macOS and iOS, where it does not exist and every call would raise `MissingPluginException`.
+- **Notes:** A platform error answers `unreachable` rather than throwing, and rather than
+  `unavailable`: failing to ask is not the same fact as being refused, and a thrown exception here
+  would have to be caught by every caller to say either. A status string this build does not know
+  answers `unknown` for the same reason. The `unsupported` short-circuit is what keeps the channel
+  untouched on Windows, macOS and iOS, where it does not exist and every call would raise
+  `MissingPluginException`.

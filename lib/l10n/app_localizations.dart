@@ -2451,6 +2451,12 @@ abstract class AppLocalizations {
   /// **'The AI service could not be reached'**
   String get aiStatusUnreachable;
 
+  /// No description provided for @aiStatusUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'The device reported a status this version does not recognise'**
+  String get aiStatusUnknown;
+
   /// No description provided for @aiStatusDownloadable.
   ///
   /// In en, this message translates to:
@@ -2486,6 +2492,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'AICore is not installed on this device.'**
   String get aiCoreMissing;
+
+  /// No description provided for @aiCoreCompatible.
+  ///
+  /// In en, this message translates to:
+  /// **'AICore can serve models on this device'**
+  String get aiCoreCompatible;
+
+  /// No description provided for @aiCoreIncompatible.
+  ///
+  /// In en, this message translates to:
+  /// **'AICore cannot serve models on this device'**
+  String get aiCoreIncompatible;
 
   /// No description provided for @aiDownload.
   ///

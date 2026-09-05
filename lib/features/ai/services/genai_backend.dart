@@ -37,6 +37,13 @@ enum GenAiStatus {
 
   /// Ready to use.
   available,
+
+  /// AICore answered with a status this build has no name for.
+  ///
+  /// Reported as itself rather than folded into [unavailable]. The set of
+  /// statuses has grown before, and reading a value the app does not know as
+  /// a refusal is how a device that works came to be told it was unsupported.
+  unknown,
 }
 
 /// Why a generation attempt did not produce an answer.
@@ -90,7 +97,15 @@ class GenAiStatusReport {
   /// Side effects: None.
   /// Notes: `detail` is deliberately not localized: it is an identifier to
   /// quote in a bug report, not prose to read.
-  const GenAiStatusReport(this.status, {this.code = -1, this.detail});
+  const GenAiStatusReport(
+    this.status, {
+    this.code = -1,
+    this.detail,
+    this.variant,
+    this.refused,
+    this.baseModelName,
+    this.tokenLimit,
+  });
 
   /// What the feature can do.
   final GenAiStatus status;
@@ -100,6 +115,23 @@ class GenAiStatusReport {
 
   /// A short diagnostic line, or null.
   final String? detail;
+
+  /// Which model variant answered, such as `stable/full`; null when none did
+  /// and on every feature that has only one.
+  final String? variant;
+
+  /// The variants the device refused, in the order they were tried, or null.
+  ///
+  /// This is the field the whole diagnostic hangs on. "Not available on this
+  /// device" was the same sentence whether one model had been asked or four,
+  /// and that ambiguity survived two releases.
+  final String? refused;
+
+  /// The name of the model actually serving, when one is; null otherwise.
+  final String? baseModelName;
+
+  /// The serving model's token limit, when one is serving; null otherwise.
+  final int? tokenLimit;
 
   /// A report for a platform that was never asked.
   static const unsupported = GenAiStatusReport(GenAiStatus.unsupported);
@@ -119,6 +151,7 @@ class GenAiCoreInfo {
     this.versionName,
     this.sdk,
     this.device,
+    this.compatible,
   });
 
   /// Whether the AICore package is present.
@@ -133,6 +166,15 @@ class GenAiCoreInfo {
   /// Manufacturer and model, as the system reports them.
   final String? device;
 
+  /// Whether ML Kit considers AICore usable here, or null when it could not
+  /// be asked.
+  ///
+  /// On a device that refuses every model variant this is what separates
+  /// "AICore is absent or too old" from "AICore is fine, this model is not
+  /// offered here" — two facts with different fixes that no public API
+  /// distinguishes.
+  final bool? compatible;
+
   /// Purpose: Read the map the platform channel sends.
   /// Inputs: `json`.
   /// Returns: `GenAiCoreInfo?` — null when the platform sent nothing usable.
@@ -145,6 +187,9 @@ class GenAiCoreInfo {
       versionName: json['versionName']?.toString(),
       sdk: json['sdk'] is int ? json['sdk'] as int : null,
       device: json['device']?.toString(),
+      compatible: json['compatible'] is bool
+          ? json['compatible'] as bool
+          : null,
     );
   }
 }
@@ -261,12 +306,21 @@ class MethodChannelGenAiBackend implements GenAiBackend {
         'downloadable' => GenAiStatus.downloadable,
         'downloading' => GenAiStatus.downloading,
         'unreachable' => GenAiStatus.unreachable,
+        'unknown' => GenAiStatus.unknown,
         _ => GenAiStatus.unavailable,
       };
       return GenAiStatusReport(
         status,
         code: answer?['code'] is int ? answer!['code'] as int : -1,
         detail: answer?['detail']?.toString(),
+        // Absent rather than wrong: an older platform side, or the
+        // proofreading feature, simply sends none of these.
+        variant: answer?['variant']?.toString(),
+        refused: answer?['refused']?.toString(),
+        baseModelName: answer?['baseModelName']?.toString(),
+        tokenLimit: answer?['tokenLimit'] is int
+            ? answer!['tokenLimit'] as int
+            : null,
       );
     } on PlatformException catch (error) {
       return GenAiStatusReport(

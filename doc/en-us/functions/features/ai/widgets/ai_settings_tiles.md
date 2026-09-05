@@ -24,6 +24,7 @@ the section names the installed AICore build and the device. See
 | [`build`](#build) | method | A | Build the switch and the rows. |
 | [`_featureRow`](#featurerow) | method | A | Build one feature's status row. |
 | `_statusLabel` | static method | B | Name a status in the learner's language. |
+| `_diagnostic` | static method | B | The untranslated line under a row: what serves it, or what refused. |
 | `_progressLabel` | static method | B | Say how far a download has got. |
 | `_iconFor` | static method | B | Pick the icon for a status. |
 

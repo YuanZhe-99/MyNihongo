@@ -29,6 +29,10 @@ class _FakeGenAiBackend extends GenAiBackend {
     this.detail,
     this.core,
     this.perFeature = const {},
+    this.variant,
+    this.refused,
+    this.baseModelName,
+    this.tokenLimit,
   });
 
   GenAiStatus status_;
@@ -40,6 +44,13 @@ class _FakeGenAiBackend extends GenAiBackend {
   String answer;
   String? detail;
   GenAiCoreInfo? core;
+
+  /// What the probe found: the variant serving, the ones refused, and the
+  /// model behind the one that answered.
+  final String? variant;
+  final String? refused;
+  final String? baseModelName;
+  final int? tokenLimit;
   final List<String> calls = [];
 
   @override
@@ -50,7 +61,14 @@ class _FakeGenAiBackend extends GenAiBackend {
 
   @override
   Future<GenAiStatusReport> statusReport(GenAiFeature feature) async =>
-      GenAiStatusReport(await status(feature), detail: detail);
+      GenAiStatusReport(
+        await status(feature),
+        detail: detail,
+        variant: variant,
+        refused: refused,
+        baseModelName: baseModelName,
+        tokenLimit: tokenLimit,
+      );
 
   @override
   Future<GenAiCoreInfo?> coreInfo() async => core;
@@ -460,7 +478,10 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('The AI service could not be reached'), findsNWidgets(2));
-    expect(find.text('AICore is not installed on this device.'), findsOneWidget);
+    expect(
+      find.text('AICore is not installed on this device.'),
+      findsOneWidget,
+    );
     expect(tester.takeException(), isNull);
     debugDefaultTargetPlatformOverride = null;
   });
@@ -480,4 +501,98 @@ void main() {
     expect(tester.takeException(), isNull);
     debugDefaultTargetPlatformOverride = null;
   });
+  testWidgets('a refusal names every model variant that was tried', (
+    tester,
+  ) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.android;
+    await useService(
+      _FakeGenAiBackend(
+        status_: GenAiStatus.unavailable,
+        detail:
+            'FeatureStatus=0 · refused: stable/full, stable/fast, '
+            'preview/full, preview/fast',
+        refused: 'stable/full, stable/fast, preview/full, preview/fast',
+        core: const GenAiCoreInfo(
+          installed: true,
+          versionName: 'aicore_20260723.00_RC11',
+          sdk: 36,
+          device: 'samsung SM-F978B',
+          compatible: true,
+        ),
+      ),
+      enabled: true,
+    );
+
+    await pumpSettings(tester);
+    await tester.tap(find.byType(SwitchListTile));
+    await tester.pumpAndSettle();
+
+    // This is what M4.0 is for. "Not available on this device" was true for
+    // two releases and never said which of four model variants had been asked
+    // for, nor whether AICore itself was the problem.
+    expect(find.textContaining('preview/fast'), findsNWidgets(2));
+    expect(
+      find.text(
+        'AICore aicore_20260723.00_RC11 · samsung SM-F978B · '
+        'AICore can serve models on this device',
+      ),
+      findsOneWidget,
+    );
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
+  testWidgets('a served feature names the variant and the model behind it', (
+    tester,
+  ) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.android;
+    await useService(
+      _FakeGenAiBackend(
+        variant: 'preview/fast',
+        baseModelName: 'gemini-nano-v4',
+        tokenLimit: 4096,
+      ),
+      enabled: true,
+    );
+
+    await pumpSettings(tester);
+    await tester.tap(find.byType(SwitchListTile));
+    await tester.pumpAndSettle();
+
+    expect(
+      find.text('preview/fast · gemini-nano-v4 · 4096 tok'),
+      findsNWidgets(2),
+    );
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
+  testWidgets(
+    'a status this build does not know says so and can be rechecked',
+    (tester) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.android;
+      await useService(
+        _FakeGenAiBackend(
+          status_: GenAiStatus.unknown,
+          detail: 'FeatureStatus=7',
+        ),
+        enabled: true,
+      );
+
+      await pumpSettings(tester);
+      await tester.tap(find.byType(SwitchListTile));
+      await tester.pumpAndSettle();
+
+      expect(
+        find.text(
+          'The device reported a status this version does not recognise',
+        ),
+        findsNWidgets(2),
+      );
+      expect(find.text('FeatureStatus=7'), findsNWidgets(2));
+      expect(find.byIcon(Icons.refresh), findsNWidgets(2));
+      expect(tester.takeException(), isNull);
+      debugDefaultTargetPlatformOverride = null;
+    },
+  );
 }

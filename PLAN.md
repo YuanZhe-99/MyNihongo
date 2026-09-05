@@ -448,7 +448,10 @@ below all depend on speech.
       it, that the Z Fold 8 is off the Prompt API's device list, was not. The device is on the
       published nano-v4 list; the *client library* was too old to talk to a nano-v4 device, which
       `genai-prompt` 1.0.0-beta4 fixes. One line of Gradle, found by reading the release notes this
-      very field note told the next agent to read
+      very field note told the next agent to read.
+      **Amended again by M4.0: that conclusion was wrong too.** beta4 was necessary and not
+      sufficient — the client asks for one model variant of four, and the Fold 8 refuses that one.
+      See M4.0
 - [x] Tests: `voice_ordering_test.dart`, `genai_backend_test.dart`, and new cases in
       `tts_service_test.dart` (probe ordering, re-apply per utterance, rebuild once, best-voice
       choice, preview restores), `speech_settings_tiles_test.dart`, `ai_assist_service_test.dart`,
@@ -731,7 +734,9 @@ the other two are the pages Phase 4's 作文 section will be built on.
       published Prompt API device list, under nano-v4; the client was too old to ask. `javap` over
       both AARs first confirmed that every member `GenAiChannel.kt` uses is unchanged, so the Kotlin
       did not move. Debug **and release** builds verified — the release one because M2.4's R8 failure
-      was release-only. **Not confirmed on the device:** there is no Samsung hardware here
+      was release-only. **Not confirmed on the device:** there is no Samsung hardware here.
+      **Amended by M4.0: on the device, beta4 turned the exception into `FeatureStatus=0`.** The
+      bump was necessary and not the fix; the app was asking for one model variant of four
 - [x] **A rewrite is offered whenever proofreading works, even when explanations do not.** The
       sentence lab's correction button sat inside a block that returned early on `!canExplain`, and
       writing practice's rewrite was Prompt-only — so the Fold 8, whose Settings correctly said
@@ -764,6 +769,40 @@ the other two are the pages Phase 4's 作文 section will be built on.
       and eleven `functions/` pages follow; both language trees
 
 ### Phase 4 — JLPT N5–N1 practice
+
+#### M4.0 The Prompt API asks for every model, not one — **done 2026-09-04**, released as `v0.4.0`
+
+Taken first and shipped alone, because Phase 4's AICore extras are worthless on a device that
+serves no model, and because the same phone had now been misdiagnosed twice.
+
+- [x] **`GenAiChannel` probes model variants instead of assuming one.** `Generation.getClient()` with
+      no configuration requests the stable release stage at the full size preference; ML Kit serves
+      four combinations, no API says which a device offers, and its own guidance is to implement a
+      fallback. The channel now builds a client per variant in preference order — `stable/full`,
+      `stable/fast`, `preview/full`, `preview/fast` — keeps the first whose `checkStatus()` is not
+      `UNAVAILABLE`, and reuses it for the download and the generation until it stops serving.
+      Adding a stage or a preference is one line; no device, client version or model name appears
+      anywhere in the decision
+- [x] **The refusal says what was refused.** The status reply carries the `variant` that answered,
+      the ones that `refused`, and the serving model's `baseModelName` and `tokenLimit`; the row
+      reads `FeatureStatus=0 · refused: stable/full, stable/fast, preview/full, preview/fast`, and a
+      working row names what is serving it. An unrecognised `FeatureStatus` is `unknown` rather than
+      a refusal. `aiCoreInfo` adds whether ML Kit considers AICore able to serve this device at all,
+      which separates "AICore is absent or too old" from "AICore is fine, this model is not offered"
+- [x] **Errors are read from `GenAiException.getErrorCode()`**, not by matching English substrings of
+      a message a reworded release could change silently. The API shapes used here were confirmed
+      with `javap -public` over the beta4 AARs before anything was written
+- [x] **`maxOutputTokens` travels from `practice.json` to the platform call.** It had been in the
+      asset and read by nothing since the practice prompts landed
+- [x] Docs: `android-aicore.md` gains a **Choosing a model** section (the four variants, the
+      developer-preview stage an app cannot enrol a device in, the per-capability probes, the
+      error-code table), a rewritten diagnosis procedure and a third Z Fold 8 field note; five wrong
+      or stale statements corrected, including `platform-notes.md` still naming `beta2`; both
+      language trees, `version-history.md` with an erratum for `0.3.2`
+- [x] Tests: fourteen new cases across `genai_backend_test`, `ai_ui_test`, `ai_assist_service_test` and
+      `ai_practice_test` — the new fields decode, an absent field is absent rather than wrong,
+      `unknown` is not `unavailable`, the refusal line reaches the UI, and the answer budget reaches
+      the platform. 740 pass
 
 - [ ] Drill content per level and section: 文字・語彙, 文法, 読解, 聴解 (TTS-read passages),
       as `assets/content/drills/<level>/*.json`; original or openly licensed questions with
@@ -825,6 +864,8 @@ the other two are the pages Phase 4's 作文 section will be built on.
 **Every release**
 
 - [ ] `AGENTS.md` → Release section
+- [ ] Compare `genai-prompt` and `genai-proofreading` with the Google Maven group index, and record
+      the decision to move or stay. A beta bump here has twice been a device-visible change
 - [ ] Submodule pinned to a tag
 - [ ] `version-history.md` entry in both languages
 
@@ -917,6 +958,8 @@ the other two are the pages Phase 4's 作文 section will be built on.
 | 2026-09-04 | Twenty-six N1 grammar points were dropped, not renamed, when their slug collided with N2 | Renaming keeps the count at the price of teaching the same pattern twice under two ids. The count is a number in a table; the duplicate is what a learner would actually meet |
 | 2026-09-04 | The classical layer went into `function_words.json`; missing ordinary words went into rewritten sentences | ぬ, ざる, べからざる, 極まりない and the rest **are** the N1 grammar points, so no example can avoid them. 東京, 顔 and 皆 are only scenery, and widening the dictionary for scenery widens everything downstream that reads it |
 | 2026-09-04 | A scenario added to a shipped lessons file is gated by turning that file back into a draft | `merge_drafts units` rewrites a whole level, so re-running it to add one conversation would be a far larger change than the conversation. Stripping the generated `zh_TW` is the only difference between the two shapes |
+| 2026-09-04 | The Prompt API client is chosen by probing model variants in preference order, never by device, client version or model name | ML Kit serves four combinations of release stage and size preference, no API says which a device offers, and `getClient()` with no configuration silently asks for one of them. Reporting that one variant's refusal as the device's answer produced two wrong diagnoses in a row on the same phone. A probe also means a model AICore begins serving later is picked up with no code change |
+| 2026-09-04 | A `FeatureStatus` value the build does not know is `unknown`, not `unavailable` | The enumeration has grown before. Reading a future value as a refusal is the same class of mistake as reading one variant's refusal as the device's, and it fails in the direction that tells a working device it is broken |
 | 2026-09-04 | `genai-prompt` is pinned to `1.0.0-beta4`, and a beta bump is treated as a possible bug fix rather than only a feature release | An older client throws `FEATURE_NOT_FOUND` from `checkStatus()` on every Gemini Nano v4 device, which is what a Z Fold 8 reported and what M3.0 wrote down as "this hardware is off the list". The device was on the list; the client could not ask. The release notes had said so a month before the report |
 | 2026-09-04 | Every AI button is gated on the feature it uses, never on "AI" | The Prompt and Proofreading APIs have separate device lists, so a device commonly has one and not the other. Gating both on explanations hid a working proofreader on exactly the hardware Settings was correctly reporting as ready — the app contradicted its own status page |
 | 2026-09-04 | The history is `lab:`/`writing:` **records** in the progress file, not a new module and not a local-only file | The same reasoning as `profile:me`: a record gets the per-record three-way merge, the conflict dialog, sync and backup for free, while a second module means a second remote file, a second backup entry and a second set of golden transcripts. Syncing it is what was asked for |

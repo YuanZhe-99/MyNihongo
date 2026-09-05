@@ -178,10 +178,7 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
     final downloadingThis = service.downloadingFeature == feature;
     final progress = service.downloadProgress;
 
-    final report = service.reportOf(feature);
-    final failed =
-        status == GenAiStatus.unavailable || status == GenAiStatus.unreachable;
-    final detail = report.detail;
+    final detail = _diagnostic(status, service.reportOf(feature));
 
     return ListTile(
       leading: Icon(_iconFor(status)),
@@ -200,8 +197,9 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
           // Untranslated on purpose: this is an identifier to quote in a bug
           // report, not prose. Without it "not available on this device" is
           // the same sentence whether the device is off a published support
-          // list or the call threw, and those have different fixes.
-          if (failed && detail != null)
+          // list, one model variant was refused and three were never tried,
+          // or the call threw — and those have different fixes.
+          if (detail != null)
             Text(
               detail,
               style: theme.textTheme.labelSmall?.copyWith(
@@ -211,7 +209,7 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
             ),
         ],
       ),
-      isThreeLine: failed && detail != null,
+      isThreeLine: detail != null,
       trailing: switch (status) {
         GenAiStatus.downloadable => FilledButton.tonal(
           onPressed: service.busy ? null : () => service.download(feature),
@@ -220,7 +218,9 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
         // Availability changes without the app doing anything: AICore
         // provisions itself after setup, and sometimes only after a restart.
         // Without this the only way to re-ask was to toggle the switch.
-        GenAiStatus.unavailable || GenAiStatus.unreachable => IconButton(
+        GenAiStatus.unavailable ||
+        GenAiStatus.unreachable ||
+        GenAiStatus.unknown => IconButton(
           icon: const Icon(Icons.refresh),
           tooltip: l10n.aiCheckAgain,
           onPressed: service.busy ? null : () => service.refreshStatus(),
@@ -250,9 +250,31 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
         GenAiStatus.downloadable => l10n.aiStatusDownloadable,
         GenAiStatus.downloading => l10n.aiStatusDownloading,
         GenAiStatus.unavailable => l10n.aiStatusUnavailable,
+        GenAiStatus.unknown => l10n.aiStatusUnknown,
         GenAiStatus.unsupported => l10n.aiStatusUnavailable,
         GenAiStatus.unreachable => l10n.aiStatusUnreachable,
       };
+
+  /// Purpose: Build the untranslated diagnostic line under a feature.
+  /// Inputs: `status` and its `report`.
+  /// Returns: `String?` — null when there is nothing worth showing.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. A working feature
+  /// names the variant and the model that serve it, because "Ready" alone
+  /// does not say *what* is ready and the answer differs per device. A
+  /// refused one carries the raw status and every variant that was tried,
+  /// which is the line two wrong diagnoses were missing.
+  static String? _diagnostic(GenAiStatus status, GenAiStatusReport report) {
+    if (status == GenAiStatus.available) {
+      final parts = [
+        ?report.variant,
+        ?report.baseModelName,
+        if (report.tokenLimit case final limit?) '$limit tok',
+      ];
+      return parts.isEmpty ? null : parts.join(' · ');
+    }
+    return report.detail;
+  }
 
   /// Purpose: Name the AICore installation behind these features.
   /// Inputs: `l10n`, `info` — null before the device has been asked.
@@ -269,6 +291,11 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
     return [
       if (version != null) l10n.aiCoreVersion(version),
       ?device,
+      // Only when ML Kit could actually be asked. On a device that refuses
+      // every model variant this is the line that says whether AICore itself
+      // is the problem, and nothing else in the app can answer that.
+      if (info.compatible case final ok?)
+        ok ? l10n.aiCoreCompatible : l10n.aiCoreIncompatible,
     ].join(' · ');
   }
 
@@ -296,6 +323,7 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
     GenAiStatus.available => Icons.check_circle_outline,
     GenAiStatus.downloadable => Icons.cloud_download_outlined,
     GenAiStatus.downloading => Icons.downloading_outlined,
+    GenAiStatus.unknown => Icons.help_outline,
     _ => Icons.block_outlined,
   };
 }

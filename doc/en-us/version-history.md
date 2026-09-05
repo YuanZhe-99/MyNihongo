@@ -12,6 +12,56 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.4.0` — 2026-09-04. The device answered again, and the answer was no: the
+  app was asking for one model out of four and reporting the refusal as the
+  device's.
+
+  **The Prompt API now probes for a model instead of assuming one.**
+  `Generation.getClient()` with no configuration is not "the model on this
+  phone". It is one request — the stable release stage at the full size
+  preference — and a device that does not serve that exact combination answers
+  `UNAVAILABLE`, which looks identical to having no on-device model at all. The
+  app now builds a client for each of `stable/full`, `stable/fast`,
+  `preview/full` and `preview/fast`, keeps the first that is not `UNAVAILABLE`,
+  and remembers it for the download and the generation. Nothing names a device,
+  a client version or a model: a variant the list does not yet know is one line,
+  and a model AICore starts serving tomorrow is picked up with no change at all.
+
+  **A refusal now says what was refused.** The row reads
+  `FeatureStatus=0 · refused: stable/full, stable/fast, preview/full,
+  preview/fast`. A working row says the opposite half: which variant is serving,
+  which model is behind it and what its token limit is. Under the section, one
+  more line reports whether AICore itself considers this device serviceable —
+  which separates "AICore is absent or too old here" from "AICore is fine, this
+  model is not offered", two facts with different fixes that no public API
+  distinguishes. A status value this build does not know is now `unknown` rather
+  than a refusal, because that enumeration has grown before.
+
+  **Errors are read from the library's own code**, not by matching English
+  substrings of a message that a reworded release could have changed silently.
+
+  **Erratum for `0.3.2`.** That release said the Z Fold 8's `FEATURE_NOT_FOUND`
+  was caused by a client library too old to talk to a Gemini Nano v4 device, and
+  that bumping `genai-prompt` to `1.0.0-beta4` was the fix. The first half was
+  true; the second was not. On the device the exception became a plain
+  `FeatureStatus=0`, because a current client still asks for only one variant.
+  The bump is a floor for what the app can *ask*, and `build.gradle.kts` now
+  says so instead of claiming a device works. Both wrong diagnoses are kept in
+  `doc/en-us/android-aicore.md`, with the rule they cost: two wrong diagnoses in
+  a row means the instrumentation is the bug.
+
+  **The answer length is the prompt asset's decision.** `practice.json` has
+  carried a `maxOutputTokens` since the practice prompts landed and nothing read
+  it. It now travels from the asset through to the platform call, so rewording a
+  task to ask for more does not also need a code change.
+
+  Docs: a **Choosing a model** section in `android-aicore.md` covering the four
+  variants, the developer-preview stage an app cannot enrol a device in, the
+  per-capability probes and the error-code table; a rewritten diagnosis
+  procedure; a third Z Fold 8 field note. Five statements that were wrong or
+  stale — including a `platform-notes.md` line still naming `beta2` — corrected.
+  740 tests.
+
 - `0.3.2` — 2026-09-04. What a Galaxy Z Fold 8 found: an AI feature that was
   never broken, a button that hid itself, and two pages that had never been
   given a foldable.

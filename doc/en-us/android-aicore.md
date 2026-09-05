@@ -59,6 +59,7 @@ Six as of the verification date. The four "feature" APIs are task-shaped and ret
 | Rewriting | `com.google.mlkit:genai-rewriting:1.0.0-beta1` | Restate in a tone or style | < 256 tokens |
 | Image description | `com.google.mlkit:genai-image-description` | Image → one-line description | — |
 | Speech recognition | `com.google.mlkit:genai-speech-recognition` | Audio → text; basic mode API 31+, advanced mode on Pixel 10/11 | — |
+| Schema | `com.google.mlkit:genai-schema:1.0.0-alpha1` | Structured output: a schema the Prompt API decodes into | — |
 
 All of them depend on `com.google.mlkit:genai-common` (`1.0.0-beta4`), which is where
 `FeatureStatus`, `DownloadCallback`, `DownloadStatus`, `StreamingCallback` and `GenAiException` live.
@@ -99,8 +100,91 @@ matters when a call fails:
 compatibility with Gemini Nano v4 … a `GenAiException` when `checkStatus()` is used". The failure
 looks exactly like an unsupported device, and it is not one. See the Z Fold 8 field note below.
 
+That bump is **necessary and not sufficient**. A current client can ask; it still asks for only one
+of four model variants unless it is told otherwise, and a Z Fold 8 running `beta4` refused that one.
+See [Choosing a model](#choosing-a-model-release-stage-and-size-preference) and the Z Fold 8 field
+notes below.
+
 Treat published device lists as a floor and the runtime status as the truth — but check the client
-version before believing a refusal.
+version, and which variant you actually asked for, before believing a refusal.
+
+## Choosing a model: release stage and size preference
+
+`Generation.getClient()` with no argument is not "the model this device has". It is one specific
+request — the **stable** release stage at the **full** size preference — and a device that does not
+serve that exact combination answers `UNAVAILABLE`, which is indistinguishable from having no
+on-device model at all.
+
+Confirmed with `javap -public` against `genai-prompt:1.0.0-beta4`:
+
+```kotlin
+Generation.getClient(
+    GenerationConfig.Builder().apply {
+        modelConfig = ModelConfig.builder().apply {
+            releaseStage = ModelReleaseStage.PREVIEW   // STABLE = 0, PREVIEW = 1
+            preference = ModelPreference.FAST          // FAST = 1, FULL = 2
+        }.build()
+    }.build(),
+)
+```
+
+Four combinations, and **no API asks which of them a device serves**. The only way to find out is to
+build a client for each and call `checkStatus()` on it. Google's own guidance says as much in one
+line: not every device supports every stage and preference, an `UNAVAILABLE` is that variant's
+answer rather than the device's, and an app should always implement a fallback strategy.
+
+So the shape that works is a probe, not a configuration:
+
+1. Try the variants in preference order.
+2. Keep the first whose `checkStatus()` is anything but `UNAVAILABLE`.
+3. **Report which variant answered, and which ones refused.**
+
+Step 3 is not a nicety. Without it, "not available on this device" is one sentence covering four
+different requests, and no field report can tell them apart. This app prints
+`FeatureStatus=0 · refused: stable/full, stable/fast, preview/full, preview/fast` under the row.
+
+`ModelReleaseStage.PREVIEW` is worth trying and worth understanding. It reaches a model only on a
+device enrolled in the **AICore developer preview**, and an app cannot enrol a device: nothing it
+does will make a preview model appear for an ordinary user. Asking for it costs one status call and
+occasionally answers on a developer's own phone, which is why it is last in the order rather than
+absent.
+
+Support is therefore best stated as a rule rather than a list: **every variant the installed client
+can name, in the order the app prefers them.** A published device list is a dated snapshot; a
+`FeatureStatus` answered a second ago is not.
+
+### What a device can be asked once a model is serving
+
+| Call | Shape | Use |
+|---|---|---|
+| `getBaseModelName()` | `suspend`, `String` | Which model is actually behind the client |
+| `getTokenLimit()` | `suspend`, `Int` | The real input budget, rather than the documented one |
+| `isThinkingModeAvailable()`, `isSystemPromptAvailable()`, `isStructuredOutputFeatureAvailable()`, `isCachingFeatureAvailable()` | `suspend`, `Boolean` | Per-capability probes added in the beta3/beta4 clients |
+| `warmup()` | `suspend` | Pay the load cost before the learner is waiting |
+
+All of them are meaningful only once a variant is serving; on a refusing device they throw. Treat
+them as diagnostics to display, never as gates to depend on.
+
+### Reading a failure
+
+`GenAiException.getErrorCode()` returns one of the `GenAiException.ErrorCode` constants, which is a
+far better thing to branch on than the English text of `message`:
+
+| Code | Constant | Means |
+|---|---|---|
+| 8 | `NOT_AVAILABLE` | The feature is not served here |
+| 16 | `NOT_SUPPORTED` | The request is not supported by this model |
+| -101 | `AICORE_INCOMPATIBLE` | AICore itself cannot serve this device |
+| 604 | `NEEDS_SYSTEM_UPDATE` | The system, not the app, is out of date |
+| 12 | `REQUEST_TOO_LARGE` | Over the token limit |
+| 9 | `BUSY` | Another inference is running |
+| 7 | `CANCELLED` | The caller cancelled it |
+
+There is also `com.google.mlkit.genai.common.internal.GenAiUtils.isAiCoreCompatible(context)`. It is
+an **internal** API, so guard the call and treat a missing class as "unknown" — but on a device that
+refuses every model variant it is the only thing that separates "AICore is absent or too old here"
+from "AICore is fine, this model is simply not offered". That distinction is worth an internal call
+that is allowed to disappear.
 
 ## The two API shapes
 
@@ -222,34 +306,41 @@ unrelated causes. Work down the list; the first two need no cable.
 
 1. **Read the app's own status rows.** Each carries the raw answer under it — `FeatureStatus=0` when
    AICore was asked and said no, or an exception class and message when the call could not be made
-   at all. A version line under the section names the installed AICore build and the device. Those
-   three facts separate every case below.
-2. **Check the client library version first when the message is `FEATURE_NOT_FOUND`.** On a Gemini
-   Nano v4 device — the Galaxy Z Fold8 family, the Pixel 11 family — any `genai-prompt` older than
+   at all. A working row instead names the variant and the model serving it. A version line under
+   the section names the installed AICore build, the device, and whether AICore reports itself able
+   to serve models here. Those facts separate every case below.
+2. **Read which model variants were refused.** The Prompt API serves four combinations of release
+   stage and size preference, and a device may serve none, one or all of them. The refusal line
+   names every one that was tried. Four refusals with `compatible` reported true is a device that
+   has AICore and is offered no Prompt model; four refusals with `compatible` false is an AICore
+   problem, not a model one. See
+   [Choosing a model](#choosing-a-model-release-stage-and-size-preference).
+3. **Check the client library version when the message is `FEATURE_NOT_FOUND`.** On a Gemini Nano v4
+   device — the Galaxy Z Fold8 family, the Pixel 11 family — any `genai-prompt` older than
    `1.0.0-beta4` throws exactly that from `checkStatus()`. It reads as "this device does not have the
-   feature" and means "this client cannot ask this device". Bump the library before diagnosing
-   anything else.
-3. **Compare the two features.** They have separate device lists. Explanations use the Prompt API,
+   feature" and means "this client cannot ask this device". Necessary, and — as the Z Fold 8 notes
+   below record — not sufficient on its own.
+4. **Compare the two features.** They have separate device lists. Explanations use the Prompt API,
    whose list is the narrower one; correction suggestions use Proofreading, whose list is much wider.
    One row ready and the other unavailable is an ordinary answer on hardware that is on one list and
-   not the other — and it is why the app never treats "AI" as one switchable thing. It is *not*
-   automatically the right answer: check step 2 first.
-4. **Check the bootloader.** `verifiedbootstate` must be `green` and `flash.locked` must be `1`. An
+   not the other — and it is why the app never treats "AI" as one switchable thing.
+5. **Check the bootloader.** `verifiedbootstate` must be `green` and `flash.locked` must be `1`. An
    unlocked bootloader fails as "unavailable", with no hint that this is the reason.
-5. **Give provisioning time and network.** Right after setup, an AICore reset, or an OS update, the
+6. **Give provisioning time and network.** Right after setup, an AICore reset, or an OS update, the
    service can answer `UNAVAILABLE` until it has fetched what it needs, sometimes only after a
    restart. Re-check rather than concluding — this is what the **Check again** button in Settings is
-   for.
-6. **Check the AICore version against the device.** A manufacturer ships AICore through its own
+   for, and it re-runs the whole probe.
+7. **Check the AICore version against the device.** A manufacturer ships AICore through its own
    update channel, so a phone can be new and its AICore old.
-7. **Only then suspect the build.** `logcat -s MyNihongoGenAi` prints every status answer and every
-   failure with its exception class. If the failure appears in a release build but not a debug one,
-   read [the R8 field note](#field-notes) before anything else.
+8. **Only then suspect the build.** `logcat -s MyNihongoGenAi` prints every variant tried, every
+   status answer and every failure with its exception class. If the failure appears in a release
+   build but not a debug one, read [the R8 field note](#field-notes) before anything else.
 
-The app is instrumented for exactly this: `GenAiChannel.status` catches its own exceptions and
-answers `unreachable` with the exception class rather than letting them collapse into `unavailable`,
-and it reads the AICore package version through the manifest's `<queries>` entry. Without that entry
-the package is invisible on API 30+ and every device looks like it has no AICore at all.
+The app is instrumented for exactly this. `GenAiChannel.status` catches its own exceptions and
+answers `unreachable` with the exception class rather than letting them collapse into
+`unavailable`; `GenAiChannel.probePrompt` records every variant it tried; and the AICore package
+version is read through the manifest's `<queries>` entry. Without that entry the package is
+invisible on API 30+ and every device looks like it has no AICore at all.
 
 ## Privacy, honestly stated
 
@@ -327,6 +418,27 @@ of it is guaranteed to generalise.
   current enough to ask the question. And **the plausible explanation is the dangerous one**: "this
   hardware is off the list" fitted every fact available, was written down here as settled, and closed
   the investigation for a day.
+
+- **Samsung Galaxy Z Fold 8, `v0.3.2` installed, 2026-09-04: beta4 was not the fix either.** The
+  bump changed the symptom and not the outcome. `checkStatus()` no longer throws; it returns `0`,
+  and the row reads "Not available on this device · `FeatureStatus=0`". Proofreading is still Ready.
+
+  **So the second plausible explanation was also wrong.** "The client is too old to ask" fitted the
+  `FEATURE_NOT_FOUND` exception exactly, was confirmed by Google's own release note for beta4, and
+  was written into this page and into `build.gradle.kts` as settled. It was true and it was not
+  sufficient: an old client cannot ask at all, and a current client still asks for only **one** of
+  four model variants. `Generation.getClient()` with no configuration requests the stable, full-size
+  model, and this device does not serve it.
+
+  What `v0.4.0` does about that is deliberately not a third guess. The app probes every variant,
+  keeps the first that answers, and prints the ones that refused — so the next report from this
+  device says *which* four requests were made rather than that something was unavailable. If all
+  four refuse, that is the honest result and the app names the refusals instead of naming a cause.
+
+  The rule this note exists for: **two wrong diagnoses in a row means the instrumentation is the
+  bug.** Both explanations were plausible, evidence-backed, and closed the investigation. Neither
+  was falsifiable from the app's own output, and that is the property worth fixing before the next
+  theory.
 
 - **Samsung Galaxy Z Fold 8, reported 2026-09-03: AICore installed, both features "not available".**
   Not reproduced here — there is no Samsung device on this host — and recorded because the *shape* of

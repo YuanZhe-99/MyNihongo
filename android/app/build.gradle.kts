@@ -80,10 +80,17 @@ dependencies {
     // genai-prompt is coroutine-based; genai-proofreading returns Guava
     // ListenableFutures. See doc/en-us/android-aicore.md.
     //
-    // genai-prompt must be at least 1.0.0-beta4: an earlier client throws
-    // FEATURE_NOT_FOUND from checkStatus() on a Gemini Nano v4 device, which
-    // is every non-Pixel device the Prompt API supports — the Galaxy
-    // Z Fold8 included. beta2 is why a Fold 8 reported the feature missing.
+    // genai-prompt is a floor, not a fix: 1.0.0-beta4 is the first client whose
+    // checkStatus() returns a value on a Gemini Nano v4 device instead of
+    // throwing, and it is the first that can ask for a named model variant at
+    // all (ModelReleaseStage × ModelPreference). Which model a device serves is
+    // decided at run time by GenAiChannel.probePrompt, never here: this line
+    // says what the app needs to be able to ask, and nothing about what any
+    // device answers. A Galaxy Z Fold8 refused the one variant beta4 asked for
+    // by default, which is why the probe exists.
+    //
+    // Compared against the Google Maven group index at every release; see
+    // PLAN.md's release checklist and doc/en-us/android-aicore.md.
     implementation("com.google.mlkit:genai-prompt:1.0.0-beta4")
     implementation("com.google.mlkit:genai-proofreading:1.0.0-beta1")
     // The Prompt API suspends and returns a Flow; the coroutine runtime is not

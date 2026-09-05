@@ -15,6 +15,7 @@
 | `AiAssistService` | 类 | B | 策略持有者。 |
 | `AiAssistService.instance` | 字段 | B | 全应用共用的实例。 |
 | `setInstanceForTest` | 静态方法 | B | 在测试中替换单例。 |
+| `AiAssistService.defaultMaxOutputTokens` | 常量 | B | 调用方没有指定预算时，回答可以有多长。 |
 | `AiAssistService.timeout` | 常量 | B | 一次生成允许耗时多久。 |
 | `statusOf` | 方法 | B | 某项功能最近一次询问到的状态。 |
 | `canExplain`、`canProofread` | getter | B | 此刻是否可以提供各自的操作。 |
