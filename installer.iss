@@ -1,7 +1,7 @@
 [Setup]
 AppId={{E7A41C92-5D3B-4F18-9A6C-2B8D7E015F44}
 AppName=MyNihongo!!!!!
-AppVersion=0.4.7
+AppVersion=0.4.8
 AppPublisher=yuanzhe
 AppPublisherURL=https://github.com/yuanzhe
 DefaultDirName={autopf}\MyNihongo!!!!!

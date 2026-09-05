@@ -217,3 +217,33 @@ sit at a harder level, or repeat one already taken.
 
 Everything shipped is model-authored and unreviewed, and every file says so in
 its own `source` field.
+
+## What to work on, and how ready this looks
+
+Two things are derived from the recent attempts and shown without being asked
+for: a readiness band on the Learn card, and a weakness report at `/weakness`.
+
+The band is a band — `not yet`, `close`, `looking ready` — and never a number.
+The JLPT scales each scoring group with an equating procedure JEES does not
+publish, so **no app can compute a JLPT score**, and the card says as much in
+the same paragraph as the band rather than behind a tooltip. The overall band is
+the **worst** scoring group rather than the average, which mirrors the exam's own
+rule that failing one group fails the level.
+
+Listening on a device with no Japanese voice is `not measured` rather than bad,
+and is left out of the overall band: the learner has not done badly at it, the
+device could not ask. And a learner who is scoring well at a level whose words
+they have mostly not met is held at `close`, with the card saying why.
+
+The weakness page shows three tables, coarsest first — by section, by 大問, then
+the individual words and grammar points — because that is the order a learner can
+act on. Something is named only once it has been asked three times and got wrong
+at least once; a table with nothing in it says so rather than leaving a heading
+over blank space.
+
+The weakest words and grammar points are also handed to the review queue, which
+puts them before everything else that is due. It only reorders the queue: nothing
+is added to it and nothing is removed.
+
+The full derivation, including every threshold and every case the estimate
+refuses to speak about, is in `algorithms/readiness-estimate.md`.

@@ -12,6 +12,61 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.4.8` — 2026-09-05. What to work on, and how ready this looks.
+
+  **A readiness band, and the reasons it will not say more.** The Learn card
+  now says whether the target level looks `not yet`, `close` or `looking ready`
+  — and never puts a number next to it. JEES scales each scoring group with an
+  equating procedure it does not publish, so no application can compute a JLPT
+  score, and the card says so in the same paragraph as the band rather than
+  behind a tooltip.
+
+  The overall band is the **worst** scoring group, not the average, because that
+  is the exam's own rule: fail one group and you fail the level, however well
+  the others went. It is the one part of real JLPT scoring that can be
+  reproduced honestly, because it is a rule rather than a number. One group with
+  too few answers therefore makes the whole estimate unknown — a band computed
+  from two groups out of three would be a claim about a paper nobody has sat.
+
+  Two things it refuses to say. Listening on a device with no Japanese voice is
+  **not measured** rather than bad, and is left out of the overall band: the
+  learner has not done badly at it, the device could not ask. And a learner
+  scoring well at a level whose words they have mostly not met is held at
+  `close`, with the card saying why — "close" with no explanation, shown to
+  somebody scoring nine in ten, reads as a bug rather than as a caveat.
+
+  **A weakness report that practice can move.** It is built from the last five
+  papers and recomputed every time it is read, never stored: over every attempt
+  ever sat, forty old papers drown five recent good ones and the report stops
+  responding to work. Three tables, coarsest first — by section, by 大問, then
+  the individual words and grammar points — because that is the order a learner
+  can act on. Something is named only once it has been asked three times and got
+  wrong at least once, and a table with nothing in it says why rather than
+  leaving a heading over blank space.
+
+  An unanswered question counts as nothing at all. The clock took it away, and
+  reading a time-out as a gap in somebody's Japanese would send them to study
+  the wrong thing.
+
+  **The review queue puts the weak words first.** Ahead of everything else that
+  is due, then most-overdue within each group. A word that keeps being missed on
+  a paper is a better use of the next five minutes than a word whose interval
+  merely happened to elapse. It only reorders: nothing is added to the queue and
+  nothing is taken out, so a report that is empty — or still reading its files —
+  costs the old ordering and nothing else.
+
+  **N3 ships complete** at the official composition — 102 questions and 38
+  passages across all four sections.
+
+  A file-writing bug found while testing this, on the exam page and real. It
+  saved on a one-second tick and again on the way out, so two writes to one file
+  could overlap — and refreshing the Learn card after each save started a read
+  of that same file, which the next save then renamed over. Windows refuses a
+  rename while another handle is open, so a save failed roughly once a minute on
+  the page whose whole job is not losing the paper, and the widget suite only
+  ever saw it as a flake. Saves are now chained rather than concurrent, and the
+  card is refreshed only on the way out. 981 tests.
+
 - `0.4.7` — 2026-09-05. The paper on a clock, and N4.
 
   **A mock exam you can put down.** Three blocks for N5, each opening on a start

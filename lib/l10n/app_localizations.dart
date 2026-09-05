@@ -3008,6 +3008,138 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'There is a saved exam. Starting a new one discards it.'**
   String get examReplaceBody;
+
+  /// No description provided for @weaknessTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What to work on'**
+  String get weaknessTitle;
+
+  /// No description provided for @weaknessEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Sit a practice section or a mock exam and this will show what you keep getting wrong.'**
+  String get weaknessEmpty;
+
+  /// No description provided for @weaknessBasis.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{From your last attempt} other{From your last {n} attempts}}'**
+  String weaknessBasis(int n);
+
+  /// No description provided for @weaknessBySection.
+  ///
+  /// In en, this message translates to:
+  /// **'By section'**
+  String get weaknessBySection;
+
+  /// No description provided for @weaknessByType.
+  ///
+  /// In en, this message translates to:
+  /// **'By question type'**
+  String get weaknessByType;
+
+  /// No description provided for @weaknessByItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Words and grammar to review'**
+  String get weaknessByItem;
+
+  /// No description provided for @weaknessScore.
+  ///
+  /// In en, this message translates to:
+  /// **'{right} of {asked}'**
+  String weaknessScore(int right, int asked);
+
+  /// No description provided for @weaknessNothingWeak.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing stands out yet. Keep going and this will fill in.'**
+  String get weaknessNothingWeak;
+
+  /// No description provided for @readinessTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Readiness'**
+  String get readinessTitle;
+
+  /// No description provided for @readinessUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough answered yet'**
+  String get readinessUnknown;
+
+  /// No description provided for @readinessNotYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Not yet'**
+  String get readinessNotYet;
+
+  /// No description provided for @readinessClose.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get readinessClose;
+
+  /// No description provided for @readinessReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Looking ready'**
+  String get readinessReady;
+
+  /// No description provided for @readinessUnmeasured.
+  ///
+  /// In en, this message translates to:
+  /// **'Not measured'**
+  String get readinessUnmeasured;
+
+  /// No description provided for @readinessNote.
+  ///
+  /// In en, this message translates to:
+  /// **'This is an estimate from your practice in this app. It is not an official JLPT score.'**
+  String get readinessNote;
+
+  /// No description provided for @readinessCapped.
+  ///
+  /// In en, this message translates to:
+  /// **'Held at Close until you have met more of the level\'s words and grammar.'**
+  String get readinessCapped;
+
+  /// No description provided for @readinessNoListening.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening is not measured on this device, so it is missing from this estimate.'**
+  String get readinessNoListening;
+
+  /// No description provided for @readinessGroupLanguageKnowledge.
+  ///
+  /// In en, this message translates to:
+  /// **'Language knowledge'**
+  String get readinessGroupLanguageKnowledge;
+
+  /// No description provided for @readinessGroupLanguageReading.
+  ///
+  /// In en, this message translates to:
+  /// **'Language knowledge and reading'**
+  String get readinessGroupLanguageReading;
+
+  /// No description provided for @readinessGroupReading.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading'**
+  String get readinessGroupReading;
+
+  /// No description provided for @readinessGroupListening.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening'**
+  String get readinessGroupListening;
+
+  /// No description provided for @weaknessOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'What to work on'**
+  String get weaknessOpen;
 }
 
 class _AppLocalizationsDelegate

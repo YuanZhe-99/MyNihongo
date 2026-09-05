@@ -5,9 +5,12 @@ import 'package:go_router/go_router.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../shared/providers/learner_profile_provider.dart';
 import '../../content/models/jlpt_level.dart';
+import '../../content/services/content_repository.dart';
+import '../../content/services/study_item_labels.dart';
 import '../../drills/models/drill_file.dart';
 import '../../drills/models/drill_section.dart';
 import '../../drills/services/drill_repository.dart';
+import '../../drills/services/readiness_rules.dart';
 import '../../drills/views/exam_page.dart';
 import '../../progress/services/nihongo_storage.dart';
 import '../../../shared/providers/exam_provider.dart';
@@ -125,6 +128,7 @@ class JlptPracticeCard extends ConsumerWidget {
                 hasVoice: hasVoice,
               ),
             const Divider(height: 24),
+            _readiness(context, ref, l10n, theme, hasVoice),
             // A saved paper is offered before a new one. Starting a fresh mock
             // is one tap away either way, but a learner who put one down half
             // an hour ago should not have to remember it exists.
@@ -173,6 +177,11 @@ class JlptPracticeCard extends ConsumerWidget {
                   icon: const Icon(Icons.history_outlined, size: 18),
                   label: Text(l10n.jlptHistory),
                 ),
+                OutlinedButton.icon(
+                  onPressed: () => context.push('/weakness'),
+                  icon: const Icon(Icons.troubleshoot_outlined, size: 18),
+                  label: Text(l10n.weaknessOpen),
+                ),
               ],
             ),
           ],
@@ -180,6 +189,120 @@ class JlptPracticeCard extends ConsumerWidget {
       ),
     );
   }
+
+  /// Purpose: Say how ready the learner looks, and what is holding it back.
+  /// Inputs: `context`, `ref`, `l10n`, `theme`, and whether the device has a
+  /// Japanese voice.
+  /// Returns: `Widget`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. **The caveat is not
+  /// optional and is not a tooltip.** A band shown beside the letters JLPT
+  /// will be read as a JLPT score unless the screen says, in the same
+  /// paragraph, that it is not one — JEES does not publish the raw-to-scaled
+  /// equating, so no app can compute the real thing.
+  ///
+  /// The three weakest points are named here rather than only on their own
+  /// page, because the whole value of a weakness report is that it is seen
+  /// without being sought.
+  Widget _readiness(
+    BuildContext context,
+    WidgetRef ref,
+    AppLocalizations l10n,
+    ThemeData theme,
+    bool hasVoice,
+  ) {
+    final estimate = ref.watch(readinessProvider);
+    final report = ref.watch(weaknessReportProvider);
+    final catalog = ref.watch(contentCatalogProvider).asData?.value;
+    final locale = Localizations.localeOf(context);
+    final weakest = report.weakestItems.take(3).toList();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Icon(
+              Icons.speed_outlined,
+              size: 18,
+              color: theme.colorScheme.primary,
+            ),
+            const SizedBox(width: 8),
+            Text(
+              l10n.readinessTitle,
+              style: theme.textTheme.titleSmall?.copyWith(
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text(
+                _bandName(l10n, estimate.overall),
+                style: theme.textTheme.bodyMedium,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 4),
+        Text(
+          l10n.readinessNote,
+          style: theme.textTheme.bodySmall?.copyWith(
+            color: theme.colorScheme.onSurfaceVariant,
+          ),
+        ),
+        if (estimate.cappedByCoverage)
+          Text(
+            l10n.readinessCapped,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
+        if (!hasVoice)
+          Text(
+            l10n.readinessNoListening,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
+        if (weakest.isNotEmpty) ...[
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 6,
+            runSpacing: 6,
+            children: [
+              for (final entry in weakest)
+                Chip(
+                  visualDensity: VisualDensity.compact,
+                  label: Text(
+                    resolveStudyItemLabel(
+                      entry.key,
+                      catalog: catalog,
+                      locale: locale,
+                    ).title,
+                  ),
+                ),
+            ],
+          ),
+        ],
+        const SizedBox(height: 12),
+      ],
+    );
+  }
+
+  /// Purpose: Name one readiness band in the learner's language.
+  /// Inputs: `l10n`, the `band`.
+  /// Returns: `String`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. Exhaustive, so a new
+  /// band cannot reach the screen unnamed.
+  String _bandName(AppLocalizations l10n, ReadinessBand band) =>
+      switch (band) {
+        ReadinessBand.unknown => l10n.readinessUnknown,
+        ReadinessBand.notYet => l10n.readinessNotYet,
+        ReadinessBand.close => l10n.readinessClose,
+        ReadinessBand.ready => l10n.readinessReady,
+        ReadinessBand.unmeasured => l10n.readinessUnmeasured,
+      };
 
   /// Purpose: Start a new mock, asking first if one is already saved.
   /// Inputs: `context`, `ref`, `l10n`, the `level`.

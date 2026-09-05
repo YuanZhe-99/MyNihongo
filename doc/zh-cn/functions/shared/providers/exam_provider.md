@@ -15,6 +15,10 @@ JLPT 作答历史记录，由进度文件推导而来，好让页面同步地读
 | 库头 | 库文档 | B | 进度文件中考试记录的两个推导视图，外加设备本地的那份进行中的卷子。 |
 | [`examAttemptsProvider`](#examattemptsprovider) | provider | A | 每一次 JLPT 作答，最新的在前。 |
 | [`savedExamProvider`](#savedexamprovider) | provider | A | 这台设备做了一半的那份卷子，如果有的话。 |
+| `drillQuestionsProvider` | provider | B | 按 id 索引的全部内置练习题——报告与结果界面都需要的那次连接。 |
+| [`weaknessReportProvider`](#weaknessreportprovider) | provider | A | 学习者在自己级别的最近几份卷子上最薄弱的地方。 |
+| [`readinessProvider`](#readinessprovider) | provider | A | 学习者对目标级别看起来准备到什么程度。 |
+| `_coverage` | 函数 | B | 说出学习者接触过一个级别目录里多大比例的内容。 |
 | [`askedQuestionsProvider`](#askedquestionsprovider) | provider | A | 哪些练习题已经被问过，以及是什么时候问的。 |
 
 ## 文档
@@ -44,6 +48,34 @@ JLPT 作答历史记录，由进度文件推导而来，好让页面同步地读
   用 `FutureProvider`，好让 Learn 卡片在文件被读完之前就能渲染，而且是**通过 `invalidate` 而不是通过 watch**：这个文件由考试页写入、由卡片删除，两者都清楚知道自己是什么时候做的。那次刷新不是可有可无的——没有它，卡片会一直拿着它在这份卷子存在之前就解析完的那个 future，在本该提出继续的地方什么也不显示。
 
   读取 `SavedExam` 不必碰内容文件，正是这一点让卡片可以说出「N5 模拟考试，第 2 个计时部分，还剩 18 分钟」，而不必为此解析四个练习题文件。
+
+### `weaknessReportProvider` <a id="weaknessreportprovider"></a>
+
+- **种类：** `Provider<WeaknessReport>`
+- **用途：** 报告学习者在自己级别的最近几份卷子上最薄弱的地方。
+- **输入：** `drillQuestionsProvider`、`examAttemptsProvider`、`learnerProfileProvider`。
+- **返回：** `WeaknessReport`；它需要的东西还在加载时返回 `empty`。
+- **副作用：** 自身没有。
+- **算法：** 对这些作答调用 `WeaknessReport.build`，与全部内置题目做连接。
+- **使用：** 薄弱点页面、学习页卡片上的标签、`readinessProvider`，以及经由 `prioritizedIds` 的 `reviewQueueProvider`。
+- **说明：** 加载期间为空，也正是一个什么都没做过的学习者看到的样子，所以屏幕上没有任何东西需要区分这两种情况。这里之所以安全，恰恰是因为报告只重排复习队列而不往里加东西——在练习题文件读完之前构建的队列是旧的排序，不是错的排序。
+
+  `drillQuestionsProvider` 会读取每个级别的四个文件。它是一个 `FutureProvider`，所以没有东西会因它阻塞；它也是"一次作答里**只保存输入**"这条规则的连接点：部分、大问和目录 id 全都来自今天的文件。
+
+### `readinessProvider` <a id="readinessprovider"></a>
+
+- **种类：** `Provider<ReadinessEstimate>`
+- **用途：** 说出学习者对目标级别看起来准备到什么程度。
+- **输入：** `learnerProfileProvider`、`jlptStructureProvider`、`weaknessReportProvider`、`contentCatalogProvider`、`progressDataProvider`，以及 `TtsService.instance.hasJapaneseVoice`。
+- **返回：** `ReadinessEstimate`；结构文件加载完成之前是 `unknown`。
+- **副作用：** 自身没有。
+- **算法：** 带着该级别的结构、报告、`_coverage` 和设备是否有日语语音调用 `ReadinessEstimate.build`。
+- **使用：** 学习页卡片。
+- **说明：** 是一个档位，从来不是一个数字，也从来不称作 JLPT 成绩——为什么没有应用能算出成绩，见
+  [`../../features/drills/services/readiness_rules.md`](../../features/drills/services/readiness_rules.md)
+  与 `algorithms/readiness-estimate.md`。
+
+  目录或进度文件还没加载完时 `_coverage` 返回 1，所以启动慢的时候显示的是卷子挣来的档位，而不是一个没有解释的压制。那里的"接触过"指的是存在学习记录——至少答过一次——而不是已经掌握：这个估计只用它来压住一个"可以了"的档位，所以宽松的读法才是对的。
 
 ### `askedQuestionsProvider` <a id="askedquestionsprovider"></a>
 

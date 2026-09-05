@@ -4,20 +4,20 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **1060** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **1081** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **1120** documented declarations. The two counts are measured separately and
+The rows below sum to **1178** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
-| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 241 |
-| Tier B (index row only) | 879 |
-| **Total** | **1120** |
+| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 254 |
+| Tier B (index row only) | 924 |
+| **Total** | **1178** |
 
-These totals were last measured against the source tree when v0.4.7 added the timed mock exam with
-save and resume. If you change these numbers, measure them rather than adjusting them by hand:
+These totals were last measured against the source tree when v0.4.8 added the weakness report and the
+readiness estimate. If you change these numbers, measure them rather than adjusting them by hand:
 
 ```bash
 find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' | wc -l
@@ -73,7 +73,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/kana/views/kana_page.dart` | [features/kana/views/kana_page.md](features/kana/views/kana_page.md) | 15 | 2 |
 | `lib/features/learn/widgets/learning_settings_tiles.dart` | [features/learn/widgets/learning_settings_tiles.md](features/learn/widgets/learning_settings_tiles.md) | 2 | 0 |
 | `lib/features/learn/widgets/today_card.dart` | [features/learn/widgets/today_card.md](features/learn/widgets/today_card.md) | 3 | 1 |
-| `lib/features/learn/widgets/jlpt_practice_card.dart` | [features/learn/widgets/jlpt_practice_card.md](features/learn/widgets/jlpt_practice_card.md) | 9 | 4 |
+| `lib/features/learn/widgets/jlpt_practice_card.dart` | [features/learn/widgets/jlpt_practice_card.md](features/learn/widgets/jlpt_practice_card.md) | 11 | 5 |
 | `lib/features/learn/widgets/study_calendar.dart` | [features/learn/widgets/study_calendar.md](features/learn/widgets/study_calendar.md) | 5 | 2 |
 | `lib/features/learn/views/learn_page.dart` | [features/learn/views/learn_page.md](features/learn/views/learn_page.md) | 5 | 0 |
 | `lib/features/progress/models/study_record.dart` | [features/progress/models/study_record.md](features/progress/models/study_record.md) | 23 | 5 |
@@ -133,16 +133,19 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 
 | Source file | Page | Declarations | Tier A count |
 |---|---|---|---|
-| `lib/features/drills/models/drill_section.dart` | [features/drills/models/drill_section.md](features/drills/models/drill_section.md) | 7 | 2 |
+| `lib/features/drills/models/drill_section.dart` | [features/drills/models/drill_section.md](features/drills/models/drill_section.md) | 9 | 2 |
 | `lib/features/drills/models/drill_file.dart` | [features/drills/models/drill_file.md](features/drills/models/drill_file.md) | 32 | 6 |
 | `lib/features/drills/services/drill_repository.dart` | [features/drills/services/drill_repository.md](features/drills/services/drill_repository.md) | 9 | 2 |
 | `lib/features/drills/services/drill_sampler.dart` | [features/drills/services/drill_sampler.md](features/drills/services/drill_sampler.md) | 8 | 3 |
 | `lib/features/drills/services/exam_session.dart` | [features/drills/services/exam_session.md](features/drills/services/exam_session.md) | 27 | 8 |
+| `lib/features/drills/services/weakness_report.dart` | [features/drills/services/weakness_report.md](features/drills/services/weakness_report.md) | 11 | 3 |
+| `lib/features/drills/services/readiness_rules.dart` | [features/drills/services/readiness_rules.md](features/drills/services/readiness_rules.md) | 8 | 1 |
 | `lib/features/drills/widgets/drill_passage_view.dart` | [features/drills/widgets/drill_passage_view.md](features/drills/widgets/drill_passage_view.md) | 3 | 1 |
 | `lib/features/drills/widgets/exam_results_view.dart` | [features/drills/widgets/exam_results_view.md](features/drills/widgets/exam_results_view.md) | 4 | 1 |
 | `lib/features/drills/widgets/listening_script_player.dart` | [features/drills/widgets/listening_script_player.md](features/drills/widgets/listening_script_player.md) | 5 | 3 |
 | `lib/features/drills/views/exam_history_page.dart` | [features/drills/views/exam_history_page.md](features/drills/views/exam_history_page.md) | 6 | 3 |
-| `lib/features/drills/views/exam_page.dart` | [features/drills/views/exam_page.md](features/drills/views/exam_page.md) | 18 | 9 |
+| `lib/features/drills/views/exam_page.dart` | [features/drills/views/exam_page.md](features/drills/views/exam_page.md) | 20 | 9 |
+| `lib/features/drills/views/weakness_report_page.dart` | [features/drills/views/weakness_report_page.md](features/drills/views/weakness_report_page.md) | 8 | 2 |
 
 ## shared/
 
@@ -152,7 +155,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/shared/providers/progress_provider.dart` | [shared/providers/progress_provider.md](shared/providers/progress_provider.md) | 6 | 0 |
 | `lib/shared/providers/learner_profile_provider.dart` | [shared/providers/learner_profile_provider.md](shared/providers/learner_profile_provider.md) | 3 | 0 |
 | `lib/shared/providers/history_provider.dart` | [shared/providers/history_provider.md](shared/providers/history_provider.md) | 3 | 2 |
-| `lib/shared/providers/exam_provider.dart` | [shared/providers/exam_provider.md](shared/providers/exam_provider.md) | 4 | 3 |
+| `lib/shared/providers/exam_provider.dart` | [shared/providers/exam_provider.md](shared/providers/exam_provider.md) | 8 | 5 |
 | `lib/shared/services/auto_sync_service.dart` | [shared/services/auto_sync_service.md](shared/services/auto_sync_service.md) | 18 | 0 |
 | `lib/shared/services/backup_service.dart` | [shared/services/backup_service.md](shared/services/backup_service.md) | 11 | 0 |
 | `lib/shared/services/import_export_service.dart` | [shared/services/import_export_service.md](shared/services/import_export_service.md) | 3 | 0 |

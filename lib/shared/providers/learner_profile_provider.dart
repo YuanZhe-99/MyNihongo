@@ -15,6 +15,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../features/content/services/content_repository.dart';
 import '../../features/progress/models/learner_profile.dart';
 import '../../features/progress/services/review_queue.dart';
+import 'exam_provider.dart';
 import 'progress_provider.dart';
 
 /// The learner's target level, daily goals and streak.
@@ -34,6 +35,11 @@ final learnerProfileProvider = Provider<LearnerProfile>((ref) {
 /// Null rather than an empty queue on purpose: an empty queue means "nothing
 /// due, well done", and showing that before the data has loaded would be a
 /// lie the learner acts on.
+///
+/// The weakness report only **reorders** this queue — it never adds anything
+/// and never removes anything — so a report still empty because the drill
+/// files have not been read costs the learner the old ordering and nothing
+/// else, and the queue does not wait for it.
 final reviewQueueProvider = Provider<ReviewQueue?>((ref) {
   final progress = ref.watch(progressDataProvider).value;
   final catalog = ref.watch(contentCatalogProvider).value;
@@ -43,5 +49,6 @@ final reviewQueueProvider = Provider<ReviewQueue?>((ref) {
     catalog: catalog,
     profile: ref.watch(learnerProfileProvider),
     now: DateTime.now(),
+    prioritized: ref.watch(weaknessReportProvider).prioritizedIds(catalog),
   );
 });

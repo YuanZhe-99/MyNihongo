@@ -20,12 +20,18 @@ watching page rebuilds with no second source of truth to keep in step.
 
 - **Kind:** provider
 - **Purpose:** Say what there is to study right now.
-- **Inputs:** `progressDataProvider`, `contentCatalogProvider`, `learnerProfileProvider`.
+- **Inputs:** `progressDataProvider`, `contentCatalogProvider`, `learnerProfileProvider`,
+  `weaknessReportProvider`.
 - **Returns:** `ReviewQueue?` — null until both the progress file and the catalog have loaded.
 - **Side effects:** None; reads `DateTime.now()` when it recomputes.
-- **Algorithm:** Watch all three, return null if either async source is still empty, otherwise call
-  `ReviewQueue.build`.
+- **Algorithm:** Watch all four, return null if either async source is still empty, otherwise call
+  `ReviewQueue.build` with the weakness report's `prioritizedIds`.
 - **Usage:** `TodayCard`.
 - **Notes:** Null rather than an empty queue while loading, and that distinction is the point: an
   empty queue means "nothing due, well done", and showing that before the data arrives is a lie the
   learner acts on. The today card renders a progress bar for null instead.
+
+  The weakness report only **reorders** the queue — it never adds anything and never removes
+  anything — so a report still empty because the drill files have not been read costs the learner the
+  old ordering and nothing else, and the queue does not wait for it. That is why this stays a
+  synchronous `Provider` over an async report rather than becoming a `FutureProvider`.

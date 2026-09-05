@@ -38,18 +38,18 @@ Consumers: `reviewQueueProvider`, and through it the Learn tab's today card.
   anything due today to be available all day, and their "today" is their own — so an item due at
   23:00 is due from midnight. The scheduler stores instants; the queue reads days.
 
-### `static ReviewQueue build({required ProgressData progress, required ContentCatalog catalog, required LearnerProfile profile, required DateTime now, Set<StudyKind> kinds})` <a id="build"></a>
+### `static ReviewQueue build({required ProgressData progress, required ContentCatalog catalog, required LearnerProfile profile, required DateTime now, Set<StudyKind> kinds, Set<String> prioritized})` <a id="build"></a>
 
 - **Kind:** static method
 - **Purpose:** Build the queue for right now.
-- **Inputs:** The progress file, the catalog, the learner profile, local `now`, and which kinds may
-  supply new items.
+- **Inputs:** The progress file, the catalog, the learner profile, local `now`, which kinds may
+  supply new items, and `prioritized` — the ids the weakness report says to put first.
 - **Returns:** `ReviewQueue`.
 - **Side effects:** None.
 - **Algorithm:**
   1. One pass over `progress.studyRecords` collecting three things: which ids are already studied,
      how many reviews and new items today has already seen, and which records are due.
-  2. Sort the due list by `dueAt` ascending — most overdue first.
+  2. Sort the due list: prioritized ids first, then `dueAt` ascending — most overdue first.
   3. Subtract today's counts from the profile's limits to get the remaining allowances.
   4. Take that many due records, and fill the new-item list from the catalog.
 - **Usage:** `reviewQueueProvider`.
@@ -60,6 +60,13 @@ Consumers: `reviewQueueProvider`, and through it the Learn tab's today card.
   synced in from another device — which a shared daily goal must not. `overdueTotal` is reported
   separately from `due.length` so the UI can say "20 of 300 today" rather than pretending the backlog
   is smaller than it is.
+
+  **`prioritized` reorders the queue and nothing else.** A word the learner keeps getting wrong on a
+  JLPT paper is a better use of the next five minutes than a word whose interval merely happens to
+  have elapsed — and within each group the longest-forgotten item is the one whose recall is decaying
+  fastest, so a learner who stops halfway has spent the time well either way. Nothing is added to the
+  queue and nothing is removed, so an empty set — no attempts yet, or a report whose files have not
+  loaded — is exactly the old sort.
 
   `_newItems` switches exhaustively over `StudyKind`, so every kind that is not a catalog item has to
   name itself and break. `exam` is one of them: an attempt is a record of something that happened,

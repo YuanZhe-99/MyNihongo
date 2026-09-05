@@ -284,8 +284,26 @@ class _ExamPageState extends ConsumerState<ExamPage>
   /// Inputs: None.
   /// Returns: None.
   /// Side effects: Writes or deletes the save file.
-  /// Notes: Internal helper used within this file only.
-  Future<void> _save() async {
+  /// Notes: Internal helper used within this file only. **Saves are chained,
+  /// never concurrent.** The clock notifies once a second and leaving the page
+  /// saves as well, so two writes to the same file could start in the same
+  /// millisecond; each one still writes the whole paper, so running them in
+  /// order costs nothing and the last one is the current state either way.
+  Future<void> _save({bool refreshCard = false}) {
+    final chained = _saving.then((_) => _saveNow(refreshCard));
+    _saving = chained.catchError((_) {});
+    return chained;
+  }
+
+  /// The save in flight, so the next one queues behind it rather than racing.
+  Future<void> _saving = Future<void>.value();
+
+  /// Purpose: Do one save.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: Writes or deletes the save file; may refresh the Learn card.
+  /// Notes: Internal helper used within this file only; call [_save].
+  Future<void> _saveNow(bool refreshCard) async {
     final exam = _exam;
     if (exam == null) return;
     if (exam.isFinished) {
@@ -296,8 +314,15 @@ class _ExamPageState extends ConsumerState<ExamPage>
     // The Learn card reads the save through a `FutureProvider`, which resolved
     // before this paper existed. Without this the learner leaves a half-sat
     // exam and the card that should offer to continue it shows nothing —
-    // which is what the device did before this line.
-    if (mounted) ref.refresh(savedExamProvider);
+    // which is what the device did before that line was added.
+    //
+    // **Only when the card is about to be looked at**, though. Refreshing it
+    // on every tick starts a read of the file that the next tick's write then
+    // renames over, and Windows refuses a rename onto a file another handle
+    // has open — so a save failed roughly once a minute, on a page whose whole
+    // job is not losing the paper. The card is behind this page, so the only
+    // moments it can be seen are the ones that leave.
+    if (refreshCard && mounted) ref.refresh(savedExamProvider);
   }
 
   /// Purpose: Record the finished paper and clear the save.
@@ -401,7 +426,7 @@ class _ExamPageState extends ConsumerState<ExamPage>
     final exam = _exam;
     if (exam == null || _finished || exam.isFinished) return true;
     exam.pauseClock();
-    await _save();
+    await _save(refreshCard: true);
     if (!mounted) return true;
     final l10n = AppLocalizations.of(context)!;
     final leave = await showDialog<bool>(

@@ -45,7 +45,11 @@ covers how the app uses it today and where it goes.
 
 - **Phase 3 (M3.2, M3.3):** quiz modes and the lesson path are what actually call `recordAnswer`;
   until they land the scheduler is written and tested but reached only through them.
-- **Phase 4:** JLPT attempts as `exam:<uuid>` records, or a second module if the file grows large.
+- **Phase 4:** JLPT attempts are `exam:` records in the same file. They are not studied items and are
+  never scheduled, but the weakest words and grammar points they name are handed to
+  `ReviewQueue.build(prioritized:)`, which puts them before everything else that is due. That is the
+  only way an exam changes the queue: it reorders, and never adds or removes. See
+  `algorithms/readiness-estimate.md`.
 
 ## Invariants worth remembering
 

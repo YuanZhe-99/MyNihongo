@@ -63,11 +63,13 @@ void main() {
   ReviewQueue build({
     List<StudyRecord> records = const [],
     LearnerProfile profile = const LearnerProfile(),
+    Set<String> prioritized = const {},
   }) => ReviewQueue.build(
     progress: ProgressData(records: records),
     catalog: catalog(),
     profile: profile,
     now: now,
+    prioritized: prioritized,
   );
 
   test('an item never reviewed is not a review', () {
@@ -113,6 +115,50 @@ void main() {
       'vocab:n4word',
       'vocab:common1',
     ]);
+  });
+
+  test('a weak item jumps the queue, however recently it fell due', () {
+    final queue = build(
+      records: [
+        due('vocab:common1', daysAgo: 1),
+        due('vocab:rare1', daysAgo: 9),
+        due('vocab:n4word', daysAgo: 4),
+      ],
+      prioritized: {'vocab:common1'},
+    );
+    expect(queue.due.map((r) => r.id), [
+      'vocab:common1',
+      'vocab:rare1',
+      'vocab:n4word',
+    ]);
+  });
+
+  test('weak items are still ordered by how overdue they are', () {
+    final queue = build(
+      records: [
+        due('vocab:common1', daysAgo: 1),
+        due('vocab:rare1', daysAgo: 9),
+        due('vocab:n4word', daysAgo: 4),
+      ],
+      prioritized: {'vocab:common1', 'vocab:n4word'},
+    );
+    expect(queue.due.map((r) => r.id), [
+      'vocab:n4word',
+      'vocab:common1',
+      'vocab:rare1',
+    ]);
+  });
+
+  test('a weak item that is not due is not scheduled', () {
+    final queue = build(
+      records: [StudyRecord.create('vocab:common1')],
+      prioritized: {'vocab:common1'},
+    );
+    expect(
+      queue.due,
+      isEmpty,
+      reason: 'the report reorders the queue; it never adds to it',
+    );
   });
 
   test('new items are kana first, then common words, then grammar', () {

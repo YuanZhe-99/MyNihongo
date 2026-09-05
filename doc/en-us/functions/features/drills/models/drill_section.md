@@ -20,6 +20,8 @@ varies is content rather than code.
 | `DrillType` constructor | constructor | B | Bind a type to its content key and its section. |
 | `key`, `section` | fields | B | What a drill file writes in `type`, and which section the type is scored under. |
 | `DrillType.parse` | static method | B | Parse a type from a drill file; null for anything unrecognized. |
+| `DrillTypeName` | extension | B | Names for the 大問 as the paper itself prints them. |
+| `jaName` | getter | B | Name one 大問 in Japanese, exhaustively over `DrillType`. |
 
 ## Documentation
 
@@ -55,3 +57,9 @@ varies is content rather than code.
   returns null rather than a default — the content gate rejects an unknown type before it ships, and
   this is the second line of defence: dropping the question is better than scoring it under a section
   it does not belong to.
+
+The `jaName` extension gives each 大問 its official Japanese heading — 漢字読み, 文脈規定, 即時応答 —
+rather than a translated one, and deliberately keeps them out of the ARB catalogs. These are the
+headings jlpt.jp prints, so a learner comparing the weakness page with a real paper is comparing the
+same words; the localized part of the label is the section name shown beside it, which the ARB does
+carry.

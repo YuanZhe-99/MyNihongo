@@ -1,7 +1,8 @@
 # lib/features/learn/widgets/jlpt_practice_card.dart
 
 The Learn tab's way into JLPT practice: one row per section, the offer to continue a saved mock, and
-the Mock and Results buttons — both of which are now live, going to `/exam` and `/exam-history`.
+the readiness band, and the Mock, Results and What-to-work-on buttons, going to `/exam`,
+`/exam-history` and `/weakness`.
 
 Replaces the roadmap card that promised this. A card that says a feature is coming should be deleted
 by the release that ships it, or the app is advertising to a learner who is already using the thing.
@@ -17,9 +18,11 @@ that wrapper and `_card` is the card, split out only so the listenable can wrap 
 |---|---|---|---|
 | `JlptPracticeCard` | class | B | The Learn tab's way into JLPT practice. |
 | [`build`](#build) | method | A | Wrap the card in the speech engine's readiness. |
-| [`_card`](#card) | method | A | Build the practise rows, the saved-paper offer, and the Mock and Results buttons. |
+| [`_card`](#card) | method | A | Build the practise rows, the readiness band, the saved-paper offer, and the three buttons. |
 | [`_startMock`](#startmock) | method | A | Start a new mock, asking first if one is already saved. |
 | `_discard` | method | B | Throw away the saved paper, after a dialog that says what survives. |
+| [`_readiness`](#readiness) | method | A | Say how ready the learner looks, and what is holding it back. |
+| `_bandName` | method | B | Name one readiness band in the learner's language. |
 | [`_sectionRow`](#row) | method | A | Render one section's practise row. |
 | `_icon` | method | B | Pick an icon for a section. |
 | `DrillSectionLabel` | extension | B | Name a section in the learner's language. |
@@ -57,8 +60,8 @@ that wrapper and `_card` is the card, split out only so the listenable can wrap 
 - **Side effects:** None until a control is used; the controls push routes, clear the save, or open a
   dialog.
 - **Algorithm:** Treat `hasVoice` as true while `!ready`, then a `Card` holding the title, the body
-  line, one `_sectionRow` per `DrillSection` value, a divider, the continue/discard pair when
-  `savedExamProvider` has a paper, and finally the Mock and Results buttons.
+  line, one `_sectionRow` per `DrillSection` value, a divider, `_readiness`, the continue/discard pair when
+  `savedExamProvider` has a paper, and finally the Mock, Results and What-to-work-on buttons.
 - **Usage:** `build`, through the `ValueListenableBuilder`.
 - **Notes:** Internal helper used within this file only. Split out only so the listenable wraps it;
   the reasoning is all in `build`.
@@ -117,3 +120,23 @@ that wrapper and `_card` is the card, split out only so the listenable can wrap 
   still loading there is no reason and no count, so the row does not flicker a "no content" line on
   its way to having content — and listening is loading until the speech probe has answered, for the
   same reason.
+
+### `Widget _readiness(BuildContext context, WidgetRef ref, AppLocalizations l10n, ThemeData theme, bool hasVoice)` <a id="readiness"></a>
+
+- **Kind:** method
+- **Purpose:** Say how ready the learner looks, and what is holding it back.
+- **Inputs:** `context`, `ref`, `l10n`, `theme`, and whether the device has a Japanese voice.
+- **Returns:** `Widget`.
+- **Side effects:** None.
+- **Algorithm:** Watch `readinessProvider` and `weaknessReportProvider`; render the band's name, the
+  caveat, the two conditional lines, and up to three chips naming the weakest items.
+- **Usage:** The Learn card, between the practise rows and the mock controls.
+- **Notes:** **The caveat is not optional and is not a tooltip.** A band shown beside the letters
+  JLPT will be read as a JLPT score unless the screen says, in the same paragraph, that it is not
+  one — JEES does not publish the raw-to-scaled equating, so no app can compute the real thing.
+
+  `cappedByCoverage` and a missing Japanese voice each add their own line, because a band with no
+  explanation for why it will not go higher reads as a bug rather than as a caveat.
+
+  The three weakest points are named here rather than only on their own page, because the whole value
+  of a weakness report is that it is seen without being sought.

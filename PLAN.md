@@ -1134,7 +1134,53 @@ for whoever had to debug the feature.
       four new `functions/` pages and six corrected ones, in both trees.
       948 tests
 
-- [ ] Weakness report: per-section and per-grammar-point accuracy feeding review priorities
+
+#### M4.4 Weakness report, readiness estimate, review priority, N3 content — **done 2026-09-05**, released as `v0.4.8`
+
+- [x] `WeaknessReport.build` — pure, over the last five attempts at the
+      learner's own level, and **recomputed rather than stored**. A weakness
+      written down once is a verdict the learner cannot shake off; over every
+      attempt ever sat, forty old papers drown five recent good ones and the
+      report stops responding to work
+- [x] **An unanswered question counts as nothing at all.** The clock took it
+      away, and reading a time-out as a gap in somebody's Japanese would send
+      them to study the wrong thing. A question the shipped files no longer have
+      is skipped rather than counted under nothing
+- [x] `ReadinessEstimate.build` — bands, never a number, and never called a JLPT
+      score. The overall band is the **worst** scoring group rather than the
+      average, mirroring the exam's own rule; one unknown group makes the whole
+      estimate unknown; listening with no Japanese voice is `unmeasured` and
+      does not drag the rest down; catalog coverage under half holds `ready`
+      back to `close` and says so
+- [x] `ReviewQueue.build(prioritized:)` — weakest first, then most overdue. It
+      **only reorders**: nothing is added to the queue and nothing removed, so a
+      report that is empty or still loading costs the old ordering and nothing
+      else, and `reviewQueueProvider` stays synchronous over an async report
+- [x] `WeaknessReportPage` at `/weakness`, three tables coarsest first, and the
+      readiness band with its caveat on the Learn card with the three weakest
+      items as chips — a weakness report is worth having because it is seen
+      without being sought. The 大問 are named in Japanese from jlpt.jp's own
+      headings rather than translated, so the page and a real paper use the same
+      words
+- [x] **N3 complete at the official composition**: 102 questions and 38
+      passages. One gate round, on 要ります segmenting into 要/り
+- [x] **A real file-writing bug, found by a flake and worth the detour.** The
+      exam page saved on a one-second tick and again on the way out, so two
+      writes to one file could overlap — and refreshing the Learn card after
+      each save started a read of that same file, which the next save then
+      renamed over. Windows refuses a rename while another handle is open, so a
+      save failed roughly once a minute on the page whose whole job is not
+      losing the paper, and the widget suite only ever saw it as a flake. Saves
+      are chained, and the card is refreshed only on the way out. Three full
+      runs at `--concurrency=24` are green
+- [x] Tests: `weakness_report_test` (9), `readiness_rules_test` (8),
+      `weakness_report_ui_test` at the eight geometries, and three review-queue
+      cases including one asserting a weak item that is not due is still not
+      scheduled. 981 tests
+- [x] Docs: new `algorithms/readiness-estimate.md` (derived, not described),
+      three new `functions/` pages, six corrected ones, `jlpt-practice.md` and
+      `learning-progress.md`, in both trees
+- [x] Weakness report: per-section and per-grammar-point accuracy feeding review priorities
 - [ ] AICore enhancement (M3.5 policy, same switch): a supplementary 作文 writing section — a short
       composition per prompt with feedback against a rubric (task fulfilment, grammar range,
       vocabulary level), labelled supplementary because the JLPT has no writing section; 読解 help —
@@ -1142,7 +1188,7 @@ for whoever had to debug the feature.
       review — the transcript with what was missed pointed out; and a short narrative for the
       weakness report, marked generated. Mock-mode scores come from the deterministic grader only;
       AICore never changes a score
-- [ ] Level readiness estimate with an explicit "this is not an official score" note
+- [x] Level readiness estimate with an explicit "this is not an official score" note
 
 ### Phase 5 — Platforms and languages
 
@@ -1317,6 +1363,15 @@ for whoever had to debug the feature.
 | 2026-09-05 | Reading and listening are sampled **by passage**, not by question | A 中文 carries three questions. Drawing independently put one question from each of three passages on a short paper — three texts read for three marks, three times the work of the paper it imitates |
 | 2026-09-05 | The sampler shuffles **within** each of its three tiers, never across the pool | Never-asked, then least-recently-asked, then the rest. A plain shuffle would offer yesterday's question as readily as one the learner has never seen, which is the whole thing "no repeats" is supposed to prevent |
 | 2026-09-05 | How a question marks the span it is about is a property of the 大問, not a field per question | A gap `（　　）` asks what belongs there; a marked span `【…】` asks about something already present. Writing it per question would let one 大問 be rendered as the other, which changes what is being asked. Furigana is withheld for 漢字読み and 表記 for the same reason: there the reading *is* the answer |
+| 2026-09-05 | The readiness estimate is a band, never a number, and the caveat is in the same paragraph | JEES does not publish the raw-to-scaled equating, so no app can compute a JLPT score. A number beside the letters JLPT invites a learner to plan around a figure nobody can stand behind, and a caveat behind a tooltip is one most readers never open |
+| 2026-09-05 | The overall band is the worst scoring group, not the average, and one unknown group makes the whole estimate unknown | Failing one group fails the level, however well the others went. That is a rule rather than a number, which makes it the one part of real JLPT scoring an app can reproduce honestly. And a band computed from two groups out of three would be a claim about a paper nobody has sat |
+| 2026-09-05 | Listening with no Japanese voice is `unmeasured`, and is excluded from the overall band rather than counted against it | The learner has not done badly at listening; the device could not ask. It is not `unknown` either — that means "sit more papers", which is advice this learner cannot take |
+| 2026-09-05 | Catalog coverage can hold a band back but never push one up, and the screen says when it did | Answering well says something about the questions asked and much less about a level whose vocabulary the learner has never met. "Close" with no explanation, shown to somebody scoring nine in ten, reads as a bug rather than as a caveat |
+| 2026-09-05 | The weakness report is recomputed from the last five attempts, never stored | A stored weakness is a verdict the learner cannot shake off. Over every attempt ever sat, forty old papers drown five recent good ones and the number stops responding to work — exactly when it starts mattering |
+| 2026-09-05 | An unanswered question is excluded from the weakness report entirely | It is its own value, not a wrong answer. The clock took the question away, and reading a time-out as a gap in the learner's Japanese would send them to study the wrong thing |
+| 2026-09-05 | The weakness report reorders the review queue and never adds to it or removes from it | That is what lets `reviewQueueProvider` stay synchronous over a report that reads every level's drill files: a queue built before those files load is the old ordering, not a wrong one |
+| 2026-09-05 | The 大問 are named in Japanese on the weakness page, and those names live in Dart rather than the ARB catalogs | 漢字読み and 即時応答 are the headings jlpt.jp prints. A learner comparing this page with a real paper should be comparing the same words, and translating them into three catalogs would have made 63 keys that are only ever read in Japanese |
+| 2026-09-05 | The exam page chains its saves and refreshes the Learn card only on the way out | Overlapping writes to one file, and a provider refresh holding that file open while the next write renamed over it, broke a save on Windows. The page whose whole job is not losing the paper was losing one write a minute, and the widget suite only saw it as a flake |
 | 2026-09-05 | `DrillRepository` asks the asset manifest rather than attempting a load and catching | A missing file is the **normal** state for most level-section pairs while levels are still being written, and `rootBundle.loadString` reports a Flutter error before it throws — which a widget test fails on even though the throw is handled |
 | 2026-09-05 | A section that cannot be practised is disabled with its reason beside it, never hidden | No content yet, or no Japanese voice: a learner who cannot find 読解 practice has no way to tell whether it exists or they have missed it. The same rule already governs `SpeakButton` and the listening quiz modes |
 | 2026-09-05 | The three deviations from the real paper are stated in the feature doc rather than quietly made | 即時応答 gets four options where the paper gives three, because every answer pane and the gate assume four; 発話表現 describes its scene in words, because there are no pictures in this catalog; a mock plays each item once, because that is the paper's rule. A deviation nobody wrote down is a bug report waiting to be filed |

@@ -2,15 +2,15 @@
 
 这是 MyNihongo 仓库中 `lib/` 手写函数解释层文档的顶层索引。每行链接到 `doc/zh-cn/functions/` 下镜像 `lib/` 树的逐源文件页面（`.dart` 换成 `.md`）。
 
-**总计：** 仓库的 `/// Purpose:` 注释数为 **1060**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **1120** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
+**总计：** 仓库的 `/// Purpose:` 注释数为 **1081**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **1178** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
 
 | Tier | 计数 |
 |---|---|
-| Tier A（完整条目：用途/输入/返回/副作用/算法/使用/说明） | 241 |
-| Tier B（仅索引行） | 879 |
-| **总计** | **1120** |
+| Tier A（完整条目：用途/输入/返回/副作用/算法/使用/说明） | 254 |
+| Tier B（仅索引行） | 924 |
+| **总计** | **1178** |
 
-这些总计上次是在 `v0.4.7` 加入带保存与继续的计时模拟考试时对照源码树测得的。若要改动这些数字，请测量而不要手工调整：
+这些总计上次是在 `v0.4.8` 加入薄弱点报告与备考程度估计时对照源码树测得的。若要改动这些数字，请测量而不要手工调整：
 
 ```bash
 find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' | wc -l
@@ -65,7 +65,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/kana/views/kana_page.dart` | [features/kana/views/kana_page.md](features/kana/views/kana_page.md) | 15 | 2 |
 | `lib/features/learn/widgets/learning_settings_tiles.dart` | [features/learn/widgets/learning_settings_tiles.md](features/learn/widgets/learning_settings_tiles.md) | 2 | 0 |
 | `lib/features/learn/widgets/today_card.dart` | [features/learn/widgets/today_card.md](features/learn/widgets/today_card.md) | 3 | 1 |
-| `lib/features/learn/widgets/jlpt_practice_card.dart` | [features/learn/widgets/jlpt_practice_card.md](features/learn/widgets/jlpt_practice_card.md) | 9 | 4 |
+| `lib/features/learn/widgets/jlpt_practice_card.dart` | [features/learn/widgets/jlpt_practice_card.md](features/learn/widgets/jlpt_practice_card.md) | 11 | 5 |
 | `lib/features/learn/widgets/study_calendar.dart` | [features/learn/widgets/study_calendar.md](features/learn/widgets/study_calendar.md) | 5 | 2 |
 | `lib/features/learn/views/learn_page.dart` | [features/learn/views/learn_page.md](features/learn/views/learn_page.md) | 5 | 0 |
 | `lib/features/progress/models/study_record.dart` | [features/progress/models/study_record.md](features/progress/models/study_record.md) | 23 | 5 |
@@ -125,16 +125,19 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 
 | 源文件 | 页面 | 声明数 | Tier A 计数 |
 |---|---|---|---|
-| `lib/features/drills/models/drill_section.dart` | [features/drills/models/drill_section.md](features/drills/models/drill_section.md) | 7 | 2 |
+| `lib/features/drills/models/drill_section.dart` | [features/drills/models/drill_section.md](features/drills/models/drill_section.md) | 9 | 2 |
 | `lib/features/drills/models/drill_file.dart` | [features/drills/models/drill_file.md](features/drills/models/drill_file.md) | 32 | 6 |
 | `lib/features/drills/services/drill_repository.dart` | [features/drills/services/drill_repository.md](features/drills/services/drill_repository.md) | 9 | 2 |
 | `lib/features/drills/services/drill_sampler.dart` | [features/drills/services/drill_sampler.md](features/drills/services/drill_sampler.md) | 8 | 3 |
 | `lib/features/drills/services/exam_session.dart` | [features/drills/services/exam_session.md](features/drills/services/exam_session.md) | 27 | 8 |
+| `lib/features/drills/services/weakness_report.dart` | [features/drills/services/weakness_report.md](features/drills/services/weakness_report.md) | 11 | 3 |
+| `lib/features/drills/services/readiness_rules.dart` | [features/drills/services/readiness_rules.md](features/drills/services/readiness_rules.md) | 8 | 1 |
 | `lib/features/drills/widgets/drill_passage_view.dart` | [features/drills/widgets/drill_passage_view.md](features/drills/widgets/drill_passage_view.md) | 3 | 1 |
 | `lib/features/drills/widgets/exam_results_view.dart` | [features/drills/widgets/exam_results_view.md](features/drills/widgets/exam_results_view.md) | 4 | 1 |
 | `lib/features/drills/widgets/listening_script_player.dart` | [features/drills/widgets/listening_script_player.md](features/drills/widgets/listening_script_player.md) | 5 | 3 |
 | `lib/features/drills/views/exam_history_page.dart` | [features/drills/views/exam_history_page.md](features/drills/views/exam_history_page.md) | 6 | 3 |
-| `lib/features/drills/views/exam_page.dart` | [features/drills/views/exam_page.md](features/drills/views/exam_page.md) | 18 | 9 |
+| `lib/features/drills/views/exam_page.dart` | [features/drills/views/exam_page.md](features/drills/views/exam_page.md) | 20 | 9 |
+| `lib/features/drills/views/weakness_report_page.dart` | [features/drills/views/weakness_report_page.md](features/drills/views/weakness_report_page.md) | 8 | 2 |
 
 ## shared/
 
@@ -144,7 +147,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/shared/providers/progress_provider.dart` | [shared/providers/progress_provider.md](shared/providers/progress_provider.md) | 6 | 0 |
 | `lib/shared/providers/learner_profile_provider.dart` | [shared/providers/learner_profile_provider.md](shared/providers/learner_profile_provider.md) | 3 | 0 |
 | `lib/shared/providers/history_provider.dart` | [shared/providers/history_provider.md](shared/providers/history_provider.md) | 3 | 2 |
-| `lib/shared/providers/exam_provider.dart` | [shared/providers/exam_provider.md](shared/providers/exam_provider.md) | 4 | 3 |
+| `lib/shared/providers/exam_provider.dart` | [shared/providers/exam_provider.md](shared/providers/exam_provider.md) | 8 | 5 |
 | `lib/shared/services/auto_sync_service.dart` | [shared/services/auto_sync_service.md](shared/services/auto_sync_service.md) | 18 | 0 |
 | `lib/shared/services/backup_service.dart` | [shared/services/backup_service.md](shared/services/backup_service.md) | 11 | 0 |
 | `lib/shared/services/import_export_service.dart` | [shared/services/import_export_service.md](shared/services/import_export_service.md) | 3 | 0 |

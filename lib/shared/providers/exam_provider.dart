@@ -12,9 +12,19 @@ library;
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../features/content/models/content_catalog.dart';
+import '../../features/content/models/jlpt_level.dart';
+import '../../features/content/services/content_repository.dart';
+import '../../features/drills/models/drill_file.dart';
+import '../../features/drills/services/drill_repository.dart';
 import '../../features/drills/services/exam_session.dart';
+import '../../features/drills/services/readiness_rules.dart';
+import '../../features/drills/services/weakness_report.dart';
+import '../../features/speech/services/tts_service.dart';
 import '../../features/progress/models/exam_attempt.dart';
+import '../../features/progress/models/study_record.dart';
 import '../../features/progress/services/nihongo_storage.dart';
+import 'learner_profile_provider.dart';
 import 'progress_provider.dart';
 
 /// Every JLPT attempt, newest first.
@@ -45,6 +55,91 @@ final examAttemptsProvider = Provider<List<ExamAttempt>>((ref) {
 final savedExamProvider = FutureProvider<SavedExam?>(
   (ref) async => SavedExam.fromJson(await NihongoStorage.loadExamInProgress()),
 );
+
+/// Every drill question the app ships, by id.
+///
+/// The join a weakness report and a results screen both need: an attempt keeps
+/// only which questions were asked, and everything else — the section, the
+/// 大問, the catalog ids — is read from the files now, so a content correction
+/// reaches both.
+final drillQuestionsProvider = FutureProvider<Map<String, DrillQuestion>>((
+  ref,
+) async {
+  final byId = <String, DrillQuestion>{};
+  for (final level in JlptLevel.values) {
+    final files = await ref.watch(drillLevelProvider(level).future);
+    for (final file in files.values) {
+      for (final question in file.questions) {
+        byId[question.id] = question;
+      }
+    }
+  }
+  return byId;
+});
+
+/// What the learner is worst at, over their recent papers at their own level.
+///
+/// Empty while anything it needs is still loading, which is also what a learner
+/// who has sat nothing sees — so nothing on screen has to tell the two apart.
+final weaknessReportProvider = Provider<WeaknessReport>((ref) {
+  final questions = ref.watch(drillQuestionsProvider).asData?.value;
+  if (questions == null) return WeaknessReport.empty;
+  return WeaknessReport.build(
+    attempts: ref.watch(examAttemptsProvider),
+    questions: questions,
+    level: ref.watch(learnerProfileProvider).targetLevel.label,
+  );
+});
+
+/// How ready the learner looks for their target level.
+///
+/// A band, never a number, and never called a JLPT score — see
+/// `readiness_rules.dart` for why no app can compute one.
+final readinessProvider = Provider<ReadinessEstimate>((ref) {
+  final level = ref.watch(learnerProfileProvider).targetLevel;
+  final structure = ref.watch(jlptStructureProvider).asData?.value;
+  final spec = structure?.forLevel(level);
+  if (spec == null) return ReadinessEstimate.unknown;
+
+  final catalog = ref.watch(contentCatalogProvider).asData?.value;
+  final progress = ref.watch(progressDataProvider).asData?.value;
+  return ReadinessEstimate.build(
+    report: ref.watch(weaknessReportProvider),
+    structure: spec,
+    coverage: _coverage(catalog, progress, level),
+    hasJapaneseVoice: TtsService.instance.hasJapaneseVoice,
+  );
+});
+
+/// Purpose: Say what share of a level's catalog the learner has met.
+/// Inputs: The `catalog`, the `progress`, the `level`.
+/// Returns: `double` from 0 to 1; 1 when there is nothing to measure.
+/// Side effects: None.
+/// Notes: Internal helper used within this file only. "Met" means there is a
+/// progress record — the item has been answered at least once — not that it has
+/// been mastered. The estimate uses this only to hold back a "ready" band, so
+/// the generous reading is the right one: it is a check against declaring
+/// somebody ready for a level whose words they have never seen, not a second
+/// score.
+///
+/// One when the catalog has not loaded, so a slow start shows the band the
+/// papers earned rather than an unexplained cap.
+double _coverage(
+  ContentCatalog? catalog,
+  ProgressData? progress,
+  JlptLevel level,
+) {
+  if (catalog == null || progress == null) return 1;
+  final ids = {
+    for (final entry in catalog.vocab)
+      if (entry.level == level) entry.id,
+    for (final point in catalog.grammar)
+      if (point.level == level) point.id,
+  };
+  if (ids.isEmpty) return 1;
+  final met = progress.studyRecords.where((r) => ids.contains(r.id)).length;
+  return met / ids.length;
+}
 
 /// What every drill question the learner has already been asked, and when.
 ///

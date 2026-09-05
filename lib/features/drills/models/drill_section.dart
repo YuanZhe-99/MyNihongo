@@ -144,3 +144,41 @@ enum DrillType {
     return null;
   }
 }
+
+/// Names for the 大問 as the paper itself prints them.
+///
+/// Japanese rather than translated, and not in the ARB catalogs, because these
+/// are the official section headings from jlpt.jp — a learner comparing this
+/// screen with a real paper is comparing the same words. The localized part of
+/// the label is the *section* name beside it, which the ARB does carry.
+extension DrillTypeName on DrillType {
+  /// Purpose: Name one 大問 in Japanese.
+  /// Inputs: None beyond the receiver.
+  /// Returns: `String`.
+  /// Side effects: None.
+  /// Notes: Exhaustive on purpose: a new type with no name is a compile error
+  /// rather than a blank row.
+  String get jaName => switch (this) {
+    DrillType.kanjiReading => '漢字読み',
+    DrillType.orthography => '表記',
+    DrillType.wordFormation => '語形成',
+    DrillType.context => '文脈規定',
+    DrillType.paraphrase => '言い換え類義',
+    DrillType.usage => '用法',
+    DrillType.formSelection => '文の文法1',
+    DrillType.sentenceComposition => '文の文法2',
+    DrillType.textGrammar => '文章の文法',
+    DrillType.short => '内容理解（短文）',
+    DrillType.mid => '内容理解（中文）',
+    DrillType.long => '内容理解（長文）',
+    DrillType.integrated => '統合理解',
+    DrillType.thematic => '主張理解',
+    DrillType.info => '情報検索',
+    DrillType.task => '課題理解',
+    DrillType.point => 'ポイント理解',
+    DrillType.outline => '概要理解',
+    DrillType.expression => '発話表現',
+    DrillType.quickResponse => '即時応答',
+    DrillType.integratedListening => '統合理解（聴解）',
+  };
+}

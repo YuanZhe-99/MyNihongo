@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 
 import '../features/drills/views/exam_history_page.dart';
+import '../features/drills/views/weakness_report_page.dart';
 import '../features/drills/views/exam_page.dart';
 import '../features/grammar/views/grammar_page.dart';
 import '../features/kana/views/kana_page.dart';
@@ -73,6 +74,10 @@ GoRouter buildAppRouter({String initialLocation = '/learn'}) => GoRouter(
     GoRoute(
       path: '/exam-history',
       builder: (context, state) => const ExamHistoryPage(),
+    ),
+    GoRoute(
+      path: '/weakness',
+      builder: (context, state) => const WeaknessReportPage(),
     ),
     GoRoute(
       path: '/lab',

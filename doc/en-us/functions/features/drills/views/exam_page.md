@@ -29,6 +29,8 @@ Consumers: the `/exam` route, reached from `JlptPracticeCard` with an `ExamConfi
 | [`_sessionFor`](#sessionfor) | method | A | Build one block's session. |
 | [`_onExamChanged`](#onexamchanged) | method | A | Follow the exam's clock and save after every change. |
 | [`_save`](#save) | method | A | Write the paper down, or clear it once it is finished. |
+| `_saving` | field | B | The save in flight, so the next one queues behind it rather than racing. |
+| `_saveNow` | method | B | Do one save. |
 | [`_record`](#record) | method | A | Record the finished paper and clear the save. |
 | `_passageFor` | method | B | Show whatever the question on screen is about — a listening script played once, or a passage with no translation. |
 | [`_confirmLeave`](#confirmleave) | method | A | Confirm before leaving a paper that is still running. |
@@ -112,20 +114,34 @@ Consumers: the `/exam` route, reached from `JlptPracticeCard` with an `ExamConfi
   while a block runs, which is a small atomic write to a file nothing else reads — and the alternative
   is a paper lost to a phone that ran out of battery.
 
-### `Future<void> _save()` <a id="save"></a>
+### `Future<void> _save({bool refreshCard = false})` <a id="save"></a>
 
 - **Kind:** method
 - **Purpose:** Write the paper down, or clear it once it is finished.
-- **Inputs:** None.
+- **Inputs:** `refreshCard` — whether the Learn card is about to be looked at.
 - **Returns:** None.
-- **Side effects:** Writes or deletes the save file; refreshes `savedExamProvider`.
-- **Algorithm:** With no session, return. A finished paper clears the save; anything else writes
-  `exam.toJson()`. Then refresh `savedExamProvider`.
-- **Usage:** `_onExamChanged`, the lifecycle callback, and `_confirmLeave`.
+- **Side effects:** Writes or deletes the save file; refreshes `savedExamProvider` when asked to.
+- **Algorithm:** Chain `_saveNow` onto the save already in flight and return the chained future. In
+  `_saveNow`: with no session, return; a finished paper clears the save, anything else writes
+  `exam.toJson()`; refresh `savedExamProvider` only when asked to.
+- **Usage:** `_onExamChanged`, the lifecycle callback, and `_confirmLeave` — the last of which is the
+  only one that asks for the card to be refreshed.
 - **Notes:** Internal helper used within this file only. The refresh is the fix for a real bug: the
   Learn card reads the save through a `FutureProvider`, which resolved before this paper existed.
   Without it the learner leaves a half-sat exam and the card that should offer to continue it shows
   nothing — which is what the device did before that line.
+
+  **Saves are chained, never concurrent.** The clock notifies once a second and leaving the page saves
+  as well, so two writes to the same file could start in the same millisecond — and Windows refuses a
+  rename onto a file another rename is touching, so one of them failed and the paper it was writing
+  was lost. Each save writes the whole paper, so running them in order costs nothing and the last one
+  is the current state either way.
+
+  **And the card is refreshed only on the way out.** Refreshing it on every tick starts a read of the
+  save file that the next tick's write then renames over, and Windows refuses a rename onto a file
+  another handle has open — so a save failed roughly once a minute, on a page whose whole job is not
+  losing the paper. The card sits behind this page, so the only moments it can be seen are the ones
+  that leave.
 
 ### `Future<void> _record()` <a id="record"></a>
 

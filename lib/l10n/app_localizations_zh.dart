@@ -1627,6 +1627,81 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get examReplaceBody => '已有一场保存的考试。开始新的会放弃它。';
+
+  @override
+  String get weaknessTitle => '该练什么';
+
+  @override
+  String get weaknessEmpty => '做一个部分的练习或一次模拟考试，这里就会显示你反复做错的地方。';
+
+  @override
+  String weaknessBasis(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '根据最近 $n 次作答',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get weaknessBySection => '按部分';
+
+  @override
+  String get weaknessByType => '按题型';
+
+  @override
+  String get weaknessByItem => '该复习的词汇与语法';
+
+  @override
+  String weaknessScore(int right, int asked) {
+    return '$asked 题对 $right 题';
+  }
+
+  @override
+  String get weaknessNothingWeak => '目前还看不出明显的薄弱点。继续做题，这里会慢慢填上。';
+
+  @override
+  String get readinessTitle => '备考程度';
+
+  @override
+  String get readinessUnknown => '作答量还不够';
+
+  @override
+  String get readinessNotYet => '还不到';
+
+  @override
+  String get readinessClose => '接近了';
+
+  @override
+  String get readinessReady => '看起来可以了';
+
+  @override
+  String get readinessUnmeasured => '无法测量';
+
+  @override
+  String get readinessNote => '这是根据你在本应用中的练习推算的估计，不是官方 JLPT 成绩。';
+
+  @override
+  String get readinessCapped => '在你接触更多本级别的词汇与语法之前，暂时停在「接近了」。';
+
+  @override
+  String get readinessNoListening => '本设备无法测量听力，因此这个估计里不含听力。';
+
+  @override
+  String get readinessGroupLanguageKnowledge => '言语知识';
+
+  @override
+  String get readinessGroupLanguageReading => '言语知识与阅读';
+
+  @override
+  String get readinessGroupReading => '阅读';
+
+  @override
+  String get readinessGroupListening => '听力';
+
+  @override
+  String get weaknessOpen => '该练什么';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -3252,4 +3327,79 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get examReplaceBody => '已有一場儲存的考試。開始新的會放棄它。';
+
+  @override
+  String get weaknessTitle => '該練什麼';
+
+  @override
+  String get weaknessEmpty => '做一個部分的練習或一次模擬考試，這裡就會顯示你反覆做錯的地方。';
+
+  @override
+  String weaknessBasis(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '根據最近 $n 次作答',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get weaknessBySection => '按部分';
+
+  @override
+  String get weaknessByType => '按題型';
+
+  @override
+  String get weaknessByItem => '該複習的詞彙與文法';
+
+  @override
+  String weaknessScore(int right, int asked) {
+    return '$asked 題對 $right 題';
+  }
+
+  @override
+  String get weaknessNothingWeak => '目前還看不出明顯的弱點。繼續做題，這裡會慢慢填上。';
+
+  @override
+  String get readinessTitle => '備考程度';
+
+  @override
+  String get readinessUnknown => '作答量還不夠';
+
+  @override
+  String get readinessNotYet => '還不到';
+
+  @override
+  String get readinessClose => '接近了';
+
+  @override
+  String get readinessReady => '看起來可以了';
+
+  @override
+  String get readinessUnmeasured => '無法測量';
+
+  @override
+  String get readinessNote => '這是根據你在本應用程式中的練習推算的估計，不是官方 JLPT 成績。';
+
+  @override
+  String get readinessCapped => '在你接觸更多本級別的詞彙與文法之前，暫時停在「接近了」。';
+
+  @override
+  String get readinessNoListening => '本裝置無法測量聽力，因此這個估計裡不含聽力。';
+
+  @override
+  String get readinessGroupLanguageKnowledge => '語言知識';
+
+  @override
+  String get readinessGroupLanguageReading => '語言知識與閱讀';
+
+  @override
+  String get readinessGroupReading => '閱讀';
+
+  @override
+  String get readinessGroupListening => '聽力';
+
+  @override
+  String get weaknessOpen => '該練什麼';
 }

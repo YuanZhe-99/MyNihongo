@@ -33,19 +33,21 @@
 - **使用：** `build`，以及固定该边界的控件测试。
 - **说明：** 这条两段式规则很重要。`dueAt` 存为纯 UTC 时刻，因此在每台设备上比较一致，磁盘上也不需要任何时区运算。但学习者认为今天到期的东西整天都该能做，而「今天」是他们自己的——因此 23:00 到期的条目从零点起就算到期。调度器存时刻；队列读日子。
 
-### `static ReviewQueue build({required ProgressData progress, required ContentCatalog catalog, required LearnerProfile profile, required DateTime now, Set<StudyKind> kinds})` <a id="build"></a>
+### `static ReviewQueue build({required ProgressData progress, required ContentCatalog catalog, required LearnerProfile profile, required DateTime now, Set<StudyKind> kinds, Set<String> prioritized})` <a id="build"></a>
 
 - **种类：** 静态方法
 - **用途：** 构建此刻的队列。
-- **输入：** 进度文件、内容库、学习者档案、本地 `now`，以及哪些类别可以提供新条目。
+- **输入：** 进度文件、内容库、学习者档案、本地 `now`、哪些类别可以提供新条目，以及 `prioritized`——薄弱点报告指明应排在最前的 id。
 - **返回：** `ReviewQueue`。
 - **副作用：** 无。
 - **算法：**
   1. 对 `progress.studyRecords` 遍历一次，收集三件事：哪些 id 已学过、今天已经做了多少复习与多少新条目、哪些记录到期。
-  2. 把到期列表按 `dueAt` 升序排序——逾期最久的在最前。
+  2. 给到期列表排序：先是 prioritized 里的 id，然后按 `dueAt` 升序——逾期最久的在最前。
   3. 用档案的上限减去今日计数，得到剩余额度。
   4. 取相应数量的到期记录，并从内容库补足新条目列表。
 - **使用：** `reviewQueueProvider`。
 - **说明：** **今日计数是推导的，从不存储。** 今天答过的复习，是 `lastReviewedAt` 落在今天本地日期的记录；今天开始的新条目，是 `createdAt` 为今天的记录——之所以成立，是因为记录由它的第一次作答创建。存储式的按天计数器需要在午夜重置、会多出一个两台设备可能不一致的字段，还会漏掉从另一台设备同步进来的学习量——而共享的每日目标不能漏掉它。`overdueTotal` 与 `due.length` 分开上报，这样界面可以说「今日 20 项，共 300 项」，而不是假装积压比实际更少。
+
+  **`prioritized` 只重排队列，别的什么也不做。** 一个在 JLPT 卷子上反复答错的词，比一个只是恰好到期的词更值得接下来的五分钟——而在每一组内部，被遗忘得最久的条目正是记忆衰减最快的那个，所以半路停下的学习者无论如何都没有白花时间。不往队列里加东西，也不从里面拿掉东西，所以空集合——还没有作答记录，或者报告的文件还没加载完——就恰好是原来的排序。
 
   `_newItems` 对 `StudyKind` 做穷尽的 switch，因此每一种不是目录条目的类别都必须点名自己并 break。`exam` 就是其中之一：一次作答是对已经发生之事的记录，不是任何人要学习的条目，它从不进入队列——它问过的那些题，已经在被作答时推动了各自条目的间隔。穷尽性正是这个 switch 的意义所在；新增一个类别会是一个编译错误，而不是队列里一条无声的条目。

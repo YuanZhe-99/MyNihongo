@@ -1697,4 +1697,85 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get examReplaceBody =>
       'There is a saved exam. Starting a new one discards it.';
+
+  @override
+  String get weaknessTitle => 'What to work on';
+
+  @override
+  String get weaknessEmpty =>
+      'Sit a practice section or a mock exam and this will show what you keep getting wrong.';
+
+  @override
+  String weaknessBasis(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: 'From your last $n attempts',
+      one: 'From your last attempt',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get weaknessBySection => 'By section';
+
+  @override
+  String get weaknessByType => 'By question type';
+
+  @override
+  String get weaknessByItem => 'Words and grammar to review';
+
+  @override
+  String weaknessScore(int right, int asked) {
+    return '$right of $asked';
+  }
+
+  @override
+  String get weaknessNothingWeak =>
+      'Nothing stands out yet. Keep going and this will fill in.';
+
+  @override
+  String get readinessTitle => 'Readiness';
+
+  @override
+  String get readinessUnknown => 'Not enough answered yet';
+
+  @override
+  String get readinessNotYet => 'Not yet';
+
+  @override
+  String get readinessClose => 'Close';
+
+  @override
+  String get readinessReady => 'Looking ready';
+
+  @override
+  String get readinessUnmeasured => 'Not measured';
+
+  @override
+  String get readinessNote =>
+      'This is an estimate from your practice in this app. It is not an official JLPT score.';
+
+  @override
+  String get readinessCapped =>
+      'Held at Close until you have met more of the level\'s words and grammar.';
+
+  @override
+  String get readinessNoListening =>
+      'Listening is not measured on this device, so it is missing from this estimate.';
+
+  @override
+  String get readinessGroupLanguageKnowledge => 'Language knowledge';
+
+  @override
+  String get readinessGroupLanguageReading => 'Language knowledge and reading';
+
+  @override
+  String get readinessGroupReading => 'Reading';
+
+  @override
+  String get readinessGroupListening => 'Listening';
+
+  @override
+  String get weaknessOpen => 'What to work on';
 }

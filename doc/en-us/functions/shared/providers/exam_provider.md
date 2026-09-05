@@ -21,6 +21,10 @@ sampler's no-repeat rule through `askedQuestionsProvider`.
 | library header | library doc | B | Two derived views of the progress file's exam records, plus the device-local paper in progress. |
 | [`examAttemptsProvider`](#examattemptsprovider) | provider | A | Every JLPT attempt, newest first. |
 | [`savedExamProvider`](#savedexamprovider) | provider | A | The paper this device has half-sat, if there is one. |
+| `drillQuestionsProvider` | provider | B | Every drill question the app ships, by id — the join a report and a results screen both need. |
+| [`weaknessReportProvider`](#weaknessreportprovider) | provider | A | What the learner is worst at, over their recent papers at their own level. |
+| [`readinessProvider`](#readinessprovider) | provider | A | How ready the learner looks for their target level. |
+| `_coverage` | function | B | Say what share of a level's catalog the learner has met. |
 | [`askedQuestionsProvider`](#askedquestionsprovider) | provider | A | Which drill questions have already been asked, and when. |
 
 ## Documentation
@@ -63,6 +67,45 @@ sampler's no-repeat rule through `askedQuestionsProvider`.
 
   `SavedExam` is read without touching the content files, which is what lets the card say "N5 mock,
   block 2, 18 minutes left" without parsing four drill files to do it.
+
+### `weaknessReportProvider` <a id="weaknessreportprovider"></a>
+
+- **Kind:** `Provider<WeaknessReport>`
+- **Purpose:** Report what the learner is worst at, over their recent papers at their own level.
+- **Inputs:** `drillQuestionsProvider`, `examAttemptsProvider`, `learnerProfileProvider`.
+- **Returns:** `WeaknessReport`; `empty` while anything it needs is still loading.
+- **Side effects:** None of its own.
+- **Algorithm:** `WeaknessReport.build` over the attempts, joined against every shipped question.
+- **Usage:** The weakness page, the chips on the Learn card, `readinessProvider`, and
+  `reviewQueueProvider` through `prioritizedIds`.
+- **Notes:** Empty while loading is also what a learner who has sat nothing sees, so nothing on
+  screen has to tell the two apart. That is safe here precisely because the report only reorders the
+  review queue and never adds to it — a queue built before the drill files were read is the old
+  ordering, not a wrong one.
+
+  `drillQuestionsProvider` reads every level's four files. It is a `FutureProvider` so nothing blocks
+  on it, and it is the join point for the rule that **only the input is stored** in an attempt: the
+  section, the 大問 and the catalog ids all come from the files as they are today.
+
+### `readinessProvider` <a id="readinessprovider"></a>
+
+- **Kind:** `Provider<ReadinessEstimate>`
+- **Purpose:** Say how ready the learner looks for their target level.
+- **Inputs:** `learnerProfileProvider`, `jlptStructureProvider`, `weaknessReportProvider`,
+  `contentCatalogProvider`, `progressDataProvider`, and `TtsService.instance.hasJapaneseVoice`.
+- **Returns:** `ReadinessEstimate`; `unknown` until the structure file has loaded.
+- **Side effects:** None of its own.
+- **Algorithm:** `ReadinessEstimate.build` with the level's structure, the report, `_coverage` and
+  whether the device has a Japanese voice.
+- **Usage:** The Learn card.
+- **Notes:** A band, never a number, and never called a JLPT score — see
+  [`../../features/drills/services/readiness_rules.md`](../../features/drills/services/readiness_rules.md)
+  and `algorithms/readiness-estimate.md` for why no app can compute one.
+
+  `_coverage` returns 1 when the catalog or the progress file has not loaded, so a slow start shows
+  the band the papers earned rather than an unexplained cap. "Met" there means there is a progress
+  record — answered at least once — not mastered: the estimate uses it only to hold back a "ready"
+  band, so the generous reading is the right one.
 
 ### `askedQuestionsProvider` <a id="askedquestionsprovider"></a>
 

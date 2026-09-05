@@ -100,6 +100,7 @@ class ReviewQueue {
     required LearnerProfile profile,
     required DateTime now,
     Set<StudyKind> kinds = studiedKinds,
+    Set<String> prioritized = const {},
   }) {
     final today = _dayOf(now);
     var reviewsDone = 0;
@@ -115,10 +116,18 @@ class ReviewQueue {
       if (kinds.contains(record.kind) && isDue(record, now)) due.add(record);
     }
 
-    // Most overdue first: the longest-forgotten item is the one whose recall
-    // is decaying fastest, and a learner who stops halfway should have spent
-    // the time on those.
-    due.sort((a, b) => a.dueAt!.compareTo(b.dueAt!));
+    // Weakest first, then most overdue. A word the learner keeps getting wrong
+    // on a JLPT paper is a better use of the next five minutes than a word
+    // whose interval merely happens to have elapsed — and within each group the
+    // longest-forgotten item is the one whose recall is decaying fastest, so a
+    // learner who stops halfway has spent the time well either way. With no
+    // weakness report the set is empty and this is exactly the old sort.
+    due.sort((a, b) {
+      final weakA = prioritized.contains(a.id);
+      final weakB = prioritized.contains(b.id);
+      if (weakA != weakB) return weakA ? -1 : 1;
+      return a.dueAt!.compareTo(b.dueAt!);
+    });
 
     final reviewAllowance = (profile.dailyReviewLimit - reviewsDone)
         .clamp(0, profile.dailyReviewLimit);
