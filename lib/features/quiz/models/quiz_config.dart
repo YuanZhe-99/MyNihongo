@@ -2,13 +2,15 @@
 /// Inputs: Built at the point the learner starts a quiz.
 /// Returns: An immutable value, passed to the quiz route as its `extra`.
 /// Side effects: None.
-/// Notes: The source is a sealed hierarchy because the five ways in are genuinely
+/// Notes: The source is a sealed hierarchy because the ways in are genuinely
 /// different questions — "what is due", "what is new", "these kana rows", "this
-/// level", "these ids" — and a single nullable-everything class would let two of
-/// them be set at once.
+/// level", "these ids", "this unit", "this paper" — and a single
+/// nullable-everything class would let two of them be set at once.
 library;
 
 import '../../content/models/jlpt_level.dart';
+import '../../drills/models/drill_file.dart';
+import '../../drills/models/drill_section.dart';
 import '../../kana/models/kana.dart';
 import '../../progress/models/study_record.dart';
 import 'quiz_question.dart';
@@ -116,6 +118,37 @@ class UnitSource extends QuizSource {
 
   /// Whether passing this session unlocks the next unit.
   final bool checkpoint;
+}
+
+/// A JLPT paper, or one section of one.
+class DrillSource extends QuizSource {
+  /// Purpose: Ask a paper's questions rather than the app's own.
+  /// Inputs: The `level`; the `sections` to draw from, empty for all four;
+  /// the `scale` of the paper.
+  /// Returns: A new `DrillSource` instance.
+  /// Side effects: None.
+  /// Notes: The only source whose questions were written for a paper rather
+  /// than derived from a catalog entry, which is why it carries a composition
+  /// instead of a list of ids: what makes a paper a paper is how many of each
+  /// 大問 it has, and that is a fact about the level, not about the learner.
+  ///
+  /// `maxQuestions` on the config does **not** apply — the composition decides
+  /// the length, and truncating it would drop the last 大問 rather than
+  /// shortening the paper evenly.
+  const DrillSource(
+    this.level, {
+    this.sections = const {},
+    this.scale = ExamScale.short,
+  });
+
+  /// Which level's paper.
+  final JlptLevel level;
+
+  /// The sections to ask about; empty means every section with content.
+  final Set<DrillSection> sections;
+
+  /// How much of the paper to ask.
+  final ExamScale scale;
 }
 
 /// One session's settings.

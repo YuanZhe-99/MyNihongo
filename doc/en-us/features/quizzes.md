@@ -137,6 +137,31 @@ wrong question must not be allowed to move a real review interval — see
 [`learning-progress.md`](learning-progress.md). It is also labelled above the
 prompt, before it is read.
 
+### A question with an id of its own
+
+Everything above scores by **item**, which is right when the app invented the
+question: two generated questions about one grammar point are the same question
+asked twice.
+
+A JLPT drill question is different. A paper asks several genuinely different
+questions about one word, so a drill question carries a `questionId` and is
+scored under that; scored by item, the second and third question about 会う
+would never have counted. The schedule still hears about each item once, on the
+first question that asked about it.
+
+A session can also be told **not to re-queue** (`requeue: false`), which is what
+a timed paper does — a paper whose length depended on how well it was going
+could not be scored against a fixed composition — and can be made to **forfeit**,
+recording whatever is left as `answered: false` rather than as wrong. See
+[`jlpt-practice.md`](jlpt-practice.md).
+
+Two latent bugs came out of that change, both of which had been sitting in the
+generated-question path unnoticed because no session had ever asked two
+questions about one item in a row: the answer pane was keyed by item and mode,
+so the first question's selection carried into the second, and the re-speak
+check compared the same pair, so the second question was silent. Both now
+compare the question.
+
 ## Where a quiz starts
 
 | From | Asks about |

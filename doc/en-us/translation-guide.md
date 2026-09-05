@@ -241,6 +241,21 @@ Not copied to the other repos — no other app has these.
 | overlay | 叠加层 | 折进生成词表的中文与例句文件 |
 | content gate | 内容门禁 | 合并草稿前跑的检查 |
 | auto-speak | 自动发音 | 题目出现时自动朗读；默认开启 |
+| JLPT practice | JLPT 练习 | Learn 页的入口卡片 |
+| drill question | 真题练习题 | 按考试题型编写的题目，非真题复制 |
+| question type (大問) | 题型 | 首次出现可附日文「大問」 |
+| section (文字・語彙 …) | 部分 | 文字・词汇／语法／阅读／听力 |
+| passage | 文章 | 阅读题所依据的短文 |
+| listening script | 听力原文 | 作答后才显示 |
+| transcript | 听力原文 | 与 listening script 同义，统一用「听力原文」 |
+| timed block | 计时部分 | 一段共用一个计时器的考试区块 |
+| scoring group | 计分组 | 得分分组，任一组不及格即整体不及格 |
+| mock exam | 模拟考试 | 计时、作答后不即时反馈 |
+| short paper | 简化卷 | 约为正式题量的三分之一 |
+| full paper | 完整卷 | 按官方题量 |
+| composition | 题目构成 | 每种题型各出多少题 |
+| readiness estimate | 备考程度估计 | 由本应用的练习数据推算，不是 JLPT 成绩 |
+| weakness report | 薄弱点报告 | |
 
 ## 6. Review checklist (run before committing a Chinese page)
 

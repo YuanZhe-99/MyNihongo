@@ -4,19 +4,19 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **932** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **994** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **923** documented declarations. The two counts are measured separately and
+The rows below sum to **1012** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
-| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 175 |
-| Tier B (index row only) | 748 |
-| **Total** | **923** |
+| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 205 |
+| Tier B (index row only) | 807 |
+| **Total** | **1012** |
 
-These totals were measured against the source tree at initialization (`PLAN.md` M1.0). If you
+These totals were last measured against the source tree when the JLPT drill pages were added. If you
 change these numbers, measure them rather than adjusting them by hand:
 
 ```bash
@@ -73,6 +73,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/kana/views/kana_page.dart` | [features/kana/views/kana_page.md](features/kana/views/kana_page.md) | 15 | 2 |
 | `lib/features/learn/widgets/learning_settings_tiles.dart` | [features/learn/widgets/learning_settings_tiles.md](features/learn/widgets/learning_settings_tiles.md) | 2 | 0 |
 | `lib/features/learn/widgets/today_card.dart` | [features/learn/widgets/today_card.md](features/learn/widgets/today_card.md) | 3 | 1 |
+| `lib/features/learn/widgets/jlpt_practice_card.dart` | [features/learn/widgets/jlpt_practice_card.md](features/learn/widgets/jlpt_practice_card.md) | 6 | 2 |
 | `lib/features/learn/views/learn_page.dart` | [features/learn/views/learn_page.md](features/learn/views/learn_page.md) | 5 | 0 |
 | `lib/features/progress/models/study_record.dart` | [features/progress/models/study_record.md](features/progress/models/study_record.md) | 23 | 5 |
 | `lib/features/progress/models/learner_profile.dart` | [features/progress/models/learner_profile.md](features/progress/models/learner_profile.md) | 7 | 2 |
@@ -82,16 +83,16 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/progress/services/sm2_scheduler.dart` | [features/progress/services/sm2_scheduler.md](features/progress/services/sm2_scheduler.md) | 5 | 2 |
 | `lib/features/settings/views/license_page.dart` | [features/settings/views/license_page.md](features/settings/views/license_page.md) | 2 | 0 |
 | `lib/features/settings/views/privacy_policy_page.dart` | [features/settings/views/privacy_policy_page.md](features/settings/views/privacy_policy_page.md) | 3 | 0 |
-| `lib/features/quiz/models/quiz_config.dart` | [features/quiz/models/quiz_config.md](features/quiz/models/quiz_config.md) | 8 | 1 |
-| `lib/features/quiz/models/quiz_question.dart` | [features/quiz/models/quiz_question.md](features/quiz/models/quiz_question.md) | 7 | 1 |
+| `lib/features/quiz/models/quiz_config.dart` | [features/quiz/models/quiz_config.md](features/quiz/models/quiz_config.md) | 9 | 1 |
+| `lib/features/quiz/models/quiz_question.dart` | [features/quiz/models/quiz_question.md](features/quiz/models/quiz_question.md) | 9 | 3 |
 | `lib/features/quiz/services/answer_checker.dart` | [features/quiz/services/answer_checker.md](features/quiz/services/answer_checker.md) | 8 | 0 |
 | `lib/features/quiz/services/distractors.dart` | [features/quiz/services/distractors.md](features/quiz/services/distractors.md) | 8 | 2 |
 | `lib/features/quiz/services/question_generator.dart` | [features/quiz/services/question_generator.md](features/quiz/services/question_generator.md) | 15 | 3 |
-| `lib/features/quiz/services/quiz_session.dart` | [features/quiz/services/quiz_session.md](features/quiz/services/quiz_session.md) | 11 | 2 |
+| `lib/features/quiz/services/quiz_session.dart` | [features/quiz/services/quiz_session.md](features/quiz/services/quiz_session.md) | 18 | 7 |
 | `lib/features/quiz/views/quiz_modes_page.dart` | [features/quiz/views/quiz_modes_page.md](features/quiz/views/quiz_modes_page.md) | 3 | 1 |
-| `lib/features/quiz/views/quiz_page.dart` | [features/quiz/views/quiz_page.md](features/quiz/views/quiz_page.md) | 9 | 1 |
-| `lib/features/quiz/widgets/answer_panes.dart` | [features/quiz/widgets/answer_panes.md](features/quiz/widgets/answer_panes.md) | 8 | 1 |
-| `lib/features/quiz/widgets/quiz_runner.dart` | [features/quiz/widgets/quiz_runner.md](features/quiz/widgets/quiz_runner.md) | 8 | 1 |
+| `lib/features/quiz/views/quiz_page.dart` | [features/quiz/views/quiz_page.md](features/quiz/views/quiz_page.md) | 12 | 3 |
+| `lib/features/quiz/widgets/answer_panes.dart` | [features/quiz/widgets/answer_panes.md](features/quiz/widgets/answer_panes.md) | 6 | 1 |
+| `lib/features/quiz/widgets/quiz_runner.dart` | [features/quiz/widgets/quiz_runner.md](features/quiz/widgets/quiz_runner.md) | 11 | 3 |
 | `lib/features/sentence/models/function_word.dart` | [features/sentence/models/function_word.md](features/sentence/models/function_word.md) | 7 | 1 |
 | `lib/features/sentence/models/sentence_analysis.dart` | [features/sentence/models/sentence_analysis.md](features/sentence/models/sentence_analysis.md) | 12 | 2 |
 | `lib/features/sentence/models/token.dart` | [features/sentence/models/token.md](features/sentence/models/token.md) | 1 | 1 |
@@ -126,6 +127,17 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/settings/views/backup_page.dart` | [features/settings/views/backup_page.md](features/settings/views/backup_page.md) | 17 | 1 |
 | `lib/features/vocab/views/vocab_page.dart` | [features/vocab/views/vocab_page.md](features/vocab/views/vocab_page.md) | 7 | 1 |
 
+## features/drills/
+
+| Source file | Page | Declarations | Tier A count |
+|---|---|---|---|
+| `lib/features/drills/models/drill_section.dart` | [features/drills/models/drill_section.md](features/drills/models/drill_section.md) | 7 | 2 |
+| `lib/features/drills/models/drill_file.dart` | [features/drills/models/drill_file.md](features/drills/models/drill_file.md) | 32 | 6 |
+| `lib/features/drills/services/drill_repository.dart` | [features/drills/services/drill_repository.md](features/drills/services/drill_repository.md) | 9 | 2 |
+| `lib/features/drills/services/drill_sampler.dart` | [features/drills/services/drill_sampler.md](features/drills/services/drill_sampler.md) | 8 | 3 |
+| `lib/features/drills/widgets/drill_passage_view.dart` | [features/drills/widgets/drill_passage_view.md](features/drills/widgets/drill_passage_view.md) | 3 | 1 |
+| `lib/features/drills/widgets/listening_script_player.dart` | [features/drills/widgets/listening_script_player.md](features/drills/widgets/listening_script_player.md) | 5 | 3 |
+
 ## shared/
 
 | Source file | Page | Declarations | Tier A count |
@@ -141,7 +153,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/shared/services/webdav_service.dart` | [shared/services/webdav_service.md](shared/services/webdav_service.md) | 15 | 2 |
 | `lib/shared/views/webdav_config_page.dart` | [shared/views/webdav_config_page.md](shared/views/webdav_config_page.md) | 21 | 1 |
 | `lib/shared/services/system_settings_launcher.dart` | [shared/services/system_settings_launcher.md](shared/services/system_settings_launcher.md) | 1 | 1 |
-| `lib/shared/utils/adaptive_layout.dart` | [shared/utils/adaptive_layout.md](shared/utils/adaptive_layout.md) | 9 | 4 |
+| `lib/shared/utils/adaptive_layout.dart` | [shared/utils/adaptive_layout.md](shared/utils/adaptive_layout.md) | 14 | 4 |
 | `lib/shared/utils/platform_capabilities.dart` | [shared/utils/platform_capabilities.md](shared/utils/platform_capabilities.md) | 6 | 1 |
 | `lib/shared/widgets/adaptive_tile_grid.dart` | [shared/widgets/adaptive_tile_grid.md](shared/widgets/adaptive_tile_grid.md) | 3 | 0 |
 | `lib/shared/widgets/example_actions.dart` | [shared/widgets/example_actions.md](shared/widgets/example_actions.md) | 1 | 1 |

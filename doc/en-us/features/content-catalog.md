@@ -161,7 +161,8 @@ license and attribution recorded here and on the in-app license page:
 | Source | License | Status |
 |---|---|---|
 | Grammar, examples, kana notes, Chinese glosses, seed words | GPL-3.0 (with the app) | Shipped |
-| Model-authored grammar, glosses, examples and units (`"source": "model-authored (Claude), unreviewed"`) | GPL-3.0 (with the app) | Shipped |
+| Model-authored grammar, glosses, examples, units and JLPT drills (`"source": "model-authored (Claude), unreviewed"`) | GPL-3.0 (with the app) | Shipped |
+| JLPT paper composition and timings (`drills/structure.json`; JEES and The Japan Foundation, jlpt.jp) | Published figures, cited in the file's own `source` | Shipped. **No JLPT question is reproduced** — the papers are © The Japan Foundation / JEES, and the drills copy the shape, not the content |
 | OpenCC conversion dictionaries (Carbo Kuo and contributors) | Apache-2.0 | Build input; the text they generate ships |
 | JMdict / EDICT (EDRDG, Monash University) | CC BY-SA 4.0 | Shipped |
 | JLPT lists (stephenmk/yomitan-jlpt-vocab; underlying lists by Jonathan Waller, CC BY) | CC BY-SA 4.0 | Shipped |

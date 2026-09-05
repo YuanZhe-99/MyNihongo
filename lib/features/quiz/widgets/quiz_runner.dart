@@ -26,14 +26,23 @@ import 'answer_panes.dart';
 /// `doc/en-us/adaptive-layout.md`.
 class QuizRunner extends ConsumerStatefulWidget {
   /// Purpose: Create the runner.
-  /// Inputs: The `session` to run, and `onFinished`.
+  /// Inputs: The `session` to run and `onFinished`; optionally a `header`
+  /// above the question, a `leadingBuilder` for whatever the question is
+  /// about, whether to `showFeedback`, and the width of the question pane.
   /// Returns: A new `QuizRunner` instance.
   /// Side effects: None.
   /// Notes: The session is owned by the page above, which disposes it.
+  ///
+  /// The four optional parameters exist for the exam page and default to what
+  /// every existing caller already got, so a practice quiz is unchanged.
   const QuizRunner({
     super.key,
     required this.session,
     required this.onFinished,
+    this.header,
+    this.leadingBuilder,
+    this.showFeedback = true,
+    this.questionPaneWidth = quizQuestionPaneWidth,
   });
 
   /// The session being run.
@@ -41,6 +50,29 @@ class QuizRunner extends ConsumerStatefulWidget {
 
   /// Called once the last question has been answered and dismissed.
   final VoidCallback onFinished;
+
+  /// A line above the question — the section and the clock, in a timed block.
+  final Widget? header;
+
+  /// Whatever this question is about: a passage to read, a script to hear.
+  ///
+  /// A builder rather than a widget because it changes with the question, and
+  /// the runner is the only thing that knows which question is on screen.
+  final Widget? Function(BuildContext, QuizQuestion)? leadingBuilder;
+
+  /// Whether the answer is marked on screen before moving on.
+  ///
+  /// False in a mock, where the paper is marked at the end. Being told after
+  /// every question is how practice teaches and is also the thing a real exam
+  /// most conspicuously does not do, so the same runner has to be able to do
+  /// neither.
+  final bool showFeedback;
+
+  /// How wide the question pane is when the layout splits.
+  ///
+  /// A reading question needs more room than a word does, so the exam page
+  /// passes `drillPassagePaneWidth`.
+  final double Function(double) questionPaneWidth;
 
   @override
   ConsumerState<QuizRunner> createState() => _QuizRunnerState();
@@ -88,6 +120,7 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
     // "correct" and it costs nothing.
     if (const AnswerChecker().check(question, answer)) {
       widget.session.answer(answer);
+      _advanceIfUnmarked();
       return;
     }
     // A typed answer can be right in words the catalog does not list. With
@@ -97,6 +130,18 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
     if (!mounted) return;
     setState(() => _aiComment = second?.comment);
     widget.session.answer(answer, acceptedAnyway: second?.same ?? false);
+    _advanceIfUnmarked();
+  }
+
+  /// Purpose: Move straight on where the answer is not being marked on screen.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: Advances the session when `showFeedback` is false.
+  /// Notes: Internal helper used within this file only. In a timed block there
+  /// is nothing to read between questions, so stopping at a Continue button
+  /// would be spending the learner's clock on a button.
+  void _advanceIfUnmarked() {
+    if (!widget.showFeedback) _continue();
   }
 
   /// Purpose: Ask the on-device model whether a typed answer means the same.
@@ -192,6 +237,8 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
         widget.session.answeredCount + (answered ? 0 : 1),
         widget.session.total,
       ),
+      header: widget.header,
+      leading: widget.leadingBuilder?.call(context, question),
     );
     final answers = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -204,7 +251,8 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
           onSubmit: _submit,
         ),
         const SizedBox(height: 12),
-        if (answered) _feedback(context, l10n, outcome, question),
+        if (answered && widget.showFeedback)
+          _feedback(context, l10n, outcome, question),
         const SizedBox(height: 12),
         FilledButton(
           onPressed: _grading
@@ -245,7 +293,7 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          width: quizQuestionPaneWidth(content),
+          width: widget.questionPaneWidth(content),
           child: SingleChildScrollView(
             padding: const EdgeInsets.fromLTRB(16, 8, 8, 24),
             child: prompt,
@@ -330,11 +378,19 @@ class _QuestionPane extends ConsumerStatefulWidget {
     required this.question,
     required this.revealed,
     required this.progress,
+    this.header,
+    this.leading,
   });
 
   final QuizQuestion question;
   final bool revealed;
   final String progress;
+
+  /// The section and the clock, in a timed block.
+  final Widget? header;
+
+  /// The passage or script this question is about.
+  final Widget? leading;
 
   @override
   ConsumerState<_QuestionPane> createState() => _QuestionPaneState();
@@ -352,7 +408,11 @@ class _QuestionPaneState extends ConsumerState<_QuestionPane> {
   @override
   void didUpdateWidget(_QuestionPane old) {
     super.didUpdateWidget(old);
-    if (old.question.itemId != widget.question.itemId ||
+    // Compared on the question, not only on the item: two consecutive
+    // questions about one word are two questions, and the second one deserves
+    // its own audio rather than the first one's silence.
+    if (old.question.questionId != widget.question.questionId ||
+        old.question.itemId != widget.question.itemId ||
         old.question.mode != widget.question.mode) {
       _speakIfWanted();
     }
@@ -400,12 +460,22 @@ class _QuestionPaneState extends ConsumerState<_QuestionPane> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
+        if (widget.header case final header?) ...[
+          header,
+          const SizedBox(height: 8),
+        ],
         Text(
           progress,
           style: theme.textTheme.labelMedium?.copyWith(
             color: theme.colorScheme.onSurfaceVariant,
           ),
         ),
+        // Above the question, because it is what the question is about: a
+        // reading question asked before its passage is a riddle.
+        if (widget.leading case final leading?) ...[
+          const SizedBox(height: 12),
+          leading,
+        ],
         // A generated question says so before it is read, not after it is
         // answered: the learner is entitled to know that this one was written
         // by a model on their phone and is not part of the catalog.
@@ -478,18 +548,36 @@ class _QuestionPaneState extends ConsumerState<_QuestionPane> {
   /// Notes: Internal helper used within this file only. Every mode says it in
   /// words rather than relying on the shape of the question, because a
   /// conjugation blank and a particle blank look identical.
-  String _instruction(AppLocalizations l10n) => switch (widget.question.mode) {
-    QuizMode.vocabListening || QuizMode.kanaListening => l10n.quizListenPrompt,
-    QuizMode.vocabTypeReading => l10n.quizTypeReadingHint,
-    QuizMode.grammarOrder => l10n.quizOrderPrompt,
-    QuizMode.grammarParticle => l10n.quizParticlePrompt,
-    QuizMode.grammarConjugation => l10n.quizConjugationPrompt,
-    QuizMode.grammarPattern => l10n.quizPatternPrompt,
-    QuizMode.vocabCloze => l10n.quizClozePrompt,
-    QuizMode.grammarSentenceToMeaning => l10n.quizSentenceToMeaningPrompt,
-    QuizMode.grammarMeaningToSentence => l10n.quizMeaningToSentencePrompt,
-    _ => l10n.quizModeLabel(widget.question.mode),
-  };
+  ///
+  /// A question that brought its own instruction keeps it. A paper writes the
+  /// instruction per 大問, and two 大問 that look identical on screen ask for
+  /// different things — 「＿の言葉の読み方」 and 「＿の言葉の書き方」 are the
+  /// same sentence with the same span marked.
+  String _instruction(AppLocalizations l10n) {
+    final own = widget.question.instruction;
+    if (own != null && own.isNotEmpty) return own;
+    return _modeInstruction(l10n);
+  }
+
+  /// Purpose: Say what this mode asks, for a question that did not say.
+  /// Inputs: `l10n`.
+  /// Returns: `String`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only.
+  String _modeInstruction(AppLocalizations l10n) =>
+      switch (widget.question.mode) {
+        QuizMode.vocabListening ||
+        QuizMode.kanaListening => l10n.quizListenPrompt,
+        QuizMode.vocabTypeReading => l10n.quizTypeReadingHint,
+        QuizMode.grammarOrder => l10n.quizOrderPrompt,
+        QuizMode.grammarParticle => l10n.quizParticlePrompt,
+        QuizMode.grammarConjugation => l10n.quizConjugationPrompt,
+        QuizMode.grammarPattern => l10n.quizPatternPrompt,
+        QuizMode.vocabCloze => l10n.quizClozePrompt,
+        QuizMode.grammarSentenceToMeaning => l10n.quizSentenceToMeaningPrompt,
+        QuizMode.grammarMeaningToSentence => l10n.quizMeaningToSentencePrompt,
+        _ => l10n.quizModeLabel(widget.question.mode),
+      };
 }
 
 /// Purpose: Name a quiz mode in the learner's language.
@@ -522,5 +610,6 @@ extension QuizModeLabel on AppLocalizations {
     QuizMode.vocabCloze => quizModeVocabCloze,
     QuizMode.grammarSentenceToMeaning => quizModeGrammarSentenceToMeaning,
     QuizMode.grammarMeaningToSentence => quizModeGrammarMeaningToSentence,
+    QuizMode.drill => quizModeDrill,
   };
 }

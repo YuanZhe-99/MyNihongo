@@ -242,4 +242,198 @@ void main() {
     expect(session.isFinished, isTrue);
     expect(session.total, 0);
   });
+
+  group('a paper rather than a practice run', () {
+    // A drill question carries its own id because a paper asks several
+    // different questions about one word. Everything in this group follows
+    // from that one difference.
+    QuizQuestion drill(String id, String item, {int answer = 0}) =>
+        QuizQuestion(
+          itemId: item,
+          questionId: id,
+          mode: QuizMode.drill,
+          kind: AnswerKind.choice,
+          prompt: id,
+          options: const ['a', 'b', 'c', 'd'],
+          answerIndex: answer,
+        );
+
+    test('two questions about one word are two questions', () {
+      final session = QuizSession(
+        questions: [
+          drill('q:1', 'vocab:1'),
+          drill('q:2', 'vocab:1', answer: 1),
+        ],
+      );
+      session.answer(const ChoiceAnswer(0));
+      session.next();
+      expect(
+        session.current?.questionId,
+        'q:2',
+        reason: 'the second question about the word is still to be asked',
+      );
+      session.answer(const ChoiceAnswer(0));
+      session.next();
+      expect(session.summary.total, 2);
+      expect(session.summary.firstTryCorrect, 1);
+    });
+
+    test('but the scheduler hears about the word once', () {
+      // SM-2 grades one recall. The second question about a word was primed
+      // by the first, so it says nothing about how well the word was known.
+      final calls = <(String, bool)>[];
+      final session = QuizSession(
+        questions: [
+          drill('q:1', 'vocab:1'),
+          drill('q:2', 'vocab:1', answer: 1),
+        ],
+        onFirstAnswer: (id, correct) => calls.add((id, correct)),
+      );
+      session.answer(const ChoiceAnswer(0));
+      session.next();
+      session.answer(const ChoiceAnswer(0));
+      session.next();
+      expect(calls, [('vocab:1', true)]);
+    });
+
+    test('a word got wrong twice is named once in the review list', () {
+      final session = QuizSession(
+        questions: [
+          drill('q:1', 'vocab:1', answer: 1),
+          drill('q:2', 'vocab:1', answer: 1),
+        ],
+        requeue: false,
+      );
+      session.answer(const ChoiceAnswer(0));
+      session.next();
+      session.answer(const ChoiceAnswer(0));
+      session.next();
+      expect(
+        session.summary.wrongIds,
+        ['vocab:1'],
+        reason: 'the same word four times is a worse list, not a louder one',
+      );
+    });
+
+    test('a paper does not ask a question again because it was wrong', () {
+      // A mock whose length depended on how well it was going could not be
+      // scored against a fixed composition, and the clock would be measuring
+      // a different paper for every learner.
+      final session = QuizSession(
+        questions: [drill('q:1', 'vocab:1', answer: 1)],
+        requeue: false,
+      );
+      session.answer(const ChoiceAnswer(0));
+      session.next();
+      expect(session.isFinished, isTrue);
+      expect(session.total, 1);
+    });
+
+    test('the outcomes are one per question, in the order asked', () {
+      final session = QuizSession(
+        questions: [
+          drill('q:1', 'vocab:1'),
+          drill('q:2', 'vocab:2', answer: 1),
+        ],
+        requeue: false,
+      );
+      session.answer(const ChoiceAnswer(0));
+      session.next();
+      session.answer(const ChoiceAnswer(0));
+      session.next();
+      expect(session.outcomes.map((o) => o.key), ['q:1', 'q:2']);
+      expect(session.outcomes.map((o) => o.itemId), ['vocab:1', 'vocab:2']);
+      expect(session.outcomes.map((o) => o.correct), [true, false]);
+      expect(session.outcomes.every((o) => o.answered), isTrue);
+    });
+
+    test('a re-queued question is one outcome, not three', () {
+      final session = QuizSession(questions: [choice('vocab:1', answer: 1)]);
+      for (var i = 0; i < 3; i++) {
+        if (session.isFinished) break;
+        session.answer(const ChoiceAnswer(0));
+        session.next();
+      }
+      expect(session.outcomes, hasLength(1));
+      expect(session.outcomes.single.correct, isFalse);
+    });
+  });
+
+  group('running out of time', () {
+    test('what was left is recorded unanswered, not wrong', () {
+      // Calling it wrong would make the learner look worse than they are;
+      // hiding it would make every timed score look better than it was.
+      final calls = <String>[];
+      final session = QuizSession(
+        questions: [choice('vocab:1'), choice('vocab:2'), choice('vocab:3')],
+        onFirstAnswer: (id, _) => calls.add(id),
+        requeue: false,
+      );
+      session.answer(const ChoiceAnswer(0));
+      session.next();
+      session.forfeit();
+
+      expect(session.isFinished, isTrue);
+      expect(session.outcomes, hasLength(3));
+      expect(session.outcomes[0].answered, isTrue);
+      expect(session.outcomes[1].answered, isFalse);
+      expect(session.outcomes[2].answered, isFalse);
+      expect(session.outcomes[1].correct, isFalse);
+      expect(calls, [
+        'vocab:1',
+      ], reason: 'an unanswered question says nothing about recall');
+    });
+
+    test('forfeiting an already finished session changes nothing', () {
+      final session = QuizSession(questions: [choice('vocab:1')]);
+      session.answer(const ChoiceAnswer(0));
+      session.next();
+      session.forfeit();
+      expect(session.outcomes, hasLength(1));
+      expect(session.outcomes.single.answered, isTrue);
+    });
+  });
+
+  group('resuming a saved paper', () {
+    test('saved answers are replayed and the rest is where it was left', () {
+      final session = QuizSession(
+        questions: [
+          choice('vocab:1'),
+          choice('vocab:2', answer: 1),
+          choice('vocab:3'),
+        ],
+        requeue: false,
+      );
+      session.restore(const {
+        'vocab:1': ChoiceAnswer(0),
+        'vocab:2': ChoiceAnswer(0),
+      });
+      expect(session.current?.itemId, 'vocab:3');
+      expect(session.answeredCount, 2);
+      expect(session.summary.firstTryCorrect, 1);
+      expect(session.summary.wrongIds, ['vocab:2']);
+    });
+
+    test('a save with nothing in it leaves the paper untouched', () {
+      final session = QuizSession(questions: [choice('vocab:1')]);
+      session.restore(const {});
+      expect(session.current?.itemId, 'vocab:1');
+      expect(session.answeredCount, 0);
+    });
+
+    test('replaying stops at the first question the save does not cover', () {
+      // Which is what "resume" means: the questions after the gap are still
+      // to be answered, not silently skipped.
+      final session = QuizSession(
+        questions: [choice('vocab:1'), choice('vocab:2'), choice('vocab:3')],
+        requeue: false,
+      );
+      session.restore(const {
+        'vocab:1': ChoiceAnswer(0),
+        'vocab:3': ChoiceAnswer(0),
+      });
+      expect(session.current?.itemId, 'vocab:2');
+      expect(session.answeredCount, 1);
+    });
+  });
 }

@@ -44,7 +44,7 @@ Traditional is generated and never authored.
 A new grammar file also has to be added to `ContentRepository.grammarAssets`.
 Nothing else in the app needs touching.
 
-## The four kinds
+## The five kinds
 
 | Kind | Batch | Written into |
 |---|---|---|
@@ -52,6 +52,7 @@ Nothing else in the app needs touching.
 | `examples` | 150 words | `vocab_examples.json`, the example overlay |
 | `grammar` | 25 points | `grammar/<level>.json` |
 | `units` | one level, whole | `lessons/<level>.json` |
+| `drills` | one 大問 at a time | `drills/<level>-<section>.json` |
 
 **Grammar ids are settled before anything is written.** `grammar-inventory`
 produces the level's list of ids and patterns in one pass, checked against every
@@ -62,6 +63,24 @@ two slugs for the same point, is the one mistake that cannot be fixed later.
 **A level's units are planned whole**, not in batches, because the property that
 makes the path a path is that every grammar point of the level belongs to exactly
 one unit. Batches that cannot see each other cannot satisfy that.
+
+**A drill batch is one 大問 or a few, never half of one.** The batch generator
+splits by question count but never across a 大問, because the questions of one
+大問 share a style and, for reading and listening, share passages: two agents
+writing half each would produce two halves that do not match.
+
+A drill batch is also the only kind whose input is **two** files. The level's
+vocabulary and grammar go in a separate `<level>-<section>.resources.json` that
+each batch names, rather than being copied into every batch: a level's common
+vocabulary is a few thousand rows, and repeating it per batch would turn a
+thirty-question ask into a megabyte of the same list.
+
+The `drills` merge **appends** to the shipped file rather than skipping what is
+already there — a section is filled up over several releases, and each batch is
+new questions rather than a better version of old ones. A duplicate id is fatal
+rather than skipped: a question id is what "already asked" is remembered by, and
+two questions under one id would make that mean whichever the file happened to
+list first.
 
 **A scenario is written into a unit that already exists**, not merged as a draft
 of its own: `merge_drafts units` writes a whole level's file, so re-running it

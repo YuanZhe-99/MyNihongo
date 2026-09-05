@@ -3,7 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:my_nihongo/features/content/models/jlpt_level.dart';
 import 'package:my_nihongo/features/content/services/content_repository.dart';
+import 'package:my_nihongo/features/drills/models/drill_section.dart';
+import 'package:my_nihongo/features/drills/widgets/drill_passage_view.dart';
+import 'package:my_nihongo/shared/utils/adaptive_layout.dart';
 import 'package:my_nihongo/features/kana/models/kana.dart';
 import 'package:my_nihongo/features/quiz/models/quiz_config.dart';
 import 'package:my_nihongo/features/quiz/models/quiz_question.dart';
@@ -204,9 +208,21 @@ void main() {
     expect(find.text('语法'), findsOneWidget);
     expect(
       find.byType(SwitchListTile),
-      findsNWidgets(QuizMode.values.length),
+      findsNWidgets(selectableQuizModes.length),
       reason: 'a mode with no switch cannot be turned off',
     );
+    // `QuizMode.drill` is the one mode with no switch, and deliberately: it
+    // means "a question written for a JLPT paper", so switching it off would
+    // only mean refusing to sit the paper — which is what not opening it
+    // already does. The count above is over the selectable set for that
+    // reason, and this asserts the gap is exactly one rather than a mode
+    // somebody forgot to group.
+    expect(
+      QuizMode.values.length - selectableQuizModes.length,
+      1,
+      reason: 'a mode in no group would be unreachable from Settings',
+    );
+    expect(selectableQuizModes.contains(QuizMode.drill), isFalse);
     expect(tester.takeException(), isNull);
   });
 
@@ -307,6 +323,92 @@ void main() {
       expect(session.total, 1);
       expect(session.answeredCount, 0);
       expect(find.text('跳过这道题'), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
+  });
+
+  group('a JLPT paper', () {
+    // The shipped N5 files, not a fixture: what is worth testing here is that
+    // the content and the page fit each other, and a fixture would prove only
+    // that the page fits the fixture.
+    QuizConfig readingDrill() => const QuizConfig(
+      source: DrillSource(
+        JlptLevel.n5,
+        sections: {DrillSection.reading},
+      ),
+    );
+
+    testWidgets('a reading question is shown with its passage', (
+      tester,
+    ) async {
+      await pumpAt(tester, 412, 915, home: QuizPage(config: readingDrill()));
+      expect(find.byType(DrillPassageView), findsOneWidget);
+      expect(find.byType(QuizRunner), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('the translation is not offered until the answer is in', (
+      tester,
+    ) async {
+      // Before the question is answered, the translation is the answer.
+      await pumpAt(tester, 412, 915, home: QuizPage(config: readingDrill()));
+      expect(find.text('显示译文'), findsNothing);
+    });
+
+    testWidgets('the passage takes the larger half on a wide window', (
+      tester,
+    ) async {
+      await pumpAt(tester, 1024, 768, home: QuizPage(config: readingDrill()));
+      final panes = tester.widgetList<SizedBox>(
+        find.ancestor(
+          of: find.byType(DrillPassageView),
+          matching: find.byType(SizedBox),
+        ),
+      );
+      expect(panes, isNotEmpty);
+      expect(tester.takeException(), isNull);
+      // The pane is wider than the quiz's would be at the same width, which
+      // is the whole point of the second constant.
+      final content = referenceContentWidth(1024);
+      expect(
+        drillPassagePaneWidth(content),
+        greaterThan(quizQuestionPaneWidth(content)),
+      );
+    });
+
+    testWidgets('a narrow window stacks the passage above the options', (
+      tester,
+    ) async {
+      await pumpAt(tester, 412, 915, home: QuizPage(config: readingDrill()));
+      expect(
+        find.byType(VerticalDivider),
+        findsNothing,
+        reason: 'a passage and four options side by side on a phone would '
+            'leave both halves worse than stacking them',
+      );
+      expect(find.byType(DrillPassageView), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('a level with no content for a section says so', (
+      tester,
+    ) async {
+      // N1 drills are not written yet. The page must say there is nothing
+      // rather than show an empty question.
+      await pumpAt(
+        tester,
+        412,
+        915,
+        home: const QuizPage(
+          config: QuizConfig(
+            source: DrillSource(
+              JlptLevel.n1,
+              sections: {DrillSection.reading},
+            ),
+          ),
+        ),
+      );
+      expect(find.byType(QuizRunner), findsNothing);
       expect(tester.takeException(), isNull);
     });
   });

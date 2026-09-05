@@ -227,15 +227,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get learnOpenGrammar => '查看语法';
 
   @override
-  String get learnRoadmap => '即将推出';
-
-  @override
-  String get learnRoadmapSrs => '情景课与写作练习';
-
-  @override
-  String get learnRoadmapJlpt => 'JLPT N5–N1 练习';
-
-  @override
   String get kanaTitle => '五十音速查';
 
   @override
@@ -1437,6 +1428,79 @@ class AppLocalizationsZh extends AppLocalizations {
   String writingSentenceN(int n) {
     return '第 $n 句';
   }
+
+  @override
+  String get quizModeDrill => 'JLPT 真题练习';
+
+  @override
+  String get drillSectionVocab => '文字・词汇';
+
+  @override
+  String get drillSectionGrammar => '语法';
+
+  @override
+  String get drillSectionReading => '阅读';
+
+  @override
+  String get drillSectionListening => '听力';
+
+  @override
+  String get drillShowTranslation => '显示译文';
+
+  @override
+  String get drillHideTranslation => '隐藏译文';
+
+  @override
+  String get drillTranscript => '听力原文';
+
+  @override
+  String get drillPlay => '播放';
+
+  @override
+  String get drillPlayAgain => '再播放一次';
+
+  @override
+  String drillPlaysLeft(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '还可播放 $n 次',
+      zero: '已无播放次数',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get drillNoVoice => '此设备没有日语语音，无法播放。';
+
+  @override
+  String jlptPracticeTitle(String level) {
+    return 'JLPT $level 练习';
+  }
+
+  @override
+  String get jlptPracticeBody => '按考试题型编写的题目，一次练一个部分。不计时，每题作答后给出解析。';
+
+  @override
+  String jlptQuestionCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '$n 题');
+    return '$_temp0';
+  }
+
+  @override
+  String get jlptNoContent => '该级别尚未编写。';
+
+  @override
+  String get jlptNoVoice => '需要设备上有日语语音。';
+
+  @override
+  String get jlptMock => '模拟考试';
+
+  @override
+  String get jlptHistory => '成绩记录';
+
+  @override
+  String get jlptComingNext => '计时模拟考试与成绩记录将在下次更新中推出。';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -1660,15 +1724,6 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get learnOpenGrammar => '查看文法';
-
-  @override
-  String get learnRoadmap => '即將推出';
-
-  @override
-  String get learnRoadmapSrs => '情景課與寫作練習';
-
-  @override
-  String get learnRoadmapJlpt => 'JLPT N5–N1 練習';
 
   @override
   String get kanaTitle => '五十音速查';
@@ -2872,4 +2927,77 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String writingSentenceN(int n) {
     return '第 $n 句';
   }
+
+  @override
+  String get quizModeDrill => 'JLPT 真題練習';
+
+  @override
+  String get drillSectionVocab => '文字・詞彙';
+
+  @override
+  String get drillSectionGrammar => '文法';
+
+  @override
+  String get drillSectionReading => '閱讀';
+
+  @override
+  String get drillSectionListening => '聽力';
+
+  @override
+  String get drillShowTranslation => '顯示譯文';
+
+  @override
+  String get drillHideTranslation => '隱藏譯文';
+
+  @override
+  String get drillTranscript => '聽力原文';
+
+  @override
+  String get drillPlay => '播放';
+
+  @override
+  String get drillPlayAgain => '再播放一次';
+
+  @override
+  String drillPlaysLeft(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '還可播放 $n 次',
+      zero: '已無播放次數',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get drillNoVoice => '此裝置沒有日語語音，無法播放。';
+
+  @override
+  String jlptPracticeTitle(String level) {
+    return 'JLPT $level 練習';
+  }
+
+  @override
+  String get jlptPracticeBody => '依考試題型編寫的題目，一次練一個部分。不計時，每題作答後提供解析。';
+
+  @override
+  String jlptQuestionCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(n, locale: localeName, other: '$n 題');
+    return '$_temp0';
+  }
+
+  @override
+  String get jlptNoContent => '此級別尚未編寫。';
+
+  @override
+  String get jlptNoVoice => '需要裝置上有日語語音。';
+
+  @override
+  String get jlptMock => '模擬考試';
+
+  @override
+  String get jlptHistory => '成績紀錄';
+
+  @override
+  String get jlptComingNext => '計時模擬考試與成績紀錄將於下次更新推出。';
 }

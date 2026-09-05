@@ -14,6 +14,12 @@ import '../../sentence/services/sentence_analyzer.dart';
 import '../../speech/services/tts_service.dart';
 import '../models/quiz_config.dart';
 import '../models/quiz_question.dart';
+import '../../drills/models/drill_file.dart';
+import '../../drills/models/drill_section.dart';
+import '../../drills/services/drill_repository.dart';
+import '../../drills/services/drill_sampler.dart';
+import '../../drills/widgets/drill_passage_view.dart';
+import '../../drills/widgets/listening_script_player.dart';
 import '../../lessons/services/lesson_repository.dart';
 import '../../lessons/services/lesson_rules.dart';
 import '../services/question_bank.dart';
@@ -54,6 +60,13 @@ class _QuizPageState extends ConsumerState<QuizPage> {
 
   /// Whether a checkpoint was passed, once one has been marked.
   bool? _checkpointPassed;
+
+  /// The passages this session's questions refer to, by id.
+  ///
+  /// Held here rather than looked up through the provider on every build: the
+  /// files are already parsed by the time the session exists, and a build
+  /// method that re-read them would re-read them for every keystroke.
+  Map<String, DrillPassage> _passages = const {};
 
   @override
   void initState() {
@@ -96,7 +109,9 @@ class _QuizPageState extends ConsumerState<QuizPage> {
     final script = source is KanaRows ? source.script : KanaScript.hiragana;
 
     final questions = <QuizQuestion>[];
-    if (unit != null) {
+    if (source is DrillSource) {
+      questions.addAll(await _drillQuestions(source, locale));
+    } else if (unit != null) {
       // A unit is small enough to build its whole pool and then draw from it,
       // which is what makes a rare mode as likely as a common one.
       questions.addAll(
@@ -154,6 +169,91 @@ class _QuizPageState extends ConsumerState<QuizPage> {
         ),
       );
     }
+  }
+
+  /// Purpose: Draw one paper's questions from the shipped drill files.
+  /// Inputs: The `source` and the `locale` to render the written text in.
+  /// Returns: `Future<List<QuizQuestion>>` in paper order.
+  /// Side effects: Reads assets; fills [_passages].
+  /// Notes: Internal helper used within this file only.
+  ///
+  /// The composition comes from `structure.json` and is filtered per section,
+  /// so a session over 文法 alone asks the grammar 大問 in the numbers the
+  /// paper asks them and nothing else. A level with no structure entry draws
+  /// nothing rather than guessing a composition — the Learn card already
+  /// refuses to offer a section with no content, so reaching here empty means
+  /// something is wrong and inventing a paper would hide it.
+  ///
+  /// Listening is dropped without a Japanese voice, the same rule
+  /// [_enabledModes] applies to the app's own listening modes: a question
+  /// nobody can hear has no answer.
+  Future<List<QuizQuestion>> _drillQuestions(
+    DrillSource source,
+    Locale locale,
+  ) async {
+    final structure = await ref.read(jlptStructureProvider.future);
+    final level = structure.forLevel(source.level);
+    if (level == null) return const [];
+    final files = await ref.read(drillLevelProvider(source.level).future);
+    final composition = level.composition(source.scale);
+
+    var wanted = source.sections.isEmpty
+        ? DrillSection.values.toSet()
+        : source.sections;
+    if (!TtsService.instance.hasJapaneseVoice) {
+      wanted = wanted.difference({DrillSection.listening});
+    }
+
+    final questions = <QuizQuestion>[];
+    final passages = <String, DrillPassage>{};
+    for (final section in DrillSection.values) {
+      if (!wanted.contains(section)) continue;
+      final file = files[section];
+      if (file == null || file.isEmpty) continue;
+      final drawn = DrillSampler.drawByPassage(
+        file,
+        counts: {
+          for (final entry in composition.entries)
+            if (entry.key.section == section) entry.key: entry.value,
+        },
+      );
+      for (final question in drawn) {
+        questions.add(question.toQuizQuestion(locale));
+        final passage = file.passageById(question.passageId);
+        if (passage != null) passages[passage.id] = passage;
+      }
+    }
+    _passages = passages;
+    return questions;
+  }
+
+  /// Purpose: Show whatever the question on screen is about.
+  /// Inputs: `context` and the `question`.
+  /// Returns: `Widget?` — null when the question stands on its own.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. A reading passage is
+  /// shown and a listening script is played, decided by the passage's own
+  /// type rather than by the question's, because 文章の文法 is a grammar
+  /// question about a text that is read.
+  ///
+  /// The transcript and the translation are both revealed only once the
+  /// question has been answered — before that they are the answer.
+  Widget? _passageFor(BuildContext context, QuizQuestion question) {
+    final passage = _passages[question.passageId];
+    if (passage == null) return null;
+    final answered = _session?.lastOutcome != null;
+    if (passage.type.section == DrillSection.listening) {
+      return ListeningScriptPlayer(
+        key: ValueKey(passage.id),
+        passage: passage,
+        revealed: answered,
+      );
+    }
+    return DrillPassageView(
+      key: ValueKey(passage.id),
+      passage: passage,
+      allowTranslation: answered,
+    );
   }
 
   /// Purpose: Ask the model for a few extra questions, in the background.
@@ -220,7 +320,7 @@ class _QuizPageState extends ConsumerState<QuizPage> {
   /// can hear has no answer.
   Set<QuizMode> _enabledModes() {
     final chosen = widget.config.modes.isEmpty
-        ? QuizMode.values.toSet()
+        ? selectableQuizModes.toSet()
         : widget.config.modes;
     if (TtsService.instance.hasJapaneseVoice) return chosen;
     return chosen.difference(listeningQuizModes);
@@ -246,6 +346,9 @@ class _QuizPageState extends ConsumerState<QuizPage> {
       // A unit does not go through here: its questions come from the bank,
       // which needs the unit rather than a list of ids.
       UnitSource() => const <String>[],
+      // Nor does a paper: its questions are drawn from the drill files by
+      // composition, not looked up by catalog id.
+      DrillSource() => const <String>[],
       LevelSource(:final level, :final kind) => switch (kind) {
         StudyKind.vocab => [
           for (final entry in catalog.vocab)
@@ -343,6 +446,10 @@ class _QuizPageState extends ConsumerState<QuizPage> {
               (_, final s?, true) => _summary(context, l10n, s),
               (_, final s?, false) => QuizRunner(
                 session: s,
+                leadingBuilder: _passageFor,
+                questionPaneWidth: widget.config.source is DrillSource
+                    ? drillPassagePaneWidth
+                    : quizQuestionPaneWidth,
                 onFinished: () {
                   _recordCheckpoint(s);
                   setState(() => _finished = true);

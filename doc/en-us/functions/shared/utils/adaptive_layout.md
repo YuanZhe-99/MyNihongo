@@ -5,7 +5,7 @@ thresholds that decide whether a layout may split at all; `navRailMinWidth` and 
 the shell; `listTileGap`, `listMaxColumns` and `listColumnsAuto` for multi-column lists;
 `pageMaxContentWidth`, `kanaTableMinWidth`, `ruleCardMinWidth` and `referenceTileMinWidth` — this
 app's own per-content minimums, each with a doc comment saying where the number came from; and
-`settingsRightPaneMinWidth`. Nine pure helpers sit on top of them.
+`settingsRightPaneMinWidth` and `quizAnswerPaneMinWidth`. Eleven pure helpers sit on top of them.
 
 The module deliberately depends on nothing but `dart:core` — no Flutter imports, and `canSplitLayout`
 takes two doubles rather than a `Size` — so every helper is directly unit-testable
@@ -20,7 +20,15 @@ and `grammar_page.dart` (`referenceColumnCount`, `listRowCount`); `learn_page.da
 (`canSplitLayout`, `columnCapacity` at `ruleCardMinWidth`); `settings_page.dart` (`canSplitLayout`,
 `shellContentWidth`, `settingsLeftPaneWidth`); the sentence lab and writing practice
 (`labInputPaneWidth`); every scrolling page (`shellListBottomInset`);
-`adaptive_tile_grid.dart` (`listRowCount`, `listTileGap`).
+`adaptive_tile_grid.dart` (`listRowCount`, `listTileGap`); `quiz_runner.dart` (`canSplitLayout`,
+`referenceContentWidth`, and `quizQuestionPaneWidth` as the default of its `questionPaneWidth`
+parameter, which the exam page overrides with `drillPassagePaneWidth`).
+
+`drillPassagePaneWidth` inverts the proportion `quizQuestionPaneWidth` uses. There the question is
+the smaller half because it holds a word; here it is the larger half because it holds a passage the
+learner reads and re-reads while answering. 0.55 rather than 0.5 gives the text the longer line
+without letting it crowd the options, and the same final cap keeps the answers at
+`quizAnswerPaneMinWidth` on the narrowest window that splits.
 
 ## Declarations
 
@@ -34,6 +42,9 @@ and `grammar_page.dart` (`referenceColumnCount`, `listRowCount`); `learn_page.da
 | [`columnCapacity`](#columncapacity) | top-level function | A | Return how many columns of a given minimum width fit a content box. |
 | [`referenceColumnCount`](#referencecolumncount) | top-level function | A | Return the number of columns a vocabulary or grammar list renders. |
 | `listRowCount` | top-level function | B | Return how many rows a list of items needs at a column count; ragged last row included. |
+| `quizAnswerPaneMinWidth` | top-level constant | B | The narrowest the quiz's answer pane may be: 280. |
+| `quizQuestionPaneWidth` | top-level function | B | Return the quiz's question pane width when the layout splits; the default the runner uses. |
+| `drillPassagePaneWidth` | top-level function | B | Return the exam page's question pane width: 0.55 of the content, clamped 360–640, capped so the answers keep `quizAnswerPaneMinWidth`. |
 | `settingsLeftPaneWidth` | top-level function | B | Return the settings page's left pane width: 0.44 of the content, clamped 300–440, capped so the right pane keeps 280. |
 | `labResultPaneMinWidth` | top-level constant | B | The narrowest the sentence lab's analysis pane may be: 360. |
 | `labInputPaneWidth` | top-level function | B | Return the lab's and writing practice's input pane width: 0.40 of the content, clamped 320–460, capped so the result pane keeps 360. |

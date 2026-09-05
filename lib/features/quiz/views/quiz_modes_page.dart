@@ -34,7 +34,7 @@ class QuizModesPage extends ConsumerWidget {
     final settings = ref.watch(appSettingsProvider);
     final notifier = ref.read(appSettingsProvider.notifier);
     final enabled = settings.quizModes.isEmpty
-        ? QuizMode.values.toSet()
+        ? selectableQuizModes.toSet()
         : settings.quizModes;
 
     return Scaffold(

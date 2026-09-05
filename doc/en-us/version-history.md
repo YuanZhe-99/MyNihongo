@@ -12,6 +12,63 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.4.4` — 2026-09-05. The JLPT practice the Learn tab has been promising since
+  the first release, at N5, one section at a time.
+
+  **Questions in the shape of the paper, not copies of it.** The past papers are
+  © The Japan Foundation and JEES and nothing here is taken from one. What is
+  taken is the shape, all of it published: twenty-one 大問, how many questions
+  each one has, the timed blocks and their minutes, and the scoring groups —
+  encoded as one content asset, `drills/structure.json`, which carries the
+  jlpt.jp pages it was read from in its own `source` field. The counts are a
+  composition target rather than a promise, because JEES says they vary from
+  session to session.
+
+  Three deviations, each stated rather than quietly made: 即時応答 gets four
+  options where the paper gives three, because every answer pane and the gate
+  assume four; 発話表現 describes its scene in words, because the app has no
+  pictures; and a mock will play each listening item once, because that is the
+  paper's rule and practising against a gentler one teaches a habit the exam
+  punishes.
+
+  **A drill question is scored under its own id.** A paper asks several
+  genuinely different questions about one word, and everything the app had built
+  before scored by item — under which the second and third question about 会う
+  would never have counted. The review schedule still hears about each item
+  once, on the first question that asked about it, because SM-2 grades one
+  recall and the second question was primed by the first.
+
+  That change surfaced two latent bugs that had been sitting in the
+  generated-question path, invisible because no session had ever asked two
+  questions about one item in a row: the answer pane was keyed by item and mode,
+  so the first question's selection carried into the second, and the re-speak
+  check compared the same pair, so the second question played no audio. Both now
+  compare the question.
+
+  **Passages are drawn whole.** A 中文 carries three questions; drawing
+  questions independently would have put one question from each of three
+  passages on a short paper — three texts to read for three marks, three times
+  the work of the paper it imitates. Within a 大問 the draw is three tiers:
+  never asked first, then least recently asked, then the rest, shuffled inside
+  each tier rather than across the pool, so an unseen question is never as
+  likely as yesterday's.
+
+  **A section that cannot be practised says why.** No content for that level
+  yet, or no Japanese voice on the device — both are shown disabled with the
+  reason beside them rather than hidden, because a learner who cannot find 読解
+  practice has no way to tell whether it exists.
+
+  The "coming next" card is gone from the Learn tab, replaced by the thing it
+  advertised. Its Mock exam and Results buttons are present and disabled with a
+  line saying they arrive in the next update: a card that grows two buttons
+  silently is a card whose new buttons nobody finds.
+
+  N5 ships complete at the official composition — 67 questions and 29 passages
+  across all four sections, model-authored and unreviewed like the rest of the
+  catalog, and every file says so. The content pipeline gains its fifth stream,
+  `drills`, with its own agent, its own batch generator and thirteen new rules
+  in the content gate. 856 tests.
+
 - `0.4.3` — 2026-09-04. Generated material stops being taken on trust: a
   question the model writes is asked back to it, a question you doubt can be
   declined, and the word examples work at all.

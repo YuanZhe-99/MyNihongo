@@ -26,10 +26,13 @@ only thing that varies, and which of them applies is a property of the question.
 - **Inputs:** The question, whether it is locked, and callbacks for composing and submitting.
 - **Returns:** A widget.
 - **Side effects:** None.
-- **Algorithm:** Switch on the question's `AnswerKind`, keyed by the question's identity.
+- **Algorithm:** Switch on the question's `AnswerKind`, keyed by the question's identity —
+  `questionId` where it has one, else `itemId`, plus the mode.
 - **Usage:** `QuizRunner`.
 - **Notes:** The key matters: composing state — a typed string, a partial ordering — is discarded
-  when the question changes rather than carried into the next one, which is what the key buys.
+  when the question changes rather than carried into the next one, which is what the key buys. It
+  includes `questionId` because a paper asks several different questions about one word: keyed on the
+  item alone, the second of them would inherit the first's half-typed answer.
   Composing and submitting are separate callbacks so a mis-tap is correctable: choosing an option
   selects it, and a second action commits it. Ordering is done by tapping rather than dragging,
   because a drag target the width of a fragment is a hard gesture on a phone and a tap is reversible

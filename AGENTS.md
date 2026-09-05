@@ -222,7 +222,7 @@ commands. `doc/en-us/platform-notes.md` describes the outputs.
 
 ## Content-authoring subagents
 
-`.claude/agents/` holds four definitions for the content pipeline — one per
+`.claude/agents/` holds five definitions for the content pipeline — one per
 draft kind in `doc/en-us/features/content-authoring.md`:
 
 | Agent | Stream | Model | Effort |
@@ -231,6 +231,7 @@ draft kind in `doc/en-us/features/content-authoring.md`:
 | `content-examples` | example sentences | `sonnet` | `low` |
 | `content-grammar` | grammar points | `opus` | `low` |
 | `content-units` | a level's lesson units | `opus` | `low` |
+| `content-drills` | JLPT drill questions | `opus` | `low` |
 
 The split is by **what the writing has to be good at**, not by how much of it
 there is. A gloss and an example sentence are mechanical and enormous in volume,

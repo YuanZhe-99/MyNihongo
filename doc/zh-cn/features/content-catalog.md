@@ -113,7 +113,8 @@ dart run tool/convert_zh_tw.dart
 | 来源 | 许可 | 状态 |
 |---|---|---|
 | 语法、例句、假名注释、中文释义、种子词 | GPL-3.0（随应用） | 已发布 |
-| 模型撰写的语法、释义、例句与单元（`"source": "model-authored (Claude), unreviewed"`） | GPL-3.0（随应用） | 已发布 |
+| 模型撰写的语法、释义、例句、单元与 JLPT 练习题（`"source": "model-authored (Claude), unreviewed"`） | GPL-3.0（随应用） | 已发布 |
+| JLPT 卷子的题目构成与计时（`drills/structure.json`；JEES 与国际交流基金，jlpt.jp） | 公布的数字，在文件自己的 `source` 字段中标注出处 | 已发布。**不复制任何一道 JLPT 真题**——真题版权归国际交流基金／JEES 所有，练习题照搬的是形状，不是内容 |
 | OpenCC 转换词典（Carbo Kuo 及贡献者） | Apache-2.0 | 构建输入；其生成的文本随应用发布 |
 | JMdict / EDICT（EDRDG，莫纳什大学） | CC BY-SA 4.0 | 已发布 |
 | JLPT 词表（stephenmk/yomitan-jlpt-vocab；底层词表来自 Jonathan Waller，CC BY） | CC BY-SA 4.0 | 已发布 |

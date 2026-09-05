@@ -37,6 +37,7 @@
 - [`features/sentence-lab.md`](features/sentence-lab.md) — 句子实验室页面：它显示什么、从哪里进入，以及它写明的限制。
 - [`features/content-authoring.md`](features/content-authoring.md) — 新的目录内容如何撰写、如何把关，以及把关保证不了什么。
 - [`features/lesson-path.md`](features/lesson-path.md) — 一个级别被划分成的单元、单元的题目如何挑选，以及下一个何时开放。
+- [`features/jlpt-practice.md`](features/jlpt-practice.md) — JLPT 真题练习：考卷的构成、哪些照搬哪些没有，以及一份卷子的题目如何挑选。
 - [`features/reminders.md`](features/reminders.md) — 每日提醒说什么，以及权限在什么时候请求。
 - [`features/quizzes.md`](features/quizzes.md) — 围绕同一个内容库的十三种提问方式，以及一道题如何被生成或被舍弃。
 - [`algorithms/spaced-repetition.md`](algorithms/spaced-repetition.md) — SM-2 的调度、与教科书的两处偏离，以及复习队列如何派生。

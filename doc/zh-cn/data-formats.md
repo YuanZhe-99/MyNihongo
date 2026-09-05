@@ -122,6 +122,58 @@
 
 对同一表层而言，该表**优先于词汇表**。`test/function_words_test.dart` 强制执行上述规则，正如 `content_catalog_test.dart` 之于目录。
 
+### JLPT 练习题（`drills/structure.json`、`drills/<level>-<section>.json`）
+
+`structure.json` 就是卷子本身——每个级别一条，记录计时部分及其分钟数、计分组、总体及格线，以及每个大問有多少道题。它带一个 `source` 字段写明这些数字出自 jlpt.jp 的哪些页面，因为它们是别人公布的数字，而每一个显示它们的界面都说得出是谁的。**这些题量是题目构成的目标，不是承诺**：JEES 明确说它们每次考试都会变。
+
+```json
+{ "schemaVersion": 1, "source": "jlpt.jp/e/guideline/testsections.html …",
+  "levels": { "N5": {
+    "blocks": [ { "sections": ["vocab"], "minutes": 20 },
+                { "sections": ["grammar", "reading"], "minutes": 40 },
+                { "sections": ["listening"], "minutes": 30 } ],
+    "scoring": [ { "id": "languageReading", "sections": ["vocab", "grammar", "reading"],
+                   "max": 120, "pass": 38 },
+                 { "id": "listening", "sections": ["listening"], "max": 60, "pass": 19 } ],
+    "overallMax": 180, "overallPass": 80,
+    "types": { "kanji-reading": 7, "orthography": 5, "context": 6, "…": 0 } } } }
+```
+
+每个级别每个部分一个练习题文件，平铺存放——`n5-reading.json`，不是 `n5/reading.json`——这样整个第 4 阶段只让 `pubspec.yaml` 多一行资源声明，`tool/convert_zh_tw.dart` 与 `test/content_zh_tw_test.dart` 里那两份硬编码的目录列表也只多一个条目而不是五个。
+
+```json
+{ "schemaVersion": 1, "source": "model-authored (Claude), unreviewed",
+  "license": "GPL-3.0 with the app.", "level": "N5", "section": "reading",
+  "passages": [ { "id": "p:n5-r-001", "type": "short",
+      "lines": [ { "speaker": "", "ja": "…", "reading": "…", "en": "…", "zh": "…" } ],
+      "en": "…", "zh": "…" } ],
+  "questions": [ { "id": "q:n5-v-001", "type": "kanji-reading",
+      "items": ["vocab:jm1578850"], "kind": "choice",
+      "ja": "…", "reading": "…", "blank": "公園", "passage": "p:n5-r-001",
+      "prompt": { "en": "…", "zh": "…" },
+      "options": ["…", "…", "…", "…"], "answer": 0,
+      "answerOrder": [1, 0, 2, 3], "frame": { "before": "…", "after": "…" },
+      "explanation": { "en": "…", "zh": "…" } } ] }
+```
+
+| 字段 | 含义 |
+|---|---|
+| `id` | `q:n[1-5]-[vgrl]-NNN`，文章用 `p:`。**兼容性契约**：「已经问过」就是以它为记的。 |
+| `type` | 二十一个大問键之一。键决定部分，所以部分不必再写一遍。 |
+| `items` | 该题所关于的目录 id，最重要的在前。`items.first` 是复习调度会推动的那一个。从不为空。 |
+| `kind` | `choice` 或 `order`。 |
+| `ja` / `reading` | 题目显示的日文及其假名。阅读与听力题**没有**这两项：它们的日文在文章里。 |
+| `blank` | `ja` 的一个字面子串——该题所考的那一段。由大問决定它渲染成 `（　　）` 还是 `【…】`。 |
+| `passage` | 该题所依据的文章。 |
+| `answerOrder` | 用于 `order`：`answerOrder[i]` 是片段 `i` 最终所在的位置。 |
+| `frame` | 用于 `order`：立于各片段之前与之后的部分。框架加上排好序的片段必须逐字重建出 `ja`。 |
+
+`level` 与 `section` 既写在文件里，**又**要与应用所请求的文件名对照。一个顶着 N5 词汇的名字却说自己是 N4 语法的文件会加载为空，而不是把 N4 语法当成 N5 词汇来计分——那是一次带错标志的合并，而它在 diff 里看不出来。
+
+格式有问题的题目只赔上这道题，不赔上整个文件，与 `LessonPath` 的立场相同。拒绝的情形有：没有 `items`、`type` 未知、选项少于两个、存在空选项、`answer` 超出选项范围，以及 `answerOrder` 不是各片段的排列——最后这一种根本无法判分，因为它声称要拼出的那个句子拼不出来。
+
+**没有 `zh_TW`。** 与其他每一个内容文件一样，繁体字符串由 `tool/convert_zh_tw.dart` 生成并提交；`drills` 就在那个工具的目录列表里。
+
 ### 解析规则
 
 `LocalizedStrings.fromJson` 接受语言代码到字符串或字符串列表的映射，或视为英语的裸字符串。`resolve(locale)` 按 `lookupOrder(locale)` 依次查找——完整标签、裸语言码、英语——再回退到第一个存在的语言。正是这个顺序让 `zh_TW` 回退到 `zh`：某条目没有繁体字符串时，繁体读者看到的是它的简体文本，而不是直接跳到英语。畸形条目——缺少 id、级别、词条或句型——被跳过而不是让整个文件失败；内容是内置的，因此坏条目是由 `test/content_catalog_test.dart` 捕获的内容 bug，而不是需要保护的用户数据。

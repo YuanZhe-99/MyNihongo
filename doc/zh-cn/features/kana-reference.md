@@ -25,8 +25,10 @@
 
 实际结果：Z Fold 8 展开横持、Fold 8 Ultra 两个方向、Pixel 10 Pro Fold、平板横持与桌面窗口得到两列；Fold 8 竖持、较窄的展开态折叠屏、平板竖持以及所有手机保持一列。两道门控及其背后的数字见 [`../adaptive-layout.md`](../adaptive-layout.md)，`test/kana_layout_ui_test.dart` 固定了其中每一台设备。
 
-## 计划
+## 详情面板
 
 点击格子或搜索结果会在底部弹层中打开该假名：大字显示两种字体并在旁标注罗马字；`assets/content/kana_notes.json` 中有条目时显示笔画数与教学要点；为易混淆的假名显示标签；并列出以它开头的最简单、最常用的单词。这些示例单词才是弹层的重点——字表教的是字形，而初学者需要在单词中看到这个字形才能读出来。单词标签打开单词弹层，易混淆标签打开另一个假名，因此 ツ 与 シ 可以直接对照，无需离开页面。弹层位于 `lib/shared/widgets/content_sheets.dart`，排序规则是 `content_links.dart` 中的 `vocabStartingWithKana`。
+
+## 计划
 
 第二阶段添加长按语音合成和假名听力测验；第三阶段添加假名测验模式，其结果成为 `kana:` 进度记录。

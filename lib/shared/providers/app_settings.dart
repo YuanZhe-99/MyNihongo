@@ -228,7 +228,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
   /// have nothing to ask.
   void setQuizModes(Set<QuizMode> modes) {
     state = state.copyWith(quizModes: modes);
-    final all = modes.length == QuizMode.values.length;
+    final all = modes.length == selectableQuizModes.length;
     NihongoStorage.setQuizModes(
       modes.isEmpty || all ? null : modes.map((m) => m.name).join(','),
     );

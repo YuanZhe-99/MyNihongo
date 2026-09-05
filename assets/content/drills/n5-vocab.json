@@ -1,0 +1,639 @@
+{
+  "schemaVersion": 1,
+  "source": "model-authored (Claude), unreviewed",
+  "license": "GPL-3.0 with the app.",
+  "level": "N5",
+  "section": "vocab",
+  "passages": [],
+  "questions": [
+    {
+      "id": "q:n5-v-001",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1273270",
+        "vocab:jm1198180",
+        "vocab:jm1540170"
+      ],
+      "kind": "choice",
+      "ja": "あした公園で友達に会います。",
+      "reading": "あしたこうえんでともだちにあいます。",
+      "blank": "公園",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "こうえん",
+        "こうへん",
+        "くうえん",
+        "こえん"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "公 is read こう and 園 is read えん here, so 公園 (park) is こうえん.",
+        "zh": "「公園」表示公园，公读作こう，園读作えん，合起来是こうえん。",
+        "zh_TW": "「公園」表示公園，公讀作こう，園讀作えん，合起來是こうえん。"
+      }
+    },
+    {
+      "id": "q:n5-v-002",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1443530",
+        "vocab:jm1524700",
+        "vocab:jm1206730"
+      ],
+      "kind": "choice",
+      "ja": "毎朝電車で学校へ行きます。",
+      "reading": "まいあさでんしゃでがっこうへいきます。",
+      "blank": "電車",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "でんしゃ",
+        "てんしゃ",
+        "でんちゃ",
+        "てんちゃ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "電 is voiced here (でん) and 車 in this compound is しゃ, so 電車 (train) is でんしゃ.",
+        "zh": "「電車」意为电车、火车。電读でん（浊音），車在这个词里读しゃ，所以是でんしゃ。",
+        "zh_TW": "「電車」意為電車、火車。電讀でん（濁音），車在這個詞裡讀しゃ，所以是でんしゃ。"
+      }
+    },
+    {
+      "id": "q:n5-v-003",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1370420",
+        "vocab:jm1456360",
+        "vocab:jm1522150"
+      ],
+      "kind": "choice",
+      "ja": "私は図書館で本を読みます。",
+      "reading": "わたしはとしょかんでほんをよみます。",
+      "blank": "図書館",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "としょかん",
+        "どしょかん",
+        "とじょかん",
+        "ずしょかん"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "図書館 (library) reads と・しょ・かん; neither 図 nor 書 is voiced in this word.",
+        "zh": "「図書館」是图书馆，读作としょかん，図和書在这个词中都不浊化。",
+        "zh_TW": "「図書館」是圖書館，讀作としょかん，図和書在這個詞中都不濁化。"
+      }
+    },
+    {
+      "id": "q:n5-v-004",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1315920",
+        "vocab:jm1579110",
+        "vocab:jm1296400"
+      ],
+      "kind": "choice",
+      "ja": "今日は時間がありません。",
+      "reading": "きょうはじかんがありません。",
+      "blank": "時間",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "じかん",
+        "じがん",
+        "しかん",
+        "ときま"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "時 is read じ and 間 is read かん in this compound, so 時間 (time) is じかん.",
+        "zh": "「時間」表示时间。時读じ，間读かん，因此读作じかん。",
+        "zh_TW": "「時間」表示時間。時讀じ，間讀かん，因此讀作じかん。"
+      }
+    },
+    {
+      "id": "q:n5-v-005",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1362360",
+        "vocab:jm1249900",
+        "vocab:jm1524720"
+      ],
+      "kind": "choice",
+      "ja": "兄は毎日新聞を読みます。",
+      "reading": "あにはまいにちしんぶんをよみます。",
+      "blank": "新聞",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "しんぶん",
+        "しんもん",
+        "じんぶん",
+        "しんふん"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "新 is しん and 聞 becomes ぶん here, so 新聞 (newspaper) is しんぶん.",
+        "zh": "「新聞」是报纸。新读しん，聞在此浊化为ぶん，所以是しんぶん。",
+        "zh_TW": "「新聞」是報紙。新讀しん，聞在此濁化為ぶん，所以是しんぶん。"
+      }
+    },
+    {
+      "id": "q:n5-v-006",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1438690",
+        "vocab:jm1579110",
+        "vocab:jm2820690"
+      ],
+      "kind": "choice",
+      "ja": "今日は天気がいいです。",
+      "reading": "きょうはてんきがいいです。",
+      "blank": "天気",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "てんき",
+        "でんき",
+        "てんぎ",
+        "てんけ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "天気 (weather) is てんき. でんき is the different word 電気 (electricity).",
+        "zh": "「天気」指天气，读てんき。でんき是另一个词「電気」（电、电灯）。",
+        "zh_TW": "「天気」指天氣，讀てんき。でんき是另一個詞「電気」（電、電燈）。"
+      }
+    },
+    {
+      "id": "q:n5-v-007",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1490220",
+        "vocab:jm1307630",
+        "vocab:jm1451150"
+      ],
+      "kind": "choice",
+      "ja": "姉は病院で働きます。",
+      "reading": "あねはびょういんではたらきます。",
+      "blank": "病院",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "びょういん",
+        "びよういん",
+        "びょうえん",
+        "ひょういん"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "病院 (hospital) is びょういん, with a small ょ; びよういん with a large よ is a different word.",
+        "zh": "「病院」是医院，读びょういん，よ要写成小写。写成大写的びよういん是另一个词（美容院）。",
+        "zh_TW": "「病院」是醫院，讀びょういん，よ要寫成小寫。寫成大寫的びよういん是另一個詞（美容院）。"
+      }
+    },
+    {
+      "id": "q:n5-v-008",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1358280",
+        "vocab:jm1270590",
+        "vocab:jm1524700"
+      ],
+      "kind": "choice",
+      "ja": "毎朝ごはんをたべます。",
+      "reading": "まいあさごはんをたべます。",
+      "blank": "たべます",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "食べます",
+        "飲べます",
+        "買べます",
+        "見べます"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "たべる means to eat and is written 食べる, so the polite form is 食べます.",
+        "zh": "たべる意为吃，汉字写作「食べる」，礼貌形是食べます。",
+        "zh_TW": "たべる意為吃，漢字寫作「食べる」，禮貌形是食べます。"
+      }
+    },
+    {
+      "id": "q:n5-v-009",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1361490",
+        "vocab:jm1246700",
+        "vocab:jm1473740"
+      ],
+      "kind": "choice",
+      "ja": "あたらしい靴を買いました。",
+      "reading": "あたらしいくつをかいました。",
+      "blank": "あたらしい",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "新しい",
+        "親しい",
+        "断しい",
+        "折しい"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "あたらしい (new) is written 新しい. 親しい is read したしい and means close or familiar.",
+        "zh": "あたらしい是「新しい」，意为新的。親しい读したしい，意思是亲近的。",
+        "zh_TW": "あたらしい是「新しい」，意為新的。親しい讀したしい，意思是親近的。"
+      }
+    },
+    {
+      "id": "q:n5-v-010",
+      "items": [
+        "vocab:jm1243490",
+        "vocab:jm1175140",
+        "vocab:jm1242160"
+      ],
+      "type": "orthography",
+      "kind": "choice",
+      "ja": "駅の近くにぎんこうがあります。",
+      "reading": "えきのちかくにぎんこうがあります。",
+      "blank": "ぎんこう",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "銀行",
+        "金行",
+        "銀校",
+        "鉄行"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "ぎんこう (bank) is written 銀行, with 銀 for ぎん and 行 for こう.",
+        "zh": "ぎんこう是银行，写作「銀行」：銀读ぎん，行读こう。",
+        "zh_TW": "ぎんこう是銀行，寫作「銀行」：銀讀ぎん，行讀こう。"
+      }
+    },
+    {
+      "id": "q:n5-v-011",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1512670",
+        "vocab:jm1464530",
+        "vocab:jm1524720"
+      ],
+      "kind": "choice",
+      "ja": "毎日日本語をべんきょうします。",
+      "reading": "まいにちにほんごをべんきょうします。",
+      "blank": "べんきょう",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "勉強",
+        "勉張",
+        "免強",
+        "勤強"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "べんきょう (study) is written 勉強; 勉 gives べん and 強 gives きょう.",
+        "zh": "べんきょう意为学习，写作「勉強」：勉读べん，強读きょう。",
+        "zh_TW": "べんきょう意為學習，寫作「勉強」：勉讀べん，強讀きょう。"
+      }
+    },
+    {
+      "id": "q:n5-v-012",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1210360",
+        "vocab:jm1579110",
+        "vocab:jm1008630"
+      ],
+      "kind": "choice",
+      "ja": "今日はとてもさむいです。",
+      "reading": "きょうはとてもさむいです。",
+      "blank": "さむい",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "寒い",
+        "暑い",
+        "熱い",
+        "厚い"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "さむい (cold weather) is written 寒い. 暑い and 熱い are both read あつい.",
+        "zh": "さむい指天气冷，写作「寒い」。暑い和熱い都读あつい，意思相反。",
+        "zh_TW": "さむい指天氣冷，寫作「寒い」。暑い和熱い都讀あつい，意思相反。"
+      }
+    },
+    {
+      "id": "q:n5-v-013",
+      "type": "context",
+      "items": [
+        "vocab:jm1495770",
+        "vocab:jm1443000",
+        "vocab:jm1499320"
+      ],
+      "kind": "choice",
+      "ja": "夜は部屋の電気をつけます。",
+      "reading": "よるはへやのでんきをつけます。",
+      "blank": "つけます",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "つけます",
+        "けします",
+        "あけます",
+        "しめます"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "電気を つける means to turn a light on, which is what you do at night. けす would turn it off.",
+        "zh": "「電気をつける」是开灯，晚上房间要开灯。けす是关灯，意思相反。",
+        "zh_TW": "「電気をつける」是開燈，晚上房間要開燈。けす是關燈，意思相反。"
+      }
+    },
+    {
+      "id": "q:n5-v-014",
+      "type": "context",
+      "items": [
+        "vocab:jm1223640",
+        "vocab:jm1524700",
+        "vocab:jm1404975"
+      ],
+      "kind": "choice",
+      "ja": "毎朝早く起きます。",
+      "reading": "まいあさはやくおきます。",
+      "blank": "起きます",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "起きます",
+        "寝ます",
+        "着きます",
+        "置きます"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "おきる means to get up, which is what you do early in the morning. ねる (to go to bed) does not fit 毎朝早く.",
+        "zh": "おきる是起床，和「毎朝早く」（每天早上很早）搭配。ねる是睡觉，不合适。",
+        "zh_TW": "おきる是起床，和「毎朝早く」（每天早上很早）搭配。ねる是睡覺，不合適。"
+      }
+    },
+    {
+      "id": "q:n5-v-015",
+      "type": "context",
+      "items": [
+        "vocab:jm1533580",
+        "vocab:jm1522150"
+      ],
+      "kind": "choice",
+      "ja": "この本はとてもおもしろいです。",
+      "reading": "このほんはとてもおもしろいです。",
+      "blank": "おもしろい",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "おもしろい",
+        "いそがしい",
+        "つめたい",
+        "せまい"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "おもしろい (interesting) is what you say about a book. いそがしい describes people, つめたい things you touch, せまい places.",
+        "zh": "形容书用おもしろい（有意思）。いそがしい形容人忙，つめたい形容摸起来凉，せまい形容地方窄。",
+        "zh_TW": "形容書用おもしろい（有意思）。いそがしい形容人忙，つめたい形容摸起來涼，せまい形容地方窄。"
+      }
+    },
+    {
+      "id": "q:n5-v-016",
+      "type": "context",
+      "items": [
+        "vocab:jm1589500",
+        "vocab:jm1443530",
+        "vocab:jm1175140"
+      ],
+      "kind": "choice",
+      "ja": "駅で電車を降ります。",
+      "reading": "えきででんしゃをおります。",
+      "blank": "降ります",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "降ります",
+        "乗ります",
+        "帰ります",
+        "走ります"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "電車を おりる means to get off the train at a station. のる would be to get on, and it takes に, not を.",
+        "zh": "「電車を降りる」是在车站下车。のる是上车，而且要用に，不用を。",
+        "zh_TW": "「電車を降りる」是在車站下車。のる是上車，而且要用に，不用を。"
+      }
+    },
+    {
+      "id": "q:n5-v-017",
+      "type": "context",
+      "items": [
+        "vocab:jm1427900",
+        "vocab:jm1385070",
+        "vocab:jm1327720"
+      ],
+      "kind": "choice",
+      "ja": "手紙に切手を貼ります。",
+      "reading": "てがみにきってをはります。",
+      "blank": "貼ります",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "貼ります",
+        "洗います",
+        "消します",
+        "磨きます"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "はる is the verb for sticking a stamp onto a letter.",
+        "zh": "把邮票贴在信上要用はる（贴）这个动词。",
+        "zh_TW": "把郵票貼在信上要用はる（貼）這個動詞。"
+      }
+    },
+    {
+      "id": "q:n5-v-018",
+      "type": "context",
+      "items": [
+        "vocab:jm1523940",
+        "vocab:jm1313000",
+        "vocab:jm1524730"
+      ],
+      "kind": "choice",
+      "ja": "私は毎晩歯を磨きます。",
+      "reading": "わたしはまいばんはをみがきます。",
+      "blank": "磨きます",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "磨きます",
+        "洗います",
+        "切ります",
+        "使います"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "歯を みがく is the set phrase for brushing your teeth; 洗う is used for hands and dishes.",
+        "zh": "刷牙的固定说法是「歯を磨く」。洗う用于洗手、洗碗等。",
+        "zh_TW": "刷牙的固定說法是「歯を磨く」。洗う用於洗手、洗碗等。"
+      }
+    },
+    {
+      "id": "q:n5-v-019",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1157000",
+        "vocab:jm1536010",
+        "vocab:jm1460850"
+      ],
+      "kind": "choice",
+      "ja": "この問題はやさしいです。",
+      "reading": "このもんだいはやさしいです。",
+      "blank": "やさしい",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "むずかしくないです",
+        "たかくないです",
+        "あたらしくないです",
+        "ちいさくないです"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "やさしい here means easy, so it is the same as saying the question is not difficult.",
+        "zh": "这里的やさしい是「简单」，也就是说这道题不难，所以等于むずかしくない。",
+        "zh_TW": "這裡的やさしい是「簡單」，也就是說這道題不難，所以等於むずかしくない。"
+      }
+    },
+    {
+      "id": "q:n5-v-020",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1414220",
+        "vocab:jm1415870",
+        "vocab:jm1582120"
+      ],
+      "kind": "choice",
+      "ja": "この店はいつも人が大勢います。",
+      "reading": "このみせはいつもひとがおおぜいいます。",
+      "blank": "大勢",
+      "prompt": {
+        "en": "Which word means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "たくさん",
+        "すこし",
+        "ぜんぶ",
+        "ひとり"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "おおぜい means a large number of people, so たくさん (a lot) says the same thing.",
+        "zh": "おおぜい指人很多，和たくさん（很多）意思相同。すこし是一点点，正好相反。",
+        "zh_TW": "おおぜい指人很多，和たくさん（很多）意思相同。すこし是一點點，正好相反。"
+      }
+    },
+    {
+      "id": "q:n5-v-021",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1381820",
+        "vocab:jm1463480",
+        "vocab:jm1499320"
+      ],
+      "kind": "choice",
+      "ja": "この部屋は静かではありません。",
+      "reading": "このへやはしずかではありません。",
+      "blank": "静かではありません",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "にぎやかです",
+        "しずかです",
+        "きれいです",
+        "ひろいです"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Saying the room is not quiet is another way of saying it is lively and noisy, にぎやか.",
+        "zh": "「不安静」换一种说法就是热闹，也就是にぎやかです。",
+        "zh_TW": "「不安靜」換一種說法就是熱鬧，也就是にぎやかです。"
+      }
+    }
+  ]
+}

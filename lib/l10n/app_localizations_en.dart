@@ -234,15 +234,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get learnOpenGrammar => 'Browse grammar';
 
   @override
-  String get learnRoadmap => 'Coming next';
-
-  @override
-  String get learnRoadmapSrs => 'Scenario lessons and writing practice';
-
-  @override
-  String get learnRoadmapJlpt => 'JLPT N5–N1 practice sets';
-
-  @override
   String get kanaTitle => 'Kana';
 
   @override
@@ -1484,4 +1475,86 @@ class AppLocalizationsEn extends AppLocalizations {
   String writingSentenceN(int n) {
     return 'Sentence $n';
   }
+
+  @override
+  String get quizModeDrill => 'JLPT drill';
+
+  @override
+  String get drillSectionVocab => 'Vocabulary';
+
+  @override
+  String get drillSectionGrammar => 'Grammar';
+
+  @override
+  String get drillSectionReading => 'Reading';
+
+  @override
+  String get drillSectionListening => 'Listening';
+
+  @override
+  String get drillShowTranslation => 'Show translation';
+
+  @override
+  String get drillHideTranslation => 'Hide translation';
+
+  @override
+  String get drillTranscript => 'Transcript';
+
+  @override
+  String get drillPlay => 'Play';
+
+  @override
+  String get drillPlayAgain => 'Play again';
+
+  @override
+  String drillPlaysLeft(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n plays left',
+      one: '1 play left',
+      zero: 'no plays left',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get drillNoVoice =>
+      'This device has no Japanese voice, so this cannot be played.';
+
+  @override
+  String jlptPracticeTitle(String level) {
+    return 'JLPT $level practice';
+  }
+
+  @override
+  String get jlptPracticeBody =>
+      'Questions written in the shape of the paper, one section at a time. Untimed, with the answer explained after each.';
+
+  @override
+  String jlptQuestionCount(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n questions',
+      one: '1 question',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get jlptNoContent => 'Not written yet for this level.';
+
+  @override
+  String get jlptNoVoice => 'Needs a Japanese voice on this device.';
+
+  @override
+  String get jlptMock => 'Mock exam';
+
+  @override
+  String get jlptHistory => 'Results';
+
+  @override
+  String get jlptComingNext =>
+      'Timed mock exams and a results history come in the next update.';
 }

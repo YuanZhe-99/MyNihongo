@@ -66,6 +66,8 @@ The shared WebDAV sync, backup, and ZIP engines are not in this repository. They
   written, checked, and what the checks cannot promise.
 - [`features/lesson-path.md`](features/lesson-path.md) — the units a level is taught in, how a
   unit's questions are chosen, and when the next one opens.
+- [`features/jlpt-practice.md`](features/jlpt-practice.md) — the JLPT drills: the shape of the
+  paper, what is copied from it and what is not, and how a paper's questions are chosen.
 - [`features/reminders.md`](features/reminders.md) — the daily reminder, what it says, and
   when permission is asked for.
 - [`features/quizzes.md`](features/quizzes.md) — the thirteen ways of asking about the same

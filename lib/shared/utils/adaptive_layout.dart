@@ -232,6 +232,22 @@ double quizQuestionPaneWidth(double contentWidth) {
   return capped < proportional ? capped : proportional;
 }
 
+/// Purpose: Return the width of the exam page's passage pane.
+/// Inputs: `contentWidth` — the width the page has to lay out in.
+/// Returns: `double`.
+/// Side effects: None.
+/// Notes: The mirror image of [quizQuestionPaneWidth], and deliberately so.
+/// There the question is the smaller half because it holds a word; here it is
+/// the larger half because it holds a passage the learner reads and re-reads
+/// while answering. 0.55 rather than 0.5 gives the text the longer line
+/// without letting it crowd the options, and the same final cap keeps the
+/// answers at [quizAnswerPaneMinWidth] on the narrowest window that splits.
+double drillPassagePaneWidth(double contentWidth) {
+  final proportional = (contentWidth * 0.55).clamp(360.0, 640.0);
+  final capped = contentWidth - quizAnswerPaneMinWidth;
+  return capped < proportional ? capped : proportional;
+}
+
 /// Purpose: Return the width of the settings page's fixed left pane.
 /// Inputs: `contentWidth` — the width both panes share, in logical pixels,
 /// which is [shellContentWidth] rather than the screen width.

@@ -7,6 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:my_nihongo/app/data_modules.dart';
 import 'package:my_nihongo/features/content/services/content_repository.dart';
 import 'package:my_nihongo/features/learn/views/learn_page.dart';
+import 'package:my_nihongo/features/learn/widgets/jlpt_practice_card.dart';
 import 'package:my_nihongo/features/learn/widgets/learning_settings_tiles.dart';
 import 'package:my_nihongo/l10n/app_localizations.dart';
 import 'package:path/path.dart' as p;
@@ -214,5 +215,70 @@ void main() {
     final profile = records.firstWhere((r) => r['id'] == 'profile:me') as Map;
     expect((profile['profile'] as Map)['targetLevel'], 'N4');
     expect(tester.takeException(), isNull);
+  });
+
+  group('the JLPT practice card', () {
+    // It replaced the "coming next" card, which promised exactly the three
+    // things that have now shipped. A card advertising a feature the learner
+    // is already using is worse than no card.
+    testWidgets('names the level and lists all four sections', (tester) async {
+      await pumpAt(tester, 412, 2400, home: const JlptPracticeCard());
+      expect(find.text('JLPT N5 练习'), findsOneWidget);
+      expect(find.text('文字・词汇'), findsOneWidget);
+      expect(find.text('语法'), findsOneWidget);
+      expect(find.text('阅读'), findsOneWidget);
+      expect(find.text('听力'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('a section with content says how much and is tappable', (
+      tester,
+    ) async {
+      await pumpAt(tester, 412, 2400, home: const JlptPracticeCard());
+      final reading = find.widgetWithText(ListTile, '阅读');
+      expect(reading, findsOneWidget);
+      expect(tester.widget<ListTile>(reading).onTap, isNotNull);
+      expect(tester.widget<ListTile>(reading).enabled, isTrue);
+      expect(find.textContaining('题'), findsWidgets);
+    });
+
+    testWidgets('listening is disabled with a reason, not hidden', (
+      tester,
+    ) async {
+      // The development host has no Japanese voice, which is exactly the
+      // device this rule is for: a question nobody can hear has no answer,
+      // and a missing row would look like a bug rather than a limitation.
+      await pumpAt(tester, 412, 2400, home: const JlptPracticeCard());
+      final listening = find.widgetWithText(ListTile, '听力');
+      expect(listening, findsOneWidget);
+      expect(tester.widget<ListTile>(listening).enabled, isFalse);
+      expect(find.text('需要设备上有日语语音。'), findsOneWidget);
+    });
+
+    testWidgets('the two unbuilt buttons are shown disabled and explained', (
+      tester,
+    ) async {
+      await pumpAt(tester, 412, 2400, home: const JlptPracticeCard());
+      final mock = find.widgetWithText(OutlinedButton, '模拟考试');
+      final history = find.widgetWithText(OutlinedButton, '成绩记录');
+      expect(mock, findsOneWidget);
+      expect(history, findsOneWidget);
+      expect(tester.widget<OutlinedButton>(mock).onPressed, isNull);
+      expect(tester.widget<OutlinedButton>(history).onPressed, isNull);
+      expect(
+        find.text('计时模拟考试与成绩记录将在下次更新中推出。'),
+        findsOneWidget,
+        reason: 'a disabled button with no reason is just a broken button',
+      );
+    });
+
+    testWidgets('the Learn tab shows it in place of the roadmap card', (
+      tester,
+    ) async {
+      await pumpAt(tester, 412, 2400);
+      expect(find.byType(JlptPracticeCard), findsOneWidget);
+      expect(find.text('即将推出'), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
   });
 }

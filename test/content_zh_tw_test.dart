@@ -27,7 +27,7 @@ void main() {
     'assets/content/vocab.json',
     'assets/content/kana_notes.json',
     'assets/content/function_words.json',
-    for (final name in const ['grammar', 'lessons'])
+    for (final name in const ['drills', 'grammar', 'lessons'])
       if (Directory('assets/content/$name').existsSync())
         for (final file in Directory('assets/content/$name')
             .listSync()

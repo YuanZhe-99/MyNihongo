@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "source": "model-authored (Claude), unreviewed",
+  "license": "GPL-3.0 with the app.",
+  "level": "N5",
+  "section": "reading",
+  "passages": [
+    {
+      "id": "p:n5-r-001",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "今日は朝から雨が降っています。",
+          "reading": "きょうはあさからあめがふっています。"
+        },
+        {
+          "ja": "私は傘を持っていませんでした。",
+          "reading": "わたしはかさをもっていませんでした。"
+        },
+        {
+          "ja": "でも、友達が新しい傘を貸してくれました。",
+          "reading": "でも、ともだちがあたらしいかさをかしてくれました。"
+        }
+      ],
+      "en": "It has been raining since this morning. I did not have an umbrella. But a friend lent me a new umbrella.",
+      "zh": "今天从早上就一直在下雨。我没有带伞。不过，朋友借了一把新伞给我。",
+      "zh_TW": "今天從早上就一直在下雨。我沒有帶傘。不過，朋友借了一把新傘給我。"
+    },
+    {
+      "id": "p:n5-r-002",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "私は毎週土曜日に日本語を勉強しています。",
+          "reading": "わたしはまいしゅうどようびににほんごをべんきょうしています。"
+        },
+        {
+          "ja": "学校は駅の近くにあります。",
+          "reading": "がっこうはえきのちかくにあります。"
+        },
+        {
+          "ja": "先週は宿題が多かったから、少し大変でした。",
+          "reading": "せんしゅうはしゅくだいがおおかったから、すこしたいへんでした。"
+        },
+        {
+          "ja": "でも、今週は宿題が少ないです。",
+          "reading": "でも、こんしゅうはしゅくだいがすくないです。"
+        }
+      ],
+      "en": "I study Japanese every Saturday. The school is near the station. Last week was a little hard because there was a lot of homework. But this week there is not much homework.",
+      "zh": "我每周六学日语。学校在车站附近。上周作业很多，所以有点辛苦。不过这周作业不多。",
+      "zh_TW": "我每週六學日語。學校在車站附近。上週作業很多，所以有點辛苦。不過這週作業不多。"
+    },
+    {
+      "id": "p:n5-r-003",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "先週の日曜日に、家族と山へ行きました。",
+          "reading": "せんしゅうのにちようびに、かぞくとやまへいきました。"
+        },
+        {
+          "ja": "朝六時に起きて、電車に乗りました。",
+          "reading": "あさろくじにおきて、でんしゃにのりました。"
+        },
+        {
+          "ja": "山の上は少し寒かったです。",
+          "reading": "やまのうえはすこしさむかったです。"
+        },
+        {
+          "ja": "お弁当を食べてから、写真をたくさん撮りました。",
+          "reading": "おべんとうをたべてから、しゃしんをたくさんとりました。"
+        },
+        {
+          "ja": "山の花がとてもきれいでした。",
+          "reading": "やまのはながとてもきれいでした。"
+        },
+        {
+          "ja": "でも、家に帰ったとき、私は疲れました。",
+          "reading": "でも、いえにかえったとき、わたしはつかれました。"
+        },
+        {
+          "ja": "来週は海へ行きたいです。",
+          "reading": "らいしゅうはうみへいきたいです。"
+        }
+      ],
+      "en": "Last Sunday I went to the mountains with my family. I got up at six in the morning and took the train. It was a little cold at the top of the mountain. After eating my boxed lunch, I took a lot of photos. The mountain flowers were very pretty. But by the time I got home, I was tired. Next week I want to go to the sea.",
+      "zh": "上周日我和家人去了山上。早上六点起床，坐了电车。山顶上有点冷。吃完便当后，我拍了很多照片。山上的花非常漂亮。不过回到家的时候，我累了。下周我想去海边。",
+      "zh_TW": "上週日我和家人去了山上。早上六點起床，坐了電車。山頂上有點冷。吃完便當後，我拍了很多照片。山上的花非常漂亮。不過回到家的時候，我累了。下週我想去海邊。"
+    },
+    {
+      "id": "p:n5-r-004",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "図書館の時間",
+          "reading": "としょかんのじかん"
+        },
+        {
+          "ja": "月曜日から金曜日までは、九時から六時までです。",
+          "reading": "げつようびからきんようびまでは、くじからろくじまでです。"
+        },
+        {
+          "ja": "土曜日は、九時から十二時までです。",
+          "reading": "どようびは、くじからじゅうにじまでです。"
+        },
+        {
+          "ja": "日曜日は休みです。",
+          "reading": "にちようびはやすみです。"
+        },
+        {
+          "ja": "本は十日、借りることができます。",
+          "reading": "ほんはとおか、かりることができます。"
+        },
+        {
+          "ja": "図書館の中で、食べ物を食べてはいけません。",
+          "reading": "としょかんのなかで、たべものをたべてはいけません。"
+        },
+        {
+          "ja": "静かに本を読んでください。",
+          "reading": "しずかにほんをよんでください。"
+        }
+      ],
+      "en": "Library hours. Monday to Friday, nine o'clock to six o'clock. Saturday, nine o'clock to twelve o'clock. Closed on Sunday. Books may be borrowed for ten days. Do not eat food inside the library. Please read quietly.",
+      "zh": "图书馆开放时间。周一到周五，九点到六点。周六，九点到十二点。周日休息。书可以借十天。馆内不可以吃东西。请安静地看书。",
+      "zh_TW": "圖書館開放時間。週一到週五，九點到六點。週六，九點到十二點。週日休息。書可以借十天。館內不可以吃東西。請安靜地看書。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q:n5-r-001",
+      "type": "short",
+      "items": [
+        "vocab:jm1301940",
+        "vocab:jm1323560",
+        "vocab:jm1540170"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-r-001",
+      "prompt": {
+        "en": "How did the writer get an umbrella today?",
+        "zh": "作者今天是怎么得到伞的？",
+        "zh_TW": "作者今天是怎麼得到傘的？"
+      },
+      "options": [
+        "傘を買いました。",
+        "友達に傘を借りました。",
+        "家に帰りました。",
+        "友達に傘を貸しました。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The text says a friend lent the writer a new umbrella, so from the writer's side the umbrella was borrowed from a friend. The writer never buys one, never goes home, and is the one receiving rather than lending.",
+        "zh": "文中说朋友把新伞借给了作者，所以从作者的角度看，是向朋友借了伞。作者没有买伞，也没有回家，而且是接受的一方，不是出借的一方。",
+        "zh_TW": "文中說朋友把新傘借給了作者，所以從作者的角度看，是向朋友借了傘。作者沒有買傘，也沒有回家，而且是接受的一方，不是出借的一方。"
+      }
+    },
+    {
+      "id": "q:n5-r-002",
+      "type": "short",
+      "items": [
+        "vocab:jm1337270",
+        "vocab:jm1407460"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-r-002",
+      "prompt": {
+        "en": "Why was last week a little hard for the writer?",
+        "zh": "为什么作者觉得上周有点辛苦？",
+        "zh_TW": "為什麼作者覺得上週有點辛苦？"
+      },
+      "options": [
+        "宿題が多かったからです。",
+        "学校が遠いからです。",
+        "日本語が好きだからです。",
+        "駅が近いからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The reason is given with から right after the clause about homework: there was a lot of homework last week. The school being near the station is stated but is not a reason for anything, and nothing in the text says the school is far.",
+        "zh": "「から」直接接在讲作业的那一句后面，说明原因是上周作业多。文中虽然提到学校靠近车站，但那不是原因，也没有说学校很远。",
+        "zh_TW": "「から」直接接在講作業的那一句後面，說明原因是上週作業多。文中雖然提到學校靠近車站，但那不是原因，也沒有說學校很遠。"
+      }
+    },
+    {
+      "id": "q:n5-r-003",
+      "type": "mid",
+      "items": [
+        "vocab:jm1210360",
+        "vocab:jm1302680"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-r-003",
+      "prompt": {
+        "en": "What was the weather like at the top of the mountain?",
+        "zh": "山顶上的天气怎么样？",
+        "zh_TW": "山頂上的天氣怎麼樣？"
+      },
+      "options": [
+        "暑かったです。",
+        "少し寒かったです。",
+        "雨が降りました。",
+        "暖かかったです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The third sentence says the top of the mountain was a little cold. Nothing in the text mentions heat, warmth, or rain on that day.",
+        "zh": "第三句写到山顶上有点冷。文中没有提到那天很热、很暖和，也没有提到下雨。",
+        "zh_TW": "第三句寫到山頂上有點冷。文中沒有提到那天很熱、很暖和，也沒有提到下雨。"
+      }
+    },
+    {
+      "id": "q:n5-r-004",
+      "type": "mid",
+      "items": [
+        "vocab:jm1201190",
+        "vocab:jm1578850"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-r-003",
+      "prompt": {
+        "en": "What does the writer want to do next week?",
+        "zh": "作者下周想做什么？",
+        "zh_TW": "作者下週想做什麼？"
+      },
+      "options": [
+        "山へ行きたいです。",
+        "海へ行きたいです。",
+        "写真を撮りたいです。",
+        "電車に乗りたいです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The last sentence says the writer wants to go to the sea next week. Going to the mountains, taking photos and riding the train are all things that already happened last Sunday.",
+        "zh": "最后一句说作者下周想去海边。去山上、拍照和坐电车都是上周日已经做过的事。",
+        "zh_TW": "最後一句說作者下週想去海邊。去山上、拍照和坐電車都是上週日已經做過的事。"
+      }
+    },
+    {
+      "id": "q:n5-r-005",
+      "type": "info",
+      "items": [
+        "vocab:jm1370420",
+        "vocab:jm1445590"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-r-004",
+      "prompt": {
+        "en": "On Saturday, what time does the library close?",
+        "zh": "周六图书馆几点关门？",
+        "zh_TW": "週六圖書館幾點關門？"
+      },
+      "options": [
+        "九時です。",
+        "十二時です。",
+        "六時です。",
+        "一時です。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The Saturday line reads nine o'clock to twelve o'clock, so twelve is the closing time. Nine is the opening time, and six is the weekday closing time.",
+        "zh": "周六那一行写的是九点到十二点，所以关门时间是十二点。九点是开门时间，六点是周一到周五的关门时间。",
+        "zh_TW": "週六那一行寫的是九點到十二點，所以關門時間是十二點。九點是開門時間，六點是週一到週五的關門時間。"
+      }
+    }
+  ]
+}

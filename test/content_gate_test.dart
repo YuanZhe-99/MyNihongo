@@ -6,9 +6,13 @@ import 'package:my_nihongo/features/content/models/content_catalog.dart';
 import 'package:my_nihongo/features/content/models/jlpt_level.dart';
 import 'package:my_nihongo/features/content/services/content_repository.dart';
 import 'package:my_nihongo/features/content/services/furigana_aligner.dart';
+import 'package:my_nihongo/features/drills/models/drill_file.dart';
+import 'package:my_nihongo/features/drills/models/drill_section.dart';
 import 'package:my_nihongo/features/sentence/models/token.dart';
 import 'package:my_nihongo/features/sentence/services/lexicon.dart';
 import 'package:my_nihongo/features/sentence/services/sentence_analyzer.dart';
+
+import '../tool/draft_inputs.dart' show drillTypeSections;
 
 /// Purpose: Judge one draft content file against everything the shipped
 /// catalog and its tests require, and report **every** problem at once.
@@ -553,6 +557,289 @@ void main() {
       '${missing.length} ${level.label} grammar points are in no unit, so the '
       'path never teaches them: ${missing.take(20).join(', ')}'
       '${missing.length > 20 ? ' ...' : ''}',
+    );
+    expect(problems, isEmpty, reason: '\n${problems.join('\n')}');
+  });
+
+  test('every drill question could be asked on a paper', () {
+    if (draft['kind'] != 'drills') return;
+    final level = JlptLevel.parse('${draft['level']}')!;
+    final section = DrillSection.parse(draft['section']);
+    need(section != null, '"${draft['section']}" is not a section');
+    if (section == null) {
+      expect(problems, isEmpty, reason: '\n${problems.join('\n')}');
+      return;
+    }
+
+    // The two tables that have to agree: the app's `DrillType` and the plain
+    // Dart copy the batch generator uses. They are separate because `tool/`
+    // must not depend on Flutter, so this is where the copy is checked.
+    for (final type in DrillType.values) {
+      need(
+        drillTypeSections[type.key] == type.section.name,
+        'tool/draft_inputs.dart files ${type.key} under '
+        '"${drillTypeSections[type.key]}", the app under '
+        '"${type.section.name}"',
+      );
+    }
+
+    final structure = JlptStructure.fromJson(
+      jsonDecode(
+        File('assets/content/drills/structure.json').readAsStringSync(),
+      ),
+    );
+    final composition = structure.forLevel(level)?.types ?? const {};
+    need(
+      composition.isNotEmpty,
+      'structure.json has no ${level.label}, so there is no paper to write '
+      'for',
+    );
+
+    // Every id already shipped anywhere at this level. Ids are unique across
+    // sections, not only within one: a question id is what "already asked"
+    // is remembered by, and two questions under one id would make that mean
+    // whichever the file happened to list first.
+    final taken = <String>{};
+    final takenPassages = <String>{};
+    for (final other in DrillSection.values) {
+      final file = File(
+        'assets/content/drills/${level.name}-${other.name}.json',
+      );
+      if (!file.existsSync()) continue;
+      final json = jsonDecode(file.readAsStringSync()) as Map;
+      for (final question in (json['questions'] as List? ?? const [])) {
+        if (question is Map) taken.add('${question['id']}');
+      }
+      for (final passage in (json['passages'] as List? ?? const [])) {
+        if (passage is Map) takenPassages.add('${passage['id']}');
+      }
+    }
+
+    final letter = switch (section) {
+      DrillSection.vocab => 'v',
+      DrillSection.grammar => 'g',
+      DrillSection.reading => 'r',
+      DrillSection.listening => 'l',
+    };
+    final idShape = RegExp('^q:${level.name}-$letter-\\d{3,4}\$');
+    final passageShape = RegExp('^p:${level.name}-$letter-\\d{3,4}\$');
+
+    /// Purpose: Check that a localized block has both languages.
+    /// Inputs: The `label`, the block, and whether it is `required`.
+    /// Returns: None.
+    /// Side effects: Appends to `problems`.
+    /// Notes: Internal helper used within this test only. `zh_TW` is refused
+    /// rather than accepted-and-ignored: every Traditional string in the repo
+    /// is generated from the Simplified beside it, so a hand-written one is a
+    /// string that silently stops matching the moment the Simplified changes.
+    void localized(String label, Object? block, {bool required = true}) {
+      if (block == null) {
+        need(!required, '$label: missing');
+        return;
+      }
+      if (block is! Map) {
+        need(false, '$label: not an object of languages');
+        return;
+      }
+      need(block['zh_TW'] == null, '$label: zh_TW is generated, not written');
+      for (final language in const ['en', 'zh']) {
+        need(
+          '${block[language] ?? ''}'.trim().isNotEmpty,
+          '$label: no "$language"',
+        );
+      }
+    }
+
+    final passages = draft['passages'] as List? ?? const [];
+    final passageIds = <String>{};
+    final passageTypes = <String, String>{};
+    for (final raw in passages) {
+      if (raw is! Map) {
+        need(false, 'a passage that is not an object');
+        continue;
+      }
+      final id = '${raw['id']}';
+      need(
+        passageShape.hasMatch(id),
+        '$id: not shaped p:${level.name}-$letter-NNN',
+      );
+      need(
+        !takenPassages.contains(id) && passageIds.add(id),
+        '$id: this passage id is already taken',
+      );
+      final type = '${raw['type']}';
+      passageTypes[id] = type;
+      need(
+        DrillType.parse(type) != null,
+        '$id: "$type" is not a question type',
+      );
+      final lines = raw['lines'] as List? ?? const [];
+      need(lines.isNotEmpty, '$id: a passage with no lines');
+      var translated = false;
+      for (var i = 0; i < lines.length; i++) {
+        final line = lines[i];
+        if (line is! Map) {
+          need(false, '$id line $i: not an object');
+          continue;
+        }
+        sentence(
+          '$id line $i',
+          '${line['ja']}',
+          line['reading'] as String?,
+          level,
+        );
+        need(line['zh_TW'] == null, '$id line $i: zh_TW is generated');
+        if ('${line['en'] ?? ''}'.trim().isNotEmpty) translated = true;
+      }
+      // Either every line is translated or the passage is, and at least one
+      // of the two: a listening script is followed line by line and a reading
+      // text is read whole, so which one carries the translation depends on
+      // what the passage is for.
+      final whole = raw['en'] != null || raw['zh'] != null;
+      need(
+        translated || whole,
+        '$id: no translation, on the passage or on any line',
+      );
+      if (whole) {
+        localized('$id translation', {'en': raw['en'], 'zh': raw['zh']});
+      }
+      need(raw['zh_TW'] == null, '$id: zh_TW is generated, not written');
+    }
+
+    final questions = draft['questions'] as List? ?? const [];
+    need(questions.isNotEmpty, 'no questions');
+    final ids = <String>{};
+    final referenced = <String>{};
+    for (final raw in questions) {
+      if (raw is! Map) {
+        need(false, 'a question that is not an object');
+        continue;
+      }
+      final id = '${raw['id']}';
+      need(idShape.hasMatch(id), '$id: not shaped q:${level.name}-$letter-NNN');
+      need(
+        !taken.contains(id) && ids.add(id),
+        '$id: this question id is already taken',
+      );
+
+      final type = DrillType.parse(raw['type']);
+      if (type == null) {
+        need(false, '$id: "${raw['type']}" is not a question type');
+        continue;
+      }
+      need(
+        type.section == section,
+        '$id: ${type.key} is a ${type.section.name} question in the '
+        '${section.name} file',
+      );
+      need(
+        composition.containsKey(type),
+        '$id: ${level.label} has no ${type.key} 大問, so this question is not '
+        'on the paper',
+      );
+
+      final items = raw['items'] as List? ?? const [];
+      need(items.isNotEmpty, '$id: no "items", so nothing to record it under');
+      for (final item in items) {
+        final itemId = '$item';
+        final entry = catalog.vocabById(itemId);
+        final point = catalog.grammarById(itemId);
+        if (entry == null && point == null) {
+          need(false, '$id: item $itemId is in no catalog the app ships');
+          continue;
+        }
+        final itemLevel = entry?.level ?? point!.level;
+        need(
+          itemLevel.index >= level.index,
+          '$id: item $itemId is ${itemLevel.label}, harder than ${level.label}',
+        );
+      }
+
+      localized('$id prompt', raw['prompt']);
+      localized('$id explanation', raw['explanation']);
+      need(raw['zh_TW'] == null, '$id: zh_TW is generated, not written');
+
+      final options = raw['options'] as List? ?? const [];
+      need(options.length == 4, '$id: ${options.length} options, not 4');
+      need(
+        options.map((o) => '$o').toSet().length == options.length,
+        '$id: two options are the same, so two answers are right',
+      );
+      for (final option in options) {
+        need('$option'.trim().isNotEmpty, '$id: an empty option');
+      }
+
+      final kind = '${raw['kind'] ?? 'choice'}';
+      if (kind == 'order') {
+        final order = [
+          for (final index in (raw['answerOrder'] as List? ?? const []))
+            if (index is int) index,
+        ];
+        final sorted = [...order]..sort();
+        need(
+          sorted.length == options.length &&
+              sorted.asMap().entries.every((e) => e.value == e.key),
+          '$id: "answerOrder" is not a permutation of the four fragments',
+        );
+        if (sorted.length == options.length) {
+          final ordered = [for (var i = 0; i < options.length; i++) i]
+            ..sort((a, b) => order[a].compareTo(order[b]));
+          final built =
+              '${raw['frame'] is Map ? (raw['frame'] as Map)['before'] ?? '' : ''}'
+              '${[for (final i in ordered) options[i]].join()}'
+              '${raw['frame'] is Map ? (raw['frame'] as Map)['after'] ?? '' : ''}';
+          need(
+            built == '${raw['ja']}',
+            '$id: the frame and the ordered fragments build "$built", not '
+            '"${raw['ja']}"',
+          );
+        }
+      } else {
+        need(kind == 'choice', '$id: "$kind" is not an answer kind');
+        final answer = raw['answer'];
+        need(
+          answer is int && answer >= 0 && answer < options.length,
+          '$id: "answer" is not one of the options',
+        );
+      }
+
+      final ja = raw['ja'];
+      if (ja != null) {
+        sentence(id, '$ja', raw['reading'] as String?, level);
+        final blank = raw['blank'];
+        if (blank != null) {
+          need(
+            '$ja'.contains('$blank'),
+            '$id: "$blank" is not in "$ja", so there is nothing to mark',
+          );
+        }
+      }
+
+      final passage = raw['passage'];
+      if (passage != null) {
+        referenced.add('$passage');
+        need(
+          passageIds.contains('$passage') || takenPassages.contains('$passage'),
+          '$id: no passage "$passage"',
+        );
+        need(
+          passageTypes['$passage'] == null ||
+              passageTypes['$passage'] == type.key,
+          '$id: passage $passage is a ${passageTypes['$passage']} passage',
+        );
+      } else {
+        need(
+          !type.needsPassage,
+          '$id: a ${type.key} question needs a passage to be about',
+        );
+      }
+    }
+
+    final orphans = passageIds.difference(referenced);
+    need(
+      orphans.isEmpty,
+      '${orphans.length} passages are asked no questions: '
+      '${orphans.join(', ')}',
     );
     expect(problems, isEmpty, reason: '\n${problems.join('\n')}');
   });

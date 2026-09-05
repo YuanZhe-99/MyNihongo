@@ -48,7 +48,13 @@ class AnswerPane extends StatelessWidget {
   /// the next one.
   @override
   Widget build(BuildContext context) {
-    final key = ValueKey('${question.itemId}/${question.mode.name}');
+    // Keyed by the question's own identity, not its item's. A paper asks
+    // several different questions about one word one after another, and
+    // keying by the item alone carried the first one's selection into the
+    // second — the same latent bug the re-speak check had.
+    final key = ValueKey(
+      '${question.questionId ?? question.itemId}/${question.mode.name}',
+    );
     return switch (question.kind) {
       AnswerKind.choice => _ChoicePane(
         key: key,

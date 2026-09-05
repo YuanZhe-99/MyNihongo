@@ -900,9 +900,73 @@ had checked it.
       `functions/` pages this feature never had (`practice_prompt_builder.md`,
       `generated_examples.md`) are written, in both trees. 773 tests
 
-- [ ] Drill content per level and section: 文字・語彙, 文法, 読解, 聴解 (TTS-read passages),
-      as `assets/content/drills/<level>/*.json`; original or openly licensed questions with
-      answers and explanations in en/zh
+
+#### M4.1 Drill content, the pipeline that writes it, and practice mode — **done 2026-09-05**, released as `v0.4.4`
+
+The paper the Learn tab has been promising since the first release, at N5, one section at a time.
+
+- [x] **The paper is content, not code.** `assets/content/drills/structure.json` holds every
+      level's timed blocks, scoring groups, overall pass mark and per-大問 counts, with the jlpt.jp
+      pages it was read from in its own `source` field. JEES says the composition varies session to
+      session, so it is a target rather than a promise, and a revision by them is a content change
+- [x] `DrillSection` and `DrillType` (twenty-one 大問, each carrying its section), `DrillFile` /
+      `DrillPassage` / `DrillQuestion` with `toQuizQuestion`, `JlptStructure` with `composition` and
+      `minutes` per `ExamScale`, `DrillRepository`, `DrillSampler`. The type keys and section names
+      are a compatibility contract and say so
+- [x] **`DrillRepository` asks the asset manifest instead of trying and catching.** A missing file
+      is the normal state for most of the twenty level-section pairs while the levels are still
+      being written, and `loadString` reports a Flutter error before it throws — which a widget test
+      fails on even where the throw itself is handled
+- [x] **A drill question is scored under its own id.** `QuizSession.scoreKey` is
+      `questionId ?? itemId`; the schedule still hears about each item once, through a separate
+      `_recordedItems` set. Also `requeue: false`, `outcomes`, `forfeit()` and `restore()`, all of
+      which M4.2 and M4.3 need and none of which changes a default
+- [x] **Two latent bugs the change surfaced**, both invisible until a session asked two questions
+      about one item in a row: the answer pane was keyed by item and mode, so the first question's
+      selection carried into the second, and the re-speak check compared the same pair, so the
+      second question was silent. Both now compare the question
+- [x] `QuizRunner` gains `header`, `leadingBuilder`, `showFeedback` and `questionPaneWidth`, all
+      defaulting to what every existing caller already had; `_QuestionPane` gains the two slots and
+      prefers the question's own instruction, because a paper writes one per 大問 and two 大問 that
+      look identical ask for different things
+- [x] `DrillPassageView`, `ListeningScriptPlayer` (line by line from the reading, `stop()` before
+      each line because `speak` toggles off a repeat, transcript hidden until answered, play limit
+      only in a mock), `drillPassagePaneWidth` — the mirror image of the quiz's split, because here
+      the question is the larger half
+- [x] **`QuizMode.drill` is deliberately not selectable.** The other sixteen are ways the app
+      invents a question about a catalog entry; this one means the question was written for a paper,
+      so switching it off would only mean refusing to sit it. `selectableQuizModes` — not
+      `QuizMode.values` — is now what "every mode is on" means in the preference
+- [x] **Passages are drawn whole.** `DrillSampler.drawByPassage` takes passages until the count is
+      met; drawing questions independently would put one question from each of three texts on a
+      short paper. Within a 大問 the order is never-asked, then least-recently-asked, then the rest,
+      shuffled **inside** each tier so an unseen question is never as likely as yesterday's
+- [x] The pipeline's fifth stream: `draft_inputs drills --level N5 --section reading --target 1`
+      (deficit per 大問 against `structure.json` × target, never splitting a 大問 across batches, with
+      the level's vocabulary and grammar in a **separate resources file** so a thirty-question ask is
+      not a megabyte of the same list), `merge_drafts drills` (appends, fatal on a duplicate id,
+      strips `zh_TW` at every depth), thirteen new gate rules, `.claude/agents/content-drills.md`,
+      `'drills'` added to the two hard-coded directory lists
+- [x] **N5 complete at the official composition**: 67 questions and 29 passages across all four
+      sections, every batch through the gate first time
+- [x] `JlptPracticeCard` replaces the "coming next" card, which promised the three things that have
+      now all shipped. A section with no content and listening with no Japanese voice are **disabled
+      with the reason beside them**; the two unbuilt buttons are shown disabled and explained
+- [x] **Verified on the Pixel 10 in a release build**: the card lists all four sections with their
+      counts; a reading question shows its passage with furigana and offers the translation only
+      after answering; a listening question plays its script and reveals the transcript only after
+      answering; 漢字読み shows 【病院】 with the furigana correctly withheld, because there the
+      reading is the answer
+- [x] Docs: new `features/jlpt-practice.md`; `content-authoring.md` (fifth kind), `content-catalog.md`
+      (two licence rows), `quizzes.md` (a question with an id of its own), `adaptive-layout.md`,
+      `data-formats.md` (the drill schema), `translation-guide.md` §5.2 (sixteen terms), seven new
+      `functions/` pages and seven corrected ones, in both trees. 856 tests
+
+- [x] Drill content per level and section: 文字・語彙, 文法, 読解, 聴解 (TTS-read passages),
+      as `assets/content/drills/<level>-<section>.json` — flat rather than the nested path this
+      line originally proposed, so `pubspec.yaml` gains one asset entry and the two hard-coded
+      directory lists gain one each; original questions with answers and explanations in en/zh.
+      **N5 landed with M4.1**; the other four levels follow, one per milestone
 - [ ] Practice mode (untimed, explanation after each) and mock mode (timed per section, results at
       the end); question bank sampling avoids repeats until exhausted
 - [ ] Results history synced: one record per attempt (`exam:<uuid>`) — a new record kind in the
@@ -1061,6 +1125,17 @@ had checked it.
 | 2026-09-04 | A display bug is verified by screenshot on a device, not by widget test alone | The widget-test font has 1.0 em metrics, so the font that causes this one is not present in the suite. Every existing test passed for the whole time it shipped |
 | 2026-09-04 | Every model variant is probed, not only those before the first success | Whether the learner has a choice of model size is itself a fact to report, and a loop that returns early cannot know it. The cost is three extra status calls on a deliberate refresh; a generation still trusts the variant already serving and pays one |
 | 2026-09-04 | The model-size switch is hidden on a device that serves one size | A control that cannot change what is serving is worse than no control: it teaches the learner that the page is decorative. The Z Fold 8 serves only the faster model |
+| 2026-09-05 | The JLPT paper's composition and timings are one content asset with a `source` field, not constants in Dart | JEES publishes them and says they vary from session to session, so they are somebody else's changing fact rather than this app's rule. A revision is then a content change, and every screen that shows a number can say whose it is |
+| 2026-09-05 | Drill files are flat — `drills/n5-reading.json`, not `drills/n5/reading.json` | One `pubspec.yaml` asset line for the whole of Phase 4, and one new entry each in `convert_zh_tw.dart` and `content_zh_tw_test.dart`, both of which hold non-recursive hard-coded directory lists. The nested path in PLAN's own wording would have cost five of each |
+| 2026-09-05 | A drill question is scored under its own id; the review schedule still hears about each item once | A paper asks several genuinely different questions about one word. Scored by item — which is right for every question the app invents — the second and third would never have counted. But SM-2 grades one recall, and the second question about a word was primed by the first, so the scheduler must not hear it twice |
+| 2026-09-05 | `QuizMode.drill` exists but is not selectable, and `selectableQuizModes` is what "every mode" means | The other sixteen modes are ways the app invents a question about a catalog entry, and the learner turns those on and off. This one means the question was written for a paper, so a switch could only mean refusing to sit it — which not opening it already does. Comparing against `QuizMode.values` would have quietly stopped the preference recognising "all on" |
+| 2026-09-05 | Reading and listening are sampled **by passage**, not by question | A 中文 carries three questions. Drawing independently put one question from each of three passages on a short paper — three texts read for three marks, three times the work of the paper it imitates |
+| 2026-09-05 | The sampler shuffles **within** each of its three tiers, never across the pool | Never-asked, then least-recently-asked, then the rest. A plain shuffle would offer yesterday's question as readily as one the learner has never seen, which is the whole thing "no repeats" is supposed to prevent |
+| 2026-09-05 | How a question marks the span it is about is a property of the 大問, not a field per question | A gap `（　　）` asks what belongs there; a marked span `【…】` asks about something already present. Writing it per question would let one 大問 be rendered as the other, which changes what is being asked. Furigana is withheld for 漢字読み and 表記 for the same reason: there the reading *is* the answer |
+| 2026-09-05 | `DrillRepository` asks the asset manifest rather than attempting a load and catching | A missing file is the **normal** state for most level-section pairs while levels are still being written, and `rootBundle.loadString` reports a Flutter error before it throws — which a widget test fails on even though the throw is handled |
+| 2026-09-05 | A section that cannot be practised is disabled with its reason beside it, never hidden | No content yet, or no Japanese voice: a learner who cannot find 読解 practice has no way to tell whether it exists or they have missed it. The same rule already governs `SpeakButton` and the listening quiz modes |
+| 2026-09-05 | The three deviations from the real paper are stated in the feature doc rather than quietly made | 即時応答 gets four options where the paper gives three, because every answer pane and the gate assume four; 発話表現 describes its scene in words, because there are no pictures in this catalog; a mock plays each item once, because that is the paper's rule. A deviation nobody wrote down is a bug report waiting to be filed |
+| 2026-09-05 | A drill batch's resources go in a file of their own that every batch names | A level's common vocabulary is a few thousand rows. Copying it into each batch would turn a thirty-question ask into a megabyte of the same list, and the agent would still be reading one list |
 | 2026-09-04 | No Remove button for a downloaded model | AICore owns the file and shares it with every app that uses the same model, and neither ML Kit client exposes a delete — checked with `javap`. The button could only lie or take away something another app is using |
 | 2026-09-04 | CI `concurrency` is keyed on the commit, so a tag run supersedes the branch run | A release pushes the commit and then the tag, which ran the same analyze/test/build twice on the same tree. The tag run is the one that also creates the Release |
 | 2026-09-04 | The Prompt API client is chosen by probing model variants in preference order, never by device, client version or model name | ML Kit serves four combinations of release stage and size preference, no API says which a device offers, and `getClient()` with no configuration silently asks for one of them. Reporting that one variant's refusal as the device's answer produced two wrong diagnoses in a row on the same phone. A probe also means a model AICore begins serving later is picked up with no code change |

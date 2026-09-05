@@ -33,6 +33,40 @@ class QuizOutcome {
   final String? expected;
 }
 
+/// What happened to one question over the whole session.
+class QuestionOutcome {
+  /// Purpose: Report one question's first result.
+  /// Inputs: `key` — the question's score key; `itemId`; `correct`;
+  /// `answered`.
+  /// Returns: A new `QuestionOutcome` instance.
+  /// Side effects: None.
+  /// Notes: One per question rather than per attempt, and per **question**
+  /// rather than per item: a paper asks 会う four different ways and a results
+  /// screen that collapsed those into one row would hide three of them.
+  ///
+  /// `answered: false` is what a timed block leaves behind when the clock runs
+  /// out. It is not a wrong answer — nobody got it wrong — and the exam record
+  /// stores it as its own value so the accuracy is over what was attempted.
+  const QuestionOutcome({
+    required this.key,
+    required this.itemId,
+    required this.correct,
+    this.answered = true,
+  });
+
+  /// The question's own id where it has one, else its item id.
+  final String key;
+
+  /// The catalog id the question is about.
+  final String itemId;
+
+  /// Whether the first answer was right; false for an unanswered question.
+  final bool correct;
+
+  /// Whether the learner answered at all.
+  final bool answered;
+}
+
 /// One finished session, as the summary screen reads it.
 class QuizSummary {
   /// Purpose: Report a finished session.
@@ -64,7 +98,7 @@ class QuizSummary {
 class QuizSession extends ChangeNotifier {
   /// Purpose: Start a session over a fixed list of questions.
   /// Inputs: `questions`; `onFirstAnswer`, called once per item with whether
-  /// the **first** answer was right.
+  /// the **first** answer was right; `requeue`.
   /// Returns: A new `QuizSession` instance.
   /// Side effects: None until answered.
   /// Notes: `onFirstAnswer` fires per answer rather than once at the end, so an
@@ -72,12 +106,24 @@ class QuizSession extends ChangeNotifier {
   /// answer to an item reaches it: SM-2 grades how well something was recalled,
   /// and an item answered right on the third attempt within one minute was not
   /// recalled at all.
-  QuizSession({required List<QuizQuestion> questions, this.onFirstAnswer})
-    : _queue = List.of(questions),
-      _total = questions.length;
+  ///
+  /// `requeue` is off for a timed paper. Asking a question again after the
+  /// learner got it wrong is how practice teaches, and it is also exactly what
+  /// an exam must not do: a mock whose length depended on how well it was
+  /// going could not be scored against a fixed composition, and the clock
+  /// would be measuring a different paper for every learner.
+  QuizSession({
+    required List<QuizQuestion> questions,
+    this.onFirstAnswer,
+    this.requeue = true,
+  }) : _queue = List.of(questions),
+       _total = questions.length;
 
   /// Called with an item id and whether its first answer was right.
   final void Function(String itemId, bool correct)? onFirstAnswer;
+
+  /// Whether a wrong answer comes back later in the same session.
+  final bool requeue;
 
   final List<QuizQuestion> _queue;
   int _total;
@@ -85,6 +131,8 @@ class QuizSession extends ChangeNotifier {
   final Map<String, bool> _firstResults = {};
   final Map<String, int> _requeues = {};
   final List<String> _wrongOrder = [];
+  final Set<String> _recordedItems = {};
+  final List<QuestionOutcome> _outcomes = [];
 
   QuizOutcome? _lastOutcome;
   int _answered = 0;
@@ -100,6 +148,25 @@ class QuizSession extends ChangeNotifier {
 
   /// How many distinct items the session holds.
   int get total => _total;
+
+  /// What happened to each question, in the order they were asked.
+  ///
+  /// The exam record is built from this. It is per question and per first
+  /// answer, which is the only reading of "what happened" that survives
+  /// re-queueing.
+  List<QuestionOutcome> get outcomes => List.unmodifiable(_outcomes);
+
+  /// Purpose: Name the key a question is scored under.
+  /// Inputs: The `question`.
+  /// Returns: `String`.
+  /// Side effects: None.
+  /// Notes: A drill question has its own id because a paper asks several
+  /// different questions about one word, and scoring them as one item would
+  /// mean the second and third never counted. Everything else is scored by
+  /// item, which is what it has always been: two generated questions about one
+  /// grammar point are the same question asked twice.
+  static String scoreKey(QuizQuestion question) =>
+      question.questionId ?? question.itemId;
 
   /// Purpose: Add a question to a session already running.
   /// Inputs: The `question`.
@@ -126,14 +193,70 @@ class QuizSession extends ChangeNotifier {
   /// learner will actually be asked.
   ///
   /// **Nothing is recorded.** A skipped question was not got wrong: it never
-  /// reaches `_firstResults`, never enters the wrong list, and never moves a
-  /// review interval. A generated question could not move one anyway, but the
-  /// rule is stated here rather than left to that coincidence.
+  /// reaches `_firstResults`, never enters the wrong list, never appears in
+  /// [outcomes], and never moves a review interval. A generated question could
+  /// not move one anyway, but the rule is stated here rather than left to that
+  /// coincidence.
   void skip() {
     if (_queue.isEmpty) return;
     _queue.removeAt(0);
     if (_total > 0) _total--;
     _lastOutcome = null;
+    notifyListeners();
+  }
+
+  /// Purpose: End the session with whatever is left unanswered.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: Empties the queue; notifies listeners.
+  /// Notes: What a timed block does when the clock reaches zero. Unlike
+  /// [skip], the remaining questions **are** recorded — as `answered: false`,
+  /// which is neither right nor wrong. Running out of time is a fact about the
+  /// attempt and hiding it would make every timed score look better than it
+  /// was; calling it wrong would make the learner look worse than they are.
+  ///
+  /// Nothing reaches `onFirstAnswer`: an unanswered question says nothing
+  /// about how well the item was recalled, so it must not move a schedule.
+  void forfeit() {
+    for (final question in _queue) {
+      final key = scoreKey(question);
+      if (_firstResults.containsKey(key)) continue;
+      _firstResults[key] = false;
+      _outcomes.add(
+        QuestionOutcome(
+          key: key,
+          itemId: question.itemId,
+          correct: false,
+          answered: false,
+        ),
+      );
+    }
+    _queue.clear();
+    _lastOutcome = null;
+    notifyListeners();
+  }
+
+  /// Purpose: Replay answers saved from an earlier sitting.
+  /// Inputs: `answers`, keyed by [scoreKey].
+  /// Returns: None.
+  /// Side effects: Marks each replayed question; may call `onFirstAnswer`;
+  /// notifies listeners once at the end.
+  /// Notes: What resuming a saved mock does. The answers are marked again
+  /// rather than their verdicts restored, so a content update that corrected
+  /// an answer key is applied to the resumed paper too — the alternative is
+  /// carrying a score the shipped file no longer agrees with.
+  ///
+  /// Questions the save has no answer for are left in the queue, which is what
+  /// "resume" means.
+  void restore(Map<String, QuizAnswer> answers) {
+    if (answers.isEmpty) return;
+    while (_queue.isNotEmpty) {
+      final question = _queue.first;
+      final saved = answers[scoreKey(question)];
+      if (saved == null) break;
+      answer(saved);
+      next();
+    }
     notifyListeners();
   }
 
@@ -174,14 +297,29 @@ class QuizSession extends ChangeNotifier {
         _checker.check(question, answer) || (acceptedAnyway ?? false);
     _answered++;
 
-    if (!_firstResults.containsKey(question.itemId)) {
-      _firstResults[question.itemId] = correct;
-      if (!correct) _wrongOrder.add(question.itemId);
+    final key = scoreKey(question);
+    if (!_firstResults.containsKey(key)) {
+      _firstResults[key] = correct;
+      _outcomes.add(
+        QuestionOutcome(key: key, itemId: question.itemId, correct: correct),
+      );
+      // Named once even when the paper asks about it four times: the list is
+      // what the learner is told to go and review, and the same word four
+      // times over is a worse list, not a more emphatic one.
+      if (!correct && !_wrongOrder.contains(question.itemId)) {
+        _wrongOrder.add(question.itemId);
+      }
       // A generated question never reaches the scheduler. It may be wrong
       // about the word, and the spacing of a word's reviews must not depend
       // on that. It still counts towards the score the learner sees, because
       // they answered it.
-      if (!question.generated) onFirstAnswer?.call(question.itemId, correct);
+      //
+      // The scheduler hears about each **item** once, even where a paper asked
+      // four questions about it: SM-2 grades one recall, and the first is the
+      // one that was not primed by the three before it.
+      if (!question.generated && _recordedItems.add(question.itemId)) {
+        onFirstAnswer?.call(question.itemId, correct);
+      }
     }
 
     _lastOutcome = QuizOutcome(
@@ -199,16 +337,18 @@ class QuizSession extends ChangeNotifier {
   /// Notes: A wrong answer sends the item to the back of the queue so it is
   /// asked again before the session ends — that repetition is where the
   /// learning happens — but at most [maxRequeues] times, or a session with one
-  /// stubborn item would never finish.
+  /// stubborn item would never finish. A session created with `requeue: false`
+  /// never does this at all; see the constructor.
   void next() {
     final question = current;
     if (question == null) return;
     _queue.removeAt(0);
 
+    final key = scoreKey(question);
     final wasWrong = _lastOutcome?.correct == false;
-    final seen = _requeues[question.itemId] ?? 0;
-    if (wasWrong && seen < maxRequeues) {
-      _requeues[question.itemId] = seen + 1;
+    final seen = _requeues[key] ?? 0;
+    if (requeue && wasWrong && seen < maxRequeues) {
+      _requeues[key] = seen + 1;
       _queue.add(question);
     }
     _lastOutcome = null;

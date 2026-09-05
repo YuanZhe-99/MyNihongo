@@ -44,7 +44,7 @@ Future<void> main(List<String> args) async {
     // instructions a model follows, hand-written in each language the way the
     // ARB files are, and this tool would delete a Traditional block it cannot
     // regenerate from a Simplified sibling.
-    for (final name in const ['grammar', 'lessons'])
+    for (final name in const ['drills', 'grammar', 'lessons'])
       if (Directory('$assets/$name').existsSync())
         ...Directory('$assets/$name').listSync().whereType<File>().where(
           (file) => file.path.endsWith('.json'),

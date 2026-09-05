@@ -459,24 +459,6 @@ abstract class AppLocalizations {
   /// **'Browse grammar'**
   String get learnOpenGrammar;
 
-  /// No description provided for @learnRoadmap.
-  ///
-  /// In en, this message translates to:
-  /// **'Coming next'**
-  String get learnRoadmap;
-
-  /// No description provided for @learnRoadmapSrs.
-  ///
-  /// In en, this message translates to:
-  /// **'Scenario lessons and writing practice'**
-  String get learnRoadmapSrs;
-
-  /// No description provided for @learnRoadmapJlpt.
-  ///
-  /// In en, this message translates to:
-  /// **'JLPT N5–N1 practice sets'**
-  String get learnRoadmapJlpt;
-
   /// No description provided for @kanaTitle.
   ///
   /// In en, this message translates to:
@@ -2708,6 +2690,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sentence {n}'**
   String writingSentenceN(int n);
+
+  /// No description provided for @quizModeDrill.
+  ///
+  /// In en, this message translates to:
+  /// **'JLPT drill'**
+  String get quizModeDrill;
+
+  /// No description provided for @drillSectionVocab.
+  ///
+  /// In en, this message translates to:
+  /// **'Vocabulary'**
+  String get drillSectionVocab;
+
+  /// No description provided for @drillSectionGrammar.
+  ///
+  /// In en, this message translates to:
+  /// **'Grammar'**
+  String get drillSectionGrammar;
+
+  /// No description provided for @drillSectionReading.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading'**
+  String get drillSectionReading;
+
+  /// No description provided for @drillSectionListening.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening'**
+  String get drillSectionListening;
+
+  /// No description provided for @drillShowTranslation.
+  ///
+  /// In en, this message translates to:
+  /// **'Show translation'**
+  String get drillShowTranslation;
+
+  /// No description provided for @drillHideTranslation.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide translation'**
+  String get drillHideTranslation;
+
+  /// No description provided for @drillTranscript.
+  ///
+  /// In en, this message translates to:
+  /// **'Transcript'**
+  String get drillTranscript;
+
+  /// No description provided for @drillPlay.
+  ///
+  /// In en, this message translates to:
+  /// **'Play'**
+  String get drillPlay;
+
+  /// No description provided for @drillPlayAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Play again'**
+  String get drillPlayAgain;
+
+  /// No description provided for @drillPlaysLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =0{no plays left} =1{1 play left} other{{n} plays left}}'**
+  String drillPlaysLeft(int n);
+
+  /// No description provided for @drillNoVoice.
+  ///
+  /// In en, this message translates to:
+  /// **'This device has no Japanese voice, so this cannot be played.'**
+  String get drillNoVoice;
+
+  /// No description provided for @jlptPracticeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'JLPT {level} practice'**
+  String jlptPracticeTitle(String level);
+
+  /// No description provided for @jlptPracticeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Questions written in the shape of the paper, one section at a time. Untimed, with the answer explained after each.'**
+  String get jlptPracticeBody;
+
+  /// No description provided for @jlptQuestionCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{n, plural, =1{1 question} other{{n} questions}}'**
+  String jlptQuestionCount(int n);
+
+  /// No description provided for @jlptNoContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Not written yet for this level.'**
+  String get jlptNoContent;
+
+  /// No description provided for @jlptNoVoice.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs a Japanese voice on this device.'**
+  String get jlptNoVoice;
+
+  /// No description provided for @jlptMock.
+  ///
+  /// In en, this message translates to:
+  /// **'Mock exam'**
+  String get jlptMock;
+
+  /// No description provided for @jlptHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Results'**
+  String get jlptHistory;
+
+  /// No description provided for @jlptComingNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Timed mock exams and a results history come in the next update.'**
+  String get jlptComingNext;
 }
 
 class _AppLocalizationsDelegate

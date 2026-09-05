@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "source": "jlpt.jp/e/guideline/testsections.html and /e/topics/202009091599642827.html, read 2026-09-04. Item counts per 大問 are the official approximate figures; JEES states they vary from session to session, so they are a composition target rather than a promise about any one paper.",
+  "levels": {
+    "N5": {
+      "blocks": [
+        {
+          "sections": [
+            "vocab"
+          ],
+          "minutes": 20
+        },
+        {
+          "sections": [
+            "grammar",
+            "reading"
+          ],
+          "minutes": 40
+        },
+        {
+          "sections": [
+            "listening"
+          ],
+          "minutes": 30
+        }
+      ],
+      "scoring": [
+        {
+          "id": "languageReading",
+          "sections": [
+            "vocab",
+            "grammar",
+            "reading"
+          ],
+          "max": 120,
+          "pass": 38
+        },
+        {
+          "id": "listening",
+          "sections": [
+            "listening"
+          ],
+          "max": 60,
+          "pass": 19
+        }
+      ],
+      "overallMax": 180,
+      "overallPass": 80,
+      "types": {
+        "kanji-reading": 7,
+        "orthography": 5,
+        "context": 6,
+        "paraphrase": 3,
+        "form-selection": 9,
+        "sentence-composition": 4,
+        "text-grammar": 4,
+        "short": 2,
+        "mid": 2,
+        "info": 1,
+        "task": 7,
+        "point": 6,
+        "expression": 5,
+        "quick-response": 6
+      }
+    },
+    "N4": {
+      "blocks": [
+        {
+          "sections": [
+            "vocab"
+          ],
+          "minutes": 25
+        },
+        {
+          "sections": [
+            "grammar",
+            "reading"
+          ],
+          "minutes": 55
+        },
+        {
+          "sections": [
+            "listening"
+          ],
+          "minutes": 35
+        }
+      ],
+      "scoring": [
+        {
+          "id": "languageReading",
+          "sections": [
+            "vocab",
+            "grammar",
+            "reading"
+          ],
+          "max": 120,
+          "pass": 38
+        },
+        {
+          "id": "listening",
+          "sections": [
+            "listening"
+          ],
+          "max": 60,
+          "pass": 19
+        }
+      ],
+      "overallMax": 180,
+      "overallPass": 90,
+      "types": {
+        "kanji-reading": 7,
+        "orthography": 5,
+        "context": 8,
+        "paraphrase": 4,
+        "usage": 4,
+        "form-selection": 13,
+        "sentence-composition": 4,
+        "text-grammar": 4,
+        "short": 3,
+        "mid": 3,
+        "info": 2,
+        "task": 8,
+        "point": 7,
+        "expression": 5,
+        "quick-response": 8
+      }
+    },
+    "N3": {
+      "blocks": [
+        {
+          "sections": [
+            "vocab"
+          ],
+          "minutes": 30
+        },
+        {
+          "sections": [
+            "grammar",
+            "reading"
+          ],
+          "minutes": 70
+        },
+        {
+          "sections": [
+            "listening"
+          ],
+          "minutes": 40
+        }
+      ],
+      "scoring": [
+        {
+          "id": "languageKnowledge",
+          "sections": [
+            "vocab",
+            "grammar"
+          ],
+          "max": 60,
+          "pass": 19
+        },
+        {
+          "id": "reading",
+          "sections": [
+            "reading"
+          ],
+          "max": 60,
+          "pass": 19
+        },
+        {
+          "id": "listening",
+          "sections": [
+            "listening"
+          ],
+          "max": 60,
+          "pass": 19
+        }
+      ],
+      "overallMax": 180,
+      "overallPass": 95,
+      "types": {
+        "kanji-reading": 8,
+        "orthography": 6,
+        "context": 11,
+        "paraphrase": 5,
+        "usage": 5,
+        "form-selection": 13,
+        "sentence-composition": 5,
+        "text-grammar": 5,
+        "short": 4,
+        "mid": 6,
+        "long": 4,
+        "info": 2,
+        "task": 6,
+        "point": 6,
+        "outline": 3,
+        "expression": 4,
+        "quick-response": 9
+      }
+    },
+    "N2": {
+      "blocks": [
+        {
+          "sections": [
+            "vocab",
+            "grammar",
+            "reading"
+          ],
+          "minutes": 105
+        },
+        {
+          "sections": [
+            "listening"
+          ],
+          "minutes": 50
+        }
+      ],
+      "scoring": [
+        {
+          "id": "languageKnowledge",
+          "sections": [
+            "vocab",
+            "grammar"
+          ],
+          "max": 60,
+          "pass": 19
+        },
+        {
+          "id": "reading",
+          "sections": [
+            "reading"
+          ],
+          "max": 60,
+          "pass": 19
+        },
+        {
+          "id": "listening",
+          "sections": [
+            "listening"
+          ],
+          "max": 60,
+          "pass": 19
+        }
+      ],
+      "overallMax": 180,
+      "overallPass": 90,
+      "types": {
+        "kanji-reading": 5,
+        "orthography": 5,
+        "word-formation": 5,
+        "context": 7,
+        "paraphrase": 5,
+        "usage": 5,
+        "form-selection": 12,
+        "sentence-composition": 5,
+        "text-grammar": 5,
+        "short": 5,
+        "mid": 9,
+        "integrated": 2,
+        "thematic": 3,
+        "info": 2,
+        "task": 5,
+        "point": 6,
+        "outline": 5,
+        "quick-response": 12,
+        "integrated-listening": 4
+      }
+    },
+    "N1": {
+      "blocks": [
+        {
+          "sections": [
+            "vocab",
+            "grammar",
+            "reading"
+          ],
+          "minutes": 110
+        },
+        {
+          "sections": [
+            "listening"
+          ],
+          "minutes": 55
+        }
+      ],
+      "scoring": [
+        {
+          "id": "languageKnowledge",
+          "sections": [
+            "vocab",
+            "grammar"
+          ],
+          "max": 60,
+          "pass": 19
+        },
+        {
+          "id": "reading",
+          "sections": [
+            "reading"
+          ],
+          "max": 60,
+          "pass": 19
+        },
+        {
+          "id": "listening",
+          "sections": [
+            "listening"
+          ],
+          "max": 60,
+          "pass": 19
+        }
+      ],
+      "overallMax": 180,
+      "overallPass": 100,
+      "types": {
+        "kanji-reading": 6,
+        "context": 7,
+        "paraphrase": 6,
+        "usage": 6,
+        "form-selection": 10,
+        "sentence-composition": 5,
+        "text-grammar": 5,
+        "short": 4,
+        "mid": 9,
+        "long": 4,
+        "integrated": 3,
+        "thematic": 4,
+        "info": 2,
+        "task": 6,
+        "point": 7,
+        "outline": 6,
+        "quick-response": 14,
+        "integrated-listening": 4
+      }
+    }
+  }
+}

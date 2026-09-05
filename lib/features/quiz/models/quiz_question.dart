@@ -62,6 +62,15 @@ enum QuizMode {
 
   /// A meaning shown, pick the sentence that says it.
   grammarMeaningToSentence,
+
+  /// A question a JLPT drill file asks, which says for itself what it wants.
+  ///
+  /// **Not selectable.** The other sixteen are ways this app can invent a
+  /// question about a catalog entry, and the learner turns them on and off.
+  /// This one means the question was written for a paper, so switching it off
+  /// would only mean refusing to sit the paper — which is what not opening it
+  /// already does.
+  drill,
 }
 
 /// How a question is answered, which decides the widget that renders it.
@@ -119,6 +128,18 @@ const parsedQuizModes = {
 /// The modes that speak rather than show, and so need a Japanese voice.
 const listeningQuizModes = {QuizMode.vocabListening, QuizMode.kanaListening};
 
+/// The modes the learner may switch off, which is every mode the app invents.
+///
+/// `QuizMode.drill` is deliberately absent: see its own note. This set — not
+/// `QuizMode.values` — is what "every mode is on" means in the preference, so
+/// a learner who has switched nothing off keeps the empty-set default and
+/// still gets any mode a later build adds.
+const selectableQuizModes = {
+  ...vocabQuizModes,
+  ...kanaQuizModes,
+  ...grammarQuizModes,
+};
+
 /// One question.
 class QuizQuestion {
   /// Purpose: Create a question.
@@ -136,7 +157,9 @@ class QuizQuestion {
     this.promptReading,
     this.promptSubtitle,
     this.speakText,
-    this.context,
+    this.questionId,
+    this.instruction,
+    this.passageId,
     this.options = const [],
     this.optionReadings = const [],
     this.answerIndex,
@@ -177,8 +200,27 @@ class QuizQuestion {
   /// engine handed 一日 has to guess between ついたち and いちにち.
   final String? speakText;
 
-  /// A sentence the question is about, with the blank already in it.
-  final String? context;
+  /// The drill question's own id, where the question came from a drill file.
+  ///
+  /// Null for a generated question, because two questions built from one
+  /// catalog entry are the same question asked twice. A drill question needs
+  /// one because a paper asks several different questions about the same word,
+  /// and the session scores each of them separately — see `QuizSession`.
+  final String? questionId;
+
+  /// What this particular question asks, when the mode label does not say it.
+  ///
+  /// A drill file writes its own instruction because a paper does: 「＿＿の
+  /// ことばは　どう　よみますか」 is not the same request as 「（　）に　なにを
+  /// いれますか」, and both are `QuizMode.grammarParticle` as far as the runner
+  /// is concerned.
+  final String? instruction;
+
+  /// The passage this question is about, where there is one.
+  ///
+  /// Only an id: the passage itself belongs to the file, and several questions
+  /// share one. The page joins it back.
+  final String? passageId;
 
   /// The options for a choice question, or the fragments for an order one.
   final List<String> options;

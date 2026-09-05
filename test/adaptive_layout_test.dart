@@ -238,4 +238,33 @@ void main() {
       }
     });
   });
+
+  group('drillPassagePaneWidth', () {
+    test('gives the passage the larger half', () {
+      // The mirror image of the quiz pane, and deliberately so: there the
+      // question holds a word, here it holds a text the learner re-reads
+      // while answering.
+      expect(drillPassagePaneWidth(852), closeTo(468.6, 0.01));
+      expect(
+        drillPassagePaneWidth(852),
+        greaterThan(quizQuestionPaneWidth(852)),
+      );
+    });
+
+    test('clamps at both ends', () {
+      expect(drillPassagePaneWidth(640), 360); // floor
+      expect(drillPassagePaneWidth(1519), 640); // desktop, ceiling
+    });
+
+    test('never squeezes the answers below their minimum', () {
+      // Every geometry that splits at all, less the rail where there is one.
+      for (final width in [600.0, 623.0, 710.0, 852.0, 943.0, 1519.0]) {
+        expect(
+          width - drillPassagePaneWidth(width),
+          greaterThanOrEqualTo(quizAnswerPaneMinWidth),
+          reason: 'at $width the options fell below their minimum',
+        );
+      }
+    });
+  });
 }

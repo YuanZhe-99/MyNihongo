@@ -10,6 +10,7 @@ import '../../content/services/content_repository.dart';
 import '../../kana/models/kana.dart';
 import '../../progress/models/study_record.dart';
 import '../../lessons/widgets/lesson_path_view.dart';
+import '../widgets/jlpt_practice_card.dart';
 import '../widgets/study_calendar.dart';
 import '../widgets/today_card.dart';
 
@@ -172,18 +173,10 @@ class LearnPage extends ConsumerWidget {
           ],
         ),
       ),
-      _card(
-        theme,
-        Icons.upcoming_outlined,
-        l10n.learnRoadmap,
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _line(theme, l10n.learnRoadmapSrs),
-            _line(theme, l10n.learnRoadmapJlpt),
-          ],
-        ),
-      ),
+      // Where the "coming next" card used to be. It promised scenario lessons,
+      // writing practice and JLPT practice; all three have shipped, so the
+      // card is the thing it advertised rather than an advertisement.
+      const JlptPracticeCard(),
     ];
 
     return Scaffold(
