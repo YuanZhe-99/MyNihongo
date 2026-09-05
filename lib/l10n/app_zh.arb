@@ -348,6 +348,7 @@
   "@quizProgress": { "placeholders": { "done": { "type": "int" }, "total": { "type": "int" } } },
   "quizCheck": "检查",
   "quizContinue": "继续",
+  "quizSkipGenerated": "跳过这道题",
   "quizAcceptedByAi": "端侧模型判为正确：{comment}",
   "@quizAcceptedByAi": { "placeholders": { "comment": { "type": "String" } } },
   "quizWhyWrong": "为什么这样不对？",

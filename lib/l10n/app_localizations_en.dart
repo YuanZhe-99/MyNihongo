@@ -993,6 +993,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get quizContinue => 'Continue';
 
   @override
+  String get quizSkipGenerated => 'Skip this question';
+
+  @override
   String quizAcceptedByAi(String comment) {
     return 'Accepted by the on-device model: $comment';
   }

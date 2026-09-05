@@ -18,6 +18,7 @@ storage and a test can watch exactly what it would have written.
 | `QuizSession` | class | B | Run one quiz. |
 | [`answer`](#answer) | method | A | Mark the current question and hold the result. |
 | [`next`](#next) | method | A | Move to the next question, re-queueing a wrong one. |
+| `skip` | method | B | Drop the current question without answering or recording it. |
 | `summary` | getter | B | The finished session. |
 | `_expectedText` | method | B | Name the right answer for the UI. |
 

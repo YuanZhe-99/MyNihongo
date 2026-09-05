@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:my_nihongo/features/content/models/grammar_point.dart';
 import 'package:my_nihongo/features/content/models/jlpt_level.dart';
 import 'package:my_nihongo/features/content/models/localized_strings.dart';
+import 'package:my_nihongo/features/ai/services/practice_response_parser.dart';
 import 'package:my_nihongo/features/quiz/models/quiz_question.dart';
 import 'package:my_nihongo/features/quiz/services/ai_question_generator.dart';
 
@@ -104,5 +105,51 @@ Answer：B
       parse('Q: 雨が＿＿。\nA: \nB: い\nC: う\nD: え\nAnswer: B'),
       isNull,
     );
+  });
+  group('the second opinion', () {
+    // A generated question used to be shown on the strength of one model call
+    // that both wrote the question and declared its answer. Now the model is
+    // handed the question back without that answer and asked to work it out,
+    // and the question is kept only if the two derivations agree.
+    final question = parse(
+      'Q: 雨が降＿＿行きません。\n'
+      'A: ったら\nB: ったり\nC: っては\nD: ってから\n'
+      'Answer: A\nWhy: A conditional.',
+    )!;
+
+    bool accepts(String raw) => AiQuestionGenerator.accepts(
+      verdict: PracticeResponseParser.quizCheck(raw),
+      question: question,
+    );
+
+    test('agreement on both counts keeps the question', () {
+      expect(accepts('A\nSOUND'), isTrue);
+    });
+
+    test('a different answer drops it, however confident the verdict', () {
+      expect(accepts('B\nSOUND'), isFalse);
+    });
+
+    test('a matching answer does not rescue an unsound question', () {
+      expect(accepts('A\nUNSOUND'), isFalse);
+    });
+
+    test('a verdict that cannot be read is a no', () {
+      for (final raw in const [
+        '',
+        'Looks fine to me.',
+        'A',
+        'A\nmaybe',
+        'E\nSOUND',
+      ]) {
+        expect(accepts(raw), isFalse, reason: 'accepted "$raw"');
+      }
+    });
+
+    test('the letter and the word survive ordinary decoration', () {
+      // Refusing over a full stop would throw away a sound question, which is
+      // the one cost this check is not allowed to have.
+      expect(accepts('A.\nSOUND.'), isTrue);
+    });
   });
 }

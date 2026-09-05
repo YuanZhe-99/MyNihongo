@@ -24,7 +24,10 @@
       "chosen": "What the learner chose",
       "correct": "The right answer",
       "options": "Options",
-      "topic": "What this unit teaches"
+      "topic": "What this unit teaches",
+      "word": "Word",
+      "meaning": "What it means",
+      "level": "JLPT level"
     },
     "zh": {
       "sentence": "句子",
@@ -39,6 +42,9 @@
       "chosen": "学习者选的",
       "correct": "正确答案",
       "options": "选项",
+      "word": "词",
+      "meaning": "词义",
+      "level": "JLPT 级别",
       "topic": "本单元教的内容"
     },
     "zh_TW": {
@@ -54,6 +60,9 @@
       "chosen": "學習者選的",
       "correct": "正確答案",
       "options": "選項",
+      "word": "詞",
+      "meaning": "詞義",
+      "level": "JLPT 級別",
       "topic": "本單元教的內容"
     }
   },
@@ -159,8 +168,9 @@
         "instruction": "Write short example sentences using the word below, at the learner's level.",
         "rules": [
           "Write three sentences, no more.",
-          "One line each, in the form: Japanese|reading in kana|English",
-          "Use the vertical bar exactly twice per line.",
+          "Put each sentence on its own line, as three fields separated by the | character: the Japanese, then its reading in kana, then the English.",
+          "Example of the form, not of the content: 本を読みます。|ほんをよみます。|I read a book.",
+          "No numbering, no bullets, no headings, no quotation marks, no code fences.",
           "Keep every other word simple enough for this level.",
           "Polite style. Nothing else on the line."
         ]
@@ -169,8 +179,9 @@
         "instruction": "请用下面这个词写几个适合该学习者水平的短例句。",
         "rules": [
           "写三句，不要更多。",
-          "每句一行，格式为：日文|假名读音|中文",
-          "每行恰好用两个竖线。",
+          "每句单独一行，用 | 分成三段：日文、假名读音、中文。",
+          "格式示例（只示范格式，不示范内容）：本を読みます。|ほんをよみます。|我读书。",
+          "不要编号，不要项目符号，不要标题，不要引号，不要代码块。",
           "句中其余的词都要简单到符合这个级别。",
           "使用敬体。行内不要写别的东西。"
         ]
@@ -179,10 +190,40 @@
         "instruction": "請用下面這個詞寫幾個適合該學習者程度的短例句。",
         "rules": [
           "寫三句，不要更多。",
-          "每句一行，格式為：日文|假名讀音|中文",
-          "每行恰好用兩個豎線。",
+          "每句單獨一行，用 | 分成三段：日文、假名讀音、中文。",
+          "格式示例（只示範格式，不示範內容）：本を読みます。|ほんをよみます。|我讀書。",
+          "不要編號，不要項目符號，不要標題，不要引號，不要程式碼區塊。",
           "句中其餘的詞都要簡單到符合這個級別。",
           "使用敬體。行內不要寫別的東西。"
+        ]
+      }
+    },
+    "quizCheck": {
+      "en": {
+        "instruction": "Answer the multiple-choice question below yourself, then judge whether it is a sound question at all.",
+        "rules": [
+          "First line: only the letter A, B, C or D — the one option that correctly fills the blank.",
+          "Second line: only SOUND or UNSOUND. UNSOUND if more than one option fits, if none does, if the sentence is not natural Japanese, or if the question tests nothing.",
+          "Judge the question on its own terms. Do not be agreeable.",
+          "Nothing else in the reply."
+        ]
+      },
+      "zh": {
+        "instruction": "请你自己回答下面这道四选一的题，然后判断它作为一道题是否成立。",
+        "rules": [
+          "第一行：只写 A、B、C 或 D 中的一个字母——能正确填入空格的那个选项。",
+          "第二行：只写 SOUND 或 UNSOUND。若不止一个选项说得通、没有一个说得通、句子不是自然的日语，或这道题什么都没考，就写 UNSOUND。",
+          "就题论题地判断，不要一味附和。",
+          "回复里不要写别的东西。"
+        ]
+      },
+      "zh_TW": {
+        "instruction": "請你自己回答下面這道四選一的題，然後判斷它作為一道題是否成立。",
+        "rules": [
+          "第一行：只寫 A、B、C 或 D 其中一個字母——能正確填入空格的那個選項。",
+          "第二行：只寫 SOUND 或 UNSOUND。若不止一個選項說得通、沒有一個說得通、句子不是自然的日語，或這道題什麼都沒考，就寫 UNSOUND。",
+          "就題論題地判斷，不要一味附和。",
+          "回覆裡不要寫別的東西。"
         ]
       }
     },

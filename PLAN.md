@@ -867,6 +867,39 @@ Reported from the Pixel 10's vocabulary list: the reading painted over the word.
       implementation replaced two releases ago; both trees now describe the `Wrap` of `_RubyBox`
       that is actually there, and why both slots force a strut. 753 tests
 
+#### M4.0c Generated questions that earn their place — **done 2026-09-04**, released as `v0.4.3`
+
+Three complaints from the device, one theme: model-written material was being shown as if something
+had checked it.
+
+- [x] **A generated question is asked twice.** `AiQuestionGenerator.generate` now hands each parsed
+      question back **without** its proposed answer through a new `quizCheck` task, and keeps it only
+      when the model re-derives the same option *and* calls the question sound
+      (`AiQuestionGenerator.accepts`, kept out of the plumbing so the rule can be stated and tested
+      on its own). Showing a model an answer and asking it to approve it produces agreement; two
+      derivations that must match is a check. Silence drops the question. One extra background call
+      per candidate, none of it on the path the learner waits on
+- [x] **A generated question can be skipped.** `QuizSession.skip()` pops it, records nothing,
+      re-queues nothing and decrements `total`; `QuizRunner` shows the button only when
+      `question.generated` and only before it is answered. One ARB key ×3
+- [x] **The word examples work.** Three faults: the widget read `canExplain` through a plain
+      `Provider` that never rebuilds, inside a `showModalBottomSheet` builder that never rebuilds
+      either — so a sheet opened during the probe stayed empty until reopened; `forExamples` asked
+      for the labels `sentence` and `expected`, which exist, so the prompt called a word "Sentence:"
+      and its gloss "The model answer:" and nothing failed loudly; and the parser refused any line
+      that was not exactly three bar-separated fields, discarding a Markdown table row, a numbered
+      line and a fenced block. Packaging is now stripped, field contents never rewritten
+- [x] **The gap that let it ship:** nothing tested `practice.json` for completeness. A test now
+      asserts every task exists in `en`, `zh` and `zh_TW` and that every label a builder indexes is
+      defined in each
+- [x] **Verified on the Pixel 10** in a release build: the examples arrive; a practice session grew
+      from 13 to 15 as generated questions passed the second opinion, one of three refused. The skip
+      button is held by widget tests — driving a 15-question session blind through typed answers was
+      not a verification, it was a coin toss
+- [x] Docs: `features/ai-assist.md` grows from four bounds on a generated question to six; the two
+      `functions/` pages this feature never had (`practice_prompt_builder.md`,
+      `generated_examples.md`) are written, in both trees. 773 tests
+
 - [ ] Drill content per level and section: 文字・語彙, 文法, 読解, 聴解 (TTS-read passages),
       as `assets/content/drills/<level>/*.json`; original or openly licensed questions with
       answers and explanations in en/zh
@@ -1021,6 +1054,9 @@ Reported from the Pixel 10's vocabulary list: the reading painted over the word.
 | 2026-09-04 | Twenty-six N1 grammar points were dropped, not renamed, when their slug collided with N2 | Renaming keeps the count at the price of teaching the same pattern twice under two ids. The count is a number in a table; the duplicate is what a learner would actually meet |
 | 2026-09-04 | The classical layer went into `function_words.json`; missing ordinary words went into rewritten sentences | ぬ, ざる, べからざる, 極まりない and the rest **are** the N1 grammar points, so no example can avoid them. 東京, 顔 and 皆 are only scenery, and widening the dictionary for scenery widens everything downstream that reads it |
 | 2026-09-04 | A scenario added to a shipped lessons file is gated by turning that file back into a draft | `merge_drafts units` rewrites a whole level, so re-running it to add one conversation would be a far larger change than the conversation. Stripping the generated `zh_TW` is the only difference between the two shapes |
+| 2026-09-04 | A generated question is judged by re-deriving its answer, never by asking the model to approve one | A model shown an answer and asked whether it is right agrees. Two independent derivations that must match can disagree, and only that is a check. A verdict that cannot be read is a no, because dropping a question costs a question nobody asked for |
+| 2026-09-04 | A generated question carries a skip; an authored one does not | The learner is told the sentence may be wrong, so the honest counterpart is letting them decline it. Skipping the syllabus is a different thing and is not offered |
+| 2026-09-04 | The example parser strips packaging but never rewrites a field | A code fence, a list marker or a table row's outer bars carry no meaning, and refusing them threw away replies that were entirely correct. Changing what a field says would be inventing content |
 | 2026-09-04 | The furigana slots are reserved from a forced strut and scaled by `MediaQuery.textScaler` | The ruby slot guessed 1.15 em where the system CJK face needs about 1.4, and nothing clamped it, so a `SizedBox` that constrains without clipping let the reading paint onto the word. The base slot had forced a strut all along and never had the bug |
 | 2026-09-04 | A display bug is verified by screenshot on a device, not by widget test alone | The widget-test font has 1.0 em metrics, so the font that causes this one is not present in the suite. Every existing test passed for the whole time it shipped |
 | 2026-09-04 | Every model variant is probed, not only those before the first success | Whether the learner has a choice of model size is itself a fact to report, and a loop that returns early cannot know it. The cost is three extra status calls on a deliberate refresh; a generation still trusts the variant already serving and pays one |

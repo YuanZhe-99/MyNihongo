@@ -12,6 +12,46 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.4.3` — 2026-09-04. Generated material stops being taken on trust: a
+  question the model writes is asked back to it, a question you doubt can be
+  declined, and the word examples work at all.
+
+  **Every generated quiz question is now asked twice.** The first call writes
+  it; the second hands it back **without** its proposed answer and asks the
+  model to work it out and to say whether the question stands. It is kept only
+  when the model reaches the same option *and* calls it sound. A model shown an
+  answer and asked to approve it agrees, so the second pass deliberately does
+  not see the first: two derivations that must match is a check, a rubber stamp
+  is not. Silence drops the question, which costs a question nobody asked for.
+
+  **A generated question can be declined.** Next to the label that says it may
+  be wrong, there is now a Skip button. Skipping records nothing, re-queues
+  nothing, and shortens the session by one, so the progress line keeps counting
+  what will actually be asked. An authored question has no skip: skipping the
+  syllabus is not what this is for.
+
+  **The word examples produce examples again.** Three faults, and the first
+  explains a button that appeared to do nothing. The widget read the AI status
+  through a provider that never rebuilds, inside a sheet that never rebuilds
+  either, so a word opened while the device was still being probed showed no
+  action at all until it was closed and reopened. It follows the service now.
+  The prompt asked for the labels `sentence` and `expected`, both of which
+  exist — so nothing fell back and nothing failed, and the model was told a
+  single word was "Sentence:" and its meaning was "The model answer:". And the
+  parser refused any line that was not exactly three bar-separated fields, which
+  threw away a Markdown table row, a numbered line and a fenced block: the same
+  three fields in the packaging a model reaches for. Packaging is now stripped;
+  what a field contains is still never rewritten.
+
+  Nothing checked the prompt asset for completeness, which is how a wrong label
+  key shipped invisibly. A test now asserts every task exists in all three
+  languages and every label a builder indexes is defined.
+
+  Verified on a Pixel 10 in a release build: the examples arrive, and a practice
+  session grew from 13 questions to 15 as generated questions passed the second
+  opinion — one of the three was refused, which is the check doing its work.
+  The two function pages this feature never had are written. 773 tests.
+
 - `0.4.2` — 2026-09-04. The reading stopped landing on top of its own kanji.
 
   **A guess about font metrics, held for two releases.** Each piece of furigana

@@ -1809,6 +1809,12 @@ abstract class AppLocalizations {
   /// **'Continue'**
   String get quizContinue;
 
+  /// No description provided for @quizSkipGenerated.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip this question'**
+  String get quizSkipGenerated;
+
   /// No description provided for @quizAcceptedByAi.
   ///
   /// In en, this message translates to:

@@ -2,13 +2,13 @@
 
 这是 MyNihongo 仓库中 `lib/` 手写函数解释层文档的顶层索引。每行链接到 `doc/zh-cn/functions/` 下镜像 `lib/` 树的逐源文件页面（`.dart` 换成 `.md`）。
 
-**总计：** 仓库的 `/// Purpose:` 注释数为 **921**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **897** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
+**总计：** 仓库的 `/// Purpose:` 注释数为 **932**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **923** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
 
 | Tier | 计数 |
 |---|---|
-| Tier A（完整条目：Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes） | 173 |
-| Tier B（仅索引行） | 724 |
-| **总计** | **897** |
+| Tier A（完整条目：用途/输入/返回/副作用/算法/使用/说明） | 175 |
+| Tier B（仅索引行） | 748 |
+| **总计** | **923** |
 
 这些总计在初始化时（`PLAN.md` M1.0）对照源码树测得。若要改动这些数字，请测量而不要手工调整：
 
@@ -79,7 +79,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/quiz/services/answer_checker.dart` | [features/quiz/services/answer_checker.md](features/quiz/services/answer_checker.md) | 8 | 0 |
 | `lib/features/quiz/services/distractors.dart` | [features/quiz/services/distractors.md](features/quiz/services/distractors.md) | 8 | 2 |
 | `lib/features/quiz/services/question_generator.dart` | [features/quiz/services/question_generator.md](features/quiz/services/question_generator.md) | 15 | 3 |
-| `lib/features/quiz/services/quiz_session.dart` | [features/quiz/services/quiz_session.md](features/quiz/services/quiz_session.md) | 10 | 2 |
+| `lib/features/quiz/services/quiz_session.dart` | [features/quiz/services/quiz_session.md](features/quiz/services/quiz_session.md) | 11 | 2 |
 | `lib/features/quiz/views/quiz_modes_page.dart` | [features/quiz/views/quiz_modes_page.md](features/quiz/views/quiz_modes_page.md) | 3 | 1 |
 | `lib/features/quiz/views/quiz_page.dart` | [features/quiz/views/quiz_page.md](features/quiz/views/quiz_page.md) | 9 | 1 |
 | `lib/features/quiz/widgets/answer_panes.dart` | [features/quiz/widgets/answer_panes.md](features/quiz/widgets/answer_panes.md) | 8 | 1 |
@@ -162,11 +162,11 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/reminders/widgets/reminder_settings_tiles.dart` | 未编写文档 | — | — |
 | `lib/features/ai/services/ai_practice_service.dart` | [features/ai/services/ai_practice_service.md](features/ai/services/ai_practice_service.md) | 7 | 2 |
 | `lib/features/ai/services/practice_prompt_builder.dart` | 未编写文档 | — | — |
-| `lib/features/ai/services/practice_response_parser.dart` | [features/ai/services/practice_response_parser.md](features/ai/services/practice_response_parser.md) | 9 | 3 |
+| `lib/features/ai/services/practice_response_parser.dart` | [features/ai/services/practice_response_parser.md](features/ai/services/practice_response_parser.md) | 12 | 3 |
 | `lib/features/ai/widgets/generated_examples.dart` | 未编写文档 | — | — |
 | `lib/features/lessons/models/scenario.dart` | [features/lessons/models/scenario.md](features/lessons/models/scenario.md) | 14 | 1 |
 | `lib/features/lessons/views/scenario_page.dart` | [features/lessons/views/scenario_page.md](features/lessons/views/scenario_page.md) | 8 | 1 |
-| `lib/features/quiz/services/ai_question_generator.dart` | [features/quiz/services/ai_question_generator.md](features/quiz/services/ai_question_generator.md) | 7 | 2 |
+| `lib/features/quiz/services/ai_question_generator.dart` | [features/quiz/services/ai_question_generator.md](features/quiz/services/ai_question_generator.md) | 9 | 2 |
 | `lib/features/writing/views/writing_practice_page.dart` | [features/writing/views/writing_practice_page.md](features/writing/views/writing_practice_page.md) | 18 | 5 |
 
 ## l10n/

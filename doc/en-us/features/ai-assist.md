@@ -262,7 +262,7 @@ and Settings raising the microphone prompt on open (see
 ## Generated questions
 
 With the switch on, a **unit practice session** asks the model for up to three extra questions
-about the unit's own grammar points. Four things bound what that can cost:
+about the unit's own grammar points. Six things bound what that can cost:
 
 - The session is built and shown first; generation runs after it, through
   `AiPracticeService.runInBackground`, which yields to any interactive request. **Waiting on a
@@ -272,8 +272,17 @@ about the unit's own grammar points. Four things bound what that can cost:
 - Every reply is checked before it becomes a question: a blank must be present, four distinct
   non-empty options, and an `Answer:` that names one of them. Anything else is dropped in silence.
   See [`ai_question_generator.md`](../functions/features/quiz/services/ai_question_generator.md).
+- **Every question is asked twice.** The first call writes it; the second hands it back *without*
+  its proposed answer and asks the model to work it out and to say whether the question stands at
+  all. It is kept only when the model reaches the same option **and** calls it sound. A model shown
+  an answer and asked to approve it agrees, so the second pass does not see the first pass's answer:
+  two derivations that must match is a check, a rubber stamp is not. Silence drops the question.
 - The question carries the generated label **above it**, before it is read, not after it is
-  answered.
+  answered — and next to it, a **Skip this question** button. The learner is being asked to trust a
+  sentence nothing human checked; the honest counterpart of saying so is letting them decline it.
+  Skipping records nothing, re-queues nothing, and shortens the session by one, so the progress line
+  keeps counting what will actually be asked. An authored question has no skip, because skipping the
+  syllabus is not what this is for.
 
 ## Not built
 

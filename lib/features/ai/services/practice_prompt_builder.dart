@@ -135,15 +135,44 @@ class PracticePromptBuilder {
   }) => _build('examples', locale, (labels, out) {
     out
       ..writeln(
-        '${labels['sentence'] ?? 'Word'}: ${entry.headword}'
+        // `word`, not `sentence`. The old key exists, so nothing fell back
+        // and nothing failed loudly — the prompt simply announced a single
+        // word as "Sentence:" and its gloss as "The model answer:", and then
+        // asked the model to write sentences from that.
+        '${labels['word'] ?? 'Word'}: ${entry.headword}'
         '（${entry.reading}）',
       )
       ..writeln(
-        '${labels['expected'] ?? 'Meaning'}: '
+        '${labels['meaning'] ?? 'Meaning'}: '
         '${entry.meanings.resolveJoined(locale)}',
       )
-      ..writeln('JLPT: ${entry.level.label}');
+      ..writeln('${labels['level'] ?? 'JLPT'}: ${entry.level.label}');
   });
+
+  /// Purpose: Ask the model to answer a generated question and judge it.
+  /// Inputs: The `question` as it would be shown, its four `options`, and the
+  /// `locale`.
+  /// Returns: `String?` — null when there is nothing coherent to ask about.
+  /// Side effects: None.
+  /// Notes: **The proposed answer is deliberately not in the prompt.** A model
+  /// shown an answer and asked whether it is right agrees; a model asked to
+  /// work the question out produces something that can disagree, and only the
+  /// second is a check. The caller compares the two letters itself.
+  String? forQuizCheck({
+    required String question,
+    required List<String> options,
+    required Locale locale,
+  }) {
+    if (question.trim().isEmpty || options.length != 4) return null;
+    if (options.any((o) => o.trim().isEmpty)) return null;
+    return _build('quizCheck', locale, (labels, out) {
+      out.writeln('${labels['question'] ?? 'Question'}: ${question.trim()}');
+      const letters = ['A', 'B', 'C', 'D'];
+      for (var i = 0; i < options.length; i++) {
+        out.writeln('${letters[i]}: ${options[i].trim()}');
+      }
+    });
+  }
 
   /// Purpose: Ask for one extra multiple-choice question about a unit.
   /// Inputs: The grammar `point` to test, the unit's `words`, and the `locale`.

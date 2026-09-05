@@ -348,6 +348,7 @@
   "@quizProgress": { "placeholders": { "done": { "type": "int" }, "total": { "type": "int" } } },
   "quizCheck": "檢查",
   "quizContinue": "繼續",
+  "quizSkipGenerated": "跳過這道題",
   "quizAcceptedByAi": "裝置端模型判為正確：{comment}",
   "@quizAcceptedByAi": { "placeholders": { "comment": { "type": "String" } } },
   "quizWhyWrong": "為什麼這樣不對？",

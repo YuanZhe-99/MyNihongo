@@ -202,4 +202,44 @@ void main() {
     expect(session.summary.total, 0);
     expect(session.summary.accuracy, 0);
   });
+  test('skipping a question removes it and shortens the session', () {
+    final session = QuizSession(questions: [choice('a'), choice('b')]);
+    expect(session.total, 2);
+
+    session.skip();
+
+    expect(session.current?.itemId, 'b');
+    expect(
+      session.total,
+      1,
+      reason: 'the progress line counts what will actually be asked',
+    );
+    expect(session.answeredCount, 0);
+    expect(session.summary.wrongIds, isEmpty);
+  });
+
+  test('a skipped question never comes back', () {
+    final session = QuizSession(questions: [choice('a'), choice('b')]);
+    session.skip();
+    session.answer(const ChoiceAnswer(0));
+    session.next();
+    expect(session.isFinished, isTrue);
+  });
+
+  test('skipping records nothing for the scheduler', () {
+    final recorded = <String>[];
+    final session = QuizSession(
+      questions: [choice('a'), choice('b')],
+      onFirstAnswer: (id, _) => recorded.add(id),
+    );
+    session.skip();
+    expect(recorded, isEmpty, reason: 'a declined question is not a wrong one');
+  });
+
+  test('skipping the last question finishes the session', () {
+    final session = QuizSession(questions: [choice('a')]);
+    session.skip();
+    expect(session.isFinished, isTrue);
+    expect(session.total, 0);
+  });
 }

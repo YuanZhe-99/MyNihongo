@@ -9,6 +9,7 @@ import 'package:my_nihongo/features/ai/services/genai_backend.dart';
 import 'package:my_nihongo/features/ai/services/practice_prompt_builder.dart';
 import 'package:my_nihongo/features/ai/services/practice_response_parser.dart';
 import 'package:my_nihongo/features/ai/services/prompt_builder.dart';
+import 'package:my_nihongo/features/content/models/localized_strings.dart';
 import 'package:my_nihongo/features/content/models/content_catalog.dart';
 import 'package:my_nihongo/features/content/services/content_repository.dart';
 
@@ -295,6 +296,125 @@ void main() {
       final practice = AiPracticeService(assist: assist);
       await practice.runInBackground('ask', maxOutputTokens: 320);
       expect(backend.lastMaxOutputTokens, 320);
+    });
+  });
+  group('the shipped prompt asset', () {
+    // Nothing checked this file for completeness, and that is how `forExamples`
+    // came to ask for the labels `sentence` and `expected` — which exist, so
+    // nothing fell back and nothing failed, and the prompt announced a single
+    // word as "Sentence:" and its gloss as "The model answer:".
+    test('every task is written in all three languages', () {
+      for (final task in const [
+        'writing',
+        'grade',
+        'whyWrong',
+        'examples',
+        'quiz',
+      ]) {
+        for (final language in const ['en', 'zh', 'zh_TW']) {
+          final template = templates.tasks[task]?[language];
+          expect(
+            template?.instruction,
+            isNotNull,
+            reason: '$task has no $language instruction',
+          );
+          expect(
+            template?.rules,
+            isNotEmpty,
+            reason: '$task has no $language rules',
+          );
+        }
+      }
+    });
+
+    test('every label a builder asks for exists in all three languages', () {
+      // The list the builders actually index. A key missing here is invisible
+      // at run time — the `??` fallbacks hide it — so it has to be checked.
+      for (final label in const [
+        'sentence',
+        'words',
+        'note',
+        'grammar',
+        'rules',
+        'learner',
+        'expected',
+        'vocabulary',
+        'question',
+        'chosen',
+        'correct',
+        'options',
+        'topic',
+        'word',
+        'meaning',
+        'level',
+      ]) {
+        for (final language in const ['en', 'zh', 'zh_TW']) {
+          expect(
+            templates.labels[language]?[label],
+            isNotNull,
+            reason: '$language is missing the label "$label"',
+          );
+        }
+      }
+    });
+
+    test('an example prompt calls a word a word', () {
+      final builder = PracticePromptBuilder(templates);
+      final entry = catalog.vocab.firstWhere((v) => v.hasKanji);
+      final prompt = builder.forExamples(entry, locale: en)!;
+      expect(prompt, contains('Word: '));
+      expect(prompt, contains('What it means: '));
+      expect(
+        prompt,
+        isNot(contains('The model answer')),
+        reason: 'a word gloss is not a model answer to anything',
+      );
+    });
+  });
+
+  group('packaging around an example line', () {
+    List<ContentExample> parse(String raw) =>
+        PracticeResponseParser.examples(raw, language: 'en');
+
+    test('a Markdown table row is read, not refused', () {
+      // The shape a model reaches for when asked for bar-separated fields, and
+      // the reason this returned nothing at all on a Pixel 10 while the model
+      // was answering perfectly well.
+      final out = parse('| 本を読みます。 | ほんをよみます。 | I read a book. |');
+      expect(out, hasLength(1));
+      expect(out.first.ja, '本を読みます。');
+      expect(out.first.reading, 'ほんをよみます。');
+    });
+
+    test('numbering, bullets and quotes are stripped', () {
+      final out = parse(
+        '1. 本を読みます。|ほんをよみます。|I read a book.\n'
+        '- 水を飲みます。|みずをのみます。|I drink water.\n'
+        '「山を見ます。|やまをみます。|I see a mountain.」',
+      );
+      expect(out, hasLength(3));
+      expect(out.first.ja, '本を読みます。');
+      expect(out.last.ja, '山を見ます。');
+    });
+
+    test('a code fence contributes nothing', () {
+      final out = parse(
+        '```\n本を読みます。|ほんをよみます。|I read a book.\n```',
+      );
+      expect(out, hasLength(1), reason: 'the fence lines are not examples');
+    });
+
+    test('an empty reading field means no reading, not a broken line', () {
+      // Dropping an *outer* empty is unpacking a table row. A middle one is a
+      // field that is really there and really empty, and the reading is the
+      // one field this widget can do without.
+      final out = parse('本を読みます。||I read a book.');
+      expect(out, hasLength(1));
+      expect(out.first.reading, isNull);
+    });
+
+    test('a line with four real fields is still refused', () {
+      expect(parse('a|b|c|d'), isEmpty);
     });
   });
 }

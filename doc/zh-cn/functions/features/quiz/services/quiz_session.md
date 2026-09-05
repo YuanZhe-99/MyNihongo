@@ -16,6 +16,7 @@
 | `QuizSession` | 类 | B | 运行一次测验。 |
 | [`answer`](#answer) | 方法 | A | 判当前题目并保留结果。 |
 | [`next`](#next) | 方法 | A | 进入下一题，并把答错的重新排队。 |
+| `skip` | 方法 | B | 丢掉当前这道题，不作答也不记录。 |
 | `summary` | getter | B | 已结束的会话。 |
 | `_expectedText` | 方法 | B | 为界面给出正确答案的文本。 |
 

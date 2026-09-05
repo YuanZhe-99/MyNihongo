@@ -10,6 +10,14 @@ fails any of them is dropped in silence, because the session is complete without
 
 Consumers: `quiz_page.dart`.
 
+**Every question is asked twice.** The first call writes it; the second hands it
+back *without* its proposed answer and asks the model to work it out and to say
+whether the question stands. It is kept only when the model reaches the same
+option and calls it sound. A model shown an answer and asked to approve it
+agrees, so the second pass deliberately does not see the first pass's answer:
+two derivations that must match is a check, and a rubber stamp is not. Silence
+drops the question, like every other refusal here.
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |
@@ -20,6 +28,8 @@ Consumers: `quiz_page.dart`.
 | [`generate`](#generate) | method | A | Yield accepted questions as they arrive. |
 | `_words` | getter | B | The unit's words, for grounding the prompt. |
 | [`parse`](#parse) | static method | A | Turn one model reply into a question, or refuse it. |
+| `accepts` | static method | B | Whether a judged question may be shown: same answer, called sound. |
+| `_survivesReview` | method | B | Ask the model to answer its own question, and judge it. |
 | `_after` | static method | B | Take what follows a label on a line. |
 
 ## Documentation

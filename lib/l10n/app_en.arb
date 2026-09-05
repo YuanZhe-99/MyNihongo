@@ -348,6 +348,7 @@
   "@quizProgress": { "placeholders": { "done": { "type": "int" }, "total": { "type": "int" } } },
   "quizCheck": "Check",
   "quizContinue": "Continue",
+  "quizSkipGenerated": "Skip this question",
   "quizAcceptedByAi": "Accepted by the on-device model: {comment}",
   "@quizAcceptedByAi": { "placeholders": { "comment": { "type": "String" } } },
   "quizWhyWrong": "Why was this wrong?",

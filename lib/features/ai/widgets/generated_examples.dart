@@ -39,6 +39,44 @@ class _GeneratedExamplesState extends ConsumerState<GeneratedExamples> {
   GenAiFailure? _failure;
   bool _loading = false;
 
+  /// Purpose: Follow the service, so the action appears when the device is
+  /// ready rather than only if it already was.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: Subscribes to the app-wide service.
+  /// Notes: `aiAssistServiceProvider` is a plain `Provider`, so watching it
+  /// never rebuilds on `notifyListeners`. This widget lives inside a modal
+  /// sheet whose builder runs once, so without this listener a sheet opened
+  /// while AICore was still being probed showed no action for as long as it
+  /// stayed open — and reopening it was the only way to find out there was
+  /// one. The sentence lab has listened for exactly this reason since it was
+  /// written; this widget was the one that did not.
+  @override
+  void initState() {
+    super.initState();
+    AiAssistService.instance.addListener(_onServiceChanged);
+  }
+
+  /// Purpose: Stop following the service.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: Removes the listener.
+  /// Notes: The service outlives this widget, so the listener has to go.
+  @override
+  void dispose() {
+    AiAssistService.instance.removeListener(_onServiceChanged);
+    super.dispose();
+  }
+
+  /// Purpose: Rebuild when the device's answer changes.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: Rebuilds.
+  /// Notes: Internal helper used within this file only.
+  void _onServiceChanged() {
+    if (mounted) setState(() {});
+  }
+
   @override
   /// Purpose: Build the button and whatever came back.
   /// Inputs: `context`.
@@ -148,10 +186,17 @@ class _GeneratedExamplesState extends ConsumerState<GeneratedExamples> {
   /// as authoritative as one somebody wrote.
   Future<void> _ask() async {
     final builder = await practicePromptBuilder(ref);
-    if (builder == null || !mounted) return;
+    if (!mounted) return;
     final locale = Localizations.localeOf(context);
-    final prompt = builder.forExamples(widget.entry, locale: locale);
-    if (prompt == null) return;
+    final prompt = builder?.forExamples(widget.entry, locale: locale);
+    // Said, not swallowed. Both of these used to return in silence, with no
+    // spinner and no message, so the button looked broken rather than
+    // unavailable — and the two causes, an unreadable prompt asset and a word
+    // the prompt cannot be built for, are invisible from the outside anyway.
+    if (prompt == null) {
+      setState(() => _failure = GenAiFailure.failed);
+      return;
+    }
 
     setState(() {
       _loading = true;
@@ -160,7 +205,7 @@ class _GeneratedExamplesState extends ConsumerState<GeneratedExamples> {
     try {
       final raw = await AiPracticeService.instance.run(
         prompt,
-        maxOutputTokens: builder.maxOutputTokens,
+        maxOutputTokens: builder!.maxOutputTokens,
       );
       if (!mounted) return;
       final parsed = PracticeResponseParser.examples(

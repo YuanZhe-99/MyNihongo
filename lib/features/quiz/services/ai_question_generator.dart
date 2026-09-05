@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import '../../ai/services/ai_practice_service.dart';
 import '../../ai/services/practice_prompt_builder.dart';
+import '../../ai/services/practice_response_parser.dart';
 import '../../content/models/content_catalog.dart';
 import '../../content/models/grammar_point.dart';
 import '../../content/models/vocab_entry.dart';
@@ -59,6 +60,18 @@ class AiQuestionGenerator {
   /// Notes: A stream rather than a list because each question is useful the
   /// moment it exists: the session appends it and the learner may reach it
   /// while the next one is still being written.
+  ///
+  /// **Every question is asked twice.** The first call writes it; the second
+  /// hands the question back without its proposed answer and asks the model to
+  /// work it out and to say whether the question stands at all. It is kept only
+  /// when the model reaches the same option *and* calls it sound. A model shown
+  /// an answer and asked to approve it agrees, so the second pass deliberately
+  /// does not see the first pass's answer — two derivations that must match is
+  /// a check, and one derivation with a rubber stamp is not.
+  ///
+  /// Silence drops the question, like every other refusal here. Nothing is lost
+  /// but a question nobody asked for, and the alternative is showing a learner
+  /// a sentence that no one and nothing has checked.
   Stream<QuizQuestion> generate({
     int limit = maxGeneratedQuestions,
     Set<String> avoid = const {},
@@ -78,10 +91,56 @@ class AiQuestionGenerator {
       if (raw == null) continue;
       final question = parse(raw, point: point);
       if (question == null || !seen.add(question.prompt)) continue;
+      if (!await _survivesReview(question)) continue;
       made++;
       yield question;
     }
   }
+
+  /// Purpose: Ask the model to answer its own question, and judge it.
+  /// Inputs: The parsed `question`.
+  /// Returns: `Future<bool>` — whether to keep it.
+  /// Side effects: One more model run on the device.
+  /// Notes: Internal helper used within this file only. Costs one extra
+  /// background call per candidate — at most three more per session, none of
+  /// them on the path the learner is waiting on. That is cheap next to a wrong
+  /// question, which the learner cannot tell from a right one.
+  Future<bool> _survivesReview(QuizQuestion question) async {
+    final prompt = builder.forQuizCheck(
+      question: question.prompt,
+      options: question.options,
+      locale: locale,
+    );
+    if (prompt == null) return false;
+    final raw = await service.runInBackground(
+      prompt,
+      maxOutputTokens: builder.maxOutputTokens,
+    );
+    if (raw == null) return false;
+    return accepts(
+      verdict: PracticeResponseParser.quizCheck(raw),
+      question: question,
+    );
+  }
+
+  /// Purpose: Decide whether a judged question may be shown.
+  /// Inputs: The `verdict` the model gave, or null when it gave none, and the
+  /// `question` it was judging.
+  /// Returns: `bool`.
+  /// Side effects: None.
+  /// Notes: The rule, kept out of the plumbing so it can be stated and tested
+  /// on its own: **both** the model's own answer must match the one the
+  /// question carries **and** the model must call the question sound. A verdict
+  /// that could not be read is a no, like every other silence here — dropping a
+  /// question costs a question nobody asked for, and keeping a wrong one costs
+  /// the learner's trust in the ones that are right.
+  static bool accepts({
+    required QuizVerdict? verdict,
+    required QuizQuestion question,
+  }) =>
+      verdict != null &&
+      verdict.sound &&
+      verdict.answerIndex == question.answerIndex;
 
   /// The unit's words, for grounding the prompt.
   List<VocabEntry> get _words => [

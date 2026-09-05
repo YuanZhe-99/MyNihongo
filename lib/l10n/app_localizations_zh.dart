@@ -959,6 +959,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get quizContinue => '继续';
 
   @override
+  String get quizSkipGenerated => '跳过这道题';
+
+  @override
   String quizAcceptedByAi(String comment) {
     return '端侧模型判为正确：$comment';
   }
@@ -2389,6 +2392,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get quizContinue => '繼續';
+
+  @override
+  String get quizSkipGenerated => '跳過這道題';
 
   @override
   String quizAcceptedByAi(String comment) {

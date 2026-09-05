@@ -7,8 +7,10 @@ import 'package:my_nihongo/features/content/services/content_repository.dart';
 import 'package:my_nihongo/features/kana/models/kana.dart';
 import 'package:my_nihongo/features/quiz/models/quiz_config.dart';
 import 'package:my_nihongo/features/quiz/models/quiz_question.dart';
+import 'package:my_nihongo/features/quiz/services/quiz_session.dart';
 import 'package:my_nihongo/features/quiz/views/quiz_modes_page.dart';
 import 'package:my_nihongo/features/quiz/views/quiz_page.dart';
+import 'package:my_nihongo/features/quiz/widgets/quiz_runner.dart';
 import 'package:my_nihongo/l10n/app_localizations.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
@@ -249,5 +251,63 @@ void main() {
       reason: 'and the switch stays on',
     );
     expect(tester.takeException(), isNull);
+  });
+  group('a generated question can be declined', () {
+    QuizQuestion question({required bool generated}) => QuizQuestion(
+      itemId: 'grammar:tara',
+      mode: QuizMode.grammarPattern,
+      kind: AnswerKind.choice,
+      prompt: '雨が降＿＿行きません。',
+      options: const ['ったら', 'ったり', 'っては', 'ってから'],
+      answerIndex: 0,
+      generated: generated,
+    );
+
+    Future<QuizSession> pumpRunner(
+      WidgetTester tester, {
+      required bool generated,
+    }) async {
+      final session = QuizSession(
+        questions: [question(generated: generated), question(generated: false)],
+      );
+      await pumpAt(
+        tester,
+        412,
+        915,
+        home: Scaffold(
+          body: QuizRunner(session: session, onFinished: () {}),
+        ),
+      );
+      return session;
+    }
+
+    testWidgets('the skip button is offered only on a generated one', (
+      tester,
+    ) async {
+      await pumpRunner(tester, generated: true);
+      expect(find.text('跳过这道题'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('an authored question offers no way out', (tester) async {
+      // Skipping the syllabus is not what this is for.
+      await pumpRunner(tester, generated: false);
+      expect(find.text('跳过这道题'), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('skipping moves on and shortens the session', (tester) async {
+      final session = await pumpRunner(tester, generated: true);
+      expect(session.total, 2);
+
+      await tester.tap(find.text('跳过这道题'));
+      await tester.pump();
+
+      expect(session.current?.generated, isFalse);
+      expect(session.total, 1);
+      expect(session.answeredCount, 0);
+      expect(find.text('跳过这道题'), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
   });
 }

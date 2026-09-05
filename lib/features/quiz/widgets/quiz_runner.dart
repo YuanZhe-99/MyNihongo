@@ -153,6 +153,23 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
     if (widget.session.isFinished) widget.onFinished();
   }
 
+  /// Purpose: Decline the generated question on screen.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: Removes the question from the session.
+  /// Notes: Internal helper used within this file only. Nothing is recorded
+  /// and nothing is re-queued — the learner said this question should not
+  /// have been asked, and treating that as a wrong answer would be the app
+  /// disagreeing with them in the progress file.
+  void _skip() {
+    setState(() {
+      _pending = null;
+      _aiComment = null;
+    });
+    widget.session.skip();
+    if (widget.session.isFinished) widget.onFinished();
+  }
+
   /// Purpose: Build the question and its answer controls.
   /// Inputs: `context`.
   /// Returns: The widget tree for the current state.
@@ -203,6 +220,16 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
                 )
               : Text(answered ? l10n.quizContinue : l10n.quizCheck),
         ),
+        // Only on a question the model wrote, and only before it is
+        // answered. The learner is being asked to trust a sentence nothing
+        // checked; the honest counterpart of saying so on the label is
+        // letting them decline it. An authored question has no skip, because
+        // skipping the syllabus is not what this is for.
+        if (question.generated && !answered)
+          TextButton(
+            onPressed: _grading ? null : _skip,
+            child: Text(l10n.quizSkipGenerated),
+          ),
       ],
     );
 

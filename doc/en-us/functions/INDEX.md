@@ -4,17 +4,17 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **921** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **932** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **897** documented declarations. The two counts are measured separately and
+The rows below sum to **923** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
-| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 173 |
-| Tier B (index row only) | 724 |
-| **Total** | **897** |
+| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 175 |
+| Tier B (index row only) | 748 |
+| **Total** | **923** |
 
 These totals were measured against the source tree at initialization (`PLAN.md` M1.0). If you
 change these numbers, measure them rather than adjusting them by hand:
@@ -87,7 +87,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/quiz/services/answer_checker.dart` | [features/quiz/services/answer_checker.md](features/quiz/services/answer_checker.md) | 8 | 0 |
 | `lib/features/quiz/services/distractors.dart` | [features/quiz/services/distractors.md](features/quiz/services/distractors.md) | 8 | 2 |
 | `lib/features/quiz/services/question_generator.dart` | [features/quiz/services/question_generator.md](features/quiz/services/question_generator.md) | 15 | 3 |
-| `lib/features/quiz/services/quiz_session.dart` | [features/quiz/services/quiz_session.md](features/quiz/services/quiz_session.md) | 10 | 2 |
+| `lib/features/quiz/services/quiz_session.dart` | [features/quiz/services/quiz_session.md](features/quiz/services/quiz_session.md) | 11 | 2 |
 | `lib/features/quiz/views/quiz_modes_page.dart` | [features/quiz/views/quiz_modes_page.md](features/quiz/views/quiz_modes_page.md) | 3 | 1 |
 | `lib/features/quiz/views/quiz_page.dart` | [features/quiz/views/quiz_page.md](features/quiz/views/quiz_page.md) | 9 | 1 |
 | `lib/features/quiz/widgets/answer_panes.dart` | [features/quiz/widgets/answer_panes.md](features/quiz/widgets/answer_panes.md) | 8 | 1 |
@@ -169,12 +169,12 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/reminders/services/desktop_reminder_backend.dart` | not documented | — | — |
 | `lib/features/reminders/widgets/reminder_settings_tiles.dart` | not documented | — | — |
 | `lib/features/ai/services/ai_practice_service.dart` | [features/ai/services/ai_practice_service.md](features/ai/services/ai_practice_service.md) | 7 | 2 |
-| `lib/features/ai/services/practice_prompt_builder.dart` | not documented | — | — |
-| `lib/features/ai/services/practice_response_parser.dart` | [features/ai/services/practice_response_parser.md](features/ai/services/practice_response_parser.md) | 9 | 3 |
-| `lib/features/ai/widgets/generated_examples.dart` | not documented | — | — |
+| `lib/features/ai/services/practice_prompt_builder.dart` | [features/ai/services/practice_prompt_builder.md](features/ai/services/practice_prompt_builder.md) | 12 | 1 |
+| `lib/features/ai/services/practice_response_parser.dart` | [features/ai/services/practice_response_parser.md](features/ai/services/practice_response_parser.md) | 12 | 3 |
+| `lib/features/ai/widgets/generated_examples.dart` | [features/ai/widgets/generated_examples.md](features/ai/widgets/generated_examples.md) | 8 | 1 |
 | `lib/features/lessons/models/scenario.dart` | [features/lessons/models/scenario.md](features/lessons/models/scenario.md) | 14 | 1 |
 | `lib/features/lessons/views/scenario_page.dart` | [features/lessons/views/scenario_page.md](features/lessons/views/scenario_page.md) | 8 | 1 |
-| `lib/features/quiz/services/ai_question_generator.dart` | [features/quiz/services/ai_question_generator.md](features/quiz/services/ai_question_generator.md) | 7 | 2 |
+| `lib/features/quiz/services/ai_question_generator.dart` | [features/quiz/services/ai_question_generator.md](features/quiz/services/ai_question_generator.md) | 9 | 2 |
 | `lib/features/writing/views/writing_practice_page.dart` | [features/writing/views/writing_practice_page.md](features/writing/views/writing_practice_page.md) | 18 | 5 |
 
 ## l10n/

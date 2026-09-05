@@ -116,6 +116,27 @@ class QuizSession extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Purpose: Drop the current question without answering it.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: Shortens the queue and the total; notifies listeners.
+  /// Notes: For a question the learner should not have been asked — today,
+  /// one the on-device model wrote. It is removed rather than re-queued, and
+  /// [total] comes down with it so the progress line keeps counting what the
+  /// learner will actually be asked.
+  ///
+  /// **Nothing is recorded.** A skipped question was not got wrong: it never
+  /// reaches `_firstResults`, never enters the wrong list, and never moves a
+  /// review interval. A generated question could not move one anyway, but the
+  /// rule is stated here rather than left to that coincidence.
+  void skip() {
+    if (_queue.isEmpty) return;
+    _queue.removeAt(0);
+    if (_total > 0) _total--;
+    _lastOutcome = null;
+    notifyListeners();
+  }
+
   /// How many items have been answered at least once.
   int get answeredCount => _firstResults.length;
 

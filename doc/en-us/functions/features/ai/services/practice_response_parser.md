@@ -8,6 +8,14 @@ nothing at all — is better than a half-parsed one.
 
 Consumers: `why_wrong.dart`, `generated_examples.dart`.
 
+M4.0c added `quizCheck` and the `QuizVerdict` it returns: a generated question is
+asked back to the model **without** its proposed answer, so the reply is a second
+derivation rather than an approval. `_unwrap` lets an example line survive the
+packaging a model puts around it — a code fence, a list marker, or the leading
+and trailing bars of a Markdown table row. That packaging is why generated
+examples returned nothing at all on a Pixel 10 while the model was answering
+perfectly well.
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |
@@ -18,6 +26,9 @@ Consumers: `why_wrong.dart`, `generated_examples.dart`.
 | `maxNotes` | constant | B | How many notes feedback may carry (3). |
 | [`writing`](#writing) | method | A | Read a rewrite and its notes. |
 | [`grade`](#grade) | method | A | Read a same-or-different verdict. |
+| `QuizVerdict` | class | B | The model's own answer to a generated question, and whether it calls it sound. |
+| `quizCheck` | static method | B | Read a verdict on a generated question. |
+| `_unwrap` | static method | B | Strip the packaging a model puts around a line. |
 | [`examples`](#examples) | method | A | Read generated example sentences. |
 | `explanation` | method | B | Read a plain explanation, as the lab does. |
 | `_after` | method | B | Take what follows a label. |
