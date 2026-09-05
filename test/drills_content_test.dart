@@ -108,6 +108,23 @@ void main() {
     }
   });
 
+  test('every level ships every section', () {
+    // The other tests in this file all iterate what is on disk, so a level
+    // that shipped nothing at all would pass every one of them by having
+    // nothing to be wrong about. This is the test that a missing file fails.
+    for (final level in JlptLevel.values) {
+      for (final section in DrillSection.values) {
+        expect(
+          files.containsKey((level, section)),
+          isTrue,
+          reason:
+              '${level.label} ${section.name} ships no file, so every other '
+              'test in this file silently skipped it',
+        );
+      }
+    }
+  });
+
   test('every shipped file loads and none is empty', () {
     expect(files, isNotEmpty, reason: 'no drill content ships at all');
     for (final entry in files.entries) {

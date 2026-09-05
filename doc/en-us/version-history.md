@@ -12,6 +12,41 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.4.10` — 2026-09-05. N1, and the last few things the repo was quiet about.
+
+  **N1 ships complete** at the official composition — 108 questions and 53
+  passages across all four sections. That finishes the set: **469 questions and
+  201 passages, every level at ×1**, so a full mock exam can be sat at any of
+  the five without the sampler repeating itself.
+
+  A test now asserts that every level ships every section. The other content
+  tests all iterate what is on disk, so a level that shipped nothing at all
+  would have passed every one of them by having nothing to be wrong about.
+
+  **The English `lexicon.md` had fallen four sections behind the Chinese one.**
+  It still described a smaller `Lexicon` from before the sentence analyser was
+  built, while the Chinese page documented the class that actually ships. The
+  English is the authoritative tree, so this was the wrong way round in the way
+  that matters most. Both now carry the same nine declarations and the same four
+  full entries.
+
+  **Four files the index called "not documented" now are** — the three content
+  pipeline tools and the placement rule behind the generated Traditional
+  Chinese. They are the files somebody reaches for when a content batch goes
+  wrong, which is the worst moment to find they were never written up.
+
+  **A test that three documents claimed existed now exists.** `ai-assist.md`,
+  `quizzes.md` and two function pages all said "a test asserts this" about the
+  rule that `AiPracticeService` and `QuizSession` import no storage — and none
+  did. It reads the two files' own import lines, because an import added in good
+  faith would break both invariants quietly: the code would still work, and
+  three documents would start saying something untrue.
+
+  And three Function Explanation comments in `app_settings.dart` had drifted
+  onto the wrong methods — all three stacked above `setAutoSpeak`, describing
+  the AI switch, the furigana switch and the auto-speak switch in that order.
+  Each is back over the method it describes. 1005 tests.
+
 - `0.4.9` — 2026-09-05. Five things the model can say, each one grounded in
   something the app already worked out.
 

@@ -1,0 +1,1368 @@
+{
+  "schemaVersion": 1,
+  "source": "model-authored (Claude), unreviewed",
+  "license": "GPL-3.0 with the app.",
+  "level": "N1",
+  "section": "reading",
+  "passages": [
+    {
+      "id": "p:n1-r-001",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "仕事の効率を上げるために、無駄な時間を減らすことばかりが語られる。",
+          "reading": "しごとのこうりつをあげるために、むだなじかんをへらすことばかりがかたられる。"
+        },
+        {
+          "ja": "しかし、すぐには役に立たない時間の中にこそ、後の仕事を支える経験の蓄積がある。",
+          "reading": "しかし、すぐにはやくにたたないじかんのなかにこそ、あとのしごとをささえるけいけんのちくせきがある。"
+        },
+        {
+          "ja": "数字に見えない時間をすぐに減らす会社ほど、数年後に新しい仕事を生む力を失う。",
+          "reading": "すうじにみえないじかんをすぐにへらすかいしゃほど、すうねんごにあたらしいしごとをうむちからをうしなう。"
+        },
+        {
+          "ja": "効率とは、短い時間で多くを行うことではなく、必要な時間とそうでない時間を分けることである。",
+          "reading": "こうりつとは、みじかいじかんでおおくをおこなうことではなく、ひつようなじかんとそうでないじかんをわけることである。"
+        }
+      ],
+      "en": "When people talk about raising efficiency at work, all they talk about is cutting out wasted time. Yet it is precisely within the hours that are of no immediate use that the experience which supports later work accumulates. The more readily a company cuts the time that does not show up in its figures, the more surely it loses, a few years on, the power to produce new work. Efficiency is not doing a great deal in a short time; it is telling the time that is needed from the time that is not.",
+      "zh": "一谈到提高工作效率，人们说来说去都是如何削减无用的时间。可恰恰是在那些不能立刻派上用场的时间里，积累着支撑日后工作的经验。越是急于砍掉那些体现不到数字上的时间的公司，几年之后就越会失去创造新事业的能力。所谓效率，并不是在短时间里做很多事，而是分辨出哪些时间是必要的、哪些不是。",
+      "zh_TW": "一談到提高工作效率，人們說來說去都是如何削減無用的時間。可恰恰是在那些不能立刻派上用場的時間裡，積累著支撐日後工作的經驗。越是急於砍掉那些體現不到數字上的時間的公司，幾年之後就越會失去創造新事業的能力。所謂效率，並不是在短時間裡做很多事，而是分辨出哪些時間是必要的、哪些不是。"
+    },
+    {
+      "id": "p:n1-r-002",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "会議で最も価値があるのは、活発な発言ではなく、時に訪れる沈黙である。",
+          "reading": "かいぎでもっともかちがあるのは、かっぱつなはつげんではなく、ときにおとずれるちんもくである。"
+        },
+        {
+          "ja": "誰も口を開かない数十秒の間に、参加者は自分の考えをもう一度整理している。",
+          "reading": "だれもくちをひらかないすうじゅうびょうのあいだに、さんかしゃはじぶんのかんがえをもういちどせいりしている。"
+        },
+        {
+          "ja": "その時間を待てない人は、沈黙を埋めるために自分から話し始めてしまう。",
+          "reading": "そのじかんをまてないひとは、ちんもくをうめるためにじぶんからはなしはじめてしまう。"
+        },
+        {
+          "ja": "こうして会議は、早く終わる代わりに、浅い結論しか残さない。",
+          "reading": "こうしてかいぎは、はやくおわるかわりに、あさいけつろんしかのこさない。"
+        }
+      ],
+      "en": "What has the greatest value in a meeting is not lively speech but the silence that falls now and then. In the few dozen seconds when nobody opens their mouth, those present are putting their thoughts in order once more. Someone who cannot wait through that time starts talking of their own accord in order to fill the silence. In this way the meeting ends early, but leaves behind only a shallow conclusion.",
+      "zh": "会议中最有价值的，并不是热烈的发言，而是偶尔降临的沉默。在无人开口的那几十秒里，与会者正在把自己的想法重新整理一遍。等不了这段时间的人，为了填补沉默便自己先开口。于是会议虽然早早结束，留下的却只是浅薄的结论。",
+      "zh_TW": "會議中最有價值的，並不是熱烈的發言，而是偶爾降臨的沉默。在無人開口的那幾十秒裡，與會者正在把自己的想法重新整理一遍。等不了這段時間的人，為了填補沉默便自己先開口。於是會議雖然早早結束，留下的卻只是淺薄的結論。"
+    },
+    {
+      "id": "p:n1-r-003",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "市の窓口では、書類の書き方をすべての人に一律に説明している。",
+          "reading": "しのまどぐちでは、しょるいのかきかたをすべてのひとにいちりつにせつめいしている。"
+        },
+        {
+          "ja": "しかし、初めて来た人と何度も来ている人では、必要な説明の量が違う。",
+          "reading": "しかし、はじめてきたひととなんどもきているひとでは、ひつようなせつめいのりょうがちがう。"
+        },
+        {
+          "ja": "同じ説明を繰り返すことは、公平に見えて、実はどちらの人にも負担になっている。",
+          "reading": "おなじせつめいをくりかえすことは、こうへいにみえて、じつはどちらのひとにもふたんになっている。"
+        },
+        {
+          "ja": "本当の公平とは、同じ扱いをすることではなく、同じ結果に届くようにすることである。",
+          "reading": "ほんとうのこうへいとは、おなじあつかいをすることではなく、おなじけっかにとどくようにすることである。"
+        }
+      ],
+      "en": "At the city office window, the way to fill in the forms is explained to everyone in exactly the same way. But a person coming for the first time and a person who has come many times need different amounts of explanation. Repeating the same explanation looks fair, yet it is in fact a burden on both kinds of visitor. True fairness is not treating people identically; it is making sure they arrive at the same result.",
+      "zh": "在市政府的服务窗口，工作人员对所有人都用同一套说法讲解表格的填写方法。可是，第一次来的人和来过多次的人，所需要的说明量并不相同。反复讲同样的内容看似公平，实际上对两种人都是一种负担。真正的公平不是给予相同的对待，而是让每个人都能抵达相同的结果。",
+      "zh_TW": "在市政府的服務窗口，工作人員對所有人都用同一套說法講解表格的填寫方法。可是，第一次來的人和來過多次的人，所需要的說明量並不相同。反覆講同樣的內容看似公平，實際上對兩種人都是一種負擔。真正的公平不是給予相同的對待，而是讓每個人都能抵達相同的結果。"
+    },
+    {
+      "id": "p:n1-r-004",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "従来、社員の教育は、決まった順序で決まった内容を教えることだった。",
+          "reading": "じゅうらい、しゃいんのきょういくは、きまったじゅんじょできまったないようをおしえることだった。"
+        },
+        {
+          "ja": "ところが、会社に入ってくる人の経験は、これまでになく多様になった。",
+          "reading": "ところが、かいしゃにはいってくるひとのけいけんは、これまでになくたようになった。"
+        },
+        {
+          "ja": "同じ内容を同じ順序で教えると、半分の人には簡単すぎ、半分の人には難しすぎる。",
+          "reading": "おなじないようをおなじじゅんじょでおしえると、はんぶんのひとにはかんたんすぎ、はんぶんのひとにはむずかしすぎる。"
+        },
+        {
+          "ja": "教える側にこそ、柔軟な工夫が必要な時代になったのである。",
+          "reading": "おしえるがわにこそ、じゅうなんなくふうがひつようなじだいになったのである。"
+        }
+      ],
+      "en": "Up to now, training staff has meant teaching a fixed content in a fixed order. The experience of the people joining a company, however, has grown more varied than ever before. If the same content is taught in the same order, it is too easy for half of them and too hard for the other half. We have entered an age in which it is the teaching side that needs to be flexible.",
+      "zh": "长期以来，员工培训就是按固定的顺序讲授固定的内容。然而如今进入公司的人，其经历之多样前所未有。若用同样的顺序讲同样的内容，对一半人来说太简单，对另一半人来说又太难。如今已是这样一个时代：真正需要灵活变通的，恰恰是施教的一方。",
+      "zh_TW": "長期以來，員工培訓就是按固定的順序講授固定的內容。然而如今進入公司的人，其經歷之多樣前所未有。若用同樣的順序講同樣的內容，對一半人來說太簡單，對另一半人來說又太難。如今已是這樣一個時代：真正需要靈活變通的，恰恰是施教的一方。"
+    },
+    {
+      "id": "p:n1-r-005",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "十年前、私の会社は売り上げの数字を毎週集めることを始めた。",
+          "reading": "じゅうねんまえ、わたしのかいしゃはうりあげのすうじをまいしゅうあつめることをはじめた。"
+        },
+        {
+          "ja": "数字を把握すれば正しい判断ができると、当時の私は信じていた。",
+          "reading": "すうじをはあくすればただしいはんだんができると、とうじのわたしはしんじていた。"
+        },
+        {
+          "ja": "ところが、数字が増えるほど、会議の時間の多くを数字の説明が占めるようになった。",
+          "reading": "ところが、すうじがふえるほど、かいぎのじかんのおおくをすうじのせつめいがしめるようになった。"
+        },
+        {
+          "ja": "客が何に困っているかという大事な話は、いつも後回しになった。",
+          "reading": "きゃくがなににこまっているかというだいじなはなしは、いつもあとまわしになった。"
+        },
+        {
+          "ja": "今は、数字は月に一度だけ見ることにしている。",
+          "reading": "いまは、すうじはつきにいちどだけみることにしている。"
+        },
+        {
+          "ja": "その代わり、社員が客から聞いた話を毎週一つずつ紹介する。",
+          "reading": "そのかわり、しゃいんがきゃくからきいたはなしをまいしゅうひとつずつしょうかいする。"
+        },
+        {
+          "ja": "数字は起きたことを示すが、なぜ起きたかまでは示さない。",
+          "reading": "すうじはおきたことをしめすが、なぜおきたかまではしめさない。"
+        },
+        {
+          "ja": "数字の認識と、現場の理解とは、別のものである。",
+          "reading": "すうじのにんしきと、げんばのりかいとは、べつのものである。"
+        }
+      ],
+      "en": "Ten years ago my company began collecting its sales figures every week. At the time I believed that if I had a grasp of the numbers I could make the right decisions. But the more numbers there were, the more of the meeting was taken up with explaining them. The important matter of what the customers were struggling with was always put off. Now we look at the figures only once a month. Instead, every week one of the staff presents something a customer has told them. Numbers show what happened, but they do not show why it happened. Knowing the figures and understanding the front line are two different things.",
+      "zh": "十年前，我们公司开始每周汇总销售数字。当时我相信，只要掌握了数字，就能作出正确的判断。可是数字越多，会议的时间就越多地被用于解释数字。至于客户到底在为什么发愁这样重要的话题，总是被推到最后。如今我们规定，数字每月只看一次。取而代之的是，每周由员工介绍一件从客户那里听来的事。数字能显示发生了什么，却不会告诉你为什么发生。掌握数字，和理解现场，是两回事。",
+      "zh_TW": "十年前，我們公司開始每週彙總銷售數字。當時我相信，只要掌握了數字，就能作出正確的判斷。可是數字越多，會議的時間就越多地被用於解釋數字。至於客戶到底在為什麼發愁這樣重要的話題，總是被推到最後。如今我們規定，數字每月只看一次。取而代之的是，每週由員工介紹一件從客戶那裡聽來的事。數字能顯示發生了什麼，卻不會告訴你為什麼發生。掌握數字，和理解現場，是兩回事。"
+    },
+    {
+      "id": "p:n1-r-006",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "電話番号を覚えている人は、今ではほとんどいない。",
+          "reading": "でんわばんごうをおぼえているひとは、いまではほとんどいない。"
+        },
+        {
+          "ja": "道を覚える人も、画面の地図を頼るようになって少なくなった。",
+          "reading": "みちをおぼえるひとも、がめんのちずをたよるようになってすくなくなった。"
+        },
+        {
+          "ja": "機械への依存が進むと人の力が落ちる、という言い方をよく耳にする。",
+          "reading": "きかいへのいそんがすすむとひとのちからがおちる、といういいかたをよくみみにする。"
+        },
+        {
+          "ja": "しかし私は、そう単純ではないと思う。",
+          "reading": "しかしわたしは、そうたんじゅんではないとおもう。"
+        },
+        {
+          "ja": "覚える必要のなくなった分だけ、人は別のことを覚えているはずだからである。",
+          "reading": "おぼえるひつようのなくなったぶんだけ、ひとはべつのことをおぼえているはずだからである。"
+        },
+        {
+          "ja": "上の世代が電話番号を覚えていたように、今の若い人は多くの店や道具の使い方を覚えている。",
+          "reading": "うえのせだいがでんわばんごうをおぼえていたように、いまのわかいひとはおおくのみせやどうぐのつかいかたをおぼえている。"
+        },
+        {
+          "ja": "変わったのは力の量ではなく、力の向かう先である。",
+          "reading": "かわったのはちからのりょうではなく、ちからのむかうさきである。"
+        }
+      ],
+      "en": "Hardly anyone now remembers telephone numbers. People who learn their way about have grown fewer too, since we came to rely on the map on the screen. One often hears it said that as dependence on machines advances, human powers decline. I do not think it is that simple. To exactly the degree that we no longer need to remember something, we must be remembering something else. Just as the generation above remembered telephone numbers, young people today remember a great many shops and how to use a great many devices. What has changed is not the quantity of the power, but where that power is directed.",
+      "zh": "如今几乎没有人还记得电话号码。自从人们依赖屏幕上的地图，会记路的人也变少了。常听到这样的说法：对机器的依赖越深，人的能力就越退化。但我认为事情没有这么简单。因为不再需要记的部分有多少，人就一定在记着别的东西。正如上一代人记得住电话号码，如今的年轻人记得住许多店铺和各种工具的用法。改变的不是能力的多少，而是能力所朝向的方向。",
+      "zh_TW": "如今幾乎沒有人還記得電話號碼。自從人們依賴屏幕上的地圖，會記路的人也變少了。常聽到這樣的說法：對機器的依賴越深，人的能力就越退化。但我認為事情沒有這麼簡單。因為不再需要記的部分有多少，人就一定在記著別的東西。正如上一代人記得住電話號碼，如今的年輕人記得住許多店鋪和各種工具的用法。改變的不是能力的多少，而是能力所朝向的方向。"
+    },
+    {
+      "id": "p:n1-r-007",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "町の図書館では、子どもが本を読む機会を増やす試みが続いている。",
+          "reading": "まちのとしょかんでは、こどもがほんをよむきかいをふやすこころみがつづいている。"
+        },
+        {
+          "ja": "一冊読むごとに紙に印を押す方法は、確かに読む数を増やした。",
+          "reading": "いっさつよむごとにかみにしるしをおすほうほうは、たしかによむかずをふやした。"
+        },
+        {
+          "ja": "しかし、紙がいっぱいになると、そこでやめる子どもも多かった。",
+          "reading": "しかし、かみがいっぱいになると、そこでやめるこどももおおかった。"
+        },
+        {
+          "ja": "読書を促すつもりが、印を集める遊びに変わっていたのである。",
+          "reading": "どくしょをうながすつもりが、しるしをあつめるあそびにかわっていたのである。"
+        },
+        {
+          "ja": "今の図書館は、読んだ本について子ども同士が短く話す時間を作っている。",
+          "reading": "いまのとしょかんは、よんだほんについてこどもどうしがみじかくはなすじかんをつくっている。"
+        },
+        {
+          "ja": "読む数は前ほど増えないが、次の本を自分で選ぶ子どもが増えた。",
+          "reading": "よむかずはまえほどふえないが、つぎのほんをじぶんでえらぶこどもがふえた。"
+        },
+        {
+          "ja": "意欲は、外から与えるものではなく、内側から出てくるのを待つものらしい。",
+          "reading": "いよくは、そとからあたえるものではなく、うちがわからでてくるのをまつものらしい。"
+        }
+      ],
+      "en": "At the town library, attempts to increase the chances for children to read go on. The method of stamping a mark on a sheet of paper for every book read certainly raised the number of books read. But many children stopped reading once their sheet was full. What was meant to encourage reading had turned into a game of collecting marks. The library now sets aside time for children to talk briefly to one another about the books they have read. The number of books does not rise as it did, but more children choose the next book for themselves. Motivation, it seems, is not something given from outside but something one waits for to come out from within.",
+      "zh": "镇上的图书馆一直在尝试增加孩子读书的机会。每读完一本就在纸上盖一个印章的做法，确实让阅读的数量增加了。但也有不少孩子，纸盖满之后就不再读了。原本是想促进阅读，结果却变成了收集印章的游戏。如今图书馆安排了让孩子们互相简短交流读后感的时间。阅读的数量不像从前那样增长了，可自己挑选下一本书的孩子却多了起来。看来，读书的意愿不是从外部给予的，而是要等它从内心生长出来。",
+      "zh_TW": "鎮上的圖書館一直在嘗試增加孩子讀書的機會。每讀完一本就在紙上蓋一個印章的做法，確實讓閱讀的數量增加了。但也有不少孩子，紙蓋滿之後就不再讀了。原本是想促進閱讀，結果卻變成了收集印章的遊戲。如今圖書館安排了讓孩子們互相簡短交流讀後感的時間。閱讀的數量不像從前那樣增長了，可自己挑選下一本書的孩子卻多了起來。看來，讀書的意願不是從外部給予的，而是要等它從內心生長出來。"
+    },
+    {
+      "id": "p:n1-r-008",
+      "type": "long",
+      "lines": [
+        {
+          "ja": "私が学生のころ、近所に家具を作る職人がいた。",
+          "reading": "わたしががくせいのころ、きんじょにかぐをつくるしょくにんがいた。"
+        },
+        {
+          "ja": "仕事場に入ると、同じ形の道具がきれいに並んでいた。",
+          "reading": "しごとばにはいると、おなじかたちのどうぐがきれいにならんでいた。"
+        },
+        {
+          "ja": "若い私は、その仕事を古いものだと思っていた。",
+          "reading": "わかいわたしは、そのしごとをふるいものだとおもっていた。"
+        },
+        {
+          "ja": "機械を使うと同じ物がもっと短い時間でできるはずだ、と考えていたからである。",
+          "reading": "きかいをつかうとおなじものがもっとみじかいじかんでできるはずだ、とかんがえていたからである。"
+        },
+        {
+          "ja": "十年後、私は同じ町で家具を売る店を開いた。",
+          "reading": "じゅうねんご、わたしはおなじまちでかぐをうるみせをひらいた。"
+        },
+        {
+          "ja": "機械で作った家具と、その職人が作った家具を並べて置いてみた。",
+          "reading": "きかいでつくったかぐと、そのしょくにんがつくったかぐをならべておいてみた。"
+        },
+        {
+          "ja": "見た目はほとんど変わらないのに、客の多くは手で作った方を選んだ。",
+          "reading": "みためはほとんどかわらないのに、きゃくのおおくはてでつくったほうをえらんだ。"
+        },
+        {
+          "ja": "理由を聞くと、どこがいいとは言えないが長く持ちそうだ、と答える人が多かった。",
+          "reading": "りゆうをきくと、どこがいいとはいえないがながくもちそうだ、とこたえるひとがおおかった。"
+        },
+        {
+          "ja": "職人は、木の一本一本の性質を見て、力の加え方を変えていた。",
+          "reading": "しょくにんは、きのいっぽんいっぽんのせいしつをみて、ちからのくわえかたをかえていた。"
+        },
+        {
+          "ja": "その判断は数字にならず、言葉にもならない。",
+          "reading": "そのはんだんはすうじにならず、ことばにもならない。"
+        },
+        {
+          "ja": "技術を次の世代が担うためには、同じ場所で長い時間を過ごすほかない。",
+          "reading": "ぎじゅつをつぎのせだいがになうためには、おなじばしょでながいじかんをすごすほかない。"
+        },
+        {
+          "ja": "学校で教える部分は、その技術のごく一部にすぎない。",
+          "reading": "がっこうでおしえるぶぶんは、そのぎじゅつのごくいちぶにすぎない。"
+        },
+        {
+          "ja": "職人の店は今も開いているが、後を継ぐ人はまだいない。",
+          "reading": "しょくにんのみせはいまもひらいているが、あとをつぐひとはまだいない。"
+        },
+        {
+          "ja": "私は今、その仕事場に通い、一つでも多くのことを覚えようとしている。",
+          "reading": "わたしはいま、そのしごとばにかよい、ひとつでもおおくのことをおぼえようとしている。"
+        }
+      ],
+      "en": "When I was a student there was a craftsman in my neighbourhood who made furniture. Stepping into his workshop, you saw tools of the same shape laid out neatly. Young as I was, I thought of his work as something old. That was because I believed a machine could turn out the same things faster. Ten years later I opened a shop selling furniture in that same town. I tried putting machine-made furniture and the craftsman's furniture side by side. Although they looked almost identical, most customers chose the handmade one. When I asked why, many answered that they could not say what was better about it, but that it looked as though it would last. The craftsman looked at the character of each single piece of wood and varied how he applied his strength. That judgement does not become a number, and it does not become words either. For the next generation to carry the skill, there is no way but to spend a long time in the same place. What can be taught in a school is only a tiny part of that skill. The craftsman's shop is still open, but there is as yet nobody to succeed him. These days I go to his workshop and try to learn even one thing more.",
+      "zh": "我念书的时候，附近住着一位做家具的匠人。走进他的工作间，就能看到形状相同的工具整整齐齐地排列着。年轻的我，觉得这门活儿已经过时了。因为我认为，用机器做同样的东西应该更快。十年后，我在同一个镇上开了一家卖家具的店。我试着把机器做的家具和那位匠人做的家具并排摆在一起。外观几乎没有差别，可多数客人还是选了手工的那一件。问起理由，很多人回答说，说不出哪里好，但看上去能用得长久。匠人会看每一根木头的性质，改变用力的方式。这种判断既变不成数字，也变不成语言。要让下一代承担起这门技艺，除了在同一个地方长时间待下去，别无他法。学校里能教的，只是这门技艺极小的一部分。匠人的店如今仍开着，但还没有人来接班。现在的我，常去那间工作间，想多学会哪怕一件事。",
+      "zh_TW": "我念書的時候，附近住著一位做傢俱的匠人。走進他的工作間，就能看到形狀相同的工具整整齊齊地排列著。年輕的我，覺得這門活兒已經過時了。因為我認為，用機器做同樣的東西應該更快。十年後，我在同一個鎮上開了一家賣傢俱的店。我試著把機器做的傢俱和那位匠人做的傢俱並排擺在一起。外觀幾乎沒有差別，可多數客人還是選了手工的那一件。問起理由，很多人回答說，說不出哪裡好，但看上去能用得長久。匠人會看每一根木頭的性質，改變用力的方式。這種判斷既變不成數字，也變不成語言。要讓下一代承擔起這門技藝，除了在同一個地方長時間待下去，別無他法。學校裡能教的，只是這門技藝極小的一部分。匠人的店如今仍開著，但還沒有人來接班。現在的我，常去那間工作間，想多學會哪怕一件事。"
+    },
+    {
+      "id": "p:n1-r-009",
+      "type": "integrated",
+      "lines": [
+        {
+          "ja": "家で働く制度について、ある人は次のように述べる。",
+          "reading": "いえではたらくせいどについて、あるひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "通勤の時間がなくなれば、その分を仕事にも家庭にも使える。",
+          "reading": "つうきんのじかんがなくなれば、そのぶんをしごとにもかていにもつかえる。"
+        },
+        {
+          "ja": "会社は場所にかかる費用を減らし、社員は自分の時間を取り戻す。",
+          "reading": "かいしゃはばしょにかかるひようをへらし、しゃいんはじぶんのじかんをとりもどす。"
+        },
+        {
+          "ja": "一方、別の人は次のように述べる。",
+          "reading": "いっぽう、べつのひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "会社は家で働く社員に、成果を数字で示すことを強いる。",
+          "reading": "かいしゃはいえではたらくしゃいんに、せいかをすうじでしめすことをしいる。"
+        },
+        {
+          "ja": "目の前にいない社員を信じない会社ほど、細かい報告を増やすからである。",
+          "reading": "めのまえにいないしゃいんをしんじないかいしゃほど、こまかいほうこくをふやすからである。"
+        },
+        {
+          "ja": "制度そのものより、会社が社員をどう見るかが問題なのである。",
+          "reading": "せいどそのものより、かいしゃがしゃいんをどうみるかがもんだいなのである。"
+        }
+      ],
+      "en": "On the system of working from home, one person says the following. If commuting time disappears, that time can be spent on work and on the family alike. The company reduces what it spends on premises, and the employee gets his own time back. Another, for his part, says the following. Companies force employees who work at home to show their results in figures. That is because the less a company trusts staff it cannot see in front of it, the more detailed reports it demands. The problem lies less in the system itself than in how a company regards its staff.",
+      "zh": "关于居家办公制度，前一位是这样说的。通勤时间消失后，这部分时间既可用于工作，也可用于家庭。公司减少了场地开支，员工则夺回了属于自己的时间。另一方面，后一位则这样说。公司会强迫在家办公的员工用数字证明成果。因为越是不信任看不见的员工的公司，就越会增加繁琐的汇报。问题不在制度本身，而在于公司如何看待员工。",
+      "zh_TW": "關於居家辦公制度，前一位是這樣說的。通勤時間消失後，這部分時間既可用於工作，也可用於家庭。公司減少了場地開支，員工則奪回了屬於自己的時間。另一方面，後一位則這樣說。公司會強迫在家辦公的員工用數字證明成果。因為越是不信任看不見的員工的公司，就越會增加繁瑣的彙報。問題不在制度本身，而在於公司如何看待員工。"
+    },
+    {
+      "id": "p:n1-r-010",
+      "type": "integrated",
+      "lines": [
+        {
+          "ja": "紙の本と画面で読む本について、ある人は次のように述べる。",
+          "reading": "かみのほんとがめんでよむほんについて、あるひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "画面なら何冊でも持ち歩け、探す手間もかからない。",
+          "reading": "がめんならなんさつでももちあるけ、さがすてまもかからない。"
+        },
+        {
+          "ja": "読む場所を選ばないことは、読む機会そのものを増やす。",
+          "reading": "よむばしょをえらばないことは、よむきかいそのものをふやす。"
+        },
+        {
+          "ja": "これに対し、別の人は次のように述べる。",
+          "reading": "これにたいし、べつのひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "紙の本は残りの部分が目に見えるため、どこまで読んだかを明瞭に把握できる。",
+          "reading": "かみのほんはのこりのぶぶんがめにみえるため、どこまでよんだかをめいりょうにはあくできる。"
+        },
+        {
+          "ja": "内容を思い出すとき、そのページの位置まで一緒に思い出すことが多い。",
+          "reading": "ないようをおもいだすとき、そのページのいちまでいっしょにおもいだすことがおおい。"
+        },
+        {
+          "ja": "本は読む物であると同時に、手で扱う物でもあるのだ。",
+          "reading": "ほんはよむものであるとどうじに、てであつかうものでもあるのだ。"
+        }
+      ],
+      "en": "On paper books and books read on a screen, one person says the following. With a screen you can carry any number of books about, and it takes no trouble to find one. Not having to choose where you read increases the very chances of reading. Against this, another says the following. With a paper book the remaining thickness is visible, so you can grasp clearly how far you have read. When recalling the content, one often recalls the position on the page along with it. A book is a thing to read and at the same time a thing handled with the hands.",
+      "zh": "关于纸质书与在屏幕上阅读的书，前一位是这样说的。用屏幕的话，多少本都能随身带着，找起来也毫不费事。不必挑选阅读的场所，这本身就增加了读书的机会。与此相对，后一位则这样说。纸质书能看见剩下的厚度，因此可以清楚地把握自己读到了哪里。回想内容时，往往连那一页的位置也一并想起。书既是用来读的东西，同时也是用手来摆弄的东西。",
+      "zh_TW": "關於紙質書與在屏幕上閱讀的書，前一位是這樣說的。用屏幕的話，多少本都能隨身帶著，找起來也毫不費事。不必挑選閱讀的場所，這本身就增加了讀書的機會。與此相對，後一位則這樣說。紙質書能看見剩下的厚度，因此可以清楚地把握自己讀到了哪裡。回想內容時，往往連那一頁的位置也一併想起。書既是用來讀的東西，同時也是用手來擺弄的東西。"
+    },
+    {
+      "id": "p:n1-r-011",
+      "type": "integrated",
+      "lines": [
+        {
+          "ja": "給料の決め方について、ある人は次のように述べる。",
+          "reading": "きゅうりょうのきめかたについて、あるひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "働いた年数だけで給料が上がる仕組みは、若い人の意欲を損なう。",
+          "reading": "はたらいたねんすうだけできゅうりょうがあがるしくみは、わかいひとのいよくをそこなう。"
+        },
+        {
+          "ja": "成果を出した人に多く払うほうが、会社全体の力も伸びる。",
+          "reading": "せいかをだしたひとにおおくはらうほうが、かいしゃぜんたいのちからものびる。"
+        },
+        {
+          "ja": "一方、別の人は次のように述べる。",
+          "reading": "いっぽう、べつのひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "成果だけで決める仕組みは、数字になりにくい仕事を人が避ける結果を生む。",
+          "reading": "せいかだけできめるしくみは、すうじになりにくいしごとをひとがさけるけっかをうむ。"
+        },
+        {
+          "ja": "誰かの仕事を助ける役目を担う人がいなければ、成果もまた生まれない。",
+          "reading": "だれかのしごとをたすけるやくめをになうひとがいなければ、せいかもまたうまれない。"
+        },
+        {
+          "ja": "給料の仕組みは、会社が何を大切にするかを示している。",
+          "reading": "きゅうりょうのしくみは、かいしゃがなにをたいせつにするかをしめしている。"
+        }
+      ],
+      "en": "On how pay should be decided, one person says the following. A scheme in which pay rises solely with years served damages the motivation of the young. Paying more to those who produce results will make the strength of the whole company grow as well. Another, for his part, says the following. A scheme decided by results alone produces the outcome that people avoid work which is hard to turn into a number. If nobody takes on the role of helping another's work, no results are produced either. A pay scheme shows what a company holds important.",
+      "zh": "关于工资的确定方式，前一位是这样说的。仅凭工龄涨工资的机制，会挫伤年轻人的干劲。给做出成绩的人多发钱，公司整体的实力也会增强。另一方面，后一位则这样说。只按成果来定的机制，会造成人们回避那些难以化为数字的工作。如果没有人承担起帮助他人工作的角色，成果也同样无从产生。工资制度显示着一家公司究竟看重什么。",
+      "zh_TW": "關於工資的確定方式，前一位是這樣說的。僅憑工齡漲工資的機制，會挫傷年輕人的幹勁。給做出成績的人多發錢，公司整體的實力也會增強。另一方面，後一位則這樣說。只按成果來定的機制，會造成人們迴避那些難以化為數字的工作。如果沒有人承擔起幫助他人工作的角色，成果也同樣無從產生。工資制度顯示著一家公司究竟看重什麼。"
+    },
+    {
+      "id": "p:n1-r-012",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "どの組織にも、うまくいかなかった仕事の記録は残りにくい。",
+          "reading": "どのそしきにも、うまくいかなかったしごとのきろくはのこりにくい。"
+        },
+        {
+          "ja": "成功した例については、多くの人が何度も話し、資料も丁寧に残る。",
+          "reading": "せいこうしたれいについては、おおくのひとがなんどもはなし、しりょうもていねいにのこる。"
+        },
+        {
+          "ja": "一方、失敗の記録は、責任の話と結びつくために表に出ない。",
+          "reading": "いっぽう、しっぱいのきろくは、せきにんのはなしとむすびつくためにおもてにでない。"
+        },
+        {
+          "ja": "その結果、組織は同じ失敗を数年ごとに繰り返す。",
+          "reading": "そのけっか、そしきはおなじしっぱいをすうねんごとにくりかえす。"
+        },
+        {
+          "ja": "私の会社では、失敗の報告に名前を書かない決まりを作った。",
+          "reading": "わたしのかいしゃでは、しっぱいのほうこくになまえをかかないきまりをつくった。"
+        },
+        {
+          "ja": "誰がしたかではなく、どういう順序で何が起きたかだけを書く。",
+          "reading": "だれがしたかではなく、どういうじゅんじょでなにがおきたかだけをかく。"
+        },
+        {
+          "ja": "始めた年に集まった報告は十ほどだったが、今では毎年百を超える。",
+          "reading": "はじめたとしにあつまったほうこくはとおほどだったが、いまではまいとしひゃくをこえる。"
+        },
+        {
+          "ja": "報告が増えたのは、失敗が増えたからではない。",
+          "reading": "ほうこくがふえたのは、しっぱいがふえたからではない。"
+        },
+        {
+          "ja": "これまで見えなかったものが、見えるようになっただけである。",
+          "reading": "これまでみえなかったものが、みえるようになっただけである。"
+        },
+        {
+          "ja": "失敗を排除することではなく、失敗から学ぶ道を開くことこそが、組織の課題である。",
+          "reading": "しっぱいをはいじょすることではなく、しっぱいからまなぶみちをひらくことこそが、そしきのかだいである。"
+        }
+      ],
+      "en": "In any organisation, records of work that went badly are unlikely to survive. Successful cases are talked about again and again, and the papers about them are carefully kept. Records of failure, by contrast, never come into the open, because they are tied to the question of responsibility. As a result, an organisation repeats the same failure every few years. At my company we made a rule that reports of failure carry no names. We write not who did it but only what happened, and in what order. In the first year a dozen or so reports came in; now there are more than a hundred every year. Reports have increased not because failures have increased. It is only that what could not be seen before has become visible. What an organisation must work at is not eliminating failure, but opening a road by which it can be learned from.",
+      "zh": "在任何组织里，失败工作的记录都很难留存下来。成功的案例被众人反复讲述，资料也保存得一丝不苟。相反，失败的记录因为总与追究责任挂钩，所以不会浮出水面。结果是，组织每隔几年就重复同样的失败。在我们公司，我们定下了失败报告不写姓名的规矩。不写谁做的，只写按什么顺序发生了什么。开始那一年收到的报告只有十几件，如今每年超过一百件。报告增多，并不是因为失败增多了。只不过是以往看不见的东西，现在能看见了。组织真正的课题，不是排除失败，而是开辟一条从失败中学习的道路。",
+      "zh_TW": "在任何組織里，失敗工作的記錄都很難留存下來。成功的案例被眾人反覆講述，資料也保存得一絲不苟。相反，失敗的記錄因為總與追究責任掛鉤，所以不會浮出水面。結果是，組織每隔幾年就重複同樣的失敗。在我們公司，我們定下了失敗報告不寫姓名的規矩。不寫誰做的，只寫按什麼順序發生了什麼。開始那一年收到的報告只有十幾件，如今每年超過一百件。報告增多，並不是因為失敗增多了。只不過是以往看不見的東西，現在能看見了。組織真正的課題，不是排除失敗，而是開闢一條從失敗中學習的道路。"
+    },
+    {
+      "id": "p:n1-r-013",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "短い言葉で意見を伝える場が増えた。",
+          "reading": "みじかいことばでいけんをつたえるばがふえた。"
+        },
+        {
+          "ja": "短い言葉は分かりやすく、多くの人に届く。",
+          "reading": "みじかいことばはわかりやすく、おおくのひとにとどく。"
+        },
+        {
+          "ja": "しかし、短くするために落ちるのは、たいてい条件や例外の部分である。",
+          "reading": "しかし、みじかくするためにおちるのは、たいていじょうけんやれいがいのぶぶんである。"
+        },
+        {
+          "ja": "この場合を除いて、という部分が消えると、意見は強い決めつけに変わる。",
+          "reading": "このばあいをのぞいて、というぶぶんがきえると、いけんはつよいきめつけにかわる。"
+        },
+        {
+          "ja": "強い言い方ほど広がり、さらに強い言い方を呼ぶ。",
+          "reading": "つよいいいかたほどひろがり、さらにつよいいいかたをよぶ。"
+        },
+        {
+          "ja": "こうして、話し合いは中間の意見が乏しい形になっていく。",
+          "reading": "こうして、はなしあいはちゅうかんのいけんがとぼしいかたちになっていく。"
+        },
+        {
+          "ja": "私は、短い言葉が悪いと言いたいのではない。",
+          "reading": "わたしは、みじかいことばがわるいといいたいのではない。"
+        },
+        {
+          "ja": "短くしたときに落ちたものを、自分で覚えておくべきだと言いたいのである。",
+          "reading": "みじかくしたときにおちたものを、じぶんでおぼえておくべきだといいたいのである。"
+        },
+        {
+          "ja": "寛容とは、相手の意見にも条件があることを忘れない態度のことである。",
+          "reading": "かんようとは、あいてのいけんにもじょうけんがあることをわすれないたいどのことである。"
+        }
+      ],
+      "en": "The places where opinions are conveyed in few words have multiplied. Short words are easy to follow and reach many people. But what falls away in the shortening is usually the conditions and the exceptions. Once the part that says 'except in this case' has gone, an opinion turns into a hard assertion. The stronger the wording, the further it spreads, and the stronger the wording it calls forth in reply. In this way discussion takes on a shape in which middle positions are scarce. I do not wish to say that short words are bad. I wish to say that we ought to keep in mind ourselves what fell away when we shortened them. Tolerance is the attitude of not forgetting that the other side's opinion has its conditions too.",
+      "zh": "用简短的话语表达意见的场合越来越多。短句易懂，也能传到更多人那里。然而，为了缩短而被舍弃的，往往正是条件与例外的部分。一旦“除了这种情况以外”这样的限定消失，意见就变成了强硬的断言。说法越强硬传播得越广，也越会招来更强硬的说法。于是，讨论便逐渐变成一种缺乏中间意见的形态。我并不是想说简短的话语不好。我想说的是，缩短时被舍弃的东西，应当由自己牢牢记住。所谓宽容，就是不忘记对方的意见同样带有条件的那种态度。",
+      "zh_TW": "用簡短的話語表達意見的場合越來越多。短句易懂，也能傳到更多人那裡。然而，為了縮短而被捨棄的，往往正是條件與例外的部分。一旦“除了這種情況以外”這樣的限定消失，意見就變成了強硬的斷言。說法越強硬傳播得越廣，也越會招來更強硬的說法。於是，討論便逐漸變成一種缺乏中間意見的形態。我並不是想說簡短的話語不好。我想說的是，縮短時被捨棄的東西，應當由自己牢牢記住。所謂寬容，就是不忘記對方的意見同樣帶有條件的那種態度。"
+    },
+    {
+      "id": "p:n1-r-014",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "町の様子は、毎日見ていると変わらないように見える。",
+          "reading": "まちのようすは、まいにちみているとかわらないようにみえる。"
+        },
+        {
+          "ja": "しかし十年前の写真と比べると、驚くほど多くのものが消えている。",
+          "reading": "しかしじゅうねんまえのしゃしんとくらべると、おどろくほどおおくのものがきえている。"
+        },
+        {
+          "ja": "緩やかな変化は、人の目に入りにくい。",
+          "reading": "ゆるやかなへんかは、ひとのめにはいりにくい。"
+        },
+        {
+          "ja": "著しい変化には反対の声が上がるが、少しずつ進む変化には声が上がらない。",
+          "reading": "いちじるしいへんかにははんたいのこえがあがるが、すこしずつすすむへんかにはこえがあがらない。"
+        },
+        {
+          "ja": "一年に一軒ずつ店が減っても誰も動かないが、一度に十軒が消えると大きな話になる。",
+          "reading": "いちねんにいっけんずつみせがへってもだれもうごかないが、いちどにじっけんがきえるとおおきなはなしになる。"
+        },
+        {
+          "ja": "十年たてば、失われる数は同じである。",
+          "reading": "じゅうねんたてば、うしなわれるかずはおなじである。"
+        },
+        {
+          "ja": "私たちの感覚は、変化の量ではなく、変化がどれだけ急かに反応する。",
+          "reading": "わたしたちのかんかくは、へんかのりょうではなく、へんかがどれだけきゅうかにはんのうする。"
+        },
+        {
+          "ja": "だからこそ、緩やかに進むものを見るためには、記録が必要になる。",
+          "reading": "だからこそ、ゆるやかにすすむものをみるためには、きろくがひつようになる。"
+        },
+        {
+          "ja": "写真も数字も、目に見えにくいものを見るための道具である。",
+          "reading": "しゃしんもすうじも、めにみえにくいものをみるためのどうぐである。"
+        }
+      ],
+      "en": "If you look at a town every day, it seems not to change. Compare it with a photograph from ten years ago, however, and a surprising number of things have gone. Gradual change does not easily catch the eye. Striking change draws voices of protest, but change that advances little by little draws none. Nobody stirs when one shop a year disappears, yet if ten vanish at once it becomes a great matter. After ten years the number lost is the same. Our senses respond not to the amount of change but to its speed. That is exactly why records are needed in order to see what proceeds gradually. Photographs and figures alike are tools for seeing what is hard to see.",
+      "zh": "若是每天都看，小镇的样子仿佛毫无变化。可一旦和十年前的照片相比，就会发现消失的东西多得惊人。缓慢的变化不易被人察觉。显著的变化会引来反对的声音，而一点一点推进的变化却无人出声。一年少一家店，谁也不会有所行动；可要是一下子消失十家，就成了大新闻。而十年过去，失去的数量其实是一样的。我们的感觉所反应的不是变化的总量，而是变化的速度。正因如此，要看见缓慢推进的事物，就需要记录。照片也好数字也好，都是用来看见那些难以看见之物的工具。",
+      "zh_TW": "若是每天都看，小鎮的樣子彷彿毫無變化。可一旦和十年前的照片相比，就會發現消失的東西多得驚人。緩慢的變化不易被人察覺。顯著的變化會引來反對的聲音，而一點一點推進的變化卻無人出聲。一年少一家店，誰也不會有所行動；可要是一下子消失十家，就成了大新聞。而十年過去，失去的數量其實是一樣的。我們的感覺所反應的不是變化的總量，而是變化的速度。正因如此，要看見緩慢推進的事物，就需要記錄。照片也好數字也好，都是用來看見那些難以看見之物的工具。"
+    },
+    {
+      "id": "p:n1-r-015",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "日本の学校では、みんなと同じであることを長く大切にしてきた。",
+          "reading": "にほんのがっこうでは、みんなとおなじであることをながくたいせつにしてきた。"
+        },
+        {
+          "ja": "同じ服を着て、同じように進むことは、確かに集団を動かしやすくする。",
+          "reading": "おなじふくをきて、おなじようにすすむことは、たしかにしゅうだんをうごかしやすくする。"
+        },
+        {
+          "ja": "同調は、秩序を作る安い方法である。",
+          "reading": "どうちょうは、ちつじょをつくるやすいほうほうである。"
+        },
+        {
+          "ja": "しかし、安いものには必ず代わりに失うものがある。",
+          "reading": "しかし、やすいものにはかならずかわりにうしなうものがある。"
+        },
+        {
+          "ja": "周りは、人と違う考えを出す人を、正しいかどうかの前に、場を乱す人だと考えてしまう。",
+          "reading": "まわりは、ひととちがうかんがえをだすひとを、ただしいかどうかのまえに、ばをみだすひとだとかんがえてしまう。"
+        },
+        {
+          "ja": "新しい考えは、最初はいつも少ない側にある。",
+          "reading": "あたらしいかんがえは、さいしょはいつもすくないがわにある。"
+        },
+        {
+          "ja": "規範を守る力と、規範を疑う力は、どちらも集団に必要である。",
+          "reading": "きはんをまもるちからと、きはんをうたがうちからは、どちらもしゅうだんにひつようである。"
+        },
+        {
+          "ja": "守る力だけが育つ組織は、静かで、そして動かない。",
+          "reading": "まもるちからだけがそだつそしきは、しずかで、そしてうごかない。"
+        },
+        {
+          "ja": "私は、同じであることが悪いと言うのではない。",
+          "reading": "わたしは、おなじであることがわるいというのではない。"
+        },
+        {
+          "ja": "違う声が出たとき、それを一度は最後まで聞く場所を用意しておくべきだと言いたいのである。",
+          "reading": "ちがうこえがでたとき、それをいちどはさいごまできくばしょをよういしておくべきだといいたいのである。"
+        }
+      ],
+      "en": "Japanese schools have long treasured being the same as everyone else. Wearing the same clothes and advancing at the same pace certainly makes a group easy to move. Conformity is a cheap way of producing order. But with anything cheap there is always something lost in exchange. Those around a person who puts forward a different idea decide, before asking whether it is right, that he is someone who disturbs the room. A new idea is always, at first, on the side of the few. The power to keep the norms and the power to doubt the norms are both necessary to a group. An organisation in which only the keeping grows is quiet, and it does not move. I am not saying that being the same is bad. I want to say that when a different voice is raised, we ought to have ready a place where it is heard once, to the end.",
+      "zh": "日本的学校长期以来都很看重与大家保持一致。穿一样的衣服、以一样的速度前进，确实让集体更容易被带动。同调是一种制造秩序的廉价手段。可是凡是廉价的东西，必定要以失去别的东西为代价。当有人提出与众不同的想法时，周围的人还没判断对错，就先认定他是搅乱场面的人。而新的想法，最初总是站在少数的一边。遵守规范的能力与怀疑规范的能力，对集体而言都不可缺少。只培养出遵守能力的组织，安静，却也不会前进。我并不是说一致有什么不好。我想说的是，当不同的声音出现时，应当准备一个至少能把它听到底的场所。",
+      "zh_TW": "日本的學校長期以來都很看重與大家保持一致。穿一樣的衣服、以一樣的速度前進，確實讓集體更容易被帶動。同調是一種製造秩序的廉價手段。可是凡是廉價的東西，必定要以失去別的東西為代價。當有人提出與眾不同的想法時，周圍的人還沒判斷對錯，就先認定他是攪亂場面的人。而新的想法，最初總是站在少數的一邊。遵守規範的能力與懷疑規範的能力，對集體而言都不可缺少。只培養出遵守能力的組織，安靜，卻也不會前進。我並不是說一致有什麼不好。我想說的是，當不同的聲音出現時，應當準備一個至少能把它聽到底的場所。"
+    },
+    {
+      "id": "p:n1-r-016",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "利用者のみなさまへ　図書館の貸し出し方法の変更について",
+          "reading": "りようしゃのみなさまへ　としょかんのかしだしほうほうのへんこうについて"
+        },
+        {
+          "ja": "十月一日から、本の貸し出しに新しいカードが必要になります。",
+          "reading": "じゅうがつついたちから、ほんのかしだしにあたらしいカードがひつようになります。"
+        },
+        {
+          "ja": "これまでのカードは、九月末で無効となります。",
+          "reading": "これまでのカードは、くがつまつでむこうとなります。"
+        },
+        {
+          "ja": "新しいカードは、一階の窓口でその日のうちにお渡しします。",
+          "reading": "あたらしいカードは、いっかいのまどぐちでそのひのうちにおわたしします。"
+        },
+        {
+          "ja": "お申し込みには住所が分かる書類が必要ですので、事前にご用意ください。",
+          "reading": "おもうしこみにはじゅうしょがわかるしょるいがひつようですので、じぜんにごよういください。"
+        },
+        {
+          "ja": "十五歳以下の方は、所定の用紙に家の方のお名前をご記入ください。",
+          "reading": "じゅうごさいいかのかたは、しょていのようしにいえのかたのおなまえをごきにゅうください。"
+        },
+        {
+          "ja": "学校や会社を通じてお申し込みの方は、この手続きはいりません。",
+          "reading": "がっこうやかいしゃをつうじておもうしこみのかたは、このてつづきはいりません。"
+        },
+        {
+          "ja": "ご不明な点は、図書館の職員までお尋ねください。",
+          "reading": "ごふめいなてんは、としょかんのしょくいんまでおたずねください。"
+        }
+      ],
+      "en": "To all users: about the change to the library's lending procedure. From 1 October a new card will be required to borrow books. Cards issued until now become invalid at the end of September. The new card is handed over the same day at the ground-floor counter. A document showing your address is needed for the application, so please prepare one in advance. Those aged fifteen or under should write the name of a member of their household on the prescribed form. Those applying through a school or a company do not need this procedure. If anything is unclear, please ask a member of the library staff.",
+      "zh": "致各位读者：关于图书馆借阅方式变更的通知。自十月一日起，借书需要使用新的借阅卡。此前的借阅卡将于九月底失效。新卡在一楼窗口当天即可发放。办理申请需要能证明住址的材料，请事先准备。十五岁以下者，请在规定表格上填写家人的姓名。通过学校或公司申请者，无需办理此手续。如有不明之处，请向图书馆的工作人员咨询。",
+      "zh_TW": "致各位讀者：關於圖書館借閱方式變更的通知。自十月一日起，借書需要使用新的借閱卡。此前的借閱卡將於九月底失效。新卡在一樓窗口當天即可發放。辦理申請需要能證明住址的材料，請事先準備。十五歲以下者，請在規定表格上填寫家人的姓名。通過學校或公司申請者，無需辦理此手續。如有不明之處，請向圖書館的工作人員諮詢。"
+    },
+    {
+      "id": "p:n1-r-017",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "市民のみなさまへ　市の畑の利用者募集のご案内",
+          "reading": "しみんのみなさまへ　しのはたけのりようしゃぼしゅうのごあんない"
+        },
+        {
+          "ja": "来年四月から一年間、市の畑をお貸しします。",
+          "reading": "らいねんしがつからいちねんかん、しのはたけをおかしします。"
+        },
+        {
+          "ja": "一区画の広さは一律で、一年の料金は六千円です。",
+          "reading": "いっくかくのひろさはいちりつで、いちねんのりょうきんはろくせんえんです。"
+        },
+        {
+          "ja": "申し込みが区画の数を超えた場合は、抽選で決めます。",
+          "reading": "もうしこみがくかくのかずをこえたばあいは、ちゅうせんできめます。"
+        },
+        {
+          "ja": "ただし、昨年利用しなかった方を優先します。",
+          "reading": "ただし、さくねんりようしなかったかたをゆうせんします。"
+        },
+        {
+          "ja": "六十五歳以上の方と、小さい子どものいる家庭は、料金が半分になります。",
+          "reading": "ろくじゅうごさいいじょうのかたと、ちいさいこどものいるかていは、りょうきんがはんぶんになります。"
+        },
+        {
+          "ja": "申し込みは一月十日までに、市の窓口へお出しください。",
+          "reading": "もうしこみはいちがつとおかまでに、しのまどぐちへおだしください。"
+        },
+        {
+          "ja": "結果は二月中に、申し込んだ方全員へお知らせします。",
+          "reading": "けっかはにがつちゅうに、もうしこんだかたぜんいんへおしらせします。"
+        }
+      ],
+      "en": "To all citizens: information about applications to use the city allotments. From April next year we will lend out the city's allotments for one year. Every plot is the same size, and the fee is six thousand yen a year. If applications exceed the number of plots, places will be decided by lot. However, those who did not use a plot last year are given priority. Those aged sixty-five and over, and households with small children, pay half the fee. Applications should be handed in at the city office window by 10 January. Everyone who applied will be informed of the result during February.",
+      "zh": "致各位市民：市属菜地使用者招募通知。自明年四月起，本市将出租市属菜地一年。每块地面积一律相同，一年的费用为六千日元。若申请数量超过地块数，将以抽签决定。但去年未曾使用过的市民优先。六十五岁以上者及有幼儿的家庭，费用减半。申请请于一月十日前提交至市政府窗口。结果将于二月内通知所有申请者。",
+      "zh_TW": "致各位市民：市屬菜地使用者招募通知。自明年四月起，本市將出租市屬菜地一年。每塊地面積一律相同，一年的費用為六千日元。若申請數量超過地塊數，將以抽籤決定。但去年未曾使用過的市民優先。六十五歲以上者及有幼兒的家庭，費用減半。申請請於一月十日前提交至市政府窗口。結果將於二月內通知所有申請者。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q:n1-r-001",
+      "type": "short",
+      "items": [
+        "vocab:jm1275210",
+        "vocab:jm1422440"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-001",
+      "prompt": {
+        "en": "What does the writer mean by efficiency?",
+        "zh": "作者所说的效率是指什么？",
+        "zh_TW": "作者所說的效率是指什麼？"
+      },
+      "options": [
+        "できるだけ多くの仕事を短い時間で終わらせることです。",
+        "必要な時間とそうでない時間を分けることです。",
+        "数字に表れない時間をすべて減らすことです。",
+        "会社の売り上げを数年で増やすことです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The last sentence states it directly: efficiency is not doing much in a short time but distinguishing the time that is needed from the time that is not. The other choices are the view the writer is arguing against.",
+        "zh": "最后一句直接给出了定义：效率不是在短时间里做很多事，而是分清哪些时间必要、哪些不必要。其余三项正是作者所反对的看法。",
+        "zh_TW": "最後一句直接給出了定義：效率不是在短時間裡做很多事，而是分清哪些時間必要、哪些不必要。其餘三項正是作者所反對的看法。"
+      }
+    },
+    {
+      "id": "q:n1-r-002",
+      "type": "short",
+      "items": [
+        "vocab:jm1431810"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-002",
+      "prompt": {
+        "en": "Why does the writer value the silence in a meeting?",
+        "zh": "作者为什么重视会议中的沉默？",
+        "zh_TW": "作者為什麼重視會議中的沉默？"
+      },
+      "options": [
+        "沈黙の間に、参加者が自分の考えを整理しているからです。",
+        "沈黙が続くと、会議が早く終わるからです。",
+        "発言の少ない人に話す機会ができるからです。",
+        "沈黙のあとの発言は、いつも正しいからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second sentence gives the reason: during those seconds of silence the participants are putting their own thoughts in order again. Ending early is what the writer calls a loss, not a gain.",
+        "zh": "第二句说明了理由：在那几十秒的沉默里，与会者正在重新整理自己的想法。会议提早结束在作者看来是损失，而不是好处。",
+        "zh_TW": "第二句說明了理由：在那幾十秒的沉默裡，與會者正在重新整理自己的想法。會議提早結束在作者看來是損失，而不是好處。"
+      }
+    },
+    {
+      "id": "q:n1-r-003",
+      "type": "short",
+      "items": [
+        "vocab:jm1167250",
+        "vocab:jm1498130"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-003",
+      "prompt": {
+        "en": "What does the writer think about explaining in the same way to everyone?",
+        "zh": "对于向所有人作同样的说明，作者是怎么看的？",
+        "zh_TW": "對於向所有人作同樣的說明，作者是怎麼看的？"
+      },
+      "options": [
+        "説明する側の負担が減るので、続けるべきです。",
+        "初めての人にだけ役に立つので、十分です。",
+        "公平に見えるだけで、実はどちらの人の負担にもなっています。",
+        "説明の量を今より増やせば、公平になります。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The third sentence says that repeating the same explanation only looks fair and is in fact a burden on both the newcomer and the regular visitor. The writer defines real fairness as reaching the same result, not as more explanation.",
+        "zh": "第三句指出，反复讲同样的内容只是看起来公平，实际上对初次来的人和常来的人都是负担。作者把真正的公平定义为让人抵达同样的结果，而不是增加说明。",
+        "zh_TW": "第三句指出，反覆講同樣的內容只是看起來公平，實際上對初次來的人和常來的人都是負擔。作者把真正的公平定義為讓人抵達同樣的結果，而不是增加說明。"
+      }
+    },
+    {
+      "id": "q:n1-r-004",
+      "type": "short",
+      "items": [
+        "vocab:jm1335480",
+        "vocab:jm1335400",
+        "vocab:jm1408100"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-004",
+      "prompt": {
+        "en": "Why does the writer say the teaching side must change?",
+        "zh": "作者为什么说必须改变的是施教的一方？",
+        "zh_TW": "作者為什麼說必須改變的是施教的一方？"
+      },
+      "options": [
+        "会社に入る人の経験が多様になり、同じ教え方では合わないからです。",
+        "会社に入る人の数が、以前より減っているからです。",
+        "教える内容が、昔より難しくなっているからです。",
+        "教える人の数が足りなくなっているからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second and third sentences give the reason: because the experience of new entrants has become unusually varied, a single fixed content in a fixed order is too easy for half and too hard for the other half. Numbers of staff and difficulty of content are not mentioned.",
+        "zh": "第二、三句给出了理由：新进员工的经历变得空前多样，固定顺序的固定内容对一半人太浅、对另一半人太深。文中并未提到人数或内容难度的变化。",
+        "zh_TW": "第二、三句給出了理由：新進員工的經歷變得空前多樣，固定順序的固定內容對一半人太淺、對另一半人太深。文中並未提到人數或內容難度的變化。"
+      }
+    },
+    {
+      "id": "q:n1-r-005",
+      "type": "mid",
+      "items": [
+        "vocab:jm1470910"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-005",
+      "prompt": {
+        "en": "What did the writer believe ten years ago?",
+        "zh": "十年前作者相信的是什么？",
+        "zh_TW": "十年前作者相信的是什麼？"
+      },
+      "options": [
+        "数字を集めるより、客の話を聞くほうが大切だということです。",
+        "数字を把握すれば、正しい判断ができるということです。",
+        "会議は短いほどよいということです。",
+        "数字は月に一度見れば十分だということです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The second sentence says that at the time the writer believed correct decisions would follow from a grasp of the figures. The monthly rule and the value of customers' stories are what the writer came to think later.",
+        "zh": "第二句写明，当时作者相信只要掌握数字就能作出正确判断。每月只看一次、以及重视客户的话，都是后来才有的想法。",
+        "zh_TW": "第二句寫明，當時作者相信只要掌握數字就能作出正確判斷。每月只看一次、以及重視客戶的話，都是後來才有的想法。"
+      }
+    },
+    {
+      "id": "q:n1-r-006",
+      "type": "mid",
+      "items": [
+        "vocab:jm1195820"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-005",
+      "prompt": {
+        "en": "What happened as the number of figures grew?",
+        "zh": "随着数字增多，公司里发生了什么？",
+        "zh_TW": "隨著數字增多，公司裡發生了什麼？"
+      },
+      "options": [
+        "会議の時間の多くを、数字の説明が占めるようになりました。",
+        "客からの相談が、会議で早く扱われるようになりました。",
+        "社員が数字を集めることをやめてしまいました。",
+        "売り上げが下がり、会議の数が減りました。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The third sentence says that the more numbers there were, the more of the meeting went on explaining them, and the fourth adds that the customers' troubles were always postponed. Sales and the number of meetings are never mentioned.",
+        "zh": "第三句说数字越多，会议时间就越多地被用来解释数字，第四句补充说客户的问题总被推到最后。文中并未提到销售额或会议数量。",
+        "zh_TW": "第三句說數字越多，會議時間就越多地被用來解釋數字，第四句補充說客戶的問題總被推到最後。文中並未提到銷售額或會議數量。"
+      }
+    },
+    {
+      "id": "q:n1-r-007",
+      "type": "mid",
+      "items": [
+        "vocab:jm1467550",
+        "vocab:jm1470910"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-005",
+      "prompt": {
+        "en": "What is the writer's conclusion about figures?",
+        "zh": "关于数字，作者的结论是什么？",
+        "zh_TW": "關於數字，作者的結論是什麼？"
+      },
+      "options": [
+        "数字は正しくないことが多いので、信じないほうがよいということです。",
+        "数字を知ることと、現場を理解することは別だということです。",
+        "数字は毎週集めなければ意味がないということです。",
+        "数字さえあれば、客の話は必要ないということです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The last two sentences say that figures show what happened but not why, and that knowing the figures and understanding the front line are different things. The writer does not say the figures are wrong, and still looks at them monthly.",
+        "zh": "最后两句说数字只能显示发生了什么，却说不出为什么，掌握数字与理解现场是两回事。作者并没有说数字不准确，而且每月仍然要看。",
+        "zh_TW": "最後兩句說數字只能顯示發生了什麼，卻說不出為什麼，掌握數字與理解現場是兩回事。作者並沒有說數字不準確，而且每月仍然要看。"
+      }
+    },
+    {
+      "id": "q:n1-r-008",
+      "type": "mid",
+      "items": [
+        "vocab:jm1575870"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-006",
+      "prompt": {
+        "en": "What is the common view that the writer takes up?",
+        "zh": "作者引用的常见说法是什么？",
+        "zh_TW": "作者引用的常見說法是什麼？"
+      },
+      "options": [
+        "機械に頼るほど、人の力は落ちていくという説明です。",
+        "機械があっても、人の記憶は変わらないという説明です。",
+        "若い人ほど、機械の使い方を覚えないという説明です。",
+        "地図がなければ、人は道を覚えられないという説明です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The third sentence quotes what is often heard: that as dependence on machines advances, human powers decline. The writer then argues against it, so the other three are not the view being quoted.",
+        "zh": "第三句引用了常听到的说法：对机器的依赖越深，人的能力就越退化。作者随后加以反驳，其余三项都不是被引用的那个说法。",
+        "zh_TW": "第三句引用了常聽到的說法：對機器的依賴越深，人的能力就越退化。作者隨後加以反駁，其餘三項都不是被引用的那個說法。"
+      }
+    },
+    {
+      "id": "q:n1-r-009",
+      "type": "mid",
+      "items": [
+        "vocab:jm1374190"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-006",
+      "prompt": {
+        "en": "Why does the writer mention young people today?",
+        "zh": "作者为什么要提到如今的年轻人？",
+        "zh_TW": "作者為什麼要提到如今的年輕人？"
+      },
+      "options": [
+        "上の世代より記憶する力が強いことを示すためです。",
+        "電話番号を今も覚えていることを示すためです。",
+        "覚える中身が変わっただけであることを示すためです。",
+        "機械がなければ何もできないことを示すためです。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "Young people are given as an example of remembering something else instead: shops and how to use devices, just as the older generation remembered numbers. The point of the example is that what is remembered has changed, not how much.",
+        "zh": "举年轻人的例子，是为了说明他们改记别的东西——店铺和工具的用法，正如上一代人记电话号码。这个例子要说明的是所记的内容变了，而不是记忆力的强弱。",
+        "zh_TW": "舉年輕人的例子，是為了說明他們改記別的東西——店鋪和工具的用法，正如上一代人記電話號碼。這個例子要說明的是所記的內容變了，而不是記憶力的強弱。"
+      }
+    },
+    {
+      "id": "q:n1-r-010",
+      "type": "mid",
+      "items": [
+        "vocab:jm1374190",
+        "vocab:jm1575870"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-006",
+      "prompt": {
+        "en": "What does the writer say has changed?",
+        "zh": "作者认为改变的是什么？",
+        "zh_TW": "作者認為改變的是什麼？"
+      },
+      "options": [
+        "人の力の量ではなく、その力が向かう先です。",
+        "人の力の量そのものです。",
+        "機械の性能と値段です。",
+        "人が道を歩く速さです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last sentence says in so many words that what changed is not the quantity of the power but where it is directed. The writer explicitly rejects the idea that the quantity has fallen.",
+        "zh": "最后一句明确指出，改变的不是能力的多少，而是能力朝向的方向。作者明确否定了能力总量下降的说法。",
+        "zh_TW": "最後一句明確指出，改變的不是能力的多少，而是能力朝向的方向。作者明確否定了能力總量下降的說法。"
+      }
+    },
+    {
+      "id": "q:n1-r-011",
+      "type": "mid",
+      "items": [
+        "vocab:jm1403760"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-007",
+      "prompt": {
+        "en": "What problem did the method of stamping marks have?",
+        "zh": "盖印章的做法存在什么问题？",
+        "zh_TW": "蓋印章的做法存在什麼問題？"
+      },
+      "options": [
+        "読む数が少しも増えなかったことです。",
+        "紙がいっぱいになると読まなくなる子どもが多かったことです。",
+        "子ども同士の話が長くなりすぎたことです。",
+        "図書館の職員の仕事が増えたことです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The second sentence admits that the number of books read did rise; the third says many children stopped reading once the sheet was full, and the fourth calls it a game of collecting marks. Nothing is said about staff workload.",
+        "zh": "第二句承认阅读数量确实增加了；第三句说很多孩子在纸盖满后就不再读，第四句称之为收集印章的游戏。文中并未提到工作人员的负担。",
+        "zh_TW": "第二句承認閱讀數量確實增加了；第三句說很多孩子在紙蓋滿後就不再讀，第四句稱之為收集印章的遊戲。文中並未提到工作人員的負擔。"
+      }
+    },
+    {
+      "id": "q:n1-r-012",
+      "type": "mid",
+      "items": [
+        "vocab:jm1587690"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-007",
+      "prompt": {
+        "en": "What changed after the library started the talking time?",
+        "zh": "图书馆设置交流时间之后，出现了什么变化？",
+        "zh_TW": "圖書館設置交流時間之後，出現了什麼變化？"
+      },
+      "options": [
+        "読む数が前より大きく増えました。",
+        "本を借りる子どもがいなくなりました。",
+        "次の本を自分で選ぶ子どもが増えました。",
+        "印を集める子どもがまた増えました。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The sixth sentence says the number of books does not rise as before, but more children now choose their next book themselves. The marks belong to the earlier method.",
+        "zh": "第六句说阅读数量不像以前那样增长，但自己挑选下一本书的孩子多了。印章属于之前的做法。",
+        "zh_TW": "第六句說閱讀數量不像以前那樣增長，但自己挑選下一本書的孩子多了。印章屬於之前的做法。"
+      }
+    },
+    {
+      "id": "q:n1-r-013",
+      "type": "mid",
+      "items": [
+        "vocab:jm1587690",
+        "vocab:jm1403760"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-007",
+      "prompt": {
+        "en": "What does the writer conclude about motivation?",
+        "zh": "关于读书的意愿，作者得出了什么结论？",
+        "zh_TW": "關於讀書的意願，作者得出了什麼結論？"
+      },
+      "options": [
+        "外から与えるものではなく、内側から出てくるのを待つものだということです。",
+        "数を数えることでしか育たないということです。",
+        "図書館より学校が育てるものだということです。",
+        "一度失われると、二度と戻らないということです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The final sentence states it: motivation is not given from outside but waited for to emerge from within. The stamping method, which counted books, is the example of what did not work.",
+        "zh": "最后一句给出了结论：意愿不是从外部给予的，而是等它从内心生长出来。以数量取胜的盖章法正是失败的例子。",
+        "zh_TW": "最後一句給出了結論：意願不是從外部給予的，而是等它從內心生長出來。以數量取勝的蓋章法正是失敗的例子。"
+      }
+    },
+    {
+      "id": "q:n1-r-014",
+      "type": "long",
+      "items": [
+        "vocab:jm1599900"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-008",
+      "prompt": {
+        "en": "What did the writer think of the craftsman's work as a student?",
+        "zh": "学生时代的作者是怎么看待这位匠人的工作的？",
+        "zh_TW": "學生時代的作者是怎麼看待這位匠人的工作的？"
+      },
+      "options": [
+        "機械では作れない特別な仕事だと思っていました。",
+        "機械を使えばもっと速くできる、古い仕事だと思っていました。",
+        "自分もいつか習いたい仕事だと思っていました。",
+        "町に必要のない仕事だと思っていました。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The third and fourth sentences say the young writer took the work for something old, because he believed a machine could make the same things faster. His wish to learn it comes only at the end of the text.",
+        "zh": "第三、四句写道，年轻的作者认为这门活儿已经过时，因为他相信用机器能更快地做出同样的东西。想学这门手艺是文章结尾才有的心情。",
+        "zh_TW": "第三、四句寫道，年輕的作者認為這門活兒已經過時，因為他相信用機器能更快地做出同樣的東西。想學這門手藝是文章結尾才有的心情。"
+      }
+    },
+    {
+      "id": "q:n1-r-015",
+      "type": "long",
+      "items": [
+        "vocab:jm1278290"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-008",
+      "prompt": {
+        "en": "How did the customers explain their choice?",
+        "zh": "客人是如何解释自己的选择的？",
+        "zh_TW": "客人是如何解釋自己的選擇的？"
+      },
+      "options": [
+        "手で作った家具のほうが安いからだと答えました。",
+        "機械で作った家具は見た目が悪いからだと答えました。",
+        "どこがいいとは言えないが、長く使えそうだと答えました。",
+        "職人を知っているからだと答えました。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The eighth sentence reports their answer: they could not name what was better, but it looked as if it would last. The seventh sentence says the two kinds looked almost the same, so appearance was not the reason.",
+        "zh": "第八句记录了他们的回答：说不出哪里好，但看上去能用得久。第七句说两者外观几乎无异，所以并不是外观的原因。",
+        "zh_TW": "第八句記錄了他們的回答：說不出哪裡好，但看上去能用得久。第七句說兩者外觀幾乎無異，所以並不是外觀的原因。"
+      }
+    },
+    {
+      "id": "q:n1-r-016",
+      "type": "long",
+      "items": [
+        "vocab:jm1599900",
+        "vocab:jm1374190"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-008",
+      "prompt": {
+        "en": "Why does the writer say a school can teach only part of the skill?",
+        "zh": "作者为什么说学校只能教这门技艺的一部分？",
+        "zh_TW": "作者為什麼說學校只能教這門技藝的一部分？"
+      },
+      "options": [
+        "職人の判断は数字にも言葉にもならないからです。",
+        "学校に木を扱う道具がないからです。",
+        "職人が教えることを断っているからです。",
+        "家具を作る学校が町にないからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The ninth and tenth sentences say the craftsman varied his force according to each piece of wood, and that this judgement becomes neither a number nor words; the eleventh concludes that one must spend long hours in the same place. Nothing suggests the craftsman refuses to teach.",
+        "zh": "第九、十句说匠人依每根木头的性质改变用力方式，而这种判断既成不了数字也成不了语言；第十一句因此说必须长时间待在同一个地方。文中并没有说匠人拒绝传授。",
+        "zh_TW": "第九、十句說匠人依每根木頭的性質改變用力方式，而這種判斷既成不了數字也成不了語言；第十一句因此說必須長時間待在同一個地方。文中並沒有說匠人拒絕傳授。"
+      }
+    },
+    {
+      "id": "q:n1-r-017",
+      "type": "long",
+      "items": [
+        "vocab:jm1374190"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-008",
+      "prompt": {
+        "en": "What is the writer doing now?",
+        "zh": "作者现在正在做什么？",
+        "zh_TW": "作者現在正在做什麼？"
+      },
+      "options": [
+        "機械で作る家具の店を新しく開いています。",
+        "職人の仕事場に通い、一つでも多く覚えようとしています。",
+        "職人に店を売ってもらう話を進めています。",
+        "家具を作る学校で教えています。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The last sentence says the writer goes to the workshop and tries to learn even one thing more, after noting that nobody has come to succeed the craftsman. The shop he opened was ten years ago.",
+        "zh": "最后一句说作者常去工作间，想多学会哪怕一件事，前一句刚提到还没有人接班。他开店是十年前的事。",
+        "zh_TW": "最後一句說作者常去工作間，想多學會哪怕一件事，前一句剛提到還沒有人接班。他開店是十年前的事。"
+      }
+    },
+    {
+      "id": "q:n1-r-018",
+      "type": "integrated",
+      "items": [
+        "vocab:jm1236100"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-009",
+      "prompt": {
+        "en": "What does the second writer point out that the first does not?",
+        "zh": "后一位指出了前一位没有提到的哪一点？",
+        "zh_TW": "後一位指出了前一位沒有提到的哪一點？"
+      },
+      "options": [
+        "通勤の時間がなくなるという点です。",
+        "会社が場所の費用を減らせるという点です。",
+        "社員を信じない会社ほど報告を増やすという点です。",
+        "家庭に使える時間が増えるという点です。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The first writer speaks only of the time and money saved. The second adds that a company which does not trust staff it cannot see demands more and more detailed reports, so the employee is not freed after all. The first, second and fourth choices are the first writer's points.",
+        "zh": "前一位只谈省下的时间和费用。后一位补充说，越是不信任看不见的员工的公司，就越会增加繁琐的汇报，员工其实并未因此轻松。第一、二、四项都是前一位的论点。",
+        "zh_TW": "前一位只談省下的時間和費用。後一位補充說，越是不信任看不見的員工的公司，就越會增加繁瑣的彙報，員工其實並未因此輕鬆。第一、二、四項都是前一位的論點。"
+      }
+    },
+    {
+      "id": "q:n1-r-019",
+      "type": "integrated",
+      "items": [
+        "vocab:jm1470910",
+        "vocab:jm1532620"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-010",
+      "prompt": {
+        "en": "What do the two writers have in common?",
+        "zh": "两位的共同之处是什么？",
+        "zh_TW": "兩位的共同之處是什麼？"
+      },
+      "options": [
+        "どちらも、読む道具が読み方に関わると考えています。",
+        "どちらも、紙の本のほうがよいと考えています。",
+        "どちらも、読む量を増やすべきだと考えています。",
+        "どちらも、画面で読むことに反対しています。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The first writer argues that a screen changes when and where one reads, and the second that paper changes how far one can see one's progress and how one remembers; both are talking about the tool shaping the reading. Only the second praises paper, and neither opposes screens outright.",
+        "zh": "前一位主张屏幕改变了阅读的时间与场所，后一位主张纸张改变了对进度的把握与记忆方式，两者谈的都是工具对阅读方式的影响。只有后一位称赞纸质书，而双方都没有全盘反对屏幕。",
+        "zh_TW": "前一位主張屏幕改變了閱讀的時間與場所，後一位主張紙張改變了對進度的把握與記憶方式，兩者談的都是工具對閱讀方式的影響。只有後一位稱讚紙質書，而雙方都沒有全盤反對屏幕。"
+      }
+    },
+    {
+      "id": "q:n1-r-020",
+      "type": "integrated",
+      "items": [
+        "vocab:jm1596510",
+        "vocab:jm1587690",
+        "vocab:jm1599900"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-011",
+      "prompt": {
+        "en": "What worry does the second writer raise about deciding pay by results alone?",
+        "zh": "对于只按成果决定工资，后一位提出了什么担忧？",
+        "zh_TW": "對於只按成果決定工資，後一位提出了什麼擔憂？"
+      },
+      "options": [
+        "若い人の給料が下がってしまうという心配です。",
+        "数字になりにくい仕事を人が避けるという心配です。",
+        "働いた年数が短い人が損をするという心配です。",
+        "会社全体の力が伸びないという心配です。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The second writer's second sentence says a results-only scheme leads people to avoid work that is hard to turn into figures, and that without those who support others' work no results appear at all. The first writer is the one who talks about the young and about the company's overall strength.",
+        "zh": "后一位的第二句说，只看成果的机制会让人回避难以化为数字的工作，而没有人承担辅助他人的角色，成果本身也无从产生。谈年轻人和公司整体实力的是前一位。",
+        "zh_TW": "後一位的第二句說，只看成果的機制會讓人迴避難以化為數字的工作，而沒有人承擔輔助他人的角色，成果本身也無從產生。談年輕人和公司整體實力的是前一位。"
+      }
+    },
+    {
+      "id": "q:n1-r-021",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1472370",
+        "vocab:jm1195820"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-012",
+      "prompt": {
+        "en": "Why does the writer say reports have increased?",
+        "zh": "作者认为报告数量增加的原因是什么？",
+        "zh_TW": "作者認為報告數量增加的原因是什麼？"
+      },
+      "options": [
+        "会社の失敗が実際に増えたからです。",
+        "報告を書くと給料が上がるようになったからです。",
+        "これまで見えなかったものが見えるようになったからです。",
+        "社員の数が十年で増えたからです。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The text says outright that reports rose not because failures rose, but because what had been invisible became visible once names were removed from the reports. No reward for reporting is mentioned.",
+        "zh": "文中明确指出，报告增多不是因为失败增多，而是因为报告不再写姓名后，以往看不见的东西变得看得见了。文中也没有提到写报告有奖励。",
+        "zh_TW": "文中明確指出，報告增多不是因為失敗增多，而是因為報告不再寫姓名後，以往看不見的東西變得看得見了。文中也沒有提到寫報告有獎勵。"
+      }
+    },
+    {
+      "id": "q:n1-r-022",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1584130",
+        "vocab:jm1211970"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-013",
+      "prompt": {
+        "en": "What is the writer's main point?",
+        "zh": "作者最想表达的是什么？",
+        "zh_TW": "作者最想表達的是什麼？"
+      },
+      "options": [
+        "短い言葉を使うのをやめるべきだということです。",
+        "短くしたときに落ちた条件を、自分で覚えておくべきだということです。",
+        "強い言い方のほうが、意見はよく伝わるということです。",
+        "話し合いには中間の意見はいらないということです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The writer states that he is not saying short words are bad, and that what should be kept in mind is the conditions dropped in the shortening; tolerance is then defined as remembering that the other side has conditions too.",
+        "zh": "作者明确表示自己并非说简短的话不好，而是要求自己记住缩短时被舍弃的那些条件；随后又把宽容定义为不忘对方的意见同样附带条件。",
+        "zh_TW": "作者明確表示自己並非說簡短的話不好，而是要求自己記住縮短時被捨棄的那些條件；隨後又把寬容定義為不忘對方的意見同樣附帶條件。"
+      }
+    },
+    {
+      "id": "q:n1-r-023",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1214450",
+        "vocab:jm1427070"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-014",
+      "prompt": {
+        "en": "Why does the writer say records are necessary?",
+        "zh": "作者为什么说记录是必要的？",
+        "zh_TW": "作者為什麼說記錄是必要的？"
+      },
+      "options": [
+        "急な変化には誰も反対しないからです。",
+        "写真より数字のほうが正しいからです。",
+        "私たちの感覚は変化の速さにしか反応しないからです。",
+        "町の店の数は必ず減っていくからです。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The text says our senses respond to the speed of change rather than its amount, so slow change escapes notice; that is exactly why photographs and figures are needed. Sudden change is the kind that does draw protest.",
+        "zh": "文中说我们的感觉反应的是变化的速度而非总量，因此缓慢的变化不易被察觉，正因如此才需要照片和数字。急剧的变化恰恰是会引来反对声的那一种。",
+        "zh_TW": "文中說我們的感覺反應的是變化的速度而非總量，因此緩慢的變化不易被察覺，正因如此才需要照片和數字。急劇的變化恰恰是會引來反對聲的那一種。"
+      }
+    },
+    {
+      "id": "q:n1-r-024",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1453120",
+        "vocab:jm1422520",
+        "vocab:jm1591390"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-015",
+      "prompt": {
+        "en": "What does the writer want schools and groups to do?",
+        "zh": "作者希望学校和集体怎么做？",
+        "zh_TW": "作者希望學校和集體怎麼做？"
+      },
+      "options": [
+        "同じであることをやめて、一人ひとり別々に進むべきです。",
+        "違う声が出たとき、それを最後まで聞く場所を用意すべきです。",
+        "規範を疑う人を、集団から離すべきです。",
+        "服や進み方の決まりを、今より細かくすべきです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The last two sentences say plainly that the writer is not calling sameness bad, but wants a place prepared where a differing voice is heard once to the end. Excluding doubters is the very habit he criticises.",
+        "zh": "最后两句明确表示，作者并非说一致不好，而是希望准备一个能把不同声音听到底的场所。把怀疑规范的人排除出去，正是他所批评的做法。",
+        "zh_TW": "最後兩句明確表示，作者並非說一致不好，而是希望準備一個能把不同聲音聽到底的場所。把懷疑規範的人排除出去，正是他所批評的做法。"
+      }
+    },
+    {
+      "id": "q:n1-r-025",
+      "type": "info",
+      "items": [
+        "vocab:jm1343350",
+        "vocab:jm1529930",
+        "vocab:jm1314050"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-016",
+      "prompt": {
+        "en": "A fourteen-year-old applying alone at the counter must do what?",
+        "zh": "一名十四岁的读者独自到窗口申请时，必须做什么？",
+        "zh_TW": "一名十四歲的讀者獨自到窗口申請時，必須做什麼？"
+      },
+      "options": [
+        "所定の用紙に家の方の名前を書き、住所が分かる書類を持っていきます。",
+        "九月末までに、これまでのカードを窓口へ返します。",
+        "学校を通じて申し込み、当日は何も持っていきません。",
+        "新しいカードを受け取るために、後日もう一度来ます。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Applicants need a document showing their address, prepared in advance, and those aged fifteen or under must enter a household member's name on the prescribed form. The card is issued the same day, and returning the old card is not asked for.",
+        "zh": "申请人需要事先准备能证明住址的材料，十五岁以下者还须在规定表格上填写家人姓名。新卡当天发放，通知中也没有要求归还旧卡。",
+        "zh_TW": "申請人需要事先準備能證明住址的材料，十五歲以下者還須在規定表格上填寫家人姓名。新卡當天發放，通知中也沒有要求歸還舊卡。"
+      }
+    },
+    {
+      "id": "q:n1-r-026",
+      "type": "info",
+      "items": [
+        "vocab:jm1426220",
+        "vocab:jm1539390",
+        "vocab:jm1167250"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-017",
+      "prompt": {
+        "en": "Which statement matches the notice?",
+        "zh": "下列哪一项与通知的内容相符？",
+        "zh_TW": "下列哪一項與通知的內容相符？"
+      },
+      "options": [
+        "区画の広さによって、料金が変わります。",
+        "申し込みが多い場合でも、昨年利用しなかった人が先に決まります。",
+        "六十五歳以上の方は、料金がいりません。",
+        "結果は申し込んだ人のうち、選ばれた人だけに知らせます。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Where applications exceed the plots a lottery decides, but those who did not use a plot last year are given priority. Every plot is the same size and price, older applicants pay half rather than nothing, and everyone who applied is told the result.",
+        "zh": "申请超过地块数时以抽签决定，但去年未使用过的人优先。每块地大小和价格一律相同，六十五岁以上者是减半而非免费，结果也会通知所有申请人。",
+        "zh_TW": "申請超過地塊數時以抽籤決定，但去年未使用過的人優先。每塊地大小和價格一律相同，六十五歲以上者是減半而非免費，結果也會通知所有申請人。"
+      }
+    }
+  ]
+}

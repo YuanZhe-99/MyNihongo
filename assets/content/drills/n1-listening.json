@@ -1,0 +1,2160 @@
+{
+  "schemaVersion": 1,
+  "source": "model-authored (Claude), unreviewed",
+  "license": "GPL-3.0 with the app.",
+  "level": "N1",
+  "section": "listening",
+  "passages": [
+    {
+      "id": "p:n1-l-001",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "来週の会議の資料、もう出来ていますか。",
+          "reading": "らいしゅうのかいぎのしりょう、もうできていますか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "はい、数字の訂正まで終わりました。",
+          "reading": "はい、すうじのていせいまでおわりました。"
+        },
+        {
+          "speaker": "女",
+          "ja": "では、印刷の前に趣旨の説明を一枚付けてください。",
+          "reading": "では、いんさつのまえにしゅしのせつめいをいちまいつけてください。"
+        },
+        {
+          "speaker": "男",
+          "ja": "分かりました。人数は三十人でいいですか。",
+          "reading": "わかりました。にんずうはさんじゅうにんでいいですか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "ええ。説明が出来てから印刷してください。",
+          "reading": "ええ。せつめいができてからいんさつしてください。"
+        },
+        {
+          "speaker": "男",
+          "ja": "はい、すぐ取り組みます。",
+          "reading": "はい、すぐとりくみます。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人はこれからまず何をしますか。",
+          "reading": "おとこのひとはこれからまずなにをしますか。"
+        }
+      ],
+      "en": "Woman: Are the materials for next week's meeting ready? Man: Yes, I've finished down to correcting the figures. Woman: Then before printing, add a page explaining the aim. Man: Understood. Thirty people, is that right? Woman: Yes. Print after the explanation is done. Man: Right, I'll get to it at once. Woman: What will the man do first after this?",
+      "zh": "女：下周开会的资料做好了吗？男：做好了，连数字的订正都完成了。女：那在印刷之前，请加一页说明宗旨的纸。男：明白了。人数是三十人吧？女：是的。说明写好之后再印。男：好，我马上做。女：男的接下来首先要做什么？",
+      "zh_TW": "女：下週開會的資料做好了嗎？男：做好了，連數字的訂正都完成了。女：那在印刷之前，請加一頁說明宗旨的紙。男：明白了。人數是三十人吧？女：是的。說明寫好之後再印。男：好，我馬上做。女：男的接下來首先要做什麼？"
+    },
+    {
+      "id": "p:n1-l-002",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "新しい商品の在庫、まだ残っていますか。",
+          "reading": "あたらしいしょうひんのざいこ、まだのこっていますか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "店にはありますが、数を把握していません。",
+          "reading": "みせにはありますが、かずをはあくしていません。"
+        },
+        {
+          "speaker": "男",
+          "ja": "では、先に数を数えてください。注文はそのあとで。",
+          "reading": "では、さきにかずをかぞえてください。ちゅうもんはそのあとで。"
+        },
+        {
+          "speaker": "女",
+          "ja": "掃除も残っていますが。",
+          "reading": "そうじものこっていますが。"
+        },
+        {
+          "speaker": "男",
+          "ja": "掃除は後回しで結構です。",
+          "reading": "そうじはあとまわしでけっこうです。"
+        },
+        {
+          "speaker": "女",
+          "ja": "分かりました。すぐ数えます。",
+          "reading": "わかりました。すぐかぞえます。"
+        },
+        {
+          "speaker": "男",
+          "ja": "女の人はこのあとまず何をしますか。",
+          "reading": "おんなのひとはこのあとまずなにをしますか。"
+        }
+      ],
+      "en": "Man: Is there still stock of the new product? Woman: There is some in the shop, but I don't have a grasp of the number. Man: Then count them first. Ordering comes after that. Woman: The cleaning is still left, though. Man: The cleaning can wait. Woman: Understood. I'll count them right away. Man: What will the woman do first after this?",
+      "zh": "男：新商品的库存还有吗？女：店里是有，但数量我还没掌握。男：那请先数一下数量，订货放在之后。女：可是打扫还没做。男：打扫往后放没关系。女：明白了，我马上数。男：女的接下来首先要做什么？",
+      "zh_TW": "男：新商品的庫存還有嗎？女：店裡是有，但數量我還沒掌握。男：那請先數一下數量，訂貨放在之後。女：可是打掃還沒做。男：打掃往後放沒關係。女：明白了，我馬上數。男：女的接下來首先要做什麼？"
+    },
+    {
+      "id": "p:n1-l-003",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "場所の手配はもう済みましたか。",
+          "reading": "ばしょのてはいはもうすみましたか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "はい、公園の隣の建物を借りました。",
+          "reading": "はい、こうえんのとなりのたてものをかりました。"
+        },
+        {
+          "speaker": "女",
+          "ja": "では、参加する人に早急に知らせてください。",
+          "reading": "では、さんかするひとにさっきゅうにしらせてください。"
+        },
+        {
+          "speaker": "男",
+          "ja": "案内は書いてありますが、時間がまだ決まっていません。",
+          "reading": "あんないはかいてありますが、じかんがまだきまっていません。"
+        },
+        {
+          "speaker": "女",
+          "ja": "時間は十時にしましょう。それを書いてから送ってください。",
+          "reading": "じかんはじゅうじにしましょう。それをかいてからおくってください。"
+        },
+        {
+          "speaker": "男",
+          "ja": "分かりました。",
+          "reading": "わかりました。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人はこれからまず何をしますか。",
+          "reading": "おとこのひとはこれからまずなにをしますか。"
+        }
+      ],
+      "en": "Woman: Have the arrangements for the venue been made? Man: Yes, I've borrowed the building next to the park. Woman: Then tell the people taking part at once. Man: The notice is written, but the time isn't decided yet. Woman: Let's make it ten o'clock. Write that in and then send it. Man: Understood. Woman: What will the man do first after this?",
+      "zh": "女：场地安排好了吗？男：好了，借了公园旁边的楼。女：那请尽快通知参加的人。男：通知已经写好了，可时间还没定。女：时间就定十点吧。写上之后再发出去。男：明白了。女：男的接下来首先要做什么？",
+      "zh_TW": "女：場地安排好了嗎？男：好了，借了公園旁邊的樓。女：那請儘快通知參加的人。男：通知已經寫好了，可時間還沒定。女：時間就定十點吧。寫上之後再發出去。男：明白了。女：男的接下來首先要做什麼？"
+    },
+    {
+      "id": "p:n1-l-004",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "今月の経費の資料、確認してくれましたか。",
+          "reading": "こんげつのけいひのしりょう、かくにんしてくれましたか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "ええ、一つだけ数字を見落としていました。",
+          "reading": "ええ、ひとつだけすうじをみおとしていました。"
+        },
+        {
+          "speaker": "男",
+          "ja": "どこですか。",
+          "reading": "どこですか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "電車の分です。訂正してから出しましょうか。",
+          "reading": "でんしゃのぶんです。ていせいしてからだしましょうか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "いえ、訂正したら先に私に見せてください。",
+          "reading": "いえ、ていせいしたらさきにわたしにみせてください。"
+        },
+        {
+          "speaker": "女",
+          "ja": "分かりました。",
+          "reading": "わかりました。"
+        },
+        {
+          "speaker": "男",
+          "ja": "女の人はこのあとまず何をしますか。",
+          "reading": "おんなのひとはこのあとまずなにをしますか。"
+        }
+      ],
+      "en": "Man: Did you check this month's expenses document? Woman: Yes, I had missed one figure. Man: Where? Woman: The train fares. Shall I correct it and then submit it? Man: No — once you've corrected it, show it to me first. Woman: Understood. Man: What will the woman do first after this?",
+      "zh": "男：这个月经费的资料你确认了吗？女：确认了，有一处数字看漏了。男：哪里？女：电车费那部分。要不要订正之后就交上去？男：不，订正好先拿给我看。女：明白了。男：女的接下来首先要做什么？",
+      "zh_TW": "男：這個月經費的資料你確認了嗎？女：確認了，有一處數字看漏了。男：哪裡？女：電車費那部分。要不要訂正之後就交上去？男：不，訂正好先拿給我看。女：明白了。男：女的接下來首先要做什麼？"
+    },
+    {
+      "id": "p:n1-l-005",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "お客さんから品質について苦情がありました。",
+          "reading": "おきゃくさんからひんしつについてくじょうがありました。"
+        },
+        {
+          "speaker": "男",
+          "ja": "商品を回収しますか。",
+          "reading": "しょうひんをかいしゅうしますか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "その前に、同じ品物が店に残っているか調べてください。",
+          "reading": "そのまえに、おなじしなものがみせにのこっているかしらべてください。"
+        },
+        {
+          "speaker": "男",
+          "ja": "分かりました。工場にも連絡しますか。",
+          "reading": "わかりました。こうじょうにもれんらくしますか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "連絡は私がします。調べた結果を早急に教えてください。",
+          "reading": "れんらくはわたしがします。しらべたけっかをさっきゅうにおしえてください。"
+        },
+        {
+          "speaker": "男",
+          "ja": "はい、すぐ見てきます。",
+          "reading": "はい、すぐみてきます。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人はこのあとまず何をしますか。",
+          "reading": "おとこのひとはこのあとまずなにをしますか。"
+        }
+      ],
+      "en": "Woman: There was a complaint from a customer about the quality. Man: Shall we recall the goods? Woman: Before that, check whether the same item is still in the shop. Man: Understood. Shall I contact the factory too? Woman: I'll do the contacting. Tell me the result of your check as soon as possible. Man: Right, I'll go and look now. Woman: What will the man do first after this?",
+      "zh": "女：有客人就品质提出了投诉。男：要回收商品吗？女：在那之前，请先查一下同样的商品店里还有没有。男：明白了。要不要也联系工厂？女：联系由我来做。请尽快把查的结果告诉我。男：好，我马上去看。女：男的接下来首先要做什么？",
+      "zh_TW": "女：有客人就品質提出了投訴。男：要回收商品嗎？女：在那之前，請先查一下同樣的商品店裡還有沒有。男：明白了。要不要也聯繫工廠？女：聯繫由我來做。請儘快把查的結果告訴我。男：好，我馬上去看。女：男的接下來首先要做什麼？"
+    },
+    {
+      "id": "p:n1-l-006",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "新しい機械の使い方、皆さんに教えないといけませんね。",
+          "reading": "あたらしいきかいのつかいかた、みなさんにおしえないといけませんね。"
+        },
+        {
+          "speaker": "女",
+          "ja": "ええ。手順を書いた紙を作りましょうか。",
+          "reading": "ええ。てじゅんをかいたかみをつくりましょうか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "紙より、実際にやって見せるほうが分かりやすいと思います。",
+          "reading": "かみより、じっさいにやってみせるほうがわかりやすいとおもいます。"
+        },
+        {
+          "speaker": "女",
+          "ja": "では、来週の朝に集まってもらいましょう。",
+          "reading": "では、らいしゅうのあさにあつまってもらいましょう。"
+        },
+        {
+          "speaker": "男",
+          "ja": "その前に、私が手順を確認しておきます。",
+          "reading": "そのまえに、わたしがてじゅんをかくにんしておきます。"
+        },
+        {
+          "speaker": "女",
+          "ja": "お願いします。",
+          "reading": "おねがいします。"
+        },
+        {
+          "speaker": "男",
+          "ja": "男の人はこれからまず何をしますか。",
+          "reading": "おとこのひとはこれからまずなにをしますか。"
+        }
+      ],
+      "en": "Man: We'll have to teach everyone how to use the new machine. Woman: Yes. Shall I make a sheet with the procedure written on it? Man: Rather than paper, actually showing them is easier to follow, I think. Woman: Then let's have them gather next week in the morning. Man: Before that, I'll check the procedure myself. Woman: Please do. Man: What will the man do first after this?",
+      "zh": "男：新机器的用法，得教给大家才行。女：是啊。要不要做一张写着步骤的纸？男：比起纸，实际做给他们看更容易懂。女：那就请大家下周早上集合吧。男：在那之前，我先把步骤确认一下。女：拜托了。男：男的接下来首先要做什么？",
+      "zh_TW": "男：新機器的用法，得教給大家才行。女：是啊。要不要做一張寫著步驟的紙？男：比起紙，實際做給他們看更容易懂。女：那就請大家下週早上集合吧。男：在那之前，我先把步驟確認一下。女：拜託了。男：男的接下來首先要做什麼？"
+    },
+    {
+      "id": "p:n1-l-007",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "来月の会のやり方を変えると聞きました。",
+          "reading": "らいげつのかいのやりかたをかえるとききました。"
+        },
+        {
+          "speaker": "男",
+          "ja": "ええ、参加する人が集まらないので。",
+          "reading": "ええ、さんかするひとがあつまらないので。"
+        },
+        {
+          "speaker": "女",
+          "ja": "場所が遠いからですか。",
+          "reading": "ばしょがとおいからですか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "場所は近いです。時間が長すぎて、気軽に来られないんです。",
+          "reading": "ばしょはちかいです。じかんがながすぎて、きがるにこられないんです。"
+        },
+        {
+          "speaker": "女",
+          "ja": "では、短くするんですね。",
+          "reading": "では、みじかくするんですね。"
+        },
+        {
+          "speaker": "男",
+          "ja": "はい、二時間だけにします。",
+          "reading": "はい、にじかんだけにします。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人はどうしてやり方を変えますか。",
+          "reading": "おとこのひとはどうしてやりかたをかえますか。"
+        }
+      ],
+      "en": "Woman: I hear you're changing how next month's gathering is run. Man: Yes, because people don't turn up. Woman: Because the place is far? Man: The place is close. It's that it runs too long, so people can't come casually. Woman: So you'll shorten it. Man: Yes, we'll make it just two hours. Woman: Why is the man changing how it is run?",
+      "zh": "女：听说下个月的聚会做法要改。男：是的，因为参加的人聚不起来。女：是因为地点远吗？男：地点很近。是时间太长，大家没法轻松地来。女：那就是要缩短了。男：对，只做两个小时。女：男的为什么要改变做法？",
+      "zh_TW": "女：聽說下個月的聚會做法要改。男：是的，因為參加的人聚不起來。女：是因為地點遠嗎？男：地點很近。是時間太長，大家沒法輕鬆地來。女：那就是要縮短了。男：對，只做兩個小時。女：男的為什麼要改變做法？"
+    },
+    {
+      "id": "p:n1-l-008",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "この店、お客さんが増えましたね。",
+          "reading": "このみせ、おきゃくさんがふえましたね。"
+        },
+        {
+          "speaker": "女",
+          "ja": "ええ。でも、値段を下げたからではありません。",
+          "reading": "ええ。でも、ねだんをさげたからではありません。"
+        },
+        {
+          "speaker": "男",
+          "ja": "では、新しい商品のおかげですか。",
+          "reading": "では、あたらしいしょうひんのおかげですか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "それも少しありますが、一番は店の中を簡素にしたことです。",
+          "reading": "それもすこしありますが、いちばんはみせのなかをかんそにしたことです。"
+        },
+        {
+          "speaker": "男",
+          "ja": "置く物を減らしたんですね。",
+          "reading": "おくものをへらしたんですね。"
+        },
+        {
+          "speaker": "女",
+          "ja": "ええ、選びやすくなったんです。",
+          "reading": "ええ、えらびやすくなったんです。"
+        },
+        {
+          "speaker": "男",
+          "ja": "女の人はお客さんが増えた一番の理由は何だと言っていますか。",
+          "reading": "おんなのひとはおきゃくさんがふえたいちばんのりゆうはなんだといっていますか。"
+        }
+      ],
+      "en": "Man: This shop has more customers now, hasn't it? Woman: Yes. But it isn't because we lowered prices. Man: Then thanks to the new products? Woman: That's a little of it, but the biggest thing is that we made the inside of the shop plain and simple. Man: You cut down on what you put out. Woman: Yes, and it became easier to choose. Man: What does the woman say is the main reason customers increased?",
+      "zh": "男：这家店客人变多了呢。女：是啊，不过不是因为降了价。男：那是新商品的功劳？女：那也有一点，但最主要的是把店内布置得简洁了。男：把摆的东西减少了吧。女：对，变得容易挑选了。男：女的说客人增加最主要的原因是什么？",
+      "zh_TW": "男：這家店客人變多了呢。女：是啊，不過不是因為降了價。男：那是新商品的功勞？女：那也有一點，但最主要的是把店內佈置得簡潔了。男：把擺的東西減少了吧。女：對，變得容易挑選了。男：女的說客人增加最主要的原因是什麼？"
+    },
+    {
+      "id": "p:n1-l-009",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "新しい仕事を辞退したと聞きました。",
+          "reading": "あたらしいしごとをじたいしたとききました。"
+        },
+        {
+          "speaker": "男",
+          "ja": "ええ、よく考えて、きっぱり断りました。",
+          "reading": "ええ、よくかんがえて、きっぱりことわりました。"
+        },
+        {
+          "speaker": "女",
+          "ja": "給料が下がるからですか。",
+          "reading": "きゅうりょうがさがるからですか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "いいえ、給料は上がる見込みでした。",
+          "reading": "いいえ、きゅうりょうはあがるみこみでした。"
+        },
+        {
+          "speaker": "女",
+          "ja": "では、遠いところに行くからですか。",
+          "reading": "では、とおいところにいくからですか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "場所は同じです。今の仕事を最後までやりたかったんです。",
+          "reading": "ばしょはおなじです。いまのしごとをさいごまでやりたかったんです。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人はどうして新しい仕事を辞退しましたか。",
+          "reading": "おとこのひとはどうしてあたらしいしごとをじたいしましたか。"
+        }
+      ],
+      "en": "Woman: I heard you declined the new job. Man: Yes, I thought it over and turned it down flatly. Woman: Because the pay would drop? Man: No, the pay was expected to rise. Woman: Then because you'd have to move far away? Man: The place is the same. It's that I wanted to see my present work through to the end. Woman: Why did the man decline the new job?",
+      "zh": "女：听说你谢绝了新工作。男：是的，仔细考虑后干脆地拒绝了。女：因为工资会降吗？男：不，工资本来有望上涨。女：那是因为要去很远的地方？男：地点是一样的。是我想把现在的工作做到最后。女：男的为什么谢绝了新工作？",
+      "zh_TW": "女：聽說你謝絕了新工作。男：是的，仔細考慮後乾脆地拒絕了。女：因為工資會降嗎？男：不，工資本來有望上漲。女：那是因為要去很遠的地方？男：地點是一樣的。是我想把現在的工作做到最後。女：男的為什麼謝絕了新工作？"
+    },
+    {
+      "id": "p:n1-l-010",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "仕事が滞っているそうですね。",
+          "reading": "しごとがとどこおっているそうですね。"
+        },
+        {
+          "speaker": "女",
+          "ja": "ええ、思ったより時間がかかっています。",
+          "reading": "ええ、おもったよりじかんがかかっています。"
+        },
+        {
+          "speaker": "男",
+          "ja": "人が足りないんですか。",
+          "reading": "ひとがたりないんですか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "人は足りています。品物が届かないのが要因です。",
+          "reading": "ひとはたりています。しなものがとどかないのがよういんです。"
+        },
+        {
+          "speaker": "男",
+          "ja": "機械の具合はどうですか。",
+          "reading": "きかいのぐあいはどうですか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "機械は問題ありません。",
+          "reading": "きかいはもんだいありません。"
+        },
+        {
+          "speaker": "男",
+          "ja": "仕事が滞っている要因は何ですか。",
+          "reading": "しごとがとどこおっているよういんはなんですか。"
+        }
+      ],
+      "en": "Man: I hear the work is held up. Woman: Yes, it's taking longer than expected. Man: Are you short of people? Woman: We have enough people. The cause is that the goods aren't arriving. Man: How is the machine working? Woman: The machine is no problem. Man: What is the cause of the work being held up?",
+      "zh": "男：听说工作停滞了。女：是啊，比预想的花时间。男：是人手不够吗？女：人是够的。原因是货物没送到。男：机器状况怎么样？女：机器没有问题。男：工作停滞的原因是什么？",
+      "zh_TW": "男：聽說工作停滯了。女：是啊，比預想的花時間。男：是人手不夠嗎？女：人是夠的。原因是貨物沒送到。男：機器狀況怎麼樣？女：機器沒有問題。男：工作停滯的原因是什麼？"
+    },
+    {
+      "id": "p:n1-l-011",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "今度の会議で何を一番に話しますか。",
+          "reading": "こんどのかいぎでなにをいちばんにはなしますか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "経費の削減について話す予定です。",
+          "reading": "けいひのさくげんについてはなすよていです。"
+        },
+        {
+          "speaker": "女",
+          "ja": "人を増やす話は出ませんか。",
+          "reading": "ひとをふやすはなしはでませんか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "それは次の機会にします。今は数字を直すことが優先です。",
+          "reading": "それはつぎのきかいにします。いまはすうじをなおすことがゆうせんです。"
+        },
+        {
+          "speaker": "女",
+          "ja": "新しい商品の話はどうですか。",
+          "reading": "あたらしいしょうひんのはなしはどうですか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "それも今回はしません。",
+          "reading": "それもこんかいはしません。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人は会議で何を一番に話しますか。",
+          "reading": "おとこのひとはかいぎでなにをいちばんにはなしますか。"
+        }
+      ],
+      "en": "Woman: What will you talk about first at the coming meeting? Man: I plan to talk about cutting expenses. Woman: Won't the subject of hiring more people come up? Man: That will wait for another time. Right now fixing the figures has priority. Woman: What about new products? Man: We won't do that this time either. Woman: What will the man talk about first at the meeting?",
+      "zh": "女：这次会议上最先谈什么？男：打算谈经费的削减。女：不谈增加人手的事吗？男：那放到下次。现在把数字调整好是优先事项。女：新商品的事呢？男：这次也不谈。女：男的在会议上最先谈什么？",
+      "zh_TW": "女：這次會議上最先談什麼？男：打算談經費的削減。女：不談增加人手的事嗎？男：那放到下次。現在把數字調整好是優先事項。女：新商品的事呢？男：這次也不談。女：男的在會議上最先談什麼？"
+    },
+    {
+      "id": "p:n1-l-012",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "一人で暮らし始めて、どうですか。",
+          "reading": "ひとりでくらしはじめて、どうですか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "初めは心細かったです。",
+          "reading": "はじめはこころぼそかったです。"
+        },
+        {
+          "speaker": "男",
+          "ja": "今は慣れましたか。",
+          "reading": "いまはなれましたか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "ええ。誰にも気兼ねしないで暮らせるのが一番いいです。",
+          "reading": "ええ。だれにもきがねしないでくらせるのがいちばんいいです。"
+        },
+        {
+          "speaker": "男",
+          "ja": "食事は大変じゃないですか。",
+          "reading": "しょくじはたいへんじゃないですか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "大変ですが、それより自由のほうが大切です。",
+          "reading": "たいへんですが、それよりじゆうのほうがたいせつです。"
+        },
+        {
+          "speaker": "男",
+          "ja": "女の人は一人の暮らしの何が一番いいと言っていますか。",
+          "reading": "おんなのひとはひとりのくらしのなにがいちばんいいといっていますか。"
+        }
+      ],
+      "en": "Man: How is it, now that you've started living alone? Woman: At first I felt forlorn. Man: Are you used to it now? Woman: Yes. The best thing is being able to live without having to hold back for anyone. Man: Isn't cooking hard work? Woman: It is, but freedom matters more than that. Man: What does the woman say is the best thing about living alone?",
+      "zh": "男：一个人开始生活后感觉怎么样？女：一开始很不安。男：现在习惯了吗？女：嗯。最好的是不用顾忌任何人地生活。男：做饭不辛苦吗？女：辛苦，但比起这个，自由更重要。男：女的说一个人生活最好的是什么？",
+      "zh_TW": "男：一個人開始生活後感覺怎麼樣？女：一開始很不安。男：現在習慣了嗎？女：嗯。最好的是不用顧忌任何人地生活。男：做飯不辛苦嗎？女：辛苦，但比起這個，自由更重要。男：女的說一個人生活最好的是什麼？"
+    },
+    {
+      "id": "p:n1-l-013",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "昨日の話、どう思いましたか。",
+          "reading": "きのうのはなし、どうおもいましたか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "分かりやすかったですが、少し物足りませんでした。",
+          "reading": "わかりやすかったですが、すこしものたりませんでした。"
+        },
+        {
+          "speaker": "女",
+          "ja": "時間が短かったからですか。",
+          "reading": "じかんがみじかかったからですか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "時間はちょうどよかったです。例が少なくて、実際の場面が見えなかったんです。",
+          "reading": "じかんはちょうどよかったです。れいがすくなくて、じっさいのばめんがみえなかったんです。"
+        },
+        {
+          "speaker": "女",
+          "ja": "なるほど。",
+          "reading": "なるほど。"
+        },
+        {
+          "speaker": "男",
+          "ja": "数字の説明は丁寧でしたけどね。",
+          "reading": "すうじのせつめいはていねいでしたけどね。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人はどうして物足りないと思いましたか。",
+          "reading": "おとこのひとはどうしてものたりないとおもいましたか。"
+        }
+      ],
+      "en": "Woman: What did you think of yesterday's talk? Man: It was easy to follow, but a little unsatisfying. Woman: Because it was too short? Man: The length was just right. There were few examples, so I couldn't picture real situations. Woman: I see. Man: The explanation of the figures was careful, mind you. Woman: Why did the man find it unsatisfying?",
+      "zh": "女：昨天的讲座你觉得怎么样？男：很好懂，但有点不过瘾。女：是因为时间短吗？男：时间正好。是例子太少，看不到实际的场面。女：原来如此。男：不过数字的说明很细致。女：男的为什么觉得不过瘾？",
+      "zh_TW": "女：昨天的講座你覺得怎麼樣？男：很好懂，但有點不過癮。女：是因為時間短嗎？男：時間正好。是例子太少，看不到實際的場面。女：原來如此。男：不過數字的說明很細緻。女：男的為什麼覺得不過癮？"
+    },
+    {
+      "id": "p:n1-l-014",
+      "type": "outline",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "仕事の効率を上げるために、まず机の上を片付けました。",
+          "reading": "しごとのこうりつをあげるために、まずつくえのうえをかたづけました。"
+        },
+        {
+          "speaker": "女",
+          "ja": "しかし、それだけでは足りませんでした。",
+          "reading": "しかし、それだけではたりませんでした。"
+        },
+        {
+          "speaker": "女",
+          "ja": "一日の手順を紙に書いて、朝に確認するようにしました。",
+          "reading": "いちにちのてじゅんをかみにかいて、あさにかくにんするようにしました。"
+        },
+        {
+          "speaker": "女",
+          "ja": "急ぎの仕事を先にして、急がない仕事は後回しにします。",
+          "reading": "いそぎのしごとをさきにして、いそがないしごとはあとまわしにします。"
+        },
+        {
+          "speaker": "女",
+          "ja": "すると、残る仕事が減り、帰る時間も早くなりました。",
+          "reading": "すると、のこるしごとがへり、かえるじかんもはやくなりました。"
+        },
+        {
+          "speaker": "女",
+          "ja": "大切なのは、急いで働くことではなく、順番を決めることだと思います。",
+          "reading": "たいせつなのは、いそいではたらくことではなく、じゅんばんをきめることだとおもいます。"
+        },
+        {
+          "speaker": "女",
+          "ja": "女の人は何について話していますか。",
+          "reading": "おんなのひとはなにについてはなしていますか。"
+        }
+      ],
+      "en": "Woman: To raise my efficiency at work, I first tidied my desk. But that alone was not enough. I began writing the day's procedure on paper and checking it in the morning. I do urgent work first and put off what is not urgent. Then the work left over went down and I got home earlier. What matters, I think, is not working fast but deciding the order. What is the woman talking about?",
+      "zh": "女：为了提高工作效率，我先收拾了桌面。可是光这样还不够。我开始把一天的步骤写在纸上，早上确认一遍。急的工作先做，不急的往后放。结果剩下的工作减少了，回家的时间也提前了。我觉得重要的不是干得快，而是定好顺序。女的在谈什么？",
+      "zh_TW": "女：為了提高工作效率，我先收拾了桌面。可是光這樣還不夠。我開始把一天的步驟寫在紙上，早上確認一遍。急的工作先做，不急的往後放。結果剩下的工作減少了，回家的時間也提前了。我覺得重要的不是幹得快，而是定好順序。女的在談什麼？"
+    },
+    {
+      "id": "p:n1-l-015",
+      "type": "outline",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "うちの店では、安い品物をたくさん置くのをやめました。",
+          "reading": "うちのみせでは、やすいしなものをたくさんおくのをやめました。"
+        },
+        {
+          "speaker": "男",
+          "ja": "値段を下げると客が増えると考えていましたが、そうではありませんでした。",
+          "reading": "ねだんをさげるときゃくがふえるとかんがえていましたが、そうではありませんでした。"
+        },
+        {
+          "speaker": "男",
+          "ja": "お客さんが求めていたのは、長く使える品質だったのです。",
+          "reading": "おきゃくさんがもとめていたのは、ながくつかえるひんしつだったのです。"
+        },
+        {
+          "speaker": "男",
+          "ja": "数を減らして、一つ一つを丁寧に選ぶようにしました。",
+          "reading": "かずをへらして、ひとつひとつをていねいにえらぶようにしました。"
+        },
+        {
+          "speaker": "男",
+          "ja": "売れる数は減りましたが、経費も減って、店は黒字になりました。",
+          "reading": "うれるかずはへりましたが、けいひもへって、みせはくろじになりました。"
+        },
+        {
+          "speaker": "男",
+          "ja": "安くすることだけが答えではないと分かりました。",
+          "reading": "やすくすることだけがこたえではないとわかりました。"
+        },
+        {
+          "speaker": "男",
+          "ja": "男の人は何について話していますか。",
+          "reading": "おとこのひとはなにについてはなしていますか。"
+        }
+      ],
+      "en": "Man: At our shop we stopped stocking large numbers of cheap goods. We had thought that lowering prices would make things sell, but that was not so. What customers wanted was quality that lasts. We cut the number of lines and chose each one carefully. The number sold fell, but expenses fell too, and the shop went into the black. I learned that making things cheap is not the only answer. What is the man talking about?",
+      "zh": "男：我们店不再大量摆放便宜的商品了。原以为降价就能卖出去，其实不然。客人要的是能长久使用的品质。我们减少了种类，一件一件仔细挑选。卖出的数量减少了，但经费也减少了，店里转为盈利。我明白了便宜并不是唯一的答案。男的在谈什么？",
+      "zh_TW": "男：我們店不再大量擺放便宜的商品了。原以為降價就能賣出去，其實不然。客人要的是能長久使用的品質。我們減少了種類，一件一件仔細挑選。賣出的數量減少了，但經費也減少了，店裡轉為盈利。我明白了便宜並不是唯一的答案。男的在談什麼？"
+    },
+    {
+      "id": "p:n1-l-016",
+      "type": "outline",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "新しく入った人に仕事を教えるとき、私は手順をすべて教えません。",
+          "reading": "あたらしくはいったひとにしごとをおしえるとき、わたしはてじゅんをすべておしえません。"
+        },
+        {
+          "speaker": "女",
+          "ja": "最初にやって見せて、そのあとは自分で考えてもらいます。",
+          "reading": "さいしょにやってみせて、そのあとはじぶんでかんがえてもらいます。"
+        },
+        {
+          "speaker": "女",
+          "ja": "間違えたときだけ、どこが違うかを指摘します。",
+          "reading": "まちがえたときだけ、どこがちがうかをしてきします。"
+        },
+        {
+          "speaker": "女",
+          "ja": "全部教えると早いですが、その人の意欲が育ちません。",
+          "reading": "ぜんぶおしえるとはやいですが、そのひとのいよくがそだちません。"
+        },
+        {
+          "speaker": "女",
+          "ja": "時間はかかっても、自分で決めた人のほうが長く続きます。",
+          "reading": "じかんはかかっても、じぶんできめたひとのほうがながくつづきます。"
+        },
+        {
+          "speaker": "女",
+          "ja": "人材を育てるのは、待つことだと思います。",
+          "reading": "じんざいをそだてるのは、まつことだとおもいます。"
+        },
+        {
+          "speaker": "女",
+          "ja": "女の人は何について話していますか。",
+          "reading": "おんなのひとはなにについてはなしていますか。"
+        }
+      ],
+      "en": "Woman: When I teach a newcomer the work, I do not teach the whole procedure. I show them once at the start, and after that I have them think for themselves. Only when they make a mistake do I point out where it went wrong. Teaching everything is quicker, but the person's motivation does not grow. Even if it takes time, someone who decided for themselves lasts longer. Bringing people on, I think, is a matter of waiting. What is the woman talking about?",
+      "zh": "女：教新人工作时，我不会把步骤全都教完。一开始做一遍给他看，之后让他自己思考。只有出错时，我才指出哪里不对。全都教虽然快，但那个人的干劲长不起来。哪怕花时间，自己做决定的人做得更久。我认为培养人才就是等待。女的在谈什么？",
+      "zh_TW": "女：教新人工作時，我不會把步驟全都教完。一開始做一遍給他看，之後讓他自己思考。只有出錯時，我才指出哪裡不對。全都教雖然快，但那個人的幹勁長不起來。哪怕花時間，自己做決定的人做得更久。我認為培養人才就是等待。女的在談什麼？"
+    },
+    {
+      "id": "p:n1-l-017",
+      "type": "outline",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "数字を見るときは、背景を踏まえることが大切です。",
+          "reading": "すうじをみるときは、はいけいをふまえることがたいせつです。"
+        },
+        {
+          "speaker": "男",
+          "ja": "去年、店に来る人の数が大幅に増えました。",
+          "reading": "きょねん、みせにくるひとのかずがおおはばにふえました。"
+        },
+        {
+          "speaker": "男",
+          "ja": "しかし、よく調べると、近くの店が閉まっていたためでした。",
+          "reading": "しかし、よくしらべると、ちかくのみせがしまっていたためでした。"
+        },
+        {
+          "speaker": "男",
+          "ja": "数字だけを見て、自分の力だと思うと、要因を見落とします。",
+          "reading": "すうじだけをみて、じぶんのちからだとおもうと、よういんをみおとします。"
+        },
+        {
+          "speaker": "男",
+          "ja": "増えた理由が分かれば、次に何をすればいいかも分かります。",
+          "reading": "ふえたりゆうがわかれば、つぎになにをすればいいかもわかります。"
+        },
+        {
+          "speaker": "男",
+          "ja": "数字は答えではなく、問いの始まりだと考えています。",
+          "reading": "すうじはこたえではなく、といのはじまりだとかんがえています。"
+        },
+        {
+          "speaker": "男",
+          "ja": "男の人は何について話していますか。",
+          "reading": "おとこのひとはなにについてはなしていますか。"
+        }
+      ],
+      "en": "Man: When you look at numbers, it matters to take the background into account. Last year the number of people coming to the shop rose sharply. But on looking closely, it was because a nearby shop had closed. If you look only at the number and think it is your own doing, you overlook the cause. Once you know why it rose, you also know what to do next. Numbers are not an answer, I think, but the start of a question. What is the man talking about?",
+      "zh": "男：看数字时，把背景考虑进去很重要。去年来店里的人数大幅增加。但仔细一查，是因为附近的店关门了。只看数字就以为是自己的本事，就会漏掉真正的原因。弄清增加的理由，也就知道下一步该做什么。我认为数字不是答案，而是提问的开始。男的在谈什么？",
+      "zh_TW": "男：看數字時，把背景考慮進去很重要。去年來店裡的人數大幅增加。但仔細一查，是因為附近的店關門了。只看數字就以為是自己的本事，就會漏掉真正的原因。弄清增加的理由，也就知道下一步該做什麼。我認為數字不是答案，而是提問的開始。男的在談什麼？"
+    },
+    {
+      "id": "p:n1-l-018",
+      "type": "outline",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "去年から、申し込みの紙を簡素にしました。",
+          "reading": "きょねんから、もうしこみのかみをかんそにしました。"
+        },
+        {
+          "speaker": "女",
+          "ja": "前は書くところが多くて、煩わしいという声がありました。",
+          "reading": "まえはかくところがおおくて、わずらわしいというこえがありました。"
+        },
+        {
+          "speaker": "女",
+          "ja": "名前と電話だけにしたところ、申し込みが大幅に増えました。",
+          "reading": "なまえとでんわだけにしたところ、もうしこみがおおはばにふえました。"
+        },
+        {
+          "speaker": "女",
+          "ja": "書く量が減っても、必要な話は後で聞けば済みます。",
+          "reading": "かくりょうがへっても、ひつようなはなしはあとできけばすみます。"
+        },
+        {
+          "speaker": "女",
+          "ja": "始めるときに書く量を減らすことが、参加を促すのだと分かりました。",
+          "reading": "はじめるときにかくりょうをへらすことが、さんかをうながすのだとわかりました。"
+        },
+        {
+          "speaker": "女",
+          "ja": "女の人は何について話していますか。",
+          "reading": "おんなのひとはなにについてはなしていますか。"
+        }
+      ],
+      "en": "Woman: From last year we made the application form plain and simple. Before, there was a lot to fill in, and people said it was a nuisance. When we cut it to name and telephone only, applications rose sharply. Even with less to write, whatever we need can be asked afterwards. I learned that cutting how much people must write at the start is what encourages them to take part. What is the woman talking about?",
+      "zh": "女：从去年起，我们把报名表做得简洁了。以前要填的地方多，有人说很麻烦。改成只填姓名和电话后，报名大幅增加。就算写的内容少了，需要的信息以后问就行。我明白了减少一开始要写的量，才能促使人参加。女的在谈什么？",
+      "zh_TW": "女：從去年起，我們把報名表做得簡潔了。以前要填的地方多，有人說很麻煩。改成只填姓名和電話後，報名大幅增加。就算寫的內容少了，需要的信息以後問就行。我明白了減少一開始要寫的量，才能促使人參加。女的在談什麼？"
+    },
+    {
+      "id": "p:n1-l-019",
+      "type": "outline",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "町の集まりに人が来ないと、長い間言われてきました。",
+          "reading": "まちのあつまりにひとがこないと、ながいあいだいわれてきました。"
+        },
+        {
+          "speaker": "男",
+          "ja": "そこで、去年から時間を決めずに、いつ来てもいい形にしました。",
+          "reading": "そこで、きょねんからじかんをきめずに、いつきてもいいかたちにしました。"
+        },
+        {
+          "speaker": "男",
+          "ja": "案の定、初めは誰も来ませんでした。",
+          "reading": "あんのじょう、はじめはだれもきませんでした。"
+        },
+        {
+          "speaker": "男",
+          "ja": "しかし、近所の人が一人来ると、次の週には三人になりました。",
+          "reading": "しかし、きんじょのひとがひとりくると、つぎのしゅうにはさんにんになりました。"
+        },
+        {
+          "speaker": "男",
+          "ja": "気軽に来られることが分かると、人は自然に集まります。",
+          "reading": "きがるにこられることがわかると、ひとはしぜんにあつまります。"
+        },
+        {
+          "speaker": "男",
+          "ja": "大切なのは、来る理由ではなく、来やすい形だと思います。",
+          "reading": "たいせつなのは、くるりゆうではなく、きやすいかたちだとおもいます。"
+        },
+        {
+          "speaker": "男",
+          "ja": "男の人は何について話していますか。",
+          "reading": "おとこのひとはなにについてはなしていますか。"
+        }
+      ],
+      "en": "Man: For a long time people said that nobody came to the town gathering. So from last year we set no fixed time and made it come-whenever. Sure enough, at first nobody came. But once one neighbour came, the next week there were three. Once people see they can drop in casually, they gather of themselves. What matters, I think, is not a reason to come but a form that is easy to come to. What is the man talking about?",
+      "zh": "男：长期以来都说镇上的聚会没人来。于是从去年起不定时间，改成随时都可以来的形式。果然，一开始谁也没来。但邻居来了一个人之后，下一周就变成三个人。一旦知道可以轻松地来，人自然就聚起来了。我觉得重要的不是来的理由，而是容易来的形式。男的在谈什么？",
+      "zh_TW": "男：長期以來都說鎮上的聚會沒人來。於是從去年起不定時間，改成隨時都可以來的形式。果然，一開始誰也沒來。但鄰居來了一個人之後，下一週就變成三個人。一旦知道可以輕鬆地來，人自然就聚起來了。我覺得重要的不是來的理由，而是容易來的形式。男的在談什麼？"
+    },
+    {
+      "id": "p:n1-l-020",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "この話、上の承諾が必要なので、少し待ってもらえますか。",
+          "reading": "このはなし、うえのしょうだくがひつようなので、すこしまってもらえますか。"
+        }
+      ],
+      "en": "Man: This matter needs approval from above, so could you wait a little?",
+      "zh": "男：这件事需要上面的同意，能请你稍等一下吗？",
+      "zh_TW": "男：這件事需要上面的同意，能請你稍等一下嗎？"
+    },
+    {
+      "id": "p:n1-l-021",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "恐れ入りますが、こちらの紙にお名前をお書きください。",
+          "reading": "おそれいりますが、こちらのかみにおなまえをおかきください。"
+        }
+      ],
+      "en": "Woman: I'm sorry to trouble you, but please write your name on this sheet.",
+      "zh": "女：不好意思，请在这张纸上写下您的姓名。",
+      "zh_TW": "女：不好意思，請在這張紙上寫下您的姓名。"
+    },
+    {
+      "id": "p:n1-l-022",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "手際がいいですね。もう終わったんですか。",
+          "reading": "てぎわがいいですね。もうおわったんですか。"
+        }
+      ],
+      "en": "Man: You work deftly. Have you finished already?",
+      "zh": "男：你手脚真麻利。已经做完了吗？",
+      "zh_TW": "男：你手腳真麻利。已經做完了嗎？"
+    },
+    {
+      "id": "p:n1-l-023",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "この二つの名前、紛らわしいので気をつけてください。",
+          "reading": "このふたつのなまえ、まぎらわしいのできをつけてください。"
+        }
+      ],
+      "en": "Woman: These two names are easy to mix up, so please be careful.",
+      "zh": "女：这两个名字容易混淆，请注意。",
+      "zh_TW": "女：這兩個名字容易混淆，請注意。"
+    },
+    {
+      "id": "p:n1-l-024",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "今日はろくに休んでいないんです。",
+          "reading": "きょうはろくにやすんでいないんです。"
+        }
+      ],
+      "en": "Man: I haven't had a proper break today.",
+      "zh": "男：我今天几乎没好好休息。",
+      "zh_TW": "男：我今天幾乎沒好好休息。"
+    },
+    {
+      "id": "p:n1-l-025",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "とりあえず、今日はここまでにしませんか。",
+          "reading": "とりあえず、きょうはここまでにしませんか。"
+        }
+      ],
+      "en": "Woman: For now, shall we call it a day here?",
+      "zh": "女：先这样吧，今天就到这里怎么样？",
+      "zh_TW": "女：先這樣吧，今天就到這裡怎麼樣？"
+    },
+    {
+      "id": "p:n1-l-026",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "この機械の取り扱いには気をつけてください。",
+          "reading": "このきかいのとりあつかいにはきをつけてください。"
+        }
+      ],
+      "en": "Man: Please be careful in handling this machine.",
+      "zh": "男：这台机器的操作请多加小心。",
+      "zh_TW": "男：這臺機器的操作請多加小心。"
+    },
+    {
+      "id": "p:n1-l-027",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "さぞお疲れでしょう。",
+          "reading": "さぞおつかれでしょう。"
+        }
+      ],
+      "en": "Woman: You must be worn out.",
+      "zh": "女：您一定累坏了吧。",
+      "zh_TW": "女：您一定累壞了吧。"
+    },
+    {
+      "id": "p:n1-l-028",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "この仕事、二人で分担しませんか。",
+          "reading": "このしごと、ふたりでぶんたんしませんか。"
+        }
+      ],
+      "en": "Man: Shall the two of us split this job between us?",
+      "zh": "男：这项工作我们两个人分担怎么样？",
+      "zh_TW": "男：這項工作我們兩個人分擔怎麼樣？"
+    },
+    {
+      "id": "p:n1-l-029",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "資料の数字、訂正しておきましたよ。",
+          "reading": "しりょうのすうじ、ていせいしておきましたよ。"
+        }
+      ],
+      "en": "Woman: I've gone ahead and corrected the figures in the document.",
+      "zh": "女：资料上的数字我已经订正好了。",
+      "zh_TW": "女：資料上的數字我已經訂正好了。"
+    },
+    {
+      "id": "p:n1-l-030",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "今度の計画、かねてから考えていたことなんです。",
+          "reading": "こんどのけいかく、かねてからかんがえていたことなんです。"
+        }
+      ],
+      "en": "Man: This plan is something I have had in mind for some time.",
+      "zh": "男：这次的计划是我早就在考虑的事。",
+      "zh_TW": "男：這次的計劃是我早就在考慮的事。"
+    },
+    {
+      "id": "p:n1-l-031",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "この問題は、もうお手上げです。",
+          "reading": "このもんだいは、もうおてあげです。"
+        }
+      ],
+      "en": "Woman: With this problem I'm at my wits' end.",
+      "zh": "女：这个问题我已经无能为力了。",
+      "zh_TW": "女：這個問題我已經無能為力了。"
+    },
+    {
+      "id": "p:n1-l-032",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "分からないことがあったら、気軽に声をかけてください。",
+          "reading": "わからないことがあったら、きがるにこえをかけてください。"
+        }
+      ],
+      "en": "Man: If there's anything you don't follow, feel free to give me a shout.",
+      "zh": "男：有不明白的地方，请随时叫我。",
+      "zh_TW": "男：有不明白的地方，請隨時叫我。"
+    },
+    {
+      "id": "p:n1-l-033",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "会議の時間、早急に決めていただけますか。",
+          "reading": "かいぎのじかん、さっきゅうにきめていただけますか。"
+        }
+      ],
+      "en": "Woman: Could you decide the time of the meeting as soon as possible?",
+      "zh": "女：能请您尽快定下开会的时间吗？",
+      "zh_TW": "女：能請您儘快定下開會的時間嗎？"
+    },
+    {
+      "id": "p:n1-l-034",
+      "type": "integrated-listening",
+      "lines": [
+        {
+          "speaker": "女1",
+          "ja": "教室のご案内です。四つの中からお選びください。",
+          "reading": "きょうしつのごあんないです。よっつのなかからおえらびください。"
+        },
+        {
+          "speaker": "女1",
+          "ja": "一つ目は朝の教室で、月曜日から金曜日の朝に行います。",
+          "reading": "ひとつめはあさのきょうしつで、げつようびからきんようびのあさにおこないます。"
+        },
+        {
+          "speaker": "女1",
+          "ja": "二つ目は夜の教室で、仕事のあとでも通えます。",
+          "reading": "ふたつめはよるのきょうしつで、しごとのあとでもかよえます。"
+        },
+        {
+          "speaker": "女1",
+          "ja": "三つ目は土曜日の教室で、月に二回だけです。",
+          "reading": "みっつめはどようびのきょうしつで、つきににかいだけです。"
+        },
+        {
+          "speaker": "女1",
+          "ja": "四つ目は家で受ける教室で、決まった時間はありません。",
+          "reading": "よっつめはいえでうけるきょうしつで、きまったじかんはありません。"
+        },
+        {
+          "speaker": "男",
+          "ja": "僕は決まった日に通いたいな。夜は仕事が終わらないことが多いから難しい。",
+          "reading": "ぼくはきまったひにかよいたいな。よるはしごとがおわらないことがおおいからむずかしい。"
+        },
+        {
+          "speaker": "女2",
+          "ja": "私は朝も夜も家のことがあるから、通うのは無理ね。",
+          "reading": "わたしはあさもよるもいえのことがあるから、かようのはむりね。"
+        },
+        {
+          "speaker": "男",
+          "ja": "土曜日なら休みだし、月に二回なら大丈夫そうだ。",
+          "reading": "どようびならやすみだし、つきににかいならだいじょうぶそうだ。"
+        },
+        {
+          "speaker": "女2",
+          "ja": "私は自分の時間に合わせられるほうにするわ。",
+          "reading": "わたしはじぶんのじかんにあわせられるほうにするわ。"
+        },
+        {
+          "speaker": "女1",
+          "ja": "男の人はどの教室を選びますか。",
+          "reading": "おとこのひとはどのきょうしつをえらびますか。"
+        },
+        {
+          "speaker": "女1",
+          "ja": "女の人はどの教室を選びますか。",
+          "reading": "おんなのひとはどのきょうしつをえらびますか。"
+        }
+      ],
+      "en": "Announcer: Information about the classes. Please choose one of four. The first is the morning class, held Monday to Friday in the morning. The second is the evening class, which you can attend after work. The third is the Saturday class, only twice a month. The fourth is the class you take at home, with no fixed times. Man: I'd like to attend on a fixed day. Evenings are hard because my work often doesn't finish. Woman: I have things to do at home both morning and evening, so attending is out of the question. Man: Saturday is my day off, and twice a month I could keep up. Woman: I'll take the one I can fit to my own hours. Announcer: Which class will the man choose? Which class will the woman choose?",
+      "zh": "广播：教室的介绍。请从四个当中选择。第一个是早上的教室，周一到周五的早上上课。第二个是晚上的教室，下班后也能来。第三个是周六的教室，一个月只有两次。第四个是在家上的教室，没有固定时间。男：我想在固定的日子去上。晚上工作常常做不完，所以有难度。女：我早上和晚上都要做家里的事，去上课不可能。男：周六是休息日，一个月两次的话应该能坚持。女：我选能配合自己时间的那个。广播：男的选哪个教室？女的选哪个教室？",
+      "zh_TW": "廣播：教室的介紹。請從四個當中選擇。第一個是早上的教室，週一到週五的早上上課。第二個是晚上的教室，下班後也能來。第三個是週六的教室，一個月只有兩次。第四個是在家上的教室，沒有固定時間。男：我想在固定的日子去上。晚上工作常常做不完，所以有難度。女：我早上和晚上都要做家裡的事，去上課不可能。男：週六是休息日，一個月兩次的話應該能堅持。女：我選能配合自己時間的那個。廣播：男的選哪個教室？女的選哪個教室？"
+    },
+    {
+      "id": "p:n1-l-035",
+      "type": "integrated-listening",
+      "lines": [
+        {
+          "speaker": "女1",
+          "ja": "秋の旅行のご案内です。四つの中からお選びください。",
+          "reading": "あきのりょこうのごあんないです。よっつのなかからおえらびください。"
+        },
+        {
+          "speaker": "女1",
+          "ja": "一つ目は山を歩く旅行で、朝早く出発しますが、値段は一番安くなります。",
+          "reading": "ひとつめはやまをあるくりょこうで、あさはやくしゅっぱつしますが、ねだんはいちばんやすくなります。"
+        },
+        {
+          "speaker": "女1",
+          "ja": "二つ目は海の近くに泊まる旅行で、二日かかります。",
+          "reading": "ふたつめはうみのちかくにとまるりょこうで、ふつかかかります。"
+        },
+        {
+          "speaker": "女1",
+          "ja": "三つ目は町の古い建物を見る旅行で、その日のうちに帰れます。",
+          "reading": "みっつめはまちのふるいたてものをみるりょこうで、そのひのうちにかえれます。"
+        },
+        {
+          "speaker": "女1",
+          "ja": "四つ目は電車で温泉に行く旅行で、値段が一番高くなります。",
+          "reading": "よっつめはでんしゃでおんせんにいくりょこうで、ねだんがいちばんたかくなります。"
+        },
+        {
+          "speaker": "男",
+          "ja": "僕は次の日に仕事があるから、泊まるのは無理だな。",
+          "reading": "ぼくはつぎのひにしごとがあるから、とまるのはむりだな。"
+        },
+        {
+          "speaker": "男",
+          "ja": "それに、朝早いのも苦手だし、歩くのも自信がない。",
+          "reading": "それに、あさはやいのもにがてだし、あるくのもじしんがない。"
+        },
+        {
+          "speaker": "男",
+          "ja": "値段が高いのは今回はやめておくよ。",
+          "reading": "ねだんがたかいのはこんかいはやめておくよ。"
+        },
+        {
+          "speaker": "女2",
+          "ja": "私は歩くのが好きだけど、今回は値段を優先したいわ。",
+          "reading": "わたしはあるくのがすきだけど、こんかいはねだんをゆうせんしたいわ。"
+        },
+        {
+          "speaker": "女2",
+          "ja": "一番安くて、朝が早くてもかまわないほうにするわ。",
+          "reading": "いちばんやすくて、あさがはやくてもかまわないほうにするわ。"
+        },
+        {
+          "speaker": "女1",
+          "ja": "男の人はどの旅行を選びますか。",
+          "reading": "おとこのひとはどのりょこうをえらびますか。"
+        },
+        {
+          "speaker": "女1",
+          "ja": "女の人はどの旅行を選びますか。",
+          "reading": "おんなのひとはどのりょこうをえらびますか。"
+        }
+      ],
+      "en": "Announcer: Information about the autumn trips. Please choose one of four. The first is the mountain walk; it sets off early in the morning but is the cheapest. The second stays near the sea and takes two days. The third looks at the old buildings in town and gets you home the same day. The fourth goes by train to a hot spring and is the most expensive. Man: I have work the next day, so staying over is out. Besides, early mornings don't suit me and I've no confidence in walking. And I'll pass on the expensive one this time. Woman: I like walking, but this time I want to put the price first. I'll take the cheapest one; an early start is fine by me. Announcer: Which trip will the man choose? Which trip will the woman choose?",
+      "zh": "广播：秋季旅行的介绍。请从四个当中选择。第一个是走山路的旅行，出发很早，但价格最便宜。第二个是住在海边的旅行，需要两天。第三个是参观镇上老建筑的旅行，当天就能回来。第四个是坐电车去温泉的旅行，价格最贵。男：我第二天要上班，住一晚不行。而且我起早也不行，走路也没信心。价格贵的这次也算了。女：我喜欢走路，但这次想优先考虑价格。我选最便宜的，早起也没关系。广播：男的选哪个旅行？女的选哪个旅行？",
+      "zh_TW": "廣播：秋季旅行的介紹。請從四個當中選擇。第一個是走山路的旅行，出發很早，但價格最便宜。第二個是住在海邊的旅行，需要兩天。第三個是參觀鎮上老建築的旅行，當天就能回來。第四個是坐電車去溫泉的旅行，價格最貴。男：我第二天要上班，住一晚不行。而且我起早也不行，走路也沒信心。價格貴的這次也算了。女：我喜歡走路，但這次想優先考慮價格。我選最便宜的，早起也沒關係。廣播：男的選哪個旅行？女的選哪個旅行？"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q:n1-l-001",
+      "type": "task",
+      "items": [
+        "vocab:jm1328990",
+        "vocab:jm1436710",
+        "vocab:jm1326820"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-001",
+      "prompt": {
+        "en": "What will the man do first after this?",
+        "zh": "男的接下来首先要做什么？",
+        "zh_TW": "男的接下來首先要做什麼？"
+      },
+      "options": [
+        "資料を印刷する",
+        "数字を訂正する",
+        "趣旨の説明を付ける",
+        "人数を数える"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The figures are already corrected, and the woman says to print only after the explanation of the aim is done, so adding that page comes first.",
+        "zh": "数字已经订正完毕，女的又说说明写好之后再印刷，所以先要加上写明宗旨的那一页。",
+        "zh_TW": "數字已經訂正完畢，女的又說說明寫好之後再印刷，所以先要加上寫明宗旨的那一頁。"
+      }
+    },
+    {
+      "id": "q:n1-l-002",
+      "type": "task",
+      "items": [
+        "vocab:jm1296470",
+        "vocab:jm1470910",
+        "vocab:jm1269500"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-002",
+      "prompt": {
+        "en": "What will the woman do first after this?",
+        "zh": "女的接下来首先要做什么？",
+        "zh_TW": "女的接下來首先要做什麼？"
+      },
+      "options": [
+        "商品を注文する",
+        "在庫の数を数える",
+        "店を掃除する",
+        "商品を工場に送る"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The man says to count first and order afterwards, and the cleaning is to be put off, so counting the stock is the first thing.",
+        "zh": "男的说先数数量、订货放在之后，打扫也往后放，所以首先是清点库存数量。",
+        "zh_TW": "男的說先數數量、訂貨放在之後，打掃也往後放，所以首先是清點庫存數量。"
+      }
+    },
+    {
+      "id": "q:n1-l-003",
+      "type": "task",
+      "items": [
+        "vocab:jm1328260",
+        "vocab:jm1581270"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-003",
+      "prompt": {
+        "en": "What will the man do first after this?",
+        "zh": "男的接下来首先要做什么？",
+        "zh_TW": "男的接下來首先要做什麼？"
+      },
+      "options": [
+        "建物を借りる",
+        "案内に時間を書く",
+        "公園を掃除する",
+        "会議の場所を変える"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The building is already booked; the notice lacks only the time, and the woman tells him to write it in before sending.",
+        "zh": "楼已经借好了，通知只差时间，女的让他写上时间之后再发出去。",
+        "zh_TW": "樓已經借好了，通知只差時間，女的讓他寫上時間之後再發出去。"
+      }
+    },
+    {
+      "id": "q:n1-l-004",
+      "type": "task",
+      "items": [
+        "vocab:jm1260140",
+        "vocab:jm1251640",
+        "vocab:jm1436710"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-004",
+      "prompt": {
+        "en": "What will the woman do first after this?",
+        "zh": "女的接下来首先要做什么？",
+        "zh_TW": "女的接下來首先要做什麼？"
+      },
+      "options": [
+        "資料をそのまま出す",
+        "数字を訂正して男の人に見せる",
+        "電車の切符を買う",
+        "経費をもう一度数える"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The man refuses to have it submitted straight away and asks to see it once the figure has been corrected.",
+        "zh": "男的不同意直接提交，要求订正数字之后先给他看。",
+        "zh_TW": "男的不同意直接提交，要求訂正數字之後先給他看。"
+      }
+    },
+    {
+      "id": "q:n1-l-005",
+      "type": "task",
+      "items": [
+        "vocab:jm1490580",
+        "vocab:jm1199470",
+        "vocab:jm1581270"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-005",
+      "prompt": {
+        "en": "What will the man do first after this?",
+        "zh": "男的接下来首先要做什么？",
+        "zh_TW": "男的接下來首先要做什麼？"
+      },
+      "options": [
+        "商品を回収する",
+        "工場に連絡する",
+        "店に残っている品物を調べる",
+        "お客さんに謝る"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The woman puts the check before any recall, and she will do the contacting herself.",
+        "zh": "女的说回收之前先去查，联系工厂由她自己来做。",
+        "zh_TW": "女的說回收之前先去查，聯繫工廠由她自己來做。"
+      }
+    },
+    {
+      "id": "q:n1-l-006",
+      "type": "task",
+      "items": [
+        "vocab:jm1327810",
+        "vocab:jm1453790"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-006",
+      "prompt": {
+        "en": "What will the man do first after this?",
+        "zh": "男的接下来首先要做什么？",
+        "zh_TW": "男的接下來首先要做什麼？"
+      },
+      "options": [
+        "手順を書いた紙を配る",
+        "自分で手順を確認する",
+        "皆さんを集める",
+        "新しい機械を買う"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The gathering is next week, and he says その前に、私が手順を確認しておきます — checking the procedure comes first.",
+        "zh": "集合是下周的事，他说「その前に、私が手順を確認しておきます」，所以先确认步骤。",
+        "zh_TW": "集合是下週的事，他說「その前に、私が手順を確認しておきます」，所以先確認步驟。"
+      }
+    },
+    {
+      "id": "q:n1-l-007",
+      "type": "point",
+      "items": [
+        "vocab:jm1222110"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-007",
+      "prompt": {
+        "en": "Why is the man changing how the gathering is run?",
+        "zh": "男的为什么要改变聚会的做法？",
+        "zh_TW": "男的為什麼要改變聚會的做法？"
+      },
+      "options": [
+        "場所が遠いから",
+        "時間が長くて気軽に来られないから",
+        "お金が足りないから",
+        "人が多すぎるから"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "He denies the distance and says the meeting runs too long for people to come casually, so he will cut it to two hours.",
+        "zh": "他否认了地点远，说时间太长大家没法轻松地来，所以要缩短到两小时。",
+        "zh_TW": "他否認了地點遠，說時間太長大家沒法輕鬆地來，所以要縮短到兩小時。"
+      }
+    },
+    {
+      "id": "q:n1-l-008",
+      "type": "point",
+      "items": [
+        "vocab:jm1214300"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-008",
+      "prompt": {
+        "en": "What does the woman say is the main reason customers increased?",
+        "zh": "女的说客人增加最主要的原因是什么？",
+        "zh_TW": "女的說客人增加最主要的原因是什麼？"
+      },
+      "options": [
+        "値段を下げたから",
+        "新しい商品を出したから",
+        "店の中を簡素にしたから",
+        "駅の近くに移ったから"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "Prices are ruled out, and the new products count only a little; 一番は店の中を簡素にしたこと.",
+        "zh": "降价被否定，新商品只占一点，她说「一番は店の中を簡素にしたこと」。",
+        "zh_TW": "降價被否定，新商品只佔一點，她說「一番は店の中を簡素にしたこと」。"
+      }
+    },
+    {
+      "id": "q:n1-l-009",
+      "type": "point",
+      "items": [
+        "vocab:jm1318990",
+        "vocab:jm1604480",
+        "vocab:jm1003440"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-009",
+      "prompt": {
+        "en": "Why did the man decline the new job?",
+        "zh": "男的为什么谢绝了新工作？",
+        "zh_TW": "男的為什麼謝絕了新工作？"
+      },
+      "options": [
+        "給料が下がるから",
+        "場所が遠いから",
+        "今の仕事を最後まで続けたいから",
+        "家族が反対したから"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The pay was going up and the place was the same; his reason is 今の仕事を最後までやりたかった.",
+        "zh": "工资本来会涨，地点也一样，他的理由是「今の仕事を最後までやりたかった」。",
+        "zh_TW": "工資本來會漲，地點也一樣，他的理由是「今の仕事を最後までやりたかった」。"
+      }
+    },
+    {
+      "id": "q:n1-l-010",
+      "type": "point",
+      "items": [
+        "vocab:jm1410920",
+        "vocab:jm1546670"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-010",
+      "prompt": {
+        "en": "What is the cause of the work being held up?",
+        "zh": "工作停滞的原因是什么？",
+        "zh_TW": "工作停滯的原因是什麼？"
+      },
+      "options": [
+        "人が足りないこと",
+        "機械が動かないこと",
+        "品物が届かないこと",
+        "天気が悪いこと"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "She says there are enough people and the machine is fine; 品物が届かないのが要因です.",
+        "zh": "她说人手够、机器也没问题，「品物が届かないのが要因です」。",
+        "zh_TW": "她說人手夠、機器也沒問題，「品物が屆かないのが要因です」。"
+      }
+    },
+    {
+      "id": "q:n1-l-011",
+      "type": "point",
+      "items": [
+        "vocab:jm1298110",
+        "vocab:jm1539390",
+        "vocab:jm1251640"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-011",
+      "prompt": {
+        "en": "What will the man talk about first at the meeting?",
+        "zh": "男的在会议上最先谈什么？",
+        "zh_TW": "男的在會議上最先談什麼？"
+      },
+      "options": [
+        "人を増やすこと",
+        "経費を削減すること",
+        "新しい商品を作ること",
+        "店を増やすこと"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Hiring waits for another time and new products are off this time; he plans to speak on 経費の削減.",
+        "zh": "增加人手放到下次，新商品这次也不谈，他打算谈「経費の削減」。",
+        "zh_TW": "增加人手放到下次，新商品這次也不談，他打算談「経費の削減」。"
+      }
+    },
+    {
+      "id": "q:n1-l-012",
+      "type": "point",
+      "items": [
+        "vocab:jm1222120",
+        "vocab:jm1360680"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-012",
+      "prompt": {
+        "en": "What does the woman say is the best thing about living alone?",
+        "zh": "女的说一个人生活最好的是什么？",
+        "zh_TW": "女的說一個人生活最好的是什麼？"
+      },
+      "options": [
+        "食事が簡単なこと",
+        "部屋が広いこと",
+        "誰にも気兼ねしないこと",
+        "近所に友達が多いこと"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "She calls cooking hard work and values freedom above it: 誰にも気兼ねしないで暮らせるのが一番いい.",
+        "zh": "她说做饭辛苦，但更看重自由：「誰にも気兼ねしないで暮らせるのが一番いい」。",
+        "zh_TW": "她說做飯辛苦，但更看重自由：「誰にも気兼ねしないで暮らせるのが一番いい」。"
+      }
+    },
+    {
+      "id": "q:n1-l-013",
+      "type": "point",
+      "items": [
+        "vocab:jm1502650"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-013",
+      "prompt": {
+        "en": "Why did the man find the talk unsatisfying?",
+        "zh": "男的为什么觉得那个讲座不过瘾？",
+        "zh_TW": "男的為什麼覺得那個講座不過癮？"
+      },
+      "options": [
+        "時間が短かったから",
+        "例が少なかったから",
+        "声が小さかったから",
+        "数字が多すぎたから"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "He says the length was just right; what was missing was examples, so he could not picture real situations.",
+        "zh": "他说时间正好，缺的是例子，所以看不到实际的场面。",
+        "zh_TW": "他說時間正好，缺的是例子，所以看不到實際的場面。"
+      }
+    },
+    {
+      "id": "q:n1-l-014",
+      "type": "outline",
+      "items": [
+        "vocab:jm1275210",
+        "vocab:jm1327810",
+        "vocab:jm1269500"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-014",
+      "prompt": {
+        "en": "What is the woman talking about?",
+        "zh": "女的在谈什么？",
+        "zh_TW": "女的在談什麼？"
+      },
+      "options": [
+        "机を片付ける方法",
+        "仕事の順番を決めることの大切さ",
+        "早く帰るための交通の工夫",
+        "新しい機械の使い方"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Tidying was only the start; her point is 大切なのは、急いで働くことではなく、順番を決めること.",
+        "zh": "收拾桌子只是开头，她的结论是「大切なのは、急いで働くことではなく、順番を決めること」。",
+        "zh_TW": "收拾桌子只是開頭，她的結論是「大切なのは、急いで働くことではなく、順番を決めること」。"
+      }
+    },
+    {
+      "id": "q:n1-l-015",
+      "type": "outline",
+      "items": [
+        "vocab:jm1490580",
+        "vocab:jm1287710",
+        "vocab:jm1251640"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-015",
+      "prompt": {
+        "en": "What is the man talking about?",
+        "zh": "男的在谈什么？",
+        "zh_TW": "男的在談什麼？"
+      },
+      "options": [
+        "値段を下げて客を増やす方法",
+        "品質を選んで黒字になった話",
+        "新しい店を出す計画",
+        "工場の機械の直し方"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "He gave up on cheap goods, chose for quality, and the shop moved into the black.",
+        "zh": "他放弃了便宜商品，转而挑选品质，店里因此转为盈利。",
+        "zh_TW": "他放棄了便宜商品，轉而挑選品質，店裡因此轉為盈利。"
+      }
+    },
+    {
+      "id": "q:n1-l-016",
+      "type": "outline",
+      "items": [
+        "vocab:jm1367760",
+        "vocab:jm1587690",
+        "vocab:jm1309940"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-016",
+      "prompt": {
+        "en": "What is the woman talking about?",
+        "zh": "女的在谈什么？",
+        "zh_TW": "女的在談什麼？"
+      },
+      "options": [
+        "新しい機械の使い方",
+        "人を育てるときの考え方",
+        "会社の給料の決め方",
+        "仕事を早く終える方法"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "She holds back from teaching everything so that motivation grows: 人材を育てるのは、待つこと.",
+        "zh": "她故意不全教，为的是让干劲长出来：「人材を育てるのは、待つこと」。",
+        "zh_TW": "她故意不全教，為的是讓幹勁長出來：「人材を育てるのは、待つこと」。"
+      }
+    },
+    {
+      "id": "q:n1-l-017",
+      "type": "outline",
+      "items": [
+        "vocab:jm1472720",
+        "vocab:jm1546670",
+        "vocab:jm1450110"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-017",
+      "prompt": {
+        "en": "What is the man talking about?",
+        "zh": "男的在谈什么？",
+        "zh_TW": "男的在談什麼？"
+      },
+      "options": [
+        "数字を増やす方法",
+        "数字の背景を調べることの大切さ",
+        "近くの店の様子",
+        "店を閉める理由"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The rise came from a neighbouring shop closing, which is why he says numbers are the start of a question, not an answer.",
+        "zh": "人数上升是因为附近的店关门，所以他说数字不是答案，而是提问的开始。",
+        "zh_TW": "人數上升是因為附近的店關門，所以他說數字不是答案，而是提問的開始。"
+      }
+    },
+    {
+      "id": "q:n1-l-018",
+      "type": "outline",
+      "items": [
+        "vocab:jm1214300",
+        "vocab:jm1481940",
+        "vocab:jm1403760"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-018",
+      "prompt": {
+        "en": "What is the woman talking about?",
+        "zh": "女的在谈什么？",
+        "zh_TW": "女的在談什麼？"
+      },
+      "options": [
+        "申し込みの紙を簡素にした結果",
+        "電話の正しい使い方",
+        "会場を変えた理由",
+        "新しい商品の説明"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Cutting the form to name and telephone raised applications sharply, and that is her whole subject.",
+        "zh": "把表格减到只填姓名和电话后报名大幅增加，这正是她所讲的内容。",
+        "zh_TW": "把表格減到只填姓名和電話後報名大幅增加，這正是她所講的內容。"
+      }
+    },
+    {
+      "id": "q:n1-l-019",
+      "type": "outline",
+      "items": [
+        "vocab:jm1222110",
+        "vocab:jm1154790"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-019",
+      "prompt": {
+        "en": "What is the man talking about?",
+        "zh": "男的在谈什么？",
+        "zh_TW": "男的在談什麼？"
+      },
+      "options": [
+        "町の祭りの歴史",
+        "集まりを来やすい形にした話",
+        "近所の店の場所",
+        "子どもの遊び方"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "He dropped the fixed time so people could drop in, and concludes that what matters is a form that is easy to come to.",
+        "zh": "他取消了固定时间让人随时能来，结论是重要的是容易来的形式。",
+        "zh_TW": "他取消了固定時間讓人隨時能來，結論是重要的是容易來的形式。"
+      }
+    },
+    {
+      "id": "q:n1-l-020",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1349470"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-020",
+      "prompt": {
+        "en": "How do you reply?",
+        "zh": "该怎么回答？",
+        "zh_TW": "該怎麼回答？"
+      },
+      "options": [
+        "では、私が承諾しておきました。",
+        "分かりました。お返事を待ちます。",
+        "はい、もう終わったんですね。",
+        "いいえ、待たせて悪かったです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "He is asking for time until approval comes from above, so the reply agrees to wait for his answer.",
+        "zh": "他是在请对方等上面批准，所以回答应当表示等他的答复。",
+        "zh_TW": "他是在請對方等上面批准，所以回答應當表示等他的答覆。"
+      }
+    },
+    {
+      "id": "q:n1-l-021",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1236680"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-021",
+      "prompt": {
+        "en": "How do you reply?",
+        "zh": "该怎么回答？",
+        "zh_TW": "該怎麼回答？"
+      },
+      "options": [
+        "はい、ここでよろしいですか。",
+        "いいえ、名前は忘れました。",
+        "では、書かなくて結構です。",
+        "それは私が書いておきました。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "She is asking you to write your name, so the natural reply checks where to write it.",
+        "zh": "她请你写下姓名，所以自然的回答是确认写在哪里。",
+        "zh_TW": "她請你寫下姓名，所以自然的回答是確認寫在哪裡。"
+      }
+    },
+    {
+      "id": "q:n1-l-022",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1327690"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-022",
+      "prompt": {
+        "en": "How do you reply?",
+        "zh": "该怎么回答？",
+        "zh_TW": "該怎麼回答？"
+      },
+      "options": [
+        "では、手を洗ってきます。",
+        "いいえ、手際は要りません。",
+        "ええ、思ったより簡単でした。",
+        "手際は明日にします。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "手際がいい praises how deftly you worked and asks if you are done, so the reply confirms it and explains why it went quickly.",
+        "zh": "「手際がいい」是称赞做得利落并问是否做完，所以回答要确认做完并说明为什么快。",
+        "zh_TW": "「手際がいい」是稱讚做得利落並問是否做完，所以回答要確認做完並說明為什麼快。"
+      }
+    },
+    {
+      "id": "q:n1-l-023",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1504990"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-023",
+      "prompt": {
+        "en": "How do you reply?",
+        "zh": "该怎么回答？",
+        "zh_TW": "該怎麼回答？"
+      },
+      "options": [
+        "では、名前を消しておきます。",
+        "ええ、二つとも同じ物です。",
+        "いいえ、紛らわしくしました。",
+        "はい、よく確認します。"
+      ],
+      "answer": 3,
+      "explanation": {
+        "en": "紛らわしい warns that the two are easy to confuse, so the reply promises to check carefully.",
+        "zh": "「紛らわしい」是提醒两者容易混淆，所以回答应当表示会仔细确认。",
+        "zh_TW": "「紛らわしい」是提醒兩者容易混淆，所以回答應當表示會仔細確認。"
+      }
+    },
+    {
+      "id": "q:n1-l-024",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1570040"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-024",
+      "prompt": {
+        "en": "How do you reply?",
+        "zh": "该怎么回答？",
+        "zh_TW": "該怎麼回答？"
+      },
+      "options": [
+        "よく休めてよかったですね。",
+        "それは大変ですね。少し座ったらどうですか。",
+        "では、明日も休みですね。",
+        "休むのは楽しいですよね。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "ろくに〜ていない means he has hardly rested at all, so the reply sympathises and suggests a break.",
+        "zh": "「ろくに〜ていない」表示几乎没休息，所以回答要表示同情并劝他歇一会儿。",
+        "zh_TW": "「ろくに〜ていない」表示幾乎沒休息，所以回答要表示同情並勸他歇一會兒。"
+      }
+    },
+    {
+      "id": "q:n1-l-025",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1598980"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-025",
+      "prompt": {
+        "en": "How do you reply?",
+        "zh": "该怎么回答？",
+        "zh_TW": "該怎麼回答？"
+      },
+      "options": [
+        "では、始めから読みましょう。",
+        "はい、もう終わりません。",
+        "そうですね。続きは明日にしましょう。",
+        "いいえ、ここは来たことがありません。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "とりあえず…ここまでに proposes stopping for today, so the reply agrees and puts the rest off to tomorrow.",
+        "zh": "「とりあえず…ここまでに」是提议今天就到此为止，所以回答同意并把余下的放到明天。",
+        "zh_TW": "「とりあえず…ここまでに」是提議今天就到此為止，所以回答同意並把餘下的放到明天。"
+      }
+    },
+    {
+      "id": "q:n1-l-026",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1598990"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-026",
+      "prompt": {
+        "en": "How do you reply?",
+        "zh": "该怎么回答？",
+        "zh_TW": "該怎麼回答？"
+      },
+      "options": [
+        "では、機械を買ってきます。",
+        "ええ、取り扱いは要らないですね。",
+        "いいえ、まだ壊れていません。",
+        "はい、説明をよく読んでおきます。"
+      ],
+      "answer": 3,
+      "explanation": {
+        "en": "取り扱いに気をつけて is a caution about handling, so the reply promises to read the instructions first.",
+        "zh": "「取り扱いに気をつけて」是提醒操作要小心，所以回答表示会先仔细读说明。",
+        "zh_TW": "「取り扱いに気をつけて」是提醒操作要小心，所以回答表示會先仔細讀說明。"
+      }
+    },
+    {
+      "id": "q:n1-l-027",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1565620"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-027",
+      "prompt": {
+        "en": "How do you reply?",
+        "zh": "该怎么回答？",
+        "zh_TW": "該怎麼回答？"
+      },
+      "options": [
+        "ええ、今日はよく歩きましたから。",
+        "では、お先に疲れます。",
+        "私も疲れていませんでした。",
+        "さぞ元気ですね。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "さぞお疲れでしょう guesses that you are tired, so the reply agrees and gives the reason.",
+        "zh": "「さぞお疲れでしょう」是推测对方很累，所以回答应当承认并说明原因。",
+        "zh_TW": "「さぞお疲れでしょう」是推測對方很累，所以回答應當承認並說明原因。"
+      }
+    },
+    {
+      "id": "q:n1-l-028",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1503950"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-028",
+      "prompt": {
+        "en": "How do you reply?",
+        "zh": "该怎么回答？",
+        "zh_TW": "該怎麼回答？"
+      },
+      "options": [
+        "はい、一人で全部やりました。",
+        "ぜひ。では、半分やります。",
+        "では、分担は要らないですね。",
+        "いいえ、二人とも休みです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "分担しませんか proposes splitting the work, so the reply accepts and takes half.",
+        "zh": "「分担しませんか」是提议分工，所以回答接受并承担一半。",
+        "zh_TW": "「分擔しませんか」是提議分工，所以回答接受並承擔一半。"
+      }
+    },
+    {
+      "id": "q:n1-l-029",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1436710"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-029",
+      "prompt": {
+        "en": "How do you reply?",
+        "zh": "该怎么回答？",
+        "zh_TW": "該怎麼回答？"
+      },
+      "options": [
+        "では、これから書き始めます。",
+        "はい、数字は入れていません。",
+        "ありがとうございます。助かりました。",
+        "いいえ、まだ間違っていません。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "She has already made the correction for you, so the reply thanks her.",
+        "zh": "她已经替你订正好了，所以回答要道谢。",
+        "zh_TW": "她已經替你訂正好了，所以回答要道謝。"
+      }
+    },
+    {
+      "id": "q:n1-l-030",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1542850"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-030",
+      "prompt": {
+        "en": "How do you reply?",
+        "zh": "该怎么回答？",
+        "zh_TW": "該怎麼回答？"
+      },
+      "options": [
+        "急に思いついたんですね。",
+        "では、ずいぶん前からの願いだったんですね。",
+        "もう終わったことなんですね。",
+        "まだ何も知らないんですね。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "かねてから means he has had the idea for a long time, so the reply restates that it is a long-held wish.",
+        "zh": "「かねてから」表示很早以前就有这个想法，所以回答说这是很久以来的心愿。",
+        "zh_TW": "「かねてから」表示很早以前就有這個想法，所以回答說這是很久以來的心願。"
+      }
+    },
+    {
+      "id": "q:n1-l-031",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1002080"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-031",
+      "prompt": {
+        "en": "How do you reply?",
+        "zh": "该怎么回答？",
+        "zh_TW": "該怎麼回答？"
+      },
+      "options": [
+        "よく解けましたね。",
+        "手を上げなくて大丈夫ですよ。",
+        "では、みんなで考えましょうか。",
+        "上手にできましたね。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "お手上げ means she has given up on the problem, so the reply offers to work on it together.",
+        "zh": "「お手上げ」表示她对这个问题束手无策，所以回答提议大家一起想办法。",
+        "zh_TW": "「お手上げ」表示她對這個問題束手無策，所以回答提議大家一起想辦法。"
+      }
+    },
+    {
+      "id": "q:n1-l-032",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1222110"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-032",
+      "prompt": {
+        "en": "How do you reply?",
+        "zh": "该怎么回答？",
+        "zh_TW": "該怎麼回答？"
+      },
+      "options": [
+        "はい、静かにします。",
+        "いいえ、声は大きいです。",
+        "では、気をつけて帰ります。",
+        "ありがとうございます。では、また相談します。"
+      ],
+      "answer": 3,
+      "explanation": {
+        "en": "気軽に声をかけて invites you to ask freely, so the reply thanks him and says you will come to him again.",
+        "zh": "「気軽に声をかけて」是欢迎你随时来问，所以回答道谢并表示以后还会来请教。",
+        "zh_TW": "「気軽に聲をかけて」是歡迎你隨時來問，所以回答道謝並表示以後還會來請教。"
+      }
+    },
+    {
+      "id": "q:n1-l-033",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1581270"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-033",
+      "prompt": {
+        "en": "How do you reply?",
+        "zh": "该怎么回答？",
+        "zh_TW": "該怎麼回答？"
+      },
+      "options": [
+        "はい、今日中にお知らせします。",
+        "ええ、来年でいいですね。",
+        "では、会議はやめましょう。",
+        "いいえ、もう決まっていました。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "早急に asks for it at once, so the reply promises an answer within the day.",
+        "zh": "「早急に」是要求马上办，所以回答承诺当天之内通知。",
+        "zh_TW": "「早急に」是要求馬上辦，所以回答承諾當天之內通知。"
+      }
+    },
+    {
+      "id": "q:n1-l-034",
+      "type": "integrated-listening",
+      "items": [
+        "vocab:jm1539390"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-034",
+      "prompt": {
+        "en": "Which class will the man choose?",
+        "zh": "男的会选哪个教室？",
+        "zh_TW": "男的會選哪個教室？"
+      },
+      "options": [
+        "朝の教室",
+        "夜の教室",
+        "土曜日の教室",
+        "家で受ける教室"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "He wants a fixed day, cannot manage evenings, and says Saturday is his day off and twice a month is something he could keep up.",
+        "zh": "他想在固定的日子上课，晚上不行，并说周六休息、一个月两次能坚持下来。",
+        "zh_TW": "他想在固定的日子上課，晚上不行，並說週六休息、一個月兩次能堅持下來。"
+      }
+    },
+    {
+      "id": "q:n1-l-035",
+      "type": "integrated-listening",
+      "items": [
+        "vocab:jm1335480"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-034",
+      "prompt": {
+        "en": "Which class will the woman choose?",
+        "zh": "女的会选哪个教室？",
+        "zh_TW": "女的會選哪個教室？"
+      },
+      "options": [
+        "朝の教室",
+        "夜の教室",
+        "土曜日の教室",
+        "家で受ける教室"
+      ],
+      "answer": 3,
+      "explanation": {
+        "en": "She cannot attend in person at all, and wants the one she can fit to her own hours — the class with no fixed times, taken at home.",
+        "zh": "她根本无法去上课，想选能配合自己时间的，也就是没有固定时间、在家上的教室。",
+        "zh_TW": "她根本無法去上課，想選能配合自己時間的，也就是沒有固定時間、在家上的教室。"
+      }
+    },
+    {
+      "id": "q:n1-l-036",
+      "type": "integrated-listening",
+      "items": [
+        "vocab:jm1604480"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-035",
+      "prompt": {
+        "en": "Which trip will the man choose?",
+        "zh": "男的会选哪个旅行？",
+        "zh_TW": "男的會選哪個旅行？"
+      },
+      "options": [
+        "山を歩く旅行",
+        "海の近くに泊まる旅行",
+        "町の古い建物を見る旅行",
+        "電車で温泉に行く旅行"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "Work the next day rules out the overnight trip, early mornings and walking rule out the mountain, and he passes on the most expensive one, leaving the same-day trip round the old buildings.",
+        "zh": "第二天要上班排除住宿的，怕早起又不擅长走路排除爬山的，最贵的他也不选，只剩当天往返看老建筑的。",
+        "zh_TW": "第二天要上班排除住宿的，怕早起又不擅長走路排除爬山的，最貴的他也不選，只剩當天往返看老建築的。"
+      }
+    },
+    {
+      "id": "q:n1-l-037",
+      "type": "integrated-listening",
+      "items": [
+        "vocab:jm1539390"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-l-035",
+      "prompt": {
+        "en": "Which trip will the woman choose?",
+        "zh": "女的会选哪个旅行？",
+        "zh_TW": "女的會選哪個旅行？"
+      },
+      "options": [
+        "山を歩く旅行",
+        "海の近くに泊まる旅行",
+        "町の古い建物を見る旅行",
+        "電車で温泉に行く旅行"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "She puts price first and does not mind an early start, and the mountain walk is announced as the cheapest.",
+        "zh": "她优先考虑价格，也不介意早起，而广播说走山路的那个最便宜。",
+        "zh_TW": "她優先考慮價格，也不介意早起，而廣播說走山路的那個最便宜。"
+      }
+    }
+  ]
+}

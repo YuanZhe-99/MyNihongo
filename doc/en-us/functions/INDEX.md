@@ -6,18 +6,18 @@ mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
 **Totals:** the repo's `/// Purpose:` comment count is **1104** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **1223** documented declarations. The two counts are measured separately and
+The rows below sum to **1260** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
-| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 259 |
-| Tier B (index row only) | 964 |
-| **Total** | **1223** |
+| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 264 |
+| Tier B (index row only) | 996 |
+| **Total** | **1260** |
 
-These totals were last measured against the source tree when v0.4.9 added the on-device notes and the
-writing checklist. If you change these numbers, measure them rather than adjusting them by hand:
+These totals were last measured against the source tree when v0.4.10 added N1 and closed the last
+undocumented files. If you change these numbers, measure them rather than adjusting them by hand:
 
 ```bash
 find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' | wc -l
@@ -103,7 +103,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/sentence/services/godan_rows.dart` | [features/sentence/services/godan_rows.md](features/sentence/services/godan_rows.md) | 6 | 0 |
 | `lib/features/sentence/services/deinflector.dart` | [features/sentence/services/deinflector.md](features/sentence/services/deinflector.md) | 5 | 3 |
 | `lib/features/sentence/services/grammar_matcher.dart` | [features/sentence/services/grammar_matcher.md](features/sentence/services/grammar_matcher.md) | 2 | 1 |
-| `lib/features/sentence/services/lexicon.dart` | [features/sentence/services/lexicon.md](features/sentence/services/lexicon.md) | 10 | 3 |
+| `lib/features/sentence/services/lexicon.dart` | [features/sentence/services/lexicon.md](features/sentence/services/lexicon.md) | 15 | 4 |
 | `lib/features/sentence/services/sentence_analyzer.dart` | [features/sentence/services/sentence_analyzer.md](features/sentence/services/sentence_analyzer.md) | 7 | 2 |
 | `lib/features/sentence/services/sentence_checks.dart` | [features/sentence/services/sentence_checks.md](features/sentence/services/sentence_checks.md) | 5 | 2 |
 | `lib/features/sentence/services/tokenizer.dart` | [features/sentence/services/tokenizer.md](features/sentence/services/tokenizer.md) | 12 | 3 |
@@ -212,7 +212,8 @@ Offline build scripts, outside `lib/` and outside the totals above.
 |---|---|---|---|
 | `tool/import_vocab.dart` | [tool/import_vocab.md](tool/import_vocab.md) | 7 | 1 |
 | `tool/src/vocab_import_core.dart` | [tool/src/vocab_import_core.md](tool/src/vocab_import_core.md) | 14 | 3 |
-| `tool/convert_zh_tw.dart` | not documented | — | — |
-| `tool/draft_inputs.dart` | not documented | — | — |
-| `tool/merge_drafts.dart` | not documented | — | — |
+| `tool/src/zh_tw.dart` | [tool/src/zh_tw.md](tool/src/zh_tw.md) | 5 | 1 |
+| `tool/convert_zh_tw.dart` | [tool/convert_zh_tw.md](tool/convert_zh_tw.md) | 5 | 1 |
+| `tool/draft_inputs.dart` | [tool/draft_inputs.md](tool/draft_inputs.md) | 11 | 1 |
+| `tool/merge_drafts.dart` | [tool/merge_drafts.md](tool/merge_drafts.md) | 11 | 1 |
 | `tool/generate_ios_icons.dart` | not documented | — | — |

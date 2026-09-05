@@ -299,20 +299,6 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     await ReminderService.instance.reschedule(l10n);
   }
 
-  /// Purpose: Turn on-device AI assistance on or off.
-  /// Inputs: `enabled`.
-  /// Returns: None.
-  /// Side effects: Applies the choice to `AiAssistService` — which asks the
-  /// device what its models can do when switched on — and persists it.
-  /// Notes: Off by default and stored as an absent key. Nothing in the app
-  /// turns this on by itself; only this setter, from the switch in Settings.
-  /// Purpose: Turn the kana printed over kanji on or off.
-  /// Inputs: `show`.
-  /// Returns: None.
-  /// Side effects: Persists the choice.
-  /// Notes: On by default, so **off** is what gets stored — the one inverted
-  /// preference in the app, because a learner who has never opened Settings is
-  /// the learner who most needs the readings.
   /// Purpose: Turn the automatic reading of a question on or off.
   /// Inputs: `speak`.
   /// Returns: None.
@@ -325,11 +311,25 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     NihongoStorage.setAutoSpeak(speak);
   }
 
+  /// Purpose: Turn the kana printed over kanji on or off.
+  /// Inputs: `show`.
+  /// Returns: None.
+  /// Side effects: Persists the choice.
+  /// Notes: On by default, so **off** is what gets stored — the one inverted
+  /// preference in the app, because a learner who has never opened Settings is
+  /// the learner who most needs the readings.
   void setShowFurigana(bool show) {
     state = state.copyWith(showFurigana: show);
     NihongoStorage.setShowFurigana(show);
   }
 
+  /// Purpose: Turn on-device AI assistance on or off.
+  /// Inputs: `enabled`.
+  /// Returns: None.
+  /// Side effects: Applies the choice to `AiAssistService` — which asks the
+  /// device what its models can do when switched on — and persists it.
+  /// Notes: Off by default and stored as an absent key. Nothing in the app
+  /// turns this on by itself; only this setter, from the switch in Settings.
   void setAiAssistEnabled(bool enabled) {
     state = state.copyWith(aiAssistEnabled: enabled);
     unawaited(AiAssistService.instance.setEnabled(enabled));

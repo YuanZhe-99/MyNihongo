@@ -1,0 +1,661 @@
+{
+  "schemaVersion": 1,
+  "source": "model-authored (Claude), unreviewed",
+  "license": "GPL-3.0 with the app.",
+  "level": "N1",
+  "section": "grammar",
+  "passages": [
+    {
+      "id": "p:n1-g-001",
+      "type": "text-grammar",
+      "lines": [
+        {
+          "ja": "私たちの暮らしは、この十年で大きく変わった。",
+          "reading": "わたしたちのくらしは、このじゅうねんでおおきくかわった。"
+        },
+        {
+          "ja": "新しい技術は、会社のみならず、家庭にまで入ってきている。",
+          "reading": "あたらしいぎじゅつは、かいしゃのみならず、かていにまではいってきている。"
+        },
+        {
+          "ja": "便利になったとはいうものの、困ることも増えた。",
+          "reading": "べんりになったとはいうものの、こまることもふえた。"
+        },
+        {
+          "ja": "例えば、私たちは何でも機械に任せるようになった。",
+          "reading": "たとえば、わたしたちはなんでもきかいにまかせるようになった。"
+        },
+        {
+          "ja": "このような時代にあって、大切なのは自分の目で確かめることだ。",
+          "reading": "このようなじだいにあって、たいせつなのはじぶんのめでたしかめることだ。"
+        },
+        {
+          "ja": "便利な道具を使いながらも、その仕組みに関心を持ち続けたい。",
+          "reading": "べんりなどうぐをつかいながらも、そのしくみにかんしんをもちつづけたい。"
+        },
+        {
+          "ja": "私は、若い人が自分の目を持つことを願ってやまない。",
+          "reading": "わたしは、わかいひとがじぶんのめをもつことをねがってやまない。"
+        },
+        {
+          "ja": "技術はこれからも進み続けるだろう。",
+          "reading": "ぎじゅつはこれからもすすみつづけるだろう。"
+        },
+        {
+          "ja": "その中で何を選ぶかは、一人一人にかかっている。",
+          "reading": "そのなかでなにをえらぶかは、ひとりひとりにかかっている。"
+        }
+      ],
+      "en": "Our lives have changed a great deal over these ten years. New technology has entered not only the workplace but even the home. Convenient though things have become, the number of things that trouble us has also grown. For example, we have come to leave everything to machines. In an age like this, what matters is checking things with our own eyes. Even while using convenient tools, I want to keep taking an interest in how they work. I sincerely hope that young people will keep eyes of their own. Technology will surely go on advancing from here as well. What each of us chooses within it rests with each of us alone.",
+      "zh": "这十年来，我们的生活发生了很大的变化。新技术不仅进入了公司，甚至也进入了家庭。虽说变方便了，但让人头疼的事情也多了起来。比如，我们变得什么都交给机器去做。在这样的时代里，重要的是用自己的眼睛去确认。即使在使用方便的工具，我也希望继续关心它们的运作原理。我衷心希望年轻人能拥有自己的眼光。今后技术还会不断进步。在这样的环境中选择什么，取决于我们每一个人。",
+      "zh_TW": "這十年來，我們的生活發生了很大的變化。新技術不僅進入了公司，甚至也進入了家庭。雖說變方便了，但讓人頭疼的事情也多了起來。比如，我們變得什麼都交給機器去做。在這樣的時代裡，重要的是用自己的眼睛去確認。即使在使用方便的工具，我也希望繼續關心它們的運作原理。我衷心希望年輕人能擁有自己的眼光。今後技術還會不斷進步。在這樣的環境中選擇什麼，取決於我們每一個人。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q:n1-g-001",
+      "type": "form-selection",
+      "items": [
+        "grammar:o-yoso-ni"
+      ],
+      "kind": "choice",
+      "ja": "周りの心配をよそに、彼は一人で山に登った。",
+      "reading": "まわりのしんぱいをよそに、かれはひとりでやまにのぼった。",
+      "blank": "よそに",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "よそに",
+        "もとに",
+        "めぐって",
+        "こめて"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Everyone around him was worried and he went up the mountain regardless, and をよそに says the speaker's subject pays that concern no attention at all.",
+        "zh": "周围的人都在担心，他却毫不理会独自上山，这种「不顾、无视」的说法用「をよそに」。",
+        "zh_TW": "周圍的人都在擔心，他卻毫不理會獨自上山，這種「不顧、無視」的說法用「をよそに」。"
+      }
+    },
+    {
+      "id": "q:n1-g-002",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-katakunai"
+      ],
+      "kind": "choice",
+      "ja": "彼女の気持ちは想像に難くない。",
+      "reading": "かのじょのきもちはそうぞうにかたくない。",
+      "blank": "難くない",
+      "prompt": {
+        "en": "Which form fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个形式？",
+        "zh_TW": "這個句子的空格里應該填哪個形式？"
+      },
+      "options": [
+        "難くない",
+        "堪えない",
+        "及ばない",
+        "足りない"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Anyone could picture how she feels, and 想像に難くない is the set written phrase for something easy to imagine.",
+        "zh": "她的心情谁都能想见，「想像に難くない」是书面语中「不难想象」的固定说法。",
+        "zh_TW": "她的心情誰都能想見，「想像に難くない」是書面語中「不難想像」的固定說法。"
+      }
+    },
+    {
+      "id": "q:n1-g-003",
+      "type": "form-selection",
+      "items": [
+        "grammar:nai-to-mo-kagiranai"
+      ],
+      "kind": "choice",
+      "ja": "雨が降らないとも限らないので、傘を持って出かけた。",
+      "reading": "あめがふらないともかぎらないので、かさをもってでかけた。",
+      "blank": "降らないとも限らない",
+      "prompt": {
+        "en": "Which form fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个形式？",
+        "zh_TW": "這個句子的空格里應該填哪個形式？"
+      },
+      "options": [
+        "降らないとも限らない",
+        "降るどころではない",
+        "降るにすぎない",
+        "降るにあたらない"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The speaker cannot rule out rain, so an umbrella goes along, and ないとも限らない says a thing is not impossible after all.",
+        "zh": "说话人无法断定不会下雨，所以带了伞，「ないとも限らない」表示「也不见得不会……」。",
+        "zh_TW": "說話人無法斷定不會下雨，所以帶了傘，「ないとも限らない」表示「也不見得不會……」。"
+      }
+    },
+    {
+      "id": "q:n1-g-004",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-hoka-naranai"
+      ],
+      "kind": "choice",
+      "ja": "この成功は、毎日の努力の結果にほかならない。",
+      "reading": "このせいこうは、まいにちのどりょくのけっかにほかならない。",
+      "blank": "にほかならない",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "にほかならない",
+        "にすぎない",
+        "にあたらない",
+        "に堪えない"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The speaker names one cause and rules every other out, and にほかならない says it is nothing but that.",
+        "zh": "说话人指出唯一的原因并排除其他，「にほかならない」表示「无非就是……」。",
+        "zh_TW": "說話人指出唯一的原因並排除其他，「にほかならない」表示「無非就是……」。"
+      }
+    },
+    {
+      "id": "q:n1-g-005",
+      "type": "form-selection",
+      "items": [
+        "grammar:naradewa"
+      ],
+      "kind": "choice",
+      "ja": "この料理には、この店ならではの味がある。",
+      "reading": "このりょうりには、このみせならではのあじがある。",
+      "blank": "ならでは",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "ならでは",
+        "ながらの",
+        "にしては",
+        "どころか"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "No other shop could produce this taste, and ならでは picks out what is possible for that one thing alone.",
+        "zh": "这种味道别的店做不出来，「ならでは」表示只有该对象才具备的独特之处。",
+        "zh_TW": "這種味道別的店做不出來，「ならでは」表示只有該對象才具備的獨特之處。"
+      }
+    },
+    {
+      "id": "q:n1-g-006",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-itaru-made"
+      ],
+      "kind": "choice",
+      "ja": "この学校では、先生から生徒に至るまで、全員が同じ服を着る。",
+      "reading": "このがっこうでは、せんせいからせいとにいたるまで、ぜんいんがおなじふくをきる。",
+      "blank": "至るまで",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "至るまで",
+        "わたるまで",
+        "及ぶまで",
+        "かけるまで"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "から marks one end of the range and に至るまで the other, sweeping in everyone from the teachers right down to the students.",
+        "zh": "「から」标出一端，「に至るまで」标出另一端，表示从老师到学生无一例外。",
+        "zh_TW": "「から」標出一端，「に至るまで」標出另一端，表示從老師到學生無一例外。"
+      }
+    },
+    {
+      "id": "q:n1-g-007",
+      "type": "form-selection",
+      "items": [
+        "grammar:ba-koso"
+      ],
+      "kind": "choice",
+      "ja": "君のことを思えばこそ、厳しいことを言うのだ。",
+      "reading": "きみのことをおもえばこそ、きびしいことをいうのだ。",
+      "blank": "思えばこそ",
+      "prompt": {
+        "en": "Which form fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个形式？",
+        "zh_TW": "這個句子的空格里應該填哪個形式？"
+      },
+      "options": [
+        "思えばこそ",
+        "思うからには",
+        "思ったところで",
+        "思うにつけ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The harsh words come from caring and from nothing else, and ばこそ singles out the one true reason.",
+        "zh": "说重话正是出于关心，「ばこそ」用来强调唯一的、真正的理由。",
+        "zh_TW": "說重話正是出於關心，「ばこそ」用來強調唯一的、真正的理由。"
+      }
+    },
+    {
+      "id": "q:n1-g-008",
+      "type": "form-selection",
+      "items": [
+        "grammar:to-iedomo"
+      ],
+      "kind": "choice",
+      "ja": "子供といえども、約束は守らなければならない。",
+      "reading": "こどもといえども、やくそくはまもらなければならない。",
+      "blank": "といえども",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "といえども",
+        "とばかりに",
+        "ときたら",
+        "といったら"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Being a child might seem to excuse it, and といえども grants that much before insisting the rule still holds.",
+        "zh": "虽说是孩子似乎可以通融，「といえども」先让步，再强调规则依然适用。",
+        "zh_TW": "雖說是孩子似乎可以通融，「といえども」先讓步，再強調規則依然適用。"
+      }
+    },
+    {
+      "id": "q:n1-g-009",
+      "type": "form-selection",
+      "items": [
+        "grammar:ga-hayai-ka"
+      ],
+      "kind": "choice",
+      "ja": "彼は授業が終わるが早いか、教室を出て行った。",
+      "reading": "かれはじゅぎょうがおわるがはやいか、きょうしつをでていった。",
+      "blank": "終わるが早いか",
+      "prompt": {
+        "en": "Which form fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个形式？",
+        "zh_TW": "這個句子的空格里應該填哪個形式？"
+      },
+      "options": [
+        "終わるが早いか",
+        "終わるにつれて",
+        "終わるどころか",
+        "終わるものなら"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "He was out of the room the instant the class ended, and が早いか joins a dictionary form to what happened the very next moment.",
+        "zh": "课一结束他就出了教室，「辞書形＋が早いか」表示前项刚一发生，后项紧接着就发生。",
+        "zh_TW": "課一結束他就出了教室，「辭書形＋が早いか」表示前項剛一發生，後項緊接著就發生。"
+      }
+    },
+    {
+      "id": "q:n1-g-010",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-taru"
+      ],
+      "kind": "choice",
+      "ja": "彼は信頼するに足る人物だ。",
+      "reading": "かれはしんらいするにたるじんぶつだ。",
+      "blank": "足る",
+      "prompt": {
+        "en": "Which word fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个词？",
+        "zh_TW": "這個句子的空格里應該填哪個詞？"
+      },
+      "options": [
+        "足る",
+        "至る",
+        "及ぶ",
+        "堪える"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "He deserves the trust placed in him, and に足る after a dictionary form says someone is worthy of that treatment.",
+        "zh": "他配得上别人的信任，「辞書形＋に足る」表示值得、够格。",
+        "zh_TW": "他配得上別人的信任，「辭書形＋に足る」表示值得、夠格。"
+      }
+    },
+    {
+      "id": "q:n1-g-011",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:ni-kakatte-iru"
+      ],
+      "kind": "order",
+      "ja": "この計画が成功するかどうかは、君の努力にかかっている。",
+      "reading": "このけいかくがせいこうするかどうかは、きみのどりょくにかかっている。",
+      "frame": {
+        "before": "この計画が",
+        "after": "かかっている。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "どうかは、",
+        "努力に",
+        "成功するか",
+        "君の"
+      ],
+      "answerOrder": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "explanation": {
+        "en": "かどうか wraps up the uncertain outcome as the topic, and にかかっている names the one thing that outcome rests on.",
+        "zh": "「かどうか」把不确定的结果作为主题，「にかかっている」再指出它取决于什么。",
+        "zh_TW": "「かどうか」把不確定的結果作為主題，「にかかっている」再指出它取決於什麼。"
+      }
+    },
+    {
+      "id": "q:n1-g-012",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:ni-hikikae"
+      ],
+      "kind": "order",
+      "ja": "兄が静かなのにひきかえ、弟はいつも元気に話す。",
+      "reading": "あにがしずかなのにひきかえ、おとうとはいつもげんきにはなす。",
+      "frame": {
+        "before": "兄が",
+        "after": "話す。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "ひきかえ、",
+        "静かなのに",
+        "元気に",
+        "弟はいつも"
+      ],
+      "answerOrder": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "explanation": {
+        "en": "なのにひきかえ follows the na-adjective and sets the quiet brother against the talkative one in the second half.",
+        "zh": "「なのにひきかえ」接在ナ形容词后面，把安静的哥哥与后半句活泼的弟弟形成对比。",
+        "zh_TW": "「なのにひきかえ」接在ナ形容詞後面，把安靜的哥哥與後半句活潑的弟弟形成對比。"
+      }
+    },
+    {
+      "id": "q:n1-g-013",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:mono-o"
+      ],
+      "kind": "order",
+      "ja": "早く相談してくれればよかったものを、彼は一人で悩んでいた。",
+      "reading": "はやくそうだんしてくれればよかったものを、かれはひとりでなやんでいた。",
+      "frame": {
+        "before": "早く",
+        "after": "悩んでいた。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "ものを、",
+        "相談してくれれば",
+        "彼は一人で",
+        "よかった"
+      ],
+      "answerOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "explanation": {
+        "en": "ものを closes a ばよかった clause and turns it into regret at what the other person failed to do.",
+        "zh": "「ものを」接在「ばよかった」之后，把假设变成对对方没那样做的惋惜和责怪。",
+        "zh_TW": "「ものを」接在「ばよかった」之後，把假設變成對對方沒那樣做的惋惜和責怪。"
+      }
+    },
+    {
+      "id": "q:n1-g-014",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:to-mo-naru-to"
+      ],
+      "kind": "order",
+      "ja": "大学の先生ともなると、話の内容がやはり違う。",
+      "reading": "だいがくのせんせいともなると、はなしのないようがやはりちがう。",
+      "frame": {
+        "before": "大学の",
+        "after": "違う。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "ともなると、",
+        "話の",
+        "先生",
+        "内容がやはり"
+      ],
+      "answerOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "explanation": {
+        "en": "ともなると attaches to the noun 先生 and says that once you reach that standing, what follows is only to be expected.",
+        "zh": "「ともなると」接在名词「先生」后面，表示一旦到了那种身份，后面的结果自然如此。",
+        "zh_TW": "「ともなると」接在名詞「先生」後面，表示一旦到了那種身份，後面的結果自然如此。"
+      }
+    },
+    {
+      "id": "q:n1-g-015",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:koto-nashi-ni"
+      ],
+      "kind": "order",
+      "ja": "努力することなしに、目標を達成することはできない。",
+      "reading": "どりょくすることなしに、もくひょうをたっせいすることはできない。",
+      "frame": {
+        "before": "努力",
+        "after": "できない。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "達成する",
+        "することなしに、",
+        "ことは",
+        "目標を"
+      ],
+      "answerOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "explanation": {
+        "en": "ことなしに follows a dictionary form and pairs with a negative ending: without the effort, the goal cannot be reached.",
+        "zh": "「ことなしに」接辞書形，后面配否定，表示不付出努力就无法实现目标。",
+        "zh_TW": "「ことなしに」接辭書形，後面配否定，表示不付出努力就無法實現目標。"
+      }
+    },
+    {
+      "id": "q:n1-g-016",
+      "type": "text-grammar",
+      "items": [
+        "grammar:nomi-narazu"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-g-001",
+      "ja": "新しい技術は、会社のみならず、家庭にまで入ってきている。",
+      "reading": "あたらしいぎじゅつは、かいしゃのみならず、かていにまではいってきている。",
+      "blank": "のみならず",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "のみならず",
+        "にかかわらず",
+        "というより",
+        "はもとより"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "A second place is added to the first and the sentence goes on with まで, so のみならず is what introduces the first item: not only at work, but even at home.",
+        "zh": "后面用「まで」补上了第二个场所，前面要用「のみならず」引出第一项，表示「不仅……甚至……」。",
+        "zh_TW": "後面用「まで」補上了第二個場所，前面要用「のみならず」引出第一項，表示「不僅……甚至……」。"
+      }
+    },
+    {
+      "id": "q:n1-g-017",
+      "type": "text-grammar",
+      "items": [
+        "grammar:to-wa-iu-mono-no"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-g-001",
+      "ja": "便利になったとはいうものの、困ることも増えた。",
+      "reading": "べんりになったとはいうものの、こまることもふえた。",
+      "blank": "とはいうものの",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "とはいうものの",
+        "とばかりに",
+        "というより",
+        "とあって"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The writer accepts that life got easier and then states the drawback, and とはいうものの is exactly that concession followed by a reversal.",
+        "zh": "作者先承认变方便了，接着说出不利的一面，「とはいうものの」正是这种「话虽如此」的转折。",
+        "zh_TW": "作者先承認變方便了，接著說出不利的一面，「とはいうものの」正是這種「話雖如此」的轉折。"
+      }
+    },
+    {
+      "id": "q:n1-g-018",
+      "type": "text-grammar",
+      "items": [
+        "grammar:ni-atte"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-g-001",
+      "ja": "このような時代にあって、大切なのは自分の目で確かめることだ。",
+      "reading": "このようなじだいにあって、たいせつなのはじぶんのめでたしかめることだ。",
+      "blank": "にあって",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "にあって",
+        "にわたって",
+        "につけて",
+        "にひきかえ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The age itself is the special situation the writer is speaking from within, and にあって sets up that circumstance in formal writing.",
+        "zh": "这个时代本身就是作者所处的特殊状况，书面语中用「にあって」提示这种处境。",
+        "zh_TW": "這個時代本身就是作者所處的特殊狀況，書面語中用「にあって」提示這種處境。"
+      }
+    },
+    {
+      "id": "q:n1-g-019",
+      "type": "text-grammar",
+      "items": [
+        "grammar:nagara-mo-advanced"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-g-001",
+      "ja": "便利な道具を使いながらも、その仕組みに関心を持ち続けたい。",
+      "reading": "べんりなどうぐをつかいながらも、そのしくみにかんしんをもちつづけたい。",
+      "blank": "使いながらも",
+      "prompt": {
+        "en": "Read the passage, then choose the form that fits this gap.",
+        "zh": "读完短文后，选择适合这个空格的形式。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的形式。"
+      },
+      "options": [
+        "使いながらも",
+        "使うそばから",
+        "使ったところで",
+        "使うどころか"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Using the tool and wanting to understand it pull against each other, and ながらも on the masu-stem is the written concessive that holds both.",
+        "zh": "在使用工具的同时又想了解其原理，两者略有矛盾，书面语用「ます形词干＋ながらも」表示这种让步。",
+        "zh_TW": "在使用工具的同時又想了解其原理，兩者略有矛盾，書面語用「ます形詞幹＋ながらも」表示這種讓步。"
+      }
+    },
+    {
+      "id": "q:n1-g-020",
+      "type": "text-grammar",
+      "items": [
+        "grammar:te-yamanai"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-g-001",
+      "ja": "私は、若い人が自分の目を持つことを願ってやまない。",
+      "reading": "わたしは、わかいひとがじぶんのめをもつことをねがってやまない。",
+      "blank": "願ってやまない",
+      "prompt": {
+        "en": "Read the passage, then choose the form that fits this gap.",
+        "zh": "读完短文后，选择适合这个空格的形式。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的形式。"
+      },
+      "options": [
+        "願ってやまない",
+        "願いかねない",
+        "願うほかない",
+        "願うまでもない"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The wish is heartfelt and never lets up, and てやまない on a verb of feeling is the formal way to say one goes on hoping sincerely.",
+        "zh": "这份愿望发自内心且始终不变，表示感情的动词加「てやまない」是「衷心希望」的郑重说法。",
+        "zh_TW": "這份願望發自內心且始終不變，表示感情的動詞加「てやまない」是「衷心希望」的鄭重說法。"
+      }
+    }
+  ]
+}

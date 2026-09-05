@@ -1235,6 +1235,47 @@ for whoever had to debug the feature.
       AICore never changes a score
 - [x] Level readiness estimate with an explicit "this is not an official score" note
 
+
+#### M4.6 N1 content and the repo gaps — **done 2026-09-05**, released as `v0.4.10`
+
+- [x] **N1 complete at the official composition**: 108 questions and 53
+      passages. Two gate rounds. One new cause worth recording: the 統合理解
+      passages labelled their two writers **A** and **B**, as the real paper
+      does, and a single Latin letter is in no catalog the app ships — so the
+      analyser could not read the line at all. They are `ある人` and `別の人`
+      now, and the prompts say "the first writer" and "the second"
+- [x] **Every level ships every section**, asserted by a new test. The other
+      content tests all iterate what is on disk, so a level that shipped
+      nothing would have passed every one of them by having nothing to be wrong
+      about
+- [x] `quiz_page_ui_test`'s empty-section case no longer relies on N1 being
+      unwritten. It injects an empty `DrillFile` instead — testing a branch
+      against content that happens to be missing means the test disappears the
+      day the content lands, which is exactly when the branch stops being
+      covered
+- [x] **`functions/features/sentence/services/lexicon.md`**: the English page
+      was four sections and eight rows behind the Chinese one, still describing
+      a smaller `Lexicon` from before the sentence analyser existed. English is
+      the authoritative tree, so this was the wrong way round in the way that
+      matters. Both now carry the same nine declarations and four full entries
+- [x] Four pages written for files the index called "not documented":
+      `tool/convert_zh_tw.md`, `tool/draft_inputs.md`, `tool/merge_drafts.md`
+      and `tool/src/zh_tw.md`, in both trees. They are what somebody reaches
+      for when a content batch goes wrong
+- [x] **`import_boundaries_test.dart`** — the test three documents claimed
+      existed. `AiPracticeService` and `QuizSession` import no storage, and now
+      something checks it by reading their own import lines. An import added in
+      good faith would have broken both quietly: the code would still work, and
+      three documents would have started saying something untrue
+- [x] Three Function Explanation comments in `app_settings.dart` had drifted
+      onto the wrong methods — all three stacked above `setAutoSpeak`. Each is
+      back over the method it describes
+- [x] The open question about who reviews the model-authored content restated
+      with the drill volume, and with why the drills raise the stakes rather
+      than just the count: a wrong gloss is one wrong word in a dictionary the
+      learner can check, and a wrong answer key on a mock exam is the app
+      telling somebody they got a question wrong when they did not
+- [x] 1005 tests
 ### Phase 5 — Platforms and languages
 
 - [x] Windows: `flutter create --platforms=windows`, `installer.iss` (x64 + ARM64), MSIX config and
@@ -1424,6 +1465,9 @@ for whoever had to debug the feature.
 | 2026-09-05 | Every prompt carries what the app already computed, and every task's rules forbid the model from computing it again | It is the difference between an opinion and a note. Asked whether the writing is good, a model agrees; shown what was measured and asked what to do next, it says something the learner can act on. The same rule stops the weakness note from guessing at a readiness band the app derives under stated rules |
 | 2026-09-05 | The reading note may use nothing outside the passage; the listening note is only ever asked after the answer is in | A reading question is a question about one text, and an answer justified from general knowledge teaches the wrong skill even when it happens to be true. And a transcript sent early is the answer to the listening question |
 | 2026-09-05 | The results screen passes what the learner actually chose to `WhyWrong`, rather than null | A screen that cannot say what was picked cannot ask why that pick was wrong, which is the question worth asking there. An ordering answer has no single index and yields none, so the choice-specific actions hide rather than point at the wrong fragment |
+| 2026-09-05 | The 統合理解 passages name their two writers `ある人` and `別の人`, not A and B as the real paper does | A single Latin letter is in no catalog the app ships, so the analyser could not read the line and the gate rejected it. Keeping the letters would have meant either an exception in the gate or an unparseable passage, and the gate is the only thing standing between a model and the content |
+| 2026-09-05 | A test asserts every level ships every section, rather than leaving it to the per-file tests | Every other content test iterates what is on disk. A level that shipped nothing at all would have passed all of them by having nothing to be wrong about — the failure mode a suite of this shape is blindest to |
+| 2026-09-05 | The empty-section UI case injects an empty `DrillFile` instead of pointing at a level with no content | Testing a branch against content that happens to be missing means the test disappears the day the content lands, which is exactly when the branch stops being covered. It passed for six releases and would have vanished silently on the seventh |
 | 2026-09-05 | `DrillRepository` asks the asset manifest rather than attempting a load and catching | A missing file is the **normal** state for most level-section pairs while levels are still being written, and `rootBundle.loadString` reports a Flutter error before it throws — which a widget test fails on even though the throw is handled |
 | 2026-09-05 | A section that cannot be practised is disabled with its reason beside it, never hidden | No content yet, or no Japanese voice: a learner who cannot find 読解 practice has no way to tell whether it exists or they have missed it. The same rule already governs `SpeakButton` and the listening quiz modes |
 | 2026-09-05 | The three deviations from the real paper are stated in the feature doc rather than quietly made | 即時応答 gets four options where the paper gives three, because every answer pane and the gate assume four; 発話表現 describes its scene in words, because there are no pictures in this catalog; a mock plays each item once, because that is the paper's rule. A deviation nobody wrote down is a bug report waiting to be filed |
@@ -1450,10 +1494,24 @@ for whoever had to debug the feature.
   gain a small hand-maintained supplement?
 - **Who reviews the model-authored content?** This was an open question about
   N5's Chinese glosses. It is now an open question about roughly 250 grammar
-  points, several thousand glosses and several hundred example sentences, all of
-  which pass the authoring gate and none of which a Japanese or Chinese speaker
-  has read. Every file says so. The gate can be tightened; it cannot be made to
-  judge whether a sentence is natural.
+  points, several thousand glosses, several hundred example sentences and —
+  since Phase 4 — **469 JLPT drill questions across five levels, with 201
+  reading passages and listening scripts behind them**, all of which pass the
+  authoring gate and none of which a Japanese or Chinese speaker has read. Every
+  file says so in its own `source` field.
+
+  The drills raise the stakes rather than just the count. A wrong gloss is one
+  wrong word in a dictionary the learner can check; a wrong answer key on a
+  mock exam is the app telling somebody they got a question wrong when they did
+  not, and the readiness estimate is built on those answers. The gate has been
+  tightened four times over Phase 4 — every sentence now has to parse with no
+  unknown token, every option has to be distinct, every ordering question has to
+  rebuild its own sentence — and it still cannot judge whether a sentence is
+  natural or whether a distractor is unfairly close to the key.
+
+  The honest options are a native reviewer, or a visible way for a learner to
+  report a bad question. Neither is built. Until one is, the labelling is the
+  whole of the answer.
 - 母 and 父 are not in the catalog at all, because the JLPT lists it is generated
   from do not contain them. This was a theoretical gap and is now a practical
   one: two example batches had to be rewritten around it.

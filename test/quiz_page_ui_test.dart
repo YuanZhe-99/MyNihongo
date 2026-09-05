@@ -5,7 +5,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:my_nihongo/features/content/models/jlpt_level.dart';
 import 'package:my_nihongo/features/content/services/content_repository.dart';
+import 'package:my_nihongo/features/drills/models/drill_file.dart';
 import 'package:my_nihongo/features/drills/models/drill_section.dart';
+import 'package:my_nihongo/features/drills/services/drill_repository.dart';
 import 'package:my_nihongo/features/drills/widgets/drill_passage_view.dart';
 import 'package:my_nihongo/shared/utils/adaptive_layout.dart';
 import 'package:my_nihongo/features/kana/models/kana.dart';
@@ -68,6 +70,7 @@ void main() {
     double width,
     double height, {
     Widget? home,
+    List<Override> overrides = const [],
   }) async {
     tester.view.devicePixelRatio = 1.0;
     tester.view.physicalSize = Size(width, height);
@@ -77,6 +80,7 @@ void main() {
     await tester.runAsync(() async {
       await tester.pumpWidget(
         ProviderScope(
+          overrides: overrides,
           child: MaterialApp(
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
@@ -393,12 +397,28 @@ void main() {
     testWidgets('a level with no content for a section says so', (
       tester,
     ) async {
-      // N1 drills are not written yet. The page must say there is nothing
-      // rather than show an empty question.
+      // The page must say there is nothing rather than show an empty
+      // question. This used to be checked against N1, which shipped no
+      // drills; every level ships every section now, so the empty file is
+      // injected instead. Testing the branch against content that happens to
+      // be missing means the test disappears the day the content lands, which
+      // is exactly when the branch stops being covered.
       await pumpAt(
         tester,
         412,
         915,
+        overrides: [
+          drillLevelProvider(JlptLevel.n1).overrideWithProvider(
+            FutureProvider(
+              (ref) async => const {
+                DrillSection.reading: DrillFile(
+                  level: JlptLevel.n1,
+                  section: DrillSection.reading,
+                ),
+              },
+            ),
+          ),
+        ],
         home: const QuizPage(
           config: QuizConfig(
             source: DrillSource(
