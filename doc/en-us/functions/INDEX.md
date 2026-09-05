@@ -4,17 +4,17 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **922** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **921** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **895** documented declarations. The two counts are measured separately and
+The rows below sum to **897** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
 | Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 173 |
-| Tier B (index row only) | 722 |
-| **Total** | **895** |
+| Tier B (index row only) | 724 |
+| **Total** | **897** |
 
 These totals were measured against the source tree at initialization (`PLAN.md` M1.0). If you
 change these numbers, measure them rather than adjusting them by hand:
@@ -145,7 +145,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/shared/utils/platform_capabilities.dart` | [shared/utils/platform_capabilities.md](shared/utils/platform_capabilities.md) | 6 | 1 |
 | `lib/shared/widgets/adaptive_tile_grid.dart` | [shared/widgets/adaptive_tile_grid.md](shared/widgets/adaptive_tile_grid.md) | 3 | 0 |
 | `lib/shared/widgets/example_actions.dart` | [shared/widgets/example_actions.md](shared/widgets/example_actions.md) | 1 | 1 |
-| `lib/shared/widgets/furigana_text.dart` | [shared/widgets/furigana_text.md](shared/widgets/furigana_text.md) | 5 | 1 |
+| `lib/shared/widgets/furigana_text.dart` | [shared/widgets/furigana_text.md](shared/widgets/furigana_text.md) | 7 | 1 |
 | `lib/shared/widgets/history_list.dart` | [shared/widgets/history_list.md](shared/widgets/history_list.md) | 6 | 2 |
 | `lib/shared/widgets/content_sheets.dart` | [shared/widgets/content_sheets.md](shared/widgets/content_sheets.md) | 8 | 3 |
 | `lib/shared/widgets/reference_widgets.dart` | [shared/widgets/reference_widgets.md](shared/widgets/reference_widgets.md) | 4 | 0 |

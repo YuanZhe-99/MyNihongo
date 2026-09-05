@@ -842,6 +842,31 @@ follow-ups came straight out of that answer, plus one CI annoyance.
 - [x] Three ARB keys ×3; eleven new tests across `genai_backend_test`, `ai_ui_test`,
       `ai_assist_service_test` and `preferences_test`. 751 pass
 
+#### M4.0b Furigana that does not collide with its own kanji — **done 2026-09-04**, released as `v0.4.2`
+
+Reported from the Pixel 10's vocabulary list: the reading painted over the word.
+
+- [x] **The ruby slot is reserved from a forced strut, not from arithmetic on `fontSize`.** It was
+      `rubyScale × 1.15` — a guess that a font's ascent plus descent fits in 1.15 em — with
+      `TextHeightBehavior` having switched off the ascent clamp that would have held it there. The
+      app ships no font, so Japanese uses the system CJK face, which needs about 1.4; a `SizedBox`
+      constrains without clipping and a paragraph paints from the top, so the surplus landed on the
+      word. The base slot never had the bug because it has forced its own strut since it was
+      written. Both do now, and `rubyLineHeight` / `baseLineHeight` are named constants that say
+      what they are
+- [x] **Sizes go through `MediaQuery.textScalerOf`.** `fontSize` is the request; the engine paints
+      the scaled value. Reserving from the nominal number meant a raised system font size grew the
+      text and not the box
+- [x] Tests: the reading's box must end at or above the word's, at text scale 1.0, 1.3 and 2.0, and
+      the boxes must grow with the scale. **The test file says plainly what it cannot hold**: the
+      widget-test font has 1.0 em metrics, so it never overflows the old reservation and every
+      existing test passed while the bug shipped
+- [x] **Verified by screenshot on the Pixel 10**, before and after, in a release build — which is
+      the only place the font that causes it exists
+- [x] Docs: the `functions/` page for this widget described the `Text.rich`/`WidgetSpan`
+      implementation replaced two releases ago; both trees now describe the `Wrap` of `_RubyBox`
+      that is actually there, and why both slots force a strut. 753 tests
+
 - [ ] Drill content per level and section: 文字・語彙, 文法, 読解, 聴解 (TTS-read passages),
       as `assets/content/drills/<level>/*.json`; original or openly licensed questions with
       answers and explanations in en/zh
@@ -996,6 +1021,8 @@ follow-ups came straight out of that answer, plus one CI annoyance.
 | 2026-09-04 | Twenty-six N1 grammar points were dropped, not renamed, when their slug collided with N2 | Renaming keeps the count at the price of teaching the same pattern twice under two ids. The count is a number in a table; the duplicate is what a learner would actually meet |
 | 2026-09-04 | The classical layer went into `function_words.json`; missing ordinary words went into rewritten sentences | ぬ, ざる, べからざる, 極まりない and the rest **are** the N1 grammar points, so no example can avoid them. 東京, 顔 and 皆 are only scenery, and widening the dictionary for scenery widens everything downstream that reads it |
 | 2026-09-04 | A scenario added to a shipped lessons file is gated by turning that file back into a draft | `merge_drafts units` rewrites a whole level, so re-running it to add one conversation would be a far larger change than the conversation. Stripping the generated `zh_TW` is the only difference between the two shapes |
+| 2026-09-04 | The furigana slots are reserved from a forced strut and scaled by `MediaQuery.textScaler` | The ruby slot guessed 1.15 em where the system CJK face needs about 1.4, and nothing clamped it, so a `SizedBox` that constrains without clipping let the reading paint onto the word. The base slot had forced a strut all along and never had the bug |
+| 2026-09-04 | A display bug is verified by screenshot on a device, not by widget test alone | The widget-test font has 1.0 em metrics, so the font that causes this one is not present in the suite. Every existing test passed for the whole time it shipped |
 | 2026-09-04 | Every model variant is probed, not only those before the first success | Whether the learner has a choice of model size is itself a fact to report, and a loop that returns early cannot know it. The cost is three extra status calls on a deliberate refresh; a generation still trusts the variant already serving and pays one |
 | 2026-09-04 | The model-size switch is hidden on a device that serves one size | A control that cannot change what is serving is worse than no control: it teaches the learner that the page is decorative. The Z Fold 8 serves only the faster model |
 | 2026-09-04 | No Remove button for a downloaded model | AICore owns the file and shares it with every app that uses the same model, and neither ML Kit client exposes a delete — checked with `javap`. The button could only lie or take away something another app is using |

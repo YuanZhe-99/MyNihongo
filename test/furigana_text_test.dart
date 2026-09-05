@@ -43,6 +43,7 @@ void main() {
     Widget child, {
     double width = 412,
     double height = 915,
+    double textScale = 1.0,
     Future<void> Function()? before,
   }) async {
     tester.view.devicePixelRatio = 1.0;
@@ -58,7 +59,10 @@ void main() {
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
             locale: const Locale('zh'),
-            home: Scaffold(body: Center(child: child)),
+            home: MediaQuery(
+              data: MediaQueryData(textScaler: TextScaler.linear(textScale)),
+              child: Scaffold(body: Center(child: child)),
+            ),
           ),
         ),
       );
@@ -206,4 +210,63 @@ void main() {
       expect(tester.takeException(), isNull);
     });
   }
+  testWidgets('the reading never reaches down into the word', (tester) async {
+    // The bug this pins down was reported from a Pixel 10's vocabulary list on
+    // 2026-09-04: the reading was painted on top of its own kanji.
+    //
+    // The reservation for the ruby slot used to be `rubyScale * 1.15` — a guess
+    // that the font's ascent plus descent fits in 1.15 em. The app ships no
+    // font, so Japanese comes from the system CJK face, which needs about 1.4,
+    // and the ruby slot had no strut to hold it to the reservation. A SizedBox
+    // constrains without clipping and a paragraph paints from the top, so the
+    // surplus landed on the word.
+    //
+    // **This test cannot reproduce that half of it.** The widget-test font has
+    // 1.0 em metrics, so it never overflows a 1.15 em box in the first place;
+    // the fix was checked by screenshot on the device. What this test does hold
+    // is the invariant that made the fix correct — the two slots are reserved
+    // exactly, so the reading's box ends at or above the word's box — and the
+    // text scale, which the widget also used to ignore entirely.
+    for (final scale in const [1.0, 1.3, 2.0]) {
+      await pump(
+        tester,
+        const FuriganaText('学生', reading: 'がくせい'),
+        textScale: scale,
+      );
+
+      final ruby = tester.getRect(find.text('がくせい'));
+      final word = tester.getRect(find.text('学生'));
+      expect(
+        ruby.bottom,
+        lessThanOrEqualTo(word.top + 0.01),
+        reason: 'at text scale $scale the reading overlaps the word',
+      );
+      expect(
+        ruby.height,
+        greaterThan(0),
+        reason: 'at text scale $scale the reading has no room at all',
+      );
+      expect(tester.takeException(), isNull);
+    }
+  });
+
+  testWidgets('the boxes grow with the viewer text scale', (tester) async {
+    // Reserving from the nominal font size while the engine paints the scaled
+    // one is the other half of the reported bug, and the half a test can hold.
+    await pump(tester, const FuriganaText('学生', reading: 'がくせい'));
+    final small = tester.getRect(find.text('学生'));
+
+    await pump(
+      tester,
+      const FuriganaText('学生', reading: 'がくせい'),
+      textScale: 2.0,
+    );
+    final large = tester.getRect(find.text('学生'));
+
+    expect(
+      large.height,
+      greaterThan(small.height),
+      reason: 'the word slot ignored the text scale',
+    );
+  });
 }

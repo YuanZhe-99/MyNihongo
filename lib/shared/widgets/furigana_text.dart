@@ -83,10 +83,16 @@ class FuriganaText extends ConsumerWidget {
     final segments = alignFurigana(text, reading);
     if (segments == null || !segments.any((s) => s.isRuby)) return plain;
 
-    final size = base.fontSize ?? 14.0;
+    // **Scaled, not nominal.** `fontSize` is what the style asks for; the
+    // paragraph engine multiplies it by the viewer's text scale before it
+    // paints. Reserving space from the unscaled number was half of why the
+    // reading landed on the kanji at a larger system font size.
+    final scaler = MediaQuery.textScalerOf(context);
+    final size = scaler.scale(base.fontSize ?? 14.0);
+    final rubySize = size * rubyScale;
     final rubyStyle = base.copyWith(
-      fontSize: size * rubyScale,
-      height: 1.0,
+      fontSize: rubySize,
+      height: rubyLineHeight,
       fontWeight: FontWeight.normal,
       color: base.color?.withValues(alpha: 0.85),
     );
@@ -99,8 +105,20 @@ class FuriganaText extends ConsumerWidget {
     // laid out level with the furigana instead of with the word. It looks
     // like two rows of text that do not belong together, and it is invisible
     // to a test that only asserts no exception was thrown. Found on a Pixel.
-    final rubyHeight = (size * rubyScale) * 1.15;
-    final lineHeight = size * (base.height ?? 1.35);
+    // **Both reservations are exact, because both slots force a strut.**
+    // This used to be a guess: `rubyScale * 1.15`, a number that assumed the
+    // font's ascent plus descent fits in 1.15 em. The app ships no font, so
+    // Japanese comes from the system CJK face, whose ascent and descent add up
+    // to about 1.4 em — and the ruby slot had no strut to hold it to the
+    // reservation, because `TextHeightBehavior` had switched the first line's
+    // ascent clamp off. A `SizedBox` constrains without clipping and a
+    // paragraph paints from the top, so the surplus spilled straight down onto
+    // the word. The base slot never did this: it has forced its own strut
+    // since it was written. Now both do, so the arithmetic here and the
+    // paragraph the engine lays out agree by construction rather than by luck.
+    // Found on a Pixel 10, in the vocabulary list, on 2026-09-04.
+    final rubyHeight = rubySize * rubyLineHeight;
+    final lineHeight = size * (base.height ?? baseLineHeight);
     return Semantics(
       label: text,
       excludeSemantics: true,
@@ -219,8 +237,11 @@ class _RubyBox extends StatelessWidget {
                 : Text(
                     reading!,
                     style: rubyStyle,
+                    strutStyle: StrutStyle.fromTextStyle(
+                      rubyStyle,
+                      forceStrutHeight: true,
+                    ),
                     maxLines: 1,
-                    textHeightBehavior: _tight,
                   ),
           ),
           SizedBox(
@@ -241,9 +262,19 @@ class _RubyBox extends StatelessWidget {
   }
 }
 
-/// Purpose: Stop the ruby line adding its own leading above the text.
-/// Notes: Internal helper used within this file only.
-const _tight = TextHeightBehavior(
-  applyHeightToFirstAscent: false,
-  applyHeightToLastDescent: false,
-);
+/// How tall the reading's line box is, as a multiple of the reading's own size.
+///
+/// Type metrics, not layout: it belongs here beside `rubyScale` rather than in
+/// `adaptive_layout.dart`, which is about how wide a window is. 1.3 leaves the
+/// kana clear of the word beneath at every size — kana ink is roughly 0.7 em,
+/// so the remainder is leading rather than padding. It is only trustworthy
+/// because the slot forces a strut to exactly this height; without that the
+/// system CJK face lays the line out about 1.4 em tall and paints the surplus
+/// over the word.
+const rubyLineHeight = 1.3;
+
+/// The base line's height when the caller's style names none.
+///
+/// The same 1.35 the widget has always used, given a name so that the two
+/// reservations read as the pair they are.
+const baseLineHeight = 1.35;

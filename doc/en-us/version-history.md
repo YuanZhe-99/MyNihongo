@@ -12,6 +12,34 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.4.2` — 2026-09-04. The reading stopped landing on top of its own kanji.
+
+  **A guess about font metrics, held for two releases.** Each piece of furigana
+  reserves two slots: a line for the reading over a line for the word. The
+  word's slot forces a strut, so it is exactly as tall as it claims. The
+  reading's did not — it was reserved as `rubyScale × 1.15`, a number that
+  assumed a font's ascent plus descent fits in 1.15 em, and a
+  `TextHeightBehavior` had switched off the clamp that would have held it there.
+  The app ships no font, so Japanese is drawn in the system CJK face, which
+  needs about 1.4. A `SizedBox` constrains without clipping and a paragraph
+  paints from the top, so the surplus went straight down onto the word. Both
+  slots now force a strut, and the arithmetic agrees with the engine by
+  construction rather than by luck.
+
+  **And the whole widget now reads the viewer's text scale.** `fontSize` is what
+  a style asks for; the engine paints the scaled value. Reserving from the
+  nominal number meant a raised system font size grew the text and not the box.
+
+  Reported from a Pixel 10's vocabulary list, and fixed with the screen rather
+  than the test suite: the widget-test font has 1.0 em metrics, so it never
+  overflows the old reservation and every existing test passed throughout. Two
+  tests were still added — the reading's box must end at or above the word's, at
+  three text scales, which is the half of the bug a test can hold — and the test
+  file says plainly which half it cannot.
+
+  Docs: the function page for this widget described an implementation replaced
+  two releases ago; it now describes the one that is there. 753 tests.
+
 - `0.4.1` — 2026-09-04. The Z Fold 8 serves a model, and answering that raised
   three more questions: which models does it serve, can you pick one, and where
   does the downloaded one live.
