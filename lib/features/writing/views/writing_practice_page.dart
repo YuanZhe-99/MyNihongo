@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../l10n/app_localizations.dart';
 import '../../../shared/providers/history_provider.dart';
+import '../../../shared/providers/learner_profile_provider.dart';
 import '../../../shared/providers/progress_provider.dart';
 import '../../../shared/utils/adaptive_layout.dart';
 import '../../../shared/widgets/history_list.dart';
@@ -13,6 +14,7 @@ import '../../ai/services/practice_response_parser.dart';
 import '../../ai/services/writing_rewrite.dart';
 import '../../ai/widgets/ai_explanation_card.dart';
 import '../../content/models/content_catalog.dart';
+import '../../content/models/jlpt_level.dart';
 import '../../content/models/vocab_entry.dart';
 import '../../content/services/content_repository.dart';
 import '../../lessons/models/lesson_path.dart';
@@ -21,6 +23,7 @@ import '../../progress/services/nihongo_storage.dart';
 import '../../sentence/models/sentence_analysis.dart';
 import '../../sentence/services/sentence_analyzer.dart';
 import '../../sentence/widgets/analysis_result_view.dart';
+import '../services/writing_rubric.dart';
 
 /// What a writing exercise is about, passed as the route's `extra`.
 class WritingPrompt {
@@ -41,7 +44,10 @@ class WritingPrompt {
 }
 
 /// How many of the unit's words a piece of writing should use.
-const writingWordTarget = 3;
+///
+/// The rubric's own constant rather than a second 3, so the line above the
+/// analyses and the checklist under it cannot come to disagree.
+const writingWordTarget = writingRubricWordTarget;
 
 /// Write a few sentences, and get them checked.
 ///
@@ -81,6 +87,11 @@ class _WritingPracticePageState extends ConsumerState<WritingPracticePage> {
   GenAiFailure? _failure;
   bool _checking = false;
   bool _asking = false;
+
+  /// The model's note on what to try next, written on top of the checklist.
+  String? _rubricNote;
+  GenAiFailure? _rubricFailure;
+  bool _rubricAsking = false;
 
   /// The optional on-device model, taken from the analyser that produced
   /// [_analyses]; null in every build where nothing may run.
@@ -310,6 +321,7 @@ class _WritingPracticePageState extends ConsumerState<WritingPracticePage> {
                 : theme.colorScheme.onSurfaceVariant,
           ),
         ),
+      ..._rubric(context, l10n),
       for (var index = 0; index < _analyses.length; index++) ...[
         const SizedBox(height: 16),
         if (_analyses.length > 1)
@@ -322,6 +334,141 @@ class _WritingPracticePageState extends ConsumerState<WritingPracticePage> {
         AnalysisResultView(analysis: _analyses[index], catalog: _catalog),
       ],
     ];
+  }
+
+  /// Purpose: Show the checklist the app can run without a model, and offer
+  /// the model's note on what to try next.
+  /// Inputs: `context`, `l10n`.
+  /// Returns: The widgets for the rubric block; empty before anything is
+  /// checked.
+  /// Side effects: None until the button is tapped.
+  /// Notes: Internal helper used within this file only. **The checklist is
+  /// always here and the note is always under it**, in that order, because the
+  /// measurements are the app's own answer and the note is commentary on them.
+  /// A device with no model shows the checklist and no button, which is the
+  /// rule every other AI action in the app already follows.
+  ///
+  /// The last line says in words that none of this is a score. 作文 is not on
+  /// the JLPT, so a number here would be the app inventing an exam nobody
+  /// sits.
+  List<Widget> _rubric(BuildContext context, AppLocalizations l10n) {
+    final theme = Theme.of(context);
+    final level = ref.watch(learnerProfileProvider).targetLevel;
+    final rubric = WritingRubric.build(
+      analyses: _analyses,
+      unit: widget.prompt.unit,
+      catalog: _catalog,
+      level: level,
+    );
+    if (rubric.isEmpty) return const [];
+    final service = ref.watch(aiAssistServiceProvider);
+
+    Widget line(String text) => Padding(
+      padding: const EdgeInsets.only(top: 2),
+      child: Text(
+        text,
+        style: theme.textTheme.bodyMedium?.copyWith(
+          color: theme.colorScheme.onSurfaceVariant,
+        ),
+      ),
+    );
+
+    return [
+      const SizedBox(height: 16),
+      Text(
+        l10n.writingRubricTitle,
+        style: theme.textTheme.titleSmall?.copyWith(
+          fontWeight: FontWeight.w700,
+        ),
+      ),
+      line(l10n.writingRubricSentences(rubric.sentences)),
+      if (rubric.grammarUsed.isNotEmpty)
+        line(l10n.writingRubricGrammar(rubric.grammarUsed.length)),
+      if (rubric.tokensPlaced > 0)
+        line(
+          l10n.writingRubricLevel(
+            (rubric.levelShare * 100).round(),
+            level.label,
+          ),
+        ),
+      if (rubric.unreadable > 0)
+        line(l10n.writingRubricUnreadable(rubric.unreadable)),
+      Padding(
+        padding: const EdgeInsets.only(top: 4),
+        child: Text(
+          l10n.writingRubricNote,
+          style: theme.textTheme.bodySmall?.copyWith(
+            color: theme.colorScheme.onSurfaceVariant,
+          ),
+        ),
+      ),
+      if (service.canExplain && _rubricNote == null && _rubricFailure == null)
+        Align(
+          alignment: Alignment.centerLeft,
+          child: TextButton.icon(
+            onPressed: _rubricAsking ? null : () => _askRubric(rubric, level),
+            icon: const Icon(Icons.auto_awesome_outlined, size: 18),
+            label: Text(l10n.aiRubric),
+          ),
+        ),
+      if (_rubricAsking || _rubricNote != null || _rubricFailure != null)
+        AiExplanationCard(
+          title: l10n.aiRubric,
+          text: _rubricNote,
+          failure: _rubricFailure,
+          loading: _rubricAsking,
+          onDismiss: () => setState(() {
+            _rubricNote = null;
+            _rubricFailure = null;
+          }),
+        ),
+    ];
+  }
+
+  /// Purpose: Ask the model what to try next, given what the checklist found.
+  /// Inputs: The computed `rubric` and the learner's target `level`.
+  /// Returns: None.
+  /// Side effects: Runs a model on the device; rebuilds.
+  /// Notes: Internal helper used within this file only. The checklist's own
+  /// findings go into the prompt, so the model is not asked whether the
+  /// writing is good — it is shown what was measured and asked what to do
+  /// about it. The task's rules forbid re-scoring, which is the same rule
+  /// every other generated thing in this app lives under.
+  Future<void> _askRubric(WritingRubric rubric, JlptLevel level) async {
+    final text = _controller.text.trim();
+    if (text.isEmpty) return;
+    final builder = await practicePromptBuilder(ref);
+    if (builder == null || !mounted) return;
+    final prompt = builder.forRubric(
+      text: text,
+      findings: rubric.promptLines(level.label),
+      topic: widget.prompt.prompt,
+      locale: Localizations.localeOf(context),
+    );
+    if (prompt == null) return;
+
+    setState(() {
+      _rubricAsking = true;
+      _rubricFailure = null;
+    });
+    try {
+      final raw = await AiPracticeService.instance.run(
+        prompt,
+        maxOutputTokens: builder.maxOutputTokens,
+      );
+      if (!mounted) return;
+      setState(() {
+        _rubricNote = PracticeResponseParser.explanation(raw, prompt: prompt);
+        _rubricFailure = _rubricNote == null ? GenAiFailure.failed : null;
+        _rubricAsking = false;
+      });
+    } on GenAiException catch (error) {
+      if (!mounted) return;
+      setState(() {
+        _rubricFailure = error.failure;
+        _rubricAsking = false;
+      });
+    }
   }
 
   ContentCatalog? get _catalog => ref.read(contentCatalogProvider).value;

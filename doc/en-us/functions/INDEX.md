@@ -4,20 +4,20 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **1081** (per the Function Explanation Layer
+**Totals:** the repo's `/// Purpose:` comment count is **1104** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
-The rows below sum to **1178** documented declarations. The two counts are measured separately and
+The rows below sum to **1223** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
 earning an index row, and a library-level doc header earns a row without carrying one.
 
 | Tier | Count |
 |---|---|
-| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 254 |
-| Tier B (index row only) | 924 |
-| **Total** | **1178** |
+| Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 259 |
+| Tier B (index row only) | 964 |
+| **Total** | **1223** |
 
-These totals were last measured against the source tree when v0.4.8 added the weakness report and the
-readiness estimate. If you change these numbers, measure them rather than adjusting them by hand:
+These totals were last measured against the source tree when v0.4.9 added the on-device notes and the
+writing checklist. If you change these numbers, measure them rather than adjusting them by hand:
 
 ```bash
 find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' | wc -l
@@ -92,7 +92,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/quiz/services/question_generator.dart` | [features/quiz/services/question_generator.md](features/quiz/services/question_generator.md) | 15 | 3 |
 | `lib/features/quiz/services/quiz_session.dart` | [features/quiz/services/quiz_session.md](features/quiz/services/quiz_session.md) | 22 | 7 |
 | `lib/features/quiz/views/quiz_modes_page.dart` | [features/quiz/views/quiz_modes_page.md](features/quiz/views/quiz_modes_page.md) | 3 | 1 |
-| `lib/features/quiz/views/quiz_page.dart` | [features/quiz/views/quiz_page.md](features/quiz/views/quiz_page.md) | 15 | 4 |
+| `lib/features/quiz/views/quiz_page.dart` | [features/quiz/views/quiz_page.md](features/quiz/views/quiz_page.md) | 16 | 4 |
 | `lib/features/quiz/widgets/answer_panes.dart` | [features/quiz/widgets/answer_panes.md](features/quiz/widgets/answer_panes.md) | 6 | 1 |
 | `lib/features/quiz/widgets/quiz_runner.dart` | [features/quiz/widgets/quiz_runner.md](features/quiz/widgets/quiz_runner.md) | 11 | 3 |
 | `lib/features/sentence/models/function_word.dart` | [features/sentence/models/function_word.md](features/sentence/models/function_word.md) | 7 | 1 |
@@ -140,12 +140,12 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/drills/services/exam_session.dart` | [features/drills/services/exam_session.md](features/drills/services/exam_session.md) | 27 | 8 |
 | `lib/features/drills/services/weakness_report.dart` | [features/drills/services/weakness_report.md](features/drills/services/weakness_report.md) | 11 | 3 |
 | `lib/features/drills/services/readiness_rules.dart` | [features/drills/services/readiness_rules.md](features/drills/services/readiness_rules.md) | 8 | 1 |
-| `lib/features/drills/widgets/drill_passage_view.dart` | [features/drills/widgets/drill_passage_view.md](features/drills/widgets/drill_passage_view.md) | 3 | 1 |
-| `lib/features/drills/widgets/exam_results_view.dart` | [features/drills/widgets/exam_results_view.md](features/drills/widgets/exam_results_view.md) | 4 | 1 |
+| `lib/features/drills/widgets/drill_passage_view.dart` | [features/drills/widgets/drill_passage_view.md](features/drills/widgets/drill_passage_view.md) | 8 | 1 |
+| `lib/features/drills/widgets/exam_results_view.dart` | [features/drills/widgets/exam_results_view.md](features/drills/widgets/exam_results_view.md) | 6 | 1 |
 | `lib/features/drills/widgets/listening_script_player.dart` | [features/drills/widgets/listening_script_player.md](features/drills/widgets/listening_script_player.md) | 5 | 3 |
 | `lib/features/drills/views/exam_history_page.dart` | [features/drills/views/exam_history_page.md](features/drills/views/exam_history_page.md) | 6 | 3 |
-| `lib/features/drills/views/exam_page.dart` | [features/drills/views/exam_page.md](features/drills/views/exam_page.md) | 20 | 9 |
-| `lib/features/drills/views/weakness_report_page.dart` | [features/drills/views/weakness_report_page.md](features/drills/views/weakness_report_page.md) | 8 | 2 |
+| `lib/features/drills/views/exam_page.dart` | [features/drills/views/exam_page.md](features/drills/views/exam_page.md) | 21 | 9 |
+| `lib/features/drills/views/weakness_report_page.dart` | [features/drills/views/weakness_report_page.md](features/drills/views/weakness_report_page.md) | 13 | 2 |
 
 ## shared/
 
@@ -183,7 +183,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/lessons/services/lesson_rules.dart` | [features/lessons/services/lesson_rules.md](features/lessons/services/lesson_rules.md) | 9 | 3 |
 | `lib/features/lessons/widgets/lesson_path_view.dart` | not documented | — | — |
 | `lib/features/quiz/services/question_bank.dart` | [features/quiz/services/question_bank.md](features/quiz/services/question_bank.md) | 5 | 2 |
-| `lib/features/quiz/widgets/why_wrong.dart` | not documented | — | — |
+| `lib/features/quiz/widgets/why_wrong.dart` | [features/quiz/widgets/why_wrong.md](features/quiz/widgets/why_wrong.md) | 9 | 2 |
 | `lib/features/reminders/services/reminder_backend.dart` | not documented | — | — |
 | `lib/features/reminders/services/reminder_planner.dart` | [features/reminders/services/reminder_planner.md](features/reminders/services/reminder_planner.md) | 3 | 1 |
 | `lib/features/reminders/services/reminder_service.dart` | [features/reminders/services/reminder_service.md](features/reminders/services/reminder_service.md) | 12 | 3 |
@@ -191,13 +191,14 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/reminders/services/desktop_reminder_backend.dart` | not documented | — | — |
 | `lib/features/reminders/widgets/reminder_settings_tiles.dart` | not documented | — | — |
 | `lib/features/ai/services/ai_practice_service.dart` | [features/ai/services/ai_practice_service.md](features/ai/services/ai_practice_service.md) | 7 | 2 |
-| `lib/features/ai/services/practice_prompt_builder.dart` | [features/ai/services/practice_prompt_builder.md](features/ai/services/practice_prompt_builder.md) | 12 | 1 |
-| `lib/features/ai/services/practice_response_parser.dart` | [features/ai/services/practice_response_parser.md](features/ai/services/practice_response_parser.md) | 12 | 3 |
+| `lib/features/ai/services/practice_prompt_builder.dart` | [features/ai/services/practice_prompt_builder.md](features/ai/services/practice_prompt_builder.md) | 16 | 1 |
+| `lib/features/ai/services/practice_response_parser.dart` | [features/ai/services/practice_response_parser.md](features/ai/services/practice_response_parser.md) | 18 | 3 |
 | `lib/features/ai/widgets/generated_examples.dart` | [features/ai/widgets/generated_examples.md](features/ai/widgets/generated_examples.md) | 8 | 1 |
 | `lib/features/lessons/models/scenario.dart` | [features/lessons/models/scenario.md](features/lessons/models/scenario.md) | 14 | 1 |
 | `lib/features/lessons/views/scenario_page.dart` | [features/lessons/views/scenario_page.md](features/lessons/views/scenario_page.md) | 8 | 1 |
 | `lib/features/quiz/services/ai_question_generator.dart` | [features/quiz/services/ai_question_generator.md](features/quiz/services/ai_question_generator.md) | 9 | 2 |
-| `lib/features/writing/views/writing_practice_page.dart` | [features/writing/views/writing_practice_page.md](features/writing/views/writing_practice_page.md) | 18 | 5 |
+| `lib/features/writing/services/writing_rubric.dart` | [features/writing/services/writing_rubric.md](features/writing/services/writing_rubric.md) | 10 | 3 |
+| `lib/features/writing/views/writing_practice_page.dart` | [features/writing/views/writing_practice_page.md](features/writing/views/writing_practice_page.md) | 20 | 5 |
 
 ## l10n/
 

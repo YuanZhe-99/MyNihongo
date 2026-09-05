@@ -1181,7 +1181,52 @@ for whoever had to debug the feature.
       three new `functions/` pages, six corrected ones, `jlpt-practice.md` and
       `learning-progress.md`, in both trees
 - [x] Weakness report: per-section and per-grammar-point accuracy feeding review priorities
-- [ ] AICore enhancement (M3.5 policy, same switch): a supplementary 作文 writing section — a short
+
+#### M4.5 AICore extras, the writing checklist, N2 content — **done 2026-09-05**, released as `v0.4.9`
+
+- [x] Five new tasks in `practice.json` in all three languages — `rubric`,
+      `paraphrase`, `contradiction`, `listeningReview`, `weakness` — plus four
+      new labels. The asset's own completeness tests cover them: every task in
+      every language, and every label a builder asks for
+- [x] **Every one of them is grounded in something the app already computed,
+      and forbidden from computing it again.** The writing note is given the
+      checklist's findings and told not to re-score; the weakness note is given
+      the report's counts and told not to estimate whether the learner would
+      pass; the reading note is given the passage and told to use nothing
+      outside it; the listening note is only ever asked after the answer is in
+- [x] `WritingRubric` — pure, and running on **every** device rather than as a
+      fallback for one with no model. Sentences, unit words, taught grammar
+      points, the share of recognised words at the target level or easier, and
+      the words that could not be read. Counted from the parse, so 食べました
+      counts as 食べる
+- [x] **No score anywhere in it, and the screen says so.** 作文 is not on the
+      JLPT. A word the catalog cannot place counts as unreadable rather than as
+      too hard, and the level share is one when nothing could be placed —
+      a checklist that scolds a learner for words it could not look up is
+      measuring the catalog
+- [x] `WhyWrong` gained the passage actions, and `QuizRunner`, `ExamResultsView`
+      and both pages gained the `passageTextOf` callback that feeds them. The
+      results screen now passes **what the learner actually chose** rather than
+      null, because a screen that cannot say what was picked cannot ask why that
+      pick was wrong
+- [x] Per-line paraphrase in `DrillPassageView`, gated on the same flag as the
+      translation and carrying the generated label — model-written Japanese
+      sitting directly under content the app wrote must not be indistinguishable
+      from it
+- [x] **N2 complete at the official composition**: 107 questions and 46
+      passages. Three gate rounds, all on the same causes as before —
+      さ-nominalization (多さ, 寒さ, 強さ), 気づく, ご覧, the 割 counter, and
+      passive or causative forms the segmenter splits (考えられ, 必要とされ,
+      持たせ)
+- [x] Tests: `writing_rubric_test` (7), nine builder cases and four parser cases
+      in `ai_practice_test`, and two UI tests asserting the app's own answer
+      stands with no model — the writing checklist and the weakness tables both
+      render with no button and no invitation. 1002 tests
+- [x] Docs: two new `functions/` pages — including `why_wrong.md`, which was
+      listed as not documented — eight corrected ones, `ai-assist.md` with five
+      new rows and their fallback column filled, `writing-practice.md` and
+      `jlpt-practice.md`, in both trees
+- [x] AICore enhancement (M3.5 policy, same switch): a supplementary 作文 writing section — a short
       composition per prompt with feedback against a rubric (task fulfilment, grammar range,
       vocabulary level), labelled supplementary because the JLPT has no writing section; 読解 help —
       paraphrase a hard sentence or explain why a chosen option contradicts the passage; 聴解
@@ -1372,6 +1417,13 @@ for whoever had to debug the feature.
 | 2026-09-05 | The weakness report reorders the review queue and never adds to it or removes from it | That is what lets `reviewQueueProvider` stay synchronous over a report that reads every level's drill files: a queue built before those files load is the old ordering, not a wrong one |
 | 2026-09-05 | The 大問 are named in Japanese on the weakness page, and those names live in Dart rather than the ARB catalogs | 漢字読み and 即時応答 are the headings jlpt.jp prints. A learner comparing this page with a real paper should be comparing the same words, and translating them into three catalogs would have made 63 keys that are only ever read in Japanese |
 | 2026-09-05 | The exam page chains its saves and refreshes the Learn card only on the way out | Overlapping writes to one file, and a provider refresh holding that file open while the next write renamed over it, broke a save on Windows. The page whose whole job is not losing the paper was losing one write a minute, and the widget suite only saw it as a flake |
+| 2026-09-05 | The writing checklist runs on every device and the AI note is written on top of it, never instead of it | A learner is entitled to the same measurements on every phone. Making the measurements the model's job would mean two learners with the same paragraph get different answers depending on which handset they bought |
+| 2026-09-05 | The checklist produces no total, no percentage of correctness and no pass line, and says so on screen | 作文 is not on the JLPT. A mark here would be the app inventing an exam nobody sits, and a number is read as a verdict however it is captioned |
+| 2026-09-05 | A word the catalog cannot place is counted as unreadable, not as above the level; and the level share is 1 when nothing could be placed | Not knowing what a word is and knowing it is too hard are different findings, and only the second is about the learner. A checklist that scolds somebody for words it could not look up is measuring the catalog |
+| 2026-09-05 | The level share measures "within your means", not "as hard as your level" | A sentence of N5 words written by somebody aiming at N1 is entirely within N1. Rewarding difficulty would push learners to write above themselves, which is the opposite of what the exercise is for |
+| 2026-09-05 | Every prompt carries what the app already computed, and every task's rules forbid the model from computing it again | It is the difference between an opinion and a note. Asked whether the writing is good, a model agrees; shown what was measured and asked what to do next, it says something the learner can act on. The same rule stops the weakness note from guessing at a readiness band the app derives under stated rules |
+| 2026-09-05 | The reading note may use nothing outside the passage; the listening note is only ever asked after the answer is in | A reading question is a question about one text, and an answer justified from general knowledge teaches the wrong skill even when it happens to be true. And a transcript sent early is the answer to the listening question |
+| 2026-09-05 | The results screen passes what the learner actually chose to `WhyWrong`, rather than null | A screen that cannot say what was picked cannot ask why that pick was wrong, which is the question worth asking there. An ordering answer has no single index and yields none, so the choice-specific actions hide rather than point at the wrong fragment |
 | 2026-09-05 | `DrillRepository` asks the asset manifest rather than attempting a load and catching | A missing file is the **normal** state for most level-section pairs while levels are still being written, and `rootBundle.loadString` reports a Flutter error before it throws — which a widget test fails on even though the throw is handled |
 | 2026-09-05 | A section that cannot be practised is disabled with its reason beside it, never hidden | No content yet, or no Japanese voice: a learner who cannot find 読解 practice has no way to tell whether it exists or they have missed it. The same rule already governs `SpeakButton` and the listening quiz modes |
 | 2026-09-05 | The three deviations from the real paper are stated in the feature doc rather than quietly made | 即時応答 gets four options where the paper gives three, because every answer pane and the gate assume four; 発話表現 describes its scene in words, because there are no pictures in this catalog; a mock plays each item once, because that is the paper's rule. A deviation nobody wrote down is a bug report waiting to be filed |

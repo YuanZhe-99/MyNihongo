@@ -222,6 +222,30 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
+  testWidgets('the checklist is shown on every device, with no model', (
+    tester,
+  ) async {
+    // The measurements are the app's own answer, not a fallback for a phone
+    // with no model. What the model adds is the note underneath, and that is
+    // the only part allowed to be missing.
+    await pumpAt(tester, 412, 2400);
+    await check(tester, 'これは本です。');
+
+    expect(find.text('应用测到的'), findsOneWidget);
+    expect(find.text('1 个句子'), findsOneWidget);
+    expect(
+      find.textContaining('这里没有分数'),
+      findsOneWidget,
+      reason: 'JLPT has no writing section, so a mark would invent an exam',
+    );
+    expect(
+      find.text('接下来可以试什么'),
+      findsNothing,
+      reason: 'the switch is off, so there is no button and no invitation',
+    );
+    expect(tester.takeException(), isNull);
+  });
+
   for (final geometry in const [
     [412.0, 915.0], // phone portrait
     [915.0, 412.0], // phone landscape

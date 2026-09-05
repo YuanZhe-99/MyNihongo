@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../l10n/app_localizations.dart';
 import '../../learn/widgets/jlpt_practice_card.dart';
+import '../../quiz/models/quiz_question.dart';
+import '../../quiz/services/answer_checker.dart';
 import '../../quiz/services/quiz_session.dart';
 import '../../quiz/widgets/why_wrong.dart';
 import '../models/drill_section.dart';
@@ -26,6 +28,7 @@ class ExamResultsView extends StatelessWidget {
     required this.exam,
     required this.sectionOf,
     required this.onDone,
+    this.passageTextOf,
   });
 
   /// The finished paper.
@@ -36,6 +39,13 @@ class ExamResultsView extends StatelessWidget {
 
   /// Called when the learner is done reading.
   final VoidCallback onDone;
+
+  /// The plain text of whatever each question was about, for the AI actions
+  /// under it; null where the page has no passages to give.
+  ///
+  /// Passed in for the same reason the section map is: the page that drew the
+  /// paper already read the files.
+  final ({String text, bool spoken})? Function(QuizQuestion)? passageTextOf;
 
   /// Purpose: Build the per-section scores and the list of what went wrong.
   /// Inputs: `context`.
@@ -168,7 +178,17 @@ class ExamResultsView extends StatelessWidget {
                             fontWeight: FontWeight.w700,
                           ),
                         ),
-                      WhyWrong(question: question, chose: null),
+                      WhyWrong(
+                        question: question,
+                        // What was chosen, not null: a results screen that
+                        // could not say what the learner picked cannot ask
+                        // why that pick was wrong, which is the question
+                        // worth asking here.
+                        chose: _chosen(block, question),
+                        passage: passageTextOf?.call(question)?.text,
+                        spoken:
+                            passageTextOf?.call(question)?.spoken ?? false,
+                      ),
                     ],
                   ),
                 ),
@@ -177,5 +197,20 @@ class ExamResultsView extends StatelessWidget {
         FilledButton(onPressed: onDone, child: Text(l10n.quizSummaryDone)),
       ],
     );
+  }
+
+  /// Purpose: Say which option the learner picked for one question.
+  /// Inputs: The `block` it was in and the `question`.
+  /// Returns: `int?` — null when nothing was picked, or when what was picked
+  /// was not one of the options.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. A results screen that
+  /// could not say what the learner chose cannot ask why that choice was
+  /// wrong, and that is the question worth asking here. An ordering answer has
+  /// no single index, so it yields null and the choice-specific actions stay
+  /// hidden rather than pointing at the wrong fragment.
+  int? _chosen(ExamBlock block, QuizQuestion question) {
+    final answer = block.session.chosen[QuizSession.scoreKey(question)];
+    return answer is ChoiceAnswer ? answer.index : null;
   }
 }

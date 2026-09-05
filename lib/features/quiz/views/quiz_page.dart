@@ -342,7 +342,29 @@ class _QuizPageState extends ConsumerState<QuizPage> {
       key: ValueKey(passage.id),
       passage: passage,
       allowTranslation: answered,
+      level: ref.read(learnerProfileProvider).targetLevel,
     );
+  }
+
+  /// Purpose: Give the AI actions the text of whatever the question is about.
+  /// Inputs: The `question`.
+  /// Returns: The passage's Japanese lines joined, and whether they were
+  /// spoken; null for a question that stands on its own.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. The Japanese only,
+  /// never the translation: the task asks the model to work from the text the
+  /// learner read, and handing it a translation would let it answer from that
+  /// instead. Speaker names are kept, because on a listening question which
+  /// person said a line is frequently the whole answer.
+  ({String text, bool spoken})? _passageTextOf(QuizQuestion question) {
+    final passage = _passages[question.passageId];
+    if (passage == null) return null;
+    final spoken = passage.type.section == DrillSection.listening;
+    final text = [
+      for (final line in passage.lines)
+        line.speaker.isEmpty ? line.ja : '${line.speaker}: ${line.ja}',
+    ].join('\n');
+    return (text: text, spoken: spoken);
   }
 
   /// Purpose: Ask the model for a few extra questions, in the background.
@@ -536,6 +558,7 @@ class _QuizPageState extends ConsumerState<QuizPage> {
               (_, final s?, false) => QuizRunner(
                 session: s,
                 leadingBuilder: _passageFor,
+                passageTextOf: _passageTextOf,
                 questionPaneWidth: widget.config.source is DrillSource
                     ? drillPassagePaneWidth
                     : quizQuestionPaneWidth,

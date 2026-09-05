@@ -41,6 +41,7 @@ class QuizRunner extends ConsumerStatefulWidget {
     required this.onFinished,
     this.header,
     this.leadingBuilder,
+    this.passageTextOf,
     this.showFeedback = true,
     this.questionPaneWidth = quizQuestionPaneWidth,
   });
@@ -59,6 +60,14 @@ class QuizRunner extends ConsumerStatefulWidget {
   /// A builder rather than a widget because it changes with the question, and
   /// the runner is the only thing that knows which question is on screen.
   final Widget? Function(BuildContext, QuizQuestion)? leadingBuilder;
+
+  /// The plain text of whatever the question is about, for the AI actions
+  /// under a wrong answer; null where a question stands on its own.
+  ///
+  /// A callback rather than a map, because the page that drew the paper is the
+  /// one that has the passages and re-deriving them here would mean reading
+  /// content files to answer a question already answered.
+  final ({String text, bool spoken})? Function(QuizQuestion)? passageTextOf;
 
   /// Whether the answer is marked on screen before moving on.
   ///
@@ -366,7 +375,13 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
               ),
             ),
           ),
-        if (!outcome.correct) WhyWrong(question: question, chose: chosen),
+        if (!outcome.correct)
+          WhyWrong(
+            question: question,
+            chose: chosen,
+            passage: widget.passageTextOf?.call(question)?.text,
+            spoken: widget.passageTextOf?.call(question)?.spoken ?? false,
+          ),
       ],
     );
   }

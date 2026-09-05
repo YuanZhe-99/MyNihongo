@@ -30,6 +30,9 @@ perfectly well.
 | `quizCheck` | static method | B | Read a verdict on a generated question. |
 | `_unwrap` | static method | B | Strip the packaging a model puts around a line. |
 | [`examples`](#examples) | method | A | Read generated example sentences. |
+| `Paraphrase` | class | B | One hard sentence said again in easier Japanese. |
+| `japanese`, `reading`, `meaning` | fields | B | The easier sentence, its kana and what it means. |
+| `paraphrase` | static method | B | Read one sentence said again in easier Japanese; null without a Japanese line. |
 | `explanation` | method | B | Read a plain explanation, as the lab does. |
 | `_after` | method | B | Take what follows a label. |
 
@@ -74,3 +77,12 @@ perfectly well.
 - **Notes:** A line with any other number of fields is dropped rather than guessed at. A generated
   example is drawn beside the catalog's own, so a mangled one would look exactly as authoritative
   as a real one.
+
+`paraphrase` requires only its Japanese line, and its absence is a refusal rather than a shrug:
+everything else on that card is optional decoration, but a paraphrase with no sentence in it has
+nothing to show. The reading and the meaning are taken when they are there, so a model that gave two
+lines out of three still helps.
+
+The four narrative tasks — rubric, contradiction, listening review and weakness — have no parser of
+their own. They go through `explanation`, which is the same cleaning the sentence lab does, because
+a note about what to try next is an explanation like any other.

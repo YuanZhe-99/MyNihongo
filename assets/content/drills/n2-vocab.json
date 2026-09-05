@@ -1,0 +1,901 @@
+{
+  "schemaVersion": 1,
+  "source": "model-authored (Claude), unreviewed",
+  "license": "GPL-3.0 with the app.",
+  "level": "N2",
+  "section": "vocab",
+  "passages": [],
+  "questions": [
+    {
+      "id": "q:n2-v-001",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1260530"
+      ],
+      "kind": "choice",
+      "ja": "この道は険しいので、気を付けてください。",
+      "reading": "このみちはけわしいので、きをつけてください。",
+      "blank": "険しい",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "けわしい",
+        "きびしい",
+        "くわしい",
+        "はげしい"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "険しい, said of steep or rugged ground, is read けわしい.",
+        "zh": "「険しい」形容路陡、险峻，读作けわしい。きびしい是「厳しい」，くわしい是「詳しい」，はげしい是「激しい」。",
+        "zh_TW": "「険しい」形容路陡、險峻，讀作けわしい。きびしい是「厳しい」，くわしい是「詳しい」，はげしい是「激しい」。"
+      }
+    },
+    {
+      "id": "q:n2-v-002",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1514830"
+      ],
+      "kind": "choice",
+      "ja": "図書館では手伝ってくれる人を募集しています。",
+      "reading": "としょかんではてつだってくれるひとをぼしゅうしています。",
+      "blank": "募集",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "ぼしゅう",
+        "ぼうしゅう",
+        "もしゅう",
+        "ぼしゅ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "募 is read ぼ, short, and 集 is しゅう, long, so 募集 (recruiting) is ぼしゅう.",
+        "zh": "「募集」意为招募、征集。募是短音ぼ，集是长音しゅう，所以读ぼしゅう，前长后短都是错的。",
+        "zh_TW": "「募集」意為招募、徵集。募是短音ぼ，集是長音しゅう，所以讀ぼしゅう，前長後短都是錯的。"
+      }
+    },
+    {
+      "id": "q:n2-v-003",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1477250"
+      ],
+      "kind": "choice",
+      "ja": "試合で実力を発揮しました。",
+      "reading": "しあいでじつりょくをはっきしました。",
+      "blank": "発揮",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "はっき",
+        "はつき",
+        "はっけ",
+        "ほっき"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "発 before き becomes はっ, so 発揮 (showing what one can do) is はっき.",
+        "zh": "「発揮」指发挥实力。発在き前促音化成はっ，揮读き，所以是はっき，不是はつき。",
+        "zh_TW": "「発揮」指發揮實力。発在き前促音化成はっ，揮讀き，所以是はっき，不是はつき。"
+      }
+    },
+    {
+      "id": "q:n2-v-004",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1397340"
+      ],
+      "kind": "choice",
+      "ja": "子どもは素直に返事をしました。",
+      "reading": "こどもはすなおにへんじをしました。",
+      "blank": "素直",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "すなお",
+        "そちょく",
+        "すじき",
+        "そなお"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "素直 is a special reading: 素 is す and 直 is なお, giving すなお, meaning frank and obedient.",
+        "zh": "「素直」是特殊读法，素读す，直读なお，合起来是すなお，意为坦率、听话。そちょく是「率直」的联想，不对。",
+        "zh_TW": "「素直」是特殊讀法，素讀す，直讀なお，合起來是すなお，意為坦率、聽話。そちょく是「率直」的聯想，不對。"
+      }
+    },
+    {
+      "id": "q:n2-v-005",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1209920"
+      ],
+      "kind": "choice",
+      "ja": "冬は空気が乾燥しています。",
+      "reading": "ふゆはくうきがかんそうしています。",
+      "blank": "乾燥",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "かんそう",
+        "かんぞう",
+        "けんそう",
+        "かんそ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "乾 is かん and 燥 is そう with no voicing, so 乾燥 (dryness) is かんそう.",
+        "zh": "「乾燥」意为干燥。乾读かん，燥读そう且不浊化，所以是かんそう。かんぞう是「肝臓」的读音。",
+        "zh_TW": "「乾燥」意為乾燥。乾讀かん，燥讀そう且不濁化，所以是かんそう。かんぞう是「肝臓」的讀音。"
+      }
+    },
+    {
+      "id": "q:n2-v-006",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1333680"
+      ],
+      "kind": "choice",
+      "ja": "明日は八時に駅の前にしゅうごうしてください。",
+      "reading": "あしたははちじにえきのまえにしゅうごうしてください。",
+      "blank": "しゅうごう",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "集合",
+        "集号",
+        "週合",
+        "収合"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "しゅうごう (gathering at a place) is written 集合: 集 for しゅう and 合 for ごう.",
+        "zh": "しゅうごう意为集合，写作「集合」：集读しゅう，合读ごう。週、収虽然也读しゅう，但这个词只能写成集合。",
+        "zh_TW": "しゅうごう意為集合，寫作「集合」：集讀しゅう，合讀ごう。週、収雖然也讀しゅう，但這個詞只能寫成集合。"
+      }
+    },
+    {
+      "id": "q:n2-v-007",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1339660"
+      ],
+      "kind": "choice",
+      "ja": "先生は来週、仕事でしゅっちょうします。",
+      "reading": "せんせいはらいしゅう、しごとでしゅっちょうします。",
+      "blank": "しゅっちょう",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "出張",
+        "出帳",
+        "出長",
+        "週張"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "しゅっちょう (a business trip) is written 出張: 出 for しゅっ and 張 for ちょう.",
+        "zh": "しゅっちょう意为出差，写作「出張」：出读しゅっ，張读ちょう。帳、長也读ちょう，但不是这个词的写法。",
+        "zh_TW": "しゅっちょう意為出差，寫作「出張」：出讀しゅっ，張讀ちょう。帳、長也讀ちょう，但不是這個詞的寫法。"
+      }
+    },
+    {
+      "id": "q:n2-v-008",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1533510"
+      ],
+      "kind": "choice",
+      "ja": "来週、会社のめんせつを受けます。",
+      "reading": "らいしゅう、かいしゃのめんせつをうけます。",
+      "blank": "めんせつ",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "面接",
+        "面切",
+        "免接",
+        "面折"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "めんせつ (a job interview) is written 面接: 面 for めん and 接 for せつ.",
+        "zh": "めんせつ指面试，写作「面接」：面读めん，接读せつ。免也读めん，切、折也读せつ，但都不是这个词的写法。",
+        "zh_TW": "めんせつ指面試，寫作「面接」：面讀めん，接讀せつ。免也讀めん，切、折也讀せつ，但都不是這個詞的寫法。"
+      }
+    },
+    {
+      "id": "q:n2-v-009",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1278130"
+      ],
+      "kind": "choice",
+      "ja": "この道は今、こうじをしています。",
+      "reading": "このみちはいま、こうじをしています。",
+      "blank": "こうじ",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "工事",
+        "工字",
+        "公事",
+        "功事"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "こうじ (construction work) is written 工事: 工 for こう and 事 for じ.",
+        "zh": "こうじ意为施工、工程，写作「工事」：工读こう，事读じ。公、功也读こう，字虽读じ，但都不能组成这个词。",
+        "zh_TW": "こうじ意為施工、工程，寫作「工事」：工讀こう，事讀じ。公、功也讀こう，字雖讀じ，但都不能組成這個詞。"
+      }
+    },
+    {
+      "id": "q:n2-v-010",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1480540"
+      ],
+      "kind": "choice",
+      "ja": "自分の失敗をはんせいしています。",
+      "reading": "じぶんのしっぱいをはんせいしています。",
+      "blank": "はんせい",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "反省",
+        "反生",
+        "半省",
+        "返省"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "はんせい (looking back on what one did wrong) is written 反省: 反 for はん and 省 for せい.",
+        "zh": "はんせい意为反省，写作「反省」：反读はん，省读せい。半、返也读はん，生也读せい，但都不是这个词的写法。",
+        "zh_TW": "はんせい意為反省，寫作「反省」：反讀はん，省讀せい。半、返也讀はん，生也讀せい，但都不是這個詞的寫法。"
+      }
+    },
+    {
+      "id": "q:n2-v-011",
+      "type": "word-formation",
+      "items": [
+        "vocab:jm1491840"
+      ],
+      "kind": "choice",
+      "ja": "最近、生活が不規則になっています。",
+      "reading": "さいきん、せいかつがふきそくになっています。",
+      "blank": "不",
+      "prompt": {
+        "en": "Which prefix fits in the blank?",
+        "zh": "括号里填哪个前缀最合适？",
+        "zh_TW": "括號裡填哪個前綴最合適？"
+      },
+      "options": [
+        "不",
+        "無",
+        "低",
+        "半"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "規則 takes the prefix 不 to mean irregular: 不規則.",
+        "zh": "表示「不规律」要说「不規則」，前面加否定前缀「不」。日语里没有無規則、低規則、半規則这样的说法。",
+        "zh_TW": "表示「不規律」要說「不規則」，前面加否定前綴「不」。日語裡沒有無規則、低規則、半規則這樣的說法。"
+      }
+    },
+    {
+      "id": "q:n2-v-012",
+      "type": "word-formation",
+      "items": [
+        "vocab:jm1528040"
+      ],
+      "kind": "choice",
+      "ja": "十八歳未満の方は入れません。",
+      "reading": "じゅうはっさいみまんのかたははいれません。",
+      "blank": "未",
+      "prompt": {
+        "en": "Which prefix fits in the blank?",
+        "zh": "括号里填哪个前缀最合适？",
+        "zh_TW": "括號裡填哪個前綴最合適？"
+      },
+      "options": [
+        "未",
+        "不",
+        "非",
+        "無"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "未満 is the set word for being under a stated number, so an age limit uses 未.",
+        "zh": "表示「不到某个数」的固定说法是「未満」，所以填「未」。不満是不满意，非、無都不能和満组成这个意思。",
+        "zh_TW": "表示「不到某個數」的固定說法是「未満」，所以填「未」。不満是不滿意，非、無都不能和満組成這個意思。"
+      }
+    },
+    {
+      "id": "q:n2-v-013",
+      "type": "word-formation",
+      "items": [
+        "vocab:jm1483600"
+      ],
+      "kind": "choice",
+      "ja": "今年の冬は比較的暖かいです。",
+      "reading": "ことしのふゆはひかくてきあたたかいです。",
+      "blank": "的",
+      "prompt": {
+        "en": "Which suffix fits in the blank?",
+        "zh": "括号里填哪个后缀最合适？",
+        "zh_TW": "括號裡填哪個後綴最合適？"
+      },
+      "options": [
+        "的",
+        "性",
+        "化",
+        "風"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "比較 plus 的 makes the adverb 比較的, meaning comparatively.",
+        "zh": "「比較」加后缀「的」构成副词「比較的」，意为比较、相对来说。比較性、比較化、比較風都不成词。",
+        "zh_TW": "「比較」加後綴「的」構成副詞「比較的」，意為比較、相對來說。比較性、比較化、比較風都不成詞。"
+      }
+    },
+    {
+      "id": "q:n2-v-014",
+      "type": "word-formation",
+      "items": [
+        "vocab:jm1402870"
+      ],
+      "kind": "choice",
+      "ja": "この店では送料が五百円かかります。",
+      "reading": "このみせではそうりょうがごひゃくえんかかります。",
+      "blank": "料",
+      "prompt": {
+        "en": "Which suffix fits in the blank?",
+        "zh": "括号里填哪个后缀最合适？",
+        "zh_TW": "括號裡填哪個後綴最合適？"
+      },
+      "options": [
+        "料",
+        "代",
+        "費",
+        "賃"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The charge for sending something is 送料; 送 takes the suffix 料 for a fee.",
+        "zh": "运费固定说「送料」，「料」是表示费用的后缀。送代、送費、送賃都不是日语的说法。",
+        "zh_TW": "運費固定說「送料」，「料」是表示費用的後綴。送代、送費、送賃都不是日語的說法。"
+      }
+    },
+    {
+      "id": "q:n2-v-015",
+      "type": "word-formation",
+      "items": [
+        "vocab:jm1580620"
+      ],
+      "kind": "choice",
+      "ja": "朝起きると、山が雪で真っ白になっていました。",
+      "reading": "あさおきると、やまがゆきでまっしろになっていました。",
+      "blank": "真っ",
+      "prompt": {
+        "en": "Which prefix fits in the blank?",
+        "zh": "括号里填哪个前缀最合适？",
+        "zh_TW": "括號裡填哪個前綴最合適？"
+      },
+      "options": [
+        "真っ",
+        "大",
+        "小",
+        "薄"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "真っ before a colour means completely that colour, so snow-covered mountains are 真っ白.",
+        "zh": "颜色前加「真っ」表示纯粹、完全，雪白就是「真っ白」。薄白不成词，大白、小白也不是日语说法。",
+        "zh_TW": "顏色前加「真っ」表示純粹、完全，雪白就是「真っ白」。薄白不成詞，大白、小白也不是日語說法。"
+      }
+    },
+    {
+      "id": "q:n2-v-016",
+      "type": "context",
+      "items": [
+        "vocab:jm1594590"
+      ],
+      "kind": "choice",
+      "ja": "申し込みの締切は明日までです。",
+      "reading": "もうしこみのしめきりはあしたまでです。",
+      "blank": "締切",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "締切",
+        "目次",
+        "見本",
+        "日課"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "A date by which an application must be in is its しめきり, the deadline.",
+        "zh": "报名到明天为止，说的是截止日期，用「締切」。目次是目录，見本是样品，日課是每天的功课。",
+        "zh_TW": "報名到明天為止，說的是截止日期，用「締切」。目次是目錄，見本是樣品，日課是每天的功課。"
+      }
+    },
+    {
+      "id": "q:n2-v-017",
+      "type": "context",
+      "items": [
+        "vocab:jm1589220"
+      ],
+      "kind": "choice",
+      "ja": "引っ越しが終わって、やっと生活が落ち着きました。",
+      "reading": "ひっこしがおわって、やっとせいかつがおちつきました。",
+      "blank": "落ち着きました",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "落ち着きました",
+        "片付きました",
+        "目立ちました",
+        "儲かりました"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "おちつく is a life or a mood settling down, which is what happens once a move is over.",
+        "zh": "搬完家后生活安定下来，用「落ち着く」。片付く是收拾好东西，目立つ是显眼，儲かる是赚钱，都不能说生活安定。",
+        "zh_TW": "搬完家後生活安定下來，用「落ち著く」。片付く是收拾好東西，目立つ是顯眼，儲かる是賺錢，都不能說生活安定。"
+      }
+    },
+    {
+      "id": "q:n2-v-018",
+      "type": "context",
+      "items": [
+        "vocab:jm1596090"
+      ],
+      "kind": "choice",
+      "ja": "せっかく来たのに、店は休みでした。",
+      "reading": "せっかくきたのに、みせはやすみでした。",
+      "blank": "せっかく",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "せっかく",
+        "たちまち",
+        "いよいよ",
+        "まもなく"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "せっかく marks trouble taken that came to nothing, which is why the closed shop is a disappointment.",
+        "zh": "特意跑一趟却白跑了，这种「好不容易…却…」的语气用「せっかく」。たちまち是转眼间，いよいよ是终于，まもなく是不久。",
+        "zh_TW": "特意跑一趟卻白跑了，這種「好不容易…卻…」的語氣用「せっかく」。たちまち是轉眼間，いよいよ是終於，まもなく是不久。"
+      }
+    },
+    {
+      "id": "q:n2-v-019",
+      "type": "context",
+      "items": [
+        "vocab:jm1535700"
+      ],
+      "kind": "choice",
+      "ja": "赤い看板は遠くからでもよく目立ちます。",
+      "reading": "あかいかんばんはとおくからでもよくめだちます。",
+      "blank": "目立ちます",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "目立ちます",
+        "縮みます",
+        "湿ります",
+        "片付きます"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Something seen easily from far away めだつ, stands out.",
+        "zh": "从远处也看得清楚，就是显眼，用「目立つ」。縮む是收缩，湿る是变潮，片付く是收拾整齐。",
+        "zh_TW": "從遠處也看得清楚，就是顯眼，用「目立つ」。縮む是收縮，溼る是變潮，片付く是收拾整齊。"
+      }
+    },
+    {
+      "id": "q:n2-v-020",
+      "type": "context",
+      "items": [
+        "vocab:jm1538690"
+      ],
+      "kind": "choice",
+      "ja": "勝っていても、最後まで油断しないでください。",
+      "reading": "かっていても、さいごまでゆだんしないでください。",
+      "blank": "油断",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "油断",
+        "反省",
+        "集合",
+        "面接"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "ゆだん is letting your guard down, the warning you give someone who is ahead.",
+        "zh": "即使领先也不要掉以轻心，「油断」正是大意、松懈的意思。反省是反省，集合是集合，面接是面试。",
+        "zh_TW": "即使領先也不要掉以輕心，「油斷」正是大意、鬆懈的意思。反省是反省，集合是集合，面接是面試。"
+      }
+    },
+    {
+      "id": "q:n2-v-021",
+      "type": "context",
+      "items": [
+        "vocab:jm1601520"
+      ],
+      "kind": "choice",
+      "ja": "その仕事を引き受けることにしました。",
+      "reading": "そのしごとをひきうけることにしました。",
+      "blank": "引き受ける",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "引き受ける",
+        "引き返す",
+        "引き止める",
+        "引っ込む"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "ひきうける is taking a job on, agreeing to do it.",
+        "zh": "接下那份工作用「引き受ける」。引き返す是折返，引き止める是挽留，引っ込む是缩回、退居，都不能说接受工作。",
+        "zh_TW": "接下那份工作用「引き受ける」。引き返す是折返，引き止める是挽留，引っ込む是縮回、退居，都不能說接受工作。"
+      }
+    },
+    {
+      "id": "q:n2-v-022",
+      "type": "context",
+      "items": [
+        "vocab:jm1213990"
+      ],
+      "kind": "choice",
+      "ja": "この店の看板には、店の名前が大きく書いてあります。",
+      "reading": "このみせのかんばんには、みせのなまえがおおきくかいてあります。",
+      "blank": "看板",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "看板",
+        "目次",
+        "表紙",
+        "名刺"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The board outside a shop with its name on it is a かんばん.",
+        "zh": "店门口写着店名的牌子是「看板」。目次是书的目录，表紙是封面，名刺是名片。",
+        "zh_TW": "店門口寫著店名的牌子是「看板」。目次是書的目錄，表紙是封面，名刺是名片。"
+      }
+    },
+    {
+      "id": "q:n2-v-023",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1401310"
+      ],
+      "kind": "choice",
+      "ja": "先生はあいかわらず元気です。",
+      "reading": "せんせいはあいかわらずげんきです。",
+      "blank": "あいかわらず",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "前と同じように",
+        "思ったより",
+        "急に",
+        "やっと"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "あいかわらず says the state has not changed from before.",
+        "zh": "あいかわらず表示和以前一样、没有变化，所以等于「前と同じように」。急に是突然，やっと是好不容易。",
+        "zh_TW": "あいかわらず表示和以前一樣、沒有變化，所以等於「前と同じように」。急に是突然，やっと是好不容易。"
+      }
+    },
+    {
+      "id": "q:n2-v-024",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1215290"
+      ],
+      "kind": "choice",
+      "ja": "電車はまもなく駅に着きます。",
+      "reading": "でんしゃはまもなくえきにつきます。",
+      "blank": "まもなく",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "もうすぐ",
+        "ゆっくり",
+        "ときどき",
+        "やっと"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "まもなく means only a short time from now, the same as もうすぐ.",
+        "zh": "まもなく表示马上、不久之后，和「もうすぐ」意思相同。ゆっくり是慢慢地，ときどき是有时。",
+        "zh_TW": "まもなく表示馬上、不久之後，和「もうすぐ」意思相同。ゆっくり是慢慢地，ときどき是有時。"
+      }
+    },
+    {
+      "id": "q:n2-v-025",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1003810"
+      ],
+      "kind": "choice",
+      "ja": "一日中歩いて、くたびれました。",
+      "reading": "いちにちじゅうあるいて、くたびれました。",
+      "blank": "くたびれました",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "とても疲れました",
+        "とても喜びました",
+        "とても驚きました",
+        "とても急ぎました"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "くたびれる is to be worn out, that is, very tired.",
+        "zh": "くたびれる指累坏了，所以等于「とても疲れました」。喜ぶ是高兴，驚く是吃惊，急ぐ是着急。",
+        "zh_TW": "くたびれる指累壞了，所以等於「とても疲れました」。喜ぶ是高興，驚く是吃驚，急ぐ是著急。"
+      }
+    },
+    {
+      "id": "q:n2-v-026",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1320570"
+      ],
+      "kind": "choice",
+      "ja": "その仕事はとっくに終わりました。",
+      "reading": "そのしごとはとっくにおわりました。",
+      "blank": "とっくに",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "ずっと前に",
+        "たった今",
+        "もうすぐ",
+        "やっと"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "とっくに means it happened long before now, not just now.",
+        "zh": "とっくに表示早就、老早以前，所以等于「ずっと前に」。たった今是刚刚，もうすぐ是马上，やっと是好不容易才。",
+        "zh_TW": "とっくに表示早就、老早以前，所以等於「ずっと前に」。たった今是剛剛，もうすぐ是馬上，やっと是好不容易才。"
+      }
+    },
+    {
+      "id": "q:n2-v-027",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1414190"
+      ],
+      "kind": "choice",
+      "ja": "あの子はとてもおとなしいです。",
+      "reading": "あのこはとてもおとなしいです。",
+      "blank": "おとなしいです",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "静かです",
+        "うるさいです",
+        "厳しいです",
+        "忙しいです"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "おとなしい describes a quiet, gentle child who does not make a fuss.",
+        "zh": "おとなしい形容孩子文静、不吵闹，所以最接近「静かです」。うるさい意思相反，厳しい是严厉，忙しい是忙。",
+        "zh_TW": "おとなしい形容孩子文靜、不吵鬧，所以最接近「静かです」。うるさい意思相反，厳しい是嚴厲，忙しい是忙。"
+      }
+    },
+    {
+      "id": "q:n2-v-028",
+      "type": "usage",
+      "items": [
+        "vocab:jm1541690"
+      ],
+      "kind": "choice",
+      "ja": "有料",
+      "reading": "ゆうりょう",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "この席は有料ですから、お金を払ってください。",
+        "この本は有料でとてもおもしろかったです。",
+        "駅まで有料で歩きました。",
+        "母は毎朝、庭の花に有料しています。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "ゆうりょう says that something costs money to use, so it fits a seat you must pay for.",
+        "zh": "有料指使用要付费，所以配「お金を払ってください」的座位。它不能形容书有趣，也不是动词，不能说给花有料。",
+        "zh_TW": "有料指使用要付費，所以配「お金を払ってください」的座位。它不能形容書有趣，也不是動詞，不能說給花有料。"
+      }
+    },
+    {
+      "id": "q:n2-v-029",
+      "type": "usage",
+      "items": [
+        "vocab:jm1259830"
+      ],
+      "kind": "choice",
+      "ja": "見送る",
+      "reading": "みおくる",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "国へ帰る友達を駅まで見送りました。",
+        "その荷物を郵便局で見送りました。",
+        "この本を来週までに見送ります。",
+        "テストの点が悪くて見送りました。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "みおくる is going with someone as far as the station or airport and watching them leave.",
+        "zh": "見送る指送别，送到车站看着对方离开。寄行李要用「送る」，还书要用「返す」，考砸了也不能用这个词。",
+        "zh_TW": "見送る指送別，送到車站看著對方離開。寄行李要用「送る」，還書要用「返す」，考砸了也不能用這個詞。"
+      }
+    },
+    {
+      "id": "q:n2-v-030",
+      "type": "usage",
+      "items": [
+        "vocab:jm1526720"
+      ],
+      "kind": "choice",
+      "ja": "満員",
+      "reading": "まんいん",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "朝の電車はいつも満員で、座れません。",
+        "コップに水が満員です。",
+        "今日は仕事が満員で、休めません。",
+        "この料理は塩が満員で、辛いです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "まんいん is a place full of people, such as a rush-hour train.",
+        "zh": "満員指人挤满了，比如早高峰的电车。杯子里的水、工作量、盐的多少都要用「いっぱい」「多い」，不能说満員。",
+        "zh_TW": "満員指人擠滿了，比如早高峰的電車。杯子裡的水、工作量、鹽的多少都要用「いっぱい」「多い」，不能說満員。"
+      }
+    },
+    {
+      "id": "q:n2-v-031",
+      "type": "usage",
+      "items": [
+        "vocab:jm1432460"
+      ],
+      "kind": "choice",
+      "ja": "追加",
+      "reading": "ついか",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "飲み物をもう一つ追加してください。",
+        "駅で電車に追加して出かけました。",
+        "この道は車が多くて追加です。",
+        "先生に長い手紙を追加しました。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "ついか is adding something more to what has already been ordered or listed.",
+        "zh": "追加指在已有的基础上再加，比如再点一杯饮料。上电车用「乗る」，寄信用「出す」，也不能用来形容道路。",
+        "zh_TW": "追加指在已有的基礎上再加，比如再點一杯飲料。上電車用「乗る」，寄信用「出す」，也不能用來形容道路。"
+      }
+    },
+    {
+      "id": "q:n2-v-032",
+      "type": "usage",
+      "items": [
+        "vocab:jm1212480"
+      ],
+      "kind": "choice",
+      "ja": "感想",
+      "reading": "かんそう",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "この本を読んだ感想を書いてください。",
+        "旅行の写真を感想しました。",
+        "会議の時間が感想になりました。",
+        "この部屋は静かで感想です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "かんそう is what you thought and felt about something you read, saw or did.",
+        "zh": "感想指读了、看了之后的想法和感受，是名词。照片要用「見る」，时间改动要用「変更」，也不能当形容词用。",
+        "zh_TW": "感想指讀了、看了之後的想法和感受，是名詞。照片要用「見る」，時間改動要用「変更」，也不能當形容詞用。"
+      }
+    }
+  ]
+}

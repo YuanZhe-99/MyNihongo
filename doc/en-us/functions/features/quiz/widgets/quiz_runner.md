@@ -13,6 +13,7 @@ block needs that a practice quiz does not.
 | Declaration | Kind | Tier | Purpose |
 |---|---|---|---|
 | [`QuizRunner`](#runner) | class | A | Run one session on screen. |
+| `passageTextOf` | field | B | The text of whatever the question is about, for the AI actions under a wrong answer. |
 | `_submit` | method | B | Submit the composed answer, asking the model for a second opinion on a typed one. |
 | `_advanceIfUnmarked` | method | B | Move straight on where the answer is not being marked on screen. |
 | `_continue` | method | B | Move past the feedback to the next question. |
@@ -82,3 +83,10 @@ block needs that a practice quiz does not.
   same span marked. Splitting the mode switch out into `_modeInstruction` is what keeps the two rules
   from being tangled: one answers "what did this question ask for", the other "what does this mode
   ask for", and only the second has a default.
+
+`passageTextOf` is the same idea as `leadingBuilder` at one remove: the page that drew the paper has
+the passages, and the runner does not, so it hands over a callback rather than a map. What comes back
+is the plain Japanese of whatever the question was about and whether it was spoken, and it goes
+straight into `WhyWrong` — which is what puts "where does the passage say otherwise?" under a 読解
+question and "which line had the answer?" under a 聴解 one. A runner given none simply shows the
+explanation it always showed.

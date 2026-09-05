@@ -18,6 +18,7 @@ Entered with `context.push('/quiz', extra: config)`.
 | [`_drillQuestions`](#drill) | method | A | Draw one paper's questions from the shipped drill files. |
 | [`_recordAttempt`](#recordattempt) | method | A | Write the finished paper into the progress file. |
 | [`_passageFor`](#passagefor) | method | A | Show whatever the question on screen is about. |
+| `_passageTextOf` | method | B | Give the AI actions the text of whatever the question is about. |
 | `_enabledModes` | method | B | Decide which modes may be used, dropping listening without a voice. |
 | `_itemIds` | method | B | List the catalog ids this session asks about. |
 | `_kanaIds` | method | B | List the kana ids of the selected rows. |
@@ -108,3 +109,9 @@ Entered with `context.push('/quiz', extra: config)`.
   script is played, decided by the **passage's** own type rather than by the question's, because
   文章の文法 is a grammar question about a text that is read. The transcript and the translation are
   both revealed only once the question has been answered — before that they are the answer.
+
+`_passageTextOf` is the plain-text twin of `_passageFor`: the same passage, joined into lines the AI
+actions can be grounded in. The Japanese only, never the translation — the task asks the model to
+work from the text the learner read, and handing it a translation would let it answer from that
+instead. Speaker names are kept, because on a listening question which person said a line is
+frequently the whole answer.

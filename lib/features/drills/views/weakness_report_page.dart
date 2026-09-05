@@ -19,7 +19,14 @@ import '../../../shared/utils/adaptive_layout.dart';
 import '../../content/models/content_catalog.dart';
 import '../../content/services/content_repository.dart';
 import '../../content/services/study_item_labels.dart';
+import '../../ai/services/ai_assist_service.dart';
+import '../../ai/services/ai_practice_service.dart';
+import '../../ai/services/genai_backend.dart';
+import '../../ai/services/practice_response_parser.dart';
+import '../../ai/widgets/ai_explanation_card.dart';
 import '../../learn/widgets/jlpt_practice_card.dart';
+import '../../sentence/services/sentence_analyzer.dart';
+import '../../../shared/providers/learner_profile_provider.dart';
 import '../models/drill_section.dart';
 import '../services/weakness_report.dart';
 
@@ -109,6 +116,8 @@ class WeaknessReportPage extends ConsumerWidget {
                     else
                       for (final entry in report.weakestItems)
                         _itemRow(context, l10n, theme, catalog, entry),
+                    const SizedBox(height: 8),
+                    _WeaknessNote(report: report, catalog: catalog),
                   ],
                 ),
         ),
@@ -236,5 +245,140 @@ class WeaknessReportPage extends ConsumerWidget {
       subtitle: label.subtitle,
       tally: entry.value,
     );
+  }
+}
+
+/// The model's note on what to do about the weaknesses above.
+///
+/// A widget of its own so the page itself stays stateless: the tables are a
+/// function of the report and nothing else, and only this one card has a
+/// request in flight to remember.
+class _WeaknessNote extends ConsumerStatefulWidget {
+  /// Purpose: Offer a note on the report.
+  /// Inputs: The `report` and the `catalog` for naming items.
+  /// Returns: A new `_WeaknessNote` instance.
+  /// Side effects: None until the button is tapped.
+  /// Notes: Internal helper used within this file only.
+  const _WeaknessNote({required this.report, required this.catalog});
+
+  final WeaknessReport report;
+  final ContentCatalog? catalog;
+
+  @override
+  ConsumerState<_WeaknessNote> createState() => _WeaknessNoteState();
+}
+
+class _WeaknessNoteState extends ConsumerState<_WeaknessNote> {
+  String? _note;
+  GenAiFailure? _failure;
+  bool _loading = false;
+
+  /// Purpose: Show the button, or whatever came back.
+  /// Inputs: `context`.
+  /// Returns: `Widget`.
+  /// Side effects: None until tapped.
+  /// Notes: With the switch off there is nothing here at all — not a disabled
+  /// button and not an invitation to turn something on. The report is complete
+  /// without it.
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    if (!ref.watch(aiAssistServiceProvider).canExplain) {
+      return const SizedBox.shrink();
+    }
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (_note == null && _failure == null)
+          Align(
+            alignment: Alignment.centerLeft,
+            child: TextButton.icon(
+              onPressed: _loading ? null : _ask,
+              icon: const Icon(Icons.auto_awesome_outlined, size: 18),
+              label: Text(l10n.aiWeaknessNote),
+            ),
+          ),
+        if (_loading || _note != null || _failure != null)
+          AiExplanationCard(
+            title: l10n.aiWeaknessNote,
+            text: _note,
+            failure: _failure,
+            loading: _loading,
+            onDismiss: () => setState(() {
+              _note = null;
+              _failure = null;
+            }),
+          ),
+      ],
+    );
+  }
+
+  /// Purpose: Ask what to do about what the report found.
+  /// Inputs: None; reads the report and the catalog.
+  /// Returns: None.
+  /// Side effects: Runs a model on the device; rebuilds.
+  /// Notes: Internal helper used within this file only. **Only what the app
+  /// already computed goes into the prompt** — the same counts the tables
+  /// show — and the task's rules forbid estimating whether the learner would
+  /// pass. The readiness band is a thing the app derives under stated rules,
+  /// and a model guessing at one beside it would be a second, unexplainable
+  /// answer to the same question.
+  Future<void> _ask() async {
+    final builder = await practicePromptBuilder(ref);
+    if (builder == null || !mounted) return;
+    final level = ref.read(learnerProfileProvider).targetLevel;
+    final prompt = builder.forWeakness(
+      weakest: _lines(),
+      level: level.label,
+      locale: Localizations.localeOf(context),
+    );
+    if (prompt == null) return;
+
+    setState(() {
+      _loading = true;
+      _failure = null;
+    });
+    try {
+      final raw = await AiPracticeService.instance.run(
+        prompt,
+        maxOutputTokens: builder.maxOutputTokens,
+      );
+      if (!mounted) return;
+      setState(() {
+        _note = PracticeResponseParser.explanation(raw, prompt: prompt);
+        _failure = _note == null ? GenAiFailure.failed : null;
+        _loading = false;
+      });
+    } on GenAiException catch (error) {
+      if (!mounted) return;
+      setState(() {
+        _failure = error.failure;
+        _loading = false;
+      });
+    }
+  }
+
+  /// Purpose: Say what the report found, in lines a prompt can carry.
+  /// Inputs: None; reads the report and the catalog.
+  /// Returns: `List<String>`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. The 大問 go in under
+  /// their Japanese names, which is what they are called on the paper and what
+  /// a learner would search for. A word goes in under its headword rather than
+  /// its catalog id: `vocab:jm1578850` means nothing to a model, and the point
+  /// of the note is that it says something about the Japanese.
+  List<String> _lines() {
+    final report = widget.report;
+    return [
+      for (final entry in report.bySection.entries)
+        '${entry.key.name}: ${entry.value.right} of ${entry.value.asked} '
+            'right.',
+      for (final entry in report.weakestTypes)
+        '${entry.key.jaName}: ${entry.value.right} of ${entry.value.asked} '
+            'right.',
+      for (final entry in report.weakestItems)
+        '${widget.catalog?.vocabById(entry.key)?.headword ?? widget.catalog?.grammarById(entry.key)?.pattern ?? entry.key}: '
+            '${entry.value.right} of ${entry.value.asked} right.',
+    ];
   }
 }

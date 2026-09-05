@@ -33,6 +33,7 @@ Consumers: the `/exam` route, reached from `JlptPracticeCard` with an `ExamConfi
 | `_saveNow` | method | B | Do one save. |
 | [`_record`](#record) | method | A | Record the finished paper and clear the save. |
 | `_passageFor` | method | B | Show whatever the question on screen is about — a listening script played once, or a passage with no translation. |
+| `_passageTextOf` | method | B | Give the AI actions the text of whatever the question is about. |
 | [`_confirmLeave`](#confirmleave) | method | A | Confirm before leaving a paper that is still running. |
 | [`build`](#build) | method | A | Build the start card, the timed block, or the results. |
 | `_startCard` | method | B | Offer to start the next block, naming its sections, its minutes and its question count. |
@@ -210,3 +211,8 @@ Consumers: the `/exam` route, reached from `JlptPracticeCard` with an `ExamConfi
   not do. The last minute is the one worth colouring — before that a countdown in red is just noise,
   and after it there is nothing to warn about. Tabular figures stop the countdown from jittering as
   the digits change.
+
+`_passageTextOf` is the plain-text twin of `_passageFor`, handed to both the runner and the results
+view so the AI actions under a wrong 読解 or 聴解 question have the text to work from. The Japanese
+only, never the translation, and speaker names kept — on a listening question, which person said a
+line is frequently the whole answer.

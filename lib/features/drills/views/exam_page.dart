@@ -414,6 +414,27 @@ class _ExamPageState extends ConsumerState<ExamPage>
     );
   }
 
+  /// Purpose: Give the AI actions the text of whatever the question is about.
+  /// Inputs: The `question`.
+  /// Returns: The passage's Japanese lines joined, and whether they were
+  /// spoken; null for a question that stands on its own.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. The Japanese only,
+  /// never the translation: the task asks the model to work from the text the
+  /// learner read, and handing it a translation would let it answer from that
+  /// instead. Speaker names are kept, because on a listening question which
+  /// person said a line is frequently the whole answer.
+  ({String text, bool spoken})? _passageTextOf(QuizQuestion question) {
+    final passage = _passages[question.passageId];
+    if (passage == null) return null;
+    final spoken = passage.type.section == DrillSection.listening;
+    final text = [
+      for (final line in passage.lines)
+        line.speaker.isEmpty ? line.ja : '${line.speaker}: ${line.ja}',
+    ].join('\n');
+    return (text: text, spoken: spoken);
+  }
+
   /// Purpose: Confirm before leaving a paper that is still running.
   /// Inputs: None.
   /// Returns: `Future<bool>`.
@@ -483,6 +504,7 @@ class _ExamPageState extends ConsumerState<ExamPage>
               (_, final e?) when e.isFinished => ExamResultsView(
                 exam: e,
                 sectionOf: _sectionOf,
+                passageTextOf: _passageTextOf,
                 onDone: () async {
                   final navigator = Navigator.of(context);
                   await _record();
@@ -573,6 +595,7 @@ class _ExamPageState extends ConsumerState<ExamPage>
       showFeedback: false,
       questionPaneWidth: drillPassagePaneWidth,
       leadingBuilder: _passageFor,
+      passageTextOf: _passageTextOf,
       header: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

@@ -247,3 +247,29 @@ is added to it and nothing is removed.
 
 The full derivation, including every threshold and every case the estimate
 refuses to speak about, is in `algorithms/readiness-estimate.md`.
+
+## Help with a passage, once the question is over
+
+With on-device AI switched on, three actions appear around 読解 and 聴解 — and every one of them is
+gated on the question already having been answered, because each would otherwise be the answer.
+
+Each line of a reading passage carries **Say this more simply**: the same sentence in easier
+Japanese, at the learner's target level, with its reading and one line of meaning. It sits under its
+own line rather than in a card at the bottom, because the point is seeing the two versions together,
+and it carries the generated label — this is model-written Japanese directly under content the app
+wrote, and the two must not be indistinguishable. A reply that will not parse leaves the line with
+the original only.
+
+Under a wrong reading answer, **Where does the passage say otherwise?** asks the model to quote the
+sentence that rules the choice out. The task forbids bringing in anything from outside the passage: a
+reading question is a question about one text, and an answer justified from general knowledge would
+teach the wrong skill even when it happened to be true.
+
+Under a wrong listening answer, over the revealed transcript, **Which line had the answer?** names
+the line and says what in it is easy to miss when heard rather than read. That is the whole point of
+the action — a learner who reads the script sees the answer immediately and learns nothing about why
+they missed it when it was spoken.
+
+The same three appear on the mock results screen, where the paper is over and the passage text is no
+longer being withheld from anybody. None of them changes a score: an attempt written with the switch
+on is the attempt written with it off.

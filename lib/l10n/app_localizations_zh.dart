@@ -1702,6 +1702,62 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get weaknessOpen => '该练什么';
+
+  @override
+  String get writingRubricTitle => '应用测到的';
+
+  @override
+  String writingRubricSentences(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 个句子',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String writingRubricGrammar(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '用到 $count 个学过的语法点',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String writingRubricLevel(int percent, String level) {
+    return '认得出的词里有 $percent% 是 $level 或更简单的';
+  }
+
+  @override
+  String writingRubricUnreadable(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 个词读不出来',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get writingRubricNote => '这里没有分数。JLPT 没有写作部分。';
+
+  @override
+  String get aiRubric => '接下来可以试什么';
+
+  @override
+  String get aiParaphrase => '用更简单的说法';
+
+  @override
+  String get aiContradiction => '文章哪里不是这么说的？';
+
+  @override
+  String get aiListeningReview => '答案在哪一句？';
+
+  @override
+  String get aiWeaknessNote => '该怎么办';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -3402,4 +3458,60 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get weaknessOpen => '該練什麼';
+
+  @override
+  String get writingRubricTitle => '應用程式測到的';
+
+  @override
+  String writingRubricSentences(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 個句子',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String writingRubricGrammar(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '用到 $count 個學過的文法點',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String writingRubricLevel(int percent, String level) {
+    return '認得出的詞裡有 $percent% 是 $level 或更簡單的';
+  }
+
+  @override
+  String writingRubricUnreadable(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 個詞讀不出來',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get writingRubricNote => '這裡沒有分數。JLPT 沒有寫作部分。';
+
+  @override
+  String get aiRubric => '接下來可以試什麼';
+
+  @override
+  String get aiParaphrase => '用更簡單的說法';
+
+  @override
+  String get aiContradiction => '文章哪裡不是這麼說的？';
+
+  @override
+  String get aiListeningReview => '答案在哪一句？';
+
+  @override
+  String get aiWeaknessNote => '該怎麼辦';
 }

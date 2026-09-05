@@ -168,6 +168,25 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
+  testWidgets('the report stands complete with no model on the device', (
+    tester,
+  ) async {
+    await seed(tester, [
+      const {'q:n5-v-001': 0},
+      const {'q:n5-v-001': 0},
+      const {'q:n5-v-001': 0},
+    ]);
+    await pumpAt(tester, 412, 915);
+    expect(find.text('按部分'), findsOneWidget);
+    expect(
+      find.text('该怎么办'),
+      findsNothing,
+      reason: 'the switch is off, so there is no button and no invitation — '
+          'the tables are the whole report',
+    );
+    expect(tester.takeException(), isNull);
+  });
+
   for (final geometry in const [
     (412.0, 915.0, 'a phone in portrait'),
     (915.0, 412.0, 'a phone in landscape'),

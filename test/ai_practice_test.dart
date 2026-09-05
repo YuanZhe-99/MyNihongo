@@ -134,6 +134,105 @@ void main() {
       expect(prompt, contains(entry.level.label));
     });
 
+
+    test('a rubric prompt carries the checklist findings, not a verdict', () {
+      final prompt = builder.forRubric(
+        text: '毎日日本語を勉強します。',
+        findings: const ['1 sentence(s) written.', '2 of 5 words used.'],
+        topic: 'Write about your day',
+        locale: en,
+      );
+      expect(prompt, isNotNull);
+      expect(prompt, contains('毎日日本語を勉強します。'));
+      expect(
+        prompt,
+        contains('2 of 5 words used.'),
+        reason: 'the model is shown what was measured, not asked to measure',
+      );
+      expect(prompt, contains('Do not re-score'));
+    });
+
+    test('a rubric prompt needs something written', () {
+      expect(
+        builder.forRubric(text: '   ', findings: const [], locale: en),
+        isNull,
+      );
+    });
+
+    test('a paraphrase prompt names the level it must stay within', () {
+      final prompt = builder.forParaphrase(
+        sentence: '本を読めば読むほど、自分が知らないことは多いと分かる。',
+        level: 'N3',
+        locale: en,
+      );
+      expect(prompt, isNotNull);
+      expect(prompt, contains('N3'));
+      expect(prompt, contains('本を読めば'));
+    });
+
+    test('a contradiction prompt carries the passage and forbids outside '
+        'knowledge', () {
+      final prompt = builder.forContradiction(
+        passage: '私は毎朝七時に起きます。',
+        question: 'What time does the writer get up?',
+        chosen: '八時',
+        correct: '七時',
+        locale: en,
+      );
+      expect(prompt, isNotNull);
+      expect(prompt, contains('私は毎朝七時に起きます。'));
+      expect(prompt, contains('八時'));
+      expect(prompt, contains('Do not bring in outside knowledge.'));
+    });
+
+    test('a contradiction prompt refuses without a passage', () {
+      expect(
+        builder.forContradiction(
+          passage: '  ',
+          question: 'q',
+          chosen: 'a',
+          correct: 'b',
+          locale: en,
+        ),
+        isNull,
+      );
+    });
+
+    test('a listening review prompt asks which line carried the answer', () {
+      final prompt = builder.forListeningReview(
+        script: '男: 明日は七時に来てください。',
+        question: 'What time should he arrive?',
+        chosen: '八時',
+        correct: '七時',
+        locale: en,
+      );
+      expect(prompt, isNotNull);
+      expect(prompt, contains('明日は七時に'));
+      expect(prompt, contains('Name the line that carried the answer'));
+    });
+
+    test('a weakness prompt carries the counts and forbids a score', () {
+      final prompt = builder.forWeakness(
+        weakest: const ['listening: 4 of 12 right.', '漢字読み: 1 of 5 right.'],
+        level: 'N4',
+        locale: en,
+      );
+      expect(prompt, isNotNull);
+      expect(prompt, contains('4 of 12 right.'));
+      expect(prompt, contains('漢字読み'));
+      expect(
+        prompt,
+        contains('do not give any score'),
+        reason: 'the readiness band is derived; a guessed one would rival it',
+      );
+    });
+
+    test('a weakness prompt with nothing to report is refused', () {
+      expect(
+        builder.forWeakness(weakest: const [], level: 'N4', locale: en),
+        isNull,
+      );
+    });
     test('no templates means no prompts, not empty ones', () {
       const empty = PracticePromptBuilder(PromptTemplates.empty);
       expect(empty.forWriting('あ', locale: en), isNull);
@@ -183,6 +282,40 @@ void main() {
       );
     });
 
+
+    test('a paraphrase is read from its three labelled lines', () {
+      final parsed = PracticeResponseParser.paraphrase(
+        'Japanese: 本をたくさん読むと、知らないことが多いと分かります。\n'
+        'Reading: ほんをたくさんよむと、しらないことがおおいとわかります。\n'
+        'Meaning: The more you read, the more you find you do not know.',
+      );
+      expect(parsed, isNotNull);
+      expect(parsed!.japanese, startsWith('本をたくさん'));
+      expect(parsed.reading, startsWith('ほんをたくさん'));
+      expect(parsed.meaning, contains('the more'));
+    });
+
+    test('a paraphrase with no Japanese line is refused', () {
+      expect(
+        PracticeResponseParser.paraphrase(
+          'Reading: ほん\nMeaning: a book',
+        ),
+        isNull,
+        reason: 'a paraphrase with no sentence in it has nothing to show',
+      );
+    });
+
+    test('a paraphrase missing its reading is still a paraphrase', () {
+      final parsed = PracticeResponseParser.paraphrase('Japanese: 本を読みます。');
+      expect(parsed, isNotNull);
+      expect(parsed!.reading, isNull);
+      expect(parsed.meaning, isNull);
+    });
+
+    test('a full-width colon labels a paraphrase too', () {
+      final parsed = PracticeResponseParser.paraphrase('Japanese： 本を読みます。');
+      expect(parsed?.japanese, '本を読みます。');
+    });
     test('a verdict is read from the first line only', () {
       expect(PracticeResponseParser.grade('SAME\nClose enough.')?.same, isTrue);
       expect(

@@ -2,15 +2,15 @@
 
 这是 MyNihongo 仓库中 `lib/` 手写函数解释层文档的顶层索引。每行链接到 `doc/zh-cn/functions/` 下镜像 `lib/` 树的逐源文件页面（`.dart` 换成 `.md`）。
 
-**总计：** 仓库的 `/// Purpose:` 注释数为 **1081**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **1178** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
+**总计：** 仓库的 `/// Purpose:` 注释数为 **1104**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **1223** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
 
 | Tier | 计数 |
 |---|---|
-| Tier A（完整条目：用途/输入/返回/副作用/算法/使用/说明） | 254 |
-| Tier B（仅索引行） | 924 |
-| **总计** | **1178** |
+| Tier A（完整条目：用途/输入/返回/副作用/算法/使用/说明） | 259 |
+| Tier B（仅索引行） | 964 |
+| **总计** | **1223** |
 
-这些总计上次是在 `v0.4.8` 加入薄弱点报告与备考程度估计时对照源码树测得的。若要改动这些数字，请测量而不要手工调整：
+这些总计上次是在 `v0.4.9` 加入端侧提示与写作清单时对照源码树测得的。若要改动这些数字，请测量而不要手工调整：
 
 ```bash
 find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' | wc -l
@@ -84,7 +84,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/quiz/services/question_generator.dart` | [features/quiz/services/question_generator.md](features/quiz/services/question_generator.md) | 15 | 3 |
 | `lib/features/quiz/services/quiz_session.dart` | [features/quiz/services/quiz_session.md](features/quiz/services/quiz_session.md) | 22 | 7 |
 | `lib/features/quiz/views/quiz_modes_page.dart` | [features/quiz/views/quiz_modes_page.md](features/quiz/views/quiz_modes_page.md) | 3 | 1 |
-| `lib/features/quiz/views/quiz_page.dart` | [features/quiz/views/quiz_page.md](features/quiz/views/quiz_page.md) | 15 | 4 |
+| `lib/features/quiz/views/quiz_page.dart` | [features/quiz/views/quiz_page.md](features/quiz/views/quiz_page.md) | 16 | 4 |
 | `lib/features/quiz/widgets/answer_panes.dart` | [features/quiz/widgets/answer_panes.md](features/quiz/widgets/answer_panes.md) | 6 | 1 |
 | `lib/features/quiz/widgets/quiz_runner.dart` | [features/quiz/widgets/quiz_runner.md](features/quiz/widgets/quiz_runner.md) | 11 | 3 |
 | `lib/features/sentence/models/function_word.dart` | [features/sentence/models/function_word.md](features/sentence/models/function_word.md) | 7 | 1 |
@@ -132,12 +132,12 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/drills/services/exam_session.dart` | [features/drills/services/exam_session.md](features/drills/services/exam_session.md) | 27 | 8 |
 | `lib/features/drills/services/weakness_report.dart` | [features/drills/services/weakness_report.md](features/drills/services/weakness_report.md) | 11 | 3 |
 | `lib/features/drills/services/readiness_rules.dart` | [features/drills/services/readiness_rules.md](features/drills/services/readiness_rules.md) | 8 | 1 |
-| `lib/features/drills/widgets/drill_passage_view.dart` | [features/drills/widgets/drill_passage_view.md](features/drills/widgets/drill_passage_view.md) | 3 | 1 |
-| `lib/features/drills/widgets/exam_results_view.dart` | [features/drills/widgets/exam_results_view.md](features/drills/widgets/exam_results_view.md) | 4 | 1 |
+| `lib/features/drills/widgets/drill_passage_view.dart` | [features/drills/widgets/drill_passage_view.md](features/drills/widgets/drill_passage_view.md) | 8 | 1 |
+| `lib/features/drills/widgets/exam_results_view.dart` | [features/drills/widgets/exam_results_view.md](features/drills/widgets/exam_results_view.md) | 6 | 1 |
 | `lib/features/drills/widgets/listening_script_player.dart` | [features/drills/widgets/listening_script_player.md](features/drills/widgets/listening_script_player.md) | 5 | 3 |
 | `lib/features/drills/views/exam_history_page.dart` | [features/drills/views/exam_history_page.md](features/drills/views/exam_history_page.md) | 6 | 3 |
-| `lib/features/drills/views/exam_page.dart` | [features/drills/views/exam_page.md](features/drills/views/exam_page.md) | 20 | 9 |
-| `lib/features/drills/views/weakness_report_page.dart` | [features/drills/views/weakness_report_page.md](features/drills/views/weakness_report_page.md) | 8 | 2 |
+| `lib/features/drills/views/exam_page.dart` | [features/drills/views/exam_page.md](features/drills/views/exam_page.md) | 21 | 9 |
+| `lib/features/drills/views/weakness_report_page.dart` | [features/drills/views/weakness_report_page.md](features/drills/views/weakness_report_page.md) | 13 | 2 |
 
 ## shared/
 
@@ -175,7 +175,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/lessons/services/lesson_rules.dart` | [features/lessons/services/lesson_rules.md](features/lessons/services/lesson_rules.md) | 9 | 3 |
 | `lib/features/lessons/widgets/lesson_path_view.dart` | 未编写文档 | — | — |
 | `lib/features/quiz/services/question_bank.dart` | [features/quiz/services/question_bank.md](features/quiz/services/question_bank.md) | 5 | 2 |
-| `lib/features/quiz/widgets/why_wrong.dart` | 未编写文档 | — | — |
+| `lib/features/quiz/widgets/why_wrong.dart` | [features/quiz/widgets/why_wrong.md](features/quiz/widgets/why_wrong.md) | 9 | 2 |
 | `lib/features/reminders/services/reminder_backend.dart` | 未编写文档 | — | — |
 | `lib/features/reminders/services/reminder_planner.dart` | [features/reminders/services/reminder_planner.md](features/reminders/services/reminder_planner.md) | 3 | 1 |
 | `lib/features/reminders/services/reminder_service.dart` | [features/reminders/services/reminder_service.md](features/reminders/services/reminder_service.md) | 12 | 3 |
@@ -183,13 +183,14 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/reminders/services/desktop_reminder_backend.dart` | 未编写文档 | — | — |
 | `lib/features/reminders/widgets/reminder_settings_tiles.dart` | 未编写文档 | — | — |
 | `lib/features/ai/services/ai_practice_service.dart` | [features/ai/services/ai_practice_service.md](features/ai/services/ai_practice_service.md) | 7 | 2 |
-| `lib/features/ai/services/practice_prompt_builder.dart` | [features/ai/services/practice_prompt_builder.md](features/ai/services/practice_prompt_builder.md) | 12 | 1 |
-| `lib/features/ai/services/practice_response_parser.dart` | [features/ai/services/practice_response_parser.md](features/ai/services/practice_response_parser.md) | 12 | 3 |
+| `lib/features/ai/services/practice_prompt_builder.dart` | [features/ai/services/practice_prompt_builder.md](features/ai/services/practice_prompt_builder.md) | 16 | 1 |
+| `lib/features/ai/services/practice_response_parser.dart` | [features/ai/services/practice_response_parser.md](features/ai/services/practice_response_parser.md) | 18 | 3 |
 | `lib/features/ai/widgets/generated_examples.dart` | [features/ai/widgets/generated_examples.md](features/ai/widgets/generated_examples.md) | 8 | 1 |
 | `lib/features/lessons/models/scenario.dart` | [features/lessons/models/scenario.md](features/lessons/models/scenario.md) | 14 | 1 |
 | `lib/features/lessons/views/scenario_page.dart` | [features/lessons/views/scenario_page.md](features/lessons/views/scenario_page.md) | 8 | 1 |
 | `lib/features/quiz/services/ai_question_generator.dart` | [features/quiz/services/ai_question_generator.md](features/quiz/services/ai_question_generator.md) | 9 | 2 |
-| `lib/features/writing/views/writing_practice_page.dart` | [features/writing/views/writing_practice_page.md](features/writing/views/writing_practice_page.md) | 18 | 5 |
+| `lib/features/writing/services/writing_rubric.dart` | [features/writing/services/writing_rubric.md](features/writing/services/writing_rubric.md) | 10 | 3 |
+| `lib/features/writing/views/writing_practice_page.dart` | [features/writing/views/writing_practice_page.md](features/writing/views/writing_practice_page.md) | 20 | 5 |
 
 ## l10n/
 

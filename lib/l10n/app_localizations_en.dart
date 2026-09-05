@@ -1778,4 +1778,64 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get weaknessOpen => 'What to work on';
+
+  @override
+  String get writingRubricTitle => 'What the app measured';
+
+  @override
+  String writingRubricSentences(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count sentences',
+      one: '1 sentence',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String writingRubricGrammar(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count grammar points you have been taught',
+      one: '1 grammar point you have been taught',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String writingRubricLevel(int percent, String level) {
+    return '$percent% of the words we recognised are $level or easier';
+  }
+
+  @override
+  String writingRubricUnreadable(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count words we could not read',
+      one: '1 word we could not read',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get writingRubricNote =>
+      'Nothing here is a score. The JLPT has no writing section.';
+
+  @override
+  String get aiRubric => 'What to try next';
+
+  @override
+  String get aiParaphrase => 'Say this more simply';
+
+  @override
+  String get aiContradiction => 'Where does the passage say otherwise?';
+
+  @override
+  String get aiListeningReview => 'Which line had the answer?';
+
+  @override
+  String get aiWeaknessNote => 'What to do about it';
 }

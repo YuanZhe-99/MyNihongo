@@ -27,10 +27,23 @@ class WhyWrong extends ConsumerStatefulWidget {
   /// Returns: A new `WhyWrong` instance.
   /// Side effects: None until the button is tapped.
   /// Notes: None.
-  const WhyWrong({super.key, required this.question, required this.chose});
+  const WhyWrong({
+    super.key,
+    required this.question,
+    required this.chose,
+    this.passage,
+    this.spoken = false,
+  });
 
   final QuizQuestion question;
   final int? chose;
+
+  /// The passage or script the question is about, as the learner has it on
+  /// screen; null for a question that stands on its own.
+  final String? passage;
+
+  /// Whether that text was spoken rather than read.
+  final bool spoken;
 
   @override
   ConsumerState<WhyWrong> createState() => _WhyWrongState();
@@ -40,6 +53,12 @@ class _WhyWrongState extends ConsumerState<WhyWrong> {
   String? _generated;
   GenAiFailure? _failure;
   bool _loading = false;
+
+  /// The passage-grounded answer, kept apart from [_generated] so a learner
+  /// can have both on screen: they answer different questions.
+  String? _passageNote;
+  GenAiFailure? _passageFailure;
+  bool _passageLoading = false;
 
   @override
   /// Purpose: Build the deterministic note and, when possible, the button.
@@ -84,8 +103,104 @@ class _WhyWrongState extends ConsumerState<WhyWrong> {
               _failure = null;
             }),
           ),
+        if (service.canExplain &&
+            widget.passage != null &&
+            _passageNote == null &&
+            _passageFailure == null)
+          Align(
+            alignment: Alignment.centerLeft,
+            child: TextButton.icon(
+              onPressed: _passageLoading ? null : _askPassage,
+              icon: const Icon(Icons.auto_awesome_outlined, size: 18),
+              label: Text(
+                widget.spoken ? l10n.aiListeningReview : l10n.aiContradiction,
+              ),
+            ),
+          ),
+        if (_passageLoading ||
+            _passageNote != null ||
+            _passageFailure != null)
+          AiExplanationCard(
+            title: widget.spoken
+                ? l10n.aiListeningReview
+                : l10n.aiContradiction,
+            text: _passageNote,
+            failure: _passageFailure,
+            loading: _passageLoading,
+            onDismiss: () => setState(() {
+              _passageNote = null;
+              _passageFailure = null;
+            }),
+          ),
       ],
     );
+  }
+
+  /// Purpose: Ask what in the passage — or in the spoken lines — settles this
+  /// question.
+  /// Inputs: None; reads the widget's question, choice and passage.
+  /// Returns: None.
+  /// Side effects: Runs a model on the device; rebuilds.
+  /// Notes: Internal helper used within this file only. Two tasks share this
+  /// method because they share every input and differ only in what is being
+  /// asked about the same text: a reading question is answered from the
+  /// passage, and a listening question is answered from the line that carried
+  /// it. The task's rules do the rest.
+  ///
+  /// The text handed over is **the text the learner has on screen**, which for
+  /// listening means the transcript is only ever sent after the question has
+  /// been answered — before that, showing it would replace the exercise.
+  Future<void> _askPassage() async {
+    final passage = widget.passage;
+    final question = widget.question;
+    final chose = widget.chose;
+    if (passage == null || chose == null) return;
+    if (chose < 0 || chose >= question.options.length) return;
+    final answer = question.answerText;
+    if (answer == null) return;
+    final builder = await practicePromptBuilder(ref);
+    if (builder == null || !mounted) return;
+
+    final locale = Localizations.localeOf(context);
+    final prompt = widget.spoken
+        ? builder.forListeningReview(
+            script: passage,
+            question: question.prompt,
+            chosen: question.options[chose],
+            correct: answer,
+            locale: locale,
+          )
+        : builder.forContradiction(
+            passage: passage,
+            question: question.prompt,
+            chosen: question.options[chose],
+            correct: answer,
+            locale: locale,
+          );
+    if (prompt == null) return;
+
+    setState(() {
+      _passageLoading = true;
+      _passageFailure = null;
+    });
+    try {
+      final raw = await AiPracticeService.instance.run(
+        prompt,
+        maxOutputTokens: builder.maxOutputTokens,
+      );
+      if (!mounted) return;
+      setState(() {
+        _passageNote = PracticeResponseParser.explanation(raw, prompt: prompt);
+        _passageFailure = _passageNote == null ? GenAiFailure.failed : null;
+        _passageLoading = false;
+      });
+    } on GenAiException catch (error) {
+      if (!mounted) return;
+      setState(() {
+        _passageFailure = error.failure;
+        _passageLoading = false;
+      });
+    }
   }
 
   /// Purpose: Find what the app itself can say about this question.

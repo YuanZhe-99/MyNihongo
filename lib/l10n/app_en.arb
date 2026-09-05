@@ -598,5 +598,20 @@
   "readinessGroupLanguageReading": "Language knowledge and reading",
   "readinessGroupReading": "Reading",
   "readinessGroupListening": "Listening",
-  "weaknessOpen": "What to work on"
+  "weaknessOpen": "What to work on",
+"writingRubricTitle": "What the app measured",
+  "writingRubricSentences": "{count, plural, =1{1 sentence} other{{count} sentences}}",
+  "@writingRubricSentences": { "placeholders": { "count": { "type": "int" } } },
+  "writingRubricGrammar": "{count, plural, =1{1 grammar point you have been taught} other{{count} grammar points you have been taught}}",
+  "@writingRubricGrammar": { "placeholders": { "count": { "type": "int" } } },
+  "writingRubricLevel": "{percent}% of the words we recognised are {level} or easier",
+  "@writingRubricLevel": { "placeholders": { "percent": { "type": "int" }, "level": { "type": "String" } } },
+  "writingRubricUnreadable": "{count, plural, =1{1 word we could not read} other{{count} words we could not read}}",
+  "@writingRubricUnreadable": { "placeholders": { "count": { "type": "int" } } },
+  "writingRubricNote": "Nothing here is a score. The JLPT has no writing section.",
+  "aiRubric": "What to try next",
+  "aiParaphrase": "Say this more simply",
+  "aiContradiction": "Where does the passage say otherwise?",
+  "aiListeningReview": "Which line had the answer?",
+  "aiWeaknessNote": "What to do about it"
 }

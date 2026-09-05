@@ -1,0 +1,717 @@
+{
+  "schemaVersion": 1,
+  "source": "model-authored (Claude), unreviewed",
+  "license": "GPL-3.0 with the app.",
+  "level": "N2",
+  "section": "grammar",
+  "passages": [
+    {
+      "id": "p:n2-g-001",
+      "type": "text-grammar",
+      "lines": [
+        {
+          "ja": "私が本を読む楽しさを知ったのは、大学に入ってからだった。",
+          "reading": "わたしがほんをよむたのしさをしったのは、だいがくにはいってからだった。"
+        },
+        {
+          "ja": "それまでは、授業で必要になったときに教科書を開くだけだった。",
+          "reading": "それまでは、じゅぎょうでひつようになったときにきょうかしょをひらくだけだった。"
+        },
+        {
+          "ja": "ある日、友人にすすめられた本を読んだのをきっかけに、私の生活は大きく変わった。",
+          "reading": "あるひ、ゆうじんにすすめられたほんをよんだのをきっかけに、わたしのせいかつはおおきくかわった。"
+        },
+        {
+          "ja": "それ以来、私の本を読む時間は増える一方だ。",
+          "reading": "それいらい、わたしのほんをよむじかんはふえるいっぽうだ。"
+        },
+        {
+          "ja": "今では、電車の中のみならず、寝る前の時間も読書に使っている。",
+          "reading": "いまでは、でんしゃのなかのみならず、ねるまえのじかんもどくしょにつかっている。"
+        },
+        {
+          "ja": "本を読めば読むほど、自分が知らないことは多いと分かる。",
+          "reading": "ほんをよめばよむほど、じぶんがしらないことはおおいとわかる。"
+        },
+        {
+          "ja": "もちろん、読んだ内容をすべて覚えられるわけではない。",
+          "reading": "もちろん、よんだないようをすべておぼえられるわけではない。"
+        },
+        {
+          "ja": "それでも、忘れることを恐れることなく、これからも読み続けたい。",
+          "reading": "それでも、わすれることをおそれることなく、これからもよみつづけたい。"
+        },
+        {
+          "ja": "読書は、私にとって今や欠かせない習慣になりつつある。",
+          "reading": "どくしょは、わたしにとっていまやかかせないしゅうかんになりつつある。"
+        }
+      ],
+      "en": "It was only after entering university that I learned how enjoyable reading is. Until then I simply opened a textbook when a class required it. One day, reading a book a friend had recommended became the trigger, and my life changed a great deal. Ever since, the time I spend reading has done nothing but increase. These days I read not only on the train but also in the time before I go to sleep. The more I read, the more I notice how much I do not know. Of course, it is not as if I can remember everything I have read. Even so, without fearing that I will forget, I want to go on reading. Reading is becoming a habit I can no longer do without.",
+      "zh": "我是上了大学以后才知道读书的乐趣的。在那之前，我只是在上课需要的时候才翻开教科书。有一天，我读了朋友推荐的一本书，以此为契机，我的生活发生了很大的变化。从那以后，我读书的时间就一直在增加。现在，我不仅在电车上读，睡前的时间也用来读书。书读得越多，越能意识到自己不知道的东西有多少。当然，读过的内容并不是都能记住。即便如此，我也不想因为怕忘记就不读，今后还想继续读下去。对我来说，读书正在变成一个不可缺少的习惯。",
+      "zh_TW": "我是上了大學以後才知道讀書的樂趣的。在那之前，我只是在上課需要的時候才翻開教科書。有一天，我讀了朋友推薦的一本書，以此為契機，我的生活發生了很大的變化。從那以後，我讀書的時間就一直在增加。現在，我不僅在電車上讀，睡前的時間也用來讀書。書讀得越多，越能意識到自己不知道的東西有多少。當然，讀過的內容並不是都能記住。即便如此，我也不想因為怕忘記就不讀，今後還想繼續讀下去。對我來說，讀書正在變成一個不可缺少的習慣。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q:n2-g-001",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-mo-kakawarazu"
+      ],
+      "kind": "choice",
+      "ja": "雨が降っていたにもかかわらず、試合は予定どおり行われた。",
+      "reading": "あめがふっていたにもかかわらず、しあいはよていどおりおこなわれた。",
+      "blank": "にもかかわらず",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "にもかかわらず",
+        "によって",
+        "にとって",
+        "において"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The rain was a reason the match should have been called off, yet it went ahead anyway, and にもかかわらず marks exactly that kind of unexpected outcome.",
+        "zh": "下雨本该是比赛取消的理由，结果比赛照常举行，这种出乎意料的转折用「にもかかわらず」。",
+        "zh_TW": "下雨本該是比賽取消的理由，結果比賽照常舉行，這種出乎意料的轉折用「にもかかわらず」。"
+      }
+    },
+    {
+      "id": "q:n2-g-002",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-motozuite"
+      ],
+      "kind": "choice",
+      "ja": "この計画は、去年の調査に基づいて作られた。",
+      "reading": "このけいかくは、きょねんのちょうさにもとづいてつくられた。",
+      "blank": "基づいて",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "基づいて",
+        "加えて",
+        "応じて",
+        "反して"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The survey is the evidence the plan was built on, and に基づいて is the phrase for working from data, rules or findings.",
+        "zh": "调查是制定计划的依据，表示以数据、规定或结果为根据时用「に基づいて」。",
+        "zh_TW": "調查是制定計劃的依據，表示以數據、規定或結果為根據時用「に基づいて」。"
+      }
+    },
+    {
+      "id": "q:n2-g-003",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-oujite"
+      ],
+      "kind": "choice",
+      "ja": "収入に応じて、払う金額が変わります。",
+      "reading": "しゅうにゅうにおうじて、はらうきんがくがかわります。",
+      "blank": "応じて",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "応じて",
+        "沿って",
+        "込めて",
+        "わたって"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The amount is not fixed: it moves up and down with the income, and に応じて says one thing varies in step with another.",
+        "zh": "金额不是固定的，会随着收入的不同而变化，表示随之而变时用「に応じて」。",
+        "zh_TW": "金額不是固定的，會隨著收入的不同而變化，表示隨之而變時用「に応じて」。"
+      }
+    },
+    {
+      "id": "q:n2-g-004",
+      "type": "form-selection",
+      "items": [
+        "grammar:tatotan"
+      ],
+      "kind": "choice",
+      "ja": "家を出たとたんに、雨が降り出した。",
+      "reading": "いえをでたとたんに、あめがふりだした。",
+      "blank": "とたんに",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "とたんに",
+        "ところに",
+        "うえに",
+        "ばかりに"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The rain started at the very moment of stepping outside, and たとたんに joins a past-form verb to something that happened the instant after it.",
+        "zh": "刚一出门雨就下起来了，「た形＋とたんに」表示前项发生的瞬间后项就发生了。",
+        "zh_TW": "剛一出門雨就下起來了，「た形＋とたんに」表示前項發生的瞬間後項就發生了。"
+      }
+    },
+    {
+      "id": "q:n2-g-005",
+      "type": "form-selection",
+      "items": [
+        "grammar:zaru-o-enai"
+      ],
+      "kind": "choice",
+      "ja": "みんなが反対したので、私は自分の意見を変えざるを得なかった。",
+      "reading": "みんながはんたいしたので、わたしはじぶんのいけんをかえざるをえなかった。",
+      "blank": "変えざるを得なかった",
+      "prompt": {
+        "en": "Which form fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个形式？",
+        "zh_TW": "這個句子的空格里應該填哪個形式？"
+      },
+      "options": [
+        "変えざるを得なかった",
+        "変えるどころではなかった",
+        "変えるまでもなかった",
+        "変えるわけがなかった"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Everyone was against it, so the speaker had no choice in the matter, and ざるを得ない is the written-style way to say one is forced into something.",
+        "zh": "大家都反对，说话人别无选择，这种「不得不」的书面说法是「ざるを得ない」。",
+        "zh_TW": "大家都反對，說話人別無選擇，這種「不得不」的書面說法是「ざるを得ない」。"
+      }
+    },
+    {
+      "id": "q:n2-g-006",
+      "type": "form-selection",
+      "items": [
+        "grammar:kanenai"
+      ],
+      "kind": "choice",
+      "ja": "そんな運転をしていると、大きな事故を起こしかねない。",
+      "reading": "そんなうんてんをしていると、おおきなじこをおこしかねない。",
+      "blank": "起こしかねない",
+      "prompt": {
+        "en": "Which form fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个形式？",
+        "zh_TW": "這個句子的空格里應該填哪個形式？"
+      },
+      "options": [
+        "起こしかねない",
+        "起こしかねる",
+        "起こしがたい",
+        "起こしっこない"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The speaker is warning that something bad could well happen, and かねない says a bad outcome is quite possible — かねる would mean the opposite, that it cannot be done.",
+        "zh": "说话人是在警告坏事很可能发生，「かねない」表示有可能发生不好的结果；「かねる」意思相反，表示做不到。",
+        "zh_TW": "說話人是在警告壞事很可能發生，「かねない」表示有可能發生不好的結果；「かねる」意思相反，表示做不到。"
+      }
+    },
+    {
+      "id": "q:n2-g-007",
+      "type": "form-selection",
+      "items": [
+        "grammar:dake-atte"
+      ],
+      "kind": "choice",
+      "ja": "彼は十年も日本に住んでいただけあって、日本語がとても自然だ。",
+      "reading": "かれはじゅうねんもにほんにすんでいただけあって、にほんごがとてもしぜんだ。",
+      "blank": "だけあって",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "だけあって",
+        "ばかりに",
+        "どころか",
+        "わりには"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The ten years explain the good Japanese and the speaker is impressed in a way that fits the reason, which is what だけあって expresses.",
+        "zh": "住了十年正好说明日语好，说话人的赞叹与理由相称，这种「不愧是」用「だけあって」。",
+        "zh_TW": "住了十年正好說明日語好，說話人的讚歎與理由相稱，這種「不愧是」用「だけあって」。"
+      }
+    },
+    {
+      "id": "q:n2-g-008",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-shite-wa"
+      ],
+      "kind": "choice",
+      "ja": "この料理は初めて作ったにしては、よくできている。",
+      "reading": "このりょうりははじめてつくったにしては、よくできている。",
+      "blank": "にしては",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "にしては",
+        "にとっては",
+        "によっては",
+        "にしても"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Judged against what a first attempt normally produces, the result is better than expected, and にしては sets up that standard of comparison.",
+        "zh": "以第一次做菜的标准来看，结果比预想的好，「にしては」正是提出这种比较标准的说法。",
+        "zh_TW": "以第一次做菜的標準來看，結果比預想的好，「にしては」正是提出這種比較標準的說法。"
+      }
+    },
+    {
+      "id": "q:n2-g-009",
+      "type": "form-selection",
+      "items": [
+        "grammar:wa-mochiron"
+      ],
+      "kind": "choice",
+      "ja": "あの店は味はもちろん、店員の親切さもすばらしい。",
+      "reading": "あのみせはあじはもちろん、てんいんのしんせつさもすばらしい。",
+      "blank": "もちろん",
+      "prompt": {
+        "en": "Which word fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个词？",
+        "zh_TW": "這個句子的空格里應該填哪個詞？"
+      },
+      "options": [
+        "もちろん",
+        "ともかく",
+        "はじめ",
+        "ぬきで"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The taste goes without saying and a second good point is added with も, and はもちろん is what introduces the obvious first item.",
+        "zh": "味道自不必说，后面又用「も」补充第二个优点，前面这个理所当然的项目要用「はもちろん」引出。",
+        "zh_TW": "味道自不必說，後面又用「も」補充第二個優點，前面這個理所當然的項目要用「はもちろん」引出。"
+      }
+    },
+    {
+      "id": "q:n2-g-010",
+      "type": "form-selection",
+      "items": [
+        "grammar:te-kara-de-nakereba"
+      ],
+      "kind": "choice",
+      "ja": "詳しい説明を聞いてからでなければ、返事はできません。",
+      "reading": "くわしいせつめいをきいてからでなければ、へんじはできません。",
+      "blank": "聞いてからでなければ",
+      "prompt": {
+        "en": "Which form fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个形式？",
+        "zh_TW": "這個句子的空格里應該填哪個形式？"
+      },
+      "options": [
+        "聞いてからでなければ",
+        "聞いてからには",
+        "聞いたところで",
+        "聞かないうちに"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Hearing the explanation is the condition that must be met first, and てからでなければ pairs with a negative ending to say nothing can happen before it.",
+        "zh": "听完说明是必须先满足的条件，「てからでなければ」后接否定，表示不先做这件事就不行。",
+        "zh_TW": "聽完說明是必須先滿足的條件，「てからでなければ」後接否定，表示不先做這件事就不行。"
+      }
+    },
+    {
+      "id": "q:n2-g-011",
+      "type": "form-selection",
+      "items": [
+        "grammar:koto-ka"
+      ],
+      "kind": "choice",
+      "ja": "合格の知らせを聞いて、どんなにうれしかったことか。",
+      "reading": "ごうかくのしらせをきいて、どんなにうれしかったことか。",
+      "blank": "ことか",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "ことか",
+        "ものか",
+        "ことに",
+        "ことだ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "どんなに at the head calls for an exclamation of degree, and ことか closes it: how very glad I was.",
+        "zh": "句首的「どんなに」要求一个感叹程度的结尾，「ことか」正好呼应，表示「多么高兴啊」。",
+        "zh_TW": "句首的「どんなに」要求一個感嘆程度的結尾，「ことか」正好呼應，表示「多麼高興啊」。"
+      }
+    },
+    {
+      "id": "q:n2-g-012",
+      "type": "form-selection",
+      "items": [
+        "grammar:nashi-ni"
+      ],
+      "kind": "choice",
+      "ja": "彼の協力なしには、この仕事は終わらなかっただろう。",
+      "reading": "かれのきょうりょくなしには、このしごとはおわらなかっただろう。",
+      "blank": "なしには",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "なしには",
+        "だけには",
+        "ばかりには",
+        "までには"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "His help was indispensable, and なしには plus a negative says that without it the result would not have come about.",
+        "zh": "他的帮助是不可或缺的，「なしには」后接否定，表示没有它就不会有这个结果。",
+        "zh_TW": "他的幫助是不可或缺的，「なしには」後接否定，表示沒有它就不會有這個結果。"
+      }
+    },
+    {
+      "id": "q:n2-g-013",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:ni-kuwaete"
+      ],
+      "kind": "order",
+      "ja": "この地域では、冬の天気に加えて、風の様子にも注意が必要だ。",
+      "reading": "このちいきでは、ふゆのてんきにくわえて、かぜのようすにもちゅういがひつようだ。",
+      "frame": {
+        "before": "この地域では、",
+        "after": "注意が必要だ。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "加えて、",
+        "冬の",
+        "風の様子にも",
+        "天気に"
+      ],
+      "answerOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "explanation": {
+        "en": "に加えて attaches to the first item, 冬の天気, and the second item then follows with も: on top of the winter weather, the wind as well.",
+        "zh": "「に加えて」接在第一项「冬の天気」后面，第二项再用「も」承接，表示除了冬天的天气之外还要注意风的情况。",
+        "zh_TW": "「に加えて」接在第一項「冬の天気」後面，第二項再用「も」承接，表示除了冬天的天氣之外還要注意風的情況。"
+      }
+    },
+    {
+      "id": "q:n2-g-014",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:mono-no"
+      ],
+      "kind": "order",
+      "ja": "新しい仕事を始めたものの、思ったほど順調には進んでいない。",
+      "reading": "あたらしいしごとをはじめたものの、おもったほどじゅんちょうにはすすんでいない。",
+      "frame": {
+        "before": "新しい",
+        "after": "進んでいない。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "思ったほど",
+        "仕事を",
+        "順調には",
+        "始めたものの、"
+      ],
+      "answerOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "explanation": {
+        "en": "ものの follows the plain past 始めた and admits the first half before the second half undercuts it.",
+        "zh": "「ものの」接在简体过去「始めた」后面，先承认前项，后半句再说出与之相反的实际情况。",
+        "zh_TW": "「ものの」接在簡體過去「始めた」後面，先承認前項，後半句再說出與之相反的實際情況。"
+      }
+    },
+    {
+      "id": "q:n2-g-015",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:kara-ni-wa"
+      ],
+      "kind": "order",
+      "ja": "一度引き受けたからには、最後まで責任を持って続けたい。",
+      "reading": "いちどひきうけたからには、さいごまでせきにんをもってつづけたい。",
+      "frame": {
+        "before": "一度",
+        "after": "続けたい。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "最後まで",
+        "からには、",
+        "引き受けた",
+        "責任を持って"
+      ],
+      "answerOrder": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "explanation": {
+        "en": "からには follows 引き受けた and states the commitment already made; what the speaker resolves to do about it comes after.",
+        "zh": "「からには」接在「引き受けた」后面，说明已经做出的承担，后半句再讲由此下定的决心。",
+        "zh_TW": "「からには」接在「引き受けた」後面，說明已經做出的承擔，後半句再講由此下定的決心。"
+      }
+    },
+    {
+      "id": "q:n2-g-016",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:ni-kakete"
+      ],
+      "kind": "order",
+      "ja": "この地方では、七月から八月にかけて、雨の多い日が続く。",
+      "reading": "このちほうでは、しちがつからはちがつにかけて、あめのおおいひがつづく。",
+      "frame": {
+        "before": "この地方では、",
+        "after": "続く。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "八月に",
+        "雨の多い日が",
+        "七月から",
+        "かけて、"
+      ],
+      "answerOrder": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "explanation": {
+        "en": "から marks where the stretch begins and にかけて marks where it ends, so the two months frame the period the rain lasts.",
+        "zh": "「から」标出起点，「にかけて」标出终点，两个月份合起来框定了多雨天气持续的时间段。",
+        "zh_TW": "「から」標出起點，「にかけて」標出終點，兩個月份合起來框定了多雨天氣持續的時間段。"
+      }
+    },
+    {
+      "id": "q:n2-g-017",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:te-kara-to-iu-mono"
+      ],
+      "kind": "order",
+      "ja": "日本で暮らし始めてからというもの、日本語の勉強が楽しくなった。",
+      "reading": "にほんでくらしはじめてからというもの、にほんごのべんきょうがたのしくなった。",
+      "frame": {
+        "before": "日本で",
+        "after": "楽しくなった。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "からというもの、",
+        "日本語の",
+        "暮らし始めて",
+        "勉強が"
+      ],
+      "answerOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "explanation": {
+        "en": "てからというもの follows the te-form and names the point after which a lasting change set in.",
+        "zh": "「てからというもの」接在て形后面，表示从那以后一直持续的变化。",
+        "zh_TW": "「てからというもの」接在て形後面，表示從那以後一直持續的變化。"
+      }
+    },
+    {
+      "id": "q:n2-g-018",
+      "type": "text-grammar",
+      "items": [
+        "grammar:o-kikkake-ni"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-g-001",
+      "ja": "ある日、友人にすすめられた本を読んだのをきっかけに、私の生活は大きく変わった。",
+      "reading": "あるひ、ゆうじんにすすめられたほんをよんだのをきっかけに、わたしのせいかつはおおきくかわった。",
+      "blank": "きっかけに",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "きっかけに",
+        "たびに",
+        "もとに",
+        "かわりに"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "That one book is the single event after which everything changed, and をきっかけに names such a trigger.",
+        "zh": "那一本书是使一切开始改变的契机，「をきっかけに」正表示以某事为契机。",
+        "zh_TW": "那一本書是使一切開始改變的契機，「をきっかけに」正表示以某事為契機。"
+      }
+    },
+    {
+      "id": "q:n2-g-019",
+      "type": "text-grammar",
+      "items": [
+        "grammar:ippou-da"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-g-001",
+      "ja": "それ以来、私の本を読む時間は増える一方だ。",
+      "reading": "それいらい、わたしのほんをよむじかんはふえるいっぽうだ。",
+      "blank": "一方だ",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "一方だ",
+        "ことだ",
+        "ものだ",
+        "わけだ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The reading time keeps moving in one direction and never back, and 一方だ says a change goes on increasing.",
+        "zh": "读书的时间只朝一个方向变化，没有回头，「一方だ」表示某种变化不断加剧。",
+        "zh_TW": "讀書的時間只朝一個方向變化，沒有回頭，「一方だ」表示某種變化不斷加劇。"
+      }
+    },
+    {
+      "id": "q:n2-g-020",
+      "type": "text-grammar",
+      "items": [
+        "grammar:nominarazu"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-g-001",
+      "ja": "今では、電車の中のみならず、寝る前の時間も読書に使っている。",
+      "reading": "いまでは、でんしゃのなかのみならず、ねるまえのじかんもどくしょにつかっている。",
+      "blank": "のみならず",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "のみならず",
+        "にもかかわらず",
+        "というより",
+        "どころか"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "A second place for reading is added to the first, and the も later in the sentence needs のみならず in front: not only on the train but also before bed.",
+        "zh": "后面又补上了第二个读书的场合，句中有「も」，前面就要用「のみならず」，表示「不仅……而且……」。",
+        "zh_TW": "後面又補上了第二個讀書的場合，句中有「も」，前面就要用「のみならず」，表示「不僅……而且……」。"
+      }
+    },
+    {
+      "id": "q:n2-g-021",
+      "type": "text-grammar",
+      "items": [
+        "grammar:koto-naku"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-g-001",
+      "ja": "それでも、忘れることを恐れることなく、これからも読み続けたい。",
+      "reading": "それでも、わすれることをおそれることなく、これからもよみつづけたい。",
+      "blank": "恐れることなく",
+      "prompt": {
+        "en": "Read the passage, then choose the form that fits this gap.",
+        "zh": "读完短文后，选择适合这个空格的形式。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的形式。"
+      },
+      "options": [
+        "恐れることなく",
+        "恐れるばかりで",
+        "恐れたところで",
+        "恐れっぱなしで"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The writer wants to keep reading with the fear left out of it, and ことなく is the written-style 'without doing' that attaches to a dictionary form.",
+        "zh": "作者想不带着这种担心继续读下去，「ことなく」接辞書形，是书面语中「不……地」的说法。",
+        "zh_TW": "作者想不帶著這種擔心繼續讀下去，「ことなく」接辭書形，是書面語中「不……地」的說法。"
+      }
+    },
+    {
+      "id": "q:n2-g-022",
+      "type": "text-grammar",
+      "items": [
+        "grammar:tsutsu-aru"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-g-001",
+      "ja": "読書は、私にとって今や欠かせない習慣になりつつある。",
+      "reading": "どくしょは、わたしにとっていまやかかせないしゅうかんになりつつある。",
+      "blank": "なりつつある",
+      "prompt": {
+        "en": "Read the passage, then choose the form that fits this gap.",
+        "zh": "读完短文后，选择适合这个空格的形式。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的形式。"
+      },
+      "options": [
+        "なりつつある",
+        "なりかねない",
+        "なるほかない",
+        "なりがたい"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The change is under way rather than finished, and つつある on the ます-stem says something is in the middle of becoming.",
+        "zh": "变化还在进行中而不是已经完成，「ます形词干＋つつある」表示正在逐渐变成某种状态。",
+        "zh_TW": "變化還在進行中而不是已經完成，「ます形詞幹＋つつある」表示正在逐漸變成某種狀態。"
+      }
+    }
+  ]
+}

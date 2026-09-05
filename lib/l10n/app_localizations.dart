@@ -3140,6 +3140,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'What to work on'**
   String get weaknessOpen;
+
+  /// No description provided for @writingRubricTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What the app measured'**
+  String get writingRubricTitle;
+
+  /// No description provided for @writingRubricSentences.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 sentence} other{{count} sentences}}'**
+  String writingRubricSentences(int count);
+
+  /// No description provided for @writingRubricGrammar.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 grammar point you have been taught} other{{count} grammar points you have been taught}}'**
+  String writingRubricGrammar(int count);
+
+  /// No description provided for @writingRubricLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% of the words we recognised are {level} or easier'**
+  String writingRubricLevel(int percent, String level);
+
+  /// No description provided for @writingRubricUnreadable.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 word we could not read} other{{count} words we could not read}}'**
+  String writingRubricUnreadable(int count);
+
+  /// No description provided for @writingRubricNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing here is a score. The JLPT has no writing section.'**
+  String get writingRubricNote;
+
+  /// No description provided for @aiRubric.
+  ///
+  /// In en, this message translates to:
+  /// **'What to try next'**
+  String get aiRubric;
+
+  /// No description provided for @aiParaphrase.
+  ///
+  /// In en, this message translates to:
+  /// **'Say this more simply'**
+  String get aiParaphrase;
+
+  /// No description provided for @aiContradiction.
+  ///
+  /// In en, this message translates to:
+  /// **'Where does the passage say otherwise?'**
+  String get aiContradiction;
+
+  /// No description provided for @aiListeningReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Which line had the answer?'**
+  String get aiListeningReview;
+
+  /// No description provided for @aiWeaknessNote.
+  ///
+  /// In en, this message translates to:
+  /// **'What to do about it'**
+  String get aiWeaknessNote;
 }
 
 class _AppLocalizationsDelegate

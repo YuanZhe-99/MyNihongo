@@ -20,6 +20,8 @@ Consumers: `exam_page.dart`, once every block is in.
 | `ExamResultsView` | class | B | What a finished mock scored, section by section, and what went wrong in it. |
 | `ExamResultsView` constructor | constructor | B | Show the finished paper. |
 | `exam`, `sectionOf`, `onDone` | fields | B | The finished paper, which section each question belongs to, and what to do when the learner is done reading. |
+| `passageTextOf` | field | B | The text of whatever each question was about, for the AI actions under it. |
+| `_chosen` | method | B | Say which option the learner picked for one question. |
 | [`build`](#build) | method | A | Build the per-section scores and the list of what went wrong. |
 
 ## Documentation
@@ -54,3 +56,13 @@ Consumers: `exam_page.dart`, once every block is in.
 
   A question whose section the map does not know is skipped rather than tallied under a blank name,
   the same rule the history page follows.
+
+Every wrong question here passes **what the learner actually chose** to `WhyWrong`, not null: a
+results screen that could not say what was picked cannot ask why that pick was wrong, and that is the
+question worth asking on this screen. An ordering answer has no single index and yields none, so the
+choice-specific actions stay hidden rather than pointing at the wrong fragment.
+
+Where the page that drew the paper can supply it, the passage or the script goes with it, which is
+what puts "where does the passage say otherwise?" and "which line had the answer?" under a 読解 or
+聴解 question. The transcript reaching the model here is not a leak of the exercise: the paper is
+over.

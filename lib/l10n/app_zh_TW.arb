@@ -598,5 +598,20 @@
   "readinessGroupLanguageReading": "語言知識與閱讀",
   "readinessGroupReading": "閱讀",
   "readinessGroupListening": "聽力",
-  "weaknessOpen": "該練什麼"
+  "weaknessOpen": "該練什麼",
+"writingRubricTitle": "應用程式測到的",
+  "writingRubricSentences": "{count, plural, other{{count} 個句子}}",
+  "@writingRubricSentences": { "placeholders": { "count": { "type": "int" } } },
+  "writingRubricGrammar": "{count, plural, other{用到 {count} 個學過的文法點}}",
+  "@writingRubricGrammar": { "placeholders": { "count": { "type": "int" } } },
+  "writingRubricLevel": "認得出的詞裡有 {percent}% 是 {level} 或更簡單的",
+  "@writingRubricLevel": { "placeholders": { "percent": { "type": "int" }, "level": { "type": "String" } } },
+  "writingRubricUnreadable": "{count, plural, other{{count} 個詞讀不出來}}",
+  "@writingRubricUnreadable": { "placeholders": { "count": { "type": "int" } } },
+  "writingRubricNote": "這裡沒有分數。JLPT 沒有寫作部分。",
+  "aiRubric": "接下來可以試什麼",
+  "aiParaphrase": "用更簡單的說法",
+  "aiContradiction": "文章哪裡不是這麼說的？",
+  "aiListeningReview": "答案在哪一句？",
+  "aiWeaknessNote": "該怎麼辦"
 }

@@ -42,6 +42,29 @@ the unit's practice session, not this.
 
 What *is* written is the text itself, to the history.
 
+## The checklist
+
+Under the analyses, the app says what it measured: how many sentences were written, how many of the
+unit's words were used, how many taught grammar points the analyser found, what share of the words it
+recognised are at the target level or easier, and how many words it could not read at all.
+
+Every one of those is counted from the **parse**, not by searching the text, so an inflected form
+counts — somebody who wrote 食べました used 食べる. A word the catalog cannot place is counted as
+unreadable rather than as too hard: not knowing what a word is and knowing it is above the level are
+different findings, and only the second is about the learner. And the level share is one when nothing
+could be placed, because a checklist that scolds a learner for words it could not look up is
+measuring the catalog.
+
+**None of it is a score, and the screen says so.** There is no total, no percentage of correctness
+and no pass line, because 作文 is not on the JLPT and inventing a mark for it would be the app
+asserting something no examiner would. The measurement is "within your means", not "as hard as your
+level": a whole sentence of N5 words written by somebody aiming at N1 is entirely at N1 or easier,
+and rewarding difficulty would push learners to write above themselves.
+
+The checklist runs on every device. With on-device AI switched on, a button under it asks the model
+what to try next — and the checklist's own findings go into that prompt, so the model is shown what
+was measured rather than asked to measure. Its rules forbid re-scoring.
+
 ## History
 
 Every piece of writing that is checked is remembered, newest first, and tapping one puts it back in

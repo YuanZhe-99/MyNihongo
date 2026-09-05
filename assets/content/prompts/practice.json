@@ -27,7 +27,11 @@
       "topic": "What this unit teaches",
       "word": "Word",
       "meaning": "What it means",
-      "level": "JLPT level"
+      "level": "JLPT level",
+      "findings": "What the checklist found",
+      "passage": "The passage",
+      "script": "What was said",
+      "weakest": "What the learner keeps getting wrong"
     },
     "zh": {
       "sentence": "句子",
@@ -45,6 +49,10 @@
       "word": "词",
       "meaning": "词义",
       "level": "JLPT 级别",
+      "findings": "清单检查的结果",
+      "passage": "文章",
+      "script": "对话原文",
+      "weakest": "学习者反复做错的地方",
       "topic": "本单元教的内容"
     },
     "zh_TW": {
@@ -63,7 +71,11 @@
       "word": "詞",
       "meaning": "詞義",
       "level": "JLPT 級別",
-      "topic": "本單元教的內容"
+      "topic": "本單元教的內容",
+      "findings": "清單檢查的結果",
+      "passage": "文章",
+      "script": "對話原文",
+      "weakest": "學習者反覆做錯的地方"
     }
   },
   "tasks": {
@@ -256,6 +268,166 @@
           "再寫一行以「Answer: 」開頭，只寫 A、B、C 或 D。",
           "最後一行以「Why: 」開頭，用一句中文說明。",
           "只用不超過這個程度的詞。回覆裡不要寫別的東西。"
+        ]
+      }
+    },
+    "rubric": {
+      "en": {
+        "instruction": "The app has already checked the learner's writing against a checklist and found what is below. Write a short encouraging note about what to do next.",
+        "rules": [
+          "Answer in English.",
+          "At most three sentences.",
+          "Say what to try next, not what the checklist already said.",
+          "Do not re-score the writing and do not give it a mark.",
+          "No headings and no greeting."
+        ]
+      },
+      "zh": {
+        "instruction": "应用已经按清单检查过这位学习者写的内容，结果在下面。请写一段简短的、给人鼓励的建议。",
+        "rules": [
+          "用简体中文回答。",
+          "最多三句话。",
+          "说下一步可以试什么，不要重复清单已经说过的。",
+          "不要重新评分，也不要给分数。",
+          "不要加标题，也不要加问候语。"
+        ]
+      },
+      "zh_TW": {
+        "instruction": "應用程式已經按清單檢查過這位學習者寫的內容，結果在下面。請寫一段簡短的、給人鼓勵的建議。",
+        "rules": [
+          "用繁體中文回答。",
+          "最多三句話。",
+          "說下一步可以試什麼，不要重複清單已經說過的。",
+          "不要重新評分，也不要給分數。",
+          "不要加標題，也不要加問候語。"
+        ]
+      }
+    },
+    "paraphrase": {
+      "en": {
+        "instruction": "Say the Japanese sentence below again in easier Japanese, at the level given.",
+        "rules": [
+          "One line only, beginning 'Japanese: ', holding the easier Japanese sentence.",
+          "Then one line beginning 'Reading: ' with that sentence in kana.",
+          "Then one line beginning 'Meaning: ' with one sentence in English.",
+          "Keep the meaning the same. Do not add anything the sentence does not say.",
+          "Use only words at or below the level given. Nothing else in the reply."
+        ]
+      },
+      "zh": {
+        "instruction": "请把下面这个日文句子用更简单的日文再说一遍，控制在给出的级别之内。",
+        "rules": [
+          "只写一行，以「Japanese: 」开头，写更简单的那个日文句子。",
+          "再写一行，以「Reading: 」开头，写它的假名读音。",
+          "再写一行，以「Meaning: 」开头，用一句中文说明意思。",
+          "意思要保持一致。不要加入原句没有说的内容。",
+          "只用不超过给出级别的词。回复里不要写别的东西。"
+        ]
+      },
+      "zh_TW": {
+        "instruction": "請把下面這個日文句子用更簡單的日文再說一遍，控制在給出的程度之內。",
+        "rules": [
+          "只寫一行，以「Japanese: 」開頭，寫更簡單的那個日文句子。",
+          "再寫一行，以「Reading: 」開頭，寫它的假名讀音。",
+          "再寫一行，以「Meaning: 」開頭，用一句中文說明意思。",
+          "意思要保持一致。不要加入原句沒有說的內容。",
+          "只用不超過給出程度的詞。回覆裡不要寫別的東西。"
+        ]
+      }
+    },
+    "contradiction": {
+      "en": {
+        "instruction": "A learner picked the wrong answer to a question about the passage below. Point at the part of the passage that rules their choice out.",
+        "rules": [
+          "Answer in English.",
+          "At most four sentences.",
+          "Quote the sentence from the passage that settles it, then say what it means for their choice.",
+          "Use only what the passage says. Do not bring in outside knowledge.",
+          "No headings and no greeting."
+        ]
+      },
+      "zh": {
+        "instruction": "一位学习者在下面这段文章的题目上选错了。请指出文章里排除掉他这个选项的地方。",
+        "rules": [
+          "用简体中文回答。",
+          "最多四句话。",
+          "先引用文章里能定下这件事的那一句，再说明它对他选的那项意味着什么。",
+          "只用文章里写了的内容，不要引入文章之外的知识。",
+          "不要加标题，也不要加问候语。"
+        ]
+      },
+      "zh_TW": {
+        "instruction": "一位學習者在下面這段文章的題目上選錯了。請指出文章裡排除掉他這個選項的地方。",
+        "rules": [
+          "用繁體中文回答。",
+          "最多四句話。",
+          "先引用文章裡能定下這件事的那一句，再說明它對他選的那項意味著什麼。",
+          "只用文章裡寫了的內容，不要引入文章之外的知識。",
+          "不要加標題，也不要加問候語。"
+        ]
+      }
+    },
+    "listeningReview": {
+      "en": {
+        "instruction": "A learner missed a question about the spoken exchange below, which they have now read. Say which line carried the answer and what is easy to mishear in it.",
+        "rules": [
+          "Answer in English.",
+          "At most four sentences.",
+          "Name the line that carried the answer before saying anything else.",
+          "Say what in that line is easy to miss when hearing rather than reading it.",
+          "No headings and no greeting."
+        ]
+      },
+      "zh": {
+        "instruction": "一位学习者在下面这段对话的题目上答错了，现在他已经看到了原文。请说明答案在哪一句，以及那一句里什么地方听的时候容易错过。",
+        "rules": [
+          "用简体中文回答。",
+          "最多四句话。",
+          "先点出答案在哪一句，再说别的。",
+          "说明那一句里什么地方在听而不是看的时候容易漏掉。",
+          "不要加标题，也不要加问候语。"
+        ]
+      },
+      "zh_TW": {
+        "instruction": "一位學習者在下面這段對話的題目上答錯了，現在他已經看到了原文。請說明答案在哪一句，以及那一句裡什麼地方聽的時候容易錯過。",
+        "rules": [
+          "用繁體中文回答。",
+          "最多四句話。",
+          "先點出答案在哪一句，再說別的。",
+          "說明那一句裡什麼地方在聽而不是看的時候容易漏掉。",
+          "不要加標題，也不要加問候語。"
+        ]
+      }
+    },
+    "weakness": {
+      "en": {
+        "instruction": "The app has worked out what this learner keeps getting wrong on its practice papers. Write a short note on what to do about it.",
+        "rules": [
+          "Answer in English.",
+          "At most four sentences.",
+          "Suggest what to practise, in the order it would help most.",
+          "Do not estimate whether they would pass, and do not give any score.",
+          "No headings and no greeting."
+        ]
+      },
+      "zh": {
+        "instruction": "应用已经算出这位学习者在练习卷上反复做错的地方。请就此写一段简短的建议。",
+        "rules": [
+          "用简体中文回答。",
+          "最多四句话。",
+          "按帮助最大的顺序说该练什么。",
+          "不要推测他能不能通过考试，也不要给任何分数。",
+          "不要加标题，也不要加问候语。"
+        ]
+      },
+      "zh_TW": {
+        "instruction": "應用程式已經算出這位學習者在練習卷上反覆做錯的地方。請就此寫一段簡短的建議。",
+        "rules": [
+          "用繁體中文回答。",
+          "最多四句話。",
+          "按幫助最大的順序說該練什麼。",
+          "不要推測他能不能通過考試，也不要給任何分數。",
+          "不要加標題，也不要加問候語。"
         ]
       }
     }

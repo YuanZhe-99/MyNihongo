@@ -42,6 +42,26 @@ class GradeVerdict {
   final String? comment;
 }
 
+/// One hard sentence said again in easier Japanese.
+class Paraphrase {
+  /// Purpose: Hold one paraphrase.
+  /// Inputs: `japanese`, `reading`, `meaning`.
+  /// Returns: A new `Paraphrase` instance.
+  /// Side effects: None.
+  /// Notes: The reading is optional and the meaning is optional; the Japanese
+  /// is not. A paraphrase with no Japanese in it is not a paraphrase.
+  const Paraphrase({required this.japanese, this.reading, this.meaning});
+
+  /// The easier Japanese sentence.
+  final String japanese;
+
+  /// Its reading in kana, where the model gave one.
+  final String? reading;
+
+  /// One sentence saying what it means, where the model gave one.
+  final String? meaning;
+}
+
 /// Parses the practice tasks' replies.
 /// What the model made of a generated question: its own answer, and whether
 /// it thinks the question is sound at all.
@@ -226,6 +246,34 @@ class PracticeResponseParser {
   /// "why was this wrong" answer is an explanation like any other.
   static String? explanation(String raw, {String? prompt}) =>
       ResponseParser.explanation(raw, prompt: prompt);
+
+  /// Purpose: Read one sentence said again in easier Japanese.
+  /// Inputs: The model's `raw` reply.
+  /// Returns: `Paraphrase?` — null without a Japanese line.
+  /// Side effects: None.
+  /// Notes: The Japanese line is the only required part, and its absence is a
+  /// refusal rather than a shrug: everything else on this card is optional
+  /// decoration, but a paraphrase with no sentence in it has nothing to show.
+  /// The reading and the meaning are taken when they are there, so a model
+  /// that gave two lines out of three still helps.
+  static Paraphrase? paraphrase(String raw) {
+    String? japanese;
+    String? reading;
+    String? meaning;
+    for (final line in raw.split('\n')) {
+      final text = line.trim();
+      if (text.isEmpty) continue;
+      japanese ??= _after(text, 'Japanese:');
+      reading ??= _after(text, 'Reading:');
+      meaning ??= _after(text, 'Meaning:');
+    }
+    if (japanese == null || japanese.isEmpty) return null;
+    return Paraphrase(
+      japanese: japanese,
+      reading: (reading?.isEmpty ?? true) ? null : reading,
+      meaning: (meaning?.isEmpty ?? true) ? null : meaning,
+    );
+  }
 
   /// Purpose: Take what follows a label, if the line carries it.
   /// Inputs: `line`, `label`.

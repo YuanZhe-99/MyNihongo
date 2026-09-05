@@ -11,8 +11,11 @@ translation beside the text turns the exercise into reading English.
 | Declaration | Kind | Tier | Purpose |
 |---|---|---|---|
 | [`DrillPassageView`](#view) | class | A | Show one passage, with its translation behind a toggle. |
-| `_DrillPassageViewState` | class | B | Holds whether the translation is currently revealed. |
+| `level` | field | B | The level a paraphrase should stay within. |
+| `_DrillPassageViewState` | class | B | Holds whether the translation is revealed, and what came back for each line. |
 | `build` | method | B | Build the passage, its speakers and its translation toggle. |
+| `_paraphraseOf` | method | B | Render whatever came back for one line. |
+| `_paraphrase` | method | B | Ask for one line in easier Japanese. |
 
 ## Documentation
 
@@ -33,3 +36,14 @@ translation beside the text turns the exercise into reading English.
   difference between a 会話 and a 説明文, and the content files say which by whether they wrote a
   `speaker`. Both the per-line and the whole-passage translations are optional, and both stay hidden
   until the question has been answered.
+
+With on-device AI switched on, and only where the translation toggle is offered, each line carries a
+button asking for that sentence again in easier Japanese. It is gated on `allowTranslation` for the
+same reason the translation is: in a timed block an easier version of the sentence the question turns
+on is very nearly the answer.
+
+The paraphrase sits **under its own line** rather than in a card at the bottom, because the whole
+point of it is seeing the two versions of one sentence together — and it carries the generated label,
+because this is model-written Japanese sitting directly under content the app wrote and the two must
+not be indistinguishable. A reply the parser cannot read leaves the line with the original only:
+nothing half-parsed is put in front of a learner as Japanese to imitate.

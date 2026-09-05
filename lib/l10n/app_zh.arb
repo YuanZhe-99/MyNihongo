@@ -598,5 +598,20 @@
   "readinessGroupLanguageReading": "言语知识与阅读",
   "readinessGroupReading": "阅读",
   "readinessGroupListening": "听力",
-  "weaknessOpen": "该练什么"
+  "weaknessOpen": "该练什么",
+"writingRubricTitle": "应用测到的",
+  "writingRubricSentences": "{count, plural, other{{count} 个句子}}",
+  "@writingRubricSentences": { "placeholders": { "count": { "type": "int" } } },
+  "writingRubricGrammar": "{count, plural, other{用到 {count} 个学过的语法点}}",
+  "@writingRubricGrammar": { "placeholders": { "count": { "type": "int" } } },
+  "writingRubricLevel": "认得出的词里有 {percent}% 是 {level} 或更简单的",
+  "@writingRubricLevel": { "placeholders": { "percent": { "type": "int" }, "level": { "type": "String" } } },
+  "writingRubricUnreadable": "{count, plural, other{{count} 个词读不出来}}",
+  "@writingRubricUnreadable": { "placeholders": { "count": { "type": "int" } } },
+  "writingRubricNote": "这里没有分数。JLPT 没有写作部分。",
+  "aiRubric": "接下来可以试什么",
+  "aiParaphrase": "用更简单的说法",
+  "aiContradiction": "文章哪里不是这么说的？",
+  "aiListeningReview": "答案在哪一句？",
+  "aiWeaknessNote": "该怎么办"
 }

@@ -12,6 +12,52 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.4.9` — 2026-09-05. Five things the model can say, each one grounded in
+  something the app already worked out.
+
+  **A checklist for writing, on every device.** Under the analyses, the app now
+  says what it measured: how many sentences, how many of the unit's words, how
+  many taught grammar points, what share of the words it recognised are at the
+  target level or easier, and how many it could not read at all. Every count
+  comes from the parse rather than a text search, so an inflected form counts —
+  somebody who wrote 食べました used 食べる.
+
+  **None of it is a score, and the screen says so.** There is no total, no
+  percentage of correctness and no pass line, because 作文 is not on the JLPT
+  and inventing a mark for it would be the app asserting something no examiner
+  would. A word the catalog cannot place counts as unreadable rather than as too
+  hard: not knowing what a word is and knowing it is above the level are
+  different findings, and only the second is about the learner.
+
+  **The model writes on top of that, never instead of it.** The checklist's own
+  findings go into the prompt, so it is not asked whether the writing is good —
+  it is shown what was measured and asked what to try next, under a task whose
+  rules forbid re-scoring.
+
+  **Three actions around a paper, all of them after the answer is in.** Each
+  line of a reading passage can be said again in easier Japanese, under its own
+  line so the two versions are side by side, carrying the generated label
+  because that is model-written Japanese sitting directly under content the app
+  wrote. A wrong reading answer can ask where the passage says otherwise, from
+  the passage only — an answer justified from general knowledge teaches the
+  wrong skill even when it is true. A wrong listening answer can ask which line
+  carried the answer and what is easy to miss when hearing rather than reading
+  it, which is the whole point: reading the script shows you the answer and
+  teaches you nothing about why you missed it.
+
+  **And a note on the weakness report**, given the counts the report already
+  computed and forbidden from estimating whether the learner would pass. The
+  readiness band is derived under stated rules; a model guessing at one beside
+  it would be a second, unexplainable answer to the same question.
+
+  With the switch off, every one of these is simply absent — no disabled
+  buttons, no invitations to turn something on. And nothing generated changes a
+  score anywhere: an attempt written with the switch on is the attempt written
+  with it off, because only the input is stored and no generated text is input.
+
+  **N2 ships complete** at the official composition — 107 questions and 46
+  passages across all four sections. 1002 tests.
+
 - `0.4.8` — 2026-09-05. What to work on, and how ready this looks.
 
   **A readiness band, and the reasons it will not say more.** The Learn card

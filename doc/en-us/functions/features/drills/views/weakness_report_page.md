@@ -61,3 +61,15 @@ and "this word keeps catching me" changes nothing until they know which section 
 The 大問 are named in Japanese, from `DrillTypeName.jaName`, with the localized section name beneath.
 These are the official headings from jlpt.jp, so a learner comparing this screen with a real paper is
 comparing the same words.
+
+`_WeaknessNote` sits under the third table and is a widget of its own so the page itself stays
+stateless: the tables are a function of the report and nothing else, and only this one card has a
+request in flight to remember. With the switch off it renders nothing at all — not a disabled button
+and not an invitation to turn something on. The report is complete without it.
+
+Only what the app already computed goes into that prompt, and the task's rules forbid estimating
+whether the learner would pass. The readiness band is derived under stated rules; a model guessing at
+one beside it would be a second, unexplainable answer to the same question. The 大問 go in under
+their Japanese names and a word goes in under its headword rather than its catalog id, because
+`vocab:jm1578850` means nothing to a model and the point of the note is that it says something about
+the Japanese.

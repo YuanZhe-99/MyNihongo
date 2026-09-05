@@ -206,6 +206,154 @@ class PracticePromptBuilder {
     }
   });
 
+
+  /// Purpose: Ask for a note on what to try next in the learner's writing.
+  /// Inputs: What the learner wrote, what the deterministic checklist
+  /// `findings` said, the unit's `topic`, and the `locale`.
+  /// Returns: `String?`.
+  /// Side effects: None.
+  /// Notes: **The checklist has already run, and its findings are in the
+  /// prompt.** That is the difference between an opinion and a note: the model
+  /// is not asked whether the writing is good, it is shown what the app
+  /// measured and asked what to do about it. The rules forbid re-scoring for
+  /// the same reason nothing generated ever changes a score anywhere else in
+  /// the app.
+  String? forRubric({
+    required String text,
+    required List<String> findings,
+    String? topic,
+    required Locale locale,
+  }) {
+    final written = text.trim();
+    if (written.isEmpty) return null;
+    return _build('rubric', locale, (labels, out) {
+      if (topic != null && topic.trim().isNotEmpty) {
+        out.writeln('${labels['topic'] ?? 'Topic'}: ${topic.trim()}');
+      }
+      final limit = templates.limit('maxWritingChars', 600);
+      out.writeln(
+        '${labels['learner'] ?? 'Learner'}: '
+        '${written.length > limit ? written.substring(0, limit) : written}',
+      );
+      if (findings.isNotEmpty) {
+        out.writeln('${labels['findings'] ?? 'Checklist'}:');
+        for (final finding in findings) {
+          out.writeln('- $finding');
+        }
+      }
+    });
+  }
+
+  /// Purpose: Ask for one hard sentence said again in easier Japanese.
+  /// Inputs: The `sentence`, the `level` to stay within, and the `locale`.
+  /// Returns: `String?`.
+  /// Side effects: None.
+  /// Notes: The level is in the prompt because "easier" has no meaning without
+  /// one — easier than what the learner just failed to read is the whole
+  /// request, and the level is how the app says that.
+  String? forParaphrase({
+    required String sentence,
+    required String level,
+    required Locale locale,
+  }) {
+    final japanese = sentence.trim();
+    if (japanese.isEmpty) return null;
+    return _build('paraphrase', locale, (labels, out) {
+      out
+        ..writeln('${labels['sentence'] ?? 'Sentence'}: $japanese')
+        ..writeln('${labels['level'] ?? 'JLPT'}: $level');
+    });
+  }
+
+  /// Purpose: Ask which part of a passage rules the learner's choice out.
+  /// Inputs: The `passage` as shown, the `question`, what they `chose`, the
+  /// `correct` option, and the `locale`.
+  /// Returns: `String?`.
+  /// Side effects: None.
+  /// Notes: The passage is passed **as the learner read it**, and the rules
+  /// forbid bringing in anything outside it. A reading question is a question
+  /// about one text, and an answer justified from general knowledge would be
+  /// teaching the wrong skill even when it happened to be true.
+  String? forContradiction({
+    required String passage,
+    required String question,
+    required String chosen,
+    required String correct,
+    required Locale locale,
+  }) {
+    if (passage.trim().isEmpty || question.trim().isEmpty) return null;
+    if (chosen.trim().isEmpty) return null;
+    return _build('contradiction', locale, (labels, out) {
+      final limit = templates.limit('maxPassageChars', 1200);
+      final text = passage.trim();
+      out
+        ..writeln(
+          '${labels['passage'] ?? 'Passage'}: '
+          '${text.length > limit ? text.substring(0, limit) : text}',
+        )
+        ..writeln('${labels['question'] ?? 'Question'}: ${question.trim()}')
+        ..writeln('${labels['chosen'] ?? 'Chosen'}: ${chosen.trim()}')
+        ..writeln('${labels['correct'] ?? 'Correct'}: ${correct.trim()}');
+    });
+  }
+
+  /// Purpose: Ask which spoken line carried the answer, and what is easy to
+  /// mishear in it.
+  /// Inputs: The `script` as it is now shown, the `question`, what they
+  /// `chose`, the `correct` option, and the `locale`.
+  /// Returns: `String?`.
+  /// Side effects: None.
+  /// Notes: Offered only **after** the question has been answered, because the
+  /// transcript is the answer to a listening question and showing it earlier
+  /// would replace the exercise. The second rule is the point of the task: a
+  /// learner who reads the script sees the answer immediately and learns
+  /// nothing about why they missed it when it was spoken.
+  String? forListeningReview({
+    required String script,
+    required String question,
+    required String chosen,
+    required String correct,
+    required Locale locale,
+  }) {
+    if (script.trim().isEmpty || question.trim().isEmpty) return null;
+    return _build('listeningReview', locale, (labels, out) {
+      final limit = templates.limit('maxPassageChars', 1200);
+      final text = script.trim();
+      out
+        ..writeln(
+          '${labels['script'] ?? 'Script'}: '
+          '${text.length > limit ? text.substring(0, limit) : text}',
+        )
+        ..writeln('${labels['question'] ?? 'Question'}: ${question.trim()}')
+        ..writeln('${labels['chosen'] ?? 'Chosen'}: ${chosen.trim()}')
+        ..writeln('${labels['correct'] ?? 'Correct'}: ${correct.trim()}');
+    });
+  }
+
+  /// Purpose: Ask what to do about what the learner keeps getting wrong.
+  /// Inputs: The `weakest` lines the report computed, the `level`, and the
+  /// `locale`.
+  /// Returns: `String?` — null with nothing to report.
+  /// Side effects: None.
+  /// Notes: **Only what the app already computed goes in**, and the rules
+  /// forbid estimating whether the learner would pass. The readiness estimate
+  /// is a band the app derives under stated rules; a model guessing at one
+  /// beside it would be a second, unexplainable answer to the same question.
+  String? forWeakness({
+    required List<String> weakest,
+    required String level,
+    required Locale locale,
+  }) {
+    if (weakest.isEmpty) return null;
+    return _build('weakness', locale, (labels, out) {
+      out
+        ..writeln('${labels['level'] ?? 'JLPT'}: $level')
+        ..writeln('${labels['weakest'] ?? 'Weakest'}:');
+      for (final line in weakest) {
+        out.writeln('- $line');
+      }
+    });
+  }
   /// Purpose: Assemble one prompt from a task template.
   /// Inputs: The `task` name, the `locale`, and a `body` writer.
   /// Returns: `String?` — null when the task has no template.

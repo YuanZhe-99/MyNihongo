@@ -21,6 +21,8 @@ Consumers: `router.dart`; opened from `lesson_path_view.dart`.
 | `_canExplain`, `_canProofread` | getters | B | Which on-device feature may be offered. |
 | `_aiText` | method | B | Word whatever the model produced. |
 | [`_deterministic`](#deterministic) | method | A | Show what the app itself can say about the writing. |
+| `_rubric` | method | B | Show the checklist, and offer the model's note on what to try next. |
+| `_askRubric` | method | B | Ask the model what to try next, given what the checklist found. |
 | `_catalog` | getter | B | The content catalog, or null while it loads. |
 | [`_unitWordsUsed`](#unitwordsused) | method | A | Count the unit's words the learner actually used. |
 | [`_check`](#check) | method | A | Run the deterministic pipeline over what was written. |
@@ -120,3 +122,14 @@ Consumers: `router.dart`; opened from `lesson_path_view.dart`.
   **normalized** sentence the analysis refers to; so a learner who has not pressed Check gets the
   deterministic pass run for them rather than an error. The sequencing and the unchanged-writing rule
   live in [`../../ai/services/writing_rewrite.md`](../../ai/services/writing_rewrite.md).
+
+`_rubric` sits between the word-count line and the per-sentence analyses: the checklist first, then
+the model's note under it. That order is the whole design. The measurements are the app's own answer
+and run on every device; the note is commentary on them, and a phone with no model shows the
+checklist and no button — which is the rule every other AI action in the app already follows.
+
+The last line of the checklist says in words that none of it is a score. 作文 is not on the JLPT, so
+a number here would be the app inventing an exam nobody sits. `_askRubric` puts the checklist's own
+findings into the prompt, so the model is not asked whether the writing is good; it is shown what was
+measured and asked what to do about it, under a task whose rules forbid re-scoring. See
+[`../services/writing_rubric.md`](../services/writing_rubric.md).

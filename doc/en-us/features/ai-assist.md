@@ -40,9 +40,14 @@ Six rules, and each one is enforced in code rather than by convention:
 | **A second opinion on a typed answer** | after Check, on a typed question the string comparison rejected | Prompt | the string comparison alone, which is what marked it before |
 | **A rewrite of what you wrote** | in writing practice | Prompt, or Proofreading when Prompt is unavailable | the parse: which unit words were used, how each sentence was read, what looked unusual |
 | **An extra question** | inside a unit practice session, labelled | Prompt | the question bank itself, which is a full session on its own |
+| **What to try next** | under the writing checklist | Prompt | the checklist itself — sentences, unit words, grammar points, level share — which is always shown |
+| **Say this more simply** | on each line of a 読解 passage, once the question is answered | Prompt | the passage's own translation, behind the same toggle |
+| **Where does the passage say otherwise?** | under a wrong 読解 answer | Prompt | the question's own explanation, which is always shown first |
+| **Which line had the answer?** | under a wrong 聴解 answer, over the revealed transcript | Prompt | the transcript itself, which is revealed either way |
+| **What to do about it** | on the weakness report | Prompt | the three tables, which are the whole report |
 
 Every row of that last column is the point: **the fallback is the app**. Removing the AI removes
-three buttons, not a feature the learner depends on.
+a row of buttons, not a feature the learner depends on.
 
 ## What the model is asked
 
@@ -313,3 +318,23 @@ about the unit's own grammar points. Six things bound what that can cost:
 The free-response translation mode and the scenario dialogue partner in `PLAN.md` are not written.
 The scripted half of a scenario is — see [`lesson-path.md`](lesson-path.md) — and a partner would
 attach to the end of it. The Phase 4 drill helpers are Phase 4.
+
+## Grounded in what the app already computed
+
+The five tasks the JLPT features added share one rule with everything above them: **the prompt
+carries what the app already worked out, and the task's rules forbid the model from working it out
+again.**
+
+- The writing note is given the deterministic checklist's findings and told not to re-score. It is
+  not asked whether the writing is good; it is shown what was measured and asked what to do next.
+- The weakness note is given the counts the report produced and told not to estimate whether the
+  learner would pass. The readiness band is derived under stated rules, and a model guessing at one
+  beside it would be a second, unexplainable answer to the same question.
+- The 読解 note is given the passage and told to use nothing outside it. A reading question is a
+  question about one text, and an answer justified from general knowledge would be teaching the wrong
+  skill even when it happened to be true.
+- The 聴解 note is only ever asked **after** the question has been answered, because the transcript
+  is the answer to a listening question and sending it earlier would replace the exercise.
+
+None of it changes a score anywhere. A mock attempt written with the switch on is byte-for-byte the
+attempt written with it off: only the input is stored, and no generated text is input.

@@ -37,6 +37,11 @@ every label a builder indexes is defined.
 | `forExamples` | method | B | Ask for example sentences using one word. |
 | [`forQuizCheck`](#forquizcheck) | method | A | Ask the model to answer a generated question and judge it. |
 | `forQuiz` | method | B | Ask for one extra multiple-choice question about a unit. |
+| `forRubric` | method | B | Ask for a note on what to try next, given what the checklist found. |
+| `forParaphrase` | method | B | Ask for one hard sentence said again in easier Japanese. |
+| `forContradiction` | method | B | Ask which part of a passage rules the learner's choice out. |
+| `forListeningReview` | method | B | Ask which spoken line carried the answer, and what is easy to mishear in it. |
+| `forWeakness` | method | B | Ask what to do about what the learner keeps getting wrong. |
 | `_build` | method | B | Assemble one prompt from a task, its labels and a body. |
 
 ## Documentation
@@ -56,3 +61,14 @@ every label a builder indexes is defined.
   asked whether it is right agrees; a model asked to work the question out produces something that
   can disagree, and only the second is a check. The caller compares the two letters itself and keeps
   the question only when they match and the verdict is `SOUND`.
+
+The five tasks added for the JLPT features share one rule with everything above them: **the prompt
+carries what the app already computed, and the task's rules forbid the model from computing it
+again.** `forRubric` hands over the deterministic checklist's findings and forbids re-scoring;
+`forWeakness` hands over the counts the weakness report produced and forbids estimating whether the
+learner would pass, because the readiness band is derived under stated rules and a guessed one beside
+it would be a second, unexplainable answer to the same question. `forContradiction` forbids bringing
+in anything outside the passage, since a reading question is a question about one text and an answer
+justified from general knowledge would teach the wrong skill even when it happened to be true. And
+`forListeningReview` is only ever built after the question has been answered, because the transcript
+is the answer to a listening question.
