@@ -49,6 +49,125 @@
       "en": "It was only after entering university that I learned how enjoyable reading is. Until then I simply opened a textbook when a class required it. One day, reading a book a friend had recommended became the trigger, and my life changed a great deal. Ever since, the time I spend reading has done nothing but increase. These days I read not only on the train but also in the time before I go to sleep. The more I read, the more I notice how much I do not know. Of course, it is not as if I can remember everything I have read. Even so, without fearing that I will forget, I want to go on reading. Reading is becoming a habit I can no longer do without.",
       "zh": "我是上了大学以后才知道读书的乐趣的。在那之前，我只是在上课需要的时候才翻开教科书。有一天，我读了朋友推荐的一本书，以此为契机，我的生活发生了很大的变化。从那以后，我读书的时间就一直在增加。现在，我不仅在电车上读，睡前的时间也用来读书。书读得越多，越能意识到自己不知道的东西有多少。当然，读过的内容并不是都能记住。即便如此，我也不想因为怕忘记就不读，今后还想继续读下去。对我来说，读书正在变成一个不可缺少的习惯。",
       "zh_TW": "我是上了大學以後才知道讀書的樂趣的。在那之前，我只是在上課需要的時候才翻開教科書。有一天，我讀了朋友推薦的一本書，以此為契機，我的生活發生了很大的變化。從那以後，我讀書的時間就一直在增加。現在，我不僅在電車上讀，睡前的時間也用來讀書。書讀得越多，越能意識到自己不知道的東西有多少。當然，讀過的內容並不是都能記住。即便如此，我也不想因為怕忘記就不讀，今後還想繼續讀下去。對我來說，讀書正在變成一個不可缺少的習慣。"
+    },
+    {
+      "id": "p:n2-g-002",
+      "type": "text-grammar",
+      "lines": [
+        {
+          "ja": "私は去年から、週に一度料理教室に通っている。",
+          "reading": "わたしはきょねんから、しゅうにいちどりょうりきょうしつにかよっている。"
+        },
+        {
+          "ja": "始めたころは、野菜を切ることさえうまくできなかった。",
+          "reading": "はじめたころは、やさいをきることさえうまくできなかった。"
+        },
+        {
+          "ja": "実際に自分で作ってみないことには、上手にはならない。",
+          "reading": "じっさいにじぶんでつくってみないことには、じょうずにはならない。"
+        },
+        {
+          "ja": "それでも、先生の説明に従って作れば、大きな失敗はしない。",
+          "reading": "それでも、せんせいのせつめいにしたがってつくれば、おおきなしっぱいはしない。"
+        },
+        {
+          "ja": "続けているうちに、味の違いが少しずつ分かるようになってきた。",
+          "reading": "つづけているうちに、あじのちがいがすこしずつわかるようになってきた。"
+        },
+        {
+          "ja": "今では、休みの日ばかりか、平日の夜も自分で作るようになった。",
+          "reading": "いまでは、やすみのひばかりか、へいじつのよるもじぶんでつくるようになった。"
+        },
+        {
+          "ja": "料理は、時間がかかる上に、準備も大変だ。",
+          "reading": "りょうりは、じかんがかかるうえに、じゅんびもたいへんだ。"
+        },
+        {
+          "ja": "それでも、家族が喜んでくれるので、これからも続けたい。",
+          "reading": "それでも、かぞくがよろこんでくれるので、これからもつづけたい。"
+        }
+      ],
+      "en": "Since last year I have been going to a cooking class once a week. When I started, I could not even cut vegetables properly. Unless you actually cook something yourself, you will never get any better. Even so, if you follow the teacher's explanation as you cook, you will not make any big mistakes. As I kept at it, I gradually came to notice differences in taste. These days I cook not only on my days off but on weekday evenings too. Cooking takes time, and on top of that the cleaning up is hard work. Even so, my family is happy about it, so I want to keep going.",
+      "zh": "我从去年开始，每周去一次烹饪教室。刚开始的时候，我连切菜都切不好。不实际自己动手做，就不可能变得熟练。不过，只要照着老师的说明做，就不会出大错。坚持了一段时间之后，我渐渐能尝出味道的差别了。现在不光是休息日，连平日的晚上我也自己下厨。做饭费时间，而且收拾起来也很麻烦。即便如此，因为家人吃得开心，我还想继续做下去。",
+      "zh_TW": "我從去年開始，每週去一次烹飪教室。剛開始的時候，我連切菜都切不好。不實際自己動手做，就不可能變得熟練。不過，只要照著老師的說明做，就不會出大錯。堅持了一段時間之後，我漸漸能嚐出味道的差別了。現在不光是休息日，連平日的晚上我也自己下廚。做飯費時間，而且收拾起來也很麻煩。即便如此，因為家人吃得開心，我還想繼續做下去。"
+    },
+    {
+      "id": "p:n2-g-003",
+      "type": "text-grammar",
+      "lines": [
+        {
+          "ja": "駅の近くに新しい図書館ができて、半年がたった。",
+          "reading": "えきのちかくにあたらしいとしょかんができて、はんとしがたった。"
+        },
+        {
+          "ja": "開いている時間が長いので、仕事の帰りにも寄ることができる。",
+          "reading": "あいているじかんがながいので、しごとのかえりにもよることができる。"
+        },
+        {
+          "ja": "利用しているのは学生に限らず、年上の人も多い。",
+          "reading": "りようしているのはがくせいにかぎらず、としうえのひともおおい。"
+        },
+        {
+          "ja": "新しいわりには、どこか落ち着いた感じがする。",
+          "reading": "あたらしいわりには、どこかおちついたかんじがする。"
+        },
+        {
+          "ja": "静かな時間の中で本を選ぶ楽しみには、特別なものがある。",
+          "reading": "しずかなじかんのなかでほんをえらぶたのしみには、とくべつなものがある。"
+        },
+        {
+          "ja": "私も休みの日には、必ずここに来ることにしている。",
+          "reading": "わたしもやすみのひには、かならずここにくることにしている。"
+        },
+        {
+          "ja": "この図書館ができてから、町の様子が少し変わったように思う。",
+          "reading": "このとしょかんができてから、まちのようすがすこしかわったようにおもう。"
+        }
+      ],
+      "en": "Half a year has passed since a new library opened near the station. Its opening hours are long, so you can drop in even on the way home from work. The people using it are not only students; there are many older people too. For a new building, it somehow has a calm feel to it. There is something special about the pleasure of choosing a book in that quiet time. I too make a point of coming here on my days off. Since this library appeared, I think the town has changed a little.",
+      "zh": "车站附近新建的图书馆已经开了半年了。因为开放时间长，下班回家的路上也能顺路进去。使用的人不限于学生，年长的人也很多。虽说是新建筑，却有一种沉静的味道。在安静的时间里挑书，这种乐趣有它特别的地方。我自己也在休息日必定来这里。自从有了这座图书馆，我觉得小镇的样子也稍微变了一些。",
+      "zh_TW": "車站附近新建的圖書館已經開了半年了。因為開放時間長，下班回家的路上也能順路進去。使用的人不限於學生，年長的人也很多。雖說是新建築，卻有一種沉靜的味道。在安靜的時間裡挑書，這種樂趣有它特別的地方。我自己也在休息日必定來這裡。自從有了這座圖書館，我覺得小鎮的樣子也稍微變了一些。"
+    },
+    {
+      "id": "p:n2-g-004",
+      "type": "text-grammar",
+      "lines": [
+        {
+          "ja": "私は五年前から、朝の散歩を習慣にしている。",
+          "reading": "わたしはごねんまえから、あさのさんぽをしゅうかんにしている。"
+        },
+        {
+          "ja": "雨の日を除いて、ほとんど毎日歩いている。",
+          "reading": "あめのひをのぞいて、ほとんどまいにちあるいている。"
+        },
+        {
+          "ja": "始めたころは、三十分歩いただけで足が痛くてたまらなかった。",
+          "reading": "はじめたころは、さんじゅっぷんあるいただけであしがいたくてたまらなかった。"
+        },
+        {
+          "ja": "それでも、少しずつ距離を伸ばしていった。",
+          "reading": "それでも、すこしずつきょりをのばしていった。"
+        },
+        {
+          "ja": "今では、一時間歩いても平気だ。",
+          "reading": "いまでは、いちじかんあるいてもへいきだ。"
+        },
+        {
+          "ja": "天気が悪い日でも、歩かないではいられない。",
+          "reading": "てんきがわるいひでも、あるかないではいられない。"
+        },
+        {
+          "ja": "体の調子がよくなったのは、この習慣のおかげにほかならない。",
+          "reading": "からだのちょうしがよくなったのは、このしゅうかんのおかげにほかならない。"
+        },
+        {
+          "ja": "これからも、無理をしない程度に続けていくつもりだ。",
+          "reading": "これからも、むりをしないていどにつづけていくつもりだ。"
+        }
+      ],
+      "en": "For five years now I have made a morning walk part of my routine. Apart from rainy days, I walk almost every day. When I started, my legs hurt unbearably after only thirty minutes. Even so, I gradually extended the distance. Now I am fine even after walking for an hour. Even on days when the weather is bad, I cannot keep myself from going out. That my health has improved is due to nothing other than this habit. From now on as well, I intend to keep it up without overdoing it.",
+      "zh": "五年前起，我就把早上散步当成了习惯。除了下雨天，我几乎每天都走。刚开始的时候，只走三十分钟腿就疼得受不了。即便如此，我还是一点点把距离拉长了。现在走一个小时也没什么问题。就算天气不好，我也忍不住要出门走走。身体状况变好，正是靠了这个习惯。今后我也打算在不勉强的范围内继续下去。",
+      "zh_TW": "五年前起，我就把早上散步當成了習慣。除了下雨天，我幾乎每天都走。剛開始的時候，只走三十分鐘腿就疼得受不了。即便如此，我還是一點點把距離拉長了。現在走一個小時也沒什麼問題。就算天氣不好，我也忍不住要出門走走。身體狀況變好，正是靠了這個習慣。今後我也打算在不勉強的範圍內繼續下去。"
     }
   ],
   "questions": [
@@ -711,6 +830,1328 @@
         "en": "The change is under way rather than finished, and つつある on the ます-stem says something is in the middle of becoming.",
         "zh": "变化还在进行中而不是已经完成，「ます形词干＋つつある」表示正在逐渐变成某种状态。",
         "zh_TW": "變化還在進行中而不是已經完成，「ます形詞幹＋つつある」表示正在逐漸變成某種狀態。"
+      }
+    },
+    {
+      "id": "q:n2-g-023",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-oite-n2"
+      ],
+      "kind": "choice",
+      "ja": "現代の社会において、情報を選ぶ力はますます重要になっている。",
+      "reading": "げんだいのしゃかいにおいて、じょうほうをえらぶちからはますますじゅうようになっている。",
+      "blank": "において",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "において",
+        "にとって",
+        "によって",
+        "に対して"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The gap marks the field or setting the statement holds in, and において is the written-style way of saying \"in\" a time, place or domain.",
+        "zh": "空格标出这句话成立的领域或场合，「において」是书面语中表示「在……方面、在……之中」的说法。",
+        "zh_TW": "空格標出這句話成立的領域或場合，「において」是書面語中表示「在……方面、在……之中」的說法。"
+      }
+    },
+    {
+      "id": "q:n2-g-024",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-tsuki"
+      ],
+      "kind": "choice",
+      "ja": "この教室の料金は、一人につき千円です。",
+      "reading": "このきょうしつのりょうきんは、ひとりにつきせんえんです。",
+      "blank": "につき",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "につき",
+        "について",
+        "にとって",
+        "における"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The amount is being given per unit — one thousand yen for each person — and につき is the phrase for a rate per unit.",
+        "zh": "这里是按单位计算金额，每人一千日元，表示「每……」的比率用「につき」。",
+        "zh_TW": "這裡是按單位計算金額，每人一千日元，表示「每……」的比率用「につき」。"
+      }
+    },
+    {
+      "id": "q:n2-g-025",
+      "type": "form-selection",
+      "items": [
+        "grammar:o-hajime"
+      ],
+      "kind": "choice",
+      "ja": "会場には、社長をはじめ、多くの社員が集まった。",
+      "reading": "かいじょうには、しゃちょうをはじめ、おおくのしゃいんがあつまった。",
+      "blank": "をはじめ",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "をはじめ",
+        "をもとに",
+        "をめぐって",
+        "を込めて"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The president is named as the leading example of a larger group that follows, which is exactly what をはじめ does.",
+        "zh": "先举出社长作为代表，后面再带出整个群体，这种「以……为首」的说法用「をはじめ」。",
+        "zh_TW": "先舉出社長作為代表，後面再帶出整個群體，這種「以……為首」的說法用「をはじめ」。"
+      }
+    },
+    {
+      "id": "q:n2-g-026",
+      "type": "form-selection",
+      "items": [
+        "grammar:o-chuushin-ni"
+      ],
+      "kind": "choice",
+      "ja": "この計画は、若い社員を中心に進んでいる。",
+      "reading": "このけいかくは、わかいしゃいんをちゅうしんにすすんでいる。",
+      "blank": "を中心に",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "を中心に",
+        "をめぐって",
+        "を込めて",
+        "を問わず"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The young staff are the core the work revolves around, and を中心に names that centre.",
+        "zh": "年轻员工是推动这项计划的核心，表示「以……为中心」用「を中心に」。",
+        "zh_TW": "年輕員工是推動這項計劃的核心，表示「以……為中心」用「を中心に」。"
+      }
+    },
+    {
+      "id": "q:n2-g-027",
+      "type": "form-selection",
+      "items": [
+        "grammar:o-motoni"
+      ],
+      "kind": "choice",
+      "ja": "先生は、生徒の意見をもとに授業の内容を決めた。",
+      "reading": "せんせいは、せいとのいけんをもとにじゅぎょうのないようをきめた。",
+      "blank": "をもとに",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "をもとに",
+        "をめぐって",
+        "を問わず",
+        "を通じて"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The students' opinions are the material the decision was built from, and をもとに marks that source.",
+        "zh": "学生的意见是做决定时所依据的素材，表示「以……为基础」用「をもとに」。",
+        "zh_TW": "學生的意見是做決定時所依據的素材，表示「以……為基礎」用「をもとに」。"
+      }
+    },
+    {
+      "id": "q:n2-g-028",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-sotte"
+      ],
+      "kind": "choice",
+      "ja": "川に沿って歩いていくと、小さな橋が見えてくる。",
+      "reading": "かわにそってあるいていくと、ちいさなはしがみえてくる。",
+      "blank": "に沿って",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "に沿って",
+        "に応じて",
+        "に反して",
+        "にわたって"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Walking follows the line of the river, and に沿って is used for moving along something long, or for keeping to a plan or rule.",
+        "zh": "走的路线顺着河流延伸，沿着长条状的事物走，或按照方针办事，都用「に沿って」。",
+        "zh_TW": "走的路線順著河流延伸，沿著長條狀的事物走，或按照方針辦事，都用「に沿って」。"
+      }
+    },
+    {
+      "id": "q:n2-g-029",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-kotaete"
+      ],
+      "kind": "choice",
+      "ja": "選手たちは、応援に応えて、最後まで走り続けた。",
+      "reading": "せんしゅたちは、おうえんにこたえて、さいごまではしりつづけた。",
+      "blank": "に応えて",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "に応えて",
+        "に応じて",
+        "に沿って",
+        "に基づいて"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The runners answered the hopes of the people cheering, and に応えて is used for living up to support, expectations or a request.",
+        "zh": "选手们回应了观众的加油，表示「不辜负期待、回应支持」用「に応えて」。",
+        "zh_TW": "選手們回應了觀眾的加油，表示「不辜負期待、回應支持」用「に応えて」。"
+      }
+    },
+    {
+      "id": "q:n2-g-030",
+      "type": "form-selection",
+      "items": [
+        "grammar:o-tsuujite"
+      ],
+      "kind": "choice",
+      "ja": "私はこの仕事を通じて、多くの人と出会った。",
+      "reading": "わたしはこのしごとをつうじて、おおくのひととであった。",
+      "blank": "を通じて",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "を通じて",
+        "をめぐって",
+        "をはじめ",
+        "をもとに"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The job is the route by which the meetings happened, and を通じて marks the means or channel something comes about through.",
+        "zh": "工作是结识这些人的途径，表示「通过……」的媒介或渠道用「を通じて」。",
+        "zh_TW": "工作是結識這些人的途徑，表示「通過……」的媒介或渠道用「を通じて」。"
+      }
+    },
+    {
+      "id": "q:n2-g-031",
+      "type": "form-selection",
+      "items": [
+        "grammar:o-megutte"
+      ],
+      "kind": "choice",
+      "ja": "新しい道路の建設をめぐって、町の意見が分かれている。",
+      "reading": "あたらしいどうろのけんせつをめぐって、まちのいけんがわかれている。",
+      "blank": "をめぐって",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "をめぐって",
+        "を通じて",
+        "を込めて",
+        "をはじめ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The road is the issue people are arguing over, and をめぐって introduces a topic that opinions or disputes circle around.",
+        "zh": "修路是众人争论的焦点，表示「围绕某个话题产生分歧」用「をめぐって」。",
+        "zh_TW": "修路是眾人爭論的焦點，表示「圍繞某個話題產生分歧」用「をめぐって」。"
+      }
+    },
+    {
+      "id": "q:n2-g-032",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-watatte"
+      ],
+      "kind": "choice",
+      "ja": "この工事は三年にわたって続いた。",
+      "reading": "このこうじはさんねんにわたってつづいた。",
+      "blank": "にわたって",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "にわたって",
+        "にかけて",
+        "において",
+        "につけ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Three years is the whole stretch the work covered, and にわたって states the full extent of a period or an area.",
+        "zh": "三年是工程持续的整个跨度，表示「历时……、涉及整个范围」用「にわたって」。",
+        "zh_TW": "三年是工程持續的整個跨度，表示「歷時……、涉及整個範圍」用「にわたって」。"
+      }
+    },
+    {
+      "id": "q:n2-g-033",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-tomonatte"
+      ],
+      "kind": "choice",
+      "ja": "気温が上がるに伴って、水を飲む量も増えた。",
+      "reading": "きおんがあがるにともなって、みずをのむりょうもふえた。",
+      "blank": "に伴って",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "に伴って",
+        "に応じて",
+        "に限って",
+        "にわたって"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "One change drags the other along with it, and に伴って links two changes that move together.",
+        "zh": "一个变化带动另一个变化，两者同步发生时用「に伴って」。",
+        "zh_TW": "一個變化帶動另一個變化，兩者同步發生時用「に伴って」。"
+      }
+    },
+    {
+      "id": "q:n2-g-034",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-hanshite"
+      ],
+      "kind": "choice",
+      "ja": "予想に反して、今年の夏はあまり暑くならなかった。",
+      "reading": "よそうにはんして、ことしのなつはあまりあつくならなかった。",
+      "blank": "に反して",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "に反して",
+        "に応えて",
+        "に沿って",
+        "に基づいて"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "What happened went the opposite way from what was expected, and に反して marks that contrast with an expectation or a rule.",
+        "zh": "实际情况和预想正好相反，表示「与……相反」时用「に反して」。",
+        "zh_TW": "實際情況和預想正好相反，表示「與……相反」時用「に反して」。"
+      }
+    },
+    {
+      "id": "q:n2-g-035",
+      "type": "form-selection",
+      "items": [
+        "grammar:o-towazu"
+      ],
+      "kind": "choice",
+      "ja": "この教室は年齢を問わず、だれでも参加できる。",
+      "reading": "このきょうしつはねんれいをとわず、だれでもさんかできる。",
+      "blank": "を問わず",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "を問わず",
+        "を込めて",
+        "をめぐって",
+        "をもとに"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Age makes no difference to who may join, and を問わず says a condition is not taken into account at all.",
+        "zh": "年龄不构成任何限制，表示「不论……」「不加以考虑」用「を問わず」。",
+        "zh_TW": "年齡不構成任何限制，表示「不論……」「不加以考慮」用「を問わず」。"
+      }
+    },
+    {
+      "id": "q:n2-g-036",
+      "type": "form-selection",
+      "items": [
+        "grammar:no-moto-de"
+      ],
+      "kind": "choice",
+      "ja": "私たちは先生の指導のもとで、実験を進めた。",
+      "reading": "わたしたちはせんせいのしどうのもとで、じっけんをすすめた。",
+      "blank": "のもとで",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "のもとで",
+        "のたびに",
+        "のかわりに",
+        "のうえに"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The teacher's guidance is the condition the work took place under, and のもとで names the influence or supervision an action happens beneath.",
+        "zh": "老师的指导是实验进行的前提条件，表示「在……之下」用「のもとで」。",
+        "zh_TW": "老師的指導是實驗進行的前提條件，表示「在……之下」用「のもとで」。"
+      }
+    },
+    {
+      "id": "q:n2-g-037",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-atatte"
+      ],
+      "kind": "choice",
+      "ja": "新しい生活を始めるにあたって、必要なものをそろえた。",
+      "reading": "あたらしいせいかつをはじめるにあたって、ひつようなものをそろえた。",
+      "blank": "にあたって",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "にあたって",
+        "にわたって",
+        "において",
+        "にかけて"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Preparations are made as an important new stage begins, and にあたって marks the occasion of such a step.",
+        "zh": "在迎来重要的新阶段时做准备，表示「值此……之际」用「にあたって」。",
+        "zh_TW": "在迎來重要的新階段時做準備，表示「值此……之際」用「にあたって」。"
+      }
+    },
+    {
+      "id": "q:n2-g-038",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-sakidatte"
+      ],
+      "kind": "choice",
+      "ja": "会議に先立って、資料を配ります。",
+      "reading": "かいぎにさきだって、しりょうをくばります。",
+      "blank": "に先立って",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "に先立って",
+        "に応じて",
+        "に伴って",
+        "に沿って"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Handing out the documents comes before the meeting as its preparation, and に先立って says one thing is done ahead of a formal event.",
+        "zh": "发资料是会议前的准备，表示「在……之前先做某事」用「に先立って」。",
+        "zh_TW": "發資料是會議前的準備，表示「在……之前先做某事」用「に先立って」。"
+      }
+    },
+    {
+      "id": "q:n2-g-039",
+      "type": "form-selection",
+      "items": [
+        "grammar:sai"
+      ],
+      "kind": "choice",
+      "ja": "図書館を利用する際は、必ずカードを見せてください。",
+      "reading": "としょかんをりようするさいは、かならずカードをみせてください。",
+      "blank": "際",
+      "prompt": {
+        "en": "Which word fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "際",
+        "間",
+        "最中",
+        "たび"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The rule applies at the occasion of using the library, and 際 is the formal word for \"when\" in notices and instructions.",
+        "zh": "这条规定适用于使用图书馆的时候，公告和说明中表示「……的时候」用「際」。",
+        "zh_TW": "這條規定適用於使用圖書館的時候，公告和說明中表示「……的時候」用「際」。"
+      }
+    },
+    {
+      "id": "q:n2-g-040",
+      "type": "form-selection",
+      "items": [
+        "grammar:saichuu-n2"
+      ],
+      "kind": "choice",
+      "ja": "食事の最中に電話が鳴った。",
+      "reading": "しょくじのさいちゅうにでんわがなった。",
+      "blank": "最中",
+      "prompt": {
+        "en": "Which word fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "最中",
+        "以来",
+        "うち",
+        "あげく"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The phone rang right in the middle of the meal, and 最中 points at the very moment something is under way when it is interrupted.",
+        "zh": "电话正好在吃饭进行到一半时响起，表示「正在……的时候」被打断用「最中」。",
+        "zh_TW": "電話正好在吃飯進行到一半時響起，表示「正在……的時候」被打斷用「最中」。"
+      }
+    },
+    {
+      "id": "q:n2-g-041",
+      "type": "form-selection",
+      "items": [
+        "grammar:tabi-ni-n2"
+      ],
+      "kind": "choice",
+      "ja": "この写真を見るたびに、子どものころを思い出す。",
+      "reading": "このしゃしんをみるたびに、こどものころをおもいだす。",
+      "blank": "たびに",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "たびに",
+        "ついでに",
+        "うちに",
+        "最中に"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Every single time the photo is looked at, the same memory comes back, and たびに states that regular repetition.",
+        "zh": "每次看到这张照片都会想起同样的事，表示「每当……就……」用「たびに」。",
+        "zh_TW": "每次看到這張照片都會想起同樣的事，表示「每當……就……」用「たびに」。"
+      }
+    },
+    {
+      "id": "q:n2-g-042",
+      "type": "form-selection",
+      "items": [
+        "grammar:ka-nai-ka-no-uchi-ni"
+      ],
+      "kind": "choice",
+      "ja": "電車が駅に着くか着かないかのうちに、彼は立ち上がった。",
+      "reading": "でんしゃがえきにつくかつかないかのうちに、かれはたちあがった。",
+      "blank": "着くか着かないかのうちに",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "着くか着かないかのうちに",
+        "着くかどうかのうちに",
+        "着かないうちに",
+        "着いてからでなければ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "He stood up at the very instant the train was arriving, almost before it had, and 〜か〜ないかのうちに describes two things happening with no gap at all.",
+        "zh": "电车刚要到站他就站了起来，几乎没有间隔，这种「刚一……就……」用「〜か〜ないかのうちに」。",
+        "zh_TW": "電車剛要到站他就站了起來，幾乎沒有間隔，這種「剛一……就……」用「〜か〜ないかのうちに」。"
+      }
+    },
+    {
+      "id": "q:n2-g-043",
+      "type": "form-selection",
+      "items": [
+        "grammar:ka-to-omou-to"
+      ],
+      "kind": "choice",
+      "ja": "空が暗くなったかと思うと、大きな音がして雨が降り出した。",
+      "reading": "そらがくらくなったかとおもうと、おおきなおとがしてあめがふりだした。",
+      "blank": "かと思うと",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "かと思うと",
+        "かと言っても",
+        "からには",
+        "ものの"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "No sooner was the sky dark than the rain came, and かと思うと reports a second event following the first at once and unexpectedly.",
+        "zh": "天刚一变暗雨就下了起来，表示「刚……就……」的意外接续用「かと思うと」。",
+        "zh_TW": "天剛一變暗雨就下了起來，表示「剛……就……」的意外接續用「かと思うと」。"
+      }
+    },
+    {
+      "id": "q:n2-g-044",
+      "type": "form-selection",
+      "items": [
+        "grammar:shidai-n2"
+      ],
+      "kind": "choice",
+      "ja": "準備ができ次第、すぐに出発します。",
+      "reading": "じゅんびができしだい、すぐにしゅっぱつします。",
+      "blank": "次第",
+      "prompt": {
+        "en": "Which word fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "次第",
+        "最中",
+        "うちに",
+        "たびに"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Departure waits only for the preparation to be finished, and 次第 on the verb stem means \"as soon as that is done\".",
+        "zh": "只要准备一完成就出发，接在动词连用形后表示「一……就立刻……」用「次第」。",
+        "zh_TW": "只要準備一完成就出發，接在動詞連用形後表示「一……就立刻……」用「次第」。"
+      }
+    },
+    {
+      "id": "q:n2-g-045",
+      "type": "form-selection",
+      "items": [
+        "grammar:te-hajimete"
+      ],
+      "kind": "choice",
+      "ja": "外国で生活してはじめて、日本の習慣について深く考えた。",
+      "reading": "がいこくでせいかつしてはじめて、にほんのしゅうかんについてふかくかんがえた。",
+      "blank": "してはじめて",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "してはじめて",
+        "してばかりで",
+        "するにあたって",
+        "したところで"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Only after the experience of living abroad did the thinking begin, and 〜てはじめて says one thing had to happen before the other was possible.",
+        "zh": "只有在国外生活过之后才开始深入思考，表示「只有……之后才……」用「〜てはじめて」。",
+        "zh_TW": "只有在國外生活過之後才開始深入思考，表示「只有……之後才……」用「〜てはじめて」。"
+      }
+    },
+    {
+      "id": "q:n2-g-046",
+      "type": "form-selection",
+      "items": [
+        "grammar:ue-de-n2"
+      ],
+      "kind": "choice",
+      "ja": "よく考えた上で、返事をするつもりです。",
+      "reading": "よくかんがえたうえで、へんじをするつもりです。",
+      "blank": "上で",
+      "prompt": {
+        "en": "Which words fit the gap in this sentence?",
+        "zh": "这个句子的空格里应该填什么？",
+        "zh_TW": "這個句子的空格里應該填什麼？"
+      },
+      "options": [
+        "上で",
+        "上に",
+        "だけで",
+        "一方で"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Thinking comes first and the answer is given on that basis, which is the order 〜た上で sets out.",
+        "zh": "先充分考虑，在此基础上再答复，这种先后关系用「〜た上で」。",
+        "zh_TW": "先充分考慮，在此基礎上再答覆，這種先後關係用「〜た上で」。"
+      }
+    },
+    {
+      "id": "q:n2-g-047",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:irai"
+      ],
+      "kind": "order",
+      "ja": "去年の春に引っ越して以来、彼とは一度も会っていない。",
+      "reading": "きょねんのはるにひっこしていらい、かれとはいちどもあっていない。",
+      "frame": {
+        "before": "去年の春に",
+        "after": "会っていない。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "以来、",
+        "一度も",
+        "引っ越して",
+        "彼とは"
+      ],
+      "answerOrder": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "explanation": {
+        "en": "以来 attaches to the te-form 引っ越して and fixes the starting point; what has been true ever since follows.",
+        "zh": "「以来」接在「引っ越して」后面，确定起点，后面再说从那以后一直如此的情况。",
+        "zh_TW": "「以來」接在「引っ越して」後面，確定起點，後面再說從那以後一直如此的情況。"
+      }
+    },
+    {
+      "id": "q:n2-g-048",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:buri"
+      ],
+      "kind": "order",
+      "ja": "私は三年ぶりに友人に会って、時間を忘れて話した。",
+      "reading": "わたしはさんねんぶりにゆうじんにあって、じかんをわすれてはなした。",
+      "frame": {
+        "before": "私は",
+        "after": "話した。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "会って、",
+        "時間を忘れて",
+        "三年ぶりに",
+        "友人に"
+      ],
+      "answerOrder": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "explanation": {
+        "en": "ぶりに attaches to the length of the interval, 三年, and modifies the verb that follows: meeting again after three years.",
+        "zh": "「ぶりに」接在表示间隔长度的「三年」后面，修饰后面的动作，表示时隔三年再次见面。",
+        "zh_TW": "「ぶりに」接在表示間隔長度的「三年」後面，修飾後面的動作，表示時隔三年再次見面。"
+      }
+    },
+    {
+      "id": "q:n2-g-049",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:ppanashi"
+      ],
+      "kind": "order",
+      "ja": "弟は、部屋のテレビをつけっぱなしにしたまま出かけてしまった。",
+      "reading": "おとうとは、へやのテレビをつけっぱなしにしたままでかけてしまった。",
+      "frame": {
+        "before": "弟は、",
+        "after": "出かけてしまった。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "テレビを",
+        "したまま",
+        "部屋の",
+        "つけっぱなしに"
+      ],
+      "answerOrder": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "explanation": {
+        "en": "っぱなし follows the verb stem つけ and says the television was left on, a state the speaker sees as careless.",
+        "zh": "「っぱなし」接在动词连用形「つけ」后面，表示电视一直开着没关，带有放任不管的语气。",
+        "zh_TW": "「っぱなし」接在動詞連用形「つけ」後面，表示電視一直開著沒關，帶有放任不管的語氣。"
+      }
+    },
+    {
+      "id": "q:n2-g-050",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:dake-ni"
+      ],
+      "kind": "order",
+      "ja": "この店は駅から近いだけに、いつも客が多い。",
+      "reading": "このみせはえきからちかいだけに、いつもきゃくがおおい。",
+      "frame": {
+        "before": "この店は",
+        "after": "多い。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "だけに、",
+        "いつも客が",
+        "駅から",
+        "近い"
+      ],
+      "answerOrder": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "explanation": {
+        "en": "だけに follows the plain form 近い and gives a reason whose result is only what you would expect from it.",
+        "zh": "「だけに」接在简体「近い」后面，说明原因，后项正是由这个原因自然导致的结果。",
+        "zh_TW": "「だけに」接在簡體「近い」後面，說明原因，後項正是由這個原因自然導致的結果。"
+      }
+    },
+    {
+      "id": "q:n2-g-051",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:bakari-ni"
+      ],
+      "kind": "order",
+      "ja": "私は傘を持たなかったばかりに、服がすっかり冷たくなった。",
+      "reading": "わたしはかさをもたなかったばかりに、ふくがすっかりつめたくなった。",
+      "frame": {
+        "before": "私は",
+        "after": "冷たくなった。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "ばかりに、",
+        "服がすっかり",
+        "傘を",
+        "持たなかった"
+      ],
+      "answerOrder": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "explanation": {
+        "en": "ばかりに follows 持たなかった and blames one small cause for the bad result that came of it.",
+        "zh": "「ばかりに」接在「持たなかった」后面，把不好的结果归咎于前面这一个小小的原因。",
+        "zh_TW": "「ばかりに」接在「持たなかった」後面，把不好的結果歸咎於前面這一個小小的原因。"
+      }
+    },
+    {
+      "id": "q:n2-g-052",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:kara-koso"
+      ],
+      "kind": "order",
+      "ja": "家族の助けがあったからこそ、私は最後まで続けることができた。",
+      "reading": "かぞくのたすけがあったからこそ、わたしはさいごまでつづけることができた。",
+      "frame": {
+        "before": "家族の",
+        "after": "続けることができた。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "あったからこそ、",
+        "助けが",
+        "最後まで",
+        "私は"
+      ],
+      "answerOrder": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "explanation": {
+        "en": "からこそ follows あった and singles that reason out as the only one that mattered.",
+        "zh": "「からこそ」接在「あった」后面，把这个理由特别强调出来，表示正因为如此。",
+        "zh_TW": "「からこそ」接在「あった」後面，把這個理由特別強調出來，表示正因為如此。"
+      }
+    },
+    {
+      "id": "q:n2-g-053",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:ijou-wa-n2"
+      ],
+      "kind": "order",
+      "ja": "試合に出る以上は、勝つまで練習を続けるつもりだ。",
+      "reading": "しあいにでるいじょうは、かつまでれんしゅうをつづけるつもりだ。",
+      "frame": {
+        "before": "試合に",
+        "after": "つもりだ。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "勝つまで",
+        "出る",
+        "練習を続ける",
+        "以上は、"
+      ],
+      "answerOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "explanation": {
+        "en": "以上は follows the plain form 出る and states a fact the speaker treats as settled; the resolve that follows from it comes after.",
+        "zh": "「以上は」接在简体「出る」后面，先摆出既定的事实，后面再说由此产生的决心。",
+        "zh_TW": "「以上は」接在簡體「出る」後面，先擺出既定的事實，後面再說由此產生的決心。"
+      }
+    },
+    {
+      "id": "q:n2-g-054",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:hanmen"
+      ],
+      "kind": "order",
+      "ja": "この機械は、値段が高い反面、故障がとても少ない。",
+      "reading": "このきかいは、ねだんがたかいはんめん、こしょうがとてもすくない。",
+      "frame": {
+        "before": "この機械は、",
+        "after": "少ない。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "高い反面、",
+        "とても",
+        "値段が",
+        "故障が"
+      ],
+      "answerOrder": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "explanation": {
+        "en": "反面 follows 高い and sets a drawback against the good point that comes next.",
+        "zh": "「反面」接在「高い」后面，把缺点和后面的优点对照起来说。",
+        "zh_TW": "「反面」接在「高い」後面，把缺點和後面的優點對照起來說。"
+      }
+    },
+    {
+      "id": "q:n2-g-055",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:ni-suginai"
+      ],
+      "kind": "order",
+      "ja": "今の説明は、問題の一部を述べたにすぎない。",
+      "reading": "いまのせつめいは、もんだいのいちぶをのべたにすぎない。",
+      "frame": {
+        "before": "今の",
+        "after": "にすぎない。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "述べた",
+        "説明は、",
+        "問題の",
+        "一部を"
+      ],
+      "answerOrder": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "explanation": {
+        "en": "にすぎない closes the sentence on the verb 述べた and plays the explanation down as no more than a part of the whole.",
+        "zh": "「にすぎない」接在动词「述べた」后面收尾，把这段说明贬低为「只不过讲了一部分」。",
+        "zh_TW": "「にすぎない」接在動詞「述べた」後面收尾，把這段說明貶低為「只不過講了一部分」。"
+      }
+    },
+    {
+      "id": "q:n2-g-056",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:to-wa-ie"
+      ],
+      "kind": "order",
+      "ja": "春になったとはいえ、朝と夜はまだかなり寒い。",
+      "reading": "はるになったとはいえ、あさとよるはまだかなりさむい。",
+      "frame": {
+        "before": "春に",
+        "after": "寒い。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "まだ",
+        "なったとはいえ、",
+        "かなり",
+        "朝と夜は"
+      ],
+      "answerOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "explanation": {
+        "en": "とはいえ follows なった and grants the fact before the second half says the reality does not match it.",
+        "zh": "「とはいえ」接在「なった」后面，先承认这个事实，后半句再说实际情况并非如此。",
+        "zh_TW": "「とはいえ」接在「なった」後面，先承認這個事實，後半句再說實際情況並非如此。"
+      }
+    },
+    {
+      "id": "q:n2-g-057",
+      "type": "text-grammar",
+      "items": [
+        "grammar:nai-koto-ni-wa"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-g-002",
+      "ja": "実際に自分で作ってみないことには、上手にはならない。",
+      "reading": "じっさいにじぶんでつくってみないことには、じょうずにはならない。",
+      "blank": "ないことには",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "ないことには",
+        "ないうちに",
+        "ないばかりに",
+        "ないながらも"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Cooking yourself is the condition without which improvement is impossible, and ないことには sets up exactly that \"unless\".",
+        "zh": "不亲手做就无法变熟练，前项是后项成立的必要条件，这种「不……就不……」用「ないことには」。",
+        "zh_TW": "不親手做就無法變熟練，前項是後項成立的必要條件，這種「不……就不……」用「ないことには」。"
+      }
+    },
+    {
+      "id": "q:n2-g-058",
+      "type": "text-grammar",
+      "items": [
+        "grammar:uchi-ni-n2"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-g-002",
+      "ja": "続けているうちに、味の違いが少しずつ分かるようになってきた。",
+      "reading": "つづけているうちに、あじのちがいがすこしずつわかるようになってきた。",
+      "blank": "うちに",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "うちに",
+        "たびに",
+        "最中に",
+        "以来"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The change came about unnoticed over the time she kept cooking, and うちに is used for a change that grows while something continues.",
+        "zh": "在持续做饭的过程中不知不觉发生了变化，表示「在……过程中渐渐……」用「うちに」。",
+        "zh_TW": "在持續做飯的過程中不知不覺發生了變化，表示「在……過程中漸漸……」用「うちに」。"
+      }
+    },
+    {
+      "id": "q:n2-g-059",
+      "type": "text-grammar",
+      "items": [
+        "grammar:bakari-ka-n2"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-g-002",
+      "ja": "今では、休みの日ばかりか、平日の夜も自分で作るようになった。",
+      "reading": "いまでは、やすみのひばかりか、へいじつのよるもじぶんでつくるようになった。",
+      "blank": "ばかりか",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "ばかりか",
+        "どころか",
+        "というより",
+        "にしては"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "A second occasion is added to the first, and the も later in the sentence needs ばかりか in front: not just days off but weekday evenings as well.",
+        "zh": "在第一种场合之外又加上第二种，句中有「も」，前面就要用「ばかりか」，表示「不仅……而且……」。",
+        "zh_TW": "在第一種場合之外又加上第二種，句中有「も」，前面就要用「ばかりか」，表示「不僅……而且……」。"
+      }
+    },
+    {
+      "id": "q:n2-g-060",
+      "type": "text-grammar",
+      "items": [
+        "grammar:ue-ni"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-g-002",
+      "ja": "料理は、時間がかかる上に、準備も大変だ。",
+      "reading": "りょうりは、じかんがかかるうえに、じゅんびもたいへんだ。",
+      "blank": "上に",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "上に",
+        "上で",
+        "わりに",
+        "反面"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Two drawbacks of the same kind are piled up, and 上に adds a second point on top of the first.",
+        "zh": "前后是两个同类的缺点叠加在一起，表示「而且、再加上」用「上に」。",
+        "zh_TW": "前後是兩個同類的缺點疊加在一起，表示「而且、再加上」用「上に」。"
+      }
+    },
+    {
+      "id": "q:n2-g-061",
+      "type": "text-grammar",
+      "items": [
+        "grammar:ni-kagirazu"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-g-003",
+      "ja": "利用しているのは学生に限らず、年上の人も多い。",
+      "reading": "りようしているのはがくせいにかぎらず、としうえのひともおおい。",
+      "blank": "に限らず",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "に限らず",
+        "に限って",
+        "に限る",
+        "に反して"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The users are not confined to students; another group is added with も, and に限らず is the phrase that opens the range out.",
+        "zh": "使用者并不局限于学生，后面用「も」再补上另一类人，表示「不限于……」用「に限らず」。",
+        "zh_TW": "使用者並不侷限於學生，後面用「も」再補上另一類人，表示「不限於……」用「に限らず」。"
+      }
+    },
+    {
+      "id": "q:n2-g-062",
+      "type": "text-grammar",
+      "items": [
+        "grammar:wari-ni-wa"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-g-003",
+      "ja": "新しいわりには、どこか落ち着いた感じがする。",
+      "reading": "あたらしいわりには、どこかおちついたかんじがする。",
+      "blank": "わりには",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "わりには",
+        "だけあって",
+        "からには",
+        "とともに"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "A new building would be expected to feel raw, yet it feels calm, and わりには marks a result that does not match what the first part leads you to expect.",
+        "zh": "新建筑本该给人生硬的感觉，实际却很沉静，结果与前项的预想不符时用「わりには」。",
+        "zh_TW": "新建築本該給人生硬的感覺，實際卻很沉靜，結果與前項的預想不符時用「わりには」。"
+      }
+    },
+    {
+      "id": "q:n2-g-063",
+      "type": "text-grammar",
+      "items": [
+        "grammar:mono-ga-aru"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-g-003",
+      "ja": "静かな時間の中で本を選ぶ楽しみには、特別なものがある。",
+      "reading": "しずかなじかんのなかでほんをえらぶたのしみには、とくべつなものがある。",
+      "blank": "ものがある",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "ものがある",
+        "ものではない",
+        "ことになる",
+        "わけがない"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The writer feels a quality in that pleasure that is hard to name, and ものがある is how such a felt impression is stated.",
+        "zh": "作者感到这种乐趣中有一种说不清的特别之处，表达这种感受用「ものがある」。",
+        "zh_TW": "作者感到這種樂趣中有一種說不清的特別之處，表達這種感受用「ものがある」。"
+      }
+    },
+    {
+      "id": "q:n2-g-064",
+      "type": "text-grammar",
+      "items": [
+        "grammar:te-tamaranai-n2"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-g-004",
+      "ja": "始めたころは、三十分歩いただけで足が痛くてたまらなかった。",
+      "reading": "はじめたころは、さんじゅっぷんあるいただけであしがいたくてたまらなかった。",
+      "blank": "てたまらなかった",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "てたまらなかった",
+        "てはならなかった",
+        "てからだった",
+        "ておかなかった"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The pain was more than the writer could bear, and てたまらない is the form for a feeling too strong to put up with.",
+        "zh": "疼得难以忍受，表示某种感觉强烈到受不了时用「てたまらない」。",
+        "zh_TW": "疼得難以忍受，表示某種感覺強烈到受不了時用「てたまらない」。"
+      }
+    },
+    {
+      "id": "q:n2-g-065",
+      "type": "text-grammar",
+      "items": [
+        "grammar:nai-de-wa-irarenai"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-g-004",
+      "ja": "天気が悪い日でも、歩かないではいられない。",
+      "reading": "てんきがわるいひでも、あるかないではいられない。",
+      "blank": "ないではいられない",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "ないではいられない",
+        "ないことはない",
+        "ないうちに",
+        "ないばかりだ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The habit has grown so strong that not walking is impossible, and ないではいられない says the urge cannot be held back.",
+        "zh": "习惯已经强到不走不行，表示「忍不住、非做不可」用「ないではいられない」。",
+        "zh_TW": "習慣已經強到不走不行，表示「忍不住、非做不可」用「ないではいられない」。"
+      }
+    },
+    {
+      "id": "q:n2-g-066",
+      "type": "text-grammar",
+      "items": [
+        "grammar:ni-hokanaranai"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-g-004",
+      "ja": "体の調子がよくなったのは、この習慣のおかげにほかならない。",
+      "reading": "からだのちょうしがよくなったのは、このしゅうかんのおかげにほかならない。",
+      "blank": "にほかならない",
+      "prompt": {
+        "en": "Read the passage, then choose the words that fit this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "にほかならない",
+        "にすぎない",
+        "とは限らない",
+        "どころではない"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The writer names one cause and rules out every other, and にほかならない asserts that it is nothing but this.",
+        "zh": "作者断定原因只有这一个，排除其他可能，这种「无非就是……」用「にほかならない」。",
+        "zh_TW": "作者斷定原因只有這一個，排除其他可能，這種「無非就是……」用「にほかならない」。"
       }
     }
   ]

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -131,13 +132,7 @@ class NihongoStorage {
       final oldDir = await getAppDir();
 
       _customPath = newPath;
-      final config = await readConfig();
-      if (newPath != null) {
-        config['storagePath'] = newPath;
-      } else {
-        config.remove('storagePath');
-      }
-      await writeConfig(config);
+      await _setKey('storagePath', newPath);
 
       final newDir = await getAppDir();
       if (oldDir.path == newDir.path) return true;
@@ -505,17 +500,102 @@ class NihongoStorage {
     return jsonDecode(raw) as Map<String, dynamic>;
   }
 
+  /// The queue every config write joins, so that only one is ever in flight.
+  ///
+  /// Two settings toggled in the same second used to run two read-modify-write
+  /// cycles at once. On Windows that is a `PathAccessException` — the second
+  /// write renames its temporary file over one the first still has open — and
+  /// on every platform it is a lost update, because both cycles read the file
+  /// before either wrote it.
+  static Future<void> _configWrites = Future<void>.value();
+
+  /// The zone [_configWrites] belongs to.
+  ///
+  /// A write waits only for writes started in the same zone. The app runs in
+  /// one zone from `main` onwards, so in the app that means "waits for every
+  /// write before it" — which is the whole point. A widget test is the case
+  /// that needs the qualifier: each test body gets a zone of its own, and file
+  /// I/O started from a tap and not awaited is left suspended in that zone
+  /// when the test ends. Waiting on it would hang every write in every test
+  /// after, for the life of the process, and there is nothing to wait for —
+  /// nobody is driving that zone any more.
+  static Zone? _configWriteZone;
+
   /// Purpose: Write `storage_config.json`.
   /// Inputs: `config`.
   /// Returns: None.
+  /// Side effects: Atomically writes the config file, after any write already
+  /// queued.
+  /// Notes: Callers read-modify-write so keys they do not own survive. Prefer
+  /// [_updateConfig], which does that reading inside the queue; this entry
+  /// point is for a caller that already holds the whole map.
+  static Future<void> writeConfig(Map<String, dynamic> config) {
+    return _queue(() => _writeConfigNow(config));
+  }
+
+  /// Purpose: Read, change and write `storage_config.json` as one step.
+  /// Inputs: `change` — applied to the map that was just read.
+  /// Returns: None.
+  /// Side effects: Rewrites the config file, after any write already queued.
+  /// Notes: Internal helper used within this file only. The read is inside the
+  /// queue on purpose: a setter that read first and queued afterwards would
+  /// still overwrite a key another setter had written in between.
+  static Future<void> _updateConfig(
+    void Function(Map<String, dynamic> config) change,
+  ) {
+    return _queue(() async {
+      final config = await readConfig();
+      change(config);
+      await _writeConfigNow(config);
+    });
+  }
+
+  /// Purpose: Run one config write after every write already queued.
+  /// Inputs: `write`.
+  /// Returns: None; the caller's own failure is its own.
+  /// Side effects: Extends the queue.
+  /// Notes: Internal helper used within this file only. The queue swallows the
+  /// failure it stores so that one write that threw does not fail every write
+  /// after it; the caller still sees its own.
+  static Future<void> _queue(Future<void> Function() write) {
+    final ahead = identical(_configWriteZone, Zone.current)
+        ? _configWrites
+        : Future<void>.value();
+    final chained = ahead.then((_) => write());
+    _configWriteZone = Zone.current;
+    _configWrites = chained.catchError((_) {});
+    return chained;
+  }
+
+  /// Purpose: Write `storage_config.json` now, without queueing.
+  /// Inputs: `config`.
+  /// Returns: None.
   /// Side effects: Atomically writes the config file.
-  /// Notes: Callers read-modify-write so keys they do not own survive.
-  static Future<void> writeConfig(Map<String, dynamic> config) async {
+  /// Notes: Internal helper used within this file only. Call it from inside
+  /// the queue and nowhere else.
+  static Future<void> _writeConfigNow(Map<String, dynamic> config) async {
     final file = await _getConfigFile();
     await atomicWriteString(
       file,
       const JsonEncoder.withIndent('  ').convert(config),
     );
+  }
+
+  /// Purpose: Set or remove one key in `storage_config.json`.
+  /// Inputs: `key` and `value`; a null `value` removes the key.
+  /// Returns: None.
+  /// Side effects: Rewrites the config file.
+  /// Notes: Internal helper used within this file only. Removing rather than
+  /// storing the default is what lets a later change of default reach devices
+  /// that never touched the setting.
+  static Future<void> _setKey(String key, Object? value) {
+    return _updateConfig((config) {
+      if (value == null) {
+        config.remove(key);
+      } else {
+        config[key] = value;
+      }
+    });
   }
 
   /// Purpose: Read one string preference from `storage_config.json`.
@@ -538,15 +618,8 @@ class NihongoStorage {
   /// Notes: Internal helper used within this file only. A default is removed
   /// rather than written, so the file stays small and a future change of
   /// default reaches devices that never touched the setting.
-  static Future<void> _setString(String key, String? value) async {
-    final config = await readConfig();
-    if (value == null) {
-      config.remove(key);
-    } else {
-      config[key] = value;
-    }
-    await writeConfig(config);
-  }
+  static Future<void> _setString(String key, String? value) =>
+      _setKey(key, value);
 
   /// Purpose: Read one integer preference.
   /// Inputs: `key`.
@@ -564,15 +637,7 @@ class NihongoStorage {
   /// Returns: None.
   /// Side effects: Writes the config file.
   /// Notes: Internal helper used within this file only.
-  static Future<void> _setInt(String key, int? value) async {
-    final config = await readConfig();
-    if (value == null) {
-      config.remove(key);
-    } else {
-      config[key] = value;
-    }
-    await writeConfig(config);
-  }
+  static Future<void> _setInt(String key, int? value) => _setKey(key, value);
 
   /// Purpose: Read the tab the app was last on.
   /// Inputs: None.
@@ -669,15 +734,8 @@ class NihongoStorage {
   /// Returns: None.
   /// Side effects: Writes the config file.
   /// Notes: The default is removed from config rather than stored.
-  static Future<void> setThemeMode(String? mode) async {
-    final config = await readConfig();
-    if (mode == null) {
-      config.remove('themeMode');
-    } else {
-      config['themeMode'] = mode;
-    }
-    await writeConfig(config);
-  }
+  static Future<void> setThemeMode(String? mode) =>
+      _setKey('themeMode', mode);
 
   /// Purpose: Read the persisted locale tag.
   /// Inputs: None.
@@ -694,15 +752,7 @@ class NihongoStorage {
   /// Returns: None.
   /// Side effects: Writes the config file.
   /// Notes: The default is removed from config rather than stored.
-  static Future<void> setLocaleTag(String? tag) async {
-    final config = await readConfig();
-    if (tag == null) {
-      config.remove('locale');
-    } else {
-      config['locale'] = tag;
-    }
-    await writeConfig(config);
-  }
+  static Future<void> setLocaleTag(String? tag) => _setKey('locale', tag);
 
   /// Purpose: Read one fractional preference.
   /// Inputs: `key`.
@@ -722,15 +772,8 @@ class NihongoStorage {
   /// Returns: None.
   /// Side effects: Writes the config file.
   /// Notes: Internal helper used within this file only.
-  static Future<void> _setDouble(String key, double? value) async {
-    final config = await readConfig();
-    if (value == null) {
-      config.remove(key);
-    } else {
-      config[key] = value;
-    }
-    await writeConfig(config);
-  }
+  static Future<void> _setDouble(String key, double? value) =>
+      _setKey(key, value);
 
   /// Purpose: Read the chosen text-to-speech speaking rate.
   /// Inputs: None.
@@ -841,15 +884,8 @@ class NihongoStorage {
   /// Returns: None.
   /// Side effects: Writes the config file.
   /// Notes: Internal helper used within this file only.
-  static Future<void> _setBool(String key, bool? value) async {
-    final config = await readConfig();
-    if (value == null) {
-      config.remove(key);
-    } else {
-      config[key] = value;
-    }
-    await writeConfig(config);
-  }
+  static Future<void> _setBool(String key, bool? value) =>
+      _setKey(key, value);
 
   /// Purpose: Read whether network speech recognition is allowed.
   /// Inputs: None.

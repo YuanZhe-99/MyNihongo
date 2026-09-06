@@ -190,6 +190,362 @@
       "en": "Notice from the library. From the 20th to the 25th of this month, the rooms on the second floor cannot be used. The rooms on the first floor can be used as usual. Please come to the reception desk on the first floor both to borrow and to return books. The newspapers and magazines from the second floor have been moved to the first floor. From the 26th the second floor can be used again. Everyone, please take note.",
       "zh": "图书馆通知。本月二十日至二十五日，二楼的房间不能使用。一楼的房间可以照常使用。借书和还书都请到一楼的服务台。二楼的报纸和杂志已搬到一楼。从二十六日起，二楼也可以使用了。请大家留意。",
       "zh_TW": "圖書館通知。本月二十日至二十五日，二樓的房間不能使用。一樓的房間可以照常使用。借書和還書都請到一樓的服務檯。二樓的報紙和雜誌已搬到一樓。從二十六日起，二樓也可以使用了。請大家留意。"
+    },
+    {
+      "id": "p:n4-r-007",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "先週、自転車が急に壊れました。",
+          "reading": "せんしゅう、じてんしゃがきゅうにこわれました。"
+        },
+        {
+          "ja": "近所の店へ持って行くと、店の人がすぐに直してくれました。",
+          "reading": "きんじょのみせへもっていくと、みせのひとがすぐになおしてくれました。"
+        },
+        {
+          "ja": "店の人はお金はいらないと言いました。",
+          "reading": "みせのひとはおかねはいらないといいました。"
+        },
+        {
+          "ja": "私はとても喜んで、何度もお礼を言いました。",
+          "reading": "わたしはとてもよろこんで、なんどもおれいをいいました。"
+        }
+      ],
+      "en": "Last week my bicycle suddenly broke. When I took it to a shop in the neighbourhood, the person there fixed it right away. The shop person said that no money was needed. I was very pleased and thanked them many times.",
+      "zh": "上周我的自行车突然坏了。我把它拿到附近的店里，店里的人马上就帮我修好了。店里的人说不用付钱。我非常高兴，向他道了好几次谢。",
+      "zh_TW": "上週我的自行車突然壞了。我把它拿到附近的店裡，店裡的人馬上就幫我修好了。店裡的人說不用付錢。我非常高興，向他道了好幾次謝。"
+    },
+    {
+      "id": "p:n4-r-008",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "秋になると、家の庭の木に小鳥が集まります。",
+          "reading": "あきになると、いえのにわのきにことりがあつまります。"
+        },
+        {
+          "ja": "私は毎朝、窓から小鳥を見るのを楽しみにしています。",
+          "reading": "わたしはまいあさ、まどからことりをみるのをたのしみにしています。"
+        },
+        {
+          "ja": "去年は木の枝を切ってしまったので、小鳥がぜんぜん来ませんでした。",
+          "reading": "きょねんはきのえだをきってしまったので、ことりがぜんぜんきませんでした。"
+        },
+        {
+          "ja": "今年は切らないことにしました。",
+          "reading": "ことしはきらないことにしました。"
+        }
+      ],
+      "en": "When autumn comes, small birds gather in the tree in our garden. Every morning I look forward to watching the birds from the window. Last year I cut the branches of the tree, so no birds came at all. This year I have decided not to cut them.",
+      "zh": "一到秋天，我家院子的树上就会聚集小鸟。我每天早上都很期待从窗户看小鸟。去年我把树枝剪掉了，所以小鸟完全没有来。今年我决定不剪了。",
+      "zh_TW": "一到秋天，我家院子的樹上就會聚集小鳥。我每天早上都很期待從窗戶看小鳥。去年我把樹枝剪掉了，所以小鳥完全沒有來。今年我決定不剪了。"
+    },
+    {
+      "id": "p:n4-r-009",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "田舎の祖母から、久しぶりに手紙が来ました。",
+          "reading": "いなかのそぼから、ひさしぶりにてがみがきました。"
+        },
+        {
+          "ja": "手紙には、今年の夏は野菜がよくできたと書いてありました。",
+          "reading": "てがみには、ことしのなつはやさいがよくできたとかいてありました。"
+        },
+        {
+          "ja": "私は今度の休みに、祖母を訪ねようと思っています。",
+          "reading": "わたしはこんどのやすみに、そぼをたずねようとおもっています。"
+        },
+        {
+          "ja": "祖母の作った野菜を食べるのが楽しみです。",
+          "reading": "そぼのつくったやさいをたべるのがたのしみです。"
+        }
+      ],
+      "en": "A letter came from my grandmother in the countryside for the first time in a long while. The letter said that the vegetables had grown well this summer. I am thinking of visiting my grandmother on my next holiday. I am looking forward to eating the vegetables she grew.",
+      "zh": "住在乡下的奶奶隔了很久寄来一封信。信里写着今年夏天蔬菜长得很好。我打算下次放假去看望奶奶。我很期待吃到奶奶种的蔬菜。",
+      "zh_TW": "住在鄉下的奶奶隔了很久寄來一封信。信裡寫著今年夏天蔬菜長得很好。我打算下次放假去看望奶奶。我很期待吃到奶奶種的蔬菜。"
+    },
+    {
+      "id": "p:n4-r-010",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "昨日、電車の中に傘を忘れてしまいました。",
+          "reading": "きのう、でんしゃのなかにかさをわすれてしまいました。"
+        },
+        {
+          "ja": "駅の事務所に電話をして、忘れ物のことを伝えました。",
+          "reading": "えきのじむしょにでんわをして、わすれもののことをつたえました。"
+        },
+        {
+          "ja": "今朝、駅の人から連絡があって、傘が見つかったと聞きました。",
+          "reading": "けさ、えきのひとかられんらくがあって、かさがみつかったとききました。"
+        },
+        {
+          "ja": "大事な傘だったので、とても安心しました。",
+          "reading": "だいじなかさだったので、とてもあんしんしました。"
+        }
+      ],
+      "en": "Yesterday I left my umbrella on the train. I phoned the station office and told them about the lost item. This morning I heard from the station staff that the umbrella had been found. It was an important umbrella, so I was very relieved.",
+      "zh": "昨天我把伞忘在电车里了。我打电话到车站办公室，告知了失物的事。今天早上车站的人联系我，说伞已经找到了。那是一把很重要的伞，所以我非常安心。",
+      "zh_TW": "昨天我把傘忘在電車裡了。我打電話到車站辦公室，告知了失物的事。今天早上車站的人聯繫我，說傘已經找到了。那是一把很重要的傘，所以我非常安心。"
+    },
+    {
+      "id": "p:n4-r-011",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "私は水泳が下手でしたが、去年から市の水泳の教室に通っています。",
+          "reading": "わたしはすいえいがへたでしたが、きょねんからしのすいえいのきょうしつにかよっています。"
+        },
+        {
+          "ja": "先生に泳ぎ方を丁寧に教えてもらいました。",
+          "reading": "せんせいにおよぎかたをていねいにおしえてもらいました。"
+        },
+        {
+          "ja": "今では長い間泳ぎ続けることができるようになりました。",
+          "reading": "いまではながいあいだおよぎつづけることができるようになりました。"
+        },
+        {
+          "ja": "来年は海で泳いでみたいと思っています。",
+          "reading": "らいねんはうみでおよいでみたいとおもっています。"
+        }
+      ],
+      "en": "I used to be bad at swimming, but since last year I have been going to the city swimming class. The teacher taught me how to swim carefully. Now I have become able to keep swimming for a long time. Next year I want to try swimming in the sea.",
+      "zh": "我原本不擅长游泳，但从去年开始就一直去市里的游泳教室。老师很耐心地教了我游泳的方法。现在我已经能连续游很长时间了。明年我想试着在海里游泳。",
+      "zh_TW": "我原本不擅長游泳，但從去年開始就一直去市裡的游泳教室。老師很耐心地教了我游泳的方法。現在我已經能連續遊很長時間了。明年我想試著在海里游泳。"
+    },
+    {
+      "id": "p:n4-r-012",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "先月、静かな町に引っ越しました。",
+          "reading": "せんげつ、しずかなまちにひっこしました。"
+        },
+        {
+          "ja": "物が多くて、一人では運ぶことができませんでした。",
+          "reading": "ものがおおくて、ひとりではこぶことができませんでした。"
+        },
+        {
+          "ja": "近所の人が手伝ってくれたので、その日のうちに片付けることができました。",
+          "reading": "きんじょのひとがてつだってくれたので、そのひのうちにかたづけることができました。"
+        },
+        {
+          "ja": "今度、お礼にごちそうを作ろうと思っています。",
+          "reading": "こんど、おれいにごちそうをつくろうとおもっています。"
+        }
+      ],
+      "en": "Last month I moved to a quiet town. There were a lot of things and I could not carry them by myself. A person from the neighbourhood helped me, so I was able to tidy everything up that same day. Next time I am thinking of cooking a good meal for them as thanks.",
+      "zh": "上个月我搬到了一个安静的小镇。东西很多，我一个人搬不动。邻居帮了我，所以当天就把东西收拾好了。下次我打算做一顿好菜答谢他。",
+      "zh_TW": "上個月我搬到了一個安靜的小鎮。東西很多，我一個人搬不動。鄰居幫了我，所以當天就把東西收拾好了。下次我打算做一頓好菜答謝他。"
+    },
+    {
+      "id": "p:n4-r-013",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "私は三年前から毎日日記を書いています。",
+          "reading": "わたしはさんねんまえからまいにちにっきをかいています。"
+        },
+        {
+          "ja": "最初は先生が書くように言ったので、あまり楽しくありませんでした。",
+          "reading": "さいしょはせんせいがかくようにいったので、あまりたのしくありませんでした。"
+        },
+        {
+          "ja": "短い文でもいいと知ってから、毎日続けることができるようになりました。",
+          "reading": "みじかいぶんでもいいとしってから、まいにちつづけることができるようになりました。"
+        },
+        {
+          "ja": "一年前の日記を読み直すと、自分の気持ちが変わったことがよく分かります。",
+          "reading": "いちねんまえのにっきをよみなおすと、じぶんのきもちがかわったことがよくわかります。"
+        },
+        {
+          "ja": "悲しかった日のことも、今は笑って読むことができます。",
+          "reading": "かなしかったひのことも、いまはわらってよむことができます。"
+        },
+        {
+          "ja": "忙しくて書けない日もありますが、次の日に必ず書くことにしています。",
+          "reading": "いそがしくてかけないひもありますが、つぎのひにかならずかくことにしています。"
+        },
+        {
+          "ja": "これからも、この習慣を大事にしていきたいです。",
+          "reading": "これからも、このしゅうかんをだいじにしていきたいです。"
+        }
+      ],
+      "en": "I have written a diary every day for three years. At first my teacher told me to write one, so it was not much fun. After I learned that even a short sentence was fine, I became able to keep it up every day. When I read a diary from a year ago again, I can clearly see how my own feelings have changed. Even about sad days, I can now read and laugh. There are days when I am too busy to write, but I make sure to write on the following day. From now on too, I want to keep valuing this habit.",
+      "zh": "我从三年前开始每天写日记。起初是老师叫我写的，所以并不觉得有趣。知道写一句短话也可以之后，我才能每天坚持下来。重新读一年前的日记，就能清楚地看出自己的心情变了。就算是难过的日子，现在也能笑着读。也有忙得写不了的日子，但我一定会在第二天补上。今后我也想珍惜这个习惯。",
+      "zh_TW": "我從三年前開始每天寫日記。起初是老師叫我寫的，所以並不覺得有趣。知道寫一句短話也可以之後，我才能每天堅持下來。重新讀一年前的日記，就能清楚地看出自己的心情變了。就算是難過的日子，現在也能笑著讀。也有忙得寫不了的日子，但我一定會在第二天補上。今後我也想珍惜這個習慣。"
+    },
+    {
+      "id": "p:n4-r-014",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "私が住んでいる町では、毎年秋にお祭りがあります。",
+          "reading": "わたしがすんでいるまちでは、まいとしあきにおまつりがあります。"
+        },
+        {
+          "ja": "去年、初めてお祭りの仕事を手伝いました。",
+          "reading": "きょねん、はじめておまつりのしごとをてつだいました。"
+        },
+        {
+          "ja": "私の仕事は、会場を案内することでした。",
+          "reading": "わたしのしごとは、かいじょうをあんないすることでした。"
+        },
+        {
+          "ja": "遠くから来た人に道を説明するのは、思ったより難しかったです。",
+          "reading": "とおくからきたひとにみちをせつめいするのは、おもったよりむずかしかったです。"
+        },
+        {
+          "ja": "でも、丁寧に話せば、みんな喜んでくれました。",
+          "reading": "でも、ていねいにはなせば、みんなよろこんでくれました。"
+        },
+        {
+          "ja": "夜、踊りを見ながら食べたごちそうは、とてもおいしかったです。",
+          "reading": "よる、おどりをみながらたべたごちそうは、とてもおいしかったです。"
+        },
+        {
+          "ja": "今年もぜひお祭りを手伝いたいと思っています。",
+          "reading": "ことしもぜひおまつりをてつだいたいとおもっています。"
+        }
+      ],
+      "en": "In the town where I live there is a festival every autumn. Last year I helped with the festival work for the first time. My job was showing people around the venue. Explaining the way to people who had come from far away was harder than I had thought. But if I spoke politely, everyone was pleased. At night, the food I ate while watching the dancing was delicious. This year too I really want to help with the festival.",
+      "zh": "我住的镇上每年秋天都有庙会。去年我第一次帮忙做庙会的工作。我的工作是在会场为大家带路。给远道而来的人指路比我想象的要难。不过只要说得客气，大家都很高兴。晚上一边看舞蹈一边吃的菜非常好吃。今年我也很想帮忙。",
+      "zh_TW": "我住的鎮上每年秋天都有廟會。去年我第一次幫忙做廟會的工作。我的工作是在會場為大家帶路。給遠道而來的人指路比我想像的要難。不過只要說得客氣，大家都很高興。晚上一邊看舞蹈一邊吃的菜非常好吃。今年我也很想幫忙。"
+    },
+    {
+      "id": "p:n4-r-015",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "駅からのお知らせ",
+          "reading": "えきからのおしらせ"
+        },
+        {
+          "ja": "来月の一日から十日まで、朝の急行電車は動きません。",
+          "reading": "らいげつのついたちからとおかまで、あさのきゅうこうでんしゃはうごきません。"
+        },
+        {
+          "ja": "普通電車は、いつもと同じように出発します。",
+          "reading": "ふつうでんしゃは、いつもとおなじようにしゅっぱつします。"
+        },
+        {
+          "ja": "急いでいる人は、七時十五分の特急を利用してください。",
+          "reading": "いそいでいるひとは、しちじじゅうごふんのとっきゅうをりようしてください。"
+        },
+        {
+          "ja": "特急に乗るときは、別の切符を買ってください。",
+          "reading": "とっきゅうにのるときは、べつのきっぷをかってください。"
+        },
+        {
+          "ja": "十一日から、急行はいつものように動きます。",
+          "reading": "じゅういちにちから、きゅうこうはいつものようにうごきます。"
+        }
+      ],
+      "en": "Notice from the station. From the 1st to the 10th of next month, the morning express trains will not run. Local trains will depart as usual. People in a hurry should use the limited express at 7:15. When you board the limited express, please buy a separate ticket. From the 11th the express trains will run as usual again.",
+      "zh": "车站通知。下个月一日至十日，早上的快车停运。普通电车照常发车。赶时间的人请利用七点十五分的特快。乘坐特快时请另外购票。从十一日起，快车恢复正常运行。",
+      "zh_TW": "車站通知。下個月一日至十日，早上的快車停運。普通電車照常發車。趕時間的人請利用七點十五分的特快。乘坐特快時請另外購票。從十一日起，快車恢復正常運行。"
+    },
+    {
+      "id": "p:n4-r-016",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "町の公園をきれいにする日のお知らせ",
+          "reading": "まちのこうえんをきれいにするひのおしらせ"
+        },
+        {
+          "ja": "今月十四日の日曜日、朝八時から十時まで行います。",
+          "reading": "こんげつじゅうよっかのにちようび、あさはちじからじゅうじまでおこないます。"
+        },
+        {
+          "ja": "集まる場所は、公園の真ん中です。",
+          "reading": "あつまるばしょは、こうえんのまんなかです。"
+        },
+        {
+          "ja": "ごみを入れる物は用意してありますが、手袋は持ってきてください。",
+          "reading": "ごみをいれるものはよういしてありますが、てぶくろはもってきてください。"
+        },
+        {
+          "ja": "雨のときは、次の日曜日に行います。",
+          "reading": "あめのときは、つぎのにちようびにおこないます。"
+        },
+        {
+          "ja": "終わったあとで、冷たい飲み物を差し上げます。",
+          "reading": "おわったあとで、つめたいのみものをさしあげます。"
+        }
+      ],
+      "en": "Notice about the day for cleaning the town park. It will be held on Sunday the 14th of this month, from eight to ten in the morning. The meeting place is the middle of the park. Bags for the rubbish are prepared, but please bring gloves. If it rains, it will be held on the following Sunday. After it is over, we will give you a cold drink.",
+      "zh": "关于清扫本镇公园的通知。时间为本月十四日（周日）早上八点到十点。集合地点是公园正中央。装垃圾的东西我们已备好，但请自带手套。下雨时改到下周日举行。结束后我们会请大家喝冷饮。",
+      "zh_TW": "關於清掃本鎮公園的通知。時間為本月十四日（週日）早上八點到十點。集合地點是公園正中央。裝垃圾的東西我們已備好，但請自帶手套。下雨時改到下週日舉行。結束後我們會請大家喝冷飲。"
+    },
+    {
+      "id": "p:n4-r-017",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "美術館の展覧会のお知らせ",
+          "reading": "びじゅつかんのてんらんかいのおしらせ"
+        },
+        {
+          "ja": "今週の金曜日から来月の十日まで、昔の人形の展覧会を行います。",
+          "reading": "こんしゅうのきんようびかららいげつのとおかまで、むかしのにんぎょうのてんらんかいをおこないます。"
+        },
+        {
+          "ja": "時間は午前九時から午後五時までです。",
+          "reading": "じかんはごぜんくじからごごごじまでです。"
+        },
+        {
+          "ja": "月曜日は休みです。",
+          "reading": "げつようびはやすみです。"
+        },
+        {
+          "ja": "高校生以下の人は、お金を払わなくてもいいです。",
+          "reading": "こうこうせいいかのひとは、おかねをはらわなくてもいいです。"
+        },
+        {
+          "ja": "人形に触ることはできませんから、注意してください。",
+          "reading": "にんぎょうにさわることはできませんから、ちゅういしてください。"
+        }
+      ],
+      "en": "Notice about the art museum exhibition. From this Friday until the 10th of next month we will hold an exhibition of old dolls. The hours are from nine in the morning to five in the afternoon. Mondays are closed. People up to and including high school students do not have to pay. You cannot touch the dolls, so please take care.",
+      "zh": "美术馆展览通知。本周五起至下月十日举办古代人偶展。开放时间为上午九点到下午五点。周一休息。高中生以下的人可以免费入场。人偶不可触摸，请多加注意。",
+      "zh_TW": "美術館展覽通知。本週五起至下月十日舉辦古代人偶展。開放時間為上午九點到下午五點。週一休息。高中生以下的人可以免費入場。人偶不可觸摸，請多加註意。"
+    },
+    {
+      "id": "p:n4-r-018",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "病院からのお知らせ",
+          "reading": "びょういんからのおしらせ"
+        },
+        {
+          "ja": "入院している人に会いに来る時間は、午後二時から七時までです。",
+          "reading": "にゅういんしているひとにあいにくるじかんは、ごごにじからしちじまでです。"
+        },
+        {
+          "ja": "小学校の子どもは、大人といっしょに来てください。",
+          "reading": "しょうがっこうのこどもは、おとなといっしょにきてください。"
+        },
+        {
+          "ja": "部屋の中で騒がないでください。",
+          "reading": "へやのなかでさわがないでください。"
+        },
+        {
+          "ja": "花を持ってくることはできますが、食べ物は受付で相談してください。",
+          "reading": "はなをもってくることはできますが、たべものはうけつけでそうだんしてください。"
+        },
+        {
+          "ja": "具合が悪い人は、お見舞いに来ないでください。",
+          "reading": "ぐあいがわるいひとは、おみまいにこないでください。"
+        }
+      ],
+      "en": "Notice from the hospital. The hours for coming to see a patient are from two to seven in the afternoon. Primary school children should come together with an adult. Please do not make noise inside the rooms. You may bring flowers, but for food please consult the reception desk. If you are unwell yourself, please do not come to visit.",
+      "zh": "医院通知。探望住院者的时间为下午两点到七点。小学生请与成人一同前来。请勿在病房内喧哗。可以带花来，但食物请先到服务台咨询。身体不适的人请勿前来探望。",
+      "zh_TW": "醫院通知。探望住院者的時間為下午兩點到七點。小學生請與成人一同前來。請勿在病房內喧譁。可以帶花來，但食物請先到服務檯諮詢。身體不適的人請勿前來探望。"
     }
   ],
   "questions": [
@@ -411,6 +767,448 @@
         "en": "The 22nd falls inside the period when the second floor is closed, and the notice says to come to the first-floor reception desk both to borrow and to return books. Waiting until the 26th is unnecessary, and it is the newspapers that were moved down, not the books being returned.",
         "zh": "二十二日正处于二楼停用的期间，通知说借书和还书都要到一楼服务台。没有必要等到二十六日，被搬到楼下的是报纸，不是要还的书。",
         "zh_TW": "二十二日正處於二樓停用的期間，通知說借書和還書都要到一樓服務檯。沒有必要等到二十六日，被搬到樓下的是報紙，不是要還的書。"
+      }
+    },
+    {
+      "id": "q:n4-r-009",
+      "type": "short",
+      "items": [
+        "vocab:jm1599390",
+        "vocab:jm1270810",
+        "vocab:jm1242350"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-007",
+      "prompt": {
+        "en": "Why did the writer thank the shop person many times?",
+        "zh": "作者为什么向店里的人道了好几次谢？",
+        "zh_TW": "作者為什麼向店裡的人道了好幾次謝？"
+      },
+      "options": [
+        "お金はいらないと言って、自転車を直してくれたからです。",
+        "新しい自転車をくれたからです。",
+        "なくした自転車を探してくれたからです。",
+        "自転車を家まで運んでくれたからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The shop fixed the bicycle at once and then said no money was needed, and that is what pleased the writer. The bicycle was not new, not lost, and was taken to the shop by the writer.",
+        "zh": "店里的人当场修好了自行车，还说不用付钱，作者高兴的正是这一点。车既不是新买的，也没有丢失，而且是作者自己拿去店里的。",
+        "zh_TW": "店裡的人當場修好了自行車，還說不用付錢，作者高興的正是這一點。車既不是新買的，也沒有丟失，而且是作者自己拿去店裡的。"
+      }
+    },
+    {
+      "id": "q:n4-r-010",
+      "type": "short",
+      "items": [
+        "vocab:jm1348530",
+        "vocab:jm1310530",
+        "vocab:jm1333550"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-008",
+      "prompt": {
+        "en": "Why did no birds come last year?",
+        "zh": "去年为什么小鸟都没有来？",
+        "zh_TW": "去年為什麼小鳥都沒有來？"
+      },
+      "options": [
+        "木の枝を切ってしまったからです。",
+        "秋が短かったからです。",
+        "窓を開けなかったからです。",
+        "庭に草が多かったからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The third sentence gives the reason: the branches were cut, so the birds had nowhere to gather. The window is only where the writer watches from, and the length of autumn and the grass are never mentioned.",
+        "zh": "第三句说明了原因：树枝被剪掉了，小鸟就没有地方停留。窗户只是作者观看的位置，秋天的长短和院子里的草文中都没有提到。",
+        "zh_TW": "第三句說明了原因：樹枝被剪掉了，小鳥就沒有地方停留。窗戶只是作者觀看的位置，秋天的長短和院子裡的草文中都沒有提到。"
+      }
+    },
+    {
+      "id": "q:n4-r-011",
+      "type": "short",
+      "items": [
+        "vocab:jm1518070",
+        "vocab:jm1396860",
+        "vocab:jm1442750"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-009",
+      "prompt": {
+        "en": "What is the writer planning to do?",
+        "zh": "作者打算做什么？",
+        "zh_TW": "作者打算做什麼？"
+      },
+      "options": [
+        "今度の休みに祖母を訪ねようと思っています。",
+        "祖母に野菜を送ろうと思っています。",
+        "田舎に引っ越そうと思っています。",
+        "祖母に毎日手紙を書こうと思っています。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The third sentence says directly that the writer intends to visit the grandmother on the next holiday. It is the grandmother who grew the vegetables and who sent a letter, not the writer.",
+        "zh": "第三句直接说作者打算下次放假去看奶奶。种蔬菜和寄信的都是奶奶，不是作者。",
+        "zh_TW": "第三句直接說作者打算下次放假去看奶奶。種蔬菜和寄信的都是奶奶，不是作者。"
+      }
+    },
+    {
+      "id": "q:n4-r-012",
+      "type": "short",
+      "items": [
+        "vocab:jm1604550",
+        "vocab:jm1519230",
+        "vocab:jm1559900"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-010",
+      "prompt": {
+        "en": "Why did the writer feel relieved?",
+        "zh": "作者为什么感到安心了？",
+        "zh_TW": "作者為什麼感到安心了？"
+      },
+      "options": [
+        "なくした傘が見つかったからです。",
+        "新しい傘を買ったからです。",
+        "駅で友だちに会ったからです。",
+        "電車が早く着いたからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The station staff got in touch to say the umbrella had been found, and since it was an important one the writer was relieved. Nothing is said about buying another umbrella or about the train's arrival.",
+        "zh": "车站的人联系说伞找到了，而那把伞很重要，所以作者才安心。文中并没有提到买新伞，也没有提到电车到站的时间。",
+        "zh_TW": "車站的人聯繫說傘找到了，而那把傘很重要，所以作者才安心。文中並沒有提到買新傘，也沒有提到電車到站的時間。"
+      }
+    },
+    {
+      "id": "q:n4-r-013",
+      "type": "short",
+      "items": [
+        "vocab:jm2005990",
+        "vocab:jm1371320",
+        "vocab:jm1405800"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-011",
+      "prompt": {
+        "en": "What has become possible for the writer now?",
+        "zh": "作者现在变得能做到什么了？",
+        "zh_TW": "作者現在變得能做到什麼了？"
+      },
+      "options": [
+        "長い間泳ぎ続けることができるようになりました。",
+        "水泳の先生になりました。",
+        "水泳をやめてしまいました。",
+        "海で泳ぐのが下手になりました。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The third sentence states the change: the writer can now keep swimming for a long time. Swimming in the sea is still only a wish for next year, and the writer is the student, not the teacher.",
+        "zh": "第三句说明了变化：作者现在能连续游很长时间了。在海里游泳只是明年的愿望，而作者是学生，不是老师。",
+        "zh_TW": "第三句說明了變化：作者現在能連續遊很長時間了。在海里游泳只是明年的願望，而作者是學生，不是老師。"
+      }
+    },
+    {
+      "id": "q:n4-r-014",
+      "type": "short",
+      "items": [
+        "vocab:jm1328190",
+        "vocab:jm1169340",
+        "vocab:jm1511790"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-012",
+      "prompt": {
+        "en": "Why was the writer able to tidy up on the day of the move?",
+        "zh": "作者为什么在搬家当天就把东西收拾好了？",
+        "zh_TW": "作者為什麼在搬家當天就把東西收拾好了？"
+      },
+      "options": [
+        "近所の人が手伝ってくれたからです。",
+        "物が少なかったからです。",
+        "町が静かだったからです。",
+        "新しい家が広かったからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The writer could not carry everything alone; it was the neighbour's help that made finishing that day possible. The text says there were many things, and the quiet town has nothing to do with the tidying.",
+        "zh": "作者一个人搬不动，正是邻居的帮忙才让当天就收拾完成。文中说东西很多，小镇安静与收拾快慢无关。",
+        "zh_TW": "作者一個人搬不動，正是鄰居的幫忙才讓當天就收拾完成。文中說東西很多，小鎮安靜與收拾快慢無關。"
+      }
+    },
+    {
+      "id": "q:n4-r-015",
+      "type": "mid",
+      "items": [
+        "vocab:jm1463930",
+        "vocab:jm1293990"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-013",
+      "prompt": {
+        "en": "How did the writer feel about the diary at the beginning?",
+        "zh": "刚开始写日记的时候，作者是什么感觉？",
+        "zh_TW": "剛開始寫日記的時候，作者是什麼感覺？"
+      },
+      "options": [
+        "あまり楽しくないと思っていました。",
+        "とても楽しいと思っていました。",
+        "毎日書くのは簡単だと思っていました。",
+        "先生に見せたいと思っていました。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second sentence says the writer started because the teacher told them to, and it was not much fun. The enjoyment came later, after learning that a short sentence was enough.",
+        "zh": "第二句说作者是因为老师叫写才开始的，并不觉得有趣。乐趣是后来知道写短句也可以之后才产生的。",
+        "zh_TW": "第二句說作者是因為老師叫寫才開始的，並不覺得有趣。樂趣是後來知道寫短句也可以之後才產生的。"
+      }
+    },
+    {
+      "id": "q:n4-r-016",
+      "type": "mid",
+      "items": [
+        "vocab:jm1591430",
+        "vocab:jm1599390"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-013",
+      "prompt": {
+        "en": "What does the writer notice when reading a diary from a year ago?",
+        "zh": "重读一年前的日记时，作者能看出什么？",
+        "zh_TW": "重讀一年前的日記時，作者能看出什麼？"
+      },
+      "options": [
+        "自分の気持ちが変わったことが分かります。",
+        "先生の考えが変わったことが分かります。",
+        "学校の規則が変わったことが分かります。",
+        "日記の書き方が正しかったことが分かります。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The fourth sentence says that reading the old diary shows clearly how the writer's own feelings have changed. The teacher, the school rules and the style of writing are not what the diary reveals.",
+        "zh": "第四句说重读旧日记能清楚看出自己心情的变化。日记显示的不是老师的想法、学校的规定或写法是否正确。",
+        "zh_TW": "第四句說重讀舊日記能清楚看出自己心情的變化。日記顯示的不是老師的想法、學校的規定或寫法是否正確。"
+      }
+    },
+    {
+      "id": "q:n4-r-017",
+      "type": "mid",
+      "items": [
+        "vocab:jm1333090",
+        "vocab:jm1487400"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-013",
+      "prompt": {
+        "en": "What does the writer do about days that are too busy to write?",
+        "zh": "遇到忙得写不了日记的日子，作者是怎么处理的？",
+        "zh_TW": "遇到忙得寫不了日記的日子，作者是怎麼處理的？"
+      },
+      "options": [
+        "次の日に必ず書くことにしています。",
+        "その週は書かないことにしています。",
+        "短い文も書かないことにしています。",
+        "先生に代わりに書いてもらっています。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The sixth sentence says that when a day is too busy, the writer makes a point of writing on the next day. Giving up for a week, or having someone else write, is never suggested.",
+        "zh": "第六句说太忙的日子作者一定会在第二天补写。文中从未提到整周不写，也没有让别人代写。",
+        "zh_TW": "第六句說太忙的日子作者一定會在第二天補寫。文中從未提到整週不寫，也沒有讓別人代寫。"
+      }
+    },
+    {
+      "id": "q:n4-r-018",
+      "type": "mid",
+      "items": [
+        "vocab:jm1154860",
+        "vocab:jm1198660"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-014",
+      "prompt": {
+        "en": "What did the writer do at the festival last year?",
+        "zh": "去年作者在庙会上做了什么？",
+        "zh_TW": "去年作者在廟會上做了什麼？"
+      },
+      "options": [
+        "会場を案内する仕事をしました。",
+        "踊りを踊る仕事をしました。",
+        "ごちそうを作る仕事をしました。",
+        "会場をきれいにする仕事をしました。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The third sentence names the job: showing people around the venue. The writer watched the dancing and ate the food as a visitor would, not as work.",
+        "zh": "第三句写明了工作内容：在会场为人带路。舞蹈是作者观看的，菜是作者吃的，都不是他的工作。",
+        "zh_TW": "第三句寫明瞭工作內容：在會場為人帶路。舞蹈是作者觀看的，菜是作者吃的，都不是他的工作。"
+      }
+    },
+    {
+      "id": "q:n4-r-019",
+      "type": "mid",
+      "items": [
+        "vocab:jm1386460",
+        "vocab:jm1177820"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-014",
+      "prompt": {
+        "en": "What was harder than the writer had expected?",
+        "zh": "什么事比作者想象的还要难？",
+        "zh_TW": "什麼事比作者想像的還要難？"
+      },
+      "options": [
+        "遠くから来た人に道を説明することです。",
+        "夜おそくまで働くことです。",
+        "踊りを覚えることです。",
+        "ごちそうを運ぶことです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The fourth sentence says explaining the way to people from far away was harder than expected. Working late, learning the dance and carrying food are not part of the writer's account.",
+        "zh": "第四句说给远道而来的人指路比想象中难。工作到深夜、学舞蹈、搬运饭菜都不是文中所写的内容。",
+        "zh_TW": "第四句說給遠道而來的人指路比想像中難。工作到深夜、學舞蹈、搬運飯菜都不是文中所寫的內容。"
+      }
+    },
+    {
+      "id": "q:n4-r-020",
+      "type": "mid",
+      "items": [
+        "vocab:jm1328190",
+        "vocab:jm1604135"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-014",
+      "prompt": {
+        "en": "What does the writer want to do this year?",
+        "zh": "作者今年想做什么？",
+        "zh_TW": "作者今年想做什麼？"
+      },
+      "options": [
+        "今年もお祭りを手伝いたいと思っています。",
+        "今年はお祭りを見に行かないつもりです。",
+        "今年は別の町のお祭りに行きたいと思っています。",
+        "今年は踊りを教えたいと思っています。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last sentence says the writer really wants to help with the festival this year as well. Going elsewhere, staying away or teaching the dance are all things the text does not say.",
+        "zh": "最后一句说作者今年也很想帮忙。去别的镇、不去看庙会、教舞蹈，文中都没有提到。",
+        "zh_TW": "最後一句說作者今年也很想幫忙。去別的鎮、不去看廟會、教舞蹈，文中都沒有提到。"
+      }
+    },
+    {
+      "id": "q:n4-r-021",
+      "type": "info",
+      "items": [
+        "vocab:jm1454750",
+        "vocab:jm1228690",
+        "vocab:jm1549660"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-015",
+      "prompt": {
+        "en": "On the morning of the 5th of next month, what should a person in a hurry do?",
+        "zh": "下个月五日早上，赶时间的人应该怎么做？",
+        "zh_TW": "下個月五日早上，趕時間的人應該怎麼做？"
+      },
+      "options": [
+        "七時十五分の特急を利用します。",
+        "いつもの急行に乗ります。",
+        "十一日まで待ちます。",
+        "駅の受付で切符を返します。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The 5th falls inside the period when the morning express does not run, and the notice tells people in a hurry to use the 7:15 limited express. The express only returns on the 11th, and nothing is said about returning tickets.",
+        "zh": "五日正处于早上快车停运的期间，通知让赶时间的人乘七点十五分的特快。快车要到十一日才恢复，通知也没有提到退票。",
+        "zh_TW": "五日正處於早上快車停運的期間，通知讓趕時間的人乘七點十五分的特快。快車要到十一日才恢復，通知也沒有提到退票。"
+      }
+    },
+    {
+      "id": "q:n4-r-022",
+      "type": "info",
+      "items": [
+        "vocab:jm1328090",
+        "vocab:jm1546220",
+        "vocab:jm1369900"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-016",
+      "prompt": {
+        "en": "What does a person joining have to bring themselves?",
+        "zh": "参加的人必须自己带什么？",
+        "zh_TW": "參加的人必須自己帶什麼？"
+      },
+      "options": [
+        "手袋です。",
+        "ごみを入れる物です。",
+        "飲み物です。",
+        "公園を案内する紙です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The notice says the bags for rubbish are already prepared but asks people to bring gloves. The drink is handed out afterwards, so nobody needs to bring one.",
+        "zh": "通知说装垃圾的东西已经备好，但请大家自带手套。饮料是结束后发放的，不需要自己带。",
+        "zh_TW": "通知說裝垃圾的東西已經備好，但請大家自帶手套。飲料是結束後發放的，不需要自己帶。"
+      }
+    },
+    {
+      "id": "q:n4-r-023",
+      "type": "info",
+      "items": [
+        "vocab:jm1501620",
+        "vocab:jm1440660",
+        "vocab:jm1367120"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-017",
+      "prompt": {
+        "en": "A junior high school student goes to the exhibition on a Saturday. What is true for that student?",
+        "zh": "一名初中生在周六去看展览，对他来说下列哪一项是正确的？",
+        "zh_TW": "一名初中生在週六去看展覽，對他來說下列哪一項是正確的？"
+      },
+      "options": [
+        "お金を払わなくてもいいです。",
+        "月曜日に行かなければなりません。",
+        "人形に触ってもいいです。",
+        "午後五時から入ることができます。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "A junior high school student is below high school age, and the notice says such visitors do not have to pay. Mondays are closed, the dolls may not be touched, and five in the afternoon is the closing time.",
+        "zh": "初中生属于高中生以下，通知说这些人可以免费入场。周一闭馆，人偶不可触摸，下午五点是闭馆时间而不是入场时间。",
+        "zh_TW": "初中生屬於高中生以下，通知說這些人可以免費入場。週一閉館，人偶不可觸摸，下午五點是閉館時間而不是入場時間。"
+      }
+    },
+    {
+      "id": "q:n4-r-024",
+      "type": "info",
+      "items": [
+        "vocab:jm1401210",
+        "vocab:jm1588060",
+        "vocab:jm1001870"
+      ],
+      "kind": "choice",
+      "passage": "p:n4-r-018",
+      "prompt": {
+        "en": "Someone wants to bring food to a friend who is in hospital. What should that person do?",
+        "zh": "有人想给住院的朋友带食物，应该怎么做？",
+        "zh_TW": "有人想給住院的朋友帶食物，應該怎麼做？"
+      },
+      "options": [
+        "受付で相談します。",
+        "午前中に持って行きます。",
+        "花といっしょに部屋に置きます。",
+        "大人といっしょに持って行きます。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Flowers may be brought freely, but for food the notice asks visitors to consult the reception desk. Visiting hours begin in the afternoon, and coming with an adult is a rule for primary school children.",
+        "zh": "花可以自由带来，但食物通知要求先到服务台咨询。探视时间从下午开始，而由成人陪同是针对小学生的规定。",
+        "zh_TW": "花可以自由帶來，但食物通知要求先到服務檯諮詢。探視時間從下午開始，而由成人陪同是針對小學生的規定。"
       }
     }
   ]

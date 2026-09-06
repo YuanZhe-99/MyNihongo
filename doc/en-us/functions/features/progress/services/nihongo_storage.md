@@ -35,7 +35,13 @@ because neither a voice name nor an engine package means anything on another dev
 | `NihongoStorage.saveExamInProgress` | static method | B | Atomically write the paper down so it can be picked up later; auto-sync is deliberately not notified. |
 | `NihongoStorage.clearExamInProgress` | static method | B | Throw away the saved paper, when it is finished or discarded. |
 | `NihongoStorage.readConfig` | static method | B | Read `storage_config.json`; empty when absent or blank. |
-| `NihongoStorage.writeConfig` | static method | B | Write `storage_config.json` atomically. |
+| [`NihongoStorage.writeConfig`](#writeconfig) | static method | A | Write `storage_config.json` atomically, behind every write already queued. |
+| `NihongoStorage._configWrites` | static field | B | The queue every config write joins, so only one is ever in flight. |
+| `NihongoStorage._configWriteZone` | static field | B | The zone the queue belongs to; a write waits only for writes started in the same one. |
+| [`NihongoStorage._updateConfig`](#updateconfig) | static method | A | Read, change and write `storage_config.json` as one step. |
+| `NihongoStorage._queue` | static method | B | Run one config write after every write already queued. |
+| `NihongoStorage._writeConfigNow` | static method | B | Write the config file now, without queueing; called only from inside the queue. |
+| `NihongoStorage._setKey` | static method | B | Set or remove one key; a null value removes it. |
 | `NihongoStorage.getThemeMode` | static method | B | Read the persisted theme mode (`light`, `dark`, or null for system). |
 | `NihongoStorage.setThemeMode` | static method | B | Persist the theme mode; the default is removed rather than stored. |
 | `NihongoStorage.getLocaleTag` | static method | B | Read the persisted locale tag (`en`, `zh`, `zh_TW`). |
@@ -199,3 +205,58 @@ where the numbers would be about a different phone. It is written from exactly o
   paper is already an `exam:` record, and leaving the save behind would offer to resume something that
   has been marked.
 
+
+### `static Future<void> writeConfig(Map<String, dynamic> config)` <a id="writeconfig"></a>
+
+- **Kind:** static method
+- **Purpose:** Write `storage_config.json` atomically, behind every write already queued.
+- **Inputs:** `config` — the whole map to write.
+- **Returns:** None; the caller's own failure is its own.
+- **Side effects:** Rewrites the config file, after any write already queued.
+- **Algorithm:** Joins `_configWrites` through `_queue`, then `_writeConfigNow` encodes the map with
+  two-space indentation and `atomicWriteString`s it.
+- **Usage:** `data_modules.dart`, which hands the sync engine the whole map. Everything inside this
+  file uses `_updateConfig` instead.
+- **Notes:** This entry point is for a caller that **already holds the whole map**. A caller that
+  wants to change one key must use `_updateConfig`, because the read has to happen inside the queue.
+
+  The queue exists because every setter used to run its own read-modify-write. Two of them at once
+  read the same file and wrote two different successors, so whichever finished second erased the
+  other's key. On Windows it did not even fail quietly: the second write renamed its temporary file
+  over one the first still had open, and `atomicWriteString` threw `PathAccessException`. Both halves
+  of that are the same bug, and both are fixed by the same queue.
+
+  `_queue` stores the failure it swallows (`chained.catchError((_) {})`) so that one write that threw
+  does not fail every write queued after it. The caller still sees its own failure, because what is
+  returned is the chained future rather than the swallowed one.
+
+  **A write waits only for writes started in the same zone.** The app runs in one zone from `main`
+  onwards, so in the app that qualifier changes nothing: every write waits for the one before it,
+  which is the point. A widget test is what needs it. Each test body gets a zone of its own, and file
+  I/O started from a tap and not awaited is left suspended there when the test ends — it never
+  completes, because nobody is driving that zone any more. An unqualified queue would wait on it for
+  the life of the process, and it does: the first attempt at this hung the whole suite. A `Timer` to
+  bound the wait is not an option either, because `flutter_test` fails any test that leaves one
+  pending.
+
+### `static Future<void> _updateConfig(void Function(Map<String, dynamic>) change)` <a id="updateconfig"></a>
+
+- **Kind:** static method
+- **Purpose:** Read, change and write `storage_config.json` as one step.
+- **Inputs:** `change` — applied to the map that was just read.
+- **Returns:** None.
+- **Side effects:** Rewrites the config file, after any write already queued.
+- **Algorithm:** Inside the queue: `readConfig`, apply `change`, `_writeConfigNow`.
+- **Usage:** Every setter in this file, through `_setKey`.
+- **Notes:** **The read is inside the queue on purpose.** A setter that read first and queued
+  afterwards would still overwrite a key another setter had written in between — the write would no
+  longer throw, and the update would still be lost. Queueing the write alone fixes the visible half
+  of the bug and leaves the silent half.
+
+  `_setKey` is the shape every setter wanted: set the key, or remove it when the value is null.
+  Removing rather than storing the default is what lets a later change of default reach a device that
+  never touched the setting, which is why the removal is part of the helper rather than each caller's
+  business.
+
+  `preferences_test.dart` pins this with four setters in one `Future.wait` and all four keys present
+  afterwards. It fails on the old code, which is the only way to know the test is about this.

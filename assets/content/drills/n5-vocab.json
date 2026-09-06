@@ -634,6 +634,1266 @@
         "zh": "「不安静」换一种说法就是热闹，也就是にぎやかです。",
         "zh_TW": "「不安靜」換一種說法就是熱鬧，也就是にぎやかです。"
       }
+    },
+    {
+      "id": "q:n5-v-022",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1387990",
+        "vocab:jm1206730",
+        "vocab:jm1547720"
+      ],
+      "kind": "choice",
+      "ja": "先生は毎日学校へ来ます。",
+      "reading": "せんせいはまいにちがっこうへきます。",
+      "blank": "先生",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "せんせい",
+        "ぜんせい",
+        "せんせん",
+        "さんせい"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "先 is せん and 生 is せい in this word, so 先生 (teacher) is せんせい.",
+        "zh": "「先生」是老师。先读せん，生在这里读せい，合起来是せんせい，开头不浊化。",
+        "zh_TW": "「先生」是老師。先讀せん，生在這裡讀せい，合起來是せんせい，開頭不濁化。"
+      }
+    },
+    {
+      "id": "q:n5-v-023",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1198550",
+        "vocab:jm1249900",
+        "vocab:jm1578850"
+      ],
+      "kind": "choice",
+      "ja": "兄は会社に行きます。",
+      "reading": "あにはかいしゃにいきます。",
+      "blank": "会社",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "かいしゃ",
+        "がいしゃ",
+        "かいさ",
+        "かいしゅ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "会 is かい and 社 is しゃ here, so 会社 (company) is かいしゃ.",
+        "zh": "「会社」指公司。会读かい，社读しゃ，所以是かいしゃ，第一个音不浊化。",
+        "zh_TW": "「會社」指公司。會讀かい，社讀しゃ，所以是かいしゃ，第一個音不濁化。"
+      }
+    },
+    {
+      "id": "q:n5-v-024",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1413240",
+        "vocab:jm1307630",
+        "vocab:jm1206900"
+      ],
+      "kind": "choice",
+      "ja": "姉は大学の学生です。",
+      "reading": "あねはだいがくのがくせいです。",
+      "blank": "大学",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "だいがく",
+        "たいがく",
+        "だいかく",
+        "おおがく"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "大 is だい and 学 is がく in this compound, so 大学 (university) is だいがく.",
+        "zh": "「大学」是大学。大读だい，学读がく，两个音都是浊音开头，所以是だいがく。",
+        "zh_TW": "「大學」是大學。大讀だい，學讀がく，兩個音都是濁音開頭，所以是だいがく。"
+      }
+    },
+    {
+      "id": "q:n5-v-025",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1183720",
+        "vocab:jm1277450",
+        "vocab:jm1311110"
+      ],
+      "kind": "choice",
+      "ja": "私は音楽が好きです。",
+      "reading": "わたしはおんがくがすきです。",
+      "blank": "音楽",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "おんがく",
+        "おんかく",
+        "おうがく",
+        "ねがく"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "音 is おん and 楽 becomes がく here, so 音楽 (music) is おんがく.",
+        "zh": "「音楽」是音乐。音读おん，楽在此浊化为がく，所以是おんがく。",
+        "zh_TW": "「音楽」是音樂。音讀おん，楽在此濁化為がく，所以是おんがく。"
+      }
+    },
+    {
+      "id": "q:n5-v-026",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1531710",
+        "vocab:jm1343950",
+        "vocab:jm1288810"
+      ],
+      "kind": "choice",
+      "ja": "ここに名前を書いてください。",
+      "reading": "ここになまえをかいてください。",
+      "blank": "名前",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "なまえ",
+        "なまい",
+        "めいぜん",
+        "みょうまえ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "名前 (name) uses the Japanese readings な and まえ, so it is なまえ.",
+        "zh": "「名前」意为名字，用训读，名读な，前读まえ，所以是なまえ。",
+        "zh_TW": "「名前」意為名字，用訓讀，名讀な，前讀まえ，所以是なまえ。"
+      }
+    },
+    {
+      "id": "q:n5-v-027",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1443840",
+        "vocab:jm1540170",
+        "vocab:jm1207610"
+      ],
+      "kind": "choice",
+      "ja": "友達に電話をかけます。",
+      "reading": "ともだちにでんわをかけます。",
+      "blank": "電話",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "でんわ",
+        "てんわ",
+        "でんは",
+        "でんご"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "電 is でん and 話 is わ in this word, so 電話 (telephone) is でんわ.",
+        "zh": "「電話」是电话。電读でん，話在这里读わ，所以是でんわ。",
+        "zh_TW": "「電話」是電話。電讀でん，話在這裡讀わ，所以是でんわ。"
+      }
+    },
+    {
+      "id": "q:n5-v-028",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1318290",
+        "vocab:jm1175140",
+        "vocab:jm1578850"
+      ],
+      "kind": "choice",
+      "ja": "私は自転車で駅へ行きます。",
+      "reading": "わたしはじてんしゃでえきへいきます。",
+      "blank": "自転車",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "じてんしゃ",
+        "じでんしゃ",
+        "してんしゃ",
+        "じてんくるま"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "自転車 (bicycle) reads じ・てん・しゃ; 転 stays てん and 車 is しゃ.",
+        "zh": "「自転車」是自行车，读じてんしゃ。転读てん不浊化，車在词中读しゃ。",
+        "zh_TW": "「自転車」是自行車，讀じてんしゃ。転讀てん不濁化，車在詞中讀しゃ。"
+      }
+    },
+    {
+      "id": "q:n5-v-029",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1237150",
+        "vocab:jm1278410",
+        "vocab:jm1008630"
+      ],
+      "kind": "choice",
+      "ja": "この教室はとても広いです。",
+      "reading": "このきょうしつはとてもひろいです。",
+      "blank": "教室",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "きょうしつ",
+        "きょしつ",
+        "きょうしち",
+        "けいしつ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "教 is きょう with a long vowel and 室 is しつ, so 教室 (classroom) is きょうしつ.",
+        "zh": "「教室」是教室。教读きょう（长音），室读しつ，所以是きょうしつ。",
+        "zh_TW": "「教室」是教室。教讀きょう（長音），室讀しつ，所以是きょうしつ。"
+      }
+    },
+    {
+      "id": "q:n5-v-030",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1589730",
+        "vocab:jm1445590",
+        "vocab:jm1157170"
+      ],
+      "kind": "choice",
+      "ja": "土曜日に買い物をします。",
+      "reading": "どようびにかいものをします。",
+      "blank": "買い物",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "かいもの",
+        "ばいもの",
+        "かいぶつ",
+        "かいもつ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "買い物 (shopping) uses the Japanese readings かい and もの.",
+        "zh": "「買い物」是购物，用训读，買读かい，物读もの，所以是かいもの。",
+        "zh_TW": "「買い物」是購物，用訓讀，買讀かい，物讀もの，所以是かいもの。"
+      }
+    },
+    {
+      "id": "q:n5-v-031",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1553170",
+        "vocab:jm1548220",
+        "vocab:jm1203620"
+      ],
+      "kind": "choice",
+      "ja": "来年、外国へ旅行に行きます。",
+      "reading": "らいねん、がいこくへりょこうにいきます。",
+      "blank": "旅行",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "りょこう",
+        "りょうこう",
+        "りょこ",
+        "りょごう"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "旅行 (travel) is りょこう: りょ is short and こう is long.",
+        "zh": "「旅行」是旅行，读りょこう。旅是短音りょ，行是长音こう，不要读成りょうこう。",
+        "zh_TW": "「旅行」是旅行，讀りょこう。旅是短音りょ，行是長音こう，不要讀成りょうこう。"
+      }
+    },
+    {
+      "id": "q:n5-v-032",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1260720",
+        "vocab:jm1002320",
+        "vocab:jm1008630"
+      ],
+      "kind": "choice",
+      "ja": "おじいさんはとても元気です。",
+      "reading": "おじいさんはとてもげんきです。",
+      "blank": "元気",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "げんき",
+        "けんき",
+        "げんぎ",
+        "がんき"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "元 is げん and 気 is き here, so 元気 (well, in good spirits) is げんき.",
+        "zh": "「元気」表示精神好、身体好。元读げん，気读き，所以是げんき。",
+        "zh_TW": "「元気」表示精神好、身體好。元讀げん，気讀き，所以是げんき。"
+      }
+    },
+    {
+      "id": "q:n5-v-033",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1353320",
+        "vocab:jm1193180",
+        "vocab:jm1540170"
+      ],
+      "kind": "choice",
+      "ja": "友達は歌が上手です。",
+      "reading": "ともだちはうたがじょうずです。",
+      "blank": "上手",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "じょうず",
+        "しょうず",
+        "じょうしゅ",
+        "じょうて"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "上手 meaning skilful is read じょうず, with both parts voiced.",
+        "zh": "表示「擅长」的「上手」读作じょうず，じょう和ず都是浊音。",
+        "zh_TW": "表示「擅長」的「上手」讀作じょうず，じょう和ず都是濁音。"
+      }
+    },
+    {
+      "id": "q:n5-v-034",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1557110",
+        "vocab:jm1231590",
+        "vocab:jm1423310"
+      ],
+      "kind": "choice",
+      "ja": "牛乳は冷蔵庫の中にあります。",
+      "reading": "ぎゅうにゅうはれいぞうこのなかにあります。",
+      "blank": "冷蔵庫",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "れいぞうこ",
+        "れいそうこ",
+        "れいぞうご",
+        "りょうぞうこ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "冷蔵庫 (refrigerator) is れい・ぞう・こ: 蔵 is voiced but 庫 is not.",
+        "zh": "「冷蔵庫」是冰箱，读れいぞうこ。蔵浊化为ぞう，庫读こ不浊化。",
+        "zh_TW": "「冷蔵庫」是冰箱，讀れいぞうこ。蔵濁化為ぞう，庫讀こ不濁化。"
+      }
+    },
+    {
+      "id": "q:n5-v-035",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1419110",
+        "vocab:jm1524590",
+        "vocab:jm1579110"
+      ],
+      "kind": "choice",
+      "ja": "今日は妹の誕生日です。",
+      "reading": "きょうはいもうとのたんじょうびです。",
+      "blank": "誕生日",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "たんじょうび",
+        "だんじょうび",
+        "たんじょうひ",
+        "たんせいび"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "誕生日 (birthday) is たん・じょう・び; the 日 at the end becomes び.",
+        "zh": "「誕生日」是生日，读たんじょうび。誕读たん，生读じょう，最后的日浊化为び。",
+        "zh_TW": "「誕生日」是生日，讀たんじょうび。誕讀たん，生讀じょう，最後的日濁化為び。"
+      }
+    },
+    {
+      "id": "q:n5-v-036",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1246700",
+        "vocab:jm1263400",
+        "vocab:jm1416400"
+      ],
+      "kind": "choice",
+      "ja": "玄関でくつを脱ぎます。",
+      "reading": "げんかんでくつをぬぎます。",
+      "blank": "くつ",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "靴",
+        "鞄",
+        "服",
+        "箱"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "くつ (shoes) is written 靴; 鞄 is かばん and 服 is ふく.",
+        "zh": "くつ是鞋，写作「靴」。鞄读かばん（包），服读ふく（衣服）。",
+        "zh_TW": "くつ是鞋，寫作「靴」。鞄讀かばん（包），服讀ふく（衣服）。"
+      }
+    },
+    {
+      "id": "q:n5-v-037",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1401400",
+        "vocab:jm1499320",
+        "vocab:jm1508590"
+      ],
+      "kind": "choice",
+      "ja": "部屋のまどを閉めます。",
+      "reading": "へやのまどをしめます。",
+      "blank": "まど",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "窓",
+        "門",
+        "戸",
+        "庭"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "まど (window) is written 窓. 門 is もん, 戸 is と, 庭 is にわ.",
+        "zh": "まど是窗户，写作「窓」。門读もん，戸读と，庭读にわ，读音都不同。",
+        "zh_TW": "まど是窗戶，寫作「窓」。門讀もん，戸讀と，庭讀にわ，讀音都不同。"
+      }
+    },
+    {
+      "id": "q:n5-v-038",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1554310",
+        "vocab:jm1549140",
+        "vocab:jm1597890"
+      ],
+      "kind": "choice",
+      "ja": "たまごのりょうりを作りました。",
+      "reading": "たまごのりょうりをつくりました。",
+      "blank": "りょうり",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "料理",
+        "科理",
+        "料利",
+        "材理"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "りょうり (cooking, a dish) is written 料理.",
+        "zh": "りょうり意为菜肴、烹饪，写作「料理」，料读りょう，理读り。",
+        "zh_TW": "りょうり意為菜餚、烹飪，寫作「料理」，料讀りょう，理讀り。"
+      }
+    },
+    {
+      "id": "q:n5-v-039",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1490230",
+        "vocab:jm1581930",
+        "vocab:jm1206730"
+      ],
+      "kind": "choice",
+      "ja": "弟はびょうきで学校を休みました。",
+      "reading": "おとうとはびょうきでがっこうをやすみました。",
+      "blank": "びょうき",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "病気",
+        "病院",
+        "痛気",
+        "疲気"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "びょうき (illness) is 病気. 病院 is read びょういん and means hospital.",
+        "zh": "びょうき是生病，写作「病気」。「病院」读びょういん，指医院，不是这个词。",
+        "zh_TW": "びょうき是生病，寫作「病気」。「病院」讀びょういん，指醫院，不是這個詞。"
+      }
+    },
+    {
+      "id": "q:n5-v-040",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1464900",
+        "vocab:jm1273270",
+        "vocab:jm1578850"
+      ],
+      "kind": "choice",
+      "ja": "にちようびに公園へ行きます。",
+      "reading": "にちようびにこうえんへいきます。",
+      "blank": "にちようび",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "日曜日",
+        "月曜日",
+        "火曜日",
+        "水曜日"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "にちようび (Sunday) is 日曜日. 月曜日 is げつようび, 火曜日 かようび, 水曜日 すいようび.",
+        "zh": "にちようび是星期日，写作「日曜日」。月曜日读げつようび，火曜日读かようび，水曜日读すいようび。",
+        "zh_TW": "にちようび是星期日，寫作「日曜日」。月曜日讀げつようび，火曜日讀かようび，水曜日讀すいようび。"
+      }
+    },
+    {
+      "id": "q:n5-v-041",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1177800",
+        "vocab:jm1191730",
+        "vocab:jm1175140"
+      ],
+      "kind": "choice",
+      "ja": "駅から家までとおいです。",
+      "reading": "えきからいえまでとおいです。",
+      "blank": "とおい",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "遠い",
+        "近い",
+        "長い",
+        "重い"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "とおい (far) is written 遠い. 近い is ちかい and means the opposite.",
+        "zh": "とおい是远，写作「遠い」。近い读ちかい，意思相反；長い读ながい，重い读おもい。",
+        "zh_TW": "とおい是遠，寫作「遠い」。近い讀ちかい，意思相反；長い讀ながい，重い讀おもい。"
+      }
+    },
+    {
+      "id": "q:n5-v-042",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1236070",
+        "vocab:jm1499720",
+        "vocab:jm1579110"
+      ],
+      "kind": "choice",
+      "ja": "今日は風がつよいです。",
+      "reading": "きょうはかぜがつよいです。",
+      "blank": "つよい",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "強い",
+        "弱い",
+        "太い",
+        "高い"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "つよい (strong) is written 強い; 弱い is よわい and means weak.",
+        "zh": "つよい是强、大，写作「強い」。弱い读よわい，意思相反；太い读ふとい。",
+        "zh_TW": "つよい是強、大，寫作「強い」。弱い讀よわい，意思相反；太い讀ふとい。"
+      }
+    },
+    {
+      "id": "q:n5-v-043",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1291800",
+        "vocab:jm1157070",
+        "vocab:jm1184270"
+      ],
+      "kind": "choice",
+      "ja": "いすにすわってください。",
+      "reading": "いすにすわってください。",
+      "blank": "すわって",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "座って",
+        "立って",
+        "走って",
+        "入って"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "すわる (to sit) is written 座る, so the te-form is 座って.",
+        "zh": "すわる是坐，写作「座る」，て形是座って。立って读たって（站），走って读はしって（跑）。",
+        "zh_TW": "すわる是坐，寫作「座る」，て形是座って。立って讀たって（站），走って讀はしって（跑）。"
+      }
+    },
+    {
+      "id": "q:n5-v-044",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1512130",
+        "vocab:jm1370420",
+        "vocab:jm1522150"
+      ],
+      "kind": "choice",
+      "ja": "図書館に本をかえします。",
+      "reading": "としょかんにほんをかえします。",
+      "blank": "かえします",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "返します",
+        "帰します",
+        "変します",
+        "代します"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "かえす meaning to give something back is written 返す, so it is 返します.",
+        "zh": "把东西还回去的かえす写作「返す」，礼貌形是返します。「帰る」读かえる，指人回家。",
+        "zh_TW": "把東西還回去的かえす寫作「返す」，禮貌形是返します。「帰る」讀かえる，指人回家。"
+      }
+    },
+    {
+      "id": "q:n5-v-045",
+      "type": "orthography",
+      "items": [
+        "vocab:jm1287420",
+        "vocab:jm1208910",
+        "vocab:jm1473740"
+      ],
+      "kind": "choice",
+      "ja": "くろいかばんを買いました。",
+      "reading": "くろいかばんをかいました。",
+      "blank": "くろい",
+      "prompt": {
+        "en": "How is the marked word written?",
+        "zh": "画线部分用汉字写应该是哪一个？",
+        "zh_TW": "畫線部分用漢字寫應該是哪一個？"
+      },
+      "options": [
+        "黒い",
+        "白い",
+        "赤い",
+        "青い"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "くろい (black) is written 黒い. 白い is しろい, 赤い あかい, 青い あおい.",
+        "zh": "くろい是黑色的，写作「黒い」。白い读しろい，赤い读あかい，青い读あおい。",
+        "zh_TW": "くろい是黑色的，寫作「黒い」。白い讀しろい，赤い讀あかい，青い讀あおい。"
+      }
+    },
+    {
+      "id": "q:n5-v-046",
+      "type": "context",
+      "items": [
+        "vocab:jm1301940",
+        "vocab:jm1171900",
+        "vocab:jm1315720"
+      ],
+      "kind": "choice",
+      "ja": "雨が降るとき、傘を持ちます。",
+      "reading": "あめがふるとき、かさをもちます。",
+      "blank": "傘",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "傘",
+        "帽子",
+        "靴下",
+        "鍵"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "かさ (umbrella) is what you carry when it rains.",
+        "zh": "下雨时带的是かさ（伞）。帽子是ぼうし，靴下是袜子，鍵是钥匙，都和下雨无关。",
+        "zh_TW": "下雨時帶的是かさ（傘）。帽子是ぼうし，靴下是襪子，鍵是鑰匙，都和下雨無關。"
+      }
+    },
+    {
+      "id": "q:n5-v-047",
+      "type": "context",
+      "items": [
+        "vocab:jm1465610",
+        "vocab:jm1208910",
+        "vocab:jm1522150"
+      ],
+      "kind": "choice",
+      "ja": "かばんに本を入れます。",
+      "reading": "かばんにほんをいれます。",
+      "blank": "入れます",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "入れます",
+        "出ます",
+        "開けます",
+        "降ります"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "いれる means to put something inside, which is what に…を requires here.",
+        "zh": "把书放进包里用いれる（放入）。出ます是自己出去，开门用开けます，都不能带这样的宾语。",
+        "zh_TW": "把書放進包裡用いれる（放入）。出ます是自己出去，開門用開けます，都不能帶這樣的賓語。"
+      }
+    },
+    {
+      "id": "q:n5-v-048",
+      "type": "context",
+      "items": [
+        "vocab:jm1483740",
+        "vocab:jm1514320",
+        "vocab:jm1415870"
+      ],
+      "kind": "choice",
+      "ja": "たくさん歩きましたから、疲れました。",
+      "reading": "たくさんあるきましたから、つかれました。",
+      "blank": "疲れました",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "疲れました",
+        "困りました",
+        "覚えました",
+        "曲がりました"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "つかれる (to get tired) is the natural result of walking a lot.",
+        "zh": "走了很多路的结果是つかれる（累）。困る是为难，覚える是记住，曲がる是拐弯，都不合适。",
+        "zh_TW": "走了很多路的結果是つかれる（累）。困る是為難，覚える是記住，曲がる是拐彎，都不合適。"
+      }
+    },
+    {
+      "id": "q:n5-v-049",
+      "type": "context",
+      "items": [
+        "vocab:jm1236900",
+        "vocab:jm1387990",
+        "vocab:jm1464530"
+      ],
+      "kind": "choice",
+      "ja": "先生が日本語を教えます。",
+      "reading": "せんせいがにほんごをおしえます。",
+      "blank": "教えます",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "教えます",
+        "習います",
+        "覚えます",
+        "答えます"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The teacher is the one who teaches, おしえる. ならう is what the student does.",
+        "zh": "老师是教的一方，用おしえる。習う是学生学，覚える是记住，答える是回答，主语不对。",
+        "zh_TW": "老師是教的一方，用おしえる。習う是學生學，覚える是記住，答える是回答，主語不對。"
+      }
+    },
+    {
+      "id": "q:n5-v-050",
+      "type": "context",
+      "items": [
+        "vocab:jm1449540",
+        "vocab:jm1320760",
+        "vocab:jm1184270"
+      ],
+      "kind": "choice",
+      "ja": "質問に答えてください。",
+      "reading": "しつもんにこたえてください。",
+      "blank": "答えて",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "答えて",
+        "聞いて",
+        "話して",
+        "読んで"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "質問に こたえる is the set phrase for answering a question.",
+        "zh": "回答问题的固定说法是「質問に答える」。聞く是问、听，和に的用法不同。",
+        "zh_TW": "回答問題的固定說法是「質問に答える」。聞く是問、聽，和に的用法不同。"
+      }
+    },
+    {
+      "id": "q:n5-v-051",
+      "type": "context",
+      "items": [
+        "vocab:jm1305990",
+        "vocab:jm1476410",
+        "vocab:jm1270590"
+      ],
+      "kind": "choice",
+      "ja": "ごはんを食べるとき、はしを使います。",
+      "reading": "ごはんをたべるとき、はしをつかいます。",
+      "blank": "使います",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "使います",
+        "作ります",
+        "洗います",
+        "売ります"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "つかう (to use) is what you do with chopsticks at a meal.",
+        "zh": "吃饭时筷子是拿来「用」的，所以用つかう。作る是做，洗う是洗，売る是卖，都不合语境。",
+        "zh_TW": "吃飯時筷子是拿來「用」的，所以用つかう。作る是做，洗う是洗，売る是賣，都不合語境。"
+      }
+    },
+    {
+      "id": "q:n5-v-052",
+      "type": "context",
+      "items": [
+        "vocab:jm1153670",
+        "vocab:jm1537370",
+        "vocab:jm1582120"
+      ],
+      "kind": "choice",
+      "ja": "この店の野菜は安いです。",
+      "reading": "このみせのやさいはやすいです。",
+      "blank": "安い",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "安い",
+        "多い",
+        "近い",
+        "早い"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "やすい (cheap) is the word used about the price of goods in a shop.",
+        "zh": "说店里的蔬菜「便宜」用やすい。多い是数量多，近い是距离近，早い是时间早，都不是说价钱。",
+        "zh_TW": "說店裡的蔬菜「便宜」用やすい。多い是數量多，近い是距離近，早い是時間早，都不是說價錢。"
+      }
+    },
+    {
+      "id": "q:n5-v-053",
+      "type": "context",
+      "items": [
+        "vocab:jm1519290",
+        "vocab:jm1304970",
+        "vocab:jm1289220"
+      ],
+      "kind": "choice",
+      "ja": "今週は仕事が多くて忙しいです。",
+      "reading": "こんしゅうはしごとがおおくていそがしいです。",
+      "blank": "忙しい",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "忙しい",
+        "楽しい",
+        "涼しい",
+        "明るい"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Having a lot of work makes you いそがしい (busy).",
+        "zh": "工作多自然是いそがしい（忙）。楽しい是快乐，涼しい说天气凉爽，明るい说光线亮。",
+        "zh_TW": "工作多自然是いそがしい（忙）。楽しい是快樂，涼しい說天氣涼爽，明るい說光線亮。"
+      }
+    },
+    {
+      "id": "q:n5-v-054",
+      "type": "context",
+      "items": [
+        "vocab:jm1444680",
+        "vocab:jm1237410",
+        "vocab:jm1000430"
+      ],
+      "kind": "choice",
+      "ja": "あの橋を渡ります。",
+      "reading": "あのはしをわたります。",
+      "blank": "渡ります",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "渡ります",
+        "曲がります",
+        "登ります",
+        "止まります"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "橋を わたる means to cross a bridge.",
+        "zh": "过桥说「橋を渡る」。曲がる是拐弯，登る是往上爬，止まる是停下，都不是过桥。",
+        "zh_TW": "過橋說「橋を渡る」。曲がる是拐彎，登る是往上爬，止まる是停下，都不是過橋。"
+      }
+    },
+    {
+      "id": "q:n5-v-055",
+      "type": "context",
+      "items": [
+        "vocab:jm1519210",
+        "vocab:jm1337270",
+        "vocab:jm1579110"
+      ],
+      "kind": "choice",
+      "ja": "今日は宿題を忘れました。",
+      "reading": "きょうはしゅくだいをわすれました。",
+      "blank": "忘れました",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "忘れました",
+        "覚えました",
+        "教えました",
+        "答えました"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "わすれる (to forget) is what happens when the homework was not brought or done.",
+        "zh": "没记住、没带作业用わすれる（忘）。覚える正好相反，是记住。",
+        "zh_TW": "沒記住、沒帶作業用わすれる（忘）。覚える正好相反，是記住。"
+      }
+    },
+    {
+      "id": "q:n5-v-056",
+      "type": "context",
+      "items": [
+        "vocab:jm1323560",
+        "vocab:jm1318970",
+        "vocab:jm1540170"
+      ],
+      "kind": "choice",
+      "ja": "友達に辞書を借ります。",
+      "reading": "ともだちにじしょをかります。",
+      "blank": "借ります",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "借ります",
+        "貸します",
+        "返します",
+        "売ります"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "友達に かりる means to borrow from a friend; かす would be to lend to them.",
+        "zh": "「友達に借りる」是向朋友借。貸す是借给别人，方向相反；返す是归还。",
+        "zh_TW": "「友達に借りる」是向朋友借。貸す是借給別人，方向相反；返す是歸還。"
+      }
+    },
+    {
+      "id": "q:n5-v-057",
+      "type": "context",
+      "items": [
+        "vocab:jm1386500",
+        "vocab:jm1446070",
+        "vocab:jm1282790"
+      ],
+      "kind": "choice",
+      "ja": "冬は雪がたくさん降ります。",
+      "reading": "ふゆはゆきがたくさんふります。",
+      "blank": "雪",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "雪",
+        "空",
+        "風",
+        "海"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "ゆき (snow) is what falls a lot in winter; ふる is used for rain and snow.",
+        "zh": "冬天下的是ゆき（雪），降る用于雨和雪。風用吹く，空和海都不能和降る搭配。",
+        "zh_TW": "冬天下的是ゆき（雪），降る用於雨和雪。風用吹く，空和海都不能和降る搭配。"
+      }
+    },
+    {
+      "id": "q:n5-v-058",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1265070",
+        "vocab:jm1361490",
+        "vocab:jm1257540"
+      ],
+      "kind": "choice",
+      "ja": "この建物は新しくないです。",
+      "reading": "このたてものはあたらしくないです。",
+      "blank": "新しくないです",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "古いです",
+        "大きいです",
+        "高いです",
+        "広いです"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Saying a building is not new is another way of saying it is old, ふるい.",
+        "zh": "「不新」换一种说法就是旧，也就是ふるいです。其他三项说的是大小、高低、宽窄。",
+        "zh_TW": "「不新」換一種說法就是舊，也就是ふるいです。其他三項說的是大小、高低、寬窄。"
+      }
+    },
+    {
+      "id": "q:n5-v-059",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1577280",
+        "vocab:jm1304970",
+        "vocab:jm1579110"
+      ],
+      "kind": "choice",
+      "ja": "今日は仕事がありません。",
+      "reading": "きょうはしごとがありません。",
+      "blank": "仕事がありません",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "ひまです",
+        "いそがしいです",
+        "げんきです",
+        "たいへんです"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Having no work today means you are free, ひま.",
+        "zh": "今天没有工作，就是有空，也就是ひまです。いそがしい是忙，正好相反。",
+        "zh_TW": "今天沒有工作，就是有空，也就是ひまです。いそがしい是忙，正好相反。"
+      }
+    },
+    {
+      "id": "q:n5-v-060",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1185200",
+        "vocab:jm1353320",
+        "vocab:jm1202270"
+      ],
+      "kind": "choice",
+      "ja": "弟は絵が上手ではありません。",
+      "reading": "おとうとはえがじょうずではありません。",
+      "blank": "上手ではありません",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "へたです",
+        "じょうずです",
+        "すきです",
+        "きらいです"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Not being good at something is へた (unskilful).",
+        "zh": "「不擅长」就是へた。すき和きらい说的是喜欢不喜欢，不是水平高低。",
+        "zh_TW": "「不擅長」就是へた。すき和きらい說的是喜歡不喜歡，不是水平高低。"
+      }
+    },
+    {
+      "id": "q:n5-v-061",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1257240",
+        "vocab:jm1277450",
+        "vocab:jm1578010"
+      ],
+      "kind": "choice",
+      "ja": "私は魚が好きではありません。",
+      "reading": "わたしはさかながすきではありません。",
+      "blank": "好きではありません",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "きらいです",
+        "だいすきです",
+        "ほしいです",
+        "おいしいです"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Not liking something is きらい (disliking).",
+        "zh": "「不喜欢」就是きらい。だいすき是非常喜欢，意思相反。",
+        "zh_TW": "「不喜歡」就是きらい。だいすき是非常喜歡，意思相反。"
+      }
+    },
+    {
+      "id": "q:n5-v-062",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1541620",
+        "vocab:jm1420470",
+        "vocab:jm1582120"
+      ],
+      "kind": "choice",
+      "ja": "この店はみんなが知っています。",
+      "reading": "このみせはみんながしっています。",
+      "blank": "みんなが知っています",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "有名です",
+        "静かです",
+        "近いです",
+        "新しいです"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "A shop that everyone knows is a famous one, ゆうめい.",
+        "zh": "大家都知道这家店，就是说这家店很有名，也就是有名です。",
+        "zh_TW": "大家都知道這家店，就是說這家店很有名，也就是有名です。"
+      }
+    },
+    {
+      "id": "q:n5-v-063",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1348910",
+        "vocab:jm1407460",
+        "vocab:jm1206900"
+      ],
+      "kind": "choice",
+      "ja": "この教室は学生が多くないです。",
+      "reading": "このきょうしつはがくせいがおおくないです。",
+      "blank": "多くないです",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "少ないです",
+        "大きいです",
+        "静かです",
+        "広いです"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Saying the students are not many is another way of saying there are few, すくない.",
+        "zh": "「学生不多」换一种说法就是学生少，也就是少ないです。",
+        "zh_TW": "「學生不多」換一種說法就是學生少，也就是少ないです。"
+      }
     }
   ]
 }

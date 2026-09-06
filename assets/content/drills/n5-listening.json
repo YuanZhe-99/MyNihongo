@@ -605,6 +605,1203 @@
       "en": "Woman: Why were you absent from school yesterday?",
       "zh": "女：昨天你为什么没来学校？",
       "zh_TW": "女：昨天你為什麼沒來學校？"
+    },
+    {
+      "id": "p:n5-l-025",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "明日、公園へ行きましょう。",
+          "reading": "あした、こうえんへいきましょう。"
+        },
+        {
+          "speaker": "男",
+          "ja": "いいですね。何を持って行きますか。",
+          "reading": "いいですね。なにをもっていきますか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "私はお弁当を作ります。",
+          "reading": "わたしはおべんとうをつくります。"
+        },
+        {
+          "speaker": "男",
+          "ja": "では、私は飲み物を持って行きます。",
+          "reading": "では、わたしはのみものをもっていきます。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人は明日、何を持って行きますか。",
+          "reading": "おとこのひとはあした、なにをもっていきますか。"
+        }
+      ],
+      "en": "Woman: Let's go to the park tomorrow. Man: Good idea. What shall we take? Woman: I'll make box lunches. Man: Then I'll bring the drinks. Woman: What will the man take tomorrow?",
+      "zh": "女：明天我们去公园吧。男：好啊。要带什么去？女：我来做便当。男：那我带饮料去。女：男的明天带什么去？",
+      "zh_TW": "女：明天我們去公園吧。男：好啊。要帶什麼去？女：我來做便當。男：那我帶飲料去。女：男的明天帶什麼去？"
+    },
+    {
+      "id": "p:n5-l-026",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "今日、銀行へ行きますか。",
+          "reading": "きょう、ぎんこうへいきますか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "はい。でも、その前に八百屋で野菜を買います。",
+          "reading": "はい。でも、そのまえにやおやでやさいをかいます。"
+        },
+        {
+          "speaker": "男",
+          "ja": "銀行は五時に閉まりますよ。",
+          "reading": "ぎんこうはごじにしまりますよ。"
+        },
+        {
+          "speaker": "女",
+          "ja": "では、先に銀行へ行きます。",
+          "reading": "では、さきにぎんこうへいきます。"
+        },
+        {
+          "speaker": "男",
+          "ja": "女の人は初めにどこへ行きますか。",
+          "reading": "おんなのひとははじめにどこへいきますか。"
+        }
+      ],
+      "en": "Man: Are you going to the bank today? Woman: Yes. But before that I'll buy vegetables at the greengrocer's. Man: The bank closes at five, you know. Woman: Then I'll go to the bank first. Man: Where will the woman go first?",
+      "zh": "男：你今天去银行吗？女：去。不过在那之前要先在蔬果店买菜。男：银行五点就关门了哦。女：那我先去银行。男：女的先去哪里？",
+      "zh_TW": "男：你今天去銀行嗎？女：去。不過在那之前要先在蔬果店買菜。男：銀行五點就關門了哦。女：那我先去銀行。男：女的先去哪裡？"
+    },
+    {
+      "id": "p:n5-l-027",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "学校まで何で行きますか。",
+          "reading": "がっこうまでなにでいきますか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "いつもは自転車です。",
+          "reading": "いつもはじてんしゃです。"
+        },
+        {
+          "speaker": "女",
+          "ja": "今日は雨ですよ。",
+          "reading": "きょうはあめですよ。"
+        },
+        {
+          "speaker": "男",
+          "ja": "本当ですね。では、今日は電車で行きます。",
+          "reading": "ほんとうですね。では、きょうはでんしゃでいきます。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人は今日、何で学校へ行きますか。",
+          "reading": "おとこのひとはきょう、なにでがっこうへいきますか。"
+        }
+      ],
+      "en": "Woman: How do you get to school? Man: Usually by bicycle. Woman: It's raining today, you know. Man: You're right. Then today I'll go by train. Woman: How will the man go to school today?",
+      "zh": "女：你怎么去学校？男：平常骑自行车。女：今天下雨哦。男：真的呢。那今天坐电车去。女：男的今天怎么去学校？",
+      "zh_TW": "女：你怎麼去學校？男：平常騎自行車。女：今天下雨哦。男：真的呢。那今天坐電車去。女：男的今天怎麼去學校？"
+    },
+    {
+      "id": "p:n5-l-028",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "姉の誕生日に何を買いましょうか。",
+          "reading": "あねのたんじょうびになにをかいましょうか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "花はどうですか。",
+          "reading": "はなはどうですか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "去年、花を買いました。",
+          "reading": "きょねん、はなをかいました。"
+        },
+        {
+          "speaker": "女",
+          "ja": "では、めがねの店で見ませんか。",
+          "reading": "では、めがねのみせでみませんか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "今年は帽子を買います。",
+          "reading": "ことしはぼうしをかいます。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人は今年、何を買いますか。",
+          "reading": "おとこのひとはことし、なにをかいますか。"
+        }
+      ],
+      "en": "Man: What shall we buy for my older sister's birthday? Woman: How about flowers? Man: I bought flowers last year. Woman: Then shall we look at the glasses shop? Man: This year I'll buy a hat. Woman: What will the man buy this year?",
+      "zh": "男：姐姐生日买什么好呢？女：买花怎么样？男：去年买过花了。女：那要不要去眼镜店看看？男：今年买帽子吧。女：男的今年买什么？",
+      "zh_TW": "男：姐姐生日買什麼好呢？女：買花怎麼樣？男：去年買過花了。女：那要不要去眼鏡店看看？男：今年買帽子吧。女：男的今年買什麼？"
+    },
+    {
+      "id": "p:n5-l-029",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "土曜日の旅行は何時に出かけますか。",
+          "reading": "どようびのりょこうはなんじにでかけますか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "電車は八時ですから、七時半に駅で会いましょう。",
+          "reading": "でんしゃははちじですから、しちじはんにえきであいましょう。"
+        },
+        {
+          "speaker": "女",
+          "ja": "少し早いですね。",
+          "reading": "すこしはやいですね。"
+        },
+        {
+          "speaker": "男",
+          "ja": "でも、切符を買いますから。",
+          "reading": "でも、きっぷをかいますから。"
+        },
+        {
+          "speaker": "女",
+          "ja": "わかりました。",
+          "reading": "わかりました。"
+        },
+        {
+          "speaker": "男",
+          "ja": "二人は何時に駅で会いますか。",
+          "reading": "ふたりはなんじにえきであいますか。"
+        }
+      ],
+      "en": "Woman: What time do we set off on Saturday's trip? Man: The train is at eight, so let's meet at the station at half past seven. Woman: That's a little early. Man: But we have to buy tickets. Woman: All right. Man: What time will the two meet at the station?",
+      "zh": "女：星期六的旅行几点出发？男：电车是八点，所以七点半在车站见吧。女：有点早呢。男：可是还要买票啊。女：好吧。男：两个人几点在车站见面？",
+      "zh_TW": "女：星期六的旅行幾點出發？男：電車是八點，所以七點半在車站見吧。女：有點早呢。男：可是還要買票啊。女：好吧。男：兩個人幾點在車站見面？"
+    },
+    {
+      "id": "p:n5-l-030",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "今日は洗濯をしますか。",
+          "reading": "きょうはせんたくをしますか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "いいえ、今日は雨ですから、明日します。",
+          "reading": "いいえ、きょうはあめですから、あしたします。"
+        },
+        {
+          "speaker": "男",
+          "ja": "では、今日は何をしますか。",
+          "reading": "では、きょうはなにをしますか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "部屋の掃除をします。",
+          "reading": "へやのそうじをします。"
+        },
+        {
+          "speaker": "男",
+          "ja": "女の人は今日、何をしますか。",
+          "reading": "おんなのひとはきょう、なにをしますか。"
+        }
+      ],
+      "en": "Man: Are you doing the laundry today? Woman: No, it's raining today, so I'll do it tomorrow. Man: Then what will you do today? Woman: I'll clean the room. Man: What will the woman do today?",
+      "zh": "男：今天洗衣服吗？女：不，今天下雨，明天再洗。男：那今天做什么？女：打扫房间。男：女的今天做什么？",
+      "zh_TW": "男：今天洗衣服嗎？女：不，今天下雨，明天再洗。男：那今天做什麼？女：打掃房間。男：女的今天做什麼？"
+    },
+    {
+      "id": "p:n5-l-031",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "何を飲みますか。",
+          "reading": "なにをのみますか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "私はお茶をください。",
+          "reading": "わたしはおちゃをください。"
+        },
+        {
+          "speaker": "女",
+          "ja": "私は紅茶を飲みます。",
+          "reading": "わたしはこうちゃをのみます。"
+        },
+        {
+          "speaker": "男",
+          "ja": "冷たい水もください。",
+          "reading": "つめたいみずもください。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人は何を飲みますか。",
+          "reading": "おとこのひとはなにをのみますか。"
+        }
+      ],
+      "en": "Woman: What will you drink? Man: I'll have green tea, please. Woman: I'll drink black tea. Man: And cold water too, please. Woman: What will the man drink?",
+      "zh": "女：你喝什么？男：我要绿茶。女：我喝红茶。男：也请给我一杯冷水。女：男的喝什么？",
+      "zh_TW": "女：你喝什麼？男：我要綠茶。女：我喝紅茶。男：也請給我一杯冷水。女：男的喝什麼？"
+    },
+    {
+      "id": "p:n5-l-032",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "この卵はどこに置きますか。",
+          "reading": "このたまごはどこにおきますか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "冷蔵庫に入れてください。",
+          "reading": "れいぞうこにいれてください。"
+        },
+        {
+          "speaker": "女",
+          "ja": "この箱はどうしますか。",
+          "reading": "このはこはどうしますか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "箱は台所の机の下に置いてください。",
+          "reading": "はこはだいどころのつくえのしたにおいてください。"
+        },
+        {
+          "speaker": "女",
+          "ja": "女の人は箱をどこに置きますか。",
+          "reading": "おんなのひとははこをどこにおきますか。"
+        }
+      ],
+      "en": "Woman: Where should I put these eggs? Man: Please put them in the fridge. Woman: And what about this box? Man: Please put the box under the kitchen table. Woman: Where will the woman put the box?",
+      "zh": "女：这些鸡蛋放在哪里？男：请放进冰箱。女：这个箱子呢？男：箱子请放在厨房桌子下面。女：女的把箱子放在哪里？",
+      "zh_TW": "女：這些雞蛋放在哪裡？男：請放進冰箱。女：這個箱子呢？男：箱子請放在廚房桌子下面。女：女的把箱子放在哪裡？"
+    },
+    {
+      "id": "p:n5-l-033",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "すみません、辞書を貸してください。",
+          "reading": "すみません、じしょをかしてください。"
+        },
+        {
+          "speaker": "男",
+          "ja": "今、使っています。あの本棚の上に古い字引がありますよ。",
+          "reading": "いま、つかっています。あのほんだなのうえにふるいじびきがありますよ。"
+        },
+        {
+          "speaker": "女",
+          "ja": "では、それを借ります。どうも。",
+          "reading": "では、それをかります。どうも。"
+        },
+        {
+          "speaker": "男",
+          "ja": "女の人は何を借りますか。",
+          "reading": "おんなのひとはなにをかりますか。"
+        }
+      ],
+      "en": "Woman: Excuse me, please lend me your dictionary. Man: I'm using it now. There's an old dictionary on top of that bookshelf. Woman: Then I'll borrow that one. Thanks. Man: What will the woman borrow?",
+      "zh": "女：不好意思，请借我词典。男：我正在用。那个书架上有一本旧字典。女：那我借那本。谢谢。男：女的借什么？",
+      "zh_TW": "女：不好意思，請借我詞典。男：我正在用。那個書架上有一本舊字典。女：那我借那本。謝謝。男：女的借什麼？"
+    },
+    {
+      "id": "p:n5-l-034",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "映画の切符を何枚買いますか。",
+          "reading": "えいがのきっぷをなんまいかいますか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "私と妹と、友達が二人来ます。",
+          "reading": "わたしといもうとと、ともだちがふたりきます。"
+        },
+        {
+          "speaker": "男",
+          "ja": "では、四枚ですね。",
+          "reading": "では、よんまいですね。"
+        },
+        {
+          "speaker": "女",
+          "ja": "はい。でも、妹は来ません。",
+          "reading": "はい。でも、いもうとはきません。"
+        },
+        {
+          "speaker": "男",
+          "ja": "男の人は切符を何枚買いますか。",
+          "reading": "おとこのひとはきっぷをなんまいかいますか。"
+        }
+      ],
+      "en": "Man: How many film tickets shall I buy? Woman: Me, my younger sister, and two friends are coming. Man: Four, then. Woman: Yes. But my sister isn't coming. Man: How many tickets will the man buy?",
+      "zh": "男：电影票买几张？女：我、妹妹，还有两个朋友要来。男：那就四张。女：对。不过妹妹不来了。男：男的买几张票？",
+      "zh_TW": "男：電影票買幾張？女：我、妹妹，還有兩個朋友要來。男：那就四張。女：對。不過妹妹不來了。男：男的買幾張票？"
+    },
+    {
+      "id": "p:n5-l-035",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "今日は傘を持って行きますか。",
+          "reading": "きょうはかさをもっていきますか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "天気は晴れですよ。",
+          "reading": "てんきははれですよ。"
+        },
+        {
+          "speaker": "男",
+          "ja": "でも、夕方から雨が降ります。",
+          "reading": "でも、ゆうがたからあめがふります。"
+        },
+        {
+          "speaker": "女",
+          "ja": "では、私も傘を持って行きます。",
+          "reading": "では、わたしもかさをもっていきます。"
+        },
+        {
+          "speaker": "男",
+          "ja": "女の人は何を持って行きますか。",
+          "reading": "おんなのひとはなにをもっていきますか。"
+        }
+      ],
+      "en": "Man: Are you taking an umbrella today? Woman: The weather is fine, you know. Man: But it will rain from the evening. Woman: Then I'll take an umbrella too. Man: What will the woman take with her?",
+      "zh": "男：今天带伞去吗？女：天气是晴天哦。男：可是傍晚开始会下雨。女：那我也带伞去。男：女的带什么去？",
+      "zh_TW": "男：今天帶傘去嗎？女：天氣是晴天哦。男：可是傍晚開始會下雨。女：那我也帶傘去。男：女的帶什麼去？"
+    },
+    {
+      "id": "p:n5-l-036",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "郵便局で何をしますか。",
+          "reading": "ゆうびんきょくでなにをしますか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "手紙を出します。切手も買います。",
+          "reading": "てがみをだします。きってもかいます。"
+        },
+        {
+          "speaker": "女",
+          "ja": "はがきは買いませんか。",
+          "reading": "はがきはかいませんか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "はがきは買いません。封筒を買います。",
+          "reading": "はがきはかいません。ふうとうをかいます。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人は郵便局で何を買いますか。",
+          "reading": "おとこのひとはゆうびんきょくでなにをかいますか。"
+        }
+      ],
+      "en": "Woman: What will you do at the post office? Man: I'll send a letter. I'll also buy stamps. Woman: Won't you buy postcards? Man: I won't buy postcards. I'll buy envelopes. Woman: What will the man buy at the post office?",
+      "zh": "女：你去邮局做什么？男：寄信。还要买邮票。女：不买明信片吗？男：明信片不买。要买信封。女：男的在邮局买什么？",
+      "zh_TW": "女：你去郵局做什麼？男：寄信。還要買郵票。女：不買明信片嗎？男：明信片不買。要買信封。女：男的在郵局買什麼？"
+    },
+    {
+      "id": "p:n5-l-037",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "今晩の御飯は何を作りますか。",
+          "reading": "こんばんのごはんはなにをつくりますか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "魚はどうですか。",
+          "reading": "さかなはどうですか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "昨日も魚でした。",
+          "reading": "きのうもさかなでした。"
+        },
+        {
+          "speaker": "女",
+          "ja": "では、豚肉の料理を作ります。",
+          "reading": "では、ぶたにくのりょうりをつくります。"
+        },
+        {
+          "speaker": "男",
+          "ja": "女の人は今晩、何を作りますか。",
+          "reading": "おんなのひとはこんばん、なにをつくりますか。"
+        }
+      ],
+      "en": "Man: What will you make for dinner tonight? Woman: How about fish? Man: We had fish yesterday too. Woman: Then I'll make a pork dish. Man: What will the woman make tonight?",
+      "zh": "男：今晚做什么饭？女：鱼怎么样？男：昨天也是鱼。女：那就做猪肉菜吧。男：女的今晚做什么？",
+      "zh_TW": "男：今晚做什麼飯？女：魚怎麼樣？男：昨天也是魚。女：那就做豬肉菜吧。男：女的今晚做什麼？"
+    },
+    {
+      "id": "p:n5-l-038",
+      "type": "task",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "明日、どこで会いますか。",
+          "reading": "あした、どこであいますか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "駅の前はいつも人が大勢います。",
+          "reading": "えきのまえはいつもひとがおおぜいいます。"
+        },
+        {
+          "speaker": "女",
+          "ja": "では、交差点の近くの喫茶店はどうですか。",
+          "reading": "では、こうさてんのちかくのきっさてんはどうですか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "いいですね。そこで待っています。",
+          "reading": "いいですね。そこでまっています。"
+        },
+        {
+          "speaker": "女",
+          "ja": "二人はどこで会いますか。",
+          "reading": "ふたりはどこであいますか。"
+        }
+      ],
+      "en": "Woman: Where shall we meet tomorrow? Man: There are always a lot of people in front of the station. Woman: Then how about the coffee shop near the crossing? Man: Good. I'll be waiting there. Woman: Where will the two of them meet?",
+      "zh": "女：明天在哪里见？男：车站前面总是人很多。女：那路口附近的咖啡店怎么样？男：好啊，我在那里等。女：两个人在哪里见面？",
+      "zh_TW": "女：明天在哪裡見？男：車站前面總是人很多。女：那路口附近的咖啡店怎麼樣？男：好啊，我在那裡等。女：兩個人在哪裡見面？"
+    },
+    {
+      "id": "p:n5-l-039",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "新しい仕事はどうですか。",
+          "reading": "あたらしいしごとはどうですか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "毎日忙しいです。でも、会社が家から近いです。",
+          "reading": "まいにちいそがしいです。でも、かいしゃがいえからちかいです。"
+        },
+        {
+          "speaker": "女",
+          "ja": "いいですね。",
+          "reading": "いいですね。"
+        },
+        {
+          "speaker": "男",
+          "ja": "ええ、朝ゆっくり起きることができますから、いいです。",
+          "reading": "ええ、あさゆっくりおきることができますから、いいです。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人は新しい仕事の何がいいと言っていますか。",
+          "reading": "おとこのひとはあたらしいしごとのなにがいいといっていますか。"
+        }
+      ],
+      "en": "Woman: How is the new job? Man: I'm busy every day. But the company is close to my house. Woman: That's nice. Man: Yes, I can get up slowly in the morning, so it's good. Woman: What does the man say is good about the new job?",
+      "zh": "女：新工作怎么样？男：每天都很忙。不过公司离家近。女：那不错呀。男：是啊，早上可以慢慢起床，很好。女：男的说新工作好在哪里？",
+      "zh_TW": "女：新工作怎麼樣？男：每天都很忙。不過公司離家近。女：那不錯呀。男：是啊，早上可以慢慢起床，很好。女：男的說新工作好在哪裡？"
+    },
+    {
+      "id": "p:n5-l-040",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "その靴、買いましたか。",
+          "reading": "そのくつ、かいましたか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "いいえ。",
+          "reading": "いいえ。"
+        },
+        {
+          "speaker": "男",
+          "ja": "安かったでしょう。",
+          "reading": "やすかったでしょう。"
+        },
+        {
+          "speaker": "女",
+          "ja": "ええ、安かったです。でも、少し小さかったです。",
+          "reading": "ええ、やすかったです。でも、すこしちいさかったです。"
+        },
+        {
+          "speaker": "男",
+          "ja": "女の人はどうして靴を買いませんでしたか。",
+          "reading": "おんなのひとはどうしてくつをかいませんでしたか。"
+        }
+      ],
+      "en": "Man: Did you buy those shoes? Woman: No. Man: They were cheap, weren't they? Woman: Yes, they were cheap. But they were a little small. Man: Why didn't the woman buy the shoes?",
+      "zh": "男：那双鞋你买了吗？女：没买。男：不是很便宜吗？女：是便宜。可是有点小。男：女的为什么没买鞋？",
+      "zh_TW": "男：那雙鞋你買了嗎？女：沒買。男：不是很便宜嗎？女：是便宜。可是有點小。男：女的為什麼沒買鞋？"
+    },
+    {
+      "id": "p:n5-l-041",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "昨日の映画はどうでしたか。",
+          "reading": "きのうのえいがはどうでしたか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "長かったです。",
+          "reading": "ながかったです。"
+        },
+        {
+          "speaker": "女",
+          "ja": "おもしろくなかったですか。",
+          "reading": "おもしろくなかったですか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "話はおもしろかったです。でも、三時間は長いですね。",
+          "reading": "はなしはおもしろかったです。でも、さんじかんはながいですね。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人は映画の何が良くなかったと言っていますか。",
+          "reading": "おとこのひとはえいがのなにがよくなかったといっていますか。"
+        }
+      ],
+      "en": "Woman: How was yesterday's film? Man: It was long. Woman: Wasn't it interesting? Man: The story was interesting. But three hours is long. Woman: What does the man say was not good about the film?",
+      "zh": "女：昨天的电影怎么样？男：很长。女：不好看吗？男：故事很有意思。可是三个小时太长了。女：男的说电影哪里不好？",
+      "zh_TW": "女：昨天的電影怎麼樣？男：很長。女：不好看嗎？男：故事很有意思。可是三個小時太長了。女：男的說電影哪裡不好？"
+    },
+    {
+      "id": "p:n5-l-042",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "今朝、どうして遅かったですか。",
+          "reading": "けさ、どうしておそかったですか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "電車が止まりました。",
+          "reading": "でんしゃがとまりました。"
+        },
+        {
+          "speaker": "女",
+          "ja": "大変でしたね。",
+          "reading": "たいへんでしたね。"
+        },
+        {
+          "speaker": "男",
+          "ja": "ええ。たくさん歩きましたから、疲れました。",
+          "reading": "ええ。たくさんあるきましたから、つかれました。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人はどうして遅くなりましたか。",
+          "reading": "おとこのひとはどうしておそくなりましたか。"
+        }
+      ],
+      "en": "Woman: Why were you late this morning? Man: The train stopped. Woman: That was hard. Man: Yes. I walked a lot, so I got tired. Woman: Why was the man late?",
+      "zh": "女：今天早上你为什么迟到了？男：电车停了。女：真够辛苦的。男：是啊。走了很多路，累坏了。女：男的为什么迟到？",
+      "zh_TW": "女：今天早上你為什麼遲到了？男：電車停了。女：真夠辛苦的。男：是啊。走了很多路，累壞了。女：男的為什麼遲到？"
+    },
+    {
+      "id": "p:n5-l-043",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "この町はどうですか。",
+          "reading": "このまちはどうですか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "静かで、きれいです。",
+          "reading": "しずかで、きれいです。"
+        },
+        {
+          "speaker": "男",
+          "ja": "賑やかな所が好きですか。",
+          "reading": "にぎやかなところがすきですか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "いいえ、私は静かな町が好きです。",
+          "reading": "いいえ、わたしはしずかなまちがすきです。"
+        },
+        {
+          "speaker": "男",
+          "ja": "女の人はどんな町が好きだと言っていますか。",
+          "reading": "おんなのひとはどんなまちがすきだといっていますか。"
+        }
+      ],
+      "en": "Man: How is this town? Woman: It's quiet and clean. Man: Do you like lively places? Woman: No, I like quiet towns. Man: What kind of town does the woman say she likes?",
+      "zh": "男：这个镇子怎么样？女：又安静又干净。男：你喜欢热闹的地方吗？女：不，我喜欢安静的镇子。男：女的说她喜欢什么样的镇子？",
+      "zh_TW": "男：這個鎮子怎麼樣？女：又安靜又幹淨。男：你喜歡熱鬧的地方嗎？女：不，我喜歡安靜的鎮子。男：女的說她喜歡什麼樣的鎮子？"
+    },
+    {
+      "id": "p:n5-l-044",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "どうして日本語を勉強していますか。",
+          "reading": "どうしてにほんごをべんきょうしていますか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "日本の歌が好きですから。",
+          "reading": "にほんのうたがすきですから。"
+        },
+        {
+          "speaker": "男",
+          "ja": "日本で働きたいですか。",
+          "reading": "にほんではたらきたいですか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "いいえ。歌の言葉を覚えたいです。",
+          "reading": "いいえ。うたのことばをおぼえたいです。"
+        },
+        {
+          "speaker": "男",
+          "ja": "女の人はどうして日本語を勉強していますか。",
+          "reading": "おんなのひとはどうしてにほんごをべんきょうしていますか。"
+        }
+      ],
+      "en": "Man: Why are you studying Japanese? Woman: Because I like Japanese songs. Man: Do you want to work in Japan? Woman: No. I want to learn the words of the songs. Man: Why is the woman studying Japanese?",
+      "zh": "男：你为什么学日语？女：因为我喜欢日本的歌。男：你想在日本工作吗？女：不。我想记住歌里的词。男：女的为什么学日语？",
+      "zh_TW": "男：你為什麼學日語？女：因為我喜歡日本的歌。男：你想在日本工作嗎？女：不。我想記住歌裡的詞。男：女的為什麼學日語？"
+    },
+    {
+      "id": "p:n5-l-045",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "新しい家はどうですか。",
+          "reading": "あたらしいいえはどうですか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "部屋は明るいですが、狭いです。",
+          "reading": "へやはあかるいですが、せまいです。"
+        },
+        {
+          "speaker": "女",
+          "ja": "駅は近いですか。",
+          "reading": "えきはちかいですか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "駅は近いです。でも、部屋が狭いですから、少し困っています。",
+          "reading": "えきはちかいです。でも、へやがせまいですから、すこしこまっています。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人は新しい家の何が良くないと言っていますか。",
+          "reading": "おとこのひとはあたらしいいえのなにがよくないといっていますか。"
+        }
+      ],
+      "en": "Woman: How is your new house? Man: The rooms are bright, but small. Woman: Is the station close? Man: The station is close. But the rooms are small, so I'm a bit troubled. Woman: What does the man say is not good about the new house?",
+      "zh": "女：新家怎么样？男：房间很亮，可是窄。女：车站近吗？男：车站很近。不过房间窄，有点头疼。女：男的说新家哪里不好？",
+      "zh_TW": "女：新家怎麼樣？男：房間很亮，可是窄。女：車站近嗎？男：車站很近。不過房間窄，有點頭疼。女：男的說新家哪裡不好？"
+    },
+    {
+      "id": "p:n5-l-046",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "日曜日、海へ行きませんか。",
+          "reading": "にちようび、うみへいきませんか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "すみません、日曜日は兄と山に登ります。",
+          "reading": "すみません、にちようびはあにとやまにのぼります。"
+        },
+        {
+          "speaker": "男",
+          "ja": "では、土曜日はどうですか。",
+          "reading": "では、どようびはどうですか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "土曜日は仕事があります。",
+          "reading": "どようびはしごとがあります。"
+        },
+        {
+          "speaker": "男",
+          "ja": "女の人はどうして土曜日に海へ行きませんか。",
+          "reading": "おんなのひとはどうしてどようびにうみへいきませんか。"
+        }
+      ],
+      "en": "Man: Won't you go to the sea on Sunday? Woman: Sorry, on Sunday I'm climbing a mountain with my older brother. Man: Then how about Saturday? Woman: On Saturday I have work. Man: Why won't the woman go to the sea on Saturday?",
+      "zh": "男：星期天要不要去海边？女：抱歉，星期天我要和哥哥去爬山。男：那星期六呢？女：星期六有工作。男：女的星期六为什么不去海边？",
+      "zh_TW": "男：星期天要不要去海邊？女：抱歉，星期天我要和哥哥去爬山。男：那星期六呢？女：星期六有工作。男：女的星期六為什麼不去海邊？"
+    },
+    {
+      "id": "p:n5-l-047",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "誕生日に何がほしいですか。",
+          "reading": "たんじょうびになにがほしいですか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "新しいかばんがほしいです。",
+          "reading": "あたらしいかばんがほしいです。"
+        },
+        {
+          "speaker": "女",
+          "ja": "時計はどうですか。",
+          "reading": "とけいはどうですか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "時計はもう二つありますから、かばんがいいです。",
+          "reading": "とけいはもうふたつありますから、かばんがいいです。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人は何がほしいと言っていますか。",
+          "reading": "おとこのひとはなにがほしいといっていますか。"
+        }
+      ],
+      "en": "Woman: What do you want for your birthday? Man: I want a new bag. Woman: How about a watch? Man: I already have two watches, so a bag would be better. Woman: What does the man say he wants?",
+      "zh": "女：生日想要什么？男：想要一个新包。女：手表怎么样？男：手表已经有两块了，还是包好。女：男的说他想要什么？",
+      "zh_TW": "女：生日想要什麼？男：想要一個新包。女：手錶怎麼樣？男：手錶已經有兩塊了，還是包好。女：男的說他想要什麼？"
+    },
+    {
+      "id": "p:n5-l-048",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "旅行はどうでしたか。",
+          "reading": "りょこうはどうでしたか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "天気が悪かったです。毎日雨でした。",
+          "reading": "てんきがわるかったです。まいにちあめでした。"
+        },
+        {
+          "speaker": "男",
+          "ja": "大変でしたね。",
+          "reading": "たいへんでしたね。"
+        },
+        {
+          "speaker": "女",
+          "ja": "でも、御飯がとてもおいしかったです。",
+          "reading": "でも、ごはんがとてもおいしかったです。"
+        },
+        {
+          "speaker": "男",
+          "ja": "女の人は旅行の何が良かったと言っていますか。",
+          "reading": "おんなのひとはりょこうのなにがよかったといっていますか。"
+        }
+      ],
+      "en": "Man: How was the trip? Woman: The weather was bad. It rained every day. Man: That was hard. Woman: But the food was very good. Man: What does the woman say was good about the trip?",
+      "zh": "男：旅行怎么样？女：天气不好。每天都下雨。男：真辛苦。女：不过饭菜非常好吃。男：女的说旅行哪里好？",
+      "zh_TW": "男：旅行怎麼樣？女：天氣不好。每天都下雨。男：真辛苦。女：不過飯菜非常好吃。男：女的說旅行哪裡好？"
+    },
+    {
+      "id": "p:n5-l-049",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "音楽が好きですか。",
+          "reading": "おんがくがすきですか。"
+        },
+        {
+          "speaker": "男",
+          "ja": "ええ。毎晩、歌を歌います。",
+          "reading": "ええ。まいばん、うたをうたいます。"
+        },
+        {
+          "speaker": "女",
+          "ja": "上手ですね。",
+          "reading": "じょうずですね。"
+        },
+        {
+          "speaker": "男",
+          "ja": "いいえ、下手です。でも、歌うのが楽しいです。",
+          "reading": "いいえ、へたです。でも、うたうのがたのしいです。"
+        },
+        {
+          "speaker": "女",
+          "ja": "男の人は自分の歌はどうだと言っていますか。",
+          "reading": "おとこのひとはじぶんのうたはどうだといっていますか。"
+        }
+      ],
+      "en": "Woman: Do you like music? Man: Yes. I sing every night. Woman: You must be good at it. Man: No, I'm bad at it. But singing is fun. Woman: What does the man say about his own singing?",
+      "zh": "女：你喜欢音乐吗？男：喜欢。每天晚上都唱歌。女：唱得很好吧。男：不，唱得不好。不过唱歌很开心。女：男的怎么评价自己唱歌？",
+      "zh_TW": "女：你喜歡音樂嗎？男：喜歡。每天晚上都唱歌。女：唱得很好吧。男：不，唱得不好。不過唱歌很開心。女：男的怎麼評價自己唱歌？"
+    },
+    {
+      "id": "p:n5-l-050",
+      "type": "point",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "毎朝、何時に起きますか。",
+          "reading": "まいあさ、なんじにおきますか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "六時に起きます。",
+          "reading": "ろくじにおきます。"
+        },
+        {
+          "speaker": "男",
+          "ja": "早いですね。何をしますか。",
+          "reading": "はやいですね。なにをしますか。"
+        },
+        {
+          "speaker": "女",
+          "ja": "犬と散歩をします。それから朝ごはんを作ります。",
+          "reading": "いぬとさんぽをします。それからあさごはんをつくります。"
+        },
+        {
+          "speaker": "男",
+          "ja": "女の人は起きてから初めに何をしますか。",
+          "reading": "おんなのひとはおきてからはじめになにをしますか。"
+        }
+      ],
+      "en": "Man: What time do you get up every morning? Woman: I get up at six. Man: That's early. What do you do? Woman: I take a walk with my dog. After that I make breakfast. Man: What does the woman do first after getting up?",
+      "zh": "男：你每天早上几点起床？女：六点起床。男：真早。起来做什么？女：和狗散步。然后做早饭。男：女的起床后先做什么？",
+      "zh_TW": "男：你每天早上幾點起床？女：六點起床。男：真早。起來做什麼？女：和狗散步。然後做早飯。男：女的起床後先做什麼？"
+    },
+    {
+      "id": "p:n5-l-051",
+      "type": "expression",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "友達に写真を撮ってもらいます。何と言いますか。",
+          "reading": "ともだちにしゃしんをとってもらいます。なんといいますか。"
+        }
+      ],
+      "en": "You are going to have a friend take a photo of you. What do you say?",
+      "zh": "你要请朋友帮你拍照。这时候该说什么？",
+      "zh_TW": "你要請朋友幫你拍照。這時候該說什麼？"
+    },
+    {
+      "id": "p:n5-l-052",
+      "type": "expression",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "教室が寒いです。窓を閉めたいです。何と言いますか。",
+          "reading": "きょうしつがさむいです。まどをしめたいです。なんといいますか。"
+        }
+      ],
+      "en": "The classroom is cold and you want to close the window. What do you say?",
+      "zh": "教室里很冷，你想关窗。这时候该说什么？",
+      "zh_TW": "教室裡很冷，你想關窗。這時候該說什麼？"
+    },
+    {
+      "id": "p:n5-l-053",
+      "type": "expression",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "道がわかりません。人に聞きます。何と言いますか。",
+          "reading": "みちがわかりません。ひとにききます。なんといいますか。"
+        }
+      ],
+      "en": "You do not know the way and are going to ask someone. What do you say?",
+      "zh": "你不认识路，要向别人打听。这时候该说什么？",
+      "zh_TW": "你不認識路，要向別人打聽。這時候該說什麼？"
+    },
+    {
+      "id": "p:n5-l-054",
+      "type": "expression",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "友達に借りた本を返します。何と言いますか。",
+          "reading": "ともだちにかりたほんをかえします。なんといいますか。"
+        }
+      ],
+      "en": "You are giving back a book you borrowed from a friend. What do you say?",
+      "zh": "你要把向朋友借的书还回去。这时候该说什么？",
+      "zh_TW": "你要把向朋友借的書還回去。這時候該說什麼？"
+    },
+    {
+      "id": "p:n5-l-055",
+      "type": "expression",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "電車の中で暑いです。窓を開けたいです。何と言いますか。",
+          "reading": "でんしゃのなかであついです。まどをあけたいです。なんといいますか。"
+        }
+      ],
+      "en": "It is hot on the train and you want to open the window. What do you say to the person next to you?",
+      "zh": "电车里很热，你想开窗。这时候该对旁边的人说什么？",
+      "zh_TW": "電車裡很熱，你想開窗。這時候該對旁邊的人說什麼？"
+    },
+    {
+      "id": "p:n5-l-056",
+      "type": "expression",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "友達が重い荷物を持っています。一緒に持ちたいです。何と言いますか。",
+          "reading": "ともだちがおもいにもつをもっています。いっしょにもちたいです。なんといいますか。"
+        }
+      ],
+      "en": "Your friend is carrying heavy luggage and you want to help carry it. What do you say?",
+      "zh": "朋友提着很重的行李，你想帮忙一起拿。这时候该说什么？",
+      "zh_TW": "朋友提著很重的行李，你想幫忙一起拿。這時候該說什麼？"
+    },
+    {
+      "id": "p:n5-l-057",
+      "type": "expression",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "授業に遅く来ました。教室に入ります。何と言いますか。",
+          "reading": "じゅぎょうにおそくきました。きょうしつにはいります。なんといいますか。"
+        }
+      ],
+      "en": "You have arrived late for class and are going into the classroom. What do you say?",
+      "zh": "你上课迟到了，正要进教室。这时候该说什么？",
+      "zh_TW": "你上課遲到了，正要進教室。這時候該說什麼？"
+    },
+    {
+      "id": "p:n5-l-058",
+      "type": "expression",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "友達の電話番号が知りたいです。何と言いますか。",
+          "reading": "ともだちのでんわばんごうがしりたいです。なんといいますか。"
+        }
+      ],
+      "en": "You want to know a friend's telephone number. What do you say?",
+      "zh": "你想知道朋友的电话号码。这时候该说什么？",
+      "zh_TW": "你想知道朋友的電話號碼。這時候該說什麼？"
+    },
+    {
+      "id": "p:n5-l-059",
+      "type": "expression",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "店で靴を買う前に、履きたいです。何と言いますか。",
+          "reading": "みせでくつをかうまえに、はきたいです。なんといいますか。"
+        }
+      ],
+      "en": "At a shop you want to try the shoes on before buying them. What do you say?",
+      "zh": "在店里买鞋之前，你想先试穿。这时候该说什么？",
+      "zh_TW": "在店裡買鞋之前，你想先試穿。這時候該說什麼？"
+    },
+    {
+      "id": "p:n5-l-060",
+      "type": "expression",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "友達と一緒に昼ご飯を食べたいです。何と言いますか。",
+          "reading": "ともだちといっしょにひるごはんをたべたいです。なんといいますか。"
+        }
+      ],
+      "en": "You want to have lunch together with a friend. What do you say?",
+      "zh": "你想和朋友一起吃午饭。这时候该说什么？",
+      "zh_TW": "你想和朋友一起吃午飯。這時候該說什麼？"
+    },
+    {
+      "id": "p:n5-l-061",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "誕生日はいつですか。",
+          "reading": "たんじょうびはいつですか。"
+        }
+      ],
+      "en": "Woman: When is your birthday?",
+      "zh": "女：你的生日是什么时候？",
+      "zh_TW": "女：你的生日是什麼時候？"
+    },
+    {
+      "id": "p:n5-l-062",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "切符は何枚ありますか。",
+          "reading": "きっぷはなんまいありますか。"
+        }
+      ],
+      "en": "Man: How many tickets are there?",
+      "zh": "男：票有几张？",
+      "zh_TW": "男：票有幾張？"
+    },
+    {
+      "id": "p:n5-l-063",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "今日は寒いですね。",
+          "reading": "きょうはさむいですね。"
+        }
+      ],
+      "en": "Woman: It's cold today, isn't it?",
+      "zh": "女：今天真冷啊。",
+      "zh_TW": "女：今天真冷啊。"
+    },
+    {
+      "id": "p:n5-l-064",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "この漢字の意味がわかりますか。",
+          "reading": "このかんじのいみがわかりますか。"
+        }
+      ],
+      "en": "Man: Do you understand the meaning of this kanji?",
+      "zh": "男：你懂这个汉字的意思吗？",
+      "zh_TW": "男：你懂這個漢字的意思嗎？"
+    },
+    {
+      "id": "p:n5-l-065",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "今、何時ですか。",
+          "reading": "いま、なんじですか。"
+        }
+      ],
+      "en": "Woman: What time is it now?",
+      "zh": "女：现在几点？",
+      "zh_TW": "女：現在幾點？"
+    },
+    {
+      "id": "p:n5-l-066",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "昼ご飯はもう食べましたか。",
+          "reading": "ひるごはんはもうたべましたか。"
+        }
+      ],
+      "en": "Man: Have you had lunch yet?",
+      "zh": "男：午饭已经吃了吗？",
+      "zh_TW": "男：午飯已經吃了嗎？"
+    },
+    {
+      "id": "p:n5-l-067",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "日曜日、一緒に公園へ行きませんか。",
+          "reading": "にちようび、いっしょにこうえんへいきませんか。"
+        }
+      ],
+      "en": "Woman: Won't you go to the park with me on Sunday?",
+      "zh": "女：星期天要不要一起去公园？",
+      "zh_TW": "女：星期天要不要一起去公園？"
+    },
+    {
+      "id": "p:n5-l-068",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "その荷物、重いですか。",
+          "reading": "そのにもつ、おもいですか。"
+        }
+      ],
+      "en": "Man: Is that luggage heavy?",
+      "zh": "男：那件行李重吗？",
+      "zh_TW": "男：那件行李重嗎？"
+    },
+    {
+      "id": "p:n5-l-069",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "電気を消しましょうか。",
+          "reading": "でんきをけしましょうか。"
+        }
+      ],
+      "en": "Woman: Shall I turn off the light?",
+      "zh": "女：我把灯关掉吧？",
+      "zh_TW": "女：我把燈關掉吧？"
+    },
+    {
+      "id": "p:n5-l-070",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "どこで働いていますか。",
+          "reading": "どこではたらいていますか。"
+        }
+      ],
+      "en": "Man: Where do you work?",
+      "zh": "男：你在哪里工作？",
+      "zh_TW": "男：你在哪裡工作？"
+    },
+    {
+      "id": "p:n5-l-071",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "女",
+          "ja": "この写真の人はどなたですか。",
+          "reading": "このしゃしんのひとはどなたですか。"
+        }
+      ],
+      "en": "Woman: Who is the person in this photo?",
+      "zh": "女：这张照片上的人是谁？",
+      "zh_TW": "女：這張照片上的人是誰？"
+    },
+    {
+      "id": "p:n5-l-072",
+      "type": "quick-response",
+      "lines": [
+        {
+          "speaker": "男",
+          "ja": "毎日どのぐらい勉強しますか。",
+          "reading": "まいにちどのぐらいべんきょうしますか。"
+        }
+      ],
+      "en": "Man: How long do you study every day?",
+      "zh": "男：你每天学习多长时间？",
+      "zh_TW": "男：你每天學習多長時間？"
     }
   ],
   "questions": [
@@ -1274,6 +2471,1350 @@
         "en": "どうして asks for a reason, and being ill is one. The distance to school is not a reason for being absent, tomorrow is the wrong day, and a はい answer does not fit a question word.",
         "zh": "「どうして」问的是原因，生病正是一个原因。学校离得近不能成为缺席的理由，明天说的是另一天，而疑问词问句也不能用「はい」回答。",
         "zh_TW": "「どうして」問的是原因，生病正是一個原因。學校離得近不能成為缺席的理由，明天說的是另一天，而疑問詞問句也不能用「はい」回答。"
+      }
+    },
+    {
+      "id": "q:n5-l-025",
+      "type": "task",
+      "items": [
+        "vocab:jm1600430",
+        "vocab:jm1513065",
+        "vocab:jm1315720"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-025",
+      "prompt": {
+        "en": "What will the man take with him tomorrow?",
+        "zh": "男的明天带什么去？",
+        "zh_TW": "男的明天帶什麼去？"
+      },
+      "options": [
+        "お弁当",
+        "飲み物",
+        "果物",
+        "写真"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The woman is the one who says she will make the box lunches; the man answers with では and takes the drinks. The question asks about the man, so the box lunches are the trap.",
+        "zh": "说要做便当的是女的；男的用「では」接下去，负责带饮料。题目问的是男的，所以便当是陷阱。",
+        "zh_TW": "說要做便當的是女的；男的用「では」接下去，負責帶飲料。題目問的是男的，所以便當是陷阱。"
+      }
+    },
+    {
+      "id": "q:n5-l-026",
+      "type": "task",
+      "items": [
+        "vocab:jm1243490",
+        "vocab:jm1476960",
+        "vocab:jm1387210"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-026",
+      "prompt": {
+        "en": "Where will the woman go first?",
+        "zh": "女的会先去哪里？",
+        "zh_TW": "女的會先去哪裡？"
+      },
+      "options": [
+        "八百屋",
+        "銀行",
+        "郵便局",
+        "店"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "She first plans the greengrocer's, but after hearing that the bank closes at five she says 先に銀行へ行きます. The last line is what counts, not the first plan.",
+        "zh": "她本来打算先去蔬果店，但听说银行五点关门后改口说「先に銀行へ行きます」。以最后说的为准，而不是最初的打算。",
+        "zh_TW": "她本來打算先去蔬果店，但聽說銀行五點關門後改口說「先に銀行へ行きます」。以最後說的為準，而不是最初的打算。"
+      }
+    },
+    {
+      "id": "q:n5-l-027",
+      "type": "task",
+      "items": [
+        "vocab:jm1443530",
+        "vocab:jm1318290",
+        "vocab:jm1171900"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-027",
+      "prompt": {
+        "en": "How will the man go to school today?",
+        "zh": "男的今天怎么去学校？",
+        "zh_TW": "男的今天怎麼去學校？"
+      },
+      "options": [
+        "自転車",
+        "電車",
+        "自動車",
+        "歩いて"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "いつもは自転車 describes his habit, not today. Because of the rain he changes to 電車 in his last line.",
+        "zh": "「いつもは自転車」说的是平常的习惯，不是今天。因为下雨，他在最后一句改成坐电车。",
+        "zh_TW": "「いつもは自転車」說的是平常的習慣，不是今天。因為下雨，他在最後一句改成坐電車。"
+      }
+    },
+    {
+      "id": "q:n5-l-028",
+      "type": "task",
+      "items": [
+        "vocab:jm1519170",
+        "vocab:jm1194500",
+        "vocab:jm1419110"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-028",
+      "prompt": {
+        "en": "What will the man buy this year?",
+        "zh": "男的今年买什么？",
+        "zh_TW": "男的今年買什麼？"
+      },
+      "options": [
+        "花",
+        "めがね",
+        "帽子",
+        "靴"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "Flowers were last year's present and the glasses shop is only the woman's suggestion. The man's own last line decides it: a hat.",
+        "zh": "花是去年送的，眼镜店只是女的的提议。真正决定的是男的最后一句：买帽子。",
+        "zh_TW": "花是去年送的，眼鏡店只是女的的提議。真正決定的是男的最後一句：買帽子。"
+      }
+    },
+    {
+      "id": "q:n5-l-029",
+      "type": "task",
+      "items": [
+        "vocab:jm1175140",
+        "vocab:jm1198180",
+        "vocab:jm1385170"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-029",
+      "prompt": {
+        "en": "What time will the two of them meet at the station?",
+        "zh": "两个人几点在车站见面？",
+        "zh_TW": "兩個人幾點在車站見面？"
+      },
+      "options": [
+        "七時",
+        "七時半",
+        "八時",
+        "八時半"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Eight o'clock is the train, not the meeting. The woman calls half past seven early, but the man keeps it because of the tickets and she agrees.",
+        "zh": "八点是电车的时间，不是碰面的时间。女的嫌七点半早，但男的因为要买票而坚持，女的也答应了。",
+        "zh_TW": "八點是電車的時間，不是碰面的時間。女的嫌七點半早，但男的因為要買票而堅持，女的也答應了。"
+      }
+    },
+    {
+      "id": "q:n5-l-030",
+      "type": "task",
+      "items": [
+        "vocab:jm1399790",
+        "vocab:jm1390980",
+        "vocab:jm1499320"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-030",
+      "prompt": {
+        "en": "What will the woman do today?",
+        "zh": "女的今天做什么？",
+        "zh_TW": "女的今天做什麼？"
+      },
+      "options": [
+        "洗濯",
+        "掃除",
+        "買い物",
+        "料理"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The laundry is put off until tomorrow because of the rain; what she does today is clean the room.",
+        "zh": "因为下雨，洗衣服推到明天；今天做的是打扫房间。",
+        "zh_TW": "因為下雨，洗衣服推到明天；今天做的是打掃房間。"
+      }
+    },
+    {
+      "id": "q:n5-l-031",
+      "type": "task",
+      "items": [
+        "vocab:jm1002430",
+        "vocab:jm1371260",
+        "vocab:jm1280770"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-031",
+      "prompt": {
+        "en": "What will the man drink?",
+        "zh": "男的喝什么？",
+        "zh_TW": "男的喝什麼？"
+      },
+      "options": [
+        "紅茶だけ",
+        "お茶と水",
+        "お茶だけ",
+        "水だけ"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "He asks for green tea, then adds cold water with も, so both. The black tea belongs to the woman.",
+        "zh": "他先要绿茶，接着用「も」加上冷水，所以两样都要。红茶是女的点的。",
+        "zh_TW": "他先要綠茶，接著用「も」加上冷水，所以兩樣都要。紅茶是女的點的。"
+      }
+    },
+    {
+      "id": "q:n5-l-032",
+      "type": "task",
+      "items": [
+        "vocab:jm1585650",
+        "vocab:jm1421850",
+        "vocab:jm1220210"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-032",
+      "prompt": {
+        "en": "Where will the woman put the box?",
+        "zh": "女的把箱子放在哪里？",
+        "zh_TW": "女的把箱子放在哪裡？"
+      },
+      "options": [
+        "冷蔵庫の中",
+        "机の上",
+        "机の下",
+        "台所の外"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The fridge is where the eggs go. For the box the man says 机の下, under the table, not on it.",
+        "zh": "冰箱是放鸡蛋的。箱子男的说「机の下」，是桌子下面，不是上面。",
+        "zh_TW": "冰箱是放雞蛋的。箱子男的說「機の下」，是桌子下面，不是上面。"
+      }
+    },
+    {
+      "id": "q:n5-l-033",
+      "type": "task",
+      "items": [
+        "vocab:jm1315140",
+        "vocab:jm1318970",
+        "vocab:jm1323560"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-033",
+      "prompt": {
+        "en": "What will the woman borrow?",
+        "zh": "女的借什么？",
+        "zh_TW": "女的借什麼？"
+      },
+      "options": [
+        "男の人の辞書",
+        "古い字引",
+        "本棚の本",
+        "新しい辞書"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The dictionary she asked for is in use, so それ in her last line points to the old dictionary on the shelf.",
+        "zh": "她原本要借的词典正在被使用，所以最后一句的「それ」指的是书架上那本旧字典。",
+        "zh_TW": "她原本要借的詞典正在被使用，所以最後一句的「それ」指的是書架上那本舊字典。"
+      }
+    },
+    {
+      "id": "q:n5-l-034",
+      "type": "task",
+      "items": [
+        "vocab:jm1385170",
+        "vocab:jm1524590",
+        "vocab:jm1540170"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-034",
+      "prompt": {
+        "en": "How many tickets will the man buy?",
+        "zh": "男的买几张票？",
+        "zh_TW": "男的買幾張票？"
+      },
+      "options": [
+        "二枚",
+        "三枚",
+        "四枚",
+        "五枚"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Four was the count before the correction. The younger sister drops out in the last line, so three remain: the woman and two friends.",
+        "zh": "四张是更正之前的数目。最后一句妹妹不来了，所以剩下三张：女的和两个朋友。",
+        "zh_TW": "四張是更正之前的數目。最後一句妹妹不來了，所以剩下三張：女的和兩個朋友。"
+      }
+    },
+    {
+      "id": "q:n5-l-035",
+      "type": "task",
+      "items": [
+        "vocab:jm1301940",
+        "vocab:jm1282790",
+        "vocab:jm1542790"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-035",
+      "prompt": {
+        "en": "What will the woman take with her?",
+        "zh": "女的带什么去？",
+        "zh_TW": "女的帶什麼去？"
+      },
+      "options": [
+        "帽子",
+        "傘",
+        "上着",
+        "何も持って行きません"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "She first points at the fine weather, but once she hears about rain from the evening she says 私も傘を, adding herself to the man.",
+        "zh": "她先提到是晴天，但听说傍晚要下雨后就说「私も傘を」，把自己加进带伞的人里。",
+        "zh_TW": "她先提到是晴天，但聽說傍晚要下雨後就說「私も傘を」，把自己加進帶傘的人裡。"
+      }
+    },
+    {
+      "id": "q:n5-l-036",
+      "type": "task",
+      "items": [
+        "vocab:jm1385070",
+        "vocab:jm1499690",
+        "vocab:jm1546590"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-036",
+      "prompt": {
+        "en": "What will the man buy at the post office?",
+        "zh": "男的在邮局买什么？",
+        "zh_TW": "男的在郵局買什麼？"
+      },
+      "options": [
+        "切手とはがき",
+        "切手と封筒",
+        "はがきと封筒",
+        "封筒だけ"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Stamps are added with も in his first line, and postcards are explicitly refused before he names envelopes. The letter is sent, not bought.",
+        "zh": "邮票在他第一句里用「も」加上，明信片被明确否定，之后才说买信封。信是寄的，不是买的。",
+        "zh_TW": "郵票在他第一句裡用「も」加上，明信片被明確否定，之後才說買信封。信是寄的，不是買的。"
+      }
+    },
+    {
+      "id": "q:n5-l-037",
+      "type": "task",
+      "items": [
+        "vocab:jm1457440",
+        "vocab:jm1554310",
+        "vocab:jm1578010"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-037",
+      "prompt": {
+        "en": "What will the woman make tonight?",
+        "zh": "女的今晚做什么？",
+        "zh_TW": "女的今晚做什麼？"
+      },
+      "options": [
+        "魚の料理",
+        "豚肉の料理",
+        "牛肉の料理",
+        "卵の料理"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Fish was her first idea, but the man says they had fish yesterday too, so she switches to pork.",
+        "zh": "鱼是她最初的想法，但男的说昨天也是鱼，于是她改成猪肉。",
+        "zh_TW": "魚是她最初的想法，但男的說昨天也是魚，於是她改成豬肉。"
+      }
+    },
+    {
+      "id": "q:n5-l-038",
+      "type": "task",
+      "items": [
+        "vocab:jm1226440",
+        "vocab:jm1592970",
+        "vocab:jm1414220"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-038",
+      "prompt": {
+        "en": "Where will the two of them meet?",
+        "zh": "两个人在哪里见面？",
+        "zh_TW": "兩個人在哪裡見面？"
+      },
+      "options": [
+        "駅の前",
+        "交差点の近くの喫茶店",
+        "公園",
+        "学校の門の前"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The front of the station is rejected because it is always crowded. The man agrees to the coffee shop near the crossing and says he will wait there.",
+        "zh": "车站前面因为总是人多而被否决。男的同意去路口附近的咖啡店，并说在那里等。",
+        "zh_TW": "車站前面因為總是人多而被否決。男的同意去路口附近的咖啡店，並說在那裡等。"
+      }
+    },
+    {
+      "id": "q:n5-l-039",
+      "type": "point",
+      "items": [
+        "vocab:jm1198550",
+        "vocab:jm1242130",
+        "vocab:jm1304970"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-039",
+      "prompt": {
+        "en": "What does the man say is good about his new job?",
+        "zh": "男的说新工作好在哪里？",
+        "zh_TW": "男的說新工作好在哪裡？"
+      },
+      "options": [
+        "仕事がやさしいこと。",
+        "会社が家から近いこと。",
+        "友達が多いこと。",
+        "毎日忙しいこと。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Being busy is what he says with でも before it, so it is the bad side. The good side is the short distance, which lets him get up slowly.",
+        "zh": "忙是「でも」前面的部分，属于不好的一面。好的一面是公司离家近，所以早上能慢慢起床。",
+        "zh_TW": "忙是「でも」前面的部分，屬於不好的一面。好的一面是公司離家近，所以早上能慢慢起床。"
+      }
+    },
+    {
+      "id": "q:n5-l-040",
+      "type": "point",
+      "items": [
+        "vocab:jm1347750",
+        "vocab:jm1246700",
+        "vocab:jm1153670"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-040",
+      "prompt": {
+        "en": "Why didn't the woman buy the shoes?",
+        "zh": "女的为什么没买那双鞋？",
+        "zh_TW": "女的為什麼沒買那雙鞋？"
+      },
+      "options": [
+        "高かったから。",
+        "小さかったから。",
+        "色が嫌いだったから。",
+        "お金がなかったから。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "She agrees the shoes were cheap, so price is not the reason. What follows でも is the reason: they were a little small.",
+        "zh": "她承认鞋子便宜，所以价钱不是原因。「でも」后面才是原因：鞋子有点小。",
+        "zh_TW": "她承認鞋子便宜，所以價錢不是原因。「でも」後面才是原因：鞋子有點小。"
+      }
+    },
+    {
+      "id": "q:n5-l-041",
+      "type": "point",
+      "items": [
+        "vocab:jm1429750",
+        "vocab:jm1173720",
+        "vocab:jm1600900"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-041",
+      "prompt": {
+        "en": "What does the man say was not good about the film?",
+        "zh": "男的说这部电影哪里不好？",
+        "zh_TW": "男的說這部電影哪裡不好？"
+      },
+      "options": [
+        "話がつまらなかったこと。",
+        "映画が長かったこと。",
+        "映画館が遠かったこと。",
+        "声が小さかったこと。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "He praises the story, so it is not the complaint. His complaint is stated twice: it was long, three hours.",
+        "zh": "他称赞了故事，所以故事不是抱怨的对象。他抱怨的东西说了两次：太长了，三个小时。",
+        "zh_TW": "他稱讚了故事，所以故事不是抱怨的對象。他抱怨的東西說了兩次：太長了，三個小時。"
+      }
+    },
+    {
+      "id": "q:n5-l-042",
+      "type": "point",
+      "items": [
+        "vocab:jm1310620",
+        "vocab:jm1443530",
+        "vocab:jm1483740"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-042",
+      "prompt": {
+        "en": "Why was the man late this morning?",
+        "zh": "男的今天早上为什么迟到？",
+        "zh_TW": "男的今天早上為什麼遲到？"
+      },
+      "options": [
+        "起きるのが遅かったから。",
+        "電車が止まったから。",
+        "道がわからなかったから。",
+        "雪が降ったから。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "He answers the どうして question at once: the train stopped. The walking and the tiredness are what followed from it, not the cause.",
+        "zh": "他对「どうして」的回答很直接：电车停了。走路和疲累是由此产生的结果，不是原因。",
+        "zh_TW": "他對「どうして」的回答很直接：電車停了。走路和疲累是由此產生的結果，不是原因。"
+      }
+    },
+    {
+      "id": "q:n5-l-043",
+      "type": "point",
+      "items": [
+        "vocab:jm1381820",
+        "vocab:jm1463480",
+        "vocab:jm1603990"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-043",
+      "prompt": {
+        "en": "What kind of town does the woman say she likes?",
+        "zh": "女的说她喜欢什么样的镇子？",
+        "zh_TW": "女的說她喜歡什麼樣的鎮子？"
+      },
+      "options": [
+        "賑やかな町",
+        "静かな町",
+        "大きな町",
+        "古い町"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The man's question about lively places is answered with いいえ, and she then names quiet towns herself.",
+        "zh": "男的问她是否喜欢热闹的地方，她回答「いいえ」，接着自己说出喜欢安静的镇子。",
+        "zh_TW": "男的問她是否喜歡熱鬧的地方，她回答「いいえ」，接著自己說出喜歡安靜的鎮子。"
+      }
+    },
+    {
+      "id": "q:n5-l-044",
+      "type": "point",
+      "items": [
+        "vocab:jm1193180",
+        "vocab:jm1464530",
+        "vocab:jm1264540"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-044",
+      "prompt": {
+        "en": "Why is the woman studying Japanese?",
+        "zh": "女的为什么学日语？",
+        "zh_TW": "女的為什麼學日語？"
+      },
+      "options": [
+        "日本で働きたいから。",
+        "日本の歌が好きだから。",
+        "学校の宿題だから。",
+        "日本へ旅行に行くから。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "She gives the reason with から in her first line, and confirms it after denying the idea of working in Japan: she wants to learn the words of the songs.",
+        "zh": "她第一句就用「から」说出理由，并在否定了在日本工作的想法后再次确认：她想记住歌词。",
+        "zh_TW": "她第一句就用「から」說出理由，並在否定了在日本工作的想法後再次確認：她想記住歌詞。"
+      }
+    },
+    {
+      "id": "q:n5-l-045",
+      "type": "point",
+      "items": [
+        "vocab:jm1237680",
+        "vocab:jm1499320",
+        "vocab:jm1532350"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-045",
+      "prompt": {
+        "en": "What does the man say is not good about the new house?",
+        "zh": "男的说新家哪里不好？",
+        "zh_TW": "男的說新家哪裡不好？"
+      },
+      "options": [
+        "部屋が暗いこと。",
+        "部屋が狭いこと。",
+        "駅が遠いこと。",
+        "家が古いこと。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "He says the rooms are bright and the station is close, so those are the good points. The one thing he repeats with でも and 困っています is that the rooms are small.",
+        "zh": "他说房间亮、车站近，这些都是优点。他用「でも」和「困っています」重复的只有一点：房间窄。",
+        "zh_TW": "他說房間亮、車站近，這些都是優點。他用「でも」和「困っています」重複的只有一點：房間窄。"
+      }
+    },
+    {
+      "id": "q:n5-l-046",
+      "type": "point",
+      "items": [
+        "vocab:jm1304970",
+        "vocab:jm1445590",
+        "vocab:jm1352570"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-046",
+      "prompt": {
+        "en": "Why won't the woman go to the sea on Saturday?",
+        "zh": "女的星期六为什么不去海边？",
+        "zh_TW": "女的星期六為什麼不去海邊？"
+      },
+      "options": [
+        "山に登るから。",
+        "仕事があるから。",
+        "病気だから。",
+        "海が嫌いだから。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The mountain is Sunday's plan. The question asks about Saturday, and the reason she gives for Saturday is work.",
+        "zh": "爬山是星期天的安排。题目问的是星期六，她给星期六的理由是有工作。",
+        "zh_TW": "爬山是星期天的安排。題目問的是星期六，她給星期六的理由是有工作。"
+      }
+    },
+    {
+      "id": "q:n5-l-047",
+      "type": "point",
+      "items": [
+        "vocab:jm1208910",
+        "vocab:jm1316140",
+        "vocab:jm1547330"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-047",
+      "prompt": {
+        "en": "What does the man say he wants?",
+        "zh": "男的说他想要什么？",
+        "zh_TW": "男的說他想要什麼？"
+      },
+      "options": [
+        "時計",
+        "かばん",
+        "靴",
+        "本"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The watch is the woman's suggestion, and he turns it down by saying he already has two. He names the bag both at the start and at the end.",
+        "zh": "手表是女的的提议，他以已经有两块为由拒绝了。包他在开头和结尾都提到了。",
+        "zh_TW": "手錶是女的的提議，他以已經有兩塊為由拒絕了。包他在開頭和結尾都提到了。"
+      }
+    },
+    {
+      "id": "q:n5-l-048",
+      "type": "point",
+      "items": [
+        "vocab:jm1270590",
+        "vocab:jm1553170",
+        "vocab:jm1438690"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-048",
+      "prompt": {
+        "en": "What does the woman say was good about the trip?",
+        "zh": "女的说旅行哪里好？",
+        "zh_TW": "女的說旅行哪裡好？"
+      },
+      "options": [
+        "天気",
+        "食べ物",
+        "部屋",
+        "山"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The weather was bad, which is exactly what the trap option repeats. The one good thing comes after でも: the food was very tasty.",
+        "zh": "天气不好，陷阱选项正是重复了这一点。唯一好的一点在「でも」之后：饭菜非常好吃。",
+        "zh_TW": "天氣不好，陷阱選項正是重複了這一點。唯一好的一點在「でも」之後：飯菜非常好吃。"
+      }
+    },
+    {
+      "id": "q:n5-l-049",
+      "type": "point",
+      "items": [
+        "vocab:jm1185200",
+        "vocab:jm1588120",
+        "vocab:jm1207240"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-049",
+      "prompt": {
+        "en": "What does the man say about his own singing?",
+        "zh": "男的怎么评价自己唱歌？",
+        "zh_TW": "男的怎麼評價自己唱歌？"
+      },
+      "options": [
+        "とても上手だ。",
+        "下手だが、楽しい。",
+        "好きではない。",
+        "少し嫌いだ。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "上手ですね is the woman's compliment, and he denies it with いいえ、下手です. But he adds with でも that singing is fun, so both halves belong in the answer.",
+        "zh": "「上手ですね」是女的的称赞，他用「いいえ、下手です」否定了。但他又用「でも」补上唱歌很开心，所以两半都要包含在答案里。",
+        "zh_TW": "「上手ですね」是女的的稱讚，他用「いいえ、下手です」否定了。但他又用「でも」補上唱歌很開心，所以兩半都要包含在答案裡。"
+      }
+    },
+    {
+      "id": "q:n5-l-050",
+      "type": "point",
+      "items": [
+        "vocab:jm1303620",
+        "vocab:jm1258330",
+        "vocab:jm1586330"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-050",
+      "prompt": {
+        "en": "What does the woman do first after getting up?",
+        "zh": "女的起床后先做什么？",
+        "zh_TW": "女的起床後先做什麼？"
+      },
+      "options": [
+        "朝ごはんを作る。",
+        "犬と散歩をする。",
+        "新聞を読む。",
+        "お風呂に入る。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "それから marks the order: the walk with the dog comes first and breakfast after it.",
+        "zh": "「それから」标出了先后：先和狗散步，之后才做早饭。",
+        "zh_TW": "「それから」標出了先後：先和狗散步，之後才做早飯。"
+      }
+    },
+    {
+      "id": "q:n5-l-051",
+      "type": "expression",
+      "items": [
+        "vocab:jm1298790",
+        "vocab:jm1321900",
+        "vocab:jm1540170"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-051",
+      "prompt": {
+        "en": "You are going to have a friend take a photo of you. What do you say?",
+        "zh": "你要请朋友帮你拍照。这时候该说什么？",
+        "zh_TW": "你要請朋友幫你拍照。這時候該說什麼？"
+      },
+      "options": [
+        "写真を撮ってください。",
+        "写真を撮りましょうか。",
+        "写真を見せてください。",
+        "写真を撮ってはいけません。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "〜てください asks the other person to do it, which is what you need here. 撮りましょうか offers to take it yourself, and the other two ask to be shown a photo or forbid taking one.",
+        "zh": "「〜てください」是请对方动手，正合这里的需要。「撮りましょうか」是自己要帮别人拍，另外两句一个是要看照片，一个是禁止拍照。",
+        "zh_TW": "「〜てください」是請對方動手，正合這裡的需要。「撮りましょうか」是自己要幫別人拍，另外兩句一個是要看照片，一個是禁止拍照。"
+      }
+    },
+    {
+      "id": "q:n5-l-052",
+      "type": "expression",
+      "items": [
+        "vocab:jm1508590",
+        "vocab:jm1401400",
+        "vocab:jm1210360"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-052",
+      "prompt": {
+        "en": "The classroom is cold and you want to close the window. What do you say?",
+        "zh": "教室里很冷，你想关窗。这时候该说什么？",
+        "zh_TW": "教室裡很冷，你想關窗。這時候該說什麼？"
+      },
+      "options": [
+        "窓を閉めましょうか。",
+        "窓を開けてください。",
+        "窓が閉まっていますね。",
+        "窓を閉めてはいけません。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "〜ましょうか offers to do it yourself, politely checking with the others in the room. The second asks for the opposite, the third only reports a state, and the fourth forbids it.",
+        "zh": "「〜ましょうか」是提出由自己来做，同时礼貌地征询在场的人。第二句要的正好相反，第三句只是在陈述状态，第四句是禁止。",
+        "zh_TW": "「〜ましょうか」是提出由自己來做，同時禮貌地徵詢在場的人。第二句要的正好相反，第三句只是在陳述狀態，第四句是禁止。"
+      }
+    },
+    {
+      "id": "q:n5-l-053",
+      "type": "expression",
+      "items": [
+        "vocab:jm1454080",
+        "vocab:jm1591110",
+        "vocab:jm1175140"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-053",
+      "prompt": {
+        "en": "You do not know the way and are going to ask someone. What do you say?",
+        "zh": "你不认识路，要向别人打听。这时候该说什么？",
+        "zh_TW": "你不認識路，要向別人打聽。這時候該說什麼？"
+      },
+      "options": [
+        "すみません、駅はどこですか。",
+        "すみません、駅は何ですか。",
+        "駅へ行ってください。",
+        "駅はここです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "どこ is the question word for a place. 何ですか asks what a station is, the third orders the stranger to go, and the fourth tells them something you do not know.",
+        "zh": "问地点要用「どこ」。「何ですか」是在问车站是什么东西，第三句是命令对方去，第四句则是在告诉对方一件你自己都不知道的事。",
+        "zh_TW": "問地點要用「どこ」。「何ですか」是在問車站是什麼東西，第三句是命令對方去，第四句則是在告訴對方一件你自己都不知道的事。"
+      }
+    },
+    {
+      "id": "q:n5-l-054",
+      "type": "expression",
+      "items": [
+        "vocab:jm1512130",
+        "vocab:jm1323560",
+        "vocab:jm1522150"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-054",
+      "prompt": {
+        "en": "You are giving back a book you borrowed from a friend. What do you say?",
+        "zh": "你要把向朋友借的书还回去。这时候该说什么？",
+        "zh_TW": "你要把向朋友借的書還回去。這時候該說什麼？"
+      },
+      "options": [
+        "この本、どうも。返します。",
+        "この本を貸してください。",
+        "この本を借りてもいいですか。",
+        "この本を買いました。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "返します is the verb for giving something back, with どうも as thanks. 貸してください and 借りてもいいですか both ask to take it, the wrong direction, and buying it is a different act.",
+        "zh": "「返します」才是归还的动词，配上「どうも」表示谢意。「貸してください」和「借りてもいいですか」都是要借走，方向相反，而买书则是另一回事。",
+        "zh_TW": "「返します」才是歸還的動詞，配上「どうも」表示謝意。「貸してください」和「借りてもいいですか」都是要借走，方向相反，而買書則是另一回事。"
+      }
+    },
+    {
+      "id": "q:n5-l-055",
+      "type": "expression",
+      "items": [
+        "vocab:jm1202450",
+        "vocab:jm1401400",
+        "vocab:jm1443530"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-055",
+      "prompt": {
+        "en": "It is hot on the train and you want to open the window. What do you say to the person next to you?",
+        "zh": "电车里很热，你想开窗。这时候该对旁边的人说什么？",
+        "zh_TW": "電車裡很熱，你想開窗。這時候該對旁邊的人說什麼？"
+      },
+      "options": [
+        "窓を開けてもいいですか。",
+        "窓を閉めましょうか。",
+        "窓が開いていますね。",
+        "窓を開けないでください。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The window is shared, so you ask permission with 〜てもいいですか before opening it yourself. The others close it, describe it as already open, or forbid opening.",
+        "zh": "窗户是大家共用的，自己动手前要用「〜てもいいですか」征求同意。其他三句分别是关窗、说窗已经开着、以及禁止开窗。",
+        "zh_TW": "窗戶是大家共用的，自己動手前要用「〜てもいいですか」徵求同意。其他三句分別是關窗、說窗已經開著、以及禁止開窗。"
+      }
+    },
+    {
+      "id": "q:n5-l-056",
+      "type": "expression",
+      "items": [
+        "vocab:jm1195430",
+        "vocab:jm1315720",
+        "vocab:jm1335750"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-056",
+      "prompt": {
+        "en": "Your friend is carrying heavy luggage and you want to help carry it. What do you say?",
+        "zh": "朋友提着很重的行李，你想帮忙一起拿。这时候该说什么？",
+        "zh_TW": "朋友提著很重的行李，你想幫忙一起拿。這時候該說什麼？"
+      },
+      "options": [
+        "荷物を持ちましょうか。",
+        "荷物を持ってください。",
+        "荷物は重くないですね。",
+        "荷物を持ちたくないです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "〜ましょうか offers your own help. 持ってください pushes the load onto the friend, and the last two deny the weight or refuse to help.",
+        "zh": "「〜ましょうか」是主动提出帮忙。「持ってください」反而是让朋友拿，最后两句一个否认行李重，一个明说不想拿。",
+        "zh_TW": "「〜ましょうか」是主動提出幫忙。「持ってください」反而是讓朋友拿，最後兩句一個否認行李重，一個明說不想拿。"
+      }
+    },
+    {
+      "id": "q:n5-l-057",
+      "type": "expression",
+      "items": [
+        "vocab:jm1330290",
+        "vocab:jm1421970",
+        "vocab:jm1237150"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-057",
+      "prompt": {
+        "en": "You have arrived late for class and are going into the classroom. What do you say?",
+        "zh": "你上课迟到了，正要进教室。这时候该说什么？",
+        "zh_TW": "你上課遲到了，正要進教室。這時候該說什麼？"
+      },
+      "options": [
+        "すみません、遅くなりました。",
+        "授業はもう終わりましたか。",
+        "今日は休みます。",
+        "早く来ましたね。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "遅くなりました states your own lateness with an apology. The second asks whether class is over, the third announces an absence you are not taking, and the fourth says you came early.",
+        "zh": "「遅くなりました」是道歉并说明自己迟到了。第二句是在问课是不是结束了，第三句是宣布请假（可你人已经来了），第四句则说来早了。",
+        "zh_TW": "「遅くなりました」是道歉並說明自己遲到了。第二句是在問課是不是結束了，第三句是宣佈請假（可你人已經來了），第四句則說來早了。"
+      }
+    },
+    {
+      "id": "q:n5-l-058",
+      "type": "expression",
+      "items": [
+        "vocab:jm1482290",
+        "vocab:jm1443840",
+        "vocab:jm1236900"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-058",
+      "prompt": {
+        "en": "You want to know a friend's telephone number. What do you say?",
+        "zh": "你想知道朋友的电话号码。这时候该说什么？",
+        "zh_TW": "你想知道朋友的電話號碼。這時候該說什麼？"
+      },
+      "options": [
+        "電話番号を教えてください。",
+        "電話番号を教えましょうか。",
+        "電話番号を書きました。",
+        "電話番号を忘れないでください。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "教えてください asks the friend to tell you. 教えましょうか offers to tell them yours, and the other two report what you did or tell them not to forget.",
+        "zh": "「教えてください」是请朋友告诉你。「教えましょうか」是要把自己的号码告诉对方，另外两句一个是陈述自己写了，一个是叫对方别忘。",
+        "zh_TW": "「教えてください」是請朋友告訴你。「教えましょうか」是要把自己的號碼告訴對方，另外兩句一個是陳述自己寫了，一個是叫對方別忘。"
+      }
+    },
+    {
+      "id": "q:n5-l-059",
+      "type": "expression",
+      "items": [
+        "vocab:jm1607260",
+        "vocab:jm1246700",
+        "vocab:jm1473740"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-059",
+      "prompt": {
+        "en": "At a shop you want to try the shoes on before buying them. What do you say?",
+        "zh": "在店里买鞋之前，你想先试穿。这时候该说什么？",
+        "zh_TW": "在店裡買鞋之前，你想先試穿。這時候該說什麼？"
+      },
+      "options": [
+        "この靴を履いてもいいですか。",
+        "この靴を履いてはいけません。",
+        "この靴は高いですね。",
+        "この靴を買いました。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The shoes are still the shop's, so you ask permission with 〜てもいいですか. The second forbids it, the third only remarks on the price, and the fourth says the purchase is done.",
+        "zh": "鞋子还是店里的，所以要用「〜てもいいですか」征求许可。第二句是禁止，第三句只是在说价钱，第四句则表示已经买下了。",
+        "zh_TW": "鞋子還是店裡的，所以要用「〜てもいいですか」徵求許可。第二句是禁止，第三句只是在說價錢，第四句則表示已經買下了。"
+      }
+    },
+    {
+      "id": "q:n5-l-060",
+      "type": "expression",
+      "items": [
+        "vocab:jm1602340",
+        "vocab:jm1163400",
+        "vocab:jm1358280"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-060",
+      "prompt": {
+        "en": "You want to have lunch together with a friend. What do you say?",
+        "zh": "你想和朋友一起吃午饭。这时候该说什么？",
+        "zh_TW": "你想和朋友一起吃午飯。這時候該說什麼？"
+      },
+      "options": [
+        "一緒に昼ご飯を食べませんか。",
+        "昼ご飯を食べてもいいですか。",
+        "昼ご飯を食べましたか。",
+        "昼ご飯は作りません。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "〜ませんか is the invitation form. The second asks permission to eat, the third only asks about the past, and the fourth says you will not cook.",
+        "zh": "「〜ませんか」是邀请的说法。第二句是请求允许吃饭，第三句只是在问过去的事，第四句说的是不做饭。",
+        "zh_TW": "「〜ませんか」是邀請的說法。第二句是請求允許吃飯，第三句只是在問過去的事，第四句說的是不做飯。"
+      }
+    },
+    {
+      "id": "q:n5-l-061",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1419110",
+        "vocab:jm1188760",
+        "vocab:jm1547900"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-061",
+      "prompt": {
+        "en": "Woman: When is your birthday? What do you reply?",
+        "zh": "女：你的生日是什么时候？该怎么回答？",
+        "zh_TW": "女：你的生日是什麼時候？該怎麼回答？"
+      },
+      "options": [
+        "来月です。",
+        "三時です。",
+        "学校です。",
+        "二つです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "いつ asks for a time, and 来月 names one. 三時 is a clock time, which does not date a birthday; the others give a place and a number.",
+        "zh": "「いつ」问的是时间，「来月」正是一个时间。「三時」是钟点，不能用来说生日；另外两个答的是地点和数量。",
+        "zh_TW": "「いつ」問的是時間，「來月」正是一個時間。「三時」是鐘點，不能用來說生日；另外兩個答的是地點和數量。"
+      }
+    },
+    {
+      "id": "q:n5-l-062",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1385170",
+        "vocab:jm1296400",
+        "vocab:jm1579350"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-062",
+      "prompt": {
+        "en": "Man: How many tickets are there? What do you reply?",
+        "zh": "男：票有几张？该怎么回答？",
+        "zh_TW": "男：票有幾張？該怎麼回答？"
+      },
+      "options": [
+        "三枚あります。",
+        "三時です。",
+        "三人です。",
+        "三日です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "何枚 asks with the counter for flat things, so the reply must use 枚. 時 counts hours, 人 people, 日 days.",
+        "zh": "「何枚」用的是数薄片状东西的量词，回答也必须用「枚」。「時」数钟点，「人」数人，「日」数日子。",
+        "zh_TW": "「何枚」用的是數薄片狀東西的量詞，回答也必須用「枚」。「時」數鐘點，「人」數人，「日」數日子。"
+      }
+    },
+    {
+      "id": "q:n5-l-063",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1210360",
+        "vocab:jm1523060",
+        "vocab:jm1001140"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-063",
+      "prompt": {
+        "en": "Woman: It's cold today, isn't it? What do you reply?",
+        "zh": "女：今天真冷啊。该怎么回答？",
+        "zh_TW": "女：今天真冷啊。該怎麼回答？"
+      },
+      "options": [
+        "ええ、本当に寒いですね。",
+        "いいえ、まだです。",
+        "はい、行きましょう。",
+        "ええ、おいしいですね。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "〜ね asks for agreement, so the natural reply agrees about the same thing, the cold. まだです answers a 'have you done it yet' question, and the other two answer an invitation and a comment on taste.",
+        "zh": "「〜ね」是在寻求同意，所以自然的回答要就同一件事（冷）表示同意。「まだです」是回答「做了吗」，另外两句分别回应邀请和评论味道。",
+        "zh_TW": "「〜ね」是在尋求同意，所以自然的回答要就同一件事（冷）表示同意。「まだです」是回答「做了嗎」，另外兩句分別回應邀請和評論味道。"
+      }
+    },
+    {
+      "id": "q:n5-l-064",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1606560",
+        "vocab:jm1213170",
+        "vocab:jm1156800"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-064",
+      "prompt": {
+        "en": "Man: Do you understand the meaning of this kanji? What do you reply?",
+        "zh": "男：你懂这个汉字的意思吗？该怎么回答？",
+        "zh_TW": "男：你懂這個漢字的意思嗎？該怎麼回答？"
+      },
+      "options": [
+        "いいえ、わかりません。",
+        "はい、書きました。",
+        "いいえ、行きません。",
+        "はい、好きです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The question uses わかりますか, so the reply repeats that verb in the negative. The others answer with different verbs that were never asked about.",
+        "zh": "问句用的是「わかりますか」，回答就用同一个动词的否定形。其他三句用的都是没被问到的动词。",
+        "zh_TW": "問句用的是「わかりますか」，回答就用同一個動詞的否定形。其他三句用的都是沒被問到的動詞。"
+      }
+    },
+    {
+      "id": "q:n5-l-065",
+      "type": "quick-response",
+      "items": [
+        "grammar:telling-time",
+        "vocab:jm1288850",
+        "vocab:jm1316140"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-065",
+      "prompt": {
+        "en": "Woman: What time is it now? What do you reply?",
+        "zh": "女：现在几点？该怎么回答？",
+        "zh_TW": "女：現在幾點？該怎麼回答？"
+      },
+      "options": [
+        "十時半です。",
+        "十日です。",
+        "十人です。",
+        "十本です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "何時 asks for a clock time, so the answer must be 〜時. The other three are a date, a number of people and a count of long thin objects.",
+        "zh": "「何時」问的是钟点，所以要用「〜時」回答。其他三个分别是日期、人数和细长物品的数量。",
+        "zh_TW": "「何時」問的是鐘點，所以要用「〜時」回答。其他三個分別是日期、人數和細長物品的數量。"
+      }
+    },
+    {
+      "id": "q:n5-l-066",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1012480",
+        "vocab:jm1527110",
+        "vocab:jm1602340"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-066",
+      "prompt": {
+        "en": "Man: Have you had lunch yet? What do you reply?",
+        "zh": "男：午饭已经吃了吗？该怎么回答？",
+        "zh_TW": "男：午飯已經吃了嗎？該怎麼回答？"
+      },
+      "options": [
+        "いいえ、まだです。",
+        "はい、食べません。",
+        "いいえ、おいしいです。",
+        "はい、作りません。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "もう〜ましたか is answered either with はい、食べました or with いいえ、まだです. はい followed by a negative contradicts itself.",
+        "zh": "「もう〜ましたか」的回答不是「はい、食べました」就是「いいえ、まだです」。用「はい」接否定形，前后自相矛盾。",
+        "zh_TW": "「もう〜ましたか」的回答不是「はい、食べました」就是「いいえ、まだです」。用「はい」接否定形，前後自相矛盾。"
+      }
+    },
+    {
+      "id": "q:n5-l-067",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1273270",
+        "vocab:jm1163400",
+        "vocab:jm1578850"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-067",
+      "prompt": {
+        "en": "Woman: Won't you go to the park with me on Sunday? What do you reply?",
+        "zh": "女：星期天要不要一起去公园？该怎么回答？",
+        "zh_TW": "女：星期天要不要一起去公園？該怎麼回答？"
+      },
+      "options": [
+        "ええ、行きましょう。",
+        "ええ、行きました。",
+        "いいえ、行きませんでした。",
+        "はい、公園です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "〜ませんか is an invitation about the future, so 〜ましょう accepts it. The two past forms answer a question about what already happened, and the last only names a place.",
+        "zh": "「〜ませんか」是对将来的邀请，所以用「〜ましょう」来接受。两个过去形回答的是已经发生的事，最后一句只是说了个地点。",
+        "zh_TW": "「〜ませんか」是對將來的邀請，所以用「〜ましょう」來接受。兩個過去形回答的是已經發生的事，最後一句只是說了個地點。"
+      }
+    },
+    {
+      "id": "q:n5-l-068",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1335750",
+        "vocab:jm1252560",
+        "vocab:jm1195430"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-068",
+      "prompt": {
+        "en": "Man: Is that luggage heavy? What do you reply?",
+        "zh": "男：那件行李重吗？该怎么回答？",
+        "zh_TW": "男：那件行李重嗎？該怎麼回答？"
+      },
+      "options": [
+        "いいえ、軽いです。",
+        "いいえ、安いです。",
+        "はい、長いです。",
+        "はい、遠いです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "重い is answered by its opposite 軽い. Cheap, long and far are adjectives about other properties, none of which answers a question about weight.",
+        "zh": "「重い」的反义词是「軽い」，用它来否定最自然。便宜、长、远说的都是别的性质，都答不上重量这个问题。",
+        "zh_TW": "「重い」的反義詞是「軽い」，用它來否定最自然。便宜、長、遠說的都是別的性質，都答不上重量這個問題。"
+      }
+    },
+    {
+      "id": "q:n5-l-069",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1350110",
+        "vocab:jm1443000",
+        "vocab:jm1254760"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-069",
+      "prompt": {
+        "en": "Woman: Shall I turn off the light? What do you reply?",
+        "zh": "女：我把灯关掉吧？该怎么回答？",
+        "zh_TW": "女：我把燈關掉吧？該怎麼回答？"
+      },
+      "options": [
+        "はい、消してください。",
+        "いいえ、電気を買いました。",
+        "はい、電気が好きです。",
+        "いいえ、電気は高いです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "〜ましょうか offers to do something, so the reply either accepts with 〜てください or declines. The other three talk about buying, liking or the price of electricity, none of which answers the offer.",
+        "zh": "「〜ましょうか」是提出替对方做某事，回答要么用「〜てください」接受，要么婉拒。其他三句说的是买、喜欢和电费贵，都没有回应这个提议。",
+        "zh_TW": "「〜ましょうか」是提出替對方做某事，回答要麼用「〜てください」接受，要麼婉拒。其他三句說的是買、喜歡和電費貴，都沒有回應這個提議。"
+      }
+    },
+    {
+      "id": "q:n5-l-070",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1451150",
+        "vocab:jm1243490",
+        "vocab:jm1577140"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-070",
+      "prompt": {
+        "en": "Man: Where do you work? What do you reply?",
+        "zh": "男：你在哪里工作？该怎么回答？",
+        "zh_TW": "男：你在哪裡工作？該怎麼回答？"
+      },
+      "options": [
+        "銀行で働いています。",
+        "銀行へ行きました。",
+        "九時から働きます。",
+        "兄と働きたいです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "どこで asks for the place of the action, which で marks. The others give a past trip, a starting time and a wish, so none answers 'where'.",
+        "zh": "「どこで」问的是动作发生的场所，由「で」标示。其他三句说的是去过哪里、几点开始、想和谁一起工作，都没有回答「在哪里」。",
+        "zh_TW": "「どこで」問的是動作發生的場所，由「で」標示。其他三句說的是去過哪裡、幾點開始、想和誰一起工作，都沒有回答「在哪裡」。"
+      }
+    },
+    {
+      "id": "q:n5-l-071",
+      "type": "quick-response",
+      "items": [
+        "vocab:jm1189370",
+        "vocab:jm1307630",
+        "vocab:jm1321900"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-071",
+      "prompt": {
+        "en": "Woman: Who is the person in this photo? What do you reply?",
+        "zh": "女：这张照片上的人是谁？该怎么回答？",
+        "zh_TW": "女：這張照片上的人是誰？該怎麼回答？"
+      },
+      "options": [
+        "私の姉です。",
+        "私の部屋です。",
+        "去年撮りました。",
+        "写真が好きです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "どなた is the polite word for 誰, so the answer must name a person. The others name a place, a time and a preference.",
+        "zh": "「どなた」是「誰」的礼貌说法，所以回答必须说出是哪个人。其他三句说的是地点、时间和喜好。",
+        "zh_TW": "「どなた」是「誰」的禮貌說法，所以回答必須說出是哪個人。其他三句說的是地點、時間和喜好。"
+      }
+    },
+    {
+      "id": "q:n5-l-072",
+      "type": "quick-response",
+      "items": [
+        "grammar:gurai-goro",
+        "vocab:jm1512670",
+        "vocab:jm1315920"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-l-072",
+      "prompt": {
+        "en": "Man: How long do you study every day? What do you reply?",
+        "zh": "男：你每天学习多长时间？该怎么回答？",
+        "zh_TW": "男：你每天學習多長時間？該怎麼回答？"
+      },
+      "options": [
+        "一時間ぐらいです。",
+        "一つぐらいです。",
+        "一人です。",
+        "一日です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "どのぐらい asks about length of time here, so the reply uses 時間 with ぐらい. 一つ counts objects and 一人 people; 一日 names a day rather than a daily amount.",
+        "zh": "这里的「どのぐらい」问的是时间长短，所以要用「時間」加「ぐらい」回答。「一つ」数东西，「一人」数人；「一日」说的是某一天，而不是每天的时长。",
+        "zh_TW": "這裡的「どのぐらい」問的是時間長短，所以要用「時間」加「ぐらい」回答。「一つ」數東西，「一人」數人；「一日」說的是某一天，而不是每天的時長。"
       }
     }
   ]

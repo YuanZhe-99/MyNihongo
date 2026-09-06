@@ -27,7 +27,13 @@ M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地�
 | `NihongoStorage.saveExamInProgress` | 静态方法 | B | 原子地把卷子写下来，好让它之后能被接着做；刻意不通知自动同步。 |
 | `NihongoStorage.clearExamInProgress` | 静态方法 | B | 在卷子做完或被放弃时，扔掉保存的考试。 |
 | `NihongoStorage.readConfig` | 静态方法 | B | 读取 `storage_config.json`；缺失或空白时为空。 |
-| `NihongoStorage.writeConfig` | 静态方法 | B | 原子写入 `storage_config.json`。 |
+| [`NihongoStorage.writeConfig`](#writeconfig) | 静态方法 | A | 原子写入 `storage_config.json`，排在已经排队的每一次写入之后。 |
+| `NihongoStorage._configWrites` | 静态字段 | B | 每一次配置写入都要排进的那个队列，任何时刻只有一次在进行中。 |
+| `NihongoStorage._configWriteZone` | 静态字段 | B | 队列所属的 zone；一次写入只等待同一个 zone 里发起的写入。 |
+| [`NihongoStorage._updateConfig`](#updateconfig) | 静态方法 | A | 把读取、改动、写回 `storage_config.json` 作为一步来做。 |
+| `NihongoStorage._queue` | 静态方法 | B | 让一次配置写入排在已经排队的每一次写入之后运行。 |
+| `NihongoStorage._writeConfigNow` | 静态方法 | B | 立刻写配置文件，不排队；只在队列内部调用。 |
+| `NihongoStorage._setKey` | 静态方法 | B | 设置或删除一个键；值为 null 时删除它。 |
 | `NihongoStorage.getThemeMode` | 静态方法 | B | 读取持久化的主题模式（`light`、`dark`，或表示跟随系统的 null）。 |
 | `NihongoStorage.setThemeMode` | 静态方法 | B | 持久化主题模式；默认值被移除而不是存储。 |
 | `NihongoStorage.getLocaleTag` | 静态方法 | B | 读取持久化的语言标签（`en`、`zh`、`zh_TW`）。 |
@@ -138,3 +144,51 @@ M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地�
   与上面的 `load` 不同，解析不了的文件会被当作没有保存的考试，而不是抛出异常。另一种做法是因为一份旧卷子损坏就拒绝开始一份新的，而这里也没有什么值得保护、不让它被覆盖的东西——一场做了一半的考试不是一份学习记录，而其中的每一次作答在当时就已经到达调度器了。
 
   `saveExamInProgress` 和这里的其他每一次写入一样是原子的，因为它在每一次作答时都会被调用，而一部在写入中途被杀掉的手机必须留下完好的上一份保存，而不是一份被截断的。`clearExamInProgress` 在一份卷子做完时以及学习者放弃一份时运行：做完的卷子已经是一条 `exam:` 记录了，而把保存留在那里会提出继续做一份已经判过分的东西。
+
+### `static Future<void> writeConfig(Map<String, dynamic> config)` <a id="writeconfig"></a>
+
+- **种类：** 静态方法
+- **用途：** 原子写入 `storage_config.json`，排在已经排队的每一次写入之后。
+- **输入：** `config`——要写入的整份 map。
+- **返回：** 无；调用方自己的失败归调用方自己。
+- **副作用：** 重写配置文件，排在已经排队的任何一次写入之后。
+- **算法：** 通过 `_queue` 加入 `_configWrites`，然后由 `_writeConfigNow` 用两个空格的缩进编码这份
+  map，并 `atomicWriteString` 写出去。
+- **使用：** `data_modules.dart`，它把整份 map 交给同步引擎。本文件内部一律改用 `_updateConfig`。
+- **注意：** 这个入口是给**已经握着整份 map** 的调用方用的。想改一个键的调用方必须走 `_updateConfig`，
+  因为读取必须发生在队列内部。
+
+  队列之所以存在，是因为每一个写入方法过去都各自跑一遍「读取—改动—写回」。两个同时跑，读到的是同一份
+  文件、写出的是两个不同的后继版本，于是后完成的那个把另一个的键抹掉了。而在 Windows 上它甚至不是悄悄
+  失败：后一次写入会把自己的临时文件改名覆盖到前一次还开着的那个文件上，于是 `atomicWriteString` 抛出
+  `PathAccessException`。这两半是同一个缺陷，也由同一个队列修好。
+
+  `_queue` 会把它吞掉的失败存下来（`chained.catchError((_) {})`），这样一次抛出异常的写入不会让排在它
+  后面的每一次写入都失败。调用方仍然看得到自己的失败，因为返回的是链上的那个 future，而不是被吞掉的那个。
+
+  **一次写入只等待同一个 zone 里发起的写入。** 应用从 `main` 起就只在一个 zone 里跑，所以在应用里这个
+  限定词什么也不改变：每一次写入都等它前面那一次，而这正是要的。需要这个限定词的是 widget 测试。每一个
+  测试体都有自己的 zone，而从一次点击发起、又没有被 await 的文件 I/O，在测试结束时就悬在那里——它永远不
+  会完成，因为再没有人驱动那个 zone 了。不加限定的队列会等它等到进程结束，而它确实等了：这个修复的第一
+  版把整个测试套件挂住了。用 `Timer` 给等待设上限也不行，因为 `flutter_test` 会让任何留下未触发定时器的
+  测试失败。
+
+### `static Future<void> _updateConfig(void Function(Map<String, dynamic>) change)` <a id="updateconfig"></a>
+
+- **种类：** 静态方法
+- **用途：** 把读取、改动、写回 `storage_config.json` 作为一步来做。
+- **输入：** `change`——作用在刚读出来的那份 map 上。
+- **返回：** 无。
+- **副作用：** 重写配置文件，排在已经排队的任何一次写入之后。
+- **算法：** 在队列内部：`readConfig`，应用 `change`，`_writeConfigNow`。
+- **使用：** 本文件里的每一个写入方法，都经由 `_setKey`。
+- **注意：** **读取放在队列内部是有意的。** 一个先读取、再排队的写入方法，仍然会覆盖掉另一个写入方法在
+  这中间写下的键——写入不再抛出异常了，而更新照样丢失。只给写入排队，修的是这个缺陷看得见的那一半，留下
+  的是沉默的那一半。
+
+  `_setKey` 正是每一个写入方法想要的形状：设置这个键，或者在值为 null 时删除它。删除而不是存下默认值，
+  正是让日后默认值的改变能够到达从没碰过这个设置的设备的原因，所以删除是这个辅助函数的一部分，而不是各
+  个调用方各自的事。
+
+  `preferences_test.dart` 用一个 `Future.wait` 里的四个写入方法把这一点钉住，之后四个键都在。它在旧代
+  码上会失败——而这是知道这项测试确实是在测这件事的唯一办法。

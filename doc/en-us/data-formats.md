@@ -527,6 +527,12 @@ Holds every device-local preference from the table above that isn't WebDAV confi
 this file is synced — it is intentionally device-specific. Keys are removed rather than written when
 set back to their default, so a fresh install and a reset install produce the same file.
 
+Every write to it goes through one queue, and each one re-reads the file inside that queue. Two
+settings changed in the same moment used to read the same file and write two different successors,
+so the second erased the first key; on Windows it threw instead, because the second write renamed
+its temporary file over one the first still had open. A person toggling two switches quickly is all
+it took.
+
 ### `webdav_config.json`
 
 WebDAV connection details and sync preferences (server URL, credentials, remote path, auto-sync

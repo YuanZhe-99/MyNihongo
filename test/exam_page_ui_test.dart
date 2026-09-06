@@ -44,7 +44,19 @@ void main() {
   });
 
   tearDown(() async {
-    if (temp.existsSync()) await temp.delete(recursive: true);
+    // Best-effort, and retried: a test that leaves the exam page while it is
+    // saving ends with a write still in flight, and Windows refuses to delete
+    // a directory holding an open handle. The handle is released a moment
+    // later, so a few attempts get it; a directory that survives all of them
+    // is a stale temp folder and nothing more, which is not worth failing a
+    // test that has already made its assertion.
+    for (var i = 0; i < 20 && temp.existsSync(); i++) {
+      try {
+        await temp.delete(recursive: true);
+      } on FileSystemException {
+        await Future<void>.delayed(const Duration(milliseconds: 50));
+      }
+    }
   });
 
   /// Purpose: Pump until something is true, rather than a fixed number of

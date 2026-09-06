@@ -665,6 +665,1284 @@
       "en": "To all citizens: information about applications to use the city allotments. From April next year we will lend out the city's allotments for one year. Every plot is the same size, and the fee is six thousand yen a year. If applications exceed the number of plots, places will be decided by lot. However, those who did not use a plot last year are given priority. Those aged sixty-five and over, and households with small children, pay half the fee. Applications should be handed in at the city office window by 10 January. Everyone who applied will be informed of the result during February.",
       "zh": "致各位市民：市属菜地使用者招募通知。自明年四月起，本市将出租市属菜地一年。每块地面积一律相同，一年的费用为六千日元。若申请数量超过地块数，将以抽签决定。但去年未曾使用过的市民优先。六十五岁以上者及有幼儿的家庭，费用减半。申请请于一月十日前提交至市政府窗口。结果将于二月内通知所有申请者。",
       "zh_TW": "致各位市民：市屬菜地使用者招募通知。自明年四月起，本市將出租市屬菜地一年。每塊地面積一律相同，一年的費用為六千日元。若申請數量超過地塊數，將以抽籤決定。但去年未曾使用過的市民優先。六十五歲以上者及有幼兒的家庭，費用減半。申請請於一月十日前提交至市政府窗口。結果將於二月內通知所有申請者。"
+    },
+    {
+      "id": "p:n1-r-018",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "新しい道具を買うことよりも、今ある道具の手入れを続けることのほうが難しい。",
+          "reading": "あたらしいどうぐをかうことよりも、いまあるどうぐのていれをつづけることのほうがむずかしい。"
+        },
+        {
+          "ja": "手入れの手順は決まっているが、その成果はその場では見えない。",
+          "reading": "ていれのてじゅんはきまっているが、そのせいかはそのばではみえない。"
+        },
+        {
+          "ja": "それでも、毎日の小さな手入れの蓄積が、十年後の道具の姿を決める。",
+          "reading": "それでも、まいにちのちいさなていれのちくせきが、じゅうねんごのどうぐのすがたをきめる。"
+        },
+        {
+          "ja": "物を大切にするとは、買う時の判断ではなく、買った後の時間の使い方である。",
+          "reading": "ものをたいせつにするとは、かうときのはんだんではなく、かったあとのじかんのつかいかたである。"
+        }
+      ],
+      "en": "It is harder to keep up the care of the tools one already has than to buy new ones. The steps of that care are fixed, but its results are not visible on the spot. Even so, the accumulation of small daily attentions decides what a tool will look like ten years on. To treat a thing with care is not a judgement made at the moment of buying; it is a way of using the time that comes after.",
+      "zh": "比起买新工具，把手上现有的工具持续保养下去反而更难。保养的步骤是固定的，可成果当场看不出来。即便如此，每天一点一滴的保养累积起来，决定了十年后这件工具的样子。所谓爱惜东西，并不是购买那一刻的判断，而是买下之后如何使用时间。",
+      "zh_TW": "比起買新工具，把手上現有的工具持續保養下去反而更難。保養的步驟是固定的，可成果當場看不出來。即便如此，每天一點一滴的保養累積起來，決定了十年後這件工具的樣子。所謂愛惜東西，並不是購買那一刻的判斷，而是買下之後如何使用時間。"
+    },
+    {
+      "id": "p:n1-r-019",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "会議の記録は、決まったことだけを短く残すのがよいとする考えが長く続いてきた。",
+          "reading": "かいぎのきろくは、きまったことだけをみじかくのこすのがよいとするかんがえがながくつづいてきた。"
+        },
+        {
+          "ja": "しかし、後で読み返して役に立つのは、決まらなかった話のほうである。",
+          "reading": "しかし、あとでよみかえしてやくにたつのは、きまらなかったはなしのほうである。"
+        },
+        {
+          "ja": "同じ問題は形を変えて必ず戻ってくるが、その時、前に何を考えたかを伝える記録は乏しい。",
+          "reading": "おなじもんだいはかたちをかえてかならずもどってくるが、そのとき、まえになにをかんがえたかをつたえるきろくはとぼしい。"
+        },
+        {
+          "ja": "考えの過程を後回しにする記録は、次の会議を助けない。",
+          "reading": "かんがえのかていをあとまわしにするきろくは、つぎのかいぎをたすけない。"
+        }
+      ],
+      "en": "The view that the minutes of a meeting should record only what was decided, and record it briefly, has held sway for a long time. Yet what proves useful on a later reading is the part that was not decided. The same problem always comes back in another shape, and at that moment records that tell us what we hesitated over before are scarce. Minutes that put the process of hesitation last are of no help to the next meeting.",
+      "zh": "长期以来，人们都认为会议记录只需简短地写下已定的事项。可事后重读时真正有用的，恰恰是那些没能定下来的讨论。同一个问题必定会换个样子再来一次，而到那时，能告诉我们当初在何处犹豫过的记录却少之又少。把犹豫的过程搁到最后的记录，帮不了下一次会议。",
+      "zh_TW": "長期以來，人們都認為會議記錄只需簡短地寫下已定的事項。可事後重讀時真正有用的，恰恰是那些沒能定下來的討論。同一個問題必定會換個樣子再來一次，而到那時，能告訴我們當初在何處猶豫過的記錄卻少之又少。把猶豫的過程擱到最後的記錄，幫不了下一次會議。"
+    },
+    {
+      "id": "p:n1-r-020",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "返事は早いほどよいと考える人が多い。",
+          "reading": "へんじははやいほどよいとかんがえるひとがおおい。"
+        },
+        {
+          "ja": "確かに、返事の遅れは相手の仕事を止める。",
+          "reading": "たしかに、へんじのおくれはあいてのしごとをとめる。"
+        },
+        {
+          "ja": "しかし、一日置いてから書いた文には、その場では出てこなかった条件や相手への配慮が入る。",
+          "reading": "しかし、いちにちおいてからかいたぶんには、そのばではでてこなかったじょうけんやあいてへのはいりょがはいる。"
+        },
+        {
+          "ja": "早い返事と、明瞭な返事とは、同じものではない。",
+          "reading": "はやいへんじと、めいりょうなへんじとは、おなじものではない。"
+        }
+      ],
+      "en": "Many people believe that the sooner a reply comes the better. It is true that a late reply halts the other person's work. But a message written after a day has passed contains conditions, and consideration for the reader, that did not come to mind on the spot. A fast reply and a clear reply are not the same thing.",
+      "zh": "很多人认为回信越快越好。诚然，回复迟了会让对方的工作停下来。但隔了一天再写的文字里，往往包含着当场想不到的条件，以及对对方的体谅。快的回复和清楚的回复，并不是一回事。",
+      "zh_TW": "很多人認為回信越快越好。誠然，回覆遲了會讓對方的工作停下來。但隔了一天再寫的文字裡，往往包含著當場想不到的條件，以及對對方的體諒。快的回覆和清楚的回覆，並不是一回事。"
+    },
+    {
+      "id": "p:n1-r-021",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "知らない町を歩く時、画面の地図に従うと、目的地には確かに着く。",
+          "reading": "しらないまちをあるくとき、がめんのちずにしたがうと、もくてきちにはたしかにつく。"
+        },
+        {
+          "ja": "ところが、次の日に同じ道を一人で歩くと、どこを曲がったか思い出せない。",
+          "reading": "ところが、つぎのひにおなじみちをひとりであるくと、どこをまがったかおもいだせない。"
+        },
+        {
+          "ja": "地図への依存は、目的地までの時間を短くする代わりに、町の形を把握する機会を奪う。",
+          "reading": "ちずへのいそんは、もくてきちまでのじかんをみじかくするかわりに、まちのかたちをはあくするきかいをうばう。"
+        },
+        {
+          "ja": "道を覚えるという仕事は、知らない道を歩く時間の中にあったのである。",
+          "reading": "みちをおぼえるというしごとは、しらないみちをあるくじかんのなかにあったのである。"
+        }
+      ],
+      "en": "When you walk through a town you do not know, following the map on the screen certainly gets you to your destination. Yet if you walk the same route alone the next day, you cannot recall where you turned. Reliance on the map shortens the journey, but in exchange it takes away the chance to grasp the shape of the town. The work of learning a route lay, all along, inside the time spent lost.",
+      "zh": "走在陌生的城市里，跟着屏幕上的地图，确实能抵达目的地。可第二天独自再走同样的路，却想不起在哪里拐过弯。对地图的依赖缩短了抵达的时间，代价却是夺走了把握这座城市轮廓的机会。原来，记住道路这件事，一直存在于迷路的那段时间里。",
+      "zh_TW": "走在陌生的城市裡，跟著屏幕上的地圖，確實能抵達目的地。可第二天獨自再走同樣的路，卻想不起在哪裡拐過彎。對地圖的依賴縮短了抵達的時間，代價卻是奪走了把握這座城市輪廓的機會。原來，記住道路這件事，一直存在於迷路的那段時間裡。"
+    },
+    {
+      "id": "p:n1-r-022",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "目標を数字で示すと、何をすべきかがはっきりする。",
+          "reading": "もくひょうをすうじでしめすと、なにをすべきかがはっきりする。"
+        },
+        {
+          "ja": "その一方で、数字にならない仕事は、いつの間にか誰も手をつけない仕事になる。",
+          "reading": "そのいっぽうで、すうじにならないしごとは、いつのまにかだれもてをつけないしごとになる。"
+        },
+        {
+          "ja": "数字は進む道を照らすが、その明かりの外を見落とす原因にもなる。",
+          "reading": "すうじはすすむみちをてらすが、そのあかりのそとをみおとすげんいんにもなる。"
+        },
+        {
+          "ja": "目標の外に残る仕事を放置しないための工夫が、目標そのものと同じだけ必要である。",
+          "reading": "もくひょうのそとにのこるしごとをほうちしないためのくふうが、もくひょうそのものとおなじだけひつようである。"
+        }
+      ],
+      "en": "Setting a goal in figures makes it clear what one ought to do. At the same time, work that does not turn into figures becomes, before anyone notices, work that nobody takes up. Numbers light the road ahead, but they are also a reason we overlook what lies outside that light. A device for not leaving the work beyond the goal untouched is as necessary as the goal itself.",
+      "zh": "用数字表示目标，该做什么就变得清清楚楚。另一方面，无法化为数字的工作，不知不觉就成了没人动手的工作。数字照亮前行的路，却也成了让人忽略光线之外事物的原因。因此，一种不让目标之外的工作被搁置的办法，与目标本身同样必要。",
+      "zh_TW": "用數字表示目標，該做什麼就變得清清楚楚。另一方面，無法化為數字的工作，不知不覺就成了沒人動手的工作。數字照亮前行的路，卻也成了讓人忽略光線之外事物的原因。因此，一種不讓目標之外的工作被擱置的辦法，與目標本身同樣必要。"
+    },
+    {
+      "id": "p:n1-r-023",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "手書きの手紙は、今では珍しいものになった。",
+          "reading": "てがきのてがみは、いまではめずらしいものになった。"
+        },
+        {
+          "ja": "書くのに時間がかかり、送っても、すぐには相手に届かない。",
+          "reading": "かくのにじかんがかかり、おくっても、すぐにはあいてにとどかない。"
+        },
+        {
+          "ja": "しかし、その時間こそが、相手の暮らしへの配慮が生まれる機会になる。",
+          "reading": "しかし、そのじかんこそが、あいてのくらしへのはいりょがうまれるきかいになる。"
+        },
+        {
+          "ja": "便利になったのは伝える手段であって、心を向ける仕事に費やす時間は、昔と少しも変わらない。",
+          "reading": "べんりになったのはつたえるしゅだんであって、こころをむけるしごとについやすじかんは、むかしとすこしもかわらない。"
+        }
+      ],
+      "en": "A handwritten letter has become a rare thing. It takes time to write, and once sent it does not reach the other person at once. Yet that very time is the occasion on which consideration for the other person's life is born. What has become convenient is the means of conveying; the time spent on the work of turning one's mind towards someone has not shortened at all.",
+      "zh": "手写的信件如今已成稀罕之物。写起来费时，寄出去也无法立刻送达对方。然而正是这段时间，才成了对对方生活生出体谅的契机。变得便利的只是传递的手段，而把心思投向他人这件事所耗费的时间，与从前分毫未减。",
+      "zh_TW": "手寫的信件如今已成稀罕之物。寫起來費時，寄出去也無法立刻送達對方。然而正是這段時間，才成了對對方生活生出體諒的契機。變得便利的只是傳遞的手段，而把心思投向他人這件事所耗費的時間，與從前分毫未減。"
+    },
+    {
+      "id": "p:n1-r-024",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "町に木を植える計画は、見た目のためだと考える人が多い。",
+          "reading": "まちにきをうえるけいかくは、みためのためだとかんがえるひとがおおい。"
+        },
+        {
+          "ja": "しかし、木の並ぶ道は夏の気温を下げ、建物で使う電気の量を軽減する。",
+          "reading": "しかし、きのならぶみちはなつのきおんをさげ、たてものでつかうでんきのりょうをけいげんする。"
+        },
+        {
+          "ja": "雨の日には、木と土が水の流れを緩やかにし、川に届くまでの時間を長くする。",
+          "reading": "あめのひには、きとつちがみずのながれをゆるやかにし、かわにとどくまでのじかんをながくする。"
+        },
+        {
+          "ja": "緑は飾りではなく、町の仕組みの一部である。",
+          "reading": "みどりはかざりではなく、まちのしくみのいちぶである。"
+        }
+      ],
+      "en": "Many people take a plan to plant trees in a town to be a matter of appearance. But a road lined with trees lowers the summer temperature and reduces the electricity used inside buildings. On rainy days, the trees and the soil slow the flow of water and lengthen the time it takes to reach the river. Greenery is not decoration; it is part of how a town works.",
+      "zh": "很多人以为在城里种树只是为了好看。可是种满树的道路能降低夏天的气温，减少建筑物里的用电量。下雨天，树木和泥土会让水流变缓，延长雨水抵达河川的时间。绿色并非装饰，而是城市运转机制的一部分。",
+      "zh_TW": "很多人以為在城裡種樹只是為了好看。可是種滿樹的道路能降低夏天的氣溫，減少建築物裡的用電量。下雨天，樹木和泥土會讓水流變緩，延長雨水抵達河川的時間。綠色並非裝飾，而是城市運轉機制的一部分。"
+    },
+    {
+      "id": "p:n1-r-025",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "失敗の報告が上に届かない組織は、外からは失敗の少ない組織に見える。",
+          "reading": "しっぱいのほうこくがうえにとどかないそしきは、そとからはしっぱいのすくないそしきにみえる。"
+        },
+        {
+          "ja": "報告が減ったのか、失敗そのものが減ったのかは、数字だけでは分からない。",
+          "reading": "ほうこくがへったのか、しっぱいそのものがへったのかは、すうじだけではわからない。"
+        },
+        {
+          "ja": "小さな失敗を指摘する声が消えた職場では、是正の機会も同時に消える。",
+          "reading": "ちいさなしっぱいをしてきするこえがきえたしょくばでは、ぜせいのきかいもどうじにきえる。"
+        },
+        {
+          "ja": "静かな職場ほど、実は危険なのかもしれない。",
+          "reading": "しずかなしょくばほど、じつはきけんなのかもしれない。"
+        }
+      ],
+      "en": "An organisation in which reports of failure do not reach the top looks, from outside, like an organisation with few failures. Whether the reports have decreased or the failures themselves have decreased cannot be told from the figures alone. In a workplace where the voices pointing out small failures have died away, the chance to put things right dies away with them. The quieter the workplace, the more dangerous it may in fact be.",
+      "zh": "失败的报告传不到上层的组织，从外面看去像是一个很少出错的组织。究竟是报告减少了，还是失败本身减少了，光看数字无从判断。在指出小失误的声音消失的职场，纠正的机会也同时消失了。越是安静的职场，实际上或许越危险。",
+      "zh_TW": "失敗的報告傳不到上層的組織，從外面看去像是一個很少出錯的組織。究竟是報告減少了，還是失敗本身減少了，光看數字無從判斷。在指出小失誤的聲音消失的職場，糾正的機會也同時消失了。越是安靜的職場，實際上或許越危險。"
+    },
+    {
+      "id": "p:n1-r-026",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "私の店は、駅前の商店街で長く食べ物を売ってきた。",
+          "reading": "わたしのみせは、えきまえのしょうてんがいでながくたべものをうってきた。"
+        },
+        {
+          "ja": "十年前まで、私は品物の数を増やすことだけを考えていた。",
+          "reading": "じゅうねんまえまで、わたしはしなもののかずをふやすことだけをかんがえていた。"
+        },
+        {
+          "ja": "客の求めるものが一つでも欠けると、その客は二度と来ないと信じていたからである。",
+          "reading": "きゃくのもとめるものがひとつでもかけると、そのきゃくはにどとこないとしんじていたからである。"
+        },
+        {
+          "ja": "ところが、棚が増えるほど、売れない品が古くなり、店の中は狭くなった。",
+          "reading": "ところが、たながふえるほど、うれないしながふるくなり、みせのなかはせまくなった。"
+        },
+        {
+          "ja": "そこで私は、品物の数を半分に減らす試みを始めた。",
+          "reading": "そこでわたしは、しなもののかずをはんぶんにへらすこころみをはじめた。"
+        },
+        {
+          "ja": "残す品は、近くの畑から届くものと、毎日買う人が多いものだけにした。",
+          "reading": "のこすしなは、ちかくのはたけからとどくものと、まいにちかうひとがおおいものだけにした。"
+        },
+        {
+          "ja": "売り上げは初めの一年こそ落ちたが、二年目には元に戻った。",
+          "reading": "うりあげははじめのいちねんこそおちたが、にねんめにはもとにもどった。"
+        },
+        {
+          "ja": "店の役割を選び直す余地は、まだ小さな店にこそ残っている。",
+          "reading": "みせのやくわりをえらびなおすよちは、まだちいさなみせにこそのこっている。"
+        }
+      ],
+      "en": "My shop has sold food for many years in the shopping street in front of the station. Until ten years ago I thought of nothing but increasing the number of goods on sale. I believed that if even one thing a customer wanted was missing, that customer would never come again. But the more shelves there were, the older the unsold goods grew, and the narrower the shop became. So I began an attempt to cut the number of goods by half. What I kept were only the things that arrive from the fields nearby and the things many people buy every day. Sales did fall in the first year, but by the second they had returned to what they were. The room to choose a shop's role afresh still remains, and it remains above all to small shops.",
+      "zh": "我的店在车站前的商店街卖了很久的食品。十年前为止，我满脑子只想着增加商品的种类。因为我相信，只要顾客要的东西缺了一样，那位顾客就再也不会来了。可是货架越多，卖不掉的商品就越陈旧，店里也越发狭窄。于是我开始尝试把商品数量减掉一半。留下的只有从附近田里送来的东西，以及每天有很多人买的东西。销售额头一年确实下滑，第二年便恢复了原样。重新选择一家店该扮演什么角色的余地，恰恰还留在小店这里。",
+      "zh_TW": "我的店在車站前的商店街賣了很久的食品。十年前為止，我滿腦子只想著增加商品的種類。因為我相信，只要顧客要的東西缺了一樣，那位顧客就再也不會來了。可是貨架越多，賣不掉的商品就越陳舊，店裡也越發狹窄。於是我開始嘗試把商品數量減掉一半。留下的只有從附近田裡送來的東西，以及每天有很多人買的東西。銷售額頭一年確實下滑，第二年便恢復了原樣。重新選擇一家店該扮演什麼角色的餘地，恰恰還留在小店這裡。"
+    },
+    {
+      "id": "p:n1-r-027",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "外国語の文章を日本語に直す仕事を、私は二十年続けている。",
+          "reading": "がいこくごのぶんしょうをにほんごになおすしごとを、わたしはにじゅうねんつづけている。"
+        },
+        {
+          "ja": "始めたころは、原文の語をできるだけ厳密に交換することが正しいと思っていた。",
+          "reading": "はじめたころは、げんぶんのごをできるだけげんみつにこうかんすることがただしいとおもっていた。"
+        },
+        {
+          "ja": "しかし、語と語が一対一で対応する言語は、どこにもない。",
+          "reading": "しかし、ごとごがいちたいいちでたいおうするげんごは、どこにもない。"
+        },
+        {
+          "ja": "一つの語の背後には、その言葉を使う人たちが長い間育ててきた概念がある。",
+          "reading": "ひとつのごのはいごには、そのことばをつかうひとたちがながいあいだそだててきたがいねんがある。"
+        },
+        {
+          "ja": "だから私は今、語ではなく、文の働きを移すことを考える。",
+          "reading": "だからわたしはいま、ごではなく、ぶんのはたらきをうつすことをかんがえる。"
+        },
+        {
+          "ja": "原文の読者が受け取ったものと同じものを、日本語の読者に届けたいのである。",
+          "reading": "げんぶんのどくしゃがうけとったものとおなじものを、にほんごのどくしゃにとどけたいのである。"
+        },
+        {
+          "ja": "それは原文から離れる作業に見えて、実は原文に最も近寄る道である。",
+          "reading": "それはげんぶんからはなれるさぎょうにみえて、じつはげんぶんにもっともちかよるみちである。"
+        }
+      ],
+      "en": "I have spent twenty years turning writing in a foreign language into Japanese. When I began, I thought the right thing was to substitute the words of the original as strictly as possible. But there is no pair of languages whose words correspond one to one. Behind a single word lies a concept that the people who use that word have cultivated over a long time. So now I think not of moving words across but of moving across what a sentence does. I want to deliver to the Japanese reader the same thing the reader of the original received. That looks like a departure from the original, yet it is in fact the road that comes closest to it.",
+      "zh": "把外语文章译成日语这份工作，我做了二十年。刚开始时，我以为尽可能严格地替换原文的词才是正确的。可世上没有任何两种语言的词是一一对应的。一个词的背后，存在着使用这种语言的人们长年培育出来的概念。所以如今我考虑的不是搬移词语，而是搬移句子所起的作用。我想把原文读者接收到的东西，原样送到日语读者手中。这看似是在远离原文，实际上却是最接近原文的路。",
+      "zh_TW": "把外語文章譯成日語這份工作，我做了二十年。剛開始時，我以為儘可能嚴格地替換原文的詞才是正確的。可世上沒有任何兩種語言的詞是一一對應的。一個詞的背後，存在著使用這種語言的人們長年培育出來的概念。所以如今我考慮的不是搬移詞語，而是搬移句子所起的作用。我想把原文讀者接收到的東西，原樣送到日語讀者手中。這看似是在遠離原文，實際上卻是最接近原文的路。"
+    },
+    {
+      "id": "p:n1-r-028",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "私は山の近くで果物を作る農家である。",
+          "reading": "わたしはやまのちかくでくだものをつくるのうかである。"
+        },
+        {
+          "ja": "祖父の代から、畑の様子を毎日紙に書き残す習慣が続いている。",
+          "reading": "そふのだいから、はたけのようすをまいにちかみにかきのこすしゅうかんがつづいている。"
+        },
+        {
+          "ja": "花の咲いた日、雨の降った日、虫の増えた日を、ただ短く書くだけである。",
+          "reading": "はなのさいたひ、あめのふったひ、むしのふえたひを、ただみじかくかくだけである。"
+        },
+        {
+          "ja": "一年分の紙にはほとんど意味がないが、三十年分を並べると、気候の変化が形を持って現れる。",
+          "reading": "いちねんぶんのかみにはほとんどいみがないが、さんじゅうねんぶんをならべると、きこうのへんかがかたちをもってあらわれる。"
+        },
+        {
+          "ja": "花の咲く日は、三十年で十日ほど早くなった。",
+          "reading": "はなのさくひは、さんじゅうねんでとおかほどはやくなった。"
+        },
+        {
+          "ja": "この土地に合う作り方は、本ではなく、この紙の山が教えてくれる。",
+          "reading": "このとちにあうつくりかたは、ほんではなく、このかみのやまがおしえてくれる。"
+        },
+        {
+          "ja": "独自の記録を持続することは、どんな新しい機械よりも確かな支えである。",
+          "reading": "どくじのきろくをじぞくすることは、どんなあたらしいきかいよりもたしかなささえである。"
+        }
+      ],
+      "en": "I am a fruit farmer near the mountains. Since my grandfather's day the household has kept up the habit of writing down the state of the orchard on paper every day. We merely note briefly the day the blossom opened, the day it rained, the day the insects increased. A single year of these papers means almost nothing, but set thirty years side by side and the change in the climate appears with a shape of its own. The day the blossom opens has moved about ten days earlier in thirty years. The way of growing that suits this land is taught to us not by books but by this pile of paper. Keeping up a record of one's own is a surer support than any new machine.",
+      "zh": "我是在山脚下种水果的农户。从祖父那一代起，每天把田里的情形写在纸上的习惯一直延续着。记的不过是花开的日子、下雨的日子、虫子变多的日子，都很简短。一年份的纸几乎没有意义，但把三十年的排在一起，气候的变化便显出形状来。花开的日子，三十年间提前了十天左右。适合这片土地的种法，不是书本，而是这一叠纸教给我的。坚持记录自己独有的东西，比任何新机器都更可靠。",
+      "zh_TW": "我是在山腳下種水果的農戶。從祖父那一代起，每天把田裡的情形寫在紙上的習慣一直延續著。記的不過是花開的日子、下雨的日子、蟲子變多的日子，都很簡短。一年份的紙幾乎沒有意義，但把三十年的排在一起，氣候的變化便顯出形狀來。花開的日子，三十年間提前了十天左右。適合這片土地的種法，不是書本，而是這一疊紙教給我的。堅持記錄自己獨有的東西，比任何新機器都更可靠。"
+    },
+    {
+      "id": "p:n1-r-029",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "明日の天気を伝える仕事には、外から見えない難しい点がある。",
+          "reading": "あしたのてんきをつたえるしごとには、そとからみえないむずかしいてんがある。"
+        },
+        {
+          "ja": "予報は、いくつもの計算の結果を集め、最も起こりやすい形を選んだものである。",
+          "reading": "よほうは、いくつものけいさんのけっかをあつめ、もっともおこりやすいかたちをえらんだものである。"
+        },
+        {
+          "ja": "つまり、外れることが前提に含まれている。",
+          "reading": "つまり、はずれることがぜんていにふくまれている。"
+        },
+        {
+          "ja": "ところが、聞く側は、予報を明日の事実として受け取る。",
+          "reading": "ところが、きくがわは、よほうをあしたのじじつとしてうけとる。"
+        },
+        {
+          "ja": "その差が、外れたときの強い不満を生む。",
+          "reading": "そのさが、はずれたときのつよいふまんをうむ。"
+        },
+        {
+          "ja": "数字の根拠を一緒に伝えると、聞く側の受け取り方は変わる。",
+          "reading": "すうじのこんきょをいっしょにつたえると、きくがわのうけとりかたはかわる。"
+        },
+        {
+          "ja": "分からない部分を隠さずに示すことこそ、信用を育てる道である。",
+          "reading": "わからないぶぶんをかくさずにしめすことこそ、しんようをそだてるみちである。"
+        }
+      ],
+      "en": "The work of announcing tomorrow's weather has a difficulty that is not visible from outside. A forecast gathers the results of any number of calculations and picks out the form most likely to occur. In other words, being wrong is built into its premise. Those who hear it, however, receive the forecast as tomorrow's fact. That gap is what produces the strong dissatisfaction when a forecast fails. If the grounds behind the figures are conveyed as well, the way the listener takes it changes. Showing the parts we do not know, without hiding them, is the very road by which trust is grown.",
+      "zh": "播报明天天气这份工作，有着外人看不见的难处。预报是汇集多次计算的结果，从中选出最可能出现的一种情形。也就是说，出错本就包含在它的前提之中。然而听的人却把预报当作明天的事实来接受。这一落差，正是预报不准时强烈不满的来源。若把数字的依据一并说明，听者的接受方式就会改变。把不确定的部分毫不掩饰地摆出来，才是培养信任的道路。",
+      "zh_TW": "播報明天天氣這份工作，有著外人看不見的難處。預報是彙集多次計算的結果，從中選出最可能出現的一種情形。也就是說，出錯本就包含在它的前提之中。然而聽的人卻把預報當作明天的事實來接受。這一落差，正是預報不準時強烈不滿的來源。若把數字的依據一併說明，聽者的接受方式就會改變。把不確定的部分毫不掩飾地擺出來，才是培養信任的道路。"
+    },
+    {
+      "id": "p:n1-r-030",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "私の住む町では、三百年続く祭りが毎年秋に開かれる。",
+          "reading": "わたしのすむまちでは、さんびゃくねんつづくまつりがまいとしあきにひらかれる。"
+        },
+        {
+          "ja": "十年ほど前から、祭りに携わる若い人の数が減り続けていた。",
+          "reading": "じゅうねんほどまえから、まつりにたずさわるわかいひとのかずがへりつづけていた。"
+        },
+        {
+          "ja": "昔からの決まりが多く、初めて参加する人には近寄りにくい行事だったのである。",
+          "reading": "むかしからのきまりがおおく、はじめてさんかするひとにはちかよりにくいぎょうじだったのである。"
+        },
+        {
+          "ja": "そこで町は、隣の小さな町の祭りと統合し、決まりを一度書き直した。",
+          "reading": "そこでまちは、となりのちいさなまちのまつりととうごうし、きまりをいちどかきなおした。"
+        },
+        {
+          "ja": "古い形をすべて守るのではなく、意味の分かるものだけを残した。",
+          "reading": "ふるいかたちをすべてまもるのではなく、いみのわかるものだけをのこした。"
+        },
+        {
+          "ja": "参加する人は三年で二倍になり、子どもの姿も戻った。",
+          "reading": "さんかするひとはさんねんでにばいになり、こどものすがたももどった。"
+        },
+        {
+          "ja": "伝統とは動かない形のことではなく、続けるための選択を重ねてきた結果である。",
+          "reading": "でんとうとはうごかないかたちのことではなく、つづけるためのせんたくをかさねてきたけっかである。"
+        }
+      ],
+      "en": "In the town where I live, a festival three hundred years old is held every autumn. For about ten years the number of young people taking part in it had gone on falling. There were many old rules, and it was an event hard for a newcomer to approach. So the town joined its festival with that of the small town next door and rewrote the rules once and for all. Rather than preserving every old form, it kept only those whose meaning could still be understood. The number taking part doubled in three years, and children came back to it too. Tradition is not an unmoving form; it is the result of choices piled up in order to keep something going.",
+      "zh": "我住的镇上，每年秋天都会举办一场延续三百年的祭典。大约十年前起，参与祭典的年轻人不断减少。旧规矩太多，对第一次参加的人来说是难以靠近的活动。于是镇上把它与邻近小镇的祭典合而为一，把规矩重新写了一遍。不是把旧有形式全部保留，而是只留下意义还讲得通的部分。三年之内参加者增加了一倍，孩子们的身影也回来了。所谓传统，并不是一成不变的形式，而是为了延续下去而不断作出选择所积累的结果。",
+      "zh_TW": "我住的鎮上，每年秋天都會舉辦一場延續三百年的祭典。大約十年前起，參與祭典的年輕人不斷減少。舊規矩太多，對第一次參加的人來說是難以靠近的活動。於是鎮上把它與鄰近小鎮的祭典合而為一，把規矩重新寫了一遍。不是把舊有形式全部保留，而是隻留下意義還講得通的部分。三年之內參加者增加了一倍，孩子們的身影也回來了。所謂傳統，並不是一成不變的形式，而是為了延續下去而不斷作出選擇所積累的結果。"
+    },
+    {
+      "id": "p:n1-r-031",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "会社が社員の健康について語る時、話は運動と食事に集まりやすい。",
+          "reading": "かいしゃがしゃいんのけんこうについてかたるとき、はなしはうんどうとしょくじにあつまりやすい。"
+        },
+        {
+          "ja": "しかし、最も大きな影響を持つのは、毎日の眠る時間である。",
+          "reading": "しかし、もっともおおきなえいきょうをもつのは、まいにちのねむるじかんである。"
+        },
+        {
+          "ja": "眠りが足りない状態が続くと、判断の質が落ち、小さな誤りが増える。",
+          "reading": "ねむりがたりないじょうたいがつづくと、はんだんのしつがおち、ちいさなあやまりがふえる。"
+        },
+        {
+          "ja": "その誤りを直す作業が、次の日の仕事の負担をさらに重くする。",
+          "reading": "そのあやまりをなおすさぎょうが、つぎのひのしごとのふたんをさらにおもくする。"
+        },
+        {
+          "ja": "遅くまで働く人ほど、次の日に多くの時間を失う。",
+          "reading": "おそくまではたらくひとほど、つぎのひにおおくのじかんをうしなう。"
+        },
+        {
+          "ja": "働く時間と休む時間の均衡は、個人の心がけの問題ではない。",
+          "reading": "はたらくじかんとやすむじかんのきんこうは、こじんのこころがけのもんだいではない。"
+        },
+        {
+          "ja": "それは、仕事の量を決める会社の側の課題である。",
+          "reading": "それは、しごとのりょうをきめるかいしゃのがわのかだいである。"
+        }
+      ],
+      "en": "When a company speaks of its employees' health, the talk gathers easily around exercise and diet. What has the greatest effect, however, is the hours of sleep each day. When a state of insufficient sleep continues, the quality of judgement falls and small errors multiply. The work of correcting those errors makes the next day's load heavier still. The later a person works, the more time is lost on the following day. The balance between working hours and resting hours is not a matter of individual resolve. It is a task for the company that decides how much work there is to do.",
+      "zh": "公司谈到员工健康时，话题总容易集中在运动和饮食上。然而影响最大的，其实是每天的睡眠时间。睡眠不足的状态持续下去，判断的质量就会下降，小差错随之增多。而修正这些差错的工作，又让第二天的负担更加沉重。工作到越晚的人，第二天失去的时间就越多。工作时间与休息时间的均衡，并不是个人自觉与否的问题。那是决定工作量的公司一方的课题。",
+      "zh_TW": "公司談到員工健康時，話題總容易集中在運動和飲食上。然而影響最大的，其實是每天的睡眠時間。睡眠不足的狀態持續下去，判斷的質量就會下降，小差錯隨之增多。而修正這些差錯的工作，又讓第二天的負擔更加沉重。工作到越晚的人，第二天失去的時間就越多。工作時間與休息時間的均衡，並不是個人自覺與否的問題。那是決定工作量的公司一方的課題。"
+    },
+    {
+      "id": "p:n1-r-032",
+      "type": "long",
+      "lines": [
+        {
+          "ja": "私の祖父は、駅から少し離れた通りで小さな時計店を営んでいた。",
+          "reading": "わたしのそふは、えきからすこしはなれたとおりでちいさなとけいてんをいとなんでいた。"
+        },
+        {
+          "ja": "店の奥には机が一つあり、その上に細かい道具が並んでいた。",
+          "reading": "みせのおくにはつくえがひとつあり、そのうえにこまかいどうぐがならんでいた。"
+        },
+        {
+          "ja": "子どものころの私は、祖父の手際をよく眺めていた。",
+          "reading": "こどものころのわたしは、そふのてぎわをよくながめていた。"
+        },
+        {
+          "ja": "壊れた時計を開き、小さな部品を一つずつ外していく手は、少しも急がなかった。",
+          "reading": "こわれたとけいをひらき、ちいさなぶひんをひとつずつはずしていくては、すこしもいそがなかった。"
+        },
+        {
+          "ja": "ある日、私は祖父に、どうしてもっと早く直さないのかと尋ねた。",
+          "reading": "あるひ、わたしはそふに、どうしてもっとはやくなおさないのかとたずねた。"
+        },
+        {
+          "ja": "祖父は、直すのは自分ではなく時計のほうだ、と答えた。",
+          "reading": "そふは、なおすのはじぶんではなくとけいのほうだ、とこたえた。"
+        },
+        {
+          "ja": "その時の私には、その言葉の意味が分からなかった。",
+          "reading": "そのときのわたしには、そのことばのいみがわからなかった。"
+        },
+        {
+          "ja": "大人になって機械を扱う仕事に就いてから、私はようやく理解した。",
+          "reading": "おとなになってきかいをあつかうしごとについてから、わたしはようやくりかいした。"
+        },
+        {
+          "ja": "止まった機械には必ず理由があり、その理由は機械の中に残っている。",
+          "reading": "とまったきかいにはかならずりゆうがあり、そのりゆうはきかいのなかにのこっている。"
+        },
+        {
+          "ja": "急いで部品を替えると、その理由を消したまま先へ進むことになる。",
+          "reading": "いそいでぶひんをかえると、そのりゆうをけしたままさきへすすむことになる。"
+        },
+        {
+          "ja": "祖父は、時計が語る理由を最後まで聞いていたのである。",
+          "reading": "そふは、とけいがかたるりゆうをさいごまできいていたのである。"
+        },
+        {
+          "ja": "手際とは早く動くことではなく、無駄な動きを一つも作らないことだと、今の私は思う。",
+          "reading": "てぎわとははやくうごくことではなく、むだなうごきをひとつもつくらないことだと、いまのわたしはおもう。"
+        }
+      ],
+      "en": "My grandfather ran a small watchmaker's shop on a street a little way from the station. At the back of the shop stood a single desk, with fine tools laid out on it. As a child I often watched the deftness of his hands. Opening a broken watch and removing the small parts one by one, those hands were never in any hurry. One day I asked him why he did not mend it faster. It is not I who mend it, he answered, but the watch. At the time the words meant nothing to me. Only when I grew up and took work handling machines did I understand. A machine that has stopped always has a reason, and that reason remains inside the machine. If you change the parts in haste, you go on ahead having erased the reason. My grandfather was listening, to the end, to the reason the watch was giving. Deftness, I now think, is not moving fast; it is making not one wasted movement.",
+      "zh": "我祖父在离车站稍远的街上开着一家小小的钟表店。店铺深处有一张桌子，上面整齐排着精细的工具。小时候，我常常看着祖父的手法。他打开坏掉的钟表，一件件卸下细小的零件，那双手一点也不着急。有一天我问祖父，为什么不修得更快些。祖父回答说，修的不是我，是钟表自己。当时的我并不明白这句话的意思。长大后从事与机械打交道的工作，我才终于懂了。停下来的机器必定有原因，而那个原因就留在机器内部。匆忙更换零件，等于把原因抹掉之后再往前走。祖父是把钟表所讲述的原因听到了最后。如今我认为，所谓手法高明并不是动作快，而是不做一个多余的动作。",
+      "zh_TW": "我祖父在離車站稍遠的街上開著一家小小的鐘錶店。店鋪深處有一張桌子，上面整齊排著精細的工具。小時候，我常常看著祖父的手法。他打開壞掉的鐘表，一件件卸下細小的零件，那雙手一點也不著急。有一天我問祖父，為什麼不修得更快些。祖父回答說，修的不是我，是鐘錶自己。當時的我並不明白這句話的意思。長大後從事與機械打交道的工作，我才終於懂了。停下來的機器必定有原因，而那個原因就留在機器內部。匆忙更換零件，等於把原因抹掉之後再往前走。祖父是把鐘錶所講述的原因聽到了最後。如今我認為，所謂手法高明並不是動作快，而是不做一個多餘的動作。"
+    },
+    {
+      "id": "p:n1-r-033",
+      "type": "long",
+      "lines": [
+        {
+          "ja": "言葉が変わることを嘆く文章は、どの時代にも見つかる。",
+          "reading": "ことばがかわることをなげくぶんしょうは、どのじだいにもみつかる。"
+        },
+        {
+          "ja": "千年前の文章にも、最近の若い者の言葉は乱れている、という言葉がある。",
+          "reading": "せんねんまえのぶんしょうにも、さいきんのわかいもののことばはみだれている、ということばがある。"
+        },
+        {
+          "ja": "それでも、その千年の間に日本語が壊れたわけではない。",
+          "reading": "それでも、そのせんねんのあいだににほんごがこわれたわけではない。"
+        },
+        {
+          "ja": "言葉の変遷は、使う人が毎日下す小さな選択の結果である。",
+          "reading": "ことばのへんせんは、つかうひとがまいにちくだすちいさなせんたくのけっかである。"
+        },
+        {
+          "ja": "言いにくい形は短くなり、区別の必要がない違いは消えていく。",
+          "reading": "いいにくいかたちはみじかくなり、くべつのひつようがないちがいはきえていく。"
+        },
+        {
+          "ja": "それを乱れと呼ぶか、変化と呼ぶかは、見る人の立場の問題にすぎない。",
+          "reading": "それをみだれとよぶか、へんかとよぶかは、みるひとのたちばのもんだいにすぎない。"
+        },
+        {
+          "ja": "ただし、変化を全て同じように歓迎してよいとも思わない。",
+          "reading": "ただし、へんかをすべておなじようにかんげいしてよいともおもわない。"
+        },
+        {
+          "ja": "意味の細かい違いを運んでいた語が消えると、その違いを語る手段も消える。",
+          "reading": "いみのこまかいちがいをはこんでいたごがきえると、そのちがいをかたるしゅだんもきえる。"
+        },
+        {
+          "ja": "古い語を排除する動きが強く進む時代ほど、書く人の役割は重い。",
+          "reading": "ふるいごをはいじょするうごきがつよくすすむじだいほど、かくひとのやくわりはおもい。"
+        },
+        {
+          "ja": "消えかけた語を文章の中で使い続けることは、辞書を守る作業ではない。",
+          "reading": "きえかけたごをぶんしょうのなかでつかいつづけることは、じしょをまもるさぎょうではない。"
+        },
+        {
+          "ja": "それは、細かく考えるための道具を次の世代に渡す作業である。",
+          "reading": "それは、こまかくかんがえるためのどうぐをつぎのせだいにわたすさぎょうである。"
+        },
+        {
+          "ja": "言葉を守るとは、変化を止めることではなく、失うものを選ぶことである。",
+          "reading": "ことばをまもるとは、へんかをとめることではなく、うしなうものをえらぶことである。"
+        }
+      ],
+      "en": "Writing that laments the change of language can be found in every age. Even in a text of a thousand years ago there are words saying that the speech of the young these days is corrupt. All the same, Japanese did not break apart during that thousand years. The change of a language is the outcome of small choices its users make every day. Forms that are hard to say grow shorter, and distinctions no longer needed disappear. Whether one calls this corruption or change is merely a matter of the observer's standpoint. That said, I do not think every change may be welcomed alike. When a word that carried a fine distinction of meaning goes, the means of speaking about that distinction goes with it. The more strongly an age drives out old words, the heavier is the role of those who write. Going on using a half-vanished word in one's prose is not a labour of protecting the dictionary. It is the labour of handing to the next generation the tools for thinking finely. To protect a language is not to stop it changing; it is to choose what one loses.",
+      "zh": "感叹语言变化的文章，在任何时代都能找到。就连一千年前的文章里也有这样的话：近来年轻人的言辞很不成体统。可即便如此，这一千年间日语并没有崩坏。语言的变迁，是使用者每天所作的细小选择的结果。难说的形式会变短，不需要区分的差别会消失。把这叫作混乱还是叫作变化，不过是观察者立场的问题。不过，我也不认为一切变化都可以同样地欢迎。当承载着细微意义差别的词消失时，谈论这种差别的手段也随之消失。排斥旧词的势头越强的时代，写作者的责任就越重。在文章里继续使用即将消失的词，并不是为了守护词典。那是把细致思考的工具交给下一代的工作。守护语言，不是让它停止变化，而是选择自己要失去什么。",
+      "zh_TW": "感嘆語言變化的文章，在任何時代都能找到。就連一千年前的文章裡也有這樣的話：近來年輕人的言辭很不成體統。可即便如此，這一千年間日語並沒有崩壞。語言的變遷，是使用者每天所作的細小選擇的結果。難說的形式會變短，不需要區分的差別會消失。把這叫作混亂還是叫作變化，不過是觀察者立場的問題。不過，我也不認為一切變化都可以同樣地歡迎。當承載著細微意義差別的詞消失時，談論這種差別的手段也隨之消失。排斥舊詞的勢頭越強的時代，寫作者的責任就越重。在文章裡繼續使用即將消失的詞，並不是為了守護詞典。那是把細緻思考的工具交給下一代的工作。守護語言，不是讓它停止變化，而是選擇自己要失去什麼。"
+    },
+    {
+      "id": "p:n1-r-034",
+      "type": "integrated",
+      "lines": [
+        {
+          "ja": "学校の制服について、ある人は次のように述べる。",
+          "reading": "がっこうのせいふくについて、あるひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "制服は服を選ぶ時間と費用を減らし、家庭の負担を軽くする。",
+          "reading": "せいふくはふくをえらぶじかんとひようをへらし、かていのふたんをかるくする。"
+        },
+        {
+          "ja": "全員が一律の服を着ることで、家の事情の違いが表に出にくくなる。",
+          "reading": "ぜんいんがいちりつのふくをきることで、いえのじじょうのちがいがおもてにでにくくなる。"
+        },
+        {
+          "ja": "一方、別の人は次のように述べる。",
+          "reading": "いっぽう、べつのひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "制服は確かに秩序を作るが、その秩序は生徒が自分で選んだものではない。",
+          "reading": "せいふくはたしかにちつじょをつくるが、そのちつじょはせいとがじぶんでえらんだものではない。"
+        },
+        {
+          "ja": "何を着るかを毎日決める経験こそ、大人になる前に必要な練習である。",
+          "reading": "なにをきるかをまいにちきめるけいけんこそ、おとなになるまえにひつようなれんしゅうである。"
+        },
+        {
+          "ja": "費用の問題は、制服以外の方法でも解決できる。",
+          "reading": "ひようのもんだいは、せいふくいがいのほうほうでもかいけつできる。"
+        }
+      ],
+      "en": "On school uniforms, one person says the following. A uniform cuts the time and the cost of choosing clothes and lightens the burden on families. When everyone wears the same clothes, differences in household circumstances are less likely to show. Another person says the following. A uniform does indeed create order, but it is not an order the pupils chose for themselves. The experience of deciding every day what to wear is precisely the practice one needs before becoming an adult. The question of cost can be solved by means other than a uniform.",
+      "zh": "关于校服，前一位是这样说的。校服减少了挑衣服的时间与花费，减轻了家庭的负担。全体穿一样的衣服，家境的差异也不容易显露出来。另一方面，后一位则这样说。校服确实带来了秩序，但那种秩序并非学生自己选择的。每天决定穿什么这一经历，恰恰是成年之前必要的练习。费用问题，用校服以外的办法同样可以解决。",
+      "zh_TW": "關於校服，前一位是這樣說的。校服減少了挑衣服的時間與花費，減輕了家庭的負擔。全體穿一樣的衣服，家境的差異也不容易顯露出來。另一方面，後一位則這樣說。校服確實帶來了秩序，但那種秩序並非學生自己選擇的。每天決定穿什麼這一經歷，恰恰是成年之前必要的練習。費用問題，用校服以外的辦法同樣可以解決。"
+    },
+    {
+      "id": "p:n1-r-035",
+      "type": "integrated",
+      "lines": [
+        {
+          "ja": "図書館の資料を電子の形に直す計画について、ある人は次のように述べる。",
+          "reading": "としょかんのしりょうをでんしのかたちになおすけいかくについて、あるひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "電子の資料は、遠くに住む人でも家から閲覧できる。",
+          "reading": "でんしのしりょうは、とおくにすむひとでもいえからえつらんできる。"
+        },
+        {
+          "ja": "紙は時とともに傷むが、電子の形なら長く保管することができる。",
+          "reading": "かみはときとともにいたむが、でんしのかたちならながくほかんすることができる。"
+        },
+        {
+          "ja": "一方、別の人は次のように述べる。",
+          "reading": "いっぽう、べつのひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "電子の資料は、読む機械と、それを動かす仕組みがあって初めて読める。",
+          "reading": "でんしのしりょうは、よむきかいと、それをうごかすしくみがあってはじめてよめる。"
+        },
+        {
+          "ja": "三十年前の形式で作った資料の多くは、今の機械では開くことができない。",
+          "reading": "さんじゅうねんまえのけいしきでつくったしりょうのおおくは、いまのきかいではひらくことができない。"
+        },
+        {
+          "ja": "紙は、置いておくだけで三百年もつ。",
+          "reading": "かみは、おいておくだけでさんびゃくねんもつ。"
+        }
+      ],
+      "en": "On the plan to convert a library's materials into electronic form, one person says the following. Electronic materials can be consulted from home even by those living far away. Paper decays with time, whereas in electronic form things can be kept for a long while. Another person says the following. Electronic material can be read only where there is a machine to read it and a system to run that machine. Much of what was made in the formats of thirty years ago cannot be opened on today's machines. Paper lasts three hundred years by simply being left where it is.",
+      "zh": "关于把图书馆资料转成电子形式的计划，前一位是这样说的。电子资料让住得再远的人也能在家中阅览。纸张会随时间受损，而电子形式则可以长久保存。另一方面，后一位则这样说。电子资料只有在有阅读用的机器、并且有驱动它的系统时才读得了。三十年前的格式所制作的资料，如今大多已无法打开。而纸只要放着，就能存续三百年。",
+      "zh_TW": "關於把圖書館資料轉成電子形式的計劃，前一位是這樣說的。電子資料讓住得再遠的人也能在家中閱覽。紙張會隨時間受損，而電子形式則可以長久保存。另一方面，後一位則這樣說。電子資料只有在有閱讀用的機器、並且有驅動它的系統時才讀得了。三十年前的格式所製作的資料，如今大多已無法打開。而紙只要放著，就能存續三百年。"
+    },
+    {
+      "id": "p:n1-r-036",
+      "type": "integrated",
+      "lines": [
+        {
+          "ja": "会議の時間を短くする取り組みについて、ある人は次のように述べる。",
+          "reading": "かいぎのじかんをみじかくするとりくみについて、あるひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "資料を事前に配り、話し合いの手順を簡素にすると、会議は半分の時間で終わる。",
+          "reading": "しりょうをじぜんにくばり、はなしあいのてじゅんをかんそにすると、かいぎははんぶんのじかんでおわる。"
+        },
+        {
+          "ja": "短い会議は参加者の集中を保ち、議論を円滑にする。",
+          "reading": "みじかいかいぎはさんかしゃのしゅうちゅうをたもち、ぎろんをえんかつにする。"
+        },
+        {
+          "ja": "一方、別の人は次のように述べる。",
+          "reading": "いっぽう、べつのひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "時間を先に決めると、結論の出やすい話題だけが残る。",
+          "reading": "じかんをさきにきめると、けつろんのでやすいわだいだけがのこる。"
+        },
+        {
+          "ja": "答えの見えない問題は、次回へ送るうちに消えていく。",
+          "reading": "こたえのみえないもんだいは、じかいへおくるうちにきえていく。"
+        },
+        {
+          "ja": "会議で本当に必要なのは、短い時間ではなく、答えの出ない話に耐える時間である。",
+          "reading": "かいぎでほんとうにひつようなのは、みじかいじかんではなく、こたえのでないはなしにたえるじかんである。"
+        }
+      ],
+      "en": "On efforts to shorten meetings, one person says the following. If the papers are handed out in advance and the order of discussion is kept simple, a meeting finishes in half the time. A short meeting keeps those present concentrated and makes the discussion run smoothly. Another person says the following. Once the length is fixed in advance, only the topics that yield a conclusion easily survive. Problems whose answer cannot be seen fade away as they are pushed to the next meeting. What a meeting truly needs is not a short span of time but time enough to bear with a matter that produces no answer.",
+      "zh": "关于缩短会议时间的做法，前一位是这样说的。事先分发资料、把讨论的流程简化，会议用一半的时间就能结束。短会议能维持与会者的专注，让讨论进行得顺畅。另一方面，后一位则这样说。先把时间定死，留下来的就只有容易得出结论的话题。看不到答案的问题，在一次次推到下次的过程中悄然消失。会议真正需要的不是短的时间，而是能忍受没有答案的讨论的时间。",
+      "zh_TW": "關於縮短會議時間的做法，前一位是這樣說的。事先分發資料、把討論的流程簡化，會議用一半的時間就能結束。短會議能維持與會者的專注，讓討論進行得順暢。另一方面，後一位則這樣說。先把時間定死，留下來的就只有容易得出結論的話題。看不到答案的問題，在一次次推到下次的過程中悄然消失。會議真正需要的不是短的時間，而是能忍受沒有答案的討論的時間。"
+    },
+    {
+      "id": "p:n1-r-037",
+      "type": "integrated",
+      "lines": [
+        {
+          "ja": "町なかの自転車について、ある人は次のように述べる。",
+          "reading": "まちなかのじてんしゃについて、あるひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "自転車が増えると車の数が減り、道の混雑も空気の汚れも軽減する。",
+          "reading": "じてんしゃがふえるとくるまのかずがへり、みちのこんざつもくうきのよごれもけいげんする。"
+        },
+        {
+          "ja": "短い距離の移動なら、自転車が最も早く着く手段である。",
+          "reading": "みじかいきょりのいどうなら、じてんしゃがもっともはやくつくしゅだんである。"
+        },
+        {
+          "ja": "一方、別の人は次のように述べる。",
+          "reading": "いっぽう、べつのひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "自転車の数が増えた町では、歩く人との事故が目立って増えている。",
+          "reading": "じてんしゃのかずがふえたまちでは、あるくひととのじこがめだってふえている。"
+        },
+        {
+          "ja": "走る場所の決まりが定まらないまま台数だけが増えると、道の秩序は崩れる。",
+          "reading": "はしるばしょのきまりがさだまらないままだいすうだけがふえると、みちのちつじょはくずれる。"
+        },
+        {
+          "ja": "必要なのは自転車を増やすことではなく、自転車の通る道を先に作ることである。",
+          "reading": "ひつようなのはじてんしゃをふやすことではなく、じてんしゃのとおるみちをさきにつくることである。"
+        }
+      ],
+      "en": "On bicycles in the town centre, one person says the following. As bicycles increase, the number of cars falls, and both the congestion of the roads and the dirtying of the air are reduced. For a short journey the bicycle is the means that arrives soonest. Another person says the following. In towns where the number of bicycles has grown, accidents with people on foot have risen noticeably. If only the number grows while the rules about where to ride remain unsettled, the order of the road collapses. What is needed is not more bicycles but roads for bicycles to travel on, built first.",
+      "zh": "关于市区里的自行车，前一位是这样说的。自行车增加，汽车数量就会减少，道路的拥堵和空气的污染都会减轻。若是短距离移动，自行车是抵达最快的手段。另一方面，后一位则这样说。在自行车增多的城市，与行人之间的事故明显上升。行驶位置的规则尚未确定，只有数量在增加，道路的秩序便会崩坏。需要的不是增加自行车，而是先修出供自行车通行的道路。",
+      "zh_TW": "關於市區裡的自行車，前一位是這樣說的。自行車增加，汽車數量就會減少，道路的擁堵和空氣的汙染都會減輕。若是短距離移動，自行車是抵達最快的手段。另一方面，後一位則這樣說。在自行車增多的城市，與行人之間的事故明顯上升。行駛位置的規則尚未確定，只有數量在增加，道路的秩序便會崩壞。需要的不是增加自行車，而是先修出供自行車通行的道路。"
+    },
+    {
+      "id": "p:n1-r-038",
+      "type": "integrated",
+      "lines": [
+        {
+          "ja": "画面を通した授業について、ある人は次のように述べる。",
+          "reading": "がめんをとおしたじゅぎょうについて、あるひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "遠くに住む学生も、体の具合がよくない学生も、同じ授業に参加できる。",
+          "reading": "とおくにすむがくせいも、からだのぐあいがよくないがくせいも、おなじじゅぎょうにさんかできる。"
+        },
+        {
+          "ja": "学ぶ形が多様になることは、それだけで大きな前進である。",
+          "reading": "まなぶかたちがたようになることは、それだけでおおきなぜんしんである。"
+        },
+        {
+          "ja": "一方、別の人は次のように述べる。",
+          "reading": "いっぽう、べつのひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "授業の価値は、話の内容だけにあるのではない。",
+          "reading": "じゅぎょうのかちは、はなしのないようだけにあるのではない。"
+        },
+        {
+          "ja": "教室の前後で交わす短い会話が、学生の疑問を形にする。",
+          "reading": "きょうしつのぜんごでかわすみじかいかいわが、がくせいのぎもんをかたちにする。"
+        },
+        {
+          "ja": "画面の授業を柔軟な選択の一つとするのはよいが、教室の代わりにはならない。",
+          "reading": "がめんのじゅぎょうをじゅうなんなせんたくのひとつとするのはよいが、きょうしつのかわりにはならない。"
+        }
+      ],
+      "en": "On classes given through a screen, one person says the following. Students who live far away, and students who are unwell, can attend the same class. That the forms of learning become various is in itself a great advance. Another person says the following. The value of a class does not lie in the content of the talk alone. The brief conversations exchanged before and after in the classroom are what give shape to a student's questions. It is well enough to have the screen class as one flexible option, but it is no substitute for the classroom.",
+      "zh": "关于通过屏幕进行的课程，前一位是这样说的。住得远的学生、身体不适的学生，都能参加同一堂课。学习形式变得多样，这本身就是很大的进步。另一方面，后一位则这样说。课堂的价值并不只在讲授的内容。课前课后在教室里交换的简短对话，才让学生的疑问成形。把屏幕上的课程当作一种灵活的选择是好的，但它替代不了教室。",
+      "zh_TW": "關於通過屏幕進行的課程，前一位是這樣說的。住得遠的學生、身體不適的學生，都能參加同一堂課。學習形式變得多樣，這本身就是很大的進步。另一方面，後一位則這樣說。課堂的價值並不只在講授的內容。課前課後在教室裡交換的簡短對話，才讓學生的疑問成形。把屏幕上的課程當作一種靈活的選擇是好的，但它替代不了教室。"
+    },
+    {
+      "id": "p:n1-r-039",
+      "type": "integrated",
+      "lines": [
+        {
+          "ja": "店での支払いの方法について、ある人は次のように述べる。",
+          "reading": "みせでのしはらいのほうほうについて、あるひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "電子の支払いは会計を早くし、店の側も一日の記録をそのまま残すことができる。",
+          "reading": "でんしのしはらいはかいけいをはやくし、みせのがわもいちにちのきろくをそのままのこすことができる。"
+        },
+        {
+          "ja": "現金を数える作業が消えた分、人はほかの仕事に時間を向けることができる。",
+          "reading": "げんきんをかぞえるさぎょうがきえたぶん、ひとはほかのしごとにじかんをむけることができる。"
+        },
+        {
+          "ja": "一方、別の人は次のように述べる。",
+          "reading": "いっぽう、べつのひとはつぎのようにのべる。"
+        },
+        {
+          "ja": "電子の支払いは、誰が何をいつ買ったかという記録を店の外に残す。",
+          "reading": "でんしのしはらいは、だれがなにをいつかったかというきろくをみせのそとにのこす。"
+        },
+        {
+          "ja": "その記録が漏れる危険は、事前にどれだけ備えても消えない。",
+          "reading": "そのきろくがもれるきけんは、じぜんにどれだけそなえてもきえない。"
+        },
+        {
+          "ja": "便利な仕組みほど、失う時の損害も大きい。",
+          "reading": "べんりなしくみほど、うしなうときのそんがいもおおきい。"
+        }
+      ],
+      "en": "On ways of paying in shops, one person says the following. Electronic payment speeds up the till, and the shop too can keep the day's record just as it stands. To the extent that the work of counting cash has gone, people can turn their time to other work. Another person says the following. Electronic payment leaves outside the shop a record of who bought what and when. The danger of that record leaking does not disappear however much one prepares in advance. The more convenient a system, the greater the damage when it is lost.",
+      "zh": "关于在店里付款的方式，前一位是这样说的。电子支付加快了结账，店家也能把一天的记录原样保留下来。清点现金的工作没有了，人们便可以把时间投向别的工作。另一方面，后一位则这样说。电子支付会把谁在何时买了什么的记录留在店铺之外。这些记录外泄的风险，事先做再多准备也不会消失。越是便利的机制，一旦失守，损失也越大。",
+      "zh_TW": "關於在店裡付款的方式，前一位是這樣說的。電子支付加快了結賬，店家也能把一天的記錄原樣保留下來。清點現金的工作沒有了，人們便可以把時間投向別的工作。另一方面，後一位則這樣說。電子支付會把誰在何時買了什麼的記錄留在店鋪之外。這些記錄外洩的風險，事先做再多準備也不會消失。越是便利的機制，一旦失守，損失也越大。"
+    },
+    {
+      "id": "p:n1-r-040",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "予定の空いた時間を無駄と呼ぶ考え方が、職場に広がっている。",
+          "reading": "よていのあいたじかんをむだとよぶかんがえかたが、しょくばにひろがっている。"
+        },
+        {
+          "ja": "空いた時間があると、そこにすぐ新しい仕事が入る。",
+          "reading": "あいたじかんがあると、そこにすぐあたらしいしごとがはいる。"
+        },
+        {
+          "ja": "一日の予定が全て埋まると、確かに効率は上がったように見える。",
+          "reading": "いちにちのよていがすべてうまると、たしかにこうりつはあがったようにみえる。"
+        },
+        {
+          "ja": "しかし、予定の埋まった一日には、思いついたことを試す余地がない。",
+          "reading": "しかし、よていのうまったいちにちには、おもいついたことをためすよちがない。"
+        },
+        {
+          "ja": "新しい仕事は、たいてい、誰も予定していなかった時間から生まれる。",
+          "reading": "あたらしいしごとは、たいてい、だれもよていしていなかったじかんからうまれる。"
+        },
+        {
+          "ja": "予定の外に置いた時間は、成果が出るまで無駄に見え続ける。",
+          "reading": "よていのそとにおいたじかんは、せいかがでるまでむだにみえつづける。"
+        },
+        {
+          "ja": "だから、その時間を最初に削る組織が多い。",
+          "reading": "だから、そのじかんをさいしょにけずるそしきがおおい。"
+        },
+        {
+          "ja": "効率とは、時間を埋めることではない。",
+          "reading": "こうりつとは、じかんをうめることではない。"
+        },
+        {
+          "ja": "何を入れないかを決めることこそ、効率の本当の姿である。",
+          "reading": "なにをいれないかをきめることこそ、こうりつのほんとうのすがたである。"
+        }
+      ],
+      "en": "The idea that empty time in the schedule is waste has spread through our workplaces. Wherever a gap appears, new work goes straight into it. When the whole of a day is filled, efficiency does indeed seem to have risen. But a day whose schedule is full leaves no room to try out what one has just thought of. New work is generally born out of hours that nobody had planned. Time set outside the schedule goes on looking like waste until a result comes of it. That is why so many organisations cut it first. Efficiency is not the filling of time. Deciding what not to put in is what efficiency truly is.",
+      "zh": "把日程表上的空档称作浪费的想法，在职场里蔓延开来。只要出现空闲，新的工作立刻就填进去。当一天的安排被排满，效率看上去确实提高了。可是排满的一天，没有余地去尝试刚刚想到的事。新的工作大多诞生于谁也没有预先安排的时间里。放在计划之外的时间，在成果出现之前始终显得像是浪费。因此，最先被砍掉这段时间的组织比比皆是。效率并不是把时间填满。决定什么不放进去，才是效率真正的样子。",
+      "zh_TW": "把日程表上的空檔稱作浪費的想法，在職場裡蔓延開來。只要出現空閒，新的工作立刻就填進去。當一天的安排被排滿，效率看上去確實提高了。可是排滿的一天，沒有餘地去嘗試剛剛想到的事。新的工作大多誕生於誰也沒有預先安排的時間裡。放在計劃之外的時間，在成果出現之前始終顯得像是浪費。因此，最先被砍掉這段時間的組織比比皆是。效率並不是把時間填滿。決定什麼不放進去，才是效率真正的樣子。"
+    },
+    {
+      "id": "p:n1-r-041",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "人の仕事を数字で評価する仕組みは、公平に見える。",
+          "reading": "ひとのしごとをすうじでひょうかするしくみは、こうへいにみえる。"
+        },
+        {
+          "ja": "誰が見ても同じ結果になるからである。",
+          "reading": "だれがみてもおなじけっかになるからである。"
+        },
+        {
+          "ja": "しかし、数字にできる仕事は、仕事全体の一部にすぎない。",
+          "reading": "しかし、すうじにできるしごとは、しごとぜんたいのいちぶにすぎない。"
+        },
+        {
+          "ja": "若い社員の相談に乗る時間や、次の担当者のために手順を書き残す作業は、どの数字にも現れない。",
+          "reading": "わかいしゃいんのそうだんにのるじかんや、つぎのたんとうしゃのためにてじゅんをかきのこすさぎょうは、どのすうじにもあらわれない。"
+        },
+        {
+          "ja": "評価の仕組みが見落とすものは、やがて職場から消えていく。",
+          "reading": "ひょうかのしくみがみおとすものは、やがてしょくばからきえていく。"
+        },
+        {
+          "ja": "人は、評価に届く行いを増やし、そうでない行いを減らすからである。",
+          "reading": "ひとは、ひょうかにとどくおこないをふやし、そうでないおこないをへらすからである。"
+        },
+        {
+          "ja": "数字は現実の一部を写したものであって、現実そのものではない。",
+          "reading": "すうじはげんじつのいちぶをうつしたものであって、げんじつそのものではない。"
+        },
+        {
+          "ja": "その差を忘れない認識を、評価する側は持たなければならない。",
+          "reading": "そのさをわすれないにんしきを、ひょうかするがわはもたなければならない。"
+        },
+        {
+          "ja": "数字を使うなと言うのではない。",
+          "reading": "すうじをつかうなというのではない。"
+        },
+        {
+          "ja": "数字が何を落としているかを、同時に指摘できる人が必要だと言いたいのである。",
+          "reading": "すうじがなにをおとしているかを、どうじにしてきできるひとがひつようだといいたいのである。"
+        }
+      ],
+      "en": "A system that assesses people's work in figures looks fair, because whoever looks at it arrives at the same result. But the work that can be turned into figures is only a part of the whole. The time spent listening to a young colleague, or the labour of writing down the procedure for whoever comes next, appears in no figure at all. What the system of assessment overlooks will in time disappear from the workplace, for people increase the acts that reach the assessment and reduce those that do not. Figures are a copy of part of reality, not reality itself. Those who assess must hold on to an awareness of that gap. I am not saying that figures should not be used. I want to say that we need people who can point out, at the same time, what the figures are leaving out.",
+      "zh": "用数字评价他人工作的制度看上去很公平，因为无论谁来看，结果都一样。然而能够化为数字的工作，只是全部工作的一部分。倾听年轻同事烦恼的时间，为下一任负责人写下操作步骤的工作，在任何数字里都不会出现。评价制度所忽略的东西，终将从职场消失，因为人会增加能被评价到的行为，减少不被评价的行为。数字只是现实一部分的映像，并不是现实本身。评价的一方必须始终意识到这中间的落差。我并不是说不要使用数字。我想说的是，我们需要有人能同时指出数字漏掉了什么。",
+      "zh_TW": "用數字評價他人工作的制度看上去很公平，因為無論誰來看，結果都一樣。然而能夠化為數字的工作，只是全部工作的一部分。傾聽年輕同事煩惱的時間，為下一任負責人寫下操作步驟的工作，在任何數字裡都不會出現。評價制度所忽略的東西，終將從職場消失，因為人會增加能被評價到的行為，減少不被評價的行為。數字只是現實一部分的映像，並不是現實本身。評價的一方必須始終意識到這中間的落差。我並不是說不要使用數字。我想說的是，我們需要有人能同時指出數字漏掉了什麼。"
+    },
+    {
+      "id": "p:n1-r-042",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "子どもが本を読むように促す方法を、大人は長く探し続けてきた。",
+          "reading": "こどもがほんをよむようにうながすほうほうを、おとなはながくさがしつづけてきた。"
+        },
+        {
+          "ja": "冊数を数え、印を集め、読んだ数に応じて品物を渡す方法が広まった。",
+          "reading": "さっすうをかぞえ、しるしをあつめ、よんだかずにおうじてしなものをわたすほうほうがひろまった。"
+        },
+        {
+          "ja": "短い期間で見ると、この方法は確かに数を増やす。",
+          "reading": "みじかいきかんでみると、このほうほうはたしかにかずをふやす。"
+        },
+        {
+          "ja": "しかし、品物を渡す期間が終わると、読む数は元の数に戻る。",
+          "reading": "しかし、しなものをわたすきかんがおわると、よむかずはもとのかずにもどる。"
+        },
+        {
+          "ja": "外から与えた理由は、与えるのをやめた時点で働きを失う。",
+          "reading": "そとからあたえたりゆうは、あたえるのをやめたじてんではたらきをうしなう。"
+        },
+        {
+          "ja": "一方、面白い本に一度出会った子どもは、次の本を自分で探す。",
+          "reading": "いっぽう、おもしろいほんにいちどであったこどもは、つぎのほんをじぶんでさがす。"
+        },
+        {
+          "ja": "大人にできるのは、その出会いが起こる場を用意することだけである。",
+          "reading": "おとなにできるのは、そのであいがおこるばをよういすることだけである。"
+        },
+        {
+          "ja": "意欲は、外から与える品物ではなく、内側から出てくるまで待つものである。",
+          "reading": "いよくは、そとからあたえるしなものではなく、うちがわからでてくるまでまつものである。"
+        }
+      ],
+      "en": "Adults have long gone on searching for ways to urge children to read. A method spread of counting the volumes, collecting stamps, and handing over a prize according to the number read. Seen over a short period, this method certainly raises the number. But once the period of prizes ends, the number read returns to what it was. A reason supplied from outside loses its force at the moment the supply stops. A child who has once met an interesting book, by contrast, looks for the next one alone. All an adult can do is prepare the place where that meeting may happen. Enthusiasm is not a prize handed out from outside; it is something one waits for until it comes from within.",
+      "zh": "大人长久以来一直在寻找促使孩子读书的方法。数册数、集印章、按阅读数量发奖品的做法广为流行。就短期而言，这种方法确实能提高数量。可是一旦发奖品的期间结束，阅读的数量又回到原来的水平。从外部给予的理由，在停止给予的那一刻就失去了作用。相反，一旦遇到过有趣的书的孩子，会自己去找下一本。大人能做的，只是准备好让这种相遇发生的场所。意愿不是从外面递过来的奖品，而是要等它从内心生长出来。",
+      "zh_TW": "大人長久以來一直在尋找促使孩子讀書的方法。數冊數、集印章、按閱讀數量發獎品的做法廣為流行。就短期而言，這種方法確實能提高數量。可是一旦發獎品的期間結束，閱讀的數量又回到原來的水平。從外部給予的理由，在停止給予的那一刻就失去了作用。相反，一旦遇到過有趣的書的孩子，會自己去找下一本。大人能做的，只是準備好讓這種相遇發生的場所。意願不是從外面遞過來的獎品，而是要等它從內心生長出來。"
+    },
+    {
+      "id": "p:n1-r-043",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "地方の町が人を呼び戻そうとする時、まず大きな建物を建てる例が多い。",
+          "reading": "ちほうのまちがひとをよびもどそうとするとき、まずおおきなたてものをたてるれいがおおい。"
+        },
+        {
+          "ja": "従来、そうした計画は、都市にあるものを小さくして持ってくる形で進んできた。",
+          "reading": "じゅうらい、そうしたけいかくは、としにあるものをちいさくしてもってくるかたちですすんできた。"
+        },
+        {
+          "ja": "しかし、都市の縮んだ形を求めて移り住む人はいない。",
+          "reading": "しかし、としのちぢんだかたちをもとめてうつりすむひとはいない。"
+        },
+        {
+          "ja": "人が動くのは、そこにしかないものがある時である。",
+          "reading": "ひとがうごくのは、そこにしかないものがあるときである。"
+        },
+        {
+          "ja": "山の水、古い町の姿、その土地だけで続いてきた仕事は、都市が用意できない。",
+          "reading": "やまのみず、ふるいまちのすがた、そのとちだけでつづいてきたしごとは、としがよういできない。"
+        },
+        {
+          "ja": "独自の資源を数え直すことは、目立たず、時間のかかる作業である。",
+          "reading": "どくじのしげんをかぞえなおすことは、めだたず、じかんのかかるさぎょうである。"
+        },
+        {
+          "ja": "建物を建てるほうが、成果が早く目に見える。",
+          "reading": "たてものをたてるほうが、せいかがはやくめにみえる。"
+        },
+        {
+          "ja": "だが、早く見える成果ほど、早く古くなる。",
+          "reading": "だが、はやくみえるせいかほど、はやくふるくなる。"
+        },
+        {
+          "ja": "町の力は、外から運んだものではなく、その土地に残っていたものの上に立つ。",
+          "reading": "まちのちからは、そとからはこんだものではなく、そのとちにのこっていたもののうえにたつ。"
+        }
+      ],
+      "en": "When a country town tries to call people back, it very often begins by putting up a large building. Hitherto such plans have proceeded by taking what exists in the city, shrinking it, and bringing it in. But nobody moves house in search of a shrunken version of the city. People move when there is something to be had only there. The mountain water, the old face of the town, the trades that have continued in that place alone — none of these can the city supply. Counting up one's own resources afresh is inconspicuous work, and it takes time. Putting up a building shows a result far sooner. Yet the sooner a result is visible, the sooner it grows old. A town's strength stands not on what was carried in from outside but on what was already there.",
+      "zh": "地方城镇想把人召回来时，往往先盖一座大楼。长期以来，这类计划都是把城市里有的东西缩小了搬过来。可是没有人会为了一个缩小版的城市而搬去居住。人之所以移动，是因为那里有别处没有的东西。山间的水、古老的街貌、只在这片土地上延续下来的行当，都是城市无法准备的。重新清点本地独有的资源，是不显眼且费时的工作。盖楼则能更快看到成果。然而，越是很快显现的成果，也越快陈旧。城镇的力量并非立在从外面搬来的东西上，而是立在这片土地上原本留存的东西上。",
+      "zh_TW": "地方城鎮想把人召回來時，往往先蓋一座大樓。長期以來，這類計劃都是把城市裡有的東西縮小了搬過來。可是沒有人會為了一個縮小版的城市而搬去居住。人之所以移動，是因為那裡有別處沒有的東西。山間的水、古老的街貌、只在這片土地上延續下來的行當，都是城市無法準備的。重新清點本地獨有的資源，是不顯眼且費時的工作。蓋樓則能更快看到成果。然而，越是很快顯現的成果，也越快陳舊。城鎮的力量並非立在從外面搬來的東西上，而是立在這片土地上原本留存的東西上。"
+    },
+    {
+      "id": "p:n1-r-044",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "事件が起きた直後、画面には数え切れない言葉が並ぶ。",
+          "reading": "じけんがおきたちょくご、がめんにはかぞえきれないことばがならぶ。"
+        },
+        {
+          "ja": "その多くは、現場を見ていない人が短い文で書いたものである。",
+          "reading": "そのおおくは、げんばをみていないひとがみじかいぶんでかいたものである。"
+        },
+        {
+          "ja": "早く出た話ほど広く伝わり、後から出た訂正は、ほとんど人に届かない。",
+          "reading": "はやくでたはなしほどひろくつたわり、あとからでたていせいは、ほとんどひとにとどかない。"
+        },
+        {
+          "ja": "根拠を確かめる作業には時間がかかる。",
+          "reading": "こんきょをたしかめるさぎょうにはじかんがかかる。"
+        },
+        {
+          "ja": "その時間の間に、確かめないままの話が先に町を回る。",
+          "reading": "そのじかんのあいだに、たしかめないままのはなしがさきにまちをまわる。"
+        },
+        {
+          "ja": "だから、伝える側は、書く前に一度手を止める抑制を持つ必要がある。",
+          "reading": "だから、つたえるがわは、かくまえにいちどてをとめるよくせいをもつひつようがある。"
+        },
+        {
+          "ja": "何も言わない時間は、遅れに見えるかもしれない。",
+          "reading": "なにもいわないじかんは、おくれにみえるかもしれない。"
+        },
+        {
+          "ja": "しかし、間違いを一つ減らすことは、記事を一つ早く出すことより重い。",
+          "reading": "しかし、まちがいをひとつへらすことは、きじをひとつはやくだすことよりおもい。"
+        },
+        {
+          "ja": "早く伝えたという評価は一日で消えるが、誤りの記憶は長く残る。",
+          "reading": "はやくつたえたというひょうかはいちにちできえるが、あやまりのきおくはながくのこる。"
+        }
+      ],
+      "en": "In the moments after an incident, countless words line up on the screen. Most of them are short sentences written by people who did not see the place. The story that comes out earliest travels furthest, and the correction that comes later hardly reaches anyone. Checking the grounds of a story takes time. During that time the unchecked story goes round the town ahead of it. Those who report, therefore, need the restraint to stop their hand once before writing. Time in which one says nothing may look like lateness. But reducing the errors by one weighs more than issuing one article sooner. Credit for reporting quickly disappears within a day, while the memory of a mistake remains for a long while.",
+      "zh": "事件发生之后，屏幕上立刻排满了数不清的话语。其中大多出自没有到过现场的人之手，都是简短的句子。出得越早的说法传得越广，而事后的更正几乎传不到人们那里。核实依据这件事很花时间。就在这段时间里，未经核实的说法已抢先在街头流传开来。因此，传播的一方需要一种在动笔前先停一下手的克制。什么都不说的时间，也许看起来像是迟缓。但少犯一个错误，比早发一篇报道更重要。报道得快所换来的评价一天就消失了，而错误留下的记忆却长久不散。",
+      "zh_TW": "事件發生之後，屏幕上立刻排滿了數不清的話語。其中大多出自沒有到過現場的人之手，都是簡短的句子。出得越早的說法傳得越廣，而事後的更正幾乎傳不到人們那裡。核實依據這件事很花時間。就在這段時間裡，未經核實的說法已搶先在街頭流傳開來。因此，傳播的一方需要一種在動筆前先停一下手的剋制。什麼都不說的時間，也許看起來像是遲緩。但少犯一個錯誤，比早發一篇報道更重要。報道得快所換來的評價一天就消失了，而錯誤留下的記憶卻長久不散。"
+    },
+    {
+      "id": "p:n1-r-045",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "決まりの多い組織は、動きが遅いという評価を受けやすい。",
+          "reading": "きまりのおおいそしきは、うごきがおそいというひょうかをうけやすい。"
+        },
+        {
+          "ja": "確かに、一つ一つの手続きは時間を取る。",
+          "reading": "たしかに、ひとつひとつのてつづきはじかんをとる。"
+        },
+        {
+          "ja": "しかし、決まりのない組織が早く動くわけでもない。",
+          "reading": "しかし、きまりのないそしきがはやくうごくわけでもない。"
+        },
+        {
+          "ja": "規範がないと、同じ判断をいつも一から議論することになる。",
+          "reading": "きはんがないと、おなじはんだんをいつもいちからぎろんすることになる。"
+        },
+        {
+          "ja": "規範は、考える手間を省くための道具である。",
+          "reading": "きはんは、かんがえるてまをはぶくためのどうぐである。"
+        },
+        {
+          "ja": "問題は、道具が目的に変わる時に起こる。",
+          "reading": "もんだいは、どうぐがもくてきにかわるときにおこる。"
+        },
+        {
+          "ja": "決まりを守ることが仕事になると、決まりの理由を誰も覚えていない状態が生まれる。",
+          "reading": "きまりをまもることがしごとになると、きまりのりゆうをだれもおぼえていないじょうたいがうまれる。"
+        },
+        {
+          "ja": "だから、規範には必ず、それを見直す手順を一緒に付けておくべきである。",
+          "reading": "だから、きはんにはかならず、それをみなおすてじゅんをいっしょにつけておくべきである。"
+        },
+        {
+          "ja": "柔軟とは、決まりを持たないことではない。",
+          "reading": "じゅうなんとは、きまりをもたないことではない。"
+        },
+        {
+          "ja": "決まりを変える道を、決まりの中に用意しておくことである。",
+          "reading": "きまりをかえるみちを、きまりのなかによういしておくことである。"
+        }
+      ],
+      "en": "An organisation with many rules easily earns the judgement that it moves slowly. It is true that each procedure takes time. But an organisation without rules does not move quickly either. Where there is no norm, the same decision has to be argued from the beginning every time. A norm is a tool for saving the trouble of thinking. The trouble starts when the tool turns into the purpose. Once keeping the rule becomes the work itself, a state arises in which nobody remembers the reason for the rule. Every norm, then, ought to be accompanied by a procedure for reviewing it. Flexibility is not the absence of rules. It is having ready, inside the rules, a road by which the rules can be changed.",
+      "zh": "规矩多的组织，容易被评价为行动迟缓。确实，每一道手续都要占用时间。然而没有规矩的组织也未必就跑得快。缺少规范，同样的判断每次都得从头讨论一遍。规范是省去思考成本的工具。问题出在工具变成目的的时候。一旦遵守规矩本身成了工作，就会出现谁也记不得规矩缘由的状态。因此，规范必须同时附带一套重新审视它的程序。所谓灵活，并不是不持有规矩。而是在规矩之中预先备好改变规矩的通道。",
+      "zh_TW": "規矩多的組織，容易被評價為行動遲緩。確實，每一道手續都要佔用時間。然而沒有規矩的組織也未必就跑得快。缺少規範，同樣的判斷每次都得從頭討論一遍。規範是省去思考成本的工具。問題出在工具變成目的的時候。一旦遵守規矩本身成了工作，就會出現誰也記不得規矩緣由的狀態。因此，規範必須同時附帶一套重新審視它的程序。所謂靈活，並不是不持有規矩。而是在規矩之中預先備好改變規矩的通道。"
+    },
+    {
+      "id": "p:n1-r-046",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "災害の後、多くの人が助けの活動に従事する。",
+          "reading": "さいがいのあと、おおくのひとがたすけのかつどうにじゅうじする。"
+        },
+        {
+          "ja": "しかし、集まった人の力が生きるかどうかは、受け入れる側の準備で決まる。",
+          "reading": "しかし、あつまったひとのちからがいきるかどうかは、うけいれるがわのじゅんびできまる。"
+        },
+        {
+          "ja": "何をすべきかが決まっていない場所では、人が多いほど混乱が大きくなる。",
+          "reading": "なにをすべきかがきまっていないばしょでは、ひとがおおいほどこんらんがおおきくなる。"
+        },
+        {
+          "ja": "一方、指示ばかりが細かい場所では、その場でしか分からない工夫が消える。",
+          "reading": "いっぽう、しじばかりがこまかいばしょでは、そのばでしかわからないくふうがきえる。"
+        },
+        {
+          "ja": "必要なのは、大きな役割だけを決め、細かい判断はその場の人に任せる形である。",
+          "reading": "ひつようなのは、おおきなやくわりだけをきめ、こまかいはんだんはそのばのひとにまかせるかたちである。"
+        },
+        {
+          "ja": "慣れない人の失敗に対する寛容も、同じだけ重要である。",
+          "reading": "なれないひとのしっぱいにたいするかんようも、おなじだけじゅうようである。"
+        },
+        {
+          "ja": "失敗を責める場では、次の日に来る人が減る。",
+          "reading": "しっぱいをせめるばでは、つぎのひにくるひとがへる。"
+        },
+        {
+          "ja": "助け合いは、集まる気持ちの量ではなく、その量を受け止める形の問題である。",
+          "reading": "たすけあいは、あつまるきもちのりょうではなく、そのりょうをうけとめるかたちのもんだいである。"
+        }
+      ],
+      "en": "After a disaster many people take part in relief work. Whether the strength of those who gather comes to anything, however, is decided by the preparation of the side receiving them. In a place where it has not been settled what should be done, the more people there are the greater the confusion. In a place where the instructions are minute and nothing else, on the other hand, the ingenuity that only those present can supply disappears. What is needed is an arrangement that fixes only the large roles and leaves the fine judgements to the people on the spot. Tolerance towards the mistakes of the inexperienced matters just as much. In a place where failure is blamed, fewer people come the next day. Mutual help is not a question of how much goodwill gathers but of the shape that receives it.",
+      "zh": "灾害之后，许多人投身于救助活动。然而聚集起来的力量能否发挥作用，取决于接收一方的准备。在尚未确定该做什么的地方，人越多混乱越大。反过来，在只有细密指示的地方，只有身在现场才想得出的办法便消失了。需要的是这样一种形式：只确定大的分工，细节判断交给现场的人。对不熟练者的失误保持宽容，同样重要。在责备失败的地方，第二天来的人就会减少。互助不是聚集起来的心意有多少的问题，而是用什么形式承接这份心意的问题。",
+      "zh_TW": "災害之後，許多人投身於救助活動。然而聚集起來的力量能否發揮作用，取決於接收一方的準備。在尚未確定該做什麼的地方，人越多混亂越大。反過來，在只有細密指示的地方，只有身在現場才想得出的辦法便消失了。需要的是這樣一種形式：只確定大的分工，細節判斷交給現場的人。對不熟練者的失誤保持寬容，同樣重要。在責備失敗的地方，第二天來的人就會減少。互助不是聚集起來的心意有多少的問題，而是用什麼形式承接這份心意的問題。"
+    },
+    {
+      "id": "p:n1-r-047",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "料理を作る道具は、この五十年で大きく変わった。",
+          "reading": "りょうりをつくるどうぐは、このごじゅうねんでおおきくかわった。"
+        },
+        {
+          "ja": "火も時間も、機械が代わりに決めてくれる。",
+          "reading": "ひもじかんも、きかいがかわりにきめてくれる。"
+        },
+        {
+          "ja": "その結果、誰が作っても同じ味に届くようになった。",
+          "reading": "そのけっか、だれがつくってもおなじあじにとどくようになった。"
+        },
+        {
+          "ja": "機械への依存を嘆く人は、この変化を人の力が落ちた証拠だと言う。",
+          "reading": "きかいへのいそんをなげくひとは、このへんかをひとのちからがおちたしょうこだという。"
+        },
+        {
+          "ja": "しかし、素朴な道具しかなかった時代に、誰もが上手に作れたわけではない。",
+          "reading": "しかし、そぼくなどうぐしかなかったじだいに、だれもがじょうずにつくれたわけではない。"
+        },
+        {
+          "ja": "機械が引き受けたのは、失敗しないための注意である。",
+          "reading": "きかいがひきうけたのは、しっぱいしないためのちゅういである。"
+        },
+        {
+          "ja": "その注意を機械に渡した人は、味を組み立てる部分に時間を向けることができる。",
+          "reading": "そのちゅういをきかいにわたしたひとは、あじをくみたてるぶぶんにじかんをむけることができる。"
+        },
+        {
+          "ja": "技術は、人の力を奪うのではなく、力の向かう先を移す。",
+          "reading": "ぎじゅつは、ひとのちからをうばうのではなく、ちからのむかうさきをうつす。"
+        },
+        {
+          "ja": "大切なのは、移った先で何をするかである。",
+          "reading": "たいせつなのは、うつったさきでなにをするかである。"
+        }
+      ],
+      "en": "The tools we cook with have changed greatly in the last fifty years. The strength of the flame and the length of time are decided for us by machines. As a result, whoever cooks arrives at the same taste. Those who lament our dependence on machines call this change proof that human ability has declined. But in the days when only simple tools existed, it was not the case that everyone cooked well. What the machine took over is the care needed to avoid failure. Having handed that care to the machine, a person can turn time towards the part where a taste is composed. Technology does not take away human power; it shifts where that power is directed. What matters is what we do once it has shifted.",
+      "zh": "做菜的器具在这五十年里发生了很大变化。火候和时间，机器都替我们决定。结果，无论谁来做，都能达到同样的味道。为依赖机器而叹息的人，把这种变化说成是人的能力下降的证据。可是在只有简朴器具的年代，也并非人人都做得好。机器接手的，是为了不出差错所需的那份注意。把这份注意交给机器的人，就能把时间投向调配味道的部分。技术并没有夺走人的能力，而是转移了能力所朝向的方向。重要的是，转移之后我们在那里做些什么。",
+      "zh_TW": "做菜的器具在這五十年裡發生了很大變化。火候和時間，機器都替我們決定。結果，無論誰來做，都能達到同樣的味道。為依賴機器而嘆息的人，把這種變化說成是人的能力下降的證據。可是在只有簡樸器具的年代，也並非人人都做得好。機器接手的，是為了不出差錯所需的那份注意。把這份注意交給機器的人，就能把時間投向調配味道的部分。技術並沒有奪走人的能力，而是轉移了能力所朝向的方向。重要的是，轉移之後我們在那裡做些什麼。"
+    },
+    {
+      "id": "p:n1-r-048",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "市民のみなさまへ　春の教室の参加者募集について",
+          "reading": "しみんのみなさまへ　はるのきょうしつのさんかしゃぼしゅうについて"
+        },
+        {
+          "ja": "四月から六月まで、料理、絵、体操の三つの教室を開きます。",
+          "reading": "しがつからろくがつまで、りょうり、え、たいそうのみっつのきょうしつをひらきます。"
+        },
+        {
+          "ja": "それぞれの教室は二十名までで、申し込みが多い場合は抽選とします。",
+          "reading": "それぞれのきょうしつはにじゅうめいまでで、もうしこみがおおいばあいはちゅうせんとします。"
+        },
+        {
+          "ja": "申し込みは、所定の用紙に必要な事項を記入し、一階の窓口へお出しください。",
+          "reading": "もうしこみは、しょていのようしにひつようなじこうをきにゅうし、いっかいのまどぐちへおだしください。"
+        },
+        {
+          "ja": "三月十日までにお申し込みの方が、抽選の対象になります。",
+          "reading": "さんがつとおかまでにおもうしこみのかたが、ちゅうせんのたいしょうになります。"
+        },
+        {
+          "ja": "締め切りの後に届いた用紙は、空きがある教室にのみお受けします。",
+          "reading": "しめきりのあとにとどいたようしは、あきがあるきょうしつにのみおうけします。"
+        },
+        {
+          "ja": "結果は三月末までに、申し込んだ方全員へお知らせします。",
+          "reading": "けっかはさんがつまつまでに、もうしこんだかたぜんいんへおしらせします。"
+        }
+      ],
+      "en": "To all citizens: about applications for the spring courses. From April to June we will hold three courses, in cooking, painting and gymnastics. Each course takes up to twenty people, and if there are many applications places will be decided by lot. To apply, fill in the required items on the prescribed form and hand it in at the ground-floor window. Those who apply by 10 March are entered in the draw. Forms arriving after the closing date will be accepted only for courses with places left. Everyone who applied will be told the result by the end of March.",
+      "zh": "致各位市民：关于春季讲座参加者的招募。四月至六月，我们将开设烹饪、绘画、体操三门讲座。每门讲座限二十人，申请人数多时以抽签决定。申请请在规定表格上填写必要事项，交至一楼窗口。三月十日之前申请者方可进入抽签。截止日之后送到的表格，仅在尚有空位的讲座中受理。结果将于三月底前通知全体申请者。",
+      "zh_TW": "致各位市民：關於春季講座參加者的招募。四月至六月，我們將開設烹飪、繪畫、體操三門講座。每門講座限二十人，申請人數多時以抽籤決定。申請請在規定表格上填寫必要事項，交至一樓窗口。三月十日之前申請者方可進入抽籤。截止日之後送到的表格，僅在尚有空位的講座中受理。結果將於三月底前通知全體申請者。"
+    },
+    {
+      "id": "p:n1-r-049",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "社員のみなさまへ　社内図書室の利用方法の変更について",
+          "reading": "しゃいんのみなさまへ　しゃないとしょしつのりようほうほうのへんこうについて"
+        },
+        {
+          "ja": "十月から、図書室の資料は画面からも閲覧できるようになります。",
+          "reading": "じゅうがつから、としょしつのしりょうはがめんからもえつらんできるようになります。"
+        },
+        {
+          "ja": "これまでの紙のカードは、九月末で無効となります。",
+          "reading": "これまでのかみのカードは、くがつまつでむこうとなります。"
+        },
+        {
+          "ja": "新しいカードは、三階の受付でその日のうちにお渡しします。",
+          "reading": "あたらしいカードは、さんがいのうけつけでそのひのうちにおわたしします。"
+        },
+        {
+          "ja": "画面から見ることができるのは、社内で作った資料のみです。",
+          "reading": "がめんからみることができるのは、しゃないでつくったしりょうのみです。"
+        },
+        {
+          "ja": "外から買った本は、これまでどおり図書室でお借りください。",
+          "reading": "そとからかったほんは、これまでどおりとしょしつでおかりください。"
+        },
+        {
+          "ja": "ご不明な点は、事務の担当者までお尋ねください。",
+          "reading": "ごふめいなてんは、じむのたんとうしゃまでおたずねください。"
+        }
+      ],
+      "en": "To all staff: about the change to the way the company library is used. From October, the library's materials can also be consulted on screen. The paper cards issued until now become invalid at the end of September. New cards are handed over the same day at the third-floor reception. What can be seen on screen is only material produced within the company. Books bought from outside should be borrowed in the library as before. If anything is unclear, please ask the person in charge in the general affairs section.",
+      "zh": "致各位同事：关于公司图书室使用方法变更的通知。自十月起，图书室的资料也可以在屏幕上阅览。此前的纸质卡将于九月底失效。新卡在三楼前台当天发放。可在屏幕上查看的，仅限公司内部制作的资料。从外部购入的图书，请照旧在图书室借阅。如有不明之处，请向总务的负责人咨询。",
+      "zh_TW": "致各位同事：關於公司圖書室使用方法變更的通知。自十月起，圖書室的資料也可以在屏幕上閱覽。此前的紙質卡將於九月底失效。新卡在三樓前臺當天發放。可在屏幕上查看的，僅限公司內部製作的資料。從外部購入的圖書，請照舊在圖書室借閱。如有不明之處，請向總務的負責人諮詢。"
+    },
+    {
+      "id": "p:n1-r-050",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "ご利用のみなさまへ　駅の階段の工事のお知らせ",
+          "reading": "ごりようのみなさまへ　えきのかいだんのこうじのおしらせ"
+        },
+        {
+          "ja": "十一月一日から十二月二十日まで、東側の階段を閉めます。",
+          "reading": "じゅういちがつついたちからじゅうにがつはつかまで、ひがしがわのかいだんをしめます。"
+        },
+        {
+          "ja": "その間、東側の出口へは、西側の階段をご利用ください。",
+          "reading": "そのあいだ、ひがしがわのでぐちへは、にしがわのかいだんをごりようください。"
+        },
+        {
+          "ja": "荷物の多い方と、階段の利用が難しい方のために、別の通路を用意する措置をとります。",
+          "reading": "にもつのおおいかたと、かいだんのりようがむずかしいかたのために、べつのつうろをよういするそちをとります。"
+        },
+        {
+          "ja": "別の通路は、朝七時から夜九時まで通ることができます。",
+          "reading": "べつのつうろは、あさしちじからよるくじまでとおることができます。"
+        },
+        {
+          "ja": "工事の音が出るのは、平日の昼の時間のみです。",
+          "reading": "こうじのおとがでるのは、へいじつのひるのじかんのみです。"
+        },
+        {
+          "ja": "工事の予定が変わる場合は、事前に駅の入り口でお知らせします。",
+          "reading": "こうじのよていがかわるばあいは、じぜんにえきのいりぐちでおしらせします。"
+        },
+        {
+          "ja": "ご不便をおかけしますが、ご協力をお願いします。",
+          "reading": "ごふべんをおかけしますが、ごきょうりょくをおねがいします。"
+        }
+      ],
+      "en": "To all passengers: notice of work on the station stairs. From 1 November to 20 December the east stairs will be closed. During that period, please use the west stairs to reach the east exit. For those with much luggage and those for whom stairs are difficult, we are taking the step of providing a separate passage. The separate passage can be used from seven in the morning until nine at night. Noise from the work occurs only during the daytime on weekdays. If the schedule of the work changes, we will give notice in advance at the station entrance. We are sorry for the inconvenience and ask for your cooperation.",
+      "zh": "致各位乘客：车站楼梯施工通知。十一月一日至十二月二十日，东侧楼梯将关闭。其间前往东出口，请使用西侧楼梯。为携带大件行李者以及不便走楼梯者，我们将采取另设通道的措施。该通道可在早七点至晚九点通行。施工噪音仅出现在工作日的白天时段。施工计划如有变更，将事先在车站入口处告知。给您带来不便，敬请配合。",
+      "zh_TW": "致各位乘客：車站樓梯施工通知。十一月一日至十二月二十日，東側樓梯將關閉。其間前往東出口，請使用西側樓梯。為攜帶大件行李者以及不便走樓梯者，我們將採取另設通道的措施。該通道可在早七點至晚九點通行。施工噪音僅出現在工作日的白天時段。施工計劃如有變更，將事先在車站入口處告知。給您帶來不便，敬請配合。"
+    },
+    {
+      "id": "p:n1-r-051",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "社員のみなさまへ　今年の健康診断のご案内",
+          "reading": "しゃいんのみなさまへ　ことしのけんこうしんだんのごあんない"
+        },
+        {
+          "ja": "六月一日から十日まで、会社の三階で健康診断を行います。",
+          "reading": "ろくがつついたちからとおかまで、かいしゃのさんがいでけんこうしんだんをおこないます。"
+        },
+        {
+          "ja": "働き始めて十年以上の方は、胃の検査も受けていただきます。",
+          "reading": "はたらきはじめてじゅうねんいじょうのかたは、いのけんさもうけていただきます。"
+        },
+        {
+          "ja": "検査の前の日の夜九時から、食事をしないでください。",
+          "reading": "けんさのまえのひのよるくじから、しょくじをしないでください。"
+        },
+        {
+          "ja": "該当する方には、事前に案内の用紙をお配りします。",
+          "reading": "がいとうするかたには、じぜんにあんないのようしをおくばりします。"
+        },
+        {
+          "ja": "六月の期間に受けることが難しい方は、七月に別の日を用意します。",
+          "reading": "ろくがつのきかんにうけることがむずかしいかたは、しちがつにべつのひをよういします。"
+        },
+        {
+          "ja": "その場合は、五月末までに事務へお申し出ください。",
+          "reading": "そのばあいは、ごがつまつまでにじむへおもうしでください。"
+        },
+        {
+          "ja": "予定の変更は、体の具合の悪い方を優先します。",
+          "reading": "よていのへんこうは、からだのぐあいのわるいかたをゆうせんします。"
+        }
+      ],
+      "en": "To all staff: information about this year's health check. From 1 to 10 June, health checks will be carried out on the third floor of the company. Those who have been working here ten years or more will also undergo a stomach examination. Please take no food from nine o'clock on the evening before the examination. Those to whom this applies will be given an information sheet in advance. For those who find it hard to attend during the June period, other days will be arranged in July. In that case, please inform general affairs by the end of May. In changing the schedule, priority is given to those in poor health.",
+      "zh": "致各位同事：今年健康检查通知。六月一日至十日，将在公司三楼进行健康检查。工作满十年以上者，还需接受胃部检查。检查前一天晚九点起请勿进食。对符合条件者，我们将事先分发说明表格。六月期间难以受检者，我们将在七月另行安排日期。此种情况请于五月底前向总务提出。变更日程时，身体状况不佳者优先。",
+      "zh_TW": "致各位同事：今年健康檢查通知。六月一日至十日，將在公司三樓進行健康檢查。工作滿十年以上者，還需接受胃部檢查。檢查前一天晚九點起請勿進食。對符合條件者，我們將事先分發說明表格。六月期間難以受檢者，我們將在七月另行安排日期。此種情況請於五月底前向總務提出。變更日程時，身體狀況不佳者優先。"
     }
   ],
   "questions": [
@@ -1362,6 +2640,1393 @@
         "en": "Where applications exceed the plots a lottery decides, but those who did not use a plot last year are given priority. Every plot is the same size and price, older applicants pay half rather than nothing, and everyone who applied is told the result.",
         "zh": "申请超过地块数时以抽签决定，但去年未使用过的人优先。每块地大小和价格一律相同，六十五岁以上者是减半而非免费，结果也会通知所有申请人。",
         "zh_TW": "申請超過地塊數時以抽籤決定，但去年未使用過的人優先。每塊地大小和價格一律相同，六十五歲以上者是減半而非免費，結果也會通知所有申請人。"
+      }
+    },
+    {
+      "id": "q:n1-r-027",
+      "type": "short",
+      "items": [
+        "vocab:jm1327810",
+        "vocab:jm1422440"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-018",
+      "prompt": {
+        "en": "What does the writer say it means to treat a thing with care?",
+        "zh": "作者认为爱惜东西指的是什么？",
+        "zh_TW": "作者認為愛惜東西指的是什麼？"
+      },
+      "options": [
+        "買った後にどれだけ手をかけるかという問題です。",
+        "よい道具をできるだけ高い値段で買うことです。",
+        "手入れの手順をすべて覚えておくことです。",
+        "古い道具を早く新しい道具に替えることです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last sentence says it plainly: care is not the judgement made when buying but the way one uses the time afterwards. The other choices concern the moment of purchase or mere knowledge of the steps.",
+        "zh": "末句说得很直接：爱惜不是购买时的判断，而是买下之后如何使用时间。其余三项讲的是购买那一刻的事，或只是记住步骤而已。",
+        "zh_TW": "末句說得很直接：愛惜不是購買時的判斷，而是買下之後如何使用時間。其餘三項講的是購買那一刻的事，或只是記住步驟而已。"
+      }
+    },
+    {
+      "id": "q:n1-r-028",
+      "type": "short",
+      "items": [
+        "vocab:jm1584130",
+        "vocab:jm1269500"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-019",
+      "prompt": {
+        "en": "According to the writer, what is missing from the usual minutes of a meeting?",
+        "zh": "作者认为，通常的会议记录里缺少什么？",
+        "zh_TW": "作者認為，通常的會議記錄裡缺少什麼？"
+      },
+      "options": [
+        "決まった内容の要点です。",
+        "参加者が何に迷ったかという過程です。",
+        "会議に出た人の名前です。",
+        "次の会議を開く日です。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The writer says records telling us what was hesitated over are scarce, and that minutes which put that process last do not help the next meeting. Decisions, by contrast, are what the usual minutes already contain.",
+        "zh": "作者说，能告诉我们当初在哪里犹豫过的记录很少，把这一过程搁到最后的记录帮不了下一次会议。至于已定事项，恰恰是通常记录里本来就有的内容。",
+        "zh_TW": "作者說，能告訴我們當初在哪裡猶豫過的記錄很少，把這一過程擱到最後的記錄幫不了下一次會議。至於已定事項，恰恰是通常記錄裡本來就有的內容。"
+      }
+    },
+    {
+      "id": "q:n1-r-029",
+      "type": "short",
+      "items": [
+        "vocab:jm1532620",
+        "vocab:jm1473210"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-020",
+      "prompt": {
+        "en": "What is the writer's view of replying quickly?",
+        "zh": "作者如何看待迅速回复？",
+        "zh_TW": "作者如何看待迅速回復？"
+      },
+      "options": [
+        "早い返事が明瞭な返事であるとは限りません。",
+        "返事は遅いほど内容がよくなります。",
+        "返事は必ず一日置いてから書くべきです。",
+        "何よりも早く返事をすることが大切です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The closing sentence separates the two: a fast reply and a clear reply are not the same thing. The writer never claims that slower is always better, nor that a day's wait is a rule.",
+        "zh": "结尾一句把两者分开：快的回复与清楚的回复不是一回事。作者并没有说越慢越好，也没有把隔一天再写定为规矩。",
+        "zh_TW": "結尾一句把兩者分開：快的回覆與清楚的回覆不是一回事。作者並沒有說越慢越好，也沒有把隔一天再寫定為規矩。"
+      }
+    },
+    {
+      "id": "q:n1-r-030",
+      "type": "short",
+      "items": [
+        "vocab:jm1470910",
+        "vocab:jm1575870"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-021",
+      "prompt": {
+        "en": "Why can the writer not remember the route walked the day before?",
+        "zh": "作者为什么记不住前一天走过的路？",
+        "zh_TW": "作者為什麼記不住前一天走過的路？"
+      },
+      "options": [
+        "地図に従うと、迷いながら町の形を把握する時間を持たないからです。",
+        "町の道の形が年ごとに変わるからです。",
+        "画面の地図が正しくないことが多いからです。",
+        "目的地までの道が毎回違うからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The third sentence says reliance on the map takes away the chance to grasp the town's shape, and the last says the work of learning a route lay in the time spent lost. The other options blame the town or the map, which the passage does not.",
+        "zh": "第三句说对地图的依赖夺走了把握城市轮廓的机会，末句说记住道路这件事本就在迷路的时间里。其余三项把原因归到城市或地图上，文中并无此意。",
+        "zh_TW": "第三句說對地圖的依賴奪走了把握城市輪廓的機會，末句說記住道路這件事本就在迷路的時間裡。其餘三項把原因歸到城市或地圖上，文中並無此意。"
+      }
+    },
+    {
+      "id": "q:n1-r-031",
+      "type": "short",
+      "items": [
+        "vocab:jm1516780",
+        "vocab:jm1260140"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-022",
+      "prompt": {
+        "en": "What danger of numerical goals does the writer point out?",
+        "zh": "作者指出用数字设定目标有什么危险？",
+        "zh_TW": "作者指出用數字設定目標有什麼危險？"
+      },
+      "options": [
+        "目標の外に残る仕事に誰も手をつけない状態になることです。",
+        "数字で示すと社員の意見が一つにまとまらないことです。",
+        "数字の目標は達成するのが難しいことです。",
+        "目標は多いほど成果が上がることです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second sentence says work that does not become a figure turns into work nobody takes up, and the last calls for a device against leaving it untouched. The others are not claims the passage makes.",
+        "zh": "第二句说无法化为数字的工作会变成没人动手的工作，末句呼吁想办法别让它被搁置。其余三项文中都未提及。",
+        "zh_TW": "第二句說無法化為數字的工作會變成沒人動手的工作，末句呼籲想辦法別讓它被擱置。其餘三項文中都未提及。"
+      }
+    },
+    {
+      "id": "q:n1-r-032",
+      "type": "short",
+      "items": [
+        "vocab:jm1484600",
+        "vocab:jm1473210"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-023",
+      "prompt": {
+        "en": "What is the writer's point about handwritten letters?",
+        "zh": "关于手写信件，作者想说明什么？",
+        "zh_TW": "關於手寫信件，作者想說明什麼？"
+      },
+      "options": [
+        "伝える手段が便利になっても、心を向ける時間は短くならないという点です。",
+        "手書きの手紙のほうが早く相手に届くという点です。",
+        "手紙を書く人が今も増え続けているという点です。",
+        "手書きの文字のほうが読みやすいという点です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last sentence draws the line: what has grown convenient is the means of conveying, while the time spent turning one's mind towards someone is unchanged. The passage says the opposite of the second and third options.",
+        "zh": "末句划出了界线：变便利的只是传递手段，而把心思投向他人所花的时间毫无缩短。第二、三项与文中所述正好相反。",
+        "zh_TW": "末句劃出了界線：變便利的只是傳遞手段，而把心思投向他人所花的時間毫無縮短。第二、三項與文中所述正好相反。"
+      }
+    },
+    {
+      "id": "q:n1-r-033",
+      "type": "short",
+      "items": [
+        "vocab:jm1252680",
+        "vocab:jm1214450"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-024",
+      "prompt": {
+        "en": "What does the writer say about trees planted in a town?",
+        "zh": "关于种在城里的树，作者是怎么说的？",
+        "zh_TW": "關於種在城裡的樹，作者是怎麼說的？"
+      },
+      "options": [
+        "町の仕組みを支える働きを持っています。",
+        "町の見た目をよくするためだけのものです。",
+        "夏の気温を上げてしまうことがあります。",
+        "雨の日には水を川へ早く送ります。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Trees lower the summer temperature, cut electricity use and slow the run-off of rain; the last sentence therefore calls greenery part of how a town works. The remaining options contradict the passage.",
+        "zh": "树木降低夏天气温、减少用电、减缓雨水流速，因此末句说绿色是城市运转机制的一部分。其余选项与文意相反。",
+        "zh_TW": "樹木降低夏天氣溫、減少用電、減緩雨水流速，因此末句說綠色是城市運轉機制的一部分。其餘選項與文意相反。"
+      }
+    },
+    {
+      "id": "q:n1-r-034",
+      "type": "short",
+      "items": [
+        "vocab:jm1374510",
+        "vocab:jm1309940"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-025",
+      "prompt": {
+        "en": "Why does the writer call a quiet workplace dangerous?",
+        "zh": "作者为什么说安静的职场反而危险？",
+        "zh_TW": "作者為什麼說安靜的職場反而危險？"
+      },
+      "options": [
+        "失敗を指摘する声が消えると、直す機会も消えるからです。",
+        "静かな職場では社員の仲が悪くなるからです。",
+        "報告の数が多いほど失敗も増えるからです。",
+        "数字を集める作業に時間がかかるからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The third sentence states it: where the voices pointing out small failures have gone, the chance to correct them goes too. Silence therefore hides risk rather than showing safety.",
+        "zh": "第三句已言明：指出小失误的声音消失时，纠正的机会也随之消失。因此安静掩盖的是风险，而非安全。",
+        "zh_TW": "第三句已言明：指出小失誤的聲音消失時，糾正的機會也隨之消失。因此安靜掩蓋的是風險，而非安全。"
+      }
+    },
+    {
+      "id": "q:n1-r-035",
+      "type": "mid",
+      "items": [
+        "vocab:jm1312270"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-026",
+      "prompt": {
+        "en": "What did the writer believe ten years ago?",
+        "zh": "十年前作者相信的是什么？",
+        "zh_TW": "十年前作者相信的是什麼？"
+      },
+      "options": [
+        "品物が一つでも欠けると客が離れるということです。",
+        "品物の数を減らすほど客が増えるということです。",
+        "近くの畑の品だけを売るべきだということです。",
+        "店は駅から遠いほうがよいということです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The third sentence gives the old belief: if even one thing a customer wanted was missing, that customer would never return. The other options describe what the writer came to do later, or nothing in the text.",
+        "zh": "第三句写出了当年的信念：只要缺了顾客想要的一样东西，那位顾客就不会再来。其余选项要么是后来的做法，要么文中根本没有。",
+        "zh_TW": "第三句寫出了當年的信念：只要缺了顧客想要的一樣東西，那位顧客就不會再來。其餘選項要麼是後來的做法，要麼文中根本沒有。"
+      }
+    },
+    {
+      "id": "q:n1-r-036",
+      "type": "mid",
+      "items": [
+        "vocab:jm1312270"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-026",
+      "prompt": {
+        "en": "What happened as the number of shelves grew?",
+        "zh": "货架增多之后发生了什么？",
+        "zh_TW": "貨架增多之後發生了什麼？"
+      },
+      "options": [
+        "売れない品が古くなり、店の中が狭くなりました。",
+        "客が二倍に増え、売り上げも上がりました。",
+        "近くの畑から届く品が減りました。",
+        "若い客だけが集まるようになりました。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The fourth sentence says exactly this: the more shelves there were, the older the unsold goods grew and the narrower the shop became. Doubling belongs to no part of this passage.",
+        "zh": "第四句正是这样写的：货架越多，卖不掉的商品越陈旧，店里也越狭窄。翻倍之说文中并无。",
+        "zh_TW": "第四句正是這樣寫的：貨架越多，賣不掉的商品越陳舊，店裡也越狹窄。翻倍之說文中並無。"
+      }
+    },
+    {
+      "id": "q:n1-r-037",
+      "type": "mid",
+      "items": [
+        "vocab:jm1544380",
+        "vocab:jm1312270"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-026",
+      "prompt": {
+        "en": "What does the writer conclude from the experiment?",
+        "zh": "从这次尝试中，作者得出了什么结论？",
+        "zh_TW": "從這次嘗試中，作者得出了什麼結論？"
+      },
+      "options": [
+        "小さな店には、店の役割を選び直す余地が残っているということです。",
+        "品物の数は多いほど店の力になるということです。",
+        "売り上げは一年で必ず元に戻るということです。",
+        "商店街の店はすべて畑を持つべきだということです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The final sentence says the room to choose a shop's role afresh still remains, and remains above all to small shops. The second option is the belief the writer abandoned.",
+        "zh": "末句说，重新选择店铺角色的余地依然存在，而且恰恰留在小店这里。第二项是作者已经放弃的想法。",
+        "zh_TW": "末句說，重新選擇店鋪角色的餘地依然存在，而且恰恰留在小店這裡。第二項是作者已經放棄的想法。"
+      }
+    },
+    {
+      "id": "q:n1-r-038",
+      "type": "mid",
+      "items": [
+        "vocab:jm1262830"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-027",
+      "prompt": {
+        "en": "What did the writer think when starting this work?",
+        "zh": "刚开始做这份工作时，作者是怎么想的？",
+        "zh_TW": "剛開始做這份工作時，作者是怎麼想的？"
+      },
+      "options": [
+        "原文の語をできるだけ厳密に置き換えるのが正しいということです。",
+        "文の働きを移すのが正しいということです。",
+        "原文から離れるほどよい訳になるということです。",
+        "訳文は原文より短くすべきだということです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second sentence states the early belief: substituting the words of the original as strictly as possible. Moving the sentence's function across is what the writer thinks now, not then.",
+        "zh": "第二句写明了最初的想法：尽可能严格地替换原文的词。搬移句子的作用是如今的做法，而非当初。",
+        "zh_TW": "第二句寫明瞭最初的想法：儘可能嚴格地替換原文的詞。搬移句子的作用是如今的做法，而非當初。"
+      }
+    },
+    {
+      "id": "q:n1-r-039",
+      "type": "mid",
+      "items": [
+        "vocab:jm1204480"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-027",
+      "prompt": {
+        "en": "Why does the writer say word-for-word substitution does not work?",
+        "zh": "作者为什么说逐词替换行不通？",
+        "zh_TW": "作者為什麼說逐詞替換行不通？"
+      },
+      "options": [
+        "語の背後には、その言葉を使う人たちが育てた概念があるからです。",
+        "原文の語の数が日本語より多いからです。",
+        "読者は原文を読むことができないからです。",
+        "二十年の経験がまだ足りないからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The fourth sentence gives the reason: behind one word lies a concept cultivated over a long time by the people who use it, so no two languages match word for word.",
+        "zh": "第四句给出了理由：一个词的背后是使用者长年培育出的概念，所以两种语言的词无法一一对应。",
+        "zh_TW": "第四句給出了理由：一個詞的背後是使用者長年培育出的概念，所以兩種語言的詞無法一一對應。"
+      }
+    },
+    {
+      "id": "q:n1-r-040",
+      "type": "mid",
+      "items": [
+        "vocab:jm1204480",
+        "vocab:jm1262830"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-027",
+      "prompt": {
+        "en": "What does the writer mean by the road that comes closest to the original?",
+        "zh": "作者所说的最接近原文的路，指的是什么？",
+        "zh_TW": "作者所說的最接近原文的路，指的是什麼？"
+      },
+      "options": [
+        "原文の読者が受け取ったものと同じものを届けることです。",
+        "原文の語順をそのまま残すことです。",
+        "原文の語をすべて訳文に入れることです。",
+        "訳文を原文と同じ長さにすることです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The sixth sentence states the aim, and the seventh calls that aim the closest approach to the original even though it looks like departure. The other options are the strict substitution the writer gave up.",
+        "zh": "第六句说明了目标，第七句说这看似远离原文，实则最接近原文。其余各项都属于作者已放弃的严格替换。",
+        "zh_TW": "第六句說明了目標，第七句說這看似遠離原文，實則最接近原文。其餘各項都屬於作者已放棄的嚴格替換。"
+      }
+    },
+    {
+      "id": "q:n1-r-041",
+      "type": "mid",
+      "items": [
+        "vocab:jm1455810"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-028",
+      "prompt": {
+        "en": "What does the writer write down every day?",
+        "zh": "作者每天记下的是什么？",
+        "zh_TW": "作者每天記下的是什麼？"
+      },
+      "options": [
+        "畑の様子を短く書き残しています。",
+        "その日の売り上げの数字です。",
+        "新しい機械の使い方です。",
+        "近くの農家と話した内容です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second and third sentences say the habit is to note briefly the state of the orchard: the day the blossom opened, the day it rained, the day the insects increased.",
+        "zh": "第二、三句说明这一习惯就是简短记下田里的情形：花开的日子、下雨的日子、虫子变多的日子。",
+        "zh_TW": "第二、三句說明這一習慣就是簡短記下田裡的情形：花開的日子、下雨的日子、蟲子變多的日子。"
+      }
+    },
+    {
+      "id": "q:n1-r-042",
+      "type": "mid",
+      "items": [
+        "vocab:jm1315810"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-028",
+      "prompt": {
+        "en": "What becomes visible from thirty years of these notes?",
+        "zh": "三十年的记录能看出什么？",
+        "zh_TW": "三十年的記錄能看出什麼？"
+      },
+      "options": [
+        "気候の変化が形を持って現れます。",
+        "果物の値段が毎年上がっています。",
+        "虫の種類が三十年で一つも変わっていません。",
+        "一年分の記録だけで十分だということです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The fourth sentence says a single year means almost nothing, but thirty years side by side let the change in the climate appear with a shape; the blossom now opens ten days earlier.",
+        "zh": "第四句说一年份几乎没有意义，但三十年并排就能让气候变化显出形状，花期提前了十天。",
+        "zh_TW": "第四句說一年份幾乎沒有意義，但三十年並排就能讓氣候變化顯出形狀，花期提前了十天。"
+      }
+    },
+    {
+      "id": "q:n1-r-043",
+      "type": "mid",
+      "items": [
+        "vocab:jm1455810",
+        "vocab:jm1315810"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-028",
+      "prompt": {
+        "en": "What does the writer regard as the surest support?",
+        "zh": "作者认为最可靠的支撑是什么？",
+        "zh_TW": "作者認為最可靠的支撐是什麼？"
+      },
+      "options": [
+        "この土地に合う作り方を教える独自の記録です。",
+        "新しい機械を早く買うことです。",
+        "本に載っている作り方に従うことです。",
+        "祖父と同じ道具を使い続けることです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last two sentences say the way of growing suited to this land is taught by the pile of paper, not by books, and that keeping up one's own record is surer than any new machine.",
+        "zh": "最后两句说，适合这片土地的种法是这叠纸而不是书本教的，坚持自己的记录比任何新机器都可靠。",
+        "zh_TW": "最後兩句說，適合這片土地的種法是這疊紙而不是書本教的，堅持自己的記錄比任何新機器都可靠。"
+      }
+    },
+    {
+      "id": "q:n1-r-044",
+      "type": "mid",
+      "items": [
+        "vocab:jm1393680"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-029",
+      "prompt": {
+        "en": "What is a weather forecast, according to the writer?",
+        "zh": "在作者看来，天气预报是什么？",
+        "zh_TW": "在作者看來，天氣預報是什麼？"
+      },
+      "options": [
+        "計算の結果の中で最も起こりやすい形を選んだものです。",
+        "明日必ず起こる事実を伝えたものです。",
+        "過去三十年の記録をそのまま並べたものです。",
+        "聞く側の希望を集めたものです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second sentence defines it: the forecast gathers the results of many calculations and selects the most likely form, so being wrong is part of its premise.",
+        "zh": "第二句给出了定义：预报汇集多次计算的结果，选出最可能出现的情形，所以出错本就包含在前提之中。",
+        "zh_TW": "第二句給出了定義：預報彙集多次計算的結果，選出最可能出現的情形，所以出錯本就包含在前提之中。"
+      }
+    },
+    {
+      "id": "q:n1-r-045",
+      "type": "mid",
+      "items": [
+        "vocab:jm1393680"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-029",
+      "prompt": {
+        "en": "Why do listeners become strongly dissatisfied?",
+        "zh": "听众为什么会产生强烈的不满？",
+        "zh_TW": "聽眾為什麼會產生強烈的不滿？"
+      },
+      "options": [
+        "外れることが含まれる予報を、事実として受け取るからです。",
+        "予報の言葉が難しいからです。",
+        "予報の回数が少ないからです。",
+        "天気が毎日変わるからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The fourth and fifth sentences name the gap: the listener takes as tomorrow's fact something into which error is built, and that gap produces the anger when it fails.",
+        "zh": "第四、五句指出这一落差：听者把本就含有出错可能的预报当成明天的事实，落差正是不满的来源。",
+        "zh_TW": "第四、五句指出這一落差：聽者把本就含有出錯可能的預報當成明天的事實，落差正是不滿的來源。"
+      }
+    },
+    {
+      "id": "q:n1-r-046",
+      "type": "mid",
+      "items": [
+        "vocab:jm1290120",
+        "vocab:jm1393680"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-029",
+      "prompt": {
+        "en": "What does the writer propose?",
+        "zh": "作者提出了什么主张？",
+        "zh_TW": "作者提出了什麼主張？"
+      },
+      "options": [
+        "分からない部分も隠さずに示すことです。",
+        "外れた予報は伝えないことです。",
+        "計算の回数を減らすことです。",
+        "予報を一日一回だけにすることです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last two sentences say that conveying the grounds behind the figures changes how listeners receive a forecast, and that showing what is not known is the road to trust.",
+        "zh": "最后两句说，把数字的依据一并说明会改变听者的接受方式，坦白不确定之处才是培养信任之路。",
+        "zh_TW": "最後兩句說，把數字的依據一併說明會改變聽者的接受方式，坦白不確定之處才是培養信任之路。"
+      }
+    },
+    {
+      "id": "q:n1-r-047",
+      "type": "mid",
+      "items": [
+        "vocab:jm1250660"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-030",
+      "prompt": {
+        "en": "Why had young people stopped taking part in the festival?",
+        "zh": "年轻人为什么不再参加祭典了？",
+        "zh_TW": "年輕人為什麼不再參加祭典了？"
+      },
+      "options": [
+        "昔からの決まりが多く、初めての人には近づきにくかったからです。",
+        "祭りが春に開かれていたからです。",
+        "隣の町の祭りのほうが有名だったからです。",
+        "町に若い人が一人もいなかったからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The third sentence gives the reason: there were many old rules and it was an event a newcomer found hard to approach. The festival is held in autumn, and the neighbouring town's fame is never mentioned.",
+        "zh": "第三句给出了原因：旧规矩多，第一次参加的人难以靠近。祭典在秋天举行，邻镇是否有名文中也未提及。",
+        "zh_TW": "第三句給出了原因：舊規矩多，第一次參加的人難以靠近。祭典在秋天舉行，鄰鎮是否有名文中也未提及。"
+      }
+    },
+    {
+      "id": "q:n1-r-048",
+      "type": "mid",
+      "items": [
+        "vocab:jm1449760"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-030",
+      "prompt": {
+        "en": "What did the town actually do?",
+        "zh": "镇上实际做了什么？",
+        "zh_TW": "鎮上實際做了什麼？"
+      },
+      "options": [
+        "隣の町の祭りと一つにし、決まりを書き直しました。",
+        "祭りを三年間休みました。",
+        "古い決まりをすべてそのまま守りました。",
+        "子どもだけが参加する祭りに変えました。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The fourth and fifth sentences say the town merged its festival with the neighbouring one, rewrote the rules and kept only the forms whose meaning was still understood.",
+        "zh": "第四、五句说镇上把祭典与邻镇合并，重写了规矩，只保留意义仍讲得通的形式。",
+        "zh_TW": "第四、五句說鎮上把祭典與鄰鎮合併，重寫了規矩，只保留意義仍講得通的形式。"
+      }
+    },
+    {
+      "id": "q:n1-r-049",
+      "type": "mid",
+      "items": [
+        "vocab:jm1250660",
+        "vocab:jm1449760"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-030",
+      "prompt": {
+        "en": "What does tradition mean to the writer?",
+        "zh": "作者所说的传统是指什么？",
+        "zh_TW": "作者所說的傳統是指什麼？"
+      },
+      "options": [
+        "続けるために選択を重ねてきた結果です。",
+        "三百年前の形をそのまま動かさないことです。",
+        "参加する人の数を毎年増やすことです。",
+        "隣の町と同じ行事を行うことです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last sentence says tradition is not an unmoving form but the result of choices piled up in order to keep something going. The second option is the view the passage rejects.",
+        "zh": "末句说传统不是一成不变的形式，而是为延续而不断选择所积累的结果。第二项正是文中否定的看法。",
+        "zh_TW": "末句說傳統不是一成不變的形式，而是為延續而不斷選擇所積累的結果。第二項正是文中否定的看法。"
+      }
+    },
+    {
+      "id": "q:n1-r-050",
+      "type": "mid",
+      "items": [
+        "vocab:jm1498130"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-031",
+      "prompt": {
+        "en": "What does the writer say has the greatest effect on health?",
+        "zh": "作者认为对健康影响最大的是什么？",
+        "zh_TW": "作者認為對健康影響最大的是什麼？"
+      },
+      "options": [
+        "毎日眠る時間です。",
+        "毎日の運動の量です。",
+        "食事の内容です。",
+        "職場の人間関係です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second sentence says so directly: exercise and diet gather the talk, but what has the greatest effect is the hours of sleep each day.",
+        "zh": "第二句直接指出：话题总集中在运动和饮食上，但影响最大的其实是每天的睡眠时间。",
+        "zh_TW": "第二句直接指出：話題總集中在運動和飲食上，但影響最大的其實是每天的睡眠時間。"
+      }
+    },
+    {
+      "id": "q:n1-r-051",
+      "type": "mid",
+      "items": [
+        "vocab:jm1498130"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-031",
+      "prompt": {
+        "en": "What happens when sleep stays short?",
+        "zh": "睡眠不足持续下去会怎样？",
+        "zh_TW": "睡眠不足持續下去會怎樣？"
+      },
+      "options": [
+        "判断の質が落ち、誤りを直す作業が翌日の負担を重くします。",
+        "翌日の仕事が早く終わります。",
+        "運動をする時間が増えます。",
+        "会社の売り上げがすぐに落ちます。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The third and fourth sentences describe the chain: judgement worsens, small errors multiply, and correcting them makes the next day's load heavier.",
+        "zh": "第三、四句描述了这一连锁：判断质量下降，小差错增多，而修正差错又加重了第二天的负担。",
+        "zh_TW": "第三、四句描述了這一連鎖：判斷質量下降，小差錯增多，而修正差錯又加重了第二天的負擔。"
+      }
+    },
+    {
+      "id": "q:n1-r-052",
+      "type": "mid",
+      "items": [
+        "vocab:jm1241270",
+        "vocab:jm1498130"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-031",
+      "prompt": {
+        "en": "Whose problem is the balance of work and rest, in the writer's view?",
+        "zh": "作者认为工作与休息的均衡是谁的问题？",
+        "zh_TW": "作者認為工作與休息的均衡是誰的問題？"
+      },
+      "options": [
+        "仕事の量を決める会社の側の課題です。",
+        "社員一人一人の心がけの問題です。",
+        "医者が決めるべき問題です。",
+        "家族が解決すべき問題です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last two sentences say plainly that it is not a matter of individual resolve but a task for the company that decides how much work there is.",
+        "zh": "最后两句说得明白：这不是个人自觉的问题，而是决定工作量的公司一方的课题。",
+        "zh_TW": "最後兩句說得明白：這不是個人自覺的問題，而是決定工作量的公司一方的課題。"
+      }
+    },
+    {
+      "id": "q:n1-r-053",
+      "type": "long",
+      "items": [
+        "vocab:jm1173420"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-032",
+      "prompt": {
+        "en": "What did the writer do as a child?",
+        "zh": "作者小时候常做的是什么？",
+        "zh_TW": "作者小時候常做的是什麼？"
+      },
+      "options": [
+        "祖父が時計を直す様子を眺めていました。",
+        "祖父の店で客の相手をしていました。",
+        "壊れた時計を自分で直していました。",
+        "店の道具を並べる仕事を手伝っていました。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The third sentence says the writer often watched the deftness of his grandfather's hands. Serving customers and mending watches himself appear nowhere in the passage.",
+        "zh": "第三句说作者常常看着祖父的手法。接待顾客、自己修表等文中都没有出现。",
+        "zh_TW": "第三句說作者常常看著祖父的手法。接待顧客、自己修表等文中都沒有出現。"
+      }
+    },
+    {
+      "id": "q:n1-r-054",
+      "type": "long",
+      "items": [
+        "vocab:jm1327690"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-032",
+      "prompt": {
+        "en": "What did the grandfather's answer mean?",
+        "zh": "祖父那句回答的意思是什么？",
+        "zh_TW": "祖父那句回答的意思是什麼？"
+      },
+      "options": [
+        "止まった理由は時計の中にあり、それを読み取るのが仕事だということです。",
+        "時計は時間が経つと自然に動き出すということです。",
+        "直す仕事は客に任せるべきだということです。",
+        "古い時計は直す必要がないということです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The writer explains it later: a stopped machine always has a reason, and that reason remains inside the machine, so the grandfather was listening to what the watch told him.",
+        "zh": "作者后文作了解释：停下来的机器必有原因，而原因就留在机器内部，所以祖父是在听钟表所讲述的原因。",
+        "zh_TW": "作者後文作了解釋：停下來的機器必有原因，而原因就留在機器內部，所以祖父是在聽鐘錶所講述的原因。"
+      }
+    },
+    {
+      "id": "q:n1-r-055",
+      "type": "long",
+      "items": [
+        "vocab:jm1327690",
+        "vocab:jm1173420"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-032",
+      "prompt": {
+        "en": "What does the writer say about changing parts in haste?",
+        "zh": "关于匆忙更换零件，作者是怎么说的？",
+        "zh_TW": "關於匆忙更換零件，作者是怎麼說的？"
+      },
+      "options": [
+        "止まった理由を消したまま先へ進むことになります。",
+        "部品の値段が高くなります。",
+        "時計が前より早く動きます。",
+        "客が長く待つことになります。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The tenth sentence says just this: replacing parts quickly means going on with the reason erased. Cost and waiting time are not discussed.",
+        "zh": "第十句正是这样说的：匆忙换零件等于把原因抹掉后再往前走。价格与等待时间文中并未讨论。",
+        "zh_TW": "第十句正是這樣說的：匆忙換零件等於把原因抹掉後再往前走。價格與等待時間文中並未討論。"
+      }
+    },
+    {
+      "id": "q:n1-r-056",
+      "type": "long",
+      "items": [
+        "vocab:jm1327690"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-032",
+      "prompt": {
+        "en": "What is deftness, in the writer's present view?",
+        "zh": "如今作者认为手法高明是指什么？",
+        "zh_TW": "如今作者認為手法高明是指什麼？"
+      },
+      "options": [
+        "無駄な動きを一つも作らないことです。",
+        "できるだけ早く手を動かすことです。",
+        "道具を多く持っていることです。",
+        "客の話を短く済ませることです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The closing sentence separates speed from skill: deftness is not moving fast but making not a single wasted movement.",
+        "zh": "末句把速度与技艺分开：手法高明不是动作快，而是不做一个多余的动作。",
+        "zh_TW": "末句把速度與技藝分開：手法高明不是動作快，而是不做一個多餘的動作。"
+      }
+    },
+    {
+      "id": "q:n1-r-057",
+      "type": "long",
+      "items": [
+        "vocab:jm1511260"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-033",
+      "prompt": {
+        "en": "What does the writer say about writing that laments language change?",
+        "zh": "关于感叹语言变化的文章，作者说了什么？",
+        "zh_TW": "關於感嘆語言變化的文章，作者說了什麼？"
+      },
+      "options": [
+        "千年前の文章にも同じ嘆きがあります。",
+        "近年になって初めて現れたものです。",
+        "若い人が書いたものが多いです。",
+        "辞書を作る人だけが書いてきたものです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The first two sentences say such laments are found in every age, and that even a text of a thousand years ago complains of the young. So the complaint is not new.",
+        "zh": "开头两句说这类感叹每个时代都有，连一千年前的文章都在抱怨年轻人。可见这并非新近才有。",
+        "zh_TW": "開頭兩句說這類感嘆每個時代都有，連一千年前的文章都在抱怨年輕人。可見這並非新近才有。"
+      }
+    },
+    {
+      "id": "q:n1-r-058",
+      "type": "long",
+      "items": [
+        "vocab:jm1511260"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-033",
+      "prompt": {
+        "en": "How does the writer explain why a language changes?",
+        "zh": "作者如何解释语言变化的原因？",
+        "zh_TW": "作者如何解釋語言變化的原因？"
+      },
+      "options": [
+        "使う人が毎日下す小さな選択が積み重なるからです。",
+        "辞書を作る人が語を選ぶからです。",
+        "学校の教え方が変わるからです。",
+        "外国語の影響だけが原因です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The fourth and fifth sentences say change is the outcome of users' small daily choices: hard forms shorten, and unneeded distinctions vanish.",
+        "zh": "第四、五句说变化是使用者每天细小选择的结果：难说的形式变短，不需要的区分消失。",
+        "zh_TW": "第四、五句說變化是使用者每天細小選擇的結果：難說的形式變短，不需要的區分消失。"
+      }
+    },
+    {
+      "id": "q:n1-r-059",
+      "type": "long",
+      "items": [
+        "vocab:jm1472370",
+        "vocab:jm1511260"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-033",
+      "prompt": {
+        "en": "Why does the writer not welcome every change alike?",
+        "zh": "作者为什么不对一切变化一视同仁地欢迎？",
+        "zh_TW": "作者為什麼不對一切變化一視同仁地歡迎？"
+      },
+      "options": [
+        "細かい違いを運ぶ語が消えると、その違いを語る手段も消えるからです。",
+        "古い語のほうが常に美しいからです。",
+        "変化が速いと辞書が売れないからです。",
+        "若い人の言葉が乱れているからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The eighth sentence gives the reason: when a word carrying a fine distinction goes, the means of speaking about that distinction goes too. The writer never claims old words are simply more beautiful.",
+        "zh": "第八句给出了理由：承载细微差别的词消失时，谈论这种差别的手段也随之消失。作者并未说旧词一定更美。",
+        "zh_TW": "第八句給出了理由：承載細微差別的詞消失時，談論這種差別的手段也隨之消失。作者並未說舊詞一定更美。"
+      }
+    },
+    {
+      "id": "q:n1-r-060",
+      "type": "long",
+      "items": [
+        "vocab:jm1511260",
+        "vocab:jm1472370"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-033",
+      "prompt": {
+        "en": "What does protecting a language mean to the writer?",
+        "zh": "作者所说的守护语言是指什么？",
+        "zh_TW": "作者所說的守護語言是指什麼？"
+      },
+      "options": [
+        "何を失うかを自分で選ぶことです。",
+        "変化を完全に止めることです。",
+        "新しい語を一つも使わないことです。",
+        "古い辞書をそのまま残すことです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last sentence states it: protecting a language is not stopping change but choosing what one loses. The writer also says the work is not one of protecting the dictionary.",
+        "zh": "末句已言明：守护语言不是阻止变化，而是选择自己要失去什么。作者还说这并非守护词典的工作。",
+        "zh_TW": "末句已言明：守護語言不是阻止變化，而是選擇自己要失去什麼。作者還說這並非守護詞典的工作。"
+      }
+    },
+    {
+      "id": "q:n1-r-061",
+      "type": "integrated",
+      "items": [
+        "vocab:jm1422520",
+        "vocab:jm1167250"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-034",
+      "prompt": {
+        "en": "On what point do the first writer and the second writer differ?",
+        "zh": "前一位与后一位的分歧在哪一点？",
+        "zh_TW": "前一位與後一位的分歧在哪一點？"
+      },
+      "options": [
+        "制服が生徒から選ぶ経験を取り上げるかどうかという点です。",
+        "制服の色をどうするかという点です。",
+        "制服を着る学校の数が増えているかという点です。",
+        "服を選ぶのに時間がかかるかどうかという点です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The first writer values the saving of time and cost and the hiding of differences between households. The second grants that a uniform makes order but objects that it removes the daily experience of choosing, which is the practice a child needs. Colour and numbers are never discussed.",
+        "zh": "前一位看重省下的时间与花费，以及掩盖家境差异。后一位承认校服带来秩序，却反对它剥夺了每天挑选衣服的经历，而那正是孩子需要的练习。颜色与学校数量文中都未涉及。",
+        "zh_TW": "前一位看重省下的時間與花費，以及掩蓋家境差異。後一位承認校服帶來秩序，卻反對它剝奪了每天挑選衣服的經歷，而那正是孩子需要的練習。顏色與學校數量文中都未涉及。"
+      }
+    },
+    {
+      "id": "q:n1-r-062",
+      "type": "integrated",
+      "items": [
+        "vocab:jm1513320",
+        "vocab:jm1175380"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-035",
+      "prompt": {
+        "en": "What does the second writer point out about electronic material?",
+        "zh": "后一位指出电子资料的什么问题？",
+        "zh_TW": "後一位指出電子資料的什麼問題？"
+      },
+      "options": [
+        "読むための機械や仕組みがないと開けないという点です。",
+        "遠くの人が家から読めるという点です。",
+        "紙より場所を取らないという点です。",
+        "紙が時とともに傷むという点です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second writer says electronic material can be read only where a machine and a system exist, and that much of what was made thirty years ago can no longer be opened. The other options are the first writer's points or not raised at all.",
+        "zh": "后一位说电子资料只有在有机器和相应系统时才读得了，三十年前制作的资料大多已打不开。其余选项或属前一位的论点，或文中未提。",
+        "zh_TW": "後一位說電子資料只有在有機器和相應系統時才讀得了，三十年前製作的資料大多已打不開。其餘選項或屬前一位的論點，或文中未提。"
+      }
+    },
+    {
+      "id": "q:n1-r-063",
+      "type": "integrated",
+      "items": [
+        "vocab:jm1576570",
+        "vocab:jm1214300"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-036",
+      "prompt": {
+        "en": "What do the two writers disagree about?",
+        "zh": "两位的意见在哪一点上不同？",
+        "zh_TW": "兩位的意見在哪一點上不同？"
+      },
+      "options": [
+        "会議を短くすると失われるものがあるかどうかという点です。",
+        "資料を事前に配るべきかどうかという点です。",
+        "会議に何人参加すべきかという点です。",
+        "会議を朝と夕方のどちらに開くかという点です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The first writer sees only gains from shortening: concentration and smooth discussion. The second says that fixing the length leaves only the easily concluded topics and lets unanswered problems fade away. Numbers and times are not discussed.",
+        "zh": "前一位只看到缩短会议的好处：专注与讨论顺畅。后一位则说先定死时间，只会留下容易得出结论的话题，没有答案的问题就此消失。人数与时段文中并未讨论。",
+        "zh_TW": "前一位只看到縮短會議的好處：專注與討論順暢。後一位則說先定死時間，只會留下容易得出結論的話題，沒有答案的問題就此消失。人數與時段文中並未討論。"
+      }
+    },
+    {
+      "id": "q:n1-r-064",
+      "type": "integrated",
+      "items": [
+        "vocab:jm1422520",
+        "vocab:jm1252680"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-037",
+      "prompt": {
+        "en": "What does the second writer say is needed?",
+        "zh": "后一位认为需要的是什么？",
+        "zh_TW": "後一位認為需要的是什麼？"
+      },
+      "options": [
+        "台数を増やす前に自転車の通る道を作ることです。",
+        "車の数をさらに減らすことです。",
+        "自転車の値段を下げることです。",
+        "歩く人の数を減らすことです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second writer's last sentence says what is needed is not more bicycles but roads for them, built first, because numbers rising without settled rules break the order of the street.",
+        "zh": "后一位在末句说，需要的不是增加自行车，而是先修出供其通行的道路，因为规则未定而数量先涨会破坏道路秩序。",
+        "zh_TW": "後一位在末句說，需要的不是增加自行車，而是先修出供其通行的道路，因為規則未定而數量先漲會破壞道路秩序。"
+      }
+    },
+    {
+      "id": "q:n1-r-065",
+      "type": "integrated",
+      "items": [
+        "vocab:jm1335480",
+        "vocab:jm1408100"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-038",
+      "prompt": {
+        "en": "What is the second writer's position?",
+        "zh": "后一位持什么立场？",
+        "zh_TW": "後一位持什麼立場？"
+      },
+      "options": [
+        "画面の授業は選択の一つとしてはよいが、教室の代わりにはならないという立場です。",
+        "画面の授業をすべて取りやめるべきだという立場です。",
+        "遠くの学生は参加しなくてよいという立場です。",
+        "教室の授業のほうが話の内容が少ないという立場です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second writer accepts the screen class as one flexible option but holds that the brief exchanges before and after a class give shape to students' questions, so it cannot replace the classroom. He never calls for abolition.",
+        "zh": "后一位接受把屏幕课程作为一种灵活选择，但认为课前课后的简短交流才让学生的疑问成形，因此无法取代教室。他并未主张取消。",
+        "zh_TW": "後一位接受把屏幕課程作為一種靈活選擇，但認為課前課後的簡短交流才讓學生的疑問成形，因此無法取代教室。他並未主張取消。"
+      }
+    },
+    {
+      "id": "q:n1-r-066",
+      "type": "integrated",
+      "items": [
+        "vocab:jm1605330",
+        "vocab:jm1314050"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-039",
+      "prompt": {
+        "en": "What is the second writer worried about?",
+        "zh": "后一位担心的是什么？",
+        "zh_TW": "後一位擔心的是什麼？"
+      },
+      "options": [
+        "買い物の記録が店の外に残り、漏れる危険が消えないことです。",
+        "会計に時間がかかることです。",
+        "現金を数える作業が増えることです。",
+        "店に一日の記録が残らないことです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second writer says electronic payment leaves outside the shop a record of who bought what and when, and that the risk of it leaking cannot be removed by preparation. The other options belong to the first writer's account of what improves.",
+        "zh": "后一位说电子支付会把谁在何时买了什么的记录留在店外，泄露的风险再怎么准备也无法消除。其余各项属于前一位所说的改善之处。",
+        "zh_TW": "後一位說電子支付會把誰在何時買了什麼的記錄留在店外，洩露的風險再怎麼準備也無法消除。其餘各項屬於前一位所說的改善之處。"
+      }
+    },
+    {
+      "id": "q:n1-r-067",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1275210",
+        "vocab:jm1544380"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-040",
+      "prompt": {
+        "en": "What is the writer's central claim?",
+        "zh": "作者的核心主张是什么？",
+        "zh_TW": "作者的核心主張是什麼？"
+      },
+      "options": [
+        "予定に入れないものを決めることこそ効率だということです。",
+        "予定は全て埋めるべきだということです。",
+        "新しい仕事は予定表からしか生まれないということです。",
+        "空いた時間は必ず無駄だということです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last two sentences say efficiency is not filling time but deciding what not to put in. The other options are the very view the writer argues against.",
+        "zh": "最后两句说，效率不是把时间填满，而是决定什么不放进去。其余三项正是作者所反对的看法。",
+        "zh_TW": "最後兩句說，效率不是把時間填滿，而是決定什麼不放進去。其餘三項正是作者所反對的看法。"
+      }
+    },
+    {
+      "id": "q:n1-r-068",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1309940",
+        "vocab:jm1467550"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-041",
+      "prompt": {
+        "en": "What does the writer most want to say?",
+        "zh": "作者最想说明的是什么？",
+        "zh_TW": "作者最想說明的是什麼？"
+      },
+      "options": [
+        "数字が何を落としているかを同時に指摘できる人が必要だということです。",
+        "数字による評価をすべてやめるべきだということです。",
+        "数字は現実そのものを正しく写しているということです。",
+        "相談に乗る時間もすべて数字にすべきだということです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The final two sentences say expressly that the writer is not asking for figures to be abandoned, but for people who can point out what the figures leave out. Figures are called a copy of part of reality, not reality itself.",
+        "zh": "最后两句明确表示：作者并非要求废除数字，而是需要能同时指出数字漏掉了什么的人。文中说数字只是现实一部分的映像，并非现实本身。",
+        "zh_TW": "最後兩句明確表示：作者並非要求廢除數字，而是需要能同時指出數字漏掉了什麼的人。文中說數字只是現實一部分的映像，並非現實本身。"
+      }
+    },
+    {
+      "id": "q:n1-r-069",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1587690",
+        "vocab:jm1403760"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-042",
+      "prompt": {
+        "en": "What does the writer conclude adults can do?",
+        "zh": "作者认为大人能做的是什么？",
+        "zh_TW": "作者認為大人能做的是什麼？"
+      },
+      "options": [
+        "本との出会いが起こる場を用意することだけです。",
+        "品物を渡す方法をもっと長く続けることです。",
+        "読んだ冊数を毎日数えることです。",
+        "子どもが読む本を大人が決めることです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last two sentences say all an adult can do is prepare the place where a meeting with a book may happen, since enthusiasm must come from within rather than be handed out.",
+        "zh": "最后两句说，大人能做的只是准备好让孩子与书相遇的场所，因为意愿要从内心生出，而非从外面递给他。",
+        "zh_TW": "最後兩句說，大人能做的只是準備好讓孩子與書相遇的場所，因為意願要從內心生出，而非從外面遞給他。"
+      }
+    },
+    {
+      "id": "q:n1-r-070",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1335400",
+        "vocab:jm1455810"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-043",
+      "prompt": {
+        "en": "What kind of plan does the writer criticise?",
+        "zh": "作者批评的是哪一类计划？",
+        "zh_TW": "作者批評的是哪一類計劃？"
+      },
+      "options": [
+        "都市にあるものを小さくして持ってくる計画です。",
+        "山の水や古い町の姿を守る計画です。",
+        "地方の仕事を数え直す作業です。",
+        "人を都市へ送り出す計画です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second and third sentences say such plans shrink what the city has and bring it in, and that nobody moves in search of a shrunken city. The other options are what the writer recommends or what is not discussed.",
+        "zh": "第二、三句说这类计划是把城市里的东西缩小搬来，而没有人会为缩小版的城市搬家。其余选项是作者所推崇的做法，或文中未提。",
+        "zh_TW": "第二、三句說這類計劃是把城市裡的東西縮小搬來，而沒有人會為縮小版的城市搬家。其餘選項是作者所推崇的做法，或文中未提。"
+      }
+    },
+    {
+      "id": "q:n1-r-071",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1547290",
+        "vocab:jm1290120"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-044",
+      "prompt": {
+        "en": "What does the writer argue those who report should do?",
+        "zh": "作者主张传播消息的一方应当怎么做？",
+        "zh_TW": "作者主張傳播消息的一方應當怎麼做？"
+      },
+      "options": [
+        "書く前に一度手を止め、根拠を確かめることです。",
+        "できるだけ早く短い文を出すことです。",
+        "訂正は出さずに黙っていることです。",
+        "現場を見ていない人の話を広く集めることです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The sixth sentence calls for the restraint to stop one's hand before writing, and the closing lines say reducing one error weighs more than being a day faster. Silence is described as a cost worth paying, not as a way of hiding corrections.",
+        "zh": "第六句要求在动笔前先停一下手的克制，结尾说少犯一个错误比早发一篇更重要。文中把沉默视为值得付出的代价，而非隐瞒更正。",
+        "zh_TW": "第六句要求在動筆前先停一下手的剋制，結尾說少犯一個錯誤比早發一篇更重要。文中把沉默視為值得付出的代價，而非隱瞞更正。"
+      }
+    },
+    {
+      "id": "q:n1-r-072",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1335480",
+        "vocab:jm1591390"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-045",
+      "prompt": {
+        "en": "What does the writer mean by flexibility?",
+        "zh": "作者所说的灵活是指什么？",
+        "zh_TW": "作者所說的靈活是指什麼？"
+      },
+      "options": [
+        "決まりを変える道を、決まりの中に用意しておくことです。",
+        "決まりを一つも持たないことです。",
+        "決まりを守ること自体を仕事にすることです。",
+        "決まりの数を毎年増やすことです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last two sentences say flexibility is not the absence of rules but having a road for changing them ready inside the rules themselves. Making the keeping of rules the work is the failure the writer describes.",
+        "zh": "最后两句说，灵活不是不持有规矩，而是在规矩之中预先备好改变规矩的通道。把遵守规矩本身当成工作，正是作者所说的弊病。",
+        "zh_TW": "最後兩句說，靈活不是不持有規矩，而是在規矩之中預先備好改變規矩的通道。把遵守規矩本身當成工作，正是作者所說的弊病。"
+      }
+    },
+    {
+      "id": "q:n1-r-073",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1211970",
+        "vocab:jm1335320"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-046",
+      "prompt": {
+        "en": "What decides whether the volunteers' strength comes to anything?",
+        "zh": "决定志愿者的力量能否发挥作用的是什么？",
+        "zh_TW": "決定志願者的力量能否發揮作用的是什麼？"
+      },
+      "options": [
+        "受け入れる側が役割と判断の分け方をどう用意するかです。",
+        "集まった人の数がどれだけ多いかです。",
+        "細かい指示をどれだけ多く出すかです。",
+        "気持ちをどれだけ長く続けるかです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The passage says the receiving side's preparation decides it: fix only the large roles, leave fine judgements to those present, and be tolerant of beginners' mistakes. Numbers alone increase confusion, and minute instructions kill on-the-spot ingenuity.",
+        "zh": "文中说这取决于接收一方的准备：只定大的分工，细节判断交给现场的人，并宽容新手的失误。单纯人多只会增加混乱，指示过细则扼杀现场的办法。",
+        "zh_TW": "文中說這取決於接收一方的準備：只定大的分工，細節判斷交給現場的人，並寬容新手的失誤。單純人多隻會增加混亂，指示過細則扼殺現場的辦法。"
+      }
+    },
+    {
+      "id": "q:n1-r-074",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1575870",
+        "vocab:jm1397390"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-047",
+      "prompt": {
+        "en": "What is the writer's view of our dependence on machines?",
+        "zh": "作者如何看待对机器的依赖？",
+        "zh_TW": "作者如何看待對機器的依賴？"
+      },
+      "options": [
+        "力を奪うのではなく、力の向かう先を移すという見方です。",
+        "人の技術を確実に落とすという見方です。",
+        "素朴な道具の時代のほうが誰でも上手だったという見方です。",
+        "機械を使った料理は味が落ちるという見方です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last two sentences say technology shifts where human power is directed rather than taking it away, and that what matters is what we do once it has shifted. The writer denies that everyone cooked well in the age of simple tools.",
+        "zh": "最后两句说技术并未夺走人的能力，而是转移了能力的方向，重要的是转移之后做什么。作者也否认简朴器具的年代人人都做得好。",
+        "zh_TW": "最後兩句說技術並未奪走人的能力，而是轉移了能力的方向，重要的是轉移之後做什麼。作者也否認簡樸器具的年代人人都做得好。"
+      }
+    },
+    {
+      "id": "q:n1-r-075",
+      "type": "info",
+      "items": [
+        "vocab:jm1426220",
+        "vocab:jm1343350"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-048",
+      "prompt": {
+        "en": "A person hands in the form on 15 March. What is true for that person?",
+        "zh": "某人在三月十五日提交表格，他的情况是怎样的？",
+        "zh_TW": "某人在三月十五日提交表格，他的情況是怎樣的？"
+      },
+      "options": [
+        "空きのある教室にだけ申し込むことができます。",
+        "抽選の対象になります。",
+        "三月末に必ず参加できます。",
+        "四月からの三つの教室すべてに参加できます。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The draw covers only those who applied by 10 March; forms arriving after the closing date are accepted only for courses with places left. So a form handed in on 15 March goes to courses that still have room.",
+        "zh": "抽签只针对三月十日之前申请的人；截止日之后送到的表格，仅在尚有空位的讲座中受理。因此十五日提交的表格只能报还有空位的讲座。",
+        "zh_TW": "抽籤只針對三月十日之前申請的人；截止日之後送到的表格，僅在尚有空位的講座中受理。因此十五日提交的表格只能報還有空位的講座。"
+      }
+    },
+    {
+      "id": "q:n1-r-076",
+      "type": "info",
+      "items": [
+        "vocab:jm1175380",
+        "vocab:jm1529930"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-049",
+      "prompt": {
+        "en": "What can be read on screen from October?",
+        "zh": "十月起可以在屏幕上阅读的是什么？",
+        "zh_TW": "十月起可以在屏幕上閱讀的是什麼？"
+      },
+      "options": [
+        "社内で作った資料だけです。",
+        "図書室のすべての本です。",
+        "外から買った本だけです。",
+        "十月より前の資料だけです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The notice says what can be seen on screen is only material produced within the company; books bought from outside must still be borrowed in the library.",
+        "zh": "通知说可在屏幕上查看的仅限公司内部制作的资料；从外部购入的图书仍须在图书室借阅。",
+        "zh_TW": "通知說可在屏幕上查看的僅限公司內部製作的資料；從外部購入的圖書仍須在圖書室借閱。"
+      }
+    },
+    {
+      "id": "q:n1-r-077",
+      "type": "info",
+      "items": [
+        "vocab:jm1396530",
+        "vocab:jm1314050"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-050",
+      "prompt": {
+        "en": "Someone with heavy luggage wants to reach the east exit at eight in the evening in December. What can that person do?",
+        "zh": "十二月的晚上八点，携带大件行李的人想前往东出口，他可以怎么做？",
+        "zh_TW": "十二月的晚上八點，攜帶大件行李的人想前往東出口，他可以怎麼做？"
+      },
+      "options": [
+        "別の通路を通ることができます。",
+        "東側の階段を使うことができます。",
+        "工事が終わるまで駅を利用できません。",
+        "昼の時間だけ通ることができます。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The east stairs are closed until 20 December, but a separate passage is provided for those with much luggage and can be used from seven in the morning to nine at night, so eight in the evening is within that time.",
+        "zh": "东侧楼梯到十二月二十日为止关闭，但为携带大件行李者另设了通道，通行时间为早七点至晚九点，晚八点仍在此范围内。",
+        "zh_TW": "東側樓梯到十二月二十日為止關閉，但為攜帶大件行李者另設了通道，通行時間為早七點至晚九點，晚八點仍在此範圍內。"
+      }
+    },
+    {
+      "id": "q:n1-r-078",
+      "type": "info",
+      "items": [
+        "vocab:jm1204700",
+        "vocab:jm1539390"
+      ],
+      "kind": "choice",
+      "passage": "p:n1-r-051",
+      "prompt": {
+        "en": "What should someone do who cannot attend during the June period?",
+        "zh": "六月期间无法受检的人应当怎么做？",
+        "zh_TW": "六月期間無法受檢的人應當怎麼做？"
+      },
+      "options": [
+        "五月末までに事務へ申し出ます。",
+        "七月に何もせず三階へ行きます。",
+        "案内の用紙を事務へ返します。",
+        "検査の前の日の夜に食事をします。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The notice says another day will be arranged in July for those who cannot come in June, and that in such a case one must inform general affairs by the end of May.",
+        "zh": "通知说，六月无法受检者将在七月另行安排日期，此种情况须在五月底前向总务提出。",
+        "zh_TW": "通知說，六月無法受檢者將在七月另行安排日期，此種情況須在五月底前向總務提出。"
       }
     }
   ]

@@ -1276,6 +1276,45 @@ for whoever had to debug the feature.
       learner can check, and a wrong answer key on a mock exam is the app
       telling somebody they got a question wrong when they did not
 - [x] 1005 tests
+
+#### M4.7 Every level at ×3 — **done 2026-09-05**, released as `v0.4.11`
+
+- [x] **Every level deepened to ×3 of the official composition.** N5 was
+      already there; N4, N3, N2 and N1 followed, in twenty batches. The
+      catalog is **1407 questions and 605 passages** — 201 / 255 / 306 / 321 /
+      324 — so three full mocks can be sat at any level without the sampler
+      repeating a question
+- [x] The depth test in `drills_content_test.dart` reads ×3 for all five. It
+      is the only place the number can be checked, because the Learn card's
+      question counts were already promising it
+- [x] Gate causes recorded, because they are one shape rather than twenty:
+      constructions the sentence analyser cannot take apart, not words the
+      learner would not know — the `〜なくなる` chain, `〜すぎて` on an
+      adjective, the `んじゃ` contraction, the `って` quotative, and compounds
+      whose halves ship but whose whole does not (`説明書`, `報告書`, `講座`,
+      `総務`). Every one was rewritten rather than dropped
+- [x] **`storage_config.json` no longer loses a write.** Every preference
+      setter read the file, changed one key and wrote it back; two running
+      together read the same file and wrote two different successors, so the
+      second erased the first's key — and on Windows renamed its temporary
+      file over one still open, throwing `PathAccessException`. Config writes
+      now go through a queue with the read inside it. Found by the suite:
+      three tests in `settings_two_pane_ui_test.dart` failed together under
+      load, and a person toggling two switches quickly would hit the same race
+- [x] `preferences_test.dart` pins it — four setters in one `Future.wait`, all
+      four keys present afterwards. It fails on the old code
+- [x] A write waits only for writes started in the **same zone**. In the app
+      that is all of them; a widget test that fires a setter from a tap and
+      then ends leaves file I/O suspended in a zone nobody drives again, and
+      an unqualified queue waited on it for the life of the process — the
+      first attempt hung the whole suite. A `Timer` to bound the wait is not
+      available either: `flutter_test` fails any test that leaves one pending
+- [x] `exam_page_ui_test.dart` deleted its temporary directory while a save
+      was still in flight, which Windows refuses. The cleanup retries now.
+      That was the load flake this file had all along
+- [x] The depth tables in `features/jlpt-practice.md`, both trees
+- [x] 1007 tests
+
 ### Phase 5 — Platforms and languages
 
 - [x] Windows: `flutter create --platforms=windows`, `installer.iss` (x64 + ARM64), MSIX config and
@@ -1472,6 +1511,9 @@ for whoever had to debug the feature.
 | 2026-09-05 | A section that cannot be practised is disabled with its reason beside it, never hidden | No content yet, or no Japanese voice: a learner who cannot find 読解 practice has no way to tell whether it exists or they have missed it. The same rule already governs `SpeakButton` and the listening quiz modes |
 | 2026-09-05 | The three deviations from the real paper are stated in the feature doc rather than quietly made | 即時応答 gets four options where the paper gives three, because every answer pane and the gate assume four; 発話表現 describes its scene in words, because there are no pictures in this catalog; a mock plays each item once, because that is the paper's rule. A deviation nobody wrote down is a bug report waiting to be filed |
 | 2026-09-05 | A drill batch's resources go in a file of their own that every batch names | A level's common vocabulary is a few thousand rows. Copying it into each batch would turn a thirty-question ask into a megabyte of the same list, and the agent would still be reading one list |
+| 2026-09-05 | Every config write goes through one queue, with the read inside it | Each preference setter read `storage_config.json`, changed a key and wrote it back. Two at once read the same file and wrote two different successors, so the second erased the first's key — and on Windows renamed its temporary file over one still open, throwing rather than losing quietly. Queueing the write alone would fix the throw and keep the lost update; the read has to be inside |
+| 2026-09-05 | That queue is scoped to the zone the writes were started in | In the app there is one zone, so it changes nothing there. A widget test body gets its own, and I/O started from a tap and not awaited stays suspended in it forever — an unqualified queue waits on that for the life of the process, and did. Bounding the wait with a `Timer` is not open either, because `flutter_test` fails any test that leaves one pending |
+| 2026-09-05 | Depth is pinned per level in the test, and raised one level at a time as content lands | The Learn card's question counts already promise it, and a diff cannot show that a batch went into the wrong file. A number lowered by accident fails before it reaches anybody |
 | 2026-09-04 | No Remove button for a downloaded model | AICore owns the file and shares it with every app that uses the same model, and neither ML Kit client exposes a delete — checked with `javap`. The button could only lie or take away something another app is using |
 | 2026-09-04 | CI `concurrency` is keyed on the commit, so a tag run supersedes the branch run | A release pushes the commit and then the tag, which ran the same analyze/test/build twice on the same tree. The tag run is the one that also creates the Release |
 | 2026-09-04 | The Prompt API client is chosen by probing model variants in preference order, never by device, client version or model name | ML Kit serves four combinations of release stage and size preference, no API says which a device offers, and `getClient()` with no configuration silently asks for one of them. Reporting that one variant's refusal as the device's answer produced two wrong diagnoses in a row on the same phone. A probe also means a model AICore begins serving later is picked up with no code change |

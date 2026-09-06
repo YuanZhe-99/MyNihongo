@@ -45,6 +45,84 @@
       "en": "I came to Japan last year. Now I study Japanese at a university. My Japanese is not good yet, but the classes are a lot of fun. Every day I eat lunch with my friends in the school cafeteria. Last Saturday I went to a park with a friend. There were a lot of pretty flowers in the park. Then we took a short walk around the park. Next month I want to go to the sea.",
       "zh": "我去年来到了日本。现在在大学学习日语。我的日语还不熟练，不过课上得很开心。每天都和朋友在学校食堂吃午饭。上周六和朋友去了公园。公园里开着很多漂亮的花。然后我们在公园里散了一会儿步。下个月我想去海边。",
       "zh_TW": "我去年來到了日本。現在在大學學習日語。我的日語還不熟練，不過課上得很開心。每天都和朋友在學校食堂吃午飯。上週六和朋友去了公園。公園裡開著很多漂亮的花。然後我們在公園裡散了一會兒步。下個月我想去海邊。"
+    },
+    {
+      "id": "p:n5-g-002",
+      "type": "text-grammar",
+      "lines": [
+        {
+          "ja": "先週の日曜日、私は妹と海へ行きました。",
+          "reading": "せんしゅうのにちようび、わたしはいもうととうみへいきました。"
+        },
+        {
+          "ja": "朝は少し寒かったですが、昼はとても暖かかったです。",
+          "reading": "あさはすこしさむかったですが、ひるはとてもあたたかかったです。"
+        },
+        {
+          "ja": "海には人が大勢いました。",
+          "reading": "うみにはひとがおおぜいいました。"
+        },
+        {
+          "ja": "私は海で泳ぎました。",
+          "reading": "わたしはうみでおよぎました。"
+        },
+        {
+          "ja": "妹も泳ぎました。",
+          "reading": "いもうともおよぎました。"
+        },
+        {
+          "ja": "昼ご飯を食べて、少し散歩しました。",
+          "reading": "ひるごはんをたべて、すこしさんぽしました。"
+        },
+        {
+          "ja": "人は多かったですが、あまりうるさくなかったです。",
+          "reading": "ひとはおおかったですが、あまりうるさくなかったです。"
+        },
+        {
+          "ja": "来年も妹と海へ行きたいです。",
+          "reading": "らいねんもいもうととうみへいきたいです。"
+        }
+      ],
+      "en": "Last Sunday I went to the sea with my younger sister. In the morning it was a little cold, but by midday it was very warm. There were a lot of people at the sea. I swam in the sea. My sister swam too. We ate lunch and then took a short walk. There were many people, but it was not very noisy. Next year I want to go to the sea with my sister again.",
+      "zh": "上周日我和妹妹去了海边。早上有点冷，中午却很暖和。海边人很多。我在海里游了泳，妹妹也游了。我们吃过午饭，还散了一小会儿步。人虽然多，但并不怎么吵。明年我还想和妹妹一起去海边。",
+      "zh_TW": "上週日我和妹妹去了海邊。早上有點冷，中午卻很暖和。海邊人很多。我在海里遊了泳，妹妹也遊了。我們吃過午飯，還散了一小會兒步。人雖然多，但並不怎麼吵。明年我還想和妹妹一起去海邊。"
+    },
+    {
+      "id": "p:n5-g-003",
+      "type": "text-grammar",
+      "lines": [
+        {
+          "ja": "私の家の近くに小さい店があります。",
+          "reading": "わたしのいえのちかくにちいさいみせがあります。"
+        },
+        {
+          "ja": "その店はとても静かな店です。",
+          "reading": "そのみせはとてもしずかなみせです。"
+        },
+        {
+          "ja": "店の中にはパンや飲み物があります。",
+          "reading": "みせのなかにはパンやのみものがあります。"
+        },
+        {
+          "ja": "私は朝そこでパンを二つ買います。",
+          "reading": "わたしはあさそこでパンをふたつかいます。"
+        },
+        {
+          "ja": "店の人はいつも元気です。",
+          "reading": "みせのひとはいつもげんきです。"
+        },
+        {
+          "ja": "でも、日曜日はその店が閉まっています。",
+          "reading": "でも、にちようびはそのみせがしまっています。"
+        },
+        {
+          "ja": "日曜日は駅の前の店でパンを買います。",
+          "reading": "にちようびはえきのまえのみせでパンをかいます。"
+        }
+      ],
+      "en": "There is a small shop near my house. It is a very quiet shop. Inside the shop there is bread, drinks and so on. In the morning I buy two pieces of bread there. The people at the shop are always cheerful. However, on Sundays that shop is closed. On Sundays I buy bread at the shop in front of the station.",
+      "zh": "我家附近有一家小店。那是一家很安静的店。店里卖面包和饮料之类的东西。我早上都在那里买两个面包。店里的人总是精神饱满。不过星期天那家店关着门。星期天我就在车站前面的店买面包。",
+      "zh_TW": "我家附近有一家小店。那是一家很安靜的店。店裡賣麵包和飲料之類的東西。我早上都在那裡買兩個麵包。店裡的人總是精神飽滿。不過星期天那家店關著門。星期天我就在車站前面的店買麵包。"
     }
   ],
   "questions": [
@@ -590,6 +668,1090 @@
         "en": "来月 points at a wish that has not happened yet, and a wish is the ます-stem plus たい: 行きたいです.",
         "zh": "「来月」说明这是还没实现的愿望，表示愿望要用「ます形词干＋たい」：「行きたいです」。",
         "zh_TW": "「來月」說明這是還沒實現的願望，表示願望要用「ます形詞幹＋たい」：「行きたいです」。"
+      }
+    },
+    {
+      "id": "q:n5-g-018",
+      "type": "form-selection",
+      "items": [
+        "grammar:de-place",
+        "vocab:jm1370420",
+        "vocab:jm1456360"
+      ],
+      "kind": "choice",
+      "ja": "私は図書館で本を読みます。",
+      "reading": "わたしはとしょかんでほんをよみます。",
+      "blank": "で",
+      "prompt": {
+        "en": "Which particle fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个助词？",
+        "zh_TW": "這個句子的空格里應該填哪個助詞？"
+      },
+      "options": [
+        "に",
+        "を",
+        "で",
+        "へ"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The library is where the reading happens, and the place an action takes place is marked with で.",
+        "zh": "图书馆是「读书」这个动作发生的场所，表示动作场所要用「で」。",
+        "zh_TW": "圖書館是「讀書」這個動作發生的場所，表示動作場所要用「で」。"
+      }
+    },
+    {
+      "id": "q:n5-g-019",
+      "type": "form-selection",
+      "items": [
+        "grammar:de-means",
+        "vocab:jm1318290",
+        "vocab:jm1206730"
+      ],
+      "kind": "choice",
+      "ja": "毎日、自転車で学校へ行きます。",
+      "reading": "まいにち、じてんしゃでがっこうへいきます。",
+      "blank": "で",
+      "prompt": {
+        "en": "Which particle fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个助词？",
+        "zh_TW": "這個句子的空格里應該填哪個助詞？"
+      },
+      "options": [
+        "で",
+        "に",
+        "と",
+        "を"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The bicycle is the means of getting there, and a means or tool is marked with で.",
+        "zh": "自行车是去学校所用的交通工具，表示手段、工具要用「で」。",
+        "zh_TW": "自行車是去學校所用的交通工具，表示手段、工具要用「で」。"
+      }
+    },
+    {
+      "id": "q:n5-g-020",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-time",
+        "vocab:jm1464900",
+        "vocab:jm1198180"
+      ],
+      "kind": "choice",
+      "ja": "日曜日に友達と会います。",
+      "reading": "にちようびにともだちとあいます。",
+      "blank": "に",
+      "prompt": {
+        "en": "Which particle fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个助词？",
+        "zh_TW": "這個句子的空格里應該填哪個助詞？"
+      },
+      "options": [
+        "で",
+        "に",
+        "へ",
+        "を"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "日曜日 is a specific point in time, and a specific time takes に.",
+        "zh": "「日曜日」是确定的时间点，表示具体时间要用「に」。",
+        "zh_TW": "「日曜日」是確定的時間點，表示具體時間要用「に」。"
+      }
+    },
+    {
+      "id": "q:n5-g-021",
+      "type": "form-selection",
+      "items": [
+        "grammar:ni-target",
+        "vocab:jm1327720",
+        "vocab:jm1343950"
+      ],
+      "kind": "choice",
+      "ja": "友達に手紙を書きました。",
+      "reading": "ともだちにてがみをかきました。",
+      "blank": "に",
+      "prompt": {
+        "en": "Which particle fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个助词？",
+        "zh_TW": "這個句子的空格里應該填哪個助詞？"
+      },
+      "options": [
+        "が",
+        "を",
+        "に",
+        "で"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The friend is the person the writing is aimed at, and that person is marked with に.",
+        "zh": "朋友是写信这个动作的对象，动作指向的人要用「に」。",
+        "zh_TW": "朋友是寫信這個動作的對象，動作指向的人要用「に」。"
+      }
+    },
+    {
+      "id": "q:n5-g-022",
+      "type": "form-selection",
+      "items": [
+        "grammar:to-with",
+        "vocab:jm1524590",
+        "vocab:jm1173720"
+      ],
+      "kind": "choice",
+      "ja": "昨日、妹と映画を見ました。",
+      "reading": "きのう、いもうととえいがをみました。",
+      "blank": "と",
+      "prompt": {
+        "en": "Which particle fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个助词？",
+        "zh_TW": "這個句子的空格里應該填哪個助詞？"
+      },
+      "options": [
+        "と",
+        "に",
+        "を",
+        "も"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "と marks the person you do something together with: 妹と means \"with my sister\".",
+        "zh": "「と」表示一起做某事的对象，「妹と」就是「和妹妹一起」。",
+        "zh_TW": "「と」表示一起做某事的對象，「妹と」就是「和妹妹一起」。"
+      }
+    },
+    {
+      "id": "q:n5-g-023",
+      "type": "form-selection",
+      "items": [
+        "grammar:kara-made",
+        "vocab:jm1330290",
+        "vocab:jm1255890"
+      ],
+      "kind": "choice",
+      "ja": "授業は月曜日から金曜日まであります。",
+      "reading": "じゅぎょうはげつようびからきんようびまであります。",
+      "blank": "から",
+      "prompt": {
+        "en": "Which word fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个词？",
+        "zh_TW": "這個句子的空格里應該填哪個詞？"
+      },
+      "options": [
+        "まで",
+        "から",
+        "ごろ",
+        "だけ"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "A range is said with から … まで, so the starting point 月曜日 takes から.",
+        "zh": "表示范围用「から〜まで」，起点「月曜日」后面要用「から」。",
+        "zh_TW": "表示範圍用「から〜まで」，起點「月曜日」後面要用「から」。"
+      }
+    },
+    {
+      "id": "q:n5-g-024",
+      "type": "form-selection",
+      "items": [
+        "grammar:kara-reason",
+        "vocab:jm1210360",
+        "vocab:jm1580340"
+      ],
+      "kind": "choice",
+      "ja": "今日は寒いから、上着を着ます。",
+      "reading": "きょうはさむいから、うわぎをきます。",
+      "blank": "から",
+      "prompt": {
+        "en": "Which word fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个词？",
+        "zh_TW": "這個句子的空格里應該填哪個詞？"
+      },
+      "options": [
+        "から",
+        "まで",
+        "より",
+        "など"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The first half is the reason for the second, and a reason is marked with から, \"because\".",
+        "zh": "前半句是后半句的原因，表示原因要用「から」。",
+        "zh_TW": "前半句是後半句的原因，表示原因要用「から」。"
+      }
+    },
+    {
+      "id": "q:n5-g-025",
+      "type": "form-selection",
+      "items": [
+        "grammar:te-mo-ii",
+        "vocab:jm1323560",
+        "vocab:jm1318970"
+      ],
+      "kind": "choice",
+      "ja": "この辞書を借りてもいいですか。",
+      "reading": "このじしょをかりてもいいですか。",
+      "blank": "借りても",
+      "prompt": {
+        "en": "Which form of 借りる fits the gap?",
+        "zh": "空格里应该填「借りる」的哪个形式？",
+        "zh_TW": "空格里應該填「借りる」的哪個形式？"
+      },
+      "options": [
+        "借りては",
+        "借りても",
+        "借りると",
+        "借りないで"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Asking permission is te-form + もいいですか, so 借りる becomes 借りても.",
+        "zh": "请求许可用「て形＋もいいですか」，「借りる」变成「借りても」。",
+        "zh_TW": "請求許可用「て形＋もいいですか」，「借りる」變成「借りても」。"
+      }
+    },
+    {
+      "id": "q:n5-g-026",
+      "type": "form-selection",
+      "items": [
+        "grammar:te-wa-ikemasen",
+        "vocab:jm1228260",
+        "vocab:jm1597150"
+      ],
+      "kind": "choice",
+      "ja": "ここでたばこを吸ってはいけません。",
+      "reading": "ここでたばこをすってはいけません。",
+      "blank": "吸っては",
+      "prompt": {
+        "en": "Which form of 吸う fits the gap?",
+        "zh": "空格里应该填「吸う」的哪个形式？",
+        "zh_TW": "空格里應該填「吸う」的哪個形式？"
+      },
+      "options": [
+        "吸っても",
+        "吸わなくて",
+        "吸っては",
+        "吸いながら"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "A prohibition is te-form + はいけません, so 吸う becomes 吸っては.",
+        "zh": "表示禁止用「て形＋はいけません」，「吸う」变成「吸っては」。",
+        "zh_TW": "表示禁止用「て形＋はいけません」，「吸う」變成「吸っては」。"
+      }
+    },
+    {
+      "id": "q:n5-g-027",
+      "type": "form-selection",
+      "items": [
+        "grammar:naide-kudasai",
+        "vocab:jm1202450",
+        "vocab:jm1401400"
+      ],
+      "kind": "choice",
+      "ja": "窓を開けないでください。",
+      "reading": "まどをあけないでください。",
+      "blank": "開けないで",
+      "prompt": {
+        "en": "Which form of 開ける fits the gap?",
+        "zh": "空格里应该填「開ける」的哪个形式？",
+        "zh_TW": "空格里應該填「開ける」的哪個形式？"
+      },
+      "options": [
+        "開けないで",
+        "開けなくて",
+        "開けて",
+        "開けたり"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "Asking someone not to do something is ないで + ください, so 開ける becomes 開けないで.",
+        "zh": "请求别人不要做某事用「ないで＋ください」，「開ける」变成「開けないで」。",
+        "zh_TW": "請求別人不要做某事用「ないで＋ください」，「開ける」變成「開けないで」。"
+      }
+    },
+    {
+      "id": "q:n5-g-028",
+      "type": "form-selection",
+      "items": [
+        "grammar:nakute-mo-ii",
+        "vocab:jm1578850",
+        "vocab:jm1206730"
+      ],
+      "kind": "choice",
+      "ja": "明日は学校へ行かなくてもいいです。",
+      "reading": "あしたはがっこうへいかなくてもいいです。",
+      "blank": "行かなくても",
+      "prompt": {
+        "en": "Which form of 行く fits the gap?",
+        "zh": "空格里应该填「行く」的哪个形式？",
+        "zh_TW": "空格里應該填「行く」的哪個形式？"
+      },
+      "options": [
+        "行かないでも",
+        "行かなくても",
+        "行っても",
+        "行かなければ"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "\"Do not have to\" is the negative stem plus なくてもいいです, so 行く becomes 行かなくても.",
+        "zh": "表示「不做也可以」用「〜なくてもいいです」，「行く」变成「行かなくても」。",
+        "zh_TW": "表示「不做也可以」用「〜なくてもいいです」，「行く」變成「行かなくても」。"
+      }
+    },
+    {
+      "id": "q:n5-g-029",
+      "type": "form-selection",
+      "items": [
+        "grammar:tari-tari",
+        "vocab:jm1456360",
+        "vocab:jm1183720"
+      ],
+      "kind": "choice",
+      "ja": "日曜日は本を読んだり音楽を聞いたりします。",
+      "reading": "にちようびはほんをよんだりおんがくをきいたりします。",
+      "blank": "読んだり",
+      "prompt": {
+        "en": "Which form of 読む fits the gap?",
+        "zh": "空格里应该填「読む」的哪个形式？",
+        "zh_TW": "空格里應該填「読む」的哪個形式？"
+      },
+      "options": [
+        "読みながら",
+        "読んでから",
+        "読んだり",
+        "読むより"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "Listing example activities uses たり…たりします, so the plain past plus り gives 読んだり.",
+        "zh": "列举几件事情用「〜たり〜たりします」，「読む」变成「読んだり」。",
+        "zh_TW": "列舉幾件事情用「〜たり〜たりします」，「読む」變成「読んだり」。"
+      }
+    },
+    {
+      "id": "q:n5-g-030",
+      "type": "form-selection",
+      "items": [
+        "grammar:ato-de",
+        "vocab:jm1358280",
+        "vocab:jm1303620"
+      ],
+      "kind": "choice",
+      "ja": "昼ご飯を食べた後で、公園を散歩しました。",
+      "reading": "ひるごはんをたべたあとで、こうえんをさんぽしました。",
+      "blank": "食べた",
+      "prompt": {
+        "en": "Which form of 食べる fits the gap before 後で?",
+        "zh": "「後で」前面的空格里应该填「食べる」的哪个形式？",
+        "zh_TW": "「後で」前面的空格里應該填「食べる」的哪個形式？"
+      },
+      "options": [
+        "食べる",
+        "食べて",
+        "食べた",
+        "食べます"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "後で always follows the plain past, so 食べる becomes 食べた.",
+        "zh": "「後で」前面一定用た形，「食べる」要变成「食べた」。",
+        "zh_TW": "「後で」前面一定用た形，「食べる」要變成「食べた」。"
+      }
+    },
+    {
+      "id": "q:n5-g-031",
+      "type": "form-selection",
+      "items": [
+        "grammar:hoshii",
+        "vocab:jm1208910",
+        "vocab:jm1361490"
+      ],
+      "kind": "choice",
+      "ja": "新しいかばんがほしいです。",
+      "reading": "あたらしいかばんがほしいです。",
+      "blank": "が",
+      "prompt": {
+        "en": "Which particle fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个助词？",
+        "zh_TW": "這個句子的空格里應該填哪個助詞？"
+      },
+      "options": [
+        "を",
+        "が",
+        "に",
+        "で"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "ほしい is an adjective, not a verb, so the thing wanted is marked with が rather than を.",
+        "zh": "「ほしい」是形容词而不是动词，想要的东西用「が」而不是「を」。",
+        "zh_TW": "「ほしい」是形容詞而不是動詞，想要的東西用「が」而不是「を」。"
+      }
+    },
+    {
+      "id": "q:n5-g-032",
+      "type": "form-selection",
+      "items": [
+        "grammar:mashou",
+        "vocab:jm1578850",
+        "vocab:jm1273270"
+      ],
+      "kind": "choice",
+      "ja": "明日、公園へ行きましょう。",
+      "reading": "あした、こうえんへいきましょう。",
+      "blank": "行きましょう",
+      "prompt": {
+        "en": "Which form of 行く fits the gap?",
+        "zh": "空格里应该填「行く」的哪个形式？",
+        "zh_TW": "空格里應該填「行く」的哪個形式？"
+      },
+      "options": [
+        "行きたいです",
+        "行きましょう",
+        "行きません",
+        "行きました"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "ましょう on the ます-stem suggests doing something together: \"let's go\".",
+        "zh": "「ます形词干＋ましょう」表示提议一起做某事，意思是「一起去吧」。",
+        "zh_TW": "「ます形詞幹＋ましょう」表示提議一起做某事，意思是「一起去吧」。"
+      }
+    },
+    {
+      "id": "q:n5-g-033",
+      "type": "form-selection",
+      "items": [
+        "grammar:tsumori",
+        "vocab:jm1578850",
+        "vocab:jm1548220"
+      ],
+      "kind": "choice",
+      "ja": "来年、日本へ行くつもりです。",
+      "reading": "らいねん、にほんへいくつもりです。",
+      "blank": "行く",
+      "prompt": {
+        "en": "Which form of 行く fits the gap before つもりです?",
+        "zh": "「つもりです」前面的空格里应该填「行く」的哪个形式？",
+        "zh_TW": "「つもりです」前面的空格里應該填「行く」的哪個形式？"
+      },
+      "options": [
+        "行きます",
+        "行った",
+        "行く",
+        "行って"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "つもりです follows the dictionary form, so the gap takes 行く.",
+        "zh": "「つもりです」前面接辞書形，所以填「行く」。",
+        "zh_TW": "「つもりです」前面接辭書形，所以填「行く」。"
+      }
+    },
+    {
+      "id": "q:n5-g-034",
+      "type": "form-selection",
+      "items": [
+        "grammar:naru",
+        "vocab:jm1586420",
+        "vocab:jm1579110"
+      ],
+      "kind": "choice",
+      "ja": "今日は暖かくなりました。",
+      "reading": "きょうはあたたかくなりました。",
+      "blank": "暖かく",
+      "prompt": {
+        "en": "Which form of 暖かい fits the gap before なりました?",
+        "zh": "「なりました」前面的空格里应该填「暖かい」的哪个形式？",
+        "zh_TW": "「なりました」前面的空格里應該填「暖かい」的哪個形式？"
+      },
+      "options": [
+        "暖かい",
+        "暖かく",
+        "暖かくて",
+        "暖かいに"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "An i-adjective before なる drops い and takes く: 暖かい becomes 暖かく.",
+        "zh": "い形容词接「なる」时要把「い」变成「く」，「暖かい」变成「暖かく」。",
+        "zh_TW": "い形容詞接「なる」時要把「い」變成「く」，「暖かい」變成「暖かく」。"
+      }
+    },
+    {
+      "id": "q:n5-g-035",
+      "type": "form-selection",
+      "items": [
+        "grammar:ageru-kureru-morau",
+        "vocab:jm1318970",
+        "vocab:jm1249900"
+      ],
+      "kind": "choice",
+      "ja": "兄が私に辞書をくれました。",
+      "reading": "あにがわたしにじしょをくれました。",
+      "blank": "くれました",
+      "prompt": {
+        "en": "Which verb fits the gap in this sentence?",
+        "zh": "这个句子的空格里应该填哪个动词？",
+        "zh_TW": "這個句子的空格里應該填哪個動詞？"
+      },
+      "options": [
+        "くれました",
+        "あげました",
+        "もらいました",
+        "かりました"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The giver is my brother and the receiver is me, and a gift that comes toward the speaker uses くれます.",
+        "zh": "给东西的是哥哥，收的是「我」，东西朝说话人这边移动时要用「くれます」。",
+        "zh_TW": "給東西的是哥哥，收的是「我」，東西朝說話人這邊移動時要用「くれます」。"
+      }
+    },
+    {
+      "id": "q:n5-g-036",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:toki",
+        "vocab:jm1542160",
+        "vocab:jm1273270"
+      ],
+      "kind": "order",
+      "ja": "子供のとき、いつもこの公園で遊びました。",
+      "reading": "こどものとき、いつもこのこうえんであそびました。",
+      "frame": {
+        "before": "子供の",
+        "after": "遊びました。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "公園で",
+        "とき、",
+        "この",
+        "いつも"
+      ],
+      "answerOrder": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "explanation": {
+        "en": "とき follows the noun plus の, so 子供のとき comes first as the time frame, and この公園で then says where.",
+        "zh": "「とき」前面接「名词＋の」，所以「子供のとき」放在最前面表示时间，「この公園で」再说明地点。",
+        "zh_TW": "「とき」前面接「名詞＋の」，所以「子供のとき」放在最前面表示時間，「この公園で」再說明地點。"
+      }
+    },
+    {
+      "id": "q:n5-g-037",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:to-omoimasu",
+        "vocab:jm1533580",
+        "vocab:jm1173720"
+      ],
+      "kind": "order",
+      "ja": "私はこの映画がおもしろいと思います。",
+      "reading": "わたしはこのえいががおもしろいとおもいます。",
+      "frame": {
+        "before": "私は",
+        "after": "思います。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "おもしろい",
+        "この",
+        "と",
+        "映画が"
+      ],
+      "answerOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "explanation": {
+        "en": "An opinion is the plain form plus と思います, so おもしろい sits right before と.",
+        "zh": "表达看法用「普通形＋と思います」，所以「おもしろい」紧挨在「と」的前面。",
+        "zh_TW": "表達看法用「普通形＋と思います」，所以「おもしろい」緊挨在「と」的前面。"
+      }
+    },
+    {
+      "id": "q:n5-g-038",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:ichiban",
+        "vocab:jm1603990",
+        "vocab:jm1591900"
+      ],
+      "kind": "order",
+      "ja": "この町で、この公園がいちばんきれいです。",
+      "reading": "このまちで、このこうえんがいちばんきれいです。",
+      "frame": {
+        "before": "この町で、",
+        "after": "です。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "いちばん",
+        "公園が",
+        "きれい",
+        "この"
+      ],
+      "answerOrder": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "explanation": {
+        "en": "In a superlative the range takes で and いちばん goes directly before the adjective it raises.",
+        "zh": "最高级句中，范围用「で」表示，「いちばん」直接放在形容词前面。",
+        "zh_TW": "最高級句中，範圍用「で」表示，「いちばん」直接放在形容詞前面。"
+      }
+    },
+    {
+      "id": "q:n5-g-039",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:ya",
+        "vocab:jm1093450",
+        "vocab:jm1121380"
+      ],
+      "kind": "order",
+      "ja": "机の上にノートやペンがあります。",
+      "reading": "つくえのうえにノートやペンがあります。",
+      "frame": {
+        "before": "机の上に",
+        "after": "あります。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "ペン",
+        "が",
+        "ノート",
+        "や"
+      ],
+      "answerOrder": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "explanation": {
+        "en": "や joins two nouns as examples out of more, and が marks what exists after あります.",
+        "zh": "「や」连接两个名词，表示列举其中一部分；「が」标记「あります」所述存在的事物。",
+        "zh_TW": "「や」連接兩個名詞，表示列舉其中一部分；「が」標記「あります」所述存在的事物。"
+      }
+    },
+    {
+      "id": "q:n5-g-040",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:mou-mada",
+        "vocab:jm1337270",
+        "vocab:jm1581930"
+      ],
+      "kind": "order",
+      "ja": "弟はまだ今日の宿題をしていません。",
+      "reading": "おとうとはまだきょうのしゅくだいをしていません。",
+      "frame": {
+        "before": "弟は",
+        "after": "いません。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "宿題を",
+        "まだ",
+        "して",
+        "今日の"
+      ],
+      "answerOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "explanation": {
+        "en": "\"Not yet\" is まだ with the te-form plus いません, so まだ comes early and して sits before いません.",
+        "zh": "表示「还没有」用「まだ〜ていません」，所以「まだ」放在前面，「して」紧接「いません」。",
+        "zh_TW": "表示「還沒有」用「まだ〜ていません」，所以「まだ」放在前面，「して」緊接「いません」。"
+      }
+    },
+    {
+      "id": "q:n5-g-041",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:dake",
+        "vocab:jm1348870",
+        "vocab:jm1522150"
+      ],
+      "kind": "order",
+      "ja": "昨日は少しだけ日本語の本を読みました。",
+      "reading": "きのうはすこしだけにほんごのほんをよみました。",
+      "frame": {
+        "before": "昨日は",
+        "after": "読みました。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "本を",
+        "だけ",
+        "日本語の",
+        "少し"
+      ],
+      "answerOrder": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "explanation": {
+        "en": "だけ comes straight after the word it limits, so 少しだけ says the amount read was small.",
+        "zh": "「だけ」紧跟在它所限定的词后面，「少しだけ」表示只读了一点点。",
+        "zh_TW": "「だけ」緊跟在它所限定的詞後面，「少しだけ」表示只讀了一點點。"
+      }
+    },
+    {
+      "id": "q:n5-g-042",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:ka-or",
+        "vocab:jm1103090",
+        "vocab:jm1513065"
+      ],
+      "kind": "order",
+      "ja": "昼ご飯はパンかお弁当を食べます。",
+      "reading": "ひるごはんはパンかおべんとうをたべます。",
+      "frame": {
+        "before": "昼ご飯は",
+        "after": "食べます。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "お弁当",
+        "パン",
+        "を",
+        "か"
+      ],
+      "answerOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "explanation": {
+        "en": "か between two nouns means \"or\", and を after the pair marks the whole choice as the object.",
+        "zh": "两个名词中间的「か」表示「或者」，「を」放在整组之后，把它作为动作的对象。",
+        "zh_TW": "兩個名詞中間的「か」表示「或者」，「を」放在整組之後，把它作為動作的對象。"
+      }
+    },
+    {
+      "id": "q:n5-g-043",
+      "type": "sentence-composition",
+      "items": [
+        "grammar:shika-nai",
+        "vocab:jm1237150",
+        "vocab:jm1206900"
+      ],
+      "kind": "order",
+      "ja": "今、教室には学生が一人しかいません。",
+      "reading": "いま、きょうしつにはがくせいがひとりしかいません。",
+      "frame": {
+        "before": "今、",
+        "after": "いません。"
+      },
+      "prompt": {
+        "en": "Put the four fragments in the right order to complete the sentence.",
+        "zh": "把四个片段排成正确的顺序，组成完整的句子。",
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+      },
+      "options": [
+        "一人",
+        "しか",
+        "教室には",
+        "学生が"
+      ],
+      "answerOrder": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "explanation": {
+        "en": "しか follows the amount it limits and always ends in a negative, so 一人しかいません means only one person is there.",
+        "zh": "「しか」跟在被限定的数量后面，句末一定是否定，「一人しかいません」表示只有一个人。",
+        "zh_TW": "「しか」跟在被限定的數量後面，句末一定是否定，「一人しかいません」表示只有一個人。"
+      }
+    },
+    {
+      "id": "q:n5-g-044",
+      "type": "text-grammar",
+      "items": [
+        "grammar:i-adjective-past",
+        "vocab:jm1210360"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-g-002",
+      "ja": "朝は少し寒かったですが、昼はとても暖かかったです。",
+      "reading": "あさはすこしさむかったですが、ひるはとてもあたたかかったです。",
+      "blank": "寒かった",
+      "prompt": {
+        "en": "Read the passage, then choose the form that fits this gap.",
+        "zh": "读完短文后，选择适合这个空格的形式。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的形式。"
+      },
+      "options": [
+        "寒い",
+        "寒かった",
+        "寒くて",
+        "寒くない"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The whole passage is about last Sunday, so the i-adjective has to be past: 寒い becomes 寒かった.",
+        "zh": "整篇短文讲的是上周日的事，所以い形容词要用过去式，「寒い」变成「寒かった」。",
+        "zh_TW": "整篇短文講的是上週日的事，所以い形容詞要用過去式，「寒い」變成「寒かった」。"
+      }
+    },
+    {
+      "id": "q:n5-g-045",
+      "type": "text-grammar",
+      "items": [
+        "grammar:mo",
+        "vocab:jm1174340"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-g-002",
+      "ja": "妹も泳ぎました。",
+      "reading": "いもうともおよぎました。",
+      "blank": "も",
+      "prompt": {
+        "en": "Read the passage, then choose the particle that fits this gap.",
+        "zh": "读完短文后，选择适合这个空格的助词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的助詞。"
+      },
+      "options": [
+        "は",
+        "が",
+        "も",
+        "を"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The writer has just said that he swam, so the sister does the same thing and takes も, \"too\".",
+        "zh": "前一句说「我」游了泳，妹妹做的是同一件事，所以用表示「也」的「も」。",
+        "zh_TW": "前一句說「我」遊了泳，妹妹做的是同一件事，所以用表示「也」的「も」。"
+      }
+    },
+    {
+      "id": "q:n5-g-046",
+      "type": "text-grammar",
+      "items": [
+        "grammar:te-form",
+        "vocab:jm1358280"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-g-002",
+      "ja": "昼ご飯を食べて、少し散歩しました。",
+      "reading": "ひるごはんをたべて、すこしさんぽしました。",
+      "blank": "食べて",
+      "prompt": {
+        "en": "Read the passage, then choose the form that fits this gap.",
+        "zh": "读完短文后，选择适合这个空格的形式。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的形式。"
+      },
+      "options": [
+        "食べる",
+        "食べた",
+        "食べます",
+        "食べて"
+      ],
+      "answer": 3,
+      "explanation": {
+        "en": "Two actions in a row are joined by the te-form, and only the last verb carries the tense.",
+        "zh": "连续发生的两个动作用て形连接，时态只由最后一个动词表示。",
+        "zh_TW": "連續發生的兩個動作用て形連接，時態只由最後一個動詞表示。"
+      }
+    },
+    {
+      "id": "q:n5-g-047",
+      "type": "text-grammar",
+      "items": [
+        "grammar:amari-nai",
+        "vocab:jm1481920"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-g-002",
+      "ja": "人は多かったですが、あまりうるさくなかったです。",
+      "reading": "ひとはおおかったですが、あまりうるさくなかったです。",
+      "blank": "あまり",
+      "prompt": {
+        "en": "Read the passage, then choose the word that fits this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "とても",
+        "あまり",
+        "少し",
+        "いつも"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "あまり pairs with a negative ending and softens it to \"not very\": あまりうるさくなかった.",
+        "zh": "「あまり」要和否定形式搭配，表示「不太〜」，即「あまりうるさくなかった」。",
+        "zh_TW": "「あまり」要和否定形式搭配，表示「不太〜」，即「あまりうるさくなかった」。"
+      }
+    },
+    {
+      "id": "q:n5-g-048",
+      "type": "text-grammar",
+      "items": [
+        "grammar:na-adjective",
+        "vocab:jm1381820"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-g-003",
+      "ja": "その店はとても静かな店です。",
+      "reading": "そのみせはとてもしずかなみせです。",
+      "blank": "静かな",
+      "prompt": {
+        "en": "Read the passage, then choose the form that fits this gap.",
+        "zh": "读完短文后，选择适合这个空格的形式。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的形式。"
+      },
+      "options": [
+        "静か",
+        "静かな",
+        "静かに",
+        "静かで"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "A na-adjective takes な before the noun it describes, so it is 静かな店.",
+        "zh": "な形容词修饰后面的名词时要加「な」，所以是「静かな店」。",
+        "zh_TW": "な形容詞修飾後面的名詞時要加「な」，所以是「静かな店」。"
+      }
+    },
+    {
+      "id": "q:n5-g-049",
+      "type": "text-grammar",
+      "items": [
+        "grammar:counters",
+        "vocab:jm1461160"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-g-003",
+      "ja": "私は朝そこでパンを二つ買います。",
+      "reading": "わたしはあさそこでパンをふたつかいます。",
+      "blank": "二つ",
+      "prompt": {
+        "en": "Read the passage, then choose the counter expression that fits this gap.",
+        "zh": "读完短文后，选择适合这个空格的量词说法。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的量詞說法。"
+      },
+      "options": [
+        "二人",
+        "二本",
+        "二つ",
+        "二枚"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "Bread is counted with the general counter つ, so two pieces is 二つ; 人 counts people and 本 counts long thin things.",
+        "zh": "面包用通用量词「つ」来数，两个就是「二つ」；「人」数人，「本」数细长的东西。",
+        "zh_TW": "麵包用通用量詞「つ」來數，兩個就是「二つ」；「人」數人，「本」數細長的東西。"
+      }
+    },
+    {
+      "id": "q:n5-g-050",
+      "type": "text-grammar",
+      "items": [
+        "grammar:no-possessive",
+        "vocab:jm1582120"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-g-003",
+      "ja": "店の人はいつも元気です。",
+      "reading": "みせのひとはいつもげんきです。",
+      "blank": "の",
+      "prompt": {
+        "en": "Read the passage, then choose the particle that fits this gap.",
+        "zh": "读完短文后，选择适合这个空格的助词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的助詞。"
+      },
+      "options": [
+        "の",
+        "は",
+        "が",
+        "に"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "の links two nouns, with the first describing the second: 店の人 means the people of the shop.",
+        "zh": "「の」连接两个名词，前一个修饰后一个，「店の人」就是「店里的人」。",
+        "zh_TW": "「の」連接兩個名詞，前一個修飾後一個，「店の人」就是「店裡的人」。"
+      }
+    },
+    {
+      "id": "q:n5-g-051",
+      "type": "text-grammar",
+      "items": [
+        "grammar:demo",
+        "vocab:jm1436560"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-g-003",
+      "ja": "でも、日曜日はその店が閉まっています。",
+      "reading": "でも、にちようびはそのみせがしまっています。",
+      "blank": "でも",
+      "prompt": {
+        "en": "Read the passage, then choose the word that fits this gap.",
+        "zh": "读完短文后，选择适合这个空格的词。",
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+      },
+      "options": [
+        "そして",
+        "でも",
+        "では",
+        "だから"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The sentence turns against what came before, and a new sentence that does that starts with でも.",
+        "zh": "这句话和前文的内容相反，另起一句表示转折时要用「でも」开头。",
+        "zh_TW": "這句話和前文的內容相反，另起一句表示轉折時要用「でも」開頭。"
       }
     }
   ]

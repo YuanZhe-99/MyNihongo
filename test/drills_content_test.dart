@@ -316,6 +316,39 @@ void main() {
     }
   });
 
+  test('a level ships as many papers as it claims to', () {
+    // How deep each level is, as a multiple of the official composition. A
+    // learner can sit this many full mocks before the sampler has to start
+    // repeating itself, so it is a promise the Learn card's question counts
+    // are already making — and the only place it can be checked is here.
+    //
+    // Raised one level at a time as the content lands. A number lowered by
+    // accident, or content merged into the wrong file, fails this before it
+    // reaches anybody.
+    const depth = {
+      JlptLevel.n5: 3,
+      JlptLevel.n4: 3,
+      JlptLevel.n3: 3,
+      JlptLevel.n2: 3,
+      JlptLevel.n1: 3,
+    };
+
+    for (final level in JlptLevel.values) {
+      final wanted = structure.forLevel(level)!.fullCount * depth[level]!;
+      final shipped = [
+        for (final entry in files.entries)
+          if (entry.key.$1 == level) entry.value.questions.length,
+      ].fold(0, (a, b) => a + b);
+      expect(
+        shipped,
+        greaterThanOrEqualTo(wanted),
+        reason:
+            '${level.label} ships $shipped questions; ×${depth[level]} of a '
+            '${structure.forLevel(level)!.fullCount}-question paper is $wanted',
+      );
+    }
+  });
+
   test('a level that ships a section ships the whole 大問 it promises', () {
     // The composition is what makes a paper a paper. A section that shipped
     // four of its five 大問 would quietly stop examining the fifth, and the

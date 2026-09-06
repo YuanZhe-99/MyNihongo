@@ -258,4 +258,25 @@ void main() {
     await configFile.writeAsString('{"debugMode": "true"}');
     expect(await NihongoStorage.getDebugMode(), isFalse);
   });
+
+  test('two preferences set at once both survive', () async {
+    // Every setter reads the whole file, changes one key and writes it back.
+    // Two of those running at once used to read the same file and write two
+    // different successors, so whichever finished second erased the other's
+    // key — and on Windows the second write renamed its temporary file over
+    // one the first still had open, which threw rather than losing quietly.
+    // The Settings page fires these without awaiting, so "at once" is what
+    // a person toggling two switches actually does.
+    await Future.wait([
+      NihongoStorage.setThemeMode('dark'),
+      NihongoStorage.setLastTab('kana'),
+      NihongoStorage.setDebugMode(true),
+      NihongoStorage.setReferenceListColumns(3),
+    ]);
+    final saved = await config();
+    expect(saved['themeMode'], 'dark');
+    expect(saved['lastTab'], 'kana');
+    expect(saved['debugMode'], isTrue);
+    expect(saved['referenceListColumns'], 3);
+  });
 }

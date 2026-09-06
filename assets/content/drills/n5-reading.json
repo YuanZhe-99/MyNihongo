@@ -124,6 +124,234 @@
       "en": "Library hours. Monday to Friday, nine o'clock to six o'clock. Saturday, nine o'clock to twelve o'clock. Closed on Sunday. Books may be borrowed for ten days. Do not eat food inside the library. Please read quietly.",
       "zh": "图书馆开放时间。周一到周五，九点到六点。周六，九点到十二点。周日休息。书可以借十天。馆内不可以吃东西。请安静地看书。",
       "zh_TW": "圖書館開放時間。週一到週五，九點到六點。週六，九點到十二點。週日休息。書可以借十天。館內不可以吃東西。請安靜地看書。"
+    },
+    {
+      "id": "p:n5-r-005",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "私の家に小さい猫がいます。",
+          "reading": "わたしのいえにちいさいねこがいます。"
+        },
+        {
+          "ja": "猫の色は白いです。",
+          "reading": "ねこのいろはしろいです。"
+        },
+        {
+          "ja": "昼は部屋で遊びます。",
+          "reading": "ひるはへやであそびます。"
+        },
+        {
+          "ja": "夜はよく寝ます。",
+          "reading": "よるはよくねます。"
+        }
+      ],
+      "en": "There is a small cat at my house. The cat's colour is white. In the daytime it plays in my room. At night it sleeps a lot.",
+      "zh": "我家有一只小猫。猫的毛色是白的。白天它在房间里玩。晚上它睡得很多。",
+      "zh_TW": "我家有一隻小貓。貓的毛色是白的。白天它在房間裡玩。晚上它睡得很多。"
+    },
+    {
+      "id": "p:n5-r-006",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "来月は姉の誕生日です。",
+          "reading": "らいげつはあねのたんじょうびです。"
+        },
+        {
+          "ja": "私は姉に手紙を書きます。",
+          "reading": "わたしはあねにてがみをかきます。"
+        },
+        {
+          "ja": "兄は新しい辞書を買います。",
+          "reading": "あにはあたらしいじしょをかいます。"
+        }
+      ],
+      "en": "Next month is my older sister's birthday. I am going to write my sister a letter. My older brother is going to buy a new dictionary.",
+      "zh": "下个月是姐姐的生日。我打算给姐姐写一封信。哥哥打算买一本新词典。",
+      "zh_TW": "下個月是姐姐的生日。我打算給姐姐寫一封信。哥哥打算買一本新詞典。"
+    },
+    {
+      "id": "p:n5-r-007",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "昨日、友達と買い物に行きました。",
+          "reading": "きのう、ともだちとかいものにいきました。"
+        },
+        {
+          "ja": "店で野菜と肉を買いました。",
+          "reading": "みせでやさいとにくをかいました。"
+        },
+        {
+          "ja": "野菜は安かったですが、肉は高かったです。",
+          "reading": "やさいはやすかったですが、にくはたかかったです。"
+        }
+      ],
+      "en": "Yesterday I went shopping with a friend. We bought vegetables and meat at the shop. The vegetables were cheap, but the meat was expensive.",
+      "zh": "昨天我和朋友去买东西了。在店里买了蔬菜和肉。蔬菜很便宜，但是肉很贵。",
+      "zh_TW": "昨天我和朋友去買東西了。在店裡買了蔬菜和肉。蔬菜很便宜，但是肉很貴。"
+    },
+    {
+      "id": "p:n5-r-008",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "私の会社は駅の近くにあります。",
+          "reading": "わたしのかいしゃはえきのちかくにあります。"
+        },
+        {
+          "ja": "毎朝、自転車で会社へ行きます。",
+          "reading": "まいあさ、じてんしゃでかいしゃへいきます。"
+        },
+        {
+          "ja": "でも、雨の日はバスに乗ります。",
+          "reading": "でも、あめのひはバスにのります。"
+        }
+      ],
+      "en": "My company is near the station. Every morning I go to the company by bicycle. But on rainy days I take the bus.",
+      "zh": "我的公司在车站附近。我每天早上骑自行车去公司。不过，下雨的日子我坐公交车。",
+      "zh_TW": "我的公司在車站附近。我每天早上騎自行車去公司。不過，下雨的日子我坐公交車。"
+    },
+    {
+      "id": "p:n5-r-009",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "私は毎日、会社で働いています。",
+          "reading": "わたしはまいにち、かいしゃではたらいています。"
+        },
+        {
+          "ja": "仕事は九時に始まって、六時に終わります。",
+          "reading": "しごとはくじにはじまって、ろくじにおわります。"
+        },
+        {
+          "ja": "家に帰ってから、夜は料理を作ります。",
+          "reading": "いえにかえってから、よるはりょうりをつくります。"
+        },
+        {
+          "ja": "火曜日と木曜日の夜は、日本語の学校へ行きます。",
+          "reading": "かようびともくようびのよるは、にほんごのがっこうへいきます。"
+        },
+        {
+          "ja": "学校では漢字をたくさん練習します。",
+          "reading": "がっこうではかんじをたくさんれんしゅうします。"
+        },
+        {
+          "ja": "漢字は少し難しいですが、とてもおもしろいです。",
+          "reading": "かんじはすこしむずかしいですが、とてもおもしろいです。"
+        },
+        {
+          "ja": "来年は日本へ旅行に行きたいです。",
+          "reading": "らいねんはにほんへりょこうにいきたいです。"
+        }
+      ],
+      "en": "I work at a company every day. Work starts at nine and finishes at six. After I get home, I cook in the evening. On Tuesday and Thursday evenings I go to a Japanese school. At school I practise a lot of kanji. Kanji is a little hard, but it is very interesting. Next year I want to travel to Japan.",
+      "zh": "我每天在公司上班。工作九点开始，六点结束。回到家以后，晚上我做饭。星期二和星期四的晚上，我去日语学校。在学校里我练习很多汉字。汉字有点难，但是非常有意思。明年我想去日本旅行。",
+      "zh_TW": "我每天在公司上班。工作九點開始，六點結束。回到家以後，晚上我做飯。星期二和星期四的晚上，我去日語學校。在學校裡我練習很多漢字。漢字有點難，但是非常有意思。明年我想去日本旅行。"
+    },
+    {
+      "id": "p:n5-r-010",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "私の家の近くに大きい公園があります。",
+          "reading": "わたしのいえのちかくにおおきいこうえんがあります。"
+        },
+        {
+          "ja": "公園には花がたくさんあります。",
+          "reading": "こうえんにははながたくさんあります。"
+        },
+        {
+          "ja": "春は子供が公園でよく遊びます。",
+          "reading": "はるはこどもがこうえんでよくあそびます。"
+        },
+        {
+          "ja": "私は毎朝、犬と公園を散歩します。",
+          "reading": "わたしはまいあさ、いぬとこうえんをさんぽします。"
+        },
+        {
+          "ja": "散歩の後で、喫茶店でコーヒーを飲みます。",
+          "reading": "さんぽのあとで、きっさてんでコーヒーをのみます。"
+        },
+        {
+          "ja": "喫茶店は公園の前にあります。",
+          "reading": "きっさてんはこうえんのまえにあります。"
+        },
+        {
+          "ja": "土曜日の朝は妹も一緒に来ます。",
+          "reading": "どようびのあさはいもうともいっしょにきます。"
+        }
+      ],
+      "en": "There is a big park near my house. There are a lot of flowers in the park. In spring, children often play in the park. Every morning I walk in the park with my dog. After the walk I drink coffee at a coffee shop. The coffee shop is in front of the park. On Saturday mornings my younger sister comes along too.",
+      "zh": "我家附近有一个大公园。公园里有很多花。春天孩子们常常在公园里玩。我每天早上和狗一起在公园散步。散步之后，我在咖啡店喝咖啡。咖啡店在公园前面。星期六早上妹妹也一起来。",
+      "zh_TW": "我家附近有一個大公園。公園裡有很多花。春天孩子們常常在公園裡玩。我每天早上和狗一起在公園散步。散步之後，我在咖啡店喝咖啡。咖啡店在公園前面。星期六早上妹妹也一起來。"
+    },
+    {
+      "id": "p:n5-r-011",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "駅の前のバス",
+          "reading": "えきのまえのバス"
+        },
+        {
+          "ja": "月曜日から土曜日までは、朝七時から夜九時までです。",
+          "reading": "げつようびからどようびまでは、あさしちじからよるくじまでです。"
+        },
+        {
+          "ja": "日曜日は、朝八時から夜八時までです。",
+          "reading": "にちようびは、あさはちじからよるはちじまでです。"
+        },
+        {
+          "ja": "病院へ行くバスは、駅の前から出ます。",
+          "reading": "びょういんへいくバスは、えきのまえからでます。"
+        },
+        {
+          "ja": "公園へ行くバスは、店の前から出ます。",
+          "reading": "こうえんへいくバスは、みせのまえからでます。"
+        },
+        {
+          "ja": "バスの中で、飲み物を飲んではいけません。",
+          "reading": "バスのなかで、のみものをのんではいけません。"
+        }
+      ],
+      "en": "Buses in front of the station. Monday to Saturday, seven in the morning to nine at night. Sunday, eight in the morning to eight at night. The bus to the hospital leaves from in front of the station. The bus to the park leaves from in front of the shop. Do not drink drinks on the bus.",
+      "zh": "车站前的公交车。周一到周六，早上七点到晚上九点。周日，早上八点到晚上八点。去医院的公交车从车站前面发车。去公园的公交车从商店前面发车。车内不可以喝饮料。",
+      "zh_TW": "車站前的公交車。週一到週六，早上七點到晚上九點。週日，早上八點到晚上八點。去醫院的公交車從車站前面發車。去公園的公交車從商店前面發車。車內不可以喝飲料。"
+    },
+    {
+      "id": "p:n5-r-012",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "日本語の教室のテスト",
+          "reading": "にほんごのきょうしつのテスト"
+        },
+        {
+          "ja": "来週の水曜日、三時から五時までテストがあります。",
+          "reading": "らいしゅうのすいようび、さんじからごじまでテストがあります。"
+        },
+        {
+          "ja": "テストの前に、漢字をよく練習してください。",
+          "reading": "テストのまえに、かんじをよくれんしゅうしてください。"
+        },
+        {
+          "ja": "テストでは辞書を使ってはいけません。",
+          "reading": "テストではじしょをつかってはいけません。"
+        },
+        {
+          "ja": "三時の前に教室へ来てください。",
+          "reading": "さんじのまえにきょうしつへきてください。"
+        },
+        {
+          "ja": "質問がある人は、先生に聞いてください。",
+          "reading": "しつもんがあるひとは、せんせいにきいてください。"
+        }
+      ],
+      "en": "Japanese class test. Next Wednesday there is a test from three o'clock to five o'clock. Please practise your kanji well before the test. You may not use a dictionary in the test. Please come to the classroom before three o'clock. If you have a question, please ask the teacher.",
+      "zh": "日语课测验通知。下周三三点到五点有测验。测验前请好好练习汉字。测验中不可以使用词典。请在三点之前来教室。有问题的人请问老师。",
+      "zh_TW": "日語課測驗通知。下週三三點到五點有測驗。測驗前請好好練習漢字。測驗中不可以使用詞典。請在三點之前來教室。有問題的人請問老師。"
     }
   ],
   "questions": [
@@ -261,6 +489,286 @@
         "en": "The Saturday line reads nine o'clock to twelve o'clock, so twelve is the closing time. Nine is the opening time, and six is the weekday closing time.",
         "zh": "周六那一行写的是九点到十二点，所以关门时间是十二点。九点是开门时间，六点是周一到周五的关门时间。",
         "zh_TW": "週六那一行寫的是九點到十二點，所以關門時間是十二點。九點是開門時間，六點是週一到週五的關門時間。"
+      }
+    },
+    {
+      "id": "q:n5-r-006",
+      "type": "short",
+      "items": [
+        "vocab:jm1467640",
+        "vocab:jm1542160",
+        "vocab:jm1426250"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-r-005",
+      "prompt": {
+        "en": "What does the cat do in the daytime?",
+        "zh": "这只猫白天做什么？",
+        "zh_TW": "這隻貓白天做什麼？"
+      },
+      "options": [
+        "部屋で遊びます。",
+        "外へ出ます。",
+        "店へ行きます。",
+        "音楽を聞きます。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The third sentence says that in the daytime the cat plays in the room. Sleeping is what it does at night, and the text never has the cat go outside or to a shop.",
+        "zh": "第三句写的是白天猫在房间里玩。睡觉是晚上的事，文中也没有说猫到外面或商店去。",
+        "zh_TW": "第三句寫的是白天貓在房間裡玩。睡覺是晚上的事，文中也沒有說貓到外面或商店去。"
+      }
+    },
+    {
+      "id": "q:n5-r-007",
+      "type": "short",
+      "items": [
+        "vocab:jm1327720",
+        "vocab:jm1419110",
+        "vocab:jm1307630"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-r-006",
+      "prompt": {
+        "en": "What will the writer do for the older sister's birthday?",
+        "zh": "作者为姐姐的生日打算做什么？",
+        "zh_TW": "作者為姐姐的生日打算做什麼？"
+      },
+      "options": [
+        "手紙を書きます。",
+        "辞書を買います。",
+        "料理を作ります。",
+        "写真を撮ります。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second sentence says the writer will write the sister a letter. Buying a new dictionary is what the older brother will do, and cooking and photographs are not in the text.",
+        "zh": "第二句说作者要给姐姐写信。买新词典是哥哥要做的事，做饭和拍照文中都没有提到。",
+        "zh_TW": "第二句說作者要給姐姐寫信。買新詞典是哥哥要做的事，做飯和拍照文中都沒有提到。"
+      }
+    },
+    {
+      "id": "q:n5-r-008",
+      "type": "short",
+      "items": [
+        "vocab:jm1463520",
+        "vocab:jm1283190",
+        "vocab:jm1537370"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-r-007",
+      "prompt": {
+        "en": "What was expensive at the shop?",
+        "zh": "在店里什么东西很贵？",
+        "zh_TW": "在店裡什麼東西很貴？"
+      },
+      "options": [
+        "野菜です。",
+        "肉です。",
+        "パンです。",
+        "牛乳です。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The last sentence contrasts the two: the vegetables were cheap, but the meat was expensive. Bread and milk are never mentioned.",
+        "zh": "最后一句把两者做了对比：蔬菜便宜，肉贵。面包和牛奶文中都没有出现。",
+        "zh_TW": "最後一句把兩者做了對比：蔬菜便宜，肉貴。麵包和牛奶文中都沒有出現。"
+      }
+    },
+    {
+      "id": "q:n5-r-009",
+      "type": "short",
+      "items": [
+        "vocab:jm1098390",
+        "vocab:jm1318290",
+        "vocab:jm1355120"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-r-008",
+      "prompt": {
+        "en": "How does the writer go to work on rainy days?",
+        "zh": "下雨的日子作者怎么去公司？",
+        "zh_TW": "下雨的日子作者怎麼去公司？"
+      },
+      "options": [
+        "自転車で行きます。",
+        "歩いて行きます。",
+        "バスに乗ります。",
+        "電車に乗ります。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The last sentence begins with でも and says that on rainy days the writer takes the bus. The bicycle is for ordinary mornings, and walking and the train are not in the text.",
+        "zh": "最后一句以「でも」开头，说下雨的日子作者坐公交车。自行车是平常早上用的，走路和电车文中都没有提到。",
+        "zh_TW": "最後一句以「でも」開頭，說下雨的日子作者坐公交車。自行車是平常早上用的，走路和電車文中都沒有提到。"
+      }
+    },
+    {
+      "id": "q:n5-r-010",
+      "type": "mid",
+      "items": [
+        "vocab:jm1194290",
+        "vocab:jm1534890",
+        "vocab:jm1536350"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-r-009",
+      "prompt": {
+        "en": "When does the writer go to the Japanese school?",
+        "zh": "作者什么时候去日语学校？",
+        "zh_TW": "作者什麼時候去日語學校？"
+      },
+      "options": [
+        "毎日の朝です。",
+        "火曜日と木曜日の夜です。",
+        "土曜日の昼です。",
+        "日曜日の夜です。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The fourth sentence names Tuesday and Thursday evenings. Every day is when the writer goes to the company, and Saturday and Sunday are not mentioned at all.",
+        "zh": "第四句写明是星期二和星期四的晚上。每天去的是公司，星期六和星期天文中完全没有提到。",
+        "zh_TW": "第四句寫明是星期二和星期四的晚上。每天去的是公司，星期六和星期天文中完全沒有提到。"
+      }
+    },
+    {
+      "id": "q:n5-r-011",
+      "type": "mid",
+      "items": [
+        "vocab:jm1553170",
+        "vocab:jm1548220",
+        "vocab:jm1578850"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-r-009",
+      "prompt": {
+        "en": "What does the writer want to do next year?",
+        "zh": "作者明年想做什么？",
+        "zh_TW": "作者明年想做什麼？"
+      },
+      "options": [
+        "日本へ旅行に行きたいです。",
+        "新しい会社で働きたいです。",
+        "漢字を教えたいです。",
+        "料理の学校へ行きたいです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last sentence says the writer wants to travel to Japan next year. Working, kanji and cooking all appear in the text, but as things done now rather than as next year's wish.",
+        "zh": "最后一句说作者明年想去日本旅行。上班、汉字和做饭虽然文中都有，但那是现在做的事，不是明年的愿望。",
+        "zh_TW": "最後一句說作者明年想去日本旅行。上班、漢字和做飯雖然文中都有，但那是現在做的事，不是明年的願望。"
+      }
+    },
+    {
+      "id": "q:n5-r-012",
+      "type": "mid",
+      "items": [
+        "vocab:jm1226440",
+        "vocab:jm1303620",
+        "vocab:jm1269320"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-r-010",
+      "prompt": {
+        "en": "Where does the writer go after the walk?",
+        "zh": "散步之后作者去哪里？",
+        "zh_TW": "散步之後作者去哪裡？"
+      },
+      "options": [
+        "銀行です。",
+        "喫茶店です。",
+        "病院です。",
+        "郵便局です。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "散歩の後で marks what comes next: coffee at the coffee shop in front of the park. No bank, hospital or post office appears in the text.",
+        "zh": "「散歩の後で」点出接下来的事：在公园前面的咖啡店喝咖啡。文中没有出现银行、医院或邮局。",
+        "zh_TW": "「散歩の後で」點出接下來的事：在公園前面的咖啡店喝咖啡。文中沒有出現銀行、醫院或郵局。"
+      }
+    },
+    {
+      "id": "q:n5-r-013",
+      "type": "mid",
+      "items": [
+        "vocab:jm1524590",
+        "vocab:jm1163400",
+        "vocab:jm1547720"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-r-010",
+      "prompt": {
+        "en": "Who comes along on Saturday mornings?",
+        "zh": "星期六早上谁会一起来？",
+        "zh_TW": "星期六早上誰會一起來？"
+      },
+      "options": [
+        "妹です。",
+        "兄です。",
+        "友達です。",
+        "先生です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last sentence says the younger sister comes along too on Saturday mornings. No brother, friend or teacher is mentioned anywhere in the text.",
+        "zh": "最后一句说星期六早上妹妹也一起来。文中没有提到哥哥、朋友或老师。",
+        "zh_TW": "最後一句說星期六早上妹妹也一起來。文中沒有提到哥哥、朋友或老師。"
+      }
+    },
+    {
+      "id": "q:n5-r-014",
+      "type": "info",
+      "items": [
+        "vocab:jm1490220",
+        "vocab:jm1175140",
+        "vocab:jm1098390"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-r-011",
+      "prompt": {
+        "en": "Where does the bus to the hospital leave from?",
+        "zh": "去医院的公交车从哪里发车？",
+        "zh_TW": "去醫院的公交車從哪裡發車？"
+      },
+      "options": [
+        "駅の前です。",
+        "店の前です。",
+        "公園の前です。",
+        "病院の前です。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The notice says the bus to the hospital leaves from in front of the station; it is the bus to the park that leaves from in front of the shop.",
+        "zh": "通知写着去医院的公交车从车站前面发车；从商店前面发车的是去公园的车。",
+        "zh_TW": "通知寫著去醫院的公交車從車站前面發車；從商店前面發車的是去公園的車。"
+      }
+    },
+    {
+      "id": "q:n5-r-015",
+      "type": "info",
+      "items": [
+        "vocab:jm1318970",
+        "vocab:jm1305990",
+        "vocab:jm1079760"
+      ],
+      "kind": "choice",
+      "passage": "p:n5-r-012",
+      "prompt": {
+        "en": "What may you not use in the test?",
+        "zh": "测验时不可以使用什么？",
+        "zh_TW": "測驗時不可以使用什麼？"
+      },
+      "options": [
+        "本です。",
+        "かばんです。",
+        "辞書です。",
+        "時計です。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "辞書を使ってはいけません says plainly that a dictionary may not be used. Books, bags and watches are not mentioned in the notice at all.",
+        "zh": "「辞書を使ってはいけません」明确说明不可以使用词典。通知里完全没有提到书、包或手表。",
+        "zh_TW": "「辭書を使ってはいけません」明確說明不可以使用詞典。通知裡完全沒有提到書、包或手錶。"
       }
     }
   ]

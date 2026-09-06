@@ -699,6 +699,1394 @@
         "zh": "手際指做事的手法利落不利落，常说「手際がいい」。看到的景色要说「景色」，价格要说「値段」，到车站的距离要说「道」。",
         "zh_TW": "手際指做事的手法利落不利落，常說「手際がいい」。看到的景色要說「景色」，價格要說「値段」，到車站的距離要說「道」。"
       }
+    },
+    {
+      "id": "q:n1-v-026",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1428230"
+      ],
+      "kind": "choice",
+      "ja": "若い選手が世界記録に挑む。",
+      "reading": "わかいせんしゅがせかいきろくにいどむ。",
+      "blank": "挑む",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "いどむ",
+        "いたむ",
+        "からむ",
+        "のぞむ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "挑む, to take something difficult on, is read いどむ.",
+        "zh": "「挑む」指主动向困难的目标发起挑战，读作いどむ。いたむ是「痛む」，からむ是「絡む」，のぞむ是「望む」。",
+        "zh_TW": "「挑む」指主動向困難的目標發起挑戰，讀作いどむ。いたむ是「痛む」，からむ是「絡む」，のぞむ是「望む」。"
+      }
+    },
+    {
+      "id": "q:n1-v-027",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1267870"
+      ],
+      "kind": "choice",
+      "ja": "彼は自分の学生時代を顧みた。",
+      "reading": "かれはじぶんのがくせいじだいをかえりみた。",
+      "blank": "顧みた",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "かえりみた",
+        "こころみた",
+        "ふりむいた",
+        "みまもった"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "顧みる, to look back over one's own past, is read かえりみる, so the past form is かえりみた.",
+        "zh": "「顧みる」是回顾自己走过的路，读作かえりみる，过去式为かえりみた。こころみる是「試みる」，ふりむく是「振り向く」，みまもる是「見守る」。",
+        "zh_TW": "「顧みる」是回顧自己走過的路，讀作かえりみる，過去式為かえりみた。こころみる是「試みる」，ふりむく是「振り向く」，みまもる是「見守る」。"
+      }
+    },
+    {
+      "id": "q:n1-v-028",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1215070"
+      ],
+      "kind": "choice",
+      "ja": "彼女は最後まで自分の考えを貫いた。",
+      "reading": "かのじょはさいごまでじぶんのかんがえをつらぬいた。",
+      "blank": "貫いた",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "つらぬいた",
+        "つらなった",
+        "かたむいた",
+        "きずいた"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "貫く, to hold to something all the way through, is read つらぬく, giving つらぬいた.",
+        "zh": "「貫く」指把自己的想法坚持到底，读作つらぬく，过去式是つらぬいた。つらなる是「連なる」，かたむく是「傾く」，きずく是「築く」。",
+        "zh_TW": "「貫く」指把自己的想法堅持到底，讀作つらぬく，過去式是つらぬいた。つらなる是「連なる」，かたむく是「傾く」，きずく是「築く」。"
+      }
+    },
+    {
+      "id": "q:n1-v-029",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1397800"
+      ],
+      "kind": "choice",
+      "ja": "強い風が船の出発を阻んだ。",
+      "reading": "つよいかぜがふねのしゅっぱつをはばんだ。",
+      "blank": "阻んだ",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "はばんだ",
+        "こばんだ",
+        "はさんだ",
+        "ふせいだ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "阻む, said of something that blocks a thing from going ahead, is read はばむ.",
+        "zh": "「阻む」指挡住、妨碍事情进行，读作はばむ，过去式是はばんだ。こばむ是「拒む」，はさむ是「挟む」，ふせぐ是「防ぐ」。",
+        "zh_TW": "「阻む」指擋住、妨礙事情進行，讀作はばむ，過去式是はばんだ。こばむ是「拒む」，はさむ是「挾む」，ふせぐ是「防ぐ」。"
+      }
+    },
+    {
+      "id": "q:n1-v-030",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1599900"
+      ],
+      "kind": "choice",
+      "ja": "若い世代が次の時代を担う。",
+      "reading": "わかいせだいがつぎのじだいをになう。",
+      "blank": "担う",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "になう",
+        "せおう",
+        "かなう",
+        "やしなう"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "担う, to carry a role or a responsibility, is read になう.",
+        "zh": "「担う」指肩负起某种责任或角色，读作になう。せおう是「背負う」，かなう是「叶う」，やしなう是「養う」。",
+        "zh_TW": "「擔う」指肩負起某種責任或角色，讀作になう。せおう是「背負う」，かなう是「葉う」，やしなう是「養う」。"
+      }
+    },
+    {
+      "id": "q:n1-v-031",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1472100"
+      ],
+      "kind": "choice",
+      "ja": "会社はこの制度の廃止を決めた。",
+      "reading": "かいしゃはこのせいどのはいしをきめた。",
+      "blank": "廃止",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "はいし",
+        "はいじ",
+        "はいと",
+        "ふはい"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "廃 is はい and 止 is し, so 廃止, doing away with a system, is はいし.",
+        "zh": "「廃止」指把制度取消掉。廃读はい，止读し，合起来是はいし，不浊化成はいじ，也不是はいと。",
+        "zh_TW": "「廃止」指把制度取消掉。廃讀はい，止讀し，合起來是はいし，不濁化成はいじ，也不是はいと。"
+      }
+    },
+    {
+      "id": "q:n1-v-032",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1491050"
+      ],
+      "kind": "choice",
+      "ja": "この地域では地震が頻繁に起こる。",
+      "reading": "このちいきではじしんがひんぱんにおこる。",
+      "blank": "頻繁",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "ひんぱん",
+        "ひんばん",
+        "はんぱん",
+        "ひんぷん"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "頻繁, said of something that happens again and again, is read ひんぱん.",
+        "zh": "「頻繁」形容同一件事一再发生，读作ひんぱん。繁在这里读ぱん而不是ばん，頻也只读ひん。",
+        "zh_TW": "「頻繁」形容同一件事一再發生，讀作ひんぱん。繁在這裡讀ぱん而不是ばん，頻也只讀ひん。"
+      }
+    },
+    {
+      "id": "q:n1-v-033",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1214450"
+      ],
+      "kind": "choice",
+      "ja": "この坂は緩やかで、歩きやすい。",
+      "reading": "このさかはゆるやかで、あるきやすい。",
+      "blank": "緩やか",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "ゆるやか",
+        "かんやか",
+        "なごやか",
+        "おだやか"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "緩やか, said of a gentle slope, is read ゆるやか, from 緩い.",
+        "zh": "「緩やか」形容坡度平缓，读作ゆるやか，和「緩い」同源。なごやか是「和やか」，おだやか是「穏やか」，かんやか不是词。",
+        "zh_TW": "「緩やか」形容坡度平緩，讀作ゆるやか，和「緩い」同源。なごやか是「和やか」，おだやか是「穏やか」，かんやか不是詞。"
+      }
+    },
+    {
+      "id": "q:n1-v-034",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1560120"
+      ],
+      "kind": "choice",
+      "ja": "彼は露骨に不満を言葉に出した。",
+      "reading": "かれはろこつにふまんをことばにだした。",
+      "blank": "露骨",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "ろこつ",
+        "ろっこつ",
+        "ろうこつ",
+        "つゆほね"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "露骨, showing a feeling without hiding it at all, is read ろこつ.",
+        "zh": "「露骨」指毫不掩饰地表现出来，读作ろこつ。这里没有促音，也不长音；つゆほね是把两个字分开训读，不成词。",
+        "zh_TW": "「露骨」指毫不掩飾地表現出來，讀作ろこつ。這裡沒有促音，也不長音；つゆほね是把兩個字分開訓讀，不成詞。"
+      }
+    },
+    {
+      "id": "q:n1-v-035",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1351760"
+      ],
+      "kind": "choice",
+      "ja": "詳細は後で連絡します。",
+      "reading": "しょうさいはあとでれんらくします。",
+      "blank": "詳細",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "しょうさい",
+        "しょうざい",
+        "ようさい",
+        "しょうせい"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "詳 is しょう and 細 is さい, so 詳細, the fine points, is しょうさい.",
+        "zh": "「詳細」指详细的内容。詳读しょう，細读さい，不浊化成ざい，詳也不读よう。",
+        "zh_TW": "「詳細」指詳細的內容。詳讀しょう，細讀さい，不濁化成ざい，詳也不讀よう。"
+      }
+    },
+    {
+      "id": "q:n1-v-036",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1584130"
+      ],
+      "kind": "choice",
+      "ja": "彼はまだ経験が乏しい。",
+      "reading": "かれはまだけいけんがとぼしい。",
+      "blank": "乏しい",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "とぼしい",
+        "まずしい",
+        "いやしい",
+        "きびしい"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "乏しい, said of something there is not enough of, is read とぼしい.",
+        "zh": "「乏しい」指数量或程度不足，读作とぼしい。まずしい是「貧しい」，いやしい是「卑しい」，きびしい是「厳しい」。",
+        "zh_TW": "「乏しい」指數量或程度不足，讀作とぼしい。まずしい是「貧しい」，いやしい是「卑しい」，きびしい是「厳しい」。"
+      }
+    },
+    {
+      "id": "q:n1-v-037",
+      "type": "kanji-reading",
+      "items": [
+        "vocab:jm1481940"
+      ],
+      "kind": "choice",
+      "ja": "手続きが多くて煩わしい。",
+      "reading": "てつづきがおおくてわずらわしい。",
+      "blank": "煩わしい",
+      "prompt": {
+        "en": "How is the marked word read?",
+        "zh": "画线词语的读音是哪一个？",
+        "zh_TW": "畫線詞語的讀音是哪一個？"
+      },
+      "options": [
+        "わずらわしい",
+        "まぎらわしい",
+        "いそがわしい",
+        "うたがわしい"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "煩わしい, said of something fiddly and tiresome, is read わずらわしい.",
+        "zh": "「煩わしい」形容手续繁琐、让人心烦，读作わずらわしい。まぎらわしい是「紛らわしい」，うたがわしい是「疑わしい」。",
+        "zh_TW": "「煩わしい」形容手續繁瑣、讓人心煩，讀作わずらわしい。まぎらわしい是「紛らわしい」，うたがわしい是「疑わしい」。"
+      }
+    },
+    {
+      "id": "q:n1-v-038",
+      "type": "context",
+      "items": [
+        "vocab:jm1251120"
+      ],
+      "kind": "choice",
+      "ja": "そうなった経緯を詳しく説明した。",
+      "reading": "そうなったいきさつをくわしくせつめいした。",
+      "blank": "経緯",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "経緯",
+        "詳細",
+        "前提",
+        "均衡"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "いきさつ is how a situation came to be as it is, which is what gets explained.",
+        "zh": "事情演变到今天的来龙去脉叫「経緯」。詳細只是细节内容，前提是先决条件，均衡是平衡，都说不出这段过程。",
+        "zh_TW": "事情演變到今天的來龍去脈叫「経緯」。詳細只是細節內容，前提是先決條件，均衡是平衡，都說不出這段過程。"
+      }
+    },
+    {
+      "id": "q:n1-v-039",
+      "type": "context",
+      "items": [
+        "vocab:jm1214530"
+      ],
+      "kind": "choice",
+      "ja": "この薬は痛みの緩和に役立つ。",
+      "reading": "このくすりはいたみのかんわにやくだつ。",
+      "blank": "緩和",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "緩和",
+        "廃止",
+        "断言",
+        "束縛"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "かんわ is making something harsh milder, which is what medicine does to pain.",
+        "zh": "把疼痛减轻、缓解，用「緩和」。廃止是废除制度，断言是断定，束縛是束缚，都不能拿来说疼痛。",
+        "zh_TW": "把疼痛減輕、緩解，用「緩和」。廃止是廢除制度，斷言是斷定，束縛是束縛，都不能拿來說疼痛。"
+      }
+    },
+    {
+      "id": "q:n1-v-040",
+      "type": "context",
+      "items": [
+        "vocab:jm1393680"
+      ],
+      "kind": "choice",
+      "ja": "この計画は全員が参加することを前提としている。",
+      "reading": "このけいかくはぜんいんがさんかすることをぜんていとしている。",
+      "blank": "前提",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "前提",
+        "相場",
+        "経緯",
+        "打開"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "ぜんてい is the condition a plan is built on, and 前提としている is the set phrase.",
+        "zh": "计划成立所依赖的条件叫「前提」，惯用说法是「〜を前提としている」。相場是行情，経緯是来龙去脉，打開是打破僵局。",
+        "zh_TW": "計劃成立所依賴的條件叫「前提」，慣用說法是「〜を前提としている」。相場是行情，経緯是來龍去脈，打開是打破僵局。"
+      }
+    },
+    {
+      "id": "q:n1-v-041",
+      "type": "context",
+      "items": [
+        "vocab:jm1410070"
+      ],
+      "kind": "choice",
+      "ja": "問題が起きたら、すぐに対処してください。",
+      "reading": "もんだいがおきたら、すぐにたいしょしてください。",
+      "blank": "対処",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "対処",
+        "該当",
+        "発足",
+        "断言"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "たいしょ is handling a problem as it comes up, which is what is asked for here.",
+        "zh": "出了问题马上去应付、处理，用「対処」。該当是符合条件，発足是新组织成立，断言是断定，都接不上「問題が起きたら」。",
+        "zh_TW": "出了問題馬上去應付、處理，用「対処」。該當是符合條件，発足是新組織成立，斷言是斷定，都接不上「問題が起きたら」。"
+      }
+    },
+    {
+      "id": "q:n1-v-042",
+      "type": "context",
+      "items": [
+        "vocab:jm1412770"
+      ],
+      "kind": "choice",
+      "ja": "雨で楽しい旅行が台無しになった。",
+      "reading": "あめでたのしいりょこうがだいなしになった。",
+      "blank": "台無し",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "台無し",
+        "大胆",
+        "露骨",
+        "漠然"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "だいなし says something good was completely spoiled, which rain did to the trip.",
+        "zh": "本来开心的旅行被雨全毁了，这种「全泡汤了」用「台無し」。大胆是有胆量，露骨是不加掩饰，漠然是模糊不清。",
+        "zh_TW": "本來開心的旅行被雨全毀了，這種「全泡湯了」用「臺無し」。大膽是有膽量，露骨是不加掩飾，漠然是模糊不清。"
+      }
+    },
+    {
+      "id": "q:n1-v-043",
+      "type": "context",
+      "items": [
+        "vocab:jm1204700"
+      ],
+      "kind": "choice",
+      "ja": "この条件に該当する人は少ない。",
+      "reading": "このじょうけんにがいとうするひとはすくない。",
+      "blank": "該当",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "該当",
+        "対処",
+        "発足",
+        "緩和"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "がいとうする is fitting a stated condition, the word used on forms and notices.",
+        "zh": "符合所列条件用「該当する」，是文件、通知里的固定说法。対処是处理，発足是成立，緩和是放宽，都不能接「条件に」。",
+        "zh_TW": "符合所列條件用「該當する」，是文件、通知裡的固定說法。対処是處理，発足是成立，緩和是放寬，都不能接「條件に」。"
+      }
+    },
+    {
+      "id": "q:n1-v-044",
+      "type": "context",
+      "items": [
+        "vocab:jm1241270"
+      ],
+      "kind": "choice",
+      "ja": "二つの力の均衡が崩れた。",
+      "reading": "ふたつのちからのきんこうがくずれた。",
+      "blank": "均衡",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "均衡",
+        "前提",
+        "経緯",
+        "相場"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "きんこう is two forces holding each other even, and it is what 崩れる is said of.",
+        "zh": "两股力量互相持平的状态叫「均衡」，常说「均衡が崩れる」。前提是前提条件，経緯是经过，相場是市价。",
+        "zh_TW": "兩股力量互相持平的狀態叫「均衡」，常說「均衡が崩れる」。前提是前提條件，経緯是經過，相場是市價。"
+      }
+    },
+    {
+      "id": "q:n1-v-045",
+      "type": "context",
+      "items": [
+        "vocab:jm1408850"
+      ],
+      "kind": "choice",
+      "ja": "話し合いで状況の打開を目指す。",
+      "reading": "はなしあいでじょうきょうのだかいをめざす。",
+      "blank": "打開",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "打開",
+        "廃止",
+        "束縛",
+        "断言"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "だかい is breaking out of a situation that is stuck, which talks aim at.",
+        "zh": "把僵持不下的局面打破叫「打開」，正是谈判想达到的。廃止是废除，束縛是限制，断言是断定，都不能接「状況の」。",
+        "zh_TW": "把僵持不下的局面打破叫「打開」，正是談判想達到的。廃止是廢除，束縛是限制，斷言是斷定，都不能接「狀況の」。"
+      }
+    },
+    {
+      "id": "q:n1-v-046",
+      "type": "context",
+      "items": [
+        "vocab:jm1598300"
+      ],
+      "kind": "choice",
+      "ja": "事件の手掛かりがまだ見つからない。",
+      "reading": "じけんのてがかりがまだみつからない。",
+      "blank": "手掛かり",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "手掛かり",
+        "見込み",
+        "相場",
+        "経緯"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "てがかり is the first thing that lets you start unravelling a case.",
+        "zh": "查案时能顺藤摸瓜的那条线索叫「手掛かり」。見込み是可能性，相場是行情，経緯是事情的过程，都不是可以「見つかる」的线索。",
+        "zh_TW": "查案時能順藤摸瓜的那條線索叫「手掛かり」。見込み是可能性，相場是行情，経緯是事情的過程，都不是可以「見つかる」的線索。"
+      }
+    },
+    {
+      "id": "q:n1-v-047",
+      "type": "context",
+      "items": [
+        "vocab:jm1604480"
+      ],
+      "kind": "choice",
+      "ja": "明日は雨が降る見込みだ。",
+      "reading": "あしたはあめがふるみこみだ。",
+      "blank": "見込み",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "見込み",
+        "手掛かり",
+        "均衡",
+        "前提"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "みこみ is what is expected to happen, so a forecast of rain is a 見込み.",
+        "zh": "对将来的估计、预计用「見込み」，天气预报正是这种说法。手掛かり是线索，均衡是平衡，前提是前提条件。",
+        "zh_TW": "對將來的估計、預計用「見込み」，天氣預報正是這種說法。手掛かり是線索，均衡是平衡，前提是前提條件。"
+      }
+    },
+    {
+      "id": "q:n1-v-048",
+      "type": "context",
+      "items": [
+        "vocab:jm1565170"
+      ],
+      "kind": "choice",
+      "ja": "危ないと思って、とっさに手を出した。",
+      "reading": "あぶないとおもって、とっさにてをだした。",
+      "blank": "とっさに",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "とっさに",
+        "一律に",
+        "厳密に",
+        "大胆に"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "とっさに is in the split second before you think, which is how a hand goes out.",
+        "zh": "来不及思考的一瞬间就动了，用「とっさに」。一律に是一律地，厳密に是严格地，大胆に是大胆地，都不表示这种瞬间反应。",
+        "zh_TW": "來不及思考的一瞬間就動了，用「とっさに」。一律に是一律地，厳密に是嚴格地，大膽に是大膽地，都不表示這種瞬間反應。"
+      }
+    },
+    {
+      "id": "q:n1-v-049",
+      "type": "context",
+      "items": [
+        "vocab:jm1167250"
+      ],
+      "kind": "choice",
+      "ja": "料金は年齢に関係なく一律だ。",
+      "reading": "りょうきんはねんれいにかんけいなくいちりつだ。",
+      "blank": "一律",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "一律",
+        "均衡",
+        "該当",
+        "柔軟"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "いちりつ is the same for everyone, with no difference by case.",
+        "zh": "不分年龄一个价，这种「一视同仁、都一样」用「一律」。均衡是双方平衡，該当是符合，柔軟是灵活，意思正相反。",
+        "zh_TW": "不分年齡一個價，這種「一視同仁、都一樣」用「一律」。均衡是雙方平衡，該當是符合，柔軟是靈活，意思正相反。"
+      }
+    },
+    {
+      "id": "q:n1-v-050",
+      "type": "context",
+      "items": [
+        "vocab:jm1335480"
+      ],
+      "kind": "choice",
+      "ja": "状況に合わせて柔軟に対応したい。",
+      "reading": "じょうきょうにあわせてじゅうなんにたいおうしたい。",
+      "blank": "柔軟に",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "柔軟に",
+        "軽率に",
+        "厳密に",
+        "大胆に"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "じゅうなんに is bending the response to fit the situation instead of sticking to one rule.",
+        "zh": "随情况改变做法叫「柔軟に対応する」。軽率に是轻率地，厳密に是死守规定，大胆に是胆子大，都不是「随机应变」。",
+        "zh_TW": "隨情況改變做法叫「柔軟に対応する」。軽率に是輕率地，厳密に是死守規定，大膽に是膽子大，都不是「隨機應變」。"
+      }
+    },
+    {
+      "id": "q:n1-v-051",
+      "type": "context",
+      "items": [
+        "vocab:jm1385050"
+      ],
+      "kind": "choice",
+      "ja": "彼の悩みは切実だ。",
+      "reading": "かれのなやみはせつじつだ。",
+      "blank": "切実",
+      "prompt": {
+        "en": "Which word fits in the blank?",
+        "zh": "括号里填哪个词最合适？",
+        "zh_TW": "括號裡填哪個詞最合適？"
+      },
+      "options": [
+        "切実",
+        "露骨",
+        "巧み",
+        "緩やか"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "せつじつ says the trouble presses on him for real, not in the abstract.",
+        "zh": "烦恼是真真切切压在身上的，用「切実」。露骨是毫不掩饰，巧み是技巧高明，緩やか是平缓，都不能形容烦恼的分量。",
+        "zh_TW": "煩惱是真真切切壓在身上的，用「切実」。露骨是毫不掩飾，巧み是技巧高明，緩やか是平緩，都不能形容煩惱的分量。"
+      }
+    },
+    {
+      "id": "q:n1-v-052",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1004570"
+      ],
+      "kind": "choice",
+      "ja": "私の予想はことごとく外れた。",
+      "reading": "わたしのよそうはことごとくはずれた。",
+      "blank": "ことごとく",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "全部",
+        "少し",
+        "たまに",
+        "やっと"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "ことごとく means every single one, without exception.",
+        "zh": "ことごとく表示一个不剩、全都如此，等于「全部」。少し是一点，たまに是偶尔，やっと是好不容易。",
+        "zh_TW": "ことごとく表示一個不剩、全都如此，等於「全部」。少し是一點，たまに是偶爾，やっと是好不容易。"
+      }
+    },
+    {
+      "id": "q:n1-v-053",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1008290"
+      ],
+      "kind": "choice",
+      "ja": "てっきり今日は休みだと思っていた。",
+      "reading": "てっきりきょうはやすみだとおもっていた。",
+      "blank": "てっきり",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "間違いなく",
+        "たぶん",
+        "まったく",
+        "いつも"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "てっきり is believing something for certain, though it turns out not to be so.",
+        "zh": "てっきり表示当时深信不疑（结果却猜错了），接近「間違いなく」。たぶん只是大概，まったく是完全，いつも是总是。",
+        "zh_TW": "てっきり表示當時深信不疑（結果卻猜錯了），接近「間違いなく」。たぶん只是大概，まったく是完全，いつも是總是。"
+      }
+    },
+    {
+      "id": "q:n1-v-054",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1565620"
+      ],
+      "kind": "choice",
+      "ja": "一人で全部やったのなら、さぞ疲れただろう。",
+      "reading": "ひとりでぜんぶやったのなら、さぞつかれただろう。",
+      "blank": "さぞ",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "きっと",
+        "少し",
+        "あまり",
+        "まさか"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "さぞ is guessing with confidence about how the other person must feel.",
+        "zh": "さぞ用来体谅地推测对方的感受，「一定很…吧」，接近「きっと」。少し是一点，あまり要跟否定，まさか是难以置信。",
+        "zh_TW": "さぞ用來體諒地推測對方的感受，「一定很…吧」，接近「きっと」。少し是一點，あまり要跟否定，まさか是難以置信。"
+      }
+    },
+    {
+      "id": "q:n1-v-055",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1599150"
+      ],
+      "kind": "choice",
+      "ja": "今年の夏はとりわけ暑い。",
+      "reading": "ことしのなつはとりわけあつい。",
+      "blank": "とりわけ",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "特に",
+        "少しも",
+        "いつも",
+        "まったく"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "とりわけ singles this one out as more so than the rest.",
+        "zh": "とりわけ把今年从历年中单挑出来，表示「格外、尤其」，等于「特に」。少しも和まったく要跟否定，いつも是一向如此。",
+        "zh_TW": "とりわけ把今年從歷年中單挑出來，表示「格外、尤其」，等於「特に」。少しも和まったく要跟否定，いつも是一向如此。"
+      }
+    },
+    {
+      "id": "q:n1-v-056",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1542850"
+      ],
+      "kind": "choice",
+      "ja": "かねて計画していた旅行に、やっと出かける。",
+      "reading": "かねてけいかくしていたりょこうに、やっとでかける。",
+      "blank": "かねて",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "以前から",
+        "急に",
+        "まれに",
+        "これから"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "かねて says the planning began some time ago and has continued since.",
+        "zh": "かねて指从早先就一直如此，等于「以前から」。急に是突然，まれに是很少，これから指的是今后，方向正相反。",
+        "zh_TW": "かねて指從早先就一直如此，等於「以前から」。急に是突然，まれに是很少，これから指的是今後，方向正相反。"
+      }
+    },
+    {
+      "id": "q:n1-v-057",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1161390"
+      ],
+      "kind": "choice",
+      "ja": "彼の意見が悪いとは一概に言えない。",
+      "reading": "かれのいけんがわるいとはいちがいにいえない。",
+      "blank": "一概に",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "ひとまとめにして",
+        "声を出して",
+        "何度も",
+        "ゆっくり"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "一概に言えない says you cannot lump every case together and judge them the same way.",
+        "zh": "「一概に言えない」是说不能不分情况地一律下结论，所以接近「ひとまとめにして」。另外三个说的是说话的方式，与判断无关。",
+        "zh_TW": "「一概に言えない」是說不能不分情況地一律下結論，所以接近「ひとまとめにして」。另外三個說的是說話的方式，與判斷無關。"
+      }
+    },
+    {
+      "id": "q:n1-v-058",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1236080"
+      ],
+      "kind": "choice",
+      "ja": "強いて言えば、こちらのほうがいい。",
+      "reading": "しいていえば、こちらのほうがいい。",
+      "blank": "強いて",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "無理に",
+        "自然に",
+        "急いで",
+        "静かに"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "強いて is forcing yourself to pick when you would rather not, so 無理に fits.",
+        "zh": "「強いて言えば」是本来难分高下，硬要说的话，所以接近「無理に」。自然に是自然而然，急いで是赶紧，静かに是安静地。",
+        "zh_TW": "「強いて言えば」是本來難分高下，硬要說的話，所以接近「無理に」。自然に是自然而然，急いで是趕緊，静かに是安靜地。"
+      }
+    },
+    {
+      "id": "q:n1-v-059",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1260380"
+      ],
+      "kind": "choice",
+      "ja": "今年は野菜の値段が軒並み上がった。",
+      "reading": "ことしはやさいのねだんがのきなみあがった。",
+      "blank": "軒並み",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "どれも",
+        "少しずつ",
+        "まれに",
+        "半分だけ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "軒並み says one after another across the board, so every vegetable went up.",
+        "zh": "軒並み原指一家挨着一家，引申为「无一例外、全都」，等于「どれも」。少しずつ说的是幅度，まれに是偶尔，半分だけ只有一半。",
+        "zh_TW": "軒並み原指一家挨著一家，引申為「無一例外、全都」，等於「どれも」。少しずつ說的是幅度，まれに是偶爾，半分だけ只有一半。"
+      }
+    },
+    {
+      "id": "q:n1-v-060",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1475790"
+      ],
+      "kind": "choice",
+      "ja": "将来のことを漠然と考えている。",
+      "reading": "しょうらいのことをばくぜんとかんがえている。",
+      "blank": "漠然と",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "ぼんやりと",
+        "はっきりと",
+        "急に",
+        "楽しく"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "漠然と is thinking without any clear shape to the thought.",
+        "zh": "漠然と指想得没有具体轮廓，模模糊糊，等于「ぼんやりと」。はっきりと意思相反，急に是突然，楽しく是快乐地。",
+        "zh_TW": "漠然と指想得沒有具體輪廓，模模糊糊，等於「ぼんやりと」。はっきりと意思相反，急に是突然，楽しく是快樂地。"
+      }
+    },
+    {
+      "id": "q:n1-v-061",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1397310"
+      ],
+      "kind": "choice",
+      "ja": "彼は素早く立ち上がった。",
+      "reading": "かれはすばやくたちあがった。",
+      "blank": "素早く",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "すぐに",
+        "ゆっくり",
+        "静かに",
+        "何度も"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "素早く is doing something without a moment's delay.",
+        "zh": "素早く指动作敏捷、毫不迟疑，接近「すぐに」。ゆっくり意思相反，静かに说的是有没有声音，何度も是反复多次。",
+        "zh_TW": "素早く指動作敏捷、毫不遲疑，接近「すぐに」。ゆっくり意思相反，静かに說的是有沒有聲音，何度も是反覆多次。"
+      }
+    },
+    {
+      "id": "q:n1-v-062",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1245100"
+      ],
+      "kind": "choice",
+      "ja": "そんな話を信じるとは愚かだ。",
+      "reading": "そんなはなしをしんじるとはおろかだ。",
+      "blank": "愚かだ",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "ばかだ",
+        "立派だ",
+        "得意だ",
+        "幸せだ"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "愚かだ is the written-style way of saying someone is being foolish.",
+        "zh": "愚かだ是书面语的「傻、糊涂」，等于口语的「ばかだ」。立派だ是了不起，得意だ是擅长，幸せだ是幸福。",
+        "zh_TW": "愚かだ是書面語的「傻、糊塗」，等於口語的「ばかだ」。立派だ是了不起，得意だ是擅長，幸せだ是幸福。"
+      }
+    },
+    {
+      "id": "q:n1-v-063",
+      "type": "paraphrase",
+      "items": [
+        "vocab:jm1278290"
+      ],
+      "kind": "choice",
+      "ja": "彼は言葉を巧みに使う。",
+      "reading": "かれはことばをたくみにつかう。",
+      "blank": "巧みに",
+      "prompt": {
+        "en": "Which phrase means almost the same as the marked part?",
+        "zh": "与画线部分意思最接近的是哪一个？",
+        "zh_TW": "與畫線部分意思最接近的是哪一個？"
+      },
+      "options": [
+        "上手に",
+        "下手に",
+        "ゆっくり",
+        "静かに"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "巧みに is handling something with skill, which 上手に also says.",
+        "zh": "巧みに指手法高明、运用自如，等于「上手に」。下手に意思相反，ゆっくり和静かに说的是速度和声音。",
+        "zh_TW": "巧みに指手法高明、運用自如，等於「上手に」。下手に意思相反，ゆっくり和静かに說的是速度和聲音。"
+      }
+    },
+    {
+      "id": "q:n1-v-064",
+      "type": "usage",
+      "items": [
+        "vocab:jm1401070"
+      ],
+      "kind": "choice",
+      "ja": "相場",
+      "reading": "そうば",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "今年は野菜の相場が上がっている。",
+        "彼は毎朝、公園の相場を歩いている。",
+        "この本は相場がとても長い。",
+        "暑いので窓を相場した。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "そうば is the going price of something in the market.",
+        "zh": "相場指市场上通行的价格、行情，所以说蔬菜的行情上涨。公园里走的是「道」，书的长短用「長い」，开窗要用「開ける」。",
+        "zh_TW": "相場指市場上通行的價格、行情，所以說蔬菜的行情上漲。公園裡走的是「道」，書的長短用「長い」，開窗要用「開ける」。"
+      }
+    },
+    {
+      "id": "q:n1-v-065",
+      "type": "usage",
+      "items": [
+        "vocab:jm1404510"
+      ],
+      "kind": "choice",
+      "ja": "束縛",
+      "reading": "そくばく",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "細かい規則が社員の自由を束縛している。",
+        "駅で友達を束縛して、一緒に帰った。",
+        "この料理は束縛がとてもいい。",
+        "暑いので窓を束縛した。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "そくばく is tying someone down so they cannot act freely.",
+        "zh": "束縛指限制别人的自由，所以说细密的规定束缚了员工。等朋友用「待つ」，菜的味道用「味」，开窗用「開ける」。",
+        "zh_TW": "束縛指限制別人的自由，所以說細密的規定束縛了員工。等朋友用「待つ」，菜的味道用「味」，開窗用「開ける」。"
+      }
+    },
+    {
+      "id": "q:n1-v-066",
+      "type": "usage",
+      "items": [
+        "vocab:jm1419590"
+      ],
+      "kind": "choice",
+      "ja": "断言",
+      "reading": "だんげん",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "彼は必ず勝つと断言した。",
+        "毎朝、公園で断言をしている。",
+        "この道は狭くて断言だ。",
+        "彼女は荷物を断言して持った。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "だんげんする is saying something flatly, with no room left for doubt.",
+        "zh": "断言指毫不含糊地把话说死，所以说他断言一定会赢。早上做的是「運動」，路窄用「狭い」，拿行李也不能说断言。",
+        "zh_TW": "斷言指毫不含糊地把話說死，所以說他斷言一定會贏。早上做的是「運動」，路窄用「狹い」，拿行李也不能說斷言。"
+      }
+    },
+    {
+      "id": "q:n1-v-067",
+      "type": "usage",
+      "items": [
+        "vocab:jm1583130"
+      ],
+      "kind": "choice",
+      "ja": "発足",
+      "reading": "はっそく",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "新しい会が来月発足する。",
+        "バスは八時に発足した。",
+        "この本は発足がとても長い。",
+        "彼は駅まで発足して行った。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "はっそく is an organisation starting up and beginning its work.",
+        "zh": "発足专指团体、组织正式成立开始活动，所以是新的会下个月成立。车出发要说「出発」，书的长短用「長い」，走去车站用「歩く」。",
+        "zh_TW": "発足專指團體、組織正式成立開始活動，所以是新的會下個月成立。車出發要說「出発」，書的長短用「長い」，走去車站用「歩く」。"
+      }
+    },
+    {
+      "id": "q:n1-v-068",
+      "type": "usage",
+      "items": [
+        "vocab:jm1252910"
+      ],
+      "kind": "choice",
+      "ja": "軽率",
+      "reading": "けいそつ",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "よく考えずに答えたのは軽率だった。",
+        "この荷物は軽率で持ちやすい。",
+        "彼は走るのが軽率だ。",
+        "この店の料理は軽率でおいしい。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "けいそつ is acting without thinking it through first.",
+        "zh": "軽率指没想清楚就行动，所以说不假思索地回答很轻率。行李轻要说「軽い」，跑得快要说「速い」，菜好吃也和它无关。",
+        "zh_TW": "軽率指沒想清楚就行動，所以說不假思索地回答很輕率。行李輕要說「軽い」，跑得快要說「速い」，菜好吃也和它無關。"
+      }
+    },
+    {
+      "id": "q:n1-v-069",
+      "type": "usage",
+      "items": [
+        "vocab:jm1262830"
+      ],
+      "kind": "choice",
+      "ja": "厳密",
+      "reading": "げんみつ",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "厳密に言えば、その説明は正しくない。",
+        "彼は厳密に走って学校へ行った。",
+        "この部屋は厳密で暖かい。",
+        "厳密な音楽を聞くのが好きだ。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "げんみつ is being exact down to the fine points, as in 厳密に言えば.",
+        "zh": "厳密指一丝不差地讲究细节，惯用「厳密に言えば」。跑得快用「速い」，房间暖用「暖かい」，音乐也谈不上厳密。",
+        "zh_TW": "厳密指一絲不差地講究細節，慣用「厳密に言えば」。跑得快用「速い」，房間暖用「暖かい」，音樂也談不上厳密。"
+      }
+    },
+    {
+      "id": "q:n1-v-070",
+      "type": "usage",
+      "items": [
+        "vocab:jm1414500"
+      ],
+      "kind": "choice",
+      "ja": "大胆",
+      "reading": "だいたん",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "彼は大胆な計画を立てた。",
+        "この道は大胆で通りにくい。",
+        "今日の天気は大胆だ。",
+        "この料理は大胆で辛い。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "だいたん is not being afraid to try something big, so a plan can be 大胆.",
+        "zh": "大胆指不怕风险、放得开，所以说制定了大胆的计划。路难走用「狭い」，天气要说「悪い」，菜辣要说「辛い」。",
+        "zh_TW": "大膽指不怕風險、放得開，所以說制定了大膽的計劃。路難走用「狹い」，天氣要說「悪い」，菜辣要說「辛い」。"
+      }
+    },
+    {
+      "id": "q:n1-v-071",
+      "type": "usage",
+      "items": [
+        "vocab:jm1208560"
+      ],
+      "kind": "choice",
+      "ja": "滑らか",
+      "reading": "なめらか",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "彼女は日本語を滑らかに話す。",
+        "この問題は滑らかで、なかなか解けない。",
+        "彼は滑らかな服を着て出かけた。",
+        "昨日は滑らかに学校を休んだ。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "なめらか is moving on without catching, whether a surface or a person's speech.",
+        "zh": "滑らか指表面光滑，也指说话流利不打结，所以说她日语说得很流利。题难要说「難しい」，衣服要说「きれい」，请假也不能用它。",
+        "zh_TW": "滑らか指表面光滑，也指說話流利不打結，所以說她日語說得很流利。題難要說「難しい」，衣服要說「きれい」，請假也不能用它。"
+      }
+    },
+    {
+      "id": "q:n1-v-072",
+      "type": "usage",
+      "items": [
+        "vocab:jm1335540"
+      ],
+      "kind": "choice",
+      "ja": "渋い",
+      "reading": "しぶい",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "このお茶は渋い味がする。",
+        "この荷物は渋くて、一人では持てない。",
+        "駅までの道は渋いので、すぐ着く。",
+        "今日は渋い天気で、気持ちがいい。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "しぶい is the puckering taste of strong tea or unripe fruit.",
+        "zh": "渋い形容茶或没熟的果子那种发涩的味道。行李重要说「重い」，路近要说「近い」，天气好要说「いい」。",
+        "zh_TW": "渋い形容茶或沒熟的果子那種發澀的味道。行李重要說「重い」，路近要說「近い」，天氣好要說「いい」。"
+      }
+    },
+    {
+      "id": "q:n1-v-073",
+      "type": "usage",
+      "items": [
+        "vocab:jm1504990"
+      ],
+      "kind": "choice",
+      "ja": "紛らわしい",
+      "reading": "まぎらわしい",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "二つの名前がよく似ていて紛らわしい。",
+        "今日は紛らわしい天気で、外に出たくない。",
+        "彼女は駅まで紛らわしく走った。",
+        "この料理は紛らわしくておいしい。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "まぎらわしい is said of two things so alike that they get mixed up.",
+        "zh": "紛らわしい指两样东西太像、容易搞混，所以说两个名字很像容易弄错。天气坏用「悪い」，跑步和菜的味道都用不上它。",
+        "zh_TW": "紛らわしい指兩樣東西太像、容易搞混，所以說兩個名字很像容易弄錯。天氣壞用「悪い」，跑步和菜的味道都用不上它。"
+      }
+    },
+    {
+      "id": "q:n1-v-074",
+      "type": "usage",
+      "items": [
+        "vocab:jm1217690"
+      ],
+      "kind": "choice",
+      "ja": "頑丈",
+      "reading": "がんじょう",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "この机は頑丈で、簡単には壊れない。",
+        "彼は頑丈な声で歌を歌った。",
+        "今日の空は頑丈だ。",
+        "この料理は頑丈でおいしい。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "がんじょう is built strongly enough not to break.",
+        "zh": "頑丈形容东西结实、不容易坏，所以说这张桌子很结实。声音大要说「大きい」，天空要说「青い」，菜好吃也和结实无关。",
+        "zh_TW": "頑丈形容東西結實、不容易壞，所以說這張桌子很結實。聲音大要說「大きい」，天空要說「青い」，菜好吃也和結實無關。"
+      }
+    },
+    {
+      "id": "q:n1-v-075",
+      "type": "usage",
+      "items": [
+        "vocab:jm1320710"
+      ],
+      "kind": "choice",
+      "ja": "質素",
+      "reading": "しっそ",
+      "prompt": {
+        "en": "Which sentence uses this word correctly?",
+        "zh": "这个词用法正确的句子是哪一个？",
+        "zh_TW": "這個詞用法正確的句子是哪一個？"
+      },
+      "options": [
+        "彼は質素な生活を続けている。",
+        "彼は質素に走って駅へ向かった。",
+        "今日の天気は質素だ。",
+        "この問題は質素で、なかなか解けない。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "しっそ is living plainly, without spending on more than you need.",
+        "zh": "質素指生活简朴、不铺张，所以说他一直过着简朴的日子。跑得快用「速い」，天气用「いい・悪い」，题难用「難しい」。",
+        "zh_TW": "質素指生活簡樸、不鋪張，所以說他一直過著簡樸的日子。跑得快用「速い」，天氣用「いい・悪い」，題難用「難しい」。"
+      }
     }
   ]
 }

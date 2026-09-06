@@ -559,6 +559,1112 @@
       "en": "To all residents of the city: information about the spring cookery class. From April to June we will hold a cookery class twice a month. There are places for twenty people; if there are many applications, those attending for the first time will be accepted first. The fee is three thousand yen for all six sessions. Those aged sixty-five and over receive a discount and pay two thousand yen. The deadline for applications is 15 March; applications after that cannot be accepted. The city provides the ingredients, so there is nothing you need to bring. For details, please enquire at the city office window.",
       "zh": "致本市各位居民：春季烹饪教室通知。四月至六月，每月举办两次烹饪教室。名额为二十人，报名人数较多时，优先接受首次参加者。参加费为六次共三千日元。六十五岁以上者享有优惠，为两千日元。报名截止日期为三月十五日，此后的报名恕不受理。食材由市里准备，无需自带任何东西。详情请向市政府服务窗口咨询。",
       "zh_TW": "致本市各位居民：春季烹飪教室通知。四月至六月，每月舉辦兩次烹飪教室。名額為二十人，報名人數較多時，優先接受首次參加者。參加費為六次共三千日元。六十五歲以上者享有優惠，為兩千日元。報名截止日期為三月十五日，此後的報名恕不受理。食材由市裡準備，無需自帶任何東西。詳情請向市政府服務窗口諮詢。"
+    },
+    {
+      "id": "p:n2-r-016",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "近くの図書館では、借りた本の期限が二週間と決まっている。",
+          "reading": "ちかくのとしょかんでは、かりたほんのきげんがにしゅうかんときまっている。"
+        },
+        {
+          "ja": "案外なことに、自分で買った本より、図書館の本のほうが早く読み終わる。",
+          "reading": "あんがいなことに、じぶんでかったほんより、としょかんのほんのほうがはやくよみおわる。"
+        },
+        {
+          "ja": "買った本はいつでも読めると思って、いつまでも机の上に置いたままになる。",
+          "reading": "かったほんはいつでもよめるとおもって、いつまでもつくえのうえにおいたままになる。"
+        },
+        {
+          "ja": "終わりが決まっていることこそ、本を読む力になるのだろう。",
+          "reading": "おわりがきまっていることこそ、ほんをよむちからになるのだろう。"
+        }
+      ],
+      "en": "At the library near my home, the term for a borrowed book is fixed at two weeks. Unexpectedly, I finish a library book sooner than one I have bought myself. A book I have bought I think I can read whenever I like, so it stays lying on my desk for ever. It must be that having a fixed end is itself what gives me the strength to read.",
+      "zh": "我家附近的图书馆规定，借来的书两周内要还。说来意外，图书馆的书我反而比自己买的书读得更快。买来的书总觉得什么时候都能读，于是一直摆在桌上。大概正因为有个规定的结束期限，才成了读下去的动力吧。",
+      "zh_TW": "我家附近的圖書館規定，借來的書兩週內要還。說來意外，圖書館的書我反而比自己買的書讀得更快。買來的書總覺得什麼時候都能讀，於是一直襬在桌上。大概正因為有個規定的結束期限，才成了讀下去的動力吧。"
+    },
+    {
+      "id": "p:n2-r-017",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "私は毎朝、通勤の途中で一つ前の駅に降りる。",
+          "reading": "わたしはまいあさ、つうきんのとちゅうでひとつまえのえきにおりる。"
+        },
+        {
+          "ja": "そこから会社まで、二十分ほど歩く。",
+          "reading": "そこからかいしゃまで、にじゅっぷんほどあるく。"
+        },
+        {
+          "ja": "運動のためだと言えば聞こえはいいが、本当の理由は別にある。",
+          "reading": "うんどうのためだといえばきこえはいいが、ほんとうのりゆうはべつにある。"
+        },
+        {
+          "ja": "歩いている間に、その日の仕事の順番が自然に決まっていくのだ。",
+          "reading": "あるいているあいだに、そのひのしごとのじゅんばんがしぜんにきまっていくのだ。"
+        }
+      ],
+      "en": "Every morning I get off one station early on my way to work. From there I walk about twenty minutes to the office. It sounds good to say it is for the exercise, but the real reason is a different one. While I am walking, the order of that day's work settles itself naturally.",
+      "zh": "我每天早上通勤时都提前一站下车，从那里步行二十分钟左右到公司。说是为了运动固然好听，可真正的理由并不在此。走路的时候，当天工作的先后顺序会自然而然地定下来。",
+      "zh_TW": "我每天早上通勤時都提前一站下車，從那裡步行二十分鐘左右到公司。說是為了運動固然好聽，可真正的理由並不在此。走路的時候，當天工作的先後順序會自然而然地定下來。"
+    },
+    {
+      "id": "p:n2-r-018",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "会議では、話を聞きながら手を動かして書くようにしている。",
+          "reading": "かいぎでは、はなしをききながらてをうごかしてかくようにしている。"
+        },
+        {
+          "ja": "後で読み返すためではない。",
+          "reading": "あとでよみかえすためではない。"
+        },
+        {
+          "ja": "書いているうちに、話の要領がつかめてくるからだ。",
+          "reading": "かいているうちに、はなしのようりょうがつかめてくるからだ。"
+        },
+        {
+          "ja": "書いた紙は、その日のうちに捨ててしまうことも多い。",
+          "reading": "かいたかみは、そのひのうちにすててしまうこともおおい。"
+        }
+      ],
+      "en": "In meetings I make a point of moving my hand and writing while I listen. It is not so that I can read it over later. It is because, as I write, I come to grasp the gist of what is being said. Often I throw the sheet away the same day.",
+      "zh": "开会时，我总是一边听一边动手记。这并不是为了以后再读一遍，而是因为写着写着，才能抓住谈话的要点。写过的纸，常常当天就扔掉了。",
+      "zh_TW": "開會時，我總是一邊聽一邊動手記。這並不是為了以後再讀一遍，而是因為寫著寫著，才能抓住談話的要點。寫過的紙，常常當天就扔掉了。"
+    },
+    {
+      "id": "p:n2-r-019",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "仕事の間に、十分だけ何もしない時間を作っている。",
+          "reading": "しごとのあいだに、じゅっぷんだけなにもしないじかんをつくっている。"
+        },
+        {
+          "ja": "電話も見ないし、人とも話さない。",
+          "reading": "でんわもみないし、ひとともはなさない。"
+        },
+        {
+          "ja": "初めのころは、休息の時間がもったいないように感じた。",
+          "reading": "はじめのころは、きゅうそくのじかんがもったいないようにかんじた。"
+        },
+        {
+          "ja": "しかし今では、その十分があるおかげで、午後の仕事が続くと思っている。",
+          "reading": "しかしいまでは、そのじゅっぷんがあるおかげで、ごごのしごとがつづくとおもっている。"
+        }
+      ],
+      "en": "In the middle of the working day I set aside ten minutes in which I do nothing. I do not look at my phone, and I do not talk to anyone. At first the time of rest felt like a waste. Now, though, I think it is thanks to those ten minutes that my afternoon's work keeps going.",
+      "zh": "工作当中，我会留出十分钟什么都不做。既不看手机，也不与人交谈。刚开始时，我觉得这段休息时间很浪费。可如今我认为，正是有了这十分钟，下午的工作才能持续下去。",
+      "zh_TW": "工作當中，我會留出十分鐘什麼都不做。既不看手機，也不與人交談。剛開始時，我覺得這段休息時間很浪費。可如今我認為，正是有了這十分鐘，下午的工作才能持續下去。"
+    },
+    {
+      "id": "p:n2-r-020",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "引っ越しのたびに、使っていない物の多いことに驚く。",
+          "reading": "ひっこしのたびに、つかっていないもののおおいことにおどろく。"
+        },
+        {
+          "ja": "一年間一度も手に取らなかった物は、これからも使わないだろう。",
+          "reading": "いちねんかんいちどもてにとらなかったものは、これからもつかわないだろう。"
+        },
+        {
+          "ja": "そう考えて、今回は余計な物を箱三つ分減らした。",
+          "reading": "そうかんがえて、こんかいはよけいなものをはこみっつぶんへらした。"
+        },
+        {
+          "ja": "部屋が広くなっただけでなく、掃除の時間まで短くなった。",
+          "reading": "へやがひろくなっただけでなく、そうじのじかんまでみじかくなった。"
+        }
+      ],
+      "en": "Every time I move house I am startled by how many things I never use. Anything I have not picked up even once in a year I am not going to use in future either. Thinking that, this time I got rid of three boxes' worth of superfluous things. Not only did the room become larger, even the time spent cleaning grew shorter.",
+      "zh": "每次搬家，我都惊讶于自己有那么多用不上的东西。一年里一次都没碰过的东西，今后大概也不会用。这么一想，这次我把多余的东西减掉了三箱。结果不只房间变宽敞了，连打扫的时间都缩短了。",
+      "zh_TW": "每次搬家，我都驚訝於自己有那麼多用不上的東西。一年裡一次都沒碰過的東西，今後大概也不會用。這麼一想，這次我把多餘的東西減掉了三箱。結果不只房間變寬敞了，連打掃的時間都縮短了。"
+    },
+    {
+      "id": "p:n2-r-021",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "一週間分の献立を、日曜日の朝に決めておく。",
+          "reading": "いっしゅうかんぶんのこんだてを、にちようびのあさにきめておく。"
+        },
+        {
+          "ja": "毎日その日の気分で考えていたころは、買い物に時間がかかっていた。",
+          "reading": "まいにちそのひのきぶんでかんがえていたころは、かいものにじかんがかかっていた。"
+        },
+        {
+          "ja": "先に決めてしまえば、材料も一度で買える。",
+          "reading": "さきにきめてしまえば、ざいりょうもいちどでかえる。"
+        },
+        {
+          "ja": "食べたい物を選ぶ楽しみは減ったが、料理そのものにかける時間は増えた。",
+          "reading": "たべたいものをえらぶたのしみはへったが、りょうりそのものにかけるじかんはふえた。"
+        }
+      ],
+      "en": "On Sunday morning I decide the menu for the whole week. When I used to think about it each day according to my mood, the shopping took a long time. If it is decided in advance, the ingredients can be bought in one trip. The pleasure of choosing what I feel like eating has shrunk, but the time I spend on the cooking itself has grown.",
+      "zh": "我会在星期天早上把一周的菜单定下来。以前每天凭当天的心情去想，买东西就很费时间。事先定好，食材一次就能买齐。虽然挑选想吃的东西那份乐趣少了，但花在做菜本身上的时间却多了。",
+      "zh_TW": "我會在星期天早上把一週的菜單定下來。以前每天憑當天的心情去想，買東西就很費時間。事先定好，食材一次就能買齊。雖然挑選想吃的東西那份樂趣少了，但花在做菜本身上的時間卻多了。"
+    },
+    {
+      "id": "p:n2-r-022",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "私の住む町には、秋の古い行事が今も残っている。",
+          "reading": "わたしのすむまちには、あきのふるいぎょうじがいまものこっている。"
+        },
+        {
+          "ja": "子どものころは、ただ人が集まる日だと思っていた。",
+          "reading": "こどものころは、ただひとがあつまるひだとおもっていた。"
+        },
+        {
+          "ja": "町を出てから、あの日が町の人をつなぐ日だったと分かった。",
+          "reading": "まちをでてから、あのひがまちのひとをつなぐひだったとわかった。"
+        },
+        {
+          "ja": "今年は仕事を休んで、久しぶりに帰るつもりだ。",
+          "reading": "ことしはしごとをやすんで、ひさしぶりにかえるつもりだ。"
+        }
+      ],
+      "en": "In the town where I grew up, an old autumn observance still survives. As a child I thought it was simply a day when people gathered. Only after I had left the town did I understand that the day was what tied its people together. This year I mean to take time off work and go back for the first time in a long while.",
+      "zh": "我住的那座小镇，至今还保留着秋天的一项古老活动。小时候我只当那是人们聚在一起的日子。离开小镇之后我才明白，那一天是把镇上的人联结起来的日子。今年我打算请假，久违地回去一趟。",
+      "zh_TW": "我住的那座小鎮，至今還保留著秋天的一項古老活動。小時候我只當那是人們聚在一起的日子。離開小鎮之後我才明白，那一天是把鎮上的人聯結起來的日子。今年我打算請假，久違地回去一趟。"
+    },
+    {
+      "id": "p:n2-r-023",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "家の前の大通りで、半年も工事が続いている。",
+          "reading": "いえのまえのおおどおりで、はんとしもこうじがつづいている。"
+        },
+        {
+          "ja": "音がうるさく、朝は車も通りにくい。",
+          "reading": "おとがうるさく、あさはくるまもとおりにくい。"
+        },
+        {
+          "ja": "それでも、工事の人が毎朝きちんとあいさつをするので、腹が立たない。",
+          "reading": "それでも、こうじのひとがまいあさきちんとあいさつをするので、はらがたたない。"
+        },
+        {
+          "ja": "同じ迷惑でも、人の表情が見えるかどうかで感じ方が変わるらしい。",
+          "reading": "おなじめいわくでも、ひとのひょうじょうがみえるかどうかでかんじかたがかわるらしい。"
+        }
+      ],
+      "en": "On the main road in front of my house, roadworks have gone on for half a year. The noise is loud, and in the morning cars have trouble getting through. Even so, the workmen greet me properly every morning, so I do not get angry. It seems that with the same nuisance, how one feels about it changes according to whether one can see a human face.",
+      "zh": "我家门前的大街上，施工已经持续了半年。噪音很吵，早上车也不好通行。即便如此，因为施工的人每天早上都好好打招呼，我并不生气。看来同样是麻烦事，能不能看见对方的脸，感受也会随之改变。",
+      "zh_TW": "我家門前的大街上，施工已經持續了半年。噪音很吵，早上車也不好通行。即便如此，因為施工的人每天早上都好好打招呼，我並不生氣。看來同樣是麻煩事，能不能看見對方的臉，感受也會隨之改變。"
+    },
+    {
+      "id": "p:n2-r-024",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "駅前の小さな書店に、月に何度か寄る。",
+          "reading": "えきまえのちいさなしょてんに、つきになんどかよる。"
+        },
+        {
+          "ja": "探している本がなくても、必ず何か一冊買って帰る。",
+          "reading": "さがしているほんがなくても、かならずなにかいっさつかってかえる。"
+        },
+        {
+          "ja": "あの店がなければ、私は自分の知っている本しか読まないだろう。",
+          "reading": "あのみせがなければ、わたしはじぶんのしっているほんしかよまないだろう。"
+        },
+        {
+          "ja": "棚の前を歩く時間こそ、私にとって本当の買い物なのだ。",
+          "reading": "たなのまえをあるくじかんこそ、わたしにとってほんとうのかいものなのだ。"
+        }
+      ],
+      "en": "I drop in several times a month at the small bookshop in front of the station. Even when the book I am after is not there, I always take one thing home with me. If that shop did not exist, I would read only the books I already know about. The time spent walking in front of the shelves is, for me, the real shopping.",
+      "zh": "车站前有家小书店，我一个月要去好几次。即使找的书没有，我也一定会买一本带回家。如果没有那家店，我大概只会读自己已经知道的书。在书架前走来走去的那段时间，对我来说才是真正的购物。",
+      "zh_TW": "車站前有家小書店，我一個月要去好幾次。即使找的書沒有，我也一定會買一本帶回家。如果沒有那家店，我大概只會讀自己已經知道的書。在書架前走來走去的那段時間，對我來說才是真正的購物。"
+    },
+    {
+      "id": "p:n2-r-025",
+      "type": "short",
+      "lines": [
+        {
+          "ja": "今年から、新しく入った社員の研修を受け持っている。",
+          "reading": "ことしから、あたらしくはいったしゃいんのけんしゅうをうけもっている。"
+        },
+        {
+          "ja": "教えるつもりだったのに、実際には教わることのほうが多い。",
+          "reading": "おしえるつもりだったのに、じっさいにはおそわることのほうがおおい。"
+        },
+        {
+          "ja": "後輩の質問は、私が長い間考えずにしてきたことばかりだからだ。",
+          "reading": "こうはいのしつもんは、わたしがながいあいだかんがえずにしてきたことばかりだからだ。"
+        },
+        {
+          "ja": "人に説明して初めて、自分の仕事の形が見えてくる。",
+          "reading": "ひとにせつめいしてはじめて、じぶんのしごとのかたちがみえてくる。"
+        }
+      ],
+      "en": "From this year I have been in charge of the training for newly joined staff. I had meant to teach, but in fact I am the one who is taught more often. That is because the juniors' questions are all about things I have done for years without thinking. Only when you explain to someone else does the shape of your own work come into view.",
+      "zh": "今年起，我负责新员工的培训。本以为是去教人，实际上反倒是我学到的更多。因为后辈提的问题，全是我多年来不假思索就做下来的事。只有向别人解释一遍，自己工作的样子才会显现出来。",
+      "zh_TW": "今年起，我負責新員工的培訓。本以為是去教人，實際上反倒是我學到的更多。因為後輩提的問題，全是我多年來不假思索就做下來的事。只有向別人解釋一遍，自己工作的樣子才會顯現出來。"
+    },
+    {
+      "id": "p:n2-r-026",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "駅の南側に、昔ながらの商店が並ぶ通りがある。",
+          "reading": "えきのみなみがわに、むかしながらのしょうてんがならぶとおりがある。"
+        },
+        {
+          "ja": "大きな店が近くにできてから、客の数はずいぶん減った。",
+          "reading": "おおきなみせがちかくにできてから、きゃくのかずはずいぶんへった。"
+        },
+        {
+          "ja": "三年前、店の人たちが集まって、通りの使い方を見直すことにした。",
+          "reading": "さんねんまえ、みせのひとたちがあつまって、とおりのつかいかたをみなおすことにした。"
+        },
+        {
+          "ja": "まず、月に一度、通りに車を入れない日を作った。",
+          "reading": "まず、つきにいちど、とおりにくるまをいれないひをつくった。"
+        },
+        {
+          "ja": "子どもが安心して遊べるので、家族で来る客が増えた。",
+          "reading": "こどもがあんしんしてあそべるので、かぞくでくるきゃくがふえた。"
+        },
+        {
+          "ja": "客がすぐに戻ったわけではない。",
+          "reading": "きゃくがすぐにもどったわけではない。"
+        },
+        {
+          "ja": "しかし、店の人たちが自分で考えて動き始めたことが何より大きいと、みんなが言う。",
+          "reading": "しかし、みせのひとたちがじぶんでかんがえてうごきはじめたことがなによりおおきいと、みんながいう。"
+        },
+        {
+          "ja": "今では、通りの行事は年に四回に増えている。",
+          "reading": "いまでは、とおりのぎょうじはねんにしかいにふえている。"
+        }
+      ],
+      "en": "On the south side of the station there is a street lined with old-fashioned shops. Since a large store opened nearby, the number of customers has fallen a great deal. Three years ago the shopkeepers got together and decided to rethink how the street was used. First they made one day a month on which no cars were let into the street. Children could play there safely, so more customers came as families. It is not that the customers came back at once. But everyone says that what matters most is that the shopkeepers began to think and act for themselves. These days the street's events have increased to four times a year.",
+      "zh": "车站南侧有一条老式店铺林立的街道。自从附近开了大商场，客人数量大幅减少。三年前，店主们聚在一起，决定重新审视这条街的用法。首先，他们设了每月一天不让汽车进入街道。孩子可以放心玩耍，于是全家一起来的客人多了起来。客人并没有马上回流。但大家都说，最重要的是店主们开始自己思考、自己行动。如今，这条街的活动已增加到一年四次。",
+      "zh_TW": "車站南側有一條老式店鋪林立的街道。自從附近開了大商場，客人數量大幅減少。三年前，店主們聚在一起，決定重新審視這條街的用法。首先，他們設了每月一天不讓汽車進入街道。孩子可以放心玩耍，於是全家一起來的客人多了起來。客人並沒有馬上回流。但大家都說，最重要的是店主們開始自己思考、自己行動。如今，這條街的活動已增加到一年四次。"
+    },
+    {
+      "id": "p:n2-r-027",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "外国語を覚えるとき、私は単語を手帳に並べて書くことをやめた。",
+          "reading": "がいこくごをおぼえるとき、わたしはたんごをてちょうにならべてかくことをやめた。"
+        },
+        {
+          "ja": "並んだ言葉は、その場では覚えても、次の日には消えてしまう。",
+          "reading": "ならんだことばは、そのばではおぼえても、つぎのひにはきえてしまう。"
+        },
+        {
+          "ja": "そこで、覚えたい言葉を使って、自分の一日について短い文を作ることにした。",
+          "reading": "そこで、おぼえたいことばをつかって、じぶんのいちにちについてみじかいぶんをつくることにした。"
+        },
+        {
+          "ja": "朝の電車の中で三つ、寝る前に三つ、それだけである。",
+          "reading": "あさのでんしゃのなかでみっつ、ねるまえにみっつ、それだけである。"
+        },
+        {
+          "ja": "一年続けてみると、同じ言葉が何度も出てくると分かった。",
+          "reading": "いちねんつづけてみると、おなじことばがなんどもでてくるとわかった。"
+        },
+        {
+          "ja": "自分の生活に必要な言葉は、案外少ないのである。",
+          "reading": "じぶんのせいかつにひつようなことばは、あんがいすくないのである。"
+        },
+        {
+          "ja": "その少ない言葉を確かなものにすることこそ、一番の工夫だったのだ。",
+          "reading": "そのすくないことばをたしかなものにすることこそ、いちばんのくふうだったのだ。"
+        }
+      ],
+      "en": "When learning a foreign language, I gave up writing words out in rows in a notebook. Words in a row may be learned on the spot, but by the next day they have vanished. So instead I took to using the words I wanted to learn in short sentences about my own day. Three on the train in the morning, three before bed: that is all. After keeping it up for a year, I found that the same words came up again and again. The words one needs for one's own life are surprisingly few. Making those few words solid was, in the end, the best device of all.",
+      "zh": "学外语时，我不再把单词一排排地抄在本子上。排成行的词，当场也许记住了，第二天就消失了。于是我改用想记的词，写关于自己一天的短句。早上电车里三句，睡前三句，仅此而已。坚持一年后我发现，同样的词会反复出现。自己生活中真正需要的词，意外地少。把这为数不多的词掌握牢靠，才是最见效的办法。",
+      "zh_TW": "學外語時，我不再把單詞一排排地抄在本子上。排成行的詞，當場也許記住了，第二天就消失了。於是我改用想記的詞，寫關於自己一天的短句。早上電車裡三句，睡前三句，僅此而已。堅持一年後我發現，同樣的詞會反覆出現。自己生活中真正需要的詞，意外地少。把這為數不多的詞掌握牢靠，才是最見效的辦法。"
+    },
+    {
+      "id": "p:n2-r-028",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "十年使った時計が止まった。",
+          "reading": "じゅうねんつかったとけいがとまった。"
+        },
+        {
+          "ja": "新しく買ったほうが安いと言う人もいたが、直してくれる店を探した。",
+          "reading": "あたらしくかったほうがやすいというひともいたが、なおしてくれるみせをさがした。"
+        },
+        {
+          "ja": "町のはずれに、修繕を受け持つ小さな店が一軒だけ残っていた。",
+          "reading": "まちのはずれに、しゅうぜんをうけもつちいさなみせがいっけんだけのこっていた。"
+        },
+        {
+          "ja": "職人は時計を開けて、部品の一つを取り替えただけで直してしまった。",
+          "reading": "しょくにんはとけいをあけて、ぶひんのひとつをとりかえただけでなおしてしまった。"
+        },
+        {
+          "ja": "代金は新しい時計の半分ほどだった。",
+          "reading": "だいきんはあたらしいとけいのはんぶんほどだった。"
+        },
+        {
+          "ja": "安くはないが、私はその値段が高いとは思わなかった。",
+          "reading": "やすくはないが、わたしはそのねだんがたかいとはおもわなかった。"
+        },
+        {
+          "ja": "払ったのは部品の代金ではなく、直せると分かっている人の時間だからである。",
+          "reading": "はらったのはぶひんのだいきんではなく、なおせるとわかっているひとのじかんだからである。"
+        },
+        {
+          "ja": "その店は、来年で店を閉じるという。",
+          "reading": "そのみせは、らいねんでみせをとじるという。"
+        }
+      ],
+      "en": "A watch I had used for ten years stopped. Some people said it would be cheaper to buy a new one, but I looked for a shop that would mend it. On the edge of town, just one small shop that undertook repairs was left. The craftsman opened the watch and mended it simply by replacing one part. The charge was about half the price of a new watch. It was not cheap, but I did not think the price high. What I paid for was not the part but the time of a person who knows the thing can be mended. That shop, they say, will close next year.",
+      "zh": "用了十年的手表停了。有人说买新的还更便宜，我却去找能修的店。镇子边上只剩下一家承接修理的小店。师傅打开表，只换了一个零件就修好了。费用大约是新表价格的一半。虽然不算便宜，我却不觉得贵。因为我付的不是零件钱，而是一个懂得如何修好它的人的时间。听说那家店明年就要关门了。",
+      "zh_TW": "用了十年的手錶停了。有人說買新的還更便宜，我卻去找能修的店。鎮子邊上只剩下一家承接修理的小店。師傅打開表，只換了一個零件就修好了。費用大約是新表價格的一半。雖然不算便宜，我卻不覺得貴。因為我付的不是零件錢，而是一個懂得如何修好它的人的時間。聽說那家店明年就要關門了。"
+    },
+    {
+      "id": "p:n2-r-029",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "以前は、深夜まで会社に残って仕事をしていた。",
+          "reading": "いぜんは、しんやまでかいしゃにのこってしごとをしていた。"
+        },
+        {
+          "ja": "時間をかけただけ、仕事は進むと思っていたからだ。",
+          "reading": "じかんをかけただけ、しごとはすすむとおもっていたからだ。"
+        },
+        {
+          "ja": "しかし、夜遅い時間の一時間は、朝の一時間とは能率がまるで違う。",
+          "reading": "しかし、よるおそいじかんのいちじかんは、あさのいちじかんとはのうりつがまるでちがう。"
+        },
+        {
+          "ja": "あるとき、七時に会社を出ると決めた。",
+          "reading": "あるとき、しちじにかいしゃをでるときめた。"
+        },
+        {
+          "ja": "終わりの時間が決まると、朝から仕事の順番を考えるようになった。",
+          "reading": "おわりのじかんがきまると、あさからしごとのじゅんばんをかんがえるようになった。"
+        },
+        {
+          "ja": "一日にできる量は、以前とほとんど変わらない。",
+          "reading": "いちにちにできるりょうは、いぜんとほとんどかわらない。"
+        },
+        {
+          "ja": "変わったのは、家に帰ってからの時間である。",
+          "reading": "かわったのは、いえにかえってからのじかんである。"
+        },
+        {
+          "ja": "長く働くことと、よく働くことは同じではないと、今なら言える。",
+          "reading": "ながくはたらくことと、よくはたらくことはおなじではないと、いまならいえる。"
+        }
+      ],
+      "en": "I used to stay at the office working until the middle of the night. That was because I thought work advanced in proportion to the time put into it. But an hour late at night is quite different in efficiency from an hour in the morning. At some point I decided to leave the office at seven. Once the finishing time was fixed, I began thinking from the morning about the order of my work. The amount I can do in a day is almost the same as before. What has changed is the time after I get home. Long work and good work are not the same thing — that I can say now.",
+      "zh": "以前我常在公司加班到深夜，因为我以为花多少时间，工作就推进多少。可是深夜的一个小时，和早晨的一个小时，效率完全不同。有一次，我决定七点就下班。结束时间一定下来，我从早上就开始考虑工作的先后顺序。一天能完成的量，和以前几乎没有差别。变的是回家以后的时间。工作时间长和工作做得好并不是一回事——如今我能这么说了。",
+      "zh_TW": "以前我常在公司加班到深夜，因為我以為花多少時間，工作就推進多少。可是深夜的一個小時，和早晨的一個小時，效率完全不同。有一次，我決定七點就下班。結束時間一定下來，我從早上就開始考慮工作的先後順序。一天能完成的量，和以前幾乎沒有差別。變的是回家以後的時間。工作時間長和工作做得好並不是一回事——如今我能這麼說了。"
+    },
+    {
+      "id": "p:n2-r-030",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "私の育った村には、一日に四本しか電車が来ない。",
+          "reading": "わたしのそだったむらには、いちにちによんほんしかでんしゃがこない。"
+        },
+        {
+          "ja": "交通機関が少ないと、人はますます車に乗るようになる。",
+          "reading": "こうつうきかんがすくないと、ひとはますますくるまにのるようになる。"
+        },
+        {
+          "ja": "車に乗る人が増えると、電車の客はさらに減る。",
+          "reading": "くるまにのるひとがふえると、でんしゃのきゃくはさらにへる。"
+        },
+        {
+          "ja": "その結果、電車の数はまた少なくなる。",
+          "reading": "そのけっか、でんしゃのかずはまたすくなくなる。"
+        },
+        {
+          "ja": "車に乗らない人、たとえば子どもや年を取った人だけが困ることになる。",
+          "reading": "くるまにのらないひと、たとえばこどもやとしをとったひとだけがこまることになる。"
+        },
+        {
+          "ja": "公共の乗り物は、使う人が多いから走るのではない。",
+          "reading": "こうきょうののりものは、つかうひとがおおいからはしるのではない。"
+        },
+        {
+          "ja": "ほかに方法がない人がいるから、走らなければならないのだ。",
+          "reading": "ほかにほうほうがないひとがいるから、はしらなければならないのだ。"
+        },
+        {
+          "ja": "お金の話をする前に、そのことを思い出したい。",
+          "reading": "おかねのはなしをするまえに、そのことをおもいだしたい。"
+        }
+      ],
+      "en": "In the village where I grew up, only four trains a day come. When there is little public transport, people take to their cars all the more. If more people drive, the trains lose still more passengers. As a result the number of trains falls again. It is only the people who do not drive — children and the old, for instance — who are left in difficulty. Public transport does not run because many people use it. It has to run because there are people who have no other means. Before we begin talking about money, that is what I want us to remember.",
+      "zh": "我长大的村子，一天只有四班电车。交通工具一少，人们就越发依赖汽车。开车的人多了，电车的乘客就更少。结果班次又进一步减少。最终受困的只有不开车的人，比如孩子和上了年纪的人。公共交通并不是因为用的人多才运行的，而是因为有些人别无他法，才必须运行。在谈钱之前，我希望人们先想起这一点。",
+      "zh_TW": "我長大的村子，一天只有四班電車。交通工具一少，人們就越發依賴汽車。開車的人多了，電車的乘客就更少。結果班次又進一步減少。最終受困的只有不開車的人，比如孩子和上了年紀的人。公共交通並不是因為用的人多才運行的，而是因為有些人別無他法，才必須運行。在談錢之前，我希望人們先想起這一點。"
+    },
+    {
+      "id": "p:n2-r-031",
+      "type": "mid",
+      "lines": [
+        {
+          "ja": "月に一度、同じ本を読んで感想を話す集まりに出ている。",
+          "reading": "つきにいちど、おなじほんをよんでかんそうをはなすあつまりにでている。"
+        },
+        {
+          "ja": "初めは、人の意見を聞けば読み方が広がると思っていた。",
+          "reading": "はじめは、ひとのいけんをきけばよみかたがひろがるとおもっていた。"
+        },
+        {
+          "ja": "実際に役に立ったのは、自分の感想を言葉にする時間のほうだった。",
+          "reading": "じっさいにやくにたったのは、じぶんのかんそうをことばにするじかんのほうだった。"
+        },
+        {
+          "ja": "面白かったとしか言えないうちは、まだ何も分かっていない。",
+          "reading": "おもしろかったとしかいえないうちは、まだなにもわかっていない。"
+        },
+        {
+          "ja": "どこがどう面白かったのかを説明しようとすると、初めて考えが形になる。",
+          "reading": "どこがどうおもしろかったのかをせつめいしようとすると、はじめてかんがえがかたちになる。"
+        },
+        {
+          "ja": "人に伝えるためではなく、自分のために話しているようなものだ。",
+          "reading": "ひとにつたえるためではなく、じぶんのためにはなしているようなものだ。"
+        },
+        {
+          "ja": "集まりが終わったあと、同じ本をもう一度開くことも多い。",
+          "reading": "あつまりがおわったあと、おなじほんをもういちどひらくこともおおい。"
+        }
+      ],
+      "en": "Once a month I go to a gathering where we read the same book and talk about our impressions. At first I thought that hearing other people's opinions would widen my own reading. What actually helped was rather the time spent putting my own impressions into words. As long as all you can say is that it was interesting, you have understood nothing yet. Only when you try to explain what was interesting and how does a thought take shape. It is less a matter of telling others than of speaking for one's own sake. After the gathering ends, I often open the same book once more.",
+      "zh": "我每月参加一次读书会，大家读同一本书，交流感想。起初我以为，听别人的意见能拓宽自己的读法。实际有帮助的，反倒是把自己的感想化为语言的那段时间。只要还停留在「很有意思」这句话上，就说明什么都还没读懂。当你试着说明哪里有意思、怎样有意思时，想法才第一次成形。与其说是讲给别人听，不如说是为自己而说。聚会结束后，我常常会把同一本书再翻开一次。",
+      "zh_TW": "我每月參加一次讀書會，大家讀同一本書，交流感想。起初我以為，聽別人的意見能拓寬自己的讀法。實際有幫助的，反倒是把自己的感想化為語言的那段時間。只要還停留在「很有意思」這句話上，就說明什麼都還沒讀懂。當你試著說明哪裡有意思、怎樣有意思時，想法才第一次成形。與其說是講給別人聽，不如說是為自己而說。聚會結束後，我常常會把同一本書再翻開一次。"
+    },
+    {
+      "id": "p:n2-r-032",
+      "type": "integrated",
+      "lines": [
+        {
+          "ja": "学校の宿題について、ある人は次のように言う。",
+          "reading": "がっこうのしゅくだいについて、あるひとはつぎのようにいう。"
+        },
+        {
+          "ja": "家で一人で問題に向かう時間があって初めて、習ったことが自分のものになる。",
+          "reading": "いえでひとりでもんだいにむかうじかんがあってはじめて、ならったことがじぶんのものになる。"
+        },
+        {
+          "ja": "量が多いという声はあるが、ただ減らせばよいという話ではない。",
+          "reading": "りょうがおおいというこえはあるが、ただへらせばよいというはなしではない。"
+        },
+        {
+          "ja": "一方、別の人は次のように言う。",
+          "reading": "いっぽう、べつのひとはつぎのようにいう。"
+        },
+        {
+          "ja": "余計な宿題が多い学校ほど、子どもが自分で選んで学ぶ時間を失っている。",
+          "reading": "よけいなしゅくだいがおおいがっこうほど、こどもがじぶんでえらんでまなぶじかんをうしなっている。"
+        },
+        {
+          "ja": "先生が出す問題を解く力と、自分で問いを作る力は別である。",
+          "reading": "せんせいがだすもんだいをとくちからと、じぶんでといをつくるちからはべつである。"
+        },
+        {
+          "ja": "家に残る時間まで学校のものにしてしまってよいのだろうか。",
+          "reading": "いえにのこるじかんまでがっこうのものにしてしまってよいのだろうか。"
+        }
+      ],
+      "en": "On school homework, one person says the following. Only when there is time spent facing problems alone at home does what has been taught become one's own. There are voices saying the quantity is large, but it is not a matter of simply cutting it. Another person, for her part, says the following. The more superfluous homework a school sets, the more it takes away the time in which children choose and learn for themselves. The power to solve problems a teacher sets and the power to frame questions oneself are two different things. Is it right to make even the time left at home the school's property?",
+      "zh": "关于学校的作业，前一位这样说。只有在家里独自面对题目的时间里，学过的东西才会真正成为自己的。有人说作业量太大，但这并不是一味削减就能解决的问题。另一方面，后一位这样说。多余作业越多的学校，孩子自己选择、自主学习的时间就被剥夺得越多。解答老师出的题的能力，和自己提出问题的能力，是两回事。连留在家中的时间都变成学校的，这样真的合适吗？",
+      "zh_TW": "關於學校的作業，前一位這樣說。只有在家裡獨自面對題目的時間裡，學過的東西才會真正成為自己的。有人說作業量太大，但這並不是一味削減就能解決的問題。另一方面，後一位這樣說。多餘作業越多的學校，孩子自己選擇、自主學習的時間就被剝奪得越多。解答老師出的題的能力，和自己提出問題的能力，是兩回事。連留在家中的時間都變成學校的，這樣真的合適嗎？"
+    },
+    {
+      "id": "p:n2-r-033",
+      "type": "integrated",
+      "lines": [
+        {
+          "ja": "会社で着る服について、ある人は次のように言う。",
+          "reading": "かいしゃできるふくについて、あるひとはつぎのようにいう。"
+        },
+        {
+          "ja": "毎朝何を着るか考える時間が、そのまま仕事の時間から減っていく。",
+          "reading": "まいあさなにをきるかかんがえるじかんが、そのまましごとのじかんからへっていく。"
+        },
+        {
+          "ja": "決まった形式があるほうが、朝は楽であり、余計な悩みもない。",
+          "reading": "きまったけいしきがあるほうが、あさはらくであり、よけいななやみもない。"
+        },
+        {
+          "ja": "一方、別の人は次のように言う。",
+          "reading": "いっぽう、べつのひとはつぎのようにいう。"
+        },
+        {
+          "ja": "同じ形の服を着せることは、同じ考え方を求めることに近い。",
+          "reading": "おなじかたちのふくをきせることは、おなじかんがえかたをもとめることにちかい。"
+        },
+        {
+          "ja": "何を着るかを自分で決める会社では、意見も出やすい。",
+          "reading": "なにをきるかをじぶんできめるかいしゃでは、いけんもでやすい。"
+        },
+        {
+          "ja": "朝が楽になる代わりに、失うものもある。",
+          "reading": "あさがらくになるかわりに、うしなうものもある。"
+        }
+      ],
+      "en": "On what to wear at work, one person says the following. The time spent every morning deciding what to put on is time taken straight out of the working day. Having a fixed form makes the morning easier and spares one needless worry. Another person, for his part, says the following. Putting people into clothes of the same shape is close to asking them for the same way of thinking. In a company where each person decides what to wear, opinions too come out more easily. In exchange for an easier morning, something is lost.",
+      "zh": "关于上班穿的衣服，前一位这样说。每天早上思考穿什么的时间，等于直接从工作时间里扣掉。有固定的形式，早晨就轻松，也没有多余的烦恼。另一方面，后一位这样说。让大家穿同样式样的衣服，近乎要求大家有同样的思维方式。在能自行决定穿着的公司里，意见也更容易提出来。早晨的轻松，是以失去某些东西为代价的。",
+      "zh_TW": "關於上班穿的衣服，前一位這樣說。每天早上思考穿什麼的時間，等於直接從工作時間裡扣掉。有固定的形式，早晨就輕鬆，也沒有多餘的煩惱。另一方面，後一位這樣說。讓大家穿同樣式樣的衣服，近乎要求大家有同樣的思維方式。在能自行決定穿著的公司裡，意見也更容易提出來。早晨的輕鬆，是以失去某些東西為代價的。"
+    },
+    {
+      "id": "p:n2-r-034",
+      "type": "integrated",
+      "lines": [
+        {
+          "ja": "旅行の計画について、ある人は次のように言う。",
+          "reading": "りょこうのけいかくについて、あるひとはつぎのようにいう。"
+        },
+        {
+          "ja": "往復の切符から泊まる所まで先に決めておけば、短い休みを無駄にしないで済む。",
+          "reading": "おうふくのきっぷからとまるところまでさきにきめておけば、みじかいやすみをむだにしないですむ。"
+        },
+        {
+          "ja": "調べている間から、旅はもう始まっているのである。",
+          "reading": "しらべているあいだから、たびはもうはじまっているのである。"
+        },
+        {
+          "ja": "一方、別の人は次のように言う。",
+          "reading": "いっぽう、べつのひとはつぎのようにいう。"
+        },
+        {
+          "ja": "予定を決めすぎると、目の前の町を見ないで時計ばかり見ることになる。",
+          "reading": "よていをきめすぎると、めのまえのまちをみないでとけいばかりみることになる。"
+        },
+        {
+          "ja": "思いがけない道に入る自由こそ、旅の一番の楽しみである。",
+          "reading": "おもいがけないみちにはいるじゆうこそ、たびのいちばんのたのしみである。"
+        },
+        {
+          "ja": "案内に出ていない店に入るために、私は計画を作らない。",
+          "reading": "あんないにでていないみせにはいるために、わたしはけいかくをつくらない。"
+        }
+      ],
+      "en": "On planning a trip, one person says the following. If everything from the return ticket to the place to stay is settled in advance, a short holiday need not be wasted. From the moment one begins looking things up, the journey has already started. Another person, for her part, says the following. Decide the schedule too finely and you end up watching the clock instead of the town in front of you. The freedom to turn into an unexpected street is the greatest pleasure of travel. It is in order to walk into shops that are in no guidebook that I make no plan.",
+      "zh": "关于旅行计划，前一位这样说。若能事先把往返车票到住处都定好，短暂的假期就不会白白浪费。从查资料的时候起，旅行其实就已经开始了。另一方面，后一位这样说。把行程定得太死，就会只顾看表，而看不见眼前的城市。能拐进意想不到的小路，这份自由才是旅行最大的乐趣。正是为了走进指南上没有的店，我才不做计划。",
+      "zh_TW": "關於旅行計劃，前一位這樣說。若能事先把往返車票到住處都定好，短暫的假期就不會白白浪費。從查資料的時候起，旅行其實就已經開始了。另一方面，後一位這樣說。把行程定得太死，就會只顧看錶，而看不見眼前的城市。能拐進意想不到的小路，這份自由才是旅行最大的樂趣。正是為了走進指南上沒有的店，我才不做計劃。"
+    },
+    {
+      "id": "p:n2-r-035",
+      "type": "integrated",
+      "lines": [
+        {
+          "ja": "新しく入った社員の育て方について、ある人は次のように言う。",
+          "reading": "あたらしくはいったしゃいんのそだてかたについて、あるひとはつぎのようにいう。"
+        },
+        {
+          "ja": "初めの半年は、失敗しても困らない仕事だけを任せるのがよい。",
+          "reading": "はじめのはんとしは、しっぱいしてもこまらないしごとだけをまかせるのがよい。"
+        },
+        {
+          "ja": "安心して手を動かすうちに、仕事の進め方が分かってくる。",
+          "reading": "あんしんしててをうごかすうちに、しごとのすすめかたがわかってくる。"
+        },
+        {
+          "ja": "一方、別の人は次のように言う。",
+          "reading": "いっぽう、べつのひとはつぎのようにいう。"
+        },
+        {
+          "ja": "小さな仕事ばかりでは、なぜその仕事をするのかが見えない。",
+          "reading": "ちいさなしごとばかりでは、なぜそのしごとをするのかがみえない。"
+        },
+        {
+          "ja": "早いうちから客と会う場に出るほうが、覚えることは多い。",
+          "reading": "はやいうちからきゃくとあうばにでるほうが、おぼえることはおおい。"
+        },
+        {
+          "ja": "安全な場所だけで身につく力には、限度がある。",
+          "reading": "あんぜんなばしょだけでみにつくちからには、げんどがある。"
+        }
+      ],
+      "en": "On how to bring on newly joined staff, one person says the following. For the first six months it is best to entrust them only with work where a mistake does no harm. As they move their hands with an easy mind, they come to understand how the work is carried forward. Another person, for his part, says the following. With nothing but small tasks, one cannot see why the work is being done at all. There is more to be learnt by going out early to places where customers are met. There is a limit to the ability that can be acquired in a safe place alone.",
+      "zh": "关于如何培养新员工，前一位这样说。最初半年，最好只交给他们即使失败也不要紧的工作。在安心动手的过程中，他们会逐渐明白工作该怎样推进。另一方面，后一位这样说。若一味只做小事，就看不出这份工作为何而做。尽早到与客户见面的场合去，能学到的东西更多。只在安全的地方所能培养出的能力，是有限度的。",
+      "zh_TW": "關於如何培養新員工，前一位這樣說。最初半年，最好只交給他們即使失敗也不要緊的工作。在安心動手的過程中，他們會逐漸明白工作該怎樣推進。另一方面，後一位這樣說。若一味只做小事，就看不出這份工作為何而做。儘早到與客戶見面的場合去，能學到的東西更多。只在安全的地方所能培養出的能力，是有限度的。"
+    },
+    {
+      "id": "p:n2-r-036",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "うまくいったことは、みんながよく話す。",
+          "reading": "うまくいったことは、みんながよくはなす。"
+        },
+        {
+          "ja": "けれども、後で役に立つのは、うまくいかなかったときの記録のほうである。",
+          "reading": "けれども、あとでやくにたつのは、うまくいかなかったときのきろくのほうである。"
+        },
+        {
+          "ja": "成功の理由はいくつも重なっていて、どれが本当の理由か分からない。",
+          "reading": "せいこうのりゆうはいくつもかさなっていて、どれがほんとうのりゆうかわからない。"
+        },
+        {
+          "ja": "失敗の理由は、多くの場合はっきりしている。",
+          "reading": "しっぱいのりゆうは、おおくのばあいはっきりしている。"
+        },
+        {
+          "ja": "だからこそ、失敗は次の役に立つ。",
+          "reading": "だからこそ、しっぱいはつぎのやくにたつ。"
+        },
+        {
+          "ja": "私の会社では、月に一度、うまくいかなかった仕事について話す時間を作っている。",
+          "reading": "わたしのかいしゃでは、つきにいちど、うまくいかなかったしごとについてはなすじかんをつくっている。"
+        },
+        {
+          "ja": "初めは、誰も口を開かなかった。",
+          "reading": "はじめは、だれもくちをひらかなかった。"
+        },
+        {
+          "ja": "自分の失敗を言えば、人の見る目が変わると思ったからである。",
+          "reading": "じぶんのしっぱいをいえば、ひとのみるめがかわるとおもったからである。"
+        },
+        {
+          "ja": "そこで、まず上に立つ者から話すことにした。",
+          "reading": "そこで、まずうえにたつものからはなすことにした。"
+        },
+        {
+          "ja": "一年たった今では、若い社員のほうが多く話す。",
+          "reading": "いちねんたったいまでは、わかいしゃいんのほうがおおくはなす。"
+        },
+        {
+          "ja": "失敗を集めることは、反省のためではない。",
+          "reading": "しっぱいをあつめることは、はんせいのためではない。"
+        },
+        {
+          "ja": "同じところで止まらないための、いちばん確かな方法なのである。",
+          "reading": "おなじところでとまらないための、いちばんたしかなほうほうなのである。"
+        }
+      ],
+      "en": "Everybody talks readily about what went well. Yet what is useful afterwards is the record of the times when things went badly. The reasons for a success lie piled on one another, and one cannot tell which was the real one. The reason for a failure is, in most cases, plain. That is precisely why a failure is of use next time. At my company we set aside time once a month to talk about work that did not go well. At first nobody would open his mouth. People thought that if they spoke of their own failures, others would look at them differently. So we made it a rule that those at the top should speak first. A year on, it is the young staff who speak most. Collecting failures is not done for the sake of self-reproach. It is the surest method there is for not stopping at the same place twice.",
+      "zh": "成功的事，大家都爱谈。可日后真正有用的，却是失败时留下的记录。成功的原因层层叠叠，谁也说不清哪一个才是真正的原因。而失败的原因，多数情况下一目了然。正因如此，失败才对下一次有用。我们公司每月留出一段时间，专谈那些没做好的工作。起初谁也不开口，因为大家觉得说出自己的失败，别人看自己的眼光就会变。于是我们规定，先由上面的人来讲。一年后的今天，反倒是年轻员工讲得最多。收集失败并不是为了检讨自责，而是为了不在同一处停下——这是最可靠的办法。",
+      "zh_TW": "成功的事，大家都愛談。可日後真正有用的，卻是失敗時留下的記錄。成功的原因層層疊疊，誰也說不清哪一個才是真正的原因。而失敗的原因，多數情況下一目瞭然。正因如此，失敗才對下一次有用。我們公司每月留出一段時間，專談那些沒做好的工作。起初誰也不開口，因為大家覺得說出自己的失敗，別人看自己的眼光就會變。於是我們規定，先由上面的人來講。一年後的今天，反倒是年輕員工講得最多。收集失敗並不是為了檢討自責，而是為了不在同一處停下——這是最可靠的辦法。"
+    },
+    {
+      "id": "p:n2-r-037",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "機械の説明の文章が読みにくいのは、書く人の言葉が難しいからではない。",
+          "reading": "きかいのせつめいのぶんしょうがよみにくいのは、かくひとのことばがむずかしいからではない。"
+        },
+        {
+          "ja": "作った人にとって当たり前のことを、書く人が省略してしまうからである。",
+          "reading": "つくったひとにとってあたりまえのことを、かくひとがしょうりゃくしてしまうからである。"
+        },
+        {
+          "ja": "よく分かっている人ほど、初めて使う人がどこで止まるか分からない。",
+          "reading": "よくわかっているひとほど、はじめてつかうひとがどこでとまるかわからない。"
+        },
+        {
+          "ja": "私は説明の文章を書くとき、必ず素人に一度読んでもらう。",
+          "reading": "わたしはせつめいのぶんしょうをかくとき、かならずしろうとにいちどよんでもらう。"
+        },
+        {
+          "ja": "そして、読む人の手が止まった場所を覚えておく。",
+          "reading": "そして、よむひとのてがとまったばしょをおぼえておく。"
+        },
+        {
+          "ja": "止まる場所は、たいてい私が説明を短くした所である。",
+          "reading": "とまるばしょは、たいていわたしがせつめいをみじかくしたところである。"
+        },
+        {
+          "ja": "文が長いから読みにくいのではない。",
+          "reading": "ぶんがながいからよみにくいのではない。"
+        },
+        {
+          "ja": "必要な一行がないから、先へ進めないのだ。",
+          "reading": "ひつようないちぎょうがないから、さきへすすめないのだ。"
+        },
+        {
+          "ja": "短く書くことが、良い説明の文章の形だとは限らない。",
+          "reading": "みじかくかくことが、よいせつめいのぶんしょうのかたちだとはかぎらない。"
+        },
+        {
+          "ja": "相手が知らないことを、一つも落とさずに書く。",
+          "reading": "あいてがしらないことを、ひとつもおとさずにかく。"
+        },
+        {
+          "ja": "それだけのことが、いちばん難しい。",
+          "reading": "それだけのことが、いちばんむずかしい。"
+        }
+      ],
+      "en": "A machine's instructions are hard to read not because the writer's language is difficult. It is because the writer leaves out what is obvious to the person who made the thing. The better someone understands it, the less he can tell where a first-time user will come to a halt. When I write instructions, I always have an amateur read them once. Then I note the places where the reader's hand stopped. The places where they stop are, as a rule, the places where I shortened the explanation. It is not length that makes a text hard to read. It is that the one line you need is missing, so you cannot go on. Writing short is not necessarily the form of good instructions. Write what the other person does not know, without dropping a single item of it. That, and nothing more, is the hardest thing of all.",
+      "zh": "机器的说明书之所以难读，并不是因为写的人用词艰深，而是因为写的人把制造者眼中理所当然的事省略掉了。越是精通的人，越不知道初次使用者会在哪里卡住。我写说明书时，一定先请外行读一遍，并记住读者的手停在了哪里。停下的地方，往往正是我把说明写短的地方。难读并不是因为句子长，而是因为缺了必要的那一行，读者无法继续往下走。写得短，未必就是好说明书的样子。把对方不知道的事，一件不漏地写出来——仅此一点，却最难做到。",
+      "zh_TW": "機器的說明書之所以難讀，並不是因為寫的人用詞艱深，而是因為寫的人把製造者眼中理所當然的事省略掉了。越是精通的人，越不知道初次使用者會在哪裡卡住。我寫說明書時，一定先請外行讀一遍，並記住讀者的手停在了哪裡。停下的地方，往往正是我把說明寫短的地方。難讀並不是因為句子長，而是因為缺了必要的那一行，讀者無法繼續往下走。寫得短，未必就是好說明書的樣子。把對方不知道的事，一件不漏地寫出來——僅此一點，卻最難做到。"
+    },
+    {
+      "id": "p:n2-r-038",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "知らない町に着いたら、私はまず地図を閉じて歩き出す。",
+          "reading": "しらないまちについたら、わたしはまずちずをとじてあるきだす。"
+        },
+        {
+          "ja": "知らない道に入るのは困るが、それでもしばらくは自分で決めた方角へ進む。",
+          "reading": "しらないみちにはいるのはこまるが、それでもしばらくはじぶんできめたほうがくへすすむ。"
+        },
+        {
+          "ja": "そうすると、町の形が体に残る。",
+          "reading": "そうすると、まちのかたちがからだにのこる。"
+        },
+        {
+          "ja": "地図を見ながら歩いた道は、次の日には忘れている。",
+          "reading": "ちずをみながらあるいたみちは、つぎのひにはわすれている。"
+        },
+        {
+          "ja": "紙の上の線を追っているだけで、町を見ていないからだろう。",
+          "reading": "かみのうえのせんをおっているだけで、まちをみていないからだろう。"
+        },
+        {
+          "ja": "間違えて入った道で、思いがけない店に出会うこともある。",
+          "reading": "まちがえてはいったみちで、おもいがけないみせにであうこともある。"
+        },
+        {
+          "ja": "もちろん、時間が決まっているときは地図を開く。",
+          "reading": "もちろん、じかんがきまっているときはちずをひらく。"
+        },
+        {
+          "ja": "約束に遅れるのは、知らない道を歩く楽しみとは別の話である。",
+          "reading": "やくそくにおくれるのは、しらないみちをあるくたのしみとはべつのはなしである。"
+        },
+        {
+          "ja": "ただ、初めの一時間だけは、知らない道のために使いたい。",
+          "reading": "ただ、はじめのいちじかんだけは、しらないみちのためにつかいたい。"
+        },
+        {
+          "ja": "その一時間があるかないかで、その町の覚え方はまるで変わる。",
+          "reading": "そのいちじかんがあるかないかで、そのまちのおぼえかたはまるでかわる。"
+        }
+      ],
+      "en": "When I arrive in a town I do not know, the first thing I do is shut the map and start walking. Getting lost is a nuisance, but even so I go for a while in whatever direction I have chosen for myself. Do that, and the shape of the town stays in the body. A street walked with one's eyes on a map is forgotten by the next day. It must be that one is only following a line on paper and not looking at the town. On a street entered by mistake, one sometimes meets an unlooked-for shop. Of course, when the time is fixed, I open the map. Being late for an appointment is another matter from the pleasure of getting lost. But the first hour, at least, I want to spend on losing my way. Whether or not there is that hour changes entirely how the town is remembered.",
+      "zh": "到了陌生的城市，我总是先合上地图开始走。迷路固然麻烦，但我仍会朝自己选定的方向走上一阵。这样一来，城市的形状就留在了身体里。看着地图走过的路，第二天就忘了。大概是因为只顾着追纸上的线条，而没有真正看这座城市。走错的路上，有时会遇见意想不到的店。当然，时间有安排时我会打开地图。约会迟到，和迷路的乐趣是两码事。只是最初的一个小时，我想用来迷路。有没有这一个小时，对这座城市的记忆方式完全不同。",
+      "zh_TW": "到了陌生的城市，我總是先合上地圖開始走。迷路固然麻煩，但我仍會朝自己選定的方向走上一陣。這樣一來，城市的形狀就留在了身體裡。看著地圖走過的路，第二天就忘了。大概是因為只顧著追紙上的線條，而沒有真正看這座城市。走錯的路上，有時會遇見意想不到的店。當然，時間有安排時我會打開地圖。約會遲到，和迷路的樂趣是兩碼事。只是最初的一個小時，我想用來迷路。有沒有這一個小時，對這座城市的記憶方式完全不同。"
+    },
+    {
+      "id": "p:n2-r-039",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "人の名前を覚えるのが苦手だと言う人は多い。",
+          "reading": "ひとのなまえをおぼえるのがにがてだというひとはおおい。"
+        },
+        {
+          "ja": "しかし、覚えられないのではなく、初めから聞いていないことのほうが多い。",
+          "reading": "しかし、おぼえられないのではなく、はじめからきいていないことのほうがおおい。"
+        },
+        {
+          "ja": "初めて会ったとき、人は相手の表情と自分の言葉のことで頭がいっぱいになる。",
+          "reading": "はじめてあったとき、ひとはあいてのひょうじょうとじぶんのことばのことであたまがいっぱいになる。"
+        },
+        {
+          "ja": "そこで私は、名前を聞いたらすぐ、その場でもう一度声に出すことにしている。",
+          "reading": "そこでわたしは、なまえをきいたらすぐ、そのばでもういちどこえにだすことにしている。"
+        },
+        {
+          "ja": "たったそれだけで、忘れる回数がずいぶん減った。",
+          "reading": "たったそれだけで、わすれるかいすうがずいぶんへった。"
+        },
+        {
+          "ja": "相手にとっても、自分の名前が戻ってくるのは悪い気分ではないらしい。",
+          "reading": "あいてにとっても、じぶんのなまえがもどってくるのはわるいきぶんではないらしい。"
+        },
+        {
+          "ja": "名前を覚えるのは、頭が良いか悪いかの問題ではない。",
+          "reading": "なまえをおぼえるのは、あたまがよいかわるいかのもんだいではない。"
+        },
+        {
+          "ja": "相手にどれだけ注意を向けているかの問題である。",
+          "reading": "あいてにどれだけちゅういをむけているかのもんだいである。"
+        },
+        {
+          "ja": "うっかり忘れてしまったときは、正直にもう一度聞けばよい。",
+          "reading": "うっかりわすれてしまったときは、しょうじきにもういちどきけばよい。"
+        },
+        {
+          "ja": "そうして怒る人には、まだ会ったことがない。",
+          "reading": "そうしておこるひとには、まだあったことがない。"
+        }
+      ],
+      "en": "Many people say they are bad at remembering names. But more often it is not that they cannot remember; it is that they never listened in the first place. On meeting someone for the first time, one's head is full of the other person's face and of one's own words. So I make a point of saying the name aloud once more, there and then, as soon as I hear it. That alone has greatly reduced the number of times I forget. For the other person too, hearing their own name come back seems not to be an unpleasant feeling. Remembering names is not a question of being clever or otherwise. It is a question of how much attention one is turning towards the other person. When one has carelessly forgotten, one may simply ask again, honestly. I have yet to meet anyone who gets angry at that.",
+      "zh": "很多人说自己不擅长记别人的名字。但多数情况并非记不住，而是一开始就没在听。初次见面时，人满脑子都是对方的长相和自己要说的话。所以我养成一个习惯：一听到名字，立刻当场再念出声来。仅仅如此，忘记的次数就大大减少了。对对方来说，听到自己的名字被复述回来，似乎也并不是坏心情。记住名字，不是脑子聪明与否的问题，而是对对方投入了多少注意力的问题。万一不小心忘了，坦率地再问一次就好。因此而生气的人，我至今还没遇到过。",
+      "zh_TW": "很多人說自己不擅長記別人的名字。但多數情況並非記不住，而是一開始就沒在聽。初次見面時，人滿腦子都是對方的長相和自己要說的話。所以我養成一個習慣：一聽到名字，立刻當場再念出聲來。僅僅如此，忘記的次數就大大減少了。對對方來說，聽到自己的名字被複述回來，似乎也並不是壞心情。記住名字，不是腦子聰明與否的問題，而是對對方投入了多少注意力的問題。萬一不小心忘了，坦率地再問一次就好。因此而生氣的人，我至今還沒遇到過。"
+    },
+    {
+      "id": "p:n2-r-040",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "文章がうまく書けないときは、書いたものを声に出して読んでみるとよい。",
+          "reading": "ぶんしょうがうまくかけないときは、かいたものをこえにだしてよんでみるとよい。"
+        },
+        {
+          "ja": "目で追っているうちは、直すべき所が見えない。",
+          "reading": "めでおっているうちは、なおすべきところがみえない。"
+        },
+        {
+          "ja": "頭が、書いたときの考えを覚えているからである。",
+          "reading": "あたまが、かいたときのかんがえをおぼえているからである。"
+        },
+        {
+          "ja": "声に出すと、息の続かない所で必ず止まる。",
+          "reading": "こえにだすと、いきのつづかないところでかならずとまる。"
+        },
+        {
+          "ja": "そこが、読む人にも読みにくい所である。",
+          "reading": "そこが、よむひとにもよみにくいところである。"
+        },
+        {
+          "ja": "意味の切れる所と、息の切れる所は、たいてい重なっている。",
+          "reading": "いみのきれるところと、いきのきれるところは、たいていかさなっている。"
+        },
+        {
+          "ja": "だから、文を区切る場所は、声が教えてくれる。",
+          "reading": "だから、ぶんをくぎるばしょは、こえがおしえてくれる。"
+        },
+        {
+          "ja": "私は仕事の手紙も、送る前に必ず一度声に出す。",
+          "reading": "わたしはしごとのてがみも、おくるまえにかならずいちどこえにだす。"
+        },
+        {
+          "ja": "そうして直した文は、短くなることが多い。",
+          "reading": "そうしてなおしたぶんは、みじかくなることがおおい。"
+        },
+        {
+          "ja": "読みやすい文章とは、声にしやすい文章のことなのだと思う。",
+          "reading": "よみやすいぶんしょうとは、こえにしやすいぶんしょうのことなのだとおもう。"
+        }
+      ],
+      "en": "When a piece of writing will not come right, it is a good idea to read aloud what you have written. As long as you are following it with the eye, you cannot see what needs mending. That is because your head still remembers the thought you had when you wrote it. Read it aloud and you will stop, without fail, wherever the breath runs out. That place is where the reader too finds it hard to read. Where the sense breaks and where the breath breaks usually coincide. So it is the voice that tells you where to divide a sentence. Even with letters for work, I always say them aloud once before sending. Sentences mended in that way usually come out shorter. Writing that is easy to read is, I think, writing that is easy to say aloud.",
+      "zh": "文章写不顺时，不妨把写好的东西朗读出来。只用眼睛看，就看不出该改的地方，因为脑子还记着当初写下时的想法。一旦出声，必定会在气接不上的地方停住。那里，也正是读者读起来吃力的地方。意思的断处与呼吸的断处，多半是重合的。所以，该在哪里断句，声音会告诉你。就连工作上的书信，我在寄出前也一定要读出声来一遍。这样改过的句子，往往会变短。所谓好读的文章，我想就是容易念出口的文章。",
+      "zh_TW": "文章寫不順時，不妨把寫好的東西朗讀出來。只用眼睛看，就看不出該改的地方，因為腦子還記著當初寫下時的想法。一旦出聲，必定會在氣接不上的地方停住。那裡，也正是讀者讀起來吃力的地方。意思的斷處與呼吸的斷處，多半是重合的。所以，該在哪裡斷句，聲音會告訴你。就連工作上的書信，我在寄出前也一定要讀出聲來一遍。這樣改過的句子，往往會變短。所謂好讀的文章，我想就是容易念出口的文章。"
+    },
+    {
+      "id": "p:n2-r-041",
+      "type": "thematic",
+      "lines": [
+        {
+          "ja": "私は約束の十五分前には着くようにしている。",
+          "reading": "わたしはやくそくのじゅうごふんまえにはつくようにしている。"
+        },
+        {
+          "ja": "遅れないためだけではない。",
+          "reading": "おくれないためだけではない。"
+        },
+        {
+          "ja": "早く着けば、その場の様子を見る時間ができる。",
+          "reading": "はやくつけば、そのばのようすをみるじかんができる。"
+        },
+        {
+          "ja": "どんな部屋で、どんな人が集まるのかが先に分かる。",
+          "reading": "どんなへやで、どんなひとがあつまるのかがさきにわかる。"
+        },
+        {
+          "ja": "その十五分があるだけで、話の始め方が変わる。",
+          "reading": "そのじゅうごふんがあるだけで、はなしのはじめかたがかわる。"
+        },
+        {
+          "ja": "反対に、始まる時間に着いた日は、初めの十分がうまく進まない。",
+          "reading": "はんたいに、はじまるじかんについたひは、はじめのじゅっぷんがうまくすすまない。"
+        },
+        {
+          "ja": "急いで来たまま話し始めることになるからだ。",
+          "reading": "いそいできたままはなしはじめることになるからだ。"
+        },
+        {
+          "ja": "早く着くために失う十五分を、無駄だと言う人もいる。",
+          "reading": "はやくつくためにうしなうじゅうごふんを、むだだというひともいる。"
+        },
+        {
+          "ja": "しかし私は、その十五分こそ、会う時間の一部だと考えている。",
+          "reading": "しかしわたしは、そのじゅうごふんこそ、あうじかんのいちぶだとかんがえている。"
+        },
+        {
+          "ja": "準備のない十分より、落ち着いた五分のほうが、ずっと役に立つ。",
+          "reading": "じゅんびのないじゅっぷんより、おちついたごふんのほうが、ずっとやくにたつ。"
+        }
+      ],
+      "en": "I make a point of arriving fifteen minutes before an appointment. It is not only so as not to be late. Arriving early gives me time to see how the place looks. I learn in advance what sort of room it is and what sort of people are gathering. Merely having those fifteen minutes changes how the conversation begins. Conversely, on days when I arrive at the starting time, the first ten minutes do not go well. That is because I begin talking still in the state of having hurried. Some people call the fifteen minutes lost in arriving early a waste. I, however, regard those fifteen minutes as part of the time of the meeting itself. Five calm minutes are far more useful than ten unprepared ones.",
+      "zh": "我总是在约定时间的十五分钟前到达。这不只是为了不迟到。早到就有时间观察现场的情形，能预先知道是怎样的房间、会聚集怎样的人。仅仅多出这十五分钟，开口的方式就会不同。反过来，在开始时间才赶到的日子，最初的十分钟总是进行得不顺，因为是带着匆忙的状态就开始说话的。有人说，为了早到而耗掉的十五分钟是浪费。可我认为，那十五分钟正是会面时间的一部分。毫无准备的十分钟，远不如从容的五分钟有用。",
+      "zh_TW": "我總是在約定時間的十五分鐘前到達。這不只是為了不遲到。早到就有時間觀察現場的情形，能預先知道是怎樣的房間、會聚集怎樣的人。僅僅多出這十五分鐘，開口的方式就會不同。反過來，在開始時間才趕到的日子，最初的十分鐘總是進行得不順，因為是帶著匆忙的狀態就開始說話的。有人說，為了早到而耗掉的十五分鐘是浪費。可我認為，那十五分鐘正是會面時間的一部分。毫無準備的十分鐘，遠不如從容的五分鐘有用。"
+    },
+    {
+      "id": "p:n2-r-042",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "図書館をご利用のみなさまへ　本の整理による休業のお知らせ",
+          "reading": "としょかんをごりようのみなさまへ　ほんのせいりによるきゅうぎょうのおしらせ"
+        },
+        {
+          "ja": "来月五日から八日まで、本の整理のため休業いたします。",
+          "reading": "らいげついつかからようかまで、ほんのせいりのためきゅうぎょういたします。"
+        },
+        {
+          "ja": "この間、本の貸し出しはできません。",
+          "reading": "このあいだ、ほんのかしだしはできません。"
+        },
+        {
+          "ja": "返す期限が五日から八日にあたる方は、九日までにお返しください。",
+          "reading": "かえすきげんがいつかからようかにあたるかたは、ここのかまでにおかえしください。"
+        },
+        {
+          "ja": "入り口の横の箱には、いつでも本を返していただけます。",
+          "reading": "いりぐちのよこのはこには、いつでもほんをかえしていただけます。"
+        },
+        {
+          "ja": "八日の午後三時からは、古い本を無料でお配りします。",
+          "reading": "ようかのごごさんじからは、ふるいほんをむりょうでおくばりします。"
+        },
+        {
+          "ja": "お一人五冊までとし、各自お持ち帰り用の袋をご用意ください。",
+          "reading": "おひとりごさつまでとし、かくじおもちかえりようのふくろをごよういください。"
+        },
+        {
+          "ja": "詳しいことは、図書館の窓口までお問い合わせください。",
+          "reading": "くわしいことは、としょかんのまどぐちまでおといあわせください。"
+        }
+      ],
+      "en": "To all users of the library: notice of closure for sorting the books. From the 5th to the 8th of next month we shall be closed in order to sort the books. During that period books cannot be lent out. Those whose return date falls between the 5th and the 8th should return their books by the 9th. Books may be returned at any time into the box beside the entrance. From three in the afternoon of the 8th, old books will be given away free. There is a limit of five books per person, and each person should bring a bag to carry them home in. For details, please enquire at the library counter.",
+      "zh": "致图书馆各位读者：因整理藏书闭馆的通知。下月五日至八日，本馆因整理图书暂停开放。其间无法办理借书。还书期限落在五日至八日之间的读者，请于九日之前归还。入口旁的还书箱随时可以还书。八日下午三点起，将免费发放旧书。每人限领五册，请各自自备携带用的袋子。详情请向图书馆服务窗口咨询。",
+      "zh_TW": "致圖書館各位讀者：因整理藏書閉館的通知。下月五日至八日，本館因整理圖書暫停開放。其間無法辦理借書。還書期限落在五日至八日之間的讀者，請於九日之前歸還。入口旁的還書箱隨時可以還書。八日下午三點起，將免費發放舊書。每人限領五冊，請各自自備攜帶用的袋子。詳情請向圖書館服務窗口諮詢。"
+    },
+    {
+      "id": "p:n2-r-043",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "社員のみなさまへ　健康診断のご案内",
+          "reading": "しゃいんのみなさまへ　けんこうしんだんのごあんない"
+        },
+        {
+          "ja": "十月十日から十四日まで、会社の三階で健康診断を行います。",
+          "reading": "じゅうがつとおかからじゅうよっかまで、かいしゃのさんがいでけんこうしんだんをおこないます。"
+        },
+        {
+          "ja": "時間は午前九時から十一時までです。",
+          "reading": "じかんはごぜんくじからじゅういちじまでです。"
+        },
+        {
+          "ja": "前の日の夜九時以降は、何も食べないでください。",
+          "reading": "まえのひのよるくじいこうは、なにもたべないでください。"
+        },
+        {
+          "ja": "水とお茶は、当日の朝も飲んでかまいません。",
+          "reading": "みずとおちゃは、とうじつのあさものんでかまいません。"
+        },
+        {
+          "ja": "出張などでこの五日間に来ない方は、二十日までにお知らせください。",
+          "reading": "しゅっちょうなどでこのいつかかんにこないかたは、はつかまでにおしらせください。"
+        },
+        {
+          "ja": "結果は十一月の初めに、各自にお渡しします。",
+          "reading": "けっかはじゅういちがつのはじめに、かくじにおわたしします。"
+        },
+        {
+          "ja": "ご不明な点は、三階の窓口へお問い合わせください。",
+          "reading": "ごふめいなてんは、さんがいのまどぐちへおといあわせください。"
+        }
+      ],
+      "en": "To all staff: information about the health check. From 10 to 14 October the health check will be held on the third floor of the company. The hours are from nine to eleven in the morning. Please eat nothing after nine o'clock on the evening before. Water and tea may be drunk even on the morning of the day itself. Those who cannot come during these five days, because of a business trip or the like, should let us know by the 20th. Results will be handed to each person individually at the beginning of November. If anything is unclear, please enquire at the third-floor window.",
+      "zh": "致各位员工：健康体检通知。十月十日至十四日，将在公司三楼进行健康体检。时间为上午九点至十一点。前一天晚上九点以后请勿进食。水和茶在当天早上也可以喝。因出差等原因无法在这五天内前来的员工，请于二十日之前告知。体检结果将于十一月初分别交给本人。如有不明之处，请向三楼窗口咨询。",
+      "zh_TW": "致各位員工：健康體檢通知。十月十日至十四日，將在公司三樓進行健康體檢。時間為上午九點至十一點。前一天晚上九點以後請勿進食。水和茶在當天早上也可以喝。因出差等原因無法在這五天內前來的員工，請於二十日之前告知。體檢結果將於十一月初分別交給本人。如有不明之處，請向三樓窗口諮詢。"
+    },
+    {
+      "id": "p:n2-r-044",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "町にお住まいのみなさまへ　春の公園そうじ参加者の募集",
+          "reading": "まちにおすまいのみなさまへ　はるのこうえんそうじさんかしゃのぼしゅう"
+        },
+        {
+          "ja": "四月十二日の朝八時から十時まで、駅の東の公園のそうじを行います。",
+          "reading": "しがつじゅうににちのあさはちじからじゅうじまで、えきのひがしのこうえんのそうじをおこないます。"
+        },
+        {
+          "ja": "どなたでも参加でき、申し込みも必要ありません。",
+          "reading": "どなたでもさんかでき、もうしこみもひつようありません。"
+        },
+        {
+          "ja": "道具は町が用意しますので、各自でお持ちいただく物はありません。",
+          "reading": "どうぐはまちがよういしますので、かくじでおもちいただくものはありません。"
+        },
+        {
+          "ja": "雨の場合は、次の日曜日に行います。",
+          "reading": "あめのばあいは、つぎのにちようびにおこないます。"
+        },
+        {
+          "ja": "終了後、公園の広場でお茶をお出しします。",
+          "reading": "しゅうりょうご、こうえんのひろばでおちゃをおだしします。"
+        },
+        {
+          "ja": "小学生以下の方は、大人と一緒にご参加ください。",
+          "reading": "しょうがくせいいかのかたは、おとなといっしょにごさんかください。"
+        },
+        {
+          "ja": "詳しいことは、町の窓口までお問い合わせください。",
+          "reading": "くわしいことは、まちのまどぐちまでおといあわせください。"
+        }
+      ],
+      "en": "To all residents of the town: recruitment of participants for the spring park clean-up. On 12 April, from eight to ten in the morning, we shall clean the park east of the station. Anyone may take part, and no application is needed. The town provides the tools, so there is nothing you need bring yourself. In case of rain it will be held on the following Sunday. Afterwards, tea will be served in the open space in the park. Those of primary-school age and under should take part together with an adult. For details, please enquire at the town office window.",
+      "zh": "致本镇各位居民：春季公园清扫活动招募参加者。四月十二日上午八点至十点，将清扫车站东侧的公园。任何人都可以参加，也无需报名。工具由镇上准备，各位无需自带任何东西。如遇下雨，将改在下个星期日举行。活动结束后，将在公园广场提供茶水。小学生及以下的孩子请与成人一同参加。详情请向镇政府服务窗口咨询。",
+      "zh_TW": "致本鎮各位居民：春季公園清掃活動招募參加者。四月十二日上午八點至十點，將清掃車站東側的公園。任何人都可以參加，也無需報名。工具由鎮上準備，各位無需自帶任何東西。如遇下雨，將改在下個星期日舉行。活動結束後，將在公園廣場提供茶水。小學生及以下的孩子請與成人一同參加。詳情請向鎮政府服務窗口諮詢。"
+    },
+    {
+      "id": "p:n2-r-045",
+      "type": "info",
+      "lines": [
+        {
+          "ja": "ご利用のみなさまへ　東口の工事のお知らせ",
+          "reading": "ごりようのみなさまへ　ひがしぐちのこうじのおしらせ"
+        },
+        {
+          "ja": "六月一日から三十日まで、東口の階段の工事を行います。",
+          "reading": "ろくがつついたちからさんじゅうにちまで、ひがしぐちのかいだんのこうじをおこないます。"
+        },
+        {
+          "ja": "工事の間、東口は朝七時から夜八時までしか通れません。",
+          "reading": "こうじのあいだ、ひがしぐちはあさしちじからよるはちじまでしかとおれません。"
+        },
+        {
+          "ja": "夜八時以降は、西口をご利用ください。",
+          "reading": "よるはちじいこうは、にしぐちをごりようください。"
+        },
+        {
+          "ja": "大きな荷物をお持ちの方は、期間中も西口が便利です。",
+          "reading": "おおきなにもつをおもちのかたは、きかんちゅうもにしぐちがべんりです。"
+        },
+        {
+          "ja": "工事が早く終わった場合は、六月二十五日から東口を一日中お使いいただけます。",
+          "reading": "こうじがはやくおわったばあいは、ろくがつにじゅうごにちからひがしぐちをいちにちじゅうおつかいいただけます。"
+        },
+        {
+          "ja": "雨が続いた場合は、期間を一週間延長することがあります。",
+          "reading": "あめがつづいたばあいは、きかんをいっしゅうかんえんちょうすることがあります。"
+        },
+        {
+          "ja": "詳しいことは、駅の窓口までお問い合わせください。",
+          "reading": "くわしいことは、えきのまどぐちまでおといあわせください。"
+        }
+      ],
+      "en": "To all passengers: notice of works at the east exit. From 1 to 30 June, work will be carried out on the stairs at the east exit. During the work the east exit can only be passed through from seven in the morning until eight at night. After eight at night, please use the west exit. Those carrying large luggage will find the west exit convenient throughout the period as well. Should the work finish early, the east exit may be used all day from 25 June. Should the rain continue, the period may be extended by one week. For details, please enquire at the station window.",
+      "zh": "致各位乘客：东口施工通知。六月一日至三十日，将对东口楼梯进行施工。施工期间，东口仅在早上七点至晚上八点之间可以通行。晚上八点以后请从西口出入。携带大件行李的乘客，在此期间也以走西口为宜。若施工提前结束，六月二十五日起东口将全天开放。若持续降雨，工期有可能延长一周。详情请向车站服务窗口咨询。",
+      "zh_TW": "致各位乘客：東口施工通知。六月一日至三十日，將對東口樓梯進行施工。施工期間，東口僅在早上七點至晚上八點之間可以通行。晚上八點以後請從西口出入。攜帶大件行李的乘客，在此期間也以走西口為宜。若施工提前結束，六月二十五日起東口將全天開放。若持續降雨，工期有可能延長一週。詳情請向車站服務窗口諮詢。"
     }
   ],
   "questions": [
@@ -1122,6 +2228,1117 @@
         "en": "The fee is three thousand yen for six sessions, with a discount to two thousand for those sixty-five and over, and applications close on 15 March. First-timers are given priority when there are many applicants, but that does not extend the deadline, and the city supplies the ingredients.",
         "zh": "参加费为六次三千日元，六十五岁以上优惠为两千日元，报名截止于三月十五日。首次参加者只是在报名者多时被优先录取，并不能因此延后截止日期，食材也由市里准备。",
         "zh_TW": "參加費為六次三千日元，六十五歲以上優惠為兩千日元，報名截止於三月十五日。首次參加者只是在報名者多時被優先錄取，並不能因此延後截止日期，食材也由市裡準備。"
+      }
+    },
+    {
+      "id": "q:n2-r-022",
+      "type": "short",
+      "items": [
+        "vocab:jm1220560",
+        "vocab:jm1154820"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-016",
+      "prompt": {
+        "en": "Why does the writer finish library books sooner than books he has bought?",
+        "zh": "作者为什么读图书馆的书比读自己买的书更快？",
+        "zh_TW": "作者為什麼讀圖書館的書比讀自己買的書更快？"
+      },
+      "options": [
+        "返す日が決まっていて、終わりが先に決まっているからです。",
+        "図書館の本のほうが面白い本が多いからです。",
+        "買った本は机の上に置く場所がないからです。",
+        "図書館では静かに読むことができるからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The last sentence says that having a fixed end is what gives the writer the strength to read; the two-week limit is the fixed end. Nothing is said about library books being more interesting, about a lack of desk space, or about reading inside the library.",
+        "zh": "最后一句说，正因为结束的期限已经定好，才成了读下去的动力，而两周的借期就是那个期限。文中没有说图书馆的书更有趣，也没提桌子不够放或在馆内安静阅读。",
+        "zh_TW": "最後一句說，正因為結束的期限已經定好，才成了讀下去的動力，而兩週的借期就是那個期限。文中沒有說圖書館的書更有趣，也沒提桌子不夠放或在館內安靜閱讀。"
+      }
+    },
+    {
+      "id": "q:n2-r-023",
+      "type": "short",
+      "items": [
+        "vocab:jm1433140"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-017",
+      "prompt": {
+        "en": "What does the writer say is the real reason for getting off one station early?",
+        "zh": "作者说，提前一站下车的真正理由是什么？",
+        "zh_TW": "作者說，提前一站下車的真正理由是什麼？"
+      },
+      "options": [
+        "電車の込む時間を避けたいからです。",
+        "歩いている間に、その日の仕事の順番が決まっていくからです。",
+        "運動をして体を強くしたいからです。",
+        "会社の近くの駅は人が多くて降りにくいからです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The writer admits that saying it is for exercise merely sounds good, and the last sentence gives the real reason: while walking, the order of the day's work settles itself. Crowding and the difficulty of getting off are not mentioned.",
+        "zh": "作者说，讲成是为了运动只是好听，真正的理由写在最后一句：走路时当天工作的顺序自然定下来。文中并未提到拥挤或不好下车。",
+        "zh_TW": "作者說，講成是為了運動只是好聽，真正的理由寫在最後一句：走路時當天工作的順序自然定下來。文中並未提到擁擠或不好下車。"
+      }
+    },
+    {
+      "id": "q:n2-r-024",
+      "type": "short",
+      "items": [
+        "vocab:jm1546850"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-018",
+      "prompt": {
+        "en": "Why does the writer take notes during meetings?",
+        "zh": "作者为什么在会议上做记录？",
+        "zh_TW": "作者為什麼在會議上做記錄？"
+      },
+      "options": [
+        "会議に出なかった人に見せるためです。",
+        "後でゆっくり読み返すためです。",
+        "書いているうちに、話の要領がつかめてくるからです。",
+        "手を動かしていないと眠くなるからです。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The writer states directly that it is not in order to reread the notes, and gives the reason as grasping the gist while writing; the paper is often thrown away the same day. Showing it to others and staying awake are not mentioned.",
+        "zh": "作者明确说不是为了以后重读，而是因为写着写着才能抓住谈话的要点，纸常常当天就扔掉。给别人看或为了不打瞌睡都没有提到。",
+        "zh_TW": "作者明確說不是為了以後重讀，而是因為寫著寫著才能抓住談話的要點，紙常常當天就扔掉。給別人看或為了不打瞌睡都沒有提到。"
+      }
+    },
+    {
+      "id": "q:n2-r-025",
+      "type": "short",
+      "items": [
+        "vocab:jm1227940"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-019",
+      "prompt": {
+        "en": "How does the writer regard the ten minutes now?",
+        "zh": "作者现在如何看待这十分钟？",
+        "zh_TW": "作者現在如何看待這十分鐘？"
+      },
+      "options": [
+        "その十分のおかげで午後の仕事が続くと考えています。",
+        "やはりもったいない時間だと考えています。",
+        "十分では短すぎるので、もっと長くしたいと考えています。",
+        "同じ時間に休む人と話すためのものだと考えています。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "At first the rest felt like a waste, but the last sentence says the writer now thinks the afternoon's work keeps going thanks to those ten minutes. He does not ask for more time, and he speaks to nobody during them.",
+        "zh": "起初他觉得休息浪费时间，但最后一句说，如今他认为正是有了这十分钟，下午的工作才能持续。他并没有要求延长，休息时也不与人交谈。",
+        "zh_TW": "起初他覺得休息浪費時間，但最後一句說，如今他認為正是有了這十分鐘，下午的工作才能持續。他並沒有要求延長，休息時也不與人交談。"
+      }
+    },
+    {
+      "id": "q:n2-r-026",
+      "type": "short",
+      "items": [
+        "vocab:jm1544090"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-020",
+      "prompt": {
+        "en": "What happened after the writer got rid of things this time?",
+        "zh": "这次处理掉多余的东西之后，发生了什么？",
+        "zh_TW": "這次處理掉多餘的東西之後，發生了什麼？"
+      },
+      "options": [
+        "引っ越しの費用が安くなりました。",
+        "部屋が広くなり、掃除の時間も短くなりました。",
+        "必要な物まで捨てて困りました。",
+        "新しい物を買う気持ちがなくなりました。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The last sentence names both results: the room became larger and even the cleaning time grew shorter. Costs, regret over throwing away necessary things, and a change in shopping habits are not mentioned.",
+        "zh": "最后一句同时写了两个结果：房间变宽敞，连打扫时间也缩短了。文中没有提到搬家费用、误扔必需品，或不再想买东西。",
+        "zh_TW": "最後一句同時寫了兩個結果：房間變寬敞，連打掃時間也縮短了。文中沒有提到搬家費用、誤扔必需品，或不再想買東西。"
+      }
+    },
+    {
+      "id": "q:n2-r-027",
+      "type": "short",
+      "items": [
+        "vocab:jm1258500"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-021",
+      "prompt": {
+        "en": "What does the writer say she has lost by deciding the week's menu in advance?",
+        "zh": "作者说，事先定好一周的菜单让她失去了什么？",
+        "zh_TW": "作者說，事先定好一週的菜單讓她失去了什麼？"
+      },
+      "options": [
+        "買い物に出かける楽しみです。",
+        "料理そのものにかける時間です。",
+        "その日に食べたい物を選ぶ楽しみです。",
+        "家族と献立を相談する時間です。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The final sentence contrasts the two: the pleasure of choosing what she feels like eating has shrunk, while the time spent on cooking itself has grown. Shopping time went down, not the pleasure of shopping, and the family is not mentioned.",
+        "zh": "最后一句作了对比：挑选当天想吃的东西那份乐趣少了，而花在做菜本身上的时间反而多了。减少的是买东西所花的时间，而非买东西的乐趣，文中也未提及家人。",
+        "zh_TW": "最後一句作了對比：挑選當天想吃的東西那份樂趣少了，而花在做菜本身上的時間反而多了。減少的是買東西所花的時間，而非買東西的樂趣，文中也未提及家人。"
+      }
+    },
+    {
+      "id": "q:n2-r-028",
+      "type": "short",
+      "items": [
+        "vocab:jm1281930"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-022",
+      "prompt": {
+        "en": "What did the writer come to understand only after leaving the town?",
+        "zh": "作者离开小镇之后才明白了什么？",
+        "zh_TW": "作者離開小鎮之後才明白了什麼？"
+      },
+      "options": [
+        "その行事が町の人をつなぐ日だったということです。",
+        "その行事が百年以上続いているということです。",
+        "町の人が行事をやめたがっているということです。",
+        "行事の日には店が全部休むということです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "As a child the writer saw it merely as a day when people gathered; the third sentence says that after leaving he understood it was the day that tied the town's people together. Its age, any wish to stop it and the shops are not mentioned.",
+        "zh": "小时候他只当那是人们聚会的日子，第三句说离开后才明白那是把镇上的人联结起来的日子。文中没有提到活动持续了多少年、有人想取消，或店铺休息。",
+        "zh_TW": "小時候他只當那是人們聚會的日子，第三句說離開後才明白那是把鎮上的人聯結起來的日子。文中沒有提到活動持續了多少年、有人想取消，或店鋪休息。"
+      }
+    },
+    {
+      "id": "q:n2-r-029",
+      "type": "short",
+      "items": [
+        "vocab:jm1278130",
+        "vocab:jm1414570"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-023",
+      "prompt": {
+        "en": "Why does the writer not get angry about the roadworks?",
+        "zh": "作者为什么对这场施工并不生气？",
+        "zh_TW": "作者為什麼對這場施工並不生氣？"
+      },
+      "options": [
+        "工事が来月で終わると聞いたからです。",
+        "音が思ったほど大きくないからです。",
+        "工事の人が毎朝きちんとあいさつをするからです。",
+        "工事のあとで道がきれいになるからです。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The third sentence says that despite the noise and the traffic he does not get angry, because the workmen greet him properly each morning; the last sentence generalises this into seeing a human face. The noise is described as loud, and neither the end date nor the finished road is mentioned.",
+        "zh": "第三句说，尽管吵闹、车也难行，他却不生气，因为施工的人每天早上都好好打招呼；最后一句把这归结为能否看见对方的脸。文中说噪音很吵，也没提完工日期或路面变好。",
+        "zh_TW": "第三句說，儘管吵鬧、車也難行，他卻不生氣，因為施工的人每天早上都好好打招呼；最後一句把這歸結為能否看見對方的臉。文中說噪音很吵，也沒提完工日期或路面變好。"
+      }
+    },
+    {
+      "id": "q:n2-r-030",
+      "type": "short",
+      "items": [
+        "vocab:jm1344120"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-024",
+      "prompt": {
+        "en": "What does the writer mean by calling the time in front of the shelves the real shopping?",
+        "zh": "作者说在书架前走动的时间才是真正的购物，这是什么意思？",
+        "zh_TW": "作者說在書架前走動的時間才是真正的購物，這是什麼意思？"
+      },
+      "options": [
+        "本の値段をゆっくり比べられるということです。",
+        "自分が知らなかった本に出会えるということです。",
+        "店の人と話をするのが目的だということです。",
+        "買う前に中身を全部読めるということです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The writer says that without the shop he would read only books he already knows about, so what he gains by walking along the shelves is an encounter with books he did not know. Prices, talking to the staff and reading the whole book in the shop are not mentioned.",
+        "zh": "作者说，如果没有那家店，他大概只会读自己已经知道的书，可见在书架前走动的收获是遇见未知的书。文中没有提比价、与店员交谈或在店里读完全书。",
+        "zh_TW": "作者說，如果沒有那家店，他大概只會讀自己已經知道的書，可見在書架前走動的收穫是遇見未知的書。文中沒有提比價、與店員交談或在店裡讀完全書。"
+      }
+    },
+    {
+      "id": "q:n2-r-031",
+      "type": "short",
+      "items": [
+        "vocab:jm1258660",
+        "vocab:jm1236940",
+        "vocab:jm1270010"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-025",
+      "prompt": {
+        "en": "Why does the writer say he is the one who learns more?",
+        "zh": "作者为什么说学到更多的反而是自己？",
+        "zh_TW": "作者為什麼說學到更多的反而是自己？"
+      },
+      "options": [
+        "後輩のほうが新しい知識を持っているからです。",
+        "研修の準備で新しいことを調べるからです。",
+        "後輩の質問が、長い間考えずにしてきたことばかりだからです。",
+        "会社が上の者にも研修を受けさせるからです。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The third sentence gives the reason: the juniors ask about things the writer has done for years without thinking, and explaining shows him the shape of his own work. New knowledge, preparation and training for seniors are not mentioned.",
+        "zh": "第三句给出了理由：后辈问的都是他多年来不假思索就做下来的事，而解释的过程让他看清自己工作的样子。文中未提后辈掌握新知识、准备培训，或公司让上级也参加培训。",
+        "zh_TW": "第三句給出了理由：後輩問的都是他多年來不假思索就做下來的事，而解釋的過程讓他看清自己工作的樣子。文中未提後輩掌握新知識、準備培訓，或公司讓上級也參加培訓。"
+      }
+    },
+    {
+      "id": "q:n2-r-032",
+      "type": "mid",
+      "items": [
+        "vocab:jm1347180"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-026",
+      "prompt": {
+        "en": "Why did the shopkeepers get together three years ago?",
+        "zh": "三年前，店主们为什么聚在一起？",
+        "zh_TW": "三年前，店主們為什麼聚在一起？"
+      },
+      "options": [
+        "近くに大きな店ができて、客がずいぶん減ったからです。",
+        "通りの道が古くなって危なくなったからです。",
+        "町が通りを別の場所に移そうとしたからです。",
+        "行事の日を決める必要があったからです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second sentence explains the situation: since a large store opened nearby, customer numbers had fallen sharply, and the third sentence says that this led them to meet and rethink the street. The road's condition, a move and the events all come later or not at all.",
+        "zh": "第二句说明了背景：附近开了大商场后客人锐减，第三句接着说他们因此聚在一起重新考虑这条街。路况变差、搬迁都没有提及，活动的事则是后来才出现的。",
+        "zh_TW": "第二句說明了背景：附近開了大商場後客人銳減，第三句接著說他們因此聚在一起重新考慮這條街。路況變差、搬遷都沒有提及，活動的事則是後來才出現的。"
+      }
+    },
+    {
+      "id": "q:n2-r-033",
+      "type": "mid",
+      "items": [
+        "vocab:jm1259900"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-026",
+      "prompt": {
+        "en": "What was the effect of the day on which cars were kept out of the street?",
+        "zh": "设立禁止汽车进入的日子，带来了什么效果？",
+        "zh_TW": "設立禁止汽車進入的日子，帶來了什麼效果？"
+      },
+      "options": [
+        "近くの大きな店の客が減りました。",
+        "子どもが安心して遊べるので、家族で来る客が増えました。",
+        "通りの店の数が三年で二倍になりました。",
+        "客がすぐに以前と同じだけ戻りました。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The fifth sentence names the effect: children could play safely, so more customers came as families. The text says expressly that customers did not come back at once, and nothing is said about the large store or the number of shops.",
+        "zh": "第五句写明了效果：孩子能放心玩耍，于是全家一起来的客人多了。文中明确说客人并没有马上回流，也没有提大商场或店铺数量。",
+        "zh_TW": "第五句寫明瞭效果：孩子能放心玩耍，於是全家一起來的客人多了。文中明確說客人並沒有馬上回流，也沒有提大商場或店鋪數量。"
+      }
+    },
+    {
+      "id": "q:n2-r-034",
+      "type": "mid",
+      "items": [
+        "vocab:jm1281930"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-026",
+      "prompt": {
+        "en": "What do the people of the street consider the most important change?",
+        "zh": "这条街上的人认为最重要的变化是什么？",
+        "zh_TW": "這條街上的人認為最重要的變化是什麼？"
+      },
+      "options": [
+        "客の数が元に戻ったことです。",
+        "町が新しい道具を用意してくれたことです。",
+        "店の人たちが自分で考えて動き始めたことです。",
+        "行事が年に四回に増えたことです。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The seventh sentence says everyone considers it above all important that the shopkeepers began to think and act for themselves. The rise to four events a year is the present state rather than what they call most important, the customers have not fully returned, and the town's help is not mentioned.",
+        "zh": "第七句说，大家认为最重要的是店主们开始自己思考、自己行动。活动增至一年四次只是现状，客人并未完全回流，文中也没有提到镇上提供工具。",
+        "zh_TW": "第七句說，大家認為最重要的是店主們開始自己思考、自己行動。活動增至一年四次只是現狀，客人並未完全迴流，文中也沒有提到鎮上提供工具。"
+      }
+    },
+    {
+      "id": "q:n2-r-035",
+      "type": "mid",
+      "items": [
+        "vocab:jm1278220"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-027",
+      "prompt": {
+        "en": "Why did the writer stop writing words out in rows?",
+        "zh": "作者为什么不再把单词一排排地抄下来？",
+        "zh_TW": "作者為什麼不再把單詞一排排地抄下來？"
+      },
+      "options": [
+        "手帳を持ち歩くのが重かったからです。",
+        "並べて書いた言葉は、次の日には消えてしまうからです。",
+        "先生に別の方法をすすめられたからです。",
+        "書く時間がまったく取れなかったからです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The second sentence gives the reason: words in a row may be learned on the spot but have vanished by the next day. The weight of the notebook, a teacher's advice and a lack of time are not mentioned.",
+        "zh": "第二句给出了理由：排成行的词当场也许记住了，第二天就消失了。文中没有提本子太重、老师建议，或完全抽不出时间。",
+        "zh_TW": "第二句給出了理由：排成行的詞當場也許記住了，第二天就消失了。文中沒有提本子太重、老師建議，或完全抽不出時間。"
+      }
+    },
+    {
+      "id": "q:n2-r-036",
+      "type": "mid",
+      "items": [
+        "vocab:jm1278220"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-027",
+      "prompt": {
+        "en": "What does the writer do now to learn words?",
+        "zh": "作者现在用什么方法记单词？",
+        "zh_TW": "作者現在用什麼方法記單詞？"
+      },
+      "options": [
+        "覚えたい言葉を使って、自分の一日について短い文を作ります。",
+        "毎日同じ言葉を三十回ずつ書きます。",
+        "電車の中で外国語の本を読みます。",
+        "覚えた言葉を人に教えるようにしています。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The third and fourth sentences describe the method: short sentences about his own day using the words he wants to learn, three in the morning train and three before bed. Repeated copying, reading books and teaching others are not part of it.",
+        "zh": "第三、四句写明了做法：用想记的词写关于自己一天的短句，早上电车里三句、睡前三句。反复抄写、读原文书或教别人都不是文中的方法。",
+        "zh_TW": "第三、四句寫明瞭做法：用想記的詞寫關於自己一天的短句，早上電車裡三句、睡前三句。反覆抄寫、讀原文書或教別人都不是文中的方法。"
+      }
+    },
+    {
+      "id": "q:n2-r-037",
+      "type": "mid",
+      "items": [
+        "vocab:jm1154820"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-027",
+      "prompt": {
+        "en": "What did a year of this practice show the writer?",
+        "zh": "坚持一年之后，作者发现了什么？",
+        "zh_TW": "堅持一年之後，作者發現了什麼？"
+      },
+      "options": [
+        "外国語は毎日使わなければ上手にならないということです。",
+        "文を作るより読むほうが早く覚えられるということです。",
+        "自分の生活に必要な言葉は案外少ないということです。",
+        "短い文では難しい言葉が使えないということです。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "After a year the writer found the same words coming up again and again, and concludes that the words needed for one's own life are surprisingly few — which is why making those few solid is the best device. The other statements are not made in the text.",
+        "zh": "坚持一年后，作者发现同样的词反复出现，于是得出结论：自己生活中真正需要的词意外地少，所以把这些词掌握牢靠才最见效。其他说法文中都没有。",
+        "zh_TW": "堅持一年後，作者發現同樣的詞反覆出現，於是得出結論：自己生活中真正需要的詞意外地少，所以把這些詞掌握牢靠才最見效。其他說法文中都沒有。"
+      }
+    },
+    {
+      "id": "q:n2-r-038",
+      "type": "mid",
+      "items": [
+        "vocab:jm1332170"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-028",
+      "prompt": {
+        "en": "What did the writer do when the watch stopped?",
+        "zh": "手表停了以后，作者做了什么？",
+        "zh_TW": "手錶停了以後，作者做了什麼？"
+      },
+      "options": [
+        "人にすすめられて、新しい時計を買いました。",
+        "直してくれる店を探しました。",
+        "しばらく時計を持たずに過ごしました。",
+        "自分で時計を開けて部品を取り替えました。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "Although some people said a new watch would be cheaper, the second sentence says he looked for a shop that would mend it; it was the craftsman, not the writer, who replaced the part.",
+        "zh": "虽然有人说买新的更便宜，第二句仍写他去找能修的店；换零件的是师傅，不是作者本人。",
+        "zh_TW": "雖然有人說買新的更便宜，第二句仍寫他去找能修的店；換零件的是師傅，不是作者本人。"
+      }
+    },
+    {
+      "id": "q:n2-r-039",
+      "type": "mid",
+      "items": [
+        "vocab:jm1357550"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-028",
+      "prompt": {
+        "en": "How did the craftsman deal with the watch?",
+        "zh": "师傅是怎样处理这块手表的？",
+        "zh_TW": "師傅是怎樣處理這塊手錶的？"
+      },
+      "options": [
+        "時計を開けて、部品の一つを取り替えただけで直しました。",
+        "時計を預かって、半年かけて直しました。",
+        "古い時計なので直せないと言いました。",
+        "新しい時計の半分の値段で別の時計を売りました。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The fourth sentence says he opened the watch and mended it simply by replacing one part. Half the price of a new watch was the charge for that repair, not the price of a different watch.",
+        "zh": "第四句说他打开表，只换了一个零件就修好了。新表价格的一半是这次修理的费用，而不是另一块表的售价。",
+        "zh_TW": "第四句說他打開表，只換了一個零件就修好了。新表價格的一半是這次修理的費用，而不是另一塊表的售價。"
+      }
+    },
+    {
+      "id": "q:n2-r-040",
+      "type": "mid",
+      "items": [
+        "vocab:jm1357550",
+        "vocab:jm1332170"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-028",
+      "prompt": {
+        "en": "Why did the writer not think the price high?",
+        "zh": "作者为什么不觉得这个价钱贵？",
+        "zh_TW": "作者為什麼不覺得這個價錢貴？"
+      },
+      "options": [
+        "新しい時計より確かに安かったからです。",
+        "その店が来年で閉じてしまうからです。",
+        "部品がとても珍しい物だったからです。",
+        "払ったのは、直せると分かっている人の時間だと考えたからです。"
+      ],
+      "answer": 3,
+      "explanation": {
+        "en": "The seventh sentence states the reason: what he paid for was not the part but the time of someone who knows the thing can be mended. He says outright that it was not cheap, the closure comes at the end as a separate fact, and the part is never called rare.",
+        "zh": "第七句写明了理由：他付的不是零件钱，而是一个懂得如何修好它的人的时间。他明说并不便宜，关店只是结尾另提的事实，零件也没有说稀有。",
+        "zh_TW": "第七句寫明瞭理由：他付的不是零件錢，而是一個懂得如何修好它的人的時間。他明說並不便宜，關店只是結尾另提的事實，零件也沒有說稀有。"
+      }
+    },
+    {
+      "id": "q:n2-r-041",
+      "type": "mid",
+      "items": [
+        "vocab:jm1362810"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-029",
+      "prompt": {
+        "en": "What did the writer believe when he used to work until late at night?",
+        "zh": "以前加班到深夜时，作者是怎么想的？",
+        "zh_TW": "以前加班到深夜時，作者是怎麼想的？"
+      },
+      "options": [
+        "時間をかけただけ仕事は進むと思っていました。",
+        "夜のほうが静かで能率が上がると思っていました。",
+        "遅くまで残る人が上に立つと思っていました。",
+        "朝の一時間は無駄になると思っていました。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second sentence gives the old belief: work advances in proportion to the time put in. The writer says the opposite about night hours, and promotion is not mentioned.",
+        "zh": "第二句写出了他从前的想法：花多少时间，工作就推进多少。关于夜间时段他的说法恰恰相反，文中也未提升职。",
+        "zh_TW": "第二句寫出了他從前的想法：花多少時間，工作就推進多少。關於夜間時段他的說法恰恰相反，文中也未提升職。"
+      }
+    },
+    {
+      "id": "q:n2-r-042",
+      "type": "mid",
+      "items": [
+        "vocab:jm1470330"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-029",
+      "prompt": {
+        "en": "What changed after the writer fixed the time to leave the office?",
+        "zh": "决定了下班时间之后，发生了什么变化？",
+        "zh_TW": "決定了下班時間之後，發生了什麼變化？"
+      },
+      "options": [
+        "一日にできる仕事の量がはっきり増えました。",
+        "朝から仕事の順番を考えるようになりました。",
+        "会社に残る人がみんな減りました。",
+        "夜の仕事を家に持って帰るようになりました。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The fifth sentence says that once the finishing time was fixed he began planning the order of his work from the morning. The amount done in a day is almost unchanged, and neither his colleagues nor taking work home is mentioned.",
+        "zh": "第五句说，结束时间一定下来，他从早上就开始考虑工作的先后顺序。一天能完成的量几乎没变，文中也未提同事或把工作带回家。",
+        "zh_TW": "第五句說，結束時間一定下來，他從早上就開始考慮工作的先後順序。一天能完成的量幾乎沒變，文中也未提同事或把工作帶回家。"
+      }
+    },
+    {
+      "id": "q:n2-r-043",
+      "type": "mid",
+      "items": [
+        "vocab:jm1470330",
+        "vocab:jm1362810"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-029",
+      "prompt": {
+        "en": "What does the writer conclude from this experience?",
+        "zh": "从这段经历中，作者得出了什么结论？",
+        "zh_TW": "從這段經歷中，作者得出了什麼結論？"
+      },
+      "options": [
+        "働く時間は短いほどよいということです。",
+        "朝早く出勤すれば仕事は必ず終わるということです。",
+        "長く働くことと、よく働くことは同じではないということです。",
+        "家に帰る時間は仕事の量で決まるということです。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The last sentence is the conclusion itself: working long and working well are not the same thing. He does not claim that shorter is always better, nor make any promise about early starts.",
+        "zh": "最后一句正是结论：工作时间长和工作做得好不是一回事。他并没有说时间越短越好，也没有对早出勤作任何保证。",
+        "zh_TW": "最後一句正是結論：工作時間長和工作做得好不是一回事。他並沒有說時間越短越好，也沒有對早出勤作任何保證。"
+      }
+    },
+    {
+      "id": "q:n2-r-044",
+      "type": "mid",
+      "items": [
+        "vocab:jm1272320"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-030",
+      "prompt": {
+        "en": "According to the writer, what happens when there is little public transport?",
+        "zh": "按作者所说，交通工具少了会发生什么？",
+        "zh_TW": "按作者所說，交通工具少了會發生什麼？"
+      },
+      "options": [
+        "人が車に乗るようになり、電車の客がさらに減って本数も減ります。",
+        "町の人が集まって新しい電車を求めます。",
+        "車の値段が上がって、買えない人が増えます。",
+        "電車の会社が客を集めるために安い切符を出します。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The second to fourth sentences describe the circle: fewer services push people into cars, fewer passengers remain, and so the number of trains falls again. Prices, campaigns and cheap tickets are not part of the argument.",
+        "zh": "第二至第四句描述了这个循环：班次少促使人们开车，乘客更少，班次于是又减少。文中没有提价格、请愿或降价车票。",
+        "zh_TW": "第二至第四句描述了這個循環：班次少促使人們開車，乘客更少，班次於是又減少。文中沒有提價格、請願或降價車票。"
+      }
+    },
+    {
+      "id": "q:n2-r-045",
+      "type": "mid",
+      "items": [
+        "vocab:jm1272320"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-030",
+      "prompt": {
+        "en": "Who does the writer say is left in difficulty?",
+        "zh": "作者说，最终陷入困境的是谁？",
+        "zh_TW": "作者說，最終陷入困境的是誰？"
+      },
+      "options": [
+        "電車で通勤している会社員です。",
+        "村を出ていった若い人です。",
+        "車に乗らない子どもや年を取った人です。",
+        "電車を走らせている会社の人です。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The fifth sentence names them: it is only those who do not drive, children and the old for instance, who end up in difficulty. Commuters, the young who have left and the railway company are not given as the answer.",
+        "zh": "第五句点明了：受困的只有不开车的人，比如孩子和上了年纪的人。通勤者、离村的年轻人和铁路公司都不是答案。",
+        "zh_TW": "第五句點明瞭：受困的只有不開車的人，比如孩子和上了年紀的人。通勤者、離村的年輕人和鐵路公司都不是答案。"
+      }
+    },
+    {
+      "id": "q:n2-r-046",
+      "type": "mid",
+      "items": [
+        "vocab:jm1273510",
+        "vocab:jm1272320"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-030",
+      "prompt": {
+        "en": "What does the writer want people to remember before talking about money?",
+        "zh": "作者希望人们在谈钱之前先想起什么？",
+        "zh_TW": "作者希望人們在談錢之前先想起什麼？"
+      },
+      "options": [
+        "公共の乗り物は、ほかに方法がない人がいるから走らなければならないということです。",
+        "公共の乗り物は、使う人が多いほど安くなるということです。",
+        "村の生活には車が欠かせないということです。",
+        "電車を増やせば客も必ず増えるということです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The sixth and seventh sentences state it: public transport runs not because many use it but because some have no other means. The writer never says fares fall with use, nor that more trains would certainly bring more passengers.",
+        "zh": "第六、七句写明：公共交通不是因为用的人多才运行，而是因为有人别无他法才必须运行。作者既没说乘客多票价就便宜，也没说增加班次一定能增加乘客。",
+        "zh_TW": "第六、七句寫明：公共交通不是因為用的人多才運行，而是因為有人別無他法才必須運行。作者既沒說乘客多票價就便宜，也沒說增加班次一定能增加乘客。"
+      }
+    },
+    {
+      "id": "q:n2-r-047",
+      "type": "mid",
+      "items": [
+        "vocab:jm1212480"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-031",
+      "prompt": {
+        "en": "What did the writer expect from the gathering at first?",
+        "zh": "起初，作者对这个读书会有什么期待？",
+        "zh_TW": "起初，作者對這個讀書會有什麼期待？"
+      },
+      "options": [
+        "同じ本を読む友人ができることです。",
+        "人の意見を聞けば自分の読み方が広がることです。",
+        "月に一度、必ず本を読む習慣がつくことです。",
+        "本の内容を早く覚えられることです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The second sentence gives the initial expectation: hearing others' opinions would widen his own reading. Making friends, forming a habit and memorising the contents are not mentioned.",
+        "zh": "第二句写出了最初的期待：听别人的意见能拓宽自己的读法。交朋友、养成习惯或快速记住内容都没有提到。",
+        "zh_TW": "第二句寫出了最初的期待：聽別人的意見能拓寬自己的讀法。交朋友、養成習慣或快速記住內容都沒有提到。"
+      }
+    },
+    {
+      "id": "q:n2-r-048",
+      "type": "mid",
+      "items": [
+        "vocab:jm1212480"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-031",
+      "prompt": {
+        "en": "What does the writer say actually helped?",
+        "zh": "作者说，真正对他有帮助的是什么？",
+        "zh_TW": "作者說，真正對他有幫助的是什麼？"
+      },
+      "options": [
+        "自分の感想を言葉にする時間のほうでした。",
+        "人の意見を静かに聞く時間でした。",
+        "同じ本を何度も読み返すことでした。",
+        "感想を紙に書いて持って行くことでした。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The third sentence answers directly: what actually helped was rather the time spent putting his own impressions into words. Listening was the expectation, not the result, and writing them down beforehand is not mentioned.",
+        "zh": "第三句直接作答：真正有帮助的，反倒是把自己的感想化为语言的那段时间。听别人说是当初的期待而非结果，事先写下来也没有提及。",
+        "zh_TW": "第三句直接作答：真正有幫助的，反倒是把自己的感想化為語言的那段時間。聽別人說是當初的期待而非結果，事先寫下來也沒有提及。"
+      }
+    },
+    {
+      "id": "q:n2-r-049",
+      "type": "mid",
+      "items": [
+        "vocab:jm1212480"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-031",
+      "prompt": {
+        "en": "Why does the writer say he is speaking for his own sake?",
+        "zh": "作者为什么说自己是为了自己而说？",
+        "zh_TW": "作者為什麼說自己是為了自己而說？"
+      },
+      "options": [
+        "人の意見をあまり信じていないからです。",
+        "説明しようとして初めて考えが形になるからです。",
+        "話さないと本の内容を忘れてしまうからです。",
+        "人に伝える自信がないからです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The fifth sentence explains it: only when he tries to explain what was interesting and how does a thought take shape, so the talking works on him rather than on his listeners. Distrust, forgetfulness and lack of confidence are not given as reasons.",
+        "zh": "第五句作了说明：当他试着解释哪里有意思、怎样有意思时，想法才第一次成形，因此说话作用于自己而非听众。不信任、怕忘记或缺乏自信都不是理由。",
+        "zh_TW": "第五句作了說明：當他試著解釋哪裡有意思、怎樣有意思時，想法才第一次成形，因此說話作用於自己而非聽眾。不信任、怕忘記或缺乏自信都不是理由。"
+      }
+    },
+    {
+      "id": "q:n2-r-050",
+      "type": "integrated",
+      "items": [
+        "vocab:jm1544090"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-032",
+      "prompt": {
+        "en": "How do the first writer and the second writer differ about homework?",
+        "zh": "关于作业，前一位与后一位的看法有何不同？",
+        "zh_TW": "關於作業，前一位與後一位的看法有何不同？"
+      },
+      "options": [
+        "一人目は量を減らせば済む話ではないと言い、二人目は宿題が子どもの学ぶ時間を奪うと言っています。",
+        "二人とも宿題をなくすべきだと言っています。",
+        "一人目は家での時間を大切にし、二人目は学校での時間を大切にしています。",
+        "二人とも宿題の量は今のままでよいと言っています。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The first writer holds that time spent alone with problems at home is what makes learning one's own, and that merely cutting the quantity settles nothing. The second holds that superfluous homework takes away the time in which children choose and learn for themselves. Neither calls for abolition, and it is the second who defends the time at home.",
+        "zh": "前一位认为，在家独自面对题目的时间才使所学成为自己的，仅仅减量并不能解决问题；后一位则认为多余的作业夺走了孩子自主选择学习的时间。两人都没有主张取消作业，而重视家中时间的恰恰是后一位。",
+        "zh_TW": "前一位認為，在家獨自面對題目的時間才使所學成為自己的，僅僅減量並不能解決問題；後一位則認為多餘的作業奪走了孩子自主選擇學習的時間。兩人都沒有主張取消作業，而重視家中時間的恰恰是後一位。"
+      }
+    },
+    {
+      "id": "q:n2-r-051",
+      "type": "integrated",
+      "items": [
+        "vocab:jm1250310",
+        "vocab:jm1544090"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-033",
+      "prompt": {
+        "en": "What does the second writer say that the first writer does not?",
+        "zh": "后一位说了前一位没有说的哪一点？",
+        "zh_TW": "後一位說了前一位沒有說的哪一點？"
+      },
+      "options": [
+        "決まった形式があると朝が楽になるということです。",
+        "服を選ぶ時間は仕事の時間から減っていくということです。",
+        "同じ形の服を求めることは、同じ考え方を求めることに近いということです。",
+        "会社の服は自分で買うべきだということです。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The first writer's argument is entirely about the morning's time and trouble. Only the second links dress to thought, saying that putting people in clothes of the same shape comes close to asking them to think alike. Who pays for the clothes is not discussed by either.",
+        "zh": "前一位的论点全在于早晨的时间与麻烦；只有后一位把衣着与思想联系起来，说让大家穿同样式样的衣服近乎要求同样的思维方式。至于衣服由谁出钱，两人都没有谈。",
+        "zh_TW": "前一位的論點全在於早晨的時間與麻煩；只有後一位把衣著與思想聯繫起來，說讓大家穿同樣式樣的衣服近乎要求同樣的思維方式。至於衣服由誰出錢，兩人都沒有談。"
+      }
+    },
+    {
+      "id": "q:n2-r-052",
+      "type": "integrated",
+      "items": [
+        "vocab:jm1179760"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-034",
+      "prompt": {
+        "en": "What do the two writers agree on?",
+        "zh": "两位在哪一点上是一致的？",
+        "zh_TW": "兩位在哪一點上是一致的？"
+      },
+      "options": [
+        "計画を作る時間そのものが楽しいということです。",
+        "旅行では何を見るかより、どう過ごすかが大切だということです。",
+        "短い休みには遠くへ行かないほうがよいということです。",
+        "案内に出ている店は行く価値がないということです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "One prizes a settled schedule so that a short holiday is not wasted, the other prizes the freedom to turn down an unexpected street; both are talking about how the time is spent rather than about which sights are seen. Only the first enjoys the planning, and neither says short holidays should stay close to home or that listed shops are worthless.",
+        "zh": "一位重视定好行程以免浪费短假，另一位重视拐进意外小路的自由，两人谈的都是时间怎么过，而不是看什么景点。享受查资料的只有前一位，两人也都没说短假不该走远或指南上的店不值得去。",
+        "zh_TW": "一位重視定好行程以免浪費短假，另一位重視拐進意外小路的自由，兩人談的都是時間怎麼過，而不是看什麼景點。享受查資料的只有前一位，兩人也都沒說短假不該走遠或指南上的店不值得去。"
+      }
+    },
+    {
+      "id": "q:n2-r-053",
+      "type": "integrated",
+      "items": [
+        "vocab:jm1264690"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-035",
+      "prompt": {
+        "en": "How do the two writers differ about new staff?",
+        "zh": "关于新员工，两位的看法有何不同？",
+        "zh_TW": "關於新員工，兩位的看法有何不同？"
+      },
+      "options": [
+        "一人目は半年で辞める人が多いと言い、二人目は少ないと言っています。",
+        "一人目は失敗しても困らない仕事から始めるのがよいと言い、二人目は早くから客と会う場に出るほうがよいと言っています。",
+        "二人とも新しい社員には小さな仕事だけを任せるべきだと言っています。",
+        "一人目は研修の期間を長くしたいと言い、二人目は研修そのものをやめたいと言っています。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The first would entrust only harmless work for the first six months, so that the new person learns how work proceeds with an easy mind. The second holds that small tasks hide the purpose of the work and that more is learnt by meeting customers early. Neither speaks of people leaving or of abolishing training.",
+        "zh": "前一位主张最初半年只交给失败也不要紧的工作，让新人安心地弄懂工作如何推进；后一位则认为只做小事看不出工作的意义，尽早接触客户能学到更多。两人都没有谈离职率，也没有主张取消培训。",
+        "zh_TW": "前一位主張最初半年只交給失敗也不要緊的工作，讓新人安心地弄懂工作如何推進；後一位則認為只做小事看不出工作的意義，儘早接觸客戶能學到更多。兩人都沒有談離職率，也沒有主張取消培訓。"
+      }
+    },
+    {
+      "id": "q:n2-r-054",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1480540",
+        "vocab:jm1335800"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-036",
+      "prompt": {
+        "en": "Why does the writer say the record of failures is more useful than that of successes?",
+        "zh": "作者为什么说失败的记录比成功的记录更有用？",
+        "zh_TW": "作者為什麼說失敗的記錄比成功的記錄更有用？"
+      },
+      "options": [
+        "失敗のほうが数が多く、集めやすいからです。",
+        "成功の理由はいくつも重なっていて分からないが、失敗の理由ははっきりしているからです。",
+        "失敗を話すと若い社員が安心するからです。",
+        "成功した仕事はみんなが忘れてしまうからです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The third and fourth sentences contrast the two: the causes of a success lie piled on one another so that the real one cannot be told, while the cause of a failure is usually plain, and that is why it can be used next time. The other options are not the reason given.",
+        "zh": "第三、四句作了对比：成功的原因层层叠叠，分不清哪个才是真的，而失败的原因多半一目了然，所以对下一次有用。其余选项都不是文中给出的理由。",
+        "zh_TW": "第三、四句作了對比：成功的原因層層疊疊，分不清哪個才是真的，而失敗的原因多半一目瞭然，所以對下一次有用。其餘選項都不是文中給出的理由。"
+      }
+    },
+    {
+      "id": "q:n2-r-055",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1592130",
+        "vocab:jm1335800"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-040",
+      "prompt": {
+        "en": "Why does the writer say reading aloud shows where a sentence should be divided?",
+        "zh": "作者为什么说，朗读能告诉你句子该在哪里断开？",
+        "zh_TW": "作者為什麼說，朗讀能告訴你句子該在哪裡斷開？"
+      },
+      "options": [
+        "声に出すと、意味より音のほうが先に耳に入るからです。",
+        "意味の切れる所と息の切れる所は、たいてい重なっているからです。",
+        "声に出すと、文が自然に短くなるからです。",
+        "目で読むより時間がかかり、よく考えられるからです。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The sixth sentence states the principle: where the sense breaks and where the breath breaks usually coincide, so the voice stops at exactly the places a reader finds hard. Sentences becoming shorter is a result of the corrections, not the reason.",
+        "zh": "第六句写出了道理：意思的断处与呼吸的断处多半重合，所以声音会正好停在读者读着吃力的地方。句子变短是修改后的结果，而不是理由。",
+        "zh_TW": "第六句寫出了道理：意思的斷處與呼吸的斷處多半重合，所以聲音會正好停在讀者讀著吃力的地方。句子變短是修改後的結果，而不是理由。"
+      }
+    },
+    {
+      "id": "q:n2-r-056",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1351120",
+        "vocab:jm1397270"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-037",
+      "prompt": {
+        "en": "What does the writer say makes instructions hard to read?",
+        "zh": "作者认为，说明书难读的原因是什么？",
+        "zh_TW": "作者認為，說明書難讀的原因是什麼？"
+      },
+      "options": [
+        "書く人の言葉が難しいからです。",
+        "文が長くて、読むのに時間がかかるからです。",
+        "作った人に当たり前のことが省略されているからです。",
+        "図が少なくて、文字ばかりだからです。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The first two sentences reject difficult language and name the real cause: what is obvious to the maker gets left out. The writer says outright that length is not the problem, and pictures are never discussed.",
+        "zh": "开头两句否定了用词艰深，并指出真正的原因：对制造者而言理所当然的内容被省略了。作者明说难读并非因为句子长，插图也从未提及。",
+        "zh_TW": "開頭兩句否定了用詞艱深，並指出真正的原因：對製造者而言理所當然的內容被省略了。作者明說難讀並非因為句子長，插圖也從未提及。"
+      }
+    },
+    {
+      "id": "q:n2-r-057",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1589220"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-041",
+      "prompt": {
+        "en": "How does the writer answer those who call the fifteen minutes a waste?",
+        "zh": "对于说这十五分钟是浪费的人，作者如何回应？",
+        "zh_TW": "對於說這十五分鐘是浪費的人，作者如何回應？"
+      },
+      "options": [
+        "その十五分こそ、会う時間の一部だと考えています。",
+        "遅れるよりは無駄なほうがよいと考えています。",
+        "早く着いた分だけ早く帰ればよいと考えています。",
+        "無駄かどうかは相手が決めることだと考えています。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The ninth sentence is his reply: he regards those fifteen minutes as part of the time of the meeting itself, since they change how the conversation begins. He does not argue merely that waste is better than lateness, nor talk of leaving early.",
+        "zh": "第九句就是他的回答：他认为那十五分钟正是会面时间的一部分，因为它改变了开口的方式。他并不是说浪费总比迟到好，也没有谈提前离开。",
+        "zh_TW": "第九句就是他的回答：他認為那十五分鐘正是會面時間的一部分，因為它改變了開口的方式。他並不是說浪費總比遲到好，也沒有談提前離開。"
+      }
+    },
+    {
+      "id": "q:n2-r-058",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1516950"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-038",
+      "prompt": {
+        "en": "Why does the writer shut the map when he arrives in an unfamiliar town?",
+        "zh": "到了陌生的城市，作者为什么先合上地图？",
+        "zh_TW": "到了陌生的城市，作者為什麼先合上地圖？"
+      },
+      "options": [
+        "地図を見るのが苦手だからです。",
+        "地図を見ながら歩くと道が危ないからです。",
+        "そうすると町の形が体に残るからです。",
+        "地図に出ている道は面白くないからです。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The third sentence gives the reason: walking that way leaves the shape of the town in the body, whereas a street walked with the eyes on a map is forgotten by the next day. He does not say he is bad with maps — he opens one when the time is fixed — nor that mapped streets are dull.",
+        "zh": "第三句给出理由：这样走，城市的形状会留在身体里；而看着地图走过的路第二天就忘了。他并没有说自己不会看地图（时间有安排时他会打开），也没说地图上的路无趣。",
+        "zh_TW": "第三句給出理由：這樣走，城市的形狀會留在身體裡；而看著地圖走過的路第二天就忘了。他並沒有說自己不會看地圖（時間有安排時他會打開），也沒說地圖上的路無趣。"
+      }
+    },
+    {
+      "id": "q:n2-r-059",
+      "type": "thematic",
+      "items": [
+        "vocab:jm1001010"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-039",
+      "prompt": {
+        "en": "What does the writer say remembering names really depends on?",
+        "zh": "作者认为，能否记住名字实际上取决于什么？",
+        "zh_TW": "作者認為，能否記住名字實際上取決於什麼？"
+      },
+      "options": [
+        "相手にどれだけ注意を向けているかです。",
+        "頭が良いか悪いかです。",
+        "何度その人と会ったかです。",
+        "名前を紙に書くかどうかです。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The seventh and eighth sentences say plainly that it is not a question of being clever but of how much attention one turns towards the other person; that is also why saying the name aloud at once works. The number of meetings and writing it down are not mentioned.",
+        "zh": "第七、八句明确指出：这不是脑子聪不聪明的问题，而是对对方投入多少注意力的问题；当场把名字念出声之所以有效，正是这个道理。见面次数和写在纸上都未提及。",
+        "zh_TW": "第七、八句明確指出：這不是腦子聰不聰明的問題，而是對對方投入多少注意力的問題；當場把名字念出聲之所以有效，正是這個道理。見面次數和寫在紙上都未提及。"
+      }
+    },
+    {
+      "id": "q:n2-r-060",
+      "type": "info",
+      "items": [
+        "vocab:jm1220560",
+        "vocab:jm1590240",
+        "vocab:jm1227940"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-042",
+      "prompt": {
+        "en": "A person's book is due back on the 6th of next month. What should this person do?",
+        "zh": "某人借的书还书期限是下月六日。这个人该怎么做？",
+        "zh_TW": "某人借的書還書期限是下月六日。這個人該怎麼做？"
+      },
+      "options": [
+        "五日までに窓口へ返します。",
+        "九日までに返せばよいことになっています。",
+        "八日の午後三時に本を取りに行きます。",
+        "休業が終わるまで返すことができません。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "The 6th falls inside the closed period of the 5th to the 8th, and the notice says that those whose return date falls in that period should return their books by the 9th. Books can in fact be put in the box beside the entrance at any time, and the three o'clock event on the 8th is the giving away of old books.",
+        "zh": "六日正落在五日至八日的闭馆期间，通知写明这类读者在九日之前归还即可。入口旁的还书箱其实随时可以还书，而八日下午三点是免费发放旧书的活动。",
+        "zh_TW": "六日正落在五日至八日的閉館期間，通知寫明這類讀者在九日之前歸還即可。入口旁的還書箱其實隨時可以還書，而八日下午三點是免費發放舊書的活動。"
+      }
+    },
+    {
+      "id": "q:n2-r-061",
+      "type": "info",
+      "items": [
+        "vocab:jm1365480",
+        "vocab:jm1339660",
+        "vocab:jm1155110"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-043",
+      "prompt": {
+        "en": "A member of staff will be away on a business trip for the whole of 10 to 14 October. What should this person do?",
+        "zh": "某员工十月十日至十四日全程都在出差。这个人该怎么做？",
+        "zh_TW": "某員工十月十日至十四日全程都在出差。這個人該怎麼做？"
+      },
+      "options": [
+        "十一月の初めに三階へ行きます。",
+        "前の日の夜九時までに食事を済ませます。",
+        "二十日までにその旨を知らせます。",
+        "出張先の近くで健康診断を受けます。"
+      ],
+      "answer": 2,
+      "explanation": {
+        "en": "The sixth line covers exactly this case: those who cannot come during the five days because of a business trip or the like should let the company know by the 20th. The beginning of November is when results are handed out, and the rule about eating applies to those who do attend.",
+        "zh": "第六行正是针对这种情况：因出差等原因无法在这五天内前来的人，需在二十日之前告知。十一月初是发放结果的时间，禁食的规定则适用于按期受检的人。",
+        "zh_TW": "第六行正是針對這種情況：因出差等原因無法在這五天內前來的人，需在二十日之前告知。十一月初是發放結果的時間，禁食的規定則適用於按期受檢的人。"
+      }
+    },
+    {
+      "id": "q:n2-r-062",
+      "type": "info",
+      "items": [
+        "vocab:jm1514830",
+        "vocab:jm1205010",
+        "vocab:jm1333040"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-044",
+      "prompt": {
+        "en": "A primary-school child wants to join the clean-up. What does the notice say?",
+        "zh": "一名小学生想参加清扫活动。通知是怎么规定的？",
+        "zh_TW": "一名小學生想參加清掃活動。通知是怎麼規定的？"
+      },
+      "options": [
+        "申し込みはいらないが、大人と一緒に参加します。",
+        "前の日までに町の窓口へ申し込みます。",
+        "そうじの道具を自分で持って行きます。",
+        "小学生は参加することができません。"
+      ],
+      "answer": 0,
+      "explanation": {
+        "en": "The notice says anyone may take part and no application is needed, and that those of primary-school age and under should come with an adult. The town provides the tools, so nothing need be brought.",
+        "zh": "通知写明任何人都可以参加、无需报名，同时规定小学生及以下的孩子要与成人同行。工具由镇上准备，因此无需自带任何东西。",
+        "zh_TW": "通知寫明任何人都可以參加、無需報名，同時規定小學生及以下的孩子要與成人同行。工具由鎮上準備，因此無需自帶任何東西。"
+      }
+    },
+    {
+      "id": "q:n2-r-063",
+      "type": "info",
+      "items": [
+        "vocab:jm1278130",
+        "vocab:jm1155110",
+        "vocab:jm1176510"
+      ],
+      "kind": "choice",
+      "passage": "p:n2-r-045",
+      "prompt": {
+        "en": "Someone arrives at the station at nine at night on 10 June with a large suitcase. What should this person do?",
+        "zh": "六月十日晚上九点，有人带着大件行李来到车站。这个人该怎么做？",
+        "zh_TW": "六月十日晚上九點，有人帶著大件行李來到車站。這個人該怎麼做？"
+      },
+      "options": [
+        "東口の階段を使います。",
+        "西口を使います。",
+        "六月二十五日まで待ちます。",
+        "駅の窓口で許可をもらいます。"
+      ],
+      "answer": 1,
+      "explanation": {
+        "en": "During the works the east exit can be used only from seven in the morning to eight at night, and after eight the notice directs people to the west exit — which it also recommends for large luggage throughout the period. The 25th concerns an early finish, and no permission is required.",
+        "zh": "施工期间东口仅在早七点至晚八点之间可通行，晚八点以后通知指示改走西口，而携带大件行李者在整个期间也以西口为宜。二十五日是提前完工的情形，也不需要办理许可。",
+        "zh_TW": "施工期間東口僅在早七點至晚八點之間可通行，晚八點以後通知指示改走西口，而攜帶大件行李者在整個期間也以西口為宜。二十五日是提前完工的情形，也不需要辦理許可。"
       }
     }
   ]

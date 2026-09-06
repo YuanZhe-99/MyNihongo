@@ -12,6 +12,47 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.4.11` — 2026-09-05. Three papers at every level, and a settings file that
+  stops losing writes.
+
+  **Every level is now at ×3.** N5 was already there; N4, N3, N2 and N1 joined
+  it. The catalog is **1407 questions and 605 passages** — 201, 255, 306, 321
+  and 324 — so three full mock exams can be sat at any of the five levels
+  before the sampler has to repeat a question, and a section practised on its
+  own has three times as much material behind it. The depth test in
+  `drills_content_test.dart` now reads ×3 for all five, which is the only place
+  that number can be checked: the Learn card's question counts were already
+  promising it.
+
+  Twenty batches went through the content gate. The causes it caught this round
+  are worth recording because they are all the same shape — a construction the
+  sentence analyser cannot take apart, not a word the learner would not know:
+  the `〜なくなる` chain (`動かなくなる`, `戻らなくなる`), `〜すぎて` on an
+  adjective (`遠すぎて`, `多すぎて`), the `んじゃ` contraction and the `って`
+  quotative, and compounds whose halves ship but whose whole does not
+  (`説明書`, `報告書`, `講座`, `総務`). Each was rewritten rather than dropped.
+
+  **Two settings changed at once no longer lose one of them.** Every preference
+  setter read `storage_config.json`, changed one key and wrote the file back.
+  Two of those running together read the same file and wrote two different
+  successors, so whichever finished second erased the other's key — and on
+  Windows the second write renamed its temporary file over one the first still
+  had open, which threw `PathAccessException` instead of losing quietly. Config
+  writes now go through a queue, with the read inside it, so a person toggling
+  two switches gets both. A write waits only for writes started in the same
+  zone, which in the app means all of them; a widget test that fires a setter
+  from a tap and then ends leaves file I/O suspended in a zone nobody drives
+  again, and an unqualified queue waited on it for the life of the process —
+  the first attempt at this hung the whole suite.
+
+  The suite found the bug, not a person: three tests in
+  `settings_two_pane_ui_test.dart` failed together on a loaded machine, and the
+  same race is what a real device would hit on a fast pair of taps. While
+  chasing it, `exam_page_ui_test.dart` turned out to delete its temporary
+  directory while a save was still in flight, which Windows refuses; the
+  cleanup retries now, which is what that flake always was. 1007 tests.
+
+
 - `0.4.10` — 2026-09-05. N1, and the last few things the repo was quiet about.
 
   **N1 ships complete** at the official composition — 108 questions and 53

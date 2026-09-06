@@ -218,6 +218,24 @@ sit at a harder level, or repeat one already taken.
 Everything shipped is model-authored and unreviewed, and every file says so in
 its own `source` field.
 
+**How much ships, per level.** Each level's depth is a multiple of the official
+composition — the number of full mocks that can be sat before the sampler has to
+start repeating itself. A test pins it, because it is a promise the Learn card's
+question counts are already making.
+
+| Level | Full paper | Ships | Depth |
+|---|---|---|---|
+| N5 | 67 | 201 | ×3 |
+| N4 | 85 | 255 | ×3 |
+| N3 | 102 | 306 | ×3 |
+| N2 | 107 | 321 | ×3 |
+| N1 | 108 | 324 | ×3 |
+
+Every level is at ×3, so three full mocks can be sat at any of them without the
+sampler repeating a question. A practice section draws from the whole pool, so the
+same depth is three times as much material for the sections a learner practises
+over and over.
+
 ## What to work on, and how ready this looks
 
 Two things are derived from the recent attempts and shown without being asked
