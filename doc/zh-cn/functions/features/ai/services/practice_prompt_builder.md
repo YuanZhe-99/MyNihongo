@@ -19,12 +19,13 @@
 | `PracticePromptBuilder.new` | 构造函数 | B | 用一组模板构建提示词。 |
 | `templates` | 字段 | B | 解析后的模板。 |
 | `maxOutputTokens` | getter | B | 这些提示词的回答可以有多长。 |
+| `maxQuizQuestions` | getter | B | 一次会话最多可以拿到几道生成的题。 |
 | `forWriting` | 方法 | B | 请求改写学习者写的内容。 |
 | `forGrading` | 方法 | B | 询问自由作答与参考答案是否同义。 |
 | `forWhyWrong` | 方法 | B | 询问所选选项为什么是错的。 |
 | `forExamples` | 方法 | B | 请求用某个词写例句。 |
-| [`forQuizCheck`](#forquizcheck) | 方法 | A | 请模型回答一道生成的题目并对它作出判定。 |
-| `forQuiz` | 方法 | B | 就某个单元请求一道额外的四选一题目。 |
+| [`forQuizCheck`](#forquizcheck) | 方法 | A | 请模型回答一道生成的题目、对它作出判定，并逐项评定选项。 |
+| `forQuiz` | 方法 | B | 就某个单元请求一道额外的四选一题目，并带上应用关于这个语法点知道的一切。 |
 | `forRubric` | 方法 | B | 就清单查出的结果，请求一句「接下来可以试什么」。 |
 | `forParaphrase` | 方法 | B | 请求把一个难句用更简单的日文再说一遍。 |
 | `forContradiction` | 方法 | B | 请求指出文章里排除掉学习者所选项的地方。 |
@@ -34,17 +35,18 @@
 
 ## 文档
 
-### `String? forQuizCheck({required String question, required List<String> options, required Locale locale})` <a id="forquizcheck"></a>
+### `String? forQuizCheck({required GrammarPoint point, required String question, required List<String> options, required Locale locale})` <a id="forquizcheck"></a>
 
 - **种类：** 方法
-- **用途：** 请模型回答一道生成的题目，并判断这道题是否成立。
-- **输入：** 会被展示出来的 `question`、它的四个 `options`，以及 `locale`。
+- **用途：** 请模型回答一道生成的题目、判断这道题是否成立，并逐项评定每个选项。
+- **输入：** 这道题声称在考的 `point`、会被展示出来的 `question`、它的四个 `options`，以及 `locale`。
 - **返回：** `String?` —— 题目为空、选项不是正好四个、或任一选项为空时返回 null。
 - **副作用：** 无。
-- **算法：** 写出题目，再写出标为 A 到 D 的四个选项，要求第一行只给一个字母，第二行只给 `SOUND` 或 `UNSOUND`。
+- **算法：** 先写出语法点和它的意思，再写出题目，然后是标为 A 到 D 的四个选项；要求第一行只给一个字母，第二行只给 `SOUND` 或 `UNSOUND`，其后为 A 到 D 各给一个 `FITS` 或 `NO`。
 - **使用：** `AiQuestionGenerator._survivesReview`，每道候选题一次。
-- **说明：** **提示词里刻意不包含它给出的答案。** 把答案摆在模型面前问它对不对，它会说对；请模型自己把题做一遍，才会产生能够反对的东西，而只有后者才算检查。两个字母由调用方自己比较，只有一致且判定为 `SOUND` 时才保留这道题。
+- **说明：** **提示词里刻意不包含它给出的答案。** 把答案摆在模型面前问它对不对，它会说对；请模型自己把题做一遍，才会产生能够反对的东西，而只有后者才算检查。两个字母由调用方自己比较，只有一致、判定为 `SOUND`、且恰好只有一个选项说得通时，才保留这道题。
 
+  之所以要点明语法点，是因为评判被问的是两个不同的问题：哪个选项表达的是**这个**语法点，以及哪些选项根本上构成正确的句子。「今日は暑い＿＿。」同时给出 ね 和 です 是一道坏题，而只被问自己答案的评判会放它过去，因为它自己的答案确实是对的。
 为 JLPT 功能新增的这五项任务，与上面所有任务共享同一条规则：**提示词里带的是应用已经算好的东西，
 而任务的规则禁止模型再算一遍。** `forRubric` 把确定性清单查出的结果交出去，并禁止重新评分；
 `forWeakness` 把薄弱点报告算出的计数交出去，并禁止推测学习者能不能通过考试——因为备考程度档位是在

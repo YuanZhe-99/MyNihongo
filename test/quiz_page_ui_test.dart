@@ -272,6 +272,100 @@ void main() {
     );
     expect(tester.takeException(), isNull);
   });
+  group('a question says what it tests', () {
+    // The device complaint this group is about: a blank-filling sentence the
+    // model had written, under the line 「这句用了哪个语法点？」, which is a
+    // different question and not the one on screen.
+    late String pointId;
+    late String pattern;
+
+    setUpAll(() async {
+      final catalog = await ContentRepository.load();
+      final point = catalog.grammar.firstWhere(
+        (p) => p.level == JlptLevel.n5 && p.meaning.resolveJoined(
+          const Locale('zh'),
+        ).isNotEmpty,
+      );
+      pointId = point.id;
+      pattern = point.pattern;
+    });
+
+    QuizQuestion question({
+      bool generated = false,
+      bool authored = false,
+    }) => QuizQuestion(
+      itemId: pointId,
+      mode: QuizMode.grammarPattern,
+      kind: AnswerKind.choice,
+      prompt: '今日は暑い＿＿。',
+      options: const ['ね', 'よ', 'な', 'わ'],
+      answerIndex: 0,
+      generated: generated,
+      authored: authored,
+    );
+
+    Future<QuizSession> pump(WidgetTester tester, QuizQuestion q) async {
+      final session = QuizSession(questions: [q]);
+      await pumpAt(
+        tester,
+        412,
+        915,
+        home: Scaffold(body: QuizRunner(session: session, onFinished: () {})),
+      );
+      return session;
+    }
+
+    testWidgets('a generated one names its point and asks for a blank', (
+      tester,
+    ) async {
+      await pump(tester, question(generated: true));
+      expect(find.textContaining('语法点：$pattern'), findsOneWidget);
+      expect(find.text('选出能表达这个语法点、可以填进空格的形式'), findsOneWidget);
+      expect(
+        find.text('这句用了哪个语法点？'),
+        findsNothing,
+        reason: 'the model was asked for a blank to fill, not for a point',
+      );
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets("an authored one is introduced by nothing but itself", (
+      tester,
+    ) async {
+      // A unit file's own question is already worded as a question; every one
+      // of them is filed under `grammarPattern` whatever it asks.
+      await pump(tester, question(authored: true));
+      expect(find.text('这句用了哪个语法点？'), findsNothing);
+      expect(find.textContaining('语法点：'), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('the point is not named above an authored pattern question', (
+      tester,
+    ) async {
+      // Where the point *is* the answer, naming it above would be giving it
+      // away.
+      await pump(tester, question());
+      expect(find.text('这句用了哪个语法点？'), findsOneWidget);
+      expect(find.textContaining('语法点：'), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('answering offers the point to read', (tester) async {
+      await pump(tester, question(generated: true));
+      await tester.tap(find.text('ね'));
+      await tester.pump();
+      await tester.tap(find.widgetWithText(FilledButton, '检查'));
+      await tester.pump();
+      final chip = find.widgetWithText(ActionChip, pattern);
+      expect(chip, findsOneWidget);
+      await tester.tap(chip);
+      await tester.pumpAndSettle();
+      expect(find.byType(BottomSheet), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+  });
+
   group('a generated question can be declined', () {
     QuizQuestion question({required bool generated}) => QuizQuestion(
       itemId: 'grammar:tara',

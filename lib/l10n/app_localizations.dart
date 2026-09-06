@@ -1869,6 +1869,24 @@ abstract class AppLocalizations {
   /// **'Which grammar point does this use?'**
   String get quizPatternPrompt;
 
+  /// No description provided for @quizGeneratedPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Fill the blank with the form that expresses this grammar point'**
+  String get quizGeneratedPrompt;
+
+  /// No description provided for @quizGrammarPointLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Grammar point: {pattern} · {meaning}'**
+  String quizGrammarPointLine(Object pattern, Object meaning);
+
+  /// No description provided for @quizOpenGrammarPoint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open this grammar point'**
+  String get quizOpenGrammarPoint;
+
   /// No description provided for @quizSummaryTitle.
   ///
   /// In en, this message translates to:

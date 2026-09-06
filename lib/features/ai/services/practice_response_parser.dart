@@ -66,23 +66,37 @@ class Paraphrase {
 /// What the model made of a generated question: its own answer, and whether
 /// it thinks the question is sound at all.
 ///
-/// Two facts rather than one, because either alone is weak. "Is this a good
+/// Three facts rather than one, because each alone is weak. "Is this a good
 /// question?" invites agreement; an answer with nothing to compare it to
-/// proves nothing. A question is kept only when the model both re-derives the
-/// generator's answer and says the question stands.
+/// proves nothing; and a judge asked only for its own answer will pass a
+/// question with two right answers, because its own answer is one of them. A
+/// question is kept only when the model re-derives the generator's answer,
+/// says the question stands, and finds exactly one option that fits.
 class QuizVerdict {
   /// Purpose: Hold one judgement of a generated question.
-  /// Inputs: `answerIndex` — the option the judge chose, 0-3; `sound`.
+  /// Inputs: `answerIndex` — the option the judge chose, 0-3; `sound`; `fits`
+  /// — whether each of the four options makes a correct sentence.
   /// Returns: A new `QuizVerdict` instance.
   /// Side effects: None.
   /// Notes: None.
-  const QuizVerdict({required this.answerIndex, required this.sound});
+  const QuizVerdict({
+    required this.answerIndex,
+    required this.sound,
+    required this.fits,
+  });
 
   /// Which option the model itself picked.
   final int answerIndex;
 
   /// Whether the model thinks the question is worth asking.
   final bool sound;
+
+  /// For each of the four options, whether it makes a correct sentence.
+  ///
+  /// Judged on grammar alone, whatever the sentence then means — that is what
+  /// makes it a different question from `answerIndex`, and what catches a
+  /// question two of whose options are simply both right.
+  final List<bool> fits;
 }
 
 class PracticeResponseParser {
@@ -147,23 +161,47 @@ class PracticeResponseParser {
   /// Inputs: The model's `raw` reply.
   /// Returns: `QuizVerdict?` — null when the reply is not one.
   /// Side effects: None.
-  /// Notes: Two lines, a letter and a word, and anything else is refused. The
-  /// caller keeps the question only when the letter matches the one the
-  /// generator proposed **and** the word is `SOUND`, so a refusal here and a
-  /// disagreement there have the same effect: the question is dropped, which
-  /// costs nothing, while a wrong question shown to a learner costs trust.
+  /// Notes: Six lines — a letter, a word, and a `FITS` or `NO` for each of the
+  /// four options — and anything else is refused. The four ratings may arrive
+  /// in any order but every letter must appear exactly once: a reply missing
+  /// one is a reply that did not do what was asked, and guessing the missing
+  /// rating would invent the very fact the rating exists to establish.
+  ///
+  /// The caller keeps the question only when the letter matches the one the
+  /// generator proposed, the word is `SOUND`, and exactly one option fits. A
+  /// refusal here and a disagreement there have the same effect: the question
+  /// is dropped, which costs nothing, while a wrong question shown to a
+  /// learner costs trust.
   static QuizVerdict? quizCheck(String raw) {
     final lines = raw
         .split('\n')
         .map((l) => l.trim())
         .where((l) => l.isNotEmpty)
         .toList();
-    if (lines.length < 2) return null;
+    if (lines.length < 6) return null;
     final letter = lines[0].toUpperCase().replaceAll(RegExp('[^A-D]'), '');
     if (letter.length != 1) return null;
     final word = lines[1].toUpperCase().replaceAll(RegExp('[^A-Z]'), '');
     if (word != 'SOUND' && word != 'UNSOUND') return null;
-    return QuizVerdict(answerIndex: letter.codeUnitAt(0) - 65, sound: word == 'SOUND');
+
+    final fits = <int, bool>{};
+    for (final line in lines.skip(2)) {
+      final match = RegExp(
+        r'^([A-D])\s*[:：]\s*(FITS|NO)\b',
+        caseSensitive: false,
+      ).firstMatch(line);
+      if (match == null) continue;
+      final index = match.group(1)!.toUpperCase().codeUnitAt(0) - 65;
+      if (fits.containsKey(index)) return null;
+      fits[index] = match.group(2)!.toUpperCase() == 'FITS';
+    }
+    if (fits.length != 4) return null;
+
+    return QuizVerdict(
+      answerIndex: letter.codeUnitAt(0) - 65,
+      sound: word == 'SOUND',
+      fits: [for (var i = 0; i < 4; i++) fits[i]!],
+    );
   }
 
   /// Purpose: Read generated example sentences.

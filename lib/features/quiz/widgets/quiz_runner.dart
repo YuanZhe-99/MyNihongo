@@ -13,9 +13,11 @@ import '../../ai/services/ai_assist_service.dart';
 import '../../ai/services/ai_practice_service.dart';
 import '../../ai/services/practice_response_parser.dart';
 import '../../sentence/services/sentence_analyzer.dart';
+import '../../progress/models/study_record.dart';
 import '../services/answer_checker.dart';
 import '../services/quiz_session.dart';
 import 'answer_panes.dart';
+import 'grammar_point_link.dart';
 
 /// Runs one session on screen: the question, the answer controls, and the
 /// feedback between them.
@@ -382,6 +384,11 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
             passage: widget.passageTextOf?.call(question)?.text,
             spoken: widget.passageTextOf?.call(question)?.spoken ?? false,
           ),
+        // The point the question came from, once the answer is on screen and
+        // it is no longer a secret. Right or wrong: a question answered
+        // correctly is the other moment a learner wants to read the rule.
+        if (studyKindOf(question.itemId) == StudyKind.grammar)
+          GrammarPointChip(question.itemId),
       ],
     );
   }
@@ -514,14 +521,19 @@ class _QuestionPaneState extends ConsumerState<_QuestionPane> {
               ),
             ],
           ),
+          // What the model was asked to test, before the question is answered.
+          // A generated question that does not say this is asking the learner
+          // to guess the question as well as the answer.
+          GrammarPointLine(question.itemId),
         ],
         const SizedBox(height: 8),
-        Text(
-          _instruction(l10n),
-          style: theme.textTheme.bodyMedium?.copyWith(
-            color: theme.colorScheme.onSurfaceVariant,
+        if (_instruction(l10n) case final instruction when instruction.isNotEmpty)
+          Text(
+            instruction,
+            style: theme.textTheme.bodyMedium?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
           ),
-        ),
         const SizedBox(height: 12),
         if (showPrompt && question.prompt.isNotEmpty)
           FuriganaText(
@@ -571,6 +583,9 @@ class _QuestionPaneState extends ConsumerState<_QuestionPane> {
   String _instruction(AppLocalizations l10n) {
     final own = widget.question.instruction;
     if (own != null && own.isNotEmpty) return own;
+    // A unit file's own question is already the whole question, so a mode line
+    // above it would introduce a different one.
+    if (widget.question.authored) return '';
     return _modeInstruction(l10n);
   }
 
@@ -587,7 +602,12 @@ class _QuestionPaneState extends ConsumerState<_QuestionPane> {
         QuizMode.grammarOrder => l10n.quizOrderPrompt,
         QuizMode.grammarParticle => l10n.quizParticlePrompt,
         QuizMode.grammarConjugation => l10n.quizConjugationPrompt,
-        QuizMode.grammarPattern => l10n.quizPatternPrompt,
+        // Every generated question is a blank to fill, whatever mode it is
+        // filed under, so the mode's own line would ask for something else.
+        QuizMode.grammarPattern =>
+          widget.question.generated
+              ? l10n.quizGeneratedPrompt
+              : l10n.quizPatternPrompt,
         QuizMode.vocabCloze => l10n.quizClozePrompt,
         QuizMode.grammarSentenceToMeaning => l10n.quizSentenceToMeaningPrompt,
         QuizMode.grammarMeaningToSentence => l10n.quizMeaningToSentencePrompt,

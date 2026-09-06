@@ -108,6 +108,7 @@ class QuestionBank {
       options: authored.options,
       answerIndex: authored.answer,
       explanation: authored.explanation?.resolveJoined(locale),
+      authored: true,
     );
   }
 

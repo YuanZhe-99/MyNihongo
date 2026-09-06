@@ -1027,6 +1027,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get quizPatternPrompt => 'Which grammar point does this use?';
 
   @override
+  String get quizGeneratedPrompt =>
+      'Fill the blank with the form that expresses this grammar point';
+
+  @override
+  String quizGrammarPointLine(Object pattern, Object meaning) {
+    return 'Grammar point: $pattern · $meaning';
+  }
+
+  @override
+  String get quizOpenGrammarPoint => 'Open this grammar point';
+
+  @override
   String get quizSummaryTitle => 'Session finished';
 
   @override

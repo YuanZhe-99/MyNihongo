@@ -11,6 +11,12 @@ Consumers: `why_wrong.dart`, `generated_examples.dart`.
 M4.0c added `quizCheck` and the `QuizVerdict` it returns: a generated question is
 asked back to the model **without** its proposed answer, so the reply is a second
 derivation rather than an approval. `_unwrap` lets an example line survive the
+
+M4.8 added the option ratings to that verdict. The judge is now asked whether
+each of the four options makes a correct sentence, whatever it then means, and
+the caller keeps the question only when exactly one does and it is the answer:
+a judge asked only for its own answer passes a question with two right answers,
+because its own answer is one of them.
 packaging a model puts around it — a code fence, a list marker, or the leading
 and trailing bars of a Markdown table row. That packaging is why generated
 examples returned nothing at all on a Pixel 10 while the model was answering
@@ -26,8 +32,8 @@ perfectly well.
 | `maxNotes` | constant | B | How many notes feedback may carry (3). |
 | [`writing`](#writing) | method | A | Read a rewrite and its notes. |
 | [`grade`](#grade) | method | A | Read a same-or-different verdict. |
-| `QuizVerdict` | class | B | The model's own answer to a generated question, and whether it calls it sound. |
-| `quizCheck` | static method | B | Read a verdict on a generated question. |
+| `QuizVerdict` | class | B | The model's own answer to a generated question, whether it calls it sound, and whether each option fits. |
+| `quizCheck` | static method | B | Read a verdict on a generated question: a letter, a word, and a rating for every option. |
 | `_unwrap` | static method | B | Strip the packaging a model puts around a line. |
 | [`examples`](#examples) | method | A | Read generated example sentences. |
 | `Paraphrase` | class | B | One hard sentence said again in easier Japanese. |

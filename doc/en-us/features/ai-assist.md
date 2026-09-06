@@ -291,7 +291,7 @@ and Settings raising the microphone prompt on open (see
 ## Generated questions
 
 With the switch on, a **unit practice session** asks the model for up to three extra questions
-about the unit's own grammar points. Six things bound what that can cost:
+about the unit's own grammar points. Eight things bound what that can cost:
 
 - The session is built and shown first; generation runs after it, through
   `AiPracticeService.runInBackground`, which yields to any interactive request. **Waiting on a
@@ -301,11 +301,28 @@ about the unit's own grammar points. Six things bound what that can cost:
 - Every reply is checked before it becomes a question: a blank must be present, four distinct
   non-empty options, and an `Answer:` that names one of them. Anything else is dropped in silence.
   See [`ai_question_generator.md`](../functions/features/quiz/services/ai_question_generator.md).
+- **The analyser reads it before a second model call is spent on it.** The sentence with the answer
+  in the blank has to parse with no unknown token — a sentence the app cannot read is one it cannot
+  explain afterwards either — and it has to contain the point being tested, while no distractor may
+  contain it. All three are facts the app already has. A point whose pattern yields no matchable
+  form, which is every one-character particle, is undecidable here and goes forward on the
+  unknown-token test alone. This is what drops 「わたし＿＿が学生です。」 with four nouns in it.
 - **Every question is asked twice.** The first call writes it; the second hands it back *without*
-  its proposed answer and asks the model to work it out and to say whether the question stands at
-  all. It is kept only when the model reaches the same option **and** calls it sound. A model shown
-  an answer and asked to approve it agrees, so the second pass does not see the first pass's answer:
-  two derivations that must match is a check, a rubber stamp is not. Silence drops the question.
+  its proposed answer and asks the model to work it out, to say whether the question stands at all,
+  and to say of **each** option whether putting it in the blank gives a correct sentence, whatever
+  it then means. It is kept only when the model reaches the same option, calls it sound, and finds
+  exactly one option that fits. A model shown an answer and asked to approve it agrees, so the
+  second pass does not see the first pass's answer: two derivations that must match is a check, a
+  rubber stamp is not. Silence drops the question.
+- **The option ratings are a separate question from the answer, and they are the one that catches a
+  question with two right answers.** 「今日は暑い＿＿。」 offering both ね and です passed a judge
+  asked only which option it would pick, because the option it picked was right. Asked whether each
+  one makes a correct sentence, it has to say that two of them do, and two is a dropped question.
+- **A generated question says what it is testing before it is answered**: the grammar point and its
+  meaning, on a line above the sentence. It used to be introduced by its quiz mode's own line,
+  「这句用了哪个语法点？」, which is a different question from the one the model was asked to write
+  — and naming the point is also what lets the four options be forms of one family rather than four
+  unrelated words. After it is answered, right or wrong, a chip opens the point's own page.
 - The question carries the generated label **above it**, before it is read, not after it is
   answered — and next to it, a **Skip this question** button. The learner is being asked to trust a
   sentence nothing human checked; the honest counterpart of saying so is letting them decline it.

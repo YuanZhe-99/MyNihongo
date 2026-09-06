@@ -6,11 +6,10 @@ import '../../ai/services/practice_response_parser.dart';
 import '../../content/models/content_catalog.dart';
 import '../../content/models/grammar_point.dart';
 import '../../content/models/vocab_entry.dart';
+import '../../content/services/content_links.dart';
 import '../../lessons/models/lesson_path.dart';
+import '../../sentence/models/sentence_analysis.dart';
 import '../models/quiz_question.dart';
-
-/// How many generated questions a single session may receive.
-const maxGeneratedQuestions = 3;
 
 /// Asks the on-device model for extra questions about a unit.
 ///
@@ -35,6 +34,7 @@ class AiQuestionGenerator {
     required this.builder,
     required this.locale,
     required this.service,
+    this.analyze,
   });
 
   /// The unit the questions are about.
@@ -52,6 +52,15 @@ class AiQuestionGenerator {
   /// Runs the model.
   final AiPracticeService service;
 
+  /// Reads a sentence the way the rest of the app reads one, when the analyser
+  /// is available.
+  ///
+  /// A function rather than the analyser itself, so that a test can answer for
+  /// three sentences without building a lexicon, and so that a session whose
+  /// analyser failed to load still gets questions — judged by the model alone,
+  /// as they were before this existed.
+  final SentenceAnalysis Function(String sentence)? analyze;
+
   /// Purpose: Generate questions one at a time, as they arrive.
   /// Inputs: `limit` — how many to ask for; `avoid` — prompts the session
   /// already has, so a generated question never repeats one.
@@ -61,25 +70,37 @@ class AiQuestionGenerator {
   /// moment it exists: the session appends it and the learner may reach it
   /// while the next one is still being written.
   ///
-  /// **Every question is asked twice.** The first call writes it; the second
-  /// hands the question back without its proposed answer and asks the model to
-  /// work it out and to say whether the question stands at all. It is kept only
-  /// when the model reaches the same option *and* calls it sound. A model shown
-  /// an answer and asked to approve it agrees, so the second pass deliberately
-  /// does not see the first pass's answer — two derivations that must match is
-  /// a check, and one derivation with a rubber stamp is not.
+  /// **Every question is read by the analyser before any model sees it
+  /// again**, when one is available: the sentence with the answer in the blank
+  /// has to parse and to contain the point being tested, and no distractor may
+  /// contain it. That costs nothing and it drops the nonsense sentence — the
+  /// one whose blank could be filled by any noun — before a model is asked to
+  /// spend a second inference on it.
+  ///
+  /// **Every question is then asked twice.** The first call writes it; the
+  /// second hands the question back without its proposed answer and asks the
+  /// model to work it out, to say whether the question stands at all, and to
+  /// say of *each* option whether it makes a correct sentence. It is kept only
+  /// when the model reaches the same option, calls it sound, and finds exactly
+  /// one option that fits. A model shown an answer and asked to approve it
+  /// agrees, so the second pass deliberately does not see the first pass's
+  /// answer — two derivations that must match is a check, and one derivation
+  /// with a rubber stamp is not. Asking about every option is what catches the
+  /// question with two right answers, which a judge asked only for its own
+  /// answer will always pass.
   ///
   /// Silence drops the question, like every other refusal here. Nothing is lost
   /// but a question nobody asked for, and the alternative is showing a learner
   /// a sentence that no one and nothing has checked.
   Stream<QuizQuestion> generate({
-    int limit = maxGeneratedQuestions,
+    int? limit,
     Set<String> avoid = const {},
   }) async* {
     final seen = {...avoid};
+    final want = limit ?? builder.maxQuizQuestions;
     var made = 0;
     for (final id in unit.grammar) {
-      if (made >= limit) return;
+      if (made >= want) return;
       final point = catalog.grammarById(id);
       if (point == null) continue;
       final prompt = builder.forQuiz(point, words: _words, locale: locale);
@@ -91,7 +112,12 @@ class AiQuestionGenerator {
       if (raw == null) continue;
       final question = parse(raw, point: point);
       if (question == null || !seen.add(question.prompt)) continue;
-      if (!await _survivesReview(question)) continue;
+      if (analyze case final analyze?) {
+        if (!passesParseFilter(question, point: point, analyze: analyze)) {
+          continue;
+        }
+      }
+      if (!await _survivesReview(question, point)) continue;
       made++;
       yield question;
     }
@@ -105,8 +131,9 @@ class AiQuestionGenerator {
   /// background call per candidate — at most three more per session, none of
   /// them on the path the learner is waiting on. That is cheap next to a wrong
   /// question, which the learner cannot tell from a right one.
-  Future<bool> _survivesReview(QuizQuestion question) async {
+  Future<bool> _survivesReview(QuizQuestion question, GrammarPoint point) async {
     final prompt = builder.forQuizCheck(
+      point: point,
       question: question.prompt,
       options: question.options,
       locale: locale,
@@ -140,7 +167,57 @@ class AiQuestionGenerator {
   }) =>
       verdict != null &&
       verdict.sound &&
-      verdict.answerIndex == question.answerIndex;
+      question.answerIndex != null &&
+      verdict.answerIndex == question.answerIndex &&
+      verdict.fits.where((fits) => fits).length == 1 &&
+      verdict.fits[question.answerIndex!];
+
+  /// Purpose: Check a generated question against the analyser before any model
+  /// is asked about it.
+  /// Inputs: The parsed `question`, the `point` it claims to test, and
+  /// `analyze` — the sentence analyser's own entry point.
+  /// Returns: `bool` — whether it is worth a second model call.
+  /// Side effects: None.
+  /// Notes: Three tests, all of them things the app already knows. The
+  /// sentence with the answer in the blank must parse with no unknown token,
+  /// because a sentence the analyser cannot read is one the app cannot explain
+  /// afterwards either. That sentence must match the point, because a question
+  /// filed under 〜ね that does not contain 〜ね is testing something else. And
+  /// no distractor may match the point, because an option that also marks the
+  /// point is a second right answer.
+  ///
+  /// A point with no match forms is undecidable here — [effectiveMatchForms]
+  /// derives forms from the pattern and comes back empty when the pattern is
+  /// not a form at all — so only the unknown-token test applies and the model
+  /// judge does the rest. A distractor that fails to parse is fine: a wrong
+  /// option is allowed to be nonsense, that is what makes it wrong.
+  static bool passesParseFilter(
+    QuizQuestion question, {
+    required GrammarPoint point,
+    required SentenceAnalysis Function(String) analyze,
+  }) {
+    final answerIndex = question.answerIndex;
+    if (answerIndex == null) return false;
+    String filled(int index) =>
+        question.prompt.replaceFirst(_blank, question.options[index]);
+
+    final answer = analyze(filled(answerIndex));
+    if (answer.hasUnknown) return false;
+
+    final matches = effectiveMatchForms(point);
+    if (matches.isEmpty) return true;
+    if (!answer.grammar.any((match) => match.pointId == point.id)) return false;
+
+    for (var i = 0; i < question.options.length; i++) {
+      if (i == answerIndex) continue;
+      final other = analyze(filled(i));
+      if (other.grammar.any((match) => match.pointId == point.id)) return false;
+    }
+    return true;
+  }
+
+  /// The blank a generated question marks its slot with.
+  static final _blank = RegExp('[＿_]+');
 
   /// The unit's words, for grounding the prompt.
   List<VocabEntry> get _words => [

@@ -2,15 +2,15 @@
 
 这是 MyNihongo 仓库中 `lib/` 手写函数解释层文档的顶层索引。每行链接到 `doc/zh-cn/functions/` 下镜像 `lib/` 树的逐源文件页面（`.dart` 换成 `.md`）。
 
-**总计：** 仓库的 `/// Purpose:` 注释数为 **1108**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **1266** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
+**总计：** 仓库的 `/// Purpose:` 注释数为 **1111**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **1274** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
 
 | Tier | 计数 |
 |---|---|
-| Tier A（完整条目：用途/输入/返回/副作用/算法/使用/说明） | 266 |
-| Tier B（仅索引行） | 1000 |
-| **总计** | **1266** |
+| Tier A（完整条目：用途/输入/返回/副作用/算法/使用/说明） | 267 |
+| Tier B（仅索引行） | 1007 |
+| **总计** | **1274** |
 
-这些总计上次是在 `v0.4.11` 把配置写入排进队列（此前它会丢掉设置）时对照源码树测得的。若要改动这些数字，请测量而不要手工调整：
+这些总计上次是在 `v0.4.12` 让生成的题目说出它在考什么时对照源码树测得的。若要改动这些数字，请测量而不要手工调整：
 
 ```bash
 find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' | wc -l
@@ -86,6 +86,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/quiz/views/quiz_modes_page.dart` | [features/quiz/views/quiz_modes_page.md](features/quiz/views/quiz_modes_page.md) | 3 | 1 |
 | `lib/features/quiz/views/quiz_page.dart` | [features/quiz/views/quiz_page.md](features/quiz/views/quiz_page.md) | 16 | 4 |
 | `lib/features/quiz/widgets/answer_panes.dart` | [features/quiz/widgets/answer_panes.md](features/quiz/widgets/answer_panes.md) | 6 | 1 |
+| `lib/features/quiz/widgets/grammar_point_link.dart` | [features/quiz/widgets/grammar_point_link.md](features/quiz/widgets/grammar_point_link.md) | 6 | 0 |
 | `lib/features/quiz/widgets/quiz_runner.dart` | [features/quiz/widgets/quiz_runner.md](features/quiz/widgets/quiz_runner.md) | 11 | 3 |
 | `lib/features/sentence/models/function_word.dart` | [features/sentence/models/function_word.md](features/sentence/models/function_word.md) | 7 | 1 |
 | `lib/features/sentence/models/sentence_analysis.dart` | [features/sentence/models/sentence_analysis.md](features/sentence/models/sentence_analysis.md) | 12 | 2 |
@@ -183,12 +184,12 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/features/reminders/services/desktop_reminder_backend.dart` | 未编写文档 | — | — |
 | `lib/features/reminders/widgets/reminder_settings_tiles.dart` | 未编写文档 | — | — |
 | `lib/features/ai/services/ai_practice_service.dart` | [features/ai/services/ai_practice_service.md](features/ai/services/ai_practice_service.md) | 7 | 2 |
-| `lib/features/ai/services/practice_prompt_builder.dart` | [features/ai/services/practice_prompt_builder.md](features/ai/services/practice_prompt_builder.md) | 16 | 1 |
+| `lib/features/ai/services/practice_prompt_builder.dart` | [features/ai/services/practice_prompt_builder.md](features/ai/services/practice_prompt_builder.md) | 17 | 1 |
 | `lib/features/ai/services/practice_response_parser.dart` | [features/ai/services/practice_response_parser.md](features/ai/services/practice_response_parser.md) | 18 | 3 |
 | `lib/features/ai/widgets/generated_examples.dart` | [features/ai/widgets/generated_examples.md](features/ai/widgets/generated_examples.md) | 8 | 1 |
 | `lib/features/lessons/models/scenario.dart` | [features/lessons/models/scenario.md](features/lessons/models/scenario.md) | 14 | 1 |
 | `lib/features/lessons/views/scenario_page.dart` | [features/lessons/views/scenario_page.md](features/lessons/views/scenario_page.md) | 8 | 1 |
-| `lib/features/quiz/services/ai_question_generator.dart` | [features/quiz/services/ai_question_generator.md](features/quiz/services/ai_question_generator.md) | 9 | 2 |
+| `lib/features/quiz/services/ai_question_generator.dart` | [features/quiz/services/ai_question_generator.md](features/quiz/services/ai_question_generator.md) | 10 | 3 |
 | `lib/features/writing/services/writing_rubric.dart` | [features/writing/services/writing_rubric.md](features/writing/services/writing_rubric.md) | 10 | 3 |
 | `lib/features/writing/views/writing_practice_page.dart` | [features/writing/views/writing_practice_page.md](features/writing/views/writing_practice_page.md) | 20 | 5 |
 

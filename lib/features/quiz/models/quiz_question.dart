@@ -168,6 +168,7 @@ class QuizQuestion {
     this.formLabel,
     this.explanation,
     this.generated = false,
+    this.authored = false,
   });
 
   /// The catalog id this question's answer is recorded against.
@@ -258,6 +259,16 @@ class QuizQuestion {
   /// spacing of a word's reviews must not depend on a question that might be
   /// wrong about the word.
   final bool generated;
+
+  /// Whether the question's own [prompt] is already the whole question.
+  ///
+  /// A unit file writes questions as a person would ask them — 「部屋に猫が
+  /// ＿。」, 「哪一句是礼貌的说法？」 — so the mode's own line above it
+  /// ("Which grammar point does this use?") describes a different question
+  /// from the one on screen. Every authored unit question is filed under
+  /// `QuizMode.grammarPattern` whatever it asks, which is why the mode cannot
+  /// be trusted to introduce it and this flag suppresses the line instead.
+  final bool authored;
 
   /// The correct option's text, for showing after a wrong answer.
   String? get answerText {

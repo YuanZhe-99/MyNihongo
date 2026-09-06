@@ -8,7 +8,9 @@
     "maxVocabInPrompt": 12,
     "maxExamples": 3,
     "maxAnswerChars": 200,
-    "maxQuizQuestions": 3
+    "maxQuizQuestions": 3,
+    "maxGrammarExcerptChars": 300,
+    "maxScenarioTurnsInPrompt": 6
   },
   "labels": {
     "en": {
@@ -31,7 +33,15 @@
       "findings": "What the checklist found",
       "passage": "The passage",
       "script": "What was said",
-      "weakest": "What the learner keeps getting wrong"
+      "weakest": "What the learner keeps getting wrong",
+      "grammarPoint": "Grammar point",
+      "patternMeaning": "What the pattern means",
+      "structure": "How it attaches",
+      "forms": "Forms that mark it in a sentence",
+      "examples": "The app's own examples",
+      "speaker": "You are",
+      "situation": "The situation",
+      "patterns": "Grammar this unit teaches"
     },
     "zh": {
       "sentence": "句子",
@@ -53,7 +63,15 @@
       "passage": "文章",
       "script": "对话原文",
       "weakest": "学习者反复做错的地方",
-      "topic": "本单元教的内容"
+      "topic": "本单元教的内容",
+      "grammarPoint": "语法点",
+      "patternMeaning": "语法点的意思",
+      "structure": "接续",
+      "forms": "句中标记这个语法点的形式",
+      "examples": "应用自带的例句",
+      "speaker": "你扮演",
+      "situation": "情景",
+      "patterns": "本单元教的语法"
     },
     "zh_TW": {
       "sentence": "句子",
@@ -75,7 +93,15 @@
       "findings": "清單檢查的結果",
       "passage": "文章",
       "script": "對話原文",
-      "weakest": "學習者反覆做錯的地方"
+      "weakest": "學習者反覆做錯的地方",
+      "grammarPoint": "文法點",
+      "patternMeaning": "文法點的意思",
+      "structure": "接續",
+      "forms": "句中標記這個文法點的形式",
+      "examples": "應用程式自帶的例句",
+      "speaker": "你扮演",
+      "situation": "情境",
+      "patterns": "本單元教的文法"
     }
   },
   "tasks": {
@@ -212,28 +238,31 @@
     },
     "quizCheck": {
       "en": {
-        "instruction": "Answer the multiple-choice question below yourself, then judge whether it is a sound question at all.",
+        "instruction": "Answer the multiple-choice question below yourself, then judge whether it is a sound question at all, then say of every option whether it fits.",
         "rules": [
-          "First line: only the letter A, B, C or D — the one option that correctly fills the blank.",
-          "Second line: only SOUND or UNSOUND. UNSOUND if more than one option fits, if none does, if the sentence is not natural Japanese, or if the question tests nothing.",
+          "First line: only the letter A, B, C or D — the option that best expresses the grammar point named above.",
+          "Second line: only SOUND or UNSOUND. UNSOUND if the sentence is not natural Japanese, if the blank does not test that grammar point, or if the question tests nothing.",
+          "Then four lines 'A: ', 'B: ', 'C: ' and 'D: ', each followed by only FITS or NO — FITS if putting that option in the blank gives a natural, correct Japanese sentence, whatever it means. Judge each option on its own, not against the others.",
           "Judge the question on its own terms. Do not be agreeable.",
           "Nothing else in the reply."
         ]
       },
       "zh": {
-        "instruction": "请你自己回答下面这道四选一的题，然后判断它作为一道题是否成立。",
+        "instruction": "请你自己回答下面这道四选一的题，然后判断它作为一道题是否成立，再逐个说明每个选项是否说得通。",
         "rules": [
-          "第一行：只写 A、B、C 或 D 中的一个字母——能正确填入空格的那个选项。",
-          "第二行：只写 SOUND 或 UNSOUND。若不止一个选项说得通、没有一个说得通、句子不是自然的日语，或这道题什么都没考，就写 UNSOUND。",
+          "第一行：只写 A、B、C 或 D 中的一个字母——最能表达上面所说语法点的那个选项。",
+          "第二行：只写 SOUND 或 UNSOUND。句子不是自然的日语、空格考的不是上面那个语法点，或这道题什么都没考时，写 UNSOUND。",
+          "然后四行分别以「A: 」「B: 」「C: 」「D: 」开头，后面只写 FITS 或 NO：把该选项填进空格后是自然、正确的日语句子就写 FITS，不论意思如何。每个选项单独判断，不要互相比较。",
           "就题论题地判断，不要一味附和。",
           "回复里不要写别的东西。"
         ]
       },
       "zh_TW": {
-        "instruction": "請你自己回答下面這道四選一的題，然後判斷它作為一道題是否成立。",
+        "instruction": "請你自己回答下面這道四選一的題，然後判斷它作為一道題是否成立，再逐個說明每個選項是否說得通。",
         "rules": [
-          "第一行：只寫 A、B、C 或 D 其中一個字母——能正確填入空格的那個選項。",
-          "第二行：只寫 SOUND 或 UNSOUND。若不止一個選項說得通、沒有一個說得通、句子不是自然的日語，或這道題什麼都沒考，就寫 UNSOUND。",
+          "第一行：只寫 A、B、C 或 D 其中一個字母——最能表達上面所說文法點的那個選項。",
+          "第二行：只寫 SOUND 或 UNSOUND。句子不是自然的日語、空格考的不是上面那個文法點，或這道題什麼都沒考時，寫 UNSOUND。",
+          "然後四行分別以「A: 」「B: 」「C: 」「D: 」開頭，後面只寫 FITS 或 NO：把該選項填進空格後是自然、正確的日語句子就寫 FITS，不論意思如何。每個選項單獨判斷，不要互相比較。",
           "就題論題地判斷，不要一味附和。",
           "回覆裡不要寫別的東西。"
         ]
@@ -241,33 +270,36 @@
     },
     "quiz": {
       "en": {
-        "instruction": "Write one multiple-choice question that tests the grammar point below, for a learner at this level.",
+        "instruction": "Write one fill-in-the-blank multiple-choice question that tests the grammar point below, for a learner at this level. The four options must all be forms that could sit in that slot — particles, endings or forms of the same family — so the question is decided by the grammar point and not by vocabulary.",
         "rules": [
-          "A line beginning 'Q: ' holding the Japanese sentence with the tested part replaced by ＿＿.",
-          "Then four lines beginning 'A: ', 'B: ', 'C: ' and 'D: ', one candidate each, all four different.",
+          "A line beginning 'Q: ' holding a natural Japanese sentence with exactly the tested form replaced by ＿＿. The blank covers that form and nothing else.",
+          "Then four lines beginning 'A: ', 'B: ', 'C: ' and 'D: ', one candidate each, all four different, all four the same kind of thing — four particles, or four forms of the same word.",
+          "Exactly one option is correct given the grammar point above. No other option may produce a natural sentence with the same meaning; if two of them both fit, change the sentence until only one does.",
           "Then a line beginning 'Answer: ' holding only A, B, C or D.",
-          "Then a line beginning 'Why: ' with one sentence in English.",
-          "Use only words at or below this level. Nothing else in the reply."
+          "Then a line beginning 'Why: ' with one sentence in English naming the grammar point.",
+          "Use only words at or below this level, preferring the unit's words listed above. Nothing else in the reply."
         ]
       },
       "zh": {
-        "instruction": "请就下面这个语法点，为这个级别的学习者出一道四选一的题。",
+        "instruction": "请就下面这个语法点，为这个级别的学习者出一道四选一的填空题。四个选项必须都是能放进那个空格的形式——同一类的助词、词尾或活用形——让题目由语法点决定，而不是由词汇决定。",
         "rules": [
-          "第一行以「Q: 」开头，写日文句子，被考的部分用 ＿＿ 代替。",
-          "接着四行分别以「A: 」「B: 」「C: 」「D: 」开头，每行一个选项，四个各不相同。",
+          "第一行以「Q: 」开头，写一个自然的日文句子，只把被考的那个形式换成 ＿＿。空格只覆盖这个形式，不多不少。",
+          "接着四行分别以「A: 」「B: 」「C: 」「D: 」开头，每行一个选项，四个各不相同，且是同一类东西——四个助词，或同一个词的四个形式。",
+          "按上面的语法点，正确的选项只能有一个。其他选项都不能构成意思相同的自然句子；如果有两个都说得通，就改句子，直到只剩一个。",
           "再写一行以「Answer: 」开头，只写 A、B、C 或 D。",
-          "最后一行以「Why: 」开头，用一句中文说明。",
-          "只用不超过这个级别的词。回复里不要写别的东西。"
+          "最后一行以「Why: 」开头，用一句中文说明，并点出这个语法点。",
+          "只用不超过这个级别的词，优先用上面列出的本单元的词。回复里不要写别的东西。"
         ]
       },
       "zh_TW": {
-        "instruction": "請就下面這個文法點，為這個程度的學習者出一道四選一的題。",
+        "instruction": "請就下面這個文法點，為這個程度的學習者出一道四選一的填空題。四個選項必須都是能放進那個空格的形式——同一類的助詞、詞尾或活用形——讓題目由文法點決定，而不是由單字決定。",
         "rules": [
-          "第一行以「Q: 」開頭，寫日文句子，被考的部分用 ＿＿ 代替。",
-          "接著四行分別以「A: 」「B: 」「C: 」「D: 」開頭，每行一個選項，四個各不相同。",
+          "第一行以「Q: 」開頭，寫一個自然的日文句子，只把被考的那個形式換成 ＿＿。空格只覆蓋這個形式，不多不少。",
+          "接著四行分別以「A: 」「B: 」「C: 」「D: 」開頭，每行一個選項，四個各不相同，且是同一類東西——四個助詞，或同一個詞的四個形式。",
+          "按上面的文法點，正確的選項只能有一個。其他選項都不能構成意思相同的自然句子；如果有兩個都說得通，就改句子，直到只剩一個。",
           "再寫一行以「Answer: 」開頭，只寫 A、B、C 或 D。",
-          "最後一行以「Why: 」開頭，用一句中文說明。",
-          "只用不超過這個程度的詞。回覆裡不要寫別的東西。"
+          "最後一行以「Why: 」開頭，用一句中文說明，並點出這個文法點。",
+          "只用不超過這個程度的單字，優先用上面列出的本單元的單字。回覆裡不要寫別的東西。"
         ]
       }
     },

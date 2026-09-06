@@ -11,6 +11,7 @@ import 'package:my_nihongo/features/ai/services/practice_response_parser.dart';
 import 'package:my_nihongo/features/ai/services/prompt_builder.dart';
 import 'package:my_nihongo/features/content/models/localized_strings.dart';
 import 'package:my_nihongo/features/content/models/content_catalog.dart';
+import 'package:my_nihongo/features/content/models/jlpt_level.dart';
 import 'package:my_nihongo/features/content/services/content_repository.dart';
 
 /// Purpose: Test the practice prompts, the replies they are given, and the
@@ -443,6 +444,12 @@ void main() {
         'whyWrong',
         'examples',
         'quiz',
+        'quizCheck',
+        'rubric',
+        'paraphrase',
+        'contradiction',
+        'listeningReview',
+        'weakness',
       ]) {
         for (final language in const ['en', 'zh', 'zh_TW']) {
           final template = templates.tasks[task]?[language];
@@ -480,6 +487,15 @@ void main() {
         'word',
         'meaning',
         'level',
+        'findings',
+        'passage',
+        'script',
+        'weakest',
+        'grammarPoint',
+        'patternMeaning',
+        'structure',
+        'forms',
+        'examples',
       ]) {
         for (final language in const ['en', 'zh', 'zh_TW']) {
           expect(
@@ -502,6 +518,96 @@ void main() {
         isNot(contains('The model answer')),
         reason: 'a word gloss is not a model answer to anything',
       );
+    });
+
+    test('a quiz prompt calls a grammar point a grammar point', () {
+      // The same fault the example prompt had: `topic` and `expected` are real
+      // keys, so nothing fell back and nothing failed, while the prompt
+      // announced a grammar point as the unit's syllabus and its meaning as an
+      // answer to something.
+      final builder = PracticePromptBuilder(templates);
+      final point = catalog.grammar.firstWhere(
+        (p) => p.examples.isNotEmpty && p.matchForms.isNotEmpty,
+      );
+      final prompt = builder.forQuiz(point, locale: en)!;
+      expect(prompt, contains('Grammar point: ${point.pattern}'));
+      expect(prompt, contains('What the pattern means: '));
+      expect(prompt, contains('Forms that mark it in a sentence: '));
+      expect(prompt, contains("The app's own examples:"));
+      expect(prompt, contains(point.examples.first.ja));
+      expect(prompt, isNot(contains('What this unit teaches')));
+      expect(
+        prompt,
+        isNot(contains('The model answer')),
+        reason: "a point's meaning is not a model answer to anything",
+      );
+    });
+
+    test('a quiz prompt stays inside the character cap at N1', () {
+      // The grounding grew in v0.4.12 — an explanation excerpt and three
+      // examples — and `_build` refuses a prompt over `maxPromptChars` whole
+      // rather than truncating it. A refusal here would be a level that
+      // silently stopped generating questions.
+      final builder = PracticePromptBuilder(templates);
+      final words = catalog.vocab.take(12).toList();
+      for (final point in catalog.grammar.where(
+        (p) => p.level == JlptLevel.n1,
+      )) {
+        for (final locale in const [
+          Locale('en'),
+          Locale('zh'),
+          Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'),
+        ]) {
+          expect(
+            builder.forQuiz(point, words: words, locale: locale),
+            isNotNull,
+            reason: '${point.id} builds no prompt in $locale',
+          );
+        }
+      }
+    });
+
+    test('a quiz-check prompt carries the point and never the answer', () {
+      final builder = PracticePromptBuilder(templates);
+      final point = catalog.grammar.first;
+      final prompt = builder.forQuizCheck(
+        point: point,
+        question: '今日は暑い＿＿。',
+        options: const ['ね', 'です', 'います', 'わかりました'],
+        locale: en,
+      )!;
+      expect(prompt, contains('Grammar point: ${point.pattern}'));
+      expect(prompt, contains('The question: 今日は暑い＿＿。'));
+      expect(prompt, contains('A: ね'));
+      expect(
+        prompt.split('\n').where((l) => l.startsWith('Answer:')),
+        isEmpty,
+        reason: 'a judge shown the answer agrees with it',
+      );
+    });
+  });
+
+  group('a verdict on a generated question', () {
+    QuizVerdict? parse(String raw) => PracticeResponseParser.quizCheck(raw);
+
+    test('the letter, the word and four ratings are read', () {
+      final verdict = parse('B\nSOUND\nA: NO\nB: FITS\nC: NO\nD: NO')!;
+      expect(verdict.answerIndex, 1);
+      expect(verdict.sound, isTrue);
+      expect(verdict.fits, [false, true, false, false]);
+    });
+
+    test('a full-width colon and a lower-case rating are read', () {
+      final verdict = parse('A\nUNSOUND\nA：fits\nB: no\nC: NO\nD: NO')!;
+      expect(verdict.sound, isFalse);
+      expect(verdict.fits, [true, false, false, false]);
+    });
+
+    test('the two-line reply the old task asked for is now a refusal', () {
+      // Refusing it is the point: a reply without the ratings is a reply from
+      // a model that did not answer the question this task now asks, and the
+      // missing ratings are exactly the fact the check exists to establish.
+      expect(parse('A\nSOUND'), isNull);
     });
   });
 

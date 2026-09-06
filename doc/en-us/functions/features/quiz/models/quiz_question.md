@@ -89,3 +89,9 @@ so the page joins it back.
 with the same label every other generated thing carries, and **its answer never reaches the
 scheduler**: the spacing of a word's reviews must not depend on a question that might be wrong about
 the word.
+
+`authored` says the question's own `prompt` is already the whole question. A unit file writes its
+questions the way a person asks them — 「部屋に猫が＿。」, 「哪一句是礼貌的说法？」 — so the mode's
+own line above it would introduce a different question. Every authored unit question is filed under
+`QuizMode.grammarPattern` whatever it asks, which is why the mode cannot be trusted to introduce it
+and this flag suppresses the line instead.

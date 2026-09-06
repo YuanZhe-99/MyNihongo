@@ -59,12 +59,16 @@ block needs that a practice quiz does not.
 - **Side effects:** None.
 - **Algorithm:** An icon and a word in the primary or error colour, plus the expected answer when the
   learner was wrong, the model's comment where there was one, and `WhyWrong` about the option they
-  picked.
+  picked, then a `GrammarPointChip` for any question filed under a `grammar:` id.
 - **Usage:** Between the answer controls and the Continue button, and only when `showFeedback` is on.
 - **Notes:** The right answer is always shown after a wrong one. An item is re-queued within the
   session, and one re-queued without being told the answer is guessed at again rather than learnt.
   Where `showFeedback` is off there is nothing to read between questions, so `_advanceIfUnmarked`
   moves straight on rather than spending the learner's clock on a Continue button.
+
+  The chip is the quiz's first link back to the catalog it draws from. It is shown right or wrong,
+  because a question answered correctly is the other moment a learner wants to read the rule, and by
+  then the point is on screen anyway.
 
 ### `String _instruction(AppLocalizations l10n)` <a id="instruction"></a>
 
@@ -73,8 +77,10 @@ block needs that a practice quiz does not.
 - **Inputs:** `l10n`.
 - **Returns:** `String`.
 - **Side effects:** None.
-- **Algorithm:** Return the question's own `instruction` where it has a non-empty one; otherwise
-  delegate to `_modeInstruction`, which switches on the mode.
+- **Algorithm:** Return the question's own `instruction` where it has a non-empty one; then the
+  empty string when the question is `authored`, so nothing is drawn above it; otherwise delegate to
+  `_modeInstruction`, which switches on the mode and gives a generated question the blank-filling
+  line rather than `grammarPattern`'s own.
 - **Usage:** The grey line above the prompt in `_QuestionPane`.
 - **Notes:** Every mode says it in words rather than relying on the shape of the question, because a
   conjugation blank and a particle blank look identical. A question that brought its own instruction
@@ -83,6 +89,11 @@ block needs that a practice quiz does not.
   same span marked. Splitting the mode switch out into `_modeInstruction` is what keeps the two rules
   from being tangled: one answers "what did this question ask for", the other "what does this mode
   ask for", and only the second has a default.
+
+  A unit's own question and a generated one are both filed under `QuizMode.grammarPattern`, so the
+  mode introduced neither correctly: 「这句用了哪个语法点？」 sat above a blank the model had written.
+  The first now shows no line at all and the second shows a blank-filling one, with the point it was
+  written to test named above it by `GrammarPointLine`.
 
 `passageTextOf` is the same idea as `leadingBuilder` at one remove: the page that drew the paper has
 the passages, and the runner does not, so it hands over a callback rather than a map. What comes back

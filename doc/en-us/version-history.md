@@ -12,6 +12,54 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.4.12` — 2026-09-06. A generated question says what it tests, and the
+  judge has to rate every option.
+
+  **Two complaints from a Pixel 10, and one cause behind both.** A generated
+  question arrived under the line 「这句用了哪个语法点？」 over the sentence
+  わたし＿＿が学生です。 with 私, 友達, 先生 and 日本語 as the options — a
+  question about a grammar point, asked as if it were about vocabulary, and a
+  blank any of the four would fill. The instruction was wrong because every
+  generated question is filed under `QuizMode.grammarPattern` whatever it
+  actually asks, and that mode's own line describes a different question. The
+  options were wrong because the prompt never told the model what it was
+  writing about: the pattern went in under the label "What this unit teaches"
+  and the meaning under "The model answer" — real keys, so nothing fell back
+  and nothing failed loudly, exactly the fault `forExamples` carried in
+  `0.4.3`.
+
+  **A generated question now states its grammar point and meaning above the
+  sentence, before it is answered**, and asks for a form to fill the blank. The
+  prompt carries what the app knows: the pattern, how it attaches, the meaning,
+  the forms that mark it, the catalog's own note and up to three of its own
+  examples — and it asks for four options of one family, so the question is
+  decided by grammar rather than by vocabulary. After any grammar question is
+  answered, right or wrong, a chip opens the point's own page; the quiz had
+  never linked back to the catalog it draws from. An authored unit question now
+  shows **no** mode line at all, because a unit file already writes its
+  questions the way a person asks them.
+
+  **The second complaint was 「今日は暑い＿＿。」 with ね, です, います and
+  わかりました, answered ね — and です fits too.** The judge introduced in
+  `0.4.3` passed it, and would pass it again: it was asked only which option it
+  would pick, and the option it picked was right. It is now asked, separately,
+  whether *each* option makes a correct sentence whatever it then means, and
+  the question is kept only when exactly one does and that one is the answer.
+  Two fits is a dropped question.
+
+  **Before either model call is spent twice, the analyser reads the sentence.**
+  The answer in the blank has to parse with no unknown token and has to carry
+  the point; no distractor may carry it. All three are facts the app already
+  had, and they cost nothing — this is what drops わたし＿＿が学生です。 before
+  a second inference is spent on it. A point whose pattern yields no matchable
+  form, which is every one-character particle including 〜ね itself, is
+  undecidable here and goes to the model as before.
+
+  Also: the asset's `maxQuizQuestions` is read at last, rather than sitting
+  beside a Dart constant that said the same thing and could have stopped
+  saying it; and `installer.iss` had two version fields still reading `0.4.7`
+  while `AppVersion` said `0.4.11`, which is fixed here. 1026 tests.
+
 - `0.4.11` — 2026-09-05. Three papers at every level, and a settings file that
   stops losing writes.
 

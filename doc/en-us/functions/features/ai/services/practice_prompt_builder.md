@@ -31,12 +31,13 @@ every label a builder indexes is defined.
 | `PracticePromptBuilder.new` | constructor | B | Build prompts from a set of templates. |
 | `templates` | field | B | The parsed templates. |
 | `maxOutputTokens` | getter | B | How long an answer to any of these prompts may be. |
+| `maxQuizQuestions` | getter | B | How many generated questions one session may be offered. |
 | `forWriting` | method | B | Ask for a rewrite of what the learner wrote. |
 | `forGrading` | method | B | Ask whether a free answer means the same as the model one. |
 | `forWhyWrong` | method | B | Ask why the chosen option is wrong. |
 | `forExamples` | method | B | Ask for example sentences using one word. |
-| [`forQuizCheck`](#forquizcheck) | method | A | Ask the model to answer a generated question and judge it. |
-| `forQuiz` | method | B | Ask for one extra multiple-choice question about a unit. |
+| [`forQuizCheck`](#forquizcheck) | method | A | Ask the model to answer a generated question, judge it, and rate every option. |
+| `forQuiz` | method | B | Ask for one extra multiple-choice question about a unit, grounded in everything the app knows about the point. |
 | `forRubric` | method | B | Ask for a note on what to try next, given what the checklist found. |
 | `forParaphrase` | method | B | Ask for one hard sentence said again in easier Japanese. |
 | `forContradiction` | method | B | Ask which part of a passage rules the learner's choice out. |
@@ -46,22 +47,29 @@ every label a builder indexes is defined.
 
 ## Documentation
 
-### `String? forQuizCheck({required String question, required List<String> options, required Locale locale})` <a id="forquizcheck"></a>
+### `String? forQuizCheck({required GrammarPoint point, required String question, required List<String> options, required Locale locale})` <a id="forquizcheck"></a>
 
 - **Kind:** method
-- **Purpose:** Ask the model to answer a generated question and to judge whether it stands.
-- **Inputs:** The `question` as it would be shown, its four `options`, and the `locale`.
+- **Purpose:** Ask the model to answer a generated question, judge whether it stands, and rate every
+  option.
+- **Inputs:** The grammar `point` the question claims to test, the `question` as it would be shown,
+  its four `options`, and the `locale`.
 - **Returns:** `String?` — null when the question is empty, when there are not exactly four options,
   or when any option is blank.
 - **Side effects:** None.
-- **Algorithm:** Writes the question, then the four options labelled A to D, and asks for a letter on
-  the first line and `SOUND` or `UNSOUND` on the second.
+- **Algorithm:** Writes the point and its meaning, then the question, then the four options labelled
+  A to D, and asks for a letter on the first line, `SOUND` or `UNSOUND` on the second, and a `FITS`
+  or `NO` for each of A to D after that.
 - **Usage:** `AiQuestionGenerator._survivesReview`, once per candidate question.
 - **Notes:** **The proposed answer is deliberately not in the prompt.** A model shown an answer and
   asked whether it is right agrees; a model asked to work the question out produces something that
   can disagree, and only the second is a check. The caller compares the two letters itself and keeps
-  the question only when they match and the verdict is `SOUND`.
+  the question only when they match, the verdict is `SOUND`, and exactly one option fits.
 
+  The point is named because the judge is asked two different things: which option expresses *this*
+  point, and which options make a correct sentence at all. 「今日は暑い＿＿。」 offering both ね and
+  です is a bad question that a judge asked only for its own answer passes, because its own answer is
+  right.
 The five tasks added for the JLPT features share one rule with everything above them: **the prompt
 carries what the app already computed, and the task's rules forbid the model from computing it
 again.** `forRubric` hands over the deterministic checklist's findings and forbids re-scoring;

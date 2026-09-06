@@ -15,7 +15,7 @@ Consumers: `quiz_page.dart`.
 | `QuestionBank` | class | B | A unit's questions. |
 | `QuestionBank.isEmpty` | getter | B | Whether the unit produced nothing. |
 | [`QuestionBank.build`](#build) | method | A | Build every question a unit can ask. |
-| `QuestionBank._authored` | method | B | Turn a hand-written question into a quiz question. |
+| `QuestionBank._authored` | method | B | Turn a hand-written question into a quiz question, marked `authored` so the runner does not introduce it. |
 | [`QuestionBank.draw`](#draw) | method | A | Draw a session's worth from the pool. |
 
 ## Documentation

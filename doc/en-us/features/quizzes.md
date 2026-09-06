@@ -137,6 +137,23 @@ wrong question must not be allowed to move a real review interval — see
 [`learning-progress.md`](learning-progress.md). It is also labelled above the
 prompt, before it is read.
 
+### What introduces a question
+
+The runner writes one line above the prompt, and it comes from three places in
+order: the question's own `instruction` when it has one, which is how a drill
+question carries its 大問's wording; nothing at all when the question is
+`authored`, because a unit file writes its questions as a person would ask them
+and a line above 「哪一句是礼貌的说法？」 would introduce a different question;
+and otherwise the quiz mode's own line.
+
+Every authored unit question and every generated one is filed under
+`QuizMode.grammarPattern` whatever it actually asks, so the mode cannot be
+trusted to introduce either. A generated question is a blank to fill, so it gets
+that line and, above it, the grammar point it was written to test with its
+meaning — the premise of the question rather than its answer. On an authored
+pattern question the point **is** the answer, so it is never named beforehand.
+After any grammar question is answered, a chip opens the point's own page.
+
 ### A question with an id of its own
 
 Everything above scores by **item**, which is right when the app invented the

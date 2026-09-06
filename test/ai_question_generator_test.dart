@@ -2,9 +2,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:my_nihongo/features/content/models/grammar_point.dart';
 import 'package:my_nihongo/features/content/models/jlpt_level.dart';
 import 'package:my_nihongo/features/content/models/localized_strings.dart';
+import 'package:my_nihongo/features/content/services/content_links.dart';
 import 'package:my_nihongo/features/ai/services/practice_response_parser.dart';
 import 'package:my_nihongo/features/quiz/models/quiz_question.dart';
 import 'package:my_nihongo/features/quiz/services/ai_question_generator.dart';
+import 'package:my_nihongo/features/sentence/models/sentence_analysis.dart';
+import 'package:my_nihongo/features/sentence/models/token.dart';
 
 /// Purpose: Test what the app will and will not accept as a generated question.
 /// Inputs: None.
@@ -122,16 +125,40 @@ Answer：B
       question: question,
     );
 
-    test('agreement on both counts keeps the question', () {
-      expect(accepts('A\nSOUND'), isTrue);
+    const onlyA = 'A: FITS\nB: NO\nC: NO\nD: NO';
+
+    test('agreement on every count keeps the question', () {
+      expect(accepts('A\nSOUND\n$onlyA'), isTrue);
     });
 
     test('a different answer drops it, however confident the verdict', () {
-      expect(accepts('B\nSOUND'), isFalse);
+      expect(accepts('B\nSOUND\n$onlyA'), isFalse);
     });
 
     test('a matching answer does not rescue an unsound question', () {
-      expect(accepts('A\nUNSOUND'), isFalse);
+      expect(accepts('A\nUNSOUND\n$onlyA'), isFalse);
+    });
+
+    test('a second option that also fits drops the question', () {
+      // 「今日は暑い＿＿。」 with both ね and です in the options, from the
+      // device. The judge's own answer was right and the question was still
+      // unusable, which is exactly what asking only for that answer cannot
+      // see.
+      expect(
+        accepts('A\nSOUND\nA: FITS\nB: FITS\nC: NO\nD: NO'),
+        isFalse,
+      );
+    });
+
+    test('the one option that fits has to be the answer', () {
+      expect(
+        accepts('A\nSOUND\nA: NO\nB: FITS\nC: NO\nD: NO'),
+        isFalse,
+      );
+    });
+
+    test('no option fitting drops it too', () {
+      expect(accepts('A\nSOUND\nA: NO\nB: NO\nC: NO\nD: NO'), isFalse);
     });
 
     test('a verdict that cannot be read is a no', () {
@@ -140,16 +167,140 @@ Answer：B
         'Looks fine to me.',
         'A',
         'A\nmaybe',
-        'E\nSOUND',
+        'A\nSOUND',
+        'E\nSOUND\nA: FITS\nB: NO\nC: NO\nD: NO',
+        // A rating short of four is a reply that did not do what was asked,
+        // and the missing one cannot be guessed without inventing the fact it
+        // exists to establish.
+        'A\nSOUND\nA: FITS\nB: NO\nC: NO',
+        'A\nSOUND\nA: FITS\nA: NO\nC: NO\nD: NO',
+        'A\nSOUND\nA: maybe\nB: NO\nC: NO\nD: NO',
       ]) {
         expect(accepts(raw), isFalse, reason: 'accepted "$raw"');
       }
     });
 
+    test('the ratings are read in whatever order they arrive', () {
+      expect(accepts('A\nSOUND\nD: NO\nB: NO\nA: FITS\nC: NO'), isTrue);
+    });
+
     test('the letter and the word survive ordinary decoration', () {
       // Refusing over a full stop would throw away a sound question, which is
       // the one cost this check is not allowed to have.
-      expect(accepts('A.\nSOUND.'), isTrue);
+      expect(accepts('A.\nSOUND.\nA：FITS\nB: no\nC: NO\nD: NO'), isTrue);
+    });
+  });
+
+  group('the parse filter', () {
+    // The analyser reads the sentence before a second model call is spent on
+    // it. Everything it checks is something the app already knows, and the
+    // sentence it rejects is the one from the device: a blank any noun could
+    // fill, under a grammar point that is nowhere in it.
+    final question = AiQuestionGenerator.parse(
+      'Q: 雨が降＿＿行きません。\n'
+      'A: ったら\nB: ったり\nC: っては\nD: ってから\n'
+      'Answer: A\nWhy: A conditional.',
+      point: point,
+    )!;
+
+    SentenceAnalysis analysisOf(
+      String input, {
+      bool unknown = false,
+      bool matches = false,
+    }) => SentenceAnalysis(
+      input: input,
+      normalized: input,
+      tokens: [
+        Token(
+          surface: input,
+          lemma: input,
+          reading: input,
+          category: unknown ? TokenCategory.unknown : TokenCategory.noun,
+          start: 0,
+          end: input.length,
+        ),
+      ],
+      chunks: const [],
+      grammar: matches
+          ? [GrammarMatch(pointId: point.id, first: 0, last: 0)]
+          : const [],
+      issues: const [],
+    );
+
+    bool passes(SentenceAnalysis Function(String) analyze) =>
+        AiQuestionGenerator.passesParseFilter(
+          question,
+          point: point,
+          analyze: analyze,
+        );
+
+    test('the answer sentence must parse and carry the point', () {
+      expect(
+        passes(
+          (s) => analysisOf(s, matches: s.contains('降ったら')),
+        ),
+        isTrue,
+      );
+    });
+
+    test('a sentence the analyser cannot read is dropped', () {
+      // Not because the model is wrong, but because the app could not explain
+      // that sentence afterwards either.
+      expect(
+        passes(
+          (s) => analysisOf(
+            s,
+            unknown: s.contains('降ったら'),
+            matches: s.contains('降ったら'),
+          ),
+        ),
+        isFalse,
+      );
+    });
+
+    test('an answer that does not use the point is dropped', () {
+      expect(passes(analysisOf), isFalse);
+    });
+
+    test('a distractor that also carries the point is a second answer', () {
+      expect(
+        passes(
+          (s) => analysisOf(
+            s,
+            matches: s.contains('降ったら') || s.contains('降ったり'),
+          ),
+        ),
+        isFalse,
+      );
+    });
+
+    test('a point with no matchable form leaves the judging to the model', () {
+      // A one-character particle carries no derived match form, because a form
+      // that short matches nearly every sentence in the catalog. 〜ね is the
+      // point the device complaint was about, so this is not a hypothetical:
+      // nothing here can decide such a question, and it goes forward on the
+      // unknown-token test alone for the model to rule on.
+      final particle = GrammarPoint(
+        id: 'grammar:ne',
+        level: JlptLevel.n5,
+        pattern: '〜ね',
+        meaning: const LocalizedStrings({
+          'en': ['seeking agreement'],
+        }),
+        explanation: const LocalizedStrings({
+          'en': ['A sentence-final particle.'],
+        }),
+        examples: const [],
+      );
+      expect(effectiveMatchForms(particle), isEmpty);
+      expect(
+        AiQuestionGenerator.passesParseFilter(
+          question,
+          point: particle,
+          analyze: analysisOf,
+        ),
+        isTrue,
+      );
     });
   });
 }

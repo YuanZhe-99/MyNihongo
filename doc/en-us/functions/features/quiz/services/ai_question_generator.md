@@ -10,40 +10,52 @@ fails any of them is dropped in silence, because the session is complete without
 
 Consumers: `quiz_page.dart`.
 
-**Every question is asked twice.** The first call writes it; the second hands it
-back *without* its proposed answer and asks the model to work it out and to say
-whether the question stands. It is kept only when the model reaches the same
-option and calls it sound. A model shown an answer and asked to approve it
-agrees, so the second pass deliberately does not see the first pass's answer:
-two derivations that must match is a check, and a rubber stamp is not. Silence
-drops the question, like every other refusal here.
+**Every question is read by the analyser first**, when one is available:
+`passesParseFilter` puts the answer in the blank and requires a sentence that
+parses and carries the point, and requires that no distractor carries it. That
+costs nothing and it drops the sentence whose blank any noun could fill before a
+second inference is spent on it.
+
+**Every question is then asked twice.** The first call writes it; the second
+hands it back *without* its proposed answer and asks the model to work it out, to
+say whether the question stands, and to say of each option whether it makes a
+correct sentence. It is kept only when the model reaches the same option, calls
+it sound, and finds exactly one option that fits. A model shown an answer and
+asked to approve it agrees, so the second pass deliberately does not see the
+first pass's answer: two derivations that must match is a check, and a rubber
+stamp is not. Asking about every option is the half that catches a question with
+two right answers, which a judge asked only for its own answer always passes.
+Silence drops the question, like every other refusal here.
 
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |
 |---|---|---|---|
-| `maxGeneratedQuestions` | constant | B | How many generated questions one session may receive (3). |
 | `AiQuestionGenerator` | class | B | Ask for extra questions about a unit. |
-| `AiQuestionGenerator.new` | constructor | B | Hold the unit, catalog, prompt builder, locale and service. |
+| `AiQuestionGenerator.new` | constructor | B | Hold the unit, catalog, prompt builder, locale, service and analyser. |
 | [`generate`](#generate) | method | A | Yield accepted questions as they arrive. |
 | `_words` | getter | B | The unit's words, for grounding the prompt. |
 | [`parse`](#parse) | static method | A | Turn one model reply into a question, or refuse it. |
-| `accepts` | static method | B | Whether a judged question may be shown: same answer, called sound. |
-| `_survivesReview` | method | B | Ask the model to answer its own question, and judge it. |
+| `accepts` | static method | B | Whether a judged question may be shown: same answer, called sound, exactly one option fitting and it the answer. |
+| [`passesParseFilter`](#passesparsefilter) | static method | A | Check a question against the analyser before a model is asked again. |
+| `_blank` | static field | B | The blank a generated question marks its slot with. |
+| `_survivesReview` | method | B | Ask the model to answer its own question, judge it, and rate every option. |
 | `_after` | static method | B | Take what follows a label on a line. |
 
 ## Documentation
 
-### `Stream<QuizQuestion> generate({int limit, Set<String> avoid})` <a id="generate"></a>
+### `Stream<QuizQuestion> generate({int? limit, Set<String> avoid})` <a id="generate"></a>
 
 - **Kind:** method
 - **Purpose:** Generate questions one at a time, as they arrive.
-- **Inputs:** `limit` — how many to ask for; `avoid` — prompts the session already has.
+- **Inputs:** `limit` — how many to ask for, defaulting to the asset's `maxQuizQuestions`; `avoid` —
+  prompts the session already has.
 - **Returns:** A stream of accepted questions.
-- **Side effects:** Runs a model on the device, once per grammar point tried.
+- **Side effects:** Runs a model on the device, once or twice per grammar point tried.
 - **Algorithm:** Walk the unit's grammar points in order. For each, build a prompt, run it through
   `AiPracticeService.runInBackground` (which yields to any interactive request and retries later),
-  parse the reply, and yield it if it parses and its prompt is new. Stop at `limit`.
+  parse the reply, drop it unless its prompt is new, put it through `passesParseFilter` when an
+  analyser was supplied, then through the model judge, and yield what survives. Stop at `limit`.
 - **Usage:** `quiz_page._generate`, started with `unawaited` right after the session is built.
 - **Notes:** A stream rather than a list because each question is useful the moment it exists: the
   session appends it, and the learner may reach it while the next one is still being written. The
@@ -74,3 +86,32 @@ drops the question, like every other refusal here.
   question**, because on screen it looks exactly as authoritative as an authored one. The label the
   runner shows above a generated question is the other half of that: see
   [`ai-assist.md`](../../../../features/ai-assist.md).
+
+### `static bool passesParseFilter(QuizQuestion question, {required GrammarPoint point, required SentenceAnalysis Function(String) analyze})` <a id="passesparsefilter"></a>
+
+- **Kind:** static method
+- **Purpose:** Check a generated question against the analyser before any model is asked about it
+  again.
+- **Inputs:** The parsed `question`, the `point` it claims to test, and `analyze` — the sentence
+  analyser's own entry point.
+- **Returns:** `bool` — whether it is worth a second model call.
+- **Side effects:** None.
+- **Algorithm:** Put each option in the blank in turn and read the result:
+
+  | Rejected when | Because |
+  |---|---|
+  | The answer's sentence has an unknown token | The app could not explain that sentence afterwards either |
+  | The answer's sentence does not match the point | A question filed under 〜ね with no 〜ね in it tests something else |
+  | A distractor's sentence matches the point | That option is a second right answer |
+
+  A point whose `effectiveMatchForms` is empty — every one-character particle, since a form that
+  short would match nearly every sentence in the catalog — is undecidable here, so only the
+  unknown-token test applies and the model judge rules on the rest. A distractor that fails to parse
+  is fine: a wrong option is allowed to be nonsense, which is what makes it wrong.
+- **Usage:** `generate`, when `analyze` was supplied; `quiz_page._generate` supplies it from
+  `sentenceAnalyzerProvider` and passes null if that provider fails, so a session whose analyser
+  will not load still gets questions, judged by the model alone as they were before this existed.
+- **Notes:** Everything checked here is a fact the app already had, and it is checked first because
+  it is free. The question this dropped on the device was 「わたし＿＿が学生です。」 with 私, 友達,
+  先生 and 日本語 in the options: four nouns, a blank any of them fits, and a grammar point nowhere
+  in the sentence.

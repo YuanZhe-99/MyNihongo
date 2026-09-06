@@ -993,6 +993,17 @@ class AppLocalizationsZh extends AppLocalizations {
   String get quizPatternPrompt => '这句用了哪个语法点？';
 
   @override
+  String get quizGeneratedPrompt => '选出能表达这个语法点、可以填进空格的形式';
+
+  @override
+  String quizGrammarPointLine(Object pattern, Object meaning) {
+    return '语法点：$pattern · $meaning';
+  }
+
+  @override
+  String get quizOpenGrammarPoint => '查看这个语法点';
+
+  @override
   String get quizSummaryTitle => '本次结束';
 
   @override
@@ -2747,6 +2758,17 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get quizPatternPrompt => '這句用了哪個文法點？';
+
+  @override
+  String get quizGeneratedPrompt => '選出能表達這個文法點、可以填進空格的形式';
+
+  @override
+  String quizGrammarPointLine(Object pattern, Object meaning) {
+    return '文法點：$pattern · $meaning';
+  }
+
+  @override
+  String get quizOpenGrammarPoint => '查看這個文法點';
 
   @override
   String get quizSummaryTitle => '本次結束';

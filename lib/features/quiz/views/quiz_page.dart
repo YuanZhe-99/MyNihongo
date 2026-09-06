@@ -385,12 +385,23 @@ class _QuizPageState extends ConsumerState<QuizPage> {
     if (!ref.read(aiAssistServiceProvider).canExplain) return;
     final builder = await practicePromptBuilder(ref);
     if (builder == null || !mounted) return;
+    // The analyser reads a generated sentence before a model is asked about it
+    // a second time. A session whose analyser will not load still gets
+    // questions: they are judged by the model alone, as they were before.
+    SentenceAnalyzer? analyzer;
+    try {
+      analyzer = await ref.read(sentenceAnalyzerProvider.future);
+    } on Object {
+      analyzer = null;
+    }
+    if (!mounted) return;
     final generator = AiQuestionGenerator(
       unit: unit,
       catalog: catalog,
       builder: builder,
       locale: Localizations.localeOf(context),
       service: AiPracticeService.instance,
+      analyze: analyzer?.analyze,
     );
     await for (final question in generator.generate(avoid: avoid)) {
       if (!mounted) return;

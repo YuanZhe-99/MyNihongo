@@ -4,6 +4,7 @@ import '../../content/models/content_catalog.dart';
 import '../../content/models/localized_strings.dart';
 import '../../content/models/grammar_point.dart';
 import '../../content/models/vocab_entry.dart';
+import '../../content/services/content_links.dart';
 import 'ai_assist_service.dart';
 import 'prompt_builder.dart';
 
@@ -39,6 +40,15 @@ class PracticePromptBuilder {
     'maxOutputTokens',
     AiAssistService.defaultMaxOutputTokens,
   );
+
+  /// How many generated questions one session may be offered.
+  ///
+  /// From the asset for the same reason as [maxOutputTokens]: the task that
+  /// writes them is written there, so how many of them to ask for belongs
+  /// there too. The asset carried this number from the day it was written and
+  /// nothing read it, while a Dart constant said three a few files away — the
+  /// two could have disagreed and only a device would have shown it.
+  int get maxQuizQuestions => templates.limit('maxQuizQuestions', 3);
 
   /// Purpose: Ask for a rewrite of what the learner wrote.
   /// Inputs: The learner's `text`, the `unitWords` the exercise is built on,
@@ -150,15 +160,22 @@ class PracticePromptBuilder {
   });
 
   /// Purpose: Ask the model to answer a generated question and judge it.
-  /// Inputs: The `question` as it would be shown, its four `options`, and the
-  /// `locale`.
+  /// Inputs: The grammar `point` the question claims to test, the `question` as
+  /// it would be shown, its four `options`, and the `locale`.
   /// Returns: `String?` — null when there is nothing coherent to ask about.
   /// Side effects: None.
   /// Notes: **The proposed answer is deliberately not in the prompt.** A model
   /// shown an answer and asked whether it is right agrees; a model asked to
   /// work the question out produces something that can disagree, and only the
   /// second is a check. The caller compares the two letters itself.
+  ///
+  /// The point is in the prompt because the judge is asked two different
+  /// things: which option expresses *this* point, and which options make a
+  /// correct sentence at all. 「今日は暑い＿＿。」 with ね and です both fitting
+  /// is a bad question that a judge asked only for its own answer will pass,
+  /// because its own answer is right.
   String? forQuizCheck({
+    required GrammarPoint point,
     required String question,
     required List<String> options,
     required Locale locale,
@@ -166,7 +183,15 @@ class PracticePromptBuilder {
     if (question.trim().isEmpty || options.length != 4) return null;
     if (options.any((o) => o.trim().isEmpty)) return null;
     return _build('quizCheck', locale, (labels, out) {
-      out.writeln('${labels['question'] ?? 'Question'}: ${question.trim()}');
+      out
+        ..writeln(
+          '${labels['grammarPoint'] ?? 'Grammar point'}: ${point.pattern}',
+        )
+        ..writeln(
+          '${labels['patternMeaning'] ?? 'What the pattern means'}: '
+          '${point.meaning.resolveJoined(locale)}',
+        )
+        ..writeln('${labels['question'] ?? 'Question'}: ${question.trim()}');
       const letters = ['A', 'B', 'C', 'D'];
       for (var i = 0; i < options.length; i++) {
         out.writeln('${letters[i]}: ${options[i].trim()}');
@@ -178,24 +203,52 @@ class PracticePromptBuilder {
   /// Inputs: The grammar `point` to test, the unit's `words`, and the `locale`.
   /// Returns: `String?`.
   /// Side effects: None.
-  /// Notes: The point's own pattern, meaning and first example go into the
-  /// prompt, so a generated question tests what the app teaches rather than
-  /// whatever the model associates with the pattern. The word list is capped
-  /// the same way the writing prompt caps it.
+  /// Notes: Everything the app itself knows about the point goes in — the
+  /// pattern, how it attaches, what it means, the forms that mark it in a
+  /// sentence, the catalog's own note and its own examples — so a generated
+  /// question tests what the app teaches rather than whatever the model
+  /// associates with the pattern.
+  ///
+  /// The labels were `topic` ("What this unit teaches") and `expected` ("The
+  /// model answer") until v0.4.12: keys that exist, so nothing fell back and
+  /// nothing failed, while the prompt announced a grammar point as the unit's
+  /// syllabus and its meaning as an answer. That is the same fault
+  /// [forExamples] carried, and it is why the prompt now names what it sends.
   String? forQuiz(
     GrammarPoint point, {
     List<VocabEntry> words = const [],
     required Locale locale,
   }) => _build('quiz', locale, (labels, out) {
-    out
-      ..writeln('${labels['topic'] ?? 'Grammar point'}: ${point.pattern}')
-      ..writeln(
-        '${labels['expected'] ?? 'Meaning'}: '
-        '${point.meaning.resolveJoined(locale)}',
-      )
-      ..writeln('JLPT: ${point.level.label}');
-    if (point.examples.firstOrNull case final example?) {
-      out.writeln('${labels['sentence'] ?? 'Example'}: ${example.ja}');
+    out.writeln(
+      '${labels['grammarPoint'] ?? 'Grammar point'}: ${point.pattern}',
+    );
+    if (point.structure case final structure?
+        when structure.trim().isNotEmpty) {
+      out.writeln('${labels['structure'] ?? 'Structure'}: ${structure.trim()}');
+    }
+    out.writeln(
+      '${labels['patternMeaning'] ?? 'What the pattern means'}: '
+      '${point.meaning.resolveJoined(locale)}',
+    );
+    final forms = effectiveMatchForms(point);
+    if (forms.isNotEmpty) {
+      out.writeln('${labels['forms'] ?? 'Forms'}: ${forms.join('、')}');
+    }
+    final note = point.explanation.resolveJoined(locale).trim();
+    if (note.isNotEmpty) {
+      final limit = templates.limit('maxGrammarExcerptChars', 300);
+      out.writeln(
+        '${labels['grammar'] ?? 'Grammar'}: '
+        '${note.length > limit ? note.substring(0, limit) : note}',
+      );
+    }
+    out.writeln('${labels['level'] ?? 'JLPT'}: ${point.level.label}');
+    final examples = point.examples.take(templates.limit('maxExamples', 3));
+    if (examples.isNotEmpty) {
+      out.writeln('${labels['examples'] ?? 'Examples'}:');
+      for (final example in examples) {
+        out.writeln('- ${example.ja}');
+      }
     }
     if (words.isNotEmpty) {
       final capped = words

@@ -1315,6 +1315,57 @@ for whoever had to debug the feature.
 - [x] The depth tables in `features/jlpt-practice.md`, both trees
 - [x] 1007 tests
 
+#### M4.8 Generated questions say what they test — **done 2026-09-06**, released as `v0.4.12`
+
+Two complaints from the Pixel 10, one cause: the app was showing model-written
+questions without telling the model — or the learner — what the question was
+about.
+
+- [x] **A generated question stated the wrong thing and asked the wrong thing.**
+      「这句用了哪个语法点？」 sat above わたし＿＿が学生です。 with 私, 友達,
+      先生 and 日本語 in the options. The line was wrong because every generated
+      question is filed under `QuizMode.grammarPattern` whatever it asks, and
+      that mode's own line describes a different question; the options were
+      wrong because the prompt put the pattern under the label "What this unit
+      teaches" and the meaning under "The model answer" — real keys, so nothing
+      fell back and nothing failed loudly, which is exactly the fault
+      `forExamples` carried until `0.4.3`
+- [x] **The question now names its grammar point and meaning above the sentence,
+      before it is answered**, and asks for a form to fill the blank. The prompt
+      carries the pattern, its structure, its meaning, its match forms, the
+      catalog's own note and up to three of its own examples, and asks for four
+      options of one family — so the question is decided by grammar and not by
+      vocabulary. Naming the point is what makes that possible: a question that
+      does not say what it tests cannot have same-family distractors, because
+      nothing has said what the family is
+- [x] **A chip under any answered grammar question opens the point's own page.**
+      Right or wrong, authored or generated: the quiz has drawn on the catalog
+      since `v0.3.1` and never linked back to it, so a wrong answer gave the
+      learner an explanation and no way to reach the page it came from
+- [x] **An authored unit question shows no mode line at all.** A unit file
+      writes its questions the way a person asks them — 「部屋に猫が＿。」,
+      「哪一句是礼貌的说法？」 — so the mode's line above it introduced a
+      different question. `QuizQuestion.authored` suppresses it
+- [x] **The judge rates every option.** 「今日は暑い＿＿。」 with ね and です
+      both fitting passed the `0.4.3` judge and would pass it again: it was
+      asked only which option it would pick, and the option it picked was
+      right. It is now asked separately whether each option makes a correct
+      sentence whatever it then means, and the question is kept only when
+      exactly one does **and** that one is the answer
+- [x] **The analyser reads the sentence before the second model call.** The
+      answer in the blank must parse with no unknown token and must carry the
+      point; no distractor may carry it. All three are facts the app already
+      had, they cost nothing, and they drop わたし＿＿が学生です。 before an
+      inference is spent on it. A point with no matchable form — every
+      one-character particle, 〜ね included — is undecidable here and goes to
+      the model as before
+- [x] The asset's `maxQuizQuestions` is read rather than sitting beside a Dart
+      constant saying the same thing; `installer.iss` had two version fields
+      still on `0.4.7` while `AppVersion` said `0.4.11`
+- [x] Docs: `ai-assist.md` grows from six bounds on a generated question to
+      eight, `quizzes.md` gains what introduces a question, and
+      `grammar_point_link.md` is written in both trees. 1026 tests
+
 ### Phase 5 — Platforms and languages
 
 - [x] Windows: `flutter create --platforms=windows`, `installer.iss` (x64 + ARM64), MSIX config and
@@ -1444,7 +1495,8 @@ for whoever had to debug the feature.
 | 2026-09-04 | An alignment that does not consume the whole reading is refused, not approximated | 母は against ははは has two candidate splits and only the one that uses every kana is right. Refusing costs a line of screen; guessing prints kana over the wrong character and teaches a reading that does not exist |
 | 2026-09-04 | Kana over kanji is stored only when **off** | It is the only preference in the app whose default is on, and inverting the storage is what makes an absent key mean on. A learner who has never opened Settings is the learner who most needs the readings |
 | 2026-09-04 | A token's ruby comes from its lemma's alignment plus the surface's kana tail | `Token.reading` is the dictionary form's reading because that is what de-inflection matches against, so 食べ carries たべる. Printing it would show a る the sentence does not contain |
-| 2026-09-04 | `AppSettingsNotifier` starts on defaults when the config cannot be read | Nothing awaits the load, so a failure surfaced as an unhandled asynchronous error while the app carried on with the defaults regardless — the same outcome, reported as a crash || 2026-09-04 | A scenario is linear: a wrong reply neither ends it nor forks it | A conversation that stops when you say the wrong thing teaches nothing about what to say instead. A per-choice fork would have to be written and gated on every unit, for a lesson whose whole point is reading one real exchange end to end |
+| 2026-09-04 | `AppSettingsNotifier` starts on defaults when the config cannot be read | Nothing awaits the load, so a failure surfaced as an unhandled asynchronous error while the app carried on with the defaults regardless — the same outcome, reported as a crash |
+| 2026-09-04 | A scenario is linear: a wrong reply neither ends it nor forks it | A conversation that stops when you say the wrong thing teaches nothing about what to say instead. A per-choice fork would have to be written and gated on every unit, for a lesson whose whole point is reading one real exchange end to end |
 | 2026-09-04 | A scenario writes nothing to the scheduler | Picking one of three replies is not recall, and the unit's own practice session already measures recall against the same items |
 | 2026-09-04 | Generated quiz questions are asked for **after** the session is on screen | The alternative is a session that waits on a model before its first question. Three extra questions are worth nothing if they cost the learner a visible pause to reach question one |
 | 2026-09-04 | A generated question never calls `onFirstAnswer` | It may be wrong. A wrong question moving a real review interval is a corruption of the progress file that no later correction can undo, and the learner cannot tell it happened |
@@ -1514,6 +1566,11 @@ for whoever had to debug the feature.
 | 2026-09-05 | Every config write goes through one queue, with the read inside it | Each preference setter read `storage_config.json`, changed a key and wrote it back. Two at once read the same file and wrote two different successors, so the second erased the first's key — and on Windows renamed its temporary file over one still open, throwing rather than losing quietly. Queueing the write alone would fix the throw and keep the lost update; the read has to be inside |
 | 2026-09-05 | That queue is scoped to the zone the writes were started in | In the app there is one zone, so it changes nothing there. A widget test body gets its own, and I/O started from a tap and not awaited stays suspended in it forever — an unqualified queue waits on that for the life of the process, and did. Bounding the wait with a `Timer` is not open either, because `flutter_test` fails any test that leaves one pending |
 | 2026-09-05 | Depth is pinned per level in the test, and raised one level at a time as content lands | The Learn card's question counts already promise it, and a diff cannot show that a batch went into the wrong file. A number lowered by accident fails before it reaches anybody |
+| 2026-09-06 | A generated question states the grammar point it tests, before it is answered | The device showed 「这句用了哪个语法点？」 over a blank the model had written — a question filed under a mode that describes a different one. Naming the point is also the precondition for same-family distractors: nothing can ask for four options of one family without first saying what the family is |
+| 2026-09-06 | An authored unit question is introduced by nothing but itself | Its `prompt` is already the whole question, written the way a person asks one. Every authored unit question is `grammarPattern` whatever it asks, so the mode was never able to introduce it correctly |
+| 2026-09-06 | The judge rates every option, not only the one it would pick | 「今日は暑い＿＿。」 with ね and です both fitting passed a judge asked only for its own answer, because its own answer was right. Asked whether each option makes a correct sentence, it has to say two do — and two is a dropped question |
+| 2026-09-06 | The analyser reads a generated sentence before the second model call | Whether the answer parses, whether it carries the point and whether a distractor also carries it are facts the app already has. Checking them costs nothing and drops the nonsense sentence before an inference is spent on it; a point with no matchable form is undecidable here and still goes to the model |
+| 2026-09-06 | A grammar question links back to the point it came from, right or wrong | The quiz has drawn on the catalog since v0.3.1 and never linked to it. Answering correctly is the other moment a learner wants to read the rule, and by then the point is on screen anyway |
 | 2026-09-04 | No Remove button for a downloaded model | AICore owns the file and shares it with every app that uses the same model, and neither ML Kit client exposes a delete — checked with `javap`. The button could only lie or take away something another app is using |
 | 2026-09-04 | CI `concurrency` is keyed on the commit, so a tag run supersedes the branch run | A release pushes the commit and then the tag, which ran the same analyze/test/build twice on the same tree. The tag run is the one that also creates the Release |
 | 2026-09-04 | The Prompt API client is chosen by probing model variants in preference order, never by device, client version or model name | ML Kit serves four combinations of release stage and size preference, no API says which a device offers, and `getClient()` with no configuration silently asks for one of them. Reporting that one variant's refusal as the device's answer produced two wrong diagnoses in a row on the same phone. A probe also means a model AICore begins serving later is picked up with no code change |

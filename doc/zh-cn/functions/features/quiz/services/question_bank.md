@@ -13,7 +13,7 @@
 | `QuestionBank` | 类 | B | 一个单元的题目。 |
 | `QuestionBank.isEmpty` | getter | B | 该单元是否什么都没产出。 |
 | [`QuestionBank.build`](#build) | 方法 | A | 构建一个单元能出的全部题目。 |
-| `QuestionBank._authored` | 方法 | B | 把手写题变成一道测验题。 |
+| `QuestionBank._authored` | 方法 | B | 把手写题变成一道测验题，并标上 `authored`，让运行器不要再去引出它。 |
 | [`QuestionBank.draw`](#draw) | 方法 | A | 从题池中抽出一次会话的量。 |
 
 ## 文档
