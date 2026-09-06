@@ -58,6 +58,27 @@ class Scenario {
     return null;
   }
 
+  /// Who the learner has been talking **to**.
+  ///
+  /// The line right after the last branch, because that is the one written as
+  /// an answer to what the learner says; failing that, the last line of the
+  /// script. A conversation whose speakers are 店員 and 客 has to be continued
+  /// by the 店員, and getting that backwards would have the model answer
+  /// itself.
+  ///
+  /// Empty when the script names nobody, which the content gate does not allow
+  /// but a hand-edited file could.
+  String get partnerSpeaker {
+    if (branches.isNotEmpty) {
+      final after = branches.last.after;
+      if (after >= 0 && after < dialogue.length) {
+        final speaker = dialogue[after].speaker;
+        if (speaker.isNotEmpty) return speaker;
+      }
+    }
+    return dialogue.isEmpty ? '' : dialogue.last.speaker;
+  }
+
   /// Purpose: Parse one scenario.
   /// Inputs: `json`.
   /// Returns: `Scenario?` — null when there is nothing to play.

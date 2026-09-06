@@ -671,9 +671,9 @@ catalog content, and never writes a progress record by itself — the learner's 
 - [ ] Free-response grading as its own quiz mode (a typed translation of a whole
       sentence) — the grading half exists and is what the second opinion uses;
       the mode does not
-- [ ] Scenario dialogue partner: a free reply answered in character at the end
+- [x] Scenario dialogue partner: a free reply answered in character at the end
       of a scenario. The scripted half now exists (M3.7), which is what this
-      would attach to
+      would attach to. **Built in M4.9, released as `v0.4.13`.**
 
 #### M3.7 Scenario lessons, writing practice, generated questions — **done 2026-09-04**
 
@@ -1366,6 +1366,40 @@ about.
       eight, `quizzes.md` gains what introduces a question, and
       `grammar_point_link.md` is written in both trees. 1026 tests
 
+#### M4.9 The scenario dialogue partner — **done 2026-09-06**, released as `v0.4.13`
+
+The third complaint from the Pixel 10 — the scripted conversation is monotonous
+— answered by the item M3.6 has carried as unbuilt since it was written.
+
+- [x] **Once the script has run out, the conversation goes on.** The learner
+      types Japanese; the other speaker — whoever the script gives the line
+      after its last branch — answers in character, with a translation under
+      the reply. The model is given the situation, the script, the turns so far
+      and the unit's own words and grammar
+- [x] **It is forbidden from correcting the learner or explaining grammar.**
+      Correcting is the proofreader's job, and a partner that marks your
+      Japanese is not a conversation
+- [x] **The learner's own line is proofread first**, where the device has a
+      proofreader, shown under what they wrote rather than in place of it. It
+      is awaited before the reply and never fired beside it: AICore serves one
+      inference to an app at a time, so the second would come back `busy`. A
+      proofread that fails is swallowed — the conversation is the feature
+- [x] **Eight turns, then it closes**, because a model answering in character
+      has no reason to stop; and **End conversation is always there**, even
+      while a reply is being written, because the learner deciding when they
+      are done is the difference between a conversation and an exercise
+- [x] **Nothing is stored.** Not a turn, not a reply, not a correction. The
+      page has written nothing to disk since it was built and still does not,
+      and `ScenarioChat` imports no storage at all
+- [x] The composer sits outside the scrolling transcript, in a `SafeArea`,
+      because a field at the bottom of a list is under the keyboard on a phone
+- [x] **A defect its own tests found**: the page called `setState` after
+      `dispose` when the learner left while a reply was being written. Every
+      await in the send path checks `mounted` first
+- [x] Twelve ARB keys ×3; `scenario_chat_test.dart` for the cap and the
+      partner, and eight new cases in `scenario_ui_test.dart` including the
+      composer over a simulated keyboard at all eight geometries. 1054 tests
+
 ### Phase 5 — Platforms and languages
 
 - [x] Windows: `flutter create --platforms=windows`, `installer.iss` (x64 + ARM64), MSIX config and
@@ -1571,6 +1605,11 @@ about.
 | 2026-09-06 | The judge rates every option, not only the one it would pick | 「今日は暑い＿＿。」 with ね and です both fitting passed a judge asked only for its own answer, because its own answer was right. Asked whether each option makes a correct sentence, it has to say two do — and two is a dropped question |
 | 2026-09-06 | The analyser reads a generated sentence before the second model call | Whether the answer parses, whether it carries the point and whether a distractor also carries it are facts the app already has. Checking them costs nothing and drops the nonsense sentence before an inference is spent on it; a point with no matchable form is undecidable here and still goes to the model |
 | 2026-09-06 | A grammar question links back to the point it came from, right or wrong | The quiz has drawn on the catalog since v0.3.1 and never linked to it. Answering correctly is the other moment a learner wants to read the rule, and by then the point is on screen anyway |
+| 2026-09-06 | The scenario partner answers in character and never grades | Correcting is the proofreader's job and the checklist's; a partner that marks your Japanese is not a conversation, and the rules of the task say so rather than leaving it to chance |
+| 2026-09-06 | A free conversation is capped at eight learner turns and can be ended at any moment | A model answering in character has no reason to stop, so something has to end it; and the learner deciding when they are done is the difference between a conversation and an exercise. End stays enabled while a reply is being written |
+| 2026-09-06 | The free turns are not stored, though the "only the input is stored" rule would allow it | The scenario page has written nothing to disk since it was built, and a chat line out of its situation is not a piece of writing anybody would re-open. Keeping it storage-free also keeps its test free of a path provider |
+| 2026-09-06 | Proofreading runs before the reply, never beside it | AICore serves one inference to an app at a time, so a proofread fired alongside the reply comes back `busy`. A proofread that fails is swallowed: the conversation is the feature, and a missing correction is not worth interrupting it for |
+| 2026-09-06 | The scenario prompt truncates its script from the oldest end, whole lines at a time | A conversation has no natural length, so something gives as it grows, and what a reply needs is the situation and what was just said. Cutting a line in half would leave the model reading a fragment as if it were speech |
 | 2026-09-04 | No Remove button for a downloaded model | AICore owns the file and shares it with every app that uses the same model, and neither ML Kit client exposes a delete — checked with `javap`. The button could only lie or take away something another app is using |
 | 2026-09-04 | CI `concurrency` is keyed on the commit, so a tag run supersedes the branch run | A release pushes the commit and then the tag, which ran the same analyze/test/build twice on the same tree. The tag run is the one that also creates the Release |
 | 2026-09-04 | The Prompt API client is chosen by probing model variants in preference order, never by device, client version or model name | ML Kit serves four combinations of release stage and size preference, no API says which a device offers, and `getClient()` with no configuration silently asks for one of them. Reporting that one variant's refusal as the device's answer produced two wrong diagnoses in a row on the same phone. A probe also means a model AICore begins serving later is picked up with no code change |

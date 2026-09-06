@@ -121,6 +121,50 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String get scenarioContinue => '继续对话';
+
+  @override
+  String scenarioContinueHint(Object speaker) {
+    return '用日语输入你接下来要说的话，$speaker 会以角色身份回答。';
+  }
+
+  @override
+  String get scenarioPartner => '对方';
+
+  @override
+  String get scenarioInputHint => '用日语说点什么';
+
+  @override
+  String get scenarioSend => '发送';
+
+  @override
+  String get scenarioEnd => '结束对话';
+
+  @override
+  String get scenarioEnded => '对话已结束。';
+
+  @override
+  String scenarioTurns(int used, int total) {
+    return '第 $used 轮，共 $total 轮';
+  }
+
+  @override
+  String get scenarioCapReached => '这段对话到此结束，辛苦了。';
+
+  @override
+  String scenarioReplyTitle(Object speaker) {
+    return '$speaker 的回答';
+  }
+
+  @override
+  String scenarioProofread(Object text) {
+    return '校对：$text';
+  }
+
+  @override
+  String get scenarioProofreadOk => '校对：没有需要改的';
+
+  @override
   String get pathCheckpointAgain => '再测一次';
 
   @override
@@ -1886,6 +1930,50 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String scenarioDone(int right, int total) {
     return '$total 次選擇裡答對了 $right 次';
   }
+
+  @override
+  String get scenarioContinue => '繼續對話';
+
+  @override
+  String scenarioContinueHint(Object speaker) {
+    return '用日語輸入你接下來要說的話，$speaker 會以角色身分回答。';
+  }
+
+  @override
+  String get scenarioPartner => '對方';
+
+  @override
+  String get scenarioInputHint => '用日語說點什麼';
+
+  @override
+  String get scenarioSend => '傳送';
+
+  @override
+  String get scenarioEnd => '結束對話';
+
+  @override
+  String get scenarioEnded => '對話已結束。';
+
+  @override
+  String scenarioTurns(int used, int total) {
+    return '第 $used 輪，共 $total 輪';
+  }
+
+  @override
+  String get scenarioCapReached => '這段對話到此結束，辛苦了。';
+
+  @override
+  String scenarioReplyTitle(Object speaker) {
+    return '$speaker 的回答';
+  }
+
+  @override
+  String scenarioProofread(Object text) {
+    return '校對：$text';
+  }
+
+  @override
+  String get scenarioProofreadOk => '校對：沒有需要改的';
 
   @override
   String get pathCheckpointAgain => '再測一次';

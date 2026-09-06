@@ -12,6 +12,41 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.4.13` — 2026-09-06. A scenario you can keep talking to.
+
+  **The scripted conversation was monotonous, and it was the one place a model
+  belongs.** A unit's scenario runs six to eight written lines with one or two
+  points where the learner picks what to say, and then it stops. With on-device
+  AI on, it no longer has to: once the script has run out, the learner can go on
+  typing Japanese and the other speaker — whoever the script gives the line
+  after its last branch — answers in character, with a translation under the
+  reply. This is the "scenario dialogue partner" `PLAN.md` has carried as
+  unbuilt since M3.6, waiting for the scripted half it attaches to.
+
+  The model is given the situation, the script, the turns so far and the unit's
+  own words and grammar, and it is **forbidden from correcting the learner or
+  explaining grammar**. Correcting is the proofreader's job — which runs on the
+  learner's own line first, and shows its suggestion under what they wrote
+  rather than in place of it — and a partner that marks your Japanese is not a
+  conversation.
+
+  Four bounds, and the reasons are the point. **Eight turns, then it closes**:
+  a model answering in character has no reason to stop. **End conversation is
+  always there**, including while a reply is being written, because the learner
+  deciding when they are done is the difference between a conversation and an
+  exercise. **Proofreading runs before the reply and never beside it**, since
+  AICore serves one inference to an app at a time and the second would come back
+  busy. And **nothing is stored** — not a turn, not a reply, not a correction:
+  this page has written nothing to disk since it was built and still does not.
+
+  A device with no model, or with the switch off, reaches the tally and stops,
+  exactly as before. The scripted conversation is the lesson and stands on its
+  own.
+
+  One defect found by its own tests and worth recording: the page could call
+  `setState` after `dispose` when the learner left while a reply was being
+  written. Every await in the send path now checks `mounted` first. 1054 tests.
+
 - `0.4.12` — 2026-09-06. A generated question says what it tests, and the
   judge has to rate every option.
 

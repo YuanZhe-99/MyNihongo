@@ -39,6 +39,10 @@ perfectly well.
 | `Paraphrase` | class | B | One hard sentence said again in easier Japanese. |
 | `japanese`, `reading`, `meaning` | fields | B | The easier sentence, its kana and what it means. |
 | `paraphrase` | static method | B | Read one sentence said again in easier Japanese; null without a Japanese line. |
+| `ScenarioReply` | class | B | One turn spoken in character at the end of a scenario. |
+| `japanese`, `meaning` | fields | B | What the other speaker said, and what it means. |
+| `scenarioReply` | static method | B | Read one reply in character; null when there is no Japanese in it. |
+| `_japanese` | static field | B | Kana or kanji, the test of whether a reply is in Japanese at all. |
 | `explanation` | method | B | Read a plain explanation, as the lab does. |
 | `_after` | method | B | Take what follows a label. |
 
@@ -92,3 +96,10 @@ lines out of three still helps.
 The four narrative tasks — rubric, contradiction, listening review and weakness — have no parser of
 their own. They go through `explanation`, which is the same cleaning the sentence lab does, because
 a note about what to try next is an explanation like any other.
+
+`scenarioReply` requires kana or kanji in the Japanese line, which is not pedantry: the failure it
+catches is a model answering the **instruction** rather than the learner. "Japanese: I'm sorry, I
+can't continue this conversation" is a well-formed line and is not a reply, and a sentence of English
+in a Japanese conversation would read as the partner's answer. The translation is optional, because a
+reply the learner cannot read is still the reply and dropping the turn over a missing gloss would
+cost more than the gloss is worth.

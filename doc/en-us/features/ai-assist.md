@@ -45,6 +45,7 @@ Six rules, and each one is enforced in code rather than by convention:
 | **Where does the passage say otherwise?** | under a wrong 読解 answer | Prompt | the question's own explanation, which is always shown first |
 | **Which line had the answer?** | under a wrong 聴解 answer, over the revealed transcript | Prompt | the transcript itself, which is revealed either way |
 | **What to do about it** | on the weakness report | Prompt | the three tables, which are the whole report |
+| **Talking on past the script** | at the end of a scenario conversation | Prompt, and Proofreading for the learner’s own line | the scripted conversation and its tally, which are the whole lesson |
 
 Every row of that last column is the point: **the fallback is the app**. Removing the AI removes
 a row of buttons, not a feature the learner depends on.
@@ -332,9 +333,10 @@ about the unit's own grammar points. Eight things bound what that can cost:
 
 ## Not built
 
-The free-response translation mode and the scenario dialogue partner in `PLAN.md` are not written.
-The scripted half of a scenario is — see [`lesson-path.md`](lesson-path.md) — and a partner would
-attach to the end of it. The Phase 4 drill helpers are Phase 4.
+The free-response translation mode in `PLAN.md` is not written: a typed translation of a whole
+sentence, graded as its own quiz mode. The grading half exists and is what the second opinion on a
+typed answer uses; the mode does not. The scenario dialogue partner **was** the other entry here and
+is written as of `v0.4.13` — see [`lesson-path.md`](lesson-path.md).
 
 ## Grounded in what the app already computed
 

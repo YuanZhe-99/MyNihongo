@@ -43,6 +43,7 @@ every label a builder indexes is defined.
 | `forContradiction` | method | B | Ask which part of a passage rules the learner's choice out. |
 | `forListeningReview` | method | B | Ask which spoken line carried the answer, and what is easy to mishear in it. |
 | `forWeakness` | method | B | Ask what to do about what the learner keeps getting wrong. |
+| `forScenarioReply` | method | B | Ask the model to answer in character once a scenario’s script has run out. |
 | `_build` | method | B | Assemble one prompt from a task, its labels and a body. |
 
 ## Documentation
@@ -80,3 +81,10 @@ in anything outside the passage, since a reading question is a question about on
 justified from general knowledge would teach the wrong skill even when it happened to be true. And
 `forListeningReview` is only ever built after the question has been answered, because the transcript
 is the answer to a listening question.
+
+`forScenarioReply` is the one prompt that grows with use, so it is the one that truncates. The script
+is cut from its oldest end, whole lines at a time, and only the last `maxScenarioTurnsInPrompt` free
+turns are sent: a conversation has no natural length, and what a reply needs is the situation and
+what was just said. Cutting a line in half would leave the model reading a fragment as if it were
+speech. Its rules forbid correcting the learner — correcting is the proofreader's job, and it has
+already run on the learner's own line before this is asked.

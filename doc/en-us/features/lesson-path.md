@@ -112,6 +112,36 @@ Three rules make it a lesson rather than a quiz:
 Six are written: N5 units 1 to 4 and N4 units 1 and 2. A unit without one shows
 no button, so the rest of the path is unaffected.
 
+### Talking on past the script
+
+With on-device AI switched on, the script is not the end of the conversation.
+Once it has run out, the learner can go on typing Japanese and the other
+speaker — the one the script gives the line after its last branch — answers in
+character, with a translation under the reply. The model is given the situation,
+the script, the turns so far and the unit's own words and grammar, and its rules
+forbid it from correcting the learner or explaining grammar: correcting is the
+proofreader's job, and a partner that marks your Japanese is not a conversation.
+
+Four things bound it:
+
+- **Eight turns, then it closes**, with a line saying so. A model answering in
+  character has no reason to stop, and eight is long enough to be a conversation
+  and short enough to end while the learner still means to be having one.
+- **End conversation is always there**, including while a reply is being
+  written. The learner deciding when they are done is the difference between a
+  conversation and an exercise.
+- **The learner's own line is proofread first**, where the device has a
+  proofreader, and the suggestion is shown under what they wrote rather than in
+  place of it. It runs before the reply and never beside it: AICore serves one
+  inference to an app at a time.
+- **Nothing is stored.** Not the turns, not the replies, not the proofreading;
+  the page has written nothing to disk since it was built and still does not.
+  A chat line out of its situation is not a piece of writing to re-open.
+
+Every reply is inside the generated card, with the label above it. A device with
+no model, or with the switch off, reaches the tally and stops, exactly as before
+— the scripted conversation is the lesson and stands on its own.
+
 ## Writing practice
 
 A unit's `writingPrompt` opens `/writing`, where the learner writes a few

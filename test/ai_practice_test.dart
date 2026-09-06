@@ -450,6 +450,7 @@ void main() {
         'contradiction',
         'listeningReview',
         'weakness',
+        'scenarioReply',
       ]) {
         for (final language in const ['en', 'zh', 'zh_TW']) {
           final template = templates.tasks[task]?[language];
@@ -496,6 +497,9 @@ void main() {
         'structure',
         'forms',
         'examples',
+        'speaker',
+        'situation',
+        'patterns',
       ]) {
         for (final language in const ['en', 'zh', 'zh_TW']) {
           expect(
@@ -584,6 +588,94 @@ void main() {
         isEmpty,
         reason: 'a judge shown the answer agrees with it',
       );
+    });
+  });
+
+  group('a reply in character', () {
+    late PracticePromptBuilder builder;
+    setUp(() => builder = PracticePromptBuilder(templates));
+
+    String? build({
+      List<({String speaker, String ja})> script = const [
+        (speaker: '店員', ja: 'いらっしゃいませ。'),
+      ],
+      List<({bool learner, String ja})> turns = const [],
+      String said = 'これをください。',
+    }) => builder.forScenarioReply(
+      title: 'At the shop',
+      speaker: '店員',
+      script: script,
+      turns: turns,
+      learnerLine: said,
+      level: 'N5',
+      patterns: const ['〜てください'],
+      locale: en,
+    );
+
+    test('the prompt carries the situation, the script and the new line', () {
+      final prompt = build()!;
+      expect(prompt, contains('The situation: At the shop'));
+      expect(prompt, contains('You are: 店員'));
+      expect(prompt, contains('いらっしゃいませ。'));
+      expect(prompt, contains('これをください。'));
+      expect(prompt, contains('〜てください'));
+      expect(prompt, contains('Do not correct the learner'));
+    });
+
+    test('a long script is cut from the oldest end, whole lines', () {
+      // A conversation has no natural length, so something gives as it grows.
+      // What a reply needs is the situation and what was just said.
+      final long = [
+        for (var i = 0; i < 60; i++)
+          (speaker: '店員', ja: 'L$i これはとても長い日本語の行です。'),
+      ];
+      final prompt = build(script: long)!;
+      expect(prompt, contains('L59 これは'));
+      expect(
+        prompt,
+        isNot(contains('L0 これは')),
+        reason: 'the oldest line of a long script is the least of it',
+      );
+    });
+
+    test('only the last few free turns are sent', () {
+      final many = [
+        for (var i = 0; i < 20; i++) (learner: i.isEven, ja: 'turn$i'),
+      ];
+      final prompt = build(turns: many)!;
+      expect(prompt, contains('turn19'));
+      expect(prompt, isNot(contains('turn0 ')));
+    });
+
+    test('nothing is asked about nothing', () {
+      expect(build(said: '   '), isNull);
+      expect(build(said: 'あ' * 500), isNull);
+    });
+
+    group('and reading it back', () {
+      ScenarioReply? parse(String raw) =>
+          PracticeResponseParser.scenarioReply(raw);
+
+      test('the Japanese and its meaning are read', () {
+        final reply = parse('Japanese: いらっしゃいませ。\nMeaning: Welcome.')!;
+        expect(reply.japanese, 'いらっしゃいませ。');
+        expect(reply.meaning, 'Welcome.');
+      });
+
+      test('a full-width colon and quotation marks are read through', () {
+        final reply = parse('Japanese：「はい、どうぞ。」')!;
+        expect(reply.japanese, contains('はい、どうぞ。'));
+        expect(reply.meaning, isNull);
+      });
+
+      test('a reply with no Japanese in it is not a reply', () {
+        // The failure this catches is a model answering the instruction
+        // instead of the learner, which is a well-formed line and not speech.
+        expect(parse("Japanese: Sorry, I can't continue this."), isNull);
+        expect(parse('Meaning: Welcome.'), isNull);
+        expect(parse('いらっしゃいませ。'), isNull);
+        expect(parse(''), isNull);
+      });
     });
   });
 

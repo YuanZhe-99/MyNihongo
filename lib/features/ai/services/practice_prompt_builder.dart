@@ -407,6 +407,81 @@ class PracticePromptBuilder {
       }
     });
   }
+
+  /// Purpose: Ask the model to answer in character, once a scenario's script
+  /// has run out.
+  /// Inputs: The scenario's `title`, the `speaker` being played, the `script`
+  /// as it was written, the free `turns` since, the learner's new
+  /// `learnerLine`, the `level`, the unit's `words` and `patterns`, and the
+  /// `locale`.
+  /// Returns: `String?` — null when the learner wrote nothing, when they wrote
+  /// more than one turn's worth, or when the whole prompt is over the cap.
+  /// Side effects: None.
+  /// Notes: **The script is truncated from the oldest end, whole lines at a
+  /// time**, and only the last `maxScenarioTurnsInPrompt` free turns are sent.
+  /// A conversation has no natural length, so something has to give as it
+  /// grows; what a reply needs is the situation and what was just said, and
+  /// the oldest line of a six-line script is the least of both. Cutting a line
+  /// in half would leave the model reading a fragment as if it were speech.
+  ///
+  /// The rules forbid correcting the learner. Correcting is the proofreader's
+  /// job and it runs on the learner's own line before this is asked; a partner
+  /// that marks your Japanese is not a conversation.
+  String? forScenarioReply({
+    required String title,
+    required String speaker,
+    required List<({String speaker, String ja})> script,
+    required List<({bool learner, String ja})> turns,
+    required String learnerLine,
+    required String level,
+    List<VocabEntry> words = const [],
+    List<String> patterns = const [],
+    required Locale locale,
+  }) {
+    final said = learnerLine.trim();
+    if (said.isEmpty) return null;
+    if (said.length > templates.limit('maxAnswerChars', 200)) return null;
+    return _build('scenarioReply', locale, (labels, out) {
+      out
+        ..writeln('${labels['situation'] ?? 'Situation'}: ${title.trim()}')
+        ..writeln('${labels['speaker'] ?? 'You are'}: $speaker')
+        ..writeln('${labels['level'] ?? 'JLPT'}: $level');
+      if (patterns.isNotEmpty) {
+        out.writeln(
+          '${labels['patterns'] ?? 'Grammar'}: ${patterns.take(8).join('、')}',
+        );
+      }
+      if (words.isNotEmpty) {
+        out.writeln(
+          '${labels['vocabulary'] ?? 'Words'}: '
+          '${words.take(templates.limit('maxVocabInPrompt', 12)).map((w) => w.headword).join('、')}',
+        );
+      }
+
+      final lines = [
+        for (final line in script) '- ${line.speaker}: ${line.ja}',
+        for (final turn in turns.length >
+                templates.limit('maxScenarioTurnsInPrompt', 6)
+            ? turns.sublist(
+                turns.length - templates.limit('maxScenarioTurnsInPrompt', 6),
+              )
+            : turns)
+          '- ${turn.learner ? (labels['learner'] ?? 'Learner') : speaker}: '
+              '${turn.ja}',
+      ];
+      final limit = templates.limit('maxPassageChars', 1200);
+      var kept = lines;
+      while (kept.length > 1 && kept.join('\n').length > limit) {
+        kept = kept.sublist(1);
+      }
+      out.writeln('${labels['script'] ?? 'What was said'}:');
+      for (final line in kept) {
+        out.writeln(line);
+      }
+      out.writeln('${labels['learner'] ?? 'Learner'}: $said');
+    });
+  }
+
   /// Purpose: Assemble one prompt from a task template.
   /// Inputs: The `task` name, the `locale`, and a `body` writer.
   /// Returns: `String?` — null when the task has no template.

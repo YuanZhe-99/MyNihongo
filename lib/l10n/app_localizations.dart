@@ -291,6 +291,78 @@ abstract class AppLocalizations {
   /// **'{right} of {total} replies were the expected one'**
   String scenarioDone(int right, int total);
 
+  /// No description provided for @scenarioContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue the conversation'**
+  String get scenarioContinue;
+
+  /// No description provided for @scenarioContinueHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Type what you say next in Japanese; {speaker} will answer in character.'**
+  String scenarioContinueHint(Object speaker);
+
+  /// No description provided for @scenarioPartner.
+  ///
+  /// In en, this message translates to:
+  /// **'the other speaker'**
+  String get scenarioPartner;
+
+  /// No description provided for @scenarioInputHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Say something in Japanese'**
+  String get scenarioInputHint;
+
+  /// No description provided for @scenarioSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get scenarioSend;
+
+  /// No description provided for @scenarioEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'End conversation'**
+  String get scenarioEnd;
+
+  /// No description provided for @scenarioEnded.
+  ///
+  /// In en, this message translates to:
+  /// **'Conversation ended.'**
+  String get scenarioEnded;
+
+  /// No description provided for @scenarioTurns.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn {used} of {total}'**
+  String scenarioTurns(int used, int total);
+
+  /// No description provided for @scenarioCapReached.
+  ///
+  /// In en, this message translates to:
+  /// **'That is the end of this conversation — well done.'**
+  String get scenarioCapReached;
+
+  /// No description provided for @scenarioReplyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{speaker} replies'**
+  String scenarioReplyTitle(Object speaker);
+
+  /// No description provided for @scenarioProofread.
+  ///
+  /// In en, this message translates to:
+  /// **'Proofread: {text}'**
+  String scenarioProofread(Object text);
+
+  /// No description provided for @scenarioProofreadOk.
+  ///
+  /// In en, this message translates to:
+  /// **'Proofread: nothing to change'**
+  String get scenarioProofreadOk;
+
   /// No description provided for @pathCheckpointAgain.
   ///
   /// In en, this message translates to:

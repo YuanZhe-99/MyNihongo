@@ -124,6 +124,51 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get scenarioContinue => 'Continue the conversation';
+
+  @override
+  String scenarioContinueHint(Object speaker) {
+    return 'Type what you say next in Japanese; $speaker will answer in character.';
+  }
+
+  @override
+  String get scenarioPartner => 'the other speaker';
+
+  @override
+  String get scenarioInputHint => 'Say something in Japanese';
+
+  @override
+  String get scenarioSend => 'Send';
+
+  @override
+  String get scenarioEnd => 'End conversation';
+
+  @override
+  String get scenarioEnded => 'Conversation ended.';
+
+  @override
+  String scenarioTurns(int used, int total) {
+    return 'Turn $used of $total';
+  }
+
+  @override
+  String get scenarioCapReached =>
+      'That is the end of this conversation — well done.';
+
+  @override
+  String scenarioReplyTitle(Object speaker) {
+    return '$speaker replies';
+  }
+
+  @override
+  String scenarioProofread(Object text) {
+    return 'Proofread: $text';
+  }
+
+  @override
+  String get scenarioProofreadOk => 'Proofread: nothing to change';
+
+  @override
   String get pathCheckpointAgain => 'Checkpoint again';
 
   @override

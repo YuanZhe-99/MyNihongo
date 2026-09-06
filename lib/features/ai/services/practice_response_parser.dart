@@ -62,6 +62,26 @@ class Paraphrase {
   final String? meaning;
 }
 
+/// One turn spoken in character at the end of a scenario.
+///
+/// The Japanese is the reply; the meaning is a convenience beside it. Neither
+/// is stored anywhere: a scenario writes nothing to disk, and a line out of
+/// its situation is not a thing to re-read.
+class ScenarioReply {
+  /// Purpose: Hold one reply from the other speaker.
+  /// Inputs: `japanese` and, where the model gave one, `meaning`.
+  /// Returns: A new `ScenarioReply` instance.
+  /// Side effects: None.
+  /// Notes: None.
+  const ScenarioReply({required this.japanese, this.meaning});
+
+  /// What the other speaker said.
+  final String japanese;
+
+  /// What it means, in the learner's language, where the model gave it.
+  final String? meaning;
+}
+
 /// Parses the practice tasks' replies.
 /// What the model made of a generated question: its own answer, and whether
 /// it thinks the question is sound at all.
@@ -312,6 +332,40 @@ class PracticeResponseParser {
       meaning: (meaning?.isEmpty ?? true) ? null : meaning,
     );
   }
+
+  /// Purpose: Read one reply spoken in character at the end of a scenario.
+  /// Inputs: The model's `raw` reply.
+  /// Returns: `ScenarioReply?` — null when there is no Japanese in it.
+  /// Side effects: None.
+  /// Notes: The Japanese line has to contain kana or kanji, which is not
+  /// pedantry: the failure this catches is a model answering the *instruction*
+  /// instead of the learner — "Japanese: I'm sorry, I can't continue this
+  /// conversation" is a well-formed line and not a reply. A refusal shows the
+  /// learner that nothing came back, which is true; a sentence of English in a
+  /// Japanese conversation would look like the partner's answer.
+  ///
+  /// The translation is optional, because a reply the learner cannot read is
+  /// still the reply, and dropping the whole turn over a missing gloss would
+  /// cost more than the gloss is worth.
+  static ScenarioReply? scenarioReply(String raw) {
+    String? japanese;
+    String? meaning;
+    for (final line in raw.split('\n')) {
+      final text = _unwrap(line.trim());
+      if (text.isEmpty) continue;
+      japanese ??= _after(text, 'Japanese:');
+      meaning ??= _after(text, 'Meaning:');
+    }
+    if (japanese == null || japanese.isEmpty) return null;
+    if (!_japanese.hasMatch(japanese)) return null;
+    return ScenarioReply(
+      japanese: japanese,
+      meaning: (meaning?.isEmpty ?? true) ? null : meaning,
+    );
+  }
+
+  /// Kana or kanji, the test of whether a reply is in Japanese at all.
+  static final _japanese = RegExp('[぀-ヿ一-鿿]');
 
   /// Purpose: Take what follows a label, if the line carries it.
   /// Inputs: `line`, `label`.

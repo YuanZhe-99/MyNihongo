@@ -19,6 +19,7 @@ Consumers: `lesson_path.dart`, `scenario_page.dart`, `lesson_path_view.dart`.
 | `Scenario` | class | B | One scripted conversation. |
 | `Scenario.new` | constructor | B | Hold a title, its lines and its branches. |
 | [`Scenario.branchAfter`](#branch) | method | A | Find the branch that follows a point in the script. |
+| `Scenario.partnerSpeaker` | getter | B | Who the learner has been talking to: the speaker given the line after the last branch. |
 | `Scenario.fromJson` | static method | B | Parse one scenario; null when there is nothing to play. |
 | `DialogueLine` | class | B | One line of a conversation. |
 | `DialogueLine.new` | constructor | B | Hold a speaker, the Japanese, its reading and translations. |
@@ -47,3 +48,8 @@ Consumers: `lesson_path.dart`, `scenario_page.dart`, `lesson_path_view.dart`.
 - **Notes:** `after` is a **count of lines shown**, not a zero-based index. `after: 2` means the
   question comes once two lines have been read, which is how an author counts a conversation on
   paper. The content gate checks that it lands inside the script.
+
+`partnerSpeaker` answers a question only the free conversation asks: once the script has run out and
+the learner types a new line, who is it that answers? The line **after** the last branch, because that
+is the one written as an answer to what the learner says; failing that, the last line of the script.
+Getting it backwards would have the model answer itself.

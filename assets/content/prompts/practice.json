@@ -462,6 +462,38 @@
           "不要加標題，也不要加問候語。"
         ]
       }
+    },
+    "scenarioReply": {
+      "en": {
+        "instruction": "You are playing one speaker in the short Japanese conversation below. The script has ended and the learner has just said something new. Reply as that speaker, staying in the situation.",
+        "rules": [
+          "One line beginning 'Japanese: ' holding your reply — one or two short sentences, at or below the JLPT level given.",
+          "Then one line beginning 'Meaning: ' with the same reply in English.",
+          "Stay in character and in the situation. Do not correct the learner, do not explain grammar, and do not ask more than one question.",
+          "Prefer the words and grammar this unit teaches, listed above. Use only words at or below this level.",
+          "Nothing else in the reply."
+        ]
+      },
+      "zh": {
+        "instruction": "你在扮演下面这段日语短对话里的一个说话人。脚本已经演完，学习者刚刚说了一句新的话。请以那个说话人的身份、在同一情景里接话。",
+        "rules": [
+          "只写一行，以「Japanese: 」开头，写你的回话——一到两个短句，不超过给出的 JLPT 级别。",
+          "再写一行，以「Meaning: 」开头，用中文写这句回话的意思。",
+          "保持角色和情景。不要纠正学习者，不要讲语法，最多问一个问题。",
+          "优先用上面列出的本单元教的词和语法。只用不超过这个级别的词。",
+          "回复里不要写别的东西。"
+        ]
+      },
+      "zh_TW": {
+        "instruction": "你在扮演下面這段日語短對話裡的一個說話人。腳本已經演完，學習者剛剛說了一句新的話。請以那個說話人的身分、在同一情境裡接話。",
+        "rules": [
+          "只寫一行，以「Japanese: 」開頭，寫你的回話——一到兩個短句，不超過給出的 JLPT 程度。",
+          "再寫一行，以「Meaning: 」開頭，用繁體中文寫這句回話的意思。",
+          "保持角色和情境。不要糾正學習者，不要講文法，最多問一個問題。",
+          "優先用上面列出的本單元教的單字和文法。只用不超過這個程度的單字。",
+          "回覆裡不要寫別的東西。"
+        ]
+      }
     }
   }
 }
