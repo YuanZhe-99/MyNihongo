@@ -71,8 +71,15 @@ void main() {
   });
 
   test('an unsupported language falls back to the template', () {
-    expect(resolve([const Locale('ja', 'JP')]), english);
     expect(resolve([const Locale('de')]), english);
+    expect(resolve([const Locale('fr', 'FR')]), english);
+  });
+
+  test('a Japanese device gets Japanese', () {
+    // Japanese has no script or region split to resolve, so Flutter's own
+    // matching is enough; this is here so the answer changing is visible.
+    expect(resolve([const Locale('ja', 'JP')]), const Locale('ja'));
+    expect(resolve([const Locale('ja')]), const Locale('ja'));
   });
 
   test('no preference at all falls back to the template', () {
@@ -83,7 +90,7 @@ void main() {
   test('a later entry is used when the first is unsupported', () {
     expect(
       resolve([
-        const Locale('ja'),
+        const Locale('de'),
         const Locale.fromSubtags(
           languageCode: 'zh',
           scriptCode: 'Hant',

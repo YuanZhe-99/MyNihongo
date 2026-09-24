@@ -198,7 +198,7 @@ void main() {
     debugDefaultTargetPlatformOverride = null;
   });
 
-  testWidgets('the language picker offers all three UI languages', (
+  testWidgets('the language picker offers all four UI languages', (
     tester,
   ) async {
     await pumpAt(tester, 933, 704);
@@ -206,10 +206,11 @@ void main() {
     await tester.pumpAndSettle();
 
     // The open menu lists every language the app ships, so a reader can find
-    // Traditional Chinese without knowing it exists.
+    // Traditional Chinese or Japanese without knowing they exist.
     expect(find.text('English'), findsWidgets);
     expect(find.text('简体中文'), findsWidgets);
     expect(find.text('繁體中文'), findsWidgets);
+    expect(find.text('日本語'), findsWidgets);
     expect(tester.takeException(), isNull);
   });
 

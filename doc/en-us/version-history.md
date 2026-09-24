@@ -12,6 +12,56 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.5.2` — 2026-09-24. The app in Japanese.
+
+  **Japanese is now a UI language, and it was the content that took the
+  work.** The menus were the easy part: one more string catalog. What a
+  learner reads inside the app was not. Under a Japanese UI every word shows a
+  **Japanese definition**, 国語辞典-style — 先生 is 「学校で勉強を教える人」, not
+  "teacher" — every grammar point has a one-line Japanese meaning and a plain
+  Japanese explanation, and every unit, scenario and JLPT drill question has its
+  instruction and explanation in Japanese. That is roughly 13,000 new strings,
+  and none of them could be taken from anywhere: the dictionary this app is
+  built on is English-only. They were written by model agents, level by level,
+  through the same draft-and-gate loop as the Chinese glosses.
+
+  **The definitions have furigana.** A definition in a word list is exactly
+  where a learner reading Japanese meets kanji, so each one carries a reading,
+  aligned character by character by the gate, and the sheet and the list draw
+  it over the kanji. The gate also insists that every word in a definition is
+  one the app's own dictionary knows — a definition the app cannot read would
+  be a strange thing to show a learner — and it refuses a long definition
+  written entirely in kana, after one agent discovered that hiragana passes
+  every other rule.
+
+  **A Japanese reader is never shown a translation of Japanese.** Until now,
+  a language with no text of its own fell back to English, which under a
+  Japanese UI would have put an English line under every example sentence, and
+  in one case could have fallen back to Chinese. Example sentences, reading
+  passages and dialogue lines now show the Japanese alone, and a translation
+  toggle with nothing to reveal is not offered. Three grammar quiz modes use a
+  sentence's translation as their material; under Japanese they are
+  unavailable, and the quiz-mode page says why beside their switches.
+
+  The on-device AI answers in Japanese, grounded in the Japanese grammar notes,
+  and where a task pairs Japanese with a line in the reader's language that
+  line is asked for as the same thing in easier Japanese. The privacy policy has
+  its own Japanese text. And one fix for everyone: the part of speech on a
+  word's sheet used to print as `verb-godan` or `suru-verb` in every language;
+  it is now named in the reader's language.
+
+  **Nobody who reads Japanese natively has checked any of this**, and every
+  file that carries it says so. The definitions were written by the cheaper of
+  the two models, by decision, which is recorded; a sample from each level was
+  re-read by the stronger one. The Japanese UI and the AI prompts have not been
+  seen on a device.
+
+  Verified here: `flutter analyze` clean and 1096 tests, including the
+  coverage tests that switch on with the Japanese catalog — every word, grammar
+  point, unit and drill question carries its Japanese. `genai-prompt`
+  1.0.0-beta4 and `genai-proofreading` 1.0.0-beta1 are still the newest on
+  Google Maven; the shared package stays at `v1.0.2`.
+
 - `0.5.1` — 2026-09-24. A quiz answered from the keyboard.
 
   **A learner at a keyboard now answers a whole session without the mouse.**

@@ -463,6 +463,11 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                   value: Locale('zh', 'TW'),
                   child: Text('繁體中文'),
                 ),
+                const DropdownMenuItem(
+                  alignment: AlignmentDirectional.centerEnd,
+                  value: Locale('ja'),
+                  child: Text('日本語'),
+                ),
               ],
               onChanged: (locale) => notifier.setLocale(locale),
             ),

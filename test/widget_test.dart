@@ -55,4 +55,14 @@ void main() {
     expect(find.text('发音规则'), findsNothing);
     expect(tester.takeException(), isNull);
   });
+
+  testWidgets('kana page renders in Japanese', (tester) async {
+    await pumpKana(tester, const Locale('ja'));
+    final ja = lookupAppLocalizations(const Locale('ja'));
+    expect(find.text(ja.kanaTitle), findsOneWidget);
+    expect(find.text(ja.kanaRulesSection), findsOneWidget);
+    // Not the English catalog wearing a Japanese locale.
+    expect(find.text('Kana'), findsNothing);
+    expect(tester.takeException(), isNull);
+  });
 }
