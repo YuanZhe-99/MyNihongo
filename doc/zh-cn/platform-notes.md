@@ -43,6 +43,12 @@ Windows 在发布标签和手动触发时由 CI 构建——一个 x64 安装包
 - **ARM64：** stable 3.44.2 能构建 `windows-arm64`，因此没有任务使用 Flutter master。目标架构取决于 Dart SDK 自身的架构，而不是某个标志：ARM64 主机构建出 `build/windows/arm64/`，也只产出 ARM64 安装包。CI 通过在 ARM64 runner 上于 stable 标签处克隆 Flutter 来获得 ARM64 Dart SDK；原因见 `ci-cd.md`。
 - **未签名。** 安装包没有代码签名。首次运行时 Windows SmartScreen 会显示「Windows 已保护你的电脑」；点*更多信息 → 仍要运行*即可安装。每个兄弟应用的安装包都是如此。
 
+### 输入
+
+- **测验可以用键盘作答。** 数字选择，Enter 检查并继续，Backspace 取回一个片段，`R` 重播，`S` 跳过一道生成的题目；完整的表格和规则在 [`features/quizzes.md`](features/quizzes.md#from-a-keyboard)。在桌面上，选项带着各自的数字，检查按钮下方有一行文字列出按键（`showsKeyboardHints`）。
+- **滚动使用 SDK 的默认行为。** `MaterialScrollBehavior` 在 Windows、macOS 和 Linux 上给每个纵向可滚动组件包上滚动条，鼠标滚轮无需改动拖动设备就能滚动。应用以前安装过一个从 MyAnime 复制来的自定义行为，把拖动设备替换为触摸、鼠标和触控板。它没有为桌面增加任何必需的东西，反而让滚动视图内的文本选择变得别扭；在 Android 上，它还悄悄丢掉了手写笔拖动，以及 Voice Access 所用的 `unknown` 设备。它在 0.5.1 中被移除。MyAnime 里仍有同一个类。
+- **一个已知缺口：** PageUp、PageDown 和方向键只有在参考列表内部某个东西取得焦点之后才能滚动它。桌面上没有列表挂到主滚动控制器上，所以这些按键从外部无处可达。
+
 ## 语音插件
 
 - **`flutter_tts: ^4.2.5`** 与 **`speech_to_text: 7.4.0`**，两者都已针对本工程的 Gradle 状态解析并构建通过。它们仍然自行应用 Kotlin Gradle 插件，而这正是 `android.builtInKotlin=false` 所需要的——与 `file_picker` 被钉版本的约束相同。Android 构建会为 `file_picker`、`flutter_tts`、`package_info_plus`、`speech_to_text` 和 `wakelock_plus` 打印 Flutter 的"插件应用了 KGP"警告；这属于插件侧，在此无法修复。

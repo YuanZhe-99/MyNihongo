@@ -1001,6 +1001,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get quizSkipGenerated => '跳过这道题';
 
   @override
+  String get quizKeyboardHint =>
+      '键盘：1–9 选择 · Enter 检查，再按继续 · Backspace 撤回 · R 重听 · S 跳过';
+
+  @override
   String quizAcceptedByAi(String comment) {
     return '端侧模型判为正确：$comment';
   }
@@ -2814,6 +2818,10 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get quizSkipGenerated => '跳過這道題';
+
+  @override
+  String get quizKeyboardHint =>
+      '鍵盤：1–9 選擇 · Enter 檢查，再按繼續 · Backspace 撤回 · R 重聽 · S 跳過';
 
   @override
   String quizAcceptedByAi(String comment) {

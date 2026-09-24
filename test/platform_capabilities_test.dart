@@ -15,7 +15,7 @@ import 'package:my_nihongo/shared/utils/platform_capabilities.dart';
 void main() {
   // Columns: mobile, desktop, storage row, system speech settings, on-device
   // model, recognizes speech, OS-scheduled reminders, in-app reminders,
-  // local-network prompt.
+  // local-network prompt, keyboard hints.
   const table = <TargetPlatform, List<bool>>{
     TargetPlatform.android: [
       true,
@@ -25,6 +25,7 @@ void main() {
       true,
       true,
       true,
+      false,
       false,
       false,
     ],
@@ -38,6 +39,7 @@ void main() {
       true,
       false,
       true,
+      false,
     ],
     TargetPlatform.windows: [
       false,
@@ -49,6 +51,7 @@ void main() {
       false,
       true,
       false,
+      true,
     ],
     TargetPlatform.macOS: [
       false,
@@ -58,6 +61,7 @@ void main() {
       false,
       true,
       false,
+      true,
       true,
       true,
     ],
@@ -71,6 +75,7 @@ void main() {
       false,
       true,
       false,
+      true,
     ],
     TargetPlatform.fuchsia: [
       false,
@@ -82,6 +87,7 @@ void main() {
       false,
       false,
       false,
+      true,
     ],
   };
 
@@ -95,6 +101,7 @@ void main() {
     platformSchedulesReminders,
     platformRemindsFromInsideTheApp,
     platformAsksForLocalNetwork,
+    showsKeyboardHints,
   ];
 
   tearDown(() => debugDefaultTargetPlatformOverride = null);

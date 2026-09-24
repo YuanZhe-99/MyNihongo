@@ -39,7 +39,7 @@ Consumers: `exam_page.dart`, once every block is in.
   in `DrillSection` order that has a tally, one line per block giving its minutes against its limit,
   and — unless nothing was missed — every question in every block's `allQuestions` whose `scoreKey` is
   in the wrong list, each with its wrong-or-unanswered label, its prompt, the right answer and a
-  `WhyWrong`. A Done button closes it.
+  `WhyWrong`. A Done button closes it, and holds the focus so Enter does too.
 - **Usage:** `exam_page.dart`, once `exam.isFinished`.
 - **Notes:** Keep this method cheap because Flutter may call it often.
 

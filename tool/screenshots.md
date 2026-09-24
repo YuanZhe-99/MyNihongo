@@ -19,10 +19,12 @@ One shot per page at each pinned geometry, matching the table in
 | Pixel 10 Pro Fold | 791 x 820 | the widest one-column kana case |
 | Tablet landscape | 1024 x 768 | three reference columns |
 | Tablet portrait | 768 x 1024 | two reference columns |
+| Windows window | 1000 x 720 | the desktop layout, with option numbers and the key hint |
 
 Pages: Learn, Kana (both scripts, and one search), Vocabulary (list and detail
 sheet), Grammar (list and detail sheet), Settings (one pane and two), WebDAV
-sync, Backup.
+sync, Backup. At the Windows geometry also: a practice quiz (a choice and an ordering
+question) and a mock paper's start card and a timed block, the two pages whose desktop form differs.
 
 ## On a real device
 
@@ -34,6 +36,9 @@ adb exec-out screencap -p > doc/screenshots/<page>_<width>x<height>.png
 Fold and unfold the device rather than restarting it: the activity's
 `configChanges` keeps it alive across the resize, and the point of the
 foldable shots is what happens on that resize.
+
+On Windows, `flutter run -d windows` opens at 1000 x 720; capture the window with the Snipping
+Tool (Win+Shift+S, window mode) so the shot has no desktop around it.
 
 ## Without the hardware
 

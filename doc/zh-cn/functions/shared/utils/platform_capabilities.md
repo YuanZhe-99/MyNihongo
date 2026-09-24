@@ -1,10 +1,10 @@
 # lib/shared/utils/platform_capabilities.dart
 
-`lib/` 中唯一按平台分支的地方。九个顶层 getter 回答"本平台能否做 X"，且每一个都读取 `defaultTargetPlatform` 而非 `dart:io` 的 `Platform`，因此 widget 测试可以通过 `debugDefaultTargetPlatformOverride` 触达任意分支。这一点在这里很关键：本工程唯一的开发主机是 Windows，否则仅 Android 的行为将无法测试。
+`lib/` 中唯一按平台分支的地方。十个顶层 getter 回答"本平台能否做 X"，且每一个都读取 `defaultTargetPlatform` 而非 `dart:io` 的 `Platform`，因此 widget 测试可以通过 `debugDefaultTargetPlatformOverride` 触达任意分支。这一点在这里很关键：本工程唯一的开发主机是 Windows，否则仅 Android 的行为将无法测试。
 
 本模块只导入 `package:flutter/foundation.dart`。在 `lib/` 的其他任何地方添加平台分支都是 bug：给该能力命名，把 getter 放在这里，然后按名字调用——与 `adaptive_layout.dart` 对宽度比较所施加的规则相同。每个答案背后的平台事实见 [../../../platform-notes.md](../../../platform-notes.md)。
 
-使用方：`settings_page.dart`（`showsStorageLocation`）、语音服务与设置条目、端侧 AI 服务与设置条目、`sentence_analyzer.dart`、`system_settings_launcher.dart`、提醒服务与设置条目（`platformSchedulesReminders`、`platformRemindsFromInsideTheApp`），以及 `webdav_config_page.dart`（`platformAsksForLocalNetwork`）。`test/platform_capabilities_test.dart` 在每个 `TargetPlatform` 上固定每个 getter 的结果。
+使用方：`settings_page.dart`（`showsStorageLocation`）、语音服务与设置条目、端侧 AI 服务与设置条目、`sentence_analyzer.dart`、`system_settings_launcher.dart`、提醒服务与设置条目（`platformSchedulesReminders`、`platformRemindsFromInsideTheApp`）、`webdav_config_page.dart`（`platformAsksForLocalNetwork`），以及 `quiz_runner.dart`（`showsKeyboardHints`）。`test/platform_capabilities_test.dart` 在每个 `TargetPlatform` 上固定每个 getter 的结果。
 
 ## 声明
 
@@ -19,6 +19,7 @@
 | `platformSchedulesReminders` | 顶层 getter | B | 报告操作系统是否自己触发提醒（Android、iOS），从而应用关闭时提醒也能到达。 |
 | `platformRemindsFromInsideTheApp` | 顶层 getter | B | 报告提醒是否必须来自运行中应用内的定时器（Windows、macOS、Linux）。 |
 | `platformAsksForLocalNetwork` | 顶层 getter | B | 报告系统是否会在应用访问本地网络前询问用户（iOS、macOS），以便失败的 WebDAV 测试能说明这一点。 |
+| `showsKeyboardHints` | 顶层 getter | B | 报告测验是否为选项编号并列出按键（仅桌面；快捷键本身在所有平台上都可用）。 |
 
 ## 文档
 

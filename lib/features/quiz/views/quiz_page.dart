@@ -526,7 +526,10 @@ class _QuizPageState extends ConsumerState<QuizPage> {
         title: Text(l10n.quizLeaveTitle),
         content: Text(l10n.quizLeaveBody),
         actions: [
+          // Focused, so Enter from the keyboard never leaves a paper by
+          // accident; Esc already dismisses the dialog.
           TextButton(
+            autofocus: true,
             onPressed: () => Navigator.of(context).pop(false),
             child: Text(l10n.cancel),
           ),
@@ -682,7 +685,9 @@ class _QuizPageState extends ConsumerState<QuizPage> {
             ),
         ],
         const SizedBox(height: 24),
+        // Focused, so Enter closes the summary from the keyboard.
         FilledButton(
+          autofocus: true,
           onPressed: () => Navigator.of(context).pop(),
           child: Text(l10n.quizSummaryDone),
         ),

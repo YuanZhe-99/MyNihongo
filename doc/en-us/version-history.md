@@ -12,6 +12,44 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.5.1` — 2026-09-24. A quiz answered from the keyboard.
+
+  **A learner at a keyboard now answers a whole session without the mouse.**
+  Digits pick an option or place the next fragment of a sentence, Backspace
+  takes a fragment back, Enter checks and then continues, `R` replays the
+  question's audio, and `S` skips a question the model wrote. The keys belong
+  to the quiz runner, so a practice quiz, a unit, a checkpoint and a mock paper
+  all have them. On a desktop the options carry their numbers and one line under
+  the Check button names the keys; a phone shows neither.
+
+  **The hard part was a digit that must sometimes be text.** On a typed
+  question `1` is part of an answer, and Enter is how the field submits. A key
+  a shortcut matches is always consumed, so the runner does not bind a key and
+  then ignore it; it builds its bindings per question and per state, and on an
+  unanswered typed question binds nothing at all. Focus follows the same rule:
+  the typed field asks for focus itself, because `autofocus` is ignored once
+  the quiz's own key handler holds it from the question before. To let a tap
+  and a key change the same thing, the chosen option and the fragments placed
+  so far moved out of the answer panes into the runner.
+
+  Around a session, the button a keyboard user reaches for next is already
+  focused: Start on a mock paper's start card, Done on a summary, and **Cancel**
+  in the leave dialogs — so Enter pressed by habit never walks out of a timed
+  paper.
+
+  **One defect removed rather than fixed.** The app installed its own scroll
+  behaviour, copied from MyAnime to make desktop scrolling work. Desktop never
+  needed it: the wheel and the scrollbars are the framework's default. What it
+  did do was replace the list of devices allowed to drag a list, which on
+  Android silently stopped a stylus and Voice Access from scrolling. It is
+  gone, a test holds the default in place, and the same class in MyAnime is
+  noted for fixing there.
+
+  These are the first key-event tests in any of the sibling apps. Verified
+  here: `flutter analyze` clean and 1083 tests. The keys were driven on
+  Windows through widget tests at the Windows window's own size; nothing about
+  them depends on the phone.
+
 - `0.5.0` — 2026-09-24. Every platform builds in CI, and the Apple projects
   are made right.
 

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../l10n/app_localizations.dart';
 import '../../../shared/utils/adaptive_layout.dart';
+import '../../../shared/utils/platform_capabilities.dart';
 import '../../speech/widgets/speak_button.dart';
 import '../../../shared/providers/app_settings.dart';
 import '../../../shared/widgets/furigana_text.dart';
@@ -95,25 +97,135 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
   String? _aiComment;
   bool _grading = false;
 
+  /// Holds keyboard focus for the shortcuts whenever no text field needs it.
+  final _keyFocus = FocusNode(debugLabel: 'quiz keys');
+
   @override
   void initState() {
     super.initState();
     widget.session.addListener(_onSessionChanged);
+    WidgetsBinding.instance.addPostFrameCallback((_) => _syncFocus());
   }
 
   @override
   void dispose() {
     widget.session.removeListener(_onSessionChanged);
+    _keyFocus.dispose();
     super.dispose();
   }
 
   /// Purpose: Redraw when the session moves on.
   /// Inputs: None.
   /// Returns: None.
-  /// Side effects: Rebuilds.
+  /// Side effects: Rebuilds, then settles keyboard focus after the frame.
   /// Notes: Internal helper used within this file only.
   void _onSessionChanged() {
-    if (mounted) setState(() {});
+    if (!mounted) return;
+    setState(() {});
+    WidgetsBinding.instance.addPostFrameCallback((_) => _syncFocus());
+  }
+
+  /// Purpose: Put keyboard focus where the next key press belongs.
+  /// Inputs: None; reads the session.
+  /// Returns: None.
+  /// Side effects: May move keyboard focus to the shortcut node.
+  /// Notes: Internal helper used within this file only. Key events travel from
+  /// the focused node up to the root, so the shortcuts only hear a key when
+  /// focus is at or below them. An unanswered typed question is left alone:
+  /// its field takes focus itself, and digits must reach it as text. Every
+  /// other state — a choice or ordering question, or any answered question,
+  /// whose field is now disabled — gives focus to the shortcut node.
+  void _syncFocus() {
+    if (!mounted) return;
+    final question = widget.session.current;
+    if (question == null) return;
+    final answered = widget.session.lastOutcome != null;
+    if (answered || question.kind != AnswerKind.typed) {
+      _keyFocus.requestFocus();
+    }
+  }
+
+  /// Purpose: Build the keyboard shortcuts that apply right now.
+  /// Inputs: The current `question` and whether it is `answered`.
+  /// Returns: `Map<ShortcutActivator, VoidCallback>`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. A binding exists only
+  /// when its action is possible, because a matched key is always consumed —
+  /// returning early inside a callback would still swallow the key. So an
+  /// unanswered typed question binds nothing: digits must reach the field as
+  /// text, and Enter must reach it as a submit. The enablement the buttons
+  /// encode is expressed the same way, by leaving the binding out.
+  Map<ShortcutActivator, VoidCallback> _bindings(
+    QuizQuestion question,
+    bool answered,
+  ) {
+    if (_grading) return const {};
+    final bindings = <ShortcutActivator, VoidCallback>{};
+    void bindEnter(VoidCallback action) {
+      bindings[const SingleActivator(LogicalKeyboardKey.enter)] = action;
+      bindings[const SingleActivator(LogicalKeyboardKey.numpadEnter)] = action;
+    }
+
+    if (answered) {
+      bindEnter(_continue);
+      return bindings;
+    }
+    if (question.kind == AnswerKind.typed) return bindings;
+
+    final count = switch (question.kind) {
+      AnswerKind.choice => question.options.length,
+      AnswerKind.order => remainingFragments(question, _pending).length,
+      AnswerKind.typed => 0,
+    };
+    for (var n = 0; n < count && n < 9; n++) {
+      void action() => question.kind == AnswerKind.choice
+          ? _compose(ChoiceAnswer(n))
+          : _placeFragment(question, n);
+      bindings[SingleActivator(_digitKeys[n])] = action;
+      bindings[SingleActivator(_numpadKeys[n])] = action;
+    }
+    final pending = _pending;
+    if (question.kind == AnswerKind.order &&
+        pending is OrderAnswer &&
+        pending.order.isNotEmpty) {
+      bindings[const SingleActivator(LogicalKeyboardKey.backspace)] = () =>
+          _compose(
+            OrderAnswer(pending.order.sublist(0, pending.order.length - 1)),
+          );
+    }
+    if (_pending != null) bindEnter(_submit);
+    final speak = question.speakText;
+    if (speak != null &&
+        speak.isNotEmpty &&
+        TtsService.instance.hasJapaneseVoice) {
+      bindings[const SingleActivator(LogicalKeyboardKey.keyR)] = () =>
+          TtsService.instance.speak(speak);
+    }
+    if (question.generated) {
+      bindings[const SingleActivator(LogicalKeyboardKey.keyS)] = _skip;
+    }
+    return bindings;
+  }
+
+  /// Purpose: Record the answer being composed.
+  /// Inputs: `answer`.
+  /// Returns: None.
+  /// Side effects: Rebuilds.
+  /// Notes: Internal helper used within this file only. The one path both a
+  /// tap and a key take.
+  void _compose(QuizAnswer answer) => setState(() => _pending = answer);
+
+  /// Purpose: Place the n-th remaining fragment of an ordering question.
+  /// Inputs: The `question` and `n`, counted as the chips are shown.
+  /// Returns: None.
+  /// Side effects: Rebuilds.
+  /// Notes: Internal helper used within this file only.
+  void _placeFragment(QuizQuestion question, int n) {
+    final remaining = remainingFragments(question, _pending);
+    if (n >= remaining.length) return;
+    final pending = _pending;
+    final chosen = pending is OrderAnswer ? pending.order : const <int>[];
+    _compose(OrderAnswer([...chosen, remaining[n]]));
   }
 
   /// Purpose: Submit the composed answer.
@@ -257,9 +369,11 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
       children: [
         AnswerPane(
           question: question,
+          pending: _pending,
           locked: answered,
-          onChanged: (answer) => setState(() => _pending = answer),
+          onChanged: _compose,
           onSubmit: _submit,
+          showKeyHints: showsKeyboardHints,
         ),
         const SizedBox(height: 12),
         if (answered && widget.showFeedback)
@@ -289,35 +403,57 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
             onPressed: _grading ? null : _skip,
             child: Text(l10n.quizSkipGenerated),
           ),
+        // Desktop only: a phone has no keyboard to name, and a tablet with
+        // one still works, it just is not told.
+        if (showsKeyboardHints) ...[
+          const SizedBox(height: 8),
+          Text(
+            l10n.quizKeyboardHint,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.outline,
+            ),
+          ),
+        ],
       ],
     );
 
+    final Widget layout;
     if (!canSplitLayout(screen.width, screen.height)) {
-      return ListView(
+      layout = ListView(
         padding: EdgeInsets.fromLTRB(16, 8, 16, 24 + screen.height * 0.02),
         children: [prompt, const SizedBox(height: 20), answers],
       );
+    } else {
+      final content = referenceContentWidth(screen.width);
+      layout = Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: widget.questionPaneWidth(content),
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.fromLTRB(16, 8, 8, 24),
+              child: prompt,
+            ),
+          ),
+          const VerticalDivider(width: 1),
+          Expanded(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
+              child: answers,
+            ),
+          ),
+        ],
+      );
     }
 
-    final content = referenceContentWidth(screen.width);
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(
-          width: widget.questionPaneWidth(content),
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.fromLTRB(16, 8, 8, 24),
-            child: prompt,
-          ),
-        ),
-        const VerticalDivider(width: 1),
-        Expanded(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
-            child: answers,
-          ),
-        ),
-      ],
+    // The shortcuts sit outside the focus node they listen through: key
+    // events travel from the focused node towards the root, so a shortcut
+    // widget below the focused node would never see them. Both layouts, and
+    // every page that hosts a runner, get the same bindings from here.
+    return CallbackShortcuts(
+      bindings: _bindings(question, answered),
+      child: Focus(focusNode: _keyFocus, child: layout),
     );
   }
 
@@ -527,7 +663,8 @@ class _QuestionPaneState extends ConsumerState<_QuestionPane> {
           GrammarPointLine(question.itemId),
         ],
         const SizedBox(height: 8),
-        if (_instruction(l10n) case final instruction when instruction.isNotEmpty)
+        if (_instruction(l10n) case final instruction
+            when instruction.isNotEmpty)
           Text(
             instruction,
             style: theme.textTheme.bodyMedium?.copyWith(
@@ -648,3 +785,29 @@ extension QuizModeLabel on AppLocalizations {
     QuizMode.drill => quizModeDrill,
   };
 }
+
+/// The number-row keys `1` to `9`, in order.
+const _digitKeys = <LogicalKeyboardKey>[
+  LogicalKeyboardKey.digit1,
+  LogicalKeyboardKey.digit2,
+  LogicalKeyboardKey.digit3,
+  LogicalKeyboardKey.digit4,
+  LogicalKeyboardKey.digit5,
+  LogicalKeyboardKey.digit6,
+  LogicalKeyboardKey.digit7,
+  LogicalKeyboardKey.digit8,
+  LogicalKeyboardKey.digit9,
+];
+
+/// The numeric keypad's `1` to `9`, in order.
+const _numpadKeys = <LogicalKeyboardKey>[
+  LogicalKeyboardKey.numpad1,
+  LogicalKeyboardKey.numpad2,
+  LogicalKeyboardKey.numpad3,
+  LogicalKeyboardKey.numpad4,
+  LogicalKeyboardKey.numpad5,
+  LogicalKeyboardKey.numpad6,
+  LogicalKeyboardKey.numpad7,
+  LogicalKeyboardKey.numpad8,
+  LogicalKeyboardKey.numpad9,
+];

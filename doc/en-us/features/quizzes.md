@@ -214,3 +214,34 @@ back to the subtitle line the quiz used before, so the reading is shown exactly 
 Question pane fixed on the left, answers on the right, when `canSplitLayout`
 says the window is the right shape; stacked otherwise. See
 [`../adaptive-layout.md`](../adaptive-layout.md) for the rule and what it costs.
+
+## From a keyboard
+
+A learner at a keyboard answers a whole session without the mouse. The keys belong to
+`QuizRunner`, so the practice quiz, a unit session, a checkpoint and a mock paper all get them.
+
+| Key | Does | Only when |
+|---|---|---|
+| `1`–`9` | Choice: select option *n*. Ordering: place the *n*-th remaining fragment | Not on a typed question, where a digit is text |
+| `Backspace` | Take the last placed fragment back | Ordering, with something placed |
+| `Enter` | Check, then Continue — the one filled button | Something is composed, or the answer is in. On an unanswered typed question Enter belongs to the field, which submits |
+| `R` | Replay the question's audio | The question has audio and a Japanese voice exists |
+| `S` | Skip a generated question | Generated, and not answered yet |
+| `Esc` | Leave, through the same confirmation as the back button | Unchanged |
+
+On a desktop the options and remaining fragments carry their digit, and one line under the Check
+button names the keys. A phone shows neither; a tablet with a keyboard still gets the keys, it is
+just not told about them. The numbers change as fragments are placed, and the key follows the
+number on screen.
+
+**The keys exist only when their action does.** A key a shortcut matches is always consumed, so a
+digit bound on a typed question would never reach the field. The runner therefore builds its
+bindings per question and per state, rather than binding everything and ignoring some of it. Focus
+follows the same rule: after every change of question the quiz's own key handler takes focus,
+except on an unanswered typed question, where the field takes it so typing works at once.
+
+Around a session, the button a keyboard user reaches for next already has the focus: Start on a
+mock paper's start card, Done on the summary and on a paper's results, and **Cancel** in both leave
+dialogs, so that Enter pressed by habit never walks out of a timed paper.
+
+Scenario branch choices, writing practice and the tabs have no shortcuts yet.

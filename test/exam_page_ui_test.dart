@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:my_nihongo/features/content/models/jlpt_level.dart';
@@ -233,4 +234,47 @@ void main() {
       expect(tester.takeException(), isNull);
     });
   }
+
+  group('from the keyboard', () {
+    final zh = lookupAppLocalizations(const Locale('zh'));
+
+    testWidgets('Enter on the start card starts the block', (tester) async {
+      await pumpAt(tester, 412, 915);
+      await tester.runAsync(() async {
+        await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+      });
+      await pumpUntil(
+        tester,
+        () => find.byType(QuizRunner).evaluate().isNotEmpty,
+      );
+      expect(find.byType(QuizRunner), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('Enter on the leave dialog stays in the paper', (tester) async {
+      // Cancel is the focused action, so a learner who hits Enter by habit
+      // does not walk out of a timed paper.
+      await pumpAt(tester, 412, 915);
+      await startBlock(tester);
+      await tester.runAsync(() async {
+        final state = tester.state(find.byType(ExamPage));
+        Navigator.of(state.context).maybePop();
+      });
+      await pumpUntil(
+        tester,
+        () => find.text(zh.examLeaveTitle).evaluate().isNotEmpty,
+      );
+      await tester.runAsync(() async {
+        await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+      });
+      await pumpUntil(
+        tester,
+        () => find.text(zh.examLeaveTitle).evaluate().isEmpty,
+      );
+      expect(find.text(zh.examLeaveTitle), findsNothing);
+      expect(find.byType(ExamPage), findsOneWidget);
+      expect(find.byType(QuizRunner), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+  });
 }

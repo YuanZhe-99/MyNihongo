@@ -1,5 +1,4 @@
 import 'package:device_preview/device_preview.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -9,22 +8,6 @@ import '../shared/providers/app_settings.dart';
 import 'locale_resolution.dart';
 import 'router.dart';
 import 'theme.dart';
-
-/// Enable mouse wheel and trackpad scrolling on desktop.
-class _DesktopScrollBehavior extends MaterialScrollBehavior {
-  /// Purpose: Report which pointer kinds may drag a scrollable.
-  /// Inputs: None.
-  /// Returns: `Set<PointerDeviceKind>`.
-  /// Side effects: None.
-  /// Notes: Android is the only shipped platform today, but the desktop
-  /// targets are planned and this costs nothing there.
-  @override
-  Set<PointerDeviceKind> get dragDevices => {
-    PointerDeviceKind.touch,
-    PointerDeviceKind.mouse,
-    PointerDeviceKind.trackpad,
-  };
-}
 
 class MyNihongoApp extends ConsumerStatefulWidget {
   /// Which tab to open on, read from the device preferences before `runApp`.
@@ -68,8 +51,10 @@ class _MyNihongoAppState extends ConsumerState<MyNihongoApp> {
       title: 'MyNihongo!!!!!',
       debugShowCheckedModeBanner: false,
 
-      // Enable desktop scroll
-      scrollBehavior: _DesktopScrollBehavior(),
+      // No scrollBehavior: the SDK default already scrolls with the wheel and
+      // draws scrollbars on desktop, and it keeps stylus and accessibility
+      // (`unknown`) drags working on Android, which a custom dragDevices set
+      // silently dropped. See doc/en-us/platform-notes.md.
 
       // Theme
       theme: AppTheme.light,

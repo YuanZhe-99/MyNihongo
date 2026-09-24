@@ -36,7 +36,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 
 | Source file | Page | Declarations | Tier A count |
 |---|---|---|---|
-| `lib/app/app.dart` | [app/app.md](app/app.md) | 4 | 0 |
+| `lib/app/app.dart` | [app/app.md](app/app.md) | 3 | 0 |
 | `lib/app/data_modules.dart` | [app/data_modules.md](app/data_modules.md) | 11 | 1 |
 | `lib/app/flavor.dart` | [app/flavor.md](app/flavor.md) | 1 | 0 |
 | `lib/app/locale_resolution.dart` | [app/locale_resolution.md](app/locale_resolution.md) | 4 | 2 |
@@ -93,9 +93,9 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/quiz/services/quiz_session.dart` | [features/quiz/services/quiz_session.md](features/quiz/services/quiz_session.md) | 22 | 7 |
 | `lib/features/quiz/views/quiz_modes_page.dart` | [features/quiz/views/quiz_modes_page.md](features/quiz/views/quiz_modes_page.md) | 3 | 1 |
 | `lib/features/quiz/views/quiz_page.dart` | [features/quiz/views/quiz_page.md](features/quiz/views/quiz_page.md) | 16 | 4 |
-| `lib/features/quiz/widgets/answer_panes.dart` | [features/quiz/widgets/answer_panes.md](features/quiz/widgets/answer_panes.md) | 6 | 1 |
+| `lib/features/quiz/widgets/answer_panes.dart` | [features/quiz/widgets/answer_panes.md](features/quiz/widgets/answer_panes.md) | 9 | 2 |
 | `lib/features/quiz/widgets/grammar_point_link.dart` | [features/quiz/widgets/grammar_point_link.md](features/quiz/widgets/grammar_point_link.md) | 6 | 0 |
-| `lib/features/quiz/widgets/quiz_runner.dart` | [features/quiz/widgets/quiz_runner.md](features/quiz/widgets/quiz_runner.md) | 11 | 3 |
+| `lib/features/quiz/widgets/quiz_runner.dart` | [features/quiz/widgets/quiz_runner.md](features/quiz/widgets/quiz_runner.md) | 17 | 4 |
 | `lib/features/sentence/models/function_word.dart` | [features/sentence/models/function_word.md](features/sentence/models/function_word.md) | 7 | 1 |
 | `lib/features/sentence/models/sentence_analysis.dart` | [features/sentence/models/sentence_analysis.md](features/sentence/models/sentence_analysis.md) | 12 | 2 |
 | `lib/features/sentence/models/token.dart` | [features/sentence/models/token.md](features/sentence/models/token.md) | 1 | 1 |
@@ -165,7 +165,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/shared/views/webdav_config_page.dart` | [shared/views/webdav_config_page.md](shared/views/webdav_config_page.md) | 21 | 1 |
 | `lib/shared/services/system_settings_launcher.dart` | [shared/services/system_settings_launcher.md](shared/services/system_settings_launcher.md) | 1 | 1 |
 | `lib/shared/utils/adaptive_layout.dart` | [shared/utils/adaptive_layout.md](shared/utils/adaptive_layout.md) | 14 | 4 |
-| `lib/shared/utils/platform_capabilities.dart` | [shared/utils/platform_capabilities.md](shared/utils/platform_capabilities.md) | 9 | 1 |
+| `lib/shared/utils/platform_capabilities.dart` | [shared/utils/platform_capabilities.md](shared/utils/platform_capabilities.md) | 10 | 1 |
 | `lib/shared/widgets/adaptive_tile_grid.dart` | [shared/widgets/adaptive_tile_grid.md](shared/widgets/adaptive_tile_grid.md) | 3 | 0 |
 | `lib/shared/widgets/example_actions.dart` | [shared/widgets/example_actions.md](shared/widgets/example_actions.md) | 1 | 1 |
 | `lib/shared/widgets/furigana_text.dart` | [shared/widgets/furigana_text.md](shared/widgets/furigana_text.md) | 7 | 1 |

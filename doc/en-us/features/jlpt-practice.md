@@ -145,6 +145,10 @@ A block that runs out of time is handed in with whatever is left recorded as
 **unanswered** — not wrong. A block whose questions all get answered is handed
 in early, and the recorded time is then the time actually spent.
 
+From a keyboard a mock runs like a practice quiz, with the keys in
+[`quizzes.md`](quizzes.md#from-a-keyboard): Enter on the start card starts the block, digits and
+Enter answer, and Enter in the leave dialog stays in the paper, because Cancel holds the focus.
+
 ### The clock measures attention, not hours
 
 Time is counted only while the block is on screen and the app is in the

@@ -194,7 +194,12 @@ class ExamResultsView extends StatelessWidget {
                 ),
         ],
         const SizedBox(height: 24),
-        FilledButton(onPressed: onDone, child: Text(l10n.quizSummaryDone)),
+        // Focused, so Enter closes the results from the keyboard.
+        FilledButton(
+          autofocus: true,
+          onPressed: onDone,
+          child: Text(l10n.quizSummaryDone),
+        ),
       ],
     );
   }

@@ -1036,6 +1036,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get quizSkipGenerated => 'Skip this question';
 
   @override
+  String get quizKeyboardHint =>
+      'Keys: 1–9 choose · Enter check, then continue · Backspace undo · R replay · S skip';
+
+  @override
   String quizAcceptedByAi(String comment) {
     return 'Accepted by the on-device model: $comment';
   }

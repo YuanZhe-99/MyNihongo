@@ -366,6 +366,10 @@
   "quizCheck": "Check",
   "quizContinue": "Continue",
   "quizSkipGenerated": "Skip this question",
+  "quizKeyboardHint": "Keys: 1–9 choose · Enter check, then continue · Backspace undo · R replay · S skip",
+  "@quizKeyboardHint": {
+    "description": "Shown under the Check button on desktop only. Keep the key names (1–9, Enter, Backspace, R, S) as they are printed on a keyboard."
+  },
   "quizAcceptedByAi": "Accepted by the on-device model: {comment}",
   "@quizAcceptedByAi": { "placeholders": { "comment": { "type": "String" } } },
   "quizWhyWrong": "Why was this wrong?",

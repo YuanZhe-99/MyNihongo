@@ -1443,11 +1443,19 @@ The third complaint from the Pixel 10 — the scripted conversation is monotonou
 
 #### M5.1 — Keyboard shortcuts for quizzes (`v0.5.1`)
 
-- [ ] Shortcuts on `QuizRunner` (digits, Backspace, Enter, R, S), bindings built per question kind
-- [ ] Option numbers and a key hint on desktop only, through `platform_capabilities.dart`
-- [ ] `_DesktopScrollBehavior` removed: the SDK default already scrolls on desktop, and the override
-      dropped stylus and accessibility scrolling on Android
-- [ ] The first key-event tests in the series
+- [x] Shortcuts on `QuizRunner` (digits, Backspace, Enter, R, S), bindings built per question kind
+      and state; the composed choice and ordering lifted out of the panes so a tap and a key share
+      one path; the typed field requests its own focus
+- [x] Option numbers and a key hint on desktop only, through `platform_capabilities.dart`
+      (`showsKeyboardHints`)
+- [x] Start, Done and the leave dialogs' Cancel hold the focus, so Enter does the safe thing
+- [x] `_DesktopScrollBehavior` removed: the SDK default already scrolls on desktop, and the override
+      dropped stylus and accessibility scrolling on Android. MyAnime carries the same class; flagged
+      in the decisions log, not fixed from here
+- [x] The first key-event tests in the series (`quiz_page_ui_test`, `exam_page_ui_test`), and a
+      drag-devices regression test in `app_smoke_test`
+- [ ] Known gap, documented: PageUp/PageDown/arrows scroll a reference list only once something in
+      it has focus
 
 #### M5.2 — Japanese UI and Japanese content (`v0.5.2`)
 
@@ -1662,6 +1670,11 @@ The third complaint from the Pixel 10 — the scripted conversation is monotonou
 | 2026-09-24 | The iOS notification-centre delegate line is parity with MyDay, not a fix | Scheduling and delivery never needed it; it only allows a foreground banner, and the app registers no tap handler |
 | 2026-09-24 | Apple's refused offline-only `listen` is classified by its message into `languageUnavailable` | `speech_to_text` drops the platform error code and keeps only the message. Matching a message is fragile, but a reworded message falls back to the old generic failure, never to a crash |
 | 2026-09-24 | No Mac builds this project; CI compilation is Phase 5's ceiling for iOS and macOS | Confirmed with the user. Every Apple behaviour stays marked unverified in the docs, as M2.1 and M2.2 did for audio |
+| 2026-09-24 | Quiz shortcuts live on `QuizRunner`, and its bindings are built per question kind and state | Every page that runs a quiz gets them from one place. A matched key is always consumed, so a binding that is present but does nothing would still swallow a digit a typed answer needs; leaving it out is the only way to give the key back |
+| 2026-09-24 | `CallbackShortcuts` wraps the runner's `Focus`, never the other way round, and the wrapper never uses `autofocus` | Key events travel from the focused node to the root, so the shortcuts must be an ancestor of the focused node. `autofocus` on the wrapper would take focus before a typed field's own request and silently cancel it |
+| 2026-09-24 | The composed choice and ordering moved from the answer panes into the runner | A key handler in the runner could not reach state private to a pane. With the state in one place a tap and a key take the same path, and the panes became stateless |
+| 2026-09-24 | Option numbers and the key hint are desktop-only, through `showsKeyboardHints` | On a phone they are clutter beside options the learner taps; a tablet with a keyboard keeps the keys without the hint |
+| 2026-09-24 | `_DesktopScrollBehavior` is deleted rather than fixed | The SDK default already gives desktop the wheel and scrollbars. The override replaced the drag devices, which dropped stylus and Voice Access scrolling on Android and added mouse dragging, which the SDK warns breaks text selection. MyAnime has the identical class; recorded here so it is fixed there, not from this repository |
 | 2026-09-04 | No Remove button for a downloaded model | AICore owns the file and shares it with every app that uses the same model, and neither ML Kit client exposes a delete — checked with `javap`. The button could only lie or take away something another app is using |
 | 2026-09-04 | CI `concurrency` is keyed on the commit, so a tag run supersedes the branch run | A release pushes the commit and then the tag, which ran the same analyze/test/build twice on the same tree. The tag run is the one that also creates the Release |
 | 2026-09-04 | The Prompt API client is chosen by probing model variants in preference order, never by device, client version or model name | ML Kit serves four combinations of release stage and size preference, no API says which a device offers, and `getClient()` with no configuration silently asks for one of them. Reporting that one variant's refusal as the device's answer produced two wrong diagnoses in a row on the same phone. A probe also means a model AICore begins serving later is picked up with no code change |

@@ -17,7 +17,12 @@ block needs that a practice quiz does not.
 | `_submit` | method | B | Submit the composed answer, asking the model for a second opinion on a typed one. |
 | `_advanceIfUnmarked` | method | B | Move straight on where the answer is not being marked on screen. |
 | `_continue` | method | B | Move past the feedback to the next question. |
-| `build` | method | B | Build the question and its answer controls, split or stacked. |
+| `_syncFocus` | method | B | Give the shortcut node keyboard focus unless an unanswered typed question needs it. |
+| [`_bindings`](#bindings) | method | A | Build the keyboard shortcuts that apply right now. |
+| `_compose` | method | B | Record the answer being composed; the one path a tap and a key both take. |
+| `_placeFragment` | method | B | Place the n-th remaining fragment of an ordering question. |
+| `_digitKeys`, `_numpadKeys` | top-level constants | B | The keys `1` to `9` on the number row and on the keypad. |
+| `build` | method | B | Build the question and its answer controls, split or stacked, with the desktop key hint, inside the shortcuts. |
 | [`_feedback`](#feedback) | method | A | Say whether the answer was right, and what it was. |
 | `_QuestionPane` | class | B | The half of the screen that asks the question: header, progress, leading, prompt. |
 | `didUpdateWidget` | method | B | Re-speak when the question changes, compared on `questionId` as well as item and mode. |
@@ -69,6 +74,28 @@ block needs that a practice quiz does not.
   The chip is the quiz's first link back to the catalog it draws from. It is shown right or wrong,
   because a question answered correctly is the other moment a learner wants to read the rule, and by
   then the point is on screen anyway.
+
+### `Map<ShortcutActivator, VoidCallback> _bindings(QuizQuestion question, bool answered)` <a id="bindings"></a>
+
+- **Kind:** method
+- **Purpose:** Build the keyboard shortcuts that apply to the question on screen right now.
+- **Inputs:** The current `question` and whether it is `answered`.
+- **Returns:** A map for the `CallbackShortcuts` that wraps both layouts.
+- **Side effects:** None.
+- **Algorithm:** Nothing while the model is grading. Once answered, Enter continues. On an
+  unanswered typed question, nothing. Otherwise: digits `1`–`9` (number row and keypad) choose an
+  option or place the n-th remaining fragment; Backspace takes the last fragment back when there is
+  one; Enter checks once something is composed; `R` replays the question's audio when it has some
+  and a Japanese voice exists; `S` skips a generated question.
+- **Usage:** `build`, once, around both the stacked and the split layout, so every page hosting a
+  runner gets the same keys.
+- **Notes:** **A binding exists only when its action is possible.** A `CallbackShortcuts` consumes a
+  key whenever the activator matches, so returning early inside a callback would still swallow it.
+  That is why an unanswered typed question binds nothing: a digit must reach the field as text, and
+  Enter must reach the field's `onSubmitted`. Key events travel from the focused node towards the
+  root, so the shortcuts sit *outside* the `Focus` they listen through; the other way round they
+  would never hear anything. `_syncFocus` gives that node focus after every session change, except
+  on an unanswered typed question, whose field takes focus itself.
 
 ### `String _instruction(AppLocalizations l10n)` <a id="instruction"></a>
 

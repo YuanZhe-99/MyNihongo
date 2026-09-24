@@ -1,6 +1,8 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:my_nihongo/features/content/models/jlpt_level.dart';
@@ -282,27 +284,25 @@ void main() {
     setUpAll(() async {
       final catalog = await ContentRepository.load();
       final point = catalog.grammar.firstWhere(
-        (p) => p.level == JlptLevel.n5 && p.meaning.resolveJoined(
-          const Locale('zh'),
-        ).isNotEmpty,
+        (p) =>
+            p.level == JlptLevel.n5 &&
+            p.meaning.resolveJoined(const Locale('zh')).isNotEmpty,
       );
       pointId = point.id;
       pattern = point.pattern;
     });
 
-    QuizQuestion question({
-      bool generated = false,
-      bool authored = false,
-    }) => QuizQuestion(
-      itemId: pointId,
-      mode: QuizMode.grammarPattern,
-      kind: AnswerKind.choice,
-      prompt: '今日は暑い＿＿。',
-      options: const ['ね', 'よ', 'な', 'わ'],
-      answerIndex: 0,
-      generated: generated,
-      authored: authored,
-    );
+    QuizQuestion question({bool generated = false, bool authored = false}) =>
+        QuizQuestion(
+          itemId: pointId,
+          mode: QuizMode.grammarPattern,
+          kind: AnswerKind.choice,
+          prompt: '今日は暑い＿＿。',
+          options: const ['ね', 'よ', 'な', 'わ'],
+          answerIndex: 0,
+          generated: generated,
+          authored: authored,
+        );
 
     Future<QuizSession> pump(WidgetTester tester, QuizQuestion q) async {
       final session = QuizSession(questions: [q]);
@@ -310,7 +310,9 @@ void main() {
         tester,
         412,
         915,
-        home: Scaffold(body: QuizRunner(session: session, onFinished: () {})),
+        home: Scaffold(
+          body: QuizRunner(session: session, onFinished: () {}),
+        ),
       );
       return session;
     }
@@ -382,7 +384,10 @@ void main() {
       required bool generated,
     }) async {
       final session = QuizSession(
-        questions: [question(generated: generated), question(generated: false)],
+        questions: [
+          question(generated: generated),
+          question(generated: false),
+        ],
       );
       await pumpAt(
         tester,
@@ -430,15 +435,10 @@ void main() {
     // the content and the page fit each other, and a fixture would prove only
     // that the page fits the fixture.
     QuizConfig readingDrill() => const QuizConfig(
-      source: DrillSource(
-        JlptLevel.n5,
-        sections: {DrillSection.reading},
-      ),
+      source: DrillSource(JlptLevel.n5, sections: {DrillSection.reading}),
     );
 
-    testWidgets('a reading question is shown with its passage', (
-      tester,
-    ) async {
+    testWidgets('a reading question is shown with its passage', (tester) async {
       await pumpAt(tester, 412, 915, home: QuizPage(config: readingDrill()));
       expect(find.byType(DrillPassageView), findsOneWidget);
       expect(find.byType(QuizRunner), findsOneWidget);
@@ -481,7 +481,8 @@ void main() {
       expect(
         find.byType(VerticalDivider),
         findsNothing,
-        reason: 'a passage and four options side by side on a phone would '
+        reason:
+            'a passage and four options side by side on a phone would '
             'leave both halves worse than stacking them',
       );
       expect(find.byType(DrillPassageView), findsOneWidget);
@@ -515,15 +516,210 @@ void main() {
         ],
         home: const QuizPage(
           config: QuizConfig(
-            source: DrillSource(
-              JlptLevel.n1,
-              sections: {DrillSection.reading},
-            ),
+            source: DrillSource(JlptLevel.n1, sections: {DrillSection.reading}),
           ),
         ),
       );
       expect(find.byType(QuizRunner), findsNothing);
       expect(tester.takeException(), isNull);
+    });
+  });
+
+  group('from the keyboard', () {
+    // The first key-event tests in the series. Built on QuizRunner with
+    // hand-made questions rather than the page, so nothing waits on content
+    // loading through dart:io: a key sent before the first question rendered
+    // would pass or fail depending on timing.
+    final zh = lookupAppLocalizations(const Locale('zh'));
+
+    QuizQuestion choice({String id = 'kana:あ', bool generated = false}) =>
+        QuizQuestion(
+          itemId: id,
+          questionId: '$id/choice',
+          mode: QuizMode.kanaToRomaji,
+          kind: AnswerKind.choice,
+          prompt: 'あ',
+          options: const ['i', 'a', 'u', 'e'],
+          answerIndex: 1,
+          generated: generated,
+        );
+
+    QuizQuestion typed() => const QuizQuestion(
+      itemId: 'kana:い',
+      questionId: 'kana:い/typed',
+      mode: QuizMode.kanaToRomaji,
+      kind: AnswerKind.typed,
+      prompt: 'い',
+      acceptedAnswers: {'i'},
+    );
+
+    QuizQuestion ordering() => const QuizQuestion(
+      itemId: 'kana:う',
+      questionId: 'kana:う/order',
+      mode: QuizMode.kanaToRomaji,
+      kind: AnswerKind.order,
+      prompt: 'I am a student.',
+      options: ['学生', '私は', 'です'],
+      answerOrder: [1, 0, 2],
+    );
+
+    Future<QuizSession> pumpKeys(
+      WidgetTester tester,
+      List<QuizQuestion> questions, {
+      double width = 412,
+      double height = 915,
+    }) async {
+      final session = QuizSession(questions: questions);
+      await pumpAt(
+        tester,
+        width,
+        height,
+        home: Scaffold(
+          body: QuizRunner(session: session, onFinished: () {}),
+        ),
+      );
+      await tester.pump();
+      return session;
+    }
+
+    Future<void> press(WidgetTester tester, LogicalKeyboardKey key) async {
+      await tester.sendKeyEvent(key);
+      await tester.pump();
+    }
+
+    FilledButton checkButton(WidgetTester tester) => tester
+        .widget<FilledButton>(find.widgetWithText(FilledButton, zh.quizCheck));
+
+    testWidgets('a digit chooses an option the way a tap does', (tester) async {
+      await pumpKeys(tester, [choice()]);
+      expect(checkButton(tester).onPressed, isNull);
+      await press(tester, LogicalKeyboardKey.digit2);
+      expect(checkButton(tester).onPressed, isNotNull);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('Enter checks, and Enter again continues', (tester) async {
+      final session = await pumpKeys(tester, [choice(), choice(id: 'kana:え')]);
+      await press(tester, LogicalKeyboardKey.digit2);
+      await tester.runAsync(() async {
+        await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+        for (var i = 0; i < 4; i++) {
+          await Future<void>.delayed(const Duration(milliseconds: 20));
+          await tester.pump();
+        }
+      });
+      expect(session.lastOutcome, isNotNull, reason: 'Enter checked it');
+      expect(find.text(zh.quizCorrect), findsOneWidget);
+      expect(
+        find.widgetWithText(FilledButton, zh.quizContinue),
+        findsOneWidget,
+      );
+
+      await press(tester, LogicalKeyboardKey.enter);
+      await tester.pump();
+      expect(session.answeredCount, 1);
+      expect(session.current?.itemId, 'kana:え');
+      expect(session.lastOutcome, isNull, reason: 'Enter continued');
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('Enter does nothing before an option is chosen', (
+      tester,
+    ) async {
+      final session = await pumpKeys(tester, [choice()]);
+      await press(tester, LogicalKeyboardKey.enter);
+      expect(session.lastOutcome, isNull);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('a typed question after a choice question gets the focus', (
+      tester,
+    ) async {
+      final session = await pumpKeys(tester, [choice(), typed()]);
+      await press(tester, LogicalKeyboardKey.digit2);
+      await tester.runAsync(() async {
+        await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+        await Future<void>.delayed(const Duration(milliseconds: 20));
+      });
+      await tester.pump();
+      await press(tester, LogicalKeyboardKey.enter);
+      await tester.pump();
+      expect(session.current?.kind, AnswerKind.typed);
+
+      // The regression this guards: the quiz's own key node holding focus
+      // would swallow the digits a learner types and discard the field's
+      // autofocus. sendKeyEvent cannot show that a character reached the
+      // field — text arrives on a different channel — so what is asserted is
+      // where focus is, and that no shortcut fired.
+      final focused = FocusManager.instance.primaryFocus;
+      expect(
+        focused?.context?.findAncestorWidgetOfExactType<TextField>(),
+        isNotNull,
+      );
+      await press(tester, LogicalKeyboardKey.digit1);
+      expect(
+        checkButton(tester).onPressed,
+        isNull,
+        reason: 'a digit on a typed question is text, not a choice',
+      );
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('digits place fragments and Backspace takes the last back', (
+      tester,
+    ) async {
+      final session = await pumpKeys(tester, [ordering()]);
+      // Remaining fragments renumber as they are placed: 2 is 私は, then 1 is
+      // 学生, then 1 is です.
+      await press(tester, LogicalKeyboardKey.digit2);
+      await press(tester, LogicalKeyboardKey.digit1);
+      await press(tester, LogicalKeyboardKey.digit1);
+      await press(tester, LogicalKeyboardKey.backspace);
+      await press(tester, LogicalKeyboardKey.digit1);
+      await tester.runAsync(() async {
+        await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+        await Future<void>.delayed(const Duration(milliseconds: 20));
+      });
+      await tester.pump();
+      expect(session.lastOutcome?.correct, isTrue);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('S skips a generated question and nothing else', (
+      tester,
+    ) async {
+      final session = await pumpKeys(tester, [
+        choice(generated: true),
+        choice(id: 'kana:え'),
+      ]);
+      expect(session.total, 2);
+      await press(tester, LogicalKeyboardKey.keyS);
+      expect(session.total, 1);
+      expect(session.current?.itemId, 'kana:え');
+      await press(tester, LogicalKeyboardKey.keyS);
+      expect(session.total, 1, reason: 'an authored question has no skip');
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('a desktop numbers the options and names the keys', (
+      tester,
+    ) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.windows;
+      await pumpKeys(tester, [choice()], width: 1000, height: 720);
+      expect(find.text(zh.quizKeyboardHint), findsOneWidget);
+      expect(find.text('1'), findsOneWidget);
+      expect(find.text('4'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      debugDefaultTargetPlatformOverride = null;
+    });
+
+    testWidgets('a phone shows neither', (tester) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.android;
+      await pumpKeys(tester, [choice()]);
+      expect(find.text(zh.quizKeyboardHint), findsNothing);
+      expect(find.text('1'), findsNothing);
+      expect(tester.takeException(), isNull);
+      debugDefaultTargetPlatformOverride = null;
     });
   });
 }

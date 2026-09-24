@@ -34,9 +34,9 @@ Consumers: the `/exam` route, reached from `JlptPracticeCard` with an `ExamConfi
 | [`_record`](#record) | method | A | Record the finished paper and clear the save. |
 | `_passageFor` | method | B | Show whatever the question on screen is about — a listening script played once, or a passage with no translation. |
 | `_passageTextOf` | method | B | Give the AI actions the text of whatever the question is about. |
-| [`_confirmLeave`](#confirmleave) | method | A | Confirm before leaving a paper that is still running. |
+| [`_confirmLeave`](#confirmleave) | method | A | Confirm before leaving a paper that is still running; Cancel holds the focus, so Enter from a keyboard stays in the paper. |
 | [`build`](#build) | method | A | Build the start card, the timed block, or the results. |
-| `_startCard` | method | B | Offer to start the next block, naming its sections, its minutes and its question count. |
+| `_startCard` | method | B | Offer to start the next block, naming its sections, its minutes and its question count; its Start button holds the focus, so Enter starts the block. |
 | [`_block`](#block) | method | A | Run the block that is on the clock. |
 
 ## Documentation

@@ -2,15 +2,17 @@
 
 `MyNihongoApp` is the root widget: a `MaterialApp.router` wired to `appRouter`, the light and dark
 `AppTheme`s, the theme mode and locale from `appSettingsProvider`, the generated `AppLocalizations`
-delegates, and `DevicePreview.appBuilder`. A private `_DesktopScrollBehavior` lets mouse wheels and
-trackpads drag scrollables, for the planned desktop targets. See
+delegates, and `DevicePreview.appBuilder`. It sets **no** `scrollBehavior`: the SDK default
+already scrolls with the mouse wheel and draws scrollbars on desktop, and it keeps stylus and
+accessibility drags working on Android. A custom behaviour that replaced the drag devices with
+touch, mouse and trackpad was removed in 0.5.1, because it dropped exactly those; see
+[../../platform-notes.md](../../platform-notes.md). See
 [../../architecture.md](../../architecture.md).
 
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |
 |---|---|---|---|
-| `_DesktopScrollBehavior.dragDevices` | getter override | B | Report which pointer kinds may drag a scrollable: touch, mouse, trackpad. |
 | `MyNihongoApp.new` | constructor (`MyNihongoApp`) | B | Create the root app widget. |
 | `MyNihongoApp.build` | method (`ConsumerWidget` build) | B | Build the `MaterialApp.router` with theme, locale, and routes from the settings provider. |
 

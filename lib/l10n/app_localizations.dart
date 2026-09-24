@@ -1875,6 +1875,12 @@ abstract class AppLocalizations {
   /// **'Skip this question'**
   String get quizSkipGenerated;
 
+  /// Shown under the Check button on desktop only. Keep the key names (1–9, Enter, Backspace, R, S) as they are printed on a keyboard.
+  ///
+  /// In en, this message translates to:
+  /// **'Keys: 1–9 choose · Enter check, then continue · Backspace undo · R replay · S skip'**
+  String get quizKeyboardHint;
+
   /// No description provided for @quizAcceptedByAi.
   ///
   /// In en, this message translates to:

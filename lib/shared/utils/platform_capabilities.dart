@@ -110,3 +110,12 @@ bool get platformRemindsFromInsideTheApp =>
 bool get platformAsksForLocalNetwork =>
     defaultTargetPlatform == TargetPlatform.iOS ||
     defaultTargetPlatform == TargetPlatform.macOS;
+
+/// Purpose: Say whether quizzes number their options and name their keys.
+/// Inputs: None; reads `defaultTargetPlatform`.
+/// Returns: `bool` — true on a desktop.
+/// Side effects: None.
+/// Notes: The shortcuts themselves work everywhere a keyboard is attached;
+/// only the visible hints are desktop-only. On a phone the numbers would be
+/// clutter beside options the learner taps.
+bool get showsKeyboardHints => isDesktopPlatform;

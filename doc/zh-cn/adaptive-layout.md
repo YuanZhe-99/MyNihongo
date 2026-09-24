@@ -135,7 +135,9 @@ int columnCapacity(double contentWidth, {required double minItemWidth,
 3. `flutter_test` 把默认字体的每个字形渲染成一个完整的 em 方块，把拉丁文本放大到实际宽度的约 2.5 倍。关心文本宽度的布局测试用简体中文驱动，因为中文字形确实是方的，这样测试度量的是生产布局而不是字体的人为产物。布局测试溢出时，先检查未改动的路径是否以同样方式失败，再相信布局真的坏了。
 4. 不要按位置索引可滚动组件；每个 `TextField` 都会贡献自己的 `Scrollable`。
 5. 注意默认的 800 × 600 测试视口会通过 `canSplitLayout`；在任何在意这一点的测试中固定显式视口。
-6. 在声称没有内联断点残留之前，grep 整棵树：
+   只在桌面上出现的行为，在 `TargetPlatform.windows` 和 1000 × 720（Windows 窗口自身的尺寸）下测试，存储行和键盘提示的测试就是这样做的。
+6. **桌面上的实时缩放**：拖动 Windows 窗口的边缘跨过每个阈值；另外，对任何本不该滚动的窗格做一次软键盘检查。
+7. 在声称没有内联断点残留之前，grep 整棵树：
 
 ```bash
 grep -rnE "maxWidth *[<>]=? *[0-9]|size\.width *[<>]=? *[0-9]" lib/

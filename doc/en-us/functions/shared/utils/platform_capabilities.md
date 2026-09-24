@@ -1,6 +1,6 @@
 # lib/shared/utils/platform_capabilities.dart
 
-The one place in `lib/` that branches on the platform. Nine top-level getters answer "can this
+The one place in `lib/` that branches on the platform. Ten top-level getters answer "can this
 platform do X", and every one of them reads `defaultTargetPlatform` rather than `dart:io`'s
 `Platform`, so a widget test reaches any branch through `debugDefaultTargetPlatformOverride`. That
 matters here: the project's only development host is Windows, and the Android-only behaviours would
@@ -14,7 +14,7 @@ rule `adaptive_layout.dart` applies to width comparisons. See
 Consumers: `settings_page.dart` (`showsStorageLocation`), the speech service and settings tiles,
 the on-device AI service and settings tiles, `sentence_analyzer.dart`, `system_settings_launcher.dart`,
 the reminder service and settings tiles (`platformSchedulesReminders`,
-`platformRemindsFromInsideTheApp`), and `webdav_config_page.dart` (`platformAsksForLocalNetwork`).
+`platformRemindsFromInsideTheApp`), `webdav_config_page.dart` (`platformAsksForLocalNetwork`), and `quiz_runner.dart` (`showsKeyboardHints`).
 `test/platform_capabilities_test.dart` pins every getter at every `TargetPlatform`.
 
 ## Declarations
@@ -30,6 +30,7 @@ the reminder service and settings tiles (`platformSchedulesReminders`,
 | `platformSchedulesReminders` | top-level getter | B | Report whether the operating system fires reminders itself (Android, iOS), so they arrive while the app is closed. |
 | `platformRemindsFromInsideTheApp` | top-level getter | B | Report whether reminders must come from a timer inside the running app (Windows, macOS, Linux). |
 | `platformAsksForLocalNetwork` | top-level getter | B | Report whether the system asks the user before the app reaches the local network (iOS, macOS), so a failed WebDAV test can say so. |
+| `showsKeyboardHints` | top-level getter | B | Report whether quizzes number their options and name their keys (desktop only; the shortcuts themselves work everywhere). |
 
 ## Documentation
 

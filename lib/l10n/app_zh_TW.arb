@@ -363,6 +363,7 @@
   "quizCheck": "檢查",
   "quizContinue": "繼續",
   "quizSkipGenerated": "跳過這道題",
+  "quizKeyboardHint": "鍵盤：1–9 選擇 · Enter 檢查，再按繼續 · Backspace 撤回 · R 重聽 · S 跳過",
   "quizAcceptedByAi": "裝置端模型判為正確：{comment}",
   "@quizAcceptedByAi": { "placeholders": { "comment": { "type": "String" } } },
   "quizWhyWrong": "為什麼這樣不對？",

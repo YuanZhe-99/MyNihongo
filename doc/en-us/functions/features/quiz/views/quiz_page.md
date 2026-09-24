@@ -22,10 +22,10 @@ Entered with `context.push('/quiz', extra: config)`.
 | `_enabledModes` | method | B | Decide which modes may be used, dropping listening without a voice. |
 | `_itemIds` | method | B | List the catalog ids this session asks about. |
 | `_kanaIds` | method | B | List the kana ids of the selected rows. |
-| `_confirmLeave` | method | B | Confirm before discarding a session in progress. |
+| `_confirmLeave` | method | B | Confirm before discarding a session in progress; Cancel holds the focus, so Enter from a keyboard never leaves by accident. |
 | `build` | method | B | Build the quiz, its summary, or the reason there is neither. |
 | `_empty` | method | B | Explain that no question could be built. |
-| `_summary` | method | B | Show the session's result. |
+| `_summary` | method | B | Show the session's result; Done holds the focus, so Enter closes it. |
 
 ## Documentation
 

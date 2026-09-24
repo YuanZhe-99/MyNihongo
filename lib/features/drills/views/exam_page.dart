@@ -456,7 +456,10 @@ class _ExamPageState extends ConsumerState<ExamPage>
         title: Text(l10n.examLeaveTitle),
         content: Text(l10n.examLeaveBody),
         actions: [
+          // Focused, so Enter from the keyboard never leaves a paper by
+          // accident; Esc already dismisses the dialog.
           TextButton(
+            autofocus: true,
             onPressed: () => Navigator.of(context).pop(false),
             child: Text(l10n.cancel),
           ),
@@ -563,7 +566,9 @@ class _ExamPageState extends ConsumerState<ExamPage>
             ),
           ),
           const SizedBox(height: 20),
+          // Focused, so Enter starts the block from the keyboard.
           FilledButton(
+            autofocus: true,
             onPressed: exam.resumeClock,
             child: Text(l10n.examStartBlock),
           ),

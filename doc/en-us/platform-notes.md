@@ -107,6 +107,22 @@ Windows is built by CI on release tags and manual dispatches — an x64 and an A
   your PC" on first run; *More info → Run anyway* installs it. The same is true of every sibling
   app's installer.
 
+### Input
+
+- **Quizzes answer from the keyboard.** Digits choose, Enter checks and continues, Backspace takes
+  a fragment back, `R` replays, `S` skips a generated question; the full table and the rules are in
+  [`features/quizzes.md`](features/quizzes.md#from-a-keyboard). On a desktop the options carry their
+  digit and a line under the Check button names the keys (`showsKeyboardHints`).
+- **Scrolling is the SDK's default.** `MaterialScrollBehavior` wraps every vertical scrollable in a
+  scrollbar on Windows, macOS and Linux, and the mouse wheel scrolls without any change to the drag
+  devices. The app used to install its own behaviour copied from MyAnime, which replaced the drag
+  devices with touch, mouse and trackpad. That added nothing a desktop needs, made text selection
+  inside scroll views awkward, and on Android silently dropped stylus drags and the `unknown` device
+  Voice Access uses. It was removed in 0.5.1. MyAnime carries the same class.
+- **One known gap:** PageUp, PageDown and the arrow keys scroll a reference list only once something
+  inside it has focus. On desktop no list attaches to the primary scroll controller, so there is
+  nothing for those keys to reach from outside.
+
 ## Speech plugins
 
 - **`flutter_tts: ^4.2.5`** and **`speech_to_text: 7.4.0`**, both resolved and built against this

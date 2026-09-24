@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -155,6 +156,24 @@ void main() {
     await tester.pump();
     // The sheet repeats the headword, so it is on screen twice.
     expect(japanese('会う'), findsNWidgets(2));
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('scrollables keep every drag device the SDK allows', (
+    tester,
+  ) async {
+    // The app once replaced the SDK's drag devices with touch, mouse and
+    // trackpad. That dropped stylus drags and the `unknown` device Android's
+    // Voice Access sends, and added mouse dragging, which the SDK warns makes
+    // text selection inside a scroll view difficult. Desktop never needed it:
+    // the wheel and the scrollbar do not depend on this set.
+    await launch(tester, 412, 915);
+    final context = tester.element(find.byType(Scrollable).first);
+    final devices = ScrollConfiguration.of(context).dragDevices;
+    expect(devices, contains(PointerDeviceKind.stylus));
+    expect(devices, contains(PointerDeviceKind.invertedStylus));
+    expect(devices, contains(PointerDeviceKind.unknown));
+    expect(devices, isNot(contains(PointerDeviceKind.mouse)));
     expect(tester.takeException(), isNull);
   });
 }

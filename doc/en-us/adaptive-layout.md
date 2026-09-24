@@ -193,7 +193,11 @@ mid-fold.
 4. Do not index scrollables positionally; every `TextField` contributes its own `Scrollable`.
 5. Note that the default 800 × 600 test viewport passes `canSplitLayout`; pin an explicit viewport in
    any test that cares.
-6. Before claiming no inline breakpoint remains, grep the whole tree:
+   A desktop-only behaviour is tested at `TargetPlatform.windows` and 1000 × 720, the Windows
+   window's own size, as the storage-row and keyboard-hint tests do.
+6. **Live resize on desktop** across each threshold, by dragging the Windows window's edge, plus a
+   soft-keyboard check on any pane that is supposed not to scroll.
+7. Before claiming no inline breakpoint remains, grep the whole tree:
 
 ```bash
 grep -rnE "maxWidth *[<>]=? *[0-9]|size\.width *[<>]=? *[0-9]" lib/
