@@ -1,6 +1,6 @@
 # Quizzes
 
-Thirteen ways of asking about the same catalog, one session runner, and the
+Seventeen ways of asking about the same catalog, one session runner, and the
 spaced-repetition schedule underneath them. The quiz is where an answer actually
 reaches [`learning-progress.md`](learning-progress.md); before M3.2 the scheduler
 existed and nothing called it.
@@ -15,6 +15,7 @@ existed and nothing called it.
 | | Written form to reading | the word | picking one of four |
 | | Listening | nothing — it is spoken | picking one of four |
 | | Type the reading | the word | typing |
+| | Fill in the word | an example sentence with the word blanked | picking one of four |
 | Kana | Kana to romaji | the kana | picking one of four |
 | | Romaji to kana | the romaji | picking one of four |
 | | Listening | nothing — it is spoken | picking one of four |
@@ -22,6 +23,9 @@ existed and nothing called it.
 | | Choose the form | the sentence with a blank | picking one of four |
 | | Order the pieces | the translation | tapping fragments into order |
 | | Pick the grammar point | the sentence | picking one of four |
+| | Sentence to meaning | a whole sentence | picking one of four meanings |
+| | Meaning to sentence | a meaning | picking one of four sentences |
+| | Type the sentence | a meaning | typing the Japanese sentence |
 
 Each is a switch in **Settings › Learning › Quiz modes**. The last one on cannot
 be switched off: a quiz with no modes opens empty and looks broken rather than
@@ -40,12 +44,15 @@ Four things are dropped rather than approximated:
 
 - **Listening modes on a device with no Japanese voice.** A question nobody can
   hear has no answer, so `QuizPage` removes them before generating anything.
-- **Grammar modes without the sentence analyser.** Three of the four need a
-  parsed example. The analyser is only awaited when such a mode is enabled,
-  because building the lexicon over 7,700 entries costs tens of milliseconds and
-  a kana quiz has no use for it.
+- **The parsing modes without the sentence analyser.** Fill in the particle,
+  Choose the form, Order the pieces and Fill in the word need a parsed sentence
+  (`parsedQuizModes`). The analyser is only awaited when one of them, or Type the
+  sentence (`lexiconAidedQuizModes`, which marks more fairly with it but works
+  without it), is enabled, because building the lexicon over 7,700 entries costs
+  tens of milliseconds and a kana quiz has no use for it.
 - **The translation-based grammar modes under a Japanese UI.** Ordering fragments against a
-  meaning, and matching a sentence to its meaning either way, use the English or Chinese
+  meaning, matching a sentence to its meaning either way, and typing the sentence a meaning
+  describes, use the English or Chinese
   translation of a catalog example as their material, and a Japanese reader is shown no
   translation of Japanese. `translationQuizModes` lists them; the quiz page drops them, and the
   quiz-mode page shows their switches off with the reason.
@@ -107,6 +114,16 @@ reproduce exactly what the sentence says.
   words.
 - **Orderings** are right when the chosen positions ascend, and the expected
   answer shown afterwards is the fragments joined, which is the sentence.
+- **Typed sentences** (Type the sentence) accept the catalog's sentence as written or its
+  reading, both through `toHiragana`, which also drops punctuation and spaces — a missing 「。」 or a
+  word in katakana is not a mistake. When the sentence analyser is loaded, the quiz page gives the
+  session a checker holding its lexicon, and the answer is also read into kana word by word
+  (`Lexicon.toKana`) and compared again: 私 marks the same as the わたし the catalog wrote. That
+  also accepts a homophone in the wrong kanji; the mode asks for a sentence, not for spelling.
+  Romaji is not accepted, and a sentence longer than 30 characters is never asked
+  (`maxTypedSentenceLength`). With on-device AI on, a different wording that means the same is the
+  model's second opinion to accept — see [`ai-assist.md`](ai-assist.md#marking-a-typed-answer).
+  Nothing is spoken: the sentence is the answer.
 
 ## A session
 

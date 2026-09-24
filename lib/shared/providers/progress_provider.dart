@@ -7,7 +7,7 @@
 /// notifier's lifetime.
 /// Notes: A sync, a restore, or a ZIP import replaces the file behind the
 /// app's back. `AutoSyncService` already reports that, so the provider
-/// subscribes once here instead of every page doing it — the `PLAN.md` M1.1
+/// subscribes once here instead of every page doing it — the M1.1
 /// wording says "pages register", and this is the deliberate deviation from it.
 library;
 

@@ -48,7 +48,7 @@ under `features/sentence/widgets/`.
 - **Side effects:** An implementation would run a model on the device.
 - **Algorithm:** —
 - **Usage:** `SentenceAnalyzer.enhancer`, which is null in every build today.
-- **Notes:** `PLAN.md` M2.3 keeps AICore / Gemini Nano as an enhancement that never becomes the
+- **Notes:** M2.3 keeps AICore / Gemini Nano as an enhancement that never becomes the
   source of truth. Nothing implements this. It exists so the shape is settled before the pressure to
   add one exists, and so the analyser has somewhere to put it that is **not** the middle of the
   pipeline: every stage above it stays deterministic and testable whether a model is present or not.

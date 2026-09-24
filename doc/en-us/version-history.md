@@ -12,6 +12,47 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.5.3` — 2026-09-24. A sentence you write yourself, and the end of the plan.
+
+  **Type the sentence** is a new grammar quiz mode, and the first in the app
+  with nothing on screen to choose from: it shows what a sentence means and the
+  learner writes the Japanese. It is marked the way the rest of the app is
+  marked — by the catalog first. The sentence as written counts, and so does its
+  reading in kana; a missing 「。」 or a word typed in katakana is not a mistake;
+  and the answer is read into kana word by word through the app's own
+  dictionary, so 私 marks the same as the わたし the catalog wrote. That leniency
+  also accepts a homophone written with the wrong kanji, on purpose: the mode
+  asks for a sentence, not for spelling. With on-device AI switched on, a
+  different wording that means the same is the model's to accept, as it already
+  was for a typed reading, and a model can still never mark a right answer
+  wrong. Sentences longer than thirty characters are not asked, and under a
+  Japanese UI the mode is unavailable, like the other modes built on a
+  translation. It was the last entry in the list of things the AI features had
+  designed and not written.
+
+  Reading the answer into kana showed that the dictionary picked the first
+  entry for a spelling, and for 私 that is わたくし. It now takes the first
+  common entry, which also helps pronunciation scoring: a recognizer that hears
+  わたし and writes 私 no longer loses points for a reading nobody said.
+
+  **PageUp and PageDown scroll the kana, vocabulary and grammar lists on
+  desktop** without anything in the list being focused first. The arrow keys
+  keep moving focus between items, as they do everywhere in Flutter.
+
+  **`PLAN.md` is retired.** The five phases it planned have all shipped. Its
+  decisions log, principles, milestone index and open questions now live in
+  [`decisions.md`](decisions.md), which also lists what was left unbuilt on
+  purpose — own-voice playback, the device screenshot pass, and the checks only
+  hardware can make — and its per-change checklists moved into `AGENTS.md`.
+  From here on a problem is reported and fixed as a bug.
+
+  Verified here: `flutter analyze` clean and 1102 tests, including a
+  new keyboard-scroll test for the three lists at the Windows window size and
+  tests that the typed sentence accepts the catalog's spelling, its reading and
+  a kanji spelling of a kana word. `genai-prompt` 1.0.0-beta4 and
+  `genai-proofreading` 1.0.0-beta1 are still the newest on Google Maven; the
+  shared package stays at `v1.0.2`.
+
 - `0.5.2` — 2026-09-24. The app in Japanese.
 
   **Japanese is now a UI language, and it was the content that took the

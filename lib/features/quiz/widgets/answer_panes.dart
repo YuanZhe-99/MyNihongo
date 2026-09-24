@@ -91,6 +91,7 @@ class AnswerPane extends StatelessWidget {
       ),
       AnswerKind.typed => _TypedPane(
         key: key,
+        sentence: question.mode == QuizMode.grammarTypeSentence,
         locked: locked,
         onChanged: onChanged,
         onSubmit: onSubmit,
@@ -233,15 +234,18 @@ class _KeyNumber extends StatelessWidget {
   }
 }
 
-/// A text field for a typed reading.
+/// A text field for a typed reading or a typed sentence.
 class _TypedPane extends StatefulWidget {
   const _TypedPane({
     super.key,
+    required this.sentence,
     required this.locked,
     required this.onChanged,
     required this.onSubmit,
   });
 
+  /// Whether the field asks for a whole sentence rather than a reading.
+  final bool sentence;
   final bool locked;
   final ValueChanged<QuizAnswer> onChanged;
   final VoidCallback onSubmit;
@@ -293,7 +297,9 @@ class _TypedPaneState extends State<_TypedPane> {
       enabled: !widget.locked,
       textInputAction: TextInputAction.done,
       decoration: InputDecoration(
-        labelText: l10n.quizTypeReadingHint,
+        labelText: widget.sentence
+            ? l10n.quizTypeSentenceHint
+            : l10n.quizTypeReadingHint,
         border: const OutlineInputBorder(),
       ),
       onChanged: (text) => widget.onChanged(TypedAnswer(text)),

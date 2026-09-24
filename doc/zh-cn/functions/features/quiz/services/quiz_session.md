@@ -17,6 +17,7 @@
 | `QuizSummary` | 类 | B | 一次已结束的会话，供总结页读取。 |
 | `accuracy` | getter | B | 首答正确率，0 到 1。 |
 | [`QuizSession`](#session) | 类 | A | 运行一次测验，可带或不带重新排队。 |
+| `checker` | 字段 | B | 给每一次作答判分的 `AnswerChecker`；运行器在决定是否需要第二意见之前会先问它同一个。默认是一个不带词典的实例。 |
 | `current`、`lastOutcome`、`isFinished`、`total`、`answeredCount`、`attempts` | getter | B | 队列的状态，供运行器读取。 |
 | `outcomes` | getter | B | 每道题目的结果，按被问到的顺序排列。 |
 | `_answers`、`_all` | 字段 | B | 按计分键给出的每道题的第一次作答，以及这次会话构建时带的每一道题。 |

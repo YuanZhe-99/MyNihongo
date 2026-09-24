@@ -38,6 +38,7 @@
   3. 把书写体系选择器、搜索框、三张表和规则节构建为局部变量。
   4. 页头：`twoColumn` 时在一个 `Row` 中并排，否则堆叠。
   5. 主体：有查询时是搜索结果加规则；否则 `twoColumn` 时是（基础表、拗音表）与（浊音表、规则）的两列 `Row`；否则按堆叠顺序。
+  6. 页面主体是一个在每个平台上都设 `primary: true` 的 `ListView`，这样在桌面上即使列表内没有任何东西持有焦点，PageUp 和 PageDown 也能到达它（见 `platform-notes.md`，输入一节）。
 - **Usage：**
   ```dart
   GoRoute(path: '/kana', builder: (context, state) => const KanaPage()),

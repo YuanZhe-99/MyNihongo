@@ -37,6 +37,13 @@ const particleBlank = '＿＿';
 /// How many fragments an ordering question needs to be worth asking.
 const minOrderFragments = 3;
 
+/// The longest sentence the typed-sentence mode asks a learner to write out.
+///
+/// Thirty characters is about two clauses of N5–N4 prose. A longer catalog
+/// example turns one question into a typing exercise, and the chance of one
+/// slip marking the whole sentence wrong grows with every character.
+const maxTypedSentenceLength = 30;
+
 /// Builds questions from catalog items.
 class QuestionGenerator {
   /// Purpose: Create a generator.
@@ -138,6 +145,9 @@ class QuestionGenerator {
     if (mode == QuizMode.grammarSentenceToMeaning ||
         mode == QuizMode.grammarMeaningToSentence) {
       return _wholeSentence(point, example, translation, mode, locale);
+    }
+    if (mode == QuizMode.grammarTypeSentence) {
+      return _typedSentence(point, example, translation);
     }
     final analysis = analyzer?.analyze(example.ja);
     if (analysis == null) return null;
@@ -334,6 +344,9 @@ class QuestionGenerator {
     if (mode == QuizMode.grammarSentenceToMeaning ||
         mode == QuizMode.grammarMeaningToSentence) {
       return _wholeSentence(point, example, translation, mode, locale);
+    }
+    if (mode == QuizMode.grammarTypeSentence) {
+      return _typedSentence(point, example, translation);
     }
 
     final analysis = analyzer?.analyze(example.ja);
@@ -731,6 +744,44 @@ class QuestionGenerator {
       correctReading: example.reading,
       wrong: [for (final other in wrong) other.ja],
       wrongReadings: [for (final other in wrong) other.reading],
+    );
+  }
+
+  /// Purpose: Show a meaning and ask for the Japanese sentence that says it.
+  /// Inputs: `point`, its `example`, the `translation` shown.
+  /// Returns: `QuizQuestion?` — null with no translation, or for a sentence
+  /// longer than [maxTypedSentenceLength].
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. The accepted set holds
+  /// the sentence as written and its reading, both folded through
+  /// `toHiragana`, plus — when the analyser is loaded — the sentence read
+  /// into kana word by word, so the key the checker's own `toKana` produces
+  /// for the catalog's spelling is in it. Nothing is spoken: the sentence is
+  /// the answer.
+  QuizQuestion? _typedSentence(
+    GrammarPoint point,
+    ContentExample example,
+    String translation,
+  ) {
+    if (translation.isEmpty) return null;
+    if (example.ja.length > maxTypedSentenceLength) return null;
+    final reading = example.reading;
+    final lexicon = analyzer?.lexicon;
+    final accepted = {
+      toHiragana(example.ja),
+      if (reading != null) toHiragana(reading),
+      if (lexicon != null) toHiragana(lexicon.toKana(example.ja)),
+    }..remove('');
+    if (accepted.isEmpty) return null;
+    return QuizQuestion(
+      itemId: point.id,
+      mode: QuizMode.grammarTypeSentence,
+      kind: AnswerKind.typed,
+      prompt: translation,
+      acceptedAnswers: accepted,
+      options: [example.ja],
+      optionReadings: [reading],
+      answerIndex: 0,
     );
   }
 

@@ -2,9 +2,9 @@
 
 内置目录与功能词表之上的"表层 → 词条"索引。`ContentCatalog` 按 id 查找词条，这正是参考页面所需要的；而阅读日语文本需要的是反方向——给定一串字符，它可能是哪些词条。
 
-它服务两个调用方：发音评分（用 `toKana` 把识别器给出的汉字答案改写成可比较的读音），以及句子分析器（用其余全部功能）。
+它服务三个调用方：发音评分（用 `toKana` 把识别器给出的汉字答案改写成可比较的读音）；写出整句测验模式（用同样的方式处理学习者键入的内容）；以及句子分析器（用其余全部功能）。
 
-使用方：`pronunciation_scorer.dart`、`tokenizer.dart`、`deinflector.dart`、`sentence_analyzer.dart`、`pronunciation_practice_sheet.dart`。
+使用方：`pronunciation_scorer.dart`、`tokenizer.dart`、`deinflector.dart`、`sentence_analyzer.dart`、`pronunciation_practice_sheet.dart`、`question_generator.dart`、`quiz_page.dart`。
 
 ## 声明
 
@@ -45,8 +45,11 @@
 - **输入：** `text`——通常是语音识别器返回的内容。
 - **返回：** 同一段文本，其中每个认得出的词都换成它的读音。仍需归一化，见说明。
 - **副作用：** 无。
-- **算法：** 从左往右的贪心最长匹配，上限为目录中最长的词形。
-- **使用：** `PronunciationScorer._resolve`。
+- **算法：** 从左往右的贪心最长匹配，上限为目录中最长的词形。一种写法对应多个词条时，由目录标为
+  common 的第一个词条给出读音（私在一个较靠前但不常用的词条里是わたくし，而常用的是わたし）；
+  否则取第一个。
+- **使用：** `PronunciationScorer._resolve`；写出整句测验模式，经由 `AnswerChecker.toKana` 与
+  `QuestionGenerator._typedSentence`。
 - **说明：** 词条用汉字书写时识别器也会用汉字作答，把它与假名读音逐字比较，会让一次完美的朗读得零分。目录不认识的一段会**原样**抄过去，所以没能解析的汉字仍然要付出编辑代价而不是凭空消失——分数对读不出来的部分保持诚实。归一化留给调用方，并对整个结果一次性施加，因为长音符号的元音取自它前面那一拍，在循环内部归一化会把它丢掉。
 
 ### `static ConjClass _classOf(VocabEntry entry)` <a id="classof"></a>

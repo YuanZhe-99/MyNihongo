@@ -186,7 +186,7 @@ to be that wrong.
   four real words in a nonsensical arrangement passes all of them. The only
   defence is reading the token chips, which is one reason the sentence lab
   exists.
-- **No morphological analyser model.** `PLAN.md` M2.3 proposed a TinySegmenter port for boundary
+- **No morphological analyser model.** M2.3 proposed a TinySegmenter port for boundary
   hints. It was not needed: at 7,700 entries plus the function-word table, the lattice reaches every
   shipped example sentence on its own, and the port would have added a model to maintain for a
   tie-break bonus. Recorded in the decisions log.

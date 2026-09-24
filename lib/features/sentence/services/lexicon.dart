@@ -110,9 +110,10 @@ class LexEntry {
 /// characters, which entries could it be — and that is what this provides, in
 /// constant time, built once per app run.
 ///
-/// It serves two callers: pronunciation scoring, which uses [toKana] to
-/// rewrite a recognizer's kanji answer into a comparable reading, and the
-/// sentence analyser, which uses the rest.
+/// It serves three callers: pronunciation scoring, which uses [toKana] to
+/// rewrite a recognizer's kanji answer into a comparable reading; the
+/// typed-sentence quiz mode, which uses it the same way on what the learner
+/// typed; and the sentence analyser, which uses the rest.
 class Lexicon {
   Lexicon._({
     required Map<String, List<VocabEntry>> byHeadword,
@@ -291,6 +292,11 @@ class Lexicon {
   /// so an unresolved kanji still costs edits rather than disappearing — the
   /// score stays honest about what could not be read.
   ///
+  /// Where one spelling has several entries, the first the catalog marks
+  /// common gives the reading: 私 is わたくし in an uncommon entry listed
+  /// before the common わたし, and the common reading is what a recognizer
+  /// hears and what a learner typing a quiz sentence means.
+  ///
   /// Normalization is deliberately left to the caller and applied to the whole
   /// result at once: `ー` takes its vowel from the mora before it, so
   /// normalizing character by character inside this loop would drop it.
@@ -306,7 +312,11 @@ class Lexicon {
         final candidate = text.substring(i, i + length);
         final entries = _byHeadword[candidate];
         if (entries != null && entries.isNotEmpty) {
-          out.write(entries.first.reading);
+          final entry = entries.firstWhere(
+            (e) => e.common,
+            orElse: () => entries.first,
+          );
+          out.write(entry.reading);
           i += length;
           matched = true;
           break;

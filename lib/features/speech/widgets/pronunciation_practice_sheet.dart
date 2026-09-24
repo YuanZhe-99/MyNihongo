@@ -111,7 +111,7 @@ class _PracticeSheetState extends ConsumerState<_PracticeSheet> {
   /// Side effects: May show a dialog; opens the microphone.
   /// Notes: Internal helper used within this file only. The rationale is shown
   /// before the platform prompt, and only when the permission is not already
-  /// granted, so the system dialog never arrives unexplained — `PLAN.md` M2.2
+  /// granted, so the system dialog never arrives unexplained — M2.2
   /// requires the microphone to be asked for at first use, never at install.
   Future<void> _startListening() async {
     final l10n = AppLocalizations.of(context)!;

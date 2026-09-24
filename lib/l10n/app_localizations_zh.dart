@@ -1099,6 +1099,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get quizTypeReadingHint => '输入读音';
 
   @override
+  String get quizTypeSentenceHint => '输入日语句子';
+
+  @override
   String get quizOrderPrompt => '把各部分排好顺序';
 
   @override
@@ -1223,6 +1226,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get quizModeGrammarMeaningToSentence => '词义 → 整句';
 
   @override
+  String get quizModeGrammarTypeSentence => '写出整句';
+
+  @override
   String get quizClozePrompt => '空格里应该填哪个词？';
 
   @override
@@ -1230,6 +1236,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get quizMeaningToSentencePrompt => '哪一句表达了这个意思？';
+
+  @override
+  String get quizTypeSentencePrompt => '用日语写出这句话。';
 
   @override
   String get formDictionary => '辞书形';
@@ -2990,6 +2999,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get quizTypeReadingHint => '輸入讀音';
 
   @override
+  String get quizTypeSentenceHint => '輸入日語句子';
+
+  @override
   String get quizOrderPrompt => '把各部分排好順序';
 
   @override
@@ -3114,6 +3126,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get quizModeGrammarMeaningToSentence => '詞義 → 整句';
 
   @override
+  String get quizModeGrammarTypeSentence => '寫出整句';
+
+  @override
   String get quizClozePrompt => '空格裡應該填哪個詞？';
 
   @override
@@ -3121,6 +3136,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get quizMeaningToSentencePrompt => '哪一句表達了這個意思？';
+
+  @override
+  String get quizTypeSentencePrompt => '用日語寫出這句話。';
 
   @override
   String get formDictionary => '辭書形';

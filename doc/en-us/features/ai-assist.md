@@ -219,8 +219,9 @@ This is the one place a model's output reaches the progress file, and it is
 worth being exact about how.
 
 The deterministic check runs first and **owns the word "correct"**. If the
-answer matches what the catalog says — the kana, the romaji, either — no model
-is asked and none could take that away.
+answer matches what the catalog says — the kana, the romaji, either; for a typed
+sentence, the sentence as written, its reading, or the answer read into kana
+through the lexicon — no model is asked and none could take that away.
 
 Only when that check says no, and only for a typed answer, and only with the
 switch on, is the model asked whether the two mean the same thing. **A yes
@@ -340,12 +341,15 @@ about the unit's own grammar points. Eight things bound what that can cost:
   keeps counting what will actually be asked. An authored question has no skip, because skipping the
   syllabus is not what this is for.
 
-## Not built
+## The free-response mode
 
-The free-response translation mode in `PLAN.md` is not written: a typed translation of a whole
-sentence, graded as its own quiz mode. The grading half exists and is what the second opinion on a
-typed answer uses; the mode does not. The scenario dialogue partner **was** the other entry here and
-is written as of `v0.4.13` — see [`lesson-path.md`](lesson-path.md).
+Both entries this section used to list are now written. The scenario dialogue partner shipped in
+`v0.4.13` — see [`lesson-path.md`](lesson-path.md). The free-response mode shipped in `v0.5.3` as
+**Type the sentence** ([`quizzes.md`](quizzes.md#marking)): a meaning is shown and the learner
+writes the Japanese. It goes the other way from a typed translation into English or Chinese on
+purpose: Japanese can be marked deterministically, so the rule above holds unchanged. The catalog's
+sentence decides "correct", and the second opinion is what accepts a different wording that means
+the same — the grading half this section described as existing without a mode.
 
 ## Grounded in what the app already computed
 

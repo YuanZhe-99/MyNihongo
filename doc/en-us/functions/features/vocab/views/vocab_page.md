@@ -29,7 +29,8 @@ chips, badges and example rendering with the grammar page through `reference_wid
 - **Source:** `lib/features/vocab/views/vocab_page.dart`
 - **Purpose:** Turn the catalog plus the current filter into a scrolling, adaptive-column list.
 - **Inputs:** `context`, `l10n`, `catalog`.
-- **Returns:** A `ListView.builder`.
+- **Returns:** A `ListView.builder`, `primary: true` on every platform so PageUp and PageDown reach
+  it on desktop with nothing inside it focused (see `platform-notes.md`, Input).
 - **Side effects:** None.
 - **Algorithm:**
   1. Filter `catalog.vocab` by the selected level and the trimmed, lowercased query

@@ -27,6 +27,7 @@ a save: the questions still to come, in order, beside the ones `outcomes` says w
 | `QuizSummary` | class | B | One finished session, as the summary screen reads it. |
 | `accuracy` | getter | B | First-try accuracy from 0 to 1. |
 | [`QuizSession`](#session) | class | A | Run one quiz, with or without re-queueing. |
+| `checker` | field | B | The `AnswerChecker` that marks every answer; the runner asks the same one before deciding whether a second opinion is needed. Defaults to one with no lexicon. |
 | `current`, `lastOutcome`, `isFinished`, `total`, `answeredCount`, `attempts` | getters | B | The queue's state, as the runner reads it. |
 | `outcomes` | getter | B | What happened to each question, in the order they were asked. |
 | `_answers`, `_all` | fields | B | The first answer to each question by score key, and every question the session was built with. |

@@ -41,7 +41,7 @@ name, minus its app-side auto-sync guard. See
   `myapps_data v1.0.1`'s `BackupEngine.restoreBackup` implements invariant I5 internally — auto-sync
   is disabled before the first write and turned back on only when nothing was written — so
   repeating it here would fight the engine over the same config file. This is a deliberate
-  deviation from the `PLAN.md` M1.1 wording.
+  deviation from the M1.1 wording.
 
 The retention dropdown offers 0 (keep forever), 3, 7, 14, 30, 60 and 90 days. A damaged bundle is
 flagged in its subtitle, its restore button is disabled and its delete button is not — deleting it

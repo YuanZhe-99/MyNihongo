@@ -1,6 +1,6 @@
 # MyNihongo!!!!! 文档（概念）
 
-**MyNihongo!!!!!**（每个面向用户的名称中都有五个感叹号——应用标题、启动器标签，以及之后的安装包元数据和 bundle 名称）是一款隐私优先的日语学习应用。它结合了五十音图、带 JLPT 级别的单词与语法内容目录、同步的用户学习进度记录、通过共享 `myapps_data` 引擎实现的 WebDAV 同步、本地备份与 ZIP 传输，以及本系列面向折叠屏设备的自适应布局。发音练习、句子分析、间隔重复课程和 JLPT 练习题在计划中；见仓库根目录的 `PLAN.md`。
+**MyNihongo!!!!!**（每个面向用户的名称中都有五个感叹号——应用标题、启动器标签，以及之后的安装包元数据和 bundle 名称）是一款隐私优先的日语学习应用。它结合了五十音图、带 JLPT 级别的单词与语法内容目录、同步的用户学习进度记录、通过共享 `myapps_data` 引擎实现的 WebDAV 同步、本地备份与 ZIP 传输，以及本系列面向折叠屏设备的自适应布局。它还能说和听，能拆解句子，能安排复习，能带你走一条课程路径，能出 JLPT N5–N1 的卷子，并支持英语、简体中文与繁体中文、日语。
 
 - **作者 / 包 id：** `yuanzhe`、`com.yuanzhe.my_nihongo`
 - **许可证：** GPL-3.0
@@ -40,7 +40,7 @@
 - [`features/lesson-path.md`](features/lesson-path.md) — 一个级别被划分成的单元、单元的题目如何挑选，以及下一个何时开放。
 - [`features/jlpt-practice.md`](features/jlpt-practice.md) — JLPT 真题练习：考卷的构成、哪些照搬哪些没有，以及一份卷子的题目如何挑选。
 - [`features/reminders.md`](features/reminders.md) — 每日提醒说什么，以及权限在什么时候请求。
-- [`features/quizzes.md`](features/quizzes.md) — 围绕同一个内容库的十三种提问方式，以及一道题如何被生成或被舍弃。
+- [`features/quizzes.md`](features/quizzes.md) — 围绕同一个内容库的十七种提问方式，以及一道题如何被生成或被舍弃。
 - [`algorithms/spaced-repetition.md`](algorithms/spaced-repetition.md) — SM-2 的调度、与教科书的两处偏离，以及复习队列如何派生。
 - [`algorithms/furigana-alignment.md`](algorithms/furigana-alignment.md) — 读音如何与它所属的字对上，以及它在什么时候拒绝猜测。
 - [`algorithms/pronunciation-scoring.md`](algorithms/pronunciation-scoring.md) — 一次朗读尝试如何逐音拍地与读音作对照。
@@ -50,4 +50,4 @@
 ## 此处不涵盖
 
 - `doc/zh-cn/functions/` — 逐源文件的函数索引页面。单独维护；从 [`functions/INDEX.md`](functions/INDEX.md) 开始。
-- `PLAN.md` — 路线图，位于仓库根目录。
+- [`decisions.md`](decisions.md) — 事情为何是这样：决策记录、刻意未构建的部分、悬而未决的问题，以及里程碑索引。

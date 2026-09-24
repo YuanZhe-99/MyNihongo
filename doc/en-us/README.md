@@ -4,9 +4,9 @@
 and later the installer metadata and bundle names) is a privacy-first Japanese learning app. It
 combines a kana chart, a vocabulary and grammar catalog with JLPT levels, a synced record of the
 user's learning progress, WebDAV sync, local backup and ZIP transfer through the shared
-`myapps_data` engines, and the series' adaptive layout for foldables. Pronunciation practice, a
-sentence analyser, spaced-repetition lessons and JLPT drills are planned; see `PLAN.md` at the
-repository root.
+`myapps_data` engines, and the series' adaptive layout for foldables. It also speaks and
+listens, takes a sentence apart, schedules reviews, runs a lesson path, sets JLPT N5–N1 papers, and
+runs in English, Simplified and Traditional Chinese and Japanese.
 
 - **Author / package id:** `yuanzhe`, `com.yuanzhe.my_nihongo`
 - **License:** GPL-3.0
@@ -72,7 +72,7 @@ The shared WebDAV sync, backup, and ZIP engines are not in this repository. They
   paper, what is copied from it and what is not, and how a paper's questions are chosen.
 - [`features/reminders.md`](features/reminders.md) — the daily reminder, what it says, and
   when permission is asked for.
-- [`features/quizzes.md`](features/quizzes.md) — the thirteen ways of asking about the same
+- [`features/quizzes.md`](features/quizzes.md) — the seventeen ways of asking about the same
   catalog, and how a question is built or dropped.
 - [`algorithms/spaced-repetition.md`](algorithms/spaced-repetition.md) — the SM-2 schedule, the two
   departures from the textbook, and how the review queue is derived.
@@ -88,4 +88,5 @@ The shared WebDAV sync, backup, and ZIP engines are not in this repository. They
 
 - `doc/en-us/functions/` — per-source-file function-index pages. Maintained separately; start at
   [`functions/INDEX.md`](functions/INDEX.md).
-- `PLAN.md` — the roadmap, at the repository root.
+- [`decisions.md`](decisions.md) — why things are the way they are: the decisions log, what was
+  left unbuilt, the open questions, and the milestone index.

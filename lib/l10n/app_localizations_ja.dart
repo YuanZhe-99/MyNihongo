@@ -1107,6 +1107,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get quizTypeReadingHint => '読みを入力';
 
   @override
+  String get quizTypeSentenceHint => '日本語の文を入力';
+
+  @override
   String get quizOrderPrompt => '正しい順に並べてください';
 
   @override
@@ -1232,6 +1235,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get quizModeGrammarMeaningToSentence => '意味 → 文';
 
   @override
+  String get quizModeGrammarTypeSentence => '文を書く';
+
+  @override
   String get quizClozePrompt => '空欄に入る単語はどれですか？';
 
   @override
@@ -1239,6 +1245,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get quizMeaningToSentencePrompt => 'この意味を表す文はどれですか？';
+
+  @override
+  String get quizTypeSentencePrompt => '日本語で書いてください。';
 
   @override
   String get formDictionary => '辞書形';

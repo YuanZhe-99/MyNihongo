@@ -23,7 +23,7 @@
 - **源码：** `lib/features/vocab/views/vocab_page.dart`
 - **Purpose：** 把目录加当前筛选变成滚动的自适应列数列表。
 - **Inputs：** `context`、`l10n`、`catalog`。
-- **Returns：** 一个 `ListView.builder`。
+- **Returns：** 一个 `ListView.builder`，在每个平台上都设 `primary: true`，这样在桌面上即使列表内没有任何东西持有焦点，PageUp 和 PageDown 也能到达它（见 `platform-notes.md`，输入一节）。
 - **Side effects：** 无。
 - **Algorithm：**
   1. 按选中的级别和修剪、转小写后的查询（`VocabEntry.matches`）筛选 `catalog.vocab`。

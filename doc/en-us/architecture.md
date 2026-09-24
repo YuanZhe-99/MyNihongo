@@ -60,7 +60,7 @@ not be introduced for normal changes. Three providers exist:
 - `progressDataProvider` (`shared/providers/progress_provider.dart`) — the progress file, a
   `StateNotifierProvider` pages reload after a save. It, not each page, registers
   `AutoSyncService.addOnLocalDataChanged`, so a sync, a backup restore or a ZIP import refreshes
-  every open page through one subscription. (`PLAN.md` M1.1 says "pages register"; this is the
+  every open page through one subscription. (The M1.1 plan said "pages register"; this is the
   deliberate deviation, and it also avoids the loading flash `ref.refresh` would cause on
   riverpod 1.x.)
 

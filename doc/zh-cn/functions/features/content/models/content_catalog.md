@@ -1,7 +1,7 @@
 # lib/features/content/models/content_catalog.dart
 
 `ContentCatalog` 承载内置内容文件描述的一切——单词列表、各等级文件中的语法点，以及假名注释——并提供按 id 的
-常数时间查找。目录在 `PLAN.md` M1.2 中从 24 个词增长到约 7,700 个，因此查找改为构造时建好的映射，而不再是种子
+常数时间查找。目录在 M1.2 中从 24 个词增长到约 7,700 个，因此查找改为构造时建好的映射，而不再是种子
 阶段负担得起的线性扫描。别名指向与主 id 相同的条目对象，因此调用方无法分辨自己是通过哪个 id 拿到的。见
 [../../../../features/content-catalog.md](../../../../features/content-catalog.md)。
 

@@ -19,7 +19,7 @@ and a keyboard shortcut change the same state through the same path.
 | `_ChoicePane` | class | B | One option per row, the whole row tappable; the selection is read from `pending`. |
 | `_ChoicePane._option` | method | B | Build one option button, numbered for a keyboard when asked, and marked once the answer is in. |
 | `_KeyNumber` | class | B | The digit that selects an option, drawn quietly and excluded from semantics. |
-| `_TypedPane` | class | B | A text field for a typed reading, holding its own focus node. |
+| `_TypedPane` | class | B | A text field for a typed reading or, for Type the sentence (`sentence`), a whole sentence, holding its own focus node. |
 | `_TypedPaneState.initState` | method | B | Request keyboard focus for the field after the first frame. |
 | `_OrderPane` | class | B | Fragments to tap into order; the ordering is read from `pending`. |
 | `_OrderPane._remove` | method | B | Take a fragment back out of the sentence. |

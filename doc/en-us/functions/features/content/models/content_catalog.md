@@ -2,7 +2,7 @@
 
 `ContentCatalog` holds everything the bundled content files describe — the vocabulary list, the
 grammar points from every level file, and the kana notes — with constant-time lookups by id. The
-catalog grew from 24 words to roughly 7,700 in `PLAN.md` M1.2, so the lookups are maps built once
+catalog grew from 24 words to roughly 7,700 in M1.2, so the lookups are maps built once
 at construction rather than the linear scans the seed could afford. Aliases point at the same entry
 object as the primary id, so a caller cannot tell which id it arrived by. See
 [../../../../features/content-catalog.md](../../../../features/content-catalog.md).

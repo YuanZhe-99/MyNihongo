@@ -113,7 +113,8 @@ translation of authored English and Chinese — mechanical, so `sonnet`. A gramm
 re-authored in plain Japanese — judgement, so `opus`. **The vocabulary definitions are the
 exception**: they are re-authored with no source, and a wrong or circular definition passes every
 gate rule, which is the case AGENTS.md puts on the capable model. They run on `sonnet` by the
-user's decision, for volume, recorded as an exception in `PLAN.md`'s decisions log. The
+user's decision, for volume, recorded as an exception in the decisions log
+([`decisions.md`](../decisions.md)). The
 mitigation was a sample: 30 definitions from each level re-read by `opus` for wrong, circular,
 misleading and missing-sense definitions. It found 8 problems in 150 — none circular, at most 3 at
 any level, none at N1 — and all 8 were corrected in the overlay. No level crossed the threshold
@@ -199,7 +200,7 @@ being checked by a person is written as the aspiration it is rather than as a
 claim about what shipped.
 
 This was a deliberate decision, taken because the alternative was shipping N5 and
-nothing else. It is recorded in `PLAN.md`'s decisions log, and the open question
+nothing else. It is recorded in the decisions log ([`decisions.md`](../decisions.md)), and the open question
 about who reviews the content stays open.
 
 ## Licensing

@@ -65,9 +65,18 @@ enum QuizMode {
   /// A meaning shown, pick the sentence that says it.
   grammarMeaningToSentence,
 
+  /// A meaning shown, type the Japanese sentence that says it.
+  ///
+  /// The one free-response mode: nothing on screen to choose from, so the
+  /// learner has to produce the whole sentence. Marked against the catalog's
+  /// own sentence and its reading; with on-device AI switched on, a different
+  /// wording that means the same can be accepted by the model's second
+  /// opinion, exactly as a typed reading can.
+  grammarTypeSentence,
+
   /// A question a JLPT drill file asks, which says for itself what it wants.
   ///
-  /// **Not selectable.** The other sixteen are ways this app can invent a
+  /// **Not selectable.** The other seventeen are ways this app can invent a
   /// question about a catalog entry, and the learner turns them on and off.
   /// This one means the question was written for a paper, so switching it off
   /// would only mean refusing to sit the paper — which is what not opening it
@@ -107,7 +116,7 @@ const kanaQuizModes = {
 
 /// The grammar modes.
 ///
-/// All but the three that work on a whole sentence need the sentence analyser,
+/// All but the four that work on a whole sentence need the sentence analyser,
 /// which is why `sentenceQuizModes` is a separate set: a quiz that only asks
 /// about whole sentences does not have to build the lexicon.
 const grammarQuizModes = {
@@ -117,6 +126,7 @@ const grammarQuizModes = {
   QuizMode.grammarPattern,
   QuizMode.grammarSentenceToMeaning,
   QuizMode.grammarMeaningToSentence,
+  QuizMode.grammarTypeSentence,
 };
 
 /// The modes that need the sentence analyser and are dropped without it.
@@ -127,6 +137,15 @@ const parsedQuizModes = {
   QuizMode.vocabCloze,
 };
 
+/// The modes that use the sentence analyser when it is there but still work
+/// without it.
+///
+/// A typed sentence is marked more fairly with the lexicon — 私 typed where
+/// the catalog wrote わたし reads the same once both are turned into kana — so
+/// the quiz page loads the analyser for it; a session without one still asks
+/// the question and marks it against the catalog's sentence and reading only.
+const lexiconAidedQuizModes = {QuizMode.grammarTypeSentence};
+
 /// The modes that speak rather than show, and so need a Japanese voice.
 const listeningQuizModes = {QuizMode.vocabListening, QuizMode.kanaListening};
 
@@ -135,7 +154,8 @@ const listeningQuizModes = {QuizMode.vocabListening, QuizMode.kanaListening};
 ///
 /// A catalog example carries an English and a Chinese translation and no
 /// Japanese one, because the sentence is already Japanese. Matching a sentence
-/// to its English meaning, or ordering fragments against an English gloss, is
+/// to its English meaning, ordering fragments against an English gloss, or
+/// typing the sentence an English meaning describes, is
 /// not an exercise a Japanese UI can offer without showing the language the
 /// learner chose not to read. They are shown as unavailable rather than
 /// silently missing, the same rule listening modes follow without a voice.
@@ -143,6 +163,7 @@ const translationQuizModes = {
   QuizMode.grammarOrder,
   QuizMode.grammarSentenceToMeaning,
   QuizMode.grammarMeaningToSentence,
+  QuizMode.grammarTypeSentence,
 };
 
 /// Purpose: Say whether a mode can be asked in this UI language.

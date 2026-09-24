@@ -1,6 +1,6 @@
 # lib/features/quiz/services/question_generator.dart
 
-把一个目录条目变成一道题，用十三种模式中适合它的那一种。
+把一个目录条目变成一道题，用十七种模式中适合它的那一种。
 
 **返回 null 是常态，不是失败。** 大多数词没有汉字，因此两种写法模式对它们不适用；大多数词没有例句，因此语法模式不适用；处在条目稀少级别的词可能凑不出三个像样的干扰项。调用方要什么就问什么、给到什么就用什么，这也正是逐条目尝试每一种模式、而不是事先挑好模式的原因。
 
@@ -13,6 +13,7 @@
 | 库头 | 库文档 | B | 把目录条目变成题目。 |
 | `particleBlank` | 顶层常量 | B | 被挖空的 token 用什么字符替代。 |
 | `minOrderFragments` | 顶层常量 | B | 排序题至少需要几个片段。 |
+| `maxTypedSentenceLength` | 顶层常量 | B | 写出整句模式会要求学习者写出的最长句子（30 个字符）。 |
 | `QuestionGenerator` | 类 | B | 从目录条目构建题目。 |
 | `generate` | 方法 | B | 用一种模式为一个条目构建一道题。 |
 | [`forItem`](#foritem) | 方法 | A | 用任一可行的已启用模式构建题目。 |
@@ -24,6 +25,7 @@
 | [`_conjugation`](#conjugation) | 方法 | A | 问句中该填哪个活用形。 |
 | `_order` | 方法 | B | 把句子拆成文节并要求排序。 |
 | `_pattern` | 方法 | B | 问一个句子用了哪个语法点。 |
+| `_typedSentence` | 方法 | B | 显示一个含义并要求写出对应的日语句子；通过 `toHiragana` 接受句子及其读音，分析器已加载时再加上词典的假名读音。不朗读任何内容。 |
 | [`_materialTranslation`](#materialtranslation) | 方法 | A | 选取题目可用作素材的译文；对日语读者为空。 |
 | `_subtitle` | 方法 | B | 选取填空句下方显示的那一行（`resolveTranslationJoined`）；日语读者没有可显示的内容时为 null。 |
 | [`_choice`](#choice) | 方法 | A | 组装一道选项已打乱的选择题。 |

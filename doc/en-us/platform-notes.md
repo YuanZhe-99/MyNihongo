@@ -119,9 +119,13 @@ Windows is built by CI on release tags and manual dispatches — an x64 and an A
   devices with touch, mouse and trackpad. That added nothing a desktop needs, made text selection
   inside scroll views awkward, and on Android silently dropped stylus drags and the `unknown` device
   Voice Access uses. It was removed in 0.5.1. MyAnime carries the same class.
-- **One known gap:** PageUp, PageDown and the arrow keys scroll a reference list only once something
-  inside it has focus. On desktop no list attaches to the primary scroll controller, so there is
-  nothing for those keys to reach from outside.
+- **PageUp and PageDown scroll the reference lists** (kana, vocabulary, grammar) with nothing inside
+  them focused. On desktop a scroll view attaches to the route's primary scroll controller only if
+  it asks to, and those keys reach a list with no focus inside it only through that controller, so
+  the three lists set `primary: true`; until 0.5.3 the keys did nothing until something in the list
+  had focus. The arrow keys are not scroll keys on desktop: they move focus between items, as
+  everywhere in Flutter, and a focused item is scrolled into view. `keyboard_scroll_ui_test` drives
+  it at the Windows window size.
 
 ## Speech plugins
 

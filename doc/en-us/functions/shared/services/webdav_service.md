@@ -42,7 +42,7 @@ counted.
 - **Side effects:** Re-acquires the remote lock, re-downloads the remote file, writes local data,
   uploads, saves the base snapshot.
 - **Algorithm:** Hand `{progressModuleId: resolutions}` to the engine's `finalizePendingSync`.
-- **Usage:** The conflict dialog (ported in `PLAN.md` M1.1).
+- **Usage:** The conflict dialog (ported in M1.1).
 - **Notes:** The base snapshot is saved only after a successful upload under the held remote
   `.lock`; dismissing the dialog never calls this.
 

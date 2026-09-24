@@ -61,11 +61,19 @@ class OrderAnswer extends QuizAnswer {
 /// Marks answers.
 class AnswerChecker {
   /// Purpose: Create a checker.
-  /// Inputs: None.
+  /// Inputs: `toKana` — optional; rewrites the words of a typed sentence into
+  /// their kana readings through the catalog (`Lexicon.toKana`).
   /// Returns: A new `AnswerChecker` instance.
   /// Side effects: None.
-  /// Notes: Stateless and `const`.
-  const AnswerChecker();
+  /// Notes: Stateless and `const`. `toKana` is a function rather than a
+  /// lexicon so this file imports nothing from the sentence analyser; without
+  /// it a typed sentence is still marked, against the catalog's own spelling
+  /// and reading only.
+  const AnswerChecker({this.toKana});
+
+  /// Turns the words of a sentence into kana, or null when no lexicon is
+  /// loaded.
+  final String Function(String text)? toKana;
 
   /// Purpose: Mark one answer.
   /// Inputs: The `question` and the `answer`.
@@ -92,10 +100,36 @@ class AnswerChecker {
   bool _checkTyped(QuizQuestion question, String text) {
     final trimmed = text.trim();
     if (trimmed.isEmpty) return false;
+    if (question.mode == QuizMode.grammarTypeSentence) {
+      return _checkSentence(question, trimmed);
+    }
     final kana = toHiragana(trimmed);
     final latin = trimmed.toLowerCase().replaceAll(RegExp(r'\s+'), '');
     return question.acceptedAnswers.contains(kana) ||
         question.acceptedAnswers.contains(latin);
+  }
+
+  /// Purpose: Mark a typed sentence.
+  /// Inputs: The `question` and the trimmed `text`.
+  /// Returns: `bool`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. The question accepts
+  /// the catalog's sentence and its reading, both through `toHiragana`, which
+  /// drops punctuation and spaces and folds katakana — so 「。」 left off or a
+  /// word typed in katakana is not a mistake. With [toKana], the answer is
+  /// also read into kana word by word and compared again, which accepts 私
+  /// where the catalog wrote わたし. What that also accepts is a homophone
+  /// written with the wrong kanji (箸 for 橋); the mode asks for a sentence,
+  /// not for spelling, and a strict check would mark far more right answers
+  /// wrong than it would catch. Romaji is not accepted: a sentence in romaji
+  /// has no agreed spacing to compare against.
+  bool _checkSentence(QuizQuestion question, String text) {
+    final key = toHiragana(text);
+    if (key.isEmpty) return false;
+    if (question.acceptedAnswers.contains(key)) return true;
+    final reader = toKana;
+    if (reader == null) return false;
+    return question.acceptedAnswers.contains(toHiragana(reader(text)));
   }
 
   /// Purpose: Mark an ordering.

@@ -11,7 +11,7 @@ import '../../l10n/app_localizations.dart';
 /// The speak button is inline because it is the one used constantly;
 /// everything else lives behind an overflow menu, because a row of icon
 /// buttons does not fit a phone-width example. Later per-example actions —
-/// the sentence lab in `PLAN.md` M2.3 — join the menu.
+/// the sentence lab in M2.3 — join the menu.
 class ExampleActions extends StatelessWidget {
   const ExampleActions({super.key, required this.example});
 

@@ -317,8 +317,8 @@ void main() {
   });
 
   test('without an analyser only the whole-sentence modes fire', () {
-    // Three of the grammar modes ask about a sentence as a whole — which one
-    // it is, what it means, which one means this — and none of them needs the
+    // Four of the grammar modes ask about a sentence as a whole — which one
+    // it is, what it means, which one means this, and writing it out — and none of them needs the
     // sentence taken apart. That is what lets a lesson ask grammar questions
     // without paying for the 7,700-entry lexicon first.
     final plain = QuestionGenerator(catalog: catalog, random: Random(1));
@@ -369,5 +369,85 @@ void main() {
       expectAnswerable(question);
     }
     expect(built, greaterThan(20));
+  });
+
+  test(
+    'a typed sentence accepts the sentence, its reading and other spellings',
+    () {
+      var built = 0;
+      final lenient = AnswerChecker(toKana: analyzer.lexicon.toKana);
+      for (final point in catalog.grammar.where((p) => p.level.label == 'N5')) {
+        final question = generator.generate(
+          point.id,
+          QuizMode.grammarTypeSentence,
+          locale: en,
+        );
+        if (question == null) continue;
+        built++;
+        expectAnswerable(question);
+        final sentence = question.answerText!;
+        expect(question.prompt, isNotEmpty);
+        expect(
+          question.speakText,
+          isNull,
+          reason: 'the sentence is the answer',
+        );
+        expect(sentence.length, lessThanOrEqualTo(maxTypedSentenceLength));
+        // As written, without its full stop, and in kana.
+        expect(checker.check(question, TypedAnswer(sentence)), isTrue);
+        expect(
+          checker.check(question, TypedAnswer(sentence.replaceAll('。', ''))),
+          isTrue,
+        );
+        final reading = question.optionReadings.first;
+        if (reading != null) {
+          expect(checker.check(question, TypedAnswer(reading)), isTrue);
+        }
+        // Read into kana through the lexicon, the catalog spelling still marks
+        // right with the lenient checker.
+        expect(lenient.check(question, TypedAnswer(sentence)), isTrue);
+        expect(checker.check(question, const TypedAnswer('ちがう')), isFalse);
+      }
+      expect(built, greaterThan(20));
+    },
+  );
+
+  test('a word written in kanji marks alike to the kana the catalog used', () {
+    // The catalog writes わたし in kana; a learner who types 私 has written
+    // the same sentence, and only the lexicon can say so.
+    const question = QuizQuestion(
+      itemId: 'grammar:desu',
+      mode: QuizMode.grammarTypeSentence,
+      kind: AnswerKind.typed,
+      prompt: 'I am a student.',
+      acceptedAnswers: {'わたしはがくせいです'},
+      options: ['わたしは学生です。'],
+      answerIndex: 0,
+    );
+    final lenient = AnswerChecker(toKana: analyzer.lexicon.toKana);
+    expect(lenient.check(question, const TypedAnswer('私は学生です')), isTrue);
+    expect(
+      checker.check(question, const TypedAnswer('私は学生です')),
+      isFalse,
+      reason: 'without a lexicon only the catalog spelling and reading count',
+    );
+    expect(lenient.check(question, const TypedAnswer('私は先生です')), isFalse);
+  });
+
+  test('a typed sentence is not asked under a Japanese UI', () {
+    for (final point in catalog.grammar.take(40)) {
+      expect(
+        generator.generate(
+          point.id,
+          QuizMode.grammarTypeSentence,
+          locale: const Locale('ja'),
+        ),
+        isNull,
+      );
+    }
+    expect(
+      quizModeWorksIn(QuizMode.grammarTypeSentence, const Locale('ja')),
+      isFalse,
+    );
   });
 }

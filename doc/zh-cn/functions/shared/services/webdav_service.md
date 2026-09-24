@@ -34,7 +34,7 @@
 - **Returns：** 待处理状态缺失、应用或上传失败时为 `false`。
 - **Side effects：** 重新获取远程锁，重新下载远程文件，写入本地数据，上传，保存基线快照。
 - **Algorithm：** 把 `{progressModuleId: resolutions}` 交给引擎的 `finalizePendingSync`。
-- **Usage：** 冲突对话框（在 `PLAN.md` M1.1 中移植）。
+- **Usage：** 冲突对话框（在 M1.1 中移植）。
 - **Notes：** 基线快照只在持有远程 `.lock` 期间成功上传后保存；关闭对话框从不调用它。
 
 ### `static SyncResult _toSyncResult(EngineSyncResult result)` <a id="tosyncresult"></a>

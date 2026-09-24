@@ -171,7 +171,7 @@ class SentenceAnalysis {
 
 /// The seam an on-device model plugs into.
 ///
-/// `PLAN.md` M2.3 keeps AICore / Gemini Nano as an **optional enhancement**
+/// M2.3 keeps AICore / Gemini Nano as an **optional enhancement**
 /// that never becomes the source of truth: the analysis above is deterministic
 /// and testable, and anything a model adds is labelled as generated. The seam
 /// was declared before there was an implementation so the shape would be

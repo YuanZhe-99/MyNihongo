@@ -55,7 +55,7 @@ Consumers: `content_sheets.dart`, `example_actions.dart`.
 - **Algorithm:** When the permission is not already granted and the rationale has not been shown
   this session, present it and stop unless the learner continues. Then ask the service to listen.
 - **Usage:** The record button.
-- **Notes:** `PLAN.md` M2.2 requires the microphone to be requested at first use with a reason,
+- **Notes:** M2.2 requires the microphone to be requested at first use with a reason,
   never at install. The rationale runs **before** the platform prompt, so the system dialog never
   arrives unexplained, and it is skipped entirely once the permission exists — an explanation shown
   every time would be noise.

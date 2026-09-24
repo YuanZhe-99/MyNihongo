@@ -35,7 +35,7 @@
 
 - `appSettingsProvider`（`shared/providers/app_settings.dart`）——主题模式和语言，设备本地持久化。
 - `contentCatalogProvider`（`features/content/services/content_repository.dart`）——解析后的内置内容，每次运行加载一次的 `FutureProvider`。解码在后台 isolate 上进行，见 [`features/content-catalog.md`](features/content-catalog.md)。
-- `progressDataProvider`（`shared/providers/progress_provider.dart`）——进度文件，页面在保存后重新加载的 `StateNotifierProvider`。注册 `AutoSyncService.addOnLocalDataChanged` 的是它而不是每个页面，因此同步、备份还原或 ZIP 导入通过一个订阅刷新所有打开的页面。（`PLAN.md` M1.1 写的是“页面注册”；这是有意的偏离，同时也避免了 riverpod 1.x 上 `ref.refresh` 造成的加载闪烁。）
+- `progressDataProvider`（`shared/providers/progress_provider.dart`）——进度文件，页面在保存后重新加载的 `StateNotifierProvider`。注册 `AutoSyncService.addOnLocalDataChanged` 的是它而不是每个页面，因此同步、备份还原或 ZIP 导入通过一个订阅刷新所有打开的页面。（M1.1 计划写的是“页面注册”；这是有意的偏离，同时也避免了 riverpod 1.x 上 `ref.refresh` 造成的加载闪烁。）
 
 ## 本地化（l10n）
 

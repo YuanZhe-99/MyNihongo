@@ -1134,6 +1134,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get quizTypeReadingHint => 'Type the reading';
 
   @override
+  String get quizTypeSentenceHint => 'Type the sentence in Japanese';
+
+  @override
   String get quizOrderPrompt => 'Put the pieces in order';
 
   @override
@@ -1263,6 +1266,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get quizModeGrammarMeaningToSentence => 'Meaning to sentence';
 
   @override
+  String get quizModeGrammarTypeSentence => 'Type the sentence';
+
+  @override
   String get quizClozePrompt => 'Which word belongs in the blank?';
 
   @override
@@ -1270,6 +1276,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get quizMeaningToSentencePrompt => 'Which sentence says this?';
+
+  @override
+  String get quizTypeSentencePrompt => 'Write this in Japanese.';
 
   @override
   String get formDictionary => 'dictionary';

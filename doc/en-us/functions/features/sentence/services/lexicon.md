@@ -6,11 +6,13 @@ A surface-to-entry index over the bundled catalog and the function words.
 text needs the opposite direction — given a run of characters, which entries could it be — and that
 is what this provides, in constant time, built once per app run.
 
-It serves two callers: pronunciation scoring, which uses `toKana` to rewrite a recognizer's kanji
-answer into a comparable reading, and the sentence analyser, which uses the rest.
+It serves three callers: pronunciation scoring, which uses `toKana` to rewrite a recognizer's kanji
+answer into a comparable reading; the typed-sentence quiz mode, which uses it the same way on what
+the learner typed; and the sentence analyser, which uses the rest.
 
 Consumers: `pronunciation_scorer.dart`, `tokenizer.dart`, `deinflector.dart`,
-`sentence_analyzer.dart`, `pronunciation_practice_sheet.dart`.
+`sentence_analyzer.dart`, `pronunciation_practice_sheet.dart`, `question_generator.dart`,
+`quiz_page.dart`.
 
 ## Declarations
 
@@ -60,7 +62,10 @@ Consumers: `pronunciation_scorer.dart`, `tokenizer.dart`, `deinflector.dart`,
   normalizing; see the notes.
 - **Side effects:** None.
 - **Algorithm:** Greedy longest match from the left, capped at the longest headword in the catalog.
-- **Usage:** `PronunciationScorer._resolve`.
+  Where one spelling has several entries, the first the catalog marks common gives the reading (私
+  is わたくし in an uncommon entry listed before the common わたし); otherwise the first.
+- **Usage:** `PronunciationScorer._resolve`; the typed-sentence quiz mode, through
+  `AnswerChecker.toKana` and `QuestionGenerator._typedSentence`.
 - **Notes:** A recognizer answers a word in kanji where the item is written in kanji, and comparing
   that with a kana reading character by character would score a perfect reading at zero. A span the
   catalog does not know is copied through **unchanged**, so an unresolved kanji still costs edits

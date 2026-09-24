@@ -36,8 +36,11 @@ Entered with `context.push('/quiz', extra: config)`.
 - **Inputs:** None; reads the config, the catalog and the review queue.
 - **Returns:** None.
 - **Side effects:** Builds a `QuizSession` and rebuilds the page.
-- **Algorithm:** Await the catalog; await the analyser only if a grammar mode is enabled; walk the
-  source's ids, asking the generator for a question in any enabled mode, until the session is full.
+- **Algorithm:** Await the catalog; await the analyser only if a mode in `parsedQuizModes` or
+  `lexiconAidedQuizModes` is enabled; walk the source's ids, asking the generator for a question in
+  any enabled mode, until the session is full; build the session with an
+  `AnswerChecker(toKana: analyzer?.lexicon.toKana)`, so a typed sentence is marked through the same
+  lexicon the questions were built with.
 - **Usage:** Once, from a post-frame callback in `initState`.
 - **Notes:** The analyser is awaited conditionally because building the lexicon over 7,700 entries
   costs tens of milliseconds and a kana quiz has no use for it. Running after the first frame rather

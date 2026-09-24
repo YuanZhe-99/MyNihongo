@@ -159,6 +159,7 @@
 | drill | 练习题 | JLPT 分项练习 |
 | mock test | 模拟考试 | |
 | quiz mode | 测验模式 | |
+| free-response (Type the sentence) | 自由作答（写出整句） | 显示词义、用日语写出整句的测验模式 |
 | pronunciation practice | 发音练习 | |
 | speech recognition (STT) | 语音识别（STT） | |
 | text-to-speech (TTS) | 语音合成（TTS） | |
@@ -199,7 +200,7 @@
 | generated (Traditional text) | 生成 | 与「生成的文字」（AI）同词，但指构建期转换，绝不手工编辑 |
 | Learn tab | 学习标签页 | 首页 |
 | dashboard | 仪表盘 | 学习标签页的卡片总览 |
-| roadmap | 路线图 | `PLAN.md` |
+| decisions log | 决策记录 | `decisions.md` |
 | furigana / ruby | 注音 / 振假名 | 汉字上方的小假名；开关名用「注音」 |
 | alignment (of a reading) | 对齐 | 读音与表面串的逐段对应；对不上就不显示 |
 | unit | 单元 | 课程路径的一节，是一个主题 |

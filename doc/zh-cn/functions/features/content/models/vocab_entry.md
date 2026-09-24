@@ -11,7 +11,7 @@
 | `VocabEntry.fromJson` | 静态方法 | B | 从内容 JSON 解析；缺少 id、级别或读音时为 null；`kanji` 可省略；`jaReading` 列表与 `meanings.ja` 并列，每个义项一个读音。 |
 | `VocabEntry.matches` | 方法 | B | 测试小写查询是否为词条、读音、罗马音或任一语言任一释义的子串。 |
 
-有两个字段随 JMdict 导入（`PLAN.md` M1.2）加入：`aliases` 是该条目曾经使用的 id，`ContentCatalog.vocabById`
+有两个字段随 JMdict 导入（M1.2）加入：`aliases` 是该条目曾经使用的 id，`ContentCatalog.vocabById`
 会把它们解析到同一条目，使任何用户的进度都不会成为孤儿；`common` 在 JMdict 把所选书写形式标为常用时为 true，
 用于排序建议，绝不用于隐藏条目。
 

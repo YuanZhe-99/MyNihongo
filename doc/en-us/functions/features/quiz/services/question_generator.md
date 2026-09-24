@@ -1,6 +1,6 @@
 # lib/features/quiz/services/question_generator.dart
 
-Turns a catalog item into a question, in whichever of the thirteen modes fits it.
+Turns a catalog item into a question, in whichever of the seventeen modes fits it.
 
 **Returning null is the normal case, not an error.** Most words have no kanji, so
 the two written-form modes do not apply; most have no example sentence, so the
@@ -17,6 +17,7 @@ Behaviour is described in [`../../../../features/quizzes.md`](../../../../featur
 | library header | library doc | B | Turn a catalog item into a question. |
 | `particleBlank` | top-level constant | B | The character a blanked-out token is replaced with. |
 | `minOrderFragments` | top-level constant | B | How many pieces an ordering question needs. |
+| `maxTypedSentenceLength` | top-level constant | B | The longest sentence (30 characters) the typed-sentence mode asks a learner to write out. |
 | `QuestionGenerator` | class | B | Build questions from catalog items. |
 | `generate` | method | B | Build one question about one item in one mode. |
 | [`forItem`](#foritem) | method | A | Build a question in whichever enabled mode works. |
@@ -28,6 +29,7 @@ Behaviour is described in [`../../../../features/quizzes.md`](../../../../featur
 | [`_conjugation`](#conjugation) | method | A | Ask which inflected form belongs in a sentence. |
 | `_order` | method | B | Break a sentence into chunks and ask for their order. |
 | `_pattern` | method | B | Ask which grammar point a sentence uses. |
+| `_typedSentence` | method | B | Show a meaning and ask for the Japanese sentence; accepts the sentence and its reading through `toHiragana`, plus the lexicon's kana reading when the analyser is loaded. Nothing is spoken. |
 | [`_materialTranslation`](#materialtranslation) | method | A | Pick the translation a question may use as material; empty for a Japanese reader. |
 | `_subtitle` | method | B | Pick the line shown under a cloze sentence (`resolveTranslationJoined`); null when a Japanese reader has nothing to be shown. |
 | [`_choice`](#choice) | method | A | Assemble a choice question with its options shuffled. |

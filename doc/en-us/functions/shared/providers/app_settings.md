@@ -42,7 +42,7 @@ version row's tap handler in
 and read by
 [`../../features/ai/widgets/ai_settings_tiles.md`](../../features/ai/widgets/ai_settings_tiles.md).
 
-## Reference preferences (`PLAN.md` M1.3)
+## Reference preferences (M1.3)
 
 `AppSettings` also carries `vocabLevel`, `grammarLevel`, `kanaScript` and `referenceListColumns`,
 with `setVocabLevel`, `setGrammarLevel`, `setKanaScript` and `setReferenceListColumns` on the

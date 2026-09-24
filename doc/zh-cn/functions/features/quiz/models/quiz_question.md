@@ -13,6 +13,7 @@
 | `AnswerKind` | 枚举 | B | 题目如何作答：选择、输入或排序。 |
 | `vocabQuizModes`、`kanaQuizModes`、`grammarQuizModes` | 常量 | B | 各内容库支持的模式。 |
 | `parsedQuizModes` | 常量 | B | 需要句子分析器、没有它就会被丢弃的模式。 |
+| `lexiconAidedQuizModes` | 常量 | B | 分析器加载后会用到、但没有它也能用的模式：写出整句，有词典时判分更公平。 |
 | `listeningQuizModes` | 常量 | B | 朗读而非显示的模式。 |
 | [`translationQuizModes`](#translation) | 常量 | A | 以日语句子的译文为素材、因而对日语读者会被丢弃的模式。 |
 | `quizModeWorksIn` | 函数 | B | 说明某个模式能否在这种界面语言下提问；只有日语界面下的 `translationQuizModes` 为 false。 |
@@ -33,7 +34,9 @@
 - **使用：** 生成器、设置里的模式开关、`quizModes` 偏好，以及 `DrillQuestion.toQuizQuestion`。
 - **说明：** **每个值的名字都是兼容性契约。** 它正是 `quizModes` 偏好所存储的内容，因此重命名某个值会悄悄把学习者关掉的模式重新打开。后来新增的值对所有人默认开启，这也正是偏好键缺失所表示的含义，以及从未主动关闭过它的人所期待的行为。
 
-  `QuizMode.drill` 是例外，它**不可选**。其余十六个是本应用就一个目录条目想出题目的方式，学习者可以逐个开关它们。`drill` 意味着这道题是为一份卷子而写的，它自己就说明了它要什么，所以关掉它只等于拒绝去做这份卷子——而不打开它本来就已经是这个意思了。
+  `QuizMode.drill` 是例外，它**不可选**。其余十七个是本应用就一个目录条目想出题目的方式，学习者可以逐个开关它们。`drill` 意味着这道题是为一份卷子而写的，它自己就说明了它要什么，所以关掉它只等于拒绝去做这份卷子——而不打开它本来就已经是这个意思了。
+
+  `grammarTypeSentence`（0.5.3）是唯一的自由作答模式：显示一个含义，学习者写出对应的日语句子。判分方式见 `AnswerChecker`。
 
 ### `const selectableQuizModes` <a id="selectable"></a>
 
@@ -50,12 +53,13 @@
 
 - **种类：** 顶层常量
 - **用途：** 指明以日语句子的译文为素材的那些模式。
-- **输入：** 无；`grammarOrder`、`grammarSentenceToMeaning` 与 `grammarMeaningToSentence`。
+- **输入：** 无；`grammarOrder`、`grammarSentenceToMeaning`、`grammarMeaningToSentence` 与
+  `grammarTypeSentence`。
 - **返回：** 无。
 - **副作用：** 无。
 - **算法：** 无；`quizModeWorksIn(mode, locale)` 恰好在语言为 `ja` 的 locale 下对这些模式为 false。
 - **使用：** 经由 `quizModeWorksIn`：`QuizPage._enabledModes` 对日语读者丢弃它们，`QuizModesPage` 把它们显示为关闭并附上原因（`quizModeNeedsTranslation`）。
-- **说明：** 目录例句带有英文和中文译文，却没有日语译文，因为句子本身已经是日语。把句子与它的英文含义匹配，或对照英文释义排列片段，都不是日语界面能提供的练习——除非显示学习者选择不读的那种语言。它们被显示为不可用，而不是悄悄消失——这与听力模式在没有日语语音的设备上遵循的规则相同。存储的 `quizModes` 偏好不会改变：把界面从日语切回去，它们就会原样回来。
+- **说明：** 目录例句带有英文和中文译文，却没有日语译文，因为句子本身已经是日语。把句子与它的英文含义匹配、对照英文释义排列片段，或者写出一个英文含义所描述的句子，都不是日语界面能提供的练习——除非显示学习者选择不读的那种语言。它们被显示为不可用，而不是悄悄消失——这与听力模式在没有日语语音的设备上遵循的规则相同。存储的 `quizModes` 偏好不会改变：把界面从日语切回去，它们就会原样回来。
 
 ### `class QuizQuestion` <a id="question"></a>
 

@@ -2,7 +2,7 @@
 /// Inputs: The decoded vocabulary, grammar and kana-note files.
 /// Returns: A catalog with constant-time lookups.
 /// Side effects: None.
-/// Notes: The catalog grew from 24 words to roughly 8,300 in `PLAN.md` M1.2,
+/// Notes: The catalog grew from 24 words to roughly 8,300 in M1.2,
 /// so the lookups are maps built once at construction rather than the linear
 /// scans the seed could afford. Grammar arrives as one file per level, so the
 /// factory takes an iterable.

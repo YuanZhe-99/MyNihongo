@@ -24,6 +24,7 @@ import '../../drills/widgets/drill_passage_view.dart';
 import '../../drills/widgets/listening_script_player.dart';
 import '../../lessons/services/lesson_repository.dart';
 import '../../lessons/services/lesson_rules.dart';
+import '../services/answer_checker.dart';
 import '../services/question_bank.dart';
 import '../services/question_generator.dart';
 import 'dart:async';
@@ -100,12 +101,19 @@ class _QuizPageState extends ConsumerState<QuizPage> {
   /// Returns: None.
   /// Side effects: Builds a `QuizSession` and rebuilds.
   /// Notes: Internal helper used within this file only. The analyser is awaited
-  /// only when a grammar mode is enabled: building the lexicon takes tens of
-  /// milliseconds over 7,700 entries, and a kana quiz has no use for it.
+  /// only when a mode that parses a sentence, or marks a typed sentence, is
+  /// enabled: building the lexicon takes tens of milliseconds over 7,700
+  /// entries, and a kana quiz has no use for it. The session is given a
+  /// checker holding the same lexicon.
   Future<void> _build() async {
     final catalog = await ref.read(contentCatalogProvider.future);
     final modes = _enabledModes();
-    final analyzer = modes.any(parsedQuizModes.contains)
+    final analyzer =
+        modes.any(
+          (mode) =>
+              parsedQuizModes.contains(mode) ||
+              lexiconAidedQuizModes.contains(mode),
+        )
         ? await ref.read(sentenceAnalyzerProvider.future)
         : null;
 
@@ -159,6 +167,9 @@ class _QuizPageState extends ConsumerState<QuizPage> {
         ? null
         : QuizSession(
             questions: questions,
+            // A typed sentence is read into kana through the same lexicon
+            // the questions were built with, so 私 and わたし mark alike.
+            checker: AnswerChecker(toKana: analyzer?.lexicon.toKana),
             onFirstAnswer: widget.config.recordProgress
                 ? (id, correct) => ref
                       .read(progressDataProvider.notifier)

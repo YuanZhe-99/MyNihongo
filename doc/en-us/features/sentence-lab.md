@@ -117,7 +117,7 @@ loading it with the 2 MB catalog would make every page pay for a page that may n
 
 ## The optional on-device model
 
-`PLAN.md` M2.4 fills the `SentenceEnhancer` seam with Android AICore, as an optional enhancement
+Milestone M2.4 fills the `SentenceEnhancer` seam with Android AICore, as an optional enhancement
 that never becomes the source of truth. Turned on in **Settings › On-device AI** — off until then —
 it adds an **Explain** button beside each possible issue, and **Explain this sentence** and **Suggest
 a correction** below them. Everything it produces is drawn in a card labelled as generated, under the

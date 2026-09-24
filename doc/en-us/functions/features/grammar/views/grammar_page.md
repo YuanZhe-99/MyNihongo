@@ -31,7 +31,8 @@ same shape as `vocab_page.dart` and shares its chips, badges and example renderi
 - **Source:** `lib/features/grammar/views/grammar_page.dart`
 - **Purpose:** Turn the catalog plus the current filter into a scrolling, adaptive-column list.
 - **Inputs:** `context`, `l10n`, `catalog`.
-- **Returns:** A `ListView.builder`.
+- **Returns:** A `ListView.builder`, `primary: true` on every platform so PageUp and PageDown reach
+  it on desktop with nothing inside it focused (see `platform-notes.md`, Input).
 - **Side effects:** None.
 - **Algorithm:**
   1. Filter `catalog.grammar` by the selected level and the trimmed, lowercased query

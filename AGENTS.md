@@ -2,7 +2,8 @@
 
 Operating guide for agents working on **MyNihongo!!!!!**. This file holds **only** rules about how
 to work here. Everything describing what the code *is* or *does* lives in `doc/en-us/` — see
-[Where to read what](#where-to-read-what). The phased roadmap lives in `PLAN.md`.
+[Where to read what](#where-to-read-what). Why the code is the way it is — the decisions log, what
+was left unbuilt, the open questions — is in `doc/en-us/decisions.md`.
 
 MyNihongo!!!!! is a privacy-first Japanese learning app (Flutter; Android first, with Windows, macOS
 and iOS built by CI for every release) covering kana, vocabulary, grammar, pronunciation practice, spaced-repetition
@@ -27,7 +28,7 @@ about to change, verify against the code, then fix the docs in the same commit.
 
 | Question | Read |
 |---|---|
-| What is planned, in what order, and what is done | `PLAN.md` |
+| Why a design decision was made; what was deliberately not built; open questions; what a milestone name such as "M1.2" refers to | `doc/en-us/decisions.md` |
 | App shell, flavors, repository layout, core rules, shared package | `doc/en-us/architecture.md` |
 | What a file or function does | `doc/en-us/functions/<mirrored path>.md` |
 | Which page covers which source file | `doc/en-us/functions/INDEX.md` |
@@ -52,8 +53,9 @@ The shared sync/backup/ZIP engines are **not in this repo** — they live in `my
 2. Before editing, fetch the relevant remote(s) and check whether the local branch is behind. Resolve
    any divergence before starting.
 3. Read per [Reading order](#reading-order).
-4. Plan when the work is non-trivial, then implement it in this workspace. When a `PLAN.md`
-   milestone is affected, update its checklist in the same change.
+4. Plan when the work is non-trivial, then implement it in this workspace. When the change makes a
+   decision of the kind `doc/en-us/decisions.md` records, add a dated row to its log in the same
+   change. Walk the matching list in [Per-change checklists](#per-change-checklists).
 5. Keep changes scoped. Do not revert unrelated work in the tree.
 6. Update documentation in the same change set — see [Documentation maintenance](#documentation-maintenance).
 7. Verify with the narrowest meaningful checks, usually `flutter analyze` plus the relevant
@@ -62,6 +64,43 @@ The shared sync/backup/ZIP engines are **not in this repo** — they live in `my
    version, the configured remotes, and anything that could not be done.
 9. For normal code changes, ask whether to push to all remotes. The user must confirm the release
    version before a release push.
+
+## Per-change checklists
+
+**Every new page**
+
+- Layout decision recorded in `adaptive-layout.md` (shape gate, width-only packing, or double
+  gate), including what it costs.
+- Widths come from `adaptive_layout.dart`; capacity measured against `shellContentWidth`.
+- Widget tests at: Fold 8 933×704 and 704×933, Pixel 10 Pro Fold 791×820, Fold 5 659×791, tablet
+  1024×768 and 768×1024, phone 412×915 and 915×412, each with
+  `expect(tester.takeException(), isNull)`; the Windows window at 1000×720 where the page has a
+  desktop behaviour.
+- Layout tests driven in `zh` where text width matters (square CJK glyphs measure the real layout;
+  the test font inflates Latin).
+- Strings in all four ARB files; `flutter gen-l10n` output committed.
+- Function Explanation Layer on every declaration; `doc/en-us/functions/` page + INDEX row;
+  `doc/zh-cn/` mirror.
+
+**Every content change**
+
+- `dart run tool/convert_zh_tw.dart`, then `flutter test test/content_zh_tw_test.dart`.
+- `flutter test test/content_catalog_test.dart`.
+- Ids stable; new ids prefixed; retired ids aliased.
+- Model-authored text keeps `reviewed: false` / its `source` label until a person has read it; the
+  gate checks readings against the surface, not whether the Japanese is natural.
+- License and attribution current.
+
+**Every release**
+
+- The [Release](#release-version-commit-tag-push) steps below, including the local
+  `release_versions_test`.
+- Compare `genai-prompt` and `genai-proofreading` with the Google Maven group index, and record the
+  decision to move or stay in `version-history.md`. A beta bump here has twice been a
+  device-visible change.
+- Submodule pinned to a tag.
+- After a workflow change: one `workflow_dispatch` run on `github` with every build job green.
+- `version-history.md` entry in both languages.
 
 ## Documentation maintenance
 
@@ -162,7 +201,7 @@ Do not change these without the user explicitly deciding to:
   progress on it. Ids may be added; a shipped id is never changed, and a retired one is kept as an
   alias in the catalog.
 - **Nothing leaves the device except WebDAV sync to a server the user configured.** Speech
-  recognition, text-to-speech, sentence analysis and AI-assisted practice (Phases 2–4 in `PLAN.md`)
+  recognition, text-to-speech, sentence analysis and AI-assisted practice
   must run on-device; AICore / Gemini Nano is used only through ML Kit GenAI on the device, off by
   default, and generated text never enters the catalog or replaces a deterministic score. A cloud
   model is only ever an opt-in the user turns on explicitly, and the privacy policy is updated in
@@ -250,7 +289,8 @@ there is. A gloss and an example sentence are mechanical and enormous in volume,
 so they take the cheaper model; an explanation and a syllabus division are
 judgement, small in volume, and a bad one is not caught by any gate. **One recorded exception:**
 the Japanese definitions are re-authored prose with no source, yet run on `sonnet` by the user's
-decision, for volume; `PLAN.md`'s decisions log records it and the mitigation. `effort` is
+decision, for volume; the decisions log in
+`doc/en-us/decisions.md` records it and the mitigation. `effort` is
 `low` throughout because the gate — not the model's own deliberation — is what
 decides whether a draft is acceptable, and a rejected batch costs one more
 round trip rather than a wrong file.
@@ -259,7 +299,7 @@ round trip rather than a wrong file.
 revisit whenever the available models change: pick the current cheap model for
 the two `sonnet` rows and the current capable one for the two `opus` rows, keep
 the split, and raise `effort` for a stream only if its gate failure rate stays
-high after two rounds. Record the change in `PLAN.md`'s decisions log, since the
+high after two rounds. Record the change in the decisions log in `doc/en-us/decisions.md`, since the
 content that follows is not comparable to the content before it.
 
 ## Agent co-author attribution

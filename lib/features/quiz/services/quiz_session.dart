@@ -98,7 +98,8 @@ class QuizSummary {
 class QuizSession extends ChangeNotifier {
   /// Purpose: Start a session over a fixed list of questions.
   /// Inputs: `questions`; `onFirstAnswer`, called once per item with whether
-  /// the **first** answer was right; `requeue`.
+  /// the **first** answer was right; `requeue`; `checker`, which marks every
+  /// answer and defaults to one with no lexicon.
   /// Returns: A new `QuizSession` instance.
   /// Side effects: None until answered.
   /// Notes: `onFirstAnswer` fires per answer rather than once at the end, so an
@@ -116,6 +117,7 @@ class QuizSession extends ChangeNotifier {
     required List<QuizQuestion> questions,
     this.onFirstAnswer,
     this.requeue = true,
+    this.checker = const AnswerChecker(),
   }) : _queue = List.of(questions),
        _all = List.of(questions),
        _total = questions.length;
@@ -126,10 +128,16 @@ class QuizSession extends ChangeNotifier {
   /// Whether a wrong answer comes back later in the same session.
   final bool requeue;
 
+  /// What marks an answer.
+  ///
+  /// Held by the session so the runner asks the same checker before it
+  /// decides whether a second opinion is needed: two checkers that disagreed
+  /// would ask the model about an answer the session then marks right.
+  final AnswerChecker checker;
+
   final List<QuizQuestion> _queue;
   final List<QuizQuestion> _all;
   int _total;
-  final AnswerChecker _checker = const AnswerChecker();
   final Map<String, bool> _firstResults = {};
   final Map<String, int> _requeues = {};
   final List<String> _wrongOrder = [];
@@ -322,7 +330,7 @@ class QuizSession extends ChangeNotifier {
     // recognise that a different wording means the same thing, which a string
     // comparison cannot — see `ai-assist.md`.
     final correct =
-        _checker.check(question, answer) || (acceptedAnyway ?? false);
+        checker.check(question, answer) || (acceptedAnyway ?? false);
     _answered++;
 
     final key = scoreKey(question);

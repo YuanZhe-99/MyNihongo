@@ -1,7 +1,7 @@
 # lib/shared/widgets/content_sheets.dart
 
 The detail sheets for a word, a grammar point and a kana, with chips linking to the entries around
-them. Lifted out of the vocabulary and grammar pages in `PLAN.md` M1.3 so all three pages can open
+them. Lifted out of the vocabulary and grammar pages in M1.3 so all three pages can open
 each other's sheets. Japanese text on a sheet — including a Japanese definition or grammar meaning
 shown to a Japanese reader — is drawn with furigana where the content supplies a reading. See
 [../../../features/content-catalog.md](../../../features/content-catalog.md).

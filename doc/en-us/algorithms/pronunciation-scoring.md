@@ -7,7 +7,7 @@ has already decided what it heard before any of this runs.
 **What this measures is recognisability, not accent.** The recognizer produced a transcription; this
 compares that transcription with the target. A learner whose pitch accent is wrong but whose morae
 are right scores 100, and the UI says so in as many words. Pitch-accent feedback would need a pitch
-dictionary and f0 analysis, and is a Phase 3+ candidate in `PLAN.md`.
+dictionary and f0 analysis, and is an open question in [`decisions.md`](../decisions.md#open-questions).
 
 ## Pipeline
 

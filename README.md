@@ -31,9 +31,10 @@ account, no telemetry, no cloud model and no ads.
 
 - **Spaced repetition** — SM-2 over every item you answer, with two deliberate departures from the
   textbook that are derived in the docs rather than assumed.
-- **Sixteen quiz modes** — meaning, written form, reading, listening, typing, kana, particles,
-  conjugation, sentence ordering, grammar points, whole sentences either way, and filling a word
-  into its own example. Each one is a switch you can turn off.
+- **Seventeen quiz modes** — meaning, written form, reading, listening, typing, kana, particles,
+  conjugation, sentence ordering, grammar points, whole sentences either way, filling a word into
+  its own example, and writing a whole sentence from its meaning. Each one is a switch you can
+  turn off.
 - **A lesson path** — every level as units, 65 of them, each a topic with its own sentences and
   questions. A checkpoint opens the next unit, and a locked unit's checkpoint is still open,
   because that is how somebody who already knows the material skips ahead.
@@ -96,8 +97,8 @@ prove the Japanese is natural. Every such file records that in its `source` fiel
 [`doc/en-us/features/content-authoring.md`](doc/en-us/features/content-authoring.md) says what the
 checks cannot promise.
 
-**Planned** — see [PLAN.md](PLAN.md): free-response translation grading, a scenario dialogue
-partner, and JLPT N5–N1 practice sets.
+**Not built**, on purpose — see [`doc/en-us/decisions.md`](doc/en-us/decisions.md#not-built):
+own-voice playback, and the checks only hardware can make. Problems are reported as bugs.
 
 ## Build flavors
 
@@ -199,8 +200,8 @@ The whole loop is described in
 - [`doc/en-us/`](doc/en-us/) — architecture, data formats, adaptive layout, sync, CI, and a page
   per feature and algorithm. Start at its README. A Simplified Chinese mirror lives in
   [`doc/zh-cn/`](doc/zh-cn/), updated in the same commit.
-- [`PLAN.md`](PLAN.md) — the phased roadmap, what is done, and a decisions log with the reason for
-  each choice.
+- [`doc/en-us/decisions.md`](doc/en-us/decisions.md) — the decisions log with the reason for each
+  choice, what was left unbuilt, and the open questions. The phased roadmap it came from is retired.
 - [`AGENTS.md`](AGENTS.md) — rules for contributors and agents.
 
 ## License

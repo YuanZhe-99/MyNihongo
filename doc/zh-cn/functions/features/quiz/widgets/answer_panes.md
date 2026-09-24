@@ -15,7 +15,7 @@
 | `_ChoicePane` | 类 | B | 每行一个选项，整行可点；选中项从 `pending` 读取。 |
 | `_ChoicePane._option` | 方法 | B | 构建一个选项按钮，需要时为键盘编号，作答后加以标记。 |
 | `_KeyNumber` | 类 | B | 选中某个选项的那个数字，低调绘制，并排除在语义之外。 |
-| `_TypedPane` | 类 | B | 输入读音用的文本框，持有自己的焦点节点。 |
+| `_TypedPane` | 类 | B | 输入读音用的文本框，或者对于写出整句（`sentence`）是一整句的文本框，持有自己的焦点节点。 |
 | `_TypedPaneState.initState` | 方法 | B | 在第一帧之后为文本框请求键盘焦点。 |
 | `_OrderPane` | 类 | B | 可点击排序的片段；排序从 `pending` 读取。 |
 | `_OrderPane._remove` | 方法 | B | 把一个片段从句子里取回。 |

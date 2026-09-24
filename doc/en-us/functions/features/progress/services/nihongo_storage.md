@@ -90,7 +90,7 @@ because neither a voice name nor an engine package means anything on another dev
 - **Notes:** The two-space format is the one the shared sync engine writes, which is what lets an
   unchanged file hit the raw-equality fast path instead of re-uploading.
 
-## Reference preferences (`PLAN.md` M1.3)
+## Reference preferences (M1.3)
 
 Five typed accessors over two private helpers, `_getString`/`_setString` and `_getInt`/`_setInt`:
 `getLastTab`/`setLastTab`, `getVocabLevel`/`setVocabLevel`, `getGrammarLevel`/`setGrammarLevel`,
@@ -102,7 +102,7 @@ setting. And a value of the wrong type reads as unset rather than throwing: the 
 in a folder the user can point anywhere, so it can be hand-edited. See
 [`../../../../features/reference-preferences.md`](../../../../features/reference-preferences.md).
 
-## Speech and AI preferences (`PLAN.md` M2.1, M2.2, M2.4)
+## Speech and AI preferences (M2.1, M2.2, M2.4)
 
 Four more pairs over `_getDouble`/`_setDouble` and `_getBool`/`_setBool`, following the same two
 rules: `getTtsRate`/`setTtsRate`, `getTtsVoice`/`setTtsVoice`,

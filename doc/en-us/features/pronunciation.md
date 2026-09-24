@@ -1,6 +1,6 @@
 # Pronunciation
 
-Everything in the app that makes or hears sound. Phase 2 of `PLAN.md`. The device's own speech
+Everything in the app that makes or hears sound. Milestones M2.1 and M2.2. The device's own speech
 engines do all the work: **nothing recorded, typed or spoken leaves the device.**
 
 ## Text to speech
@@ -182,4 +182,4 @@ The sheet states plainly that it judges whether you were **recognisable**, not y
 ### Not built
 
 Own-voice recording and playback (`record` + `just_audio`) are deferred: they need the microphone at
-the same time as the recognizer, which cannot be verified without a device. See `PLAN.md` M2.2.
+the same time as the recognizer, which cannot be verified without a device. See [`decisions.md`](../decisions.md#not-built).

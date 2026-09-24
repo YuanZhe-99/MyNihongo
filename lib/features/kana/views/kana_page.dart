@@ -162,6 +162,10 @@ class _KanaPageState extends ConsumerState<KanaPage> {
         ],
       ),
       body: ListView(
+        // Primary on every platform, not only on phones: PageUp, PageDown and
+        // the arrows reach a list with nothing in it focused only through the
+        // route's primary scroll controller. See platform-notes.md, Input.
+        primary: true,
         padding: EdgeInsets.fromLTRB(
           16,
           8,

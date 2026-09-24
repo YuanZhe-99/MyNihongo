@@ -46,6 +46,8 @@ display data of one rule card. See
   4. Header: side by side in a `Row` when `twoColumn`, otherwise stacked.
   5. Body: the search results plus the rules when a query is active; otherwise a two-column `Row` of
      (basic, yōon) and (voiced, rules) when `twoColumn`; otherwise the stacked order.
+  6. The page body is a `ListView` with `primary: true` on every platform, so PageUp and PageDown
+     reach it on desktop with nothing inside it focused (see `platform-notes.md`, Input).
 - **Usage:**
   ```dart
   GoRoute(path: '/kana', builder: (context, state) => const KanaPage()),

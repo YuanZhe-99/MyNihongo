@@ -241,7 +241,7 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
 
     // The deterministic check first, because it is the one that decides
     // "correct" and it costs nothing.
-    if (const AnswerChecker().check(question, answer)) {
+    if (widget.session.checker.check(question, answer)) {
       widget.session.answer(answer);
       _advanceIfUnmarked();
       return;
@@ -282,7 +282,11 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
   ) async {
     if (answer is! TypedAnswer) return null;
     if (!ref.read(aiAssistServiceProvider).canExplain) return null;
-    final expected = question.acceptedAnswers.firstOrNull;
+    // The answer as the catalog writes it, not a normalized key: a typed
+    // sentence's accepted set is folded to bare hiragana, which is a worse
+    // thing to hand a model than the sentence itself.
+    final expected =
+        question.answerText ?? question.acceptedAnswers.firstOrNull;
     if (expected == null) return null;
     final builder = await practicePromptBuilder(ref);
     if (builder == null || !mounted) return null;
@@ -748,6 +752,7 @@ class _QuestionPaneState extends ConsumerState<_QuestionPane> {
         QuizMode.vocabCloze => l10n.quizClozePrompt,
         QuizMode.grammarSentenceToMeaning => l10n.quizSentenceToMeaningPrompt,
         QuizMode.grammarMeaningToSentence => l10n.quizMeaningToSentencePrompt,
+        QuizMode.grammarTypeSentence => l10n.quizTypeSentencePrompt,
         _ => l10n.quizModeLabel(widget.question.mode),
       };
 }
@@ -782,6 +787,7 @@ extension QuizModeLabel on AppLocalizations {
     QuizMode.vocabCloze => quizModeVocabCloze,
     QuizMode.grammarSentenceToMeaning => quizModeGrammarSentenceToMeaning,
     QuizMode.grammarMeaningToSentence => quizModeGrammarMeaningToSentence,
+    QuizMode.grammarTypeSentence => quizModeGrammarTypeSentence,
     QuizMode.drill => quizModeDrill,
   };
 }

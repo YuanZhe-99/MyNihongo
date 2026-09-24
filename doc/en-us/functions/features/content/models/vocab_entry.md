@@ -14,7 +14,7 @@ the readings of any Japanese definitions, and examples. `fromJson` returns null 
 | `VocabEntry.fromJson` | static method | B | Parse from content JSON; null when the id, level, or reading is missing; `kanji` may be absent; a `jaReading` list travels beside `meanings.ja`, one reading per sense. |
 | `VocabEntry.matches` | method | B | Test whether a lowercased query is a substring of the headword, reading, romaji, or any gloss in any language. |
 
-Two fields arrived with the JMdict import (`PLAN.md` M1.2): `aliases`, the ids the entry used to
+Two fields arrived with the JMdict import (M1.2): `aliases`, the ids the entry used to
 ship under, which `ContentCatalog.vocabById` resolves to the same entry so no user's progress is
 orphaned; and `common`, true when JMdict marks the chosen written form as common, used to order
 suggestions and never to hide an entry.

@@ -2063,6 +2063,12 @@ abstract class AppLocalizations {
   /// **'Type the reading'**
   String get quizTypeReadingHint;
 
+  /// No description provided for @quizTypeSentenceHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Type the sentence in Japanese'**
+  String get quizTypeSentenceHint;
+
   /// No description provided for @quizOrderPrompt.
   ///
   /// In en, this message translates to:
@@ -2303,6 +2309,12 @@ abstract class AppLocalizations {
   /// **'Meaning to sentence'**
   String get quizModeGrammarMeaningToSentence;
 
+  /// No description provided for @quizModeGrammarTypeSentence.
+  ///
+  /// In en, this message translates to:
+  /// **'Type the sentence'**
+  String get quizModeGrammarTypeSentence;
+
   /// No description provided for @quizClozePrompt.
   ///
   /// In en, this message translates to:
@@ -2320,6 +2332,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Which sentence says this?'**
   String get quizMeaningToSentencePrompt;
+
+  /// No description provided for @quizTypeSentencePrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Write this in Japanese.'**
+  String get quizTypeSentencePrompt;
 
   /// No description provided for @formDictionary.
   ///

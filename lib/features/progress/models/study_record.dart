@@ -44,8 +44,9 @@ const masteredIntervalDays = 21;
 /// `profile`, `lesson`, `history` and `exam` are not catalog items. They share the
 /// file, and the merge, because a second data module would mean a second remote
 /// file, a second backup entry and a second set of golden transcripts for state
-/// that is a handful of fields — see the decisions log in `PLAN.md`. The kinds
-/// that are studied are what [studiedKinds] names.
+/// that is a handful of fields — see the decisions log in
+/// `doc/en-us/decisions.md`. The kinds that are studied are what
+/// [studiedKinds] names.
 
 enum StudyKind { kana, vocab, grammar, profile, lesson, history, exam, other }
 

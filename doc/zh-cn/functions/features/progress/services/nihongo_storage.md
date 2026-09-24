@@ -74,7 +74,7 @@ M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地�
 - **Usage：** `upsertRecords`；未来的每条写入路径。
 - **Notes：** 两空格格式是共享同步引擎写入的格式，正是它让未改动的文件命中原始相等快速路径而不是重新上传。
 
-## 参考页面偏好（`PLAN.md` M1.3）
+## 参考页面偏好（M1.3）
 
 在两组私有辅助方法 `_getString`/`_setString` 与 `_getInt`/`_setInt` 之上的五组带类型访问器：
 `getLastTab`/`setLastTab`、`getVocabLevel`/`setVocabLevel`、`getGrammarLevel`/`setGrammarLevel`、
@@ -84,7 +84,7 @@ M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地�
 改过该设置的设备。类型不对的值按“未设置”读取而不是抛出异常：文件是用户可指定目录中的纯 JSON，可以手工编辑。见
 [`../../../../features/reference-preferences.md`](../../../../features/reference-preferences.md)。
 
-## 语音与 AI 偏好（`PLAN.md` M2.1、M2.2、M2.4）
+## 语音与 AI 偏好（M2.1、M2.2、M2.4）
 
 在 `_getDouble`/`_setDouble` 与 `_getBool`/`_setBool` 之上再有四对访问器，遵循同样的两条规则：`getTtsRate`/`setTtsRate`、`getTtsVoice`/`setTtsVoice`、`getSpeechNetworkFallback`/`setSpeechNetworkFallback`，以及 `getAiAssistEnabled`/`setAiAssistEnabled`。
 

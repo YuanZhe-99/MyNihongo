@@ -16,6 +16,7 @@ three widgets.
 | `AnswerKind` | enum | B | How a question is answered: choice, typed or order. |
 | `vocabQuizModes`, `kanaQuizModes`, `grammarQuizModes` | constants | B | The modes each catalog supports. |
 | `parsedQuizModes` | constant | B | The modes that need the sentence analyser and are dropped without it. |
+| `lexiconAidedQuizModes` | constant | B | The modes that use the sentence analyser when it is loaded but still work without it: Type the sentence, which marks more fairly with the lexicon. |
 | `listeningQuizModes` | constant | B | The modes that speak rather than show. |
 | [`translationQuizModes`](#translation) | constant | A | The modes whose material is a translation of a Japanese sentence, and so are dropped for a Japanese reader. |
 | `quizModeWorksIn` | function | B | Say whether a mode can be asked in this UI language; false only for `translationQuizModes` under a Japanese UI. |
@@ -40,10 +41,13 @@ three widgets.
   value added later is switched on by default for everybody, which is what an absent preference key
   means and what somebody who never opted out would expect.
 
-  `QuizMode.drill` is the exception and is **not selectable**. The other sixteen are ways this app
+  `QuizMode.drill` is the exception and is **not selectable**. The other seventeen are ways this app
   can invent a question about a catalog entry, and the learner turns them on and off. `drill` means
   the question was written for a paper and says for itself what it wants, so switching it off would
   only mean refusing to sit the paper — which is what not opening it already does.
+
+  `grammarTypeSentence` (0.5.3) is the one free-response mode: a meaning is shown and the learner
+  types the Japanese sentence. See `AnswerChecker` for how it is marked.
 
 ### `const selectableQuizModes` <a id="selectable"></a>
 
@@ -62,7 +66,8 @@ three widgets.
 
 - **Kind:** top-level constant
 - **Purpose:** Name the modes whose material is a translation of a Japanese sentence.
-- **Inputs:** None; `grammarOrder`, `grammarSentenceToMeaning` and `grammarMeaningToSentence`.
+- **Inputs:** None; `grammarOrder`, `grammarSentenceToMeaning`, `grammarMeaningToSentence` and
+  `grammarTypeSentence`.
 - **Returns:** None.
 - **Side effects:** None.
 - **Algorithm:** None; `quizModeWorksIn(mode, locale)` is false exactly for these modes under a
@@ -70,9 +75,10 @@ three widgets.
 - **Usage:** Through `quizModeWorksIn`: `QuizPage._enabledModes` drops them for a Japanese reader,
   and `QuizModesPage` shows them switched off with the reason (`quizModeNeedsTranslation`).
 - **Notes:** A catalog example carries an English and a Chinese translation and no Japanese one,
-  because the sentence is already Japanese. Matching a sentence to its English meaning, or ordering
-  fragments against an English gloss, is not an exercise a Japanese UI can offer without showing the
-  language the learner chose not to read. They are shown as unavailable rather than silently missing
+  because the sentence is already Japanese. Matching a sentence to its English meaning, ordering
+  fragments against an English gloss, or typing the sentence an English meaning describes, is not
+  an exercise a Japanese UI can offer without showing the language the learner chose not to read.
+  They are shown as unavailable rather than silently missing
   — the same rule the listening modes follow on a device without a Japanese voice. The stored
   `quizModes` preference is not changed: switching the UI back out of Japanese brings them back as
   they were.

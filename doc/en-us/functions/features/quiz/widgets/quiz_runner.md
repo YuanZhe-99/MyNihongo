@@ -14,7 +14,7 @@ block needs that a practice quiz does not.
 |---|---|---|---|
 | [`QuizRunner`](#runner) | class | A | Run one session on screen. |
 | `passageTextOf` | field | B | The text of whatever the question is about, for the AI actions under a wrong answer. |
-| `_submit` | method | B | Submit the composed answer, asking the model for a second opinion on a typed one. |
+| `_submit` | method | B | Submit the composed answer through the session's own `checker`, asking the model for a second opinion on a typed one; the model is shown the catalog's answer (`answerText`), not a normalized key. |
 | `_advanceIfUnmarked` | method | B | Move straight on where the answer is not being marked on screen. |
 | `_continue` | method | B | Move past the feedback to the next question. |
 | `_syncFocus` | method | B | Give the shortcut node keyboard focus unless an unanswered typed question needs it. |
