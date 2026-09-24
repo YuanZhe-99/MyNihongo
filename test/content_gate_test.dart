@@ -43,16 +43,25 @@ import '../tool/draft_inputs.dart' show drillTypeSections;
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  final path = Platform.environment['CONTENT_DRAFT'];
-  if (path == null || path.isEmpty) {
+  final env = Platform.environment['CONTENT_DRAFT'];
+  if (env == null || env.isEmpty) {
     test('no draft to check', () {}, skip: 'CONTENT_DRAFT is not set');
     return;
   }
+  // One draft, or — when the variable names a `.txt` file — every draft
+  // listed in it, one per line. The catalog and the analyser are built once
+  // either way; a batch of a hundred drafts is then one test run, not a
+  // hundred, and each draft still reports every one of its problems in its
+  // own group.
+  final paths = env.endsWith('.txt')
+      ? [
+          for (final line in File(env).readAsLinesSync())
+            if (line.trim().isNotEmpty) line.trim(),
+        ]
+      : [env];
 
   late ContentCatalog catalog;
   late SentenceAnalyzer analyzer;
-  late Map<String, Object?> draft;
-  final problems = <String>[];
 
   setUpAll(() async {
     ContentRepository.parseInIsolate = false;
@@ -61,13 +70,40 @@ void main() {
       lexicon: Lexicon.build(catalog, functionWords: await loadFunctionWords()),
       catalog: catalog,
     );
+  });
+
+  tearDownAll(() => ContentRepository.parseInIsolate = true);
+
+  for (final path in paths) {
+    group(path, () => _checkDraft(path, () => catalog, () => analyzer));
+  }
+}
+
+/// Purpose: Register every gate check for one draft file.
+/// Inputs: The draft `path`, and getters for the shared `catalog` and
+/// `analyzer` built once for the whole run.
+/// Returns: None.
+/// Side effects: Registers tests.
+/// Notes: Internal helper used within this file only. The body is the gate as
+/// it always was; only the draft and its list of problems are per file.
+void _checkDraft(
+  String path,
+  ContentCatalog Function() catalogOf,
+  SentenceAnalyzer Function() analyzerOf,
+) {
+  late Map<String, Object?> draft;
+  final problems = <String>[];
+  late ContentCatalog catalog;
+  late SentenceAnalyzer analyzer;
+
+  setUpAll(() {
+    catalog = catalogOf();
+    analyzer = analyzerOf();
     final file = File(path);
     if (!file.existsSync()) throw StateError('No draft at $path');
     draft = (jsonDecode(file.readAsStringSync()) as Map)
         .cast<String, Object?>();
   });
-
-  tearDownAll(() => ContentRepository.parseInIsolate = true);
 
   /// Purpose: Record one problem.
   /// Inputs: `ok` and the `message` to record when it is false.
@@ -843,4 +879,255 @@ void main() {
     );
     expect(problems, isEmpty, reason: '\n${problems.join('\n')}');
   });
+
+  // ── The Japanese streams ──────────────────────────────────────────────────
+
+  /// Characters no catalog word explains, tolerated here exactly as the
+  /// shipped analyser test tolerates them, so the gate and that test agree —
+  /// plus the iteration mark 々. 人々 and 時々 are ordinary written Japanese,
+  /// and the tokenizer reads the mark as a character of its own rather than as
+  /// a repeat of the one before; that is a limit of the tokenizer, not a word
+  /// the reader does not know.
+  Set<String> allowedUnknown() {
+    final file = File('test/fixtures/sentence/allowed_unknown.json');
+    if (!file.existsSync()) return const {'々'};
+    final json = jsonDecode(file.readAsStringSync()) as Map;
+    return {
+      '々',
+      for (final row in (json['allowed'] as List? ?? const []))
+        if (row is Map) '${row['surface']}',
+    };
+  }
+
+  /// Whether a string is written in Japanese at all.
+  bool japanese(String text) => RegExp(r'[぀-ヿ一-鿿]').hasMatch(text);
+
+  /// Purpose: Check one piece of Japanese prose that carries a reading.
+  /// Inputs: A `label`, the `text`, and its `reading`.
+  /// Returns: None.
+  /// Side effects: Appends to `problems`.
+  /// Notes: Internal helper used within this file only. The unknown-token half
+  /// of [sentence] plus its alignment half, without the empty-sentence rule
+  /// and with the shipped `allowed_unknown.json` tolerance. What this proves
+  /// for a definition is that the app's own dictionary can read it and that
+  /// the reading is this text's; it does not prove the definition is right.
+  void readable(String label, String text, Object? reading, Set<String> allow) {
+    final unknown = analyzer
+        .analyze(text)
+        .tokens
+        .where((t) => t.category == TokenCategory.unknown)
+        .map((t) => t.surface)
+        .where((s) => !allow.contains(s))
+        .toList();
+    need(
+      unknown.isEmpty,
+      '$label: "$text" uses ${unknown.join('/')}, which no catalog word '
+      'explains. Say it with words the catalog has.',
+    );
+    if (reading is! String || reading.trim().isEmpty) {
+      need(false, '$label: "$text" has no reading');
+      return;
+    }
+    need(
+      alignFurigana(text, reading) != null,
+      '$label: the reading "$reading" does not line up with "$text". Every '
+      'kana of the text has to appear in the reading, in order.',
+    );
+  }
+
+  /// Purpose: Check one Japanese string of a localized field.
+  /// Inputs: A `label`, the `value`, and its length bounds.
+  /// Returns: None.
+  /// Side effects: Appends to `problems`.
+  /// Notes: Internal helper used within this file only. `[A-Za-z]{3,}` is the
+  /// gloss rule already in use; a Japanese grammar explanation may quote
+  /// romaji such as "wa", which two letters allow.
+  void jaText(String label, Object? value, {int min = 1, required int max}) {
+    if (value is! String || value.trim().isEmpty) {
+      need(false, '$label: missing');
+      return;
+    }
+    final text = value.trim();
+    need(japanese(text), '$label: "$text" is not Japanese');
+    need(
+      !RegExp('[A-Za-z]{3,}').hasMatch(text),
+      '$label: "$text" still contains English.',
+    );
+    need(
+      text.length >= min && text.length <= max,
+      '$label: ${text.length} characters; it has to be $min to $max.',
+    );
+  }
+
+  test('every Japanese definition is short, Japanese and readable', () {
+    if (draft['kind'] != 'gloss-ja') return;
+    final allow = allowedUnknown();
+    final rows = draft['rows'] as List? ?? const [];
+    need(rows.isNotEmpty, 'no rows');
+    final seen = <String>{};
+    for (final row in rows) {
+      if (row is! Map) {
+        need(false, 'a row that is not an object');
+        continue;
+      }
+      final id = '${row['id']}';
+      need(seen.add(id), '$id appears twice');
+      need(
+        row.keys.every((k) => k == 'id' || k == 'ja' || k == 'jaReading'),
+        '$id: only "id", "ja" and "jaReading" belong in a row',
+      );
+      final entry = catalog.vocabById(id);
+      if (entry == null) {
+        need(false, '$id is not in the catalog');
+        continue;
+      }
+      final ja = row['ja'];
+      final readings = row['jaReading'];
+      if (ja is! List || ja.isEmpty || ja.length > 3) {
+        need(false, '$id: "ja" has to be a list of one to three definitions');
+        continue;
+      }
+      if (readings is! List || readings.length != ja.length) {
+        need(false, '$id: "jaReading" needs one reading per definition');
+        continue;
+      }
+      for (var i = 0; i < ja.length; i++) {
+        final text = '${ja[i]}'.trim();
+        final label = '$id (${entry.headword}) #${i + 1}';
+        jaText(label, text, max: 24);
+        need(
+          text != entry.headword && text != entry.reading,
+          '$label: the definition is the word itself',
+        );
+        // A definition written wholly in kana is harder to read than one
+        // with kanji and furigana, and it is the easy way round the
+        // readability check below — so a definition of any length has to
+        // write its words the way Japanese writes them.
+        need(
+          text.length < 8 || RegExp(r'[一-鿿]').hasMatch(text),
+          '$label: "$text" is all kana. Write the words in kanji where '
+          'Japanese does; the reading gives the furigana.',
+        );
+        readable(label, text, readings[i], allow);
+      }
+    }
+    expect(problems, isEmpty, reason: '\n${problems.join('\n')}');
+  });
+
+  test(
+    'every ja string belongs to the file it names and reads as Japanese',
+    () {
+      if (draft['kind'] != 'ja') return;
+      final allow = allowedUnknown();
+      final target = '${draft['target']}';
+      final level = '${draft['level']}'.toLowerCase();
+      final rows = draft['rows'] as List? ?? const [];
+      need(rows.isNotEmpty, 'no rows');
+      need(
+        const {'grammar', 'function-words', 'units', 'drills'}.contains(target),
+        '"$target" is not a ja target',
+      );
+
+      Map<String, Map> index(String path, String listKey) {
+        final file = File(path);
+        if (!file.existsSync()) return {};
+        final json = jsonDecode(file.readAsStringSync()) as Map;
+        return {
+          for (final item in (json[listKey] as List? ?? const []))
+            if (item is Map) '${item['id']}': item,
+        };
+      }
+
+      final drillQuestions = <String, Map>{};
+      if (target == 'drills') {
+        for (final file in Directory('assets/content/drills').listSync()) {
+          if (file is! File) continue;
+          if (!file.uri.pathSegments.last.startsWith('$level-')) continue;
+          drillQuestions.addAll(index(file.path, 'questions'));
+        }
+      }
+      final shipped = switch (target) {
+        'grammar' => index('assets/content/grammar/$level.json', 'points'),
+        'function-words' => index(
+          'assets/content/function_words.json',
+          'words',
+        ),
+        'units' => index('assets/content/lessons/$level.json', 'units'),
+        _ => drillQuestions,
+      };
+
+      final seen = <String>{};
+      for (final row in rows) {
+        if (row is! Map) {
+          need(false, 'a row that is not an object');
+          continue;
+        }
+        final id = '${row['id']}';
+        need(seen.add(id), '$id appears twice');
+        need(!jsonEncode(row).contains('zh_TW'), '$id: no zh_TW in a ja draft');
+        final item = shipped[id];
+        if (item == null) {
+          need(false, '$id is not in the $target file for $level');
+          continue;
+        }
+        switch (target) {
+          case 'grammar':
+            need(
+              row.keys.every(
+                (k) => const {
+                  'id',
+                  'meaning',
+                  'meaningReading',
+                  'explanation',
+                }.contains(k),
+              ),
+              '$id: only id, meaning, meaningReading and explanation belong',
+            );
+            jaText('$id meaning', row['meaning'], max: 30);
+            if (row['meaning'] is String) {
+              readable(
+                '$id meaning',
+                '${row['meaning']}'.trim(),
+                row['meaningReading'],
+                allow,
+              );
+            }
+            jaText('$id explanation', row['explanation'], min: 20, max: 240);
+          case 'function-words':
+            jaText('$id gloss', row['gloss'], max: 24);
+          case 'units':
+            jaText('$id title', row['title'], max: 30);
+            if (item['writingPrompt'] != null) {
+              jaText('$id writingPrompt', row['writingPrompt'], max: 120);
+            }
+            final scenario = item['scenario'];
+            if (scenario is Map && scenario['title'] != null) {
+              jaText('$id scenarioTitle', row['scenarioTitle'], max: 30);
+            }
+            final questions = {
+              for (final q in (item['questions'] as List? ?? const []))
+                if (q is Map) '${q['id']}',
+            };
+            final written = <String>{};
+            for (final q in (row['questions'] as List? ?? const [])) {
+              if (q is! Map) continue;
+              final qid = '${q['id']}';
+              written.add(qid);
+              need(questions.contains(qid), '$id: no question $qid');
+              jaText('$qid prompt', q['prompt'], max: 80);
+              jaText('$qid explanation', q['explanation'], max: 160);
+            }
+            final missing = questions.difference(written);
+            need(
+              missing.isEmpty,
+              '$id: questions without Japanese: ${missing.join(', ')}',
+            );
+          case 'drills':
+            jaText('$id prompt', row['prompt'], max: 100);
+            jaText('$id explanation', row['explanation'], max: 200);
+        }
+      }
+      expect(problems, isEmpty, reason: '\n${problems.join('\n')}');
+    },
+  );
 }

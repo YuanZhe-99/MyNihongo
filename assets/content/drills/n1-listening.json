@@ -3370,7 +3370,8 @@
       "prompt": {
         "en": "What will the man do first after this?",
         "zh": "男的接下来首先要做什么？",
-        "zh_TW": "男的接下來首先要做什麼？"
+        "zh_TW": "男的接下來首先要做什麼？",
+        "ja": "男の人はこれからまず何をしますか。"
       },
       "options": [
         "資料を印刷する",
@@ -3382,7 +3383,8 @@
       "explanation": {
         "en": "The figures are already corrected, and the woman says to print only after the explanation of the aim is done, so adding that page comes first.",
         "zh": "数字已经订正完毕，女的又说说明写好之后再印刷，所以先要加上写明宗旨的那一页。",
-        "zh_TW": "數字已經訂正完畢，女的又說說明寫好之後再印刷，所以先要加上寫明宗旨的那一頁。"
+        "zh_TW": "數字已經訂正完畢，女的又說說明寫好之後再印刷，所以先要加上寫明宗旨的那一頁。",
+        "ja": "数字はすでに訂正済みで、女の人は趣旨の説明を付けてから印刷するようにと言っているので、まずそのページを加える。"
       }
     },
     {
@@ -3398,7 +3400,8 @@
       "prompt": {
         "en": "What will the woman do first after this?",
         "zh": "女的接下来首先要做什么？",
-        "zh_TW": "女的接下來首先要做什麼？"
+        "zh_TW": "女的接下來首先要做什麼？",
+        "ja": "女の人はこのあとまず何をしますか。"
       },
       "options": [
         "商品を注文する",
@@ -3410,7 +3413,8 @@
       "explanation": {
         "en": "The man says to count first and order afterwards, and the cleaning is to be put off, so counting the stock is the first thing.",
         "zh": "男的说先数数量、订货放在之后，打扫也往后放，所以首先是清点库存数量。",
-        "zh_TW": "男的說先數數量、訂貨放在之後，打掃也往後放，所以首先是清點庫存數量。"
+        "zh_TW": "男的說先數數量、訂貨放在之後，打掃也往後放，所以首先是清點庫存數量。",
+        "ja": "男の人はまず数を数え、注文はそのあとにと言い、掃除も後回しにするよう言っているので、最初に在庫を数える。"
       }
     },
     {
@@ -3425,7 +3429,8 @@
       "prompt": {
         "en": "What will the man do first after this?",
         "zh": "男的接下来首先要做什么？",
-        "zh_TW": "男的接下來首先要做什麼？"
+        "zh_TW": "男的接下來首先要做什麼？",
+        "ja": "男の人はこれからまず何をしますか。"
       },
       "options": [
         "建物を借りる",
@@ -3437,7 +3442,8 @@
       "explanation": {
         "en": "The building is already booked; the notice lacks only the time, and the woman tells him to write it in before sending.",
         "zh": "楼已经借好了，通知只差时间，女的让他写上时间之后再发出去。",
-        "zh_TW": "樓已經借好了，通知只差時間，女的讓他寫上時間之後再發出去。"
+        "zh_TW": "樓已經借好了，通知只差時間，女的讓他寫上時間之後再發出去。",
+        "ja": "建物はすでに借りてあり、案内は時間だけが空欄なので、女の人は時間を書いてから送るように言っている。"
       }
     },
     {
@@ -3453,7 +3459,8 @@
       "prompt": {
         "en": "What will the woman do first after this?",
         "zh": "女的接下来首先要做什么？",
-        "zh_TW": "女的接下來首先要做什麼？"
+        "zh_TW": "女的接下來首先要做什麼？",
+        "ja": "女の人はこのあとまず何をしますか。"
       },
       "options": [
         "資料をそのまま出す",
@@ -3465,7 +3472,8 @@
       "explanation": {
         "en": "The man refuses to have it submitted straight away and asks to see it once the figure has been corrected.",
         "zh": "男的不同意直接提交，要求订正数字之后先给他看。",
-        "zh_TW": "男的不同意直接提交，要求訂正數字之後先給他看。"
+        "zh_TW": "男的不同意直接提交，要求訂正數字之後先給他看。",
+        "ja": "男の人はそのまま提出することを認めず、数字を訂正してから先に見せてほしいと頼んでいる。"
       }
     },
     {
@@ -3481,7 +3489,8 @@
       "prompt": {
         "en": "What will the man do first after this?",
         "zh": "男的接下来首先要做什么？",
-        "zh_TW": "男的接下來首先要做什麼？"
+        "zh_TW": "男的接下來首先要做什麼？",
+        "ja": "男の人はこのあとまず何をしますか。"
       },
       "options": [
         "商品を回収する",
@@ -3493,7 +3502,8 @@
       "explanation": {
         "en": "The woman puts the check before any recall, and she will do the contacting herself.",
         "zh": "女的说回收之前先去查，联系工厂由她自己来做。",
-        "zh_TW": "女的說回收之前先去查，聯繫工廠由她自己來做。"
+        "zh_TW": "女的說回收之前先去查，聯繫工廠由她自己來做。",
+        "ja": "女の人は回収の前にまず確認をと言い、工場への連絡は自分がすると言っている。"
       }
     },
     {
@@ -3508,7 +3518,8 @@
       "prompt": {
         "en": "What will the man do first after this?",
         "zh": "男的接下来首先要做什么？",
-        "zh_TW": "男的接下來首先要做什麼？"
+        "zh_TW": "男的接下來首先要做什麼？",
+        "ja": "男の人はこれからまず何をしますか。"
       },
       "options": [
         "手順を書いた紙を配る",
@@ -3520,7 +3531,8 @@
       "explanation": {
         "en": "The gathering is next week, and he says その前に、私が手順を確認しておきます — checking the procedure comes first.",
         "zh": "集合是下周的事，他说「その前に、私が手順を確認しておきます」，所以先确认步骤。",
-        "zh_TW": "集合是下週的事，他說「その前に、私が手順を確認しておきます」，所以先確認步驟。"
+        "zh_TW": "集合是下週的事，他說「その前に、私が手順を確認しておきます」，所以先確認步驟。",
+        "ja": "集合は来週のことで、彼は「その前に、私が手順を確認しておきます」と言っているので、まず手順を確認する。"
       }
     },
     {
@@ -3534,7 +3546,8 @@
       "prompt": {
         "en": "Why is the man changing how the gathering is run?",
         "zh": "男的为什么要改变聚会的做法？",
-        "zh_TW": "男的為什麼要改變聚會的做法？"
+        "zh_TW": "男的為什麼要改變聚會的做法？",
+        "ja": "男の人はどうしてやり方を変えますか。"
       },
       "options": [
         "場所が遠いから",
@@ -3546,7 +3559,8 @@
       "explanation": {
         "en": "He denies the distance and says the meeting runs too long for people to come casually, so he will cut it to two hours.",
         "zh": "他否认了地点远，说时间太长大家没法轻松地来，所以要缩短到两小时。",
-        "zh_TW": "他否認了地點遠，說時間太長大家沒法輕鬆地來，所以要縮短到兩小時。"
+        "zh_TW": "他否認了地點遠，說時間太長大家沒法輕鬆地來，所以要縮短到兩小時。",
+        "ja": "彼は場所が遠いことを否定し、時間が長すぎて気軽に来られないと言っているので、二時間に短くする。"
       }
     },
     {
@@ -3560,7 +3574,8 @@
       "prompt": {
         "en": "What does the woman say is the main reason customers increased?",
         "zh": "女的说客人增加最主要的原因是什么？",
-        "zh_TW": "女的說客人增加最主要的原因是什麼？"
+        "zh_TW": "女的說客人增加最主要的原因是什麼？",
+        "ja": "女の人はお客さんが増えた一番の理由は何だと言っていますか。"
       },
       "options": [
         "値段を下げたから",
@@ -3572,7 +3587,8 @@
       "explanation": {
         "en": "Prices are ruled out, and the new products count only a little; 一番は店の中を簡素にしたこと.",
         "zh": "降价被否定，新商品只占一点，她说「一番は店の中を簡素にしたこと」。",
-        "zh_TW": "降價被否定，新商品只佔一點，她說「一番は店の中を簡素にしたこと」。"
+        "zh_TW": "降價被否定，新商品只佔一點，她說「一番は店の中を簡素にしたこと」。",
+        "ja": "値下げは否定され、新商品の影響もわずかで、「一番は店の中を簡素にしたこと」だと述べている。"
       }
     },
     {
@@ -3588,7 +3604,8 @@
       "prompt": {
         "en": "Why did the man decline the new job?",
         "zh": "男的为什么谢绝了新工作？",
-        "zh_TW": "男的為什麼謝絕了新工作？"
+        "zh_TW": "男的為什麼謝絕了新工作？",
+        "ja": "男の人はどうして新しい仕事を辞退しましたか。"
       },
       "options": [
         "給料が下がるから",
@@ -3600,7 +3617,8 @@
       "explanation": {
         "en": "The pay was going up and the place was the same; his reason is 今の仕事を最後までやりたかった.",
         "zh": "工资本来会涨，地点也一样，他的理由是「今の仕事を最後までやりたかった」。",
-        "zh_TW": "工資本來會漲，地點也一樣，他的理由是「今の仕事を最後までやりたかった」。"
+        "zh_TW": "工資本來會漲，地點也一樣，他的理由是「今の仕事を最後までやりたかった」。",
+        "ja": "給料は上がる見込みで場所も同じだったが、理由は「今の仕事を最後までやりたかった」ことである。"
       }
     },
     {
@@ -3615,7 +3633,8 @@
       "prompt": {
         "en": "What is the cause of the work being held up?",
         "zh": "工作停滞的原因是什么？",
-        "zh_TW": "工作停滯的原因是什麼？"
+        "zh_TW": "工作停滯的原因是什麼？",
+        "ja": "仕事が滞っている要因は何ですか。"
       },
       "options": [
         "人が足りないこと",
@@ -3627,7 +3646,8 @@
       "explanation": {
         "en": "She says there are enough people and the machine is fine; 品物が届かないのが要因です.",
         "zh": "她说人手够、机器也没问题，「品物が届かないのが要因です」。",
-        "zh_TW": "她說人手夠、機器也沒問題，「品物が屆かないのが要因です」。"
+        "zh_TW": "她說人手夠、機器也沒問題，「品物が屆かないのが要因です」。",
+        "ja": "人手は足りており機械も問題ないので、「品物が届かないのが要因です」と述べている。"
       }
     },
     {
@@ -3643,7 +3663,8 @@
       "prompt": {
         "en": "What will the man talk about first at the meeting?",
         "zh": "男的在会议上最先谈什么？",
-        "zh_TW": "男的在會議上最先談什麼？"
+        "zh_TW": "男的在會議上最先談什麼？",
+        "ja": "男の人は会議で何を一番に話しますか。"
       },
       "options": [
         "人を増やすこと",
@@ -3655,7 +3676,8 @@
       "explanation": {
         "en": "Hiring waits for another time and new products are off this time; he plans to speak on 経費の削減.",
         "zh": "增加人手放到下次，新商品这次也不谈，他打算谈「経費の削減」。",
-        "zh_TW": "增加人手放到下次，新商品這次也不談，他打算談「経費の削減」。"
+        "zh_TW": "增加人手放到下次，新商品這次也不談，他打算談「経費の削減」。",
+        "ja": "人を増やす話は次の機会に、新商品の話も今回はしないので、まず「経費の削減」について話す予定である。"
       }
     },
     {
@@ -3670,7 +3692,8 @@
       "prompt": {
         "en": "What does the woman say is the best thing about living alone?",
         "zh": "女的说一个人生活最好的是什么？",
-        "zh_TW": "女的說一個人生活最好的是什麼？"
+        "zh_TW": "女的說一個人生活最好的是什麼？",
+        "ja": "女の人は一人の暮らしの何が一番いいと言っていますか。"
       },
       "options": [
         "食事が簡単なこと",
@@ -3682,7 +3705,8 @@
       "explanation": {
         "en": "She calls cooking hard work and values freedom above it: 誰にも気兼ねしないで暮らせるのが一番いい.",
         "zh": "她说做饭辛苦，但更看重自由：「誰にも気兼ねしないで暮らせるのが一番いい」。",
-        "zh_TW": "她說做飯辛苦，但更看重自由：「誰にも気兼ねしないで暮らせるのが一番いい」。"
+        "zh_TW": "她說做飯辛苦，但更看重自由：「誰にも気兼ねしないで暮らせるのが一番いい」。",
+        "ja": "彼女は食事を大変だとしながらも、それより自由を大切にし、「誰にも気兼ねしないで暮らせるのが一番いい」と言う。"
       }
     },
     {
@@ -3696,7 +3720,8 @@
       "prompt": {
         "en": "Why did the man find the talk unsatisfying?",
         "zh": "男的为什么觉得那个讲座不过瘾？",
-        "zh_TW": "男的為什麼覺得那個講座不過癮？"
+        "zh_TW": "男的為什麼覺得那個講座不過癮？",
+        "ja": "男の人はどうして物足りないと思いましたか。"
       },
       "options": [
         "時間が短かったから",
@@ -3708,7 +3733,8 @@
       "explanation": {
         "en": "He says the length was just right; what was missing was examples, so he could not picture real situations.",
         "zh": "他说时间正好，缺的是例子，所以看不到实际的场面。",
-        "zh_TW": "他說時間正好，缺的是例子，所以看不到實際的場面。"
+        "zh_TW": "他說時間正好，缺的是例子，所以看不到實際的場面。",
+        "ja": "時間はちょうどよかったと言い、足りなかったのは例で、実際の場面が見えなかったと述べている。"
       }
     },
     {
@@ -3724,7 +3750,8 @@
       "prompt": {
         "en": "What is the woman talking about?",
         "zh": "女的在谈什么？",
-        "zh_TW": "女的在談什麼？"
+        "zh_TW": "女的在談什麼？",
+        "ja": "女の人は何について話していますか。"
       },
       "options": [
         "机を片付ける方法",
@@ -3736,7 +3763,8 @@
       "explanation": {
         "en": "Tidying was only the start; her point is 大切なのは、急いで働くことではなく、順番を決めること.",
         "zh": "收拾桌子只是开头，她的结论是「大切なのは、急いで働くことではなく、順番を決めること」。",
-        "zh_TW": "收拾桌子只是開頭，她的結論是「大切なのは、急いで働くことではなく、順番を決めること」。"
+        "zh_TW": "收拾桌子只是開頭，她的結論是「大切なのは、急いで働くことではなく、順番を決めること」。",
+        "ja": "机を片付けたのは始まりにすぎず、彼女の結論は「大切なのは、急いで働くことではなく、順番を決めること」である。"
       }
     },
     {
@@ -3752,7 +3780,8 @@
       "prompt": {
         "en": "What is the man talking about?",
         "zh": "男的在谈什么？",
-        "zh_TW": "男的在談什麼？"
+        "zh_TW": "男的在談什麼？",
+        "ja": "男の人は何について話していますか。"
       },
       "options": [
         "値段を下げて客を増やす方法",
@@ -3764,7 +3793,8 @@
       "explanation": {
         "en": "He gave up on cheap goods, chose for quality, and the shop moved into the black.",
         "zh": "他放弃了便宜商品，转而挑选品质，店里因此转为盈利。",
-        "zh_TW": "他放棄了便宜商品，轉而挑選品質，店裡因此轉為盈利。"
+        "zh_TW": "他放棄了便宜商品，轉而挑選品質，店裡因此轉為盈利。",
+        "ja": "安い品物をやめて品質を選んだ結果、店は黒字になったという話をしている。"
       }
     },
     {
@@ -3780,7 +3810,8 @@
       "prompt": {
         "en": "What is the woman talking about?",
         "zh": "女的在谈什么？",
-        "zh_TW": "女的在談什麼？"
+        "zh_TW": "女的在談什麼？",
+        "ja": "女の人は何について話していますか。"
       },
       "options": [
         "新しい機械の使い方",
@@ -3792,7 +3823,8 @@
       "explanation": {
         "en": "She holds back from teaching everything so that motivation grows: 人材を育てるのは、待つこと.",
         "zh": "她故意不全教，为的是让干劲长出来：「人材を育てるのは、待つこと」。",
-        "zh_TW": "她故意不全教，為的是讓幹勁長出來：「人材を育てるのは、待つこと」。"
+        "zh_TW": "她故意不全教，為的是讓幹勁長出來：「人材を育てるのは、待つこと」。",
+        "ja": "全部を教えず意欲が育つのを待つという考えで、「人材を育てるのは、待つこと」だと述べている。"
       }
     },
     {
@@ -3808,7 +3840,8 @@
       "prompt": {
         "en": "What is the man talking about?",
         "zh": "男的在谈什么？",
-        "zh_TW": "男的在談什麼？"
+        "zh_TW": "男的在談什麼？",
+        "ja": "男の人は何について話していますか。"
       },
       "options": [
         "数字を増やす方法",
@@ -3820,7 +3853,8 @@
       "explanation": {
         "en": "The rise came from a neighbouring shop closing, which is why he says numbers are the start of a question, not an answer.",
         "zh": "人数上升是因为附近的店关门，所以他说数字不是答案，而是提问的开始。",
-        "zh_TW": "人數上升是因為附近的店關門，所以他說數字不是答案，而是提問的開始。"
+        "zh_TW": "人數上升是因為附近的店關門，所以他說數字不是答案，而是提問的開始。",
+        "ja": "人数が増えたのは近くの店が閉まったためであり、数字は答えではなく問いの始まりだと述べている。"
       }
     },
     {
@@ -3836,7 +3870,8 @@
       "prompt": {
         "en": "What is the woman talking about?",
         "zh": "女的在谈什么？",
-        "zh_TW": "女的在談什麼？"
+        "zh_TW": "女的在談什麼？",
+        "ja": "女の人は何について話していますか。"
       },
       "options": [
         "申し込みの紙を簡素にした結果",
@@ -3848,7 +3883,8 @@
       "explanation": {
         "en": "Cutting the form to name and telephone raised applications sharply, and that is her whole subject.",
         "zh": "把表格减到只填姓名和电话后报名大幅增加，这正是她所讲的内容。",
-        "zh_TW": "把表格減到只填姓名和電話後報名大幅增加，這正是她所講的內容。"
+        "zh_TW": "把表格減到只填姓名和電話後報名大幅增加，這正是她所講的內容。",
+        "ja": "申し込みの紙を名前と電話だけに簡素にしたところ、申し込みが大幅に増えたという結果について話している。"
       }
     },
     {
@@ -3863,7 +3899,8 @@
       "prompt": {
         "en": "What is the man talking about?",
         "zh": "男的在谈什么？",
-        "zh_TW": "男的在談什麼？"
+        "zh_TW": "男的在談什麼？",
+        "ja": "男の人は何について話していますか。"
       },
       "options": [
         "町の祭りの歴史",
@@ -3875,7 +3912,8 @@
       "explanation": {
         "en": "He dropped the fixed time so people could drop in, and concludes that what matters is a form that is easy to come to.",
         "zh": "他取消了固定时间让人随时能来，结论是重要的是容易来的形式。",
-        "zh_TW": "他取消了固定時間讓人隨時能來，結論是重要的是容易來的形式。"
+        "zh_TW": "他取消了固定時間讓人隨時能來，結論是重要的是容易來的形式。",
+        "ja": "決まった時間をやめて誰でも来られる形にし、大切なのは来やすい形だという結論を述べている。"
       }
     },
     {
@@ -3889,7 +3927,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "では、私が承諾しておきました。",
@@ -3901,7 +3940,8 @@
       "explanation": {
         "en": "He is asking for time until approval comes from above, so the reply agrees to wait for his answer.",
         "zh": "他是在请对方等上面批准，所以回答应当表示等他的答复。",
-        "zh_TW": "他是在請對方等上面批准，所以回答應當表示等他的答覆。"
+        "zh_TW": "他是在請對方等上面批准，所以回答應當表示等他的答覆。",
+        "ja": "上の承諾が下りるまで待ってほしいという頼みなので、答えは待つことを了承する内容になる。"
       }
     },
     {
@@ -3915,7 +3955,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、ここでよろしいですか。",
@@ -3927,7 +3968,8 @@
       "explanation": {
         "en": "She is asking you to write your name, so the natural reply checks where to write it.",
         "zh": "她请你写下姓名，所以自然的回答是确认写在哪里。",
-        "zh_TW": "她請你寫下姓名，所以自然的回答是確認寫在哪裡。"
+        "zh_TW": "她請你寫下姓名，所以自然的回答是確認寫在哪裡。",
+        "ja": "名前を書くよう頼まれているので、答えは書く場所を確認する内容が自然である。"
       }
     },
     {
@@ -3941,7 +3983,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "では、手を洗ってきます。",
@@ -3953,7 +3996,8 @@
       "explanation": {
         "en": "手際がいい praises how deftly you worked and asks if you are done, so the reply confirms it and explains why it went quickly.",
         "zh": "「手際がいい」是称赞做得利落并问是否做完，所以回答要确认做完并说明为什么快。",
-        "zh_TW": "「手際がいい」是稱讚做得利落並問是否做完，所以回答要確認做完並說明為什麼快。"
+        "zh_TW": "「手際がいい」是稱讚做得利落並問是否做完，所以回答要確認做完並說明為什麼快。",
+        "ja": "「手際がいい」は手早さをほめて終わったかを尋ねる言葉なので、答えは終わったことを認め、早かった理由を述べる。"
       }
     },
     {
@@ -3967,7 +4011,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "では、名前を消しておきます。",
@@ -3979,7 +4024,8 @@
       "explanation": {
         "en": "紛らわしい warns that the two are easy to confuse, so the reply promises to check carefully.",
         "zh": "「紛らわしい」是提醒两者容易混淆，所以回答应当表示会仔细确认。",
-        "zh_TW": "「紛らわしい」是提醒兩者容易混淆，所以回答應當表示會仔細確認。"
+        "zh_TW": "「紛らわしい」是提醒兩者容易混淆，所以回答應當表示會仔細確認。",
+        "ja": "「紛らわしい」は二つが混同しやすいという注意なので、答えはよく確認すると約束する内容になる。"
       }
     },
     {
@@ -3993,7 +4039,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "よく休めてよかったですね。",
@@ -4005,7 +4052,8 @@
       "explanation": {
         "en": "ろくに〜ていない means he has hardly rested at all, so the reply sympathises and suggests a break.",
         "zh": "「ろくに〜ていない」表示几乎没休息，所以回答要表示同情并劝他歇一会儿。",
-        "zh_TW": "「ろくに〜ていない」表示幾乎沒休息，所以回答要表示同情並勸他歇一會兒。"
+        "zh_TW": "「ろくに〜ていない」表示幾乎沒休息，所以回答要表示同情並勸他歇一會兒。",
+        "ja": "「ろくに〜ていない」はほとんど休んでいないという意味なので、答えは同情して休憩を勧める内容になる。"
       }
     },
     {
@@ -4019,7 +4067,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "では、始めから読みましょう。",
@@ -4031,7 +4080,8 @@
       "explanation": {
         "en": "とりあえず…ここまでに proposes stopping for today, so the reply agrees and puts the rest off to tomorrow.",
         "zh": "「とりあえず…ここまでに」是提议今天就到此为止，所以回答同意并把余下的放到明天。",
-        "zh_TW": "「とりあえず…ここまでに」是提議今天就到此為止，所以回答同意並把餘下的放到明天。"
+        "zh_TW": "「とりあえず…ここまでに」是提議今天就到此為止，所以回答同意並把餘下的放到明天。",
+        "ja": "「とりあえず…ここまでに」は今日はここで終わりにしようという提案なので、答えは同意し続きを明日にする内容になる。"
       }
     },
     {
@@ -4045,7 +4095,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "では、機械を買ってきます。",
@@ -4057,7 +4108,8 @@
       "explanation": {
         "en": "取り扱いに気をつけて is a caution about handling, so the reply promises to read the instructions first.",
         "zh": "「取り扱いに気をつけて」是提醒操作要小心，所以回答表示会先仔细读说明。",
-        "zh_TW": "「取り扱いに気をつけて」是提醒操作要小心，所以回答表示會先仔細讀說明。"
+        "zh_TW": "「取り扱いに気をつけて」是提醒操作要小心，所以回答表示會先仔細讀說明。",
+        "ja": "「取り扱いに気をつけて」は操作の注意なので、答えは先に説明をよく読んでおくという内容になる。"
       }
     },
     {
@@ -4071,7 +4123,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "ええ、今日はよく歩きましたから。",
@@ -4083,7 +4136,8 @@
       "explanation": {
         "en": "さぞお疲れでしょう guesses that you are tired, so the reply agrees and gives the reason.",
         "zh": "「さぞお疲れでしょう」是推测对方很累，所以回答应当承认并说明原因。",
-        "zh_TW": "「さぞお疲れでしょう」是推測對方很累，所以回答應當承認並說明原因。"
+        "zh_TW": "「さぞお疲れでしょう」是推測對方很累，所以回答應當承認並說明原因。",
+        "ja": "「さぞお疲れでしょう」は疲れているだろうという推測なので、答えはそれを認めて理由を述べる。"
       }
     },
     {
@@ -4097,7 +4151,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、一人で全部やりました。",
@@ -4109,7 +4164,8 @@
       "explanation": {
         "en": "分担しませんか proposes splitting the work, so the reply accepts and takes half.",
         "zh": "「分担しませんか」是提议分工，所以回答接受并承担一半。",
-        "zh_TW": "「分擔しませんか」是提議分工，所以回答接受並承擔一半。"
+        "zh_TW": "「分擔しませんか」是提議分工，所以回答接受並承擔一半。",
+        "ja": "「分担しませんか」は仕事を分けようという提案なので、答えは受け入れて半分を引き受ける内容になる。"
       }
     },
     {
@@ -4123,7 +4179,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "では、これから書き始めます。",
@@ -4135,7 +4192,8 @@
       "explanation": {
         "en": "She has already made the correction for you, so the reply thanks her.",
         "zh": "她已经替你订正好了，所以回答要道谢。",
-        "zh_TW": "她已經替你訂正好了，所以回答要道謝。"
+        "zh_TW": "她已經替你訂正好了，所以回答要道謝。",
+        "ja": "女の人はすでに数字を訂正してくれているので、答えは礼を述べる内容になる。"
       }
     },
     {
@@ -4149,7 +4207,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "急に思いついたんですね。",
@@ -4161,7 +4220,8 @@
       "explanation": {
         "en": "かねてから means he has had the idea for a long time, so the reply restates that it is a long-held wish.",
         "zh": "「かねてから」表示很早以前就有这个想法，所以回答说这是很久以来的心愿。",
-        "zh_TW": "「かねてから」表示很早以前就有這個想法，所以回答說這是很久以來的心願。"
+        "zh_TW": "「かねてから」表示很早以前就有這個想法，所以回答說這是很久以來的心願。",
+        "ja": "「かねてから」は以前からそう考えていたという意味なので、答えはそれを長年の願いだったと言い換える。"
       }
     },
     {
@@ -4175,7 +4235,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "よく解けましたね。",
@@ -4187,7 +4248,8 @@
       "explanation": {
         "en": "お手上げ means she has given up on the problem, so the reply offers to work on it together.",
         "zh": "「お手上げ」表示她对这个问题束手无策，所以回答提议大家一起想办法。",
-        "zh_TW": "「お手上げ」表示她對這個問題束手無策，所以回答提議大家一起想辦法。"
+        "zh_TW": "「お手上げ」表示她對這個問題束手無策，所以回答提議大家一起想辦法。",
+        "ja": "「お手上げ」はその問題を諦めたという意味なので、答えはみんなで考えようと提案する内容になる。"
       }
     },
     {
@@ -4201,7 +4263,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、静かにします。",
@@ -4213,7 +4276,8 @@
       "explanation": {
         "en": "気軽に声をかけて invites you to ask freely, so the reply thanks him and says you will come to him again.",
         "zh": "「気軽に声をかけて」是欢迎你随时来问，所以回答道谢并表示以后还会来请教。",
-        "zh_TW": "「気軽に聲をかけて」是歡迎你隨時來問，所以回答道謝並表示以後還會來請教。"
+        "zh_TW": "「気軽に聲をかけて」是歡迎你隨時來問，所以回答道謝並表示以後還會來請教。",
+        "ja": "「気軽に声をかけて」は自由に聞いてよいという誘いなので、答えは礼を述べて今後また相談すると言う。"
       }
     },
     {
@@ -4227,7 +4291,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、今日中にお知らせします。",
@@ -4239,7 +4304,8 @@
       "explanation": {
         "en": "早急に asks for it at once, so the reply promises an answer within the day.",
         "zh": "「早急に」是要求马上办，所以回答承诺当天之内通知。",
-        "zh_TW": "「早急に」是要求馬上辦，所以回答承諾當天之內通知。"
+        "zh_TW": "「早急に」是要求馬上辦，所以回答承諾當天之內通知。",
+        "ja": "「早急に」はすぐにという意味なので、答えは今日中に知らせると約束する内容になる。"
       }
     },
     {
@@ -4253,7 +4319,8 @@
       "prompt": {
         "en": "Which class will the man choose?",
         "zh": "男的会选哪个教室？",
-        "zh_TW": "男的會選哪個教室？"
+        "zh_TW": "男的會選哪個教室？",
+        "ja": "男の人はどの教室を選びますか。"
       },
       "options": [
         "朝の教室",
@@ -4265,7 +4332,8 @@
       "explanation": {
         "en": "He wants a fixed day, cannot manage evenings, and says Saturday is his day off and twice a month is something he could keep up.",
         "zh": "他想在固定的日子上课，晚上不行，并说周六休息、一个月两次能坚持下来。",
-        "zh_TW": "他想在固定的日子上課，晚上不行，並說週六休息、一個月兩次能堅持下來。"
+        "zh_TW": "他想在固定的日子上課，晚上不行，並說週六休息、一個月兩次能堅持下來。",
+        "ja": "決まった日に通いたく、夜は都合が悪いため、土曜日は休みで月に二回なら続けられると述べている。"
       }
     },
     {
@@ -4279,7 +4347,8 @@
       "prompt": {
         "en": "Which class will the woman choose?",
         "zh": "女的会选哪个教室？",
-        "zh_TW": "女的會選哪個教室？"
+        "zh_TW": "女的會選哪個教室？",
+        "ja": "女の人はどの教室を選びますか。"
       },
       "options": [
         "朝の教室",
@@ -4291,7 +4360,8 @@
       "explanation": {
         "en": "She cannot attend in person at all, and wants the one she can fit to her own hours — the class with no fixed times, taken at home.",
         "zh": "她根本无法去上课，想选能配合自己时间的，也就是没有固定时间、在家上的教室。",
-        "zh_TW": "她根本無法去上課，想選能配合自己時間的，也就是沒有固定時間、在家上的教室。"
+        "zh_TW": "她根本無法去上課，想選能配合自己時間的，也就是沒有固定時間、在家上的教室。",
+        "ja": "彼女は通うこと自体が難しく、自分の時間に合わせられる、決まった時間のない家で受ける教室を選ぶ。"
       }
     },
     {
@@ -4305,7 +4375,8 @@
       "prompt": {
         "en": "Which trip will the man choose?",
         "zh": "男的会选哪个旅行？",
-        "zh_TW": "男的會選哪個旅行？"
+        "zh_TW": "男的會選哪個旅行？",
+        "ja": "男の人はどの旅行を選びますか。"
       },
       "options": [
         "山を歩く旅行",
@@ -4317,7 +4388,8 @@
       "explanation": {
         "en": "Work the next day rules out the overnight trip, early mornings and walking rule out the mountain, and he passes on the most expensive one, leaving the same-day trip round the old buildings.",
         "zh": "第二天要上班排除住宿的，怕早起又不擅长走路排除爬山的，最贵的他也不选，只剩当天往返看老建筑的。",
-        "zh_TW": "第二天要上班排除住宿的，怕早起又不擅長走路排除爬山的，最貴的他也不選，只剩當天往返看老建築的。"
+        "zh_TW": "第二天要上班排除住宿的，怕早起又不擅長走路排除爬山的，最貴的他也不選，只剩當天往返看老建築的。",
+        "ja": "翌日仕事があるため宿泊はできず、早起きや歩くのも苦手で、一番高いものも避けるので、日帰りで古い建物を見る旅行になる。"
       }
     },
     {
@@ -4331,7 +4403,8 @@
       "prompt": {
         "en": "Which trip will the woman choose?",
         "zh": "女的会选哪个旅行？",
-        "zh_TW": "女的會選哪個旅行？"
+        "zh_TW": "女的會選哪個旅行？",
+        "ja": "女の人はどの旅行を選びますか。"
       },
       "options": [
         "山を歩く旅行",
@@ -4343,7 +4416,8 @@
       "explanation": {
         "en": "She puts price first and does not mind an early start, and the mountain walk is announced as the cheapest.",
         "zh": "她优先考虑价格，也不介意早起，而广播说走山路的那个最便宜。",
-        "zh_TW": "她優先考慮價格，也不介意早起，而廣播說走山路的那個最便宜。"
+        "zh_TW": "她優先考慮價格，也不介意早起，而廣播說走山路的那個最便宜。",
+        "ja": "彼女は値段を優先し、早起きも構わないと言っており、案内では山を歩く旅行が一番安いとされている。"
       }
     },
     {
@@ -4357,7 +4431,8 @@
       "prompt": {
         "en": "What will the man do first after this?",
         "zh": "男的接下来首先要做什么？",
-        "zh_TW": "男的接下來首先要做什麼？"
+        "zh_TW": "男的接下來首先要做什麼？",
+        "ja": "男の人はこのあとまず何をしますか。"
       },
       "options": [
         "機械を動かす",
@@ -4369,7 +4444,8 @@
       "explanation": {
         "en": "The woman hands him the procedure sheet and says reading it comes before touching the machine.",
         "zh": "女的把写有步骤的纸交给他，并说要先看完再动机器，所以先读纸。",
-        "zh_TW": "女的把寫有步驟的紙交給他，並說要先看完再動機器，所以先讀紙。"
+        "zh_TW": "女的把寫有步驟的紙交給他，並說要先看完再動機器，所以先讀紙。",
+        "ja": "女の人が手順の紙を渡し、読んでから機械を動かすようにと言っているので、まず紙を読む。"
       }
     },
     {
@@ -4383,7 +4459,8 @@
       "prompt": {
         "en": "What will the man do first after this?",
         "zh": "男的接下来首先要做什么？",
-        "zh_TW": "男的接下來首先要做什麼？"
+        "zh_TW": "男的接下來首先要做什麼？",
+        "ja": "男の人はこのあとまず何をしますか。"
       },
       "options": [
         "泊まる所を決める",
@@ -4395,7 +4472,8 @@
       "explanation": {
         "en": "The flight is booked, the room comes later and the printing can wait until tomorrow, so lodging is first.",
         "zh": "机票已订，会议室放在之后，打印明天再说，所以先定住的地方。",
-        "zh_TW": "機票已訂，會議室放在之後，打印明天再說，所以先定住的地方。"
+        "zh_TW": "機票已訂，會議室放在之後，打印明天再說，所以先定住的地方。",
+        "ja": "飛行機はすでに取ってあり、部屋の予約はそのあと、印刷は明日でよいので、まず泊まる所を決める。"
       }
     },
     {
@@ -4409,7 +4487,8 @@
       "prompt": {
         "en": "What will the woman do first after this?",
         "zh": "女的接下来首先要做什么？",
-        "zh_TW": "女的接下來首先要做什麼？"
+        "zh_TW": "女的接下來首先要做什麼？",
+        "ja": "女の人はこのあとまず何をしますか。"
       },
       "options": [
         "値段を下げる",
@@ -4421,7 +4500,8 @@
       "explanation": {
         "en": "The man puts the count of customers before any talk of prices, and the report can wait a week.",
         "zh": "男的说先查客人数量，价格的事在后，报告下周再写。",
-        "zh_TW": "男的說先查客人數量，價格的事在後，報告下週再寫。"
+        "zh_TW": "男的說先查客人數量，價格的事在後，報告下週再寫。",
+        "ja": "男の人は値段の話より先に客の数を調べるよう言い、報告は来週でよいとしている。"
       }
     },
     {
@@ -4435,7 +4515,8 @@
       "prompt": {
         "en": "What will the man do first after this?",
         "zh": "男的接下来首先要做什么？",
-        "zh_TW": "男的接下來首先要做什麼？"
+        "zh_TW": "男的接下來首先要做什麼？",
+        "ja": "男の人はこのあとまず何をしますか。"
       },
       "options": [
         "送った記録を確認する",
@@ -4447,7 +4528,8 @@
       "explanation": {
         "en": "She will do the record check herself and tells him the call comes first.",
         "zh": "确认记录由女的自己做，她说打电话优先。",
-        "zh_TW": "確認記錄由女的自己做，她說打電話優先。"
+        "zh_TW": "確認記錄由女的自己做，她說打電話優先。",
+        "ja": "記録の確認は女の人が自分でするので、電話が先だと言われている。"
       }
     },
     {
@@ -4461,7 +4543,8 @@
       "prompt": {
         "en": "What will the woman do first after this?",
         "zh": "女的接下来首先要做什么？",
-        "zh_TW": "女的接下來首先要做什麼？"
+        "zh_TW": "女的接下來首先要做什麼？",
+        "ja": "女の人はこのあとまず何をしますか。"
       },
       "options": [
         "参加する人の数を数える",
@@ -4473,7 +4556,8 @@
       "explanation": {
         "en": "Counting comes before ordering food, the names are already collected, and the man will book the room.",
         "zh": "点餐之前先数人数，名字已经收齐，房间由男的预订。",
-        "zh_TW": "點餐之前先數人數，名字已經收齊，房間由男的預訂。"
+        "zh_TW": "點餐之前先數人數，名字已經收齊，房間由男的預訂。",
+        "ja": "食べ物の注文の前にまず人数を数えるよう言われ、名前はすでに集まっており、部屋の予約は男の人がする。"
       }
     },
     {
@@ -4487,7 +4571,8 @@
       "prompt": {
         "en": "What will the man do first after this?",
         "zh": "男的接下来首先要做什么？",
-        "zh_TW": "男的接下來首先要做什麼？"
+        "zh_TW": "男的接下來首先要做什麼？",
+        "ja": "男の人はこのあとまず何をしますか。"
       },
       "options": [
         "案内を配る",
@@ -4499,7 +4584,8 @@
       "explanation": {
         "en": "The woman stops him handing it out and asks for the correction, and she wants to see it before it is reprinted.",
         "zh": "女的阻止他直接发放，要求先订正日期，重印之前还要给她看。",
-        "zh_TW": "女的阻止他直接發放，要求先訂正日期，重印之前還要給她看。"
+        "zh_TW": "女的阻止他直接發放，要求先訂正日期，重印之前還要給她看。",
+        "ja": "女の人はすぐに配ることを止め、まず日にちを訂正してから配るよう求め、印刷し直す前にもう一度見せてほしいと言っている。"
       }
     },
     {
@@ -4513,7 +4599,8 @@
       "prompt": {
         "en": "What will the man do first after this?",
         "zh": "男的接下来首先要做什么？",
-        "zh_TW": "男的接下來首先要做什麼？"
+        "zh_TW": "男的接下來首先要做什麼？",
+        "ja": "男の人はこのあとまず何をしますか。"
       },
       "options": [
         "資料を十枚印刷する",
@@ -4525,7 +4612,8 @@
       "explanation": {
         "en": "She asks him to hold back the fine figures and to send it after rewriting, so the rewrite comes first.",
         "zh": "女的要求少放细数字并改完后再发给她，所以先改写。",
-        "zh_TW": "女的要求少放細數字並改完後再發給她，所以先改寫。"
+        "zh_TW": "女的要求少放細數字並改完後再發給她，所以先改寫。",
+        "ja": "女の人は細かい数字を控えて書き直してから送るよう頼んでいるので、まず書き直す。"
       }
     },
     {
@@ -4539,7 +4627,8 @@
       "prompt": {
         "en": "What will the man do first after this?",
         "zh": "男的接下来首先要做什么？",
-        "zh_TW": "男的接下來首先要做什麼？"
+        "zh_TW": "男的接下來首先要做什麼？",
+        "ja": "男の人はこのあとまず何をしますか。"
       },
       "options": [
         "すぐお金を払う",
@@ -4551,7 +4640,8 @@
       "explanation": {
         "en": "She stops him paying at once and says the records come before the bank.",
         "zh": "女的不让他马上付款，并说查记录比问银行优先。",
-        "zh_TW": "女的不讓他馬上付款，並說查記錄比問銀行優先。"
+        "zh_TW": "女的不讓他馬上付款，並說查記錄比問銀行優先。",
+        "ja": "女の人はすぐに払うことを止め、銀行より先にこちらの記録を調べるよう言っている。"
       }
     },
     {
@@ -4565,7 +4655,8 @@
       "prompt": {
         "en": "What will the woman do first after this?",
         "zh": "女的接下来首先要做什么？",
-        "zh_TW": "女的接下來首先要做什麼？"
+        "zh_TW": "女的接下來首先要做什麼？",
+        "ja": "女の人はこのあとまず何をしますか。"
       },
       "options": [
         "箱を全部集める",
@@ -4577,7 +4668,8 @@
       "explanation": {
         "en": "The man asks for the boxes to be gathered first and says the carrying can follow.",
         "zh": "男的要求先把箱子集中过来，搬运在那之后。",
-        "zh_TW": "男的要求先把箱子集中過來，搬運在那之後。"
+        "zh_TW": "男的要求先把箱子集中過來，搬運在那之後。",
+        "ja": "男の人はまず箱を全部集めるよう頼み、運ぶのはそのあとでよいと言っている。"
       }
     },
     {
@@ -4591,7 +4683,8 @@
       "prompt": {
         "en": "What will the woman do first after this?",
         "zh": "女的接下来首先要做什么？",
-        "zh_TW": "女的接下來首先要做什麼？"
+        "zh_TW": "女的接下來首先要做什麼？",
+        "ja": "女の人はこのあとまず何をしますか。"
       },
       "options": [
         "見学に行く",
@@ -4603,7 +4696,8 @@
       "explanation": {
         "en": "Questions must be handed in by the day before, and she says she will write them today.",
         "zh": "问题要在前一天之前交，她说今天之内就写。",
-        "zh_TW": "問題要在前一天之前交，她說今天之內就寫。"
+        "zh_TW": "問題要在前一天之前交，她說今天之內就寫。",
+        "ja": "質問は前の日までに紙に書いて出す必要があるため、彼女は今日中に書くと言っている。"
       }
     },
     {
@@ -4617,7 +4711,8 @@
       "prompt": {
         "en": "What will the woman do first after this?",
         "zh": "女的接下来首先要做什么？",
-        "zh_TW": "女的接下來首先要做什麼？"
+        "zh_TW": "女的接下來首先要做什麼？",
+        "ja": "女の人はこのあとまず何をしますか。"
       },
       "options": [
         "細かい数字を計算する",
@@ -4629,7 +4724,8 @@
       "explanation": {
         "en": "The fine figures are put off and the table waits for them, so showing the broad flow comes first.",
         "zh": "细数字放到后面，表要等数字定了，所以先给他看大的思路。",
-        "zh_TW": "細數字放到後面，表要等數字定了，所以先給他看大的思路。"
+        "zh_TW": "細數字放到後面，表要等數字定了，所以先給他看大的思路。",
+        "ja": "細かい数字は後回しにして、まず大きい流れを見せるよう言われており、表は数字が決まってからでよい。"
       }
     },
     {
@@ -4643,7 +4739,8 @@
       "prompt": {
         "en": "What will the woman do first after this?",
         "zh": "女的接下来首先要做什么？",
-        "zh_TW": "女的接下來首先要做什麼？"
+        "zh_TW": "女的接下來首先要做什麼？",
+        "ja": "女の人はこのあとまず何をしますか。"
       },
       "options": [
         "機械を買う",
@@ -4655,7 +4752,8 @@
       "explanation": {
         "en": "Approval is still missing and the price is already known, so the paperwork comes first.",
         "zh": "上面还没同意，价格也已知道，所以先做文件。",
-        "zh_TW": "上面還沒同意，價格也已知道，所以先做文件。"
+        "zh_TW": "上面還沒同意，價格也已知道，所以先做文件。",
+        "ja": "上の承諾はまだだが値段はすでに分かっているので、まず書類を作る。"
       }
     },
     {
@@ -4669,7 +4767,8 @@
       "prompt": {
         "en": "Why was the trip cancelled?",
         "zh": "旅行取消的原因是什么？",
-        "zh_TW": "旅行取消的原因是什麼？"
+        "zh_TW": "旅行取消的原因是什麼？",
+        "ja": "旅行が中止になった理由は何ですか。"
       },
       "options": [
         "日にちが試験と重なったから",
@@ -4681,7 +4780,8 @@
       "explanation": {
         "en": "He denies the price was the cause and says the dates clashed with the exams, so nobody signed up.",
         "zh": "他否认是价格问题，说日期和考试撞上了，所以人凑不够。",
-        "zh_TW": "他否認是價格問題，說日期和考試撞上了，所以人湊不夠。"
+        "zh_TW": "他否認是價格問題，說日期和考試撞上了，所以人湊不夠。",
+        "ja": "値段が原因ではないと否定され、日にちが試験と重なったために人が集まらなかったと述べている。"
       }
     },
     {
@@ -4695,7 +4795,8 @@
       "prompt": {
         "en": "Why did the woman make the form longer?",
         "zh": "女的把表格加长的原因是什么？",
-        "zh_TW": "女的把表格加長的原因是什麼？"
+        "zh_TW": "女的把表格加長的原因是什麼？",
+        "ja": "女の人が紙を長くした理由は何ですか。"
       },
       "options": [
         "申し込みを増やすため",
@@ -4707,7 +4808,8 @@
       "explanation": {
         "en": "She says outright that she wanted to cut the work of phoning applicants afterwards.",
         "zh": "她明确说是想减少事后打电话询问的麻烦。",
-        "zh_TW": "她明確說是想減少事後打電話詢問的麻煩。"
+        "zh_TW": "她明確說是想減少事後打電話詢問的麻煩。",
+        "ja": "彼女は後で電話して聞く手間を減らしたかったとはっきり述べている。"
       }
     },
     {
@@ -4721,7 +4823,8 @@
       "prompt": {
         "en": "Why did the shop start doing well?",
         "zh": "店铺开始顺利的原因是什么？",
-        "zh_TW": "店鋪開始順利的原因是什麼？"
+        "zh_TW": "店鋪開始順利的原因是什麼？",
+        "ja": "店がうまくいくようになった理由は何ですか。"
       },
       "options": [
         "宣伝をたくさんしたから",
@@ -4733,7 +4836,8 @@
       "explanation": {
         "en": "He says he has hardly advertised; what worked was neighbours bringing their friends.",
         "zh": "他说几乎没做宣传，起作用的是附近的人把朋友带来。",
-        "zh_TW": "他說幾乎沒做宣傳，起作用的是附近的人把朋友帶來。"
+        "zh_TW": "他說幾乎沒做宣傳，起作用的是附近的人把朋友帶來。",
+        "ja": "宣伝はほとんどしておらず、近所の人が友達を連れてきてくれたことが効いたと述べている。"
       }
     },
     {
@@ -4747,7 +4851,8 @@
       "prompt": {
         "en": "Why will the festival be smaller this year?",
         "zh": "庙会缩小规模的原因是什么？",
-        "zh_TW": "廟會縮小規模的原因是什麼？"
+        "zh_TW": "廟會縮小規模的原因是什麼？",
+        "ja": "祭りの規模を小さくする理由は何ですか。"
       },
       "options": [
         "お金が足りないから",
@@ -4759,7 +4864,8 @@
       "explanation": {
         "en": "The money was raised; what is missing is people to work on the day.",
         "zh": "钱已经凑齐，缺的是当天能干活的人手。",
-        "zh_TW": "錢已經湊齊，缺的是當天能幹活的人手。"
+        "zh_TW": "錢已經湊齊，缺的是當天能幹活的人手。",
+        "ja": "お金はすでに集まっており、足りないのは当日動く手伝いの人だと述べている。"
       }
     },
     {
@@ -4773,7 +4879,8 @@
       "prompt": {
         "en": "Why did the population begin to rise?",
         "zh": "人口开始增加的原因是什么？",
-        "zh_TW": "人口開始增加的原因是什麼？"
+        "zh_TW": "人口開始增加的原因是什麼？",
+        "ja": "人口が増え始めた理由は何ですか。"
       },
       "options": [
         "家の値段が下がったから",
@@ -4785,7 +4892,8 @@
       "explanation": {
         "en": "The factory is not built yet; he names cheaper housing for young people as the big reason.",
         "zh": "工厂还没建成，他指出年轻人住房价格下降才是主因。",
-        "zh_TW": "工廠還沒建成，他指出年輕人住房價格下降才是主因。"
+        "zh_TW": "工廠還沒建成，他指出年輕人住房價格下降才是主因。",
+        "ja": "工場はまだできておらず、若い人が住む家の値段が下がったことが大きいと述べている。"
       }
     },
     {
@@ -4799,7 +4907,8 @@
       "prompt": {
         "en": "Why is the charge being made a flat rate?",
         "zh": "把收费改成统一价的原因是什么？",
-        "zh_TW": "把收費改成統一價的原因是什麼？"
+        "zh_TW": "把收費改成統一價的原因是什麼？",
+        "ja": "料金を一律にする理由は何ですか。"
       },
       "options": [
         "料金を安くするため",
@@ -4811,7 +4920,8 @@
       "explanation": {
         "en": "The price itself does not change; rates differing by the hour caused many mistakes.",
         "zh": "价格本身不变，按时段不同才是出错多的原因。",
-        "zh_TW": "價格本身不變，按時段不同才是出錯多的原因。"
+        "zh_TW": "價格本身不變，按時段不同才是出錯多的原因。",
+        "ja": "値段そのものは変わらず、時間ごとに違っていたために間違いが多かったことが理由である。"
       }
     },
     {
@@ -4825,7 +4935,8 @@
       "prompt": {
         "en": "Why does the man hold a meeting every morning?",
         "zh": "男的每天早上开会的原因是什么？",
-        "zh_TW": "男的每天早上開會的原因是什麼？"
+        "zh_TW": "男的每天早上開會的原因是什麼？",
+        "ja": "男の人が毎朝集まる理由は何ですか。"
       },
       "options": [
         "仕事を早く終えるため",
@@ -4837,7 +4948,8 @@
       "explanation": {
         "en": "He gives the concrete gain: five minutes cuts the trouble of asking the same thing twice.",
         "zh": "他给出的具体好处是：五分钟就减少了重复询问同一件事的麻烦。",
-        "zh_TW": "他給出的具體好處是：五分鐘就減少了重複詢問同一件事的麻煩。"
+        "zh_TW": "他給出的具體好處是：五分鐘就減少了重複詢問同一件事的麻煩。",
+        "ja": "五分だけの集まりで、同じことを二度聞く手間が減ったという具体的な利点を挙げている。"
       }
     },
     {
@@ -4851,7 +4963,8 @@
       "prompt": {
         "en": "Why does the new person work quickly?",
         "zh": "新人做事快的原因是什么？",
-        "zh_TW": "新人做事快的原因是什麼？"
+        "zh_TW": "新人做事快的原因是什麼？",
+        "ja": "新しい人の仕事が早い理由は何ですか。"
       },
       "options": [
         "前に同じ仕事をしていたから",
@@ -4863,7 +4976,8 @@
       "explanation": {
         "en": "It is her first time, so experience is ruled out; she reads the whole procedure the day before.",
         "zh": "这是她第一次做，排除经验；她会在前一天把步骤全部读完。",
-        "zh_TW": "這是她第一次做，排除經驗；她會在前一天把步驟全部讀完。"
+        "zh_TW": "這是她第一次做，排除經驗；她會在前一天把步驟全部讀完。",
+        "ja": "初めての仕事なので経験は理由にならず、前の日に手順を全部読んでくることが理由である。"
       }
     },
     {
@@ -4877,7 +4991,8 @@
       "prompt": {
         "en": "What was the main reason the response was so quick?",
         "zh": "应对迅速的最主要原因是什么？",
-        "zh_TW": "應對迅速的最主要原因是什麼？"
+        "zh_TW": "應對迅速的最主要原因是什麼？",
+        "ja": "対応が迅速だった一番の理由は何ですか。"
       },
       "options": [
         "連絡の紙が壁に貼ってあったから",
@@ -4889,7 +5004,8 @@
       "explanation": {
         "en": "He allows that practice matters but says above all it was the contact list on the wall.",
         "zh": "他承认演练也重要，但说最关键的是墙上贴着的联络方式。",
-        "zh_TW": "他承認演練也重要，但說最關鍵的是牆上貼著的聯絡方式。"
+        "zh_TW": "他承認演練也重要，但說最關鍵的是牆上貼著的聯絡方式。",
+        "ja": "練習も大切だと認めつつ、何より壁に貼ってあった連絡の紙が良かったと述べている。"
       }
     },
     {
@@ -4903,7 +5019,8 @@
       "prompt": {
         "en": "Why did the woman come to take charge of the class?",
         "zh": "女的开始负责教室的原因是什么？",
-        "zh_TW": "女的開始負責教室的原因是什麼？"
+        "zh_TW": "女的開始負責教室的原因是什麼？",
+        "ja": "女の人が教室を担うようになった理由は何ですか。"
       },
       "options": [
         "前からやりたかったから",
@@ -4915,7 +5032,8 @@
       "explanation": {
         "en": "She says it had never crossed her mind; the job came round to her when her predecessor moved away.",
         "zh": "她说从没想过要做，是前任搬家后才轮到她。",
-        "zh_TW": "她說從沒想過要做，是前任搬家後才輪到她。"
+        "zh_TW": "她說從沒想過要做，是前任搬家後才輪到她。",
+        "ja": "前からやりたかったわけではなく、前の人が引っ越したので彼女に回ってきたと述べている。"
       }
     },
     {
@@ -4929,7 +5047,8 @@
       "prompt": {
         "en": "Why does the woman say the draft should be revised?",
         "zh": "女的说方案应该修改的原因是什么？",
-        "zh_TW": "女的說方案應該修改的原因是什麼？"
+        "zh_TW": "女的說方案應該修改的原因是什麼？",
+        "ja": "女の人が案を直したほうがいいと言う理由は何ですか。"
       },
       "options": [
         "数字が間違っているから",
@@ -4941,7 +5060,8 @@
       "explanation": {
         "en": "She rules out the figures and says it is unclear who the reader is meant to be.",
         "zh": "她排除了数字的问题，指出不清楚写给谁看。",
-        "zh_TW": "她排除了數字的問題，指出不清楚寫給誰看。"
+        "zh_TW": "她排除了數字的問題，指出不清楚寫給誰看。",
+        "ja": "数字の問題ではなく、読む人が誰かがはっきりしないことを理由に挙げている。"
       }
     },
     {
@@ -4955,7 +5075,8 @@
       "prompt": {
         "en": "Why was the date changed?",
         "zh": "改日期的原因是什么？",
-        "zh_TW": "改日期的原因是什麼？"
+        "zh_TW": "改日期的原因是什麼？",
+        "ja": "日にちを変えた理由は何ですか。"
       },
       "options": [
         "去年雨が降ったから",
@@ -4967,7 +5088,8 @@
       "explanation": {
         "en": "Rain is admitted but ranked below the real cause: last year's date fell just before the exams.",
         "zh": "他承认下过雨，但说更主要的是去年赶在考试前，没人来。",
-        "zh_TW": "他承認下過雨，但說更主要的是去年趕在考試前，沒人來。"
+        "zh_TW": "他承認下過雨，但說更主要的是去年趕在考試前，沒人來。",
+        "ja": "雨も降ったと認めつつ、それより試験の前で人が来なかったことのほうが大きいと述べている。"
       }
     },
     {
@@ -4981,7 +5103,8 @@
       "prompt": {
         "en": "Why did the aim of the gathering fail to get through?",
         "zh": "聚会的宗旨没能传达的原因是什么？",
-        "zh_TW": "聚會的宗旨沒能傳達的原因是什麼？"
+        "zh_TW": "聚會的宗旨沒能傳達的原因是什麼？",
+        "ja": "趣旨が伝わらなかった理由は何ですか。"
       },
       "options": [
         "案内の最後に小さく書いたから",
@@ -4993,7 +5116,8 @@
       "explanation": {
         "en": "It was written, but in small type on the last line, and the woman agrees nobody reads that.",
         "zh": "宗旨写了，但字小又在最后一行，女的也说那样没人会看。",
-        "zh_TW": "宗旨寫了，但字小又在最後一行，女的也說那樣沒人會看。"
+        "zh_TW": "宗旨寫了，但字小又在最後一行，女的也說那樣沒人會看。",
+        "ja": "趣旨は書いたが小さく案内の最後の行だったため、それでは読まれないと女の人も同意している。"
       }
     },
     {
@@ -5007,7 +5131,8 @@
       "prompt": {
         "en": "Why didn't the child fall?",
         "zh": "孩子没摔倒是因为什么？",
-        "zh_TW": "孩子沒摔倒是因為什麼？"
+        "zh_TW": "孩子沒摔倒是因為什麼？",
+        "ja": "子どもが転ばなかったのはどうしてですか。"
       },
       "options": [
         "駅の人が助けたから",
@@ -5019,7 +5144,8 @@
       "explanation": {
         "en": "The one who caught him acted on the instant and was an ordinary passenger, not station staff.",
         "zh": "扶住他的人是瞬间伸手的普通乘客，并非车站工作人员。",
-        "zh_TW": "扶住他的人是瞬間伸手的普通乘客，並非車站工作人員。"
+        "zh_TW": "扶住他的人是瞬間伸手的普通乘客，並非車站工作人員。",
+        "ja": "とっさに手を出して支えたのは隣にいた普通の客で、駅の人ではなかったと述べている。"
       }
     },
     {
@@ -5033,7 +5159,8 @@
       "prompt": {
         "en": "What is the man talking about?",
         "zh": "男的在谈什么？",
-        "zh_TW": "男的在談什麼？"
+        "zh_TW": "男的在談什麼？",
+        "ja": "男の人は何について話していますか。"
       },
       "options": [
         "机の片づけ方",
@@ -5045,7 +5172,8 @@
       "explanation": {
         "en": "He changed from many jobs at once to one at a time and concludes that efficiency comes from the order.",
         "zh": "他从同时做多件改为一件一件做，结论是效率取决于顺序。",
-        "zh_TW": "他從同時做多件改為一件一件做，結論是效率取決於順序。"
+        "zh_TW": "他從同時做多件改為一件一件做，結論是效率取決於順序。",
+        "ja": "同時にいくつも進めるのをやめ、一つずつ整理する形に変えた結果、効率は数ではなく順番で決まると述べている。"
       }
     },
     {
@@ -5059,7 +5187,8 @@
       "prompt": {
         "en": "What is the woman talking about?",
         "zh": "女的在谈什么？",
-        "zh_TW": "女的在談什麼？"
+        "zh_TW": "女的在談什麼？",
+        "ja": "女の人は何について話していますか。"
       },
       "options": [
         "店の値段の決め方",
@@ -5071,7 +5200,8 @@
       "explanation": {
         "en": "Neither prices nor goods changed; one short notice doubled the customers who picked things up.",
         "zh": "价格和商品都没变，只是一句短短的告示就让拿起商品的客人翻倍。",
-        "zh_TW": "價格和商品都沒變，只是一句短短的告示就讓拿起商品的客人翻倍。"
+        "zh_TW": "價格和商品都沒變，只是一句短短的告示就讓拿起商品的客人翻倍。",
+        "ja": "値段も品物も変えず、手に取ってもいいという短い紙一枚で手に取る客が二倍になった話をしている。"
       }
     },
     {
@@ -5085,7 +5215,8 @@
       "prompt": {
         "en": "What is the man talking about?",
         "zh": "男的在谈什么？",
-        "zh_TW": "男的在談什麼？"
+        "zh_TW": "男的在談什麼？",
+        "ja": "男の人は何について話していますか。"
       },
       "options": [
         "会議の時間の決め方",
@@ -5097,7 +5228,8 @@
       "explanation": {
         "en": "Ten pages went unread; one page of figures and conclusion got read and drew questions.",
         "zh": "十页没人看，改成只有数字和结论的一页后有人看也有人提问。",
-        "zh_TW": "十頁沒人看，改成只有數字和結論的一頁後有人看也有人提問。"
+        "zh_TW": "十頁沒人看，改成只有數字和結論的一頁後有人看也有人提問。",
+        "ja": "十枚配っていた資料を大事な数字と結論だけの一枚に減らしたところ、読む人も質問も増えたと述べている。"
       }
     },
     {
@@ -5111,7 +5243,8 @@
       "prompt": {
         "en": "What is the woman talking about?",
         "zh": "女的在谈什么？",
-        "zh_TW": "女的在談什麼？"
+        "zh_TW": "女的在談什麼？",
+        "ja": "女の人は何について話していますか。"
       },
       "options": [
         "冬に熱い飲み物を出して売り上げが増えた話",
@@ -5123,7 +5256,8 @@
       "explanation": {
         "en": "Hot drinks kept customers seated longer on cold days and food orders rose with them.",
         "zh": "热饮让客人在冷天坐得更久，餐食点单也随之增加。",
-        "zh_TW": "熱飲讓客人在冷天坐得更久，餐食點單也隨之增加。"
+        "zh_TW": "熱飲讓客人在冷天坐得更久，餐食點單也隨之增加。",
+        "ja": "冬に熱い飲み物を出したところ、客が長く座るようになり食べ物の注文も増えたという話をしている。"
       }
     },
     {
@@ -5137,7 +5271,8 @@
       "prompt": {
         "en": "What is the man talking about?",
         "zh": "男的在谈什么？",
-        "zh_TW": "男的在談什麼？"
+        "zh_TW": "男的在談什麼？",
+        "ja": "男の人は何について話していますか。"
       },
       "options": [
         "新しい人の性格の話",
@@ -5149,7 +5284,8 @@
       "explanation": {
         "en": "The trouble was that each teacher taught a different procedure; one shared sheet ended the mistakes.",
         "zh": "问题在于教的人各有各的步骤，统一成一张纸后错误就消失了。",
-        "zh_TW": "問題在於教的人各有各的步驟，統一成一張紙後錯誤就消失了。"
+        "zh_TW": "問題在於教的人各有各的步驟，統一成一張紙後錯誤就消失了。",
+        "ja": "間違いの原因は教える側の手順が人によって違っていたことで、一つの手順にそろえたら間違いが減ったと述べている。"
       }
     },
     {
@@ -5163,7 +5299,8 @@
       "prompt": {
         "en": "What is the woman talking about?",
         "zh": "女的在谈什么？",
-        "zh_TW": "女的在談什麼？"
+        "zh_TW": "女的在談什麼？",
+        "ja": "女の人は何について話していますか。"
       },
       "options": [
         "祭りの歴史",
@@ -5175,7 +5312,8 @@
       "explanation": {
         "en": "She shrank the festival to a park and half a day so that it could be kept going.",
         "zh": "她把庙会缩到只用公园、只办半天，为的是能长久办下去。",
-        "zh_TW": "她把廟會縮到只用公園、只辦半天，為的是能長久辦下去。"
+        "zh_TW": "她把廟會縮到只用公園、只辦半天，為的是能長久辦下去。",
+        "ja": "祭りを公園だけ、半日だけに小さくしたのは、続けることを一番に考えた結果だと述べている。"
       }
     },
     {
@@ -5189,7 +5327,8 @@
       "prompt": {
         "en": "What is the man talking about?",
         "zh": "男的在谈什么？",
-        "zh_TW": "男的在談什麼？"
+        "zh_TW": "男的在談什麼？",
+        "ja": "男の人は何について話していますか。"
       },
       "options": [
         "店の場所の話",
@@ -5201,7 +5340,8 @@
       "explanation": {
         "en": "Sales fell as expected, but nobody quit and hiring costs fell, leaving more money over the year.",
         "zh": "销售额果然下降，但没人辞职、招人的功夫也省了，一年算下来反而剩得多。",
-        "zh_TW": "銷售額果然下降，但沒人辭職、招人的功夫也省了，一年算下來反而剩得多。"
+        "zh_TW": "銷售額果然下降，但沒人辭職、招人的功夫也省了，一年算下來反而剩得多。",
+        "ja": "休みを増やして売り上げは下がったが、辞める人が出ず、一年で計算すると残るお金は前より多いと述べている。"
       }
     },
     {
@@ -5215,7 +5355,8 @@
       "prompt": {
         "en": "What is the woman talking about?",
         "zh": "女的在谈什么？",
-        "zh_TW": "女的在談什麼？"
+        "zh_TW": "女的在談什麼？",
+        "ja": "女の人は何について話していますか。"
       },
       "options": [
         "前もって調べておくと得だという話",
@@ -5227,7 +5368,8 @@
       "explanation": {
         "en": "Thirty minutes with a map the night before saves hours of hunting for the way.",
         "zh": "前一天花三十分钟看地图，能省下第二天找路的几个小时。",
-        "zh_TW": "前一天花三十分鐘看地圖，能省下第二天找路的幾個小時。"
+        "zh_TW": "前一天花三十分鐘看地圖，能省下第二天找路的幾個小時。",
+        "ja": "前の日に三十分地図を見ておくと、次の日の道探しの時間が省けるという話をしている。"
       }
     },
     {
@@ -5241,7 +5383,8 @@
       "prompt": {
         "en": "What is the man talking about?",
         "zh": "男的在谈什么？",
-        "zh_TW": "男的在談什麼？"
+        "zh_TW": "男的在談什麼？",
+        "ja": "男の人は何について話していますか。"
       },
       "options": [
         "絵の道具の話",
@@ -5253,7 +5396,8 @@
       "explanation": {
         "en": "He stopped teaching technique and began asking what the child wants to draw, and more of them finish.",
         "zh": "他不再教技法，而是问孩子想画什么，结果能画到最后的孩子多了。",
-        "zh_TW": "他不再教技法，而是問孩子想畫什麼，結果能畫到最後的孩子多了。"
+        "zh_TW": "他不再教技法，而是問孩子想畫什麼，結果能畫到最後的孩子多了。",
+        "ja": "技法を教えるのをやめて何を描きたいかを聞くようにしたところ、最後まで描く子どもが増えたと述べている。"
       }
     },
     {
@@ -5267,7 +5411,8 @@
       "prompt": {
         "en": "What is the woman talking about?",
         "zh": "女的在谈什么？",
-        "zh_TW": "女的在談什麼？"
+        "zh_TW": "女的在談什麼？",
+        "ja": "女の人は何について話していますか。"
       },
       "options": [
         "本の選び方",
@@ -5279,7 +5424,8 @@
       "explanation": {
         "en": "She rented an empty shop, and the place grew as the people who came brought things to it.",
         "zh": "她租下空店，靠来的人不断带东西来，场所才慢慢成形。",
-        "zh_TW": "她租下空店，靠來的人不斷帶東西來，場所才慢慢成形。"
+        "zh_TW": "她租下空店，靠來的人不斷帶東西來，場所才慢慢成形。",
+        "ja": "空いていた店を借りて始めた場所に、人が本を持ってきたりして少しずつ人が集まるようになった話をしている。"
       }
     },
     {
@@ -5293,7 +5439,8 @@
       "prompt": {
         "en": "What is the man talking about?",
         "zh": "男的在谈什么？",
-        "zh_TW": "男的在談什麼？"
+        "zh_TW": "男的在談什麼？",
+        "ja": "男の人は何について話していますか。"
       },
       "options": [
         "会議の進め方",
@@ -5305,7 +5452,8 @@
       "explanation": {
         "en": "He found the wrong figure himself and put it right on the spot rather than hide it.",
         "zh": "他自己发现数字错了，当场订正而不是隐瞒。",
-        "zh_TW": "他自己發現數字錯了，當場訂正而不是隱瞞。"
+        "zh_TW": "他自己發現數字錯了，當場訂正而不是隱瞞。",
+        "ja": "自分で見つけた数字の間違いをその場で訂正したところ、隠すより早いほうがよかったという話をしている。"
       }
     },
     {
@@ -5319,7 +5467,8 @@
       "prompt": {
         "en": "What is the woman talking about?",
         "zh": "女的在谈什么？",
-        "zh_TW": "女的在談什麼？"
+        "zh_TW": "女的在談什麼？",
+        "ja": "女の人は何について話していますか。"
       },
       "options": [
         "決まりを一律にした話",
@@ -5331,7 +5480,8 @@
       "explanation": {
         "en": "Loan periods that differed by borrower crowded the desk; one flat period fixed it with no ill effect.",
         "zh": "因人而异的借期把前台挤满了，改成一律两周后问题解决且没有副作用。",
-        "zh_TW": "因人而異的借期把前臺擠滿了，改成一律兩週後問題解決且沒有副作用。"
+        "zh_TW": "因人而異的借期把前臺擠滿了，改成一律兩週後問題解決且沒有副作用。",
+        "ja": "人によって違っていた貸出期間を一律二週間にしたところ、混雑が解消し悪い影響もなかったと述べている。"
       }
     },
     {
@@ -5345,7 +5495,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、朝一番で頼んであります。",
@@ -5357,7 +5508,8 @@
       "explanation": {
         "en": "He is asking whether the booking is done, so the reply says it was ordered first thing in the morning.",
         "zh": "他问的是车是否已经安排好，所以回答说一早就订好了。",
-        "zh_TW": "他問的是車是否已經安排好，所以回答說一早就訂好了。"
+        "zh_TW": "他問的是車是否已經安排好，所以回答說一早就訂好了。",
+        "ja": "明日の車の手配が済んでいるかという質問なので、答えは朝一番で頼んであると報告する内容になる。"
       }
     },
     {
@@ -5371,7 +5523,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、手紙はもう届きました。",
@@ -5383,7 +5536,8 @@
       "explanation": {
         "en": "She is pressing for a quick reply, so the answer promises a time by which it will be sent.",
         "zh": "她催的是尽快答复，所以回答要给出送达的时限。",
-        "zh_TW": "她催的是儘快答覆，所以回答要給出送達的時限。"
+        "zh_TW": "她催的是儘快答覆，所以回答要給出送達的時限。",
+        "ja": "早く返事がほしいという催促なので、答えは送る期限を示す内容になる。"
       }
     },
     {
@@ -5397,7 +5551,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "ええ、場所は駅の前です。",
@@ -5409,7 +5564,8 @@
       "explanation": {
         "en": "He asks whether consent was obtained, so the reply reports getting it by phone yesterday.",
         "zh": "他问的是有没有取得同意，所以回答说昨天电话里已得到应允。",
-        "zh_TW": "他問的是有沒有取得同意，所以回答說昨天電話裡已得到應允。"
+        "zh_TW": "他問的是有沒有取得同意，所以回答說昨天電話裡已得到應允。",
+        "ja": "相手の承諾が取れたかという質問なので、答えは昨日電話で了解をもらったと報告する内容になる。"
       }
     },
     {
@@ -5423,7 +5579,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、そこに置いておきました。",
@@ -5435,7 +5592,8 @@
       "explanation": {
         "en": "She asks whether you have a grasp of the situation; admitting you do not yet is the fitting reply.",
         "zh": "她问的是是否掌握了情况，坦白还没完全掌握才是合适的回答。",
-        "zh_TW": "她問的是是否掌握了情況，坦白還沒完全掌握才是合適的回答。"
+        "zh_TW": "她問的是是否掌握了情況，坦白還沒完全掌握才是合適的回答。",
+        "ja": "状況を把握しているかという質問なので、まだ全部は分かっていないと正直に答えるのが自然である。"
       }
     },
     {
@@ -5449,7 +5607,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "ええ、雨で材料が届かないんです。",
@@ -5461,7 +5620,8 @@
       "explanation": {
         "en": "He asks what has happened to hold the work up, so the reply gives the cause of the delay.",
         "zh": "他问的是工程停滞的原因，所以回答要说明延误的缘由。",
-        "zh_TW": "他問的是工程停滯的原因，所以回答要說明延誤的緣由。"
+        "zh_TW": "他問的是工程停滯的原因，所以回答要說明延誤的緣由。",
+        "ja": "工事が止まっている理由を尋ねているので、答えは遅れの原因を説明する内容になる。"
       }
     },
     {
@@ -5475,7 +5635,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、外はとても静かでした。",
@@ -5487,7 +5648,8 @@
       "explanation": {
         "en": "She asks you to stay in, so the reply accepts and says you will work indoors.",
         "zh": "她要求不要外出，所以回答应表示接受并留在室内工作。",
-        "zh_TW": "她要求不要外出，所以回答應表示接受並留在室內工作。"
+        "zh_TW": "她要求不要外出，所以回答應表示接受並留在室內工作。",
+        "ja": "外に出ないよう頼まれているので、答えは受け入れて中で仕事をすると答える。"
       }
     },
     {
@@ -5501,7 +5663,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、味は悪くないです。",
@@ -5513,7 +5676,8 @@
       "explanation": {
         "en": "He is pointing out that the layout is inefficient, so the reply agrees and offers to change it.",
         "zh": "他指出排列效率不好，所以回答应表示同意并提出调整顺序。",
-        "zh_TW": "他指出排列效率不好，所以回答應表示同意並提出調整順序。"
+        "zh_TW": "他指出排列效率不好，所以回答應表示同意並提出調整順序。",
+        "ja": "並べ方の効率が悪いと指摘されているので、答えは同意して順番を変えると提案する。"
       }
     },
     {
@@ -5527,7 +5691,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "ええ、去年の予定も同じでした。",
@@ -5539,7 +5704,8 @@
       "explanation": {
         "en": "She reports a big change of schedule, so the natural reply asks to be told the new one.",
         "zh": "她通报日程大幅变更，自然的回答是请对方告知新的日程。",
-        "zh_TW": "她通報日程大幅變更，自然的回答是請對方告知新的日程。"
+        "zh_TW": "她通報日程大幅變更，自然的回答是請對方告知新的日程。",
+        "ja": "予定が大幅に変わると知らされているので、答えは新しい予定を教えてほしいと頼む内容になる。"
       }
     },
     {
@@ -5553,7 +5719,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "半分ぐらいだと思います。",
@@ -5565,7 +5732,8 @@
       "explanation": {
         "en": "He asks how likely the plan is to succeed, so the reply estimates the chance.",
         "zh": "他问的是成功的可能性，所以回答要给出把握的大小。",
-        "zh_TW": "他問的是成功的可能性，所以回答要給出把握的大小。"
+        "zh_TW": "他問的是成功的可能性，所以回答要給出把握的大小。",
+        "ja": "計画がうまくいく見込みを尋ねられているので、答えは成功の見込みを見積もる内容になる。"
       }
     },
     {
@@ -5579,7 +5747,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、声は大きかったです。",
@@ -5591,7 +5760,8 @@
       "explanation": {
         "en": "She did not follow the point, not the volume, so the reply offers to sum it up again briefly.",
         "zh": "她没听懂的是要点而不是听不见，所以回答应提出再简短地归纳一次。",
-        "zh_TW": "她沒聽懂的是要點而不是聽不見，所以回答應提出再簡短地歸納一次。"
+        "zh_TW": "她沒聽懂的是要點而不是聽不見，所以回答應提出再簡短地歸納一次。",
+        "ja": "聞き取れなかったのは声ではなく話の要点なので、答えはもう一度短くまとめると申し出る内容になる。"
       }
     },
     {
@@ -5605,7 +5775,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、練習は毎日しています。",
@@ -5617,7 +5788,8 @@
       "explanation": {
         "en": "He suggests polishing the draft before submitting, so the reply agrees to hold it back a while.",
         "zh": "他提议再推敲后再提交，所以回答应表示同意，先等一等。",
-        "zh_TW": "他提議再推敲後再提交，所以回答應表示同意，先等一等。"
+        "zh_TW": "他提議再推敲後再提交，所以回答應表示同意，先等一等。",
+        "ja": "案を練ってから出そうという提案なので、答えは同意してしばらく待つ内容になる。"
       }
     },
     {
@@ -5631,7 +5803,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、その話は初めて聞きました。",
@@ -5643,7 +5816,8 @@
       "explanation": {
         "en": "She has heard you are tackling new work, so the reply confirms it and says how it is going.",
         "zh": "她听说你在做新工作，所以回答应确认并说明现状。",
-        "zh_TW": "她聽說你在做新工作，所以回答應確認並說明現狀。"
+        "zh_TW": "她聽說你在做新工作，所以回答應確認並說明現狀。",
+        "ja": "新しい仕事に取り組んでいると聞いた話なので、答えはそれを認めて現状を述べる内容になる。"
       }
     },
     {
@@ -5657,7 +5831,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "ええ、五年前のことです。",
@@ -5669,7 +5844,8 @@
       "explanation": {
         "en": "He asks whether you were involved in the design, so the reply confirms it and gives when.",
         "zh": "他问你是否参与过设计，所以回答应确认并说出时间。",
-        "zh_TW": "他問你是否參與過設計，所以回答應確認並說出時間。"
+        "zh_TW": "他問你是否參與過設計，所以回答應確認並說出時間。",
+        "ja": "設計に関わったかという質問なので、答えは認めて時期を答える内容になる。"
       }
     },
     {
@@ -5683,7 +5859,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、受付はあちらです。",
@@ -5695,7 +5872,8 @@
       "explanation": {
         "en": "She is asking you to take the role on, so the reply accepts with a modest reservation.",
         "zh": "她是在请你接下这个职责，所以回答应谦逊地表示愿意承担。",
-        "zh_TW": "她是在請你接下這個職責，所以回答應謙遜地表示願意承擔。"
+        "zh_TW": "她是在請你接下這個職責，所以回答應謙遜地表示願意承擔。",
+        "ja": "役目を引き受けてほしいという頼みなので、答えは謙遜しながら引き受ける内容になる。"
       }
     },
     {
@@ -5709,7 +5887,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、土地は広いです。",
@@ -5721,7 +5900,8 @@
       "explanation": {
         "en": "He says the draft can still be improved, so the reply asks which part to fix.",
         "zh": "他说方案还有修改余地，所以回答应问改哪里。",
-        "zh_TW": "他說方案還有修改餘地，所以回答應問改哪裡。"
+        "zh_TW": "他說方案還有修改餘地，所以回答應問改哪裡。",
+        "ja": "案にはまだ直す余地があるという指摘なので、答えはどこを直すか尋ねる内容になる。"
       }
     },
     {
@@ -5735,7 +5915,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、店は八時に閉まります。",
@@ -5747,7 +5928,8 @@
       "explanation": {
         "en": "She notes hopeful signs in sales, so the reply agrees and gives the figure behind it.",
         "zh": "她说销售出现好兆头，所以回答应表示同意并说明依据。",
-        "zh_TW": "她說銷售出現好兆頭，所以回答應表示同意並說明依據。"
+        "zh_TW": "她說銷售出現好兆頭，所以回答應表示同意並說明依據。",
+        "ja": "売り上げに良い兆しが出てきたという話なので、答えは同意して根拠を述べる内容になる。"
       }
     },
     {
@@ -5761,7 +5943,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "ええ、思ったより早く決まりそうです。",
@@ -5773,7 +5956,8 @@
       "explanation": {
         "en": "He asks how the discussion is going, so the reply reports that it is moving faster than expected.",
         "zh": "他问讨论是否顺利，所以回答应说明进展比预想还快。",
-        "zh_TW": "他問討論是否順利，所以回答應說明進展比預想還快。"
+        "zh_TW": "他問討論是否順利，所以回答應說明進展比預想還快。",
+        "ja": "話し合いが順調かという質問なので、答えは予想より早く決まりそうだと報告する内容になる。"
       }
     },
     {
@@ -5787,7 +5971,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、急いで来てください。",
@@ -5799,7 +5984,8 @@
       "explanation": {
         "en": "She is thanking you, so the reply plays it down and says you are glad it was in time.",
         "zh": "她在道谢，所以回答应谦让并说赶上了就好。",
-        "zh_TW": "她在道謝，所以回答應謙讓並說趕上了就好。"
+        "zh_TW": "她在道謝，所以回答應謙讓並說趕上了就好。",
+        "ja": "迅速な対応への感謝なので、答えは謙遜して間に合ってよかったと述べる内容になる。"
       }
     },
     {
@@ -5813,7 +5999,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、全員来ました。",
@@ -5825,7 +6012,8 @@
       "explanation": {
         "en": "He asks whether the rate is flat, so the reply says adults and children pay the same.",
         "zh": "他问收费是否统一，所以回答说大人小孩都一样。",
-        "zh_TW": "他問收費是否統一，所以回答說大人小孩都一樣。"
+        "zh_TW": "他問收費是否統一，所以回答說大人小孩都一樣。",
+        "ja": "料金が一律かという質問なので、答えは大人も子どもも同じだと答える内容になる。"
       }
     },
     {
@@ -5839,7 +6027,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、数字は五つです。",
@@ -5851,7 +6040,8 @@
       "explanation": {
         "en": "She offers to make the correction, so the reply accepts the offer with thanks.",
         "zh": "她主动提出帮忙订正，所以回答应接受并道谢。",
-        "zh_TW": "她主動提出幫忙訂正，所以回答應接受並道謝。"
+        "zh_TW": "她主動提出幫忙訂正，所以回答應接受並道謝。",
+        "ja": "数字を訂正しておこうかという申し出なので、答えはお願いして感謝する内容になる。"
       }
     },
     {
@@ -5865,7 +6055,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "みんなが手伝ってくれたおかげです。",
@@ -5877,7 +6068,8 @@
       "explanation": {
         "en": "He is praising how neatly it was finished, so the reply modestly credits the others' help.",
         "zh": "他在称赞收拾得利落，所以回答应谦虚地归功于大家的帮忙。",
-        "zh_TW": "他在稱讚收拾得利落，所以回答應謙虛地歸功於大家的幫忙。"
+        "zh_TW": "他在稱讚收拾得利落，所以回答應謙虛地歸功於大家的幫忙。",
+        "ja": "手際よく整理できたことをほめられているので、答えは謙遜してみんなのおかげだと述べる。"
       }
     },
     {
@@ -5891,7 +6083,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、紙は十枚あります。",
@@ -5903,7 +6096,8 @@
       "explanation": {
         "en": "She asks whether to follow the sheet, so the reply confirms it and says to go from the top.",
         "zh": "她问是否照纸上的步骤做，所以回答应确认并说从上往下按顺序来。",
-        "zh_TW": "她問是否照紙上的步驟做，所以回答應確認並說從上往下按順序來。"
+        "zh_TW": "她問是否照紙上的步驟做，所以回答應確認並說從上往下按順序來。",
+        "ja": "紙のとおりでよいかという確認なので、答えは同意して上から順にと頼む内容になる。"
       }
     },
     {
@@ -5917,7 +6111,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、味はいいですよ。",
@@ -5929,7 +6124,8 @@
       "explanation": {
         "en": "A customer asks about stock, so the shop reply is to ask them to wait while it is checked.",
         "zh": "客人问库存，店员的回答应是请稍等、马上去查。",
-        "zh_TW": "客人問庫存，店員的回答應是請稍等、馬上去查。"
+        "zh_TW": "客人問庫存，店員的回答應是請稍等、馬上去查。",
+        "ja": "在庫があるかという客からの質問なので、答えは少し待ってもらいすぐ調べると答える。"
       }
     },
     {
@@ -5943,7 +6139,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、人は多かったです。",
@@ -5955,7 +6152,8 @@
       "explanation": {
         "en": "She wants the number in advance, so the reply promises to send it today rather than on the day.",
         "zh": "她要的是事先告知人数，所以回答应承诺今天之内通知，而不是当天再数。",
-        "zh_TW": "她要的是事先告知人數，所以回答應承諾今天之內通知，而不是當天再數。"
+        "zh_TW": "她要的是事先告知人數，所以回答應承諾今天之內通知，而不是當天再數。",
+        "ja": "あらかじめ人数を知らせてほしいという頼みなので、答えは当日ではなく今日中に知らせると約束する。"
       }
     },
     {
@@ -5969,7 +6167,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、こちらは準備ができています。",
@@ -5981,7 +6180,8 @@
       "explanation": {
         "en": "He asks permission to go ahead with the plan, so the reply grants it and says you are ready.",
         "zh": "他请求推进计划，所以回答应表示同意并说这边已准备好。",
-        "zh_TW": "他請求推進計劃，所以回答應表示同意並說這邊已準備好。"
+        "zh_TW": "他請求推進計劃，所以回答應表示同意並說這邊已準備好。",
+        "ja": "かねての計画を進めてよいかという確認なので、答えは了承してこちらは準備ができていると答える。"
       }
     },
     {
@@ -5995,7 +6195,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、道は広いです。",
@@ -6007,7 +6208,8 @@
       "explanation": {
         "en": "She says the jam was just as expected, so the reply agrees and proposes leaving earlier next time.",
         "zh": "她说堵车果然如所料，所以回答应同意并提议下次早点出发。",
-        "zh_TW": "她說堵車果然如所料，所以回答應同意並提議下次早點出發。"
+        "zh_TW": "她說堵車果然如所料，所以回答應同意並提議下次早點出發。",
+        "ja": "道が混んでいたという話なので、答えは同意して次は早く出ようと提案する内容になる。"
       }
     },
     {
@@ -6021,7 +6223,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、大きな声で言いました。",
@@ -6033,7 +6236,8 @@
       "explanation": {
         "en": "He regrets freezing at a sudden moment, so the reply comforts him that anyone would.",
         "zh": "他为突发时说不出话而懊恼，所以回答应安慰说谁都会那样。",
-        "zh_TW": "他為突發時說不出話而懊惱，所以回答應安慰說誰都會那樣。"
+        "zh_TW": "他為突發時說不出話而懊惱，所以回答應安慰說誰都會那樣。",
+        "ja": "とっさに言葉が出なかったことを悔やんでいるので、答えは誰でもそうなると慰める内容になる。"
       }
     },
     {
@@ -6047,7 +6251,8 @@
       "prompt": {
         "en": "How do you reply?",
         "zh": "该怎么回答？",
-        "zh_TW": "該怎麼回答？"
+        "zh_TW": "該怎麼回答？",
+        "ja": "何と答えますか。"
       },
       "options": [
         "はい、足元に気をつけます。",
@@ -6059,7 +6264,8 @@
       "explanation": {
         "en": "She has handed in a revision, so the reply thanks her and says you will look at it now.",
         "zh": "她交上了修改稿，所以回答应道谢并说马上就看。",
-        "zh_TW": "她交上了修改稿，所以回答應道謝並說馬上就看。"
+        "zh_TW": "她交上了修改稿，所以回答應道謝並說馬上就看。",
+        "ja": "前回の結果を踏まえて直したという報告なので、答えは礼を述べてすぐ見ると言う内容になる。"
       }
     },
     {
@@ -6073,7 +6279,8 @@
       "prompt": {
         "en": "Which circle will the man choose?",
         "zh": "男的会选哪个读书会？",
-        "zh_TW": "男的會選哪個讀書會？"
+        "zh_TW": "男的會選哪個讀書會？",
+        "ja": "男の人はどの会を選びますか。"
       },
       "options": [
         "朝の会",
@@ -6085,7 +6292,8 @@
       "explanation": {
         "en": "Weekday mornings are out for him, he prefers long books read slowly, and Saturdays are free.",
         "zh": "工作日早上他不行，他喜欢慢慢读长篇，而且周六有空。",
-        "zh_TW": "工作日早上他不行，他喜歡慢慢讀長篇，而且週六有空。"
+        "zh_TW": "工作日早上他不行，他喜歡慢慢讀長篇，而且週六有空。",
+        "ja": "平日の朝は難しく、長い本をゆっくり読むほうが好きで、土曜日は空いているため土曜日の会を選ぶ。"
       }
     },
     {
@@ -6099,7 +6307,8 @@
       "prompt": {
         "en": "Which circle will the woman choose?",
         "zh": "女的会选哪个读书会？",
-        "zh_TW": "女的會選哪個讀書會？"
+        "zh_TW": "女的會選哪個讀書會？",
+        "ja": "女の人はどの会を選びますか。"
       },
       "options": [
         "朝の会",
@@ -6111,7 +6320,8 @@
       "explanation": {
         "en": "She cannot make time to meet at all and likes writing, which is the paper option.",
         "zh": "她根本抽不出时间聚会，又喜欢写，所以选书面参加的那个。",
-        "zh_TW": "她根本抽不出時間聚會，又喜歡寫，所以選書面參加的那個。"
+        "zh_TW": "她根本抽不出時間聚會，又喜歡寫，所以選書面參加的那個。",
+        "ja": "集まる時間が取れず、書くのが好きなので、紙で参加する会を選ぶ。"
       }
     },
     {
@@ -6125,7 +6335,8 @@
       "prompt": {
         "en": "Which class will the man choose?",
         "zh": "男的会选哪个教室？",
-        "zh_TW": "男的會選哪個教室？"
+        "zh_TW": "男的會選哪個教室？",
+        "ja": "男の人はどの教室を選びますか。"
       },
       "options": [
         "水の中で歩く教室",
@@ -6137,7 +6348,8 @@
       "explanation": {
         "en": "His legs hurt, so he holds back from running and cycling, and he says water is fine for him.",
         "zh": "他腿疼，避开跑步和自行车，并说在水里没问题。",
-        "zh_TW": "他腿疼，避開跑步和自行車，並說在水裡沒問題。"
+        "zh_TW": "他腿疼，避開跑步和自行車，並說在水裡沒問題。",
+        "ja": "足が痛いため走るのと自転車は避けたく、水の中なら大丈夫だと聞いて選ぶ。"
       }
     },
     {
@@ -6151,7 +6363,8 @@
       "prompt": {
         "en": "Which class will the woman choose?",
         "zh": "女的会选哪个教室？",
-        "zh_TW": "女的會選哪個教室？"
+        "zh_TW": "女的會選哪個教室？",
+        "ja": "女の人はどの教室を選びますか。"
       },
       "options": [
         "水の中で歩く教室",
@@ -6163,7 +6376,8 @@
       "explanation": {
         "en": "She cannot go at a set time and says indoors is fine, which is the class with free hours.",
         "zh": "她无法在固定时间去，又说室内就行，正是时间自由的那个。",
-        "zh_TW": "她無法在固定時間去，又說室內就行，正是時間自由的那個。"
+        "zh_TW": "她無法在固定時間去，又說室內就行，正是時間自由的那個。",
+        "ja": "決まった時間に行くのが難しく、室内で構わないため、時間が自由な教室を選ぶ。"
       }
     },
     {
@@ -6177,7 +6391,8 @@
       "prompt": {
         "en": "Which room will the man choose?",
         "zh": "男的会选哪个房间？",
-        "zh_TW": "男的會選哪個房間？"
+        "zh_TW": "男的會選哪個房間？",
+        "ja": "男の人はどの部屋を選びますか。"
       },
       "options": [
         "駅から三分の部屋",
@@ -6189,7 +6404,8 @@
       "explanation": {
         "en": "He wants to be near the station because of his early mornings and says a little expensive is fine.",
         "zh": "他每天早出，想离车站近，并说贵一点也没关系。",
-        "zh_TW": "他每天早出，想離車站近，並說貴一點也沒關係。"
+        "zh_TW": "他每天早出，想離車站近，並說貴一點也沒關係。",
+        "ja": "毎朝早いため駅から近いほうが助かり、少し高くてもよいと考えている。"
       }
     },
     {
@@ -6203,7 +6419,8 @@
       "prompt": {
         "en": "Which room will the woman choose?",
         "zh": "女的会选哪个房间？",
-        "zh_TW": "女的會選哪個房間？"
+        "zh_TW": "女的會選哪個房間？",
+        "ja": "女の人はどの部屋を選びますか。"
       },
       "options": [
         "駅から三分の部屋",
@@ -6215,7 +6432,8 @@
       "explanation": {
         "en": "She works at home and wants space; ten minutes to the station and an old building are both fine.",
         "zh": "她在家工作想要宽敞，到车站十分钟和楼旧都不介意。",
-        "zh_TW": "她在家工作想要寬敞，到車站十分鐘和樓舊都不介意。"
+        "zh_TW": "她在家工作想要寬敞，到車站十分鐘和樓舊都不介意。",
+        "ja": "家で仕事をするため広い部屋を望み、駅までの時間や建物の古さは気にしない。"
       }
     },
     {
@@ -6229,7 +6447,8 @@
       "prompt": {
         "en": "Which format will the man choose?",
         "zh": "男的会选哪种发表形式？",
-        "zh_TW": "男的會選哪種發表形式？"
+        "zh_TW": "男的會選哪種發表形式？",
+        "ja": "男の人はどの形を選びますか。"
       },
       "options": [
         "一人で二十分話す形",
@@ -6241,7 +6460,8 @@
       "explanation": {
         "en": "He is poor at speaking at length and says he will prepare the sheet, which is the question-and-answer format.",
         "zh": "他不擅长长时间讲话，又说会准备资料，正是发资料答问的形式。",
-        "zh_TW": "他不擅長長時間講話，又說會準備資料，正是發資料答問的形式。"
+        "zh_TW": "他不擅長長時間講話，又說會準備資料，正是發資料答問的形式。",
+        "ja": "長く話すのが苦手で紙を前もって準備できるため、質問に答える形を選ぶ。"
       }
     },
     {
@@ -6255,7 +6475,8 @@
       "prompt": {
         "en": "Which format will the woman choose?",
         "zh": "女的会选哪种发表形式？",
-        "zh_TW": "女的會選哪種發表形式？"
+        "zh_TW": "女的會選哪種發表形式？",
+        "ja": "女の人はどの形を選びますか。"
       },
       "options": [
         "一人で二十分話す形",
@@ -6267,7 +6488,8 @@
       "explanation": {
         "en": "She handles figures and thinks words alone will not carry them, so she shows tables while speaking.",
         "zh": "她处理数字，认为光靠语言传达不了，所以选一边展示图表一边讲。",
-        "zh_TW": "她處理數字，認為光靠語言傳達不了，所以選一邊展示圖表一邊講。"
+        "zh_TW": "她處理數字，認為光靠語言傳達不了，所以選一邊展示圖表一邊講。",
+        "ja": "数字を扱うため言葉だけでは伝わらないと考え、絵や表を見せながら話す形を選ぶ。"
       }
     }
   ]

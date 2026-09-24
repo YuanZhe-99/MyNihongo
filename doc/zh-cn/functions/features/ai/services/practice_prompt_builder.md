@@ -8,7 +8,7 @@
 
 使用方：`generated_examples.dart`、`why_wrong.dart`、`quiz_runner.dart`、`writing_practice_page.dart`、`ai_question_generator.dart`。
 
-在 `v0.4.3` 之前，`forExamples` 取的是 `sentence` 与 `expected` 两个标签。它们都存在，所以没有回退、也没有报错——提示词只是把一个词报成「Sentence:」、把它的释义报成「The model answer:」，然后请模型写句子。当时也没有任何测试检查这个资源是否完整；现在 `ai_practice_test` 会检查每个任务都写了三种语言，以及每个构建器会去取的标签都有定义。
+在 `v0.4.3` 之前，`forExamples` 取的是 `sentence` 与 `expected` 两个标签。它们都存在，所以没有回退、也没有报错——提示词只是把一个词报成「Sentence:」、把它的释义报成「The model answer:」，然后请模型写句子。当时也没有任何测试检查这个资源是否完整；现在 `ai_practice_test` 会检查每个任务都写了四种语言，以及每个构建器会去取的标签都有定义。
 
 ## 声明
 

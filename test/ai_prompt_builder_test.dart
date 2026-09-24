@@ -42,13 +42,13 @@ void main() {
     expect(templates.schemaVersion, greaterThan(0));
     for (final task in ['issue', 'sentence']) {
       expect(templates.tasks[task], isNotNull, reason: task);
-      expect(templates.tasks[task]!.keys, containsAll(['en', 'zh', 'zh_TW']));
-      for (final language in ['en', 'zh', 'zh_TW']) {
+      expect(templates.tasks[task]!.keys, containsAll(['en', 'zh', 'zh_TW', 'ja']));
+      for (final language in ['en', 'zh', 'zh_TW', 'ja']) {
         expect(templates.tasks[task]![language]!.rules, isNotEmpty,
             reason: '$task/$language');
       }
     }
-    expect(templates.labels.keys, containsAll(['en', 'zh', 'zh_TW']));
+    expect(templates.labels.keys, containsAll(['en', 'zh', 'zh_TW', 'ja']));
   });
 
   test('an issue prompt carries the sentence, the split and the message', () {

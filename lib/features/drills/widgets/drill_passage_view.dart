@@ -74,11 +74,17 @@ class _DrillPassageViewState extends ConsumerState<DrillPassageView> {
     final theme = Theme.of(context);
     final locale = Localizations.localeOf(context);
     final canAsk =
-        widget.allowTranslation && ref.watch(aiAssistServiceProvider).canExplain;
-    final translation = widget.passage.translations.resolveJoined(
+        widget.allowTranslation &&
+        ref.watch(aiAssistServiceProvider).canExplain;
+    final translation = widget.passage.translations.resolveTranslationJoined(
       locale,
       separator: '\n',
     );
+    final hasTranslation =
+        translation.isNotEmpty ||
+        widget.passage.lines.any(
+          (line) => line.translations.resolveTranslation(locale).isNotEmpty,
+        );
 
     return Card(
       margin: EdgeInsets.zero,
@@ -112,7 +118,7 @@ class _DrillPassageViewState extends ConsumerState<DrillPassageView> {
                       Padding(
                         padding: const EdgeInsets.only(top: 2),
                         child: Text(
-                          line.translations.resolveJoined(locale),
+                          line.translations.resolveTranslationJoined(locale),
                           style: theme.textTheme.bodySmall?.copyWith(
                             color: theme.colorScheme.onSurfaceVariant,
                           ),
@@ -148,7 +154,9 @@ class _DrillPassageViewState extends ConsumerState<DrillPassageView> {
                   ),
                 ),
               ),
-            if (widget.allowTranslation)
+            // A toggle that reveals nothing is not offered: a Japanese
+            // reader has no translation of a Japanese passage.
+            if (widget.allowTranslation && hasTranslation)
               Align(
                 alignment: Alignment.centerLeft,
                 child: TextButton.icon(

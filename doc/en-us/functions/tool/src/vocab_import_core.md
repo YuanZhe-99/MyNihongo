@@ -26,6 +26,7 @@ in [`../import_vocab.md`](../import_vocab.md), so these are unit-tested on fixtu
 | `posOf` | top-level function | B | Map a word's part-of-speech tags onto the app's set. |
 | [`buildEntries`](#buildentries) | top-level function | A | Build the catalog entries from every input. |
 | `_entry` | top-level function | B | Assemble one catalog entry with its keys in a fixed order. |
+| [`applyJapaneseOverlay`](#applyjapaneseoverlay) | top-level function | A | Fold the Japanese-definition overlay into catalog entries, in both import modes. |
 
 ### `chooseForms` <a id="chooseforms"></a>
 
@@ -73,3 +74,23 @@ in [`../import_vocab.md`](../import_vocab.md), so these are unit-tested on fixtu
   across runs. A seed entry's hand-written glosses and examples win over JMdict's, because they
   were written for a learner rather than for a dictionary, and its old id becomes an alias so no
   user's progress is orphaned.
+
+### `applyJapaneseOverlay` <a id="applyjapaneseoverlay"></a>
+
+- **Purpose:** Fold the Japanese-definition overlay into catalog entries.
+- **Inputs:** `entries` — the catalog rows, modified in place; `overlay` — the parsed
+  `vocab_ja.json`, keyed by catalog id, each row carrying `ja` (the definitions) and `jaReading`
+  (one hiragana reading per definition).
+- **Returns:** `int` — how many entries carry a Japanese definition afterwards.
+- **Side effects:** Mutates `entries`.
+- **Algorithm:** For **every** entry, remove `meanings.ja` and `jaReading` first. If the overlay row
+  for its id has a non-empty `ja` list, write it back as `meanings.ja`, and write `jaReading` only
+  when its length matches the definitions'; count the entry.
+- **Usage:** `import_vocab.dart`, in both the full import and `--overlay-only`.
+- **Notes:** Used by **both** modes because a full import rebuilds every entry from JMdict: were the
+  overlay applied only in one mode, the next JMdict refresh would silently delete every Japanese
+  definition while `vocab_ja.json` still held them. Every entry is rewritten, not only the overlay's:
+  removing the keys first and re-adding them last means a row taken out of the overlay leaves the
+  catalog too, and the key order is the same whichever mode wrote it — so the two modes produce
+  byte-identical output. A reading list of the wrong length is dropped rather than misaligned, and
+  the app then draws those definitions without furigana.

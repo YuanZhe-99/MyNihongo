@@ -30,3 +30,9 @@ Consumers: `reminder_service.dart`.
   Thursday, and a count that is quietly wrong is worse than no count, so the later days name the
   next unit instead. Seven days at a time means a phone nobody opens still reminds for a week; the
   ids are small and stable so re-scheduling replaces rather than duplicates.
+
+  The next unit's title is resolved in the UI language with
+  `localeFromTag(l10n.localeName)` ([../../../app/locale_resolution.md](../../../app/locale_resolution.md)),
+  so it follows the same lookup order the content uses everywhere else: `zh_TW`, `zh` and `ja` keep
+  their own text. The planner has only `AppLocalizations` and no `BuildContext`; it used to map
+  every Chinese UI to `zh` and everything else to English.

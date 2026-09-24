@@ -28,6 +28,8 @@ Behaviour is described in [`../../../../features/quizzes.md`](../../../../featur
 | [`_conjugation`](#conjugation) | method | A | Ask which inflected form belongs in a sentence. |
 | `_order` | method | B | Break a sentence into chunks and ask for their order. |
 | `_pattern` | method | B | Ask which grammar point a sentence uses. |
+| [`_materialTranslation`](#materialtranslation) | method | A | Pick the translation a question may use as material; empty for a Japanese reader. |
+| `_subtitle` | method | B | Pick the line shown under a cloze sentence (`resolveTranslationJoined`); null when a Japanese reader has nothing to be shown. |
 | [`_choice`](#choice) | method | A | Assemble a choice question with its options shuffled. |
 | `_classOf` | method | B | Find a token's conjugation class through the lexicon. |
 | `_sameOrder` | method | B | Compare two orderings. |
@@ -63,6 +65,24 @@ Behaviour is described in [`../../../../features/quizzes.md`](../../../../featur
   — so the form has to be reassembled here. The match against the sentence's own text is what keeps
   the question honest: a "correct" answer that is not what the sentence says would teach the wrong
   thing, so a word the conjugator cannot reproduce is skipped rather than approximated.
+
+### `String _materialTranslation(ContentExample example, Locale locale)` <a id="materialtranslation"></a>
+
+- **Kind:** method
+- **Purpose:** Pick the translation a question may use as material.
+- **Inputs:** The `example` and the reader's `locale`.
+- **Returns:** `String`; empty when there is none to use.
+- **Side effects:** None.
+- **Algorithm:** For a `ja` locale, `LocalizedStrings.resolveTranslationJoined` — only a Japanese
+  entry counts; for every other locale, `resolveJoined` as before.
+- **Usage:** `fromSentence` and `_grammar`, once per example, before dispatching to a grammar mode.
+- **Notes:** Internal helper used within this file only. Catalog examples carry no Japanese
+  translation, so for a Japanese reader this is empty: `_order` and `_wholeSentence` then return null,
+  and `_particle`, `_conjugation` and `_pattern` show no subtitle. The page lists the modes built on
+  a translation as unavailable in Japanese (`translationQuizModes` in `quiz_question.dart`) rather
+  than showing an English line under a Japanese UI. It is separate from the display-only
+  `resolveTranslation` on purpose: a translation used *as material* decides whether a question can
+  exist at all, which a display site never has to.
 
 ### `QuizQuestion? _choice({...})` <a id="choice"></a>
 

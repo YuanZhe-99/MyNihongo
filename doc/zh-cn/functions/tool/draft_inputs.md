@@ -12,7 +12,11 @@ dart run tool/draft_inputs.dart examples --level N5 --batch 150
 dart run tool/draft_inputs.dart grammar-inventory --level N4
 dart run tool/draft_inputs.dart units --level N5
 dart run tool/draft_inputs.dart drills --level N5 --section reading
+dart run tool/draft_inputs.dart gloss-ja --level N5 --batch 100
+dart run tool/draft_inputs.dart ja --kind grammar --level N5 --batch 25
 ```
+
+有两个种类服务于日语内容流。`gloss-ja` 列出某级别里还没有日语释义（`meanings.ja`）的词，是 `gloss` 的孪生。`ja` 为目录中已有英文和中文的文本添加日语版本——语法点、功能词释义、课程单元或练习题，用 `--kind`（`grammar`、`function-words`、`units`、`drills`）选择——并把批次写到 `<out>/ja/<kind>/` 下。
 
 ## 声明
 
@@ -20,7 +24,7 @@ dart run tool/draft_inputs.dart drills --level N5 --section reading
 |---|---|---|---|
 | library header | library doc | B | 写出创作代理据以工作的输入批次。 |
 | `draftRoot` | 常量 | B | 批次写到哪里；被 git 忽略，提交前清空。 |
-| `main` | 函数 | B | 解析参数、加载目录，并按种类分派。 |
+| `main` | 函数 | B | 解析参数（包括 `ja` 的目标 `--kind`）、加载目录，并按种类分派。 |
 | `_glossRows` | 函数 | B | 列出某级别里还没有中文释义的词。 |
 | `_exampleRows` | 函数 | B | 列出某级别里还没有例句的词。 |
 | `_write` | 函数 | B | 把行切成批次，每批写一个输入文件。 |
@@ -29,6 +33,10 @@ dart run tool/draft_inputs.dart drills --level N5 --section reading
 | `drillTypeSections` | 常量 | B | 每个大问属于哪个部分，供练习题批次使用。 |
 | `drillPassageShapes` | 常量 | B | 每个阅读与听力大问想要多长的文章。 |
 | [`_drills`](#drills) | 函数 | A | 写出一个练习题批次以及随附的资源文件。 |
+| `_glossJaRows` | 函数 | B | 列出某级别里还没有日语释义（`meanings.ja`）的词，附上它们的英文与中文释义以确定义项。 |
+| `_enZh` | 函数 | B | 只保留本地化字段的 `en` 与 `zh`，因为 `zh_TW` 副本只会白费 token。 |
+| `_needsJa` | 函数 | B | 说明一个本地化字段是否存在且仍没有 `ja`。 |
+| [`_ja`](#ja) | 函数 | A | 写出一个 `ja` 目标的输入批次。 |
 
 ## 文档
 
@@ -52,3 +60,27 @@ dart run tool/draft_inputs.dart drills --level N5 --section reading
 
   已被占用的 id 会交出去，好让新批次从上一批停下的地方接着编号。`merge_drafts.dart` 把重复 id 视为
   致命错误，所以这里是那条规则便宜的一半，而合并才是执行的那一半。
+
+### `void _ja(String out, String target, String level, String assets, int batch)` <a id="ja"></a>
+
+- **种类：** 函数
+- **用途：** 写出一个 `ja` 目标的输入批次。
+- **输入：** 输出根目录、`target`（`grammar`、`function-words`、`units`、`drills`）、`level`、资产路径，
+  以及批次大小。
+- **返回：** 无。
+- **副作用：** 在 `<out>/ja/<target>/` 下写出 `<level>-NN.input.json` 文件并打印它们；目标未知时把退出码
+  设为 1。
+- **算法：** 为每条仍有字段需要 `ja`（`_needsJa`）的记录收集一行：
+  - `grammar` —— `grammar/<level>.json` 中 `meaning` 或 `explanation` 缺少 `ja` 的每个语法点，附上它的
+    句型、结构、两个字段的 `en`/`zh`，以及至多两个例句；
+  - `function-words` —— `function_words.json` 中 `gloss` 缺少 `ja` 的每个词（该文件不分级别）；
+  - `units` —— `lessons/<level>.json` 中标题、写作题目、情景标题或任一题目的提示或解析缺少 `ja` 的每个
+    单元，只列出那些题目；
+  - `drills` —— 该级别练习题文件中提示或解析缺少 `ja` 的每道题，有文章时附上文章拼接后的文本。
+
+  然后把这些行切成批次，每批包在 `{kind: 'ja', target, level, count, rows}` 里；若已无剩余，则打印说明。
+- **使用：** 手工运行，之后再把日语创作代理派往某个目标。
+- **注意：** 仅在本文件内部使用的辅助函数。`ja` 流为目录中已有英文和中文的文本添加日语版本，所以每一行
+  都（经由 `_enZh`）携带那些文本，别无其他。「缺失」处处是同一条规则：一个还没有 `ja` 的字段，所以合并
+  之后重跑只会要求仍然缺失的部分。信封写明目标，因为门禁和 `merge_drafts.dart` 的 `_mergeJa` 都需要知道
+  这些行属于哪个文件。

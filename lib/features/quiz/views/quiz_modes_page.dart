@@ -31,6 +31,7 @@ class QuizModesPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
+    final locale = Localizations.localeOf(context);
     final settings = ref.watch(appSettingsProvider);
     final notifier = ref.read(appSettingsProvider.notifier);
     final enabled = settings.quizModes.isEmpty
@@ -66,11 +67,23 @@ class QuizModesPage extends ConsumerWidget {
               ),
             ),
             for (final mode in group.$2)
-              SwitchListTile(
-                title: Text(l10n.quizModeLabel(mode)),
-                value: enabled.contains(mode),
-                onChanged: (on) => _toggle(context, notifier, enabled, mode, on),
-              ),
+              // A mode this UI language cannot ask is shown, switched off
+              // and explained, rather than left out: a missing switch reads
+              // as a missing feature.
+              if (quizModeWorksIn(mode, locale))
+                SwitchListTile(
+                  title: Text(l10n.quizModeLabel(mode)),
+                  value: enabled.contains(mode),
+                  onChanged: (on) =>
+                      _toggle(context, notifier, enabled, mode, on),
+                )
+              else
+                SwitchListTile(
+                  title: Text(l10n.quizModeLabel(mode)),
+                  subtitle: Text(l10n.quizModeNeedsTranslation),
+                  value: false,
+                  onChanged: null,
+                ),
           ],
           SizedBox(height: shellListBottomInset(MediaQuery.sizeOf(context).width)),
         ],

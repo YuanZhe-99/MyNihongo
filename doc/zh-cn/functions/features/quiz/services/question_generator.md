@@ -24,6 +24,8 @@
 | [`_conjugation`](#conjugation) | 方法 | A | 问句中该填哪个活用形。 |
 | `_order` | 方法 | B | 把句子拆成文节并要求排序。 |
 | `_pattern` | 方法 | B | 问一个句子用了哪个语法点。 |
+| [`_materialTranslation`](#materialtranslation) | 方法 | A | 选取题目可用作素材的译文；对日语读者为空。 |
+| `_subtitle` | 方法 | B | 选取填空句下方显示的那一行（`resolveTranslationJoined`）；日语读者没有可显示的内容时为 null。 |
 | [`_choice`](#choice) | 方法 | A | 组装一道选项已打乱的选择题。 |
 | `_classOf` | 方法 | B | 通过词典找出 token 的活用类别。 |
 | `_sameOrder` | 方法 | B | 比较两个排序。 |
@@ -51,6 +53,17 @@
 - **算法：** 找出一个带有已恢复形式且活用类别已知的 token；向后扩展越过附着其上的每个助动词，得到书写形式；向活用器索取该词的全部四种形式；仅当其中之一恰好等于句子所写内容时才保留该题。
 - **使用：** `_grammar`。
 - **说明：** **一个活用形是好几个 token。** 分析器把食べます拆成携带已恢复ます形词干的食べ，以及作为独立助动词的ます——正是这种拆分让解析可行——所以形式必须在这里重新拼回。与句子自身文本比对是让题目诚实的关键：一个并非句子所写内容的「正确答案」会教错东西，因此活用器无法重现的词会被跳过而不是凑合。
+
+### `String _materialTranslation(ContentExample example, Locale locale)` <a id="materialtranslation"></a>
+
+- **种类：** 方法
+- **用途：** 选取题目可用作素材的译文。
+- **输入：** `example` 与读者的 `locale`。
+- **返回：** `String`；没有可用的译文时为空。
+- **副作用：** 无。
+- **算法：** 对 `ja` locale，用 `LocalizedStrings.resolveTranslationJoined`——只有日语条目才算数；对其他每个 locale，照旧用 `resolveJoined`。
+- **使用：** `fromSentence` 与 `_grammar`，每个例句一次，在分派到某个语法模式之前。
+- **说明：** 仅在本文件内部使用的辅助函数。目录例句不带日语译文，所以对日语读者它为空：此时 `_order` 与 `_wholeSentence` 返回 null，`_particle`、`_conjugation` 与 `_pattern` 不显示副标题。页面把基于译文的模式列为日语下不可用（`quiz_question.dart` 中的 `translationQuizModes`），而不是在日语界面下显示一行英文。它刻意与仅用于显示的 `resolveTranslation` 分开：*作为素材*的译文决定一道题能否存在，而显示处从不需要决定这件事。
 
 ### `QuizQuestion? _choice({...})` <a id="choice"></a>
 

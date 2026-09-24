@@ -11,7 +11,7 @@ Device-local UI preferences as Riverpod state: `AppSettings` (theme mode, locale
 | Declaration | Kind | Tier | Purpose |
 |---|---|---|---|
 | `AppSettingsNotifier.new` | constructor | B | Create the notifier and start loading the persisted settings. |
-| `AppSettingsNotifier._loadPersisted` | method | B | Load the persisted theme mode and locale from disk and replace the state. |
+| `AppSettingsNotifier._loadPersisted` | method | B | Load the persisted theme mode and locale from disk and replace the state; the stored locale tag is parsed with `localeFromTag`. |
 | `AppSettingsNotifier.setThemeMode` | method | B | Update and persist the theme mode; `system` is stored as an absent key. |
 | `AppSettingsNotifier.setLocale` | method | B | Update and persist the locale as `language` or `language_COUNTRY`; null follows the system. The country is what carries `zh_TW`. |
 | `AppSettingsNotifier.setAiAssistEnabled` | method | B | Turn on-device AI on or off; applies it to `AiAssistService` and persists it, off as an absent key. |

@@ -1818,7 +1818,8 @@
       "prompt": {
         "en": "Where will the man wait for the woman tomorrow?",
         "zh": "男的明天会在哪里等女的？",
-        "zh_TW": "男的明天會在哪裡等女的？"
+        "zh_TW": "男的明天會在哪裡等女的？",
+        "ja": "男の人は明日、どこで女の人を待ちますか。"
       },
       "options": [
         "図書館の前",
@@ -1830,7 +1831,8 @@
       "explanation": {
         "en": "The library is where they are going, but the man's last line says he will be waiting in front of the station. The place of meeting and the place they are heading for are different, and that is what the question asks about.",
         "zh": "图书馆是两人要去的目的地，但男的最后一句说他会在车站前面等。碰面的地点和要去的地点不一样，题目问的是碰面的地点。",
-        "zh_TW": "圖書館是兩人要去的目的地，但男的最後一句說他會在車站前面等。碰面的地點和要去的地點不一樣，題目問的是碰面的地點。"
+        "zh_TW": "圖書館是兩人要去的目的地，但男的最後一句說他會在車站前面等。碰面的地點和要去的地點不一樣，題目問的是碰面的地點。",
+        "ja": "図書館は二人が行く場所ですが、男の人は最後に駅の前で待つと言っています。待ち合わせの場所と行き先は違うので、これが答えです。"
       }
     },
     {
@@ -1846,7 +1848,8 @@
       "prompt": {
         "en": "What will the man buy at the shop?",
         "zh": "男的会在店里买什么？",
-        "zh_TW": "男的會在店裡買什麼？"
+        "zh_TW": "男的會在店裡買什麼？",
+        "ja": "男の人は店で何を買いますか。"
       },
       "options": [
         "卵だけ",
@@ -1858,7 +1861,8 @@
       "explanation": {
         "en": "The woman first says there are no eggs, and then adds milk with も when the man asks what else. So both are on the list, and neither one alone is the answer. Meat is never mentioned.",
         "zh": "女的先说没有鸡蛋，男的问还要买什么时，她又用「も」加上了牛奶。所以两样都要买，只买其中一样都不对。对话里从没提到肉。",
-        "zh_TW": "女的先說沒有雞蛋，男的問還要買什麼時，她又用「も」加上了牛奶。所以兩樣都要買，只買其中一樣都不對。對話裡從沒提到肉。"
+        "zh_TW": "女的先說沒有雞蛋，男的問還要買什麼時，她又用「も」加上了牛奶。所以兩樣都要買，只買其中一樣都不對。對話裡從沒提到肉。",
+        "ja": "女の人はまず卵がないと言い、何を買うか聞かれてから「も」を使って牛乳を加えます。だから両方買うことになり、肉は会話に出てきません。"
       }
     },
     {
@@ -1874,7 +1878,8 @@
       "prompt": {
         "en": "By when must the student hand in the homework?",
         "zh": "这位女学生必须在什么时候之前交作业？",
-        "zh_TW": "這位女學生必須在什麼時候之前交作業？"
+        "zh_TW": "這位女學生必須在什麼時候之前交作業？",
+        "ja": "女の学生は宿題をいつまでに出しますか。"
       },
       "options": [
         "今日",
@@ -1886,7 +1891,8 @@
       "explanation": {
         "en": "The teacher answers いつまでですか with 来週の月曜日までです. Today is only when she plans to write it in the classroom, which is not the same as the deadline.",
         "zh": "老师对「いつまでですか」的回答是「来週の月曜日まで」。今天只是她打算在教室里写作业的日子，并不是截止时间。",
-        "zh_TW": "老師對「いつまでですか」的回答是「來週の月曜日まで」。今天只是她打算在教室裡寫作業的日子，並不是截止時間。"
+        "zh_TW": "老師對「いつまでですか」的回答是「來週の月曜日まで」。今天只是她打算在教室裡寫作業的日子，並不是截止時間。",
+        "ja": "先生は「いつまでですか」という質問に「来週の月曜日までです」と答えています。今日は教室で宿題を書く予定の日で、締め切りとは違います。"
       }
     },
     {
@@ -1902,7 +1908,8 @@
       "prompt": {
         "en": "What time will the two of them meet?",
         "zh": "两个人几点见面？",
-        "zh_TW": "兩個人幾點見面？"
+        "zh_TW": "兩個人幾點見面？",
+        "ja": "二人は何時に会いますか。"
       },
       "options": [
         "一時",
@@ -1914,7 +1921,8 @@
       "explanation": {
         "en": "The man first suggests half past two, but the woman proposes two o'clock for tea and he agrees with いいですね. Three o'clock is when the film starts, not when they meet.",
         "zh": "男的一开始提议两点半，但女的提出两点去喝茶，男的用「いいですね」表示同意。三点是电影开场的时间，不是见面的时间。",
-        "zh_TW": "男的一開始提議兩點半，但女的提出兩點去喝茶，男的用「いいですね」表示同意。三點是電影開場的時間，不是見面的時間。"
+        "zh_TW": "男的一開始提議兩點半，但女的提出兩點去喝茶，男的用「いいですね」表示同意。三點是電影開場的時間，不是見面的時間。",
+        "ja": "男の人は最初に二時半を提案しますが、女の人が二時にお茶を飲もうと言い、男の人は「いいですね」と同意します。三時は映画が始まる時間で、待ち合わせの時間ではありません。"
       }
     },
     {
@@ -1930,7 +1938,8 @@
       "prompt": {
         "en": "What will the woman clean tomorrow?",
         "zh": "女的明天要打扫哪里？",
-        "zh_TW": "女的明天要打掃哪裡？"
+        "zh_TW": "女的明天要打掃哪裡？",
+        "ja": "女の人は明日、どこを掃除しますか。"
       },
       "options": [
         "窓",
@@ -1942,7 +1951,8 @@
       "explanation": {
         "en": "The man takes the windows and the woman answers では、私は台所を掃除します. The bookshelf is what the man asks her to put books on, not what she cleans.",
         "zh": "男的负责擦窗户，女的说「では、私は台所を掃除します」。书架只是男的请她把书摆上去的地方，不是她打扫的地方。",
-        "zh_TW": "男的負責擦窗戶，女的說「では、私は臺所を掃除します」。書架只是男的請她把書擺上去的地方，不是她打掃的地方。"
+        "zh_TW": "男的負責擦窗戶，女的說「では、私は臺所を掃除します」。書架只是男的請她把書擺上去的地方，不是她打掃的地方。",
+        "ja": "男の人は窓を洗い、女の人は「では、私は台所を掃除します」と答えています。本棚は男の人が本を並べるように頼んだ場所で、掃除する場所ではありません。"
       }
     },
     {
@@ -1958,7 +1968,8 @@
       "prompt": {
         "en": "Which way does the woman turn at the corner?",
         "zh": "女的在路口要往哪边拐？",
-        "zh_TW": "女的在路口要往哪邊拐？"
+        "zh_TW": "女的在路口要往哪邊拐？",
+        "ja": "女の人は角をどちらに曲がりますか。"
       },
       "options": [
         "右",
@@ -1970,7 +1981,8 @@
       "explanation": {
         "en": "The man says 次の角を右に曲がってください and the woman repeats 右ですね. Left is where the post office stands after the bridge, and straight is what she does before reaching the corner.",
         "zh": "男的说「次の角を右に曲がってください」，女的重复确认「右ですね」。左边是过桥后邮局所在的位置，直走则是到路口之前的动作。",
-        "zh_TW": "男的說「次の角を右に曲がってください」，女的重複確認「右ですね」。左邊是過橋後郵局所在的位置，直走則是到路口之前的動作。"
+        "zh_TW": "男的說「次の角を右に曲がってください」，女的重複確認「右ですね」。左邊是過橋後郵局所在的位置，直走則是到路口之前的動作。",
+        "ja": "男の人は「次の角を右に曲がってください」と言い、女の人も「右ですね」と確認しています。左は橋を渡った後の郵便局の位置で、まっすぐは角に着くまでの動作です。"
       }
     },
     {
@@ -1986,7 +1998,8 @@
       "prompt": {
         "en": "What will the man do today?",
         "zh": "男的今天要做什么？",
-        "zh_TW": "男的今天要做什麼？"
+        "zh_TW": "男的今天要做什麼？",
+        "ja": "男の人は今日、何をしますか。"
       },
       "options": [
         "病院へ行きます。",
@@ -1998,7 +2011,8 @@
       "explanation": {
         "en": "The woman's instruction for today is 今日は早く寝てください; the hospital is for tomorrow. He was asked whether he had taken medicine, but nobody says he will go and buy any.",
         "zh": "女的对今天的要求是「今日は早く寝てください」，去医院是明天的事。她只是问他吃药了没有，并没有说他要去买药。",
-        "zh_TW": "女的對今天的要求是「今日は早く寢てください」，去醫院是明天的事。她只是問他吃藥了沒有，並沒有說他要去買藥。"
+        "zh_TW": "女的對今天的要求是「今日は早く寢てください」，去醫院是明天的事。她只是問他吃藥了沒有，並沒有說他要去買藥。",
+        "ja": "女の人が今日について頼んでいるのは「今日は早く寝てください」で、病院は明日のことです。薬を飲んだか聞かれただけで、買いに行くとは言っていません。"
       }
     },
     {
@@ -2014,7 +2028,8 @@
       "prompt": {
         "en": "Why didn't the woman go to see the film?",
         "zh": "女的为什么没去看电影？",
-        "zh_TW": "女的為什麼沒去看電影？"
+        "zh_TW": "女的為什麼沒去看電影？",
+        "ja": "女の人はどうして映画を見に行きませんでしたか。"
       },
       "options": [
         "切符を買わなかったから。",
@@ -2026,7 +2041,8 @@
       "explanation": {
         "en": "The reason comes after でも: her work did not finish. She confirms with ええ that she did buy a ticket, so the ticket was not the problem, and illness and rain are never mentioned.",
         "zh": "原因出现在「でも」之后：工作没有做完。她用「ええ」确认票已经买了，所以票不是问题，而生病和下雨在对话中都没有提到。",
-        "zh_TW": "原因出現在「でも」之後：工作沒有做完。她用「ええ」確認票已經買了，所以票不是問題，而生病和下雨在對話中都沒有提到。"
+        "zh_TW": "原因出現在「でも」之後：工作沒有做完。她用「ええ」確認票已經買了，所以票不是問題，而生病和下雨在對話中都沒有提到。",
+        "ja": "理由は「でも」の後にあり、仕事が終わらなかったからです。切符は買ったと「ええ」で確認しているので問題ではなく、病気や雨は会話に出てきません。"
       }
     },
     {
@@ -2042,7 +2058,8 @@
       "prompt": {
         "en": "What does the woman say is hard about her new room?",
         "zh": "女的说新房间哪一点让她觉得不方便？",
-        "zh_TW": "女的說新房間哪一點讓她覺得不方便？"
+        "zh_TW": "女的說新房間哪一點讓她覺得不方便？",
+        "ja": "女の人は新しい部屋の何が大変だと言っていますか。"
       },
       "options": [
         "部屋が狭いこと。",
@@ -2054,7 +2071,8 @@
       "explanation": {
         "en": "She answers the question about convenience with 近くに店がありませんから、少し大変です, so the lack of shops is the difficulty. She says the room itself is wide and clean, so it is neither cramped nor unpleasant.",
         "zh": "她回答「方便吗」时说「近くに店がありませんから、少し大変です」，所以困难在于附近没有店。她说房间本身又宽敞又干净，因此既不狭小也不糟糕。",
-        "zh_TW": "她回答「方便嗎」時說「近くに店がありませんから、少し大変です」，所以困難在於附近沒有店。她說房間本身又寬敞又幹淨，因此既不狹小也不糟糕。"
+        "zh_TW": "她回答「方便嗎」時說「近くに店がありませんから、少し大変です」，所以困難在於附近沒有店。她說房間本身又寬敞又幹淨，因此既不狹小也不糟糕。",
+        "ja": "便利かという質問に「近くに店がありませんから、少し大変です」と答えているので、店がないことが大変な点です。部屋自体は広くてきれいなので、狭いことや汚いことではありません。"
       }
     },
     {
@@ -2070,7 +2088,8 @@
       "prompt": {
         "en": "What does the man say is the most difficult?",
         "zh": "男的说什么最难？",
-        "zh_TW": "男的說什麼最難？"
+        "zh_TW": "男的說什麼最難？",
+        "ja": "男の人は何が一番難しいと言っていますか。"
       },
       "options": [
         "読むこと",
@@ -2082,7 +2101,8 @@
       "explanation": {
         "en": "He calls kanji difficult, but 一番 marks the top of the list and it is attached to 書くの. Speaking is what he says he likes, so it is the opposite of the answer.",
         "zh": "他说汉字很难，但「一番」标出的是最高一项，而它接在「書くの」上。说是他喜欢的部分，正好和答案相反。",
-        "zh_TW": "他說漢字很難，但「一番」標出的是最高一項，而它接在「書くの」上。說是他喜歡的部分，正好和答案相反。"
+        "zh_TW": "他說漢字很難，但「一番」標出的是最高一項，而它接在「書くの」上。說是他喜歡的部分，正好和答案相反。",
+        "ja": "漢字も難しいと言っていますが、「一番」は「書くの」につけられています。話すことは好きだと言っているので、これは答えと反対です。"
       }
     },
     {
@@ -2098,7 +2118,8 @@
       "prompt": {
         "en": "Why didn't the woman go to the sea?",
         "zh": "女的为什么没去海边？",
-        "zh_TW": "女的為什麼沒去海邊？"
+        "zh_TW": "女的為什麼沒去海邊？",
+        "ja": "女の人はどうして海へ行きませんでしたか。"
       },
       "options": [
         "山が好きだから。",
@@ -2110,7 +2131,8 @@
       "explanation": {
         "en": "Her answer ends in から, which marks the reason: it rained a lot. She says 行きたかった, so it was not a matter of preferring the mountains, and neither time nor money is mentioned.",
         "zh": "她的回答以「から」结尾，标出原因：雨下得很大。她说「行きたかった」，所以并不是因为更喜欢山，而时间和钱都没有被提到。",
-        "zh_TW": "她的回答以「から」結尾，標出原因：雨下得很大。她說「行きたかった」，所以並不是因為更喜歡山，而時間和錢都沒有被提到。"
+        "zh_TW": "她的回答以「から」結尾，標出原因：雨下得很大。她說「行きたかった」，所以並不是因為更喜歡山，而時間和錢都沒有被提到。",
+        "ja": "答えの文末は理由を表す「から」で終わり、雨がたくさん降ったからです。「行きたかった」と言っているので山が好きだからではなく、時間やお金の話も出てきません。"
       }
     },
     {
@@ -2126,7 +2148,8 @@
       "prompt": {
         "en": "What does the man say was not good last night?",
         "zh": "男的说昨天晚上哪一点不好？",
-        "zh_TW": "男的說昨天晚上哪一點不好？"
+        "zh_TW": "男的說昨天晚上哪一點不好？",
+        "ja": "男の人は昨日の晩、何が良くなかったと言っていますか。"
       },
       "options": [
         "御飯がまずかったこと。",
@@ -2138,7 +2161,8 @@
       "explanation": {
         "en": "He says ええ to the question about it being fun, then turns it with でも: the dining hall was noisy. He never comments on the taste of the food, his friend was there, and no distance is mentioned.",
         "zh": "被问到开不开心时他回答「ええ」，然后用「でも」转折：食堂很吵。他没有评价饭菜的味道，朋友也在场，路程远近更是没提。",
-        "zh_TW": "被問到開不開心時他回答「ええ」，然後用「でも」轉折：食堂很吵。他沒有評價飯菜的味道，朋友也在場，路程遠近更是沒提。"
+        "zh_TW": "被問到開不開心時他回答「ええ」，然後用「でも」轉折：食堂很吵。他沒有評價飯菜的味道，朋友也在場，路程遠近更是沒提。",
+        "ja": "楽しかったかという質問に「ええ」と答えた後、「でも」で食堂がうるさかったと続けています。料理の味には触れておらず、友達は来ていて、距離の話も出てきません。"
       }
     },
     {
@@ -2154,7 +2178,8 @@
       "prompt": {
         "en": "Where will tomorrow's class be held?",
         "zh": "明天的课在哪里上？",
-        "zh_TW": "明天的課在哪裡上？"
+        "zh_TW": "明天的課在哪裡上？",
+        "ja": "明日の授業はどこでありますか。"
       },
       "options": [
         "いつもの教室",
@@ -2166,7 +2191,8 @@
       "explanation": {
         "en": "The teacher says 教室が違います and then names the classroom next to the library. It is next to the library, not inside it, and the usual classroom is exactly what has changed.",
         "zh": "老师说「教室が違います」，接着指明是图书馆旁边的教室。是在图书馆旁边，不是在图书馆里面，而平常的教室正是被换掉的那间。",
-        "zh_TW": "老師說「教室が違います」，接著指明是圖書館旁邊的教室。是在圖書館旁邊，不是在圖書館裡面，而平常的教室正是被換掉的那間。"
+        "zh_TW": "老師說「教室が違います」，接著指明是圖書館旁邊的教室。是在圖書館旁邊，不是在圖書館裡面，而平常的教室正是被換掉的那間。",
+        "ja": "先生は「教室が違います」と言い、その後で図書館の隣の教室だと教えています。図書館の中ではなく隣で、いつもの教室はまさに変わった場所です。"
       }
     },
     {
@@ -2181,7 +2207,8 @@
       "prompt": {
         "en": "You are about to go into a friend's house. What do you say?",
         "zh": "你正要进朋友的家。这时候该说什么？",
-        "zh_TW": "你正要進朋友的家。這時候該說什麼？"
+        "zh_TW": "你正要進朋友的家。這時候該說什麼？",
+        "ja": "友達の家に入ります。何と言いますか。"
       },
       "options": [
         "入ってもいいですか。",
@@ -2193,7 +2220,8 @@
       "explanation": {
         "en": "〜てもいいですか asks the owner's permission, which is what a visitor at the door needs. The other three refuse, forbid, or report an inability, none of which fits someone who wants to come in.",
         "zh": "「〜てもいいですか」是向主人请求许可，正是站在门口的客人需要说的话。其他三句分别是拒绝、禁止和说自己进不去，都不适合想要进门的人。",
-        "zh_TW": "「〜てもいいですか」是向主人請求許可，正是站在門口的客人需要說的話。其他三句分別是拒絕、禁止和說自己進不去，都不適合想要進門的人。"
+        "zh_TW": "「〜てもいいですか」是向主人請求許可，正是站在門口的客人需要說的話。其他三句分別是拒絕、禁止和說自己進不去，都不適合想要進門的人。",
+        "ja": "「〜てもいいですか」は家の主に許可を求める言い方で、玄関にいる客にふさわしい言葉です。他の三つは断る、禁止する、できないと言う言葉で、入りたい人には合いません。"
       }
     },
     {
@@ -2209,7 +2237,8 @@
       "prompt": {
         "en": "At a shop you want to look at cheaper clothes. What do you say to the shop assistant?",
         "zh": "在店里你想看更便宜的衣服。这时候该对店员说什么？",
-        "zh_TW": "在店裡你想看更便宜的衣服。這時候該對店員說什麼？"
+        "zh_TW": "在店裡你想看更便宜的衣服。這時候該對店員說什麼？",
+        "ja": "店で、もっと安い服を見たいです。何と言いますか。"
       },
       "options": [
         "もっと安いのを見せてください。",
@@ -2221,7 +2250,8 @@
       "explanation": {
         "en": "もっと安い names the direction you want and 見せてください asks to be shown it. Option three asks for the opposite, option two only comments on the price, and option four returns something you have not bought.",
         "zh": "「もっと安い」说明了你要的方向，「見せてください」则是请对方拿出来给你看。第三项要的正好相反，第二项只是在评论价钱，第四项是退还你根本还没买的衣服。",
-        "zh_TW": "「もっと安い」說明了你要的方向，「見せてください」則是請對方拿出來給你看。第三項要的正好相反，第二項只是在評論價錢，第四項是退還你根本還沒買的衣服。"
+        "zh_TW": "「もっと安い」說明了你要的方向，「見せてください」則是請對方拿出來給你看。第三項要的正好相反，第二項只是在評論價錢，第四項是退還你根本還沒買的衣服。",
+        "ja": "「もっと安い」は欲しい方向を表し、「見せてください」は見せてもらうように頼む言葉です。三番目は逆の願いで、二番目は値段を言っているだけ、四番目はまだ買っていない服を返しています。"
       }
     },
     {
@@ -2237,7 +2267,8 @@
       "prompt": {
         "en": "You want to borrow a pencil from a friend. What do you say?",
         "zh": "你想向朋友借一支铅笔。这时候该说什么？",
-        "zh_TW": "你想向朋友借一支鉛筆。這時候該說什麼？"
+        "zh_TW": "你想向朋友借一支鉛筆。這時候該說什麼？",
+        "ja": "友達に鉛筆を借りたいです。何と言いますか。"
       },
       "options": [
         "鉛筆を貸してください。",
@@ -2249,7 +2280,8 @@
       "explanation": {
         "en": "貸す is what the lender does, so asking the friend to 貸してください is how the borrower speaks. 借りてください would tell the friend to do the borrowing, which reverses the two roles.",
         "zh": "「貸す」是出借一方的动作，所以请朋友「貸してください」才是借用者该说的话。「借りてください」是叫朋友去借，把两个人的角色弄反了。",
-        "zh_TW": "「貸す」是出借一方的動作，所以請朋友「貸してください」才是借用者該說的話。「借りてください」是叫朋友去借，把兩個人的角色弄反了。"
+        "zh_TW": "「貸す」是出借一方的動作，所以請朋友「貸してください」才是借用者該說的話。「借りてください」是叫朋友去借，把兩個人的角色弄反了。",
+        "ja": "「貸す」は貸す側の動作なので、借りる側は友達に「貸してください」と頼みます。「借りてください」は友達に借りるように言うことになり、役割が逆になります。"
       }
     },
     {
@@ -2265,7 +2297,8 @@
       "prompt": {
         "en": "You have a question for your teacher. What do you say?",
         "zh": "你有问题想问老师。这时候该说什么？",
-        "zh_TW": "你有問題想問老師。這時候該說什麼？"
+        "zh_TW": "你有問題想問老師。這時候該說什麼？",
+        "ja": "先生に質問があります。何と言いますか。"
       },
       "options": [
         "先生、ちょっと聞いてもいいですか。",
@@ -2277,7 +2310,8 @@
       "explanation": {
         "en": "聞く covers asking as well as listening, and 〜てもいいですか makes it a polite request for the teacher's time. The others tell the teacher to wait, report a finished action, or claim you taught the teacher the answer.",
         "zh": "「聞く」既有听也有问的意思，加上「〜てもいいですか」就成了礼貌的请求。其余三句分别是叫老师等一下、报告已经写完的事、以及说自己把答案教给了老师。",
-        "zh_TW": "「聞く」既有聽也有問的意思，加上「〜てもいいですか」就成了禮貌的請求。其餘三句分別是叫老師等一下、報告已經寫完的事、以及說自己把答案教給了老師。"
+        "zh_TW": "「聞く」既有聽也有問的意思，加上「〜てもいいですか」就成了禮貌的請求。其餘三句分別是叫老師等一下、報告已經寫完的事、以及說自己把答案教給了老師。",
+        "ja": "「聞く」には聞く意味も尋ねる意味もあり、「〜てもいいですか」で丁寧な依頼になります。他の三つは先生に待つよう言ったり、終わったことを報告したり、自分が答えを教えたと言ったりしています。"
       }
     },
     {
@@ -2293,7 +2327,8 @@
       "prompt": {
         "en": "Your friend is ill. What do you say to them?",
         "zh": "你的朋友生病了。这时候该对他说什么？",
-        "zh_TW": "你的朋友生病了。這時候該對他說什麼？"
+        "zh_TW": "你的朋友生病了。這時候該對他說什麼？",
+        "ja": "友達が病気です。何と言いますか。"
       },
       "options": [
         "ゆっくり休んでください。",
@@ -2305,7 +2340,8 @@
       "explanation": {
         "en": "ゆっくり休んでください tells a sick person to rest, which is the kind thing to say. The other three push work, study or a mountain climb on someone who cannot manage any of them.",
         "zh": "「ゆっくり休んでください」是让生病的人好好休息，正是关心对方的说法。其余三句却要一个病人去工作、学习或爬山，都是他做不到的事。",
-        "zh_TW": "「ゆっくり休んでください」是讓生病的人好好休息，正是關心對方的說法。其餘三句卻要一個病人去工作、學習或爬山，都是他做不到的事。"
+        "zh_TW": "「ゆっくり休んでください」是讓生病的人好好休息，正是關心對方的說法。其餘三句卻要一個病人去工作、學習或爬山，都是他做不到的事。",
+        "ja": "「ゆっくり休んでください」は病気の人に休むよう言う、優しい言葉です。他の三つは働くこと、勉強すること、山に登ることを勧めており、病気の人にはできません。"
       }
     },
     {
@@ -2320,7 +2356,8 @@
       "prompt": {
         "en": "Whose umbrella is this? — What is the right reply?",
         "zh": "「这把伞是谁的？」——该怎么回答？",
-        "zh_TW": "「這把傘是誰的？」——該怎麼回答？"
+        "zh_TW": "「這把傘是誰的？」——該怎麼回答？",
+        "ja": "「この傘は誰のですか。」の正しい答えはどれですか。"
       },
       "options": [
         "私のです。",
@@ -2332,7 +2369,8 @@
       "explanation": {
         "en": "誰の asks for an owner, and 私の names one with の standing in for 傘. A はい answer does not fit a question word, and the other two give a past action or a place instead of an owner.",
         "zh": "「誰の」问的是所有者，「私の」正是用「の」代替「傘」来指明所有者。疑问词问句不能用「はい」回答，另外两句给的是过去的动作和地点，而不是所有者。",
-        "zh_TW": "「誰の」問的是所有者，「私の」正是用「の」代替「傘」來指明所有者。疑問詞問句不能用「はい」回答，另外兩句給的是過去的動作和地點，而不是所有者。"
+        "zh_TW": "「誰の」問的是所有者，「私の」正是用「の」代替「傘」來指明所有者。疑問詞問句不能用「はい」回答，另外兩句給的是過去的動作和地點，而不是所有者。",
+        "ja": "「誰の」は持ち主を尋ねる言い方で、「私の」は「の」が「傘」の代わりになって持ち主を答えています。「はい」は疑問詞の質問には合わず、他の二つは過去の動作や場所を答えています。"
       }
     },
     {
@@ -2348,7 +2386,8 @@
       "prompt": {
         "en": "Won't you have tea with me? — What is the right reply?",
         "zh": "「要不要一起喝茶？」——该怎么回答？",
-        "zh_TW": "「要不要一起喝茶？」——該怎麼回答？"
+        "zh_TW": "「要不要一起喝茶？」——該怎麼回答？",
+        "ja": "「一緒にお茶を飲みませんか。」の正しい答えはどれですか。"
       },
       "options": [
         "ええ、飲みましょう。",
@@ -2360,7 +2399,8 @@
       "explanation": {
         "en": "〜ませんか is an invitation, and the natural way to accept is 〜ましょう. A past tense reply answers about something already done, and いいえ followed by 飲みます contradicts itself.",
         "zh": "「〜ませんか」是邀请，接受邀请自然要用「〜ましょう」。用过去式回答说的是已经做过的事，而「いいえ」后面接「飲みます」则前后矛盾。",
-        "zh_TW": "「〜ませんか」是邀請，接受邀請自然要用「〜ましょう」。用過去式回答說的是已經做過的事，而「いいえ」後面接「飲みます」則前後矛盾。"
+        "zh_TW": "「〜ませんか」是邀請，接受邀請自然要用「〜ましょう」。用過去式回答說的是已經做過的事，而「いいえ」後面接「飲みます」則前後矛盾。",
+        "ja": "「〜ませんか」は誘いの言葉なので、受けるときは「〜ましょう」を使うのが自然です。過去形の答えはすでにしたことを答えることになり、「いいえ」の後に「飲みます」と続けるのは矛盾します。"
       }
     },
     {
@@ -2376,7 +2416,8 @@
       "prompt": {
         "en": "Have you read that book yet? — What is the right reply?",
         "zh": "「那本书你已经读了吗？」——该怎么回答？",
-        "zh_TW": "「那本書你已經讀了嗎？」——該怎麼回答？"
+        "zh_TW": "「那本書你已經讀了嗎？」——該怎麼回答？",
+        "ja": "「その本、もう読みましたか。」の正しい答えはどれですか。"
       },
       "options": [
         "いいえ、まだです。",
@@ -2388,7 +2429,8 @@
       "explanation": {
         "en": "もう〜ましたか is answered either with はい、読みました or with いいえ、まだです, the fixed pair for not yet. The other three mix a はい with a negative, or answer a completed action with a plan or a wish.",
         "zh": "「もう〜ましたか」的回答不是「はい、読みました」就是「いいえ、まだです」，后者是表示「还没有」的固定说法。其余三句要么「はい」配否定，要么用打算或愿望去回答一件已完成的事。",
-        "zh_TW": "「もう〜ましたか」的回答不是「はい、読みました」就是「いいえ、まだです」，後者是表示「還沒有」的固定說法。其餘三句要麼「はい」配否定，要麼用打算或願望去回答一件已完成的事。"
+        "zh_TW": "「もう〜ましたか」的回答不是「はい、読みました」就是「いいえ、まだです」，後者是表示「還沒有」的固定說法。其餘三句要麼「はい」配否定，要麼用打算或願望去回答一件已完成的事。",
+        "ja": "「もう〜ましたか」には「はい、読みました」か、「いいえ、まだです」という決まった答え方があります。他の三つは「はい」と否定を組み合わせたり、すでに終わったことを予定や希望で答えたりしています。"
       }
     },
     {
@@ -2403,7 +2445,8 @@
       "prompt": {
         "en": "Do you have a Japanese dictionary? — What is the right reply?",
         "zh": "「你有日语词典吗？」——该怎么回答？",
-        "zh_TW": "「你有日語詞典嗎？」——該怎麼回答？"
+        "zh_TW": "「你有日語詞典嗎？」——該怎麼回答？",
+        "ja": "「日本語の辞書を持っていますか。」の正しい答えはどれですか。"
       },
       "options": [
         "はい、持っています。",
@@ -2415,7 +2458,8 @@
       "explanation": {
         "en": "持っています describes a state of owning, so the reply keeps that same form. 持ちません and 持ちました are about the act of picking something up, and 持ってください is an order rather than an answer.",
         "zh": "「持っています」表示拥有的状态，所以回答也要用同样的形式。「持ちません」和「持ちました」说的是拿起东西这个动作，而「持ってください」是命令，不是回答。",
-        "zh_TW": "「持っています」表示擁有的狀態，所以回答也要用同樣的形式。「持ちません」和「持ちました」說的是拿起東西這個動作，而「持ってください」是命令，不是回答。"
+        "zh_TW": "「持っています」表示擁有的狀態，所以回答也要用同樣的形式。「持ちません」和「持ちました」說的是拿起東西這個動作，而「持ってください」是命令，不是回答。",
+        "ja": "「持っています」は持っている状態を表すので、答えも同じ形を使います。「持ちません」と「持ちました」は物を手に取る動作について言う言葉で、「持ってください」は命令であって答えではありません。"
       }
     },
     {
@@ -2430,7 +2474,8 @@
       "prompt": {
         "en": "Shall I close the window? — What is the right reply?",
         "zh": "「我把窗户关上吧？」——该怎么回答？",
-        "zh_TW": "「我把窗戶關上吧？」——該怎麼回答？"
+        "zh_TW": "「我把窗戶關上吧？」——該怎麼回答？",
+        "ja": "「窓を閉めましょうか。」の正しい答えはどれですか。"
       },
       "options": [
         "ええ、閉めてください。",
@@ -2442,7 +2487,8 @@
       "explanation": {
         "en": "〜ましょうか offers to do something for you, and 閉めてください accepts the offer. The others count windows, ask a question back, or describe the window, none of which answers an offer.",
         "zh": "「〜ましょうか」是提出要替对方做某事，用「閉めてください」就是接受这个提议。其余三句分别是数窗户、反问对方、描述窗户，都没有回应这个提议。",
-        "zh_TW": "「〜ましょうか」是提出要替對方做某事，用「閉めてください」就是接受這個提議。其餘三句分別是數窗戶、反問對方、描述窗戶，都沒有回應這個提議。"
+        "zh_TW": "「〜ましょうか」是提出要替對方做某事，用「閉めてください」就是接受這個提議。其餘三句分別是數窗戶、反問對方、描述窗戶，都沒有回應這個提議。",
+        "ja": "「〜ましょうか」は相手のために何かをする申し出で、「閉めてください」で申し出を受けています。他の三つは窓を数えたり、質問し返したり、窓について述べたりしているだけです。"
       }
     },
     {
@@ -2458,7 +2504,8 @@
       "prompt": {
         "en": "Why were you absent from school yesterday? — What is the right reply?",
         "zh": "「昨天你为什么没来学校？」——该怎么回答？",
-        "zh_TW": "「昨天你為什麼沒來學校？」——該怎麼回答？"
+        "zh_TW": "「昨天你為什麼沒來學校？」——該怎麼回答？",
+        "ja": "「昨日はどうして学校を休みましたか。」の正しい答えはどれですか。"
       },
       "options": [
         "病気でした。",
@@ -2470,7 +2517,8 @@
       "explanation": {
         "en": "どうして asks for a reason, and being ill is one. The distance to school is not a reason for being absent, tomorrow is the wrong day, and a はい answer does not fit a question word.",
         "zh": "「どうして」问的是原因，生病正是一个原因。学校离得近不能成为缺席的理由，明天说的是另一天，而疑问词问句也不能用「はい」回答。",
-        "zh_TW": "「どうして」問的是原因，生病正是一個原因。學校離得近不能成為缺席的理由，明天說的是另一天，而疑問詞問句也不能用「はい」回答。"
+        "zh_TW": "「どうして」問的是原因，生病正是一個原因。學校離得近不能成為缺席的理由，明天說的是另一天，而疑問詞問句也不能用「はい」回答。",
+        "ja": "「どうして」は理由を尋ねる言葉で、病気だったことは理由になります。学校が近いことは休む理由にならず、明日は違う日で、「はい」も疑問詞の質問には合いません。"
       }
     },
     {
@@ -2486,7 +2534,8 @@
       "prompt": {
         "en": "What will the man take with him tomorrow?",
         "zh": "男的明天带什么去？",
-        "zh_TW": "男的明天帶什麼去？"
+        "zh_TW": "男的明天帶什麼去？",
+        "ja": "男の人は明日、何を持って行きますか。"
       },
       "options": [
         "お弁当",
@@ -2498,7 +2547,8 @@
       "explanation": {
         "en": "The woman is the one who says she will make the box lunches; the man answers with では and takes the drinks. The question asks about the man, so the box lunches are the trap.",
         "zh": "说要做便当的是女的；男的用「では」接下去，负责带饮料。题目问的是男的，所以便当是陷阱。",
-        "zh_TW": "說要做便當的是女的；男的用「では」接下去，負責帶飲料。題目問的是男的，所以便當是陷阱。"
+        "zh_TW": "說要做便當的是女的；男的用「では」接下去，負責帶飲料。題目問的是男的，所以便當是陷阱。",
+        "ja": "お弁当を作ると言っているのは女の人で、男の人は「では」と続けて飲み物を持って行くと言っています。質問は男の人についてなので、お弁当は間違いを誘う選択肢です。"
       }
     },
     {
@@ -2514,7 +2564,8 @@
       "prompt": {
         "en": "Where will the woman go first?",
         "zh": "女的会先去哪里？",
-        "zh_TW": "女的會先去哪裡？"
+        "zh_TW": "女的會先去哪裡？",
+        "ja": "女の人は初めにどこへ行きますか。"
       },
       "options": [
         "八百屋",
@@ -2526,7 +2577,8 @@
       "explanation": {
         "en": "She first plans the greengrocer's, but after hearing that the bank closes at five she says 先に銀行へ行きます. The last line is what counts, not the first plan.",
         "zh": "她本来打算先去蔬果店，但听说银行五点关门后改口说「先に銀行へ行きます」。以最后说的为准，而不是最初的打算。",
-        "zh_TW": "她本來打算先去蔬果店，但聽說銀行五點關門後改口說「先に銀行へ行きます」。以最後說的為準，而不是最初的打算。"
+        "zh_TW": "她本來打算先去蔬果店，但聽說銀行五點關門後改口說「先に銀行へ行きます」。以最後說的為準，而不是最初的打算。",
+        "ja": "女の人は最初、八百屋に行くつもりでしたが、銀行が五時に閉まると聞いて「先に銀行へ行きます」と言い直しています。最後に言ったことが答えで、最初の予定ではありません。"
       }
     },
     {
@@ -2542,7 +2594,8 @@
       "prompt": {
         "en": "How will the man go to school today?",
         "zh": "男的今天怎么去学校？",
-        "zh_TW": "男的今天怎麼去學校？"
+        "zh_TW": "男的今天怎麼去學校？",
+        "ja": "男の人は今日、何で学校へ行きますか。"
       },
       "options": [
         "自転車",
@@ -2554,7 +2607,8 @@
       "explanation": {
         "en": "いつもは自転車 describes his habit, not today. Because of the rain he changes to 電車 in his last line.",
         "zh": "「いつもは自転車」说的是平常的习惯，不是今天。因为下雨，他在最后一句改成坐电车。",
-        "zh_TW": "「いつもは自転車」說的是平常的習慣，不是今天。因為下雨，他在最後一句改成坐電車。"
+        "zh_TW": "「いつもは自転車」說的是平常的習慣，不是今天。因為下雨，他在最後一句改成坐電車。",
+        "ja": "「いつもは自転車」は普段の習慣で、今日のことではありません。雨のため、男の人は最後の発言で電車に変えています。"
       }
     },
     {
@@ -2570,7 +2624,8 @@
       "prompt": {
         "en": "What will the man buy this year?",
         "zh": "男的今年买什么？",
-        "zh_TW": "男的今年買什麼？"
+        "zh_TW": "男的今年買什麼？",
+        "ja": "男の人は今年、何を買いますか。"
       },
       "options": [
         "花",
@@ -2582,7 +2637,8 @@
       "explanation": {
         "en": "Flowers were last year's present and the glasses shop is only the woman's suggestion. The man's own last line decides it: a hat.",
         "zh": "花是去年送的，眼镜店只是女的的提议。真正决定的是男的最后一句：买帽子。",
-        "zh_TW": "花是去年送的，眼鏡店只是女的的提議。真正決定的是男的最後一句：買帽子。"
+        "zh_TW": "花是去年送的，眼鏡店只是女的的提議。真正決定的是男的最後一句：買帽子。",
+        "ja": "花は去年贈ったもので、めがねの店は女の人が提案しただけです。決めるのは男の人の最後の発言で、帽子を買うと言っています。"
       }
     },
     {
@@ -2598,7 +2654,8 @@
       "prompt": {
         "en": "What time will the two of them meet at the station?",
         "zh": "两个人几点在车站见面？",
-        "zh_TW": "兩個人幾點在車站見面？"
+        "zh_TW": "兩個人幾點在車站見面？",
+        "ja": "二人は何時に駅で会いますか。"
       },
       "options": [
         "七時",
@@ -2610,7 +2667,8 @@
       "explanation": {
         "en": "Eight o'clock is the train, not the meeting. The woman calls half past seven early, but the man keeps it because of the tickets and she agrees.",
         "zh": "八点是电车的时间，不是碰面的时间。女的嫌七点半早，但男的因为要买票而坚持，女的也答应了。",
-        "zh_TW": "八點是電車的時間，不是碰面的時間。女的嫌七點半早，但男的因為要買票而堅持，女的也答應了。"
+        "zh_TW": "八點是電車的時間，不是碰面的時間。女的嫌七點半早，但男的因為要買票而堅持，女的也答應了。",
+        "ja": "八時は電車の時間で、待ち合わせの時間ではありません。女の人は七時半を早いと言いますが、男の人は切符を買うためだと言って譲らず、女の人も納得しています。"
       }
     },
     {
@@ -2626,7 +2684,8 @@
       "prompt": {
         "en": "What will the woman do today?",
         "zh": "女的今天做什么？",
-        "zh_TW": "女的今天做什麼？"
+        "zh_TW": "女的今天做什麼？",
+        "ja": "女の人は今日、何をしますか。"
       },
       "options": [
         "洗濯",
@@ -2638,7 +2697,8 @@
       "explanation": {
         "en": "The laundry is put off until tomorrow because of the rain; what she does today is clean the room.",
         "zh": "因为下雨，洗衣服推到明天；今天做的是打扫房间。",
-        "zh_TW": "因為下雨，洗衣服推到明天；今天做的是打掃房間。"
+        "zh_TW": "因為下雨，洗衣服推到明天；今天做的是打掃房間。",
+        "ja": "洗濯は雨のため明日に延期され、今日することは部屋の掃除です。"
       }
     },
     {
@@ -2654,7 +2714,8 @@
       "prompt": {
         "en": "What will the man drink?",
         "zh": "男的喝什么？",
-        "zh_TW": "男的喝什麼？"
+        "zh_TW": "男的喝什麼？",
+        "ja": "男の人は何を飲みますか。"
       },
       "options": [
         "紅茶だけ",
@@ -2666,7 +2727,8 @@
       "explanation": {
         "en": "He asks for green tea, then adds cold water with も, so both. The black tea belongs to the woman.",
         "zh": "他先要绿茶，接着用「も」加上冷水，所以两样都要。红茶是女的点的。",
-        "zh_TW": "他先要綠茶，接著用「も」加上冷水，所以兩樣都要。紅茶是女的點的。"
+        "zh_TW": "他先要綠茶，接著用「も」加上冷水，所以兩樣都要。紅茶是女的點的。",
+        "ja": "男の人はまずお茶を頼み、それから「も」を使って冷たい水も加えているので、両方飲みます。紅茶は女の人が頼んだものです。"
       }
     },
     {
@@ -2682,7 +2744,8 @@
       "prompt": {
         "en": "Where will the woman put the box?",
         "zh": "女的把箱子放在哪里？",
-        "zh_TW": "女的把箱子放在哪裡？"
+        "zh_TW": "女的把箱子放在哪裡？",
+        "ja": "女の人は箱をどこに置きますか。"
       },
       "options": [
         "冷蔵庫の中",
@@ -2694,7 +2757,8 @@
       "explanation": {
         "en": "The fridge is where the eggs go. For the box the man says 机の下, under the table, not on it.",
         "zh": "冰箱是放鸡蛋的。箱子男的说「机の下」，是桌子下面，不是上面。",
-        "zh_TW": "冰箱是放雞蛋的。箱子男的說「機の下」，是桌子下面，不是上面。"
+        "zh_TW": "冰箱是放雞蛋的。箱子男的說「機の下」，是桌子下面，不是上面。",
+        "ja": "冷蔵庫は卵を入れる場所です。箱については男の人が「机の下」と言っていて、上ではありません。"
       }
     },
     {
@@ -2710,7 +2774,8 @@
       "prompt": {
         "en": "What will the woman borrow?",
         "zh": "女的借什么？",
-        "zh_TW": "女的借什麼？"
+        "zh_TW": "女的借什麼？",
+        "ja": "女の人は何を借りますか。"
       },
       "options": [
         "男の人の辞書",
@@ -2722,7 +2787,8 @@
       "explanation": {
         "en": "The dictionary she asked for is in use, so それ in her last line points to the old dictionary on the shelf.",
         "zh": "她原本要借的词典正在被使用，所以最后一句的「それ」指的是书架上那本旧字典。",
-        "zh_TW": "她原本要借的詞典正在被使用，所以最後一句的「それ」指的是書架上那本舊字典。"
+        "zh_TW": "她原本要借的詞典正在被使用，所以最後一句的「それ」指的是書架上那本舊字典。",
+        "ja": "女の人が最初に頼んだ辞書は使われていたので、最後の「それ」は本棚の上にある古い字引を指しています。"
       }
     },
     {
@@ -2738,7 +2804,8 @@
       "prompt": {
         "en": "How many tickets will the man buy?",
         "zh": "男的买几张票？",
-        "zh_TW": "男的買幾張票？"
+        "zh_TW": "男的買幾張票？",
+        "ja": "男の人は切符を何枚買いますか。"
       },
       "options": [
         "二枚",
@@ -2750,7 +2817,8 @@
       "explanation": {
         "en": "Four was the count before the correction. The younger sister drops out in the last line, so three remain: the woman and two friends.",
         "zh": "四张是更正之前的数目。最后一句妹妹不来了，所以剩下三张：女的和两个朋友。",
-        "zh_TW": "四張是更正之前的數目。最後一句妹妹不來了，所以剩下三張：女的和兩個朋友。"
+        "zh_TW": "四張是更正之前的數目。最後一句妹妹不來了，所以剩下三張：女的和兩個朋友。",
+        "ja": "四枚は訂正される前の数です。最後の発言で妹が来ないことになるので、残りは女の人と友達二人の三枚です。"
       }
     },
     {
@@ -2766,7 +2834,8 @@
       "prompt": {
         "en": "What will the woman take with her?",
         "zh": "女的带什么去？",
-        "zh_TW": "女的帶什麼去？"
+        "zh_TW": "女的帶什麼去？",
+        "ja": "女の人は何を持って行きますか。"
       },
       "options": [
         "帽子",
@@ -2778,7 +2847,8 @@
       "explanation": {
         "en": "She first points at the fine weather, but once she hears about rain from the evening she says 私も傘を, adding herself to the man.",
         "zh": "她先提到是晴天，但听说傍晚要下雨后就说「私も傘を」，把自己加进带伞的人里。",
-        "zh_TW": "她先提到是晴天，但聽說傍晚要下雨後就說「私も傘を」，把自己加進帶傘的人裡。"
+        "zh_TW": "她先提到是晴天，但聽說傍晚要下雨後就說「私も傘を」，把自己加進帶傘的人裡。",
+        "ja": "女の人は最初、晴れだと言っていますが、夕方から雨が降ると聞いて「私も傘を」と言い、男の人と同じように傘を持つことにします。"
       }
     },
     {
@@ -2794,7 +2864,8 @@
       "prompt": {
         "en": "What will the man buy at the post office?",
         "zh": "男的在邮局买什么？",
-        "zh_TW": "男的在郵局買什麼？"
+        "zh_TW": "男的在郵局買什麼？",
+        "ja": "男の人は郵便局で何を買いますか。"
       },
       "options": [
         "切手とはがき",
@@ -2806,7 +2877,8 @@
       "explanation": {
         "en": "Stamps are added with も in his first line, and postcards are explicitly refused before he names envelopes. The letter is sent, not bought.",
         "zh": "邮票在他第一句里用「も」加上，明信片被明确否定，之后才说买信封。信是寄的，不是买的。",
-        "zh_TW": "郵票在他第一句裡用「も」加上，明信片被明確否定，之後才說買信封。信是寄的，不是買的。"
+        "zh_TW": "郵票在他第一句裡用「も」加上，明信片被明確否定，之後才說買信封。信是寄的，不是買的。",
+        "ja": "切手は最初の発言で「も」を使って加えられ、はがきははっきり買わないと言った後で封筒を買うと言っています。手紙は出すもので、買うものではありません。"
       }
     },
     {
@@ -2822,7 +2894,8 @@
       "prompt": {
         "en": "What will the woman make tonight?",
         "zh": "女的今晚做什么？",
-        "zh_TW": "女的今晚做什麼？"
+        "zh_TW": "女的今晚做什麼？",
+        "ja": "女の人は今晩、何を作りますか。"
       },
       "options": [
         "魚の料理",
@@ -2834,7 +2907,8 @@
       "explanation": {
         "en": "Fish was her first idea, but the man says they had fish yesterday too, so she switches to pork.",
         "zh": "鱼是她最初的想法，但男的说昨天也是鱼，于是她改成猪肉。",
-        "zh_TW": "魚是她最初的想法，但男的說昨天也是魚，於是她改成豬肉。"
+        "zh_TW": "魚是她最初的想法，但男的說昨天也是魚，於是她改成豬肉。",
+        "ja": "魚は最初の案でしたが、男の人が昨日も魚だったと言ったので、女の人は豚肉の料理に変えます。"
       }
     },
     {
@@ -2850,7 +2924,8 @@
       "prompt": {
         "en": "Where will the two of them meet?",
         "zh": "两个人在哪里见面？",
-        "zh_TW": "兩個人在哪裡見面？"
+        "zh_TW": "兩個人在哪裡見面？",
+        "ja": "二人はどこで会いますか。"
       },
       "options": [
         "駅の前",
@@ -2862,7 +2937,8 @@
       "explanation": {
         "en": "The front of the station is rejected because it is always crowded. The man agrees to the coffee shop near the crossing and says he will wait there.",
         "zh": "车站前面因为总是人多而被否决。男的同意去路口附近的咖啡店，并说在那里等。",
-        "zh_TW": "車站前面因為總是人多而被否決。男的同意去路口附近的咖啡店，並說在那裡等。"
+        "zh_TW": "車站前面因為總是人多而被否決。男的同意去路口附近的咖啡店，並說在那裡等。",
+        "ja": "駅の前はいつも人が多いという理由で断られます。男の人は交差点の近くの喫茶店に賛成し、そこで待つと言っています。"
       }
     },
     {
@@ -2878,7 +2954,8 @@
       "prompt": {
         "en": "What does the man say is good about his new job?",
         "zh": "男的说新工作好在哪里？",
-        "zh_TW": "男的說新工作好在哪裡？"
+        "zh_TW": "男的說新工作好在哪裡？",
+        "ja": "男の人は新しい仕事の何がいいと言っていますか。"
       },
       "options": [
         "仕事がやさしいこと。",
@@ -2890,7 +2967,8 @@
       "explanation": {
         "en": "Being busy is what he says with でも before it, so it is the bad side. The good side is the short distance, which lets him get up slowly.",
         "zh": "忙是「でも」前面的部分，属于不好的一面。好的一面是公司离家近，所以早上能慢慢起床。",
-        "zh_TW": "忙是「でも」前面的部分，屬於不好的一面。好的一面是公司離家近，所以早上能慢慢起床。"
+        "zh_TW": "忙是「でも」前面的部分，屬於不好的一面。好的一面是公司離家近，所以早上能慢慢起床。",
+        "ja": "忙しいことは「でも」の前にあり、良くない面です。良い面は会社が家から近いことで、そのために朝ゆっくり起きられると言っています。"
       }
     },
     {
@@ -2906,7 +2984,8 @@
       "prompt": {
         "en": "Why didn't the woman buy the shoes?",
         "zh": "女的为什么没买那双鞋？",
-        "zh_TW": "女的為什麼沒買那雙鞋？"
+        "zh_TW": "女的為什麼沒買那雙鞋？",
+        "ja": "女の人はどうして靴を買いませんでしたか。"
       },
       "options": [
         "高かったから。",
@@ -2918,7 +2997,8 @@
       "explanation": {
         "en": "She agrees the shoes were cheap, so price is not the reason. What follows でも is the reason: they were a little small.",
         "zh": "她承认鞋子便宜，所以价钱不是原因。「でも」后面才是原因：鞋子有点小。",
-        "zh_TW": "她承認鞋子便宜，所以價錢不是原因。「でも」後面才是原因：鞋子有點小。"
+        "zh_TW": "她承認鞋子便宜，所以價錢不是原因。「でも」後面才是原因：鞋子有點小。",
+        "ja": "女の人は靴が安かったことを認めているので、値段は理由ではありません。「でも」の後にある理由は、靴が少し小さかったことです。"
       }
     },
     {
@@ -2934,7 +3014,8 @@
       "prompt": {
         "en": "What does the man say was not good about the film?",
         "zh": "男的说这部电影哪里不好？",
-        "zh_TW": "男的說這部電影哪裡不好？"
+        "zh_TW": "男的說這部電影哪裡不好？",
+        "ja": "男の人は映画の何が良くなかったと言っていますか。"
       },
       "options": [
         "話がつまらなかったこと。",
@@ -2946,7 +3027,8 @@
       "explanation": {
         "en": "He praises the story, so it is not the complaint. His complaint is stated twice: it was long, three hours.",
         "zh": "他称赞了故事，所以故事不是抱怨的对象。他抱怨的东西说了两次：太长了，三个小时。",
-        "zh_TW": "他稱讚了故事，所以故事不是抱怨的對象。他抱怨的東西說了兩次：太長了，三個小時。"
+        "zh_TW": "他稱讚了故事，所以故事不是抱怨的對象。他抱怨的東西說了兩次：太長了，三個小時。",
+        "ja": "男の人は話の内容をほめているので、それは不満ではありません。不満は二度言われていて、三時間と長かったことです。"
       }
     },
     {
@@ -2962,7 +3044,8 @@
       "prompt": {
         "en": "Why was the man late this morning?",
         "zh": "男的今天早上为什么迟到？",
-        "zh_TW": "男的今天早上為什麼遲到？"
+        "zh_TW": "男的今天早上為什麼遲到？",
+        "ja": "男の人はどうして遅くなりましたか。"
       },
       "options": [
         "起きるのが遅かったから。",
@@ -2974,7 +3057,8 @@
       "explanation": {
         "en": "He answers the どうして question at once: the train stopped. The walking and the tiredness are what followed from it, not the cause.",
         "zh": "他对「どうして」的回答很直接：电车停了。走路和疲累是由此产生的结果，不是原因。",
-        "zh_TW": "他對「どうして」的回答很直接：電車停了。走路和疲累是由此產生的結果，不是原因。"
+        "zh_TW": "他對「どうして」的回答很直接：電車停了。走路和疲累是由此產生的結果，不是原因。",
+        "ja": "男の人は「どうして」という質問にすぐ答えていて、電車が止まったからです。歩いたことや疲れたことはその結果であって、原因ではありません。"
       }
     },
     {
@@ -2990,7 +3074,8 @@
       "prompt": {
         "en": "What kind of town does the woman say she likes?",
         "zh": "女的说她喜欢什么样的镇子？",
-        "zh_TW": "女的說她喜歡什麼樣的鎮子？"
+        "zh_TW": "女的說她喜歡什麼樣的鎮子？",
+        "ja": "女の人はどんな町が好きだと言っていますか。"
       },
       "options": [
         "賑やかな町",
@@ -3002,7 +3087,8 @@
       "explanation": {
         "en": "The man's question about lively places is answered with いいえ, and she then names quiet towns herself.",
         "zh": "男的问她是否喜欢热闹的地方，她回答「いいえ」，接着自己说出喜欢安静的镇子。",
-        "zh_TW": "男的問她是否喜歡熱鬧的地方，她回答「いいえ」，接著自己說出喜歡安靜的鎮子。"
+        "zh_TW": "男的問她是否喜歡熱鬧的地方，她回答「いいえ」，接著自己說出喜歡安靜的鎮子。",
+        "ja": "男の人が賑やかな場所が好きかと聞くと、女の人は「いいえ」と答え、自分から静かな町が好きだと言っています。"
       }
     },
     {
@@ -3018,7 +3104,8 @@
       "prompt": {
         "en": "Why is the woman studying Japanese?",
         "zh": "女的为什么学日语？",
-        "zh_TW": "女的為什麼學日語？"
+        "zh_TW": "女的為什麼學日語？",
+        "ja": "女の人はどうして日本語を勉強していますか。"
       },
       "options": [
         "日本で働きたいから。",
@@ -3030,7 +3117,8 @@
       "explanation": {
         "en": "She gives the reason with から in her first line, and confirms it after denying the idea of working in Japan: she wants to learn the words of the songs.",
         "zh": "她第一句就用「から」说出理由，并在否定了在日本工作的想法后再次确认：她想记住歌词。",
-        "zh_TW": "她第一句就用「から」說出理由，並在否定了在日本工作的想法後再次確認：她想記住歌詞。"
+        "zh_TW": "她第一句就用「から」說出理由，並在否定了在日本工作的想法後再次確認：她想記住歌詞。",
+        "ja": "女の人は最初の発言で「から」を使って理由を述べ、日本で働きたいという考えを否定した後にも、歌の言葉を覚えたいと確認しています。"
       }
     },
     {
@@ -3046,7 +3134,8 @@
       "prompt": {
         "en": "What does the man say is not good about the new house?",
         "zh": "男的说新家哪里不好？",
-        "zh_TW": "男的說新家哪裡不好？"
+        "zh_TW": "男的說新家哪裡不好？",
+        "ja": "男の人は新しい家の何が良くないと言っていますか。"
       },
       "options": [
         "部屋が暗いこと。",
@@ -3058,7 +3147,8 @@
       "explanation": {
         "en": "He says the rooms are bright and the station is close, so those are the good points. The one thing he repeats with でも and 困っています is that the rooms are small.",
         "zh": "他说房间亮、车站近，这些都是优点。他用「でも」和「困っています」重复的只有一点：房间窄。",
-        "zh_TW": "他說房間亮、車站近，這些都是優點。他用「でも」和「困っています」重複的只有一點：房間窄。"
+        "zh_TW": "他說房間亮、車站近，這些都是優點。他用「でも」和「困っています」重複的只有一點：房間窄。",
+        "ja": "部屋は明るく、駅も近いと言っているので、それらは良い点です。「でも」と「困っています」で繰り返されているのは、部屋が狭いということだけです。"
       }
     },
     {
@@ -3074,7 +3164,8 @@
       "prompt": {
         "en": "Why won't the woman go to the sea on Saturday?",
         "zh": "女的星期六为什么不去海边？",
-        "zh_TW": "女的星期六為什麼不去海邊？"
+        "zh_TW": "女的星期六為什麼不去海邊？",
+        "ja": "女の人はどうして土曜日に海へ行きませんか。"
       },
       "options": [
         "山に登るから。",
@@ -3086,7 +3177,8 @@
       "explanation": {
         "en": "The mountain is Sunday's plan. The question asks about Saturday, and the reason she gives for Saturday is work.",
         "zh": "爬山是星期天的安排。题目问的是星期六，她给星期六的理由是有工作。",
-        "zh_TW": "爬山是星期天的安排。題目問的是星期六，她給星期六的理由是有工作。"
+        "zh_TW": "爬山是星期天的安排。題目問的是星期六，她給星期六的理由是有工作。",
+        "ja": "山に登るのは日曜日の予定です。質問は土曜日についてで、女の人が土曜日について挙げた理由は仕事があることです。"
       }
     },
     {
@@ -3102,7 +3194,8 @@
       "prompt": {
         "en": "What does the man say he wants?",
         "zh": "男的说他想要什么？",
-        "zh_TW": "男的說他想要什麼？"
+        "zh_TW": "男的說他想要什麼？",
+        "ja": "男の人は何がほしいと言っていますか。"
       },
       "options": [
         "時計",
@@ -3114,7 +3207,8 @@
       "explanation": {
         "en": "The watch is the woman's suggestion, and he turns it down by saying he already has two. He names the bag both at the start and at the end.",
         "zh": "手表是女的的提议，他以已经有两块为由拒绝了。包他在开头和结尾都提到了。",
-        "zh_TW": "手錶是女的的提議，他以已經有兩塊為由拒絕了。包他在開頭和結尾都提到了。"
+        "zh_TW": "手錶是女的的提議，他以已經有兩塊為由拒絕了。包他在開頭和結尾都提到了。",
+        "ja": "時計は女の人の提案で、男の人はもう二つあるからと断っています。かばんは最初と最後の両方で男の人が言っています。"
       }
     },
     {
@@ -3130,7 +3224,8 @@
       "prompt": {
         "en": "What does the woman say was good about the trip?",
         "zh": "女的说旅行哪里好？",
-        "zh_TW": "女的說旅行哪裡好？"
+        "zh_TW": "女的說旅行哪裡好？",
+        "ja": "女の人は旅行の何が良かったと言っていますか。"
       },
       "options": [
         "天気",
@@ -3142,7 +3237,8 @@
       "explanation": {
         "en": "The weather was bad, which is exactly what the trap option repeats. The one good thing comes after でも: the food was very tasty.",
         "zh": "天气不好，陷阱选项正是重复了这一点。唯一好的一点在「でも」之后：饭菜非常好吃。",
-        "zh_TW": "天氣不好，陷阱選項正是重複了這一點。唯一好的一點在「でも」之後：飯菜非常好吃。"
+        "zh_TW": "天氣不好，陷阱選項正是重複了這一點。唯一好的一點在「でも」之後：飯菜非常好吃。",
+        "ja": "天気が悪かったことは正解ではなく、間違いを誘う選択肢に繰り返されています。「でも」の後にある良かった点は、御飯がとてもおいしかったことです。"
       }
     },
     {
@@ -3158,7 +3254,8 @@
       "prompt": {
         "en": "What does the man say about his own singing?",
         "zh": "男的怎么评价自己唱歌？",
-        "zh_TW": "男的怎麼評價自己唱歌？"
+        "zh_TW": "男的怎麼評價自己唱歌？",
+        "ja": "男の人は自分の歌はどうだと言っていますか。"
       },
       "options": [
         "とても上手だ。",
@@ -3170,7 +3267,8 @@
       "explanation": {
         "en": "上手ですね is the woman's compliment, and he denies it with いいえ、下手です. But he adds with でも that singing is fun, so both halves belong in the answer.",
         "zh": "「上手ですね」是女的的称赞，他用「いいえ、下手です」否定了。但他又用「でも」补上唱歌很开心，所以两半都要包含在答案里。",
-        "zh_TW": "「上手ですね」是女的的稱讚，他用「いいえ、下手です」否定了。但他又用「でも」補上唱歌很開心，所以兩半都要包含在答案裡。"
+        "zh_TW": "「上手ですね」是女的的稱讚，他用「いいえ、下手です」否定了。但他又用「でも」補上唱歌很開心，所以兩半都要包含在答案裡。",
+        "ja": "「上手ですね」は女の人のほめ言葉で、男の人は「いいえ、下手です」と否定します。でも「でも」の後で歌うのが楽しいとも言っているので、両方が答えに含まれます。"
       }
     },
     {
@@ -3186,7 +3284,8 @@
       "prompt": {
         "en": "What does the woman do first after getting up?",
         "zh": "女的起床后先做什么？",
-        "zh_TW": "女的起床後先做什麼？"
+        "zh_TW": "女的起床後先做什麼？",
+        "ja": "女の人は起きてから初めに何をしますか。"
       },
       "options": [
         "朝ごはんを作る。",
@@ -3198,7 +3297,8 @@
       "explanation": {
         "en": "それから marks the order: the walk with the dog comes first and breakfast after it.",
         "zh": "「それから」标出了先后：先和狗散步，之后才做早饭。",
-        "zh_TW": "「それから」標出了先後：先和狗散步，之後才做早飯。"
+        "zh_TW": "「それから」標出了先後：先和狗散步，之後才做早飯。",
+        "ja": "「それから」が順序を表していて、犬との散歩が先で、朝ごはんはその後です。"
       }
     },
     {
@@ -3214,7 +3314,8 @@
       "prompt": {
         "en": "You are going to have a friend take a photo of you. What do you say?",
         "zh": "你要请朋友帮你拍照。这时候该说什么？",
-        "zh_TW": "你要請朋友幫你拍照。這時候該說什麼？"
+        "zh_TW": "你要請朋友幫你拍照。這時候該說什麼？",
+        "ja": "友達に写真を撮ってもらいます。何と言いますか。"
       },
       "options": [
         "写真を撮ってください。",
@@ -3226,7 +3327,8 @@
       "explanation": {
         "en": "〜てください asks the other person to do it, which is what you need here. 撮りましょうか offers to take it yourself, and the other two ask to be shown a photo or forbid taking one.",
         "zh": "「〜てください」是请对方动手，正合这里的需要。「撮りましょうか」是自己要帮别人拍，另外两句一个是要看照片，一个是禁止拍照。",
-        "zh_TW": "「〜てください」是請對方動手，正合這裡的需要。「撮りましょうか」是自己要幫別人拍，另外兩句一個是要看照片，一個是禁止拍照。"
+        "zh_TW": "「〜てください」是請對方動手，正合這裡的需要。「撮りましょうか」是自己要幫別人拍，另外兩句一個是要看照片，一個是禁止拍照。",
+        "ja": "「〜てください」は相手に頼む言い方で、ここで必要な言葉です。「撮りましょうか」は自分が撮ると申し出る言葉で、他の二つは写真を見せてもらうことや、撮ってはいけないことを表しています。"
       }
     },
     {
@@ -3242,7 +3344,8 @@
       "prompt": {
         "en": "The classroom is cold and you want to close the window. What do you say?",
         "zh": "教室里很冷，你想关窗。这时候该说什么？",
-        "zh_TW": "教室裡很冷，你想關窗。這時候該說什麼？"
+        "zh_TW": "教室裡很冷，你想關窗。這時候該說什麼？",
+        "ja": "教室が寒いです。窓を閉めたいです。何と言いますか。"
       },
       "options": [
         "窓を閉めましょうか。",
@@ -3254,7 +3357,8 @@
       "explanation": {
         "en": "〜ましょうか offers to do it yourself, politely checking with the others in the room. The second asks for the opposite, the third only reports a state, and the fourth forbids it.",
         "zh": "「〜ましょうか」是提出由自己来做，同时礼貌地征询在场的人。第二句要的正好相反，第三句只是在陈述状态，第四句是禁止。",
-        "zh_TW": "「〜ましょうか」是提出由自己來做，同時禮貌地徵詢在場的人。第二句要的正好相反，第三句只是在陳述狀態，第四句是禁止。"
+        "zh_TW": "「〜ましょうか」是提出由自己來做，同時禮貌地徵詢在場的人。第二句要的正好相反，第三句只是在陳述狀態，第四句是禁止。",
+        "ja": "「〜ましょうか」は自分がすることを申し出て、丁寧に周りの人に確かめる言い方です。二番目は逆の願いで、三番目は状態を述べているだけ、四番目は禁止です。"
       }
     },
     {
@@ -3270,7 +3374,8 @@
       "prompt": {
         "en": "You do not know the way and are going to ask someone. What do you say?",
         "zh": "你不认识路，要向别人打听。这时候该说什么？",
-        "zh_TW": "你不認識路，要向別人打聽。這時候該說什麼？"
+        "zh_TW": "你不認識路，要向別人打聽。這時候該說什麼？",
+        "ja": "道がわかりません。人に聞きます。何と言いますか。"
       },
       "options": [
         "すみません、駅はどこですか。",
@@ -3282,7 +3387,8 @@
       "explanation": {
         "en": "どこ is the question word for a place. 何ですか asks what a station is, the third orders the stranger to go, and the fourth tells them something you do not know.",
         "zh": "问地点要用「どこ」。「何ですか」是在问车站是什么东西，第三句是命令对方去，第四句则是在告诉对方一件你自己都不知道的事。",
-        "zh_TW": "問地點要用「どこ」。「何ですか」是在問車站是什麼東西，第三句是命令對方去，第四句則是在告訴對方一件你自己都不知道的事。"
+        "zh_TW": "問地點要用「どこ」。「何ですか」是在問車站是什麼東西，第三句是命令對方去，第四句則是在告訴對方一件你自己都不知道的事。",
+        "ja": "場所を尋ねるときは「どこ」を使います。「何ですか」は駅が何かを尋ねる質問で、三番目は相手に行くように命令し、四番目は自分が知らないはずのことを教えています。"
       }
     },
     {
@@ -3298,7 +3404,8 @@
       "prompt": {
         "en": "You are giving back a book you borrowed from a friend. What do you say?",
         "zh": "你要把向朋友借的书还回去。这时候该说什么？",
-        "zh_TW": "你要把向朋友借的書還回去。這時候該說什麼？"
+        "zh_TW": "你要把向朋友借的書還回去。這時候該說什麼？",
+        "ja": "友達に借りた本を返します。何と言いますか。"
       },
       "options": [
         "この本、どうも。返します。",
@@ -3310,7 +3417,8 @@
       "explanation": {
         "en": "返します is the verb for giving something back, with どうも as thanks. 貸してください and 借りてもいいですか both ask to take it, the wrong direction, and buying it is a different act.",
         "zh": "「返します」才是归还的动词，配上「どうも」表示谢意。「貸してください」和「借りてもいいですか」都是要借走，方向相反，而买书则是另一回事。",
-        "zh_TW": "「返します」才是歸還的動詞，配上「どうも」表示謝意。「貸してください」和「借りてもいいですか」都是要借走，方向相反，而買書則是另一回事。"
+        "zh_TW": "「返します」才是歸還的動詞，配上「どうも」表示謝意。「貸してください」和「借りてもいいですか」都是要借走，方向相反，而買書則是另一回事。",
+        "ja": "「返します」は物を返すときの動詞で、「どうも」でお礼を表します。「貸してください」と「借りてもいいですか」はどちらも借りようとする言葉で方向が逆になり、買うことはまた別の行為です。"
       }
     },
     {
@@ -3326,7 +3434,8 @@
       "prompt": {
         "en": "It is hot on the train and you want to open the window. What do you say to the person next to you?",
         "zh": "电车里很热，你想开窗。这时候该对旁边的人说什么？",
-        "zh_TW": "電車裡很熱，你想開窗。這時候該對旁邊的人說什麼？"
+        "zh_TW": "電車裡很熱，你想開窗。這時候該對旁邊的人說什麼？",
+        "ja": "電車の中で暑いです。窓を開けたいです。隣の人に何と言いますか。"
       },
       "options": [
         "窓を開けてもいいですか。",
@@ -3338,7 +3447,8 @@
       "explanation": {
         "en": "The window is shared, so you ask permission with 〜てもいいですか before opening it yourself. The others close it, describe it as already open, or forbid opening.",
         "zh": "窗户是大家共用的，自己动手前要用「〜てもいいですか」征求同意。其他三句分别是关窗、说窗已经开着、以及禁止开窗。",
-        "zh_TW": "窗戶是大家共用的，自己動手前要用「〜てもいいですか」徵求同意。其他三句分別是關窗、說窗已經開著、以及禁止開窗。"
+        "zh_TW": "窗戶是大家共用的，自己動手前要用「〜てもいいですか」徵求同意。其他三句分別是關窗、說窗已經開著、以及禁止開窗。",
+        "ja": "窓はみんなのものなので、自分で開ける前に「〜てもいいですか」で許可を求めます。他の三つは窓を閉めたり、すでに開いていると言ったり、開けることを禁止したりしています。"
       }
     },
     {
@@ -3354,7 +3464,8 @@
       "prompt": {
         "en": "Your friend is carrying heavy luggage and you want to help carry it. What do you say?",
         "zh": "朋友提着很重的行李，你想帮忙一起拿。这时候该说什么？",
-        "zh_TW": "朋友提著很重的行李，你想幫忙一起拿。這時候該說什麼？"
+        "zh_TW": "朋友提著很重的行李，你想幫忙一起拿。這時候該說什麼？",
+        "ja": "友達が重い荷物を持っています。一緒に持ちたいです。何と言いますか。"
       },
       "options": [
         "荷物を持ちましょうか。",
@@ -3366,7 +3477,8 @@
       "explanation": {
         "en": "〜ましょうか offers your own help. 持ってください pushes the load onto the friend, and the last two deny the weight or refuse to help.",
         "zh": "「〜ましょうか」是主动提出帮忙。「持ってください」反而是让朋友拿，最后两句一个否认行李重，一个明说不想拿。",
-        "zh_TW": "「〜ましょうか」是主動提出幫忙。「持ってください」反而是讓朋友拿，最後兩句一個否認行李重，一個明說不想拿。"
+        "zh_TW": "「〜ましょうか」是主動提出幫忙。「持ってください」反而是讓朋友拿，最後兩句一個否認行李重，一個明說不想拿。",
+        "ja": "「〜ましょうか」は自分から手伝いを申し出る言い方です。「持ってください」は逆に友達に持たせることになり、後の二つは重くないと言ったり、持ちたくないと言ったりしています。"
       }
     },
     {
@@ -3382,7 +3494,8 @@
       "prompt": {
         "en": "You have arrived late for class and are going into the classroom. What do you say?",
         "zh": "你上课迟到了，正要进教室。这时候该说什么？",
-        "zh_TW": "你上課遲到了，正要進教室。這時候該說什麼？"
+        "zh_TW": "你上課遲到了，正要進教室。這時候該說什麼？",
+        "ja": "授業に遅く来ました。教室に入ります。何と言いますか。"
       },
       "options": [
         "すみません、遅くなりました。",
@@ -3394,7 +3507,8 @@
       "explanation": {
         "en": "遅くなりました states your own lateness with an apology. The second asks whether class is over, the third announces an absence you are not taking, and the fourth says you came early.",
         "zh": "「遅くなりました」是道歉并说明自己迟到了。第二句是在问课是不是结束了，第三句是宣布请假（可你人已经来了），第四句则说来早了。",
-        "zh_TW": "「遅くなりました」是道歉並說明自己遲到了。第二句是在問課是不是結束了，第三句是宣佈請假（可你人已經來了），第四句則說來早了。"
+        "zh_TW": "「遅くなりました」是道歉並說明自己遲到了。第二句是在問課是不是結束了，第三句是宣佈請假（可你人已經來了），第四句則說來早了。",
+        "ja": "「遅くなりました」は自分の遅刻を謝る言葉です。二番目は授業が終わったか尋ねる質問で、三番目はまだ来たのに休むと言っており、四番目は早く来たと言っています。"
       }
     },
     {
@@ -3410,7 +3524,8 @@
       "prompt": {
         "en": "You want to know a friend's telephone number. What do you say?",
         "zh": "你想知道朋友的电话号码。这时候该说什么？",
-        "zh_TW": "你想知道朋友的電話號碼。這時候該說什麼？"
+        "zh_TW": "你想知道朋友的電話號碼。這時候該說什麼？",
+        "ja": "友達の電話番号が知りたいです。何と言いますか。"
       },
       "options": [
         "電話番号を教えてください。",
@@ -3422,7 +3537,8 @@
       "explanation": {
         "en": "教えてください asks the friend to tell you. 教えましょうか offers to tell them yours, and the other two report what you did or tell them not to forget.",
         "zh": "「教えてください」是请朋友告诉你。「教えましょうか」是要把自己的号码告诉对方，另外两句一个是陈述自己写了，一个是叫对方别忘。",
-        "zh_TW": "「教えてください」是請朋友告訴你。「教えましょうか」是要把自己的號碼告訴對方，另外兩句一個是陳述自己寫了，一個是叫對方別忘。"
+        "zh_TW": "「教えてください」是請朋友告訴你。「教えましょうか」是要把自己的號碼告訴對方，另外兩句一個是陳述自己寫了，一個是叫對方別忘。",
+        "ja": "「教えてください」は友達に教えてもらうよう頼む言葉です。「教えましょうか」は自分の番号を教える申し出で、他の二つは自分が書いたことを述べたり、忘れないよう頼んだりしています。"
       }
     },
     {
@@ -3438,7 +3554,8 @@
       "prompt": {
         "en": "At a shop you want to try the shoes on before buying them. What do you say?",
         "zh": "在店里买鞋之前，你想先试穿。这时候该说什么？",
-        "zh_TW": "在店裡買鞋之前，你想先試穿。這時候該說什麼？"
+        "zh_TW": "在店裡買鞋之前，你想先試穿。這時候該說什麼？",
+        "ja": "店で靴を買う前に、履きたいです。何と言いますか。"
       },
       "options": [
         "この靴を履いてもいいですか。",
@@ -3450,7 +3567,8 @@
       "explanation": {
         "en": "The shoes are still the shop's, so you ask permission with 〜てもいいですか. The second forbids it, the third only remarks on the price, and the fourth says the purchase is done.",
         "zh": "鞋子还是店里的，所以要用「〜てもいいですか」征求许可。第二句是禁止，第三句只是在说价钱，第四句则表示已经买下了。",
-        "zh_TW": "鞋子還是店裡的，所以要用「〜てもいいですか」徵求許可。第二句是禁止，第三句只是在說價錢，第四句則表示已經買下了。"
+        "zh_TW": "鞋子還是店裡的，所以要用「〜てもいいですか」徵求許可。第二句是禁止，第三句只是在說價錢，第四句則表示已經買下了。",
+        "ja": "靴はまだ店のものなので、「〜てもいいですか」で許可を求めます。二番目は禁止で、三番目は値段について述べているだけ、四番目はすでに買ったと言っています。"
       }
     },
     {
@@ -3466,7 +3584,8 @@
       "prompt": {
         "en": "You want to have lunch together with a friend. What do you say?",
         "zh": "你想和朋友一起吃午饭。这时候该说什么？",
-        "zh_TW": "你想和朋友一起吃午飯。這時候該說什麼？"
+        "zh_TW": "你想和朋友一起吃午飯。這時候該說什麼？",
+        "ja": "友達と一緒に昼ご飯を食べたいです。何と言いますか。"
       },
       "options": [
         "一緒に昼ご飯を食べませんか。",
@@ -3478,7 +3597,8 @@
       "explanation": {
         "en": "〜ませんか is the invitation form. The second asks permission to eat, the third only asks about the past, and the fourth says you will not cook.",
         "zh": "「〜ませんか」是邀请的说法。第二句是请求允许吃饭，第三句只是在问过去的事，第四句说的是不做饭。",
-        "zh_TW": "「〜ませんか」是邀請的說法。第二句是請求允許吃飯，第三句只是在問過去的事，第四句說的是不做飯。"
+        "zh_TW": "「〜ませんか」是邀請的說法。第二句是請求允許吃飯，第三句只是在問過去的事，第四句說的是不做飯。",
+        "ja": "「〜ませんか」は誘う言い方です。二番目は食べる許可を求める言葉で、三番目は過去のことを尋ねているだけ、四番目は作らないと言っています。"
       }
     },
     {
@@ -3494,7 +3614,8 @@
       "prompt": {
         "en": "Woman: When is your birthday? What do you reply?",
         "zh": "女：你的生日是什么时候？该怎么回答？",
-        "zh_TW": "女：你的生日是什麼時候？該怎麼回答？"
+        "zh_TW": "女：你的生日是什麼時候？該怎麼回答？",
+        "ja": "「誕生日はいつですか。」の正しい答えはどれですか。"
       },
       "options": [
         "来月です。",
@@ -3506,7 +3627,8 @@
       "explanation": {
         "en": "いつ asks for a time, and 来月 names one. 三時 is a clock time, which does not date a birthday; the others give a place and a number.",
         "zh": "「いつ」问的是时间，「来月」正是一个时间。「三時」是钟点，不能用来说生日；另外两个答的是地点和数量。",
-        "zh_TW": "「いつ」問的是時間，「來月」正是一個時間。「三時」是鐘點，不能用來說生日；另外兩個答的是地點和數量。"
+        "zh_TW": "「いつ」問的是時間，「來月」正是一個時間。「三時」是鐘點，不能用來說生日；另外兩個答的是地點和數量。",
+        "ja": "「いつ」は時を尋ねる言葉で、「来月」がそれに答えています。「三時」は時刻で誕生日の答えにはならず、他の二つは場所や数を答えています。"
       }
     },
     {
@@ -3522,7 +3644,8 @@
       "prompt": {
         "en": "Man: How many tickets are there? What do you reply?",
         "zh": "男：票有几张？该怎么回答？",
-        "zh_TW": "男：票有幾張？該怎麼回答？"
+        "zh_TW": "男：票有幾張？該怎麼回答？",
+        "ja": "「切符は何枚ありますか。」の正しい答えはどれですか。"
       },
       "options": [
         "三枚あります。",
@@ -3534,7 +3657,8 @@
       "explanation": {
         "en": "何枚 asks with the counter for flat things, so the reply must use 枚. 時 counts hours, 人 people, 日 days.",
         "zh": "「何枚」用的是数薄片状东西的量词，回答也必须用「枚」。「時」数钟点，「人」数人，「日」数日子。",
-        "zh_TW": "「何枚」用的是數薄片狀東西的量詞，回答也必須用「枚」。「時」數鐘點，「人」數人，「日」數日子。"
+        "zh_TW": "「何枚」用的是數薄片狀東西的量詞，回答也必須用「枚」。「時」數鐘點，「人」數人，「日」數日子。",
+        "ja": "「何枚」は薄いものを数える助数詞を使った質問なので、答えも「枚」を使います。「時」は時刻を、「人」は人を、「日」は日数を数える言葉です。"
       }
     },
     {
@@ -3550,7 +3674,8 @@
       "prompt": {
         "en": "Woman: It's cold today, isn't it? What do you reply?",
         "zh": "女：今天真冷啊。该怎么回答？",
-        "zh_TW": "女：今天真冷啊。該怎麼回答？"
+        "zh_TW": "女：今天真冷啊。該怎麼回答？",
+        "ja": "「今日は寒いですね。」の正しい答えはどれですか。"
       },
       "options": [
         "ええ、本当に寒いですね。",
@@ -3562,7 +3687,8 @@
       "explanation": {
         "en": "〜ね asks for agreement, so the natural reply agrees about the same thing, the cold. まだです answers a 'have you done it yet' question, and the other two answer an invitation and a comment on taste.",
         "zh": "「〜ね」是在寻求同意，所以自然的回答要就同一件事（冷）表示同意。「まだです」是回答「做了吗」，另外两句分别回应邀请和评论味道。",
-        "zh_TW": "「〜ね」是在尋求同意，所以自然的回答要就同一件事（冷）表示同意。「まだです」是回答「做了嗎」，另外兩句分別回應邀請和評論味道。"
+        "zh_TW": "「〜ね」是在尋求同意，所以自然的回答要就同一件事（冷）表示同意。「まだです」是回答「做了嗎」，另外兩句分別回應邀請和評論味道。",
+        "ja": "「〜ね」は同意を求める言い方なので、自然な答えは同じ寒さについて同意します。「まだです」は「もうしましたか」への答えで、他の二つは誘いや味の感想への答えです。"
       }
     },
     {
@@ -3578,7 +3704,8 @@
       "prompt": {
         "en": "Man: Do you understand the meaning of this kanji? What do you reply?",
         "zh": "男：你懂这个汉字的意思吗？该怎么回答？",
-        "zh_TW": "男：你懂這個漢字的意思嗎？該怎麼回答？"
+        "zh_TW": "男：你懂這個漢字的意思嗎？該怎麼回答？",
+        "ja": "「この漢字の意味がわかりますか。」の正しい答えはどれですか。"
       },
       "options": [
         "いいえ、わかりません。",
@@ -3590,7 +3717,8 @@
       "explanation": {
         "en": "The question uses わかりますか, so the reply repeats that verb in the negative. The others answer with different verbs that were never asked about.",
         "zh": "问句用的是「わかりますか」，回答就用同一个动词的否定形。其他三句用的都是没被问到的动词。",
-        "zh_TW": "問句用的是「わかりますか」，回答就用同一個動詞的否定形。其他三句用的都是沒被問到的動詞。"
+        "zh_TW": "問句用的是「わかりますか」，回答就用同一個動詞的否定形。其他三句用的都是沒被問到的動詞。",
+        "ja": "質問は「わかりますか」を使っているので、答えも同じ動詞の否定形を使います。他の三つは質問されていない別の動詞で答えています。"
       }
     },
     {
@@ -3606,7 +3734,8 @@
       "prompt": {
         "en": "Woman: What time is it now? What do you reply?",
         "zh": "女：现在几点？该怎么回答？",
-        "zh_TW": "女：現在幾點？該怎麼回答？"
+        "zh_TW": "女：現在幾點？該怎麼回答？",
+        "ja": "「今、何時ですか。」の正しい答えはどれですか。"
       },
       "options": [
         "十時半です。",
@@ -3618,7 +3747,8 @@
       "explanation": {
         "en": "何時 asks for a clock time, so the answer must be 〜時. The other three are a date, a number of people and a count of long thin objects.",
         "zh": "「何時」问的是钟点，所以要用「〜時」回答。其他三个分别是日期、人数和细长物品的数量。",
-        "zh_TW": "「何時」問的是鐘點，所以要用「〜時」回答。其他三個分別是日期、人數和細長物品的數量。"
+        "zh_TW": "「何時」問的是鐘點，所以要用「〜時」回答。其他三個分別是日期、人數和細長物品的數量。",
+        "ja": "「何時」は時刻を尋ねる言葉なので、答えは「〜時」になります。他の三つは日付、人数、細長いものの数を答えています。"
       }
     },
     {
@@ -3634,7 +3764,8 @@
       "prompt": {
         "en": "Man: Have you had lunch yet? What do you reply?",
         "zh": "男：午饭已经吃了吗？该怎么回答？",
-        "zh_TW": "男：午飯已經吃了嗎？該怎麼回答？"
+        "zh_TW": "男：午飯已經吃了嗎？該怎麼回答？",
+        "ja": "「昼ご飯はもう食べましたか。」の正しい答えはどれですか。"
       },
       "options": [
         "いいえ、まだです。",
@@ -3646,7 +3777,8 @@
       "explanation": {
         "en": "もう〜ましたか is answered either with はい、食べました or with いいえ、まだです. はい followed by a negative contradicts itself.",
         "zh": "「もう〜ましたか」的回答不是「はい、食べました」就是「いいえ、まだです」。用「はい」接否定形，前后自相矛盾。",
-        "zh_TW": "「もう〜ましたか」的回答不是「はい、食べました」就是「いいえ、まだです」。用「はい」接否定形，前後自相矛盾。"
+        "zh_TW": "「もう〜ましたか」的回答不是「はい、食べました」就是「いいえ、まだです」。用「はい」接否定形，前後自相矛盾。",
+        "ja": "「もう〜ましたか」には「はい、食べました」か「いいえ、まだです」という決まった答え方があります。「はい」の後に否定を続けるのは矛盾しています。"
       }
     },
     {
@@ -3662,7 +3794,8 @@
       "prompt": {
         "en": "Woman: Won't you go to the park with me on Sunday? What do you reply?",
         "zh": "女：星期天要不要一起去公园？该怎么回答？",
-        "zh_TW": "女：星期天要不要一起去公園？該怎麼回答？"
+        "zh_TW": "女：星期天要不要一起去公園？該怎麼回答？",
+        "ja": "「日曜日、一緒に公園へ行きませんか。」の正しい答えはどれですか。"
       },
       "options": [
         "ええ、行きましょう。",
@@ -3674,7 +3807,8 @@
       "explanation": {
         "en": "〜ませんか is an invitation about the future, so 〜ましょう accepts it. The two past forms answer a question about what already happened, and the last only names a place.",
         "zh": "「〜ませんか」是对将来的邀请，所以用「〜ましょう」来接受。两个过去形回答的是已经发生的事，最后一句只是说了个地点。",
-        "zh_TW": "「〜ませんか」是對將來的邀請，所以用「〜ましょう」來接受。兩個過去形回答的是已經發生的事，最後一句只是說了個地點。"
+        "zh_TW": "「〜ませんか」是對將來的邀請，所以用「〜ましょう」來接受。兩個過去形回答的是已經發生的事，最後一句只是說了個地點。",
+        "ja": "「〜ませんか」は未来のことを誘う言い方なので、「〜ましょう」で受けます。過去形の二つはすでに起きたことについて答えることになり、最後の一つは場所を言っているだけです。"
       }
     },
     {
@@ -3690,7 +3824,8 @@
       "prompt": {
         "en": "Man: Is that luggage heavy? What do you reply?",
         "zh": "男：那件行李重吗？该怎么回答？",
-        "zh_TW": "男：那件行李重嗎？該怎麼回答？"
+        "zh_TW": "男：那件行李重嗎？該怎麼回答？",
+        "ja": "「その荷物、重いですか。」の正しい答えはどれですか。"
       },
       "options": [
         "いいえ、軽いです。",
@@ -3702,7 +3837,8 @@
       "explanation": {
         "en": "重い is answered by its opposite 軽い. Cheap, long and far are adjectives about other properties, none of which answers a question about weight.",
         "zh": "「重い」的反义词是「軽い」，用它来否定最自然。便宜、长、远说的都是别的性质，都答不上重量这个问题。",
-        "zh_TW": "「重い」的反義詞是「軽い」，用它來否定最自然。便宜、長、遠說的都是別的性質，都答不上重量這個問題。"
+        "zh_TW": "「重い」的反義詞是「軽い」，用它來否定最自然。便宜、長、遠說的都是別的性質，都答不上重量這個問題。",
+        "ja": "「重い」の反対は「軽い」で、それを使って否定するのが最も自然です。安い、長い、遠いは別の性質を表す言葉で、重さの質問には答えられません。"
       }
     },
     {
@@ -3718,7 +3854,8 @@
       "prompt": {
         "en": "Woman: Shall I turn off the light? What do you reply?",
         "zh": "女：我把灯关掉吧？该怎么回答？",
-        "zh_TW": "女：我把燈關掉吧？該怎麼回答？"
+        "zh_TW": "女：我把燈關掉吧？該怎麼回答？",
+        "ja": "「電気を消しましょうか。」の正しい答えはどれですか。"
       },
       "options": [
         "はい、消してください。",
@@ -3730,7 +3867,8 @@
       "explanation": {
         "en": "〜ましょうか offers to do something, so the reply either accepts with 〜てください or declines. The other three talk about buying, liking or the price of electricity, none of which answers the offer.",
         "zh": "「〜ましょうか」是提出替对方做某事，回答要么用「〜てください」接受，要么婉拒。其他三句说的是买、喜欢和电费贵，都没有回应这个提议。",
-        "zh_TW": "「〜ましょうか」是提出替對方做某事，回答要麼用「〜てください」接受，要麼婉拒。其他三句說的是買、喜歡和電費貴，都沒有回應這個提議。"
+        "zh_TW": "「〜ましょうか」是提出替對方做某事，回答要麼用「〜てください」接受，要麼婉拒。其他三句說的是買、喜歡和電費貴，都沒有回應這個提議。",
+        "ja": "「〜ましょうか」は何かをする申し出なので、「〜てください」で受けるか断ります。他の三つは買ったこと、電気が好きなこと、電気代が高いことを述べていて、申し出には答えていません。"
       }
     },
     {
@@ -3746,7 +3884,8 @@
       "prompt": {
         "en": "Man: Where do you work? What do you reply?",
         "zh": "男：你在哪里工作？该怎么回答？",
-        "zh_TW": "男：你在哪裡工作？該怎麼回答？"
+        "zh_TW": "男：你在哪裡工作？該怎麼回答？",
+        "ja": "「どこで働いていますか。」の正しい答えはどれですか。"
       },
       "options": [
         "銀行で働いています。",
@@ -3758,7 +3897,8 @@
       "explanation": {
         "en": "どこで asks for the place of the action, which で marks. The others give a past trip, a starting time and a wish, so none answers 'where'.",
         "zh": "「どこで」问的是动作发生的场所，由「で」标示。其他三句说的是去过哪里、几点开始、想和谁一起工作，都没有回答「在哪里」。",
-        "zh_TW": "「どこで」問的是動作發生的場所，由「で」標示。其他三句說的是去過哪裡、幾點開始、想和誰一起工作，都沒有回答「在哪裡」。"
+        "zh_TW": "「どこで」問的是動作發生的場所，由「で」標示。其他三句說的是去過哪裡、幾點開始、想和誰一起工作，都沒有回答「在哪裡」。",
+        "ja": "「どこで」は動作が行われる場所を尋ね、「で」で表します。他の三つは過去に行った場所、始まる時刻、一緒に働きたい人について答えていて、場所の答えになりません。"
       }
     },
     {
@@ -3774,7 +3914,8 @@
       "prompt": {
         "en": "Woman: Who is the person in this photo? What do you reply?",
         "zh": "女：这张照片上的人是谁？该怎么回答？",
-        "zh_TW": "女：這張照片上的人是誰？該怎麼回答？"
+        "zh_TW": "女：這張照片上的人是誰？該怎麼回答？",
+        "ja": "「この写真の人はどなたですか。」の正しい答えはどれですか。"
       },
       "options": [
         "私の姉です。",
@@ -3786,7 +3927,8 @@
       "explanation": {
         "en": "どなた is the polite word for 誰, so the answer must name a person. The others name a place, a time and a preference.",
         "zh": "「どなた」是「誰」的礼貌说法，所以回答必须说出是哪个人。其他三句说的是地点、时间和喜好。",
-        "zh_TW": "「どなた」是「誰」的禮貌說法，所以回答必須說出是哪個人。其他三句說的是地點、時間和喜好。"
+        "zh_TW": "「どなた」是「誰」的禮貌說法，所以回答必須說出是哪個人。其他三句說的是地點、時間和喜好。",
+        "ja": "「どなた」は「誰」の丁寧な言い方なので、答えは人を答える必要があります。他の三つは場所、時、好みについて答えています。"
       }
     },
     {
@@ -3802,7 +3944,8 @@
       "prompt": {
         "en": "Man: How long do you study every day? What do you reply?",
         "zh": "男：你每天学习多长时间？该怎么回答？",
-        "zh_TW": "男：你每天學習多長時間？該怎麼回答？"
+        "zh_TW": "男：你每天學習多長時間？該怎麼回答？",
+        "ja": "「毎日どのぐらい勉強しますか。」の正しい答えはどれですか。"
       },
       "options": [
         "一時間ぐらいです。",
@@ -3814,7 +3957,8 @@
       "explanation": {
         "en": "どのぐらい asks about length of time here, so the reply uses 時間 with ぐらい. 一つ counts objects and 一人 people; 一日 names a day rather than a daily amount.",
         "zh": "这里的「どのぐらい」问的是时间长短，所以要用「時間」加「ぐらい」回答。「一つ」数东西，「一人」数人；「一日」说的是某一天，而不是每天的时长。",
-        "zh_TW": "這裡的「どのぐらい」問的是時間長短，所以要用「時間」加「ぐらい」回答。「一つ」數東西，「一人」數人；「一日」說的是某一天，而不是每天的時長。"
+        "zh_TW": "這裡的「どのぐらい」問的是時間長短，所以要用「時間」加「ぐらい」回答。「一つ」數東西，「一人」數人；「一日」說的是某一天，而不是每天的時長。",
+        "ja": "ここでの「どのぐらい」は時間の長さを尋ねているので、「時間」と「ぐらい」を使って答えます。「一つ」は物、「一人」は人、「一日」はある日を数える言葉です。"
       }
     }
   ]

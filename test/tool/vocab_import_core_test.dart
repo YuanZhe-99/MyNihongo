@@ -343,4 +343,70 @@ void main() {
       'vocab:jm3',
     ]);
   });
+
+  group('applyJapaneseOverlay', () {
+    Map<String, Object?> entry(String id, {bool withJa = false}) => {
+      'id': id,
+      'meanings': {
+        'en': ['teacher'],
+        'zh': ['老师'],
+        'zh_TW': ['老師'],
+        if (withJa) 'ja': ['古い定義'],
+      },
+      'examples': <Object?>[],
+      if (withJa) 'jaReading': ['ふるいていぎ'],
+    };
+
+    test('writes the definitions after zh_TW and the readings last', () {
+      final entries = [entry('vocab:jm1')];
+      final count = applyJapaneseOverlay(entries, {
+        'vocab:jm1': {
+          'ja': ['学校で教える人'],
+          'jaReading': ['がっこうでおしえるひと'],
+          'reviewed': false,
+        },
+      });
+      expect(count, 1);
+      final meanings = entries.single['meanings'] as Map;
+      expect(meanings.keys, ['en', 'zh', 'zh_TW', 'ja']);
+      expect(meanings['ja'], ['学校で教える人']);
+      expect(entries.single.keys.last, 'jaReading');
+      expect(entries.single['jaReading'], ['がっこうでおしえるひと']);
+    });
+
+    test('a row taken out of the overlay leaves the catalog too', () {
+      final entries = [entry('vocab:jm1', withJa: true)];
+      expect(applyJapaneseOverlay(entries, const {}), 0);
+      expect((entries.single['meanings'] as Map).containsKey('ja'), isFalse);
+      expect(entries.single.containsKey('jaReading'), isFalse);
+    });
+
+    test('the same overlay applied twice gives the same entry', () {
+      final overlay = {
+        'vocab:jm1': {
+          'ja': ['学校で教える人'],
+          'jaReading': ['がっこうでおしえるひと'],
+        },
+      };
+      final once = [entry('vocab:jm1')];
+      applyJapaneseOverlay(once, overlay);
+      final twice = [entry('vocab:jm1')];
+      applyJapaneseOverlay(twice, overlay);
+      applyJapaneseOverlay(twice, overlay);
+      expect(twice.single.toString(), once.single.toString());
+      expect(twice.single.keys.toList(), once.single.keys.toList());
+    });
+
+    test('readings of the wrong length are dropped, not misaligned', () {
+      final entries = [entry('vocab:jm1')];
+      applyJapaneseOverlay(entries, {
+        'vocab:jm1': {
+          'ja': ['一つ目', '二つ目'],
+          'jaReading': ['ひとつめ'],
+        },
+      });
+      expect((entries.single['meanings'] as Map)['ja'], ['一つ目', '二つ目']);
+      expect(entries.single.containsKey('jaReading'), isFalse);
+    });
+  });
 }

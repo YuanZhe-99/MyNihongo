@@ -130,7 +130,7 @@ class QuestionGenerator {
   }) {
     final point = catalog.grammarById(itemId);
     if (point == null) return null;
-    final translation = example.translations.resolveJoined(locale);
+    final translation = _materialTranslation(example, locale);
 
     if (mode == QuizMode.grammarPattern) {
       return _pattern(point, example, translation);
@@ -326,7 +326,7 @@ class QuestionGenerator {
   QuizQuestion? _grammar(GrammarPoint point, QuizMode mode, Locale locale) {
     if (point.examples.isEmpty) return null;
     final example = point.examples[_random.nextInt(point.examples.length)];
-    final translation = example.translations.resolveJoined(locale);
+    final translation = _materialTranslation(example, locale);
 
     if (mode == QuizMode.grammarPattern) {
       return _pattern(point, example, translation);
@@ -641,13 +641,38 @@ class QuestionGenerator {
           token.start,
           token.end,
         ),
-        promptSubtitle: example.translations.resolveJoined(locale),
+        promptSubtitle: _subtitle(example, locale),
         correct: token.surface,
         wrong: [for (final other in wrong) other.headword],
       );
       if (question != null) return question;
     }
     return null;
+  }
+
+  /// Purpose: Pick the translation a question may use as material.
+  /// Inputs: The `example` and the reader's `locale`.
+  /// Returns: `String`; empty when there is none to use.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. For a Japanese reader
+  /// only a Japanese entry counts, and catalog examples have none, so the
+  /// modes built on a translation return null — the page lists them as
+  /// unavailable in Japanese (`translationQuizModes`) rather than showing an
+  /// English line under a Japanese UI. Everyone else gets [LocalizedStrings.
+  /// resolveJoined] as before.
+  String _materialTranslation(ContentExample example, Locale locale) =>
+      locale.languageCode == 'ja'
+      ? example.translations.resolveTranslationJoined(locale)
+      : example.translations.resolveJoined(locale);
+
+  /// Purpose: Pick the line shown under a cloze sentence.
+  /// Inputs: The `example` and the reader's `locale`.
+  /// Returns: `String?`; null when a Japanese reader has nothing to be shown.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only.
+  String? _subtitle(ContentExample example, Locale locale) {
+    final text = example.translations.resolveTranslationJoined(locale);
+    return text.isEmpty ? null : text;
   }
 
   /// Purpose: Ask what a whole sentence means, or which sentence means this.

@@ -7,7 +7,7 @@
 | 声明 | 类型 | Tier | Purpose |
 |---|---|---|---|
 | `AppSettingsNotifier.new` | 构造函数 | B | 创建 notifier 并开始加载持久化的设置。 |
-| `AppSettingsNotifier._loadPersisted` | 方法 | B | 从磁盘加载持久化的主题模式和语言并替换状态。 |
+| `AppSettingsNotifier._loadPersisted` | 方法 | B | 从磁盘加载持久化的主题模式和语言并替换状态；存储的 locale 标签用 `localeFromTag` 解析。 |
 | `AppSettingsNotifier.setThemeMode` | 方法 | B | 更新并持久化主题模式；`system` 存为缺失的键。 |
 | `AppSettingsNotifier.setLocale` | 方法 | B | 以 `language` 或 `language_COUNTRY` 更新并持久化语言；null 跟随系统。承载 `zh_TW` 的正是国家代码。 |
 | `AppSettingsNotifier.setAiAssistEnabled` | 方法 | B | 打开或关闭端侧 AI；应用到 `AiAssistService` 并持久化，关闭存为缺失键。 |

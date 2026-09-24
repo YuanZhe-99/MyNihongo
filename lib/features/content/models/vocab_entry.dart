@@ -24,6 +24,13 @@ class VocabEntry {
   /// Glosses by language.
   final LocalizedStrings meanings;
 
+  /// Hiragana readings of the Japanese definitions, one per sense.
+  ///
+  /// Parallel to `meanings['ja']`, which `LocalizedStrings` cannot carry
+  /// readings for. Empty when there is no Japanese definition; a sense with no
+  /// reading here is drawn without furigana.
+  final List<String> jaReadings;
+
   /// Example sentences.
   final List<ContentExample> examples;
 
@@ -52,6 +59,7 @@ class VocabEntry {
     this.romaji,
     this.partsOfSpeech = const [],
     this.meanings = LocalizedStrings.empty,
+    this.jaReadings = const [],
     this.examples = const [],
     this.aliases = const [],
     this.common = false,
@@ -69,7 +77,8 @@ class VocabEntry {
   /// Returns: `VocabEntry?` — null when the id, level, headword, or reading
   /// is missing, because content without those cannot be shown or tracked.
   /// Side effects: None.
-  /// Notes: `kanji` may be absent; the reading is then the headword.
+  /// Notes: `kanji` may be absent; the reading is then the headword. A
+  /// `jaReading` list travels beside `meanings.ja`, one reading per sense.
   static VocabEntry? fromJson(Object? json) {
     if (json is! Map) return null;
     final id = json['id'];
@@ -87,6 +96,9 @@ class VocabEntry {
       romaji: json['romaji'] is String ? json['romaji'] as String : null,
       partsOfSpeech: pos is List ? pos.whereType<String>().toList() : const [],
       meanings: LocalizedStrings.fromJson(json['meanings']),
+      jaReadings: json['jaReading'] is List
+          ? (json['jaReading'] as List).whereType<String>().toList()
+          : const [],
       examples: ContentExample.listFromJson(json['examples']),
       aliases: json['aliases'] is List
           ? (json['aliases'] as List).whereType<String>().toList()

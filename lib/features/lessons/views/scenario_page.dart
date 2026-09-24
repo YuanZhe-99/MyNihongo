@@ -614,12 +614,15 @@ class _ScenarioPageState extends ConsumerState<ScenarioPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   FuriganaText(choice.ja, reading: choice.reading),
-                  Text(
-                    choice.translations.resolveJoined(locale),
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      color: theme.colorScheme.onSurfaceVariant,
+                  if (choice.translations
+                        .resolveTranslation(locale)
+                        .isNotEmpty)
+                    Text(
+                      choice.translations.resolveTranslationJoined(locale),
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
+                      ),
                     ),
-                  ),
                 ],
               ),
             ),
@@ -657,12 +660,15 @@ class _ScenarioPageState extends ConsumerState<ScenarioPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 FuriganaText(line.ja, reading: line.reading),
-                Text(
-                  line.translations.resolveJoined(locale),
-                  style: theme.textTheme.bodySmall?.copyWith(
-                    color: theme.colorScheme.onSurfaceVariant,
+                if (line.translations
+                      .resolveTranslation(locale)
+                      .isNotEmpty)
+                  Text(
+                    line.translations.resolveTranslationJoined(locale),
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
                   ),
-                ),
               ],
             ),
           ),

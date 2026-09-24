@@ -18,7 +18,7 @@ chips, badges and example rendering with the grammar page through `reference_wid
 | `_VocabPageState.build` | method (widget build) | B | Build the vocabulary browser around the catalog provider's three states. |
 | [`_VocabPageState._buildList`](#buildlist) | method (widget helper) | A | Build the filtered, adaptive-column list with its header as a virtualized `ListView.builder`. |
 | `_VocabPageState._buildHeader` | method (widget helper) | B | Build the search field, level chips, and result count. |
-| `_VocabPageState._buildTile` | method (widget helper) | B | Build one vocabulary tile: headword, reading/romaji line, one meaning line, level badge. |
+| `_VocabPageState._buildTile` | method (widget helper) | B | Build one vocabulary tile: headword, reading/romaji line, one meaning line (a Japanese definition drawn with furigana when `jaReadings` has one reading per sense, joined with the same `; ` separator), level badge. |
 | `_VocabPageState._showDetail` | method (widget helper) | B | Show a word's full entry in a modal bottom sheet. |
 
 ## Documentation

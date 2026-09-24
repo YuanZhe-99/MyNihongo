@@ -5,8 +5,7 @@
 /// wording and the timing be tested exactly, on a host with no notifications.
 library;
 
-import 'dart:ui';
-
+import '../../../app/locale_resolution.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../lessons/models/lesson_path.dart';
 import '../../lessons/services/lesson_rules.dart';
@@ -58,9 +57,11 @@ List<ScheduledReminder> planReminders({
     final body = i == 0 && due > 0
         ? l10n.reminderDueBody(due)
         : next != null
-        ? l10n.reminderUnitBody(next.title.resolveJoined(l10n.localeName.startsWith('zh')
-              ? const Locale('zh')
-              : const Locale('en')))
+        // The unit title in the UI language, by the same lookup order the
+        // content uses everywhere else: zh_TW, zh and ja keep their own text.
+        ? l10n.reminderUnitBody(
+            next.title.resolveJoined(localeFromTag(l10n.localeName)),
+          )
         : l10n.reminderPlainBody;
     out.add(
       ScheduledReminder(

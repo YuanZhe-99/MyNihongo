@@ -74,10 +74,12 @@ sync rule, or a feature must update, in the same commit:
 - every affected concept doc (`architecture.md`, `data-formats.md`, `sync.md`,
   `backup-restore.md`, `features/*.md`, `adaptive-layout.md`, `platform-notes.md`, `ci-cd.md`).
 
-Every language directory under `doc/` (currently `en-us` and `zh-cn`) mirrors the others exactly —
+Every documentation language directory under `doc/` (currently `en-us` and `zh-cn`) mirrors the
+others exactly —
 same files, headings, tables, and examples. `doc/en-us/` is authoritative: any documentation change
 updates **all** language directories in the same commit, translated per `translation-guide.md`.
-Adding a new language means creating a complete mirror of `doc/en-us/` in the same change. New
+Adding a new *documentation* language means creating a complete mirror of `doc/en-us/` in the
+same change; a new UI language (`zh_TW`, `ja`) adds an ARB file and content keys, not a doc tree. New
 terminology goes into the glossary in `translation-guide.md`: cross-cutting terms into Section 5.1
 in **every** sibling repo (MyAnime, MyDay, MyDevice, MyApps-DATA, MyNihongo), app-specific terms
 into this repo's Section 5.2 only.
@@ -124,8 +126,8 @@ Other conventions:
   inside a widget file is a bug; add a named constant with a doc comment saying where the number
   came from, and call a named predicate. Grep the whole tree before claiming none remain:
   `grep -rnE "maxWidth *[<>]=? *[0-9]|size\.width *[<>]=? *[0-9]" lib/`.
-- **Content is data, in both languages.** Every bundled vocabulary entry and grammar point carries
-  `en` and `zh` text, a JLPT level, and an id with its kind prefix (`vocab:`, `grammar:`); kana use
+- **Content is data, in every language.** Every bundled vocabulary entry and grammar point carries
+  `en` and `zh` text (and `ja`, from the Japanese streams), a JLPT level, and an id with its kind prefix (`vocab:`, `grammar:`); kana use
   `kana:<hiragana>`. `test/content_catalog_test.dart` enforces this.
 - **Traditional Chinese in the content is generated, never hand-edited.** After changing any `zh`
   string in `assets/content/`, run `dart run tool/convert_zh_tw.dart`; it writes the `zh_TW` string
@@ -134,8 +136,8 @@ Other conventions:
   Chinese prose belongs in `tool/content/opencc/preserve.txt`, or the conversion will change it. Check Japanese examples for
   correctness before committing them; a wrong example teaches the wrong thing.
 - **User-facing strings go through the ARB files** (`lib/l10n/app_en.arb` is the template;
-  `app_zh.arb` and `app_zh_TW.arb` mirror it key for key, and `test/l10n_arb_test.dart` fails when
-  one of them does not). The two Chinese catalogs are **both hand-maintained**: Taiwan usage differs
+  `app_zh.arb`, `app_zh_TW.arb` and `app_ja.arb` mirror it key for key, and
+  `test/l10n_arb_test.dart` fails when one of them does not). The two Chinese catalogs are **both hand-maintained**: Taiwan usage differs
   by vocabulary and not only by characters — 設定 not 設置, 單字 not 單詞, 文法 not 語法. JLPT level
   labels (`N5`…`N1`) and Japanese text itself are the exceptions.
 
@@ -228,8 +230,9 @@ commands. `doc/en-us/platform-notes.md` describes the outputs.
 
 ## Content-authoring subagents
 
-`.claude/agents/` holds five definitions for the content pipeline — one per
-draft kind in `doc/en-us/features/content-authoring.md`:
+`.claude/agents/` holds eight definitions for the content pipeline — one per
+draft kind in `doc/en-us/features/content-authoring.md`, and one per model tier within the
+Japanese stream:
 
 | Agent | Stream | Model | Effort |
 |---|---|---|---|
@@ -238,11 +241,16 @@ draft kind in `doc/en-us/features/content-authoring.md`:
 | `content-grammar` | grammar points | `opus` | `low` |
 | `content-units` | a level's lesson units | `opus` | `low` |
 | `content-drills` | JLPT drill questions | `opus` | `low` |
+| `content-gloss-ja` | Japanese definitions (`gloss-ja`) | `sonnet` | `low` |
+| `content-grammar-ja` | Japanese grammar meanings and explanations (`ja --kind grammar`) | `opus` | `low` |
+| `content-ja` | Japanese function-word, unit and drill text (`ja` other targets) | `sonnet` | `low` |
 
 The split is by **what the writing has to be good at**, not by how much of it
 there is. A gloss and an example sentence are mechanical and enormous in volume,
 so they take the cheaper model; an explanation and a syllabus division are
-judgement, small in volume, and a bad one is not caught by any gate. `effort` is
+judgement, small in volume, and a bad one is not caught by any gate. **One recorded exception:**
+the Japanese definitions are re-authored prose with no source, yet run on `sonnet` by the user's
+decision, for volume; `PLAN.md`'s decisions log records it and the mitigation. `effort` is
 `low` throughout because the gate — not the model's own deliberation — is what
 decides whether a draft is acceptable, and a rejected batch costs one more
 round trip rather than a wrong file.

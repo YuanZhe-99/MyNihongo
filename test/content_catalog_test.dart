@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'dart:ui';
 
 import 'package:flutter/services.dart';
@@ -188,6 +189,162 @@ void main() {
     }
   });
 
+  test('the Japanese overlay matches what the catalog ships', () async {
+    // The ja twin of the test above, and for the same reason: a batch merged
+    // into vocab_ja.json whose `--overlay-only` run was forgotten would
+    // otherwise pass every test until the whole stream was finished.
+    final file = File('assets/content/vocab_ja.json');
+    final overlay = file.existsSync()
+        ? (jsonDecode(file.readAsStringSync()) as Map)['entries'] as Map
+        : const {};
+    final ids = <String>{};
+    for (final row in overlay.entries) {
+      final id = row.key.toString();
+      ids.add(id);
+      final entry = catalog.vocabById(id);
+      expect(
+        entry,
+        isNotNull,
+        reason: 'ja overlay id $id is not in the catalog',
+      );
+      final value = row.value as Map;
+      expect(
+        entry!.meanings.values['ja'],
+        value['ja'],
+        reason: 'ja overlay and catalog disagree on $id',
+      );
+      expect(
+        entry.jaReadings,
+        value['jaReading'],
+        reason: 'ja overlay and catalog disagree on the readings of $id',
+      );
+    }
+    // And nothing reaches the catalog except through the overlay.
+    for (final entry in catalog.vocab) {
+      if (entry.meanings.values.containsKey('ja')) {
+        expect(ids, contains(entry.id), reason: '${entry.id} has a stray ja');
+      }
+    }
+  });
+
+  // Written now, enforced from the commit that ships app_ja.arb. Content lands
+  // before the UI language that shows it, so until then these are skipped —
+  // and the moment the ARB exists, every one of them has to hold, which is
+  // what stops a Japanese UI shipping over English glosses.
+  final shipsJapanese = File('lib/l10n/app_ja.arb').existsSync();
+  const noJapaneseUiYet = 'app_ja.arb does not exist yet';
+
+  test(
+    'with a Japanese UI, every word has a Japanese definition',
+    () {
+      final missing = [
+        for (final entry in catalog.vocab)
+          if (!entry.meanings.values.containsKey('ja')) entry.id,
+      ];
+      expect(
+        missing,
+        isEmpty,
+        reason:
+            '${missing.length} words, e.g. '
+            '${missing.take(10).join(', ')}',
+      );
+    },
+    skip: shipsJapanese ? false : noJapaneseUiYet,
+  );
+
+  test(
+    'with a Japanese UI, every grammar point has a Japanese meaning and explanation',
+    () {
+      for (final point in catalog.grammar) {
+        expect(point.meaning.values.keys, contains('ja'), reason: point.id);
+        expect(point.explanation.values.keys, contains('ja'), reason: point.id);
+        expect(point.meaningJaReading, isNotNull, reason: point.id);
+      }
+    },
+    skip: shipsJapanese ? false : noJapaneseUiYet,
+  );
+
+  test(
+    'with a Japanese UI, every unit and every drill question has Japanese text',
+    () {
+      final missing = <String>[];
+      for (final file in Directory('assets/content/lessons').listSync()) {
+        if (file is! File) continue;
+        final json = jsonDecode(file.readAsStringSync()) as Map;
+        for (final unit in json['units'] as List) {
+          if (!((unit as Map)['title'] as Map).containsKey('ja')) {
+            missing.add('${unit['id']}');
+          }
+          for (final q in (unit['questions'] as List? ?? const [])) {
+            if (!((q as Map)['prompt'] as Map).containsKey('ja')) {
+              missing.add('${q['id']}');
+            }
+          }
+        }
+      }
+      for (final file in Directory('assets/content/drills').listSync()) {
+        if (file is! File || file.path.endsWith('structure.json')) continue;
+        final json = jsonDecode(file.readAsStringSync()) as Map;
+        for (final q in json['questions'] as List) {
+          final prompt = (q as Map)['prompt'];
+          final explanation = q['explanation'];
+          if (prompt is Map && !prompt.containsKey('ja')) {
+            missing.add('${q['id']}');
+          }
+          if (explanation is Map && !explanation.containsKey('ja')) {
+            missing.add('${q['id']}');
+          }
+        }
+      }
+      expect(missing, isEmpty, reason: missing.take(10).join(', '));
+    },
+    skip: shipsJapanese ? false : noJapaneseUiYet,
+  );
+
+  test('a Japanese reader is never shown a translation of Japanese', () {
+    // resolveTranslation's rule: `ja` or nothing, never the last-resort first
+    // value `resolve` falls back to — which for a generated example filed
+    // under `zh` would be Chinese.
+    const ja = Locale('ja');
+    const strings = LocalizedStrings({
+      'zh': ['中文'],
+      'en': ['English'],
+    });
+    expect(strings.resolveTranslation(ja), isEmpty);
+    expect(strings.resolve(ja), ['English']);
+    expect(
+      const LocalizedStrings({
+        'zh': ['中文'],
+      }).resolveTranslation(ja),
+      isEmpty,
+    );
+    expect(
+      const LocalizedStrings({
+        'ja': ['やさしい言い方'],
+      }).resolveTranslation(ja),
+      ['やさしい言い方'],
+    );
+    expect(strings.resolveTranslation(const Locale('en')), ['English']);
+    expect(LocalizedStrings.lookupOrder(ja), ['ja', 'en']);
+  });
+
+  test('no drill passage carries a top-level ja', () {
+    // DrillPassage.fromJson reads every key but id, type and lines as a
+    // translation, so a `ja` there would be shown to a Japanese reader as the
+    // translation of a Japanese passage.
+    for (final file in Directory('assets/content/drills').listSync()) {
+      if (file is! File || file.path.endsWith('structure.json')) continue;
+      final json = jsonDecode(file.readAsStringSync()) as Map;
+      for (final passage in (json['passages'] as List? ?? const [])) {
+        expect(
+          (passage as Map).containsKey('ja'),
+          isFalse,
+          reason: '${passage['id']} in ${file.path}',
+        );
+      }
+    }
+  });
+
   test('every grammar point has both languages and examples', () {
     const en = Locale('en');
     const zh = Locale('zh');
@@ -255,7 +412,10 @@ void main() {
     final point = catalog.grammarById('grammar:desu')!;
 
     expect(point.explanation.resolve(zhTw), point.explanation.values['zh_TW']);
-    expect(point.explanation.resolve(zhTw), isNot(point.explanation.resolve(zh)));
+    expect(
+      point.explanation.resolve(zhTw),
+      isNot(point.explanation.resolve(zh)),
+    );
     expect(point.explanation.resolve(zh), point.explanation.values['zh']);
   });
 

@@ -39,7 +39,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/app/app.dart` | [app/app.md](app/app.md) | 3 | 0 |
 | `lib/app/data_modules.dart` | [app/data_modules.md](app/data_modules.md) | 11 | 1 |
 | `lib/app/flavor.dart` | [app/flavor.md](app/flavor.md) | 1 | 0 |
-| `lib/app/locale_resolution.dart` | [app/locale_resolution.md](app/locale_resolution.md) | 4 | 2 |
+| `lib/app/locale_resolution.dart` | [app/locale_resolution.md](app/locale_resolution.md) | 5 | 3 |
 | `lib/app/router.dart` | [app/router.md](app/router.md) | 1 | 0 |
 | `lib/app/theme.dart` | [app/theme.md](app/theme.md) | 3 | 0 |
 
@@ -58,7 +58,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/content/models/content_catalog.dart` | [features/content/models/content_catalog.md](features/content/models/content_catalog.md) | 7 | 0 |
 | `lib/features/content/models/grammar_point.dart` | [features/content/models/grammar_point.md](features/content/models/grammar_point.md) | 3 | 0 |
 | `lib/features/content/models/jlpt_level.dart` | [features/content/models/jlpt_level.md](features/content/models/jlpt_level.md) | 2 | 0 |
-| `lib/features/content/models/localized_strings.dart` | [features/content/models/localized_strings.md](features/content/models/localized_strings.md) | 10 | 2 |
+| `lib/features/content/models/localized_strings.dart` | [features/content/models/localized_strings.md](features/content/models/localized_strings.md) | 13 | 3 |
 | `lib/features/content/models/parts_of_speech.dart` | [features/content/models/parts_of_speech.md](features/content/models/parts_of_speech.md) | 1 | 0 |
 | `lib/features/content/models/vocab_entry.dart` | [features/content/models/vocab_entry.md](features/content/models/vocab_entry.md) | 4 | 0 |
 | `lib/features/content/services/content_repository.dart` | [features/content/services/content_repository.md](features/content/services/content_repository.md) | 5 | 0 |
@@ -86,10 +86,10 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/features/settings/views/license_page.dart` | [features/settings/views/license_page.md](features/settings/views/license_page.md) | 2 | 0 |
 | `lib/features/settings/views/privacy_policy_page.dart` | [features/settings/views/privacy_policy_page.md](features/settings/views/privacy_policy_page.md) | 3 | 0 |
 | `lib/features/quiz/models/quiz_config.dart` | [features/quiz/models/quiz_config.md](features/quiz/models/quiz_config.md) | 9 | 1 |
-| `lib/features/quiz/models/quiz_question.dart` | [features/quiz/models/quiz_question.md](features/quiz/models/quiz_question.md) | 9 | 3 |
+| `lib/features/quiz/models/quiz_question.dart` | [features/quiz/models/quiz_question.md](features/quiz/models/quiz_question.md) | 11 | 4 |
 | `lib/features/quiz/services/answer_checker.dart` | [features/quiz/services/answer_checker.md](features/quiz/services/answer_checker.md) | 8 | 0 |
 | `lib/features/quiz/services/distractors.dart` | [features/quiz/services/distractors.md](features/quiz/services/distractors.md) | 8 | 2 |
-| `lib/features/quiz/services/question_generator.dart` | [features/quiz/services/question_generator.md](features/quiz/services/question_generator.md) | 15 | 3 |
+| `lib/features/quiz/services/question_generator.dart` | [features/quiz/services/question_generator.md](features/quiz/services/question_generator.md) | 17 | 4 |
 | `lib/features/quiz/services/quiz_session.dart` | [features/quiz/services/quiz_session.md](features/quiz/services/quiz_session.md) | 22 | 7 |
 | `lib/features/quiz/views/quiz_modes_page.dart` | [features/quiz/views/quiz_modes_page.md](features/quiz/views/quiz_modes_page.md) | 3 | 1 |
 | `lib/features/quiz/views/quiz_page.dart` | [features/quiz/views/quiz_page.md](features/quiz/views/quiz_page.md) | 16 | 4 |
@@ -171,6 +171,7 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 | `lib/shared/widgets/furigana_text.dart` | [shared/widgets/furigana_text.md](shared/widgets/furigana_text.md) | 7 | 1 |
 | `lib/shared/widgets/history_list.dart` | [shared/widgets/history_list.md](shared/widgets/history_list.md) | 6 | 2 |
 | `lib/shared/widgets/content_sheets.dart` | [shared/widgets/content_sheets.md](shared/widgets/content_sheets.md) | 8 | 3 |
+| `lib/shared/widgets/part_of_speech_labels.dart` | [shared/widgets/part_of_speech_labels.md](shared/widgets/part_of_speech_labels.md) | 1 | 1 |
 | `lib/shared/widgets/reference_widgets.dart` | [shared/widgets/reference_widgets.md](shared/widgets/reference_widgets.md) | 4 | 0 |
 | `lib/shared/widgets/shell_scaffold.dart` | [shared/widgets/shell_scaffold.md](shared/widgets/shell_scaffold.md) | 5 | 1 |
 | `lib/shared/widgets/study_conflict_dialog.dart` | [shared/widgets/study_conflict_dialog.md](shared/widgets/study_conflict_dialog.md) | 9 | 1 |
@@ -212,10 +213,10 @@ Offline build scripts, outside `lib/` and outside the totals above.
 
 | Source file | Page | Declarations | Tier A count |
 |---|---|---|---|
-| `tool/import_vocab.dart` | [tool/import_vocab.md](tool/import_vocab.md) | 7 | 1 |
-| `tool/src/vocab_import_core.dart` | [tool/src/vocab_import_core.md](tool/src/vocab_import_core.md) | 14 | 3 |
+| `tool/import_vocab.dart` | [tool/import_vocab.md](tool/import_vocab.md) | 8 | 1 |
+| `tool/src/vocab_import_core.dart` | [tool/src/vocab_import_core.md](tool/src/vocab_import_core.md) | 15 | 4 |
 | `tool/src/zh_tw.dart` | [tool/src/zh_tw.md](tool/src/zh_tw.md) | 5 | 1 |
 | `tool/convert_zh_tw.dart` | [tool/convert_zh_tw.md](tool/convert_zh_tw.md) | 5 | 1 |
-| `tool/draft_inputs.dart` | [tool/draft_inputs.md](tool/draft_inputs.md) | 11 | 1 |
-| `tool/merge_drafts.dart` | [tool/merge_drafts.md](tool/merge_drafts.md) | 11 | 1 |
+| `tool/draft_inputs.dart` | [tool/draft_inputs.md](tool/draft_inputs.md) | 15 | 2 |
+| `tool/merge_drafts.dart` | [tool/merge_drafts.md](tool/merge_drafts.md) | 16 | 2 |
 | `tool/generate_ios_icons.dart` | not documented | — | — |

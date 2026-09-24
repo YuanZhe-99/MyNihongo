@@ -32,7 +32,8 @@
 - `romaji` —— 可选罗马字；只有手写的种子词带这一字段。
 - `pos` —— 取自 `lib/features/content/models/parts_of_speech.dart` 中封闭集合的词性标签。集合之外的标签会
   让内容测试失败。
-- `meanings` —— 语言代码到释义列表。`en` 始终存在；`zh` 存在于 N5 与种子词，其余条目由界面回退到英语。`zh_TW` 由 `zh` 生成，`zh` 出现的地方它都出现——见[繁体中文](#繁体中文)。
+- `meanings` —— 语言代码到释义列表。`en` 始终存在；`zh` 存在于 N5 与种子词，其余条目由界面回退到英语。`zh_TW` 由 `zh` 生成，`zh` 出现的地方它都出现——见[繁体中文](#繁体中文)。`ja` 是单语的日语释义，由导入器从 `vocab_ja.json` 折入；见[日语释义覆盖文件](#japanese-definition-overlay-vocab_jajson)。
+- `jaReading` —— 每条 `meanings.ja` 释义对应一个平假名读音，顺序相同，用于注音。没有日语释义时不存在；始终是条目的最后一个键。
 - `common` —— JMdict 将所选书写形式标为常用时该字段为 true。用于排序建议，绝不用于隐藏条目。
 - `aliases` —— 该条目曾经使用过的 id。`vocabById` 会把它们解析到同一个条目。
 - `examples` —— 每项为 `{ja, reading?, <语言>: 译文…}`；除 `ja` 与 `reading` 外的每个键都是语言代码。
@@ -50,6 +51,24 @@
 
 这是构建输入，之所以随包发布，只是为了让内容测试能把它与实际发布的目录比对。`reviewed` 属于写作状态，绝不
 进入 `vocab.json`。
+
+### 日语释义覆盖文件（`vocab_ja.json`） <a id="japanese-definition-overlay-vocab_jajson"></a>
+
+```json
+{
+  "schemaVersion": 1,
+  "source": "model-authored (Claude), unreviewed",
+  "entries": {
+    "vocab:jm1198180": {
+      "ja": ["人と人が同じところで一緒になること"],
+      "jaReading": ["ひととひとがおなじところでいっしょになること"],
+      "reviewed": false
+    }
+  }
+}
+```
+
+形状与作用都与中文覆盖文件相同：它是 `meanings.ja` 与 `jaReading` 的事实来源，由 `tool/import_vocab.dart` 在**两种**模式下都折入 `vocab.json`——完整的 JMdict 导入会重建每一个条目，否则就会把它们丢掉。从覆盖文件中删掉的行也会离开目录。`reviewed` 属于写作状态，绝不进入 `vocab.json`；覆盖文件与目录不一致时 `content_catalog_test` 会失败。
 
 ### 语法（`grammar/n5.json`，每级一个文件）
 
@@ -75,7 +94,8 @@
 - `id`、`level`、`pattern` 为必填；`structure` 可选。
 - `match` —— 可选的字面字符串，用于在句中标出该语法点，解析为 `GrammarPoint.matchForms`。单字助词必须给出
   该字段，因为从其句型推导出的形式几乎会匹配任何句子。
-- `meaning` 与 `explanation` 按语言分键；纯字符串按英语处理。两者都在 `zh` 旁带有生成的 `zh_TW`。
+- `meaning` 与 `explanation` 按语言分键；纯字符串按英语处理。两者都在 `zh` 旁带有生成的 `zh_TW`。`zh_TW` 之后是 `ja` 键，由模型用浅显的日语撰写。
+- `meaningJaReading` —— `meaning.ja` 的平假名读音，用于注音。`explanation.ja` 没有读音：长段散文在任何语言下都按纯文本绘制。
 
 ### 假名
 
@@ -116,7 +136,7 @@
 | `lemma` | 其词族的基本形，使整套活用都归到同一个词 |
 | `needs` | 它所接的词干形态；缺失表示接在任何东西之后 |
 | `forms` | 它为所关闭的文节贡献的 `InflectionForm` 值 |
-| `gloss` | `en` 与 `zh`，两者必需——功能词没有目录条目，因此色块携带自己的含义；`zh_TW` 由 `zh` 生成 |
+| `gloss` | `en` 与 `zh`，两者必需——功能词没有目录条目，因此色块携带自己的含义；`zh_TW` 由 `zh` 生成；`ja` 是一行日语释义 |
 
 文件还携带 `sets`：各项检查所读的命名词表（`time-past`、`time-future`、`path-verbs`、`motion-verbs`）以及 `transitivity-pairs`；后者是二元数组而非对象，因为检查会双向查找它们。
 
@@ -367,7 +387,7 @@
 | JLPT 作答历史记录 | `nihongo_progress.json` | 是 | `exam:` 记录，id 带时间戳，模拟考试 40 次、练习 80 次；只保存问了哪些题以及作答是什么 |
 | 进行中的模拟考试 | `exam_in_progress.json` | 否 | 每台设备一份保存的考试：题目 id、当时选了什么，以及每个计时部分已经用掉的时间。刻意置于同步、备份与导出注册表之外——计时属于这一次作答，而半份卷子不是一个结果 |
 | 主题模式 | `storage_config.json` | 否 | 设备特定偏好（`themeMode`：`light`/`dark`；缺失表示跟随系统） |
-| 语言 | `storage_config.json` | 否 | 设备特定偏好（`locale`：`en`/`zh`/`zh_TW`；缺失表示跟随系统） |
+| 语言 | `storage_config.json` | 否 | 设备特定偏好（`locale`：`en`/`zh`/`zh_TW`/`ja`；缺失表示跟随系统） |
 | 存储路径覆盖 | `storage_config.json` | 否 | 设备特定路径（`storagePath`） |
 | 自动备份启用 | `storage_config.json` | 否 | 设备特定配置（`autoBackupEnabled`） |
 | 备份保留天数 | `storage_config.json` | 否 | 设备特定配置（`backupRetentionDays`） |

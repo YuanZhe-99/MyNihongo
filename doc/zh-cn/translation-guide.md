@@ -190,6 +190,9 @@
 | explanation (AI) | 解释 | 「解释这个句子」 |
 | correction suggestion | 改写建议 | 校对 API 的输出；不说「纠错」 |
 | Traditional Chinese | 繁体中文 | UI 语言 `zh_TW`；文档树只有 `doc/zh-cn/`，不镜像繁体 |
+| Japanese (UI language) | 日语（界面语言） | UI 语言 `ja`；同样没有 `doc/ja-jp/` 文档树 |
+| monolingual definition | 日语释义 | 日语界面下单词的释义，国语辞典式，不是翻译 |
+| easier-Japanese paraphrase | 简单日语的改写 | 日语界面下生成例句下方的那一行 |
 | Simplified Chinese | 简体中文 | UI 语言 `zh`；`doc/zh-cn/` 用它撰写 |
 | OpenCC | OpenCC | 简繁转换词典项目名，不译 |
 | conversion dictionary | 转换词典 | `tool/content/opencc/` 下的 OpenCC 词表 |

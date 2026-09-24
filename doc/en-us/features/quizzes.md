@@ -36,7 +36,7 @@ a thin level may have no three plausible distractors. Rather than choosing a mod
 up front and hoping, the generator is asked for each enabled mode in a shuffled
 order and the first that produces something wins.
 
-Three things are dropped rather than approximated:
+Four things are dropped rather than approximated:
 
 - **Listening modes on a device with no Japanese voice.** A question nobody can
   hear has no answer, so `QuizPage` removes them before generating anything.
@@ -44,6 +44,11 @@ Three things are dropped rather than approximated:
   parsed example. The analyser is only awaited when such a mode is enabled,
   because building the lexicon over 7,700 entries costs tens of milliseconds and
   a kana quiz has no use for it.
+- **The translation-based grammar modes under a Japanese UI.** Ordering fragments against a
+  meaning, and matching a sentence to its meaning either way, use the English or Chinese
+  translation of a catalog example as their material, and a Japanese reader is shown no
+  translation of Japanese. `translationQuizModes` lists them; the quiz page drops them, and the
+  quiz-mode page shows their switches off with the reason.
 - **Any question whose options are not four distinct strings.** The last check
   before a choice question is assembled: two identical options mean two correct
   answers, and no distractor rule can rule that out for every mode on its own.

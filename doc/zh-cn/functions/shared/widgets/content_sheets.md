@@ -1,7 +1,7 @@
 # lib/shared/widgets/content_sheets.dart
 
 单词、语法点与假名的详情弹层，并带有指向相邻条目的标签。在 `PLAN.md` M1.3 中从单词与语法页面抽出，使三个页面
-都能打开彼此的弹层。见 [../../../features/content-catalog.md](../../../features/content-catalog.md)。
+都能打开彼此的弹层。弹层上的日语文本——包括向日语读者显示的日语释义或语法含义——在内容提供了读音的地方以注音绘制。见 [../../../features/content-catalog.md](../../../features/content-catalog.md)。
 
 ## 声明
 
@@ -24,11 +24,11 @@
 - **Inputs:** `context`、`catalog`、`entry`、`locale`。
 - **Returns:** 弹层关闭时完成的 `Future<void>`。
 - **Side effects:** 推入模态底部弹层。
-- **Algorithm:** 词头、等级、读音与罗马字、词性、界面语言下的全部释义、例句，最后为例句中找到的每个语法点显示一个
-  标签（去重）。
+- **Algorithm:** 词头、等级、读音与罗马字、由 `posLabel` 以学习者语言命名的词性、界面语言下的全部释义、例句，最后为例句中找到的每个语法点显示一个
+  标签（去重）。当 `meanings.resolvedKey(locale)` 为 `ja` 时，每个义项是一个项目符号，旁边是带 `entry.jaReadings[index]` 的 `FuriganaText`（该义项没有读音时不带注音）；英文或中文释义是纯文本的项目符号。
 - **Usage:** 单词卡片，以及另外两个弹层上的单词标签。
 - **Notes:** 标签基于子串匹配而非句法分析，因此以“例句中使用的语法”呈现，而不是作为分析结果；见
-  `content_links.dart`。
+  `content_links.dart`。在 `posLabel`（[part_of_speech_labels.md](part_of_speech_labels.md)）之前，词性标签在每种语言下都原样打印（`verb-godan`、`suru-verb`）；日语释义与应用中其他所有日语字符串一样带注音。
 
 ### `showGrammarDetailSheet` <a id="showgrammardetailsheet"></a>
 
@@ -36,9 +36,9 @@
 - **Inputs:** `context`、`catalog`、`point`、`locale`。
 - **Returns:** `Future<void>`。
 - **Side effects:** 推入模态底部弹层。
-- **Algorithm:** 句型、等级、含义、结构、详解、例句，最后为例句中找到的每个单词显示一个标签。
+- **Algorithm:** 句型、等级、含义、结构、详解、例句，最后为例句中找到的每个单词显示一个标签。当 `meaning.resolvedKey(locale)` 为 `ja` 时，一行含义是带 `point.meaningJaReading` 的 `FuriganaText`；否则是纯文本。
 - **Usage:** 语法卡片，以及单词弹层上的语法标签。
-- **Notes:** 单词标签限定在该语法点自身等级及以下。
+- **Notes:** 单词标签限定在该语法点自身等级及以下。只有日语的一行含义带读音并以注音绘制；较长的详解不带（见 `content-catalog.md`）。
 
 ### `showKanaDetailSheet` <a id="showkanadetailsheet"></a>
 

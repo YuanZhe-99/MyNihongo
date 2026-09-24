@@ -69,7 +69,8 @@ after the session is already on screen, and answering one never touches the revi
   record, keep local backups with a retention policy, and export a ZIP anywhere.
 - **Foldable-aware layout** — one rule set decides when panes and columns appear; navigation moves
   to a side rail on wide windows.
-- **English, Simplified Chinese and Traditional Chinese.**
+- **English, Simplified Chinese, Traditional Chinese and Japanese** — in Japanese, words are
+  defined in Japanese rather than translated.
 
 ## Content coverage
 

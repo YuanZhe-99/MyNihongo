@@ -5,7 +5,7 @@ says how to work here; `doc/en-us/` says what the code does; this file says **wh
 what order, why, and what is done**. Update the checklists in the same change that lands a
 milestone item.
 
-**Status as of 2026-09-24:** **Phases 1 to 4 are complete**; Phase 4 shipped one milestone per release, `v0.4.0` to `v0.4.13`. **Phase 5 (platforms and languages) is under way** as three releases: M5.0 (every platform builds in CI, and the Apple projects are made right) is `v0.5.0`; M5.1 (keyboard shortcuts for quizzes) and M5.2 (Japanese UI and Japanese content) follow as `v0.5.1` and `v0.5.2`. The iOS and macOS projects are compiled by CI and have never run, because no Mac available to this project can build it. The paragraphs below are earlier status notes, kept as history; `pubspec.yaml` is the current version.
+**Status as of 2026-09-24:** **Phases 1 to 4 are complete**; Phase 4 shipped one milestone per release, `v0.4.0` to `v0.4.13`. **Phase 5 (platforms and languages) is complete**, as three releases: M5.0 (every platform builds in CI, and the Apple projects are made right) is `v0.5.0`, M5.1 (keyboard shortcuts for quizzes) is `v0.5.1`, and M5.2 (Japanese UI and Japanese content) is `v0.5.2`. The Japanese content is model-authored and unreviewed, like the rest of the catalog beyond N5 grammar. The iOS and macOS projects are compiled by CI and have never run, because no Mac available to this project can build it. The paragraphs below are earlier status notes, kept as history; `pubspec.yaml` is the current version.
 
 **Status as of 2026-09-04:** **Phase 3 is complete**, released as `v0.3.1` and polished by `v0.3.2` (M3.8 below — the on-device AI fix a Z Fold 8 found, plus history and a foldable layout for the two writing surfaces). Phase 3's milestones: M3.0 (device fixes), M3.1 (spaced repetition core), M3.2 (quiz modes), M3.3 (kana over kanji), M3.4 (the rest of the catalog), M3.5 (lesson path and reminders), M3.6 (AI-assisted practice) and M3.7 (scenario lessons, generated questions, writing practice routed) have all landed. The catalog is complete: grammar, Chinese glosses, example sentences and lesson units at every level from N5 to N1, with the coverage stated in `version-history.md`. What remains from Phase 3 is deliberately deferred rather than missing — the free-response translation mode and the scenario dialogue partner, both listed under M3.6. Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
 (text-to-speech), M2.2 (speech recognition and pronunciation feedback), M2.3 (the sentence lab),
@@ -1459,9 +1459,21 @@ The third complaint from the Pixel 10 — the scripted conversation is monotonou
 
 #### M5.2 — Japanese UI and Japanese content (`v0.5.2`)
 
-- [ ] UI language `ja`: an `app_ja.arb` and Japanese glosses, which do not exist yet. A Japanese
-      UI over English-only glosses would be the worst of both, so the content lands first and the
-      ARB last
+- [x] UI language `ja`: `app_ja.arb` (every key; 85 reused verbatim from MyAnime where the English
+      is identical), the language picker row, a hand-written Japanese privacy policy
+- [x] Japanese content, landed before the ARB: a monolingual definition with readings for every
+      word (`vocab_ja.json`, folded in by the importer in both modes), a Japanese meaning with
+      reading and an explanation for every grammar point, a gloss for every function word, and
+      Japanese unit, scenario and drill text; the 21 kana hints and the `ja` prompt blocks by hand
+- [x] Pipeline: `gloss-ja` and `ja --kind …` in `draft_inputs` / `merge_drafts`, `--overlay-ja`,
+      two gate branches (short, Japanese, readable with the app's own dictionary, readings
+      aligned, not all kana), three agents, and a gate that checks a list of drafts in one run
+- [x] A Japanese reader is shown no translation of Japanese (`resolveTranslation` at display
+      sites); the three translation-based grammar modes are unavailable under `ja`, visibly
+- [x] Part-of-speech tags named through the ARB in every language (`posLabel`)
+- [x] Coverage tests written against the content and switched on by the ARB's existence
+- [ ] The `ja` prompt blocks and the Japanese UI checked on a device — **not done**: device-only,
+      as the `zh_TW` block was
 
 ---
 
@@ -1476,7 +1488,7 @@ The third complaint from the Pixel 10 — the scripted conversation is monotonou
       tablet 1024×768 and 768×1024, phone 412×915 and 915×412; `expect(tester.takeException(), isNull)`
 - [ ] Layout tests driven in `zh` where text width matters (square CJK glyphs measure the real
       layout; the test font inflates Latin)
-- [ ] Strings in all three ARB files; `flutter gen-l10n` output committed
+- [ ] Strings in all four ARB files; `flutter gen-l10n` output committed
 - [ ] Function Explanation Layer on every declaration; `doc/en-us/functions/` page + INDEX row;
       `doc/zh-cn/` mirror
 
@@ -1485,7 +1497,9 @@ The third complaint from the Pixel 10 — the scripted conversation is monotonou
 - [ ] `dart run tool/convert_zh_tw.dart`, then `flutter test test/content_zh_tw_test.dart`
 - [ ] `flutter test test/content_catalog_test.dart`
 - [ ] Ids stable; new ids prefixed; retired ids aliased
-- [ ] Japanese checked by a person; readings match the surface
+- [ ] Japanese checked by a person — **an aspiration, not a claim**: the model-authored streams,
+      the `ja` definitions and explanations included, are labelled unreviewed in their `source`;
+      readings are checked against the surface by the gate
 - [ ] License/attribution current
 
 **Every release**
@@ -1675,6 +1689,14 @@ The third complaint from the Pixel 10 — the scripted conversation is monotonou
 | 2026-09-24 | The composed choice and ordering moved from the answer panes into the runner | A key handler in the runner could not reach state private to a pane. With the state in one place a tap and a key take the same path, and the panes became stateless |
 | 2026-09-24 | Option numbers and the key hint are desktop-only, through `showsKeyboardHints` | On a phone they are clutter beside options the learner taps; a tablet with a keyboard keeps the keys without the hint |
 | 2026-09-24 | `_DesktopScrollBehavior` is deleted rather than fixed | The SDK default already gives desktop the wheel and scrollbars. The override replaced the drag devices, which dropped stylus and Voice Access scrolling on Android and added mouse dragging, which the SDK warns breaks text selection. MyAnime has the identical class; recorded here so it is fixed there, not from this repository |
+| 2026-09-24 | A word's Japanese meaning is a monolingual definition, 国語辞典-style, for all 7,744 words | Decided with the user. A Japanese reader is reading Japanese; an English gloss under a Japanese menu is the worst of both, and there is no Japanese source to take definitions from — the JMdict edition is English-only |
+| 2026-09-24 | The Japanese definitions run on `sonnet` — **an exception** to AGENTS.md's split | Decided with the user, for volume. A definition is re-authored with no source and a wrong one passes every gate rule, which is the case the split puts on the capable model. Recorded so the content is known not to be comparable to the `opus`-written grammar explanations. A 150-definition sample re-read by `opus` found 8 problems (5%), none circular; all were corrected |
+| 2026-09-24 | Definitions and a grammar point's one-line meaning carry a hiragana reading and are drawn with furigana; explanations and prompts do not | Every other Japanese string in the catalog has a reading. `LocalizedStrings` cannot hold one, so it sits beside it (`jaReading`, `meaningJaReading`). Long prose is plain text in every language |
+| 2026-09-24 | The definition gate requires every word to be readable with the app's own dictionary, tolerates `々`, and refuses a long all-kana definition | The first makes the definition readable by the app that shows it; `々` is a tokenizer limit, not an unknown word; the last closes the loophole one agent found — writing everything in hiragana passes the first rule and is harder to read |
+| 2026-09-24 | A Japanese reader is shown no translation of Japanese at display sites; the three translation-based grammar modes are unavailable under `ja`, and say so | `resolve`'s English fallback, or its last-resort first value, would otherwise print English or even Chinese under Japanese. Question logic is separate: a mode that needs a translation as material cannot be asked, and a switch that silently does nothing reads as a bug |
+| 2026-09-24 | Under `ja`, the model answers in Japanese and grounds in Japanese; the gloss line of five tasks becomes an easier-Japanese paraphrase | The M2.5 rule — ask and ground in the same language — applied to a reader of the target language. A translation line is meaningless to them; a paraphrase is the Japanese learner's equivalent |
+| 2026-09-24 | `ja` content lands before `app_ja.arb`, and the coverage tests switch on with the ARB | The locale cannot be chosen until it is complete, and the tests make the order fail loudly rather than depend on discipline |
+| 2026-09-24 | `gloss-ja` batches are 100 words, not the Chinese stream's 300 | A row is a definition and its reading, about three times a Chinese gloss's output; 300 would overrun one agent reply |
 | 2026-09-04 | No Remove button for a downloaded model | AICore owns the file and shares it with every app that uses the same model, and neither ML Kit client exposes a delete — checked with `javap`. The button could only lie or take away something another app is using |
 | 2026-09-04 | CI `concurrency` is keyed on the commit, so a tag run supersedes the branch run | A release pushes the commit and then the tag, which ran the same analyze/test/build twice on the same tree. The tag run is the one that also creates the Release |
 | 2026-09-04 | The Prompt API client is chosen by probing model variants in preference order, never by device, client version or model name | ML Kit serves four combinations of release stage and size preference, no API says which a device offers, and `getClient()` with no configuration silently asks for one of them. Reporting that one variant's refusal as the device's answer produced two wrong diagnoses in a row on the same phone. A probe also means a model AICore begins serving later is picked up with no code change |
@@ -1696,10 +1718,11 @@ The third complaint from the Pixel 10 — the scripted conversation is monotonou
   regenerating `vocab.json` — is that worth doing for a handful of words, or should the import tool
   gain a small hand-maintained supplement?
 - **Who reviews the model-authored content?** This was an open question about
-  N5's Chinese glosses. It is now an open question about roughly 250 grammar
-  points, several thousand glosses, several hundred example sentences and —
-  since Phase 4 — **469 JLPT drill questions across five levels, with 201
-  reading passages and listening scripts behind them**, all of which pass the
+  N5's Chinese glosses. It is now an open question about the whole of N4–N1
+  grammar, 7,744 Chinese glosses, 7,700 example sentences, **1,407 JLPT drill
+  questions across five levels, with 605 reading passages and listening scripts
+  behind them** — and, since Phase 5, **a Japanese definition for every word and
+  a Japanese description of every grammar point, unit and drill question**, all of which pass the
   authoring gate and none of which a Japanese or Chinese speaker has read. Every
   file says so in its own `source` field.
 
@@ -1717,7 +1740,9 @@ The third complaint from the Pixel 10 — the scripted conversation is monotonou
   whole of the answer.
 - 母 and 父 are not in the catalog at all, because the JLPT lists it is generated
   from do not contain them. This was a theoretical gap and is now a practical
-  one: two example batches had to be rewritten around it.
+  one: two example batches had to be rewritten around it. Phase 5's Japanese definitions
+  meet it constantly — a definition of 両親 or 表情 cannot route around 父 or 顔 — and the
+  agents write around them, with 事 written こと, which the catalog has only in kana.
 - Grammar authoring throughput: ~80 N5 points is a few days of careful writing; who reviews?
 - Pitch accent: worth a Phase 3 item if an openly licensed accent dictionary is available.
 - Whether Phase 4 attempts belong in the progress module or their own module (decide on file size

@@ -1,6 +1,6 @@
 # lib/app/locale_resolution.dart
 
-设备偏好的语言列表如何匹配到应用的三种界面语言之一。在 [app.md](app.md) 中作为 `MaterialApp.localeListResolutionCallback` 接入，因此它只在学习者没有在设置中选择语言时才做决定。见 [../../architecture.md](../../architecture.md)。
+设备偏好的语言列表如何匹配到应用的四种界面语言之一。在 [app.md](app.md) 中作为 `MaterialApp.localeListResolutionCallback` 接入，因此它只在学习者没有在设置中选择语言时才做决定。它还拥有 `language_COUNTRY` 标签形式的唯一解析器，设置与提醒计划器都通过它读取存储的或生成的标签。见 [../../architecture.md](../../architecture.md)。
 
 ## 声明
 
@@ -10,6 +10,7 @@
 | `traditionalChineseRegions` | 常量 | B | 以繁体字书写中文的地区。 |
 | [`normalizeChinese`](#normalizechinese) | 函数 | A | 把任意中文 locale 归约为应用的两种之一。 |
 | [`resolveAppLocale`](#resolveapplocale) | 函数 | A | 为设备的语言列表选择界面语言。 |
+| [`localeFromTag`](#localefromtag) | 函数 | A | 把存储的或生成的 locale 标签（`ja`、`zh`、`zh_TW`）还原为 `Locale`。 |
 
 ## 文档
 
@@ -36,3 +37,15 @@
 - **Algorithm：** 归一化列表中的每个中文条目，然后把列表交给 Flutter 自己的 `basicLocaleListResolution`。
 - **Usage：** `app.dart` 中 `MaterialApp.router` 的 `localeListResolutionCallback`。
 - **Notes：** 保留 Flutter 的算法而不是取代它——只修正它的输入。它按语言与国家匹配，因此请求 `zh-Hant-HK` 的手机会被给到简体中文：国家 `HK` 不是 `TW`，而它确实发送了的文字系统被忽略。修正输入而不是算法，使所有非中文情况完全保持 Flutter 定义的行为，包括无匹配时回落到模板语言。
+
+### `Locale localeFromTag(String tag)` <a id="localefromtag"></a>
+
+- **类型：** 函数
+- **源码：** `lib/app/locale_resolution.dart`
+- **Purpose：** 把存储的或生成的 locale 标签还原为一个 `Locale`。
+- **Inputs：** `tag`——`ja`、`zh`、`zh_TW`，拼写与 `AppLocalizations.localeName` 和存储的语言偏好一致。
+- **Returns：** `Locale`——标签带下划线时包含语言与国家，否则只有语言。
+- **Side effects：** 无。
+- **Algorithm：** 按 `_` 拆分；多于一段时变为 `Locale(parts[0], parts[1])`，只有一段时变为 `Locale(parts[0])`。
+- **Usage：** 读取存储的 `locale` 偏好的 `AppSettingsNotifier`（[../shared/providers/app_settings.md](../shared/providers/app_settings.md)），以及 `planReminders`（[../features/reminders/services/reminder_planner.md](../features/reminders/services/reminder_planner.md)），后者用 `localeFromTag(l10n.localeName)` 解析下一个单元的标题。
+- **Notes：** 这是唯一解析 `language_COUNTRY` 形式的地方。提醒计划器只有 `AppLocalizations` 而没有 `BuildContext`，所以它靠这个得知界面语言；此前它把中文以外的一切都映射为英语、把每个中文界面都映射为 `zh`，于是繁体中文或日语读者拿到的是另一种语言的单元标题。

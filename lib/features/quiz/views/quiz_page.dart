@@ -439,11 +439,17 @@ class _QuizPageState extends ConsumerState<QuizPage> {
   /// Notes: Internal helper used within this file only. An empty set in the
   /// config means "everything the learner has left on". Listening modes are
   /// dropped where the device has no Japanese voice, because a question nobody
-  /// can hear has no answer.
+  /// can hear has no answer. The translation-based grammar modes are dropped
+  /// for a Japanese reader, for whom no translation is shown.
   Set<QuizMode> _enabledModes() {
-    final chosen = widget.config.modes.isEmpty
+    final locale = Localizations.localeOf(context);
+    var chosen = widget.config.modes.isEmpty
         ? selectableQuizModes.toSet()
         : widget.config.modes;
+    chosen = {
+      for (final mode in chosen)
+        if (quizModeWorksIn(mode, locale)) mode,
+    };
     if (TtsService.instance.hasJapaneseVoice) return chosen;
     return chosen.difference(listeningQuizModes);
   }

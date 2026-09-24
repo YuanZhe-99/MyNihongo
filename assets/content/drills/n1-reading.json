@@ -1958,7 +1958,8 @@
       "prompt": {
         "en": "What does the writer mean by efficiency?",
         "zh": "作者所说的效率是指什么？",
-        "zh_TW": "作者所說的效率是指什麼？"
+        "zh_TW": "作者所說的效率是指什麼？",
+        "ja": "作者の言う効率とは何を指しますか。"
       },
       "options": [
         "できるだけ多くの仕事を短い時間で終わらせることです。",
@@ -1970,7 +1971,8 @@
       "explanation": {
         "en": "The last sentence states it directly: efficiency is not doing much in a short time but distinguishing the time that is needed from the time that is not. The other choices are the view the writer is arguing against.",
         "zh": "最后一句直接给出了定义：效率不是在短时间里做很多事，而是分清哪些时间必要、哪些不必要。其余三项正是作者所反对的看法。",
-        "zh_TW": "最後一句直接給出了定義：效率不是在短時間裡做很多事，而是分清哪些時間必要、哪些不必要。其餘三項正是作者所反對的看法。"
+        "zh_TW": "最後一句直接給出了定義：效率不是在短時間裡做很多事，而是分清哪些時間必要、哪些不必要。其餘三項正是作者所反對的看法。",
+        "ja": "最後の文で、効率とは短時間で多くをこなすことではなく、必要な時間と不要な時間を分けることだと直接述べている。"
       }
     },
     {
@@ -1984,7 +1986,8 @@
       "prompt": {
         "en": "Why does the writer value the silence in a meeting?",
         "zh": "作者为什么重视会议中的沉默？",
-        "zh_TW": "作者為什麼重視會議中的沉默？"
+        "zh_TW": "作者為什麼重視會議中的沉默？",
+        "ja": "作者はなぜ会議の沈黙を大切にしていますか。"
       },
       "options": [
         "沈黙の間に、参加者が自分の考えを整理しているからです。",
@@ -1996,7 +1999,8 @@
       "explanation": {
         "en": "The second sentence gives the reason: during those seconds of silence the participants are putting their own thoughts in order again. Ending early is what the writer calls a loss, not a gain.",
         "zh": "第二句说明了理由：在那几十秒的沉默里，与会者正在重新整理自己的想法。会议提早结束在作者看来是损失，而不是好处。",
-        "zh_TW": "第二句說明了理由：在那幾十秒的沉默裡，與會者正在重新整理自己的想法。會議提早結束在作者看來是損失，而不是好處。"
+        "zh_TW": "第二句說明了理由：在那幾十秒的沉默裡，與會者正在重新整理自己的想法。會議提早結束在作者看來是損失，而不是好處。",
+        "ja": "二文目で、沈黙の数十秒の間に参加者が自分の考えを整理し直していると理由を述べている。"
       }
     },
     {
@@ -2011,7 +2015,8 @@
       "prompt": {
         "en": "What does the writer think about explaining in the same way to everyone?",
         "zh": "对于向所有人作同样的说明，作者是怎么看的？",
-        "zh_TW": "對於向所有人作同樣的說明，作者是怎麼看的？"
+        "zh_TW": "對於向所有人作同樣的說明，作者是怎麼看的？",
+        "ja": "全員に同じ説明をすることについて、作者はどう考えていますか。"
       },
       "options": [
         "説明する側の負担が減るので、続けるべきです。",
@@ -2023,7 +2028,8 @@
       "explanation": {
         "en": "The third sentence says that repeating the same explanation only looks fair and is in fact a burden on both the newcomer and the regular visitor. The writer defines real fairness as reaching the same result, not as more explanation.",
         "zh": "第三句指出，反复讲同样的内容只是看起来公平，实际上对初次来的人和常来的人都是负担。作者把真正的公平定义为让人抵达同样的结果，而不是增加说明。",
-        "zh_TW": "第三句指出，反覆講同樣的內容只是看起來公平，實際上對初次來的人和常來的人都是負擔。作者把真正的公平定義為讓人抵達同樣的結果，而不是增加說明。"
+        "zh_TW": "第三句指出，反覆講同樣的內容只是看起來公平，實際上對初次來的人和常來的人都是負擔。作者把真正的公平定義為讓人抵達同樣的結果，而不是增加說明。",
+        "ja": "三文目で、同じ説明の繰り返しは公平に見えて実はどちらの人にも負担になると述べている。"
       }
     },
     {
@@ -2039,7 +2045,8 @@
       "prompt": {
         "en": "Why does the writer say the teaching side must change?",
         "zh": "作者为什么说必须改变的是施教的一方？",
-        "zh_TW": "作者為什麼說必須改變的是施教的一方？"
+        "zh_TW": "作者為什麼說必須改變的是施教的一方？",
+        "ja": "作者はなぜ教える側が変わるべきだと言っていますか。"
       },
       "options": [
         "会社に入る人の経験が多様になり、同じ教え方では合わないからです。",
@@ -2051,7 +2058,8 @@
       "explanation": {
         "en": "The second and third sentences give the reason: because the experience of new entrants has become unusually varied, a single fixed content in a fixed order is too easy for half and too hard for the other half. Numbers of staff and difficulty of content are not mentioned.",
         "zh": "第二、三句给出了理由：新进员工的经历变得空前多样，固定顺序的固定内容对一半人太浅、对另一半人太深。文中并未提到人数或内容难度的变化。",
-        "zh_TW": "第二、三句給出了理由：新進員工的經歷變得空前多樣，固定順序的固定內容對一半人太淺、對另一半人太深。文中並未提到人數或內容難度的變化。"
+        "zh_TW": "第二、三句給出了理由：新進員工的經歷變得空前多樣，固定順序的固定內容對一半人太淺、對另一半人太深。文中並未提到人數或內容難度的變化。",
+        "ja": "会社に入る人の経験が多様になり、同じ順序と内容ではどちらかに合わなくなったからだと述べている。"
       }
     },
     {
@@ -2065,7 +2073,8 @@
       "prompt": {
         "en": "What did the writer believe ten years ago?",
         "zh": "十年前作者相信的是什么？",
-        "zh_TW": "十年前作者相信的是什麼？"
+        "zh_TW": "十年前作者相信的是什麼？",
+        "ja": "十年前、作者は何を信じていましたか。"
       },
       "options": [
         "数字を集めるより、客の話を聞くほうが大切だということです。",
@@ -2077,7 +2086,8 @@
       "explanation": {
         "en": "The second sentence says that at the time the writer believed correct decisions would follow from a grasp of the figures. The monthly rule and the value of customers' stories are what the writer came to think later.",
         "zh": "第二句写明，当时作者相信只要掌握数字就能作出正确判断。每月只看一次、以及重视客户的话，都是后来才有的想法。",
-        "zh_TW": "第二句寫明，當時作者相信只要掌握數字就能作出正確判斷。每月只看一次、以及重視客戶的話，都是後來才有的想法。"
+        "zh_TW": "第二句寫明，當時作者相信只要掌握數字就能作出正確判斷。每月只看一次、以及重視客戶的話，都是後來才有的想法。",
+        "ja": "二文目で、数字を把握すれば正しい判断ができると当時は信じていたと述べている。"
       }
     },
     {
@@ -2091,7 +2101,8 @@
       "prompt": {
         "en": "What happened as the number of figures grew?",
         "zh": "随着数字增多，公司里发生了什么？",
-        "zh_TW": "隨著數字增多，公司裡發生了什麼？"
+        "zh_TW": "隨著數字增多，公司裡發生了什麼？",
+        "ja": "数字が増えるにつれて何が起こりましたか。"
       },
       "options": [
         "会議の時間の多くを、数字の説明が占めるようになりました。",
@@ -2103,7 +2114,8 @@
       "explanation": {
         "en": "The third sentence says that the more numbers there were, the more of the meeting went on explaining them, and the fourth adds that the customers' troubles were always postponed. Sales and the number of meetings are never mentioned.",
         "zh": "第三句说数字越多，会议时间就越多地被用来解释数字，第四句补充说客户的问题总被推到最后。文中并未提到销售额或会议数量。",
-        "zh_TW": "第三句說數字越多，會議時間就越多地被用來解釋數字，第四句補充說客戶的問題總被推到最後。文中並未提到銷售額或會議數量。"
+        "zh_TW": "第三句說數字越多，會議時間就越多地被用來解釋數字，第四句補充說客戶的問題總被推到最後。文中並未提到銷售額或會議數量。",
+        "ja": "三文目で会議の時間の多くを数字の説明が占めるようになり、四文目で客の困りごとの話が後回しにされたと述べている。"
       }
     },
     {
@@ -2118,7 +2130,8 @@
       "prompt": {
         "en": "What is the writer's conclusion about figures?",
         "zh": "关于数字，作者的结论是什么？",
-        "zh_TW": "關於數字，作者的結論是什麼？"
+        "zh_TW": "關於數字，作者的結論是什麼？",
+        "ja": "数字について、作者の結論は何ですか。"
       },
       "options": [
         "数字は正しくないことが多いので、信じないほうがよいということです。",
@@ -2130,7 +2143,8 @@
       "explanation": {
         "en": "The last two sentences say that figures show what happened but not why, and that knowing the figures and understanding the front line are different things. The writer does not say the figures are wrong, and still looks at them monthly.",
         "zh": "最后两句说数字只能显示发生了什么，却说不出为什么，掌握数字与理解现场是两回事。作者并没有说数字不准确，而且每月仍然要看。",
-        "zh_TW": "最後兩句說數字只能顯示發生了什麼，卻說不出為什麼，掌握數字與理解現場是兩回事。作者並沒有說數字不準確，而且每月仍然要看。"
+        "zh_TW": "最後兩句說數字只能顯示發生了什麼，卻說不出為什麼，掌握數字與理解現場是兩回事。作者並沒有說數字不準確，而且每月仍然要看。",
+        "ja": "最後の二文で、数字は起きたことを示すが理由までは示さず、数字の認識と現場の理解は別のものだと結論づけている。"
       }
     },
     {
@@ -2144,7 +2158,8 @@
       "prompt": {
         "en": "What is the common view that the writer takes up?",
         "zh": "作者引用的常见说法是什么？",
-        "zh_TW": "作者引用的常見說法是什麼？"
+        "zh_TW": "作者引用的常見說法是什麼？",
+        "ja": "作者が取り上げている一般的な見方は何ですか。"
       },
       "options": [
         "機械に頼るほど、人の力は落ちていくという説明です。",
@@ -2156,7 +2171,8 @@
       "explanation": {
         "en": "The third sentence quotes what is often heard: that as dependence on machines advances, human powers decline. The writer then argues against it, so the other three are not the view being quoted.",
         "zh": "第三句引用了常听到的说法：对机器的依赖越深，人的能力就越退化。作者随后加以反驳，其余三项都不是被引用的那个说法。",
-        "zh_TW": "第三句引用了常聽到的說法：對機器的依賴越深，人的能力就越退化。作者隨後加以反駁，其餘三項都不是被引用的那個說法。"
+        "zh_TW": "第三句引用了常聽到的說法：對機器的依賴越深，人的能力就越退化。作者隨後加以反駁，其餘三項都不是被引用的那個說法。",
+        "ja": "三文目で、機械への依存が進むと人の力が落ちるという言い方がよく聞かれると引用している。"
       }
     },
     {
@@ -2170,7 +2186,8 @@
       "prompt": {
         "en": "Why does the writer mention young people today?",
         "zh": "作者为什么要提到如今的年轻人？",
-        "zh_TW": "作者為什麼要提到如今的年輕人？"
+        "zh_TW": "作者為什麼要提到如今的年輕人？",
+        "ja": "作者はなぜ今の若い人について触れていますか。"
       },
       "options": [
         "上の世代より記憶する力が強いことを示すためです。",
@@ -2182,7 +2199,8 @@
       "explanation": {
         "en": "Young people are given as an example of remembering something else instead: shops and how to use devices, just as the older generation remembered numbers. The point of the example is that what is remembered has changed, not how much.",
         "zh": "举年轻人的例子，是为了说明他们改记别的东西——店铺和工具的用法，正如上一代人记电话号码。这个例子要说明的是所记的内容变了，而不是记忆力的强弱。",
-        "zh_TW": "舉年輕人的例子，是為了說明他們改記別的東西——店鋪和工具的用法，正如上一代人記電話號碼。這個例子要說明的是所記的內容變了，而不是記憶力的強弱。"
+        "zh_TW": "舉年輕人的例子，是為了說明他們改記別的東西——店鋪和工具的用法，正如上一代人記電話號碼。這個例子要說明的是所記的內容變了，而不是記憶力的強弱。",
+        "ja": "上の世代が電話番号を覚えていたように、若い人は店や道具の使い方を覚えており、覚える中身が変わっただけだと示すためである。"
       }
     },
     {
@@ -2197,7 +2215,8 @@
       "prompt": {
         "en": "What does the writer say has changed?",
         "zh": "作者认为改变的是什么？",
-        "zh_TW": "作者認為改變的是什麼？"
+        "zh_TW": "作者認為改變的是什麼？",
+        "ja": "作者は何が変わったと言っていますか。"
       },
       "options": [
         "人の力の量ではなく、その力が向かう先です。",
@@ -2209,7 +2228,8 @@
       "explanation": {
         "en": "The last sentence says in so many words that what changed is not the quantity of the power but where it is directed. The writer explicitly rejects the idea that the quantity has fallen.",
         "zh": "最后一句明确指出，改变的不是能力的多少，而是能力朝向的方向。作者明确否定了能力总量下降的说法。",
-        "zh_TW": "最後一句明確指出，改變的不是能力的多少，而是能力朝向的方向。作者明確否定了能力總量下降的說法。"
+        "zh_TW": "最後一句明確指出，改變的不是能力的多少，而是能力朝向的方向。作者明確否定了能力總量下降的說法。",
+        "ja": "最後の文で、変わったのは力の量ではなく力の向かう先だとはっきり述べ、量が減ったという考えを明確に否定している。"
       }
     },
     {
@@ -2223,7 +2243,8 @@
       "prompt": {
         "en": "What problem did the method of stamping marks have?",
         "zh": "盖印章的做法存在什么问题？",
-        "zh_TW": "蓋印章的做法存在什麼問題？"
+        "zh_TW": "蓋印章的做法存在什麼問題？",
+        "ja": "印を押す方法にはどんな問題がありましたか。"
       },
       "options": [
         "読む数が少しも増えなかったことです。",
@@ -2235,7 +2256,8 @@
       "explanation": {
         "en": "The second sentence admits that the number of books read did rise; the third says many children stopped reading once the sheet was full, and the fourth calls it a game of collecting marks. Nothing is said about staff workload.",
         "zh": "第二句承认阅读数量确实增加了；第三句说很多孩子在纸盖满后就不再读，第四句称之为收集印章的游戏。文中并未提到工作人员的负担。",
-        "zh_TW": "第二句承認閱讀數量確實增加了；第三句說很多孩子在紙蓋滿後就不再讀，第四句稱之為收集印章的遊戲。文中並未提到工作人員的負擔。"
+        "zh_TW": "第二句承認閱讀數量確實增加了；第三句說很多孩子在紙蓋滿後就不再讀，第四句稱之為收集印章的遊戲。文中並未提到工作人員的負擔。",
+        "ja": "読む数は確かに増えたが、紙がいっぱいになると読むのをやめる子どもが多く、印を集める遊びになっていたと述べている。"
       }
     },
     {
@@ -2249,7 +2271,8 @@
       "prompt": {
         "en": "What changed after the library started the talking time?",
         "zh": "图书馆设置交流时间之后，出现了什么变化？",
-        "zh_TW": "圖書館設置交流時間之後，出現了什麼變化？"
+        "zh_TW": "圖書館設置交流時間之後，出現了什麼變化？",
+        "ja": "図書館が話す時間を設けてから何が変わりましたか。"
       },
       "options": [
         "読む数が前より大きく増えました。",
@@ -2261,7 +2284,8 @@
       "explanation": {
         "en": "The sixth sentence says the number of books does not rise as before, but more children now choose their next book themselves. The marks belong to the earlier method.",
         "zh": "第六句说阅读数量不像以前那样增长，但自己挑选下一本书的孩子多了。印章属于之前的做法。",
-        "zh_TW": "第六句說閱讀數量不像以前那樣增長，但自己挑選下一本書的孩子多了。印章屬於之前的做法。"
+        "zh_TW": "第六句說閱讀數量不像以前那樣增長，但自己挑選下一本書的孩子多了。印章屬於之前的做法。",
+        "ja": "六文目で、読む数は前ほど増えないが、次の本を自分で選ぶ子どもが増えたと述べている。"
       }
     },
     {
@@ -2276,7 +2300,8 @@
       "prompt": {
         "en": "What does the writer conclude about motivation?",
         "zh": "关于读书的意愿，作者得出了什么结论？",
-        "zh_TW": "關於讀書的意願，作者得出了什麼結論？"
+        "zh_TW": "關於讀書的意願，作者得出了什麼結論？",
+        "ja": "意欲について、作者はどう結論づけていますか。"
       },
       "options": [
         "外から与えるものではなく、内側から出てくるのを待つものだということです。",
@@ -2288,7 +2313,8 @@
       "explanation": {
         "en": "The final sentence states it: motivation is not given from outside but waited for to emerge from within. The stamping method, which counted books, is the example of what did not work.",
         "zh": "最后一句给出了结论：意愿不是从外部给予的，而是等它从内心生长出来。以数量取胜的盖章法正是失败的例子。",
-        "zh_TW": "最後一句給出了結論：意願不是從外部給予的，而是等它從內心生長出來。以數量取勝的蓋章法正是失敗的例子。"
+        "zh_TW": "最後一句給出了結論：意願不是從外部給予的，而是等它從內心生長出來。以數量取勝的蓋章法正是失敗的例子。",
+        "ja": "最後の文で、意欲は外から与えるものではなく、内側から出てくるのを待つものだと結論づけている。"
       }
     },
     {
@@ -2302,7 +2328,8 @@
       "prompt": {
         "en": "What did the writer think of the craftsman's work as a student?",
         "zh": "学生时代的作者是怎么看待这位匠人的工作的？",
-        "zh_TW": "學生時代的作者是怎麼看待這位匠人的工作的？"
+        "zh_TW": "學生時代的作者是怎麼看待這位匠人的工作的？",
+        "ja": "学生時代の作者は、この職人の仕事をどう思っていましたか。"
       },
       "options": [
         "機械では作れない特別な仕事だと思っていました。",
@@ -2314,7 +2341,8 @@
       "explanation": {
         "en": "The third and fourth sentences say the young writer took the work for something old, because he believed a machine could make the same things faster. His wish to learn it comes only at the end of the text.",
         "zh": "第三、四句写道，年轻的作者认为这门活儿已经过时，因为他相信用机器能更快地做出同样的东西。想学这门手艺是文章结尾才有的心情。",
-        "zh_TW": "第三、四句寫道，年輕的作者認為這門活兒已經過時，因為他相信用機器能更快地做出同樣的東西。想學這門手藝是文章結尾才有的心情。"
+        "zh_TW": "第三、四句寫道，年輕的作者認為這門活兒已經過時，因為他相信用機器能更快地做出同樣的東西。想學這門手藝是文章結尾才有的心情。",
+        "ja": "三、四文目で、機械のほうが速く作れるはずだと考え、その仕事を古いものだと思っていたと述べている。"
       }
     },
     {
@@ -2328,7 +2356,8 @@
       "prompt": {
         "en": "How did the customers explain their choice?",
         "zh": "客人是如何解释自己的选择的？",
-        "zh_TW": "客人是如何解釋自己的選擇的？"
+        "zh_TW": "客人是如何解釋自己的選擇的？",
+        "ja": "客はどうして手で作った家具を選んだと説明しましたか。"
       },
       "options": [
         "手で作った家具のほうが安いからだと答えました。",
@@ -2340,7 +2369,8 @@
       "explanation": {
         "en": "The eighth sentence reports their answer: they could not name what was better, but it looked as if it would last. The seventh sentence says the two kinds looked almost the same, so appearance was not the reason.",
         "zh": "第八句记录了他们的回答：说不出哪里好，但看上去能用得久。第七句说两者外观几乎无异，所以并不是外观的原因。",
-        "zh_TW": "第八句記錄了他們的回答：說不出哪裡好，但看上去能用得久。第七句說兩者外觀幾乎無異，所以並不是外觀的原因。"
+        "zh_TW": "第八句記錄了他們的回答：說不出哪裡好，但看上去能用得久。第七句說兩者外觀幾乎無異，所以並不是外觀的原因。",
+        "ja": "八文目で、どこがいいとは言えないが長く持ちそうだと答える人が多かったと述べている。"
       }
     },
     {
@@ -2355,7 +2385,8 @@
       "prompt": {
         "en": "Why does the writer say a school can teach only part of the skill?",
         "zh": "作者为什么说学校只能教这门技艺的一部分？",
-        "zh_TW": "作者為什麼說學校只能教這門技藝的一部分？"
+        "zh_TW": "作者為什麼說學校只能教這門技藝的一部分？",
+        "ja": "作者はなぜ学校で教えられるのは技術の一部にすぎないと言っていますか。"
       },
       "options": [
         "職人の判断は数字にも言葉にもならないからです。",
@@ -2367,7 +2398,8 @@
       "explanation": {
         "en": "The ninth and tenth sentences say the craftsman varied his force according to each piece of wood, and that this judgement becomes neither a number nor words; the eleventh concludes that one must spend long hours in the same place. Nothing suggests the craftsman refuses to teach.",
         "zh": "第九、十句说匠人依每根木头的性质改变用力方式，而这种判断既成不了数字也成不了语言；第十一句因此说必须长时间待在同一个地方。文中并没有说匠人拒绝传授。",
-        "zh_TW": "第九、十句說匠人依每根木頭的性質改變用力方式，而這種判斷既成不了數字也成不了語言；第十一句因此說必須長時間待在同一個地方。文中並沒有說匠人拒絕傳授。"
+        "zh_TW": "第九、十句說匠人依每根木頭的性質改變用力方式，而這種判斷既成不了數字也成不了語言；第十一句因此說必須長時間待在同一個地方。文中並沒有說匠人拒絕傳授。",
+        "ja": "職人の判断は木の性質ごとに変わり、それは数字にも言葉にもならないため、同じ場所で長い時間を過ごすほかないと述べている。"
       }
     },
     {
@@ -2381,7 +2413,8 @@
       "prompt": {
         "en": "What is the writer doing now?",
         "zh": "作者现在正在做什么？",
-        "zh_TW": "作者現在正在做什麼？"
+        "zh_TW": "作者現在正在做什麼？",
+        "ja": "作者は今、何をしていますか。"
       },
       "options": [
         "機械で作る家具の店を新しく開いています。",
@@ -2393,7 +2426,8 @@
       "explanation": {
         "en": "The last sentence says the writer goes to the workshop and tries to learn even one thing more, after noting that nobody has come to succeed the craftsman. The shop he opened was ten years ago.",
         "zh": "最后一句说作者常去工作间，想多学会哪怕一件事，前一句刚提到还没有人接班。他开店是十年前的事。",
-        "zh_TW": "最後一句說作者常去工作間，想多學會哪怕一件事，前一句剛提到還沒有人接班。他開店是十年前的事。"
+        "zh_TW": "最後一句說作者常去工作間，想多學會哪怕一件事，前一句剛提到還沒有人接班。他開店是十年前的事。",
+        "ja": "最後の文で、その仕事場に通い、一つでも多くのことを覚えようとしていると述べている。"
       }
     },
     {
@@ -2407,7 +2441,8 @@
       "prompt": {
         "en": "What does the second writer point out that the first does not?",
         "zh": "后一位指出了前一位没有提到的哪一点？",
-        "zh_TW": "後一位指出了前一位沒有提到的哪一點？"
+        "zh_TW": "後一位指出了前一位沒有提到的哪一點？",
+        "ja": "後の人は前の人が述べていない何を指摘していますか。"
       },
       "options": [
         "通勤の時間がなくなるという点です。",
@@ -2419,7 +2454,8 @@
       "explanation": {
         "en": "The first writer speaks only of the time and money saved. The second adds that a company which does not trust staff it cannot see demands more and more detailed reports, so the employee is not freed after all. The first, second and fourth choices are the first writer's points.",
         "zh": "前一位只谈省下的时间和费用。后一位补充说，越是不信任看不见的员工的公司，就越会增加繁琐的汇报，员工其实并未因此轻松。第一、二、四项都是前一位的论点。",
-        "zh_TW": "前一位只談省下的時間和費用。後一位補充說，越是不信任看不見的員工的公司，就越會增加繁瑣的彙報，員工其實並未因此輕鬆。第一、二、四項都是前一位的論點。"
+        "zh_TW": "前一位只談省下的時間和費用。後一位補充說，越是不信任看不見的員工的公司，就越會增加繁瑣的彙報，員工其實並未因此輕鬆。第一、二、四項都是前一位的論點。",
+        "ja": "前の人は時間と費用のことしか述べていないが、後の人は見えない社員を信じない会社ほど報告を増やすと補足している。"
       }
     },
     {
@@ -2434,7 +2470,8 @@
       "prompt": {
         "en": "What do the two writers have in common?",
         "zh": "两位的共同之处是什么？",
-        "zh_TW": "兩位的共同之處是什麼？"
+        "zh_TW": "兩位的共同之處是什麼？",
+        "ja": "二人の共通点は何ですか。"
       },
       "options": [
         "どちらも、読む道具が読み方に関わると考えています。",
@@ -2446,7 +2483,8 @@
       "explanation": {
         "en": "The first writer argues that a screen changes when and where one reads, and the second that paper changes how far one can see one's progress and how one remembers; both are talking about the tool shaping the reading. Only the second praises paper, and neither opposes screens outright.",
         "zh": "前一位主张屏幕改变了阅读的时间与场所，后一位主张纸张改变了对进度的把握与记忆方式，两者谈的都是工具对阅读方式的影响。只有后一位称赞纸质书，而双方都没有全盘反对屏幕。",
-        "zh_TW": "前一位主張屏幕改變了閱讀的時間與場所，後一位主張紙張改變了對進度的把握與記憶方式，兩者談的都是工具對閱讀方式的影響。只有後一位稱讚紙質書，而雙方都沒有全盤反對屏幕。"
+        "zh_TW": "前一位主張屏幕改變了閱讀的時間與場所，後一位主張紙張改變了對進度的把握與記憶方式，兩者談的都是工具對閱讀方式的影響。只有後一位稱讚紙質書，而雙方都沒有全盤反對屏幕。",
+        "ja": "どちらも、読む道具が読み方そのものに関わると述べている点で共通している。"
       }
     },
     {
@@ -2462,7 +2500,8 @@
       "prompt": {
         "en": "What worry does the second writer raise about deciding pay by results alone?",
         "zh": "对于只按成果决定工资，后一位提出了什么担忧？",
-        "zh_TW": "對於只按成果決定工資，後一位提出了什麼擔憂？"
+        "zh_TW": "對於只按成果決定工資，後一位提出了什麼擔憂？",
+        "ja": "成果だけで給料を決めることについて、後の人はどんな心配を述べていますか。"
       },
       "options": [
         "若い人の給料が下がってしまうという心配です。",
@@ -2474,7 +2513,8 @@
       "explanation": {
         "en": "The second writer's second sentence says a results-only scheme leads people to avoid work that is hard to turn into figures, and that without those who support others' work no results appear at all. The first writer is the one who talks about the young and about the company's overall strength.",
         "zh": "后一位的第二句说，只看成果的机制会让人回避难以化为数字的工作，而没有人承担辅助他人的角色，成果本身也无从产生。谈年轻人和公司整体实力的是前一位。",
-        "zh_TW": "後一位的第二句說，只看成果的機制會讓人迴避難以化為數字的工作，而沒有人承擔輔助他人的角色，成果本身也無從產生。談年輕人和公司整體實力的是前一位。"
+        "zh_TW": "後一位的第二句說，只看成果的機制會讓人迴避難以化為數字的工作，而沒有人承擔輔助他人的角色，成果本身也無從產生。談年輕人和公司整體實力的是前一位。",
+        "ja": "後の人は、数字になりにくい仕事を人が避けるようになる結果を生むと心配している。"
       }
     },
     {
@@ -2489,7 +2529,8 @@
       "prompt": {
         "en": "Why does the writer say reports have increased?",
         "zh": "作者认为报告数量增加的原因是什么？",
-        "zh_TW": "作者認為報告數量增加的原因是什麼？"
+        "zh_TW": "作者認為報告數量增加的原因是什麼？",
+        "ja": "作者はなぜ報告が増えたと言っていますか。"
       },
       "options": [
         "会社の失敗が実際に増えたからです。",
@@ -2501,7 +2542,8 @@
       "explanation": {
         "en": "The text says outright that reports rose not because failures rose, but because what had been invisible became visible once names were removed from the reports. No reward for reporting is mentioned.",
         "zh": "文中明确指出，报告增多不是因为失败增多，而是因为报告不再写姓名后，以往看不见的东西变得看得见了。文中也没有提到写报告有奖励。",
-        "zh_TW": "文中明確指出，報告增多不是因為失敗增多，而是因為報告不再寫姓名後，以往看不見的東西變得看得見了。文中也沒有提到寫報告有獎勵。"
+        "zh_TW": "文中明確指出，報告增多不是因為失敗增多，而是因為報告不再寫姓名後，以往看不見的東西變得看得見了。文中也沒有提到寫報告有獎勵。",
+        "ja": "失敗が実際に増えたのではなく、名前を書かなくなったことでこれまで見えなかったものが見えるようになっただけだと述べている。"
       }
     },
     {
@@ -2516,7 +2558,8 @@
       "prompt": {
         "en": "What is the writer's main point?",
         "zh": "作者最想表达的是什么？",
-        "zh_TW": "作者最想表達的是什麼？"
+        "zh_TW": "作者最想表達的是什麼？",
+        "ja": "作者が最も言いたいことは何ですか。"
       },
       "options": [
         "短い言葉を使うのをやめるべきだということです。",
@@ -2528,7 +2571,8 @@
       "explanation": {
         "en": "The writer states that he is not saying short words are bad, and that what should be kept in mind is the conditions dropped in the shortening; tolerance is then defined as remembering that the other side has conditions too.",
         "zh": "作者明确表示自己并非说简短的话不好，而是要求自己记住缩短时被舍弃的那些条件；随后又把宽容定义为不忘对方的意见同样附带条件。",
-        "zh_TW": "作者明確表示自己並非說簡短的話不好，而是要求自己記住縮短時被捨棄的那些條件；隨後又把寬容定義為不忘對方的意見同樣附帶條件。"
+        "zh_TW": "作者明確表示自己並非說簡短的話不好，而是要求自己記住縮短時被捨棄的那些條件；隨後又把寬容定義為不忘對方的意見同樣附帶條件。",
+        "ja": "短い言葉自体を否定するのではなく、短くしたときに落ちた条件を自分で覚えておくべきだと述べている。"
       }
     },
     {
@@ -2543,7 +2587,8 @@
       "prompt": {
         "en": "Why does the writer say records are necessary?",
         "zh": "作者为什么说记录是必要的？",
-        "zh_TW": "作者為什麼說記錄是必要的？"
+        "zh_TW": "作者為什麼說記錄是必要的？",
+        "ja": "作者はなぜ記録が必要だと言っていますか。"
       },
       "options": [
         "急な変化には誰も反対しないからです。",
@@ -2555,7 +2600,8 @@
       "explanation": {
         "en": "The text says our senses respond to the speed of change rather than its amount, so slow change escapes notice; that is exactly why photographs and figures are needed. Sudden change is the kind that does draw protest.",
         "zh": "文中说我们的感觉反应的是变化的速度而非总量，因此缓慢的变化不易被察觉，正因如此才需要照片和数字。急剧的变化恰恰是会引来反对声的那一种。",
-        "zh_TW": "文中說我們的感覺反應的是變化的速度而非總量，因此緩慢的變化不易被察覺，正因如此才需要照片和數字。急劇的變化恰恰是會引來反對聲的那一種。"
+        "zh_TW": "文中說我們的感覺反應的是變化的速度而非總量，因此緩慢的變化不易被察覺，正因如此才需要照片和數字。急劇的變化恰恰是會引來反對聲的那一種。",
+        "ja": "私たちの感覚は変化の量ではなく速さに反応するため、緩やかな変化は記録がなければ見えないと述べている。"
       }
     },
     {
@@ -2571,7 +2617,8 @@
       "prompt": {
         "en": "What does the writer want schools and groups to do?",
         "zh": "作者希望学校和集体怎么做？",
-        "zh_TW": "作者希望學校和集體怎麼做？"
+        "zh_TW": "作者希望學校和集體怎麼做？",
+        "ja": "作者は学校や集団にどうしてほしいと言っていますか。"
       },
       "options": [
         "同じであることをやめて、一人ひとり別々に進むべきです。",
@@ -2583,7 +2630,8 @@
       "explanation": {
         "en": "The last two sentences say plainly that the writer is not calling sameness bad, but wants a place prepared where a differing voice is heard once to the end. Excluding doubters is the very habit he criticises.",
         "zh": "最后两句明确表示，作者并非说一致不好，而是希望准备一个能把不同声音听到底的场所。把怀疑规范的人排除出去，正是他所批评的做法。",
-        "zh_TW": "最後兩句明確表示，作者並非說一致不好，而是希望準備一個能把不同聲音聽到底的場所。把懷疑規範的人排除出去，正是他所批評的做法。"
+        "zh_TW": "最後兩句明確表示，作者並非說一致不好，而是希望準備一個能把不同聲音聽到底的場所。把懷疑規範的人排除出去，正是他所批評的做法。",
+        "ja": "同じであることを否定するのではなく、違う声が出たときそれを最後まで聞く場所を用意すべきだと述べている。"
       }
     },
     {
@@ -2599,7 +2647,8 @@
       "prompt": {
         "en": "A fourteen-year-old applying alone at the counter must do what?",
         "zh": "一名十四岁的读者独自到窗口申请时，必须做什么？",
-        "zh_TW": "一名十四歲的讀者獨自到窗口申請時，必須做什麼？"
+        "zh_TW": "一名十四歲的讀者獨自到窗口申請時，必須做什麼？",
+        "ja": "十四歳が窓口で一人で申し込む場合、何をしなければなりませんか。"
       },
       "options": [
         "所定の用紙に家の方の名前を書き、住所が分かる書類を持っていきます。",
@@ -2611,7 +2660,8 @@
       "explanation": {
         "en": "Applicants need a document showing their address, prepared in advance, and those aged fifteen or under must enter a household member's name on the prescribed form. The card is issued the same day, and returning the old card is not asked for.",
         "zh": "申请人需要事先准备能证明住址的材料，十五岁以下者还须在规定表格上填写家人姓名。新卡当天发放，通知中也没有要求归还旧卡。",
-        "zh_TW": "申請人需要事先準備能證明住址的材料，十五歲以下者還須在規定表格上填寫家人姓名。新卡當天發放，通知中也沒有要求歸還舊卡。"
+        "zh_TW": "申請人需要事先準備能證明住址的材料，十五歲以下者還須在規定表格上填寫家人姓名。新卡當天發放，通知中也沒有要求歸還舊卡。",
+        "ja": "住所が分かる書類を事前に用意し、十五歳以下は所定の用紙に家の方の名前を記入しなければならない。"
       }
     },
     {
@@ -2627,7 +2677,8 @@
       "prompt": {
         "en": "Which statement matches the notice?",
         "zh": "下列哪一项与通知的内容相符？",
-        "zh_TW": "下列哪一項與通知的內容相符？"
+        "zh_TW": "下列哪一項與通知的內容相符？",
+        "ja": "お知らせの内容と合っているのはどれですか。"
       },
       "options": [
         "区画の広さによって、料金が変わります。",
@@ -2639,7 +2690,8 @@
       "explanation": {
         "en": "Where applications exceed the plots a lottery decides, but those who did not use a plot last year are given priority. Every plot is the same size and price, older applicants pay half rather than nothing, and everyone who applied is told the result.",
         "zh": "申请超过地块数时以抽签决定，但去年未使用过的人优先。每块地大小和价格一律相同，六十五岁以上者是减半而非免费，结果也会通知所有申请人。",
-        "zh_TW": "申請超過地塊數時以抽籤決定，但去年未使用過的人優先。每塊地大小和價格一律相同，六十五歲以上者是減半而非免費，結果也會通知所有申請人。"
+        "zh_TW": "申請超過地塊數時以抽籤決定，但去年未使用過的人優先。每塊地大小和價格一律相同，六十五歲以上者是減半而非免費，結果也會通知所有申請人。",
+        "ja": "申し込みが区画を超えた場合は抽選だが、昨年利用しなかった人が優先されると述べられている。"
       }
     },
     {
@@ -2654,7 +2706,8 @@
       "prompt": {
         "en": "What does the writer say it means to treat a thing with care?",
         "zh": "作者认为爱惜东西指的是什么？",
-        "zh_TW": "作者認為愛惜東西指的是什麼？"
+        "zh_TW": "作者認為愛惜東西指的是什麼？",
+        "ja": "物を大切にするとは、作者にとって何を指しますか。"
       },
       "options": [
         "買った後にどれだけ手をかけるかという問題です。",
@@ -2666,7 +2719,8 @@
       "explanation": {
         "en": "The last sentence says it plainly: care is not the judgement made when buying but the way one uses the time afterwards. The other choices concern the moment of purchase or mere knowledge of the steps.",
         "zh": "末句说得很直接：爱惜不是购买时的判断，而是买下之后如何使用时间。其余三项讲的是购买那一刻的事，或只是记住步骤而已。",
-        "zh_TW": "末句說得很直接：愛惜不是購買時的判斷，而是買下之後如何使用時間。其餘三項講的是購買那一刻的事，或只是記住步驟而已。"
+        "zh_TW": "末句說得很直接：愛惜不是購買時的判斷，而是買下之後如何使用時間。其餘三項講的是購買那一刻的事，或只是記住步驟而已。",
+        "ja": "最後の文で、それは買う時の判断ではなく、買った後の時間の使い方だと述べている。"
       }
     },
     {
@@ -2681,7 +2735,8 @@
       "prompt": {
         "en": "According to the writer, what is missing from the usual minutes of a meeting?",
         "zh": "作者认为，通常的会议记录里缺少什么？",
-        "zh_TW": "作者認為，通常的會議記錄裡缺少什麼？"
+        "zh_TW": "作者認為，通常的會議記錄裡缺少什麼？",
+        "ja": "普段の会議の記録に足りないものは何だと作者は言っていますか。"
       },
       "options": [
         "決まった内容の要点です。",
@@ -2693,7 +2748,8 @@
       "explanation": {
         "en": "The writer says records telling us what was hesitated over are scarce, and that minutes which put that process last do not help the next meeting. Decisions, by contrast, are what the usual minutes already contain.",
         "zh": "作者说，能告诉我们当初在哪里犹豫过的记录很少，把这一过程搁到最后的记录帮不了下一次会议。至于已定事项，恰恰是通常记录里本来就有的内容。",
-        "zh_TW": "作者說，能告訴我們當初在哪裡猶豫過的記錄很少，把這一過程擱到最後的記錄幫不了下一次會議。至於已定事項，恰恰是通常記錄裡本來就有的內容。"
+        "zh_TW": "作者說，能告訴我們當初在哪裡猶豫過的記錄很少，把這一過程擱到最後的記錄幫不了下一次會議。至於已定事項，恰恰是通常記錄裡本來就有的內容。",
+        "ja": "決まらなかった話、つまり参加者が何に迷ったかという過程を伝える記録が乏しいと述べている。"
       }
     },
     {
@@ -2708,7 +2764,8 @@
       "prompt": {
         "en": "What is the writer's view of replying quickly?",
         "zh": "作者如何看待迅速回复？",
-        "zh_TW": "作者如何看待迅速回復？"
+        "zh_TW": "作者如何看待迅速回復？",
+        "ja": "早い返事について、作者はどう考えていますか。"
       },
       "options": [
         "早い返事が明瞭な返事であるとは限りません。",
@@ -2720,7 +2777,8 @@
       "explanation": {
         "en": "The closing sentence separates the two: a fast reply and a clear reply are not the same thing. The writer never claims that slower is always better, nor that a day's wait is a rule.",
         "zh": "结尾一句把两者分开：快的回复与清楚的回复不是一回事。作者并没有说越慢越好，也没有把隔一天再写定为规矩。",
-        "zh_TW": "結尾一句把兩者分開：快的回覆與清楚的回覆不是一回事。作者並沒有說越慢越好，也沒有把隔一天再寫定為規矩。"
+        "zh_TW": "結尾一句把兩者分開：快的回覆與清楚的回覆不是一回事。作者並沒有說越慢越好，也沒有把隔一天再寫定為規矩。",
+        "ja": "早い返事と明瞭な返事は同じものではないと結んでいる。"
       }
     },
     {
@@ -2735,7 +2793,8 @@
       "prompt": {
         "en": "Why can the writer not remember the route walked the day before?",
         "zh": "作者为什么记不住前一天走过的路？",
-        "zh_TW": "作者為什麼記不住前一天走過的路？"
+        "zh_TW": "作者為什麼記不住前一天走過的路？",
+        "ja": "作者はなぜ前の日に歩いた道を思い出せないのですか。"
       },
       "options": [
         "地図に従うと、迷いながら町の形を把握する時間を持たないからです。",
@@ -2747,7 +2806,8 @@
       "explanation": {
         "en": "The third sentence says reliance on the map takes away the chance to grasp the town's shape, and the last says the work of learning a route lay in the time spent lost. The other options blame the town or the map, which the passage does not.",
         "zh": "第三句说对地图的依赖夺走了把握城市轮廓的机会，末句说记住道路这件事本就在迷路的时间里。其余三项把原因归到城市或地图上，文中并无此意。",
-        "zh_TW": "第三句說對地圖的依賴奪走了把握城市輪廓的機會，末句說記住道路這件事本就在迷路的時間裡。其餘三項把原因歸到城市或地圖上，文中並無此意。"
+        "zh_TW": "第三句說對地圖的依賴奪走了把握城市輪廓的機會，末句說記住道路這件事本就在迷路的時間裡。其餘三項把原因歸到城市或地圖上，文中並無此意。",
+        "ja": "地図に頼ることで、迷いながら町の形を把握する時間を持たなくなるからだと述べている。"
       }
     },
     {
@@ -2762,7 +2822,8 @@
       "prompt": {
         "en": "What danger of numerical goals does the writer point out?",
         "zh": "作者指出用数字设定目标有什么危险？",
-        "zh_TW": "作者指出用數字設定目標有什麼危險？"
+        "zh_TW": "作者指出用數字設定目標有什麼危險？",
+        "ja": "数字による目標にはどんな危険があると作者は指摘していますか。"
       },
       "options": [
         "目標の外に残る仕事に誰も手をつけない状態になることです。",
@@ -2774,7 +2835,8 @@
       "explanation": {
         "en": "The second sentence says work that does not become a figure turns into work nobody takes up, and the last calls for a device against leaving it untouched. The others are not claims the passage makes.",
         "zh": "第二句说无法化为数字的工作会变成没人动手的工作，末句呼吁想办法别让它被搁置。其余三项文中都未提及。",
-        "zh_TW": "第二句說無法化為數字的工作會變成沒人動手的工作，末句呼籲想辦法別讓它被擱置。其餘三項文中都未提及。"
+        "zh_TW": "第二句說無法化為數字的工作會變成沒人動手的工作，末句呼籲想辦法別讓它被擱置。其餘三項文中都未提及。",
+        "ja": "数字にならない仕事は、いつの間にか誰も手をつけない仕事になってしまうという危険を指摘している。"
       }
     },
     {
@@ -2789,7 +2851,8 @@
       "prompt": {
         "en": "What is the writer's point about handwritten letters?",
         "zh": "关于手写信件，作者想说明什么？",
-        "zh_TW": "關於手寫信件，作者想說明什麼？"
+        "zh_TW": "關於手寫信件，作者想說明什麼？",
+        "ja": "手書きの手紙について、作者は何を言おうとしていますか。"
       },
       "options": [
         "伝える手段が便利になっても、心を向ける時間は短くならないという点です。",
@@ -2801,7 +2864,8 @@
       "explanation": {
         "en": "The last sentence draws the line: what has grown convenient is the means of conveying, while the time spent turning one's mind towards someone is unchanged. The passage says the opposite of the second and third options.",
         "zh": "末句划出了界线：变便利的只是传递手段，而把心思投向他人所花的时间毫无缩短。第二、三项与文中所述正好相反。",
-        "zh_TW": "末句劃出了界線：變便利的只是傳遞手段，而把心思投向他人所花的時間毫無縮短。第二、三項與文中所述正好相反。"
+        "zh_TW": "末句劃出了界線：變便利的只是傳遞手段，而把心思投向他人所花的時間毫無縮短。第二、三項與文中所述正好相反。",
+        "ja": "伝える手段は便利になっても、相手に心を向ける時間そのものは変わらないと述べている。"
       }
     },
     {
@@ -2816,7 +2880,8 @@
       "prompt": {
         "en": "What does the writer say about trees planted in a town?",
         "zh": "关于种在城里的树，作者是怎么说的？",
-        "zh_TW": "關於種在城裡的樹，作者是怎麼說的？"
+        "zh_TW": "關於種在城裡的樹，作者是怎麼說的？",
+        "ja": "町に植える木について、作者は何と述べていますか。"
       },
       "options": [
         "町の仕組みを支える働きを持っています。",
@@ -2828,7 +2893,8 @@
       "explanation": {
         "en": "Trees lower the summer temperature, cut electricity use and slow the run-off of rain; the last sentence therefore calls greenery part of how a town works. The remaining options contradict the passage.",
         "zh": "树木降低夏天气温、减少用电、减缓雨水流速，因此末句说绿色是城市运转机制的一部分。其余选项与文意相反。",
-        "zh_TW": "樹木降低夏天氣溫、減少用電、減緩雨水流速，因此末句說綠色是城市運轉機制的一部分。其餘選項與文意相反。"
+        "zh_TW": "樹木降低夏天氣溫、減少用電、減緩雨水流速，因此末句說綠色是城市運轉機制的一部分。其餘選項與文意相反。",
+        "ja": "気温を下げ、電気の使用量を減らし、雨水の流れを緩やかにすることから、緑は町の仕組みを支えていると述べている。"
       }
     },
     {
@@ -2843,7 +2909,8 @@
       "prompt": {
         "en": "Why does the writer call a quiet workplace dangerous?",
         "zh": "作者为什么说安静的职场反而危险？",
-        "zh_TW": "作者為什麼說安靜的職場反而危險？"
+        "zh_TW": "作者為什麼說安靜的職場反而危險？",
+        "ja": "作者はなぜ静かな職場を危険だと言っていますか。"
       },
       "options": [
         "失敗を指摘する声が消えると、直す機会も消えるからです。",
@@ -2855,7 +2922,8 @@
       "explanation": {
         "en": "The third sentence states it: where the voices pointing out small failures have gone, the chance to correct them goes too. Silence therefore hides risk rather than showing safety.",
         "zh": "第三句已言明：指出小失误的声音消失时，纠正的机会也随之消失。因此安静掩盖的是风险，而非安全。",
-        "zh_TW": "第三句已言明：指出小失誤的聲音消失時，糾正的機會也隨之消失。因此安靜掩蓋的是風險，而非安全。"
+        "zh_TW": "第三句已言明：指出小失誤的聲音消失時，糾正的機會也隨之消失。因此安靜掩蓋的是風險，而非安全。",
+        "ja": "小さな失敗を指摘する声が消えると、それを直す機会も同時に消えてしまうからだと述べている。"
       }
     },
     {
@@ -2869,7 +2937,8 @@
       "prompt": {
         "en": "What did the writer believe ten years ago?",
         "zh": "十年前作者相信的是什么？",
-        "zh_TW": "十年前作者相信的是什麼？"
+        "zh_TW": "十年前作者相信的是什麼？",
+        "ja": "十年前、作者は何を信じていましたか。"
       },
       "options": [
         "品物が一つでも欠けると客が離れるということです。",
@@ -2881,7 +2950,8 @@
       "explanation": {
         "en": "The third sentence gives the old belief: if even one thing a customer wanted was missing, that customer would never return. The other options describe what the writer came to do later, or nothing in the text.",
         "zh": "第三句写出了当年的信念：只要缺了顾客想要的一样东西，那位顾客就不会再来。其余选项要么是后来的做法，要么文中根本没有。",
-        "zh_TW": "第三句寫出了當年的信念：只要缺了顧客想要的一樣東西，那位顧客就不會再來。其餘選項要麼是後來的做法，要麼文中根本沒有。"
+        "zh_TW": "第三句寫出了當年的信念：只要缺了顧客想要的一樣東西，那位顧客就不會再來。其餘選項要麼是後來的做法，要麼文中根本沒有。",
+        "ja": "三文目で、客の求めるものが一つでも欠けるとその客は二度と来ないと信じていたと述べている。"
       }
     },
     {
@@ -2895,7 +2965,8 @@
       "prompt": {
         "en": "What happened as the number of shelves grew?",
         "zh": "货架增多之后发生了什么？",
-        "zh_TW": "貨架增多之後發生了什麼？"
+        "zh_TW": "貨架增多之後發生了什麼？",
+        "ja": "棚が増えるにつれて何が起こりましたか。"
       },
       "options": [
         "売れない品が古くなり、店の中が狭くなりました。",
@@ -2907,7 +2978,8 @@
       "explanation": {
         "en": "The fourth sentence says exactly this: the more shelves there were, the older the unsold goods grew and the narrower the shop became. Doubling belongs to no part of this passage.",
         "zh": "第四句正是这样写的：货架越多，卖不掉的商品越陈旧，店里也越狭窄。翻倍之说文中并无。",
-        "zh_TW": "第四句正是這樣寫的：貨架越多，賣不掉的商品越陳舊，店裡也越狹窄。翻倍之說文中並無。"
+        "zh_TW": "第四句正是這樣寫的：貨架越多，賣不掉的商品越陳舊，店裡也越狹窄。翻倍之說文中並無。",
+        "ja": "四文目で、売れない品が古くなり、店の中が狭くなったと述べている。"
       }
     },
     {
@@ -2922,7 +2994,8 @@
       "prompt": {
         "en": "What does the writer conclude from the experiment?",
         "zh": "从这次尝试中，作者得出了什么结论？",
-        "zh_TW": "從這次嘗試中，作者得出了什麼結論？"
+        "zh_TW": "從這次嘗試中，作者得出了什麼結論？",
+        "ja": "この試みから作者は何を結論づけていますか。"
       },
       "options": [
         "小さな店には、店の役割を選び直す余地が残っているということです。",
@@ -2934,7 +3007,8 @@
       "explanation": {
         "en": "The final sentence says the room to choose a shop's role afresh still remains, and remains above all to small shops. The second option is the belief the writer abandoned.",
         "zh": "末句说，重新选择店铺角色的余地依然存在，而且恰恰留在小店这里。第二项是作者已经放弃的想法。",
-        "zh_TW": "末句說，重新選擇店鋪角色的餘地依然存在，而且恰恰留在小店這裡。第二項是作者已經放棄的想法。"
+        "zh_TW": "末句說，重新選擇店鋪角色的餘地依然存在，而且恰恰留在小店這裡。第二項是作者已經放棄的想法。",
+        "ja": "店の役割を選び直す余地は、まだ小さな店にこそ残っていると結論づけている。"
       }
     },
     {
@@ -2948,7 +3022,8 @@
       "prompt": {
         "en": "What did the writer think when starting this work?",
         "zh": "刚开始做这份工作时，作者是怎么想的？",
-        "zh_TW": "剛開始做這份工作時，作者是怎麼想的？"
+        "zh_TW": "剛開始做這份工作時，作者是怎麼想的？",
+        "ja": "この仕事を始めたころ、作者はどう考えていましたか。"
       },
       "options": [
         "原文の語をできるだけ厳密に置き換えるのが正しいということです。",
@@ -2960,7 +3035,8 @@
       "explanation": {
         "en": "The second sentence states the early belief: substituting the words of the original as strictly as possible. Moving the sentence's function across is what the writer thinks now, not then.",
         "zh": "第二句写明了最初的想法：尽可能严格地替换原文的词。搬移句子的作用是如今的做法，而非当初。",
-        "zh_TW": "第二句寫明瞭最初的想法：儘可能嚴格地替換原文的詞。搬移句子的作用是如今的做法，而非當初。"
+        "zh_TW": "第二句寫明瞭最初的想法：儘可能嚴格地替換原文的詞。搬移句子的作用是如今的做法，而非當初。",
+        "ja": "原文の語をできるだけ厳密に交換することが正しいと考えていたと述べている。"
       }
     },
     {
@@ -2974,7 +3050,8 @@
       "prompt": {
         "en": "Why does the writer say word-for-word substitution does not work?",
         "zh": "作者为什么说逐词替换行不通？",
-        "zh_TW": "作者為什麼說逐詞替換行不通？"
+        "zh_TW": "作者為什麼說逐詞替換行不通？",
+        "ja": "作者はなぜ語を一対一で置き換えることはできないと言っていますか。"
       },
       "options": [
         "語の背後には、その言葉を使う人たちが育てた概念があるからです。",
@@ -2986,7 +3063,8 @@
       "explanation": {
         "en": "The fourth sentence gives the reason: behind one word lies a concept cultivated over a long time by the people who use it, so no two languages match word for word.",
         "zh": "第四句给出了理由：一个词的背后是使用者长年培育出的概念，所以两种语言的词无法一一对应。",
-        "zh_TW": "第四句給出了理由：一個詞的背後是使用者長年培育出的概念，所以兩種語言的詞無法一一對應。"
+        "zh_TW": "第四句給出了理由：一個詞的背後是使用者長年培育出的概念，所以兩種語言的詞無法一一對應。",
+        "ja": "一つの語の背後には、それを使う人たちが長い間育ててきた概念があるからだと述べている。"
       }
     },
     {
@@ -3001,7 +3079,8 @@
       "prompt": {
         "en": "What does the writer mean by the road that comes closest to the original?",
         "zh": "作者所说的最接近原文的路，指的是什么？",
-        "zh_TW": "作者所說的最接近原文的路，指的是什麼？"
+        "zh_TW": "作者所說的最接近原文的路，指的是什麼？",
+        "ja": "原文に最も近寄る道とは、作者にとって何を指しますか。"
       },
       "options": [
         "原文の読者が受け取ったものと同じものを届けることです。",
@@ -3013,7 +3092,8 @@
       "explanation": {
         "en": "The sixth sentence states the aim, and the seventh calls that aim the closest approach to the original even though it looks like departure. The other options are the strict substitution the writer gave up.",
         "zh": "第六句说明了目标，第七句说这看似远离原文，实则最接近原文。其余各项都属于作者已放弃的严格替换。",
-        "zh_TW": "第六句說明了目標，第七句說這看似遠離原文，實則最接近原文。其餘各項都屬於作者已放棄的嚴格替換。"
+        "zh_TW": "第六句說明了目標，第七句說這看似遠離原文，實則最接近原文。其餘各項都屬於作者已放棄的嚴格替換。",
+        "ja": "原文の読者が受け取ったものと同じものを、日本語の読者に届けることを指している。"
       }
     },
     {
@@ -3027,7 +3107,8 @@
       "prompt": {
         "en": "What does the writer write down every day?",
         "zh": "作者每天记下的是什么？",
-        "zh_TW": "作者每天記下的是什麼？"
+        "zh_TW": "作者每天記下的是什麼？",
+        "ja": "作者は毎日何を書き残していますか。"
       },
       "options": [
         "畑の様子を短く書き残しています。",
@@ -3039,7 +3120,8 @@
       "explanation": {
         "en": "The second and third sentences say the habit is to note briefly the state of the orchard: the day the blossom opened, the day it rained, the day the insects increased.",
         "zh": "第二、三句说明这一习惯就是简短记下田里的情形：花开的日子、下雨的日子、虫子变多的日子。",
-        "zh_TW": "第二、三句說明這一習慣就是簡短記下田裡的情形：花開的日子、下雨的日子、蟲子變多的日子。"
+        "zh_TW": "第二、三句說明這一習慣就是簡短記下田裡的情形：花開的日子、下雨的日子、蟲子變多的日子。",
+        "ja": "花の咲いた日、雨の降った日、虫の増えた日など、畑の様子を短く書き残している。"
       }
     },
     {
@@ -3053,7 +3135,8 @@
       "prompt": {
         "en": "What becomes visible from thirty years of these notes?",
         "zh": "三十年的记录能看出什么？",
-        "zh_TW": "三十年的記錄能看出什麼？"
+        "zh_TW": "三十年的記錄能看出什麼？",
+        "ja": "三十年分の記録から何が見えてきますか。"
       },
       "options": [
         "気候の変化が形を持って現れます。",
@@ -3065,7 +3148,8 @@
       "explanation": {
         "en": "The fourth sentence says a single year means almost nothing, but thirty years side by side let the change in the climate appear with a shape; the blossom now opens ten days earlier.",
         "zh": "第四句说一年份几乎没有意义，但三十年并排就能让气候变化显出形状，花期提前了十天。",
-        "zh_TW": "第四句說一年份幾乎沒有意義，但三十年並排就能讓氣候變化顯出形狀，花期提前了十天。"
+        "zh_TW": "第四句說一年份幾乎沒有意義，但三十年並排就能讓氣候變化顯出形狀，花期提前了十天。",
+        "ja": "気候の変化が形を持って現れ、花の咲く日が三十年で十日ほど早くなったことが分かる。"
       }
     },
     {
@@ -3080,7 +3164,8 @@
       "prompt": {
         "en": "What does the writer regard as the surest support?",
         "zh": "作者认为最可靠的支撑是什么？",
-        "zh_TW": "作者認為最可靠的支撐是什麼？"
+        "zh_TW": "作者認為最可靠的支撐是什麼？",
+        "ja": "作者が最も確かな支えだと考えているものは何ですか。"
       },
       "options": [
         "この土地に合う作り方を教える独自の記録です。",
@@ -3092,7 +3177,8 @@
       "explanation": {
         "en": "The last two sentences say the way of growing suited to this land is taught by the pile of paper, not by books, and that keeping up one's own record is surer than any new machine.",
         "zh": "最后两句说，适合这片土地的种法是这叠纸而不是书本教的，坚持自己的记录比任何新机器都可靠。",
-        "zh_TW": "最後兩句說，適合這片土地的種法是這疊紙而不是書本教的，堅持自己的記錄比任何新機器都可靠。"
+        "zh_TW": "最後兩句說，適合這片土地的種法是這疊紙而不是書本教的，堅持自己的記錄比任何新機器都可靠。",
+        "ja": "この土地に合う作り方を教えてくれる、独自の記録を続けることだと考えている。"
       }
     },
     {
@@ -3106,7 +3192,8 @@
       "prompt": {
         "en": "What is a weather forecast, according to the writer?",
         "zh": "在作者看来，天气预报是什么？",
-        "zh_TW": "在作者看來，天氣預報是什麼？"
+        "zh_TW": "在作者看來，天氣預報是什麼？",
+        "ja": "作者にとって、天気予報とは何ですか。"
       },
       "options": [
         "計算の結果の中で最も起こりやすい形を選んだものです。",
@@ -3118,7 +3205,8 @@
       "explanation": {
         "en": "The second sentence defines it: the forecast gathers the results of many calculations and selects the most likely form, so being wrong is part of its premise.",
         "zh": "第二句给出了定义：预报汇集多次计算的结果，选出最可能出现的情形，所以出错本就包含在前提之中。",
-        "zh_TW": "第二句給出了定義：預報彙集多次計算的結果，選出最可能出現的情形，所以出錯本就包含在前提之中。"
+        "zh_TW": "第二句給出了定義：預報彙集多次計算的結果，選出最可能出現的情形，所以出錯本就包含在前提之中。",
+        "ja": "いくつもの計算の結果を集め、最も起こりやすい形を選んだものであり、外れることが前提に含まれている。"
       }
     },
     {
@@ -3132,7 +3220,8 @@
       "prompt": {
         "en": "Why do listeners become strongly dissatisfied?",
         "zh": "听众为什么会产生强烈的不满？",
-        "zh_TW": "聽眾為什麼會產生強烈的不滿？"
+        "zh_TW": "聽眾為什麼會產生強烈的不滿？",
+        "ja": "聞く側はなぜ強い不満を持つのですか。"
       },
       "options": [
         "外れることが含まれる予報を、事実として受け取るからです。",
@@ -3144,7 +3233,8 @@
       "explanation": {
         "en": "The fourth and fifth sentences name the gap: the listener takes as tomorrow's fact something into which error is built, and that gap produces the anger when it fails.",
         "zh": "第四、五句指出这一落差：听者把本就含有出错可能的预报当成明天的事实，落差正是不满的来源。",
-        "zh_TW": "第四、五句指出這一落差：聽者把本就含有出錯可能的預報當成明天的事實，落差正是不滿的來源。"
+        "zh_TW": "第四、五句指出這一落差：聽者把本就含有出錯可能的預報當成明天的事實，落差正是不滿的來源。",
+        "ja": "外れることが前提に含まれた予報を、明日の事実として受け取ってしまうためである。"
       }
     },
     {
@@ -3159,7 +3249,8 @@
       "prompt": {
         "en": "What does the writer propose?",
         "zh": "作者提出了什么主张？",
-        "zh_TW": "作者提出了什麼主張？"
+        "zh_TW": "作者提出了什麼主張？",
+        "ja": "作者は何を提案していますか。"
       },
       "options": [
         "分からない部分も隠さずに示すことです。",
@@ -3171,7 +3262,8 @@
       "explanation": {
         "en": "The last two sentences say that conveying the grounds behind the figures changes how listeners receive a forecast, and that showing what is not known is the road to trust.",
         "zh": "最后两句说，把数字的依据一并说明会改变听者的接受方式，坦白不确定之处才是培养信任之路。",
-        "zh_TW": "最後兩句說，把數字的依據一併說明會改變聽者的接受方式，坦白不確定之處才是培養信任之路。"
+        "zh_TW": "最後兩句說，把數字的依據一併說明會改變聽者的接受方式，坦白不確定之處才是培養信任之路。",
+        "ja": "数字の根拠を一緒に伝え、分からない部分も隠さずに示すことを提案している。"
       }
     },
     {
@@ -3185,7 +3277,8 @@
       "prompt": {
         "en": "Why had young people stopped taking part in the festival?",
         "zh": "年轻人为什么不再参加祭典了？",
-        "zh_TW": "年輕人為什麼不再參加祭典了？"
+        "zh_TW": "年輕人為什麼不再參加祭典了？",
+        "ja": "若い人はなぜ祭りに参加しなくなっていたのですか。"
       },
       "options": [
         "昔からの決まりが多く、初めての人には近づきにくかったからです。",
@@ -3197,7 +3290,8 @@
       "explanation": {
         "en": "The third sentence gives the reason: there were many old rules and it was an event a newcomer found hard to approach. The festival is held in autumn, and the neighbouring town's fame is never mentioned.",
         "zh": "第三句给出了原因：旧规矩多，第一次参加的人难以靠近。祭典在秋天举行，邻镇是否有名文中也未提及。",
-        "zh_TW": "第三句給出了原因：舊規矩多，第一次參加的人難以靠近。祭典在秋天舉行，鄰鎮是否有名文中也未提及。"
+        "zh_TW": "第三句給出了原因：舊規矩多，第一次參加的人難以靠近。祭典在秋天舉行，鄰鎮是否有名文中也未提及。",
+        "ja": "昔からの決まりが多く、初めて参加する人には近寄りにくい行事だったからである。"
       }
     },
     {
@@ -3211,7 +3305,8 @@
       "prompt": {
         "en": "What did the town actually do?",
         "zh": "镇上实际做了什么？",
-        "zh_TW": "鎮上實際做了什麼？"
+        "zh_TW": "鎮上實際做了什麼？",
+        "ja": "町は実際に何をしましたか。"
       },
       "options": [
         "隣の町の祭りと一つにし、決まりを書き直しました。",
@@ -3223,7 +3318,8 @@
       "explanation": {
         "en": "The fourth and fifth sentences say the town merged its festival with the neighbouring one, rewrote the rules and kept only the forms whose meaning was still understood.",
         "zh": "第四、五句说镇上把祭典与邻镇合并，重写了规矩，只保留意义仍讲得通的形式。",
-        "zh_TW": "第四、五句說鎮上把祭典與鄰鎮合併，重寫了規矩，只保留意義仍講得通的形式。"
+        "zh_TW": "第四、五句說鎮上把祭典與鄰鎮合併，重寫了規矩，只保留意義仍講得通的形式。",
+        "ja": "隣の町の祭りと一つにし、決まりを一度書き直した。"
       }
     },
     {
@@ -3238,7 +3334,8 @@
       "prompt": {
         "en": "What does tradition mean to the writer?",
         "zh": "作者所说的传统是指什么？",
-        "zh_TW": "作者所說的傳統是指什麼？"
+        "zh_TW": "作者所說的傳統是指什麼？",
+        "ja": "作者にとって伝統とは何ですか。"
       },
       "options": [
         "続けるために選択を重ねてきた結果です。",
@@ -3250,7 +3347,8 @@
       "explanation": {
         "en": "The last sentence says tradition is not an unmoving form but the result of choices piled up in order to keep something going. The second option is the view the passage rejects.",
         "zh": "末句说传统不是一成不变的形式，而是为延续而不断选择所积累的结果。第二项正是文中否定的看法。",
-        "zh_TW": "末句說傳統不是一成不變的形式，而是為延續而不斷選擇所積累的結果。第二項正是文中否定的看法。"
+        "zh_TW": "末句說傳統不是一成不變的形式，而是為延續而不斷選擇所積累的結果。第二項正是文中否定的看法。",
+        "ja": "動かない形のことではなく、続けるための選択を重ねてきた結果だと述べている。"
       }
     },
     {
@@ -3264,7 +3362,8 @@
       "prompt": {
         "en": "What does the writer say has the greatest effect on health?",
         "zh": "作者认为对健康影响最大的是什么？",
-        "zh_TW": "作者認為對健康影響最大的是什麼？"
+        "zh_TW": "作者認為對健康影響最大的是什麼？",
+        "ja": "作者は健康に最も影響が大きいものは何だと言っていますか。"
       },
       "options": [
         "毎日眠る時間です。",
@@ -3276,7 +3375,8 @@
       "explanation": {
         "en": "The second sentence says so directly: exercise and diet gather the talk, but what has the greatest effect is the hours of sleep each day.",
         "zh": "第二句直接指出：话题总集中在运动和饮食上，但影响最大的其实是每天的睡眠时间。",
-        "zh_TW": "第二句直接指出：話題總集中在運動和飲食上，但影響最大的其實是每天的睡眠時間。"
+        "zh_TW": "第二句直接指出：話題總集中在運動和飲食上，但影響最大的其實是每天的睡眠時間。",
+        "ja": "運動や食事より、毎日眠る時間の影響が最も大きいと直接述べている。"
       }
     },
     {
@@ -3290,7 +3390,8 @@
       "prompt": {
         "en": "What happens when sleep stays short?",
         "zh": "睡眠不足持续下去会怎样？",
-        "zh_TW": "睡眠不足持續下去會怎樣？"
+        "zh_TW": "睡眠不足持續下去會怎樣？",
+        "ja": "睡眠が足りない状態が続くとどうなりますか。"
       },
       "options": [
         "判断の質が落ち、誤りを直す作業が翌日の負担を重くします。",
@@ -3302,7 +3403,8 @@
       "explanation": {
         "en": "The third and fourth sentences describe the chain: judgement worsens, small errors multiply, and correcting them makes the next day's load heavier.",
         "zh": "第三、四句描述了这一连锁：判断质量下降，小差错增多，而修正差错又加重了第二天的负担。",
-        "zh_TW": "第三、四句描述了這一連鎖：判斷質量下降，小差錯增多，而修正差錯又加重了第二天的負擔。"
+        "zh_TW": "第三、四句描述了這一連鎖：判斷質量下降，小差錯增多，而修正差錯又加重了第二天的負擔。",
+        "ja": "判断の質が落ち、誤りを直す作業が翌日の負担をさらに重くする。"
       }
     },
     {
@@ -3317,7 +3419,8 @@
       "prompt": {
         "en": "Whose problem is the balance of work and rest, in the writer's view?",
         "zh": "作者认为工作与休息的均衡是谁的问题？",
-        "zh_TW": "作者認為工作與休息的均衡是誰的問題？"
+        "zh_TW": "作者認為工作與休息的均衡是誰的問題？",
+        "ja": "作者は、働く時間と休む時間の均衡は誰の問題だと言っていますか。"
       },
       "options": [
         "仕事の量を決める会社の側の課題です。",
@@ -3329,7 +3432,8 @@
       "explanation": {
         "en": "The last two sentences say plainly that it is not a matter of individual resolve but a task for the company that decides how much work there is.",
         "zh": "最后两句说得明白：这不是个人自觉的问题，而是决定工作量的公司一方的课题。",
-        "zh_TW": "最後兩句說得明白：這不是個人自覺的問題，而是決定工作量的公司一方的課題。"
+        "zh_TW": "最後兩句說得明白：這不是個人自覺的問題，而是決定工作量的公司一方的課題。",
+        "ja": "個人の心がけの問題ではなく、仕事の量を決める会社側の課題だと述べている。"
       }
     },
     {
@@ -3343,7 +3447,8 @@
       "prompt": {
         "en": "What did the writer do as a child?",
         "zh": "作者小时候常做的是什么？",
-        "zh_TW": "作者小時候常做的是什麼？"
+        "zh_TW": "作者小時候常做的是什麼？",
+        "ja": "子どものころ、作者は何をしていましたか。"
       },
       "options": [
         "祖父が時計を直す様子を眺めていました。",
@@ -3355,7 +3460,8 @@
       "explanation": {
         "en": "The third sentence says the writer often watched the deftness of his grandfather's hands. Serving customers and mending watches himself appear nowhere in the passage.",
         "zh": "第三句说作者常常看着祖父的手法。接待顾客、自己修表等文中都没有出现。",
-        "zh_TW": "第三句說作者常常看著祖父的手法。接待顧客、自己修表等文中都沒有出現。"
+        "zh_TW": "第三句說作者常常看著祖父的手法。接待顧客、自己修表等文中都沒有出現。",
+        "ja": "祖父が時計を直す手際をよく眺めていたと述べている。"
       }
     },
     {
@@ -3369,7 +3475,8 @@
       "prompt": {
         "en": "What did the grandfather's answer mean?",
         "zh": "祖父那句回答的意思是什么？",
-        "zh_TW": "祖父那句回答的意思是什麼？"
+        "zh_TW": "祖父那句回答的意思是什麼？",
+        "ja": "祖父の答えはどういう意味でしたか。"
       },
       "options": [
         "止まった理由は時計の中にあり、それを読み取るのが仕事だということです。",
@@ -3381,7 +3488,8 @@
       "explanation": {
         "en": "The writer explains it later: a stopped machine always has a reason, and that reason remains inside the machine, so the grandfather was listening to what the watch told him.",
         "zh": "作者后文作了解释：停下来的机器必有原因，而原因就留在机器内部，所以祖父是在听钟表所讲述的原因。",
-        "zh_TW": "作者後文作了解釋：停下來的機器必有原因，而原因就留在機器內部，所以祖父是在聽鐘錶所講述的原因。"
+        "zh_TW": "作者後文作了解釋：停下來的機器必有原因，而原因就留在機器內部，所以祖父是在聽鐘錶所講述的原因。",
+        "ja": "止まった機械には必ず理由があり、それを読み取ることが仕事だという意味だった。"
       }
     },
     {
@@ -3396,7 +3504,8 @@
       "prompt": {
         "en": "What does the writer say about changing parts in haste?",
         "zh": "关于匆忙更换零件，作者是怎么说的？",
-        "zh_TW": "關於匆忙更換零件，作者是怎麼說的？"
+        "zh_TW": "關於匆忙更換零件，作者是怎麼說的？",
+        "ja": "急いで部品を替えることについて、作者は何と述べていますか。"
       },
       "options": [
         "止まった理由を消したまま先へ進むことになります。",
@@ -3408,7 +3517,8 @@
       "explanation": {
         "en": "The tenth sentence says just this: replacing parts quickly means going on with the reason erased. Cost and waiting time are not discussed.",
         "zh": "第十句正是这样说的：匆忙换零件等于把原因抹掉后再往前走。价格与等待时间文中并未讨论。",
-        "zh_TW": "第十句正是這樣說的：匆忙換零件等於把原因抹掉後再往前走。價格與等待時間文中並未討論。"
+        "zh_TW": "第十句正是這樣說的：匆忙換零件等於把原因抹掉後再往前走。價格與等待時間文中並未討論。",
+        "ja": "止まった理由を消したまま先へ進むことになると述べている。"
       }
     },
     {
@@ -3422,7 +3532,8 @@
       "prompt": {
         "en": "What is deftness, in the writer's present view?",
         "zh": "如今作者认为手法高明是指什么？",
-        "zh_TW": "如今作者認為手法高明是指什麼？"
+        "zh_TW": "如今作者認為手法高明是指什麼？",
+        "ja": "今の作者にとって、手際のよさとは何ですか。"
       },
       "options": [
         "無駄な動きを一つも作らないことです。",
@@ -3434,7 +3545,8 @@
       "explanation": {
         "en": "The closing sentence separates speed from skill: deftness is not moving fast but making not a single wasted movement.",
         "zh": "末句把速度与技艺分开：手法高明不是动作快，而是不做一个多余的动作。",
-        "zh_TW": "末句把速度與技藝分開：手法高明不是動作快，而是不做一個多餘的動作。"
+        "zh_TW": "末句把速度與技藝分開：手法高明不是動作快，而是不做一個多餘的動作。",
+        "ja": "早く動くことではなく、無駄な動きを一つも作らないことだと述べている。"
       }
     },
     {
@@ -3448,7 +3560,8 @@
       "prompt": {
         "en": "What does the writer say about writing that laments language change?",
         "zh": "关于感叹语言变化的文章，作者说了什么？",
-        "zh_TW": "關於感嘆語言變化的文章，作者說了什麼？"
+        "zh_TW": "關於感嘆語言變化的文章，作者說了什麼？",
+        "ja": "言葉の変化を嘆く文章について、作者は何を述べていますか。"
       },
       "options": [
         "千年前の文章にも同じ嘆きがあります。",
@@ -3460,7 +3573,8 @@
       "explanation": {
         "en": "The first two sentences say such laments are found in every age, and that even a text of a thousand years ago complains of the young. So the complaint is not new.",
         "zh": "开头两句说这类感叹每个时代都有，连一千年前的文章都在抱怨年轻人。可见这并非新近才有。",
-        "zh_TW": "開頭兩句說這類感嘆每個時代都有，連一千年前的文章都在抱怨年輕人。可見這並非新近才有。"
+        "zh_TW": "開頭兩句說這類感嘆每個時代都有，連一千年前的文章都在抱怨年輕人。可見這並非新近才有。",
+        "ja": "そうした嘆きはどの時代にも見つかり、千年前の文章にも同じような嘆きがあると述べている。"
       }
     },
     {
@@ -3474,7 +3588,8 @@
       "prompt": {
         "en": "How does the writer explain why a language changes?",
         "zh": "作者如何解释语言变化的原因？",
-        "zh_TW": "作者如何解釋語言變化的原因？"
+        "zh_TW": "作者如何解釋語言變化的原因？",
+        "ja": "作者は言葉が変わる理由をどう説明していますか。"
       },
       "options": [
         "使う人が毎日下す小さな選択が積み重なるからです。",
@@ -3486,7 +3601,8 @@
       "explanation": {
         "en": "The fourth and fifth sentences say change is the outcome of users' small daily choices: hard forms shorten, and unneeded distinctions vanish.",
         "zh": "第四、五句说变化是使用者每天细小选择的结果：难说的形式变短，不需要的区分消失。",
-        "zh_TW": "第四、五句說變化是使用者每天細小選擇的結果：難說的形式變短，不需要的區分消失。"
+        "zh_TW": "第四、五句說變化是使用者每天細小選擇的結果：難說的形式變短，不需要的區分消失。",
+        "ja": "使う人が毎日下す小さな選択が積み重なった結果だと説明している。"
       }
     },
     {
@@ -3501,7 +3617,8 @@
       "prompt": {
         "en": "Why does the writer not welcome every change alike?",
         "zh": "作者为什么不对一切变化一视同仁地欢迎？",
-        "zh_TW": "作者為什麼不對一切變化一視同仁地歡迎？"
+        "zh_TW": "作者為什麼不對一切變化一視同仁地歡迎？",
+        "ja": "作者はなぜすべての変化を同じように歓迎しないのですか。"
       },
       "options": [
         "細かい違いを運ぶ語が消えると、その違いを語る手段も消えるからです。",
@@ -3513,7 +3630,8 @@
       "explanation": {
         "en": "The eighth sentence gives the reason: when a word carrying a fine distinction goes, the means of speaking about that distinction goes too. The writer never claims old words are simply more beautiful.",
         "zh": "第八句给出了理由：承载细微差别的词消失时，谈论这种差别的手段也随之消失。作者并未说旧词一定更美。",
-        "zh_TW": "第八句給出了理由：承載細微差別的詞消失時，談論這種差別的手段也隨之消失。作者並未說舊詞一定更美。"
+        "zh_TW": "第八句給出了理由：承載細微差別的詞消失時，談論這種差別的手段也隨之消失。作者並未說舊詞一定更美。",
+        "ja": "細かい違いを運ぶ語が消えると、その違いを語る手段も一緒に消えてしまうからである。"
       }
     },
     {
@@ -3528,7 +3646,8 @@
       "prompt": {
         "en": "What does protecting a language mean to the writer?",
         "zh": "作者所说的守护语言是指什么？",
-        "zh_TW": "作者所說的守護語言是指什麼？"
+        "zh_TW": "作者所說的守護語言是指什麼？",
+        "ja": "作者にとって言葉を守るとは何を指しますか。"
       },
       "options": [
         "何を失うかを自分で選ぶことです。",
@@ -3540,7 +3659,8 @@
       "explanation": {
         "en": "The last sentence states it: protecting a language is not stopping change but choosing what one loses. The writer also says the work is not one of protecting the dictionary.",
         "zh": "末句已言明：守护语言不是阻止变化，而是选择自己要失去什么。作者还说这并非守护词典的工作。",
-        "zh_TW": "末句已言明：守護語言不是阻止變化，而是選擇自己要失去什麼。作者還說這並非守護詞典的工作。"
+        "zh_TW": "末句已言明：守護語言不是阻止變化，而是選擇自己要失去什麼。作者還說這並非守護詞典的工作。",
+        "ja": "変化を止めることではなく、何を失うかを自分で選ぶことを指している。"
       }
     },
     {
@@ -3555,7 +3675,8 @@
       "prompt": {
         "en": "On what point do the first writer and the second writer differ?",
         "zh": "前一位与后一位的分歧在哪一点？",
-        "zh_TW": "前一位與後一位的分歧在哪一點？"
+        "zh_TW": "前一位與後一位的分歧在哪一點？",
+        "ja": "前の人と後の人は何の点で意見が異なりますか。"
       },
       "options": [
         "制服が生徒から選ぶ経験を取り上げるかどうかという点です。",
@@ -3567,7 +3688,8 @@
       "explanation": {
         "en": "The first writer values the saving of time and cost and the hiding of differences between households. The second grants that a uniform makes order but objects that it removes the daily experience of choosing, which is the practice a child needs. Colour and numbers are never discussed.",
         "zh": "前一位看重省下的时间与花费，以及掩盖家境差异。后一位承认校服带来秩序，却反对它剥夺了每天挑选衣服的经历，而那正是孩子需要的练习。颜色与学校数量文中都未涉及。",
-        "zh_TW": "前一位看重省下的時間與花費，以及掩蓋家境差異。後一位承認校服帶來秩序，卻反對它剝奪了每天挑選衣服的經歷，而那正是孩子需要的練習。顏色與學校數量文中都未涉及。"
+        "zh_TW": "前一位看重省下的時間與花費，以及掩蓋家境差異。後一位承認校服帶來秩序，卻反對它剝奪了每天挑選衣服的經歷，而那正是孩子需要的練習。顏色與學校數量文中都未涉及。",
+        "ja": "制服が生徒から自分で選ぶ経験を取り上げてしまうかどうかという点で意見が異なる。"
       }
     },
     {
@@ -3582,7 +3704,8 @@
       "prompt": {
         "en": "What does the second writer point out about electronic material?",
         "zh": "后一位指出电子资料的什么问题？",
-        "zh_TW": "後一位指出電子資料的什麼問題？"
+        "zh_TW": "後一位指出電子資料的什麼問題？",
+        "ja": "後の人は電子資料について何を指摘していますか。"
       },
       "options": [
         "読むための機械や仕組みがないと開けないという点です。",
@@ -3594,7 +3717,8 @@
       "explanation": {
         "en": "The second writer says electronic material can be read only where a machine and a system exist, and that much of what was made thirty years ago can no longer be opened. The other options are the first writer's points or not raised at all.",
         "zh": "后一位说电子资料只有在有机器和相应系统时才读得了，三十年前制作的资料大多已打不开。其余选项或属前一位的论点，或文中未提。",
-        "zh_TW": "後一位說電子資料只有在有機器和相應系統時才讀得了，三十年前製作的資料大多已打不開。其餘選項或屬前一位的論點，或文中未提。"
+        "zh_TW": "後一位說電子資料只有在有機器和相應系統時才讀得了，三十年前製作的資料大多已打不開。其餘選項或屬前一位的論點，或文中未提。",
+        "ja": "読むための機械や仕組みがなければ開けず、三十年前の資料の多くはもう開けないと指摘している。"
       }
     },
     {
@@ -3609,7 +3733,8 @@
       "prompt": {
         "en": "What do the two writers disagree about?",
         "zh": "两位的意见在哪一点上不同？",
-        "zh_TW": "兩位的意見在哪一點上不同？"
+        "zh_TW": "兩位的意見在哪一點上不同？",
+        "ja": "二人は何の点で意見が一致しませんか。"
       },
       "options": [
         "会議を短くすると失われるものがあるかどうかという点です。",
@@ -3621,7 +3746,8 @@
       "explanation": {
         "en": "The first writer sees only gains from shortening: concentration and smooth discussion. The second says that fixing the length leaves only the easily concluded topics and lets unanswered problems fade away. Numbers and times are not discussed.",
         "zh": "前一位只看到缩短会议的好处：专注与讨论顺畅。后一位则说先定死时间，只会留下容易得出结论的话题，没有答案的问题就此消失。人数与时段文中并未讨论。",
-        "zh_TW": "前一位只看到縮短會議的好處：專注與討論順暢。後一位則說先定死時間，只會留下容易得出結論的話題，沒有答案的問題就此消失。人數與時段文中並未討論。"
+        "zh_TW": "前一位只看到縮短會議的好處：專注與討論順暢。後一位則說先定死時間，只會留下容易得出結論的話題，沒有答案的問題就此消失。人數與時段文中並未討論。",
+        "ja": "会議を短くすることで失われるものがあるかどうかという点で意見が一致していない。"
       }
     },
     {
@@ -3636,7 +3762,8 @@
       "prompt": {
         "en": "What does the second writer say is needed?",
         "zh": "后一位认为需要的是什么？",
-        "zh_TW": "後一位認為需要的是什麼？"
+        "zh_TW": "後一位認為需要的是什麼？",
+        "ja": "後の人は何が必要だと述べていますか。"
       },
       "options": [
         "台数を増やす前に自転車の通る道を作ることです。",
@@ -3648,7 +3775,8 @@
       "explanation": {
         "en": "The second writer's last sentence says what is needed is not more bicycles but roads for them, built first, because numbers rising without settled rules break the order of the street.",
         "zh": "后一位在末句说，需要的不是增加自行车，而是先修出供其通行的道路，因为规则未定而数量先涨会破坏道路秩序。",
-        "zh_TW": "後一位在末句說，需要的不是增加自行車，而是先修出供其通行的道路，因為規則未定而數量先漲會破壞道路秩序。"
+        "zh_TW": "後一位在末句說，需要的不是增加自行車，而是先修出供其通行的道路，因為規則未定而數量先漲會破壞道路秩序。",
+        "ja": "台数を増やす前に、自転車の通る道を先に作ることが必要だと述べている。"
       }
     },
     {
@@ -3663,7 +3791,8 @@
       "prompt": {
         "en": "What is the second writer's position?",
         "zh": "后一位持什么立场？",
-        "zh_TW": "後一位持什麼立場？"
+        "zh_TW": "後一位持什麼立場？",
+        "ja": "後の人はどんな立場を取っていますか。"
       },
       "options": [
         "画面の授業は選択の一つとしてはよいが、教室の代わりにはならないという立場です。",
@@ -3675,7 +3804,8 @@
       "explanation": {
         "en": "The second writer accepts the screen class as one flexible option but holds that the brief exchanges before and after a class give shape to students' questions, so it cannot replace the classroom. He never calls for abolition.",
         "zh": "后一位接受把屏幕课程作为一种灵活选择，但认为课前课后的简短交流才让学生的疑问成形，因此无法取代教室。他并未主张取消。",
-        "zh_TW": "後一位接受把屏幕課程作為一種靈活選擇，但認為課前課後的簡短交流才讓學生的疑問成形，因此無法取代教室。他並未主張取消。"
+        "zh_TW": "後一位接受把屏幕課程作為一種靈活選擇，但認為課前課後的簡短交流才讓學生的疑問成形，因此無法取代教室。他並未主張取消。",
+        "ja": "画面の授業は選択の一つとしてはよいが、教室の代わりにはならないという立場を取っている。"
       }
     },
     {
@@ -3690,7 +3820,8 @@
       "prompt": {
         "en": "What is the second writer worried about?",
         "zh": "后一位担心的是什么？",
-        "zh_TW": "後一位擔心的是什麼？"
+        "zh_TW": "後一位擔心的是什麼？",
+        "ja": "後の人は何を心配していますか。"
       },
       "options": [
         "買い物の記録が店の外に残り、漏れる危険が消えないことです。",
@@ -3702,7 +3833,8 @@
       "explanation": {
         "en": "The second writer says electronic payment leaves outside the shop a record of who bought what and when, and that the risk of it leaking cannot be removed by preparation. The other options belong to the first writer's account of what improves.",
         "zh": "后一位说电子支付会把谁在何时买了什么的记录留在店外，泄露的风险再怎么准备也无法消除。其余各项属于前一位所说的改善之处。",
-        "zh_TW": "後一位說電子支付會把誰在何時買了什麼的記錄留在店外，洩露的風險再怎麼準備也無法消除。其餘各項屬於前一位所說的改善之處。"
+        "zh_TW": "後一位說電子支付會把誰在何時買了什麼的記錄留在店外，洩露的風險再怎麼準備也無法消除。其餘各項屬於前一位所說的改善之處。",
+        "ja": "買い物の記録が店の外に残り、それが漏れる危険が消えないことを心配している。"
       }
     },
     {
@@ -3717,7 +3849,8 @@
       "prompt": {
         "en": "What is the writer's central claim?",
         "zh": "作者的核心主张是什么？",
-        "zh_TW": "作者的核心主張是什麼？"
+        "zh_TW": "作者的核心主張是什麼？",
+        "ja": "作者の中心的な主張は何ですか。"
       },
       "options": [
         "予定に入れないものを決めることこそ効率だということです。",
@@ -3729,7 +3862,8 @@
       "explanation": {
         "en": "The last two sentences say efficiency is not filling time but deciding what not to put in. The other options are the very view the writer argues against.",
         "zh": "最后两句说，效率不是把时间填满，而是决定什么不放进去。其余三项正是作者所反对的看法。",
-        "zh_TW": "最後兩句說，效率不是把時間填滿，而是決定什麼不放進去。其餘三項正是作者所反對的看法。"
+        "zh_TW": "最後兩句說，效率不是把時間填滿，而是決定什麼不放進去。其餘三項正是作者所反對的看法。",
+        "ja": "予定を埋めることではなく、何を入れないかを決めることこそ効率だと主張している。"
       }
     },
     {
@@ -3744,7 +3878,8 @@
       "prompt": {
         "en": "What does the writer most want to say?",
         "zh": "作者最想说明的是什么？",
-        "zh_TW": "作者最想說明的是什麼？"
+        "zh_TW": "作者最想說明的是什麼？",
+        "ja": "作者が最も言いたいことは何ですか。"
       },
       "options": [
         "数字が何を落としているかを同時に指摘できる人が必要だということです。",
@@ -3756,7 +3891,8 @@
       "explanation": {
         "en": "The final two sentences say expressly that the writer is not asking for figures to be abandoned, but for people who can point out what the figures leave out. Figures are called a copy of part of reality, not reality itself.",
         "zh": "最后两句明确表示：作者并非要求废除数字，而是需要能同时指出数字漏掉了什么的人。文中说数字只是现实一部分的映像，并非现实本身。",
-        "zh_TW": "最後兩句明確表示：作者並非要求廢除數字，而是需要能同時指出數字漏掉了什麼的人。文中說數字只是現實一部分的映像，並非現實本身。"
+        "zh_TW": "最後兩句明確表示：作者並非要求廢除數字，而是需要能同時指出數字漏掉了什麼的人。文中說數字只是現實一部分的映像，並非現實本身。",
+        "ja": "数字が何を落としているかを同時に指摘できる人が必要だということである。"
       }
     },
     {
@@ -3771,7 +3907,8 @@
       "prompt": {
         "en": "What does the writer conclude adults can do?",
         "zh": "作者认为大人能做的是什么？",
-        "zh_TW": "作者認為大人能做的是什麼？"
+        "zh_TW": "作者認為大人能做的是什麼？",
+        "ja": "作者は、大人にできることは何だと結論づけていますか。"
       },
       "options": [
         "本との出会いが起こる場を用意することだけです。",
@@ -3783,7 +3920,8 @@
       "explanation": {
         "en": "The last two sentences say all an adult can do is prepare the place where a meeting with a book may happen, since enthusiasm must come from within rather than be handed out.",
         "zh": "最后两句说，大人能做的只是准备好让孩子与书相遇的场所，因为意愿要从内心生出，而非从外面递给他。",
-        "zh_TW": "最後兩句說，大人能做的只是準備好讓孩子與書相遇的場所，因為意願要從內心生出，而非從外面遞給他。"
+        "zh_TW": "最後兩句說，大人能做的只是準備好讓孩子與書相遇的場所，因為意願要從內心生出，而非從外面遞給他。",
+        "ja": "本との出会いが起こる場を用意することだけだと結論づけている。"
       }
     },
     {
@@ -3798,7 +3936,8 @@
       "prompt": {
         "en": "What kind of plan does the writer criticise?",
         "zh": "作者批评的是哪一类计划？",
-        "zh_TW": "作者批評的是哪一類計劃？"
+        "zh_TW": "作者批評的是哪一類計劃？",
+        "ja": "作者が批判しているのはどんな計画ですか。"
       },
       "options": [
         "都市にあるものを小さくして持ってくる計画です。",
@@ -3810,7 +3949,8 @@
       "explanation": {
         "en": "The second and third sentences say such plans shrink what the city has and bring it in, and that nobody moves in search of a shrunken city. The other options are what the writer recommends or what is not discussed.",
         "zh": "第二、三句说这类计划是把城市里的东西缩小搬来，而没有人会为缩小版的城市搬家。其余选项是作者所推崇的做法，或文中未提。",
-        "zh_TW": "第二、三句說這類計劃是把城市裡的東西縮小搬來，而沒有人會為縮小版的城市搬家。其餘選項是作者所推崇的做法，或文中未提。"
+        "zh_TW": "第二、三句說這類計劃是把城市裡的東西縮小搬來，而沒有人會為縮小版的城市搬家。其餘選項是作者所推崇的做法，或文中未提。",
+        "ja": "都市にあるものを小さくして持ってくる計画を批判し、そうした縮んだ形を求めて移り住む人はいないと述べている。"
       }
     },
     {
@@ -3825,7 +3965,8 @@
       "prompt": {
         "en": "What does the writer argue those who report should do?",
         "zh": "作者主张传播消息的一方应当怎么做？",
-        "zh_TW": "作者主張傳播消息的一方應當怎麼做？"
+        "zh_TW": "作者主張傳播消息的一方應當怎麼做？",
+        "ja": "作者は、伝える側は何をすべきだと主張していますか。"
       },
       "options": [
         "書く前に一度手を止め、根拠を確かめることです。",
@@ -3837,7 +3978,8 @@
       "explanation": {
         "en": "The sixth sentence calls for the restraint to stop one's hand before writing, and the closing lines say reducing one error weighs more than being a day faster. Silence is described as a cost worth paying, not as a way of hiding corrections.",
         "zh": "第六句要求在动笔前先停一下手的克制，结尾说少犯一个错误比早发一篇更重要。文中把沉默视为值得付出的代价，而非隐瞒更正。",
-        "zh_TW": "第六句要求在動筆前先停一下手的剋制，結尾說少犯一個錯誤比早發一篇更重要。文中把沉默視為值得付出的代價，而非隱瞞更正。"
+        "zh_TW": "第六句要求在動筆前先停一下手的剋制，結尾說少犯一個錯誤比早發一篇更重要。文中把沉默視為值得付出的代價，而非隱瞞更正。",
+        "ja": "書く前に一度手を止め、根拠を確かめる抑制を持つべきだと主張している。"
       }
     },
     {
@@ -3852,7 +3994,8 @@
       "prompt": {
         "en": "What does the writer mean by flexibility?",
         "zh": "作者所说的灵活是指什么？",
-        "zh_TW": "作者所說的靈活是指什麼？"
+        "zh_TW": "作者所說的靈活是指什麼？",
+        "ja": "作者の言う柔軟とは何を指しますか。"
       },
       "options": [
         "決まりを変える道を、決まりの中に用意しておくことです。",
@@ -3864,7 +4007,8 @@
       "explanation": {
         "en": "The last two sentences say flexibility is not the absence of rules but having a road for changing them ready inside the rules themselves. Making the keeping of rules the work is the failure the writer describes.",
         "zh": "最后两句说，灵活不是不持有规矩，而是在规矩之中预先备好改变规矩的通道。把遵守规矩本身当成工作，正是作者所说的弊病。",
-        "zh_TW": "最後兩句說，靈活不是不持有規矩，而是在規矩之中預先備好改變規矩的通道。把遵守規矩本身當成工作，正是作者所說的弊病。"
+        "zh_TW": "最後兩句說，靈活不是不持有規矩，而是在規矩之中預先備好改變規矩的通道。把遵守規矩本身當成工作，正是作者所說的弊病。",
+        "ja": "決まりを持たないことではなく、決まりを変える道を決まりの中に用意しておくことを指している。"
       }
     },
     {
@@ -3879,7 +4023,8 @@
       "prompt": {
         "en": "What decides whether the volunteers' strength comes to anything?",
         "zh": "决定志愿者的力量能否发挥作用的是什么？",
-        "zh_TW": "決定志願者的力量能否發揮作用的是什麼？"
+        "zh_TW": "決定志願者的力量能否發揮作用的是什麼？",
+        "ja": "ボランティアの力が生きるかどうかを決めるのは何ですか。"
       },
       "options": [
         "受け入れる側が役割と判断の分け方をどう用意するかです。",
@@ -3891,7 +4036,8 @@
       "explanation": {
         "en": "The passage says the receiving side's preparation decides it: fix only the large roles, leave fine judgements to those present, and be tolerant of beginners' mistakes. Numbers alone increase confusion, and minute instructions kill on-the-spot ingenuity.",
         "zh": "文中说这取决于接收一方的准备：只定大的分工，细节判断交给现场的人，并宽容新手的失误。单纯人多只会增加混乱，指示过细则扼杀现场的办法。",
-        "zh_TW": "文中說這取決於接收一方的準備：只定大的分工，細節判斷交給現場的人，並寬容新手的失誤。單純人多隻會增加混亂，指示過細則扼殺現場的辦法。"
+        "zh_TW": "文中說這取決於接收一方的準備：只定大的分工，細節判斷交給現場的人，並寬容新手的失誤。單純人多隻會增加混亂，指示過細則扼殺現場的辦法。",
+        "ja": "受け入れる側が役割と判断の分け方をどう用意するかで決まると述べている。"
       }
     },
     {
@@ -3906,7 +4052,8 @@
       "prompt": {
         "en": "What is the writer's view of our dependence on machines?",
         "zh": "作者如何看待对机器的依赖？",
-        "zh_TW": "作者如何看待對機器的依賴？"
+        "zh_TW": "作者如何看待對機器的依賴？",
+        "ja": "機械への依存について、作者はどんな見方を示していますか。"
       },
       "options": [
         "力を奪うのではなく、力の向かう先を移すという見方です。",
@@ -3918,7 +4065,8 @@
       "explanation": {
         "en": "The last two sentences say technology shifts where human power is directed rather than taking it away, and that what matters is what we do once it has shifted. The writer denies that everyone cooked well in the age of simple tools.",
         "zh": "最后两句说技术并未夺走人的能力，而是转移了能力的方向，重要的是转移之后做什么。作者也否认简朴器具的年代人人都做得好。",
-        "zh_TW": "最後兩句說技術並未奪走人的能力，而是轉移了能力的方向，重要的是轉移之後做什麼。作者也否認簡樸器具的年代人人都做得好。"
+        "zh_TW": "最後兩句說技術並未奪走人的能力，而是轉移了能力的方向，重要的是轉移之後做什麼。作者也否認簡樸器具的年代人人都做得好。",
+        "ja": "力を奪うのではなく、力の向かう先を移すという見方を示している。"
       }
     },
     {
@@ -3933,7 +4081,8 @@
       "prompt": {
         "en": "A person hands in the form on 15 March. What is true for that person?",
         "zh": "某人在三月十五日提交表格，他的情况是怎样的？",
-        "zh_TW": "某人在三月十五日提交表格，他的情況是怎樣的？"
+        "zh_TW": "某人在三月十五日提交表格，他的情況是怎樣的？",
+        "ja": "三月十五日に用紙を提出した人はどうなりますか。"
       },
       "options": [
         "空きのある教室にだけ申し込むことができます。",
@@ -3945,7 +4094,8 @@
       "explanation": {
         "en": "The draw covers only those who applied by 10 March; forms arriving after the closing date are accepted only for courses with places left. So a form handed in on 15 March goes to courses that still have room.",
         "zh": "抽签只针对三月十日之前申请的人；截止日之后送到的表格，仅在尚有空位的讲座中受理。因此十五日提交的表格只能报还有空位的讲座。",
-        "zh_TW": "抽籤只針對三月十日之前申請的人；截止日之後送到的表格，僅在尚有空位的講座中受理。因此十五日提交的表格只能報還有空位的講座。"
+        "zh_TW": "抽籤只針對三月十日之前申請的人；截止日之後送到的表格，僅在尚有空位的講座中受理。因此十五日提交的表格只能報還有空位的講座。",
+        "ja": "抽選の対象になるのは三月十日までの申し込みで、締め切り後の用紙は空きのある教室にだけ申し込める。"
       }
     },
     {
@@ -3960,7 +4110,8 @@
       "prompt": {
         "en": "What can be read on screen from October?",
         "zh": "十月起可以在屏幕上阅读的是什么？",
-        "zh_TW": "十月起可以在屏幕上閱讀的是什麼？"
+        "zh_TW": "十月起可以在屏幕上閱讀的是什麼？",
+        "ja": "十月から画面で読めるようになるのは何ですか。"
       },
       "options": [
         "社内で作った資料だけです。",
@@ -3972,7 +4123,8 @@
       "explanation": {
         "en": "The notice says what can be seen on screen is only material produced within the company; books bought from outside must still be borrowed in the library.",
         "zh": "通知说可在屏幕上查看的仅限公司内部制作的资料；从外部购入的图书仍须在图书室借阅。",
-        "zh_TW": "通知說可在屏幕上查看的僅限公司內部製作的資料；從外部購入的圖書仍須在圖書室借閱。"
+        "zh_TW": "通知說可在屏幕上查看的僅限公司內部製作的資料；從外部購入的圖書仍須在圖書室借閱。",
+        "ja": "画面から見られるのは社内で作った資料のみで、外から買った本はこれまでどおり図書室で借りる必要がある。"
       }
     },
     {
@@ -3987,7 +4139,8 @@
       "prompt": {
         "en": "Someone with heavy luggage wants to reach the east exit at eight in the evening in December. What can that person do?",
         "zh": "十二月的晚上八点，携带大件行李的人想前往东出口，他可以怎么做？",
-        "zh_TW": "十二月的晚上八點，攜帶大件行李的人想前往東出口，他可以怎麼做？"
+        "zh_TW": "十二月的晚上八點，攜帶大件行李的人想前往東出口，他可以怎麼做？",
+        "ja": "十二月の夜八時、大きな荷物を持つ人は東出口へどう行けますか。"
       },
       "options": [
         "別の通路を通ることができます。",
@@ -3999,7 +4152,8 @@
       "explanation": {
         "en": "The east stairs are closed until 20 December, but a separate passage is provided for those with much luggage and can be used from seven in the morning to nine at night, so eight in the evening is within that time.",
         "zh": "东侧楼梯到十二月二十日为止关闭，但为携带大件行李者另设了通道，通行时间为早七点至晚九点，晚八点仍在此范围内。",
-        "zh_TW": "東側樓梯到十二月二十日為止關閉，但為攜帶大件行李者另設了通道，通行時間為早七點至晚九點，晚八點仍在此範圍內。"
+        "zh_TW": "東側樓梯到十二月二十日為止關閉，但為攜帶大件行李者另設了通道，通行時間為早七點至晚九點，晚八點仍在此範圍內。",
+        "ja": "東側の階段は十二月二十日まで閉まっているが、荷物の多い人のための別の通路が朝七時から夜九時まで使える。"
       }
     },
     {
@@ -4014,7 +4168,8 @@
       "prompt": {
         "en": "What should someone do who cannot attend during the June period?",
         "zh": "六月期间无法受检的人应当怎么做？",
-        "zh_TW": "六月期間無法受檢的人應當怎麼做？"
+        "zh_TW": "六月期間無法受檢的人應當怎麼做？",
+        "ja": "六月の期間に受けられない人はどうすればよいですか。"
       },
       "options": [
         "五月末までに事務へ申し出ます。",
@@ -4026,7 +4181,8 @@
       "explanation": {
         "en": "The notice says another day will be arranged in July for those who cannot come in June, and that in such a case one must inform general affairs by the end of May.",
         "zh": "通知说，六月无法受检者将在七月另行安排日期，此种情况须在五月底前向总务提出。",
-        "zh_TW": "通知說，六月無法受檢者將在七月另行安排日期，此種情況須在五月底前向總務提出。"
+        "zh_TW": "通知說，六月無法受檢者將在七月另行安排日期，此種情況須在五月底前向總務提出。",
+        "ja": "七月に別の日が用意されるが、その場合は五月末までに事務へ申し出る必要がある。"
       }
     }
   ]

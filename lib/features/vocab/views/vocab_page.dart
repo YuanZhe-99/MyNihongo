@@ -299,8 +299,16 @@ class _VocabPageState extends ConsumerState<VocabPage> {
                         ),
                       ),
                     const SizedBox(height: 4),
-                    Text(
+                    // Japanese definitions get furigana; their readings are
+                    // joined with the same separator so the two align.
+                    FuriganaText(
                       entry.meanings.resolveJoined(locale),
+                      reading:
+                          entry.meanings.resolvedKey(locale) == 'ja' &&
+                              entry.jaReadings.length ==
+                                  entry.meanings.resolve(locale).length
+                          ? entry.jaReadings.join('; ')
+                          : null,
                       style: theme.textTheme.bodyMedium,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,

@@ -17,7 +17,7 @@
 | [`_recordAttempt`](#recordattempt) | 方法 | A | 把做完的卷子写进进度文件。 |
 | [`_passageFor`](#passagefor) | 方法 | A | 显示屏幕上这道题所关于的东西。 |
 | `_passageTextOf` | 方法 | B | 把这道题所依据的文本交给 AI 操作。 |
-| `_enabledModes` | 方法 | B | 决定可用的模式，无语音时去掉听力模式。 |
+| `_enabledModes` | 方法 | B | 决定可用的模式：对日语读者去掉基于译文的语法模式（`quizModeWorksIn`），无语音时去掉听力模式。 |
 | `_itemIds` | 方法 | B | 列出本次会话要提问的目录 id。 |
 | `_kanaIds` | 方法 | B | 列出所选各行的假名 id。 |
 | `_confirmLeave` | 方法 | B | 放弃进行中的会话前先确认；焦点在「取消」上，所以键盘上按 Enter 永远不会意外离开。 |

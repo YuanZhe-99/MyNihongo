@@ -50,3 +50,16 @@ Locale resolveAppLocale(List<Locale>? preferred, Iterable<Locale> supported) {
   ];
   return basicLocaleListResolution(normalized, supported);
 }
+
+/// Purpose: Turn a stored or generated locale tag back into a `Locale`.
+/// Inputs: `tag` — `ja`, `zh`, `zh_TW`, as `AppLocalizations.localeName` and
+/// the stored language preference spell it.
+/// Returns: `Locale`.
+/// Side effects: None.
+/// Notes: The one place the `language_COUNTRY` form is parsed. Settings reads
+/// the stored preference through it, and the reminder planner, which has only
+/// `AppLocalizations` and no `BuildContext`, reads the UI language through it.
+Locale localeFromTag(String tag) {
+  final parts = tag.split('_');
+  return parts.length > 1 ? Locale(parts[0], parts[1]) : Locale(parts[0]);
+}

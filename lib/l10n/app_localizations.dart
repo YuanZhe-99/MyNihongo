@@ -699,11 +699,149 @@ abstract class AppLocalizations {
   /// **'{count} words'**
   String vocabCount(int count);
 
-  /// No description provided for @vocabPartOfSpeech.
+  /// The pos* keys below name the content's part-of-speech tags (lib/features/content/models/parts_of_speech.dart). Use the terms a Japanese grammar reference uses in this language.
   ///
   /// In en, this message translates to:
   /// **'Part of speech'**
   String get vocabPartOfSpeech;
+
+  /// No description provided for @posNoun.
+  ///
+  /// In en, this message translates to:
+  /// **'noun'**
+  String get posNoun;
+
+  /// No description provided for @posPronoun.
+  ///
+  /// In en, this message translates to:
+  /// **'pronoun'**
+  String get posPronoun;
+
+  /// No description provided for @posProperNoun.
+  ///
+  /// In en, this message translates to:
+  /// **'proper noun'**
+  String get posProperNoun;
+
+  /// No description provided for @posVerbGodan.
+  ///
+  /// In en, this message translates to:
+  /// **'godan verb'**
+  String get posVerbGodan;
+
+  /// No description provided for @posVerbIchidan.
+  ///
+  /// In en, this message translates to:
+  /// **'ichidan verb'**
+  String get posVerbIchidan;
+
+  /// No description provided for @posVerbIrregular.
+  ///
+  /// In en, this message translates to:
+  /// **'irregular verb'**
+  String get posVerbIrregular;
+
+  /// No description provided for @posSuruVerb.
+  ///
+  /// In en, this message translates to:
+  /// **'suru verb'**
+  String get posSuruVerb;
+
+  /// No description provided for @posTransitive.
+  ///
+  /// In en, this message translates to:
+  /// **'transitive'**
+  String get posTransitive;
+
+  /// No description provided for @posIntransitive.
+  ///
+  /// In en, this message translates to:
+  /// **'intransitive'**
+  String get posIntransitive;
+
+  /// No description provided for @posAuxiliary.
+  ///
+  /// In en, this message translates to:
+  /// **'auxiliary'**
+  String get posAuxiliary;
+
+  /// No description provided for @posIAdjective.
+  ///
+  /// In en, this message translates to:
+  /// **'i-adjective'**
+  String get posIAdjective;
+
+  /// No description provided for @posNaAdjective.
+  ///
+  /// In en, this message translates to:
+  /// **'na-adjective'**
+  String get posNaAdjective;
+
+  /// No description provided for @posNoAdjective.
+  ///
+  /// In en, this message translates to:
+  /// **'no-adjective'**
+  String get posNoAdjective;
+
+  /// No description provided for @posAdnominal.
+  ///
+  /// In en, this message translates to:
+  /// **'pre-noun adjectival'**
+  String get posAdnominal;
+
+  /// No description provided for @posAdverb.
+  ///
+  /// In en, this message translates to:
+  /// **'adverb'**
+  String get posAdverb;
+
+  /// No description provided for @posParticle.
+  ///
+  /// In en, this message translates to:
+  /// **'particle'**
+  String get posParticle;
+
+  /// No description provided for @posConjunction.
+  ///
+  /// In en, this message translates to:
+  /// **'conjunction'**
+  String get posConjunction;
+
+  /// No description provided for @posInterjection.
+  ///
+  /// In en, this message translates to:
+  /// **'interjection'**
+  String get posInterjection;
+
+  /// No description provided for @posExpression.
+  ///
+  /// In en, this message translates to:
+  /// **'expression'**
+  String get posExpression;
+
+  /// No description provided for @posCounter.
+  ///
+  /// In en, this message translates to:
+  /// **'counter'**
+  String get posCounter;
+
+  /// No description provided for @posNumeric.
+  ///
+  /// In en, this message translates to:
+  /// **'numeral'**
+  String get posNumeric;
+
+  /// No description provided for @posPrefix.
+  ///
+  /// In en, this message translates to:
+  /// **'prefix'**
+  String get posPrefix;
+
+  /// No description provided for @posSuffix.
+  ///
+  /// In en, this message translates to:
+  /// **'suffix'**
+  String get posSuffix;
 
   /// No description provided for @grammarTitle.
   ///
@@ -2036,6 +2174,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Switch off any way of asking you would rather not see. A mode that this device or this word cannot support is skipped anyway.'**
   String get quizModesBody;
+
+  /// No description provided for @quizModeNeedsTranslation.
+  ///
+  /// In en, this message translates to:
+  /// **'Not available in Japanese: this mode asks about a translation.'**
+  String get quizModeNeedsTranslation;
 
   /// No description provided for @quizModesVocab.
   ///

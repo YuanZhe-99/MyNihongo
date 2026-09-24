@@ -119,6 +119,44 @@ The UI strings are a different matter: `lib/l10n/app_zh_TW.arb` is hand-maintain
 usage differs by vocabulary and not only by characters — 設定 not 設置, 單字 not 單詞, 文法 not
 語法, 網路 not 網絡.
 
+### Japanese
+
+A learner can set the app to Japanese. What they read under a Japanese UI is decided per kind:
+
+| Content | What a Japanese reader sees |
+|---|---|
+| A word's meaning | a **monolingual definition**, 国語辞典-style — 「学校で勉強を教える人」, not a translation — one to three per word, with furigana |
+| A grammar point | a one-line meaning with furigana, and an explanation in plain Japanese |
+| A function word's chip | a one-line Japanese gloss |
+| Unit, drill and scenario text | the same instruction or explanation in Japanese |
+| An example sentence, a passage, a dialogue line | the Japanese, and **no translation** |
+
+The definitions are authored in `assets/content/vocab_ja.json` and folded into the catalog by the
+importer, exactly as the Chinese glosses are; every other `ja` string sits in the shipped file beside
+`en`, `zh` and `zh_TW`. All of it is **model-authored and unreviewed**, and no Japanese source exists
+to check it against: the JMdict edition this app uses is English-only. How it was written is in
+[`content-authoring.md`](content-authoring.md).
+
+**A translation of Japanese is never shown to a Japanese reader.** `LocalizedStrings.resolve` falls
+back to English, and as a last resort to whichever language comes first — so without a rule, a
+Japanese UI would print an English line under every example, and the easier-Japanese line under a
+model-generated example could even resolve to Chinese. Display sites call
+`LocalizedStrings.resolveTranslation` instead, which for Japanese returns the `ja` entry or nothing,
+and a translation toggle with nothing to reveal is not offered. Question logic is decided
+separately: the three grammar quiz modes that use a translation as their material — ordering
+fragments against a meaning, and matching a sentence to its meaning either way — are **unavailable
+under a Japanese UI**, and the quiz-mode page says so beside their switches.
+
+**Definitions carry readings.** A word's definitions and a grammar point's one-line meaning are the
+Japanese text a learner meets most, so each carries a hiragana reading and is drawn with furigana:
+`jaReading` on the entry, one per definition, and `meaningJaReading` on the point. Longer prose —
+explanations, prompts — is plain text, as it is in every language.
+
+Two things stay as they are under every UI language. A grammar point's `structure`
+(`N + です`, `V-て + いる`) keeps its N/V/A notation, which is how Japanese grammar references write
+structures too. And part-of-speech tags are now named through the UI's own strings in every
+language, where they used to print as `verb-godan` and `suru-verb` regardless.
+
 ## Rules every entry follows
 
 Enforced by `test/content_catalog_test.dart`:

@@ -39,11 +39,11 @@
 
 ## 本地化（l10n）
 
-- 支持语言：英语（模板）、简体中文和繁体中文。
-- ARB 模板是 `lib/l10n/app_en.arb`；`app_zh.arb` 与 `app_zh_TW.arb` 逐键镜像它。任何一个不镜像时 `test/l10n_arb_test.dart` 会失败。
+- 支持语言：英语（模板）、简体中文、繁体中文和日语。
+- ARB 模板是 `lib/l10n/app_en.arb`；`app_zh.arb`、`app_zh_TW.arb` 与 `app_ja.arb` 逐键镜像它。`test/l10n_arb_test.dart` 会枚举每一个 `app_*.arb`，任何一个不镜像时都会失败。
 - 生成的本地化文件位于 `lib/l10n/` 下并被跟踪；编辑 ARB 文件后运行 `flutter gen-l10n` 并提交结果。
-- `app/locale_resolution.dart` 决定设备的语言列表对应三者中的哪一个，也是唯一读取文字系统（script）子标签的地方：请求 `zh-Hant-HK` 的手机想要的是繁体中文，而 Flutter 自身按语言与国家匹配的解析会给出简体。在设置中显式选择语言会完全跳过这一步。
-- JLPT 级别标签（`N5`…`N1`）和日语内容文本不本地化。
+- `app/locale_resolution.dart` 决定设备的语言列表对应四者中的哪一个，也是唯一读取文字系统（script）子标签的地方：请求 `zh-Hant-HK` 的手机想要的是繁体中文，而 Flutter 自身按语言与国家匹配的解析会给出简体。在设置中显式选择语言会完全跳过这一步。
+- JLPT 级别标签（`N5`…`N1`）和日语内容文本不本地化。在日语界面下，内容显示日语释义和日语解释，不显示日语文本的译文；见 [`features/content-catalog.md`](features/content-catalog.md#japanese)。
 
 ## 仓库结构
 

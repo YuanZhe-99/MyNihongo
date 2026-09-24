@@ -19,7 +19,7 @@ Consumers: `generated_examples.dart`, `why_wrong.dart`, `quiz_runner.dart`,
 `forExamples` asked for the labels `sentence` and `expected` until `v0.4.3`. Both exist, so nothing
 fell back and nothing failed — the prompt simply announced a single word as "Sentence:" and its gloss
 as "The model answer:", and then asked for sentences. Nothing tested the asset for completeness
-either; `ai_practice_test` now checks that every task is written in all three languages and that
+either; `ai_practice_test` now checks that every task is written in all four languages and that
 every label a builder indexes is defined.
 
 ## Declarations

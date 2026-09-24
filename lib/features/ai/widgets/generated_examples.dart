@@ -155,12 +155,17 @@ class _GeneratedExamplesState extends ConsumerState<GeneratedExamples> {
                           reading: example.reading,
                           style: theme.textTheme.bodyLarge,
                         ),
-                        Text(
-                          example.translations.resolveJoined(locale),
-                          style: theme.textTheme.bodyMedium?.copyWith(
-                            color: theme.colorScheme.onSurfaceVariant,
+                        if (example.translations
+                            .resolveTranslation(locale)
+                            .isNotEmpty)
+                          Text(
+                            example.translations.resolveTranslationJoined(
+                              locale,
+                            ),
+                            style: theme.textTheme.bodyMedium?.copyWith(
+                              color: theme.colorScheme.onSurfaceVariant,
+                            ),
                           ),
-                        ),
                       ],
                     ),
                   ),
@@ -210,7 +215,14 @@ class _GeneratedExamplesState extends ConsumerState<GeneratedExamples> {
       if (!mounted) return;
       final parsed = PracticeResponseParser.examples(
         raw,
-        language: locale.languageCode == 'en' ? 'en' : 'zh',
+        // The line under each example is filed under the reader's language:
+        // English, Japanese (an easier-Japanese paraphrase), or Chinese for
+        // both Chinese UIs, whose lookup order falls back to `zh`.
+        language: switch (locale.languageCode) {
+          'en' => 'en',
+          'ja' => 'ja',
+          _ => 'zh',
+        },
         limit: builder.templates.limit('maxExamples', 3),
       );
       setState(() {

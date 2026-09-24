@@ -4,12 +4,14 @@
 
 与 WebDAV 页和备份页一样是二级页面：窄窗口全屏压栈，宽窗口承载于详情窗格，走的是同一套 `_SettingsDetail` 机制。
 
+当前界面语言无法提问的模式——日语界面下基于译文的语法模式，见 [../models/quiz_question.md](../models/quiz_question.md) 中的 `translationQuizModes`——会被显示、关闭并附上说明（`quizModeNeedsTranslation`），而不是被省略：缺失的开关读起来像缺失的功能。它存储的状态保持不动。
+
 ## 声明
 
 | 声明 | 种类 | 层级 | 用途 |
 |---|---|---|---|
 | `QuizModesPage` | 类 | B | 模式开关。 |
-| `build` | 方法 | B | 构建三组开关。 |
+| `build` | 方法 | B | 构建三组开关；这种界面语言无法提问的模式（`quizModeWorksIn`）显示为关闭并禁用，副标题写明原因。 |
 | [`_toggle`](#toggle) | 方法 | A | 开关一种模式，并拒绝关掉最后一个。 |
 
 ## 文档

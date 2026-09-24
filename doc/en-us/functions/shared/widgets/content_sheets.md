@@ -2,7 +2,8 @@
 
 The detail sheets for a word, a grammar point and a kana, with chips linking to the entries around
 them. Lifted out of the vocabulary and grammar pages in `PLAN.md` M1.3 so all three pages can open
-each other's sheets. See
+each other's sheets. Japanese text on a sheet — including a Japanese definition or grammar meaning
+shown to a Japanese reader — is drawn with furigana where the content supplies a reading. See
 [../../../features/content-catalog.md](../../../features/content-catalog.md).
 
 ## Declarations
@@ -27,11 +28,17 @@ to the first, which is what "back" should mean here.
 - **Inputs:** `context`, `catalog`, `entry`, `locale`.
 - **Returns:** `Future<void>` completing when the sheet closes.
 - **Side effects:** Pushes a modal bottom sheet.
-- **Algorithm:** Headword, level, reading and romaji, parts of speech, every meaning in the UI
-  language, the examples, then a chip per grammar point found in those examples, deduplicated.
+- **Algorithm:** Headword, level, reading and romaji, parts of speech named in the learner's
+  language by `posLabel`, every meaning in the UI language, the examples, then a chip per grammar
+  point found in those examples, deduplicated. When `meanings.resolvedKey(locale)` is `ja`, each
+  sense is a bullet beside a `FuriganaText` carrying `entry.jaReadings[index]` (no furigana when
+  that sense has no reading); an English or Chinese gloss is a plain text bullet.
 - **Usage:** A vocabulary tile, and the word chips on the other two sheets.
 - **Notes:** The chips are matched by substring, not by parsing, so they are labelled as what the
-  example uses rather than presented as analysis; see `content_links.dart`.
+  example uses rather than presented as analysis; see `content_links.dart`. Part-of-speech tags
+  were printed verbatim (`verb-godan`, `suru-verb`) in every language until `posLabel`
+  ([part_of_speech_labels.md](part_of_speech_labels.md)); a Japanese definition gets furigana like
+  every other Japanese string in the app.
 
 ### `showGrammarDetailSheet` <a id="showgrammardetailsheet"></a>
 
@@ -40,9 +47,12 @@ to the first, which is what "back" should mean here.
 - **Returns:** `Future<void>`.
 - **Side effects:** Pushes a modal bottom sheet.
 - **Algorithm:** Pattern, level, meaning, structure, explanation, examples, then a chip per word
-  found in the examples.
+  found in the examples. When `meaning.resolvedKey(locale)` is `ja`, the one-line meaning is a
+  `FuriganaText` with `point.meaningJaReading`; otherwise plain text.
 - **Usage:** A grammar tile, and the grammar chips on the vocabulary sheet.
-- **Notes:** The word chips are limited to the point's own level and below.
+- **Notes:** The word chips are limited to the point's own level and below. Only the Japanese
+  one-line meaning has a reading and gets furigana; the longer explanation does not (see
+  `content-catalog.md`).
 
 ### `showKanaDetailSheet` <a id="showkanadetailsheet"></a>
 

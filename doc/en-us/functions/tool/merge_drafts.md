@@ -12,9 +12,11 @@ dart run tool/merge_drafts.dart examples tool/content/drafts/examples/n5-*.json
 dart run tool/merge_drafts.dart grammar --level N4 tool/content/drafts/grammar/n4-*.json
 dart run tool/merge_drafts.dart units   --level N5 tool/content/drafts/units/n5.json
 dart run tool/merge_drafts.dart drills  --level N5 --section reading tool/content/drafts/drills/n5-reading-01.json
+dart run tool/merge_drafts.dart gloss-ja tool/content/drafts/gloss-ja/n5-*.json
+dart run tool/merge_drafts.dart ja      tool/content/drafts/ja/grammar/n5-*.json
 ```
 
-Then, for the two vocabulary overlays:
+Then, for the three vocabulary overlays (Chinese glosses, examples, Japanese definitions):
 `dart run tool/import_vocab.dart --overlay-only && dart run tool/convert_zh_tw.dart`.
 
 ## Declarations
@@ -32,6 +34,11 @@ Then, for the two vocabulary overlays:
 | `_mergeUnits` | function | B | Replace a level's units, because a level is planned whole. |
 | [`_mergeDrills`](#drills) | function | A | Append drill questions and passages to a level's section file. |
 | `_stripTw`, `_stripTwMap` | functions | B | Drop any `zh_TW` a draft carried; it is generated, never authored. |
+| `_jaSource` | constant | B | What a hand-written file declares once the `ja` stream has written into it: `en` and `zh` hand-written, `ja` model-authored and unreviewed. |
+| `_mergeGlossJa` | function | B | Fold Japanese-definition batches into `vocab_ja.json` (created if absent): the twin of `_mergeGloss` — existing rows never overwritten, sorted by id, `reviewed: false`, readings kept beside the definitions one per sense. |
+| `_putJa` | function | B | Add one `ja` string to a localized field, never overwriting and appending after the existing keys; returns 1 when something was written. |
+| `_withJaSource` | function | B | Mark a hand-written file as now carrying model-authored `ja` by setting `source` right after `schemaVersion`; a model-authored file is left as it is. |
+| [`_mergeJa`](#mergeja) | function | A | Fold `ja` batches into the shipped grammar, lessons, drills or function-word file they belong to. |
 
 ## Documentation
 
@@ -60,3 +67,31 @@ Then, for the two vocabulary overlays:
   The `source` field is written, not copied: every shipped drill file says
   `model-authored (Claude), unreviewed` in its own text, so a reader of the asset learns where it
   came from without having to find this document.
+
+### `void _mergeJa(String assets, List<String> drafts)` <a id="mergeja"></a>
+
+- **Kind:** function
+- **Purpose:** Fold `ja` batches into the shipped file they belong to.
+- **Inputs:** The assets path and the draft paths; each draft names its `target` and `level`.
+- **Returns:** None; exits non-zero when the drafts disagree on target or level, on an unknown
+  target, or on an unknown id.
+- **Side effects:** Rewrites one grammar, lessons or function-word file, or the level's drill files.
+- **Algorithm:** Require every draft to share one `target` and one `level`. Load the shipped file for
+  the target — `grammar/<level>.json`, `function_words.json`, `lessons/<level>.json`, or every
+  `drills/<level>-*.json` — and index its records by id. For each draft row, `_putJa` each field the
+  target carries: a grammar point's `meaning` and `explanation` (plus `meaningJaReading` from the
+  row's `meaningReading` when the meaning was written), a function word's `gloss`, a unit's `title`,
+  `writingPrompt`, scenario title and each question's `prompt` and `explanation`, a drill question's
+  `prompt` and `explanation`. Collect any id the file lacks. If there is one, write nothing;
+  otherwise write every loaded file back through `_encoder`, with `source` marked by
+  `_withJaSource`.
+- **Usage:** After a `ja` batch has passed the content gate. No import or conversion step follows:
+  the text lands in the shipped file directly.
+- **Notes:** **An unknown id is fatal and nothing is written**: a draft that names a question the
+  file does not have is a draft written against the wrong file. An existing `ja` is never
+  overwritten, and no key but `ja` (and a grammar point's `meaningJaReading`) is ever touched. A
+  `zh_TW` in a draft row is ignored — the gate forbids it — and the shipped blocks are appended to,
+  not rewritten, so `{en, zh, zh_TW}` becomes `{en, zh, zh_TW, ja}` and the next
+  `convert_zh_tw.dart` has nothing to do. The `source` line is rewritten because a file that was
+  hand-written now carries model-authored text, and a reader of the asset should learn that from
+  the file itself.

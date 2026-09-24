@@ -34,6 +34,12 @@ wording and the timing be tested exactly on a machine with no notifications.
 | Nothing due, a unit open | the unit's name |
 | Neither | a plain nudge |
 
+The unit's name is in the UI language, found by the same lookup order the content uses:
+`planReminders` has the localizations but no `BuildContext`, so it turns `localeName` back into a
+locale with `localeFromTag`. It used to test for a `zh` prefix and fall back to English, which
+named the unit in Simplified Chinese for a Traditional reader and would have named it in English
+for a Japanese one.
+
 Seven days are scheduled at a time, so a phone that is never opened still
 reminds for a week. Only the first day carries a number: nothing can know what
 will be due on Thursday, and a count that is quietly wrong is worse than no

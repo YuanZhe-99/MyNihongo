@@ -18,6 +18,11 @@ class GrammarPoint {
   /// Short meaning by language.
   final LocalizedStrings meaning;
 
+  /// Hiragana reading of the Japanese `meaning`, from the JSON key
+  /// `meaningJaReading`; null when there is none, and the meaning is then
+  /// drawn without furigana.
+  final String? meaningJaReading;
+
   /// Longer explanation by language.
   final LocalizedStrings explanation;
 
@@ -43,6 +48,7 @@ class GrammarPoint {
     required this.pattern,
     this.structure,
     this.meaning = LocalizedStrings.empty,
+    this.meaningJaReading,
     this.explanation = LocalizedStrings.empty,
     this.examples = const [],
     this.matchForms = const [],
@@ -69,6 +75,9 @@ class GrammarPoint {
           ? json['structure'] as String
           : null,
       meaning: LocalizedStrings.fromJson(json['meaning']),
+      meaningJaReading: json['meaningJaReading'] is String
+          ? json['meaningJaReading'] as String
+          : null,
       explanation: LocalizedStrings.fromJson(json['explanation']),
       examples: ContentExample.listFromJson(json['examples']),
       matchForms: json['match'] is List

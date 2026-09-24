@@ -19,7 +19,7 @@ Entered with `context.push('/quiz', extra: config)`.
 | [`_recordAttempt`](#recordattempt) | method | A | Write the finished paper into the progress file. |
 | [`_passageFor`](#passagefor) | method | A | Show whatever the question on screen is about. |
 | `_passageTextOf` | method | B | Give the AI actions the text of whatever the question is about. |
-| `_enabledModes` | method | B | Decide which modes may be used, dropping listening without a voice. |
+| `_enabledModes` | method | B | Decide which modes may be used, dropping the translation-based grammar modes for a Japanese reader (`quizModeWorksIn`) and listening without a voice. |
 | `_itemIds` | method | B | List the catalog ids this session asks about. |
 | `_kanaIds` | method | B | List the kana ids of the selected rows. |
 | `_confirmLeave` | method | B | Confirm before discarding a session in progress; Cancel holds the focus, so Enter from a keyboard never leaves by accident. |

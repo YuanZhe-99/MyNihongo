@@ -94,6 +94,44 @@ class LocalizedStrings {
   String resolveJoined(Locale locale, {String separator = '; '}) =>
       resolve(locale).join(separator);
 
+  /// Purpose: Pick the translation of a Japanese text for a reader.
+  /// Inputs: `locale`.
+  /// Returns: `List<String>`; empty when there is nothing to show.
+  /// Side effects: None.
+  /// Notes: For display sites only — the translation under an example, a
+  /// passage, a dialogue line. A Japanese reader is shown the `ja` entry when
+  /// there is one (a generated example's easier-Japanese paraphrase) and
+  /// **nothing** otherwise: an English line under a Japanese sentence, in a
+  /// Japanese UI, is noise, and `resolve`'s last-resort first value could even
+  /// be Chinese. Every other language behaves exactly as [resolve]. Question
+  /// logic that uses a translation as material must not call this; it decides
+  /// separately what to do without one.
+  List<String> resolveTranslation(Locale locale) {
+    if (locale.languageCode == 'ja') return values['ja'] ?? const [];
+    return resolve(locale);
+  }
+
+  /// Purpose: Say which language key [resolve] draws from for a locale.
+  /// Inputs: `locale`.
+  /// Returns: `String?` — the key, or null when there are no values at all.
+  /// Side effects: None.
+  /// Notes: Lets a display site treat Japanese text differently — a Japanese
+  /// definition is drawn with furigana, an English or Chinese one is not.
+  String? resolvedKey(Locale locale) {
+    for (final key in lookupOrder(locale)) {
+      if (values.containsKey(key)) return key;
+    }
+    return values.isEmpty ? null : values.keys.first;
+  }
+
+  /// Purpose: Pick a translation for a reader and join it for display.
+  /// Inputs: `locale`, `separator`.
+  /// Returns: `String`; empty when a Japanese reader has nothing to be shown.
+  /// Side effects: None.
+  /// Notes: See [resolveTranslation].
+  String resolveTranslationJoined(Locale locale, {String separator = '; '}) =>
+      resolveTranslation(locale).join(separator);
+
   /// Purpose: Test whether any string in any language contains a query.
   /// Inputs: `query` — expected already lowercased.
   /// Returns: `bool`.

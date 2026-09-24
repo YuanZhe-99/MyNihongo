@@ -12,9 +12,11 @@
 /// dart run tool/merge_drafts.dart examples tool/content/drafts/examples/n5-*.json
 /// dart run tool/merge_drafts.dart grammar --level N4 tool/content/drafts/grammar/n4-*.json
 /// dart run tool/merge_drafts.dart units   --level N5 tool/content/drafts/units/n5.json
+/// dart run tool/merge_drafts.dart gloss-ja tool/content/drafts/gloss-ja/n5-*.json
+/// dart run tool/merge_drafts.dart ja      tool/content/drafts/ja/grammar/n5-*.json
 /// ```
 ///
-/// Then, for the two vocabulary overlays:
+/// Then, for the three vocabulary overlays:
 /// `dart run tool/import_vocab.dart --overlay-only && dart run tool/convert_zh_tw.dart`.
 library;
 
@@ -35,7 +37,8 @@ const _source = 'model-authored (Claude), unreviewed';
 void main(List<String> args) {
   if (args.isEmpty) {
     stderr.writeln(
-      'Usage: merge_drafts.dart <gloss|examples|grammar|units|drills> '
+      'Usage: merge_drafts.dart '
+      '<gloss|examples|grammar|units|drills|gloss-ja|ja> '
       '[--level N4] [--section reading] <draft.json ...>',
     );
     exitCode = 1;
@@ -79,6 +82,10 @@ void main(List<String> args) {
       _mergeUnits(assets, level, drafts);
     case 'drills':
       _mergeDrills(assets, level, section, drafts);
+    case 'gloss-ja':
+      _mergeGlossJa(assets, drafts);
+    case 'ja':
+      _mergeJa(assets, drafts);
     default:
       stderr.writeln('Unknown kind "$kind".');
       exitCode = 1;
@@ -380,4 +387,262 @@ Object? _stripTw(Object? value) {
   }
   if (value is List) return [for (final member in value) _stripTw(member)];
   return value;
+}
+
+/// What a file declares once the `ja` stream has written into a hand-written
+/// one: its `en` and `zh` are still hand-written, its `ja` is not.
+const _jaSource = 'hand-written; ja model-authored (Claude), unreviewed';
+
+/// Purpose: Fold Japanese-definition batches into the Japanese overlay.
+/// Inputs: `assets`, `drafts`.
+/// Returns: None.
+/// Side effects: Writes `vocab_ja.json`, creating it if needed.
+/// Notes: Internal helper used within this file only. The twin of
+/// `_mergeGloss`: an existing row is never overwritten, rows are sorted by id,
+/// and `reviewed` starts false. Each row keeps its readings beside the
+/// definitions, one per sense, because the catalog draws them with furigana.
+void _mergeGlossJa(String assets, List<String> drafts) {
+  final path = '$assets/vocab_ja.json';
+  final file = File(path);
+  final json = file.existsSync()
+      ? jsonDecode(file.readAsStringSync()) as Map<String, Object?>
+      : <String, Object?>{
+          'schemaVersion': 1,
+          'source': _source,
+          'license': 'GPL-3.0 with the app.',
+          'note':
+              'Monolingual Japanese definitions layered onto the generated '
+              'catalog by tool/import_vocab.dart, keyed by the catalog id. '
+              'jaReading holds one hiragana reading per definition, for '
+              'furigana. Written by a model against tool/content/drafts and '
+              'checked by test/content_gate_test.dart; no native speaker has '
+              'read them.',
+          'entries': <String, Object?>{},
+        };
+  final entries = (json['entries'] as Map).cast<String, Object?>();
+  var added = 0;
+  var kept = 0;
+  for (final row in _rows(drafts, 'rows')) {
+    final id = '${row['id']}';
+    final ja = row['ja'];
+    final readings = row['jaReading'];
+    if (ja is! List || ja.isEmpty) continue;
+    if (entries.containsKey(id)) {
+      kept++;
+      continue;
+    }
+    entries[id] = {
+      'ja': [for (final sense in ja) '$sense'],
+      'jaReading': [
+        if (readings is List)
+          for (final reading in readings) '$reading',
+      ],
+      'reviewed': false,
+    };
+    added++;
+  }
+  json['entries'] = Map.fromEntries(
+    entries.entries.toList()..sort((a, b) => a.key.compareTo(b.key)),
+  );
+  file.writeAsStringSync('${_encoder.convert(json)}\n');
+  stdout.writeln(
+    'Added $added Japanese definitions to $path'
+    '${kept > 0 ? '; left $kept existing rows alone' : ''}.',
+  );
+}
+
+/// Purpose: Add one `ja` string to a localized field, never overwriting.
+/// Inputs: The `holder` map, the `field` name, and the draft `value`.
+/// Returns: `int` — 1 when something was written, 0 otherwise.
+/// Side effects: Mutates `holder[field]`.
+/// Notes: Internal helper used within this file only. Appending keeps the
+/// field's existing keys and their order, so `{en, zh, zh_TW}` becomes
+/// `{en, zh, zh_TW, ja}` and `convert_zh_tw.dart` leaves it byte-identical.
+int _putJa(Map<String, Object?> holder, String field, Object? value) {
+  final target = holder[field];
+  if (target is! Map || value is! String || value.trim().isEmpty) return 0;
+  if (target.containsKey('ja')) return 0;
+  (target as Map<String, Object?>)['ja'] = value.trim();
+  return 1;
+}
+
+/// Purpose: Mark a hand-written file as now carrying model-authored `ja`.
+/// Inputs: The parsed file `json`.
+/// Returns: `Map<String, Object?>` — the same content, with `source` set.
+/// Side effects: None.
+/// Notes: Internal helper used within this file only. A file that says
+/// `hand-written`, or says nothing, gains the `ja` note right after
+/// `schemaVersion`; a file already model-authored says so already.
+Map<String, Object?> _withJaSource(Map<String, Object?> json) {
+  final source = json['source'];
+  if (source == _source || source == _jaSource) return json;
+  final out = <String, Object?>{};
+  for (final entry in json.entries) {
+    if (entry.key == 'source') continue;
+    out[entry.key] = entry.value;
+    if (entry.key == 'schemaVersion') out['source'] = _jaSource;
+  }
+  out.putIfAbsent('source', () => _jaSource);
+  return out;
+}
+
+/// Purpose: Fold `ja` batches into the shipped file they belong to.
+/// Inputs: `assets`, `drafts`.
+/// Returns: None.
+/// Side effects: Rewrites one grammar, lessons, drills or function-word file.
+/// Notes: Internal helper used within this file only. Every batch names its
+/// `target` and `level`, and all the batches given must agree. **An unknown
+/// id is fatal and nothing is written**: a draft that names a question the
+/// file does not have is a draft written against the wrong file. An existing
+/// `ja` is never overwritten, and no key but `ja` (and a grammar point's
+/// `meaningJaReading`) is ever touched. `zh_TW` in a draft row is ignored —
+/// the gate forbids it — and the shipped blocks are appended to, not
+/// rewritten, so the next `convert_zh_tw.dart` has nothing to do.
+void _mergeJa(String assets, List<String> drafts) {
+  final targets = <String>{};
+  final levels = <String>{};
+  for (final path in drafts) {
+    final file = File(path);
+    if (!file.existsSync()) continue;
+    final json = jsonDecode(file.readAsStringSync());
+    if (json is Map) {
+      targets.add('${json['target']}');
+      levels.add('${json['level']}'.toLowerCase());
+    }
+  }
+  if (targets.length != 1 || levels.length != 1) {
+    stderr.writeln(
+      'The drafts must share one target and one level; got '
+      '${targets.join(', ')} at ${levels.join(', ')}.',
+    );
+    exitCode = 1;
+    return;
+  }
+  final target = targets.single;
+  final level = levels.single;
+  final rows = _rows(drafts, 'rows');
+  final unknown = <String>[];
+  var written = 0;
+
+  // One shipped file per target, except drills, which spread over four.
+  final files = <String, Map<String, Object?>>{};
+  Map<String, Object?> load(String path) =>
+      files[path] ??= (jsonDecode(File(path).readAsStringSync()) as Map)
+          .cast<String, Object?>();
+
+  switch (target) {
+    case 'grammar':
+      final path = '$assets/grammar/$level.json';
+      final json = load(path);
+      final points = {
+        for (final p in json['points'] as List)
+          '${(p as Map)['id']}': p.cast<String, Object?>(),
+      };
+      for (final row in rows) {
+        final point = points['${row['id']}'];
+        if (point == null) {
+          unknown.add('${row['id']}');
+          continue;
+        }
+        final meaning = _putJa(point, 'meaning', row['meaning']);
+        written += meaning + _putJa(point, 'explanation', row['explanation']);
+        final reading = row['meaningReading'];
+        if (meaning == 1 && reading is String && reading.isNotEmpty) {
+          point['meaningJaReading'] = reading;
+        }
+      }
+    case 'function-words':
+      final json = load('$assets/function_words.json');
+      final words = {
+        for (final w in json['words'] as List)
+          '${(w as Map)['id']}': w.cast<String, Object?>(),
+      };
+      for (final row in rows) {
+        final word = words['${row['id']}'];
+        if (word == null) {
+          unknown.add('${row['id']}');
+          continue;
+        }
+        written += _putJa(word, 'gloss', row['gloss']);
+      }
+    case 'units':
+      final json = load('$assets/lessons/$level.json');
+      final units = {
+        for (final u in json['units'] as List)
+          '${(u as Map)['id']}': u.cast<String, Object?>(),
+      };
+      for (final row in rows) {
+        final unit = units['${row['id']}'];
+        if (unit == null) {
+          unknown.add('${row['id']}');
+          continue;
+        }
+        written += _putJa(unit, 'title', row['title']);
+        written += _putJa(unit, 'writingPrompt', row['writingPrompt']);
+        final scenario = unit['scenario'];
+        if (scenario is Map) {
+          written += _putJa(
+            scenario.cast<String, Object?>(),
+            'title',
+            row['scenarioTitle'],
+          );
+        }
+        final questions = {
+          for (final q in (unit['questions'] as List? ?? const []))
+            '${(q as Map)['id']}': q.cast<String, Object?>(),
+        };
+        for (final raw in (row['questions'] as List? ?? const [])) {
+          if (raw is! Map) continue;
+          final question = questions['${raw['id']}'];
+          if (question == null) {
+            unknown.add('${row['id']}/${raw['id']}');
+            continue;
+          }
+          written += _putJa(question, 'prompt', raw['prompt']);
+          written += _putJa(question, 'explanation', raw['explanation']);
+        }
+      }
+    case 'drills':
+      final byId = <String, Map<String, Object?>>{};
+      for (final file in Directory(
+        '$assets/drills',
+      ).listSync().whereType<File>()) {
+        final name = file.uri.pathSegments.last;
+        if (!name.startsWith('$level-')) continue;
+        final json = load(file.path);
+        for (final q in json['questions'] as List) {
+          byId['${(q as Map)['id']}'] = q.cast<String, Object?>();
+        }
+      }
+      for (final row in rows) {
+        final question = byId['${row['id']}'];
+        if (question == null) {
+          unknown.add('${row['id']}');
+          continue;
+        }
+        written += _putJa(question, 'prompt', row['prompt']);
+        written += _putJa(question, 'explanation', row['explanation']);
+      }
+    default:
+      stderr.writeln('Unknown ja target "$target".');
+      exitCode = 1;
+      return;
+  }
+
+  if (unknown.isNotEmpty) {
+    stderr.writeln(
+      'Refusing to merge: ${unknown.length} ids are not in the $target file '
+      'for $level: ${unknown.take(20).join(', ')}',
+    );
+    exitCode = 1;
+    return;
+  }
+  for (final entry in files.entries) {
+    File(
+      entry.key,
+    ).writeAsStringSync('${_encoder.convert(_withJaSource(entry.value))}\n');
+  }
+  stdout.writeln(
+    'Wrote $written Japanese strings into ${files.keys.join(', ')}.',
+  );
 }

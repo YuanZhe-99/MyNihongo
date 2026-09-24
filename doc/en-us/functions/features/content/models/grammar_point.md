@@ -1,7 +1,8 @@
 # lib/features/content/models/grammar_point.dart
 
 `GrammarPoint` is one grammar point from the bundled content: id, JLPT level, pattern, optional
-structure, language-keyed meaning and explanation, and examples. `fromJson` returns null when the
+structure, language-keyed meaning (with an optional reading of its Japanese text) and explanation,
+and examples. `fromJson` returns null when the
 id, level or pattern is missing. Search matches the pattern, structure and meaning but deliberately
 not the explanation. See
 [../../../../features/content-catalog.md](../../../../features/content-catalog.md).
@@ -17,3 +18,8 @@ not the explanation. See
 `matchForms` arrived with `PLAN.md` M1.2, from the JSON key `match`: literal strings that mark this
 point in a sentence, used by the cross-linking in `content_links.dart`. A single-character particle
 needs an explicit list, because a form derived from its pattern would match nearly every sentence.
+
+`meaningJaReading`, from the JSON key of the same name, is the hiragana reading of the Japanese
+`meaning` (`meaning.ja`), written by the `ja` content stream beside it. The grammar detail sheet
+draws a Japanese one-line meaning with furigana from it; it is null when there is none, and the
+meaning is then drawn without furigana. The longer explanation carries no reading.

@@ -184,7 +184,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "にもかかわらず",
@@ -196,7 +197,8 @@
       "explanation": {
         "en": "The rain was a reason the match should have been called off, yet it went ahead anyway, and にもかかわらず marks exactly that kind of unexpected outcome.",
         "zh": "下雨本该是比赛取消的理由，结果比赛照常举行，这种出乎意料的转折用「にもかかわらず」。",
-        "zh_TW": "下雨本該是比賽取消的理由，結果比賽照常舉行，這種出乎意料的轉折用「にもかかわらず」。"
+        "zh_TW": "下雨本該是比賽取消的理由，結果比賽照常舉行，這種出乎意料的轉折用「にもかかわらず」。",
+        "ja": "雨で試合は中止になってもおかしくないのに、実際には行われた。この予想外の結果を表すのは「にもかかわらず」である。"
       }
     },
     {
@@ -212,7 +214,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "基づいて",
@@ -224,7 +227,8 @@
       "explanation": {
         "en": "The survey is the evidence the plan was built on, and に基づいて is the phrase for working from data, rules or findings.",
         "zh": "调查是制定计划的依据，表示以数据、规定或结果为根据时用「に基づいて」。",
-        "zh_TW": "調查是制定計劃的依據，表示以數據、規定或結果為根據時用「に基づいて」。"
+        "zh_TW": "調查是制定計劃的依據，表示以數據、規定或結果為根據時用「に基づいて」。",
+        "ja": "調査は計画を立てる根拠であり、データや規則、結果をもとにする場合は「に基づいて」を使う。"
       }
     },
     {
@@ -240,7 +244,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "応じて",
@@ -252,7 +257,8 @@
       "explanation": {
         "en": "The amount is not fixed: it moves up and down with the income, and に応じて says one thing varies in step with another.",
         "zh": "金额不是固定的，会随着收入的不同而变化，表示随之而变时用「に応じて」。",
-        "zh_TW": "金額不是固定的，會隨著收入的不同而變化，表示隨之而變時用「に応じて」。"
+        "zh_TW": "金額不是固定的，會隨著收入的不同而變化，表示隨之而變時用「に応じて」。",
+        "ja": "金額は一定ではなく、収入によって上下する。何かに合わせて変化することを表すのは「に応じて」である。"
       }
     },
     {
@@ -268,7 +274,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "とたんに",
@@ -280,7 +287,8 @@
       "explanation": {
         "en": "The rain started at the very moment of stepping outside, and たとたんに joins a past-form verb to something that happened the instant after it.",
         "zh": "刚一出门雨就下起来了，「た形＋とたんに」表示前项发生的瞬间后项就发生了。",
-        "zh_TW": "剛一出門雨就下起來了，「た形＋とたんに」表示前項發生的瞬間後項就發生了。"
+        "zh_TW": "剛一出門雨就下起來了，「た形＋とたんに」表示前項發生的瞬間後項就發生了。",
+        "ja": "外に出たちょうどその瞬間に雨が降り始めた。「た形＋とたんに」は前のことが起こった直後に後のことが起こる意味を表す。"
       }
     },
     {
@@ -296,7 +304,8 @@
       "prompt": {
         "en": "Which form fits the gap in this sentence?",
         "zh": "这个句子的空格里应该填哪个形式？",
-        "zh_TW": "這個句子的空格里應該填哪個形式？"
+        "zh_TW": "這個句子的空格里應該填哪個形式？",
+        "ja": "文の（　）に入る形はどれですか。"
       },
       "options": [
         "変えざるを得なかった",
@@ -308,7 +317,8 @@
       "explanation": {
         "en": "Everyone was against it, so the speaker had no choice in the matter, and ざるを得ない is the written-style way to say one is forced into something.",
         "zh": "大家都反对，说话人别无选择，这种「不得不」的书面说法是「ざるを得ない」。",
-        "zh_TW": "大家都反對，說話人別無選擇，這種「不得不」的書面說法是「ざるを得ない」。"
+        "zh_TW": "大家都反對，說話人別無選擇，這種「不得不」的書面說法是「ざるを得ない」。",
+        "ja": "皆に反対され、他に選びようがなかった。「仕方なく～する」という硬い言い方は「ざるを得ない」である。"
       }
     },
     {
@@ -324,7 +334,8 @@
       "prompt": {
         "en": "Which form fits the gap in this sentence?",
         "zh": "这个句子的空格里应该填哪个形式？",
-        "zh_TW": "這個句子的空格里應該填哪個形式？"
+        "zh_TW": "這個句子的空格里應該填哪個形式？",
+        "ja": "文の（　）に入る形はどれですか。"
       },
       "options": [
         "起こしかねない",
@@ -336,7 +347,8 @@
       "explanation": {
         "en": "The speaker is warning that something bad could well happen, and かねない says a bad outcome is quite possible — かねる would mean the opposite, that it cannot be done.",
         "zh": "说话人是在警告坏事很可能发生，「かねない」表示有可能发生不好的结果；「かねる」意思相反，表示做不到。",
-        "zh_TW": "說話人是在警告壞事很可能發生，「かねない」表示有可能發生不好的結果；「かねる」意思相反，表示做不到。"
+        "zh_TW": "說話人是在警告壞事很可能發生，「かねない」表示有可能發生不好的結果；「かねる」意思相反，表示做不到。",
+        "ja": "話し手は悪いことが十分起こり得ると警告している。「かねない」は悪い結果が起こる可能性を表す。「かねる」は逆に「できない」という意味になる。"
       }
     },
     {
@@ -352,7 +364,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "だけあって",
@@ -364,7 +377,8 @@
       "explanation": {
         "en": "The ten years explain the good Japanese and the speaker is impressed in a way that fits the reason, which is what だけあって expresses.",
         "zh": "住了十年正好说明日语好，说话人的赞叹与理由相称，这种「不愧是」用「だけあって」。",
-        "zh_TW": "住了十年正好說明日語好，說話人的讚歎與理由相稱，這種「不愧是」用「だけあって」。"
+        "zh_TW": "住了十年正好說明日語好，說話人的讚歎與理由相稱，這種「不愧是」用「だけあって」。",
+        "ja": "十年住んでいたことは日本語が上手な理由になっており、その理由にふさわしい感心を表すのが「だけあって」である。"
       }
     },
     {
@@ -380,7 +394,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "にしては",
@@ -392,7 +407,8 @@
       "explanation": {
         "en": "Judged against what a first attempt normally produces, the result is better than expected, and にしては sets up that standard of comparison.",
         "zh": "以第一次做菜的标准来看，结果比预想的好，「にしては」正是提出这种比较标准的说法。",
-        "zh_TW": "以第一次做菜的標準來看，結果比預想的好，「にしては」正是提出這種比較標準的說法。"
+        "zh_TW": "以第一次做菜的標準來看，結果比預想的好，「にしては」正是提出這種比較標準的說法。",
+        "ja": "初めて作った料理にしては、という基準に照らして、結果が予想より良いことを表すのが「にしては」である。"
       }
     },
     {
@@ -408,7 +424,8 @@
       "prompt": {
         "en": "Which word fits the gap in this sentence?",
         "zh": "这个句子的空格里应该填哪个词？",
-        "zh_TW": "這個句子的空格里應該填哪個詞？"
+        "zh_TW": "這個句子的空格里應該填哪個詞？",
+        "ja": "文の（　）に入る言葉はどれですか。"
       },
       "options": [
         "もちろん",
@@ -420,7 +437,8 @@
       "explanation": {
         "en": "The taste goes without saying and a second good point is added with も, and はもちろん is what introduces the obvious first item.",
         "zh": "味道自不必说，后面又用「も」补充第二个优点，前面这个理所当然的项目要用「はもちろん」引出。",
-        "zh_TW": "味道自不必說，後面又用「も」補充第二個優點，前面這個理所當然的項目要用「はもちろん」引出。"
+        "zh_TW": "味道自不必說，後面又用「も」補充第二個優點，前面這個理所當然的項目要用「はもちろん」引出。",
+        "ja": "味の良さは言うまでもなく、後ろに「も」で二つ目の長所を付け加えている。当然のことを最初に挙げるのは「はもちろん」である。"
       }
     },
     {
@@ -436,7 +454,8 @@
       "prompt": {
         "en": "Which form fits the gap in this sentence?",
         "zh": "这个句子的空格里应该填哪个形式？",
-        "zh_TW": "這個句子的空格里應該填哪個形式？"
+        "zh_TW": "這個句子的空格里應該填哪個形式？",
+        "ja": "文の（　）に入る形はどれですか。"
       },
       "options": [
         "聞いてからでなければ",
@@ -448,7 +467,8 @@
       "explanation": {
         "en": "Hearing the explanation is the condition that must be met first, and てからでなければ pairs with a negative ending to say nothing can happen before it.",
         "zh": "听完说明是必须先满足的条件，「てからでなければ」后接否定，表示不先做这件事就不行。",
-        "zh_TW": "聽完說明是必須先滿足的條件，「てからでなければ」後接否定，表示不先做這件事就不行。"
+        "zh_TW": "聽完說明是必須先滿足的條件，「てからでなければ」後接否定，表示不先做這件事就不行。",
+        "ja": "説明を聞くことが必ず満たすべき条件であり、「てからでなければ」は否定の文と結びついて、それをしないと先に進めないことを表す。"
       }
     },
     {
@@ -464,7 +484,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "ことか",
@@ -476,7 +497,8 @@
       "explanation": {
         "en": "どんなに at the head calls for an exclamation of degree, and ことか closes it: how very glad I was.",
         "zh": "句首的「どんなに」要求一个感叹程度的结尾，「ことか」正好呼应，表示「多么高兴啊」。",
-        "zh_TW": "句首的「どんなに」要求一個感嘆程度的結尾，「ことか」正好呼應，表示「多麼高興啊」。"
+        "zh_TW": "句首的「どんなに」要求一個感嘆程度的結尾，「ことか」正好呼應，表示「多麼高興啊」。",
+        "ja": "文頭の「どんなに」は程度を表す感嘆の結びを求めており、「ことか」がそれに応える。「どんなに嬉しかったことか」という意味になる。"
       }
     },
     {
@@ -492,7 +514,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "なしには",
@@ -504,7 +527,8 @@
       "explanation": {
         "en": "His help was indispensable, and なしには plus a negative says that without it the result would not have come about.",
         "zh": "他的帮助是不可或缺的，「なしには」后接否定，表示没有它就不会有这个结果。",
-        "zh_TW": "他的幫助是不可或缺的，「なしには」後接否定，表示沒有它就不會有這個結果。"
+        "zh_TW": "他的幫助是不可或缺的，「なしには」後接否定，表示沒有它就不會有這個結果。",
+        "ja": "彼の助けはなくてはならないものであり、「なしには」は後ろに否定を伴って、それがなければ結果が生まれなかったことを表す。"
       }
     },
     {
@@ -523,7 +547,8 @@
       "prompt": {
         "en": "Put the four fragments in the right order to complete the sentence.",
         "zh": "把四个片段排成正确的顺序，组成完整的句子。",
-        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。",
+        "ja": "四つの言葉を正しい順に並べ替えて、文を完成させてください。"
       },
       "options": [
         "加えて、",
@@ -540,7 +565,8 @@
       "explanation": {
         "en": "に加えて attaches to the first item, 冬の天気, and the second item then follows with も: on top of the winter weather, the wind as well.",
         "zh": "「に加えて」接在第一项「冬の天気」后面，第二项再用「も」承接，表示除了冬天的天气之外还要注意风的情况。",
-        "zh_TW": "「に加えて」接在第一項「冬の天気」後面，第二項再用「も」承接，表示除了冬天的天氣之外還要注意風的情況。"
+        "zh_TW": "「に加えて」接在第一項「冬の天気」後面，第二項再用「も」承接，表示除了冬天的天氣之外還要注意風的情況。",
+        "ja": "「加えて」は最初の項目「冬の天気」に付き、二つ目の項目は「も」で受ける。「冬の天気に加えて、風の様子にも」という順になる。"
       }
     },
     {
@@ -559,7 +585,8 @@
       "prompt": {
         "en": "Put the four fragments in the right order to complete the sentence.",
         "zh": "把四个片段排成正确的顺序，组成完整的句子。",
-        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。",
+        "ja": "四つの言葉を正しい順に並べ替えて、文を完成させてください。"
       },
       "options": [
         "思ったほど",
@@ -576,7 +603,8 @@
       "explanation": {
         "en": "ものの follows the plain past 始めた and admits the first half before the second half undercuts it.",
         "zh": "「ものの」接在简体过去「始めた」后面，先承认前项，后半句再说出与之相反的实际情况。",
-        "zh_TW": "「ものの」接在簡體過去「始めた」後面，先承認前項，後半句再說出與之相反的實際情況。"
+        "zh_TW": "「ものの」接在簡體過去「始めた」後面，先承認前項，後半句再說出與之相反的實際情況。",
+        "ja": "「ものの」は簡体過去形「始めた」に付き、前半を認めたうえで後半で反対のことを述べる。「仕事を始めたものの、思ったほど順調には」という順になる。"
       }
     },
     {
@@ -595,7 +623,8 @@
       "prompt": {
         "en": "Put the four fragments in the right order to complete the sentence.",
         "zh": "把四个片段排成正确的顺序，组成完整的句子。",
-        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。",
+        "ja": "四つの言葉を正しい順に並べ替えて、文を完成させてください。"
       },
       "options": [
         "最後まで",
@@ -612,7 +641,8 @@
       "explanation": {
         "en": "からには follows 引き受けた and states the commitment already made; what the speaker resolves to do about it comes after.",
         "zh": "「からには」接在「引き受けた」后面，说明已经做出的承担，后半句再讲由此下定的决心。",
-        "zh_TW": "「からには」接在「引き受けた」後面，說明已經做出的承擔，後半句再講由此下定的決心。"
+        "zh_TW": "「からには」接在「引き受けた」後面，說明已經做出的承擔，後半句再講由此下定的決心。",
+        "ja": "「からには」は「引き受けた」に付き、すでに引き受けたという事実を述べる。後半にはそこから生まれる決意が続く。"
       }
     },
     {
@@ -631,7 +661,8 @@
       "prompt": {
         "en": "Put the four fragments in the right order to complete the sentence.",
         "zh": "把四个片段排成正确的顺序，组成完整的句子。",
-        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。",
+        "ja": "四つの言葉を正しい順に並べ替えて、文を完成させてください。"
       },
       "options": [
         "八月に",
@@ -648,7 +679,8 @@
       "explanation": {
         "en": "から marks where the stretch begins and にかけて marks where it ends, so the two months frame the period the rain lasts.",
         "zh": "「から」标出起点，「にかけて」标出终点，两个月份合起来框定了多雨天气持续的时间段。",
-        "zh_TW": "「から」標出起點，「にかけて」標出終點，兩個月份合起來框定了多雨天氣持續的時間段。"
+        "zh_TW": "「から」標出起點，「にかけて」標出終點，兩個月份合起來框定了多雨天氣持續的時間段。",
+        "ja": "「から」で始まりを示し、「にかけて」で終わりを示す。二つの月が雨の多い時期の範囲を示している。"
       }
     },
     {
@@ -667,7 +699,8 @@
       "prompt": {
         "en": "Put the four fragments in the right order to complete the sentence.",
         "zh": "把四个片段排成正确的顺序，组成完整的句子。",
-        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。",
+        "ja": "四つの言葉を正しい順に並べ替えて、文を完成させてください。"
       },
       "options": [
         "からというもの、",
@@ -684,7 +717,8 @@
       "explanation": {
         "en": "てからというもの follows the te-form and names the point after which a lasting change set in.",
         "zh": "「てからというもの」接在て形后面，表示从那以后一直持续的变化。",
-        "zh_TW": "「てからというもの」接在て形後面，表示從那以後一直持續的變化。"
+        "zh_TW": "「てからというもの」接在て形後面，表示從那以後一直持續的變化。",
+        "ja": "「てからというもの」はて形に付き、その時から続いている変化の始まりを示す。「暮らし始めてからというもの、日本語の勉強が」という順になる。"
       }
     },
     {
@@ -701,7 +735,8 @@
       "prompt": {
         "en": "Read the passage, then choose the words that fit this gap.",
         "zh": "读完短文后，选择适合这个空格的词。",
-        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。",
+        "ja": "文章を読んで、（　）に入る言葉を選んでください。"
       },
       "options": [
         "きっかけに",
@@ -713,7 +748,8 @@
       "explanation": {
         "en": "That one book is the single event after which everything changed, and をきっかけに names such a trigger.",
         "zh": "那一本书是使一切开始改变的契机，「をきっかけに」正表示以某事为契机。",
-        "zh_TW": "那一本書是使一切開始改變的契機，「をきっかけに」正表示以某事為契機。"
+        "zh_TW": "那一本書是使一切開始改變的契機，「をきっかけに」正表示以某事為契機。",
+        "ja": "友人にすすめられた一冊の本が、生活が大きく変わるきっかけとなった。このような契機を表すのは「をきっかけに」である。"
       }
     },
     {
@@ -730,7 +766,8 @@
       "prompt": {
         "en": "Read the passage, then choose the words that fit this gap.",
         "zh": "读完短文后，选择适合这个空格的词。",
-        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。",
+        "ja": "文章を読んで、（　）に入る言葉を選んでください。"
       },
       "options": [
         "一方だ",
@@ -742,7 +779,8 @@
       "explanation": {
         "en": "The reading time keeps moving in one direction and never back, and 一方だ says a change goes on increasing.",
         "zh": "读书的时间只朝一个方向变化，没有回头，「一方だ」表示某种变化不断加剧。",
-        "zh_TW": "讀書的時間只朝一個方向變化，沒有回頭，「一方だ」表示某種變化不斷加劇。"
+        "zh_TW": "讀書的時間只朝一個方向變化，沒有回頭，「一方だ」表示某種變化不斷加劇。",
+        "ja": "読書の時間は一方向に増え続け、戻ることがない。変化が増え続けることを表すのは「一方だ」である。"
       }
     },
     {
@@ -759,7 +797,8 @@
       "prompt": {
         "en": "Read the passage, then choose the words that fit this gap.",
         "zh": "读完短文后，选择适合这个空格的词。",
-        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。",
+        "ja": "文章を読んで、（　）に入る言葉を選んでください。"
       },
       "options": [
         "のみならず",
@@ -771,7 +810,8 @@
       "explanation": {
         "en": "A second place for reading is added to the first, and the も later in the sentence needs のみならず in front: not only on the train but also before bed.",
         "zh": "后面又补上了第二个读书的场合，句中有「も」，前面就要用「のみならず」，表示「不仅……而且……」。",
-        "zh_TW": "後面又補上了第二個讀書的場合，句中有「も」，前面就要用「のみならず」，表示「不僅……而且……」。"
+        "zh_TW": "後面又補上了第二個讀書的場合，句中有「も」，前面就要用「のみならず」，表示「不僅……而且……」。",
+        "ja": "後ろに「も」があり、二つ目の場面が付け加えられている。「電車の中だけでなく」を表すのは「のみならず」である。"
       }
     },
     {
@@ -788,7 +828,8 @@
       "prompt": {
         "en": "Read the passage, then choose the form that fits this gap.",
         "zh": "读完短文后，选择适合这个空格的形式。",
-        "zh_TW": "讀完短文後，選擇適合這個空格的形式。"
+        "zh_TW": "讀完短文後，選擇適合這個空格的形式。",
+        "ja": "文章を読んで、（　）に入る形を選んでください。"
       },
       "options": [
         "恐れることなく",
@@ -800,7 +841,8 @@
       "explanation": {
         "en": "The writer wants to keep reading with the fear left out of it, and ことなく is the written-style 'without doing' that attaches to a dictionary form.",
         "zh": "作者想不带着这种担心继续读下去，「ことなく」接辞書形，是书面语中「不……地」的说法。",
-        "zh_TW": "作者想不帶著這種擔心繼續讀下去，「ことなく」接辭書形，是書面語中「不……地」的說法。"
+        "zh_TW": "作者想不帶著這種擔心繼續讀下去，「ことなく」接辭書形，是書面語中「不……地」的說法。",
+        "ja": "筆者はその不安を取り除いたまま読み続けたいと考えている。「ことなく」は辞書形に付く硬い「～せずに」の言い方である。"
       }
     },
     {
@@ -817,7 +859,8 @@
       "prompt": {
         "en": "Read the passage, then choose the form that fits this gap.",
         "zh": "读完短文后，选择适合这个空格的形式。",
-        "zh_TW": "讀完短文後，選擇適合這個空格的形式。"
+        "zh_TW": "讀完短文後，選擇適合這個空格的形式。",
+        "ja": "文章を読んで、（　）に入る形を選んでください。"
       },
       "options": [
         "なりつつある",
@@ -829,7 +872,8 @@
       "explanation": {
         "en": "The change is under way rather than finished, and つつある on the ます-stem says something is in the middle of becoming.",
         "zh": "变化还在进行中而不是已经完成，「ます形词干＋つつある」表示正在逐渐变成某种状态。",
-        "zh_TW": "變化還在進行中而不是已經完成，「ます形詞幹＋つつある」表示正在逐漸變成某種狀態。"
+        "zh_TW": "變化還在進行中而不是已經完成，「ます形詞幹＋つつある」表示正在逐漸變成某種狀態。",
+        "ja": "変化はまだ完了せず、進行している。「ます形の語幹＋つつある」は徐々に変わりつつあることを表す。"
       }
     },
     {
@@ -845,7 +889,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "において",
@@ -857,7 +902,8 @@
       "explanation": {
         "en": "The gap marks the field or setting the statement holds in, and において is the written-style way of saying \"in\" a time, place or domain.",
         "zh": "空格标出这句话成立的领域或场合，「において」是书面语中表示「在……方面、在……之中」的说法。",
-        "zh_TW": "空格標出這句話成立的領域或場合，「において」是書面語中表示「在……方面、在……之中」的說法。"
+        "zh_TW": "空格標出這句話成立的領域或場合，「において」是書面語中表示「在……方面、在……之中」的說法。",
+        "ja": "この文はある分野や場面で成り立つことを述べている。「において」は時間・場所・分野の「～で」を表す硬い言い方である。"
       }
     },
     {
@@ -873,7 +919,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "につき",
@@ -885,7 +932,8 @@
       "explanation": {
         "en": "The amount is being given per unit — one thousand yen for each person — and につき is the phrase for a rate per unit.",
         "zh": "这里是按单位计算金额，每人一千日元，表示「每……」的比率用「につき」。",
-        "zh_TW": "這裡是按單位計算金額，每人一千日元，表示「每……」的比率用「につき」。"
+        "zh_TW": "這裡是按單位計算金額，每人一千日元，表示「每……」的比率用「につき」。",
+        "ja": "金額は単位ごとに決められており、一人につき千円である。「単位あたり」を表すのは「につき」である。"
       }
     },
     {
@@ -901,7 +949,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "をはじめ",
@@ -913,7 +962,8 @@
       "explanation": {
         "en": "The president is named as the leading example of a larger group that follows, which is exactly what をはじめ does.",
         "zh": "先举出社长作为代表，后面再带出整个群体，这种「以……为首」的说法用「をはじめ」。",
-        "zh_TW": "先舉出社長作為代表，後面再帶出整個群體，這種「以……為首」的說法用「をはじめ」。"
+        "zh_TW": "先舉出社長作為代表，後面再帶出整個群體，這種「以……為首」的說法用「をはじめ」。",
+        "ja": "社長を代表として挙げ、後ろでより大きな集団を示している。「～を代表として」を表すのは「をはじめ」である。"
       }
     },
     {
@@ -929,7 +979,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "を中心に",
@@ -941,7 +992,8 @@
       "explanation": {
         "en": "The young staff are the core the work revolves around, and を中心に names that centre.",
         "zh": "年轻员工是推动这项计划的核心，表示「以……为中心」用「を中心に」。",
-        "zh_TW": "年輕員工是推動這項計劃的核心，表示「以……為中心」用「を中心に」。"
+        "zh_TW": "年輕員工是推動這項計劃的核心，表示「以……為中心」用「を中心に」。",
+        "ja": "若手社員がこの計画を動かす中心となっている。「～を中心にして」を表すのは「を中心に」である。"
       }
     },
     {
@@ -957,7 +1009,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "をもとに",
@@ -969,7 +1022,8 @@
       "explanation": {
         "en": "The students' opinions are the material the decision was built from, and をもとに marks that source.",
         "zh": "学生的意见是做决定时所依据的素材，表示「以……为基础」用「をもとに」。",
-        "zh_TW": "學生的意見是做決定時所依據的素材，表示「以……為基礎」用「をもとに」。"
+        "zh_TW": "學生的意見是做決定時所依據的素材，表示「以……為基礎」用「をもとに」。",
+        "ja": "学生の意見が決定を下す材料になっている。「～を基礎として」を表すのは「をもとに」である。"
       }
     },
     {
@@ -985,7 +1039,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "に沿って",
@@ -997,7 +1052,8 @@
       "explanation": {
         "en": "Walking follows the line of the river, and に沿って is used for moving along something long, or for keeping to a plan or rule.",
         "zh": "走的路线顺着河流延伸，沿着长条状的事物走，或按照方针办事，都用「に沿って」。",
-        "zh_TW": "走的路線順著河流延伸，沿著長條狀的事物走，或按照方針辦事，都用「に沿って」。"
+        "zh_TW": "走的路線順著河流延伸，沿著長條狀的事物走，或按照方針辦事，都用「に沿って」。",
+        "ja": "歩く道は川の流れに沿っている。長いものに沿って進む、または方針や規則どおりに行うことを表すのは「に沿って」である。"
       }
     },
     {
@@ -1013,7 +1069,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "に応えて",
@@ -1025,7 +1082,8 @@
       "explanation": {
         "en": "The runners answered the hopes of the people cheering, and に応えて is used for living up to support, expectations or a request.",
         "zh": "选手们回应了观众的加油，表示「不辜负期待、回应支持」用「に応えて」。",
-        "zh_TW": "選手們回應了觀眾的加油，表示「不辜負期待、回應支持」用「に応えて」。"
+        "zh_TW": "選手們回應了觀眾的加油，表示「不辜負期待、回應支持」用「に応えて」。",
+        "ja": "選手たちは応援する人々の期待に応えた。支援や期待、要望に応じることを表すのは「に応えて」である。"
       }
     },
     {
@@ -1041,7 +1099,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "を通じて",
@@ -1053,7 +1112,8 @@
       "explanation": {
         "en": "The job is the route by which the meetings happened, and を通じて marks the means or channel something comes about through.",
         "zh": "工作是结识这些人的途径，表示「通过……」的媒介或渠道用「を通じて」。",
-        "zh_TW": "工作是結識這些人的途徑，表示「通過……」的媒介或渠道用「を通じて」。"
+        "zh_TW": "工作是結識這些人的途徑，表示「通過……」的媒介或渠道用「を通じて」。",
+        "ja": "仕事はこの人たちと知り合う手段となった。「～を経由して」を表すのは「を通じて」である。"
       }
     },
     {
@@ -1069,7 +1129,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "をめぐって",
@@ -1081,7 +1142,8 @@
       "explanation": {
         "en": "The road is the issue people are arguing over, and をめぐって introduces a topic that opinions or disputes circle around.",
         "zh": "修路是众人争论的焦点，表示「围绕某个话题产生分歧」用「をめぐって」。",
-        "zh_TW": "修路是眾人爭論的焦點，表示「圍繞某個話題產生分歧」用「をめぐって」。"
+        "zh_TW": "修路是眾人爭論的焦點，表示「圍繞某個話題產生分歧」用「をめぐって」。",
+        "ja": "道路の建設は人々が争う焦点になっている。ある話題をめぐって意見が対立することを表すのは「をめぐって」である。"
       }
     },
     {
@@ -1097,7 +1159,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "にわたって",
@@ -1109,7 +1172,8 @@
       "explanation": {
         "en": "Three years is the whole stretch the work covered, and にわたって states the full extent of a period or an area.",
         "zh": "三年是工程持续的整个跨度，表示「历时……、涉及整个范围」用「にわたって」。",
-        "zh_TW": "三年是工程持續的整個跨度，表示「歷時……、涉及整個範圍」用「にわたって」。"
+        "zh_TW": "三年是工程持續的整個跨度，表示「歷時……、涉及整個範圍」用「にわたって」。",
+        "ja": "三年は工事全体が続いた期間である。期間や範囲の広がり全体を表すのは「にわたって」である。"
       }
     },
     {
@@ -1125,7 +1189,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "に伴って",
@@ -1137,7 +1202,8 @@
       "explanation": {
         "en": "One change drags the other along with it, and に伴って links two changes that move together.",
         "zh": "一个变化带动另一个变化，两者同步发生时用「に伴って」。",
-        "zh_TW": "一個變化帶動另一個變化，兩者同步發生時用「に伴って」。"
+        "zh_TW": "一個變化帶動另一個變化，兩者同步發生時用「に伴って」。",
+        "ja": "一つの変化がもう一つの変化を引き起こしている。二つの変化が同時に起こることを表すのは「に伴って」である。"
       }
     },
     {
@@ -1153,7 +1219,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "に反して",
@@ -1165,7 +1232,8 @@
       "explanation": {
         "en": "What happened went the opposite way from what was expected, and に反して marks that contrast with an expectation or a rule.",
         "zh": "实际情况和预想正好相反，表示「与……相反」时用「に反して」。",
-        "zh_TW": "實際情況和預想正好相反，表示「與……相反」時用「に反して」。"
+        "zh_TW": "實際情況和預想正好相反，表示「與……相反」時用「に反して」。",
+        "ja": "実際の結果は予想と正反対だった。予想や規則との対比を表すのは「に反して」である。"
       }
     },
     {
@@ -1181,7 +1249,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "を問わず",
@@ -1193,7 +1262,8 @@
       "explanation": {
         "en": "Age makes no difference to who may join, and を問わず says a condition is not taken into account at all.",
         "zh": "年龄不构成任何限制，表示「不论……」「不加以考虑」用「を問わず」。",
-        "zh_TW": "年齡不構成任何限制，表示「不論……」「不加以考慮」用「を問わず」。"
+        "zh_TW": "年齡不構成任何限制，表示「不論……」「不加以考慮」用「を問わず」。",
+        "ja": "参加資格に年齢は関係ない。ある条件を問題にしないことを表すのは「を問わず」である。"
       }
     },
     {
@@ -1209,7 +1279,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "のもとで",
@@ -1221,7 +1292,8 @@
       "explanation": {
         "en": "The teacher's guidance is the condition the work took place under, and のもとで names the influence or supervision an action happens beneath.",
         "zh": "老师的指导是实验进行的前提条件，表示「在……之下」用「のもとで」。",
-        "zh_TW": "老師的指導是實驗進行的前提條件，表示「在……之下」用「のもとで」。"
+        "zh_TW": "老師的指導是實驗進行的前提條件，表示「在……之下」用「のもとで」。",
+        "ja": "先生の指導は実験が行われる前提条件である。「～の影響・監督の下で」を表すのは「のもとで」である。"
       }
     },
     {
@@ -1237,7 +1309,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "にあたって",
@@ -1249,7 +1322,8 @@
       "explanation": {
         "en": "Preparations are made as an important new stage begins, and にあたって marks the occasion of such a step.",
         "zh": "在迎来重要的新阶段时做准备，表示「值此……之际」用「にあたって」。",
-        "zh_TW": "在迎來重要的新階段時做準備，表示「值此……之際」用「にあたって」。"
+        "zh_TW": "在迎來重要的新階段時做準備，表示「值此……之際」用「にあたって」。",
+        "ja": "重要な新しい段階を迎えるにあたり、準備をしている。物事の機会を表すのは「にあたって」である。"
       }
     },
     {
@@ -1265,7 +1339,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "に先立って",
@@ -1277,7 +1352,8 @@
       "explanation": {
         "en": "Handing out the documents comes before the meeting as its preparation, and に先立って says one thing is done ahead of a formal event.",
         "zh": "发资料是会议前的准备，表示「在……之前先做某事」用「に先立って」。",
-        "zh_TW": "發資料是會議前的準備，表示「在……之前先做某事」用「に先立って」。"
+        "zh_TW": "發資料是會議前的準備，表示「在……之前先做某事」用「に先立って」。",
+        "ja": "資料を配ることは会議の前の準備である。正式な行事より前に何かを行うことを表すのは「に先立って」である。"
       }
     },
     {
@@ -1293,7 +1369,8 @@
       "prompt": {
         "en": "Which word fits the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入る言葉はどれですか。"
       },
       "options": [
         "際",
@@ -1305,7 +1382,8 @@
       "explanation": {
         "en": "The rule applies at the occasion of using the library, and 際 is the formal word for \"when\" in notices and instructions.",
         "zh": "这条规定适用于使用图书馆的时候，公告和说明中表示「……的时候」用「際」。",
-        "zh_TW": "這條規定適用於使用圖書館的時候，公告和說明中表示「……的時候」用「際」。"
+        "zh_TW": "這條規定適用於使用圖書館的時候，公告和說明中表示「……的時候」用「際」。",
+        "ja": "この規則は図書館を利用する時に適用される。案内文などで「～の時」を表す硬い言葉は「際」である。"
       }
     },
     {
@@ -1321,7 +1399,8 @@
       "prompt": {
         "en": "Which word fits the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入る言葉はどれですか。"
       },
       "options": [
         "最中",
@@ -1333,7 +1412,8 @@
       "explanation": {
         "en": "The phone rang right in the middle of the meal, and 最中 points at the very moment something is under way when it is interrupted.",
         "zh": "电话正好在吃饭进行到一半时响起，表示「正在……的时候」被打断用「最中」。",
-        "zh_TW": "電話正好在吃飯進行到一半時響起，表示「正在……的時候」被打斷用「最中」。"
+        "zh_TW": "電話正好在吃飯進行到一半時響起，表示「正在……的時候」被打斷用「最中」。",
+        "ja": "電話は食事のちょうど半ばで鳴った。何かの進行中に邪魔が入ることを表すのは「最中」である。"
       }
     },
     {
@@ -1349,7 +1429,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "たびに",
@@ -1361,7 +1442,8 @@
       "explanation": {
         "en": "Every single time the photo is looked at, the same memory comes back, and たびに states that regular repetition.",
         "zh": "每次看到这张照片都会想起同样的事，表示「每当……就……」用「たびに」。",
-        "zh_TW": "每次看到這張照片都會想起同樣的事，表示「每當……就……」用「たびに」。"
+        "zh_TW": "每次看到這張照片都會想起同樣的事，表示「每當……就……」用「たびに」。",
+        "ja": "その写真を見るたびに同じ思い出がよみがえる。毎回の繰り返しを表すのは「たびに」である。"
       }
     },
     {
@@ -1377,7 +1459,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "着くか着かないかのうちに",
@@ -1389,7 +1472,8 @@
       "explanation": {
         "en": "He stood up at the very instant the train was arriving, almost before it had, and 〜か〜ないかのうちに describes two things happening with no gap at all.",
         "zh": "电车刚要到站他就站了起来，几乎没有间隔，这种「刚一……就……」用「〜か〜ないかのうちに」。",
-        "zh_TW": "電車剛要到站他就站了起來，幾乎沒有間隔，這種「剛一……就……」用「〜か〜ないかのうちに」。"
+        "zh_TW": "電車剛要到站他就站了起來，幾乎沒有間隔，這種「剛一……就……」用「〜か〜ないかのうちに」。",
+        "ja": "電車が着くのとほぼ同時に彼は立ち上がった。間を置かず二つのことが起こることを表すのは「〜か〜ないかのうちに」である。"
       }
     },
     {
@@ -1405,7 +1489,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "かと思うと",
@@ -1417,7 +1502,8 @@
       "explanation": {
         "en": "No sooner was the sky dark than the rain came, and かと思うと reports a second event following the first at once and unexpectedly.",
         "zh": "天刚一变暗雨就下了起来，表示「刚……就……」的意外接续用「かと思うと」。",
-        "zh_TW": "天剛一變暗雨就下了起來，表示「剛……就……」的意外接續用「かと思うと」。"
+        "zh_TW": "天剛一變暗雨就下了起來，表示「剛……就……」的意外接續用「かと思うと」。",
+        "ja": "空が暗くなったと思ったらすぐに雨が降ってきた。予想外に続けて起こることを表すのは「かと思うと」である。"
       }
     },
     {
@@ -1433,7 +1519,8 @@
       "prompt": {
         "en": "Which word fits the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入る言葉はどれですか。"
       },
       "options": [
         "次第",
@@ -1445,7 +1532,8 @@
       "explanation": {
         "en": "Departure waits only for the preparation to be finished, and 次第 on the verb stem means \"as soon as that is done\".",
         "zh": "只要准备一完成就出发，接在动词连用形后表示「一……就立刻……」用「次第」。",
-        "zh_TW": "只要準備一完成就出發，接在動詞連用形後表示「一……就立刻……」用「次第」。"
+        "zh_TW": "只要準備一完成就出發，接在動詞連用形後表示「一……就立刻……」用「次第」。",
+        "ja": "出発は準備が終わるのを待つだけである。動詞の連用形に付き「～したらすぐに」を表すのは「次第」である。"
       }
     },
     {
@@ -1461,7 +1549,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "してはじめて",
@@ -1473,7 +1562,8 @@
       "explanation": {
         "en": "Only after the experience of living abroad did the thinking begin, and 〜てはじめて says one thing had to happen before the other was possible.",
         "zh": "只有在国外生活过之后才开始深入思考，表示「只有……之后才……」用「〜てはじめて」。",
-        "zh_TW": "只有在國外生活過之後才開始深入思考，表示「只有……之後才……」用「〜てはじめて」。"
+        "zh_TW": "只有在國外生活過之後才開始深入思考，表示「只有……之後才……」用「〜てはじめて」。",
+        "ja": "海外で暮らした経験があって初めて考え始めた。「〜て初めて」は先に何かが起こって初めて後のことが可能になることを表す。"
       }
     },
     {
@@ -1489,7 +1579,8 @@
       "prompt": {
         "en": "Which words fit the gap in this sentence?",
         "zh": "这个句子的空格里应该填什么？",
-        "zh_TW": "這個句子的空格里應該填什麼？"
+        "zh_TW": "這個句子的空格里應該填什麼？",
+        "ja": "文の（　）に入るのはどれですか。"
       },
       "options": [
         "上で",
@@ -1501,7 +1592,8 @@
       "explanation": {
         "en": "Thinking comes first and the answer is given on that basis, which is the order 〜た上で sets out.",
         "zh": "先充分考虑，在此基础上再答复，这种先后关系用「〜た上で」。",
-        "zh_TW": "先充分考慮，在此基礎上再答覆，這種先後關係用「〜た上で」。"
+        "zh_TW": "先充分考慮，在此基礎上再答覆，這種先後關係用「〜た上で」。",
+        "ja": "先によく考え、それを踏まえて答える。「〜た上で」はこの順序を表す。"
       }
     },
     {
@@ -1520,7 +1612,8 @@
       "prompt": {
         "en": "Put the four fragments in the right order to complete the sentence.",
         "zh": "把四个片段排成正确的顺序，组成完整的句子。",
-        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。",
+        "ja": "四つの言葉を正しい順に並べ替えて、文を完成させてください。"
       },
       "options": [
         "以来、",
@@ -1537,7 +1630,8 @@
       "explanation": {
         "en": "以来 attaches to the te-form 引っ越して and fixes the starting point; what has been true ever since follows.",
         "zh": "「以来」接在「引っ越して」后面，确定起点，后面再说从那以后一直如此的情况。",
-        "zh_TW": "「以來」接在「引っ越して」後面，確定起點，後面再說從那以後一直如此的情況。"
+        "zh_TW": "「以來」接在「引っ越して」後面，確定起點，後面再說從那以後一直如此的情況。",
+        "ja": "「以来」はて形「引っ越して」に付き、起点を定める。後ろにはそれ以降ずっと続く状態が続く。"
       }
     },
     {
@@ -1556,7 +1650,8 @@
       "prompt": {
         "en": "Put the four fragments in the right order to complete the sentence.",
         "zh": "把四个片段排成正确的顺序，组成完整的句子。",
-        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。",
+        "ja": "四つの言葉を正しい順に並べ替えて、文を完成させてください。"
       },
       "options": [
         "会って、",
@@ -1573,7 +1668,8 @@
       "explanation": {
         "en": "ぶりに attaches to the length of the interval, 三年, and modifies the verb that follows: meeting again after three years.",
         "zh": "「ぶりに」接在表示间隔长度的「三年」后面，修饰后面的动作，表示时隔三年再次见面。",
-        "zh_TW": "「ぶりに」接在表示間隔長度的「三年」後面，修飾後面的動作，表示時隔三年再次見面。"
+        "zh_TW": "「ぶりに」接在表示間隔長度的「三年」後面，修飾後面的動作，表示時隔三年再次見面。",
+        "ja": "「ぶりに」は間隔の長さを表す「三年」に付き、後ろの動作を修飾する。三年ぶりに再会したことを表す。"
       }
     },
     {
@@ -1592,7 +1688,8 @@
       "prompt": {
         "en": "Put the four fragments in the right order to complete the sentence.",
         "zh": "把四个片段排成正确的顺序，组成完整的句子。",
-        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。",
+        "ja": "四つの言葉を正しい順に並べ替えて、文を完成させてください。"
       },
       "options": [
         "テレビを",
@@ -1609,7 +1706,8 @@
       "explanation": {
         "en": "っぱなし follows the verb stem つけ and says the television was left on, a state the speaker sees as careless.",
         "zh": "「っぱなし」接在动词连用形「つけ」后面，表示电视一直开着没关，带有放任不管的语气。",
-        "zh_TW": "「っぱなし」接在動詞連用形「つけ」後面，表示電視一直開著沒關，帶有放任不管的語氣。"
+        "zh_TW": "「っぱなし」接在動詞連用形「つけ」後面，表示電視一直開著沒關，帶有放任不管的語氣。",
+        "ja": "「っぱなし」は動詞の連用形「つけ」に付き、テレビがつけたままになっていることを表す。放置している態度が感じられる。"
       }
     },
     {
@@ -1628,7 +1726,8 @@
       "prompt": {
         "en": "Put the four fragments in the right order to complete the sentence.",
         "zh": "把四个片段排成正确的顺序，组成完整的句子。",
-        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。",
+        "ja": "四つの言葉を正しい順に並べ替えて、文を完成させてください。"
       },
       "options": [
         "だけに、",
@@ -1645,7 +1744,8 @@
       "explanation": {
         "en": "だけに follows the plain form 近い and gives a reason whose result is only what you would expect from it.",
         "zh": "「だけに」接在简体「近い」后面，说明原因，后项正是由这个原因自然导致的结果。",
-        "zh_TW": "「だけに」接在簡體「近い」後面，說明原因，後項正是由這個原因自然導致的結果。"
+        "zh_TW": "「だけに」接在簡體「近い」後面，說明原因，後項正是由這個原因自然導致的結果。",
+        "ja": "「だけに」は簡体形「近い」に付き理由を示し、後半はその理由から自然に導かれる結果である。"
       }
     },
     {
@@ -1664,7 +1764,8 @@
       "prompt": {
         "en": "Put the four fragments in the right order to complete the sentence.",
         "zh": "把四个片段排成正确的顺序，组成完整的句子。",
-        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。",
+        "ja": "四つの言葉を正しい順に並べ替えて、文を完成させてください。"
       },
       "options": [
         "ばかりに、",
@@ -1681,7 +1782,8 @@
       "explanation": {
         "en": "ばかりに follows 持たなかった and blames one small cause for the bad result that came of it.",
         "zh": "「ばかりに」接在「持たなかった」后面，把不好的结果归咎于前面这一个小小的原因。",
-        "zh_TW": "「ばかりに」接在「持たなかった」後面，把不好的結果歸咎於前面這一個小小的原因。"
+        "zh_TW": "「ばかりに」接在「持たなかった」後面，把不好的結果歸咎於前面這一個小小的原因。",
+        "ja": "「ばかりに」は「持たなかった」に付き、悪い結果の原因を一つの小さなことに求める。"
       }
     },
     {
@@ -1700,7 +1802,8 @@
       "prompt": {
         "en": "Put the four fragments in the right order to complete the sentence.",
         "zh": "把四个片段排成正确的顺序，组成完整的句子。",
-        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。",
+        "ja": "四つの言葉を正しい順に並べ替えて、文を完成させてください。"
       },
       "options": [
         "あったからこそ、",
@@ -1717,7 +1820,8 @@
       "explanation": {
         "en": "からこそ follows あった and singles that reason out as the only one that mattered.",
         "zh": "「からこそ」接在「あった」后面，把这个理由特别强调出来，表示正因为如此。",
-        "zh_TW": "「からこそ」接在「あった」後面，把這個理由特別強調出來，表示正因為如此。"
+        "zh_TW": "「からこそ」接在「あった」後面，把這個理由特別強調出來，表示正因為如此。",
+        "ja": "「からこそ」は「あった」に付き、その理由こそが特に重要であったことを強調する。"
       }
     },
     {
@@ -1736,7 +1840,8 @@
       "prompt": {
         "en": "Put the four fragments in the right order to complete the sentence.",
         "zh": "把四个片段排成正确的顺序，组成完整的句子。",
-        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。",
+        "ja": "四つの言葉を正しい順に並べ替えて、文を完成させてください。"
       },
       "options": [
         "勝つまで",
@@ -1753,7 +1858,8 @@
       "explanation": {
         "en": "以上は follows the plain form 出る and states a fact the speaker treats as settled; the resolve that follows from it comes after.",
         "zh": "「以上は」接在简体「出る」后面，先摆出既定的事实，后面再说由此产生的决心。",
-        "zh_TW": "「以上は」接在簡體「出る」後面，先擺出既定的事實，後面再說由此產生的決心。"
+        "zh_TW": "「以上は」接在簡體「出る」後面，先擺出既定的事實，後面再說由此產生的決心。",
+        "ja": "「以上は」は簡体形「出る」に付き、既に決まった事実を述べる。後半ではそこから生まれる決意が続く。"
       }
     },
     {
@@ -1772,7 +1878,8 @@
       "prompt": {
         "en": "Put the four fragments in the right order to complete the sentence.",
         "zh": "把四个片段排成正确的顺序，组成完整的句子。",
-        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。",
+        "ja": "四つの言葉を正しい順に並べ替えて、文を完成させてください。"
       },
       "options": [
         "高い反面、",
@@ -1789,7 +1896,8 @@
       "explanation": {
         "en": "反面 follows 高い and sets a drawback against the good point that comes next.",
         "zh": "「反面」接在「高い」后面，把缺点和后面的优点对照起来说。",
-        "zh_TW": "「反面」接在「高い」後面，把缺點和後面的優點對照起來說。"
+        "zh_TW": "「反面」接在「高い」後面，把缺點和後面的優點對照起來說。",
+        "ja": "「反面」は「高い」に付き、欠点を後ろの長所と対照させる。"
       }
     },
     {
@@ -1808,7 +1916,8 @@
       "prompt": {
         "en": "Put the four fragments in the right order to complete the sentence.",
         "zh": "把四个片段排成正确的顺序，组成完整的句子。",
-        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。",
+        "ja": "四つの言葉を正しい順に並べ替えて、文を完成させてください。"
       },
       "options": [
         "述べた",
@@ -1825,7 +1934,8 @@
       "explanation": {
         "en": "にすぎない closes the sentence on the verb 述べた and plays the explanation down as no more than a part of the whole.",
         "zh": "「にすぎない」接在动词「述べた」后面收尾，把这段说明贬低为「只不过讲了一部分」。",
-        "zh_TW": "「にすぎない」接在動詞「述べた」後面收尾，把這段說明貶低為「只不過講了一部分」。"
+        "zh_TW": "「にすぎない」接在動詞「述べた」後面收尾，把這段說明貶低為「只不過講了一部分」。",
+        "ja": "「にすぎない」は動詞「述べた」に付いて文を締めくくり、説明が全体のごく一部にすぎないと控えめに言う。"
       }
     },
     {
@@ -1844,7 +1954,8 @@
       "prompt": {
         "en": "Put the four fragments in the right order to complete the sentence.",
         "zh": "把四个片段排成正确的顺序，组成完整的句子。",
-        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。"
+        "zh_TW": "把四個片段排成正確的順序，組成完整的句子。",
+        "ja": "四つの言葉を正しい順に並べ替えて、文を完成させてください。"
       },
       "options": [
         "まだ",
@@ -1861,7 +1972,8 @@
       "explanation": {
         "en": "とはいえ follows なった and grants the fact before the second half says the reality does not match it.",
         "zh": "「とはいえ」接在「なった」后面，先承认这个事实，后半句再说实际情况并非如此。",
-        "zh_TW": "「とはいえ」接在「なった」後面，先承認這個事實，後半句再說實際情況並非如此。"
+        "zh_TW": "「とはいえ」接在「なった」後面，先承認這個事實，後半句再說實際情況並非如此。",
+        "ja": "「とはいえ」は「なった」に付き、前半の事実を一応認めたうえで、後半で実際は違うと続ける言い方である。"
       }
     },
     {
@@ -1878,7 +1990,8 @@
       "prompt": {
         "en": "Read the passage, then choose the words that fit this gap.",
         "zh": "读完短文后，选择适合这个空格的词。",
-        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。",
+        "ja": "文章を読んで、（　）に入る言葉を選んでください。"
       },
       "options": [
         "ないことには",
@@ -1890,7 +2003,8 @@
       "explanation": {
         "en": "Cooking yourself is the condition without which improvement is impossible, and ないことには sets up exactly that \"unless\".",
         "zh": "不亲手做就无法变熟练，前项是后项成立的必要条件，这种「不……就不……」用「ないことには」。",
-        "zh_TW": "不親手做就無法變熟練，前項是後項成立的必要條件，這種「不……就不……」用「ないことには」。"
+        "zh_TW": "不親手做就無法變熟練，前項是後項成立的必要條件，這種「不……就不……」用「ないことには」。",
+        "ja": "自分で作ってみなければ上達しない。前のことをしないと後のことも成立しないという不可欠な条件を表すのは「ないことには」である。"
       }
     },
     {
@@ -1907,7 +2021,8 @@
       "prompt": {
         "en": "Read the passage, then choose the words that fit this gap.",
         "zh": "读完短文后，选择适合这个空格的词。",
-        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。",
+        "ja": "文章を読んで、（　）に入る言葉を選んでください。"
       },
       "options": [
         "うちに",
@@ -1919,7 +2034,8 @@
       "explanation": {
         "en": "The change came about unnoticed over the time she kept cooking, and うちに is used for a change that grows while something continues.",
         "zh": "在持续做饭的过程中不知不觉发生了变化，表示「在……过程中渐渐……」用「うちに」。",
-        "zh_TW": "在持續做飯的過程中不知不覺發生了變化，表示「在……過程中漸漸……」用「うちに」。"
+        "zh_TW": "在持續做飯的過程中不知不覺發生了變化，表示「在……過程中漸漸……」用「うちに」。",
+        "ja": "料理を続けている間に、少しずつ味の違いが分かるようになった。何かを続けている間に起こる変化を表すのは「うちに」である。"
       }
     },
     {
@@ -1936,7 +2052,8 @@
       "prompt": {
         "en": "Read the passage, then choose the words that fit this gap.",
         "zh": "读完短文后，选择适合这个空格的词。",
-        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。",
+        "ja": "文章を読んで、（　）に入る言葉を選んでください。"
       },
       "options": [
         "ばかりか",
@@ -1948,7 +2065,8 @@
       "explanation": {
         "en": "A second occasion is added to the first, and the も later in the sentence needs ばかりか in front: not just days off but weekday evenings as well.",
         "zh": "在第一种场合之外又加上第二种，句中有「も」，前面就要用「ばかりか」，表示「不仅……而且……」。",
-        "zh_TW": "在第一種場合之外又加上第二種，句中有「も」，前面就要用「ばかりか」，表示「不僅……而且……」。"
+        "zh_TW": "在第一種場合之外又加上第二種，句中有「も」，前面就要用「ばかりか」，表示「不僅……而且……」。",
+        "ja": "後ろに「も」があり、休みの日に加えてもう一つの場面が付け加えられている。「～だけでなく」を表すのは「ばかりか」である。"
       }
     },
     {
@@ -1965,7 +2083,8 @@
       "prompt": {
         "en": "Read the passage, then choose the words that fit this gap.",
         "zh": "读完短文后，选择适合这个空格的词。",
-        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。",
+        "ja": "文章を読んで、（　）に入る言葉を選んでください。"
       },
       "options": [
         "上に",
@@ -1977,7 +2096,8 @@
       "explanation": {
         "en": "Two drawbacks of the same kind are piled up, and 上に adds a second point on top of the first.",
         "zh": "前后是两个同类的缺点叠加在一起，表示「而且、再加上」用「上に」。",
-        "zh_TW": "前後是兩個同類的缺點疊加在一起，表示「而且、再加上」用「上に」。"
+        "zh_TW": "前後是兩個同類的缺點疊加在一起，表示「而且、再加上」用「上に」。",
+        "ja": "時間がかかることと準備が大変なことという、同じ種類の欠点が重ねられている。「さらに」を表すのは「上に」である。"
       }
     },
     {
@@ -1994,7 +2114,8 @@
       "prompt": {
         "en": "Read the passage, then choose the words that fit this gap.",
         "zh": "读完短文后，选择适合这个空格的词。",
-        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。",
+        "ja": "文章を読んで、（　）に入る言葉を選んでください。"
       },
       "options": [
         "に限らず",
@@ -2006,7 +2127,8 @@
       "explanation": {
         "en": "The users are not confined to students; another group is added with も, and に限らず is the phrase that opens the range out.",
         "zh": "使用者并不局限于学生，后面用「も」再补上另一类人，表示「不限于……」用「に限らず」。",
-        "zh_TW": "使用者並不侷限於學生，後面用「も」再補上另一類人，表示「不限於……」用「に限らず」。"
+        "zh_TW": "使用者並不侷限於學生，後面用「も」再補上另一類人，表示「不限於……」用「に限らず」。",
+        "ja": "利用者は学生だけにとどまらず、後ろに「も」で別の層が付け加えられている。範囲を広げる「～だけでなく」を表すのは「に限らず」である。"
       }
     },
     {
@@ -2023,7 +2145,8 @@
       "prompt": {
         "en": "Read the passage, then choose the words that fit this gap.",
         "zh": "读完短文后，选择适合这个空格的词。",
-        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。",
+        "ja": "文章を読んで、（　）に入る言葉を選んでください。"
       },
       "options": [
         "わりには",
@@ -2035,7 +2158,8 @@
       "explanation": {
         "en": "A new building would be expected to feel raw, yet it feels calm, and わりには marks a result that does not match what the first part leads you to expect.",
         "zh": "新建筑本该给人生硬的感觉，实际却很沉静，结果与前项的预想不符时用「わりには」。",
-        "zh_TW": "新建築本該給人生硬的感覺，實際卻很沉靜，結果與前項的預想不符時用「わりには」。"
+        "zh_TW": "新建築本該給人生硬的感覺，實際卻很沉靜，結果與前項的預想不符時用「わりには」。",
+        "ja": "新しい建物なら硬い印象を与えそうなのに、実際は落ち着いている。前の予想と合わない結果を表すのは「わりには」である。"
       }
     },
     {
@@ -2052,7 +2176,8 @@
       "prompt": {
         "en": "Read the passage, then choose the words that fit this gap.",
         "zh": "读完短文后，选择适合这个空格的词。",
-        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。",
+        "ja": "文章を読んで、（　）に入る言葉を選んでください。"
       },
       "options": [
         "ものがある",
@@ -2064,7 +2189,8 @@
       "explanation": {
         "en": "The writer feels a quality in that pleasure that is hard to name, and ものがある is how such a felt impression is stated.",
         "zh": "作者感到这种乐趣中有一种说不清的特别之处，表达这种感受用「ものがある」。",
-        "zh_TW": "作者感到這種樂趣中有一種說不清的特別之處，表達這種感受用「ものがある」。"
+        "zh_TW": "作者感到這種樂趣中有一種說不清的特別之處，表達這種感受用「ものがある」。",
+        "ja": "筆者はその楽しみの中に言葉にしにくい特別な性質を感じている。このような印象を述べるのが「ものがある」である。"
       }
     },
     {
@@ -2081,7 +2207,8 @@
       "prompt": {
         "en": "Read the passage, then choose the words that fit this gap.",
         "zh": "读完短文后，选择适合这个空格的词。",
-        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。",
+        "ja": "文章を読んで、（　）に入る形を選んでください。"
       },
       "options": [
         "てたまらなかった",
@@ -2093,7 +2220,8 @@
       "explanation": {
         "en": "The pain was more than the writer could bear, and てたまらない is the form for a feeling too strong to put up with.",
         "zh": "疼得难以忍受，表示某种感觉强烈到受不了时用「てたまらない」。",
-        "zh_TW": "疼得難以忍受，表示某種感覺強烈到受不了時用「てたまらない」。"
+        "zh_TW": "疼得難以忍受，表示某種感覺強烈到受不了時用「てたまらない」。",
+        "ja": "痛みが我慢できないほど強かった。感覚が強すぎて耐えられないことを表すのは「てたまらない」である。"
       }
     },
     {
@@ -2110,7 +2238,8 @@
       "prompt": {
         "en": "Read the passage, then choose the words that fit this gap.",
         "zh": "读完短文后，选择适合这个空格的词。",
-        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。",
+        "ja": "文章を読んで、（　）に入る形を選んでください。"
       },
       "options": [
         "ないではいられない",
@@ -2122,7 +2251,8 @@
       "explanation": {
         "en": "The habit has grown so strong that not walking is impossible, and ないではいられない says the urge cannot be held back.",
         "zh": "习惯已经强到不走不行，表示「忍不住、非做不可」用「ないではいられない」。",
-        "zh_TW": "習慣已經強到不走不行，表示「忍不住、非做不可」用「ないではいられない」。"
+        "zh_TW": "習慣已經強到不走不行，表示「忍不住、非做不可」用「ないではいられない」。",
+        "ja": "習慣が強くなり、歩かずにはいられなくなっている。抑えられない気持ちを表すのは「ないではいられない」である。"
       }
     },
     {
@@ -2139,7 +2269,8 @@
       "prompt": {
         "en": "Read the passage, then choose the words that fit this gap.",
         "zh": "读完短文后，选择适合这个空格的词。",
-        "zh_TW": "讀完短文後，選擇適合這個空格的詞。"
+        "zh_TW": "讀完短文後，選擇適合這個空格的詞。",
+        "ja": "文章を読んで、（　）に入る言葉を選んでください。"
       },
       "options": [
         "にほかならない",
@@ -2151,7 +2282,8 @@
       "explanation": {
         "en": "The writer names one cause and rules out every other, and にほかならない asserts that it is nothing but this.",
         "zh": "作者断定原因只有这一个，排除其他可能，这种「无非就是……」用「にほかならない」。",
-        "zh_TW": "作者斷定原因只有這一個，排除其他可能，這種「無非就是……」用「にほかならない」。"
+        "zh_TW": "作者斷定原因只有這一個，排除其他可能，這種「無非就是……」用「にほかならない」。",
+        "ja": "筆者は原因を一つに定め、他の可能性を除いている。「まさにこれである」と断定するのは「にほかならない」である。"
       }
     }
   ]

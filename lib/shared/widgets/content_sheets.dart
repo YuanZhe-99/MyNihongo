@@ -23,6 +23,7 @@ import '../../features/speech/widgets/speak_button.dart';
 import '../../l10n/app_localizations.dart';
 import '../../features/ai/widgets/generated_examples.dart';
 import 'furigana_text.dart';
+import 'part_of_speech_labels.dart';
 import 'reference_widgets.dart';
 
 /// Purpose: Render a section heading inside a sheet.
@@ -131,17 +132,38 @@ Future<void> showVocabDetailSheet(
         if (entry.partsOfSpeech.isNotEmpty) ...[
           const SizedBox(height: 12),
           Text(
-            '${l10n.vocabPartOfSpeech}: ${entry.partsOfSpeech.join(', ')}',
+            '${l10n.vocabPartOfSpeech}: '
+            '${entry.partsOfSpeech.map((tag) => posLabel(l10n, tag)).join(', ')}',
             style: theme.textTheme.bodySmall?.copyWith(
               color: theme.colorScheme.onSurfaceVariant,
             ),
           ),
         ],
         const SizedBox(height: 16),
-        for (final meaning in entry.meanings.resolve(locale))
+        // A Japanese definition carries a reading per sense and is drawn with
+        // furigana like every other Japanese string; an English or Chinese
+        // gloss is plain text.
+        for (final (index, meaning)
+            in entry.meanings.resolve(locale).indexed)
           Padding(
             padding: const EdgeInsets.only(bottom: 4),
-            child: Text('• $meaning', style: theme.textTheme.bodyLarge),
+            child: entry.meanings.resolvedKey(locale) == 'ja'
+                ? Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text('• ', style: theme.textTheme.bodyLarge),
+                      Flexible(
+                        child: FuriganaText(
+                          meaning,
+                          reading: index < entry.jaReadings.length
+                              ? entry.jaReadings[index]
+                              : null,
+                          style: theme.textTheme.bodyLarge,
+                        ),
+                      ),
+                    ],
+                  )
+                : Text('• $meaning', style: theme.textTheme.bodyLarge),
           ),
         const SizedBox(height: 16),
         exampleList(context, entry.examples, locale),
@@ -199,12 +221,23 @@ Future<void> showGrammarDetailSheet(
             levelChip(context, point.level),
           ],
         ),
-        Text(
-          point.meaning.resolveJoined(locale),
-          style: theme.textTheme.titleMedium?.copyWith(
-            color: theme.colorScheme.onSurfaceVariant,
+        // The Japanese one-line meaning has a reading and gets furigana; the
+        // longer explanation below does not (see content-catalog.md).
+        if (point.meaning.resolvedKey(locale) == 'ja')
+          FuriganaText(
+            point.meaning.resolveJoined(locale),
+            reading: point.meaningJaReading,
+            style: theme.textTheme.titleMedium?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          )
+        else
+          Text(
+            point.meaning.resolveJoined(locale),
+            style: theme.textTheme.titleMedium?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
           ),
-        ),
         if (point.structure != null) ...[
           const SizedBox(height: 16),
           _sectionLabel(theme, l10n.grammarStructure),

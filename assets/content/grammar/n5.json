@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "source": "hand-written",
+  "source": "hand-written; ja model-authored (Claude), unreviewed",
   "license": "Hand-written, GPL-3.0 with the app.",
   "level": "N5",
   "points": [
@@ -18,12 +18,14 @@
       "meaning": {
         "en": "is; am; are (polite copula)",
         "zh": "是（敬体判断句）",
-        "zh_TW": "是（敬體判斷句）"
+        "zh_TW": "是（敬體判斷句）",
+        "ja": "名詞の後ろにつけて丁寧に言う形"
       },
       "explanation": {
         "en": "です follows a noun or na-adjective to make a polite statement. The negative is ではありません (spoken: じゃありません), the past is でした.",
         "zh": "です接在名词或形容动词后，构成敬体的判断句。否定形式为ではありません（口语：じゃありません），过去形式为でした。",
-        "zh_TW": "です接在名詞或形容動詞後，構成敬體的判斷句。否定形式為ではありません（口語：じゃありません），過去形式為でした。"
+        "zh_TW": "です接在名詞或形容動詞後，構成敬體的判斷句。否定形式為ではありません（口語：じゃありません），過去形式為でした。",
+        "ja": "名詞やな形容詞の後ろにつけて、丁寧に言い切る。否定はではありません（話し言葉ではじゃありません）、過去はでした。い形容詞の後ろのですは丁寧にするだけで、形は変わらない。"
       },
       "examples": [
         {
@@ -40,7 +42,8 @@
           "zh": "我不是学生。",
           "zh_TW": "我不是學生。"
         }
-      ]
+      ],
+      "meaningJaReading": "めいしのうしろにつけてていねいにいうかたち"
     },
     {
       "id": "grammar:ka",
@@ -55,12 +58,14 @@
       "meaning": {
         "en": "question marker",
         "zh": "疑问助词",
-        "zh_TW": "疑問助詞"
+        "zh_TW": "疑問助詞",
+        "ja": "文の終わりにつけて質問にする"
       },
       "explanation": {
         "en": "Adding か to the end of a polite sentence turns it into a question. Word order does not change, and a question mark is optional in writing.",
         "zh": "在敬体句末加か即构成疑问句。语序不变，书面上问号可省略。",
-        "zh_TW": "在敬體句末加か即構成疑問句。語序不變，書面上問號可省略。"
+        "zh_TW": "在敬體句末加か即構成疑問句。語序不變，書面上問號可省略。",
+        "ja": "丁寧な文の終わりにかをつけると、質問の文になる。言葉の順番は変わらない。書くときは「？」をつけなくてもいい。"
       },
       "examples": [
         {
@@ -77,7 +82,8 @@
           "zh": "你已经吃午饭了吗？",
           "zh_TW": "你已經吃午飯了嗎？"
         }
-      ]
+      ],
+      "meaningJaReading": "ぶんのおわりにつけてしつもんにする"
     },
     {
       "id": "grammar:wa-topic",
@@ -90,12 +96,14 @@
       "meaning": {
         "en": "topic marker",
         "zh": "主题助词",
-        "zh_TW": "主題助詞"
+        "zh_TW": "主題助詞",
+        "ja": "文の話題を示す"
       },
       "explanation": {
         "en": "は (read wa) marks what the sentence is about. It is not the subject marker; the rest of the sentence is a comment on the topic.",
         "zh": "は（读作wa）标示句子的主题，表示“关于……”。它不是主语助词，后面的部分是对主题的说明。",
-        "zh_TW": "は（讀作wa）標示句子的主題，表示“關於……”。它不是主語助詞，後面的部分是對主題的說明。"
+        "zh_TW": "は（讀作wa）標示句子的主題，表示“關於……”。它不是主語助詞，後面的部分是對主題的說明。",
+        "ja": "名詞の後ろについて、その文が何について話すのかを示す。読み方は「わ」。主語を示すがとは違い、はの後ろはその話題についての説明になる。"
       },
       "examples": [
         {
@@ -112,7 +120,8 @@
           "zh": "这家店很便宜。",
           "zh_TW": "這家店很便宜。"
         }
-      ]
+      ],
+      "meaningJaReading": "ぶんのわだいをしめす"
     },
     {
       "id": "grammar:o-object",
@@ -125,12 +134,14 @@
       "meaning": {
         "en": "direct object marker",
         "zh": "宾语助词",
-        "zh_TW": "賓語助詞"
+        "zh_TW": "賓語助詞",
+        "ja": "動作の対象を示す"
       },
       "explanation": {
         "en": "を marks the direct object of a transitive verb — the thing the action is done to. It is written with its own kana を and read o.",
         "zh": "を标示他动词的宾语，即动作所作用的对象。它有专用的假名を，读作o。",
-        "zh_TW": "を標示他動詞的賓語，即動作所作用的對象。它有專用的假名を，讀作o。"
+        "zh_TW": "を標示他動詞的賓語，即動作所作用的對象。它有專用的假名を，讀作o。",
+        "ja": "動詞の前の名詞について、動作を受けるものを示す。「を」と書いて「お」と読む。「水を飲む」のように、何をするのかを表す。"
       },
       "examples": [
         {
@@ -147,7 +158,8 @@
           "zh": "我每晚看新闻。",
           "zh_TW": "我每晚看新聞。"
         }
-      ]
+      ],
+      "meaningJaReading": "どうさのたいしょうをしめす"
     },
     {
       "id": "grammar:ni-e-direction",
@@ -165,12 +177,14 @@
       "meaning": {
         "en": "to (destination or direction)",
         "zh": "去往……（目的地、方向）",
-        "zh_TW": "去往……（目的地、方向）"
+        "zh_TW": "去往……（目的地、方向）",
+        "ja": "行く場所や方向を示す"
       },
       "explanation": {
         "en": "With movement verbs, に or へ marks the destination. へ (read e) stresses the direction of travel; に stresses arriving at the place. In everyday speech they are interchangeable here.",
         "zh": "与移动动词搭配时，に或へ表示目的地。へ（读作e）偏重移动的方向，に偏重到达的地点；日常口语中两者在此可互换。",
-        "zh_TW": "與移動動詞搭配時，に或へ表示目的地。へ（讀作e）偏重移動的方向，に偏重到達的地點；日常口語中兩者在此可互換。"
+        "zh_TW": "與移動動詞搭配時，に或へ表示目的地。へ（讀作e）偏重移動的方向，に偏重到達的地點；日常口語中兩者在此可互換。",
+        "ja": "行く・来る・帰るなどと一緒に使い、行き先を示す。へ（読み方は「え」）は進む方向を、には着く場所を強く言う。毎日の会話ではどちらを使ってもいい。"
       },
       "examples": [
         {
@@ -187,7 +201,8 @@
           "zh": "我来到了日本。",
           "zh_TW": "我來到了日本。"
         }
-      ]
+      ],
+      "meaningJaReading": "いくばしょやほうこうをしめす"
     },
     {
       "id": "grammar:masu",
@@ -201,12 +216,14 @@
       "meaning": {
         "en": "polite non-past, affirmative and negative",
         "zh": "敬体动词现在／将来时，肯定与否定",
-        "zh_TW": "敬體動詞現在／將來時，肯定與否定"
+        "zh_TW": "敬體動詞現在／將來時，肯定與否定",
+        "ja": "動詞の丁寧な形と否定の形"
       },
       "explanation": {
         "en": "ます is the polite non-past ending; it covers both present habits and the future. ません is its negative.",
         "zh": "ます是敬体的非过去时词尾，既表示现在的习惯，也表示将来。ません是其否定形式。",
-        "zh_TW": "ます是敬體的非過去時詞尾，既表示現在的習慣，也表示將來。ません是其否定形式。"
+        "zh_TW": "ます是敬體的非過去時詞尾，既表示現在的習慣，也表示將來。ません是其否定形式。",
+        "ja": "動詞のます形で丁寧に言う。今の習慣にも、これからのことにも使う。否定はません。「毎日勉強します」「明日行きます」のように、時を表す言葉で今か未来かが分かる。"
       },
       "examples": [
         {
@@ -223,7 +240,8 @@
           "zh": "我不吃肉。",
           "zh_TW": "我不吃肉。"
         }
-      ]
+      ],
+      "meaningJaReading": "どうしのていねいなかたちとひていのかたち"
     },
     {
       "id": "grammar:mashita",
@@ -237,12 +255,14 @@
       "meaning": {
         "en": "polite past, affirmative and negative",
         "zh": "敬体动词过去时，肯定与否定",
-        "zh_TW": "敬體動詞過去時，肯定與否定"
+        "zh_TW": "敬體動詞過去時，肯定與否定",
+        "ja": "動詞の丁寧な過去の形"
       },
       "explanation": {
         "en": "Replace ます with ました for a polite past statement, and ません with ませんでした for its negative.",
         "zh": "把ます换成ました即为敬体过去时肯定；把ません换成ませんでした即为过去时否定。",
-        "zh_TW": "把ます換成ました即為敬體過去時肯定；把ません換成ませんでした即為過去時否定。"
+        "zh_TW": "把ます換成ました即為敬體過去時肯定；把ません換成ませんでした即為過去時否定。",
+        "ja": "ますをましたにすると丁寧な過去、ませんをませんでしたにすると過去の否定になる。「ましたではありません」とは言わないので注意する。"
       },
       "examples": [
         {
@@ -259,7 +279,8 @@
           "zh": "我没吃早饭。",
           "zh_TW": "我沒吃早飯。"
         }
-      ]
+      ],
+      "meaningJaReading": "どうしのていねいなかこのかたち"
     },
     {
       "id": "grammar:arimasu-imasu",
@@ -273,12 +294,14 @@
       "meaning": {
         "en": "there is (inanimate / animate)",
         "zh": "存在句：有……（无生命／有生命）",
-        "zh_TW": "存在句：有……（無生命／有生命）"
+        "zh_TW": "存在句：有……（無生命／有生命）",
+        "ja": "物や人があることを示す"
       },
       "explanation": {
         "en": "Both mean that something exists or is located somewhere. あります is for things and plants; います is for people and animals. The place takes に and the thing that exists takes が.",
         "zh": "两者都表示某物存在于某处。あります用于物品和植物，います用于人和动物。地点用に，存在的事物用が。",
-        "zh_TW": "兩者都表示某物存在於某處。あります用於物品和植物，います用於人和動物。地點用に，存在的事物用が。"
+        "zh_TW": "兩者都表示某物存在於某處。あります用於物品和植物，います用於人和動物。地點用に，存在的事物用が。",
+        "ja": "物や人がどこにあるかを言う。物や植物にはあります、人や動物にはいますを使う。場所にはに、あるものにはがをつける。動作をする場所のでと間違えやすい。"
       },
       "examples": [
         {
@@ -295,7 +318,8 @@
           "zh": "教室里有学生。",
           "zh_TW": "教室裡有學生。"
         }
-      ]
+      ],
+      "meaningJaReading": "ものやひとがあることをしめす"
     },
     {
       "id": "grammar:ga-subject",
@@ -308,12 +332,14 @@
       "meaning": {
         "en": "subject marker",
         "zh": "主语助词",
-        "zh_TW": "主語助詞"
+        "zh_TW": "主語助詞",
+        "ja": "文の主語を示す"
       },
       "explanation": {
         "en": "が marks the subject, especially new information the listener does not know yet, the thing that exists in あります/います sentences, and the object of feelings such as 好き, 上手 and ほしい.",
         "zh": "が标示主语，尤其用于听话人尚不知道的新信息、あります／います句中存在的事物，以及好き、上手、ほしい等表示情感与能力的对象。",
-        "zh_TW": "が標示主語，尤其用於聽話人尚不知道的新信息、あります／います句中存在的事物，以及好き、上手、ほしい等表示情感與能力的對象。"
+        "zh_TW": "が標示主語，尤其用於聽話人尚不知道的新信息、あります／います句中存在的事物，以及好き、上手、ほしい等表示情感與能力的對象。",
+        "ja": "主語を示す。特に相手がまだ知らない新しいことや、あります・いますの文であるものに使う。好き・上手・ほしいの前では、気持ちの対象もがで示す。「猫を好き」と言いやすいので注意。"
       },
       "examples": [
         {
@@ -330,7 +356,8 @@
           "zh": "我喜欢猫。",
           "zh_TW": "我喜歡貓。"
         }
-      ]
+      ],
+      "meaningJaReading": "ぶんのしゅごをしめす"
     },
     {
       "id": "grammar:mo",
@@ -343,12 +370,14 @@
       "meaning": {
         "en": "too; also; either",
         "zh": "也；（否定句中）也不",
-        "zh_TW": "也；（否定句中）也不"
+        "zh_TW": "也；（否定句中）也不",
+        "ja": "同じであることを示す"
       },
       "explanation": {
         "en": "も replaces は or が and means too. In a negative sentence it means not … either. It never stacks on top of は or が.",
         "zh": "も取代は或が，表示“也”。用于否定句时表示“也不”。它不与は、が叠用。",
-        "zh_TW": "も取代は或が，表示“也”。用於否定句時表示“也不”。它不與は、が疊用。"
+        "zh_TW": "も取代は或が，表示“也”。用於否定句時表示“也不”。它不與は、が疊用。",
+        "ja": "はやがの代わりに使い、「〜も同じだ」という意味を表す。否定の文では「〜も〜ない」になる。「はも」「がも」のように重ねては使わない。"
       },
       "examples": [
         {
@@ -365,7 +394,8 @@
           "zh": "咖啡和茶我都不喝。",
           "zh_TW": "咖啡和茶我都不喝。"
         }
-      ]
+      ],
+      "meaningJaReading": "おなじであることをしめす"
     },
     {
       "id": "grammar:no-possessive",
@@ -378,12 +408,14 @@
       "meaning": {
         "en": "of; possessive (links two nouns)",
         "zh": "的（连接两个名词）",
-        "zh_TW": "的（連接兩個名詞）"
+        "zh_TW": "的（連接兩個名詞）",
+        "ja": "二つの名詞をつなぐ"
       },
       "explanation": {
         "en": "の joins two nouns, with the first describing the second: owner, group, material, or kind. Japanese puts the describing noun first, which is the opposite order from the English of.",
         "zh": "の连接两个名词，前者修饰后者，可表示所属、所属团体、材料或种类。日语把修饰的名词放在前面。",
-        "zh_TW": "の連接兩個名詞，前者修飾後者，可表示所屬、所屬團體、材料或種類。日語把修飾的名詞放在前面。"
+        "zh_TW": "の連接兩個名詞，前者修飾後者，可表示所屬、所屬團體、材料或種類。日語把修飾的名詞放在前面。",
+        "ja": "名詞と名詞の間に入れて、前の名詞が後ろの名詞を説明する。持ち主、グループ、材料、種類などを表す。「私の傘」のように、説明する言葉が必ず前に来る。"
       },
       "examples": [
         {
@@ -400,7 +432,8 @@
           "zh": "我见到了日语老师。",
           "zh_TW": "我見到了日語老師。"
         }
-      ]
+      ],
+      "meaningJaReading": "ふたつのめいしをつなぐ"
     },
     {
       "id": "grammar:to-and",
@@ -413,12 +446,14 @@
       "meaning": {
         "en": "and (exhaustive list of nouns)",
         "zh": "和（穷尽列举名词）",
-        "zh_TW": "和（窮盡列舉名詞）"
+        "zh_TW": "和（窮盡列舉名詞）",
+        "ja": "名詞を全部並べる"
       },
       "explanation": {
         "en": "と joins nouns into a complete list: these and nothing else. It never joins verbs or clauses; that is what the て-form is for.",
         "zh": "と把名词连成完整的列举，意为“只有这些”。它不能连接动词或句子，那要用て形。",
-        "zh_TW": "と把名詞連成完整的列舉，意為“只有這些”。它不能連接動詞或句子，那要用て形。"
+        "zh_TW": "と把名詞連成完整的列舉，意為“只有這些”。它不能連接動詞或句子，那要用て形。",
+        "ja": "名詞と名詞をつないで、それで全部だと示す。動詞や文をつなぐことはできない。動詞をつなぐときはて形を使う。"
       },
       "examples": [
         {
@@ -435,7 +470,8 @@
           "zh": "桌子上有笔和笔记本。",
           "zh_TW": "桌子上有筆和筆記本。"
         }
-      ]
+      ],
+      "meaningJaReading": "めいしをぜんぶならべる"
     },
     {
       "id": "grammar:ya",
@@ -449,12 +485,14 @@
       "meaning": {
         "en": "and (partial list: among others)",
         "zh": "……啊……啊（部分列举）",
-        "zh_TW": "……啊……啊（部分列舉）"
+        "zh_TW": "……啊……啊（部分列舉）",
+        "ja": "例を並べる"
       },
       "explanation": {
         "en": "や lists examples rather than everything, often closed off with など. Use と when the list is complete and や when it is not.",
         "zh": "や用于举例式的列举，而非全部，常与など呼应。列举完整时用と，不完整时用や。",
-        "zh_TW": "や用於舉例式的列舉，而非全部，常與など呼應。列舉完整時用と，不完整時用や。"
+        "zh_TW": "や用於舉例式的列舉，而非全部，常與など呼應。列舉完整時用と，不完整時用や。",
+        "ja": "名詞をいくつか並べて、ほかにもあることを表す。後ろになどをつけることが多い。全部を言うときはと、例だけを言うときはやを使う。"
       },
       "examples": [
         {
@@ -471,7 +509,8 @@
           "zh": "周末我做打扫、洗衣之类的事。",
           "zh_TW": "週末我做打掃、洗衣之類的事。"
         }
-      ]
+      ],
+      "meaningJaReading": "れいをならべる"
     },
     {
       "id": "grammar:de-place",
@@ -484,12 +523,14 @@
       "meaning": {
         "en": "at; in (where an action happens)",
         "zh": "在……（动作发生的场所）",
-        "zh_TW": "在……（動作發生的場所）"
+        "zh_TW": "在……（動作發生的場所）",
+        "ja": "動作をする場所を示す"
       },
       "explanation": {
         "en": "で marks the place an action takes place. Compare に, which marks where something exists or where movement ends.",
         "zh": "で标示动作发生的场所。与に对比：に标示存在的地点或移动的终点。",
-        "zh_TW": "で標示動作發生的場所。與に對比：に標示存在的地點或移動的終點。"
+        "zh_TW": "で標示動作發生的場所。與に對比：に標示存在的地點或移動的終點。",
+        "ja": "動作をする場所の後ろにつける。「図書館で勉強する」のように使う。物や人がある場所や行き先を示すにと、よく間違えるので注意する。"
       },
       "examples": [
         {
@@ -506,7 +547,8 @@
           "zh": "我在公园拍了照片。",
           "zh_TW": "我在公園拍了照片。"
         }
-      ]
+      ],
+      "meaningJaReading": "どうさをするばしょをしめす"
     },
     {
       "id": "grammar:de-means",
@@ -519,12 +561,14 @@
       "meaning": {
         "en": "by; with; in (means, tool, language)",
         "zh": "用……（手段、工具、语言）",
-        "zh_TW": "用……（手段、工具、語言）"
+        "zh_TW": "用……（手段、工具、語言）",
+        "ja": "使う道具や方法を示す"
       },
       "explanation": {
         "en": "The same particle で also marks the means of an action: the tool used, the transport taken, or the language spoken.",
         "zh": "同一个助词で也表示动作的手段：使用的工具、乘坐的交通工具或使用的语言。",
-        "zh_TW": "同一個助詞で也表示動作的手段：使用的工具、乘坐的交通工具或使用的語言。"
+        "zh_TW": "同一個助詞で也表示動作的手段：使用的工具、乘坐的交通工具或使用的語言。",
+        "ja": "場所のでと同じ形で、動作に使う道具、乗り物、言葉などを示す。「電車で行く」「日本語で話す」のように使う。場所か方法かは、前の名詞で分かる。"
       },
       "examples": [
         {
@@ -541,7 +585,8 @@
           "zh": "我们用日语说吧。",
           "zh_TW": "我們用日語說吧。"
         }
-      ]
+      ],
+      "meaningJaReading": "つかうどうぐやほうほうをしめす"
     },
     {
       "id": "grammar:ni-time",
@@ -554,12 +599,14 @@
       "meaning": {
         "en": "at; on; in (a specific time)",
         "zh": "在……（具体时间）",
-        "zh_TW": "在……（具體時間）"
+        "zh_TW": "在……（具體時間）",
+        "ja": "動作をする時間を示す"
       },
       "explanation": {
         "en": "に marks a time that can be named on a clock or calendar: 七時に, 月曜日に, 三月に. Relative times such as 今日, 明日, 毎日 and 今 take no particle.",
         "zh": "に用于可以在钟表或日历上指明的时间：七時に、月曜日に、三月に。今日、明日、毎日、今等相对时间不加助词。",
-        "zh_TW": "に用於可以在鐘錶或日曆上指明的時間：七時に、月曜日に、三月に。今日、明日、毎日、今等相對時間不加助詞。"
+        "zh_TW": "に用於可以在鐘錶或日曆上指明的時間：七時に、月曜日に、三月に。今日、明日、毎日、今等相對時間不加助詞。",
+        "ja": "時計やカレンダーで言える時の後ろにつける。七時に、月曜日に、三月に、のように使う。今日・明日・毎日・今などにはにをつけない。"
       },
       "examples": [
         {
@@ -576,7 +623,8 @@
           "zh": "我星期天和朋友见面。",
           "zh_TW": "我星期天和朋友見面。"
         }
-      ]
+      ],
+      "meaningJaReading": "どうさをするじかんをしめす"
     },
     {
       "id": "grammar:ni-target",
@@ -589,12 +637,14 @@
       "meaning": {
         "en": "to (the person an action is directed at)",
         "zh": "向／给……（动作的对象）",
-        "zh_TW": "向／給……（動作的對象）"
+        "zh_TW": "向／給……（動作的對象）",
+        "ja": "動作の相手を示す"
       },
       "explanation": {
         "en": "に marks the person on the receiving end: who you give something to, tell something to, or telephone.",
         "zh": "に标示动作的接受方：给谁东西、对谁说话、给谁打电话。",
-        "zh_TW": "に標示動作的接受方：給誰東西、對誰說話、給誰打電話。"
+        "zh_TW": "に標示動作的接受方：給誰東西、對誰說話、給誰打電話。",
+        "ja": "物をあげる人、話す人、電話をかける人など、動作を受ける相手の後ろにつける。「母に電話をかける」のように使う。一緒に何かをする人を示すととは違う。"
       },
       "examples": [
         {
@@ -611,7 +661,8 @@
           "zh": "我向老师提问。",
           "zh_TW": "我向老師提問。"
         }
-      ]
+      ],
+      "meaningJaReading": "どうさのあいてをしめす"
     },
     {
       "id": "grammar:to-with",
@@ -624,12 +675,14 @@
       "meaning": {
         "en": "with (someone)",
         "zh": "和……一起",
-        "zh_TW": "和……一起"
+        "zh_TW": "和……一起",
+        "ja": "一緒にする相手を示す"
       },
       "explanation": {
         "en": "と after a person means doing something together with them. 一緒に is often added for emphasis but is not required.",
         "zh": "と接在人物之后表示与其一同做某事。常加一緒に加强语气，但并非必需。",
-        "zh_TW": "と接在人物之後表示與其一同做某事。常加一緒に加強語氣，但並非必需。"
+        "zh_TW": "と接在人物之後表示與其一同做某事。常加一緒に加強語氣，但並非必需。",
+        "ja": "人の後ろについて、その人と一緒に何かをすることを表す。一緒にをつけることも多いが、なくてもいい。動作を受ける相手を示すにと間違えないように。"
       },
       "examples": [
         {
@@ -646,7 +699,8 @@
           "zh": "我和家人住在一起。",
           "zh_TW": "我和家人住在一起。"
         }
-      ]
+      ],
+      "meaningJaReading": "いっしょにするあいてをしめす"
     },
     {
       "id": "grammar:kara-made",
@@ -660,12 +714,14 @@
       "meaning": {
         "en": "from … to …",
         "zh": "从……到……",
-        "zh_TW": "從……到……"
+        "zh_TW": "從……到……",
+        "ja": "時間や場所の範囲を示す"
       },
       "explanation": {
         "en": "から marks a starting point and まで an end point, for both time and place. Either half can stand on its own.",
         "zh": "から表示起点，まで表示终点，时间和地点都适用。两者可以单独使用。",
-        "zh_TW": "から表示起點，まで表示終點，時間和地點都適用。兩者可以單獨使用。"
+        "zh_TW": "から表示起點，まで表示終點，時間和地點都適用。兩者可以單獨使用。",
+        "ja": "からは始まるところ、までは終わるところを示す。時間にも場所にも使う。「九時から」「駅まで」のように、片方だけでも使える。"
       },
       "examples": [
         {
@@ -682,7 +738,8 @@
           "zh": "我从车站走到了学校。",
           "zh_TW": "我從車站走到了學校。"
         }
-      ]
+      ],
+      "meaningJaReading": "じかんやばしょのはんいをしめす"
     },
     {
       "id": "grammar:kara-reason",
@@ -695,12 +752,14 @@
       "meaning": {
         "en": "because; so",
         "zh": "因为……所以",
-        "zh_TW": "因為……所以"
+        "zh_TW": "因為……所以",
+        "ja": "理由を示す"
       },
       "explanation": {
         "en": "から after a full sentence gives the reason for what follows. The reason comes first, the opposite order from an English because at the end.",
         "zh": "から接在完整句子之后，说明后续内容的原因。日语先说原因，与英语把because放句末的顺序相反。",
-        "zh_TW": "から接在完整句子之後，說明後續內容的原因。日語先說原因，與英語把because放句末的順序相反。"
+        "zh_TW": "から接在完整句子之後，說明後續內容的原因。日語先說原因，與英語把because放句末的順序相反。",
+        "ja": "文の後ろにつけて、次の文の理由を表す。理由を先に、結果を後に言う。「寒いですから、窓を閉めます」のように、丁寧な文にも普通の文にもつく。"
       },
       "examples": [
         {
@@ -717,7 +776,8 @@
           "zh": "因为明天有考试，所以今天要学习。",
           "zh_TW": "因為明天有考試，所以今天要學習。"
         }
-      ]
+      ],
+      "meaningJaReading": "りゆうをしめす"
     },
     {
       "id": "grammar:ne",
@@ -730,12 +790,14 @@
       "meaning": {
         "en": "right? (seeking agreement)",
         "zh": "……吧（寻求同意）",
-        "zh_TW": "……吧（尋求同意）"
+        "zh_TW": "……吧（尋求同意）",
+        "ja": "相手の同意を確かめる"
       },
       "explanation": {
         "en": "ね at the end of a sentence invites the listener to agree, assuming they already share the same view. It softens a statement rather than asking a real question.",
         "zh": "句末的ね邀请对方表示同意，前提是双方看法一致。它使语气变得柔和，并非真正提问。",
-        "zh_TW": "句末的ね邀請對方表示同意，前提是雙方看法一致。它使語氣變得柔和，並非真正提問。"
+        "zh_TW": "句末的ね邀請對方表示同意，前提是雙方看法一致。它使語氣變得柔和，並非真正提問。",
+        "ja": "文の終わりにつけて、相手も同じ気持ちだと思って同意を求める。本当の質問ではなく、言い方を柔らかくする。「暑いですね」のように会話でよく使う。"
       },
       "examples": [
         {
@@ -752,7 +814,8 @@
           "zh": "这家店很安静呢。",
           "zh_TW": "這家店很安靜呢。"
         }
-      ]
+      ],
+      "meaningJaReading": "あいてのどういをたしかめる"
     },
     {
       "id": "grammar:yo",
@@ -765,12 +828,14 @@
       "meaning": {
         "en": "you know (telling something new)",
         "zh": "……哦（告知对方新信息）",
-        "zh_TW": "……哦（告知對方新信息）"
+        "zh_TW": "……哦（告知對方新信息）",
+        "ja": "相手が知らないことを知らせる"
       },
       "explanation": {
         "en": "よ tells the listener something you assume they do not know. Overusing it sounds pushy, so it is kept for information that really is new.",
         "zh": "よ用于告诉对方你认为他还不知道的信息。用得过多会显得强势，因此只在信息确实是新的时候使用。",
-        "zh_TW": "よ用於告訴對方你認為他還不知道的信息。用得過多會顯得強勢，因此只在信息確實是新的時候使用。"
+        "zh_TW": "よ用於告訴對方你認為他還不知道的信息。用得過多會顯得強勢，因此只在信息確實是新的時候使用。",
+        "ja": "文の終わりにつけて、相手がまだ知らないと思うことを伝える。使いすぎると強く聞こえるので、本当に新しいことを言うときに使う。同意を求めるねとの違いに注意。"
       },
       "examples": [
         {
@@ -787,7 +852,8 @@
           "zh": "电车到了哦。",
           "zh_TW": "電車到了哦。"
         }
-      ]
+      ],
+      "meaningJaReading": "あいてがしらないことをしらせる"
     },
     {
       "id": "grammar:ga-but",
@@ -800,12 +866,14 @@
       "meaning": {
         "en": "but; although",
         "zh": "但是；虽然",
-        "zh_TW": "但是；雖然"
+        "zh_TW": "但是；雖然",
+        "ja": "二つの文を逆の意味でつなぐ"
       },
       "explanation": {
         "en": "が between two polite clauses means but. It is more formal than でも, which starts a new sentence instead.",
         "zh": "が连接两个敬体分句，表示“但是”。它比另起一句的でも更正式。",
-        "zh_TW": "が連接兩個敬體分句，表示“但是”。它比另起一句的でも更正式。"
+        "zh_TW": "が連接兩個敬體分句，表示“但是”。它比另起一句的でも更正式。",
+        "ja": "二つの丁寧な文の間に入れて、「でも」の意味を表す。「狭いですが、明るいです」のように使う。でもは新しい文の始めに置くが、がは文の途中に置き、少し硬い言い方になる。"
       },
       "examples": [
         {
@@ -822,7 +890,8 @@
           "zh": "日语很难，但很有意思。",
           "zh_TW": "日語很難，但很有意思。"
         }
-      ]
+      ],
+      "meaningJaReading": "ふたつのぶんをぎゃくのいみでつなぐ"
     },
     {
       "id": "grammar:ka-or",
@@ -835,12 +904,14 @@
       "meaning": {
         "en": "or",
         "zh": "或者",
-        "zh_TW": "或者"
+        "zh_TW": "或者",
+        "ja": "二つから選ぶことを示す"
       },
       "explanation": {
         "en": "か between nouns offers a choice. Unlike the English or, it sits between the two nouns and nothing else in the sentence changes.",
         "zh": "か放在名词之间表示选择。与英语的or不同，它只放在两个名词中间，句子其他部分不变。",
-        "zh_TW": "か放在名詞之間表示選擇。與英語的or不同，它只放在兩個名詞中間，句子其他部分不變。"
+        "zh_TW": "か放在名詞之間表示選擇。與英語的or不同，它只放在兩個名詞中間，句子其他部分不變。",
+        "ja": "名詞と名詞の間に入れて、どちらか一つを選ぶことを表す。「コーヒーかお茶」のように使う。文の終わりの質問のかと同じ形なので、置く場所で意味を見分ける。"
       },
       "examples": [
         {
@@ -857,7 +928,8 @@
           "zh": "我星期六或星期天去。",
           "zh_TW": "我星期六或星期天去。"
         }
-      ]
+      ],
+      "meaningJaReading": "ふたつからえらぶことをしめす"
     },
     {
       "id": "grammar:wa-contrast",
@@ -870,12 +942,14 @@
       "meaning": {
         "en": "as for … (contrast)",
         "zh": "……（对比）",
-        "zh_TW": "……（對比）"
+        "zh_TW": "……（對比）",
+        "ja": "ほかと比べて違いを示す"
       },
       "explanation": {
         "en": "The same は also sets one thing against another. In a negative sentence it often marks the exception: 肉は食べません says that meat in particular is not eaten.",
         "zh": "同一个は也用于对比。用于否定句时常表示例外：肉は食べません强调“肉”是不吃的。",
-        "zh_TW": "同一個は也用於對比。用於否定句時常表示例外：肉は食べません強調“肉”是不吃的。"
+        "zh_TW": "同一個は也用於對比。用於否定句時常表示例外：肉は食べません強調“肉”是不吃的。",
+        "ja": "話題のはと同じ形で、ほかのものと比べるときにも使う。否定の文ではよく例外を示す。「肉は食べません」は、ほかの物は食べるが肉は食べないという意味になる。"
       },
       "examples": [
         {
@@ -892,7 +966,8 @@
           "zh": "今天我不去。",
           "zh_TW": "今天我不去。"
         }
-      ]
+      ],
+      "meaningJaReading": "ほかとくらべてちがいをしめす"
     },
     {
       "id": "grammar:dake",
@@ -905,12 +980,14 @@
       "meaning": {
         "en": "only; just",
         "zh": "只；仅仅",
-        "zh_TW": "只；僅僅"
+        "zh_TW": "只；僅僅",
+        "ja": "それだけに限ることを示す"
       },
       "explanation": {
         "en": "だけ limits the amount or the set: this much and no more. It goes straight after the noun and takes the place of は or が.",
         "zh": "だけ限定数量或范围，表示“只有这些”。它直接接在名词后，并取代は或が。",
-        "zh_TW": "だけ限定數量或範圍，表示“只有這些”。它直接接在名詞後，並取代は或が。"
+        "zh_TW": "だけ限定數量或範圍，表示“只有這些”。它直接接在名詞後，並取代は或が。",
+        "ja": "名詞の後ろにつけて、その数や物だけに限ることを表す。はやがの代わりに使える。数が多いか少ないかという気持ちは入らない。"
       },
       "examples": [
         {
@@ -927,7 +1004,8 @@
           "zh": "只来了一个人。",
           "zh_TW": "只來了一個人。"
         }
-      ]
+      ],
+      "meaningJaReading": "それだけにかぎることをしめす"
     },
     {
       "id": "grammar:gurai-goro",
@@ -942,12 +1020,14 @@
       "meaning": {
         "en": "about (amount) / around (point in time)",
         "zh": "大约（数量）／左右（时间点）",
-        "zh_TW": "大約（數量）／左右（時間點）"
+        "zh_TW": "大約（數量）／左右（時間點）",
+        "ja": "だいたいの数や時を示す"
       },
       "explanation": {
         "en": "ぐらい softens an amount or a length of time; ごろ softens a point in time. 三時ごろ is around three o'clock, 三時間ぐらい is about three hours. ごろ never takes に.",
         "zh": "ぐらい用于概数或时间长度，ごろ用于时间点。三時ごろ是三点左右，三時間ぐらい是三个小时左右。ごろ后面不加に。",
-        "zh_TW": "ぐらい用於概數或時間長度，ごろ用於時間點。三時ごろ是三點左右，三時間ぐらい是三個小時左右。ごろ後面不加に。"
+        "zh_TW": "ぐらい用於概數或時間長度，ごろ用於時間點。三時ごろ是三點左右，三時間ぐらい是三個小時左右。ごろ後面不加に。",
+        "ja": "ぐらいは数や時間の長さに、ごろは時の一点につける。三時ごろは三時の前後、三時間ぐらいは長さを表す。ごろの後ろのには、ふつうつけない。"
       },
       "examples": [
         {
@@ -964,7 +1044,8 @@
           "zh": "我八点左右出门。",
           "zh_TW": "我八點左右出門。"
         }
-      ]
+      ],
+      "meaningJaReading": "だいたいのかずやときをしめす"
     },
     {
       "id": "grammar:shika-nai",
@@ -977,12 +1058,14 @@
       "meaning": {
         "en": "only (nothing but)",
         "zh": "只有……（别无其他）",
-        "zh_TW": "只有……（別無其他）"
+        "zh_TW": "只有……（別無其他）",
+        "ja": "少ないという気持ちで限る"
       },
       "explanation": {
         "en": "しか also means only, but it always takes a negative verb and sounds like a complaint: there is only this and it is not enough. だけ is neutral about the amount.",
         "zh": "しか同样表示“只”，但必须与否定形式呼应，带有“只有这些，不够”的语气。だけ则不含这种评价。",
-        "zh_TW": "しか同樣表示“只”，但必須與否定形式呼應，帶有“只有這些，不夠”的語氣。だけ則不含這種評價。"
+        "zh_TW": "しか同樣表示“只”，但必須與否定形式呼應，帶有“只有這些，不夠”的語氣。だけ則不含這種評價。",
+        "ja": "名詞の後ろにつけ、必ず否定の形と一緒に使う。「それだけで足りない」という気持ちがある。だけは数について気持ちを入れないが、しかは少ないと感じるときに使う。"
       },
       "examples": [
         {
@@ -999,7 +1082,8 @@
           "zh": "我只会说日语。",
           "zh_TW": "我只會說日語。"
         }
-      ]
+      ],
+      "meaningJaReading": "すくないというきもちでかぎる"
     },
     {
       "id": "grammar:kore-sore-are",
@@ -1015,12 +1099,14 @@
       "meaning": {
         "en": "this one / that one / that one over there / which one",
         "zh": "这个／那个／那个（远处）／哪个",
-        "zh_TW": "這個／那個／那個（遠處）／哪個"
+        "zh_TW": "這個／那個／那個（遠處）／哪個",
+        "ja": "物を指す言葉"
       },
       "explanation": {
         "en": "These stand on their own as pronouns. これ is near the speaker, それ near the listener, あれ away from both, どれ is the question word. Japanese splits by distance from each person, not by near and far alone.",
         "zh": "这组词单独作代词使用。これ靠近说话人，それ靠近听话人，あれ离两者都远，どれ是疑问词。日语按与各方的距离区分，而不只分远近。",
-        "zh_TW": "這組詞單獨作代詞使用。これ靠近說話人，それ靠近聽話人，あれ離兩者都遠，どれ是疑問詞。日語按與各方的距離區分，而不只分遠近。"
+        "zh_TW": "這組詞單獨作代詞使用。これ靠近說話人，それ靠近聽話人，あれ離兩者都遠，どれ是疑問詞。日語按與各方的距離區分，而不只分遠近。",
+        "ja": "名詞の代わりに一つで使う。これは話す人の近く、それは聞く人の近く、あれは両方から遠い物を指す。どれは質問に使う。近いか遠いかだけでなく、だれの近くかで分ける。"
       },
       "examples": [
         {
@@ -1037,7 +1123,8 @@
           "zh": "那边那个是我的包。",
           "zh_TW": "那邊那個是我的包。"
         }
-      ]
+      ],
+      "meaningJaReading": "ものをさすことば"
     },
     {
       "id": "grammar:kono-sono-ano",
@@ -1053,12 +1140,14 @@
       "meaning": {
         "en": "this / that / that … over there / which … (before a noun)",
         "zh": "这个／那个／那个（远处）／哪个（后接名词）",
-        "zh_TW": "這個／那個／那個（遠處）／哪個（後接名詞）"
+        "zh_TW": "這個／那個／那個（遠處）／哪個（後接名詞）",
+        "ja": "名詞の前で物を指す言葉"
       },
       "explanation": {
         "en": "These attach to a noun and cannot stand alone: この本, not このは. The distance rule is the same as これ・それ・あれ.",
         "zh": "这组词必须接名词，不能单独使用：この本，不能说このは。距离的区分与これ・それ・あれ相同。",
-        "zh_TW": "這組詞必須接名詞，不能單獨使用：この本，不能說このは。距離的區分與これ・それ・あれ相同。"
+        "zh_TW": "這組詞必須接名詞，不能單獨使用：この本，不能說このは。距離的區分與これ・それ・あれ相同。",
+        "ja": "必ず後ろに名詞をつけて使う。「この本」とは言えるが、「このは」とは言えない。近い・遠いの分け方は、これ・それ・あれと同じ。"
       },
       "examples": [
         {
@@ -1075,7 +1164,8 @@
           "zh": "那把伞是谁的？",
           "zh_TW": "那把傘是誰的？"
         }
-      ]
+      ],
+      "meaningJaReading": "めいしのまえでものをさすことば"
     },
     {
       "id": "grammar:koko-soko-asoko",
@@ -1091,12 +1181,14 @@
       "meaning": {
         "en": "here / there / over there / where",
         "zh": "这里／那里／那边／哪里",
-        "zh_TW": "這裡／那裡／那邊／哪裡"
+        "zh_TW": "這裡／那裡／那邊／哪裡",
+        "ja": "場所を指す言葉"
       },
       "explanation": {
         "en": "The place members of the same family. こちら・そちら・あちら・どちら are their polite equivalents, and also mean this way and which of two.",
         "zh": "同一组词中表示场所的成员。こちら・そちら・あちら・どちら是其礼貌说法，也可表示方向或二者择一。",
-        "zh_TW": "同一組詞中表示場所的成員。こちら・そちら・あちら・どちら是其禮貌說法，也可表示方向或二者擇一。"
+        "zh_TW": "同一組詞中表示場所的成員。こちら・そちら・あちら・どちら是其禮貌說法，也可表示方向或二者擇一。",
+        "ja": "ここ・そこ・あそこは場所を指し、どこは場所を聞く。丁寧な言い方はこちら・そちら・あちら・どちらで、方向や、二つから選ぶときにも使う。"
       },
       "examples": [
         {
@@ -1113,7 +1205,8 @@
           "zh": "可以在这里拍照吗？",
           "zh_TW": "可以在這裡拍照嗎？"
         }
-      ]
+      ],
+      "meaningJaReading": "ばしょをさすことば"
     },
     {
       "id": "grammar:question-words",
@@ -1134,12 +1227,14 @@
       "meaning": {
         "en": "who / what / when / where / why",
         "zh": "谁／什么／什么时候／哪里／为什么",
-        "zh_TW": "誰／什麼／什麼時候／哪裡／為什麼"
+        "zh_TW": "誰／什麼／什麼時候／哪裡／為什麼",
+        "ja": "知らないことを聞く言葉"
       },
       "explanation": {
         "en": "A question word sits in the same slot as the answer would; the word order does not change and the sentence still ends in か. A question word as subject takes が, never は.",
         "zh": "疑问词放在答案所在的位置，语序不变，句末仍加か。疑问词作主语时用が，不用は。",
-        "zh_TW": "疑問詞放在答案所在的位置，語序不變，句末仍加か。疑問詞作主語時用が，不用は。"
+        "zh_TW": "疑問詞放在答案所在的位置，語序不變，句末仍加か。疑問詞作主語時用が，不用は。",
+        "ja": "答えが入る場所に、そのまま疑問詞を置く。言葉の順番は変わらず、文の終わりにかをつける。疑問詞が主語のときは、はではなくがを使う。「誰は来ましたか」は間違い。"
       },
       "examples": [
         {
@@ -1156,7 +1251,8 @@
           "zh": "你什么时候去日本？",
           "zh_TW": "你什麼時候去日本？"
         }
-      ]
+      ],
+      "meaningJaReading": "しらないことをきくことば"
     },
     {
       "id": "grammar:donna",
@@ -1169,12 +1265,14 @@
       "meaning": {
         "en": "what kind of …",
         "zh": "什么样的……",
-        "zh_TW": "什麼樣的……"
+        "zh_TW": "什麼樣的……",
+        "ja": "様子や性質を聞く"
       },
       "explanation": {
         "en": "どんな asks what something is like and always takes a noun after it. どの asks which one out of a known set.",
         "zh": "どんな询问事物的性质，后面必须接名词。どの则是在已知范围内问“哪一个”。",
-        "zh_TW": "どんな詢問事物的性質，後面必須接名詞。どの則是在已知範圍內問“哪一個”。"
+        "zh_TW": "どんな詢問事物的性質，後面必須接名詞。どの則是在已知範圍內問“哪一個”。",
+        "ja": "物や人がどういうものかを聞く。後ろに必ず名詞をつける。いくつかある中からどれかを聞くときは、どのを使う。"
       },
       "examples": [
         {
@@ -1191,7 +1289,8 @@
           "zh": "是个什么样的人？",
           "zh_TW": "是個什麼樣的人？"
         }
-      ]
+      ],
+      "meaningJaReading": "ようすやせいしつをきく"
     },
     {
       "id": "grammar:ikutsu-ikura",
@@ -1208,12 +1307,14 @@
       "meaning": {
         "en": "how many / how much / how many + counter",
         "zh": "几个／多少钱／几＋量词",
-        "zh_TW": "幾個／多少錢／幾＋量詞"
+        "zh_TW": "幾個／多少錢／幾＋量詞",
+        "ja": "数やお金を聞く言葉"
       },
       "explanation": {
         "en": "いくら asks a price, いくつ a small count or an age, and 何 plus a counter asks a count in that counter's unit: 何人, 何枚, 何時間.",
         "zh": "いくら问价格，いくつ问少量数目或年龄，何加量词则按该量词的单位提问：何人、何枚、何時間。",
-        "zh_TW": "いくら問價格，いくつ問少量數目或年齡，何加量詞則按該量詞的單位提問：何人、何枚、何時間。"
+        "zh_TW": "いくら問價格，いくつ問少量數目或年齡，何加量詞則按該量詞的單位提問：何人、何枚、何時間。",
+        "ja": "いくらは値段を、いくつは物の数や年を聞く。何に数え方の言葉をつけると、その単位で数を聞ける。何人、何枚、何時間のように使う。"
       },
       "examples": [
         {
@@ -1230,7 +1331,8 @@
           "zh": "你家有几口人？",
           "zh_TW": "你家有幾口人？"
         }
-      ]
+      ],
+      "meaningJaReading": "かずやおかねをきくことば"
     },
     {
       "id": "grammar:deshita",
@@ -1245,12 +1347,14 @@
       "meaning": {
         "en": "was; were (polite past copula)",
         "zh": "（过去）是／不是",
-        "zh_TW": "（過去）是／不是"
+        "zh_TW": "（過去）是／不是",
+        "ja": "名詞の丁寧な過去の形"
       },
       "explanation": {
         "en": "The past of です. The negative past is ではありませんでした, spoken as じゃありませんでした. Nouns and na-adjectives use these; i-adjectives conjugate on their own.",
         "zh": "です的过去形式。过去否定为ではありませんでした，口语说じゃありませんでした。名词与形容动词用这一组；形容词有自己的活用。",
-        "zh_TW": "です的過去形式。過去否定為ではありませんでした，口語說じゃありませんでした。名詞與形容動詞用這一組；形容詞有自己的活用。"
+        "zh_TW": "です的過去形式。過去否定為ではありませんでした，口語說じゃありませんでした。名詞與形容動詞用這一組；形容詞有自己的活用。",
+        "ja": "ですの過去の形。過去の否定はではありませんでしたで、話し言葉ではじゃありませんでしたとも言う。名詞とな形容詞に使い、い形容詞には使わない。"
       },
       "examples": [
         {
@@ -1267,7 +1371,8 @@
           "zh": "考试并不简单。",
           "zh_TW": "考試並不簡單。"
         }
-      ]
+      ],
+      "meaningJaReading": "めいしのていねいなかこのかたち"
     },
     {
       "id": "grammar:i-adjective",
@@ -1281,12 +1386,14 @@
       "meaning": {
         "en": "i-adjective, present affirmative and negative",
         "zh": "形容词的现在时肯定与否定",
-        "zh_TW": "形容詞的現在時肯定與否定"
+        "zh_TW": "形容詞的現在時肯定與否定",
+        "ja": "形容詞の今の形と否定の形"
       },
       "explanation": {
         "en": "An i-adjective already carries its own tense, so です only makes it polite and never changes. The negative drops い and adds くない: 高い to 高くないです. いい is irregular and becomes よくない.",
         "zh": "形容词自身带有时态，です只表示礼貌，本身不变化。否定去掉い加くない：高い→高くないです。いい是特殊变化，否定为よくない。",
-        "zh_TW": "形容詞自身帶有時態，です只表示禮貌，本身不變化。否定去掉い加くない：高い→高くないです。いい是特殊變化，否定為よくない。"
+        "zh_TW": "形容詞自身帶有時態，です只表示禮貌，本身不變化。否定去掉い加くない：高い→高くないです。いい是特殊變化，否定為よくない。",
+        "ja": "い形容詞は自分で時を表すので、ですは丁寧にするだけで形が変わらない。否定はいを取ってくないをつける（高い→高くないです）。いいは特別で、よくないになる。"
       },
       "examples": [
         {
@@ -1303,7 +1410,8 @@
           "zh": "今天不冷。",
           "zh_TW": "今天不冷。"
         }
-      ]
+      ],
+      "meaningJaReading": "けいようしのいまのかたちとひていのかたち"
     },
     {
       "id": "grammar:i-adjective-past",
@@ -1317,12 +1425,14 @@
       "meaning": {
         "en": "i-adjective, past affirmative and negative",
         "zh": "形容词的过去时肯定与否定",
-        "zh_TW": "形容詞的過去時肯定與否定"
+        "zh_TW": "形容詞的過去時肯定與否定",
+        "ja": "形容詞の過去の形"
       },
       "explanation": {
         "en": "Drop い and add かった for the past, くなかった for the past negative. です stays unchanged after it; でした is never used with an i-adjective.",
         "zh": "去掉い加かった构成过去时，加くなかった构成过去否定。其后的です不变，形容词绝不与でした搭配。",
-        "zh_TW": "去掉い加かった構成過去時，加くなかった構成過去否定。其後的です不變，形容詞絕不與でした搭配。"
+        "zh_TW": "去掉い加かった構成過去時，加くなかった構成過去否定。其後的です不變，形容詞絕不與でした搭配。",
+        "ja": "いを取ってかったをつけると過去、くなかったをつけると過去の否定になる。後ろのですは変わらない。「高いでした」のように、い形容詞にでしたは使わない。"
       },
       "examples": [
         {
@@ -1339,7 +1449,8 @@
           "zh": "菜不辣。",
           "zh_TW": "菜不辣。"
         }
-      ]
+      ],
+      "meaningJaReading": "けいようしのかこのかたち"
     },
     {
       "id": "grammar:na-adjective",
@@ -1353,12 +1464,14 @@
       "meaning": {
         "en": "na-adjective before a noun and as a predicate",
         "zh": "形容动词的连体用法与谓语用法",
-        "zh_TW": "形容動詞的連體用法與謂語用法"
+        "zh_TW": "形容動詞的連體用法與謂語用法",
+        "ja": "名詞のように使う形容詞"
       },
       "explanation": {
         "en": "A na-adjective takes な before a noun (静かな部屋) and behaves exactly like a noun at the end of a sentence (静かです, 静かではありません).",
         "zh": "形容动词修饰名词时加な（静かな部屋），作谓语时与名词完全相同（静かです、静かではありません）。",
-        "zh_TW": "形容動詞修飾名詞時加な（静かな部屋），作謂語時與名詞完全相同（静かです、静かではありません）。"
+        "zh_TW": "形容動詞修飾名詞時加な（静かな部屋），作謂語時與名詞完全相同（静かです、静かではありません）。",
+        "ja": "な形容詞は名詞の前でなをつける（静かな部屋）。文の終わりでは名詞と同じで、静かです、静かではありません、となる。い形容詞と違い、くないは使わない。"
       },
       "examples": [
         {
@@ -1375,7 +1488,8 @@
           "zh": "这个城市不方便。",
           "zh_TW": "這個城市不方便。"
         }
-      ]
+      ],
+      "meaningJaReading": "めいしのようにつかうけいようし"
     },
     {
       "id": "grammar:na-adjective-past",
@@ -1388,12 +1502,14 @@
       "meaning": {
         "en": "na-adjective, past affirmative and negative",
         "zh": "形容动词的过去时肯定与否定",
-        "zh_TW": "形容動詞的過去時肯定與否定"
+        "zh_TW": "形容動詞的過去時肯定與否定",
+        "ja": "名詞と同じ過去の形"
       },
       "explanation": {
         "en": "Because a na-adjective behaves like a noun, it takes でした and ではありませんでした, never かった.",
         "zh": "形容动词与名词同样活用，因此用でした和ではありませんでした，不用かった。",
-        "zh_TW": "形容動詞與名詞同樣活用，因此用でした和ではありませんでした，不用かった。"
+        "zh_TW": "形容動詞與名詞同樣活用，因此用でした和ではありませんでした，不用かった。",
+        "ja": "な形容詞は名詞と同じように形が変わるので、過去はでした、過去の否定はではありませんでしたになる。「静かかった」のように、かったはつけない。"
       },
       "examples": [
         {
@@ -1410,7 +1526,8 @@
           "zh": "车站并不安静。",
           "zh_TW": "車站並不安靜。"
         }
-      ]
+      ],
+      "meaningJaReading": "めいしとおなじかこのかたち"
     },
     {
       "id": "grammar:adjective-te",
@@ -1423,12 +1540,14 @@
       "meaning": {
         "en": "and (joining two adjectives)",
         "zh": "又……又……（连接两个形容词）",
-        "zh_TW": "又……又……（連接兩個形容詞）"
+        "zh_TW": "又……又……（連接兩個形容詞）",
+        "ja": "形容詞を二つつなぐ"
       },
       "explanation": {
         "en": "To pile up two descriptions, an i-adjective becomes くて and a na-adjective or noun becomes で. Both halves have to point the same way; a contrast needs が instead.",
         "zh": "要连用两个描述时，形容词变为くて，形容动词或名词变为で。两部分的褒贬方向必须一致，转折要用が。",
-        "zh_TW": "要連用兩個描述時，形容詞變為くて，形容動詞或名詞變為で。兩部分的褒貶方向必須一致，轉折要用が。"
+        "zh_TW": "要連用兩個描述時，形容詞變為くて，形容動詞或名詞變為で。兩部分的褒貶方向必須一致，轉折要用が。",
+        "ja": "い形容詞はいを取ってくて、な形容詞や名詞はでにして、次の言葉につなぐ。「広くて明るい」のように、二つは同じ方向の意味にする。反対の意味なら、がを使う。"
       },
       "examples": [
         {
@@ -1445,7 +1564,8 @@
           "zh": "她既亲切又有名。",
           "zh_TW": "她既親切又有名。"
         }
-      ]
+      ],
+      "meaningJaReading": "けいようしをふたつつなぐ"
     },
     {
       "id": "grammar:amari-nai",
@@ -1458,12 +1578,14 @@
       "meaning": {
         "en": "not very; not much",
         "zh": "不太……",
-        "zh_TW": "不太……"
+        "zh_TW": "不太……",
+        "ja": "程度があまり高くないことを示す"
       },
       "explanation": {
         "en": "あまり always pairs with a negative and softens it: not very rather than not at all. 全然 with a negative means not at all.",
         "zh": "あまり必须与否定呼应，表示“不太”，而非完全否定。全然与否定连用才表示“完全不”。",
-        "zh_TW": "あまり必須與否定呼應，表示“不太”，而非完全否定。全然與否定連用才表示“完全不”。"
+        "zh_TW": "あまり必須與否定呼應，表示“不太”，而非完全否定。全然與否定連用才表示“完全不”。",
+        "ja": "あまりは必ず否定の形と一緒に使い、「それほどではない」という意味になる。全然と否定を一緒に使うと「全く〜ない」という意味になり、あまりより強い。"
       },
       "examples": [
         {
@@ -1480,7 +1602,8 @@
           "zh": "我不太看电视。",
           "zh_TW": "我不太看電視。"
         }
-      ]
+      ],
+      "meaningJaReading": "ていどがあまりたかくないことをしめす"
     },
     {
       "id": "grammar:totemo",
@@ -1496,12 +1619,14 @@
       "meaning": {
         "en": "very / a little / a bit",
         "zh": "非常／有点／稍微",
-        "zh_TW": "非常／有點／稍微"
+        "zh_TW": "非常／有點／稍微",
+        "ja": "程度を表す言葉"
       },
       "explanation": {
         "en": "Degree adverbs go straight before the adjective. ちょっと is the everyday spoken form of 少し, and also softens a refusal on its own.",
         "zh": "程度副词直接放在形容词前。ちょっと是少し的口语说法，单独使用时还可用于委婉拒绝。",
-        "zh_TW": "程度副詞直接放在形容詞前。ちょっと是少し的口語說法，單獨使用時還可用於委婉拒絕。"
+        "zh_TW": "程度副詞直接放在形容詞前。ちょっと是少し的口語說法，單獨使用時還可用於委婉拒絕。",
+        "ja": "形容詞の前に置いて、程度を表す。ちょっとは少しの話し言葉で、会話でよく使う。「ちょっと…」とだけ言うと、柔らかく断る意味にもなる。"
       },
       "examples": [
         {
@@ -1518,7 +1643,8 @@
           "zh": "我有点累了。",
           "zh_TW": "我有點累了。"
         }
-      ]
+      ],
+      "meaningJaReading": "ていどをあらわすことば"
     },
     {
       "id": "grammar:ichiban",
@@ -1532,12 +1658,14 @@
       "meaning": {
         "en": "the most … in …",
         "zh": "在……中最……",
-        "zh_TW": "在……中最……"
+        "zh_TW": "在……中最……",
+        "ja": "範囲の中で最も〜なことを示す"
       },
       "explanation": {
         "en": "一番 before an adjective makes a superlative, with the group marked by で or の中で.",
         "zh": "一番放在形容词前构成最高级，范围用で或の中で表示。",
-        "zh_TW": "一番放在形容詞前構成最高級，範圍用で或の中で表示。"
+        "zh_TW": "一番放在形容詞前構成最高級，範圍用で或の中で表示。",
+        "ja": "一番を形容詞の前に置くと、「最も〜だ」という意味になる。比べる範囲は、でかの中でで示す。「クラスで一番高い」のように使う。"
       },
       "examples": [
         {
@@ -1554,7 +1682,8 @@
           "zh": "水果中我最喜欢苹果。",
           "zh_TW": "水果中我最喜歡蘋果。"
         }
-      ]
+      ],
+      "meaningJaReading": "はんいのなかでもっとも〜なことをしめす"
     },
     {
       "id": "grammar:hou-ga-yori",
@@ -1568,12 +1697,14 @@
       "meaning": {
         "en": "N1 is more … than N2",
         "zh": "……比……更……",
-        "zh_TW": "……比……更……"
+        "zh_TW": "……比……更……",
+        "ja": "二つの物を比べる"
       },
       "explanation": {
         "en": "より marks the thing being compared against, and ほうが marks the winner. Either half can be dropped once the comparison is clear.",
         "zh": "より标示比较的基准，ほうが标示胜出的一方。比较对象明确时可省略其中一半。",
-        "zh_TW": "より標示比較的基準，ほうが標示勝出的一方。比較對象明確時可省略其中一半。"
+        "zh_TW": "より標示比較的基準，ほうが標示勝出的一方。比較對象明確時可省略其中一半。",
+        "ja": "よりは比べる相手を、ほうがは上の方を示す。「電車のほうがバスより速い」のように使う。何を比べているか分かるときは、片方を言わなくてもいい。"
       },
       "examples": [
         {
@@ -1590,7 +1721,8 @@
           "zh": "今天比昨天暖和。",
           "zh_TW": "今天比昨天暖和。"
         }
-      ]
+      ],
+      "meaningJaReading": "ふたつのものをくらべる"
     },
     {
       "id": "grammar:dictionary-form",
@@ -1600,12 +1732,14 @@
       "meaning": {
         "en": "dictionary form (plain non-past)",
         "zh": "动词原形（简体非过去）",
-        "zh_TW": "動詞原形（簡體非過去）"
+        "zh_TW": "動詞原形（簡體非過去）",
+        "ja": "辞書で使う動詞の形"
       },
       "explanation": {
         "en": "The form a verb is listed under. Godan verbs end in an u-sound (行く, 話す), ichidan verbs in る after an i- or e-sound (食べる, 見る), and する and 来る are the two irregulars. Many later patterns attach to this form.",
         "zh": "词典中列出的形式。五段动词以u段音结尾（行く、話す），一段动词在i段或e段后接る（食べる、見る），する和来る是两个不规则动词。许多后续句型都接在这一形式后。",
-        "zh_TW": "詞典中列出的形式。五段動詞以u段音結尾（行く、話す），一段動詞在i段或e段後接る（食べる、見る），する和来る是兩個不規則動詞。許多後續句型都接在這一形式後。"
+        "zh_TW": "詞典中列出的形式。五段動詞以u段音結尾（行く、話す），一段動詞在i段或e段後接る（食べる、見る），する和来る是兩個不規則動詞。許多後續句型都接在這一形式後。",
+        "ja": "辞書にのっている動詞の形。五段動詞はうの段の音で終わり（行く、話す）、一段動詞はいかえの段の音の後にるがつく（食べる、見る）。するとくるは特別な動詞。多くの文型がこの形につく。"
       },
       "examples": [
         {
@@ -1622,7 +1756,8 @@
           "zh": "我会说日语。",
           "zh_TW": "我會說日語。"
         }
-      ]
+      ],
+      "meaningJaReading": "じしょでつかうどうしのかたち"
     },
     {
       "id": "grammar:plain-form",
@@ -1632,12 +1767,14 @@
       "meaning": {
         "en": "plain form (casual style)",
         "zh": "简体形（常体）",
-        "zh_TW": "簡體形（常體）"
+        "zh_TW": "簡體形（常體）",
+        "ja": "丁寧ではない普通の形"
       },
       "explanation": {
         "en": "The four plain forms are the casual counterparts of ます, ません, ました and ませんでした. They are used with family and close friends, and they are also what longer patterns attach to, whatever the politeness of the sentence.",
         "zh": "四种简体形分别对应ます、ません、ました、ませんでした。它们用于家人和亲近的朋友之间，同时也是许多复杂句型的接续形式，与整句的敬体与否无关。",
-        "zh_TW": "四種簡體形分別對應ます、ません、ました、ませんでした。它們用於家人和親近的朋友之間，同時也是許多複雜句型的接續形式，與整句的敬體與否無關。"
+        "zh_TW": "四種簡體形分別對應ます、ません、ました、ませんでした。它們用於家人和親近的朋友之間，同時也是許多複雜句型的接續形式，與整句的敬體與否無關。",
+        "ja": "ます・ません・ました・ませんでしたの普通の形。家族や仲のいい友達と話すときに使う。また、多くの文型はこの形につくので、丁寧な文の中でも使う。"
       },
       "examples": [
         {
@@ -1654,7 +1791,8 @@
           "zh": "昨天很忙。",
           "zh_TW": "昨天很忙。"
         }
-      ]
+      ],
+      "meaningJaReading": "ていねいではないふつうのかたち"
     },
     {
       "id": "grammar:te-form",
@@ -1668,12 +1806,14 @@
       "meaning": {
         "en": "te-form: joins verbs into a sequence",
         "zh": "て形：连接动作，表示先后",
-        "zh_TW": "て形：連接動作，表示先後"
+        "zh_TW": "て形：連接動作，表示先後",
+        "ja": "動作を順番につなぐ形"
       },
       "explanation": {
         "en": "The て-form links actions in the order they happen and is the base of many patterns. Godan endings change: く to いて, ぐ to いで, う・つ・る to って, ぬ・ぶ・む to んで, す to して; 行く is the exception, 行って. Ichidan verbs drop る and add て.",
         "zh": "て形按发生顺序连接动作，也是许多句型的基础。五段动词变化：く→いて，ぐ→いで，う・つ・る→って，ぬ・ぶ・む→んで，す→して；行く例外，为行って。一段动词去る加て。",
-        "zh_TW": "て形按發生順序連接動作，也是許多句型的基礎。五段動詞變化：く→いて，ぐ→いで，う・つ・る→って，ぬ・ぶ・む→んで，す→して；行く例外，為行って。一段動詞去る加て。"
+        "zh_TW": "て形按發生順序連接動作，也是許多句型的基礎。五段動詞變化：く→いて，ぐ→いで，う・つ・る→って，ぬ・ぶ・む→んで，す→して；行く例外，為行って。一段動詞去る加て。",
+        "ja": "動作を起こる順につなぎ、多くの文型のもとになる。五段動詞は、く→いて、ぐ→いで、う・つ・る→って、ぬ・ぶ・む→んで、す→して。行くだけは行って。一段動詞はるを取っててをつける。"
       },
       "examples": [
         {
@@ -1690,7 +1830,8 @@
           "zh": "我看了书然后睡了。",
           "zh_TW": "我看了書然後睡了。"
         }
-      ]
+      ],
+      "meaningJaReading": "どうさをじゅんばんにつなぐかたち"
     },
     {
       "id": "grammar:te-imasu",
@@ -1706,12 +1847,14 @@
       "meaning": {
         "en": "is doing; is in a state",
         "zh": "正在……；处于……状态",
-        "zh_TW": "正在……；處於……狀態"
+        "zh_TW": "正在……；處於……狀態",
+        "ja": "動作の最中や状態を示す"
       },
       "explanation": {
         "en": "With an action verb this is the progressive: 食べています, is eating. With a verb of change it is the resulting state: 結婚しています means is married, not is getting married. It also covers habits: 銀行で働いています.",
         "zh": "接动作动词表示进行：食べています（正在吃）。接变化动词表示结果状态：結婚しています是“已婚”，不是“正在结婚”。也可表示习惯：銀行で働いています。",
-        "zh_TW": "接動作動詞表示進行：食べています（正在吃）。接變化動詞表示結果狀態：結婚しています是“已婚”，不是“正在結婚”。也可表示習慣：銀行で働いています。"
+        "zh_TW": "接動作動詞表示進行：食べています（正在吃）。接變化動詞表示結果狀態：結婚しています是“已婚”，不是“正在結婚”。也可表示習慣：銀行で働いています。",
+        "ja": "動作の動詞では、今している最中を表す（食べています）。変化の動詞ではその後の状態を表し、結婚していますは「今、結婚している人だ」という意味になる。習慣にも使う（銀行で働いています）。"
       },
       "examples": [
         {
@@ -1728,7 +1871,8 @@
           "zh": "我哥哥住在东京。",
           "zh_TW": "我哥哥住在東京。"
         }
-      ]
+      ],
+      "meaningJaReading": "どうさのさいちゅうやじょうたいをしめす"
     },
     {
       "id": "grammar:te-kudasai",
@@ -1742,12 +1886,14 @@
       "meaning": {
         "en": "please do …",
         "zh": "请……",
-        "zh_TW": "請……"
+        "zh_TW": "請……",
+        "ja": "丁寧に頼む"
       },
       "explanation": {
         "en": "A polite request or instruction. It is an instruction as much as a favour, so a superior is usually asked with a longer, softer phrase instead.",
         "zh": "礼貌的请求或指示。它同时带有指示的语气，因此对上级通常改用更委婉的长句。",
-        "zh_TW": "禮貌的請求或指示。它同時帶有指示的語氣，因此對上級通常改用更委婉的長句。"
+        "zh_TW": "禮貌的請求或指示。它同時帶有指示的語氣，因此對上級通常改用更委婉的長句。",
+        "ja": "て形につけて、丁寧に頼んだり指示したりする。ただし指示の気持ちもあるので、目上の人にはもっと柔らかい言い方を使うことが多い。"
       },
       "examples": [
         {
@@ -1764,7 +1910,8 @@
           "zh": "请在这里写上名字。",
           "zh_TW": "請在這裡寫上名字。"
         }
-      ]
+      ],
+      "meaningJaReading": "ていねいにたのむ"
     },
     {
       "id": "grammar:te-mo-ii",
@@ -1778,12 +1925,14 @@
       "meaning": {
         "en": "may; it is all right to …",
         "zh": "可以……",
-        "zh_TW": "可以……"
+        "zh_TW": "可以……",
+        "ja": "許可を出すときや聞くときの形"
       },
       "explanation": {
         "en": "Gives or asks for permission. As a question it is the standard way to ask whether something is allowed.",
         "zh": "表示给予或请求许可。用于疑问句时，是询问“是否可以”的标准说法。",
-        "zh_TW": "表示給予或請求許可。用於疑問句時，是詢問“是否可以”的標準說法。"
+        "zh_TW": "表示給予或請求許可。用於疑問句時，是詢問“是否可以”的標準說法。",
+        "ja": "て形にもいいですをつけて、許可を表す。質問にすると、何かをしていいかどうかを聞く普通の言い方になる。だめなときは「〜てはいけません」と答える。"
       },
       "examples": [
         {
@@ -1800,7 +1949,8 @@
           "zh": "可以拍照。",
           "zh_TW": "可以拍照。"
         }
-      ]
+      ],
+      "meaningJaReading": "きょかをだすときやきくときのかたち"
     },
     {
       "id": "grammar:te-wa-ikemasen",
@@ -1815,12 +1965,14 @@
       "meaning": {
         "en": "must not; may not",
         "zh": "不可以……；禁止……",
-        "zh_TW": "不可以……；禁止……"
+        "zh_TW": "不可以……；禁止……",
+        "ja": "してはいけないことを言う形"
       },
       "explanation": {
         "en": "A prohibition, the opposite of てもいいです. It is strong, so signs and rules use it while a person asking a favour would not.",
         "zh": "表示禁止，与てもいいです相对。语气较强，多见于告示和规定，个人请求时一般不用。",
-        "zh_TW": "表示禁止，與てもいいです相對。語氣較強，多見於告示和規定，個人請求時一般不用。"
+        "zh_TW": "表示禁止，與てもいいです相對。語氣較強，多見於告示和規定，個人請求時一般不用。",
+        "ja": "動詞のて形に「はいけません」をつけて、その動作をしてはいけないと言う。「てもいいです」の反対の意味。強い言い方なので、規則や注意の文によく使い、人にお願いするときにはあまり使わない。"
       },
       "examples": [
         {
@@ -1837,7 +1989,8 @@
           "zh": "图书馆内不可以说话。",
           "zh_TW": "圖書館內不可以說話。"
         }
-      ]
+      ],
+      "meaningJaReading": "してはいけないことをいうかたち"
     },
     {
       "id": "grammar:te-kara",
@@ -1851,12 +2004,14 @@
       "meaning": {
         "en": "after doing …",
         "zh": "……之后（再）",
-        "zh_TW": "……之後（再）"
+        "zh_TW": "……之後（再）",
+        "ja": "前のことが終わってから次をする"
       },
       "explanation": {
         "en": "Marks the first of two actions and stresses that the second waits for it. Plain て also puts actions in order; てから adds the sense of not before that.",
         "zh": "标示两个动作中的前者，强调后者要等前者完成。单纯的て也表示先后，てから则强调“在此之前不做”。",
-        "zh_TW": "標示兩個動作中的前者，強調後者要等前者完成。單純的て也表示先後，てから則強調“在此之前不做”。"
+        "zh_TW": "標示兩個動作中的前者，強調後者要等前者完成。單純的て也表示先後，てから則強調“在此之前不做”。",
+        "ja": "動詞のて形に「から」をつけて、一つ目の動作が終わった後で二つ目の動作をすると言う。て形だけでも順番は言えるが、「てから」は「それが終わるまではしない」という気持ちが強い。"
       },
       "examples": [
         {
@@ -1873,7 +2028,8 @@
           "zh": "请洗完手再吃。",
           "zh_TW": "請洗完手再吃。"
         }
-      ]
+      ],
+      "meaningJaReading": "まえのことがおわってからつぎをする"
     },
     {
       "id": "grammar:nai-form",
@@ -1886,12 +2042,14 @@
       "meaning": {
         "en": "plain negative",
         "zh": "简体否定形",
-        "zh_TW": "簡體否定形"
+        "zh_TW": "簡體否定形",
+        "ja": "動詞の普通の否定の形"
       },
       "explanation": {
         "en": "Godan verbs change the final u-sound to the a-row and add ない (書く to 書かない); a verb ending in う takes わ (買う to 買わない). Ichidan verbs drop る. する becomes しない and 来る becomes 来ない. ある is irregular: ない.",
         "zh": "五段动词把词尾u段变为a段再加ない（書く→書かない）；以う结尾的变为わ（買う→買わない）。一段动词去る加ない。する→しない，来る→来ない。ある特殊，否定为ない。",
-        "zh_TW": "五段動詞把詞尾u段變為a段再加ない（書く→書かない）；以う結尾的變為わ（買う→買わない）。一段動詞去る加ない。する→しない，来る→来ない。ある特殊，否定為ない。"
+        "zh_TW": "五段動詞把詞尾u段變為a段再加ない（書く→書かない）；以う結尾的變為わ（買う→買わない）。一段動詞去る加ない。する→しない，来る→来ない。ある特殊，否定為ない。",
+        "ja": "五段動詞は最後の音を「あ」の段にかえて「ない」をつける（書く→書かない）。「う」で終わる動詞は「わ」になる（買う→買わない）。一段動詞は「る」を取る。する→しない、来る→来ない。「ある」の否定は「ない」だけになる。"
       },
       "examples": [
         {
@@ -1908,7 +2066,8 @@
           "zh": "我不喝酒。",
           "zh_TW": "我不喝酒。"
         }
-      ]
+      ],
+      "meaningJaReading": "どうしのふつうのひていのかたち"
     },
     {
       "id": "grammar:naide-kudasai",
@@ -1921,12 +2080,14 @@
       "meaning": {
         "en": "please do not …",
         "zh": "请不要……",
-        "zh_TW": "請不要……"
+        "zh_TW": "請不要……",
+        "ja": "相手にしないでと頼む形"
       },
       "explanation": {
         "en": "The negative counterpart of てください. It asks someone not to do something, and is gentler than てはいけません.",
         "zh": "てください的否定形式，用于请求对方不要做某事，语气比てはいけません柔和。",
-        "zh_TW": "てください的否定形式，用於請求對方不要做某事，語氣比てはいけません柔和。"
+        "zh_TW": "てください的否定形式，用於請求對方不要做某事，語氣比てはいけません柔和。",
+        "ja": "動詞のない形に「でください」をつけて、その動作をしないように相手に頼む。「てください」の否定の形で、「てはいけません」よりやわらかい言い方になる。"
       },
       "examples": [
         {
@@ -1943,7 +2104,8 @@
           "zh": "请不要担心。",
           "zh_TW": "請不要擔心。"
         }
-      ]
+      ],
+      "meaningJaReading": "あいてにしないでとたのむかたち"
     },
     {
       "id": "grammar:nakereba-narimasen",
@@ -1958,12 +2120,14 @@
       "meaning": {
         "en": "must; have to",
         "zh": "必须……",
-        "zh_TW": "必須……"
+        "zh_TW": "必須……",
+        "ja": "それをする必要があると言う形"
       },
       "explanation": {
         "en": "Literally if you do not do it, it will not do. なくてはいけません means the same. Both are long; the casual spoken forms are なきゃ and なくちゃ.",
         "zh": "字面意思是“不做就不行”。なくてはいけません意思相同。两者都较长，口语常缩略为なきゃ、なくちゃ。",
-        "zh_TW": "字面意思是“不做就不行”。なくてはいけません意思相同。兩者都較長，口語常縮略為なきゃ、なくちゃ。"
+        "zh_TW": "字面意思是“不做就不行”。なくてはいけません意思相同。兩者都較長，口語常縮略為なきゃ、なくちゃ。",
+        "ja": "動詞のない形の「ない」を「なければ」にかえて「なりません」をつける。「しないとだめだ」という意味で、「なくてはいけません」も同じ。どちらも長いので、話すときは「なきゃ」「なくちゃ」と短くすることが多い。"
       },
       "examples": [
         {
@@ -1980,7 +2144,8 @@
           "zh": "我必须吃药。",
           "zh_TW": "我必須吃藥。"
         }
-      ]
+      ],
+      "meaningJaReading": "それをするひつようがあるというかたち"
     },
     {
       "id": "grammar:nakute-mo-ii",
@@ -1993,12 +2158,14 @@
       "meaning": {
         "en": "do not have to",
         "zh": "不……也可以",
-        "zh_TW": "不……也可以"
+        "zh_TW": "不……也可以",
+        "ja": "する必要がないと言う形"
       },
       "explanation": {
         "en": "Says that an action is not required. It is the negative counterpart of てもいいです and the opposite of なければなりません.",
         "zh": "表示不必做某事，是てもいいです的否定对应，也是なければなりません的反义表达。",
-        "zh_TW": "表示不必做某事，是てもいいです的否定對應，也是なければなりません的反義表達。"
+        "zh_TW": "表示不必做某事，是てもいいです的否定對應，也是なければなりません的反義表達。",
+        "ja": "動詞のない形を「なくて」にかえて「もいいです」をつけ、その動作はしなくても大丈夫だと言う。「てもいいです」の否定の形で、「なければなりません」の反対の意味になる。"
       },
       "examples": [
         {
@@ -2015,7 +2182,8 @@
           "zh": "不用全部吃完也可以。",
           "zh_TW": "不用全部吃完也可以。"
         }
-      ]
+      ],
+      "meaningJaReading": "するひつようがないというかたち"
     },
     {
       "id": "grammar:ta-form",
@@ -2029,12 +2197,14 @@
       "meaning": {
         "en": "plain past",
         "zh": "简体过去形",
-        "zh_TW": "簡體過去形"
+        "zh_TW": "簡體過去形",
+        "ja": "動詞の普通の過去の形"
       },
       "explanation": {
         "en": "Formed exactly like the て-form with た instead of て: 書いて to 書いた, 読んで to 読んだ. Several patterns attach to it, so it is worth learning as a form rather than only as a tense.",
         "zh": "变化方式与て形完全相同，只是把て换成た：書いて→書いた，読んで→読んだ。多个句型接在这一形式后，因此要把它作为一种“形”来记，而不仅是时态。",
-        "zh_TW": "變化方式與て形完全相同，只是把て換成た：書いて→書いた，読んで→読んだ。多個句型接在這一形式後，因此要把它作為一種“形”來記，而不僅是時態。"
+        "zh_TW": "變化方式與て形完全相同，只是把て換成た：書いて→書いた，読んで→読んだ。多個句型接在這一形式後，因此要把它作為一種“形”來記，而不僅是時態。",
+        "ja": "て形の「て」を「た」に、「で」を「だ」にかえるだけで作れる（書いて→書いた、読んで→読んだ）。た形のあとにつく文型がたくさんあるので、過去の言い方としてだけでなく、一つの形として覚えておくといい。"
       },
       "examples": [
         {
@@ -2051,7 +2221,8 @@
           "zh": "我已经吃过午饭了。",
           "zh_TW": "我已經吃過午飯了。"
         }
-      ]
+      ],
+      "meaningJaReading": "どうしのふつうのかこのかたち"
     },
     {
       "id": "grammar:ta-koto-ga-aru",
@@ -2065,12 +2236,14 @@
       "meaning": {
         "en": "have done … before (experience)",
         "zh": "曾经……过（经验）",
-        "zh_TW": "曾經……過（經驗）"
+        "zh_TW": "曾經……過（經驗）",
+        "ja": "前にした経験を言う形"
       },
       "explanation": {
         "en": "Reports an experience at some point in the past, not a particular occasion. Something that happened yesterday is too recent for it.",
         "zh": "表示过去有过的经验，而非某一次具体的事。昨天刚发生的事不能用这一句型。",
-        "zh_TW": "表示過去有過的經驗，而非某一次具體的事。昨天剛發生的事不能用這一句型。"
+        "zh_TW": "表示過去有過的經驗，而非某一次具體的事。昨天剛發生的事不能用這一句型。",
+        "ja": "動詞のた形に「ことがあります」をつけて、今までにその経験があると言う。ある一回のことではなく、経験があるかどうかを言う形なので、昨日したばかりのことには使わない。"
       },
       "examples": [
         {
@@ -2087,7 +2260,8 @@
           "zh": "我没骑过马。",
           "zh_TW": "我沒騎過馬。"
         }
-      ]
+      ],
+      "meaningJaReading": "まえにしたけいけんをいうかたち"
     },
     {
       "id": "grammar:tari-tari",
@@ -2101,12 +2275,14 @@
       "meaning": {
         "en": "do things like … and …",
         "zh": "又是……又是……（列举动作）",
-        "zh_TW": "又是……又是……（列舉動作）"
+        "zh_TW": "又是……又是……（列舉動作）",
+        "ja": "動作の例をいくつか並べる"
       },
       "explanation": {
         "en": "Lists example activities without saying they happened in that order or that the list is complete. する at the end carries the tense for the whole sentence.",
         "zh": "举例列举若干动作，不表示先后顺序，也不表示列举完整。句末的する承担全句的时态。",
-        "zh_TW": "舉例列舉若干動作，不表示先後順序，也不表示列舉完整。句末的する承擔全句的時態。"
+        "zh_TW": "舉例列舉若干動作，不表示先後順序，也不表示列舉完整。句末的する承擔全句的時態。",
+        "ja": "動詞のた形に「り」をつけて並べ、最後に「します」をつける。したことの例をいくつか言うだけで、その順番にしたという意味も、それで全部という意味もない。過去かどうかは最後の「します」「しました」で決まる。"
       },
       "examples": [
         {
@@ -2123,7 +2299,8 @@
           "zh": "昨天我又是打扫又是洗衣服。",
           "zh_TW": "昨天我又是打掃又是洗衣服。"
         }
-      ]
+      ],
+      "meaningJaReading": "どうさのれいをいくつかならべる"
     },
     {
       "id": "grammar:koto-ga-dekiru",
@@ -2137,12 +2314,14 @@
       "meaning": {
         "en": "can; be able to",
         "zh": "能够……；会……",
-        "zh_TW": "能夠……；會……"
+        "zh_TW": "能夠……；會……",
+        "ja": "その動作ができると言う形"
       },
       "explanation": {
         "en": "States an ability or a permission. A noun can take it directly with が: 運転ができます. The shorter potential form is taught at N4.",
         "zh": "表示能力或许可。名词可直接用が接续：運転ができます。更简短的可能形在N4学习。",
-        "zh_TW": "表示能力或許可。名詞可直接用が接續：運転ができます。更簡短的可能形在N4學習。"
+        "zh_TW": "表示能力或許可。名詞可直接用が接續：運転ができます。更簡短的可能形在N4學習。",
+        "ja": "動詞の辞書形に「ことができます」をつけて、能力や、してもいいことを言う。名詞なら「運転ができます」のように「が」で直接つけられる。もっと短い可能形は次のレベルで習う。"
       },
       "examples": [
         {
@@ -2159,7 +2338,8 @@
           "zh": "可以在这里付款吗？",
           "zh_TW": "可以在這裡付款嗎？"
         }
-      ]
+      ],
+      "meaningJaReading": "そのどうさができるというかたち"
     },
     {
       "id": "grammar:mae-ni",
@@ -2173,12 +2353,14 @@
       "meaning": {
         "en": "before doing …",
         "zh": "在……之前",
-        "zh_TW": "在……之前"
+        "zh_TW": "在……之前",
+        "ja": "ある動作をする前の時"
       },
       "explanation": {
         "en": "The verb before 前に is always in the dictionary form, whatever the tense of the sentence, because it has not happened yet at that point.",
         "zh": "前に前面的动词一律用原形，与全句时态无关，因为在那个时点动作尚未发生。",
-        "zh_TW": "前に前面的動詞一律用原形，與全句時態無關，因為在那個時點動作尚未發生。"
+        "zh_TW": "前に前面的動詞一律用原形，與全句時態無關，因為在那個時點動作尚未發生。",
+        "ja": "動詞の辞書形か「名詞＋の」に「前に」をつける。文が過去でも、「前に」の前の動詞はいつも辞書形になる。その時にはまだその動作をしていないからだ。「寝た前に」とは言わない。"
       },
       "examples": [
         {
@@ -2195,7 +2377,8 @@
           "zh": "吃饭前我洗了手。",
           "zh_TW": "吃飯前我洗了手。"
         }
-      ]
+      ],
+      "meaningJaReading": "あるどうさをするまえのとき"
     },
     {
       "id": "grammar:ato-de",
@@ -2209,12 +2392,14 @@
       "meaning": {
         "en": "after doing …",
         "zh": "在……之后",
-        "zh_TW": "在……之後"
+        "zh_TW": "在……之後",
+        "ja": "ある動作が終わった後の時"
       },
       "explanation": {
         "en": "The mirror image of 前に: the verb before 後で is always in the た-form, because it is finished at that point.",
         "zh": "与前に相对：後で前面的动词一律用た形，因为在那个时点动作已经完成。",
-        "zh_TW": "與前に相對：後で前面的動詞一律用た形，因為在那個時點動作已經完成。"
+        "zh_TW": "與前に相對：後で前面的動詞一律用た形，因為在那個時點動作已經完成。",
+        "ja": "動詞のた形か「名詞＋の」に「後で」をつける。「前に」の反対で、「後で」の前の動詞はいつもた形になる。その時にはもう動作が終わっているからだ。文がこれからのことでも「見た後で」と言う。"
       },
       "examples": [
         {
@@ -2231,7 +2416,8 @@
           "zh": "下课后我去图书馆。",
           "zh_TW": "下課後我去圖書館。"
         }
-      ]
+      ],
+      "meaningJaReading": "あるどうさがおわったあとのとき"
     },
     {
       "id": "grammar:nagara",
@@ -2244,12 +2430,14 @@
       "meaning": {
         "en": "while doing …",
         "zh": "一边……一边……",
-        "zh_TW": "一邊……一邊……"
+        "zh_TW": "一邊……一邊……",
+        "ja": "二つの動作を同時にする"
       },
       "explanation": {
         "en": "Two actions by one person at the same time. The main action is the second one, so 音楽を聞きながら勉強する is studying, with music in the background.",
         "zh": "同一个人同时进行两个动作。主要动作是后者，因此音楽を聞きながら勉強する的重点是“学习”。",
-        "zh_TW": "同一個人同時進行兩個動作。主要動作是後者，因此音楽を聞きながら勉強する的重點是“學習”。"
+        "zh_TW": "同一個人同時進行兩個動作。主要動作是後者，因此音楽を聞きながら勉強する的重點是“學習”。",
+        "ja": "動詞のます形から「ます」を取って「ながら」をつけ、一人の人が二つの動作を同時にすると言う。大事な動作は後ろのほうで、「音楽を聞きながら勉強する」は勉強がおもな動作になる。"
       },
       "examples": [
         {
@@ -2266,7 +2454,8 @@
           "zh": "请不要一边走路一边打电话。",
           "zh_TW": "請不要一邊走路一邊打電話。"
         }
-      ]
+      ],
+      "meaningJaReading": "ふたつのどうさをどうじにする"
     },
     {
       "id": "grammar:tai",
@@ -2280,12 +2469,14 @@
       "meaning": {
         "en": "want to do …",
         "zh": "想要……（做某事）",
-        "zh_TW": "想要……（做某事）"
+        "zh_TW": "想要……（做某事）",
+        "ja": "自分がしたいことを言う形"
       },
       "explanation": {
         "en": "Expresses the speaker's own wish, and conjugates like an i-adjective: たくない, たかった. The object may take を or が. It is not used to state what someone else wants; that needs たがっている.",
         "zh": "表示说话人自身的愿望，按形容词活用：たくない、たかった。宾语可用を或が。不能用来陈述他人的愿望，那要用たがっている。",
-        "zh_TW": "表示說話人自身的願望，按形容詞活用：たくない、たかった。賓語可用を或が。不能用來陳述他人的願望，那要用たがっている。"
+        "zh_TW": "表示說話人自身的願望，按形容詞活用：たくない、たかった。賓語可用を或が。不能用來陳述他人的願望，那要用たがっている。",
+        "ja": "動詞のます形から「ます」を取って「たい」をつける。い形容詞と同じように「たくない」「たかった」と変わる。「を」のかわりに「が」も使える。話す人自身の気持ちを言う形で、ほかの人の気持ちには「たがっている」を使う。"
       },
       "examples": [
         {
@@ -2302,7 +2493,8 @@
           "zh": "今天我什么都不想吃。",
           "zh_TW": "今天我什麼都不想吃。"
         }
-      ]
+      ],
+      "meaningJaReading": "じぶんがしたいことをいうかたち"
     },
     {
       "id": "grammar:hoshii",
@@ -2315,12 +2507,14 @@
       "meaning": {
         "en": "want (a thing)",
         "zh": "想要（某物）",
-        "zh_TW": "想要（某物）"
+        "zh_TW": "想要（某物）",
+        "ja": "自分が欲しい物を言う形"
       },
       "explanation": {
         "en": "ほしい is for wanting a thing, たい for wanting to do something. The thing wanted takes が. Like たい it describes the speaker, not a third person.",
         "zh": "ほしい表示想要某物，たい表示想做某事。想要的东西用が标示。与たい一样，只用于描述说话人。",
-        "zh_TW": "ほしい表示想要某物，たい表示想做某事。想要的東西用が標示。與たい一樣，只用於描述說話人。"
+        "zh_TW": "ほしい表示想要某物，たい表示想做某事。想要的東西用が標示。與たい一樣，只用於描述說話人。",
+        "ja": "欲しい物に「が」をつけて「ほしいです」と言う。「ほしい」は物が欲しいとき、「たい」は何かをしたいときに使う。「たい」と同じで、話す人自身の気持ちを言う形なので、ほかの人のことには使わない。"
       },
       "examples": [
         {
@@ -2337,7 +2531,8 @@
           "zh": "我现在什么都不想要。",
           "zh_TW": "我現在什麼都不想要。"
         }
-      ]
+      ],
+      "meaningJaReading": "じぶんがほしいものをいうかたち"
     },
     {
       "id": "grammar:mashou",
@@ -2350,12 +2545,14 @@
       "meaning": {
         "en": "let us … / shall I …?",
         "zh": "……吧／我来……好吗？",
-        "zh_TW": "……吧／我來……好嗎？"
+        "zh_TW": "……吧／我來……好嗎？",
+        "ja": "一緒にすることを誘う形"
       },
       "explanation": {
         "en": "ましょう suggests doing something together. ましょうか offers to do it yourself, or asks whether the suggestion is welcome.",
         "zh": "ましょう提议一起做某事。ましょうか则表示主动提出由自己来做，或询问对方是否愿意。",
-        "zh_TW": "ましょう提議一起做某事。ましょうか則表示主動提出由自己來做，或詢問對方是否願意。"
+        "zh_TW": "ましょう提議一起做某事。ましょうか則表示主動提出由自己來做，或詢問對方是否願意。",
+        "ja": "動詞のます形の「ます」を「ましょう」にかえて、一緒にしようと相手を誘う。「ましょうか」にすると、自分がしてあげようかと聞いたり、相手がそれでいいか聞いたりする言い方になる。"
       },
       "examples": [
         {
@@ -2372,7 +2569,8 @@
           "zh": "我把窗户打开好吗？",
           "zh_TW": "我把窗戶打開好嗎？"
         }
-      ]
+      ],
+      "meaningJaReading": "いっしょにすることをさそうかたち"
     },
     {
       "id": "grammar:masen-ka",
@@ -2385,12 +2583,14 @@
       "meaning": {
         "en": "would you like to …? (invitation)",
         "zh": "要不要……？（邀请）",
-        "zh_TW": "要不要……？（邀請）"
+        "zh_TW": "要不要……？（邀請）",
+        "ja": "相手を丁寧に誘う形"
       },
       "explanation": {
         "en": "An invitation. It is softer than ましょう because the negative question leaves the listener room to decline.",
         "zh": "用于邀请。因为采用否定疑问的形式，给对方留有拒绝的余地，语气比ましょう柔和。",
-        "zh_TW": "用於邀請。因為採用否定疑問的形式，給對方留有拒絕的餘地，語氣比ましょう柔和。"
+        "zh_TW": "用於邀請。因為採用否定疑問的形式，給對方留有拒絕的餘地，語氣比ましょう柔和。",
+        "ja": "動詞のます形の「ます」を「ませんか」にかえて、相手を誘う。否定の質問の形なので、相手が断りやすく、「ましょう」よりやわらかい言い方になる。人を初めて誘うときによく使う。"
       },
       "examples": [
         {
@@ -2407,7 +2607,8 @@
           "zh": "要不要休息一下？",
           "zh_TW": "要不要休息一下？"
         }
-      ]
+      ],
+      "meaningJaReading": "あいてをていねいにさそうかたち"
     },
     {
       "id": "grammar:tsumori",
@@ -2420,12 +2621,14 @@
       "meaning": {
         "en": "intend to …",
         "zh": "打算……",
-        "zh_TW": "打算……"
+        "zh_TW": "打算……",
+        "ja": "もう決めた予定を言う形"
       },
       "explanation": {
         "en": "States a decision already made, which is stronger than たいです. The negative is either 行かないつもり (intend not to go) or 行くつもりはない (have no intention of going).",
         "zh": "表示已经做出的决定，语气比たいです强。否定有两种：行かないつもり（打算不去）与行くつもりはない（没有去的打算）。",
-        "zh_TW": "表示已經做出的決定，語氣比たいです強。否定有兩種：行かないつもり（打算不去）與行くつもりはない（沒有去的打算）。"
+        "zh_TW": "表示已經做出的決定，語氣比たいです強。否定有兩種：行かないつもり（打算不去）與行くつもりはない（沒有去的打算）。",
+        "ja": "動詞の辞書形かない形に「つもりです」をつけて、もう決めていることを言う。「たいです」より気持ちが強い。否定は「行かないつもり」と「行くつもりはない」の二つがあり、後ろのほうが強い言い方になる。"
       },
       "examples": [
         {
@@ -2442,7 +2645,8 @@
           "zh": "我今天不打算出门。",
           "zh_TW": "我今天不打算出門。"
         }
-      ]
+      ],
+      "meaningJaReading": "もうきめたよていをいうかたち"
     },
     {
       "id": "grammar:deshou",
@@ -2456,12 +2660,14 @@
       "meaning": {
         "en": "probably; I suppose",
         "zh": "大概……吧",
-        "zh_TW": "大概……吧"
+        "zh_TW": "大概……吧",
+        "ja": "たぶんそうだと思うことを言う"
       },
       "explanation": {
         "en": "Marks a guess rather than a fact, which is why it is the weather forecast's word of choice. Said with a rising tone it asks the listener to confirm.",
         "zh": "表示推测而非事实，因此是天气预报常用的说法。用升调说时，则是请对方确认。",
-        "zh_TW": "表示推測而非事實，因此是天氣預報常用的說法。用升調說時，則是請對方確認。"
+        "zh_TW": "表示推測而非事實，因此是天氣預報常用的說法。用升調說時，則是請對方確認。",
+        "ja": "文の最後に「でしょう」をつけて、はっきりわからないが、たぶんそうだと思うことを言う。だから天気予報でよく使う。最後を上げて言うと、相手に「そうですよね」と確認する言い方になる。"
       },
       "examples": [
         {
@@ -2478,7 +2684,8 @@
           "zh": "他大概已经回去了吧。",
           "zh_TW": "他大概已經回去了吧。"
         }
-      ]
+      ],
+      "meaningJaReading": "たぶんそうだとおもうことをいう"
     },
     {
       "id": "grammar:naru",
@@ -2494,12 +2701,14 @@
       "meaning": {
         "en": "become …",
         "zh": "变得……；成为……",
-        "zh_TW": "變得……；成為……"
+        "zh_TW": "變得……；成為……",
+        "ja": "物や様子が変わることを言う"
       },
       "explanation": {
         "en": "An i-adjective becomes く before なる, a na-adjective or a noun takes に. なる describes a change that happens; する in the same slot describes a change someone makes.",
         "zh": "形容词变为く后接なる，形容动词与名词用に。なる表示自然发生的变化，同一位置用する则表示人为造成的变化。",
-        "zh_TW": "形容詞變為く後接なる，形容動詞與名詞用に。なる表示自然發生的變化，同一位置用する則表示人為造成的變化。"
+        "zh_TW": "形容詞變為く後接なる，形容動詞與名詞用に。なる表示自然發生的變化，同一位置用する則表示人為造成的變化。",
+        "ja": "い形容詞は「い」を「く」にかえて「なる」をつけ、な形容詞と名詞は「に」をつけて「なる」をつける。「なる」は自然に変わることを言い、同じところに「する」を使うと、人が変えることになる。"
       },
       "examples": [
         {
@@ -2516,7 +2725,8 @@
           "zh": "我姐姐成了医生。",
           "zh_TW": "我姐姐成了醫生。"
         }
-      ]
+      ],
+      "meaningJaReading": "ものやようすがかわることをいう"
     },
     {
       "id": "grammar:ageru-kureru-morau",
@@ -2531,12 +2741,14 @@
       "meaning": {
         "en": "give (away from me) / give (toward me) / receive",
         "zh": "给（他人）／给（我方）／得到",
-        "zh_TW": "給（他人）／給（我方）／得到"
+        "zh_TW": "給（他人）／給（我方）／得到",
+        "ja": "物を渡したり受け取ったりする言葉"
       },
       "explanation": {
         "en": "Japanese chooses the verb by direction. あげます is giving away from the speaker's side, くれます is giving toward it, and もらいます is receiving. あげます can never describe a gift to the speaker.",
         "zh": "日语按方向选择动词。あげます表示从说话人一方给出，くれます表示给到说话人一方，もらいます表示得到。给说话人的东西绝不能用あげます。",
-        "zh_TW": "日語按方向選擇動詞。あげます表示從說話人一方給出，くれます表示給到說話人一方，もらいます表示得到。給說話人的東西絕不能用あげます。"
+        "zh_TW": "日語按方向選擇動詞。あげます表示從說話人一方給出，くれます表示給到說話人一方，もらいます表示得到。給說話人的東西絕不能用あげます。",
+        "ja": "日本語は物が動く方向で動詞を選ぶ。「あげます」は自分のほうから人へ、「くれます」は人から自分のほうへ、「もらいます」は受け取る人から見た言い方。自分がもらった物に「あげます」は使えない。"
       },
       "examples": [
         {
@@ -2553,7 +2765,8 @@
           "zh": "朋友送了我一本书。",
           "zh_TW": "朋友送了我一本書。"
         }
-      ]
+      ],
+      "meaningJaReading": "ものをわたしたりうけとったりすることば"
     },
     {
       "id": "grammar:to-omoimasu",
@@ -2567,12 +2780,14 @@
       "meaning": {
         "en": "I think that …",
         "zh": "我认为……",
-        "zh_TW": "我認為……"
+        "zh_TW": "我認為……",
+        "ja": "自分の考えを言う形"
       },
       "explanation": {
         "en": "The clause before と is always in the plain form, however polite the sentence is. と思います states the speaker's own opinion; someone else's thought needs と思っています.",
         "zh": "と之前的分句一律使用简体，与全句敬体与否无关。と思います表示说话人自己的看法；他人的想法要用と思っています。",
-        "zh_TW": "と之前的分句一律使用簡體，與全句敬體與否無關。と思います表示說話人自己的看法；他人的想法要用と思っています。"
+        "zh_TW": "と之前的分句一律使用簡體，與全句敬體與否無關。と思います表示說話人自己的看法；他人的想法要用と思っています。",
+        "ja": "文を普通形にして「と思います」をつける。丁寧な文でも、「と」の前はいつも普通形になる。「と思います」は話す人自身の考えで、ほかの人の考えを言うときは「と思っています」を使う。"
       },
       "examples": [
         {
@@ -2589,7 +2804,8 @@
           "zh": "我想他不会来。",
           "zh_TW": "我想他不會來。"
         }
-      ]
+      ],
+      "meaningJaReading": "じぶんのかんがえをいうかたち"
     },
     {
       "id": "grammar:to-iimasu",
@@ -2603,12 +2819,14 @@
       "meaning": {
         "en": "say that …; be called …",
         "zh": "说……；叫作……",
-        "zh_TW": "說……；叫作……"
+        "zh_TW": "說……；叫作……",
+        "ja": "人の言葉や名前を伝える形"
       },
       "explanation": {
         "en": "と marks quoted speech, direct or reported, and the quoted part stays in the plain form. It is also how a name is given: 田中と言います.",
         "zh": "と标示引用的内容，直接引用与转述皆可，被引用的部分用简体。自报姓名也用这一形式：田中と言います。",
-        "zh_TW": "と標示引用的內容，直接引用與轉述皆可，被引用的部分用簡體。自報姓名也用這一形式：田中と言います。"
+        "zh_TW": "と標示引用的內容，直接引用與轉述皆可，被引用的部分用簡體。自報姓名也用這一形式：田中と言います。",
+        "ja": "人が言ったことに「と」をつけて「言います」を続ける。そのままの言葉でも、内容だけでも使え、伝える文は普通形にすることが多い。自分の名前を言うときも「田中と言います」のように使う。"
       },
       "examples": [
         {
@@ -2625,7 +2843,8 @@
           "zh": "老师说明天有考试。",
           "zh_TW": "老師說明天有考試。"
         }
-      ]
+      ],
+      "meaningJaReading": "ひとのことばやなまえをつたえるかたち"
     },
     {
       "id": "grammar:toki",
@@ -2639,12 +2858,14 @@
       "meaning": {
         "en": "when …",
         "zh": "……的时候",
-        "zh_TW": "……的時候"
+        "zh_TW": "……的時候",
+        "ja": "何かをする時を言う"
       },
       "explanation": {
         "en": "The form before とき sets the timing: the dictionary form means before or during, the た-form means after. 日本へ行くとき is on the way there, 日本へ行ったとき is once there.",
         "zh": "とき前面的形式决定时间点：原形表示之前或过程中，た形表示之后。日本へ行くとき是去日本的路上，日本へ行ったとき是到了日本以后。",
-        "zh_TW": "とき前面的形式決定時間點：原形表示之前或過程中，た形表示之後。日本へ行くとき是去日本的路上，日本へ行ったとき是到了日本以後。"
+        "zh_TW": "とき前面的形式決定時間點：原形表示之前或過程中，た形表示之後。日本へ行くとき是去日本的路上，日本へ行ったとき是到了日本以後。",
+        "ja": "動詞、形容詞、「名詞＋の」に「とき」をつける。前の動詞の形で時が変わり、辞書形はその前か途中、た形はその後になる。「日本へ行くとき」は行く途中、「日本へ行ったとき」は日本に着いてからのこと。"
       },
       "examples": [
         {
@@ -2661,7 +2882,8 @@
           "zh": "小时候我常在公园玩。",
           "zh_TW": "小時候我常在公園玩。"
         }
-      ]
+      ],
+      "meaningJaReading": "なにかをするときをいう"
     },
     {
       "id": "grammar:mou-mada",
@@ -2675,12 +2897,14 @@
       "meaning": {
         "en": "already … / not yet …",
         "zh": "已经……／还没……",
-        "zh_TW": "已經……／還沒……"
+        "zh_TW": "已經……／還沒……",
+        "ja": "もう終わったか、まだかを言う"
       },
       "explanation": {
         "en": "The answer to a もう question is not ませんでした but まだです or まだ〜ていません: the action has not happened yet, rather than having failed to happen.",
         "zh": "回答もう的提问时不用ませんでした，而用まだです或まだ〜ていません：表示动作尚未发生，而不是没有发生过。",
-        "zh_TW": "回答もう的提問時不用ませんでした，而用まだです或まだ〜ていません：表示動作尚未發生，而不是沒有發生過。"
+        "zh_TW": "回答もう的提問時不用ませんでした，而用まだです或まだ〜ていません：表示動作尚未發生，而不是沒有發生過。",
+        "ja": "「もう〜ましたか」と聞かれて、まだしていないときは「いいえ、まだです」か「まだ〜ていません」と答える。「ませんでした」と言うと、しなかったという意味になるので、ここでは使わない。"
       },
       "examples": [
         {
@@ -2697,7 +2921,8 @@
           "zh": "我还没吃。",
           "zh_TW": "我還沒吃。"
         }
-      ]
+      ],
+      "meaningJaReading": "もうおわったか、まだかをいう"
     },
     {
       "id": "grammar:counters",
@@ -2716,12 +2941,14 @@
       "meaning": {
         "en": "counters: a unit word for each kind of thing",
         "zh": "量词：按事物种类使用不同的单位",
-        "zh_TW": "量詞：按事物種類使用不同的單位"
+        "zh_TW": "量詞：按事物種類使用不同的單位",
+        "ja": "物を数えるときにつける言葉"
       },
       "explanation": {
         "en": "Japanese counts with a counter chosen by shape or kind: 人 for people, 枚 for flat things, 本 for long things, 冊 for books, 匹 for small animals, 台 for machines, 個 as a general fallback. The counter usually follows the noun and its particle: りんごを三つ.",
         "zh": "日语按形状或种类选择量词：人用于人，枚用于扁平物，本用于细长物，冊用于书本，匹用于小动物，台用于机器，個为通用量词。量词通常放在名词及其助词之后：りんごを三つ。",
-        "zh_TW": "日語按形狀或種類選擇量詞：人用於人，枚用於扁平物，本用於細長物，冊用於書本，匹用於小動物，臺用於機器，個為通用量詞。量詞通常放在名詞及其助詞之後：りんごを三つ。"
+        "zh_TW": "日語按形狀或種類選擇量詞：人用於人，枚用於扁平物，本用於細長物，冊用於書本，匹用於小動物，臺用於機器，個為通用量詞。量詞通常放在名詞及其助詞之後：りんごを三つ。",
+        "ja": "日本語では物の形や種類で数え方が変わる。人は「人」、紙のように薄い物は「枚」、細長い物は「本」、本は「冊」、小さい動物は「匹」、機械は「台」、わからないときは「個」や「つ」を使う。ふつうは「りんごを三つ」のように、名詞と助詞の後に置く。"
       },
       "examples": [
         {
@@ -2738,7 +2965,8 @@
           "zh": "有两只狗。",
           "zh_TW": "有兩隻狗。"
         }
-      ]
+      ],
+      "meaningJaReading": "ものをかぞえるときにつけることば"
     },
     {
       "id": "grammar:telling-time",
@@ -2753,12 +2981,14 @@
       "meaning": {
         "en": "telling the time",
         "zh": "时刻的说法",
-        "zh_TW": "時刻的說法"
+        "zh_TW": "時刻的說法",
+        "ja": "時刻を言う言葉"
       },
       "explanation": {
         "en": "Hours take 時 and minutes 分, with 半 for half past. Four irregular readings have to be learned: 四時 yoji, 七時 shichiji, 九時 kuji, and 四分 yonpun.",
         "zh": "小时用時，分钟用分，半小时用半。有四个特殊读音必须记住：四時读yoji，七時读shichiji，九時读kuji，四分读yonpun。",
-        "zh_TW": "小時用時，分鐘用分，半小時用半。有四個特殊讀音必須記住：四時讀yoji，七時讀shichiji，九時讀kuji，四分讀yonpun。"
+        "zh_TW": "小時用時，分鐘用分，半小時用半。有四個特殊讀音必須記住：四時讀yoji，七時讀shichiji，九時讀kuji，四分讀yonpun。",
+        "ja": "時間は数字に「時」、分は「分」をつけ、三十分は「半」とも言う。読み方が特別なものに気をつけよう。四時は「よじ」、七時は「しちじ」、九時は「くじ」、四分は「よんぷん」と読む。"
       },
       "examples": [
         {
@@ -2775,7 +3005,8 @@
           "zh": "会议九点十五分开始。",
           "zh_TW": "會議九點十五分開始。"
         }
-      ]
+      ],
+      "meaningJaReading": "じこくをいうことば"
     },
     {
       "id": "grammar:dates",
@@ -2790,12 +3021,14 @@
       "meaning": {
         "en": "dates and days of the week",
         "zh": "日期与星期的说法",
-        "zh_TW": "日期與星期的說法"
+        "zh_TW": "日期與星期的說法",
+        "ja": "日付と曜日を言う言葉"
       },
       "explanation": {
         "en": "Months are simply the number plus 月, but the days of the month from the first to the tenth, plus the fourteenth, twentieth and twenty-fourth, have their own readings: 一日 tsuitachi, 二十日 hatsuka. The week runs 日月火水木金土.",
         "zh": "月份直接用数字加月，但一日到十日以及十四日、二十日、二十四日有特殊读法：一日读tsuitachi，二十日读hatsuka。星期依次为日月火水木金土。",
-        "zh_TW": "月份直接用數字加月，但一日到十日以及十四日、二十日、二十四日有特殊讀法：一日讀tsuitachi，二十日讀hatsuka。星期依次為日月火水木金土。"
+        "zh_TW": "月份直接用數字加月，但一日到十日以及十四日、二十日、二十四日有特殊讀法：一日讀tsuitachi，二十日讀hatsuka。星期依次為日月火水木金土。",
+        "ja": "月は数字に「月」をつけるだけだが、日は一日から十日と、十四日、二十日、二十四日の読み方が特別だ。一日は「ついたち」、二十日は「はつか」と読む。曜日は日・月・火・水・木・金・土の順番。"
       },
       "examples": [
         {
@@ -2812,7 +3045,8 @@
           "zh": "星期三有考试。",
           "zh_TW": "星期三有考試。"
         }
-      ]
+      ],
+      "meaningJaReading": "ひづけとようびをいうことば"
     },
     {
       "id": "grammar:ni-iku",
@@ -2826,12 +3060,14 @@
       "meaning": {
         "en": "go somewhere in order to …",
         "zh": "去做……（表示目的）",
-        "zh_TW": "去做……（表示目的）"
+        "zh_TW": "去做……（表示目的）",
+        "ja": "何をしに行くか、目的を言う形"
       },
       "explanation": {
         "en": "The ます-stem before に names the purpose of the trip: 食べに行きます, go to eat. A noun that describes an activity can stand there directly: 買い物に行きます.",
         "zh": "に前面的ます形词干表示前往的目的：食べに行きます（去吃饭）。表示活动的名词可直接放在这里：買い物に行きます。",
-        "zh_TW": "に前面的ます形詞幹表示前往的目的：食べに行きます（去吃飯）。表示活動的名詞可直接放在這裡：買い物に行きます。"
+        "zh_TW": "に前面的ます形詞幹表示前往的目的：食べに行きます（去吃飯）。表示活動的名詞可直接放在這裡：買い物に行きます。",
+        "ja": "動詞のます形から「ます」を取って「に」をつけ、「行きます」「来ます」を続けて、行く目的を言う。「食べに行きます」は食べるために行くこと。「買い物」のような動作の名詞は、そのまま「買い物に行きます」と言える。"
       },
       "examples": [
         {
@@ -2848,7 +3084,8 @@
           "zh": "我去东京见朋友。",
           "zh_TW": "我去東京見朋友。"
         }
-      ]
+      ],
+      "meaningJaReading": "なにをしにいくか、もくてきをいうかたち"
     },
     {
       "id": "grammar:issho-ni",
@@ -2862,12 +3099,14 @@
       "meaning": {
         "en": "together (with)",
         "zh": "一起",
-        "zh_TW": "一起"
+        "zh_TW": "一起",
+        "ja": "だれかと同じことをする"
       },
       "explanation": {
         "en": "一緒に says the action is done together and usually appears with と marking the other person. It sits just before the verb.",
         "zh": "一緒に表示共同进行，通常与标示同伴的と搭配。它放在动词之前。",
-        "zh_TW": "一緒に表示共同進行，通常與標示同伴的と搭配。它放在動詞之前。"
+        "zh_TW": "一緒に表示共同進行，通常與標示同伴的と搭配。它放在動詞之前。",
+        "ja": "「一緒に」は二人以上で同じことをするときに使い、動詞のすぐ前に置く。一緒にする人には「と」をつけて「妹と一緒に」と言うことが多い。「と」だけでも意味は通じる。"
       },
       "examples": [
         {
@@ -2884,7 +3123,8 @@
           "zh": "我和妹妹住在一起。",
           "zh_TW": "我和妹妹住在一起。"
         }
-      ]
+      ],
+      "meaningJaReading": "だれかとおなじことをする"
     },
     {
       "id": "grammar:demo",
@@ -2897,12 +3137,14 @@
       "meaning": {
         "en": "but; however (starting a sentence)",
         "zh": "但是（用于句首）",
-        "zh_TW": "但是（用於句首）"
+        "zh_TW": "但是（用於句首）",
+        "ja": "前の文と反対のことを言う言葉"
       },
       "explanation": {
         "en": "でも starts a new sentence that goes against the last one. It is the spoken counterpart of が, which joins clauses inside one sentence instead.",
         "zh": "でも用于另起一句，转折上一句的内容。它是が的口语对应说法，而が在同一句内连接分句。",
-        "zh_TW": "でも用於另起一句，轉折上一句的內容。它是が的口語對應說法，而が在同一句內連接分句。"
+        "zh_TW": "でも用於另起一句，轉折上一句的內容。它是が的口語對應說法，而が在同一句內連接分句。",
+        "ja": "「でも」は文の初めに置いて、前の文と反対のことを言う。話すときによく使う。同じ意味の「が」は一つの文の中で二つの部分をつなぐが、「でも」は文を一度切ってから次の文を始める。"
       },
       "examples": [
         {
@@ -2919,7 +3161,8 @@
           "zh": "我想去。但是没有时间。",
           "zh_TW": "我想去。但是沒有時間。"
         }
-      ]
+      ],
+      "meaningJaReading": "まえのぶんとはんたいのことをいうことば"
     }
   ]
 }

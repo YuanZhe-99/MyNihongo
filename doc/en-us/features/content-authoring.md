@@ -44,7 +44,7 @@ Traditional is generated and never authored.
 A new grammar file also has to be added to `ContentRepository.grammarAssets`.
 Nothing else in the app needs touching.
 
-## The five kinds
+## The kinds
 
 | Kind | Batch | Written into |
 |---|---|---|
@@ -53,6 +53,8 @@ Nothing else in the app needs touching.
 | `grammar` | 25 points | `grammar/<level>.json` |
 | `units` | one level, whole | `lessons/<level>.json` |
 | `drills` | one 大問 at a time | `drills/<level>-<section>.json` |
+| `gloss-ja` | 100 words | `vocab_ja.json`, the Japanese overlay |
+| `ja` | by target; see *The Japanese streams* | a `ja` key in the shipped file it names |
 
 **Grammar ids are settled before anything is written.** `grammar-inventory`
 produces the level's list of ids and patterns in one pass, checked against every
@@ -88,6 +90,59 @@ would be a bigger change than adding one conversation. To gate a scenario added
 that way, turn the shipped file back into a draft — strip the generated `zh_TW`
 and wrap it as `{"kind": "units", ...}` — and run the gate on that.
 
+## The Japanese streams
+
+A learner who sets the app to Japanese needs Japanese where everyone else gets English or Chinese:
+a definition under each word, a description of each grammar point, the unit and drill instructions.
+None of it has a source to translate from — the JMdict edition is English-only — so all of it is
+written by model agents through the same loop, as two kinds.
+
+| Kind | What is written | Batch | Agent | Written into |
+|---|---|---|---|---|
+| `gloss-ja` | a monolingual definition per sense, 国語辞典-style, with a hiragana reading for each | 100 words | `content-gloss-ja` (`sonnet`) | `vocab_ja.json`, the Japanese overlay |
+| `ja --kind grammar` | a one-line `meaning` with its reading, and an `explanation` | 25 points | `content-grammar-ja` (`opus`) | a `ja` key beside `en`, `zh` and `zh_TW` in `grammar/<level>.json`, plus the point's `meaningJaReading` |
+| `ja --kind function-words` | a one-line gloss | 50 words | `content-ja` (`sonnet`) | `function_words.json` |
+| `ja --kind units` | unit title, writing prompt, scenario title, question prompts and explanations | 3 units | `content-ja` (`sonnet`) | `lessons/<level>.json` |
+| `ja --kind drills` | question prompts and explanations | 60 questions | `content-ja` (`sonnet`) | `drills/<level>-<section>.json` |
+
+The 21 kana hints and the `ja` blocks of the two prompt assets are hand-written, as the `zh_TW`
+prompt blocks were.
+
+**What the text is, per kind, decides the model.** Unit, drill and function-word text is a
+translation of authored English and Chinese — mechanical, so `sonnet`. A grammar explanation is
+re-authored in plain Japanese — judgement, so `opus`. **The vocabulary definitions are the
+exception**: they are re-authored with no source, and a wrong or circular definition passes every
+gate rule, which is the case AGENTS.md puts on the capable model. They run on `sonnet` by the
+user's decision, for volume, recorded as an exception in `PLAN.md`'s decisions log. The
+mitigation was a sample: 30 definitions from each level re-read by `opus` for wrong, circular,
+misleading and missing-sense definitions. It found 8 problems in 150 — none circular, at most 3 at
+any level, none at N1 — and all 8 were corrected in the overlay. No level crossed the threshold
+(more than three wrong) that would have sent it back to `opus` whole.
+
+**The two definition fields carry readings; the prose does not.** A Japanese definition in a list
+row, and a grammar point's one-line meaning, are exactly where a learner reading Japanese meets
+kanji, so each carries a hiragana reading the gate aligns and the app draws as furigana.
+`LocalizedStrings` holds lists of strings and cannot carry a reading, so the readings live beside
+it: `jaReading` on a vocabulary entry, one per sense, and `meaningJaReading` on a grammar point.
+Explanations, prompts and glosses stay plain text, like every other language's.
+
+**`gloss-ja` rides the importer like the Chinese overlay does.** `vocab_ja.json` is the source of
+truth; `import_vocab.dart` writes `meanings.ja` and `jaReading` into `vocab.json` in **both** of
+its modes, because a full JMdict import rebuilds every entry and would otherwise delete them. A
+`ja` merge appends the key to the shipped block without rewriting it, so `convert_zh_tw.dart` has
+nothing to do afterwards: after every merge it is run twice, and the second run must say it is up
+to date.
+
+**A file's `source` stays true.** `vocab_ja.json` says model-authored. A hand-written file that
+gains a model-authored `ja` key — the N5 grammar file, the function words — says
+`hand-written; ja model-authored (Claude), unreviewed`. The kana notes stay hand-written, because
+their `ja` hints are.
+
+**The UI language lands last.** Until `lib/l10n/app_ja.arb` exists, Japanese cannot be chosen,
+and every `ja` key is inert. The coverage tests in `content_catalog_test` are written against the
+content and skipped while the ARB is absent; the commit that adds it turns them on, so a Japanese
+UI can never ship over English glosses.
+
 ## What the gate checks
 
 Each rule is one a shipped test already enforces on the catalog, moved earlier so
@@ -116,6 +171,18 @@ a batch fails before it is merged rather than after:
   end counts exactly one.
 - **A gloss is Chinese**: no kana, no leftover English, short enough for a list
   row.
+- **A Japanese definition is short, Japanese, not the word itself, and readable.** At most 24
+  characters, one to three per word, no run of three Latin letters, and every definition goes
+  through the analyser: no character the catalog cannot explain, except the handful
+  `allowed_unknown.json` already tolerates for the shipped examples. What this proves is that
+  the app's own dictionary can read the definition and that its reading is really its reading.
+  It does not prove the definition is right; a wrong one reads just as well. It also shapes the
+  writing: 事, 母, 父 and 顔 are not catalog words, so a definition says こと and writes around the
+  others.
+- **A `ja` string belongs to the file it names**, is Japanese, and fits its place: a grammar
+  meaning at most 30 characters with an aligned reading, an explanation 20 to 240, a unit or drill
+  prompt at most 80 or 100, and every question of a unit covered. An unknown id is refused, and
+  the merge refuses it too.
 
 ## What nothing checks
 
@@ -126,8 +193,8 @@ correctly read*; it cannot prove it is *idiomatic*. A model-authored sentence
 that passes every rule above may still be something no native speaker would say.
 
 So the files say so. Every model-authored file carries
-`"source": "model-authored (Claude), unreviewed"`, `vocab_zh.json` keeps its
-`reviewed: false` on every row, and `content-catalog.md`'s rule about Japanese
+`"source": "model-authored (Claude), unreviewed"`, `vocab_zh.json` and
+`vocab_ja.json` keep `reviewed: false` on every row, and `content-catalog.md`'s rule about Japanese
 being checked by a person is written as the aspiration it is rather than as a
 claim about what shipped.
 

@@ -148,12 +148,17 @@ class _ExampleTile extends ConsumerWidget {
                       color: theme.colorScheme.onSurfaceVariant,
                     ),
                   ),
-                Text(
-                  example.translations.resolveJoined(locale),
-                  style: theme.textTheme.bodyMedium?.copyWith(
-                    color: theme.colorScheme.onSurfaceVariant,
+                // A Japanese reader gets no translation under a Japanese
+                // sentence, and then no empty line either.
+                if (example.translations
+                    .resolveTranslationJoined(locale)
+                    .isNotEmpty)
+                  Text(
+                    example.translations.resolveTranslationJoined(locale),
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
                   ),
-                ),
               ],
             ),
           ),

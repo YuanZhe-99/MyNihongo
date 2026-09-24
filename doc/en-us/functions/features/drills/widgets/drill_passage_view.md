@@ -6,6 +6,10 @@ supplies a reading, and the translation behind a toggle.
 The translation is a toggle rather than a column because 読解 is the skill of reading Japanese — a
 translation beside the text turns the exercise into reading English.
 
+Translations are picked with `LocalizedStrings.resolveTranslation`, so a Japanese reader — who has
+no translation of a Japanese passage — is shown none, and the toggle is not offered at all when
+neither the passage nor any of its lines has something to reveal.
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |
@@ -13,7 +17,7 @@ translation beside the text turns the exercise into reading English.
 | [`DrillPassageView`](#view) | class | A | Show one passage, with its translation behind a toggle. |
 | `level` | field | B | The level a paraphrase should stay within. |
 | `_DrillPassageViewState` | class | B | Holds whether the translation is revealed, and what came back for each line. |
-| `build` | method | B | Build the passage, its speakers and its translation toggle. |
+| `build` | method | B | Build the passage, its speakers and its translation toggle; the toggle appears only when there is a translation to reveal for this reader. |
 | `_paraphraseOf` | method | B | Render whatever came back for one line. |
 | `_paraphrase` | method | B | Ask for one line in easier Japanese. |
 
@@ -28,14 +32,16 @@ translation beside the text turns the exercise into reading English.
 - **Side effects:** None; the toggle is local state.
 - **Algorithm:** A card holding one block per line — the speaker where the content named one, the
   Japanese as `FuriganaText`, and the line's own translation when revealed — followed by the whole
-  passage's translation when revealed, and the toggle button when it is allowed.
+  passage's translation when revealed, and the toggle button when it is allowed **and** the passage
+  or one of its lines has a translation for this reader (`resolveTranslation` is non-empty).
 - **Usage:** `quiz_page.dart`'s `_passageFor`, as the runner's leading widget for a reading question.
 - **Notes:** `allowTranslation` is false in a timed block. A mock is meant to measure what the learner
   can read unaided, and a translation is the one aid that answers most questions outright. A line
   with a speaker is laid out as a dialogue turn; a line without one is a paragraph — that is the
   difference between a 会話 and a 説明文, and the content files say which by whether they wrote a
   `speaker`. Both the per-line and the whole-passage translations are optional, and both stay hidden
-  until the question has been answered.
+  until the question has been answered. A toggle that reveals nothing is not offered: a Japanese
+  reader has no translation of a Japanese passage.
 
 With on-device AI switched on, and only where the translation toggle is offered, each line carries a
 button asking for that sentence again in easier Japanese. It is gated on `allowTranslation` for the

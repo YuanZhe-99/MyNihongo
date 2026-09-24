@@ -1,7 +1,8 @@
 /// Purpose: Regenerate `assets/content/vocab.json` from JMdict and the JLPT
 /// lists.
 /// Inputs: Command-line flags; the JMdict body under `tool/data/`, the lists
-/// under `tool/content/jlpt/`, the seed and the Chinese overlay.
+/// under `tool/content/jlpt/`, the seed, the Chinese overlay and the Japanese
+/// definition overlay.
 /// Returns: Process exit code 0 on success, 1 on a fatal input problem.
 /// Side effects: Reads several files and rewrites the vocabulary asset.
 /// Notes: Offline and deterministic: running it twice with unchanged inputs
@@ -11,7 +12,7 @@
 ///
 /// ```bash
 /// dart run tool/import_vocab.dart
-/// dart run tool/import_vocab.dart --overlay-only   # re-apply Chinese glosses
+/// dart run tool/import_vocab.dart --overlay-only   # re-apply the overlays
 /// ```
 library;
 
@@ -27,13 +28,15 @@ const _jmdictRelease =
     'https://github.com/scriptin/jmdict-simplified/releases/latest';
 
 /// Purpose: Run the import.
-/// Inputs: `args` — `--data`, `--out`, `--overlay`, `--examples`, `--seed`,
-/// `--overlay-only`.
+/// Inputs: `args` — `--data`, `--out`, `--overlay`, `--overlay-ja`,
+/// `--examples`, `--seed`, `--overlay-only`.
 /// Returns: None; sets the exit code.
 /// Side effects: File I/O and console output.
-/// Notes: `--overlay-only` rewrites the existing catalog's Chinese glosses and
-/// example sentences from the two overlays without touching JMdict, so
-/// authoring either of them level by level never needs the 117 MB download.
+/// Notes: `--overlay-only` rewrites the existing catalog's Chinese glosses,
+/// Japanese definitions and example sentences from the three overlays without
+/// touching JMdict, so authoring any of them level by level never needs the
+/// 117 MB download. The Japanese overlay is applied by the full import too;
+/// otherwise a JMdict refresh would delete every definition.
 Future<void> main(List<String> args) async {
   final options = _parseArgs(args);
 
@@ -45,13 +48,18 @@ Future<void> main(List<String> args) async {
     stderr.writeln('No overlay at ${options.overlay}; English glosses only.');
   }
 
+  final overlayJaFile = File(options.overlayJa);
+  final overlayJa = overlayJaFile.existsSync()
+      ? _readOverlay(overlayJaFile.readAsStringSync())
+      : <String, Map<String, Object?>>{};
+
   final examplesFile = File(options.examples);
   final examples = examplesFile.existsSync()
       ? _readExamples(examplesFile.readAsStringSync())
       : <String, List<Object?>>{};
 
   if (options.overlayOnly) {
-    _applyOverlayOnly(options.out, overlay, examples);
+    _applyOverlayOnly(options.out, overlay, overlayJa, examples);
     return;
   }
 
@@ -121,6 +129,9 @@ Future<void> main(List<String> args) async {
   }
 
   _applyExamples(result.entries, examples);
+  final defined = applyJapaneseOverlay(result.entries, overlayJa);
+  stdout.writeln('  $defined entries carry a Japanese definition.');
+  _reportOrphans(result.entries, overlayJa.keys, 'Japanese overlay');
 
   _write(
     options.out,
@@ -136,6 +147,7 @@ typedef _Options = ({
   String data,
   String out,
   String overlay,
+  String overlayJa,
   String examples,
   String seed,
   bool overlayOnly,
@@ -151,6 +163,7 @@ _Options _parseArgs(List<String> args) {
   var data = 'tool/data';
   var out = 'assets/content/vocab.json';
   var overlay = 'assets/content/vocab_zh.json';
+  var overlayJa = 'assets/content/vocab_ja.json';
   var examples = 'assets/content/vocab_examples.json';
   var seed = 'tool/content/vocab_seed.json';
   var overlayOnly = false;
@@ -163,6 +176,8 @@ _Options _parseArgs(List<String> args) {
         out = next;
       case '--overlay' when next != null:
         overlay = next;
+      case '--overlay-ja' when next != null:
+        overlayJa = next;
       case '--examples' when next != null:
         examples = next;
       case '--seed' when next != null:
@@ -175,6 +190,7 @@ _Options _parseArgs(List<String> args) {
     data: data,
     out: out,
     overlay: overlay,
+    overlayJa: overlayJa,
     examples: examples,
     seed: seed,
     overlayOnly: overlayOnly,
@@ -220,17 +236,40 @@ Map<String, Map<String, Object?>> _readOverlay(String raw) {
   };
 }
 
-/// Purpose: Re-apply the overlay to an existing catalog.
-/// Inputs: `out` — the catalog path; `overlay`.
+/// Purpose: Say which overlay rows name an id the catalog no longer has.
+/// Inputs: `entries`, the overlay's `ids`, and a `label` for the message.
+/// Returns: None.
+/// Side effects: Writes to stderr.
+/// Notes: Internal helper. Reported, never dropped silently: an orphaned row
+/// is authored text that no longer reaches anyone.
+void _reportOrphans(
+  List<Map<String, Object?>> entries,
+  Iterable<String> ids,
+  String label,
+) {
+  final known = {for (final entry in entries) '${entry['id']}'};
+  for (final id in ids) {
+    if (!known.contains(id)) {
+      stderr.writeln('  $label id $id is not in the catalog any more');
+    }
+  }
+}
+
+/// Purpose: Re-apply the overlays to an existing catalog.
+/// Inputs: `out` — the catalog path; the Chinese `overlay`; the Japanese
+/// `overlayJa`; the `examples`.
 /// Returns: None.
 /// Side effects: Rewrites the catalog in place.
-/// Notes: Internal helper. Only the `zh` key of `meanings` is touched, so a
-/// hand-written seed gloss is left exactly as the full import wrote it. An
-/// overlay row naming an id the catalog no longer has is reported, not
-/// dropped silently.
+/// Notes: Internal helper. Only the `zh` key of `meanings` is touched by the
+/// Chinese overlay, so a hand-written seed gloss is left exactly as the full
+/// import wrote it; the Japanese definitions go through
+/// `applyJapaneseOverlay`, the same function the full import uses. An overlay
+/// row naming an id the catalog no longer has is reported, not dropped
+/// silently.
 void _applyOverlayOnly(
   String out,
   Map<String, Map<String, Object?>> overlay,
+  Map<String, Map<String, Object?>> overlayJa,
   Map<String, List<Object?>> examples,
 ) {
   final file = File(out);
@@ -267,6 +306,9 @@ void _applyOverlayOnly(
       stderr.writeln('  example id $id is not in the catalog any more');
     }
   }
+  final defined = applyJapaneseOverlay(entries, overlayJa);
+  _reportOrphans(entries, overlayJa.keys, 'Japanese overlay');
+  stdout.writeln('  $defined entries carry a Japanese definition.');
   _write(
     out,
     entries: entries,

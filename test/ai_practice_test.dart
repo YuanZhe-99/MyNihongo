@@ -452,7 +452,7 @@ void main() {
         'weakness',
         'scenarioReply',
       ]) {
-        for (final language in const ['en', 'zh', 'zh_TW']) {
+        for (final language in const ['en', 'zh', 'zh_TW', 'ja']) {
           final template = templates.tasks[task]?[language];
           expect(
             template?.instruction,
@@ -501,7 +501,7 @@ void main() {
         'situation',
         'patterns',
       ]) {
-        for (final language in const ['en', 'zh', 'zh_TW']) {
+        for (final language in const ['en', 'zh', 'zh_TW', 'ja']) {
           expect(
             templates.labels[language]?[label],
             isNotNull,

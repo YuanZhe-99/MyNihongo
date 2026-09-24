@@ -14,6 +14,8 @@
 | `vocabQuizModes`、`kanaQuizModes`、`grammarQuizModes` | 常量 | B | 各内容库支持的模式。 |
 | `parsedQuizModes` | 常量 | B | 需要句子分析器、没有它就会被丢弃的模式。 |
 | `listeningQuizModes` | 常量 | B | 朗读而非显示的模式。 |
+| [`translationQuizModes`](#translation) | 常量 | A | 以日语句子的译文为素材、因而对日语读者会被丢弃的模式。 |
+| `quizModeWorksIn` | 函数 | B | 说明某个模式能否在这种界面语言下提问；只有日语界面下的 `translationQuizModes` 为 false。 |
 | [`selectableQuizModes`](#selectable) | 常量 | A | 学习者可以关闭的模式，也就是偏好里「所有模式」所指的范围。 |
 | [`QuizQuestion`](#question) | 类 | A | 一道题目。 |
 | `answerText` | getter | B | 正确选项的文本，用于答错后显示。 |
@@ -43,6 +45,17 @@
 - **算法：** 无。
 - **使用：** 设置里的模式开关，以及每一处需要把「所有模式都开着」明确写出来的地方。
 - **说明：** `QuizMode.drill` 刻意不在其中。偏好里「所有模式都开着」指的是这个集合，**不是** `QuizMode.values`，因此一个什么都没关过的学习者保持着空集这一默认值，仍然会得到后续版本新增的任何模式。
+
+### `const translationQuizModes` <a id="translation"></a>
+
+- **种类：** 顶层常量
+- **用途：** 指明以日语句子的译文为素材的那些模式。
+- **输入：** 无；`grammarOrder`、`grammarSentenceToMeaning` 与 `grammarMeaningToSentence`。
+- **返回：** 无。
+- **副作用：** 无。
+- **算法：** 无；`quizModeWorksIn(mode, locale)` 恰好在语言为 `ja` 的 locale 下对这些模式为 false。
+- **使用：** 经由 `quizModeWorksIn`：`QuizPage._enabledModes` 对日语读者丢弃它们，`QuizModesPage` 把它们显示为关闭并附上原因（`quizModeNeedsTranslation`）。
+- **说明：** 目录例句带有英文和中文译文，却没有日语译文，因为句子本身已经是日语。把句子与它的英文含义匹配，或对照英文释义排列片段，都不是日语界面能提供的练习——除非显示学习者选择不读的那种语言。它们被显示为不可用，而不是悄悄消失——这与听力模式在没有日语语音的设备上遵循的规则相同。存储的 `quizModes` 偏好不会改变：把界面从日语切回去，它们就会原样回来。
 
 ### `class QuizQuestion` <a id="question"></a>
 

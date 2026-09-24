@@ -9,6 +9,8 @@
 /// thirteen classes behind three widgets.
 library;
 
+import 'dart:ui' show Locale;
+
 /// Every way the app can ask about something.
 ///
 /// The name of each value is persisted in the `quizModes` preference, so these
@@ -127,6 +129,29 @@ const parsedQuizModes = {
 
 /// The modes that speak rather than show, and so need a Japanese voice.
 const listeningQuizModes = {QuizMode.vocabListening, QuizMode.kanaListening};
+
+/// The modes whose material is a translation of a Japanese sentence, and so
+/// are dropped for a Japanese reader.
+///
+/// A catalog example carries an English and a Chinese translation and no
+/// Japanese one, because the sentence is already Japanese. Matching a sentence
+/// to its English meaning, or ordering fragments against an English gloss, is
+/// not an exercise a Japanese UI can offer without showing the language the
+/// learner chose not to read. They are shown as unavailable rather than
+/// silently missing, the same rule listening modes follow without a voice.
+const translationQuizModes = {
+  QuizMode.grammarOrder,
+  QuizMode.grammarSentenceToMeaning,
+  QuizMode.grammarMeaningToSentence,
+};
+
+/// Purpose: Say whether a mode can be asked in this UI language.
+/// Inputs: `mode`, `locale`.
+/// Returns: `bool`.
+/// Side effects: None.
+/// Notes: False only for [translationQuizModes] under a Japanese UI.
+bool quizModeWorksIn(QuizMode mode, Locale locale) =>
+    locale.languageCode != 'ja' || !translationQuizModes.contains(mode);
 
 /// The modes the learner may switch off, which is every mode the app invents.
 ///

@@ -1680,7 +1680,8 @@
       "prompt": {
         "en": "Why does the writer go on using a paper notebook?",
         "zh": "作者为什么至今仍使用纸质记事本？",
-        "zh_TW": "作者為什麼至今仍使用紙質記事本？"
+        "zh_TW": "作者為什麼至今仍使用紙質記事本？",
+        "ja": "筆者はどうして今も紙の手帳を使い続けているのですか。"
       },
       "options": [
         "書き直すたびに、その週にすべきことを改めて考えることになるからです。",
@@ -1692,7 +1693,8 @@
       "explanation": {
         "en": "The third sentence gives the reason: rewriting the schedule by hand makes the writer think again about the week's tasks, which is why handwritten plans are remembered. The writer admits the phone is more convenient, so speed is not the point, and no rule at work is mentioned.",
         "zh": "第三句说明了原因：每次动手重写日程，都会重新思考那一周该做的事，所以手写的计划才记得牢。作者承认机器更方便，因此并不是写得更快，文中也没有公司规定这回事。",
-        "zh_TW": "第三句說明了原因：每次動手重寫日程，都會重新思考那一週該做的事，所以手寫的計劃才記得牢。作者承認機器更方便，因此並不是寫得更快，文中也沒有公司規定這回事。"
+        "zh_TW": "第三句說明了原因：每次動手重寫日程，都會重新思考那一週該做的事，所以手寫的計劃才記得牢。作者承認機器更方便，因此並不是寫得更快，文中也沒有公司規定這回事。",
+        "ja": "第三文に理由がある。予定を書き直すたびに、その週にすべきことを改めて考えることになるため、手書きの予定はよく覚えているのである。"
       }
     },
     {
@@ -1708,7 +1710,8 @@
       "prompt": {
         "en": "Why does the writer hand out the papers by the day before?",
         "zh": "作者为什么要在前一天就把资料发下去？",
-        "zh_TW": "作者為什麼要在前一天就把資料發下去？"
+        "zh_TW": "作者為什麼要在前一天就把資料發下去？",
+        "ja": "筆者はどうして資料を前の日までに配ることにしているのですか。"
       },
       "options": [
         "当日に配ると、読むだけで会議の時間が過ぎてしまうからです。",
@@ -1720,7 +1723,8 @@
       "explanation": {
         "en": "The second sentence says papers given out on the spot use the meeting up simply in being read, and the third says reading in advance frees the meeting for opinions. Preparation actually became harder, not easier.",
         "zh": "第二句说当场发的资料光是读就把会议时间耗掉了，第三句说事先读过就能把会上的时间用来发表意见。准备工作反而变得更辛苦，而不是更轻松。",
-        "zh_TW": "第二句說當場發的資料光是讀就把會議時間耗掉了，第三句說事先讀過就能把會上的時間用來發表意見。準備工作反而變得更辛苦，而不是更輕鬆。"
+        "zh_TW": "第二句說當場發的資料光是讀就把會議時間耗掉了，第三句說事先讀過就能把會上的時間用來發表意見。準備工作反而變得更辛苦，而不是更輕鬆。",
+        "ja": "当日配られた資料は読むだけで会議の時間が過ぎてしまうためであり、前もって読んでおけば会議では意見を出す時間に使える。"
       }
     },
     {
@@ -1735,7 +1739,8 @@
       "prompt": {
         "en": "How does the shopkeeper see this umbrella lending?",
         "zh": "店里的人是怎么看待这项借伞服务的？",
-        "zh_TW": "店裡的人是怎麼看待這項借傘服務的？"
+        "zh_TW": "店裡的人是怎麼看待這項借傘服務的？",
+        "ja": "店の人はこの傘の貸し出しをどう考えていますか。"
       },
       "options": [
         "借りた人がまた店に来てくれるので、それで十分だと考えています。",
@@ -1747,7 +1752,8 @@
       "explanation": {
         "en": "The last sentence states the shopkeeper's view directly: the borrowers come back to the shop, and that in itself is enough. Over ninety percent of the umbrellas return, no deadline is wanted, and nothing is charged.",
         "zh": "最后一句直接说明了店主的想法：借伞的人会再来店里，这样就够了。九成以上的伞都会还回来，店里既没有想定期限，也没有收费的意思。",
-        "zh_TW": "最後一句直接說明了店主的想法：借傘的人會再來店裡，這樣就夠了。九成以上的傘都會還回來，店裡既沒有想定期限，也沒有收費的意思。"
+        "zh_TW": "最後一句直接說明了店主的想法：借傘的人會再來店裡，這樣就夠了。九成以上的傘都會還回來，店裡既沒有想定期限，也沒有收費的意思。",
+        "ja": "最後の文で店の人の考えが述べられている。借りた人がまた店に来てくれるので、それで十分だと考えている。"
       }
     },
     {
@@ -1762,7 +1768,8 @@
       "prompt": {
         "en": "How does the writer feel about moving house now?",
         "zh": "对于搬家这件事，作者现在是怎么想的？",
-        "zh_TW": "對於搬家這件事，作者現在是怎麼想的？"
+        "zh_TW": "對於搬家這件事，作者現在是怎麼想的？",
+        "ja": "筆者は引っ越しについて今どう思っていますか。"
       },
       "options": [
         "家賃は上がったが、お金で時間を買ったようなものだと思っています。",
@@ -1774,7 +1781,8 @@
       "explanation": {
         "en": "The second sentence admits the rent rose but says more than an hour a day was gained, and the last sentence sums it up as buying time with money. The commute became shorter and free time increased, so the other three all reverse the text.",
         "zh": "第二句承认房租涨了，但每天多出一个多小时；最后一句把这件事总结为用钱买来了时间。通勤变短、自由时间增加，因此其余三项都与原文相反。",
-        "zh_TW": "第二句承認房租漲了，但每天多出一個多小時；最後一句把這件事總結為用錢買來了時間。通勤變短、自由時間增加，因此其餘三項都與原文相反。"
+        "zh_TW": "第二句承認房租漲了，但每天多出一個多小時；最後一句把這件事總結為用錢買來了時間。通勤變短、自由時間增加，因此其餘三項都與原文相反。",
+        "ja": "家賃が上がったことを認めつつ、一時間以上の自由な時間が手に入ったとし、お金で時間を買ったようなものだと結んでいる。"
       }
     },
     {
@@ -1788,7 +1796,8 @@
       "prompt": {
         "en": "Why does the writer eat where the local people gather?",
         "zh": "作者为什么要去当地人常聚的店里吃饭？",
-        "zh_TW": "作者為什麼要去當地人常聚的店裡吃飯？"
+        "zh_TW": "作者為什麼要去當地人常聚的店裡吃飯？",
+        "ja": "筆者はどうしてその町の人が集まる店で食事をするのですか。"
       },
       "options": [
         "安くておいしいうえに、その町の暮らしがよく分かるからです。",
@@ -1800,7 +1809,8 @@
       "explanation": {
         "en": "The second sentence gives price and taste, and the third says that more than that, you can see how people in the town live. Crowding, expenses and making friends are never mentioned.",
         "zh": "第二句讲的是价格和味道，第三句说更重要的是能了解那座城市里人们的生活。文中没有提到店里拥挤、公司报销，也没有说要交朋友。",
-        "zh_TW": "第二句講的是價格和味道，第三句說更重要的是能瞭解那座城市裡人們的生活。文中沒有提到店裡擁擠、公司報銷，也沒有說要交朋友。"
+        "zh_TW": "第二句講的是價格和味道，第三句說更重要的是能瞭解那座城市裡人們的生活。文中沒有提到店裡擁擠、公司報銷，也沒有說要交朋友。",
+        "ja": "値段が安く味もいいことに加え、その町の人がどんな暮らしをしているかがよく分かるからである。"
       }
     },
     {
@@ -1814,7 +1824,8 @@
       "prompt": {
         "en": "Who objected to the city's plan, and why?",
         "zh": "是谁反对市里的计划？理由是什么？",
-        "zh_TW": "是誰反對市裡的計劃？理由是什麼？"
+        "zh_TW": "是誰反對市裡的計劃？理由是什麼？",
+        "ja": "市の計画に反対したのは誰で、その理由は何ですか。"
       },
       "options": [
         "古い建物を借りて店を始めていた若い人たちです。",
@@ -1826,7 +1837,8 @@
       "explanation": {
         "en": "The third sentence says explicitly that it was not the residents but young shopkeepers, and the fourth explains why: they had rented the old buildings and started using them as shops. Older residents, companies and the builders' families do not appear.",
         "zh": "第三句明确指出反对的不是住户，而是年轻的店主；第四句说明了理由：他们租下老房子，已经开始当作店铺使用。文中没有出现老住户、公司或建造者的家人。",
-        "zh_TW": "第三句明確指出反對的不是住戶，而是年輕的店主；第四句說明了理由：他們租下老房子，已經開始當作店鋪使用。文中沒有出現老住戶、公司或建造者的家人。"
+        "zh_TW": "第三句明確指出反對的不是住戶，而是年輕的店主；第四句說明了理由：他們租下老房子，已經開始當作店鋪使用。文中沒有出現老住戶、公司或建造者的家人。",
+        "ja": "反対したのはそこに住む人たちではなく、古い建物を借りて店を始めていた若い人たちであり、店として使い始めていたことが理由である。"
       }
     },
     {
@@ -1841,7 +1853,8 @@
       "prompt": {
         "en": "What did the city finally do, and what came of it?",
         "zh": "市里最后是怎么做的？结果如何？",
-        "zh_TW": "市裡最後是怎麼做的？結果如何？"
+        "zh_TW": "市裡最後是怎麼做的？結果如何？",
+        "ja": "市は最後にどうし、その結果どうなりましたか。"
       },
       "options": [
         "計画を見直して建物を残し、通りを歩く人も店も増えました。",
@@ -1853,7 +1866,8 @@
       "explanation": {
         "en": "The fifth sentence says the plan was reviewed and the road moved so the buildings could stay; the sixth gives the outcome, three times as many walkers at weekends and new shops around. The buildings were neither demolished nor rebuilt.",
         "zh": "第五句说市里重新审视计划，改变道路位置以保留建筑；第六句给出了结果：周末走在街上的人多了三倍，周边也开了新店。建筑既没有被拆掉，也没有被重建。",
-        "zh_TW": "第五句說市裡重新審視計劃，改變道路位置以保留建築；第六句給出了結果：週末走在街上的人多了三倍，周邊也開了新店。建築既沒有被拆掉，也沒有被重建。"
+        "zh_TW": "第五句說市裡重新審視計劃，改變道路位置以保留建築；第六句給出了結果：週末走在街上的人多了三倍，周邊也開了新店。建築既沒有被拆掉，也沒有被重建。",
+        "ja": "市は計画を見直し、道の位置を変えて建物を残すことにした。その結果、通りを歩く人が三倍に増え、周辺の店も増えた。"
       }
     },
     {
@@ -1867,7 +1881,8 @@
       "prompt": {
         "en": "What does the writer say about the significance of keeping old buildings?",
         "zh": "关于保留老建筑的意义，作者是怎么说的？",
-        "zh_TW": "關於保留老建築的意義，作者是怎麼說的？"
+        "zh_TW": "關於保留老建築的意義，作者是怎麼說的？",
+        "ja": "古い建物を残すことの意義について、筆者は何と言っていますか。"
       },
       "options": [
         "昔を思い出すためだけでなく、町の将来を考えることでもあります。",
@@ -1879,7 +1894,8 @@
       "explanation": {
         "en": "The last two sentences say the significance does not lie only in remembering the past: it is also a question of how the town's future is imagined. The text does not ask anyone to live as they did before, and the road was moved rather than abandoned.",
         "zh": "最后两句说，其意义并不只在于回忆过去，同时也是如何思考小镇未来的问题。文中并没有要求居民保持旧日的生活，道路也只是改了位置而非取消。",
-        "zh_TW": "最後兩句說，其意義並不只在於回憶過去，同時也是如何思考小鎮未來的問題。文中並沒有要求居民保持舊日的生活，道路也只是改了位置而非取消。"
+        "zh_TW": "最後兩句說，其意義並不只在於回憶過去，同時也是如何思考小鎮未來的問題。文中並沒有要求居民保持舊日的生活，道路也只是改了位置而非取消。",
+        "ja": "最後の二文で、昔を思い出すためだけではなく、町の将来をどう考えるかという問題でもあると述べている。"
       }
     },
     {
@@ -1894,7 +1910,8 @@
       "prompt": {
         "en": "Why were many employees glad when working from home began?",
         "zh": "开始在家办公时，为什么许多员工感到高兴？",
-        "zh_TW": "開始在家辦公時，為什麼許多員工感到高興？"
+        "zh_TW": "開始在家辦公時，為什麼許多員工感到高興？",
+        "ja": "在宅勤務が始まったとき、多くの社員はどうして喜んだのですか。"
       },
       "options": [
         "通勤に使っていた時間がなくなったからです。",
@@ -1906,7 +1923,8 @@
       "explanation": {
         "en": "The second sentence states it: the time spent commuting disappeared, and many said it was a great help. The one-day-a-week office day came later as a fix, and neither pay nor meetings changed at that point.",
         "zh": "第二句写得很清楚：通勤所花的时间没有了，很多人说帮了大忙。每周一天到岗是后来的补救措施，当时工资和开会的安排都没有变化。",
-        "zh_TW": "第二句寫得很清楚：通勤所花的時間沒有了，很多人說幫了大忙。每週一天到崗是後來的補救措施，當時工資和開會的安排都沒有變化。"
+        "zh_TW": "第二句寫得很清楚：通勤所花的時間沒有了，很多人說幫了大忙。每週一天到崗是後來的補救措施，當時工資和開會的安排都沒有變化。",
+        "ja": "通勤に使っていた時間がなくなったからであり、多くの社員が助かったと言ったと書かれている。"
       }
     },
     {
@@ -1920,7 +1938,8 @@
       "prompt": {
         "en": "What did the company do about the problem that appeared after six months?",
         "zh": "针对半年后出现的问题，公司采取了什么做法？",
-        "zh_TW": "針對半年後出現的問題，公司採取了什麼做法？"
+        "zh_TW": "針對半年後出現的問題，公司採取了什麼做法？",
+        "ja": "半年後に現れた問題に対して、会社はどうしましたか。"
       },
       "options": [
         "週に一度、全員が出勤して自由に話せる日を作りました。",
@@ -1932,7 +1951,8 @@
       "explanation": {
         "en": "The fifth and sixth sentences give the measure: one day a week when everyone comes in, with no meetings booked so people can talk freely at their desks. Home working was kept, and meetings were removed from that day rather than increased.",
         "zh": "第五、六句说明了做法：每周一天全员到岗，那天不安排会议，让大家在座位上自由交谈。在家办公得以保留，那天的会议是被取消而不是增加。",
-        "zh_TW": "第五、六句說明了做法：每週一天全員到崗，那天不安排會議，讓大家在座位上自由交談。在家辦公得以保留，那天的會議是被取消而不是增加。"
+        "zh_TW": "第五、六句說明了做法：每週一天全員到崗，那天不安排會議，讓大家在座位上自由交談。在家辦公得以保留，那天的會議是被取消而不是增加。",
+        "ja": "会社は週に一度、全員が出勤する日を決め、その日は会議を入れずに自由に話せるようにした。"
       }
     },
     {
@@ -1946,7 +1966,8 @@
       "prompt": {
         "en": "What does the writer think changing the way people work requires?",
         "zh": "作者认为改变工作方式时需要什么？",
-        "zh_TW": "作者認為改變工作方式時需要什麼？"
+        "zh_TW": "作者認為改變工作方式時需要什麼？",
+        "ja": "働き方を変えるには何が必要だと筆者は考えていますか。"
       },
       "options": [
         "便利さだけでなく、失うものにも目を向ける姿勢です。",
@@ -1958,7 +1979,8 @@
       "explanation": {
         "en": "The final sentence says exactly this: an attitude that looks not only at convenience but also at what is lost. The company in fact changed its new arrangement after six months, and shortening hours is never the writer's theme.",
         "zh": "最后一句正是这个意思：不能只看方便之处，还要正视失去的东西。公司实际上在半年后修改了新做法，缩短工时也不是作者讨论的主题。",
-        "zh_TW": "最後一句正是這個意思：不能只看方便之處，還要正視失去的東西。公司實際上在半年後修改了新做法，縮短工時也不是作者討論的主題。"
+        "zh_TW": "最後一句正是這個意思：不能只看方便之處，還要正視失去的東西。公司實際上在半年後修改了新做法，縮短工時也不是作者討論的主題。",
+        "ja": "便利さだけでなく、失うものにも目を向ける姿勢が必要だと最後に述べている。"
       }
     },
     {
@@ -1973,7 +1995,8 @@
       "prompt": {
         "en": "What is happening to library loans and to visitor numbers?",
         "zh": "图书馆的外借数量和来馆人数分别在发生什么变化？",
-        "zh_TW": "圖書館的外借數量和來館人數分別在發生什麼變化？"
+        "zh_TW": "圖書館的外借數量和來館人數分別在發生什麼變化？",
+        "ja": "図書館の貸し出し数と来館者数はそれぞれどうなっていますか。"
       },
       "options": [
         "貸し出しの数は減っていますが、訪れる人の数は増えています。",
@@ -1985,7 +2008,8 @@
       "explanation": {
         "en": "The second sentence cites figures putting loans at about seventy percent of ten years ago, and the third says visitors are if anything increasing. The two numbers move in opposite directions, which is the point of the passage.",
         "zh": "第二句引用统计说外借量只有十年前的七成左右，第三句则说来馆人数反而在增加。两个数字方向相反，这正是文章的重点。",
-        "zh_TW": "第二句引用統計說外借量只有十年前的七成左右，第三句則說來館人數反而在增加。兩個數字方向相反，這正是文章的重點。"
+        "zh_TW": "第二句引用統計說外借量只有十年前的七成左右，第三句則說來館人數反而在增加。兩個數字方向相反，這正是文章的重點。",
+        "ja": "統計によれば貸し出しの数は十年前より少ないが、訪れる人の数はむしろ増えている。"
       }
     },
     {
@@ -1999,7 +2023,8 @@
       "prompt": {
         "en": "What is held in the small room that one library made?",
         "zh": "某图书馆开辟的那个小房间里举办着什么？",
-        "zh_TW": "某圖書館開闢的那個小房間裡舉辦著什麼？"
+        "zh_TW": "某圖書館開闢的那個小房間裡舉辦著什麼？",
+        "ja": "ある図書館が作った小さな部屋では何が開かれていますか。"
       },
       "options": [
         "料理を教える催しや、子どもに本を読む会です。",
@@ -2011,7 +2036,8 @@
       "explanation": {
         "en": "The sixth sentence names both: events teaching cookery and gatherings where books are read to children. Book sales, examinations and newspaper work appear nowhere in the text.",
         "zh": "第六句列出了两项：教做菜的活动和给孩子读书的聚会。文中完全没有出现卖书、考试或办报纸的内容。",
-        "zh_TW": "第六句列出了兩項：教做菜的活動和給孩子讀書的聚會。文中完全沒有出現賣書、考試或辦報紙的內容。"
+        "zh_TW": "第六句列出了兩項：教做菜的活動和給孩子讀書的聚會。文中完全沒有出現賣書、考試或辦報紙的內容。",
+        "ja": "料理を教える催しや、子どもに本を読む会が開かれている。"
       }
     },
     {
@@ -2026,7 +2052,8 @@
       "prompt": {
         "en": "Where does the writer say the significance of today's library lies?",
         "zh": "作者认为如今图书馆的意义在于什么？",
-        "zh_TW": "作者認為如今圖書館的意義在於什麼？"
+        "zh_TW": "作者認為如今圖書館的意義在於什麼？",
+        "ja": "今の図書館の意義はどこにあると筆者は言っていますか。"
       },
       "options": [
         "人が集まる場所として見直されているところにあります。",
@@ -2038,7 +2065,8 @@
       "explanation": {
         "en": "The last two sentences argue that a library which only lent books would stop being needed, and locate its significance in being seen anew as a place where people gather. Lending more, adding seats and keeping old newspapers are not what the writer values.",
         "zh": "最后两句指出，只借书的图书馆确实会变得不再被需要，其意义在于作为人们聚集之所而被重新认识。多借书、增加座位、保存旧报纸都不是作者所强调的。",
-        "zh_TW": "最後兩句指出，只借書的圖書館確實會變得不再被需要，其意義在於作為人們聚集之所而被重新認識。多借書、增加座位、保存舊報紙都不是作者所強調的。"
+        "zh_TW": "最後兩句指出，只借書的圖書館確實會變得不再被需要，其意義在於作為人們聚集之所而被重新認識。多借書、增加座位、保存舊報紙都不是作者所強調的。",
+        "ja": "本を貸すだけの場所であれば必要でなくなるが、人が集まる場所として見直されているところに意義があると述べている。"
       }
     },
     {
@@ -2052,7 +2080,8 @@
       "prompt": {
         "en": "What idea do the two opinions have in common?",
         "zh": "两种意见共同具有的想法是什么？",
-        "zh_TW": "兩種意見共同具有的想法是什麼？"
+        "zh_TW": "兩種意見共同具有的想法是什麼？",
+        "ja": "二つの意見に共通する考えは何ですか。"
       },
       "options": [
         "小学校では、何かの力や興味を育てることが大切だという考えです。",
@@ -2064,7 +2093,8 @@
       "explanation": {
         "en": "The side in favour wants interest in other countries nurtured, and the side against wants the power to think in Japanese nurtured; both talk about what should be grown in a child at primary school. Only the second opinion mentions starting later, and neither asks for more lessons.",
         "zh": "赞成的一方主张培养对外国的兴趣，反对的一方主张培养用日语思考的能力，两者谈的都是在小学阶段该培养什么。推迟到中学只是反对方的立场，双方也都没有要求增加课时。",
-        "zh_TW": "贊成的一方主張培養對外國的興趣，反對的一方主張培養用日語思考的能力，兩者談的都是在小學階段該培養什麼。推遲到中學只是反對方的立場，雙方也都沒有要求增加課時。"
+        "zh_TW": "贊成的一方主張培養對外國的興趣，反對的一方主張培養用日語思考的能力，兩者談的都是在小學階段該培養什麼。推遲到中學只是反對方的立場，雙方也都沒有要求增加課時。",
+        "ja": "賛成側は外国への興味を育てることを、反対側は日本語で考える力を育てることを重視しており、どちらも小学校で何を育てるべきかを論じている。"
       }
     },
     {
@@ -2078,7 +2108,8 @@
       "prompt": {
         "en": "What do both opinions say?",
         "zh": "两种意见都提到的是什么？",
-        "zh_TW": "兩種意見都提到的是什麼？"
+        "zh_TW": "兩種意見都提到的是什麼？",
+        "ja": "二つの意見が共に述べていることは何ですか。"
       },
       "options": [
         "持たせるなら、家庭で使い方の方針を決める必要があります。",
@@ -2090,7 +2121,8 @@
       "explanation": {
         "en": "The last sentence states the shared ground: if a child is to have a phone, the family must set a policy for its use. Not giving one at all is only the second opinion, and teaching at school is never proposed.",
         "zh": "最后一句写明了双方的共识：如果要让孩子带手机，家里必须先定下使用的方针。不让孩子带只是其中一方的看法，文中也没有提出由学校来教。",
-        "zh_TW": "最後一句寫明瞭雙方的共識：如果要讓孩子帶手機，家裡必須先定下使用的方針。不讓孩子帶只是其中一方的看法，文中也沒有提出由學校來教。"
+        "zh_TW": "最後一句寫明瞭雙方的共識：如果要讓孩子帶手機，家裡必須先定下使用的方針。不讓孩子帶只是其中一方的看法，文中也沒有提出由學校來教。",
+        "ja": "最後の文にある通り、携帯電話を持たせるなら家庭で使い方の方針を決める必要があるという点で一致している。"
       }
     },
     {
@@ -2106,7 +2138,8 @@
       "prompt": {
         "en": "Why does the writer think failures should be written down?",
         "zh": "作者为什么认为应该把失败写下来？",
-        "zh_TW": "作者為什麼認為應該把失敗寫下來？"
+        "zh_TW": "作者為什麼認為應該把失敗寫下來？",
+        "ja": "筆者はどうして失敗を書いておくべきだと考えているのですか。"
       },
       "options": [
         "記憶は都合よく変わり、失敗の理由が運のせいになってしまうからです。",
@@ -2118,7 +2151,8 @@
       "explanation": {
         "en": "The third and fourth sentences give the reason: memory reshapes itself to suit us, and in time the cause of a failure shrinks to the phrase that we were unlucky. The record is for the writer alone, and its purpose is preventing a repeat, not counting failures.",
         "zh": "第三、四句说明了理由：记忆会朝对自己有利的方向改变，久而久之失败的原因就只剩下运气不好这一句。这份记录只给自己看，目的是防止重蹈覆辙，而不是统计失败的数量。",
-        "zh_TW": "第三、四句說明了理由：記憶會朝對自己有利的方向改變，久而久之失敗的原因就只剩下運氣不好這一句。這份記錄只給自己看，目的是防止重蹈覆轍，而不是統計失敗的數量。"
+        "zh_TW": "第三、四句說明了理由：記憶會朝對自己有利的方向改變，久而久之失敗的原因就只剩下運氣不好這一句。這份記錄只給自己看，目的是防止重蹈覆轍，而不是統計失敗的數量。",
+        "ja": "記憶は自分に都合よく形を変え、時間がたつと失敗の理由が運のせいだという一言に変わってしまうからである。"
       }
     },
     {
@@ -2132,7 +2166,8 @@
       "prompt": {
         "en": "What does the writer most want to say?",
         "zh": "作者最想说的是什么？",
-        "zh_TW": "作者最想說的是什麼？"
+        "zh_TW": "作者最想說的是什麼？",
+        "ja": "筆者が一番言いたいことは何ですか。"
       },
       "options": [
         "便利になった分だけ、人と会う機会を自分で作る必要があります。",
@@ -2144,7 +2179,8 @@
       "explanation": {
         "en": "The ninth sentence rules out opposition to the big shop, and the tenth and eleventh say the point: convenience leaves time to spare but does not decide its use, so meetings with others must be made deliberately. Nothing is claimed about small shops being cheaper.",
         "zh": "第九句明确否认反对大商店，第十、十一句道出主旨：方便省下了时间，却不会替人决定怎么用，因此必须自己去创造与人见面的机会。文中并未说小店更便宜。",
-        "zh_TW": "第九句明確否認反對大商店，第十、十一句道出主旨：方便省下了時間，卻不會替人決定怎麼用，因此必須自己去創造與人見面的機會。文中並未說小店更便宜。"
+        "zh_TW": "第九句明確否認反對大商店，第十、十一句道出主旨：方便省下了時間，卻不會替人決定怎麼用，因此必須自己去創造與人見面的機會。文中並未說小店更便宜。",
+        "ja": "大きな店への反対は否定したうえで、便利になった分だけ人と会う機会を自分で作る必要があると述べている。"
       }
     },
     {
@@ -2159,7 +2195,8 @@
       "prompt": {
         "en": "Why does the writer have students write their own thoughts for five minutes first?",
         "zh": "作者为什么要让学生先花五分钟写下自己的想法？",
-        "zh_TW": "作者為什麼要讓學生先花五分鐘寫下自己的想法？"
+        "zh_TW": "作者為什麼要讓學生先花五分鐘寫下自己的想法？",
+        "ja": "筆者はどうして学生にまず五分間、自分の考えを書かせているのですか。"
       },
       "options": [
         "自分が何を分かっていないのかを知るためです。",
@@ -2171,7 +2208,8 @@
       "explanation": {
         "en": "The eighth and ninth sentences say the five minutes are not for producing an answer but for finding out what one does not understand, and the tenth adds that only then does looking things up become useful. Writing skill and speed of searching are not the aim.",
         "zh": "第八、九句说这五分钟不是为了得出答案，而是为了弄清自己哪里不明白，第十句补充说唯有如此查到的东西才真正有用。提高写作能力或缩短查找时间都不是目的。",
-        "zh_TW": "第八、九句說這五分鐘不是為了得出答案，而是為了弄清自己哪裡不明白，第十句補充說唯有如此查到的東西才真正有用。提高寫作能力或縮短查找時間都不是目的。"
+        "zh_TW": "第八、九句說這五分鐘不是為了得出答案，而是為了弄清自己哪裡不明白，第十句補充說唯有如此查到的東西才真正有用。提高寫作能力或縮短查找時間都不是目的。",
+        "ja": "その五分は答えを出すためではなく、自分が何を分かっていないのかを知るための時間であり、それが分かって初めて調べたことが役に立つからである。"
       }
     },
     {
@@ -2187,7 +2225,8 @@
       "prompt": {
         "en": "Someone wants to use water at ten in the morning on the 11th. What should that person do?",
         "zh": "有人想在十一日上午十点用水，应该怎么做？",
-        "zh_TW": "有人想在十一日上午十點用水，應該怎麼做？"
+        "zh_TW": "有人想在十一日上午十點用水，應該怎麼做？",
+        "ja": "十一日の午前十時に水を使いたい人はどうすればいいですか。"
       },
       "options": [
         "前の日までに、自分で水を用意しておきます。",
@@ -2199,7 +2238,8 @@
       "explanation": {
         "en": "The 11th falls inside the 10th-to-12th period, when water cannot be used from nine to three, and the notice tells those who need water to prepare it themselves by the day before. Only the 12th is a full day of water, the office answers enquiries rather than handing out water, and nobody enters the rooms.",
         "zh": "十一日处于十日至十二日的施工期间内，九点至三点无法用水，通知要求需要用水的人前一天自行准备。全天可用水的只有十二日；服务窗口只受理咨询而不发水，施工人员也不会进入室内。",
-        "zh_TW": "十一日處於十日至十二日的施工期間內，九點至三點無法用水，通知要求需要用水的人前一天自行準備。全天可用水的只有十二日；服務窗口只受理諮詢而不發水，施工人員也不會進入室內。"
+        "zh_TW": "十一日處於十日至十二日的施工期間內，九點至三點無法用水，通知要求需要用水的人前一天自行準備。全天可用水的只有十二日；服務窗口只受理諮詢而不發水，施工人員也不會進入室內。",
+        "ja": "十一日は九時から三時まで水が使えない工事期間にあたるため、通知に従い水が必要な人は前の日までに自分で用意しておく必要がある。"
       }
     },
     {
@@ -2215,7 +2255,8 @@
       "prompt": {
         "en": "A seventy-year-old is applying for the first time. Which statement is correct?",
         "zh": "一位七十岁、第一次报名的人，下列哪一项说法正确？",
-        "zh_TW": "一位七十歲、第一次報名的人，下列哪一項說法正確？"
+        "zh_TW": "一位七十歲、第一次報名的人，下列哪一項說法正確？",
+        "ja": "初めて申し込む七十歳の人について、正しいのはどれですか。"
       },
       "options": [
         "三月十五日までに申し込めば、二千円で全六回参加できます。",
@@ -2227,7 +2268,8 @@
       "explanation": {
         "en": "The fee is three thousand yen for six sessions, with a discount to two thousand for those sixty-five and over, and applications close on 15 March. First-timers are given priority when there are many applicants, but that does not extend the deadline, and the city supplies the ingredients.",
         "zh": "参加费为六次三千日元，六十五岁以上优惠为两千日元，报名截止于三月十五日。首次参加者只是在报名者多时被优先录取，并不能因此延后截止日期，食材也由市里准备。",
-        "zh_TW": "參加費為六次三千日元，六十五歲以上優惠為兩千日元，報名截止於三月十五日。首次參加者只是在報名者多時被優先錄取，並不能因此延後截止日期，食材也由市裡準備。"
+        "zh_TW": "參加費為六次三千日元，六十五歲以上優惠為兩千日元，報名截止於三月十五日。首次參加者只是在報名者多時被優先錄取，並不能因此延後截止日期，食材也由市裡準備。",
+        "ja": "参加費は全六回で三千円だが、六十五歳以上は二千円に割引され、申し込みは三月十五日までである。"
       }
     },
     {
@@ -2242,7 +2284,8 @@
       "prompt": {
         "en": "Why does the writer finish library books sooner than books he has bought?",
         "zh": "作者为什么读图书馆的书比读自己买的书更快？",
-        "zh_TW": "作者為什麼讀圖書館的書比讀自己買的書更快？"
+        "zh_TW": "作者為什麼讀圖書館的書比讀自己買的書更快？",
+        "ja": "筆者はどうして図書館の本のほうが自分で買った本より早く読み終わるのですか。"
       },
       "options": [
         "返す日が決まっていて、終わりが先に決まっているからです。",
@@ -2254,7 +2297,8 @@
       "explanation": {
         "en": "The last sentence says that having a fixed end is what gives the writer the strength to read; the two-week limit is the fixed end. Nothing is said about library books being more interesting, about a lack of desk space, or about reading inside the library.",
         "zh": "最后一句说，正因为结束的期限已经定好，才成了读下去的动力，而两周的借期就是那个期限。文中没有说图书馆的书更有趣，也没提桌子不够放或在馆内安静阅读。",
-        "zh_TW": "最後一句說，正因為結束的期限已經定好，才成了讀下去的動力，而兩週的借期就是那個期限。文中沒有說圖書館的書更有趣，也沒提桌子不夠放或在館內安靜閱讀。"
+        "zh_TW": "最後一句說，正因為結束的期限已經定好，才成了讀下去的動力，而兩週的借期就是那個期限。文中沒有說圖書館的書更有趣，也沒提桌子不夠放或在館內安靜閱讀。",
+        "ja": "返す日が決まっていて、終わりが先に決まっていることが、本を読む力になっているからである。"
       }
     },
     {
@@ -2268,7 +2312,8 @@
       "prompt": {
         "en": "What does the writer say is the real reason for getting off one station early?",
         "zh": "作者说，提前一站下车的真正理由是什么？",
-        "zh_TW": "作者說，提前一站下車的真正理由是什麼？"
+        "zh_TW": "作者說，提前一站下車的真正理由是什麼？",
+        "ja": "一つ前の駅で降りる本当の理由は何だと筆者は言っていますか。"
       },
       "options": [
         "電車の込む時間を避けたいからです。",
@@ -2280,7 +2325,8 @@
       "explanation": {
         "en": "The writer admits that saying it is for exercise merely sounds good, and the last sentence gives the real reason: while walking, the order of the day's work settles itself. Crowding and the difficulty of getting off are not mentioned.",
         "zh": "作者说，讲成是为了运动只是好听，真正的理由写在最后一句：走路时当天工作的顺序自然定下来。文中并未提到拥挤或不好下车。",
-        "zh_TW": "作者說，講成是為了運動只是好聽，真正的理由寫在最後一句：走路時當天工作的順序自然定下來。文中並未提到擁擠或不好下車。"
+        "zh_TW": "作者說，講成是為了運動只是好聽，真正的理由寫在最後一句：走路時當天工作的順序自然定下來。文中並未提到擁擠或不好下車。",
+        "ja": "運動のためだと言えば聞こえはいいが、本当は歩いている間にその日の仕事の順番が自然に決まっていくからである。"
       }
     },
     {
@@ -2294,7 +2340,8 @@
       "prompt": {
         "en": "Why does the writer take notes during meetings?",
         "zh": "作者为什么在会议上做记录？",
-        "zh_TW": "作者為什麼在會議上做記錄？"
+        "zh_TW": "作者為什麼在會議上做記錄？",
+        "ja": "筆者はどうして会議で記録を取るのですか。"
       },
       "options": [
         "会議に出なかった人に見せるためです。",
@@ -2306,7 +2353,8 @@
       "explanation": {
         "en": "The writer states directly that it is not in order to reread the notes, and gives the reason as grasping the gist while writing; the paper is often thrown away the same day. Showing it to others and staying awake are not mentioned.",
         "zh": "作者明确说不是为了以后重读，而是因为写着写着才能抓住谈话的要点，纸常常当天就扔掉。给别人看或为了不打瞌睡都没有提到。",
-        "zh_TW": "作者明確說不是為了以後重讀，而是因為寫著寫著才能抓住談話的要點，紙常常當天就扔掉。給別人看或為了不打瞌睡都沒有提到。"
+        "zh_TW": "作者明確說不是為了以後重讀，而是因為寫著寫著才能抓住談話的要點，紙常常當天就扔掉。給別人看或為了不打瞌睡都沒有提到。",
+        "ja": "後で読み返すためではなく、書いているうちに話の要領がつかめてくるからである。"
       }
     },
     {
@@ -2320,7 +2368,8 @@
       "prompt": {
         "en": "How does the writer regard the ten minutes now?",
         "zh": "作者现在如何看待这十分钟？",
-        "zh_TW": "作者現在如何看待這十分鐘？"
+        "zh_TW": "作者現在如何看待這十分鐘？",
+        "ja": "筆者は今、その十分をどう考えていますか。"
       },
       "options": [
         "その十分のおかげで午後の仕事が続くと考えています。",
@@ -2332,7 +2381,8 @@
       "explanation": {
         "en": "At first the rest felt like a waste, but the last sentence says the writer now thinks the afternoon's work keeps going thanks to those ten minutes. He does not ask for more time, and he speaks to nobody during them.",
         "zh": "起初他觉得休息浪费时间，但最后一句说，如今他认为正是有了这十分钟，下午的工作才能持续。他并没有要求延长，休息时也不与人交谈。",
-        "zh_TW": "起初他覺得休息浪費時間，但最後一句說，如今他認為正是有了這十分鐘，下午的工作才能持續。他並沒有要求延長，休息時也不與人交談。"
+        "zh_TW": "起初他覺得休息浪費時間，但最後一句說，如今他認為正是有了這十分鐘，下午的工作才能持續。他並沒有要求延長，休息時也不與人交談。",
+        "ja": "初めはもったいなく感じたが、今ではその十分があるおかげで午後の仕事が続くと考えている。"
       }
     },
     {
@@ -2346,7 +2396,8 @@
       "prompt": {
         "en": "What happened after the writer got rid of things this time?",
         "zh": "这次处理掉多余的东西之后，发生了什么？",
-        "zh_TW": "這次處理掉多餘的東西之後，發生了什麼？"
+        "zh_TW": "這次處理掉多餘的東西之後，發生了什麼？",
+        "ja": "今回、物を減らしたあとどうなりましたか。"
       },
       "options": [
         "引っ越しの費用が安くなりました。",
@@ -2358,7 +2409,8 @@
       "explanation": {
         "en": "The last sentence names both results: the room became larger and even the cleaning time grew shorter. Costs, regret over throwing away necessary things, and a change in shopping habits are not mentioned.",
         "zh": "最后一句同时写了两个结果：房间变宽敞，连打扫时间也缩短了。文中没有提到搬家费用、误扔必需品，或不再想买东西。",
-        "zh_TW": "最後一句同時寫了兩個結果：房間變寬敞，連打掃時間也縮短了。文中沒有提到搬家費用、誤扔必需品，或不再想買東西。"
+        "zh_TW": "最後一句同時寫了兩個結果：房間變寬敞，連打掃時間也縮短了。文中沒有提到搬家費用、誤扔必需品，或不再想買東西。",
+        "ja": "部屋が広くなっただけでなく、掃除の時間まで短くなった。"
       }
     },
     {
@@ -2372,7 +2424,8 @@
       "prompt": {
         "en": "What does the writer say she has lost by deciding the week's menu in advance?",
         "zh": "作者说，事先定好一周的菜单让她失去了什么？",
-        "zh_TW": "作者說，事先定好一週的菜單讓她失去了什麼？"
+        "zh_TW": "作者說，事先定好一週的菜單讓她失去了什麼？",
+        "ja": "一週間分の献立を先に決めることで、筆者は何を失ったと言っていますか。"
       },
       "options": [
         "買い物に出かける楽しみです。",
@@ -2384,7 +2437,8 @@
       "explanation": {
         "en": "The final sentence contrasts the two: the pleasure of choosing what she feels like eating has shrunk, while the time spent on cooking itself has grown. Shopping time went down, not the pleasure of shopping, and the family is not mentioned.",
         "zh": "最后一句作了对比：挑选当天想吃的东西那份乐趣少了，而花在做菜本身上的时间反而多了。减少的是买东西所花的时间，而非买东西的乐趣，文中也未提及家人。",
-        "zh_TW": "最後一句作了對比：挑選當天想吃的東西那份樂趣少了，而花在做菜本身上的時間反而多了。減少的是買東西所花的時間，而非買東西的樂趣，文中也未提及家人。"
+        "zh_TW": "最後一句作了對比：挑選當天想吃的東西那份樂趣少了，而花在做菜本身上的時間反而多了。減少的是買東西所花的時間，而非買東西的樂趣，文中也未提及家人。",
+        "ja": "その日に食べたい物を選ぶ楽しみが減った一方で、料理そのものにかける時間は増えたと述べている。"
       }
     },
     {
@@ -2398,7 +2452,8 @@
       "prompt": {
         "en": "What did the writer come to understand only after leaving the town?",
         "zh": "作者离开小镇之后才明白了什么？",
-        "zh_TW": "作者離開小鎮之後才明白了什麼？"
+        "zh_TW": "作者離開小鎮之後才明白了什麼？",
+        "ja": "町を出てから、筆者は何を分かるようになりましたか。"
       },
       "options": [
         "その行事が町の人をつなぐ日だったということです。",
@@ -2410,7 +2465,8 @@
       "explanation": {
         "en": "As a child the writer saw it merely as a day when people gathered; the third sentence says that after leaving he understood it was the day that tied the town's people together. Its age, any wish to stop it and the shops are not mentioned.",
         "zh": "小时候他只当那是人们聚会的日子，第三句说离开后才明白那是把镇上的人联结起来的日子。文中没有提到活动持续了多少年、有人想取消，或店铺休息。",
-        "zh_TW": "小時候他只當那是人們聚會的日子，第三句說離開後才明白那是把鎮上的人聯結起來的日子。文中沒有提到活動持續了多少年、有人想取消，或店鋪休息。"
+        "zh_TW": "小時候他只當那是人們聚會的日子，第三句說離開後才明白那是把鎮上的人聯結起來的日子。文中沒有提到活動持續了多少年、有人想取消，或店鋪休息。",
+        "ja": "その行事が町の人をつなぐ日だったということである。"
       }
     },
     {
@@ -2425,7 +2481,8 @@
       "prompt": {
         "en": "Why does the writer not get angry about the roadworks?",
         "zh": "作者为什么对这场施工并不生气？",
-        "zh_TW": "作者為什麼對這場施工並不生氣？"
+        "zh_TW": "作者為什麼對這場施工並不生氣？",
+        "ja": "筆者はどうして工事について怒らないのですか。"
       },
       "options": [
         "工事が来月で終わると聞いたからです。",
@@ -2437,7 +2494,8 @@
       "explanation": {
         "en": "The third sentence says that despite the noise and the traffic he does not get angry, because the workmen greet him properly each morning; the last sentence generalises this into seeing a human face. The noise is described as loud, and neither the end date nor the finished road is mentioned.",
         "zh": "第三句说，尽管吵闹、车也难行，他却不生气，因为施工的人每天早上都好好打招呼；最后一句把这归结为能否看见对方的脸。文中说噪音很吵，也没提完工日期或路面变好。",
-        "zh_TW": "第三句說，儘管吵鬧、車也難行，他卻不生氣，因為施工的人每天早上都好好打招呼；最後一句把這歸結為能否看見對方的臉。文中說噪音很吵，也沒提完工日期或路面變好。"
+        "zh_TW": "第三句說，儘管吵鬧、車也難行，他卻不生氣，因為施工的人每天早上都好好打招呼；最後一句把這歸結為能否看見對方的臉。文中說噪音很吵，也沒提完工日期或路面變好。",
+        "ja": "音がうるさくても、工事の人が毎朝きちんとあいさつをするので腹が立たないのである。"
       }
     },
     {
@@ -2451,7 +2509,8 @@
       "prompt": {
         "en": "What does the writer mean by calling the time in front of the shelves the real shopping?",
         "zh": "作者说在书架前走动的时间才是真正的购物，这是什么意思？",
-        "zh_TW": "作者說在書架前走動的時間才是真正的購物，這是什麼意思？"
+        "zh_TW": "作者說在書架前走動的時間才是真正的購物，這是什麼意思？",
+        "ja": "棚の前を歩く時間が本当の買い物だとは、どういう意味ですか。"
       },
       "options": [
         "本の値段をゆっくり比べられるということです。",
@@ -2463,7 +2522,8 @@
       "explanation": {
         "en": "The writer says that without the shop he would read only books he already knows about, so what he gains by walking along the shelves is an encounter with books he did not know. Prices, talking to the staff and reading the whole book in the shop are not mentioned.",
         "zh": "作者说，如果没有那家店，他大概只会读自己已经知道的书，可见在书架前走动的收获是遇见未知的书。文中没有提比价、与店员交谈或在店里读完全书。",
-        "zh_TW": "作者說，如果沒有那家店，他大概只會讀自己已經知道的書，可見在書架前走動的收穫是遇見未知的書。文中沒有提比價、與店員交談或在店裡讀完全書。"
+        "zh_TW": "作者說，如果沒有那家店，他大概只會讀自己已經知道的書，可見在書架前走動的收穫是遇見未知的書。文中沒有提比價、與店員交談或在店裡讀完全書。",
+        "ja": "その店がなければ自分の知っている本しか読まないだろうと述べており、棚の前で自分が知らなかった本に出会えることを言っている。"
       }
     },
     {
@@ -2479,7 +2539,8 @@
       "prompt": {
         "en": "Why does the writer say he is the one who learns more?",
         "zh": "作者为什么说学到更多的反而是自己？",
-        "zh_TW": "作者為什麼說學到更多的反而是自己？"
+        "zh_TW": "作者為什麼說學到更多的反而是自己？",
+        "ja": "筆者はどうして自分のほうが学ぶことが多いと言っているのですか。"
       },
       "options": [
         "後輩のほうが新しい知識を持っているからです。",
@@ -2491,7 +2552,8 @@
       "explanation": {
         "en": "The third sentence gives the reason: the juniors ask about things the writer has done for years without thinking, and explaining shows him the shape of his own work. New knowledge, preparation and training for seniors are not mentioned.",
         "zh": "第三句给出了理由：后辈问的都是他多年来不假思索就做下来的事，而解释的过程让他看清自己工作的样子。文中未提后辈掌握新知识、准备培训，或公司让上级也参加培训。",
-        "zh_TW": "第三句給出了理由：後輩問的都是他多年來不假思索就做下來的事，而解釋的過程讓他看清自己工作的樣子。文中未提後輩掌握新知識、準備培訓，或公司讓上級也參加培訓。"
+        "zh_TW": "第三句給出了理由：後輩問的都是他多年來不假思索就做下來的事，而解釋的過程讓他看清自己工作的樣子。文中未提後輩掌握新知識、準備培訓，或公司讓上級也參加培訓。",
+        "ja": "後輩の質問は、彼が長い間考えずにしてきたことばかりであり、説明して初めて自分の仕事の形が見えてくるからである。"
       }
     },
     {
@@ -2505,7 +2567,8 @@
       "prompt": {
         "en": "Why did the shopkeepers get together three years ago?",
         "zh": "三年前，店主们为什么聚在一起？",
-        "zh_TW": "三年前，店主們為什麼聚在一起？"
+        "zh_TW": "三年前，店主們為什麼聚在一起？",
+        "ja": "三年前、店の人たちはどうして集まったのですか。"
       },
       "options": [
         "近くに大きな店ができて、客がずいぶん減ったからです。",
@@ -2517,7 +2580,8 @@
       "explanation": {
         "en": "The second sentence explains the situation: since a large store opened nearby, customer numbers had fallen sharply, and the third sentence says that this led them to meet and rethink the street. The road's condition, a move and the events all come later or not at all.",
         "zh": "第二句说明了背景：附近开了大商场后客人锐减，第三句接着说他们因此聚在一起重新考虑这条街。路况变差、搬迁都没有提及，活动的事则是后来才出现的。",
-        "zh_TW": "第二句說明了背景：附近開了大商場後客人銳減，第三句接著說他們因此聚在一起重新考慮這條街。路況變差、搬遷都沒有提及，活動的事則是後來才出現的。"
+        "zh_TW": "第二句說明了背景：附近開了大商場後客人銳減，第三句接著說他們因此聚在一起重新考慮這條街。路況變差、搬遷都沒有提及，活動的事則是後來才出現的。",
+        "ja": "近くに大きな店ができて客の数がずいぶん減ったため、通りの使い方を見直すことにしたのである。"
       }
     },
     {
@@ -2531,7 +2595,8 @@
       "prompt": {
         "en": "What was the effect of the day on which cars were kept out of the street?",
         "zh": "设立禁止汽车进入的日子，带来了什么效果？",
-        "zh_TW": "設立禁止汽車進入的日子，帶來了什麼效果？"
+        "zh_TW": "設立禁止汽車進入的日子，帶來了什麼效果？",
+        "ja": "車を通りに入れない日を作ったことで、どんな効果がありましたか。"
       },
       "options": [
         "近くの大きな店の客が減りました。",
@@ -2543,7 +2608,8 @@
       "explanation": {
         "en": "The fifth sentence names the effect: children could play safely, so more customers came as families. The text says expressly that customers did not come back at once, and nothing is said about the large store or the number of shops.",
         "zh": "第五句写明了效果：孩子能放心玩耍，于是全家一起来的客人多了。文中明确说客人并没有马上回流，也没有提大商场或店铺数量。",
-        "zh_TW": "第五句寫明瞭效果：孩子能放心玩耍，於是全家一起來的客人多了。文中明確說客人並沒有馬上回流，也沒有提大商場或店鋪數量。"
+        "zh_TW": "第五句寫明瞭效果：孩子能放心玩耍，於是全家一起來的客人多了。文中明確說客人並沒有馬上回流，也沒有提大商場或店鋪數量。",
+        "ja": "子どもが安心して遊べるようになり、家族で来る客が増えた。"
       }
     },
     {
@@ -2557,7 +2623,8 @@
       "prompt": {
         "en": "What do the people of the street consider the most important change?",
         "zh": "这条街上的人认为最重要的变化是什么？",
-        "zh_TW": "這條街上的人認為最重要的變化是什麼？"
+        "zh_TW": "這條街上的人認為最重要的變化是什麼？",
+        "ja": "通りの人たちが最も大きいと考えている変化は何ですか。"
       },
       "options": [
         "客の数が元に戻ったことです。",
@@ -2569,7 +2636,8 @@
       "explanation": {
         "en": "The seventh sentence says everyone considers it above all important that the shopkeepers began to think and act for themselves. The rise to four events a year is the present state rather than what they call most important, the customers have not fully returned, and the town's help is not mentioned.",
         "zh": "第七句说，大家认为最重要的是店主们开始自己思考、自己行动。活动增至一年四次只是现状，客人并未完全回流，文中也没有提到镇上提供工具。",
-        "zh_TW": "第七句說，大家認為最重要的是店主們開始自己思考、自己行動。活動增至一年四次只是現狀，客人並未完全迴流，文中也沒有提到鎮上提供工具。"
+        "zh_TW": "第七句說，大家認為最重要的是店主們開始自己思考、自己行動。活動增至一年四次只是現狀，客人並未完全迴流，文中也沒有提到鎮上提供工具。",
+        "ja": "客がすぐに戻ったわけではないが、店の人たちが自分で考えて動き始めたことが何より大きいと、みんなが言っている。"
       }
     },
     {
@@ -2583,7 +2651,8 @@
       "prompt": {
         "en": "Why did the writer stop writing words out in rows?",
         "zh": "作者为什么不再把单词一排排地抄下来？",
-        "zh_TW": "作者為什麼不再把單詞一排排地抄下來？"
+        "zh_TW": "作者為什麼不再把單詞一排排地抄下來？",
+        "ja": "筆者はどうして単語を並べて書くことをやめたのですか。"
       },
       "options": [
         "手帳を持ち歩くのが重かったからです。",
@@ -2595,7 +2664,8 @@
       "explanation": {
         "en": "The second sentence gives the reason: words in a row may be learned on the spot but have vanished by the next day. The weight of the notebook, a teacher's advice and a lack of time are not mentioned.",
         "zh": "第二句给出了理由：排成行的词当场也许记住了，第二天就消失了。文中没有提本子太重、老师建议，或完全抽不出时间。",
-        "zh_TW": "第二句給出了理由：排成行的詞當場也許記住了，第二天就消失了。文中沒有提本子太重、老師建議，或完全抽不出時間。"
+        "zh_TW": "第二句給出了理由：排成行的詞當場也許記住了，第二天就消失了。文中沒有提本子太重、老師建議，或完全抽不出時間。",
+        "ja": "並んだ言葉はその場では覚えても、次の日には消えてしまうからである。"
       }
     },
     {
@@ -2609,7 +2679,8 @@
       "prompt": {
         "en": "What does the writer do now to learn words?",
         "zh": "作者现在用什么方法记单词？",
-        "zh_TW": "作者現在用什麼方法記單詞？"
+        "zh_TW": "作者現在用什麼方法記單詞？",
+        "ja": "筆者は今、言葉を覚えるためにどうしていますか。"
       },
       "options": [
         "覚えたい言葉を使って、自分の一日について短い文を作ります。",
@@ -2621,7 +2692,8 @@
       "explanation": {
         "en": "The third and fourth sentences describe the method: short sentences about his own day using the words he wants to learn, three in the morning train and three before bed. Repeated copying, reading books and teaching others are not part of it.",
         "zh": "第三、四句写明了做法：用想记的词写关于自己一天的短句，早上电车里三句、睡前三句。反复抄写、读原文书或教别人都不是文中的方法。",
-        "zh_TW": "第三、四句寫明瞭做法：用想記的詞寫關於自己一天的短句，早上電車裡三句、睡前三句。反覆抄寫、讀原文書或教別人都不是文中的方法。"
+        "zh_TW": "第三、四句寫明瞭做法：用想記的詞寫關於自己一天的短句，早上電車裡三句、睡前三句。反覆抄寫、讀原文書或教別人都不是文中的方法。",
+        "ja": "覚えたい言葉を使って、自分の一日について短い文を作っている。朝の電車の中で三つ、寝る前に三つである。"
       }
     },
     {
@@ -2635,7 +2707,8 @@
       "prompt": {
         "en": "What did a year of this practice show the writer?",
         "zh": "坚持一年之后，作者发现了什么？",
-        "zh_TW": "堅持一年之後，作者發現了什麼？"
+        "zh_TW": "堅持一年之後，作者發現了什麼？",
+        "ja": "一年続けてみて、筆者は何が分かりましたか。"
       },
       "options": [
         "外国語は毎日使わなければ上手にならないということです。",
@@ -2647,7 +2720,8 @@
       "explanation": {
         "en": "After a year the writer found the same words coming up again and again, and concludes that the words needed for one's own life are surprisingly few — which is why making those few solid is the best device. The other statements are not made in the text.",
         "zh": "坚持一年后，作者发现同样的词反复出现，于是得出结论：自己生活中真正需要的词意外地少，所以把这些词掌握牢靠才最见效。其他说法文中都没有。",
-        "zh_TW": "堅持一年後，作者發現同樣的詞反覆出現，於是得出結論：自己生活中真正需要的詞意外地少，所以把這些詞掌握牢靠才最見效。其他說法文中都沒有。"
+        "zh_TW": "堅持一年後，作者發現同樣的詞反覆出現，於是得出結論：自己生活中真正需要的詞意外地少，所以把這些詞掌握牢靠才最見效。其他說法文中都沒有。",
+        "ja": "同じ言葉が何度も出てくると分かり、自分の生活に必要な言葉は案外少ないということが分かった。"
       }
     },
     {
@@ -2661,7 +2735,8 @@
       "prompt": {
         "en": "What did the writer do when the watch stopped?",
         "zh": "手表停了以后，作者做了什么？",
-        "zh_TW": "手錶停了以後，作者做了什麼？"
+        "zh_TW": "手錶停了以後，作者做了什麼？",
+        "ja": "時計が止まったとき、筆者はどうしましたか。"
       },
       "options": [
         "人にすすめられて、新しい時計を買いました。",
@@ -2673,7 +2748,8 @@
       "explanation": {
         "en": "Although some people said a new watch would be cheaper, the second sentence says he looked for a shop that would mend it; it was the craftsman, not the writer, who replaced the part.",
         "zh": "虽然有人说买新的更便宜，第二句仍写他去找能修的店；换零件的是师傅，不是作者本人。",
-        "zh_TW": "雖然有人說買新的更便宜，第二句仍寫他去找能修的店；換零件的是師傅，不是作者本人。"
+        "zh_TW": "雖然有人說買新的更便宜，第二句仍寫他去找能修的店；換零件的是師傅，不是作者本人。",
+        "ja": "新しく買ったほうが安いと言う人もいたが、直してくれる店を探した。"
       }
     },
     {
@@ -2687,7 +2763,8 @@
       "prompt": {
         "en": "How did the craftsman deal with the watch?",
         "zh": "师傅是怎样处理这块手表的？",
-        "zh_TW": "師傅是怎樣處理這塊手錶的？"
+        "zh_TW": "師傅是怎樣處理這塊手錶的？",
+        "ja": "職人はこの時計をどのように扱いましたか。"
       },
       "options": [
         "時計を開けて、部品の一つを取り替えただけで直しました。",
@@ -2699,7 +2776,8 @@
       "explanation": {
         "en": "The fourth sentence says he opened the watch and mended it simply by replacing one part. Half the price of a new watch was the charge for that repair, not the price of a different watch.",
         "zh": "第四句说他打开表，只换了一个零件就修好了。新表价格的一半是这次修理的费用，而不是另一块表的售价。",
-        "zh_TW": "第四句說他打開表，只換了一個零件就修好了。新表價格的一半是這次修理的費用，而不是另一塊表的售價。"
+        "zh_TW": "第四句說他打開表，只換了一個零件就修好了。新表價格的一半是這次修理的費用，而不是另一塊表的售價。",
+        "ja": "時計を開けて、部品の一つを取り替えただけで直してしまった。"
       }
     },
     {
@@ -2714,7 +2792,8 @@
       "prompt": {
         "en": "Why did the writer not think the price high?",
         "zh": "作者为什么不觉得这个价钱贵？",
-        "zh_TW": "作者為什麼不覺得這個價錢貴？"
+        "zh_TW": "作者為什麼不覺得這個價錢貴？",
+        "ja": "筆者はどうしてその値段を高いと思わなかったのですか。"
       },
       "options": [
         "新しい時計より確かに安かったからです。",
@@ -2726,7 +2805,8 @@
       "explanation": {
         "en": "The seventh sentence states the reason: what he paid for was not the part but the time of someone who knows the thing can be mended. He says outright that it was not cheap, the closure comes at the end as a separate fact, and the part is never called rare.",
         "zh": "第七句写明了理由：他付的不是零件钱，而是一个懂得如何修好它的人的时间。他明说并不便宜，关店只是结尾另提的事实，零件也没有说稀有。",
-        "zh_TW": "第七句寫明瞭理由：他付的不是零件錢，而是一個懂得如何修好它的人的時間。他明說並不便宜，關店只是結尾另提的事實，零件也沒有說稀有。"
+        "zh_TW": "第七句寫明瞭理由：他付的不是零件錢，而是一個懂得如何修好它的人的時間。他明說並不便宜，關店只是結尾另提的事實，零件也沒有說稀有。",
+        "ja": "払ったのは部品の代金ではなく、直せると分かっている人の時間だと考えたからである。"
       }
     },
     {
@@ -2740,7 +2820,8 @@
       "prompt": {
         "en": "What did the writer believe when he used to work until late at night?",
         "zh": "以前加班到深夜时，作者是怎么想的？",
-        "zh_TW": "以前加班到深夜時，作者是怎麼想的？"
+        "zh_TW": "以前加班到深夜時，作者是怎麼想的？",
+        "ja": "以前、深夜まで働いていたとき、筆者は何を信じていましたか。"
       },
       "options": [
         "時間をかけただけ仕事は進むと思っていました。",
@@ -2752,7 +2833,8 @@
       "explanation": {
         "en": "The second sentence gives the old belief: work advances in proportion to the time put in. The writer says the opposite about night hours, and promotion is not mentioned.",
         "zh": "第二句写出了他从前的想法：花多少时间，工作就推进多少。关于夜间时段他的说法恰恰相反，文中也未提升职。",
-        "zh_TW": "第二句寫出了他從前的想法：花多少時間，工作就推進多少。關於夜間時段他的說法恰恰相反，文中也未提升職。"
+        "zh_TW": "第二句寫出了他從前的想法：花多少時間，工作就推進多少。關於夜間時段他的說法恰恰相反，文中也未提升職。",
+        "ja": "時間をかけただけ、仕事は進むと思っていたのである。"
       }
     },
     {
@@ -2766,7 +2848,8 @@
       "prompt": {
         "en": "What changed after the writer fixed the time to leave the office?",
         "zh": "决定了下班时间之后，发生了什么变化？",
-        "zh_TW": "決定了下班時間之後，發生了什麼變化？"
+        "zh_TW": "決定了下班時間之後，發生了什麼變化？",
+        "ja": "会社を出る時間を決めたあと、何が変わりましたか。"
       },
       "options": [
         "一日にできる仕事の量がはっきり増えました。",
@@ -2778,7 +2861,8 @@
       "explanation": {
         "en": "The fifth sentence says that once the finishing time was fixed he began planning the order of his work from the morning. The amount done in a day is almost unchanged, and neither his colleagues nor taking work home is mentioned.",
         "zh": "第五句说，结束时间一定下来，他从早上就开始考虑工作的先后顺序。一天能完成的量几乎没变，文中也未提同事或把工作带回家。",
-        "zh_TW": "第五句說，結束時間一定下來，他從早上就開始考慮工作的先後順序。一天能完成的量幾乎沒變，文中也未提同事或把工作帶回家。"
+        "zh_TW": "第五句說，結束時間一定下來，他從早上就開始考慮工作的先後順序。一天能完成的量幾乎沒變，文中也未提同事或把工作帶回家。",
+        "ja": "終わりの時間が決まると、朝から仕事の順番を考えるようになった。"
       }
     },
     {
@@ -2793,7 +2877,8 @@
       "prompt": {
         "en": "What does the writer conclude from this experience?",
         "zh": "从这段经历中，作者得出了什么结论？",
-        "zh_TW": "從這段經歷中，作者得出了什麼結論？"
+        "zh_TW": "從這段經歷中，作者得出了什麼結論？",
+        "ja": "この経験から、筆者はどんな結論に至りましたか。"
       },
       "options": [
         "働く時間は短いほどよいということです。",
@@ -2805,7 +2890,8 @@
       "explanation": {
         "en": "The last sentence is the conclusion itself: working long and working well are not the same thing. He does not claim that shorter is always better, nor make any promise about early starts.",
         "zh": "最后一句正是结论：工作时间长和工作做得好不是一回事。他并没有说时间越短越好，也没有对早出勤作任何保证。",
-        "zh_TW": "最後一句正是結論：工作時間長和工作做得好不是一回事。他並沒有說時間越短越好，也沒有對早出勤作任何保證。"
+        "zh_TW": "最後一句正是結論：工作時間長和工作做得好不是一回事。他並沒有說時間越短越好，也沒有對早出勤作任何保證。",
+        "ja": "長く働くことと、よく働くことは同じではないという結論である。"
       }
     },
     {
@@ -2819,7 +2905,8 @@
       "prompt": {
         "en": "According to the writer, what happens when there is little public transport?",
         "zh": "按作者所说，交通工具少了会发生什么？",
-        "zh_TW": "按作者所說，交通工具少了會發生什麼？"
+        "zh_TW": "按作者所說，交通工具少了會發生什麼？",
+        "ja": "筆者によれば、交通機関が少ないとどうなりますか。"
       },
       "options": [
         "人が車に乗るようになり、電車の客がさらに減って本数も減ります。",
@@ -2831,7 +2918,8 @@
       "explanation": {
         "en": "The second to fourth sentences describe the circle: fewer services push people into cars, fewer passengers remain, and so the number of trains falls again. Prices, campaigns and cheap tickets are not part of the argument.",
         "zh": "第二至第四句描述了这个循环：班次少促使人们开车，乘客更少，班次于是又减少。文中没有提价格、请愿或降价车票。",
-        "zh_TW": "第二至第四句描述了這個循環：班次少促使人們開車，乘客更少，班次於是又減少。文中沒有提價格、請願或降價車票。"
+        "zh_TW": "第二至第四句描述了這個循環：班次少促使人們開車，乘客更少，班次於是又減少。文中沒有提價格、請願或降價車票。",
+        "ja": "人が車に乗るようになり、電車の客がさらに減って本数も減るという悪循環が起こる。"
       }
     },
     {
@@ -2845,7 +2933,8 @@
       "prompt": {
         "en": "Who does the writer say is left in difficulty?",
         "zh": "作者说，最终陷入困境的是谁？",
-        "zh_TW": "作者說，最終陷入困境的是誰？"
+        "zh_TW": "作者說，最終陷入困境的是誰？",
+        "ja": "最終的に困るのは誰だと筆者は言っていますか。"
       },
       "options": [
         "電車で通勤している会社員です。",
@@ -2857,7 +2946,8 @@
       "explanation": {
         "en": "The fifth sentence names them: it is only those who do not drive, children and the old for instance, who end up in difficulty. Commuters, the young who have left and the railway company are not given as the answer.",
         "zh": "第五句点明了：受困的只有不开车的人，比如孩子和上了年纪的人。通勤者、离村的年轻人和铁路公司都不是答案。",
-        "zh_TW": "第五句點明瞭：受困的只有不開車的人，比如孩子和上了年紀的人。通勤者、離村的年輕人和鐵路公司都不是答案。"
+        "zh_TW": "第五句點明瞭：受困的只有不開車的人，比如孩子和上了年紀的人。通勤者、離村的年輕人和鐵路公司都不是答案。",
+        "ja": "車に乗らない子どもや年を取った人だけが困ることになると述べている。"
       }
     },
     {
@@ -2872,7 +2962,8 @@
       "prompt": {
         "en": "What does the writer want people to remember before talking about money?",
         "zh": "作者希望人们在谈钱之前先想起什么？",
-        "zh_TW": "作者希望人們在談錢之前先想起什麼？"
+        "zh_TW": "作者希望人們在談錢之前先想起什麼？",
+        "ja": "お金の話をする前に、筆者は何を思い出してほしいと言っていますか。"
       },
       "options": [
         "公共の乗り物は、ほかに方法がない人がいるから走らなければならないということです。",
@@ -2884,7 +2975,8 @@
       "explanation": {
         "en": "The sixth and seventh sentences state it: public transport runs not because many use it but because some have no other means. The writer never says fares fall with use, nor that more trains would certainly bring more passengers.",
         "zh": "第六、七句写明：公共交通不是因为用的人多才运行，而是因为有人别无他法才必须运行。作者既没说乘客多票价就便宜，也没说增加班次一定能增加乘客。",
-        "zh_TW": "第六、七句寫明：公共交通不是因為用的人多才運行，而是因為有人別無他法才必須運行。作者既沒說乘客多票價就便宜，也沒說增加班次一定能增加乘客。"
+        "zh_TW": "第六、七句寫明：公共交通不是因為用的人多才運行，而是因為有人別無他法才必須運行。作者既沒說乘客多票價就便宜，也沒說增加班次一定能增加乘客。",
+        "ja": "公共の乗り物は使う人が多いから走るのではなく、ほかに方法がない人がいるから走らなければならないということである。"
       }
     },
     {
@@ -2898,7 +2990,8 @@
       "prompt": {
         "en": "What did the writer expect from the gathering at first?",
         "zh": "起初，作者对这个读书会有什么期待？",
-        "zh_TW": "起初，作者對這個讀書會有什麼期待？"
+        "zh_TW": "起初，作者對這個讀書會有什麼期待？",
+        "ja": "初め、筆者はこの集まりに何を期待していましたか。"
       },
       "options": [
         "同じ本を読む友人ができることです。",
@@ -2910,7 +3003,8 @@
       "explanation": {
         "en": "The second sentence gives the initial expectation: hearing others' opinions would widen his own reading. Making friends, forming a habit and memorising the contents are not mentioned.",
         "zh": "第二句写出了最初的期待：听别人的意见能拓宽自己的读法。交朋友、养成习惯或快速记住内容都没有提到。",
-        "zh_TW": "第二句寫出了最初的期待：聽別人的意見能拓寬自己的讀法。交朋友、養成習慣或快速記住內容都沒有提到。"
+        "zh_TW": "第二句寫出了最初的期待：聽別人的意見能拓寬自己的讀法。交朋友、養成習慣或快速記住內容都沒有提到。",
+        "ja": "人の意見を聞けば自分の読み方が広がることを期待していた。"
       }
     },
     {
@@ -2924,7 +3018,8 @@
       "prompt": {
         "en": "What does the writer say actually helped?",
         "zh": "作者说，真正对他有帮助的是什么？",
-        "zh_TW": "作者說，真正對他有幫助的是什麼？"
+        "zh_TW": "作者說，真正對他有幫助的是什麼？",
+        "ja": "実際に役立ったのは何だと筆者は言っていますか。"
       },
       "options": [
         "自分の感想を言葉にする時間のほうでした。",
@@ -2936,7 +3031,8 @@
       "explanation": {
         "en": "The third sentence answers directly: what actually helped was rather the time spent putting his own impressions into words. Listening was the expectation, not the result, and writing them down beforehand is not mentioned.",
         "zh": "第三句直接作答：真正有帮助的，反倒是把自己的感想化为语言的那段时间。听别人说是当初的期待而非结果，事先写下来也没有提及。",
-        "zh_TW": "第三句直接作答：真正有幫助的，反倒是把自己的感想化為語言的那段時間。聽別人說是當初的期待而非結果，事先寫下來也沒有提及。"
+        "zh_TW": "第三句直接作答：真正有幫助的，反倒是把自己的感想化為語言的那段時間。聽別人說是當初的期待而非結果，事先寫下來也沒有提及。",
+        "ja": "実際に役に立ったのは、自分の感想を言葉にする時間のほうだった。"
       }
     },
     {
@@ -2950,7 +3046,8 @@
       "prompt": {
         "en": "Why does the writer say he is speaking for his own sake?",
         "zh": "作者为什么说自己是为了自己而说？",
-        "zh_TW": "作者為什麼說自己是為了自己而說？"
+        "zh_TW": "作者為什麼說自己是為了自己而說？",
+        "ja": "筆者はどうして自分のために話していると言っているのですか。"
       },
       "options": [
         "人の意見をあまり信じていないからです。",
@@ -2962,7 +3059,8 @@
       "explanation": {
         "en": "The fifth sentence explains it: only when he tries to explain what was interesting and how does a thought take shape, so the talking works on him rather than on his listeners. Distrust, forgetfulness and lack of confidence are not given as reasons.",
         "zh": "第五句作了说明：当他试着解释哪里有意思、怎样有意思时，想法才第一次成形，因此说话作用于自己而非听众。不信任、怕忘记或缺乏自信都不是理由。",
-        "zh_TW": "第五句作了說明：當他試著解釋哪裡有意思、怎樣有意思時，想法才第一次成形，因此說話作用於自己而非聽眾。不信任、怕忘記或缺乏自信都不是理由。"
+        "zh_TW": "第五句作了說明：當他試著解釋哪裡有意思、怎樣有意思時，想法才第一次成形，因此說話作用於自己而非聽眾。不信任、怕忘記或缺乏自信都不是理由。",
+        "ja": "どこがどう面白かったのかを説明しようとして初めて、考えが形になるからである。"
       }
     },
     {
@@ -2976,7 +3074,8 @@
       "prompt": {
         "en": "How do the first writer and the second writer differ about homework?",
         "zh": "关于作业，前一位与后一位的看法有何不同？",
-        "zh_TW": "關於作業，前一位與後一位的看法有何不同？"
+        "zh_TW": "關於作業，前一位與後一位的看法有何不同？",
+        "ja": "宿題について、前の人と後の人の意見はどう違いますか。"
       },
       "options": [
         "一人目は量を減らせば済む話ではないと言い、二人目は宿題が子どもの学ぶ時間を奪うと言っています。",
@@ -2988,7 +3087,8 @@
       "explanation": {
         "en": "The first writer holds that time spent alone with problems at home is what makes learning one's own, and that merely cutting the quantity settles nothing. The second holds that superfluous homework takes away the time in which children choose and learn for themselves. Neither calls for abolition, and it is the second who defends the time at home.",
         "zh": "前一位认为，在家独自面对题目的时间才使所学成为自己的，仅仅减量并不能解决问题；后一位则认为多余的作业夺走了孩子自主选择学习的时间。两人都没有主张取消作业，而重视家中时间的恰恰是后一位。",
-        "zh_TW": "前一位認為，在家獨自面對題目的時間才使所學成為自己的，僅僅減量並不能解決問題；後一位則認為多餘的作業奪走了孩子自主選擇學習的時間。兩人都沒有主張取消作業，而重視家中時間的恰恰是後一位。"
+        "zh_TW": "前一位認為，在家獨自面對題目的時間才使所學成為自己的，僅僅減量並不能解決問題；後一位則認為多餘的作業奪走了孩子自主選擇學習的時間。兩人都沒有主張取消作業，而重視家中時間的恰恰是後一位。",
+        "ja": "前の人は量を減らせば済む話ではないと言い、後の人は宿題が子どもの学ぶ時間を奪うと言っている。"
       }
     },
     {
@@ -3003,7 +3103,8 @@
       "prompt": {
         "en": "What does the second writer say that the first writer does not?",
         "zh": "后一位说了前一位没有说的哪一点？",
-        "zh_TW": "後一位說了前一位沒有說的哪一點？"
+        "zh_TW": "後一位說了前一位沒有說的哪一點？",
+        "ja": "後の人が言っていて、前の人が言っていないことは何ですか。"
       },
       "options": [
         "決まった形式があると朝が楽になるということです。",
@@ -3015,7 +3116,8 @@
       "explanation": {
         "en": "The first writer's argument is entirely about the morning's time and trouble. Only the second links dress to thought, saying that putting people in clothes of the same shape comes close to asking them to think alike. Who pays for the clothes is not discussed by either.",
         "zh": "前一位的论点全在于早晨的时间与麻烦；只有后一位把衣着与思想联系起来，说让大家穿同样式样的衣服近乎要求同样的思维方式。至于衣服由谁出钱，两人都没有谈。",
-        "zh_TW": "前一位的論點全在於早晨的時間與麻煩；只有後一位把衣著與思想聯繫起來，說讓大家穿同樣式樣的衣服近乎要求同樣的思維方式。至於衣服由誰出錢，兩人都沒有談。"
+        "zh_TW": "前一位的論點全在於早晨的時間與麻煩；只有後一位把衣著與思想聯繫起來，說讓大家穿同樣式樣的衣服近乎要求同樣的思維方式。至於衣服由誰出錢，兩人都沒有談。",
+        "ja": "同じ形の服を求めることは、同じ考え方を求めることに近いという点である。"
       }
     },
     {
@@ -3029,7 +3131,8 @@
       "prompt": {
         "en": "What do the two writers agree on?",
         "zh": "两位在哪一点上是一致的？",
-        "zh_TW": "兩位在哪一點上是一致的？"
+        "zh_TW": "兩位在哪一點上是一致的？",
+        "ja": "二人が一致しているのはどんな点ですか。"
       },
       "options": [
         "計画を作る時間そのものが楽しいということです。",
@@ -3041,7 +3144,8 @@
       "explanation": {
         "en": "One prizes a settled schedule so that a short holiday is not wasted, the other prizes the freedom to turn down an unexpected street; both are talking about how the time is spent rather than about which sights are seen. Only the first enjoys the planning, and neither says short holidays should stay close to home or that listed shops are worthless.",
         "zh": "一位重视定好行程以免浪费短假，另一位重视拐进意外小路的自由，两人谈的都是时间怎么过，而不是看什么景点。享受查资料的只有前一位，两人也都没说短假不该走远或指南上的店不值得去。",
-        "zh_TW": "一位重視定好行程以免浪費短假，另一位重視拐進意外小路的自由，兩人談的都是時間怎麼過，而不是看什麼景點。享受查資料的只有前一位，兩人也都沒說短假不該走遠或指南上的店不值得去。"
+        "zh_TW": "一位重視定好行程以免浪費短假，另一位重視拐進意外小路的自由，兩人談的都是時間怎麼過，而不是看什麼景點。享受查資料的只有前一位，兩人也都沒說短假不該走遠或指南上的店不值得去。",
+        "ja": "旅行では何を見るかより、どう過ごすかが大切だという点である。"
       }
     },
     {
@@ -3055,7 +3159,8 @@
       "prompt": {
         "en": "How do the two writers differ about new staff?",
         "zh": "关于新员工，两位的看法有何不同？",
-        "zh_TW": "關於新員工，兩位的看法有何不同？"
+        "zh_TW": "關於新員工，兩位的看法有何不同？",
+        "ja": "新しい社員について、二人の意見はどう違いますか。"
       },
       "options": [
         "一人目は半年で辞める人が多いと言い、二人目は少ないと言っています。",
@@ -3067,7 +3172,8 @@
       "explanation": {
         "en": "The first would entrust only harmless work for the first six months, so that the new person learns how work proceeds with an easy mind. The second holds that small tasks hide the purpose of the work and that more is learnt by meeting customers early. Neither speaks of people leaving or of abolishing training.",
         "zh": "前一位主张最初半年只交给失败也不要紧的工作，让新人安心地弄懂工作如何推进；后一位则认为只做小事看不出工作的意义，尽早接触客户能学到更多。两人都没有谈离职率，也没有主张取消培训。",
-        "zh_TW": "前一位主張最初半年只交給失敗也不要緊的工作，讓新人安心地弄懂工作如何推進；後一位則認為只做小事看不出工作的意義，儘早接觸客戶能學到更多。兩人都沒有談離職率，也沒有主張取消培訓。"
+        "zh_TW": "前一位主張最初半年只交給失敗也不要緊的工作，讓新人安心地弄懂工作如何推進；後一位則認為只做小事看不出工作的意義，儘早接觸客戶能學到更多。兩人都沒有談離職率，也沒有主張取消培訓。",
+        "ja": "前の人は失敗しても困らない仕事から始めるのがよいと言い、後の人は早くから客と会う場に出るほうがよいと言っている。"
       }
     },
     {
@@ -3082,7 +3188,8 @@
       "prompt": {
         "en": "Why does the writer say the record of failures is more useful than that of successes?",
         "zh": "作者为什么说失败的记录比成功的记录更有用？",
-        "zh_TW": "作者為什麼說失敗的記錄比成功的記錄更有用？"
+        "zh_TW": "作者為什麼說失敗的記錄比成功的記錄更有用？",
+        "ja": "失敗の記録のほうが成功の記録より役に立つと、筆者はどうして言うのですか。"
       },
       "options": [
         "失敗のほうが数が多く、集めやすいからです。",
@@ -3094,7 +3201,8 @@
       "explanation": {
         "en": "The third and fourth sentences contrast the two: the causes of a success lie piled on one another so that the real one cannot be told, while the cause of a failure is usually plain, and that is why it can be used next time. The other options are not the reason given.",
         "zh": "第三、四句作了对比：成功的原因层层叠叠，分不清哪个才是真的，而失败的原因多半一目了然，所以对下一次有用。其余选项都不是文中给出的理由。",
-        "zh_TW": "第三、四句作了對比：成功的原因層層疊疊，分不清哪個才是真的，而失敗的原因多半一目瞭然，所以對下一次有用。其餘選項都不是文中給出的理由。"
+        "zh_TW": "第三、四句作了對比：成功的原因層層疊疊，分不清哪個才是真的，而失敗的原因多半一目瞭然，所以對下一次有用。其餘選項都不是文中給出的理由。",
+        "ja": "成功の理由はいくつも重なっていてどれが本当か分からないが、失敗の理由はたいてい明らかだからである。"
       }
     },
     {
@@ -3109,7 +3217,8 @@
       "prompt": {
         "en": "Why does the writer say reading aloud shows where a sentence should be divided?",
         "zh": "作者为什么说，朗读能告诉你句子该在哪里断开？",
-        "zh_TW": "作者為什麼說，朗讀能告訴你句子該在哪裡斷開？"
+        "zh_TW": "作者為什麼說，朗讀能告訴你句子該在哪裡斷開？",
+        "ja": "声に出して読むと文の区切り方が分かるのはどうしてですか。"
       },
       "options": [
         "声に出すと、意味より音のほうが先に耳に入るからです。",
@@ -3121,7 +3230,8 @@
       "explanation": {
         "en": "The sixth sentence states the principle: where the sense breaks and where the breath breaks usually coincide, so the voice stops at exactly the places a reader finds hard. Sentences becoming shorter is a result of the corrections, not the reason.",
         "zh": "第六句写出了道理：意思的断处与呼吸的断处多半重合，所以声音会正好停在读者读着吃力的地方。句子变短是修改后的结果，而不是理由。",
-        "zh_TW": "第六句寫出了道理：意思的斷處與呼吸的斷處多半重合，所以聲音會正好停在讀者讀著吃力的地方。句子變短是修改後的結果，而不是理由。"
+        "zh_TW": "第六句寫出了道理：意思的斷處與呼吸的斷處多半重合，所以聲音會正好停在讀者讀著吃力的地方。句子變短是修改後的結果，而不是理由。",
+        "ja": "意味の切れる所と息の切れる所は、たいてい重なっているからである。"
       }
     },
     {
@@ -3136,7 +3246,8 @@
       "prompt": {
         "en": "What does the writer say makes instructions hard to read?",
         "zh": "作者认为，说明书难读的原因是什么？",
-        "zh_TW": "作者認為，說明書難讀的原因是什麼？"
+        "zh_TW": "作者認為，說明書難讀的原因是什麼？",
+        "ja": "説明書が読みにくいのはどうしてだと筆者は言っていますか。"
       },
       "options": [
         "書く人の言葉が難しいからです。",
@@ -3148,7 +3259,8 @@
       "explanation": {
         "en": "The first two sentences reject difficult language and name the real cause: what is obvious to the maker gets left out. The writer says outright that length is not the problem, and pictures are never discussed.",
         "zh": "开头两句否定了用词艰深，并指出真正的原因：对制造者而言理所当然的内容被省略了。作者明说难读并非因为句子长，插图也从未提及。",
-        "zh_TW": "開頭兩句否定了用詞艱深，並指出真正的原因：對製造者而言理所當然的內容被省略了。作者明說難讀並非因為句子長，插圖也從未提及。"
+        "zh_TW": "開頭兩句否定了用詞艱深，並指出真正的原因：對製造者而言理所當然的內容被省略了。作者明說難讀並非因為句子長，插圖也從未提及。",
+        "ja": "作った人にとって当たり前のことが、書く人によって省略されてしまうからである。"
       }
     },
     {
@@ -3162,7 +3274,8 @@
       "prompt": {
         "en": "How does the writer answer those who call the fifteen minutes a waste?",
         "zh": "对于说这十五分钟是浪费的人，作者如何回应？",
-        "zh_TW": "對於說這十五分鐘是浪費的人，作者如何回應？"
+        "zh_TW": "對於說這十五分鐘是浪費的人，作者如何回應？",
+        "ja": "その十五分を無駄だと言う人に、筆者はどう答えていますか。"
       },
       "options": [
         "その十五分こそ、会う時間の一部だと考えています。",
@@ -3174,7 +3287,8 @@
       "explanation": {
         "en": "The ninth sentence is his reply: he regards those fifteen minutes as part of the time of the meeting itself, since they change how the conversation begins. He does not argue merely that waste is better than lateness, nor talk of leaving early.",
         "zh": "第九句就是他的回答：他认为那十五分钟正是会面时间的一部分，因为它改变了开口的方式。他并不是说浪费总比迟到好，也没有谈提前离开。",
-        "zh_TW": "第九句就是他的回答：他認為那十五分鐘正是會面時間的一部分，因為它改變了開口的方式。他並不是說浪費總比遲到好，也沒有談提前離開。"
+        "zh_TW": "第九句就是他的回答：他認為那十五分鐘正是會面時間的一部分，因為它改變了開口的方式。他並不是說浪費總比遲到好，也沒有談提前離開。",
+        "ja": "その十五分こそ、会う時間の一部だと考えていると答えている。"
       }
     },
     {
@@ -3188,7 +3302,8 @@
       "prompt": {
         "en": "Why does the writer shut the map when he arrives in an unfamiliar town?",
         "zh": "到了陌生的城市，作者为什么先合上地图？",
-        "zh_TW": "到了陌生的城市，作者為什麼先合上地圖？"
+        "zh_TW": "到了陌生的城市，作者為什麼先合上地圖？",
+        "ja": "知らない町に着くと、筆者はどうして地図を閉じるのですか。"
       },
       "options": [
         "地図を見るのが苦手だからです。",
@@ -3200,7 +3315,8 @@
       "explanation": {
         "en": "The third sentence gives the reason: walking that way leaves the shape of the town in the body, whereas a street walked with the eyes on a map is forgotten by the next day. He does not say he is bad with maps — he opens one when the time is fixed — nor that mapped streets are dull.",
         "zh": "第三句给出理由：这样走，城市的形状会留在身体里；而看着地图走过的路第二天就忘了。他并没有说自己不会看地图（时间有安排时他会打开），也没说地图上的路无趣。",
-        "zh_TW": "第三句給出理由：這樣走，城市的形狀會留在身體裡；而看著地圖走過的路第二天就忘了。他並沒有說自己不會看地圖（時間有安排時他會打開），也沒說地圖上的路無趣。"
+        "zh_TW": "第三句給出理由：這樣走，城市的形狀會留在身體裡；而看著地圖走過的路第二天就忘了。他並沒有說自己不會看地圖（時間有安排時他會打開），也沒說地圖上的路無趣。",
+        "ja": "そうすると町の形が体に残るからである。"
       }
     },
     {
@@ -3214,7 +3330,8 @@
       "prompt": {
         "en": "What does the writer say remembering names really depends on?",
         "zh": "作者认为，能否记住名字实际上取决于什么？",
-        "zh_TW": "作者認為，能否記住名字實際上取決於什麼？"
+        "zh_TW": "作者認為，能否記住名字實際上取決於什麼？",
+        "ja": "名前を覚えられるかどうかは、実は何によると筆者は言っていますか。"
       },
       "options": [
         "相手にどれだけ注意を向けているかです。",
@@ -3226,7 +3343,8 @@
       "explanation": {
         "en": "The seventh and eighth sentences say plainly that it is not a question of being clever but of how much attention one turns towards the other person; that is also why saying the name aloud at once works. The number of meetings and writing it down are not mentioned.",
         "zh": "第七、八句明确指出：这不是脑子聪不聪明的问题，而是对对方投入多少注意力的问题；当场把名字念出声之所以有效，正是这个道理。见面次数和写在纸上都未提及。",
-        "zh_TW": "第七、八句明確指出：這不是腦子聰不聰明的問題，而是對對方投入多少注意力的問題；當場把名字念出聲之所以有效，正是這個道理。見面次數和寫在紙上都未提及。"
+        "zh_TW": "第七、八句明確指出：這不是腦子聰不聰明的問題，而是對對方投入多少注意力的問題；當場把名字念出聲之所以有效，正是這個道理。見面次數和寫在紙上都未提及。",
+        "ja": "相手にどれだけ注意を向けているかによると言っている。"
       }
     },
     {
@@ -3242,7 +3360,8 @@
       "prompt": {
         "en": "A person's book is due back on the 6th of next month. What should this person do?",
         "zh": "某人借的书还书期限是下月六日。这个人该怎么做？",
-        "zh_TW": "某人借的書還書期限是下月六日。這個人該怎麼做？"
+        "zh_TW": "某人借的書還書期限是下月六日。這個人該怎麼做？",
+        "ja": "来月六日が返却期限の人はどうすればいいですか。"
       },
       "options": [
         "五日までに窓口へ返します。",
@@ -3254,7 +3373,8 @@
       "explanation": {
         "en": "The 6th falls inside the closed period of the 5th to the 8th, and the notice says that those whose return date falls in that period should return their books by the 9th. Books can in fact be put in the box beside the entrance at any time, and the three o'clock event on the 8th is the giving away of old books.",
         "zh": "六日正落在五日至八日的闭馆期间，通知写明这类读者在九日之前归还即可。入口旁的还书箱其实随时可以还书，而八日下午三点是免费发放旧书的活动。",
-        "zh_TW": "六日正落在五日至八日的閉館期間，通知寫明這類讀者在九日之前歸還即可。入口旁的還書箱其實隨時可以還書，而八日下午三點是免費發放舊書的活動。"
+        "zh_TW": "六日正落在五日至八日的閉館期間，通知寫明這類讀者在九日之前歸還即可。入口旁的還書箱其實隨時可以還書，而八日下午三點是免費發放舊書的活動。",
+        "ja": "六日は五日から八日までの休業期間にあたるため、通知に従い九日までに返せばよいことになっている。"
       }
     },
     {
@@ -3270,7 +3390,8 @@
       "prompt": {
         "en": "A member of staff will be away on a business trip for the whole of 10 to 14 October. What should this person do?",
         "zh": "某员工十月十日至十四日全程都在出差。这个人该怎么做？",
-        "zh_TW": "某員工十月十日至十四日全程都在出差。這個人該怎麼做？"
+        "zh_TW": "某員工十月十日至十四日全程都在出差。這個人該怎麼做？",
+        "ja": "十月十日から十四日まで出張でいない社員はどうすればいいですか。"
       },
       "options": [
         "十一月の初めに三階へ行きます。",
@@ -3282,7 +3403,8 @@
       "explanation": {
         "en": "The sixth line covers exactly this case: those who cannot come during the five days because of a business trip or the like should let the company know by the 20th. The beginning of November is when results are handed out, and the rule about eating applies to those who do attend.",
         "zh": "第六行正是针对这种情况：因出差等原因无法在这五天内前来的人，需在二十日之前告知。十一月初是发放结果的时间，禁食的规定则适用于按期受检的人。",
-        "zh_TW": "第六行正是針對這種情況：因出差等原因無法在這五天內前來的人，需在二十日之前告知。十一月初是發放結果的時間，禁食的規定則適用於按期受檢的人。"
+        "zh_TW": "第六行正是針對這種情況：因出差等原因無法在這五天內前來的人，需在二十日之前告知。十一月初是發放結果的時間，禁食的規定則適用於按期受檢的人。",
+        "ja": "出張などでこの五日間に来ない人は、二十日までにその旨を知らせる必要がある。"
       }
     },
     {
@@ -3298,7 +3420,8 @@
       "prompt": {
         "en": "A primary-school child wants to join the clean-up. What does the notice say?",
         "zh": "一名小学生想参加清扫活动。通知是怎么规定的？",
-        "zh_TW": "一名小學生想參加清掃活動。通知是怎麼規定的？"
+        "zh_TW": "一名小學生想參加清掃活動。通知是怎麼規定的？",
+        "ja": "そうじに参加したい小学生について、通知はどう定めていますか。"
       },
       "options": [
         "申し込みはいらないが、大人と一緒に参加します。",
@@ -3310,7 +3433,8 @@
       "explanation": {
         "en": "The notice says anyone may take part and no application is needed, and that those of primary-school age and under should come with an adult. The town provides the tools, so nothing need be brought.",
         "zh": "通知写明任何人都可以参加、无需报名，同时规定小学生及以下的孩子要与成人同行。工具由镇上准备，因此无需自带任何东西。",
-        "zh_TW": "通知寫明任何人都可以參加、無需報名，同時規定小學生及以下的孩子要與成人同行。工具由鎮上準備，因此無需自帶任何東西。"
+        "zh_TW": "通知寫明任何人都可以參加、無需報名，同時規定小學生及以下的孩子要與成人同行。工具由鎮上準備，因此無需自帶任何東西。",
+        "ja": "申し込みはいらないが、小学生以下は大人と一緒に参加することになっている。"
       }
     },
     {
@@ -3326,7 +3450,8 @@
       "prompt": {
         "en": "Someone arrives at the station at nine at night on 10 June with a large suitcase. What should this person do?",
         "zh": "六月十日晚上九点，有人带着大件行李来到车站。这个人该怎么做？",
-        "zh_TW": "六月十日晚上九點，有人帶著大件行李來到車站。這個人該怎麼做？"
+        "zh_TW": "六月十日晚上九點，有人帶著大件行李來到車站。這個人該怎麼做？",
+        "ja": "六月十日の夜九時、大きな荷物を持って駅に着いた人はどうすればいいですか。"
       },
       "options": [
         "東口の階段を使います。",
@@ -3338,7 +3463,8 @@
       "explanation": {
         "en": "During the works the east exit can be used only from seven in the morning to eight at night, and after eight the notice directs people to the west exit — which it also recommends for large luggage throughout the period. The 25th concerns an early finish, and no permission is required.",
         "zh": "施工期间东口仅在早七点至晚八点之间可通行，晚八点以后通知指示改走西口，而携带大件行李者在整个期间也以西口为宜。二十五日是提前完工的情形，也不需要办理许可。",
-        "zh_TW": "施工期間東口僅在早七點至晚八點之間可通行，晚八點以後通知指示改走西口，而攜帶大件行李者在整個期間也以西口為宜。二十五日是提前完工的情形，也不需要辦理許可。"
+        "zh_TW": "施工期間東口僅在早七點至晚八點之間可通行，晚八點以後通知指示改走西口，而攜帶大件行李者在整個期間也以西口為宜。二十五日是提前完工的情形，也不需要辦理許可。",
+        "ja": "工事期間中、東口は朝七時から夜八時までしか通れず、夜八時以降は西口を使うことになっている。大きな荷物を持つ人にも西口が勧められている。"
       }
     }
   ]

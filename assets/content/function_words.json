@@ -1,5 +1,6 @@
 {
   "schemaVersion": 1,
+  "source": "hand-written; ja model-authored (Claude), unreviewed",
   "license": "Hand-written for MyNihongo!!!!!, GPL-3.0 with the app.",
   "note": "Particles, copula forms, auxiliaries and formal nouns. These are authoritative over the vocabulary catalog for the same surface: は is the topic marker far more often than it is 歯, and a sentence analyser that guessed otherwise would be wrong constantly. See doc/en-us/algorithms/sentence-analysis.md.",
   "words": [
@@ -10,7 +11,8 @@
       "gloss": {
         "en": "subject marker",
         "zh": "主格助词",
-        "zh_TW": "主格助詞"
+        "zh_TW": "主格助詞",
+        "ja": "主語を示す"
       }
     },
     {
@@ -21,7 +23,8 @@
       "gloss": {
         "en": "direct object marker",
         "zh": "宾格助词",
-        "zh_TW": "賓格助詞"
+        "zh_TW": "賓格助詞",
+        "ja": "目的語を示す"
       }
     },
     {
@@ -31,7 +34,8 @@
       "gloss": {
         "en": "to, at, in",
         "zh": "表示时间、地点或对象",
-        "zh_TW": "表示時間、地點或對象"
+        "zh_TW": "表示時間、地點或對象",
+        "ja": "時・場所・対象を示す"
       }
     },
     {
@@ -42,7 +46,8 @@
       "gloss": {
         "en": "towards",
         "zh": "表示方向",
-        "zh_TW": "表示方向"
+        "zh_TW": "表示方向",
+        "ja": "方向を示す"
       }
     },
     {
@@ -52,7 +57,8 @@
       "gloss": {
         "en": "at, by means of",
         "zh": "表示场所或手段",
-        "zh_TW": "表示場所或手段"
+        "zh_TW": "表示場所或手段",
+        "ja": "場所や手段を示す"
       }
     },
     {
@@ -62,7 +68,8 @@
       "gloss": {
         "en": "and, with",
         "zh": "和、与",
-        "zh_TW": "和、與"
+        "zh_TW": "和、與",
+        "ja": "並列や相手を示す"
       }
     },
     {
@@ -72,7 +79,8 @@
       "gloss": {
         "en": "from",
         "zh": "从",
-        "zh_TW": "從"
+        "zh_TW": "從",
+        "ja": "起点を示す"
       }
     },
     {
@@ -82,7 +90,8 @@
       "gloss": {
         "en": "until, as far as",
         "zh": "到、直到",
-        "zh_TW": "到、直到"
+        "zh_TW": "到、直到",
+        "ja": "終点を示す"
       }
     },
     {
@@ -92,7 +101,8 @@
       "gloss": {
         "en": "than, from",
         "zh": "比、从",
-        "zh_TW": "比、從"
+        "zh_TW": "比、從",
+        "ja": "比較の基準を示す"
       }
     },
     {
@@ -102,7 +112,8 @@
       "gloss": {
         "en": "of, possessive",
         "zh": "的",
-        "zh_TW": "的"
+        "zh_TW": "的",
+        "ja": "所有・所属を示す"
       }
     },
     {
@@ -113,7 +124,8 @@
       "gloss": {
         "en": "topic marker",
         "zh": "提示主题",
-        "zh_TW": "提示主題"
+        "zh_TW": "提示主題",
+        "ja": "主題を示す"
       }
     },
     {
@@ -123,7 +135,8 @@
       "gloss": {
         "en": "too, also",
         "zh": "也",
-        "zh_TW": "也"
+        "zh_TW": "也",
+        "ja": "同類を加える"
       }
     },
     {
@@ -133,7 +146,8 @@
       "gloss": {
         "en": "only (with a negative)",
         "zh": "只（后接否定）",
-        "zh_TW": "只（後接否定）"
+        "zh_TW": "只（後接否定）",
+        "ja": "限定を示す（否定文で）"
       }
     },
     {
@@ -143,7 +157,8 @@
       "gloss": {
         "en": "only",
         "zh": "只、仅",
-        "zh_TW": "只、僅"
+        "zh_TW": "只、僅",
+        "ja": "限定を表す"
       }
     },
     {
@@ -153,7 +168,8 @@
       "gloss": {
         "en": "nothing but",
         "zh": "净是、光是",
-        "zh_TW": "淨是、光是"
+        "zh_TW": "淨是、光是",
+        "ja": "それだけと強調する"
       }
     },
     {
@@ -163,7 +179,8 @@
       "gloss": {
         "en": "about, approximately",
         "zh": "大约",
-        "zh_TW": "大約"
+        "zh_TW": "大約",
+        "ja": "概数を示す"
       }
     },
     {
@@ -173,7 +190,8 @@
       "gloss": {
         "en": "about, approximately",
         "zh": "大约",
-        "zh_TW": "大約"
+        "zh_TW": "大約",
+        "ja": "概数を示す"
       }
     },
     {
@@ -183,7 +201,8 @@
       "gloss": {
         "en": "around (a time)",
         "zh": "前后（时间）",
-        "zh_TW": "前後（時間）"
+        "zh_TW": "前後（時間）",
+        "ja": "時刻の概数を示す"
       }
     },
     {
@@ -193,7 +212,8 @@
       "gloss": {
         "en": "and so on",
         "zh": "等等",
-        "zh_TW": "等等"
+        "zh_TW": "等等",
+        "ja": "例示を表す"
       }
     },
     {
@@ -203,7 +223,8 @@
       "gloss": {
         "en": "and (non-exhaustive)",
         "zh": "和（列举其一）",
-        "zh_TW": "和（列舉其一）"
+        "zh_TW": "和（列舉其一）",
+        "ja": "例を挙げて並べる"
       }
     },
     {
@@ -213,7 +234,8 @@
       "gloss": {
         "en": "things like",
         "zh": "之类的",
-        "zh_TW": "之類的"
+        "zh_TW": "之類的",
+        "ja": "例示を挙げる（口語）"
       }
     },
     {
@@ -223,7 +245,8 @@
       "gloss": {
         "en": "each, apiece",
         "zh": "各、每",
-        "zh_TW": "各、每"
+        "zh_TW": "各、每",
+        "ja": "均等な配分を示す"
       }
     },
     {
@@ -233,7 +256,8 @@
       "gloss": {
         "en": "as for (at, to)",
         "zh": "在……方面",
-        "zh_TW": "在……方面"
+        "zh_TW": "在……方面",
+        "ja": "「に」を強調する"
       }
     },
     {
@@ -243,7 +267,8 @@
       "gloss": {
         "en": "as for (at, by)",
         "zh": "在……则",
-        "zh_TW": "在……則"
+        "zh_TW": "在……則",
+        "ja": "「で」を強調する"
       }
     },
     {
@@ -253,7 +278,8 @@
       "gloss": {
         "en": "as for (with)",
         "zh": "所谓",
-        "zh_TW": "所謂"
+        "zh_TW": "所謂",
+        "ja": "「と」を強調する"
       }
     },
     {
@@ -264,7 +290,8 @@
       "gloss": {
         "en": "because",
         "zh": "因为",
-        "zh_TW": "因為"
+        "zh_TW": "因為",
+        "ja": "理由を表す"
       }
     },
     {
@@ -275,7 +302,8 @@
       "gloss": {
         "en": "since, because",
         "zh": "因为",
-        "zh_TW": "因為"
+        "zh_TW": "因為",
+        "ja": "理由を表す"
       }
     },
     {
@@ -286,7 +314,8 @@
       "gloss": {
         "en": "even though",
         "zh": "尽管",
-        "zh_TW": "儘管"
+        "zh_TW": "儘管",
+        "ja": "逆接・不満を表す"
       }
     },
     {
@@ -297,7 +326,8 @@
       "gloss": {
         "en": "but",
         "zh": "但是",
-        "zh_TW": "但是"
+        "zh_TW": "但是",
+        "ja": "逆接を表す"
       }
     },
     {
@@ -308,7 +338,8 @@
       "gloss": {
         "en": "but",
         "zh": "但是",
-        "zh_TW": "但是"
+        "zh_TW": "但是",
+        "ja": "逆接を表す（口語）"
       }
     },
     {
@@ -319,7 +350,8 @@
       "gloss": {
         "en": "but",
         "zh": "但是",
-        "zh_TW": "但是"
+        "zh_TW": "但是",
+        "ja": "逆接を表す"
       }
     },
     {
@@ -330,7 +362,8 @@
       "gloss": {
         "en": "but",
         "zh": "但是",
-        "zh_TW": "但是"
+        "zh_TW": "但是",
+        "ja": "逆接を表す（丁寧）"
       }
     },
     {
@@ -341,7 +374,8 @@
       "gloss": {
         "en": "and what is more",
         "zh": "而且",
-        "zh_TW": "而且"
+        "zh_TW": "而且",
+        "ja": "理由を列挙する"
       }
     },
     {
@@ -355,7 +389,8 @@
       "gloss": {
         "en": "while doing",
         "zh": "一边……一边",
-        "zh_TW": "一邊……一邊"
+        "zh_TW": "一邊……一邊",
+        "ja": "同時動作を表す"
       }
     },
     {
@@ -365,7 +400,8 @@
       "gloss": {
         "en": "question marker",
         "zh": "疑问助词",
-        "zh_TW": "疑問助詞"
+        "zh_TW": "疑問助詞",
+        "ja": "疑問を表す"
       }
     },
     {
@@ -375,7 +411,8 @@
       "gloss": {
         "en": "right?, isn't it",
         "zh": "……吧、……呢",
-        "zh_TW": "……吧、……呢"
+        "zh_TW": "……吧、……呢",
+        "ja": "同意を求める"
       }
     },
     {
@@ -385,7 +422,8 @@
       "gloss": {
         "en": "I tell you",
         "zh": "语气助词，提醒",
-        "zh_TW": "語氣助詞，提醒"
+        "zh_TW": "語氣助詞，提醒",
+        "ja": "情報を伝える"
       }
     },
     {
@@ -395,7 +433,8 @@
       "gloss": {
         "en": "soft assertion",
         "zh": "柔和的断定语气",
-        "zh_TW": "柔和的斷定語氣"
+        "zh_TW": "柔和的斷定語氣",
+        "ja": "柔らかい断定を表す"
       }
     },
     {
@@ -405,7 +444,8 @@
       "gloss": {
         "en": "I wonder",
         "zh": "……吧、我想",
-        "zh_TW": "……吧、我想"
+        "zh_TW": "……吧、我想",
+        "ja": "軽い疑問を表す"
       }
     },
     {
@@ -416,7 +456,8 @@
       "gloss": {
         "en": "don't (prohibitive)",
         "zh": "禁止",
-        "zh_TW": "禁止"
+        "zh_TW": "禁止",
+        "ja": "禁止を表す"
       }
     },
     {
@@ -427,7 +468,8 @@
       "gloss": {
         "en": "to be (plain)",
         "zh": "是（简体）",
-        "zh_TW": "是（簡體）"
+        "zh_TW": "是（簡體）",
+        "ja": "断定を表す（普通体）"
       }
     },
     {
@@ -441,7 +483,8 @@
       "gloss": {
         "en": "to be (polite)",
         "zh": "是（敬体）",
-        "zh_TW": "是（敬體）"
+        "zh_TW": "是（敬體）",
+        "ja": "断定を表す（丁寧体）"
       }
     },
     {
@@ -456,7 +499,8 @@
       "gloss": {
         "en": "was (polite)",
         "zh": "是（敬体过去）",
-        "zh_TW": "是（敬體過去）"
+        "zh_TW": "是（敬體過去）",
+        "ja": "過去の断定（丁寧体）"
       }
     },
     {
@@ -470,7 +514,8 @@
       "gloss": {
         "en": "was (plain)",
         "zh": "是（简体过去）",
-        "zh_TW": "是（簡體過去）"
+        "zh_TW": "是（簡體過去）",
+        "ja": "過去の断定（普通体）"
       }
     },
     {
@@ -485,7 +530,8 @@
       "gloss": {
         "en": "is not (polite)",
         "zh": "不是（敬体）",
-        "zh_TW": "不是（敬體）"
+        "zh_TW": "不是（敬體）",
+        "ja": "否定の断定（丁寧体）"
       }
     },
     {
@@ -500,7 +546,8 @@
       "gloss": {
         "en": "is not (polite, casual)",
         "zh": "不是（敬体口语）",
-        "zh_TW": "不是（敬體口語）"
+        "zh_TW": "不是（敬體口語）",
+        "ja": "否定の断定（丁寧・口語）"
       }
     },
     {
@@ -516,7 +563,8 @@
       "gloss": {
         "en": "was not (polite)",
         "zh": "不是（敬体过去）",
-        "zh_TW": "不是（敬體過去）"
+        "zh_TW": "不是（敬體過去）",
+        "ja": "過去否定の断定（丁寧体）"
       }
     },
     {
@@ -532,7 +580,8 @@
       "gloss": {
         "en": "was not (polite, casual)",
         "zh": "不是（敬体过去口语）",
-        "zh_TW": "不是（敬體過去口語）"
+        "zh_TW": "不是（敬體過去口語）",
+        "ja": "過去否定（丁寧・口語）"
       }
     },
     {
@@ -546,7 +595,8 @@
       "gloss": {
         "en": "is not (plain)",
         "zh": "不是（简体）",
-        "zh_TW": "不是（簡體）"
+        "zh_TW": "不是（簡體）",
+        "ja": "否定の断定（普通体）"
       }
     },
     {
@@ -560,7 +610,8 @@
       "gloss": {
         "en": "is not (plain, casual)",
         "zh": "不是（简体口语）",
-        "zh_TW": "不是（簡體口語）"
+        "zh_TW": "不是（簡體口語）",
+        "ja": "否定の断定（普通・口語）"
       }
     },
     {
@@ -575,7 +626,8 @@
       "gloss": {
         "en": "was not (plain, casual)",
         "zh": "不是（简体过去口语）",
-        "zh_TW": "不是（簡體過去口語）"
+        "zh_TW": "不是（簡體過去口語）",
+        "ja": "過去否定（普通・口語）"
       }
     },
     {
@@ -589,7 +641,8 @@
       "gloss": {
         "en": "probably, right?",
         "zh": "大概、……吧",
-        "zh_TW": "大概、……吧"
+        "zh_TW": "大概、……吧",
+        "ja": "推量・確認を表す"
       }
     },
     {
@@ -600,7 +653,8 @@
       "gloss": {
         "en": "probably",
         "zh": "大概",
-        "zh_TW": "大概"
+        "zh_TW": "大概",
+        "ja": "推量を表す（普通体）"
       }
     },
     {
@@ -614,7 +668,8 @@
       "gloss": {
         "en": "attributive of a na-adjective",
         "zh": "な形容词的连体形",
-        "zh_TW": "な形容詞的連體形"
+        "zh_TW": "な形容詞的連體形",
+        "ja": "な形容詞の連体形"
       }
     },
     {
@@ -629,7 +684,8 @@
       "gloss": {
         "en": "polite non-past",
         "zh": "敬体现在",
-        "zh_TW": "敬體現在"
+        "zh_TW": "敬體現在",
+        "ja": "丁寧な現在形"
       }
     },
     {
@@ -645,7 +701,8 @@
       "gloss": {
         "en": "polite negative",
         "zh": "敬体否定",
-        "zh_TW": "敬體否定"
+        "zh_TW": "敬體否定",
+        "ja": "丁寧な否定形"
       }
     },
     {
@@ -661,7 +718,8 @@
       "gloss": {
         "en": "polite past",
         "zh": "敬体过去",
-        "zh_TW": "敬體過去"
+        "zh_TW": "敬體過去",
+        "ja": "丁寧な過去形"
       }
     },
     {
@@ -678,7 +736,8 @@
       "gloss": {
         "en": "polite negative past",
         "zh": "敬体否定过去",
-        "zh_TW": "敬體否定過去"
+        "zh_TW": "敬體否定過去",
+        "ja": "丁寧な過去否定形"
       }
     },
     {
@@ -694,7 +753,8 @@
       "gloss": {
         "en": "let us",
         "zh": "我们……吧",
-        "zh_TW": "我們……吧"
+        "zh_TW": "我們……吧",
+        "ja": "勧誘を表す"
       }
     },
     {
@@ -710,7 +770,8 @@
       "gloss": {
         "en": "won't you?",
         "zh": "要不要……？",
-        "zh_TW": "要不要……？"
+        "zh_TW": "要不要……？",
+        "ja": "丁寧な勧誘を表す"
       }
     },
     {
@@ -725,7 +786,8 @@
       "gloss": {
         "en": "do it (instruction)",
         "zh": "请（命令）",
-        "zh_TW": "請（命令）"
+        "zh_TW": "請（命令）",
+        "ja": "指示・命令を表す"
       }
     },
     {
@@ -740,7 +802,8 @@
       "gloss": {
         "en": "want to",
         "zh": "想要",
-        "zh_TW": "想要"
+        "zh_TW": "想要",
+        "ja": "希望を表す"
       }
     },
     {
@@ -756,7 +819,8 @@
       "gloss": {
         "en": "wanted to",
         "zh": "曾想要",
-        "zh_TW": "曾想要"
+        "zh_TW": "曾想要",
+        "ja": "過去の希望を表す"
       }
     },
     {
@@ -772,7 +836,8 @@
       "gloss": {
         "en": "do not want to",
         "zh": "不想",
-        "zh_TW": "不想"
+        "zh_TW": "不想",
+        "ja": "希望の否定を表す"
       }
     },
     {
@@ -787,7 +852,8 @@
       "gloss": {
         "en": "not (plain)",
         "zh": "不（简体）",
-        "zh_TW": "不（簡體）"
+        "zh_TW": "不（簡體）",
+        "ja": "否定を表す（普通体）"
       }
     },
     {
@@ -803,7 +869,8 @@
       "gloss": {
         "en": "did not (plain)",
         "zh": "没有（简体）",
-        "zh_TW": "沒有（簡體）"
+        "zh_TW": "沒有（簡體）",
+        "ja": "過去否定（普通体）"
       }
     },
     {
@@ -819,7 +886,8 @@
       "gloss": {
         "en": "not, and",
         "zh": "不……而",
-        "zh_TW": "不……而"
+        "zh_TW": "不……而",
+        "ja": "否定して理由を示す"
       }
     },
     {
@@ -835,7 +903,8 @@
       "gloss": {
         "en": "without doing",
         "zh": "不……就",
-        "zh_TW": "不……就"
+        "zh_TW": "不……就",
+        "ja": "「〜しないで」を示す"
       }
     },
     {
@@ -851,7 +920,8 @@
       "gloss": {
         "en": "if not",
         "zh": "如果不",
-        "zh_TW": "如果不"
+        "zh_TW": "如果不",
+        "ja": "否定の条件を示す"
       }
     },
     {
@@ -866,7 +936,8 @@
       "gloss": {
         "en": "past (plain)",
         "zh": "过去（简体）",
-        "zh_TW": "過去（簡體）"
+        "zh_TW": "過去（簡體）",
+        "ja": "過去を表す（普通体）"
       }
     },
     {
@@ -881,7 +952,8 @@
       "gloss": {
         "en": "past (plain, voiced)",
         "zh": "过去（简体，浊音）",
-        "zh_TW": "過去（簡體，濁音）"
+        "zh_TW": "過去（簡體，濁音）",
+        "ja": "過去を表す（濁音）"
       }
     },
     {
@@ -896,7 +968,8 @@
       "gloss": {
         "en": "te-form",
         "zh": "て形",
-        "zh_TW": "て形"
+        "zh_TW": "て形",
+        "ja": "動作をつなぐ形"
       }
     },
     {
@@ -911,7 +984,8 @@
       "gloss": {
         "en": "te-form (voiced)",
         "zh": "て形（浊音）",
-        "zh_TW": "て形（濁音）"
+        "zh_TW": "て形（濁音）",
+        "ja": "動作をつなぐ形（濁音）"
       }
     },
     {
@@ -926,7 +1000,8 @@
       "gloss": {
         "en": "if, when",
         "zh": "如果、……的时候",
-        "zh_TW": "如果、……的時候"
+        "zh_TW": "如果、……的時候",
+        "ja": "条件・時を表す"
       }
     },
     {
@@ -941,7 +1016,8 @@
       "gloss": {
         "en": "doing things like",
         "zh": "又……又……",
-        "zh_TW": "又……又……"
+        "zh_TW": "又……又……",
+        "ja": "動作を列挙する"
       }
     },
     {
@@ -956,7 +1032,8 @@
       "gloss": {
         "en": "if",
         "zh": "如果",
-        "zh_TW": "如果"
+        "zh_TW": "如果",
+        "ja": "仮定条件を表す"
       }
     },
     {
@@ -971,7 +1048,8 @@
       "gloss": {
         "en": "doing things like (voiced)",
         "zh": "又……又……（浊音）",
-        "zh_TW": "又……又……（濁音）"
+        "zh_TW": "又……又……（濁音）",
+        "ja": "動作の列挙（濁音）"
       }
     },
     {
@@ -986,7 +1064,8 @@
       "gloss": {
         "en": "if, when (voiced)",
         "zh": "如果、……的时候（浊音）",
-        "zh_TW": "如果、……的時候（濁音）"
+        "zh_TW": "如果、……的時候（濁音）",
+        "ja": "条件・時（濁音）"
       }
     },
     {
@@ -1001,7 +1080,8 @@
       "gloss": {
         "en": "adverbial form of an i-adjective",
         "zh": "い形容词的连用形",
-        "zh_TW": "い形容詞的連用形"
+        "zh_TW": "い形容詞的連用形",
+        "ja": "い形容詞の連用形"
       }
     },
     {
@@ -1017,7 +1097,8 @@
       "gloss": {
         "en": "and (joining adjectives)",
         "zh": "（连接形容词）而且",
-        "zh_TW": "（連接形容詞）而且"
+        "zh_TW": "（連接形容詞）而且",
+        "ja": "形容詞をつなぐ形"
       }
     },
     {
@@ -1032,7 +1113,8 @@
       "gloss": {
         "en": "past of an i-adjective",
         "zh": "い形容词的过去形",
-        "zh_TW": "い形容詞的過去形"
+        "zh_TW": "い形容詞的過去形",
+        "ja": "い形容詞の過去形"
       }
     },
     {
@@ -1047,7 +1129,8 @@
       "gloss": {
         "en": "negative of an i-adjective",
         "zh": "い形容词的否定形",
-        "zh_TW": "い形容詞的否定形"
+        "zh_TW": "い形容詞的否定形",
+        "ja": "い形容詞の否定形"
       }
     },
     {
@@ -1063,7 +1146,8 @@
       "gloss": {
         "en": "negative past of an i-adjective",
         "zh": "い形容词的否定过去形",
-        "zh_TW": "い形容詞的否定過去形"
+        "zh_TW": "い形容詞的否定過去形",
+        "ja": "い形容詞の否定過去形"
       }
     },
     {
@@ -1078,7 +1162,8 @@
       "gloss": {
         "en": "if (i-adjective)",
         "zh": "如果（い形容词）",
-        "zh_TW": "如果（い形容詞）"
+        "zh_TW": "如果（い形容詞）",
+        "ja": "い形容詞の仮定形"
       }
     },
     {
@@ -1088,7 +1173,8 @@
       "gloss": {
         "en": "the act of, nominalizer",
         "zh": "……的事（名词化）",
-        "zh_TW": "……的事（名詞化）"
+        "zh_TW": "……的事（名詞化）",
+        "ja": "動作を名詞化する"
       }
     },
     {
@@ -1098,7 +1184,8 @@
       "gloss": {
         "en": "thing",
         "zh": "东西、事物",
-        "zh_TW": "東西、事物"
+        "zh_TW": "東西、事物",
+        "ja": "具体的な物を示す"
       }
     },
     {
@@ -1108,7 +1195,8 @@
       "gloss": {
         "en": "side, the one that",
         "zh": "方面、一方",
-        "zh_TW": "方面、一方"
+        "zh_TW": "方面、一方",
+        "ja": "選択の一方を示す"
       }
     },
     {
@@ -1118,7 +1206,8 @@
       "gloss": {
         "en": "intend to",
         "zh": "打算",
-        "zh_TW": "打算"
+        "zh_TW": "打算",
+        "ja": "意図・予定を表す"
       }
     },
     {
@@ -1128,7 +1217,8 @@
       "gloss": {
         "en": "ought to",
         "zh": "应该",
-        "zh_TW": "應該"
+        "zh_TW": "應該",
+        "ja": "当然の推測を表す"
       }
     },
     {
@@ -1138,7 +1228,8 @@
       "gloss": {
         "en": "when",
         "zh": "……的时候",
-        "zh_TW": "……的時候"
+        "zh_TW": "……的時候",
+        "ja": "時点を示す"
       }
     },
     {
@@ -1148,7 +1239,8 @@
       "gloss": {
         "en": "for the sake of",
         "zh": "为了",
-        "zh_TW": "為了"
+        "zh_TW": "為了",
+        "ja": "目的・原因を示す"
       }
     },
     {
@@ -1158,7 +1250,8 @@
       "gloss": {
         "en": "reason, no wonder",
         "zh": "缘由、道理",
-        "zh_TW": "緣由、道理"
+        "zh_TW": "緣由、道理",
+        "ja": "理由・道理を示す"
       }
     },
     {
@@ -1173,7 +1266,8 @@
       "gloss": {
         "en": "passive",
         "zh": "被动",
-        "zh_TW": "被動"
+        "zh_TW": "被動",
+        "ja": "受身を表す"
       }
     },
     {
@@ -1189,7 +1283,8 @@
       "gloss": {
         "en": "passive, polite",
         "zh": "被动敬体",
-        "zh_TW": "被動敬體"
+        "zh_TW": "被動敬體",
+        "ja": "受身の丁寧形"
       }
     },
     {
@@ -1206,7 +1301,8 @@
       "gloss": {
         "en": "passive, polite past",
         "zh": "被动敬体过去",
-        "zh_TW": "被動敬體過去"
+        "zh_TW": "被動敬體過去",
+        "ja": "受身の丁寧過去形"
       }
     },
     {
@@ -1223,7 +1319,8 @@
       "gloss": {
         "en": "passive, polite negative",
         "zh": "被动敬体否定",
-        "zh_TW": "被動敬體否定"
+        "zh_TW": "被動敬體否定",
+        "ja": "受身の丁寧否定形"
       }
     },
     {
@@ -1241,7 +1338,8 @@
       "gloss": {
         "en": "passive, polite negative past",
         "zh": "被动敬体否定过去",
-        "zh_TW": "被動敬體否定過去"
+        "zh_TW": "被動敬體否定過去",
+        "ja": "受身の丁寧過去否定形"
       }
     },
     {
@@ -1257,7 +1355,8 @@
       "gloss": {
         "en": "passive, negative",
         "zh": "被动否定",
-        "zh_TW": "被動否定"
+        "zh_TW": "被動否定",
+        "ja": "受身の否定形"
       }
     },
     {
@@ -1274,7 +1373,8 @@
       "gloss": {
         "en": "passive, negative past",
         "zh": "被动否定过去",
-        "zh_TW": "被動否定過去"
+        "zh_TW": "被動否定過去",
+        "ja": "受身の否定過去形"
       }
     },
     {
@@ -1290,7 +1390,8 @@
       "gloss": {
         "en": "passive, past",
         "zh": "被动过去",
-        "zh_TW": "被動過去"
+        "zh_TW": "被動過去",
+        "ja": "受身の過去形"
       }
     },
     {
@@ -1306,7 +1407,8 @@
       "gloss": {
         "en": "passive, te-form",
         "zh": "被动て形",
-        "zh_TW": "被動て形"
+        "zh_TW": "被動て形",
+        "ja": "受身のて形"
       }
     },
     {
@@ -1322,7 +1424,8 @@
       "gloss": {
         "en": "passive, conditional",
         "zh": "被动条件形",
-        "zh_TW": "被動條件形"
+        "zh_TW": "被動條件形",
+        "ja": "受身の仮定形"
       }
     },
     {
@@ -1338,7 +1441,8 @@
       "gloss": {
         "en": "passive, conditional",
         "zh": "被动条件形",
-        "zh_TW": "被動條件形"
+        "zh_TW": "被動條件形",
+        "ja": "受身の条件形"
       }
     },
     {
@@ -1353,7 +1457,8 @@
       "gloss": {
         "en": "passive or potential",
         "zh": "被动或可能",
-        "zh_TW": "被動或可能"
+        "zh_TW": "被動或可能",
+        "ja": "受身・可能を表す"
       }
     },
     {
@@ -1369,7 +1474,8 @@
       "gloss": {
         "en": "passive or potential, polite",
         "zh": "被动或可能敬体",
-        "zh_TW": "被動或可能敬體"
+        "zh_TW": "被動或可能敬體",
+        "ja": "受身・可能の丁寧形"
       }
     },
     {
@@ -1386,7 +1492,8 @@
       "gloss": {
         "en": "passive or potential, polite past",
         "zh": "被动或可能敬体过去",
-        "zh_TW": "被動或可能敬體過去"
+        "zh_TW": "被動或可能敬體過去",
+        "ja": "受身・可能の丁寧過去形"
       }
     },
     {
@@ -1403,7 +1510,8 @@
       "gloss": {
         "en": "passive or potential, polite negative",
         "zh": "被动或可能敬体否定",
-        "zh_TW": "被動或可能敬體否定"
+        "zh_TW": "被動或可能敬體否定",
+        "ja": "受身・可能の丁寧否定形"
       }
     },
     {
@@ -1421,7 +1529,8 @@
       "gloss": {
         "en": "passive or potential, polite negative past",
         "zh": "被动或可能敬体否定过去",
-        "zh_TW": "被動或可能敬體否定過去"
+        "zh_TW": "被動或可能敬體否定過去",
+        "ja": "受身・可能の丁寧過去否定"
       }
     },
     {
@@ -1437,7 +1546,8 @@
       "gloss": {
         "en": "passive or potential, negative",
         "zh": "被动或可能否定",
-        "zh_TW": "被動或可能否定"
+        "zh_TW": "被動或可能否定",
+        "ja": "受身・可能の否定形"
       }
     },
     {
@@ -1454,7 +1564,8 @@
       "gloss": {
         "en": "passive or potential, negative past",
         "zh": "被动或可能否定过去",
-        "zh_TW": "被動或可能否定過去"
+        "zh_TW": "被動或可能否定過去",
+        "ja": "受身・可能の否定過去形"
       }
     },
     {
@@ -1470,7 +1581,8 @@
       "gloss": {
         "en": "passive or potential, past",
         "zh": "被动或可能过去",
-        "zh_TW": "被動或可能過去"
+        "zh_TW": "被動或可能過去",
+        "ja": "受身・可能の過去形"
       }
     },
     {
@@ -1486,7 +1598,8 @@
       "gloss": {
         "en": "passive or potential, te-form",
         "zh": "被动或可能て形",
-        "zh_TW": "被動或可能て形"
+        "zh_TW": "被動或可能て形",
+        "ja": "受身・可能のて形"
       }
     },
     {
@@ -1502,7 +1615,8 @@
       "gloss": {
         "en": "passive or potential, conditional",
         "zh": "被动或可能条件形",
-        "zh_TW": "被動或可能條件形"
+        "zh_TW": "被動或可能條件形",
+        "ja": "受身・可能の仮定形"
       }
     },
     {
@@ -1518,7 +1632,8 @@
       "gloss": {
         "en": "passive or potential, conditional",
         "zh": "被动或可能条件形",
-        "zh_TW": "被動或可能條件形"
+        "zh_TW": "被動或可能條件形",
+        "ja": "受身・可能の条件形"
       }
     },
     {
@@ -1533,7 +1648,8 @@
       "gloss": {
         "en": "causative",
         "zh": "使役",
-        "zh_TW": "使役"
+        "zh_TW": "使役",
+        "ja": "使役を表す"
       }
     },
     {
@@ -1549,7 +1665,8 @@
       "gloss": {
         "en": "causative, polite",
         "zh": "使役敬体",
-        "zh_TW": "使役敬體"
+        "zh_TW": "使役敬體",
+        "ja": "使役の丁寧形"
       }
     },
     {
@@ -1566,7 +1683,8 @@
       "gloss": {
         "en": "causative, polite past",
         "zh": "使役敬体过去",
-        "zh_TW": "使役敬體過去"
+        "zh_TW": "使役敬體過去",
+        "ja": "使役の丁寧過去形"
       }
     },
     {
@@ -1583,7 +1701,8 @@
       "gloss": {
         "en": "causative, polite negative",
         "zh": "使役敬体否定",
-        "zh_TW": "使役敬體否定"
+        "zh_TW": "使役敬體否定",
+        "ja": "使役の丁寧否定形"
       }
     },
     {
@@ -1601,7 +1720,8 @@
       "gloss": {
         "en": "causative, polite negative past",
         "zh": "使役敬体否定过去",
-        "zh_TW": "使役敬體否定過去"
+        "zh_TW": "使役敬體否定過去",
+        "ja": "使役の丁寧過去否定形"
       }
     },
     {
@@ -1617,7 +1737,8 @@
       "gloss": {
         "en": "causative, negative",
         "zh": "使役否定",
-        "zh_TW": "使役否定"
+        "zh_TW": "使役否定",
+        "ja": "使役の否定形"
       }
     },
     {
@@ -1634,7 +1755,8 @@
       "gloss": {
         "en": "causative, negative past",
         "zh": "使役否定过去",
-        "zh_TW": "使役否定過去"
+        "zh_TW": "使役否定過去",
+        "ja": "使役の否定過去形"
       }
     },
     {
@@ -1650,7 +1772,8 @@
       "gloss": {
         "en": "causative, past",
         "zh": "使役过去",
-        "zh_TW": "使役過去"
+        "zh_TW": "使役過去",
+        "ja": "使役の過去形"
       }
     },
     {
@@ -1666,7 +1789,8 @@
       "gloss": {
         "en": "causative, te-form",
         "zh": "使役て形",
-        "zh_TW": "使役て形"
+        "zh_TW": "使役て形",
+        "ja": "使役のて形"
       }
     },
     {
@@ -1682,7 +1806,8 @@
       "gloss": {
         "en": "causative, conditional",
         "zh": "使役条件形",
-        "zh_TW": "使役條件形"
+        "zh_TW": "使役條件形",
+        "ja": "使役の仮定形"
       }
     },
     {
@@ -1698,7 +1823,8 @@
       "gloss": {
         "en": "causative, conditional",
         "zh": "使役条件形",
-        "zh_TW": "使役條件形"
+        "zh_TW": "使役條件形",
+        "ja": "使役の条件形"
       }
     },
     {
@@ -1713,7 +1839,8 @@
       "gloss": {
         "en": "causative",
         "zh": "使役",
-        "zh_TW": "使役"
+        "zh_TW": "使役",
+        "ja": "使役を表す"
       }
     },
     {
@@ -1729,7 +1856,8 @@
       "gloss": {
         "en": "causative, polite",
         "zh": "使役敬体",
-        "zh_TW": "使役敬體"
+        "zh_TW": "使役敬體",
+        "ja": "使役の丁寧形"
       }
     },
     {
@@ -1746,7 +1874,8 @@
       "gloss": {
         "en": "causative, polite past",
         "zh": "使役敬体过去",
-        "zh_TW": "使役敬體過去"
+        "zh_TW": "使役敬體過去",
+        "ja": "使役の丁寧過去形"
       }
     },
     {
@@ -1763,7 +1892,8 @@
       "gloss": {
         "en": "causative, polite negative",
         "zh": "使役敬体否定",
-        "zh_TW": "使役敬體否定"
+        "zh_TW": "使役敬體否定",
+        "ja": "使役の丁寧否定形"
       }
     },
     {
@@ -1781,7 +1911,8 @@
       "gloss": {
         "en": "causative, polite negative past",
         "zh": "使役敬体否定过去",
-        "zh_TW": "使役敬體否定過去"
+        "zh_TW": "使役敬體否定過去",
+        "ja": "使役の丁寧過去否定形"
       }
     },
     {
@@ -1797,7 +1928,8 @@
       "gloss": {
         "en": "causative, negative",
         "zh": "使役否定",
-        "zh_TW": "使役否定"
+        "zh_TW": "使役否定",
+        "ja": "使役の否定形"
       }
     },
     {
@@ -1814,7 +1946,8 @@
       "gloss": {
         "en": "causative, negative past",
         "zh": "使役否定过去",
-        "zh_TW": "使役否定過去"
+        "zh_TW": "使役否定過去",
+        "ja": "使役の否定過去形"
       }
     },
     {
@@ -1830,7 +1963,8 @@
       "gloss": {
         "en": "causative, past",
         "zh": "使役过去",
-        "zh_TW": "使役過去"
+        "zh_TW": "使役過去",
+        "ja": "使役の過去形"
       }
     },
     {
@@ -1846,7 +1980,8 @@
       "gloss": {
         "en": "causative, te-form",
         "zh": "使役て形",
-        "zh_TW": "使役て形"
+        "zh_TW": "使役て形",
+        "ja": "使役のて形"
       }
     },
     {
@@ -1862,7 +1997,8 @@
       "gloss": {
         "en": "causative, conditional",
         "zh": "使役条件形",
-        "zh_TW": "使役條件形"
+        "zh_TW": "使役條件形",
+        "ja": "使役の仮定形"
       }
     },
     {
@@ -1878,7 +2014,8 @@
       "gloss": {
         "en": "causative, conditional",
         "zh": "使役条件形",
-        "zh_TW": "使役條件形"
+        "zh_TW": "使役條件形",
+        "ja": "使役の条件形"
       }
     },
     {
@@ -1894,7 +2031,8 @@
       "gloss": {
         "en": "causative-passive",
         "zh": "使役被动",
-        "zh_TW": "使役被動"
+        "zh_TW": "使役被動",
+        "ja": "使役受身を表す"
       }
     },
     {
@@ -1911,7 +2049,8 @@
       "gloss": {
         "en": "causative-passive, polite",
         "zh": "使役被动敬体",
-        "zh_TW": "使役被動敬體"
+        "zh_TW": "使役被動敬體",
+        "ja": "使役受身の丁寧形"
       }
     },
     {
@@ -1929,7 +2068,8 @@
       "gloss": {
         "en": "causative-passive, polite past",
         "zh": "使役被动敬体过去",
-        "zh_TW": "使役被動敬體過去"
+        "zh_TW": "使役被動敬體過去",
+        "ja": "使役受身の丁寧過去形"
       }
     },
     {
@@ -1947,7 +2087,8 @@
       "gloss": {
         "en": "causative-passive, polite negative",
         "zh": "使役被动敬体否定",
-        "zh_TW": "使役被動敬體否定"
+        "zh_TW": "使役被動敬體否定",
+        "ja": "使役受身の丁寧否定形"
       }
     },
     {
@@ -1966,7 +2107,8 @@
       "gloss": {
         "en": "causative-passive, polite negative past",
         "zh": "使役被动敬体否定过去",
-        "zh_TW": "使役被動敬體否定過去"
+        "zh_TW": "使役被動敬體否定過去",
+        "ja": "使役受身の丁寧過去否定"
       }
     },
     {
@@ -1983,7 +2125,8 @@
       "gloss": {
         "en": "causative-passive, negative",
         "zh": "使役被动否定",
-        "zh_TW": "使役被動否定"
+        "zh_TW": "使役被動否定",
+        "ja": "使役受身の否定形"
       }
     },
     {
@@ -2001,7 +2144,8 @@
       "gloss": {
         "en": "causative-passive, negative past",
         "zh": "使役被动否定过去",
-        "zh_TW": "使役被動否定過去"
+        "zh_TW": "使役被動否定過去",
+        "ja": "使役受身の否定過去形"
       }
     },
     {
@@ -2018,7 +2162,8 @@
       "gloss": {
         "en": "causative-passive, past",
         "zh": "使役被动过去",
-        "zh_TW": "使役被動過去"
+        "zh_TW": "使役被動過去",
+        "ja": "使役受身の過去形"
       }
     },
     {
@@ -2035,7 +2180,8 @@
       "gloss": {
         "en": "causative-passive, te-form",
         "zh": "使役被动て形",
-        "zh_TW": "使役被動て形"
+        "zh_TW": "使役被動て形",
+        "ja": "使役受身のて形"
       }
     },
     {
@@ -2052,7 +2198,8 @@
       "gloss": {
         "en": "causative-passive, conditional",
         "zh": "使役被动条件形",
-        "zh_TW": "使役被動條件形"
+        "zh_TW": "使役被動條件形",
+        "ja": "使役受身の仮定形"
       }
     },
     {
@@ -2069,7 +2216,8 @@
       "gloss": {
         "en": "causative-passive, conditional",
         "zh": "使役被动条件形",
-        "zh_TW": "使役被動條件形"
+        "zh_TW": "使役被動條件形",
+        "ja": "使役受身の条件形"
       }
     },
     {
@@ -2085,7 +2233,8 @@
       "gloss": {
         "en": "causative-passive",
         "zh": "使役被动",
-        "zh_TW": "使役被動"
+        "zh_TW": "使役被動",
+        "ja": "使役受身を表す"
       }
     },
     {
@@ -2102,7 +2251,8 @@
       "gloss": {
         "en": "causative-passive, polite",
         "zh": "使役被动敬体",
-        "zh_TW": "使役被動敬體"
+        "zh_TW": "使役被動敬體",
+        "ja": "使役受身の丁寧形"
       }
     },
     {
@@ -2120,7 +2270,8 @@
       "gloss": {
         "en": "causative-passive, polite past",
         "zh": "使役被动敬体过去",
-        "zh_TW": "使役被動敬體過去"
+        "zh_TW": "使役被動敬體過去",
+        "ja": "使役受身の丁寧過去形"
       }
     },
     {
@@ -2138,7 +2289,8 @@
       "gloss": {
         "en": "causative-passive, polite negative",
         "zh": "使役被动敬体否定",
-        "zh_TW": "使役被動敬體否定"
+        "zh_TW": "使役被動敬體否定",
+        "ja": "使役受身の丁寧否定形"
       }
     },
     {
@@ -2157,7 +2309,8 @@
       "gloss": {
         "en": "causative-passive, polite negative past",
         "zh": "使役被动敬体否定过去",
-        "zh_TW": "使役被動敬體否定過去"
+        "zh_TW": "使役被動敬體否定過去",
+        "ja": "使役受身の丁寧過去否定"
       }
     },
     {
@@ -2174,7 +2327,8 @@
       "gloss": {
         "en": "causative-passive, negative",
         "zh": "使役被动否定",
-        "zh_TW": "使役被動否定"
+        "zh_TW": "使役被動否定",
+        "ja": "使役受身の否定形"
       }
     },
     {
@@ -2192,7 +2346,8 @@
       "gloss": {
         "en": "causative-passive, negative past",
         "zh": "使役被动否定过去",
-        "zh_TW": "使役被動否定過去"
+        "zh_TW": "使役被動否定過去",
+        "ja": "使役受身の否定過去形"
       }
     },
     {
@@ -2209,7 +2364,8 @@
       "gloss": {
         "en": "causative-passive, past",
         "zh": "使役被动过去",
-        "zh_TW": "使役被動過去"
+        "zh_TW": "使役被動過去",
+        "ja": "使役受身の過去形"
       }
     },
     {
@@ -2226,7 +2382,8 @@
       "gloss": {
         "en": "causative-passive, te-form",
         "zh": "使役被动て形",
-        "zh_TW": "使役被動て形"
+        "zh_TW": "使役被動て形",
+        "ja": "使役受身のて形"
       }
     },
     {
@@ -2243,7 +2400,8 @@
       "gloss": {
         "en": "causative-passive, conditional",
         "zh": "使役被动条件形",
-        "zh_TW": "使役被動條件形"
+        "zh_TW": "使役被動條件形",
+        "ja": "使役受身の仮定形"
       }
     },
     {
@@ -2260,7 +2418,8 @@
       "gloss": {
         "en": "causative-passive, conditional",
         "zh": "使役被动条件形",
-        "zh_TW": "使役被動條件形"
+        "zh_TW": "使役被動條件形",
+        "ja": "使役受身の条件形"
       }
     },
     {
@@ -2276,7 +2435,8 @@
       "gloss": {
         "en": "if it is",
         "zh": "如果……的话",
-        "zh_TW": "如果……的話"
+        "zh_TW": "如果……的話",
+        "ja": "い形容詞の条件形"
       }
     },
     {
@@ -2289,7 +2449,8 @@
       "gloss": {
         "en": "if it is the case that",
         "zh": "如果是……的话",
-        "zh_TW": "如果是……的話"
+        "zh_TW": "如果是……的話",
+        "ja": "条件を示す"
       }
     },
     {
@@ -2305,7 +2466,8 @@
       "gloss": {
         "en": "have to (spoken)",
         "zh": "必须（口语）",
-        "zh_TW": "必須（口語）"
+        "zh_TW": "必須（口語）",
+        "ja": "義務を表す（口語）"
       }
     },
     {
@@ -2321,7 +2483,8 @@
       "gloss": {
         "en": "have to (spoken)",
         "zh": "必须（口语）",
-        "zh_TW": "必須（口語）"
+        "zh_TW": "必須（口語）",
+        "ja": "義務を表す（口語）"
       }
     },
     {
@@ -2336,7 +2499,8 @@
       "gloss": {
         "en": "if not",
         "zh": "如果不……",
-        "zh_TW": "如果不……"
+        "zh_TW": "如果不……",
+        "ja": "「〜しなければ」の意"
       }
     },
     {
@@ -2351,7 +2515,8 @@
       "gloss": {
         "en": "need not",
         "zh": "不必",
-        "zh_TW": "不必"
+        "zh_TW": "不必",
+        "ja": "不必要を表す"
       }
     },
     {
@@ -2363,7 +2528,8 @@
       "gloss": {
         "en": "apparently, it seems",
         "zh": "好像、似乎",
-        "zh_TW": "好像、似乎"
+        "zh_TW": "好像、似乎",
+        "ja": "伝聞・様態を表す"
       }
     },
     {
@@ -2377,7 +2543,8 @@
       "gloss": {
         "en": "apparently, it seems",
         "zh": "好像、似乎",
-        "zh_TW": "好像、似乎"
+        "zh_TW": "好像、似乎",
+        "ja": "伝聞・様態（丁寧体）"
       }
     },
     {
@@ -2389,7 +2556,8 @@
       "gloss": {
         "en": "might, perhaps",
         "zh": "也许、可能",
-        "zh_TW": "也許、可能"
+        "zh_TW": "也許、可能",
+        "ja": "可能性を表す"
       }
     },
     {
@@ -2403,7 +2571,8 @@
       "gloss": {
         "en": "might, perhaps",
         "zh": "也许、可能",
-        "zh_TW": "也許、可能"
+        "zh_TW": "也許、可能",
+        "ja": "可能性を表す（丁寧体）"
       }
     },
     {
@@ -2415,7 +2584,8 @@
       "gloss": {
         "en": "like, seems",
         "zh": "好像、像是",
-        "zh_TW": "好像、像是"
+        "zh_TW": "好像、像是",
+        "ja": "類似・様態を表す"
       }
     },
     {
@@ -2429,7 +2599,8 @@
       "gloss": {
         "en": "like, seems",
         "zh": "好像、像是",
-        "zh_TW": "好像、像是"
+        "zh_TW": "好像、像是",
+        "ja": "類似・様態（丁寧体）"
       }
     },
     {
@@ -2445,7 +2616,8 @@
       "gloss": {
         "en": "shall I?",
         "zh": "我来……吧？",
-        "zh_TW": "我來……吧？"
+        "zh_TW": "我來……吧？",
+        "ja": "申し出を表す"
       }
     },
     {
@@ -2460,7 +2632,8 @@
       "gloss": {
         "en": "shows signs of wanting to",
         "zh": "（第三人称）想要",
-        "zh_TW": "（第三人稱）想要"
+        "zh_TW": "（第三人稱）想要",
+        "ja": "第三者の願望を表す"
       }
     },
     {
@@ -2473,7 +2646,8 @@
       "gloss": {
         "en": "too much",
         "zh": "过于",
-        "zh_TW": "過於"
+        "zh_TW": "過於",
+        "ja": "程度の過剰を表す"
       }
     },
     {
@@ -2488,7 +2662,8 @@
       "gloss": {
         "en": "too much",
         "zh": "过于",
-        "zh_TW": "過於"
+        "zh_TW": "過於",
+        "ja": "程度の過剰（丁寧体）"
       }
     },
     {
@@ -2501,7 +2676,8 @@
       "gloss": {
         "en": "easy to",
         "zh": "容易……",
-        "zh_TW": "容易……"
+        "zh_TW": "容易……",
+        "ja": "「〜しやすい」を示す"
       }
     },
     {
@@ -2514,7 +2690,8 @@
       "gloss": {
         "en": "hard to",
         "zh": "难以……",
-        "zh_TW": "難以……"
+        "zh_TW": "難以……",
+        "ja": "「〜しにくい」を示す"
       }
     },
     {
@@ -2529,7 +2706,8 @@
       "gloss": {
         "en": "potential",
         "zh": "可能",
-        "zh_TW": "可能"
+        "zh_TW": "可能",
+        "ja": "可能を表す"
       }
     },
     {
@@ -2545,7 +2723,8 @@
       "gloss": {
         "en": "potential, polite",
         "zh": "可能敬体",
-        "zh_TW": "可能敬體"
+        "zh_TW": "可能敬體",
+        "ja": "可能の丁寧形"
       }
     },
     {
@@ -2562,7 +2741,8 @@
       "gloss": {
         "en": "potential, polite past",
         "zh": "可能敬体过去",
-        "zh_TW": "可能敬體過去"
+        "zh_TW": "可能敬體過去",
+        "ja": "可能の丁寧過去形"
       }
     },
     {
@@ -2579,7 +2759,8 @@
       "gloss": {
         "en": "potential, polite negative",
         "zh": "可能敬体否定",
-        "zh_TW": "可能敬體否定"
+        "zh_TW": "可能敬體否定",
+        "ja": "可能の丁寧否定形"
       }
     },
     {
@@ -2596,7 +2777,8 @@
       "gloss": {
         "en": "potential, polite question",
         "zh": "可能敬体疑问",
-        "zh_TW": "可能敬體疑問"
+        "zh_TW": "可能敬體疑問",
+        "ja": "可能の丁寧な勧誘"
       }
     },
     {
@@ -2614,7 +2796,8 @@
       "gloss": {
         "en": "potential, polite negative past",
         "zh": "可能敬体否定过去",
-        "zh_TW": "可能敬體否定過去"
+        "zh_TW": "可能敬體否定過去",
+        "ja": "可能の丁寧過去否定形"
       }
     },
     {
@@ -2630,7 +2813,8 @@
       "gloss": {
         "en": "potential, negative",
         "zh": "可能否定",
-        "zh_TW": "可能否定"
+        "zh_TW": "可能否定",
+        "ja": "可能の否定形"
       }
     },
     {
@@ -2647,7 +2831,8 @@
       "gloss": {
         "en": "potential, negative past",
         "zh": "可能否定过去",
-        "zh_TW": "可能否定過去"
+        "zh_TW": "可能否定過去",
+        "ja": "可能の否定過去形"
       }
     },
     {
@@ -2663,7 +2848,8 @@
       "gloss": {
         "en": "potential, past",
         "zh": "可能过去",
-        "zh_TW": "可能過去"
+        "zh_TW": "可能過去",
+        "ja": "可能の過去形"
       }
     },
     {
@@ -2679,7 +2865,8 @@
       "gloss": {
         "en": "potential, te-form",
         "zh": "可能て形",
-        "zh_TW": "可能て形"
+        "zh_TW": "可能て形",
+        "ja": "可能のて形"
       }
     },
     {
@@ -2695,7 +2882,8 @@
       "gloss": {
         "en": "potential, conditional",
         "zh": "可能条件形",
-        "zh_TW": "可能條件形"
+        "zh_TW": "可能條件形",
+        "ja": "可能の条件形"
       }
     },
     {
@@ -2710,7 +2898,8 @@
       "gloss": {
         "en": "let us, I think I will",
         "zh": "意志、劝诱",
-        "zh_TW": "意志、勸誘"
+        "zh_TW": "意志、勸誘",
+        "ja": "意志・勧誘を表す"
       }
     },
     {
@@ -2725,7 +2914,8 @@
       "gloss": {
         "en": "let us, I think I will",
         "zh": "意志、劝诱",
-        "zh_TW": "意志、勸誘"
+        "zh_TW": "意志、勸誘",
+        "ja": "意志・勧誘を表す"
       }
     },
     {
@@ -2738,7 +2928,8 @@
       "gloss": {
         "en": "end up (spoken)",
         "zh": "（口语）不小心……了",
-        "zh_TW": "（口語）不小心……了"
+        "zh_TW": "（口語）不小心……了",
+        "ja": "動作の完了（口語）"
       }
     },
     {
@@ -2753,7 +2944,8 @@
       "gloss": {
         "en": "ended up (spoken)",
         "zh": "（口语）不小心……了",
-        "zh_TW": "（口語）不小心……了"
+        "zh_TW": "（口語）不小心……了",
+        "ja": "動作の完了（口語過去）"
       }
     },
     {
@@ -2768,7 +2960,8 @@
       "gloss": {
         "en": "end up (spoken)",
         "zh": "（口语）不小心……了",
-        "zh_TW": "（口語）不小心……了"
+        "zh_TW": "（口語）不小心……了",
+        "ja": "動作の完了（丁寧・口語）"
       }
     },
     {
@@ -2784,7 +2977,8 @@
       "gloss": {
         "en": "ended up (spoken)",
         "zh": "（口语）不小心……了",
-        "zh_TW": "（口語）不小心……了"
+        "zh_TW": "（口語）不小心……了",
+        "ja": "動作の完了（丁寧口語過去）"
       }
     },
     {
@@ -2797,7 +2991,8 @@
       "gloss": {
         "en": "end up (spoken)",
         "zh": "（口语）不小心……了",
-        "zh_TW": "（口語）不小心……了"
+        "zh_TW": "（口語）不小心……了",
+        "ja": "動作の完了（口語・濁音）"
       }
     },
     {
@@ -2812,7 +3007,8 @@
       "gloss": {
         "en": "ended up (spoken)",
         "zh": "（口语）不小心……了",
-        "zh_TW": "（口語）不小心……了"
+        "zh_TW": "（口語）不小心……了",
+        "ja": "動作の完了（口語濁音過去）"
       }
     },
     {
@@ -2827,7 +3023,8 @@
       "gloss": {
         "en": "end up (spoken)",
         "zh": "（口语）不小心……了",
-        "zh_TW": "（口語）不小心……了"
+        "zh_TW": "（口語）不小心……了",
+        "ja": "動作の完了（丁寧・濁音）"
       }
     },
     {
@@ -2843,7 +3040,8 @@
       "gloss": {
         "en": "ended up (spoken)",
         "zh": "（口语）不小心……了",
-        "zh_TW": "（口語）不小心……了"
+        "zh_TW": "（口語）不小心……了",
+        "ja": "動作の完了（丁寧濁音過去）"
       }
     },
     {
@@ -2855,7 +3053,8 @@
       "gloss": {
         "en": "decide to, come to",
         "zh": "决定、变成",
-        "zh_TW": "決定、變成"
+        "zh_TW": "決定、變成",
+        "ja": "決定・変化を表す"
       }
     },
     {
@@ -2867,7 +3066,8 @@
       "gloss": {
         "en": "so that, in order to",
         "zh": "为了、以便",
-        "zh_TW": "為了、以便"
+        "zh_TW": "為了、以便",
+        "ja": "目的を表す"
       }
     },
     {
@@ -2879,7 +3079,8 @@
       "gloss": {
         "en": "in order to, because of",
         "zh": "为了、因为",
-        "zh_TW": "為了、因為"
+        "zh_TW": "為了、因為",
+        "ja": "目的・原因を表す"
       }
     },
     {
@@ -2891,7 +3092,8 @@
       "gloss": {
         "en": "I wonder",
         "zh": "……吧？（自问）",
-        "zh_TW": "……吧？（自問）"
+        "zh_TW": "……吧？（自問）",
+        "ja": "疑問・自問を表す"
       }
     },
     {
@@ -2903,7 +3105,8 @@
       "gloss": {
         "en": "I wonder",
         "zh": "……吧？（自问）",
-        "zh_TW": "……吧？（自問）"
+        "zh_TW": "……吧？（自問）",
+        "ja": "疑問・自問を表す"
       }
     },
     {
@@ -2917,7 +3120,8 @@
       "gloss": {
         "en": "there is (polite)",
         "zh": "有（郑重）",
-        "zh_TW": "有（鄭重）"
+        "zh_TW": "有（鄭重）",
+        "ja": "「ある」の丁寧語"
       }
     },
     {
@@ -2931,7 +3135,8 @@
       "gloss": {
         "en": "is (polite)",
         "zh": "是（郑重）",
-        "zh_TW": "是（鄭重）"
+        "zh_TW": "是（鄭重）",
+        "ja": "「です」の丁寧語"
       }
     },
     {
@@ -2944,7 +3149,8 @@
       "gloss": {
         "en": "hard to",
         "zh": "难以……",
-        "zh_TW": "難以……"
+        "zh_TW": "難以……",
+        "ja": "しにくいことを表す"
       }
     },
     {
@@ -2959,7 +3165,8 @@
       "gloss": {
         "en": "hard to",
         "zh": "难以……",
-        "zh_TW": "難以……"
+        "zh_TW": "難以……",
+        "ja": "しにくいことを表す"
       }
     },
     {
@@ -2974,7 +3181,8 @@
       "gloss": {
         "en": "easy to",
         "zh": "容易……",
-        "zh_TW": "容易……"
+        "zh_TW": "容易……",
+        "ja": "しやすいことを表す"
       }
     },
     {
@@ -2989,7 +3197,8 @@
       "gloss": {
         "en": "hard to",
         "zh": "难以……",
-        "zh_TW": "難以……"
+        "zh_TW": "難以……",
+        "ja": "しにくいことを表す"
       }
     },
     {
@@ -3005,7 +3214,8 @@
       "gloss": {
         "en": "shows signs of wanting to",
         "zh": "（第三人称）想要",
-        "zh_TW": "（第三人稱）想要"
+        "zh_TW": "（第三人稱）想要",
+        "ja": "他人の願望を表す"
       }
     },
     {
@@ -3022,7 +3232,8 @@
       "gloss": {
         "en": "shows signs of wanting to",
         "zh": "（第三人称）想要",
-        "zh_TW": "（第三人稱）想要"
+        "zh_TW": "（第三人稱）想要",
+        "ja": "他人の願望を表す"
       }
     },
     {
@@ -3038,7 +3249,8 @@
       "gloss": {
         "en": "shows signs of wanting to",
         "zh": "（第三人称）想要",
-        "zh_TW": "（第三人稱）想要"
+        "zh_TW": "（第三人稱）想要",
+        "ja": "他人の願望を表す"
       }
     },
     {
@@ -3055,7 +3267,8 @@
       "gloss": {
         "en": "shows signs of wanting to",
         "zh": "（第三人称）想要",
-        "zh_TW": "（第三人稱）想要"
+        "zh_TW": "（第三人稱）想要",
+        "ja": "他人の願望を表す（過去）"
       }
     },
     {
@@ -3071,7 +3284,8 @@
       "gloss": {
         "en": "showed signs of wanting to",
         "zh": "（第三人称）想要",
-        "zh_TW": "（第三人稱）想要"
+        "zh_TW": "（第三人稱）想要",
+        "ja": "他人の願望を表す（過去）"
       }
     },
     {
@@ -3085,7 +3299,8 @@
       "gloss": {
         "en": "explaining, it is that",
         "zh": "（说明）是……",
-        "zh_TW": "（說明）是……"
+        "zh_TW": "（說明）是……",
+        "ja": "説明・強調を表す"
       }
     },
     {
@@ -3099,7 +3314,8 @@
       "gloss": {
         "en": "asking for an explanation",
         "zh": "（询问）是……吗",
-        "zh_TW": "（詢問）是……嗎"
+        "zh_TW": "（詢問）是……嗎",
+        "ja": "説明を求める"
       }
     },
     {
@@ -3111,7 +3327,8 @@
       "gloss": {
         "en": "explaining, it is that",
         "zh": "（说明）是……",
-        "zh_TW": "（說明）是……"
+        "zh_TW": "（說明）是……",
+        "ja": "説明・強調を表す（普通体）"
       }
     },
     {
@@ -3126,7 +3343,8 @@
       "gloss": {
         "en": "explaining, it was that",
         "zh": "（说明）是……",
-        "zh_TW": "（說明）是……"
+        "zh_TW": "（說明）是……",
+        "ja": "説明を表す（過去）"
       }
     },
     {
@@ -3140,7 +3358,8 @@
       "gloss": {
         "en": "is it not that",
         "zh": "不是……吗",
-        "zh_TW": "不是……嗎"
+        "zh_TW": "不是……嗎",
+        "ja": "「〜のではないか」の口語"
       }
     },
     {
@@ -3154,7 +3373,8 @@
       "gloss": {
         "en": "is it not that",
         "zh": "不是……吗",
-        "zh_TW": "不是……嗎"
+        "zh_TW": "不是……嗎",
+        "ja": "「〜のではないか」の口語"
       }
     },
     {
@@ -3168,7 +3388,8 @@
       "gloss": {
         "en": "explaining, it is that",
         "zh": "（说明）是……",
-        "zh_TW": "（說明）是……"
+        "zh_TW": "（說明）是……",
+        "ja": "説明・強調を表す"
       }
     },
     {
@@ -3180,7 +3401,8 @@
       "gloss": {
         "en": "explaining, it is that",
         "zh": "（说明）是……",
-        "zh_TW": "（說明）是……"
+        "zh_TW": "（說明）是……",
+        "ja": "説明・強調を表す（普通体）"
       }
     },
     {
@@ -3192,7 +3414,8 @@
       "gloss": {
         "en": "ought to, should",
         "zh": "应该",
-        "zh_TW": "應該"
+        "zh_TW": "應該",
+        "ja": "「〜すべきだ」当然を表す"
       }
     },
     {
@@ -3204,7 +3427,8 @@
       "gloss": {
         "en": "ought to, should",
         "zh": "应该",
-        "zh_TW": "應該"
+        "zh_TW": "應該",
+        "ja": "当然・義務を表す"
       }
     },
     {
@@ -3218,7 +3442,8 @@
       "gloss": {
         "en": "ought to, should",
         "zh": "应该",
-        "zh_TW": "應該"
+        "zh_TW": "應該",
+        "ja": "当然・義務を表す（丁寧）"
       }
     },
     {
@@ -3232,7 +3457,8 @@
       "gloss": {
         "en": "ought not to",
         "zh": "不应该",
-        "zh_TW": "不應該"
+        "zh_TW": "不應該",
+        "ja": "当然の否定を表す"
       }
     },
     {
@@ -3247,7 +3473,8 @@
       "gloss": {
         "en": "ought not to",
         "zh": "不应该",
-        "zh_TW": "不應該"
+        "zh_TW": "不應該",
+        "ja": "当然の否定を表す（丁寧）"
       }
     },
     {
@@ -3261,7 +3488,8 @@
       "gloss": {
         "en": "ought not to",
         "zh": "不应该",
-        "zh_TW": "不應該"
+        "zh_TW": "不應該",
+        "ja": "当然の否定を表す（口語）"
       }
     },
     {
@@ -3273,7 +3501,8 @@
       "gloss": {
         "en": "this one in particular",
         "zh": "正是、才是",
-        "zh_TW": "正是、才是"
+        "zh_TW": "正是、才是",
+        "ja": "強調を表す"
       }
     },
     {
@@ -3285,7 +3514,8 @@
       "gloss": {
         "en": "even",
         "zh": "连……都",
-        "zh_TW": "連……都"
+        "zh_TW": "連……都",
+        "ja": "極端な例を挙げる"
       }
     },
     {
@@ -3297,7 +3527,8 @@
       "gloss": {
         "en": "such a thing as",
         "zh": "什么的、居然",
-        "zh_TW": "什麼的、居然"
+        "zh_TW": "什麼的、居然",
+        "ja": "軽視・驚きを表す"
       }
     },
     {
@@ -3309,7 +3540,8 @@
       "gloss": {
         "en": "such a thing as",
         "zh": "什么的、之类",
-        "zh_TW": "什麼的、之類"
+        "zh_TW": "什麼的、之類",
+        "ja": "例示・軽視を表す"
       }
     },
     {
@@ -3321,7 +3553,8 @@
       "gloss": {
         "en": "concerning, regarding",
         "zh": "关于",
-        "zh_TW": "關於"
+        "zh_TW": "關於",
+        "ja": "話題を示す"
       }
     },
     {
@@ -3333,7 +3566,8 @@
       "gloss": {
         "en": "concerning, regarding",
         "zh": "关于",
-        "zh_TW": "關於"
+        "zh_TW": "關於",
+        "ja": "話題を示す（連体）"
       }
     },
     {
@@ -3349,7 +3583,8 @@
       "gloss": {
         "en": "made to do",
         "zh": "被迫做",
-        "zh_TW": "被迫做"
+        "zh_TW": "被迫做",
+        "ja": "受身・使役受身を表す"
       }
     },
     {
@@ -3366,7 +3601,8 @@
       "gloss": {
         "en": "made to do",
         "zh": "被迫做",
-        "zh_TW": "被迫做"
+        "zh_TW": "被迫做",
+        "ja": "受身を表す（丁寧）"
       }
     },
     {
@@ -3383,7 +3619,8 @@
       "gloss": {
         "en": "was made to do",
         "zh": "被迫做了",
-        "zh_TW": "被迫做了"
+        "zh_TW": "被迫做了",
+        "ja": "受身を表す（過去）"
       }
     },
     {
@@ -3401,7 +3638,8 @@
       "gloss": {
         "en": "was made to do",
         "zh": "被迫做了",
-        "zh_TW": "被迫做了"
+        "zh_TW": "被迫做了",
+        "ja": "受身を表す（過去・丁寧）"
       }
     },
     {
@@ -3418,7 +3656,8 @@
       "gloss": {
         "en": "made to do",
         "zh": "被迫做",
-        "zh_TW": "被迫做"
+        "zh_TW": "被迫做",
+        "ja": "受身を表す（て形）"
       }
     },
     {
@@ -3433,7 +3672,8 @@
       "gloss": {
         "en": "without doing",
         "zh": "不……而",
-        "zh_TW": "不……而"
+        "zh_TW": "不……而",
+        "ja": "「〜ないで」の意味"
       }
     },
     {
@@ -3448,7 +3688,8 @@
       "gloss": {
         "en": "without doing",
         "zh": "不……",
-        "zh_TW": "不……"
+        "zh_TW": "不……",
+        "ja": "打消しを表す（文語）"
       }
     },
     {
@@ -3460,7 +3701,8 @@
       "gloss": {
         "en": "what was it again?",
         "zh": "来着？",
-        "zh_TW": "來著？"
+        "zh_TW": "來著？",
+        "ja": "記憶を確かめる"
       }
     },
     {
@@ -3472,7 +3714,8 @@
       "gloss": {
         "en": "what was it again?",
         "zh": "来着？",
-        "zh_TW": "來著？"
+        "zh_TW": "來著？",
+        "ja": "記憶を確かめる（普通体）"
       }
     },
     {
@@ -3486,7 +3729,8 @@
       "gloss": {
         "en": "what was it again?",
         "zh": "来着？",
-        "zh_TW": "來著？"
+        "zh_TW": "來著？",
+        "ja": "記憶を確かめる（過去）"
       }
     },
     {
@@ -3500,7 +3744,8 @@
       "gloss": {
         "en": "says (honorific)",
         "zh": "说（尊敬）",
-        "zh_TW": "說（尊敬）"
+        "zh_TW": "說（尊敬）",
+        "ja": "「言う」の尊敬語"
       }
     },
     {
@@ -3515,7 +3760,8 @@
       "gloss": {
         "en": "said (honorific)",
         "zh": "说了（尊敬）",
-        "zh_TW": "說了（尊敬）"
+        "zh_TW": "說了（尊敬）",
+        "ja": "「言った」の尊敬語"
       }
     },
     {
@@ -3529,7 +3775,8 @@
       "gloss": {
         "en": "does (honorific)",
         "zh": "做（尊敬）",
-        "zh_TW": "做（尊敬）"
+        "zh_TW": "做（尊敬）",
+        "ja": "「する」の尊敬語"
       }
     },
     {
@@ -3543,7 +3790,8 @@
       "gloss": {
         "en": "is, goes, comes (honorific)",
         "zh": "在、去、来（尊敬）",
-        "zh_TW": "在、去、來（尊敬）"
+        "zh_TW": "在、去、來（尊敬）",
+        "ja": "「いる・行く・来る」の尊敬語"
       }
     },
     {
@@ -3557,7 +3805,8 @@
       "gloss": {
         "en": "goes, comes (humble)",
         "zh": "去、来（自谦）",
-        "zh_TW": "去、來（自謙）"
+        "zh_TW": "去、來（自謙）",
+        "ja": "「行く・来る」の謙譲語"
       }
     },
     {
@@ -3571,7 +3820,8 @@
       "gloss": {
         "en": "says (humble)",
         "zh": "说（自谦）",
-        "zh_TW": "說（自謙）"
+        "zh_TW": "說（自謙）",
+        "ja": "「言う」の謙譲語"
       }
     },
     {
@@ -3585,7 +3835,8 @@
       "gloss": {
         "en": "asks, visits (humble)",
         "zh": "请教、拜访（自谦）",
-        "zh_TW": "請教、拜訪（自謙）"
+        "zh_TW": "請教、拜訪（自謙）",
+        "ja": "「聞く・訪ねる」の謙譲語"
       }
     },
     {
@@ -3597,7 +3848,8 @@
       "gloss": {
         "en": "tends to be, -ish",
         "zh": "容易……、有点像",
-        "zh_TW": "容易……、有點像"
+        "zh_TW": "容易……、有點像",
+        "ja": "〜のようだと表す"
       }
     },
     {
@@ -3611,7 +3863,8 @@
       "gloss": {
         "en": "tends to be, -ish",
         "zh": "容易……、有点像",
-        "zh_TW": "容易……、有點像"
+        "zh_TW": "容易……、有點像",
+        "ja": "〜のようだと表す（丁寧）"
       }
     },
     {
@@ -3624,7 +3877,8 @@
       "gloss": {
         "en": "looking, seeming",
         "zh": "显得……的样子",
-        "zh_TW": "顯得……的樣子"
+        "zh_TW": "顯得……的樣子",
+        "ja": "様子を表す"
       }
     },
     {
@@ -3636,7 +3890,8 @@
       "gloss": {
         "en": "in, at, regarding",
         "zh": "在……方面",
-        "zh_TW": "在……方面"
+        "zh_TW": "在……方面",
+        "ja": "場面・分野を示す"
       }
     },
     {
@@ -3648,7 +3903,8 @@
       "gloss": {
         "en": "in, at, regarding",
         "zh": "在……的",
-        "zh_TW": "在……的"
+        "zh_TW": "在……的",
+        "ja": "場面・分野を示す（連体）"
       }
     },
     {
@@ -3660,7 +3916,8 @@
       "gloss": {
         "en": "according to",
         "zh": "根据",
-        "zh_TW": "根據"
+        "zh_TW": "根據",
+        "ja": "状況に応じることを示す"
       }
     },
     {
@@ -3672,7 +3929,8 @@
       "gloss": {
         "en": "according to",
         "zh": "根据",
-        "zh_TW": "根據"
+        "zh_TW": "根據",
+        "ja": "状況に応じることを示す（連体）"
       }
     },
     {
@@ -3684,7 +3942,8 @@
       "gloss": {
         "en": "in response to",
         "zh": "回应",
-        "zh_TW": "回應"
+        "zh_TW": "回應",
+        "ja": "応答することを示す"
       }
     },
     {
@@ -3696,7 +3955,8 @@
       "gloss": {
         "en": "to respond to",
         "zh": "回应",
-        "zh_TW": "回應"
+        "zh_TW": "回應",
+        "ja": "応答することを示す（動詞）"
       }
     },
     {
@@ -3708,7 +3968,8 @@
       "gloss": {
         "en": "along, in line with",
         "zh": "沿着、按照",
-        "zh_TW": "沿著、按照"
+        "zh_TW": "沿著、按照",
+        "ja": "方針に従うことを示す"
       }
     },
     {
@@ -3720,7 +3981,8 @@
       "gloss": {
         "en": "over, throughout",
         "zh": "历经、遍及",
-        "zh_TW": "歷經、遍及"
+        "zh_TW": "歷經、遍及",
+        "ja": "範囲・期間の広がりを示す"
       }
     },
     {
@@ -3732,7 +3994,8 @@
       "gloss": {
         "en": "over, throughout",
         "zh": "历经、遍及",
-        "zh_TW": "歷經、遍及"
+        "zh_TW": "歷經、遍及",
+        "ja": "範囲の広がりを示す（連体）"
       }
     },
     {
@@ -3744,7 +4007,8 @@
       "gloss": {
         "en": "concerning, over",
         "zh": "围绕",
-        "zh_TW": "圍繞"
+        "zh_TW": "圍繞",
+        "ja": "論争の対象を示す"
       }
     },
     {
@@ -3756,7 +4020,8 @@
       "gloss": {
         "en": "concerning, over",
         "zh": "围绕",
-        "zh_TW": "圍繞"
+        "zh_TW": "圍繞",
+        "ja": "論争の対象を示す（連体）"
       }
     },
     {
@@ -3768,7 +4033,8 @@
       "gloss": {
         "en": "based on",
         "zh": "以……为基础",
-        "zh_TW": "以……為基礎"
+        "zh_TW": "以……為基礎",
+        "ja": "根拠を示す"
       }
     },
     {
@@ -3780,7 +4046,8 @@
       "gloss": {
         "en": "through, via",
         "zh": "通过",
-        "zh_TW": "通過"
+        "zh_TW": "通過",
+        "ja": "手段・経路を示す"
       }
     },
     {
@@ -3792,7 +4059,8 @@
       "gloss": {
         "en": "through, via",
         "zh": "通过",
-        "zh_TW": "通過"
+        "zh_TW": "通過",
+        "ja": "手段・経路を示す"
       }
     },
     {
@@ -3804,7 +4072,8 @@
       "gloss": {
         "en": "based on",
         "zh": "基于",
-        "zh_TW": "基於"
+        "zh_TW": "基於",
+        "ja": "根拠に基づくことを示す"
       }
     },
     {
@@ -3816,7 +4085,8 @@
       "gloss": {
         "en": "based on",
         "zh": "基于",
-        "zh_TW": "基於"
+        "zh_TW": "基於",
+        "ja": "根拠に基づくことを示す（連体）"
       }
     },
     {
@@ -3828,7 +4098,8 @@
       "gloss": {
         "en": "regardless of",
         "zh": "不论",
-        "zh_TW": "不論"
+        "zh_TW": "不論",
+        "ja": "無関係であることを示す"
       }
     },
     {
@@ -3840,7 +4111,8 @@
       "gloss": {
         "en": "regardless of",
         "zh": "不论",
-        "zh_TW": "不論"
+        "zh_TW": "不論",
+        "ja": "無関係であることを示す"
       }
     },
     {
@@ -3852,7 +4124,8 @@
       "gloss": {
         "en": "to do with, affecting",
         "zh": "关系到",
-        "zh_TW": "關係到"
+        "zh_TW": "關係到",
+        "ja": "関係することを示す"
       }
     },
     {
@@ -3864,7 +4137,8 @@
       "gloss": {
         "en": "to do with, affecting",
         "zh": "关系到",
-        "zh_TW": "關係到"
+        "zh_TW": "關係到",
+        "ja": "関係することを示す"
       }
     },
     {
@@ -3876,7 +4150,8 @@
       "gloss": {
         "en": "in spite of",
         "zh": "尽管",
-        "zh_TW": "儘管"
+        "zh_TW": "儘管",
+        "ja": "逆接を強調する"
       }
     },
     {
@@ -3888,7 +4163,8 @@
       "gloss": {
         "en": "not only",
         "zh": "不限于",
-        "zh_TW": "不限於"
+        "zh_TW": "不限於",
+        "ja": "範囲が限らないことを示す"
       }
     },
     {
@@ -3900,7 +4176,8 @@
       "gloss": {
         "en": "only, of all things",
         "zh": "偏偏",
-        "zh_TW": "偏偏"
+        "zh_TW": "偏偏",
+        "ja": "限定・皮肉を示す"
       }
     },
     {
@@ -3912,7 +4189,8 @@
       "gloss": {
         "en": "only, limited to",
         "zh": "仅限",
-        "zh_TW": "僅限"
+        "zh_TW": "僅限",
+        "ja": "限定を示す"
       }
     },
     {
@@ -3924,7 +4202,8 @@
       "gloss": {
         "en": "as, along with",
         "zh": "随着",
-        "zh_TW": "隨著"
+        "zh_TW": "隨著",
+        "ja": "変化の並行を示す"
       }
     },
     {
@@ -3936,7 +4215,8 @@
       "gloss": {
         "en": "accompanying",
         "zh": "伴随",
-        "zh_TW": "伴隨"
+        "zh_TW": "伴隨",
+        "ja": "変化に伴うことを示す"
       }
     },
     {
@@ -3948,7 +4228,8 @@
       "gloss": {
         "en": "accompanying",
         "zh": "伴随",
-        "zh_TW": "伴隨"
+        "zh_TW": "伴隨",
+        "ja": "変化に伴うことを示す（連体）"
       }
     },
     {
@@ -3960,7 +4241,8 @@
       "gloss": {
         "en": "in accordance with",
         "zh": "按照",
-        "zh_TW": "按照"
+        "zh_TW": "按照",
+        "ja": "基準に従うことを示す"
       }
     },
     {
@@ -3972,7 +4254,8 @@
       "gloss": {
         "en": "towards, in contrast to",
         "zh": "对于、相对",
-        "zh_TW": "對於、相對"
+        "zh_TW": "對於、相對",
+        "ja": "対象・対比を示す"
       }
     },
     {
@@ -3984,7 +4267,8 @@
       "gloss": {
         "en": "towards",
         "zh": "对于",
-        "zh_TW": "對於"
+        "zh_TW": "對於",
+        "ja": "対象を示す（連体）"
       }
     },
     {
@@ -3996,7 +4280,8 @@
       "gloss": {
         "en": "for, to",
         "zh": "对……来说",
-        "zh_TW": "對……來說"
+        "zh_TW": "對……來說",
+        "ja": "立場からの評価を示す"
       }
     },
     {
@@ -4008,7 +4293,8 @@
       "gloss": {
         "en": "together with",
         "zh": "与……一起",
-        "zh_TW": "與……一起"
+        "zh_TW": "與……一起",
+        "ja": "同時・同伴を示す"
       }
     },
     {
@@ -4020,7 +4306,8 @@
       "gloss": {
         "en": "on the occasion of",
         "zh": "值此之际",
-        "zh_TW": "值此之際"
+        "zh_TW": "值此之際",
+        "ja": "場面を示す"
       }
     },
     {
@@ -4032,7 +4319,8 @@
       "gloss": {
         "en": "prior to",
         "zh": "在……之前",
-        "zh_TW": "在……之前"
+        "zh_TW": "在……之前",
+        "ja": "前段階であることを示す"
       }
     },
     {
@@ -4044,7 +4332,8 @@
       "gloss": {
         "en": "starting with",
         "zh": "以……为首",
-        "zh_TW": "以……為首"
+        "zh_TW": "以……為首",
+        "ja": "代表例を挙げる"
       }
     },
     {
@@ -4056,7 +4345,8 @@
       "gloss": {
         "en": "centring on",
         "zh": "以……为中心",
-        "zh_TW": "以……為中心"
+        "zh_TW": "以……為中心",
+        "ja": "中心となる対象を示す"
       }
     },
     {
@@ -4068,7 +4358,8 @@
       "gloss": {
         "en": "in addition to",
         "zh": "加上",
-        "zh_TW": "加上"
+        "zh_TW": "加上",
+        "ja": "追加を示す"
       }
     },
     {
@@ -4080,7 +4371,8 @@
       "gloss": {
         "en": "contrary to",
         "zh": "与……相反",
-        "zh_TW": "與……相反"
+        "zh_TW": "與……相反",
+        "ja": "予想との相違を示す"
       }
     },
     {
@@ -4092,7 +4384,8 @@
       "gloss": {
         "en": "compared with",
         "zh": "与……相比",
-        "zh_TW": "與……相比"
+        "zh_TW": "與……相比",
+        "ja": "比較を示す"
       }
     },
     {
@@ -4104,7 +4397,8 @@
       "gloss": {
         "en": "on behalf of",
         "zh": "代替",
-        "zh_TW": "代替"
+        "zh_TW": "代替",
+        "ja": "代理を示す"
       }
     },
     {
@@ -4116,7 +4410,8 @@
       "gloss": {
         "en": "prompted by",
         "zh": "以……为契机",
-        "zh_TW": "以……為契機"
+        "zh_TW": "以……為契機",
+        "ja": "きっかけを示す"
       }
     },
     {
@@ -4128,7 +4423,8 @@
       "gloss": {
         "en": "prompted by",
         "zh": "以……为契机",
-        "zh_TW": "以……為契機"
+        "zh_TW": "以……為契機",
+        "ja": "きっかけを示す"
       }
     },
     {
@@ -4140,7 +4436,8 @@
       "gloss": {
         "en": "at the time of",
         "zh": "在……之际",
-        "zh_TW": "在……之際"
+        "zh_TW": "在……之際",
+        "ja": "場面を示す"
       }
     },
     {
@@ -4152,7 +4449,8 @@
       "gloss": {
         "en": "at the time of",
         "zh": "在……之际",
-        "zh_TW": "在……之際"
+        "zh_TW": "在……之際",
+        "ja": "場面を示す"
       }
     },
     {
@@ -4164,7 +4462,8 @@
       "gloss": {
         "en": "filled with",
         "zh": "满怀",
-        "zh_TW": "滿懷"
+        "zh_TW": "滿懷",
+        "ja": "気持ちを込めることを示す"
       }
     },
     {
@@ -4176,7 +4475,8 @@
       "gloss": {
         "en": "filled with",
         "zh": "满怀",
-        "zh_TW": "滿懷"
+        "zh_TW": "滿懷",
+        "ja": "気持ちを込めることを示す"
       }
     },
     {
@@ -4188,7 +4488,8 @@
       "gloss": {
         "en": "over, throughout",
         "zh": "历经、遍及",
-        "zh_TW": "歷經、遍及"
+        "zh_TW": "歷經、遍及",
+        "ja": "範囲・期間の広がりを示す"
       }
     },
     {
@@ -4200,7 +4501,8 @@
       "gloss": {
         "en": "regardless of",
         "zh": "不问、无论",
-        "zh_TW": "不問、無論"
+        "zh_TW": "不問、無論",
+        "ja": "区別しないことを示す"
       }
     },
     {
@@ -4212,7 +4514,8 @@
       "gloss": {
         "en": "not to mention",
         "zh": "自不必说",
-        "zh_TW": "自不必說"
+        "zh_TW": "自不必說",
+        "ja": "当然の追加を示す"
       }
     },
     {
@@ -4224,7 +4527,8 @@
       "gloss": {
         "en": "not to mention",
         "zh": "自不必说",
-        "zh_TW": "自不必說"
+        "zh_TW": "自不必說",
+        "ja": "当然の追加を示す"
       }
     },
     {
@@ -4236,7 +4540,8 @@
       "gloss": {
         "en": "not only",
         "zh": "不仅",
-        "zh_TW": "不僅"
+        "zh_TW": "不僅",
+        "ja": "範囲の拡張を示す"
       }
     },
     {
@@ -4248,7 +4553,8 @@
       "gloss": {
         "en": "not only",
         "zh": "不仅",
-        "zh_TW": "不僅"
+        "zh_TW": "不僅",
+        "ja": "範囲の拡張を示す"
       }
     },
     {
@@ -4260,7 +4566,8 @@
       "gloss": {
         "en": "far from",
         "zh": "岂止",
-        "zh_TW": "豈止"
+        "zh_TW": "豈止",
+        "ja": "予想と逆の強調を示す"
       }
     },
     {
@@ -4272,7 +4579,8 @@
       "gloss": {
         "en": "must be",
         "zh": "一定是",
-        "zh_TW": "一定是"
+        "zh_TW": "一定是",
+        "ja": "強い推量を示す"
       }
     },
     {
@@ -4284,7 +4592,8 @@
       "gloss": {
         "en": "is certainly",
         "zh": "肯定是",
-        "zh_TW": "肯定是"
+        "zh_TW": "肯定是",
+        "ja": "断定的な推量を示す"
       }
     },
     {
@@ -4296,7 +4605,8 @@
       "gloss": {
         "en": "there is no way",
         "zh": "不可能",
-        "zh_TW": "不可能"
+        "zh_TW": "不可能",
+        "ja": "強い否定の推量を示す"
       }
     },
     {
@@ -4308,7 +4618,8 @@
       "gloss": {
         "en": "it is not that",
         "zh": "并不是",
-        "zh_TW": "並不是"
+        "zh_TW": "並不是",
+        "ja": "部分否定を示す"
       }
     },
     {
@@ -4320,7 +4631,8 @@
       "gloss": {
         "en": "cannot afford to",
         "zh": "不能",
-        "zh_TW": "不能"
+        "zh_TW": "不能",
+        "ja": "事情による不可を示す"
       }
     },
     {
@@ -4332,7 +4644,8 @@
       "gloss": {
         "en": "that is what it is",
         "zh": "就是……",
-        "zh_TW": "就是……"
+        "zh_TW": "就是……",
+        "ja": "一般論としての断定"
       }
     },
     {
@@ -4344,7 +4657,8 @@
       "gloss": {
         "en": "rather than",
         "zh": "与其说",
-        "zh_TW": "與其說"
+        "zh_TW": "與其說",
+        "ja": "言い換えを示す"
       }
     },
     {
@@ -4356,7 +4670,8 @@
       "gloss": {
         "en": "although you say",
         "zh": "虽说",
-        "zh_TW": "雖說"
+        "zh_TW": "雖說",
+        "ja": "程度の限定を示す"
       }
     },
     {
@@ -4368,7 +4683,8 @@
       "gloss": {
         "en": "even so",
         "zh": "虽说如此",
-        "zh_TW": "雖說如此"
+        "zh_TW": "雖說如此",
+        "ja": "逆接を示す"
       }
     },
     {
@@ -4380,7 +4696,8 @@
       "gloss": {
         "en": "although",
         "zh": "虽然",
-        "zh_TW": "雖然"
+        "zh_TW": "雖然",
+        "ja": "逆接を示す"
       }
     },
     {
@@ -4392,7 +4709,8 @@
       "gloss": {
         "en": "although",
         "zh": "虽然",
-        "zh_TW": "雖然"
+        "zh_TW": "雖然",
+        "ja": "逆接を示す"
       }
     },
     {
@@ -4404,7 +4722,8 @@
       "gloss": {
         "en": "precisely because",
         "zh": "正因为",
-        "zh_TW": "正因為"
+        "zh_TW": "正因為",
+        "ja": "理由を強調する"
       }
     },
     {
@@ -4416,7 +4735,8 @@
       "gloss": {
         "en": "now that",
         "zh": "既然",
-        "zh_TW": "既然"
+        "zh_TW": "既然",
+        "ja": "前提からの当然を示す"
       }
     },
     {
@@ -4428,7 +4748,8 @@
       "gloss": {
         "en": "as one would expect",
         "zh": "不愧是",
-        "zh_TW": "不愧是"
+        "zh_TW": "不愧是",
+        "ja": "納得できる理由を示す"
       }
     },
     {
@@ -4440,7 +4761,8 @@
       "gloss": {
         "en": "no more than",
         "zh": "只不过",
-        "zh_TW": "只不過"
+        "zh_TW": "只不過",
+        "ja": "程度の低さを示す"
       }
     },
     {
@@ -4452,7 +4774,8 @@
       "gloss": {
         "en": "no more than",
         "zh": "只不过",
-        "zh_TW": "只不過"
+        "zh_TW": "只不過",
+        "ja": "程度の低さを示す"
       }
     },
     {
@@ -4464,7 +4787,8 @@
       "gloss": {
         "en": "be forced to",
         "zh": "被迫",
-        "zh_TW": "被迫"
+        "zh_TW": "被迫",
+        "ja": "やむを得ないことを示す"
       }
     },
     {
@@ -4476,7 +4800,8 @@
       "gloss": {
         "en": "cannot help but",
         "zh": "不得不",
-        "zh_TW": "不得不"
+        "zh_TW": "不得不",
+        "ja": "やむを得ないことを示す"
       }
     },
     {
@@ -4488,7 +4813,8 @@
       "gloss": {
         "en": "cannot suppress",
         "zh": "禁不住",
-        "zh_TW": "禁不住"
+        "zh_TW": "禁不住",
+        "ja": "感情を抑えられないことを示す"
       }
     },
     {
@@ -4500,7 +4826,8 @@
       "gloss": {
         "en": "worth",
         "zh": "值得",
-        "zh_TW": "值得"
+        "zh_TW": "值得",
+        "ja": "十分な価値を示す"
       }
     },
     {
@@ -4512,7 +4839,8 @@
       "gloss": {
         "en": "unbearable",
         "zh": "不堪",
-        "zh_TW": "不堪"
+        "zh_TW": "不堪",
+        "ja": "耐えられないことを示す"
       }
     },
     {
@@ -4524,7 +4852,8 @@
       "gloss": {
         "en": "starting from",
         "zh": "以……为开端",
-        "zh_TW": "以……為開端"
+        "zh_TW": "以……為開端",
+        "ja": "始まりの合図を示す"
       }
     },
     {
@@ -4536,7 +4865,8 @@
       "gloss": {
         "en": "undaunted by",
         "zh": "不顾",
-        "zh_TW": "不顧"
+        "zh_TW": "不顧",
+        "ja": "困難を恐れないことを示す"
       }
     },
     {
@@ -4548,7 +4878,8 @@
       "gloss": {
         "en": "ignoring",
         "zh": "不顾",
-        "zh_TW": "不顧"
+        "zh_TW": "不顧",
+        "ja": "無視することを示す"
       }
     },
     {
@@ -4560,7 +4891,8 @@
       "gloss": {
         "en": "unique to",
         "zh": "独有的",
-        "zh_TW": "獨有的"
+        "zh_TW": "獨有的",
+        "ja": "独自性を示す"
       }
     },
     {
@@ -4572,7 +4904,8 @@
       "gloss": {
         "en": "in contrast to",
         "zh": "与之相反",
-        "zh_TW": "與之相反"
+        "zh_TW": "與之相反",
+        "ja": "対比を示す"
       }
     },
     {
@@ -4584,7 +4917,8 @@
       "gloss": {
         "en": "more than",
         "zh": "更胜于",
-        "zh_TW": "更勝於"
+        "zh_TW": "更勝於",
+        "ja": "程度の上回りを示す"
       }
     },
     {
@@ -4596,7 +4930,8 @@
       "gloss": {
         "en": "coupled with",
         "zh": "与……相结合",
-        "zh_TW": "與……相結合"
+        "zh_TW": "與……相結合",
+        "ja": "要因が重なることを示す"
       }
     },
     {
@@ -4608,7 +4943,8 @@
       "gloss": {
         "en": "after an interval of",
         "zh": "时隔",
-        "zh_TW": "時隔"
+        "zh_TW": "時隔",
+        "ja": "期間の経過を示す"
       }
     },
     {
@@ -4620,7 +4956,8 @@
       "gloss": {
         "en": "after an interval of",
         "zh": "时隔",
-        "zh_TW": "時隔"
+        "zh_TW": "時隔",
+        "ja": "期間の経過を示す"
       }
     },
     {
@@ -4632,7 +4969,8 @@
       "gloss": {
         "en": "after an interval of",
         "zh": "时隔",
-        "zh_TW": "時隔"
+        "zh_TW": "時隔",
+        "ja": "期間の経過を示す（連体）"
       }
     },
     {
@@ -4645,7 +4983,8 @@
       "gloss": {
         "en": "left as it is",
         "zh": "一直……着",
-        "zh_TW": "一直……著"
+        "zh_TW": "一直……著",
+        "ja": "放置された状態を示す"
       }
     },
     {
@@ -4658,7 +4997,8 @@
       "gloss": {
         "en": "left as it is",
         "zh": "一直……着",
-        "zh_TW": "一直……著"
+        "zh_TW": "一直……著",
+        "ja": "放置された状態を示す"
       }
     },
     {
@@ -4670,7 +5010,8 @@
       "gloss": {
         "en": "after all that",
         "zh": "结果、到头来",
-        "zh_TW": "結果、到頭來"
+        "zh_TW": "結果、到頭來",
+        "ja": "悪い結果に至ることを示す"
       }
     },
     {
@@ -4682,7 +5023,8 @@
       "gloss": {
         "en": "after all that",
         "zh": "结果、到头来",
-        "zh_TW": "結果、到頭來"
+        "zh_TW": "結果、到頭來",
+        "ja": "悪い結果に至ることを示す"
       }
     },
     {
@@ -4694,7 +5036,8 @@
       "gloss": {
         "en": "after, in the end",
         "zh": "经过……之后",
-        "zh_TW": "經過……之後"
+        "zh_TW": "經過……之後",
+        "ja": "長い過程の末を示す"
       }
     },
     {
@@ -4706,7 +5049,8 @@
       "gloss": {
         "en": "even",
         "zh": "连……都",
-        "zh_TW": "連……都"
+        "zh_TW": "連……都",
+        "ja": "極端な例を挙げる"
       }
     },
     {
@@ -4718,7 +5062,8 @@
       "gloss": {
         "en": "even",
         "zh": "连……都",
-        "zh_TW": "連……都"
+        "zh_TW": "連……都",
+        "ja": "極端な例を挙げる"
       }
     },
     {
@@ -4730,7 +5075,8 @@
       "gloss": {
         "en": "in order to",
         "zh": "为了",
-        "zh_TW": "為了"
+        "zh_TW": "為了",
+        "ja": "目的を示す"
       }
     },
     {
@@ -4742,7 +5088,8 @@
       "gloss": {
         "en": "must not",
         "zh": "不得",
-        "zh_TW": "不得"
+        "zh_TW": "不得",
+        "ja": "禁止を示す（文語）"
       }
     },
     {
@@ -4755,7 +5102,8 @@
       "gloss": {
         "en": "will not, surely not",
         "zh": "不会、不打算",
-        "zh_TW": "不會、不打算"
+        "zh_TW": "不會、不打算",
+        "ja": "打消しの推量を示す"
       }
     },
     {
@@ -4768,7 +5116,8 @@
       "gloss": {
         "en": "while",
         "zh": "一边……一边",
-        "zh_TW": "一邊……一邊"
+        "zh_TW": "一邊……一邊",
+        "ja": "同時進行を示す"
       }
     },
     {
@@ -4781,7 +5130,8 @@
       "gloss": {
         "en": "in the process of",
         "zh": "正在……中",
-        "zh_TW": "正在……中"
+        "zh_TW": "正在……中",
+        "ja": "変化の進行を示す"
       }
     },
     {
@@ -4794,7 +5144,8 @@
       "gloss": {
         "en": "hard to",
         "zh": "难以",
-        "zh_TW": "難以"
+        "zh_TW": "難以",
+        "ja": "しがたいことを示す"
       }
     },
     {
@@ -4807,7 +5158,8 @@
       "gloss": {
         "en": "cannot bring oneself to",
         "zh": "难以",
-        "zh_TW": "難以"
+        "zh_TW": "難以",
+        "ja": "しにくいことを示す"
       }
     },
     {
@@ -4820,7 +5172,8 @@
       "gloss": {
         "en": "might well",
         "zh": "有可能",
-        "zh_TW": "有可能"
+        "zh_TW": "有可能",
+        "ja": "悪い可能性を示す"
       }
     },
     {
@@ -4833,7 +5186,8 @@
       "gloss": {
         "en": "can, may",
         "zh": "可能",
-        "zh_TW": "可能"
+        "zh_TW": "可能",
+        "ja": "可能性を示す"
       }
     },
     {
@@ -4846,7 +5200,8 @@
       "gloss": {
         "en": "cannot",
         "zh": "不可能",
-        "zh_TW": "不可能"
+        "zh_TW": "不可能",
+        "ja": "不可能を示す"
       }
     },
     {
@@ -4858,7 +5213,8 @@
       "gloss": {
         "en": "only, since",
         "zh": "只、自从",
-        "zh_TW": "只、自從"
+        "zh_TW": "只、自從",
+        "ja": "限定・以来を示す"
       }
     },
     {
@@ -4870,7 +5226,8 @@
       "gloss": {
         "en": "entirely",
         "zh": "清一色",
-        "zh_TW": "清一色"
+        "zh_TW": "清一色",
+        "ja": "すべてがその状態を示す"
       }
     },
     {
@@ -4882,7 +5239,8 @@
       "gloss": {
         "en": "covered in",
         "zh": "沾满",
-        "zh_TW": "沾滿"
+        "zh_TW": "沾滿",
+        "ja": "汚れが覆う様子を示す"
       }
     },
     {
@@ -4894,7 +5252,8 @@
       "gloss": {
         "en": "a touch of",
         "zh": "有点",
-        "zh_TW": "有點"
+        "zh_TW": "有點",
+        "ja": "やや〜の傾向を示す"
       }
     },
     {
@@ -4906,7 +5265,8 @@
       "gloss": {
         "en": "aimed at",
         "zh": "面向",
-        "zh_TW": "面向"
+        "zh_TW": "面向",
+        "ja": "対象を示す"
       }
     },
     {
@@ -4918,7 +5278,8 @@
       "gloss": {
         "en": "suited to",
         "zh": "适合",
-        "zh_TW": "適合"
+        "zh_TW": "適合",
+        "ja": "適性を示す"
       }
     },
     {
@@ -4930,7 +5291,8 @@
       "gloss": {
         "en": "without",
         "zh": "不要、去掉",
-        "zh_TW": "不要、去掉"
+        "zh_TW": "不要、去掉",
+        "ja": "除くことを示す"
       }
     },
     {
@@ -4942,7 +5304,8 @@
       "gloss": {
         "en": "there is something",
         "zh": "有一种……",
-        "zh_TW": "有一種……"
+        "zh_TW": "有一種……",
+        "ja": "感慨を表す"
       }
     },
     {
@@ -4954,7 +5317,8 @@
       "gloss": {
         "en": "how very",
         "zh": "多么",
-        "zh_TW": "多麼"
+        "zh_TW": "多麼",
+        "ja": "感嘆を表す"
       }
     },
     {
@@ -4966,7 +5330,8 @@
       "gloss": {
         "en": "have no choice but",
         "zh": "只好",
-        "zh_TW": "只好"
+        "zh_TW": "只好",
+        "ja": "他に方法がないことを示す"
       }
     },
     {
@@ -4978,7 +5343,8 @@
       "gloss": {
         "en": "have no choice but",
         "zh": "只好",
-        "zh_TW": "只好"
+        "zh_TW": "只好",
+        "ja": "他に方法がないことを示す"
       }
     },
     {
@@ -4991,7 +5357,8 @@
       "gloss": {
         "en": "there is no way it will",
         "zh": "不可能",
-        "zh_TW": "不可能"
+        "zh_TW": "不可能",
+        "ja": "強い否定の推量を示す"
       }
     },
     {
@@ -5004,7 +5371,8 @@
       "gloss": {
         "en": "there is no way it will",
         "zh": "不可能",
-        "zh_TW": "不可能"
+        "zh_TW": "不可能",
+        "ja": "強い否定の推量を示す（丁寧）"
       }
     },
     {
@@ -5017,7 +5385,8 @@
       "gloss": {
         "en": "not (literary)",
         "zh": "不（文言）",
-        "zh_TW": "不（文言）"
+        "zh_TW": "不（文言）",
+        "ja": "打消しを表す（文語）"
       }
     },
     {
@@ -5030,7 +5399,8 @@
       "gloss": {
         "en": "not (literary)",
         "zh": "不（文言）",
-        "zh_TW": "不（文言）"
+        "zh_TW": "不（文言）",
+        "ja": "打消しを表す（文語）"
       }
     },
     {
@@ -5043,7 +5413,8 @@
       "gloss": {
         "en": "not (literary)",
         "zh": "不……的",
-        "zh_TW": "不……的"
+        "zh_TW": "不……的",
+        "ja": "打消しを表す（連体・文語）"
       }
     },
     {
@@ -5056,7 +5427,8 @@
       "gloss": {
         "en": "not (literary)",
         "zh": "不……的",
-        "zh_TW": "不……的"
+        "zh_TW": "不……的",
+        "ja": "打消しを表す（文語）"
       }
     },
     {
@@ -5068,7 +5440,8 @@
       "gloss": {
         "en": "must not",
         "zh": "不可……的",
-        "zh_TW": "不可……的"
+        "zh_TW": "不可……的",
+        "ja": "禁止を表す（文語・連体）"
       }
     },
     {
@@ -5080,7 +5453,8 @@
       "gloss": {
         "en": "about to",
         "zh": "正要",
-        "zh_TW": "正要"
+        "zh_TW": "正要",
+        "ja": "直前の動作を示す"
       }
     },
     {
@@ -5092,7 +5466,8 @@
       "gloss": {
         "en": "about to",
         "zh": "正要",
-        "zh_TW": "正要"
+        "zh_TW": "正要",
+        "ja": "直前の動作を示す（過去）"
       }
     },
     {
@@ -5105,7 +5480,8 @@
       "gloss": {
         "en": "as if about to",
         "zh": "几乎要",
-        "zh_TW": "幾乎要"
+        "zh_TW": "幾乎要",
+        "ja": "今にもそうなる様子"
       }
     },
     {
@@ -5118,7 +5494,8 @@
       "gloss": {
         "en": "as if about to",
         "zh": "几乎要",
-        "zh_TW": "幾乎要"
+        "zh_TW": "幾乎要",
+        "ja": "今にもそうなる様子"
       }
     },
     {
@@ -5131,7 +5508,8 @@
       "gloss": {
         "en": "as if about to",
         "zh": "几乎要",
-        "zh_TW": "幾乎要"
+        "zh_TW": "幾乎要",
+        "ja": "今にもそうなる様子（連体）"
       }
     },
     {
@@ -5144,7 +5522,8 @@
       "gloss": {
         "en": "now this, now that",
         "zh": "时而",
-        "zh_TW": "時而"
+        "zh_TW": "時而",
+        "ja": "動作が交互に起こる様子"
       }
     },
     {
@@ -5156,7 +5535,8 @@
       "gloss": {
         "en": "a way, a means",
         "zh": "办法",
-        "zh_TW": "辦法"
+        "zh_TW": "辦法",
+        "ja": "方法・手段を示す"
       }
     },
     {
@@ -5168,7 +5548,8 @@
       "gloss": {
         "en": "as soon as",
         "zh": "刚一……就",
-        "zh_TW": "剛一……就"
+        "zh_TW": "剛一……就",
+        "ja": "直後の動作を示す"
       }
     },
     {
@@ -5180,7 +5561,8 @@
       "gloss": {
         "en": "since, as",
         "zh": "因为",
-        "zh_TW": "因為"
+        "zh_TW": "因為",
+        "ja": "理由を表す（文語）"
       }
     },
     {
@@ -5192,7 +5574,8 @@
       "gloss": {
         "en": "in accordance with",
         "zh": "按照",
-        "zh_TW": "按照"
+        "zh_TW": "按照",
+        "ja": "基準に沿うことを示す"
       }
     },
     {
@@ -5204,7 +5587,8 @@
       "gloss": {
         "en": "in accordance with",
         "zh": "按照",
-        "zh_TW": "按照"
+        "zh_TW": "按照",
+        "ja": "基準に沿うことを示す（連体）"
       }
     },
     {
@@ -5216,7 +5600,8 @@
       "gloss": {
         "en": "worth doing",
         "zh": "值得",
-        "zh_TW": "值得"
+        "zh_TW": "值得",
+        "ja": "十分な価値があることを示す"
       }
     },
     {
@@ -5228,7 +5613,8 @@
       "gloss": {
         "en": "all the way to",
         "zh": "直到",
-        "zh_TW": "直到"
+        "zh_TW": "直到",
+        "ja": "極端な範囲を示す"
       }
     },
     {
@@ -5240,7 +5626,8 @@
       "gloss": {
         "en": "utterly, in the extreme",
         "zh": "极其",
-        "zh_TW": "極其"
+        "zh_TW": "極其",
+        "ja": "程度が極端なことを示す"
       }
     },
     {
@@ -5252,7 +5639,8 @@
       "gloss": {
         "en": "utterly, in the extreme",
         "zh": "极其",
-        "zh_TW": "極其"
+        "zh_TW": "極其",
+        "ja": "程度が極端なことを示す"
       }
     },
     {
@@ -5264,7 +5652,8 @@
       "gloss": {
         "en": "the height of",
         "zh": "……的极致",
-        "zh_TW": "……的極致"
+        "zh_TW": "……的極致",
+        "ja": "最高の状態を示す"
       }
     },
     {
@@ -5276,7 +5665,8 @@
       "gloss": {
         "en": "the height of",
         "zh": "……之至",
-        "zh_TW": "……之至"
+        "zh_TW": "……之至",
+        "ja": "極致であることを示す"
       }
     },
     {
@@ -5288,7 +5678,8 @@
       "gloss": {
         "en": "as good as",
         "zh": "如同",
-        "zh_TW": "如同"
+        "zh_TW": "如同",
+        "ja": "ほぼ同じ状態を示す"
       }
     },
     {
@@ -5300,7 +5691,8 @@
       "gloss": {
         "en": "the most one can do",
         "zh": "顶多",
-        "zh_TW": "頂多"
+        "zh_TW": "頂多",
+        "ja": "限界であることを示す"
       }
     },
     {
@@ -5312,7 +5704,8 @@
       "gloss": {
         "en": "the whole of",
         "zh": "全体",
-        "zh_TW": "全體"
+        "zh_TW": "全體",
+        "ja": "全体を含むことを示す"
       }
     },
     {
@@ -5324,7 +5717,8 @@
       "gloss": {
         "en": "absorbed in",
         "zh": "沉溺于",
-        "zh_TW": "沉溺於"
+        "zh_TW": "沉溺於",
+        "ja": "夢中である様子を示す"
       }
     },
     {
@@ -5336,7 +5730,8 @@
       "gloss": {
         "en": "what with, and",
         "zh": "又……又",
-        "zh_TW": "又……又"
+        "zh_TW": "又……又",
+        "ja": "並立・不確かさを示す"
       }
     },
     {
@@ -5348,7 +5743,8 @@
       "gloss": {
         "en": "be forced to",
         "zh": "被迫",
-        "zh_TW": "被迫"
+        "zh_TW": "被迫",
+        "ja": "やむを得なかったことを示す"
       }
     },
     {
@@ -5360,7 +5756,8 @@
       "gloss": {
         "en": "be forced to",
         "zh": "被迫",
-        "zh_TW": "被迫"
+        "zh_TW": "被迫",
+        "ja": "やむを得なくさせることを示す"
       }
     }
   ],

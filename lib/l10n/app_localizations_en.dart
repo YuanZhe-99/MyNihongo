@@ -377,6 +377,75 @@ class AppLocalizationsEn extends AppLocalizations {
   String get vocabPartOfSpeech => 'Part of speech';
 
   @override
+  String get posNoun => 'noun';
+
+  @override
+  String get posPronoun => 'pronoun';
+
+  @override
+  String get posProperNoun => 'proper noun';
+
+  @override
+  String get posVerbGodan => 'godan verb';
+
+  @override
+  String get posVerbIchidan => 'ichidan verb';
+
+  @override
+  String get posVerbIrregular => 'irregular verb';
+
+  @override
+  String get posSuruVerb => 'suru verb';
+
+  @override
+  String get posTransitive => 'transitive';
+
+  @override
+  String get posIntransitive => 'intransitive';
+
+  @override
+  String get posAuxiliary => 'auxiliary';
+
+  @override
+  String get posIAdjective => 'i-adjective';
+
+  @override
+  String get posNaAdjective => 'na-adjective';
+
+  @override
+  String get posNoAdjective => 'no-adjective';
+
+  @override
+  String get posAdnominal => 'pre-noun adjectival';
+
+  @override
+  String get posAdverb => 'adverb';
+
+  @override
+  String get posParticle => 'particle';
+
+  @override
+  String get posConjunction => 'conjunction';
+
+  @override
+  String get posInterjection => 'interjection';
+
+  @override
+  String get posExpression => 'expression';
+
+  @override
+  String get posCounter => 'counter';
+
+  @override
+  String get posNumeric => 'numeral';
+
+  @override
+  String get posPrefix => 'prefix';
+
+  @override
+  String get posSuffix => 'suffix';
+
+  @override
   String get grammarTitle => 'Grammar';
 
   @override
@@ -1128,6 +1197,10 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get quizModesBody =>
       'Switch off any way of asking you would rather not see. A mode that this device or this word cannot support is skipped anyway.';
+
+  @override
+  String get quizModeNeedsTranslation =>
+      'Not available in Japanese: this mode asks about a translation.';
 
   @override
   String get quizModesVocab => 'Vocabulary';

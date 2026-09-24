@@ -1,8 +1,10 @@
 # lib/app/locale_resolution.dart
 
-How a device's preferred language list is matched to one of the app's three UI languages. Wired as
+How a device's preferred language list is matched to one of the app's four UI languages. Wired as
 `MaterialApp.localeListResolutionCallback` in [app.md](app.md), so it decides only when the learner
-has not picked a language in Settings. See [../../architecture.md](../../architecture.md).
+has not picked a language in Settings. It also owns the one parser of the `language_COUNTRY` tag
+form, through which Settings and the reminder planner read a stored or generated tag. See
+[../../architecture.md](../../architecture.md).
 
 ## Declarations
 
@@ -12,6 +14,7 @@ has not picked a language in Settings. See [../../architecture.md](../../archite
 | `traditionalChineseRegions` | constant | B | Regions that write Chinese in Traditional characters. |
 | [`normalizeChinese`](#normalizechinese) | function | A | Reduce any Chinese locale to one of the app's two. |
 | [`resolveAppLocale`](#resolveapplocale) | function | A | Choose the UI language for a device's list. |
+| [`localeFromTag`](#localefromtag) | function | A | Turn a stored or generated locale tag (`ja`, `zh`, `zh_TW`) back into a `Locale`. |
 
 ## Documentation
 
@@ -46,3 +49,24 @@ has not picked a language in Settings. See [../../architecture.md](../../archite
   Chinese: the country `HK` is not `TW`, and the script it did send is ignored. Correcting the
   input rather than the algorithm keeps every non-Chinese case exactly as Flutter defines it,
   including the fall-through to the template language when nothing matches.
+
+### `Locale localeFromTag(String tag)` <a id="localefromtag"></a>
+
+- **Kind:** function
+- **Source:** `lib/app/locale_resolution.dart`
+- **Purpose:** Turn a stored or generated locale tag back into a `Locale`.
+- **Inputs:** `tag` — `ja`, `zh`, `zh_TW`, spelled as `AppLocalizations.localeName` and the stored
+  language preference spell it.
+- **Returns:** `Locale` — language and country when the tag has an underscore, language alone
+  otherwise.
+- **Side effects:** None.
+- **Algorithm:** Split on `_`; more than one part becomes `Locale(parts[0], parts[1])`, one part
+  becomes `Locale(parts[0])`.
+- **Usage:** `AppSettingsNotifier` reading the stored `locale` preference
+  ([../shared/providers/app_settings.md](../shared/providers/app_settings.md)), and `planReminders`
+  ([../features/reminders/services/reminder_planner.md](../features/reminders/services/reminder_planner.md)),
+  which resolves the next unit's title with `localeFromTag(l10n.localeName)`.
+- **Notes:** The one place the `language_COUNTRY` form is parsed. The reminder planner has only
+  `AppLocalizations` and no `BuildContext`, so this is how it learns the UI language; before, it
+  mapped anything but Chinese to English and every Chinese UI to `zh`, so a Traditional Chinese or
+  Japanese reader was given another language's unit title.

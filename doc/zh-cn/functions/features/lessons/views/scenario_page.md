@@ -4,6 +4,8 @@
 
 页面只保存三样状态，再无其他——已经显示了多少行、哪个分支正在等待回答、学习者说过什么。不写任何存储。
 
+台词或回复选项下方的译文用 `LocalizedStrings.resolveTranslation` 选取：日语读者在日语下方看不到英文行，也不会在那个位置看到一个空行。
+
 使用方：`router.dart`（`/scenario`）、`lesson_path_view.dart`（推入它的按钮）。
 
 ## 声明
@@ -16,8 +18,9 @@
 | `ScenarioPage.new` | 构造函数 | B | 保存参数。 |
 | `_ScenarioPageState._advance` | 方法 | B | 显示下一行，或它之前的分支。 |
 | [`_ScenarioPageState._choose`](#choose) | 方法 | A | 记录回答并继续。 |
-| `_ScenarioPageState._saidLine` | 方法 | B | 渲染学习者选择说的那一行。 |
+| `_ScenarioPageState._saidLine` | 方法 | B | 渲染学习者选择说的那一行；`resolveTranslation` 为这位读者给出译文时，译文显示在它下方。 |
 | `_ScenarioPageState.build` | 方法 | B | 构建页面。 |
+| `_ScenarioPageState._line` | 方法 | B | 渲染一行台词；`resolveTranslation` 为这位读者给出译文时，译文显示在它下方。 |
 | `_ScenarioPageState._onAiChanged` | 方法 | B | 端侧 AI 状态变化时重建。 |
 | `_ScenarioPageState._canChat` | getter | B | 模型能否把对话继续下去。 |
 | `_ScenarioPageState._partner` | 方法 | B | 学习者在跟谁说话，用脚本给的称呼。 |
@@ -28,7 +31,6 @@
 | `_ScenarioPageState._learnerTurn` | 方法 | B | 渲染学习者打的那一行。 |
 | `_ScenarioPageState._replyTurn` | 方法 | B | 渲染对方的回话。 |
 | `_ScenarioPageState._composer` | 方法 | B | 构建学习者打字用的输入框。 |
-| `_ScenarioPageState._line` | 方法 | B | 渲染一行台词。 |
 
 ## 文档
 

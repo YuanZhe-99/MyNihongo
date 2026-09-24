@@ -6,12 +6,17 @@ A second-level page like the WebDAV and backup pages: pushed full-screen on a
 narrow window, hosted in the detail pane on a wide one, by the same
 `_SettingsDetail` mechanism.
 
+A mode the current UI language cannot ask — the translation-based grammar modes under a Japanese UI,
+see `translationQuizModes` in [../models/quiz_question.md](../models/quiz_question.md) — is shown,
+switched off and explained (`quizModeNeedsTranslation`) rather than left out: a missing switch reads
+as a missing feature. Its stored state is left alone.
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |
 |---|---|---|---|
 | `QuizModesPage` | class | B | The mode switches. |
-| `build` | method | B | Build the three groups of switches. |
+| `build` | method | B | Build the three groups of switches; a mode this UI language cannot ask (`quizModeWorksIn`) is shown switched off and disabled, with the reason as its subtitle. |
 | [`_toggle`](#toggle) | method | A | Switch one mode on or off, refusing the last one. |
 
 ## Documentation

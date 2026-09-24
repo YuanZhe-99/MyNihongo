@@ -640,3 +640,42 @@ String encodeCatalog(
     ..writeln('}');
   return buffer.toString();
 }
+
+/// Purpose: Fold the Japanese-definition overlay into catalog entries.
+/// Inputs: `entries` — the catalog rows, modified in place; `overlay` — the
+/// parsed `vocab_ja.json`, keyed by catalog id, each row carrying `ja` (the
+/// definitions) and `jaReading` (one hiragana reading per definition).
+/// Returns: `int` — how many entries carry a Japanese definition afterwards.
+/// Side effects: Mutates `entries`.
+/// Notes: Used by **both** the full import and `--overlay-only`, because a
+/// full import rebuilds every entry from JMdict: were the overlay applied only
+/// in one mode, the next JMdict refresh would silently delete every Japanese
+/// definition while `vocab_ja.json` still held them. Every entry is
+/// rewritten, not only the overlay's: `meanings.ja` and `jaReading` are
+/// removed first and re-added last, so a row taken out of the overlay leaves
+/// the catalog too, and the key order is the same whichever mode wrote it.
+int applyJapaneseOverlay(
+  List<Map<String, Object?>> entries,
+  Map<String, Map<String, Object?>> overlay,
+) {
+  var applied = 0;
+  for (final entry in entries) {
+    final meanings = (entry['meanings'] as Map).cast<String, Object?>();
+    meanings.remove('ja');
+    entry.remove('jaReading');
+    final row = overlay['${entry['id']}'];
+    final ja = row?['ja'];
+    if (ja is List && ja.isNotEmpty) {
+      meanings['ja'] = [for (final sense in ja) '$sense'];
+      final readings = row?['jaReading'];
+      entry['meanings'] = meanings;
+      if (readings is List && readings.length == ja.length) {
+        entry['jaReading'] = [for (final r in readings) '$r'];
+      }
+      applied++;
+    } else {
+      entry['meanings'] = meanings;
+    }
+  }
+  return applied;
+}

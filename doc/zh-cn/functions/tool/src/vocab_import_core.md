@@ -25,6 +25,7 @@
 | `posOf` | 顶层函数 | B | 把词条的词性标签映射到应用的集合。 |
 | [`buildEntries`](#buildentries) | 顶层函数 | A | 从全部输入构建目录条目。 |
 | `_entry` | 顶层函数 | B | 以固定的键顺序组装一个目录条目。 |
+| [`applyJapaneseOverlay`](#applyjapaneseoverlay) | 顶层函数 | A | 把日语释义覆盖文件折入目录条目，两种导入模式都会用到。 |
 
 ### `chooseForms` <a id="chooseforms"></a>
 
@@ -62,3 +63,18 @@
 - **Usage:** 命令唯一的一次调用。
 - **Notes:** 依靠排序而非输入顺序或映射顺序，是输出在多次运行间逐字节稳定的原因。种子条目的手写释义与例句
   优先于 JMdict 的，因为它们是为学习者而不是为词典写的；其旧 id 成为别名，使任何用户的进度都不会成为孤儿。
+
+### `applyJapaneseOverlay` <a id="applyjapaneseoverlay"></a>
+
+- **Purpose:** 把日语释义覆盖文件折入目录条目。
+- **Inputs:** `entries` —— 目录各行，原地修改；`overlay` —— 解析后的 `vocab_ja.json`，按目录 id 分键，每行带
+  `ja`（释义）与 `jaReading`（每条释义一个平假名读音）。
+- **Returns:** `int` —— 之后带有日语释义的条目数。
+- **Side effects:** 修改 `entries`。
+- **Algorithm:** 对**每一个**条目，先移除 `meanings.ja` 与 `jaReading`。若该 id 的覆盖行有非空的 `ja` 列表，则把它
+  写回为 `meanings.ja`，并且只有当 `jaReading` 的长度与释义一致时才写入它；计入该条目。
+- **Usage:** `import_vocab.dart`，在完整导入与 `--overlay-only` 中都会调用。
+- **Notes:** **两种**模式都用它，因为完整导入会从 JMdict 重建每一个条目：若只在一种模式下应用覆盖文件，下一次
+  JMdict 刷新就会悄悄删掉每一条日语释义，而 `vocab_ja.json` 里仍保存着它们。每个条目都会被重写，而不只是覆盖文件
+  中的那些：先移除这些键、最后再加回，意味着从覆盖文件中删掉的行也会离开目录，并且无论哪种模式写出，键的顺序都
+  相同——所以两种模式产出逐字节相同的结果。长度不对的读音列表会被丢弃而不是错位，应用随后不带注音地绘制那些释义。

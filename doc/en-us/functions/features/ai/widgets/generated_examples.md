@@ -5,7 +5,9 @@ The **More examples** action in a word's detail sheet, and whatever the model wr
 Shown only where the Prompt API can actually run, and only when the learner taps the button. Nothing
 is generated on opening a sheet, and nothing generated is stored: the examples live for as long as
 the sheet does. Each one carries the same generated label every generated thing in this app carries,
-above the text rather than below it, so it is read before the Japanese is.
+above the text rather than below it, so it is read before the Japanese is. The line under each
+example is in the reader's language; for a Japanese UI it is an easier-Japanese paraphrase, and when
+there is none the line is left out rather than shown in another language.
 
 Consumer: `content_sheets.dart`, inside `showVocabDetailSheet`.
 
@@ -27,7 +29,7 @@ unavailable; it now says so.
 | `initState` | method | B | Follow the service, so the action appears when the device is ready. |
 | `dispose` | method | B | Stop following the service. |
 | `_onServiceChanged` | method | B | Rebuild when the device's answer changes. |
-| `build` | method | B | Build the button and whatever came back. |
+| `build` | method | B | Build the button and whatever came back; the line under each example is `resolveTranslationJoined`, and is left out when empty. |
 | [`_ask`](#ask) | method | A | Ask the model for example sentences. |
 
 ## Documentation
@@ -40,7 +42,10 @@ unavailable; it now says so.
 - **Returns:** `Future<void>`.
 - **Side effects:** Runs a model on the device; sets the widget's state.
 - **Algorithm:** Await the prompt builder, build the prompt, run it through `AiPracticeService` with
-  the asset's token budget, parse the reply into whole examples, and show them — or show a failure.
+  the asset's token budget, parse the reply into whole examples, and show them — or show a failure. The
+  parser files the line under each example under the reader's language: `en` for English, `ja` for
+  Japanese (an easier-Japanese paraphrase), and `zh` for both Chinese UIs, whose lookup order falls
+  back to `zh`.
 - **Usage:** The button, once per tap.
 - **Notes:** A reply that does not parse into whole lines is dropped rather than partly shown: a
   generated sentence sits beside the catalog's own and would otherwise look exactly as authoritative

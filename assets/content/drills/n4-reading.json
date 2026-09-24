@@ -562,7 +562,8 @@
       "prompt": {
         "en": "Why did the flowers not do well at first?",
         "zh": "为什么一开始花长得不好？",
-        "zh_TW": "為什麼一開始花長得不好？"
+        "zh_TW": "為什麼一開始花長得不好？",
+        "ja": "はじめ、花はどうして元気になりませんでしたか。"
       },
       "options": [
         "世話が下手だったからです。",
@@ -574,7 +575,8 @@
       "explanation": {
         "en": "The second sentence gives the reason directly: the writer was bad at looking after the flowers, so they did not do well. The price of the flowers, a lack of water and the mother's schedule are never mentioned.",
         "zh": "第二句直接说明了原因：作者不擅长照顾花，所以花长得不精神。文中没有提到花的价钱、家里没有水，也没有说妈妈很忙。",
-        "zh_TW": "第二句直接說明了原因：作者不擅長照顧花，所以花長得不精神。文中沒有提到花的價錢、家裡沒有水，也沒有說媽媽很忙。"
+        "zh_TW": "第二句直接說明了原因：作者不擅長照顧花，所以花長得不精神。文中沒有提到花的價錢、家裡沒有水，也沒有說媽媽很忙。",
+        "ja": "二文目に「世話が下手で、花が元気になりませんでした」とはっきり理由が書かれています。花の値段や水がなかったこと、母が忙しかったことは文中にありません。"
       }
     },
     {
@@ -590,7 +592,8 @@
       "prompt": {
         "en": "What time did the meeting actually start?",
         "zh": "会议实际上是几点开始的？",
-        "zh_TW": "會議實際上是幾點開始的？"
+        "zh_TW": "會議實際上是幾點開始的？",
+        "ja": "会議は実際に何時に始まりましたか。"
       },
       "options": [
         "九時半です。",
@@ -602,7 +605,8 @@
       "explanation": {
         "en": "Ten o'clock was only the plan; because other people were late as well, the meeting began at half past ten. Half past nine is when the writer reached the office.",
         "zh": "十点只是原定的时间，因为其他人也迟到了，会议在十点半才开始。九点半是作者到公司的时间。",
-        "zh_TW": "十點只是原定的時間，因為其他人也遲到了，會議在十點半才開始。九點半是作者到公司的時間。"
+        "zh_TW": "十點只是原定的時間，因為其他人也遲到了，會議在十點半才開始。九點半是作者到公司的時間。",
+        "ja": "十時は最初の予定にすぎません。ほかの人も遅れたので、会議は十時半に始まりました。九時半は作者が会社に着いた時間です。"
       }
     },
     {
@@ -617,7 +621,8 @@
       "prompt": {
         "en": "What did the writer do for the girl?",
         "zh": "作者为那个女孩做了什么？",
-        "zh_TW": "作者為那個女孩做了什麼？"
+        "zh_TW": "作者為那個女孩做了什麼？",
+        "ja": "作者はその女の子のために何をしましたか。"
       },
       "options": [
         "いっしょに公園の事務所へ行きました。",
@@ -629,7 +634,8 @@
       "explanation": {
         "en": "Because the mother was nowhere to be seen, the writer went with the girl to the park office. The girl was not hurt, no phone call is mentioned, and it was the mother who came running.",
         "zh": "因为看不到女孩的妈妈，作者陪她去了公园的办公室。女孩并没有受伤，文中也没有打电话的情节，跑过来的是她妈妈。",
-        "zh_TW": "因為看不到女孩的媽媽，作者陪她去了公園的辦公室。女孩並沒有受傷，文中也沒有打電話的情節，跑過來的是她媽媽。"
+        "zh_TW": "因為看不到女孩的媽媽，作者陪她去了公園的辦公室。女孩並沒有受傷，文中也沒有打電話的情節，跑過來的是她媽媽。",
+        "ja": "お母さんが見えなかったので、作者は女の子と一緒に公園の事務所へ行きました。女の子はけがをしておらず、電話の話もなく、走って来たのはお母さんです。"
       }
     },
     {
@@ -644,7 +650,8 @@
       "prompt": {
         "en": "What kind of work does the writer do at the shop?",
         "zh": "作者在店里做的是什么样的工作？",
-        "zh_TW": "作者在店裡做的是什麼樣的工作？"
+        "zh_TW": "作者在店裡做的是什麼樣的工作？",
+        "ja": "作者は店でどんな仕事をしていますか。"
       },
       "options": [
         "花に水をやって、店の中をきれいにする仕事です。",
@@ -656,7 +663,8 @@
       "explanation": {
         "en": "The second sentence states the job exactly: watering the flowers and keeping the inside of the shop clean. The writer is the one still learning the flower names, and the university is where the writer studies, not works.",
         "zh": "第二句明确说明了工作内容：给花浇水和把店里打扫干净。记花名的是作者自己还在学的事，大学是上学的地方，不是工作的地方。",
-        "zh_TW": "第二句明確說明了工作內容：給花澆水和把店裡打掃乾淨。記花名的是作者自己還在學的事，大學是上學的地方，不是工作的地方。"
+        "zh_TW": "第二句明確說明了工作內容：給花澆水和把店裡打掃乾淨。記花名的是作者自己還在學的事，大學是上學的地方，不是工作的地方。",
+        "ja": "二文目に「花に水をやることと、店の中をきれいにすること」だと明確に書かれています。花の名前を覚えるのは作者自身がまだ学んでいることで、大学は勉強する場所です。"
       }
     },
     {
@@ -671,7 +679,8 @@
       "prompt": {
         "en": "What are the people at the shop like?",
         "zh": "店里的人是什么样的人？",
-        "zh_TW": "店裡的人是什麼樣的人？"
+        "zh_TW": "店裡的人是什麼樣的人？",
+        "ja": "店の人はどんな人ですか。"
       },
       "options": [
         "忙しいときでも、丁寧に質問に答えてくれる人です。",
@@ -683,7 +692,8 @@
       "explanation": {
         "en": "The fourth sentence says that even when they are busy they answer the writer's questions politely, so being busy does not stop them helping. Staying open late is about the shop's hours, not about resting.",
         "zh": "第四句说他们即使很忙也会耐心回答作者的问题，可见忙碌并不影响他们帮忙。营业到深夜说的是店的营业时间，不是在休息。",
-        "zh_TW": "第四句說他們即使很忙也會耐心回答作者的問題，可見忙碌並不影響他們幫忙。營業到深夜說的是店的營業時間，不是在休息。"
+        "zh_TW": "第四句說他們即使很忙也會耐心回答作者的問題，可見忙碌並不影響他們幫忙。營業到深夜說的是店的營業時間，不是在休息。",
+        "ja": "四文目に、忙しいときでも作者の質問に丁寧に答えてくれると書かれているので、忙しさは助けにならない理由にはなりません。夜遅くまで開けているのは営業時間の話です。"
       }
     },
     {
@@ -698,7 +708,8 @@
       "prompt": {
         "en": "What does the writer want to do in the future?",
         "zh": "作者将来想做什么？",
-        "zh_TW": "作者將來想做什麼？"
+        "zh_TW": "作者將來想做什麼？",
+        "ja": "作者は将来何をしたいと思っていますか。"
       },
       "options": [
         "自分の店を持ちたいと思っています。",
@@ -710,7 +721,8 @@
       "explanation": {
         "en": "The last sentence says plainly that the writer wants a shop of their own. University and the late hours belong to the writer's present life, and writing a book is never mentioned.",
         "zh": "最后一句明确说作者想拥有自己的店。上大学和工作到很晚是现在的生活，写书在文中从未提及。",
-        "zh_TW": "最後一句明確說作者想擁有自己的店。上大學和工作到很晚是現在的生活，寫書在文中從未提及。"
+        "zh_TW": "最後一句明確說作者想擁有自己的店。上大學和工作到很晚是現在的生活，寫書在文中從未提及。",
+        "ja": "最後の文に自分の店を持ちたいとはっきり書かれています。大学と夜遅くまでの仕事は今の生活のことで、本を書く話は文中にありません。"
       }
     },
     {
@@ -726,7 +738,8 @@
       "prompt": {
         "en": "What must someone who wants to join the class do?",
         "zh": "想参加这个教室的人必须做什么？",
-        "zh_TW": "想參加這個教室的人必須做什麼？"
+        "zh_TW": "想參加這個教室的人必須做什麼？",
+        "ja": "教室に入りたい人は何をしなければなりませんか。"
       },
       "options": [
         "十月五日までに一階の受付で名前を書きます。",
@@ -738,7 +751,8 @@
       "explanation": {
         "en": "The notice says to write your name at the first-floor reception desk by October 5th. The equipment is prepared for you, the class itself begins at one in the afternoon, and twenty is only the limit on numbers.",
         "zh": "通知写明要在十月五日之前到一楼服务台写下姓名。用品由主办方准备，教室下午一点才开始，二十人只是人数上限。",
-        "zh_TW": "通知寫明要在十月五日之前到一樓服務檯寫下姓名。用品由主辦方準備，教室下午一點才開始，二十人只是人數上限。"
+        "zh_TW": "通知寫明要在十月五日之前到一樓服務檯寫下姓名。用品由主辦方準備，教室下午一點才開始，二十人只是人數上限。",
+        "ja": "十月五日までに一階の受付で名前を書くようにと書いてあります。用品は主催者が用意し、教室自体は午後一時から始まり、二十人は人数の上限にすぎません。"
       }
     },
     {
@@ -754,7 +768,8 @@
       "prompt": {
         "en": "Someone wants to return a book on the 22nd of this month. What should that person do?",
         "zh": "有人想在本月二十二日还书，应该怎么做？",
-        "zh_TW": "有人想在本月二十二日還書，應該怎麼做？"
+        "zh_TW": "有人想在本月二十二日還書，應該怎麼做？",
+        "ja": "今月二十二日に本を返したい人はどうすればいいですか。"
       },
       "options": [
         "一階の受付へ持って行きます。",
@@ -766,7 +781,8 @@
       "explanation": {
         "en": "The 22nd falls inside the period when the second floor is closed, and the notice says to come to the first-floor reception desk both to borrow and to return books. Waiting until the 26th is unnecessary, and it is the newspapers that were moved down, not the books being returned.",
         "zh": "二十二日正处于二楼停用的期间，通知说借书和还书都要到一楼服务台。没有必要等到二十六日，被搬到楼下的是报纸，不是要还的书。",
-        "zh_TW": "二十二日正處於二樓停用的期間，通知說借書和還書都要到一樓服務檯。沒有必要等到二十六日，被搬到樓下的是報紙，不是要還的書。"
+        "zh_TW": "二十二日正處於二樓停用的期間，通知說借書和還書都要到一樓服務檯。沒有必要等到二十六日，被搬到樓下的是報紙，不是要還的書。",
+        "ja": "二十二日は二階が使えない期間に入っており、借りるときも返すときも一階の受付へ来るよう書いてあります。二十六日まで待つ必要はなく、一階に運ばれたのは新聞であって本ではありません。"
       }
     },
     {
@@ -782,7 +798,8 @@
       "prompt": {
         "en": "Why did the writer thank the shop person many times?",
         "zh": "作者为什么向店里的人道了好几次谢？",
-        "zh_TW": "作者為什麼向店裡的人道了好幾次謝？"
+        "zh_TW": "作者為什麼向店裡的人道了好幾次謝？",
+        "ja": "作者はどうして店の人に何度もお礼を言いましたか。"
       },
       "options": [
         "お金はいらないと言って、自転車を直してくれたからです。",
@@ -794,7 +811,8 @@
       "explanation": {
         "en": "The shop fixed the bicycle at once and then said no money was needed, and that is what pleased the writer. The bicycle was not new, not lost, and was taken to the shop by the writer.",
         "zh": "店里的人当场修好了自行车，还说不用付钱，作者高兴的正是这一点。车既不是新买的，也没有丢失，而且是作者自己拿去店里的。",
-        "zh_TW": "店裡的人當場修好了自行車，還說不用付錢，作者高興的正是這一點。車既不是新買的，也沒有丟失，而且是作者自己拿去店裡的。"
+        "zh_TW": "店裡的人當場修好了自行車，還說不用付錢，作者高興的正是這一點。車既不是新買的，也沒有丟失，而且是作者自己拿去店裡的。",
+        "ja": "店の人がすぐに自転車を直してくれ、お金はいらないと言ってくれたので、作者は喜びました。自転車は新しいものでも、なくしたものでもなく、店まで運んだのは作者自身です。"
       }
     },
     {
@@ -810,7 +828,8 @@
       "prompt": {
         "en": "Why did no birds come last year?",
         "zh": "去年为什么小鸟都没有来？",
-        "zh_TW": "去年為什麼小鳥都沒有來？"
+        "zh_TW": "去年為什麼小鳥都沒有來？",
+        "ja": "去年はどうして小鳥が来ませんでしたか。"
       },
       "options": [
         "木の枝を切ってしまったからです。",
@@ -822,7 +841,8 @@
       "explanation": {
         "en": "The third sentence gives the reason: the branches were cut, so the birds had nowhere to gather. The window is only where the writer watches from, and the length of autumn and the grass are never mentioned.",
         "zh": "第三句说明了原因：树枝被剪掉了，小鸟就没有地方停留。窗户只是作者观看的位置，秋天的长短和院子里的草文中都没有提到。",
-        "zh_TW": "第三句說明了原因：樹枝被剪掉了，小鳥就沒有地方停留。窗戶只是作者觀看的位置，秋天的長短和院子裡的草文中都沒有提到。"
+        "zh_TW": "第三句說明了原因：樹枝被剪掉了，小鳥就沒有地方停留。窗戶只是作者觀看的位置，秋天的長短和院子裡的草文中都沒有提到。",
+        "ja": "三文目に理由が書かれています。木の枝を切ってしまったので、小鳥が集まる場所がなくなりました。窓は作者が見る場所にすぎず、秋の長さや庭の草については書かれていません。"
       }
     },
     {
@@ -838,7 +858,8 @@
       "prompt": {
         "en": "What is the writer planning to do?",
         "zh": "作者打算做什么？",
-        "zh_TW": "作者打算做什麼？"
+        "zh_TW": "作者打算做什麼？",
+        "ja": "作者は何をしようと思っていますか。"
       },
       "options": [
         "今度の休みに祖母を訪ねようと思っています。",
@@ -850,7 +871,8 @@
       "explanation": {
         "en": "The third sentence says directly that the writer intends to visit the grandmother on the next holiday. It is the grandmother who grew the vegetables and who sent a letter, not the writer.",
         "zh": "第三句直接说作者打算下次放假去看奶奶。种蔬菜和寄信的都是奶奶，不是作者。",
-        "zh_TW": "第三句直接說作者打算下次放假去看奶奶。種蔬菜和寄信的都是奶奶，不是作者。"
+        "zh_TW": "第三句直接說作者打算下次放假去看奶奶。種蔬菜和寄信的都是奶奶，不是作者。",
+        "ja": "三文目に、次の休みに祖母を訪ねようと思っているとはっきり書かれています。野菜を作ったり手紙を書いたりしたのは祖母であって、作者ではありません。"
       }
     },
     {
@@ -866,7 +888,8 @@
       "prompt": {
         "en": "Why did the writer feel relieved?",
         "zh": "作者为什么感到安心了？",
-        "zh_TW": "作者為什麼感到安心了？"
+        "zh_TW": "作者為什麼感到安心了？",
+        "ja": "作者はどうして安心しましたか。"
       },
       "options": [
         "なくした傘が見つかったからです。",
@@ -878,7 +901,8 @@
       "explanation": {
         "en": "The station staff got in touch to say the umbrella had been found, and since it was an important one the writer was relieved. Nothing is said about buying another umbrella or about the train's arrival.",
         "zh": "车站的人联系说伞找到了，而那把伞很重要，所以作者才安心。文中并没有提到买新伞，也没有提到电车到站的时间。",
-        "zh_TW": "車站的人聯繫說傘找到了，而那把傘很重要，所以作者才安心。文中並沒有提到買新傘，也沒有提到電車到站的時間。"
+        "zh_TW": "車站的人聯繫說傘找到了，而那把傘很重要，所以作者才安心。文中並沒有提到買新傘，也沒有提到電車到站的時間。",
+        "ja": "駅の人から傘が見つかったと連絡があり、それが大事な傘だったので作者は安心しました。新しい傘を買った話や電車の到着時刻の話は文中にありません。"
       }
     },
     {
@@ -894,7 +918,8 @@
       "prompt": {
         "en": "What has become possible for the writer now?",
         "zh": "作者现在变得能做到什么了？",
-        "zh_TW": "作者現在變得能做到什麼了？"
+        "zh_TW": "作者現在變得能做到什麼了？",
+        "ja": "作者は今、何ができるようになりましたか。"
       },
       "options": [
         "長い間泳ぎ続けることができるようになりました。",
@@ -906,7 +931,8 @@
       "explanation": {
         "en": "The third sentence states the change: the writer can now keep swimming for a long time. Swimming in the sea is still only a wish for next year, and the writer is the student, not the teacher.",
         "zh": "第三句说明了变化：作者现在能连续游很长时间了。在海里游泳只是明年的愿望，而作者是学生，不是老师。",
-        "zh_TW": "第三句說明了變化：作者現在能連續遊很長時間了。在海里游泳只是明年的願望，而作者是學生，不是老師。"
+        "zh_TW": "第三句說明了變化：作者現在能連續遊很長時間了。在海里游泳只是明年的願望，而作者是學生，不是老師。",
+        "ja": "三文目に、長い間泳ぎ続けることができるようになったと書かれています。海で泳ぐのは来年の希望にすぎず、作者は水泳の先生ではなく生徒です。"
       }
     },
     {
@@ -922,7 +948,8 @@
       "prompt": {
         "en": "Why was the writer able to tidy up on the day of the move?",
         "zh": "作者为什么在搬家当天就把东西收拾好了？",
-        "zh_TW": "作者為什麼在搬家當天就把東西收拾好了？"
+        "zh_TW": "作者為什麼在搬家當天就把東西收拾好了？",
+        "ja": "作者はどうして引っ越した日のうちに片付けることができましたか。"
       },
       "options": [
         "近所の人が手伝ってくれたからです。",
@@ -934,7 +961,8 @@
       "explanation": {
         "en": "The writer could not carry everything alone; it was the neighbour's help that made finishing that day possible. The text says there were many things, and the quiet town has nothing to do with the tidying.",
         "zh": "作者一个人搬不动，正是邻居的帮忙才让当天就收拾完成。文中说东西很多，小镇安静与收拾快慢无关。",
-        "zh_TW": "作者一個人搬不動，正是鄰居的幫忙才讓當天就收拾完成。文中說東西很多，小鎮安靜與收拾快慢無關。"
+        "zh_TW": "作者一個人搬不動，正是鄰居的幫忙才讓當天就收拾完成。文中說東西很多，小鎮安靜與收拾快慢無關。",
+        "ja": "作者一人では運べませんでしたが、近所の人が手伝ってくれたのでその日のうちに片付きました。文には物が多かったと書かれており、静かな町であることは片付けとは関係ありません。"
       }
     },
     {
@@ -949,7 +977,8 @@
       "prompt": {
         "en": "How did the writer feel about the diary at the beginning?",
         "zh": "刚开始写日记的时候，作者是什么感觉？",
-        "zh_TW": "剛開始寫日記的時候，作者是什麼感覺？"
+        "zh_TW": "剛開始寫日記的時候，作者是什麼感覺？",
+        "ja": "日記を書き始めたころ、作者はどう感じていましたか。"
       },
       "options": [
         "あまり楽しくないと思っていました。",
@@ -961,7 +990,8 @@
       "explanation": {
         "en": "The second sentence says the writer started because the teacher told them to, and it was not much fun. The enjoyment came later, after learning that a short sentence was enough.",
         "zh": "第二句说作者是因为老师叫写才开始的，并不觉得有趣。乐趣是后来知道写短句也可以之后才产生的。",
-        "zh_TW": "第二句說作者是因為老師叫寫才開始的，並不覺得有趣。樂趣是後來知道寫短句也可以之後才產生的。"
+        "zh_TW": "第二句說作者是因為老師叫寫才開始的，並不覺得有趣。樂趣是後來知道寫短句也可以之後才產生的。",
+        "ja": "二文目に、先生が書くように言ったので始めたが、あまり楽しくなかったと書かれています。楽しさは、短い文でもよいと知った後に生まれました。"
       }
     },
     {
@@ -976,7 +1006,8 @@
       "prompt": {
         "en": "What does the writer notice when reading a diary from a year ago?",
         "zh": "重读一年前的日记时，作者能看出什么？",
-        "zh_TW": "重讀一年前的日記時，作者能看出什麼？"
+        "zh_TW": "重讀一年前的日記時，作者能看出什麼？",
+        "ja": "一年前の日記を読み直すと、作者は何が分かりますか。"
       },
       "options": [
         "自分の気持ちが変わったことが分かります。",
@@ -988,7 +1019,8 @@
       "explanation": {
         "en": "The fourth sentence says that reading the old diary shows clearly how the writer's own feelings have changed. The teacher, the school rules and the style of writing are not what the diary reveals.",
         "zh": "第四句说重读旧日记能清楚看出自己心情的变化。日记显示的不是老师的想法、学校的规定或写法是否正确。",
-        "zh_TW": "第四句說重讀舊日記能清楚看出自己心情的變化。日記顯示的不是老師的想法、學校的規定或寫法是否正確。"
+        "zh_TW": "第四句說重讀舊日記能清楚看出自己心情的變化。日記顯示的不是老師的想法、學校的規定或寫法是否正確。",
+        "ja": "四文目に、古い日記を読み直すと自分の気持ちが変わったことがよく分かると書かれています。日記から分かるのは先生の考えや学校の規則、書き方の正しさではありません。"
       }
     },
     {
@@ -1003,7 +1035,8 @@
       "prompt": {
         "en": "What does the writer do about days that are too busy to write?",
         "zh": "遇到忙得写不了日记的日子，作者是怎么处理的？",
-        "zh_TW": "遇到忙得寫不了日記的日子，作者是怎麼處理的？"
+        "zh_TW": "遇到忙得寫不了日記的日子，作者是怎麼處理的？",
+        "ja": "忙しくて書けない日、作者はどうしていますか。"
       },
       "options": [
         "次の日に必ず書くことにしています。",
@@ -1015,7 +1048,8 @@
       "explanation": {
         "en": "The sixth sentence says that when a day is too busy, the writer makes a point of writing on the next day. Giving up for a week, or having someone else write, is never suggested.",
         "zh": "第六句说太忙的日子作者一定会在第二天补写。文中从未提到整周不写，也没有让别人代写。",
-        "zh_TW": "第六句說太忙的日子作者一定會在第二天補寫。文中從未提到整週不寫，也沒有讓別人代寫。"
+        "zh_TW": "第六句說太忙的日子作者一定會在第二天補寫。文中從未提到整週不寫，也沒有讓別人代寫。",
+        "ja": "六文目に、忙しい日は次の日に必ず書くことにしていると書かれています。一週間書かないことや、代わりに書いてもらうことについては書かれていません。"
       }
     },
     {
@@ -1030,7 +1064,8 @@
       "prompt": {
         "en": "What did the writer do at the festival last year?",
         "zh": "去年作者在庙会上做了什么？",
-        "zh_TW": "去年作者在廟會上做了什麼？"
+        "zh_TW": "去年作者在廟會上做了什麼？",
+        "ja": "去年、作者はお祭りで何をしましたか。"
       },
       "options": [
         "会場を案内する仕事をしました。",
@@ -1042,7 +1077,8 @@
       "explanation": {
         "en": "The third sentence names the job: showing people around the venue. The writer watched the dancing and ate the food as a visitor would, not as work.",
         "zh": "第三句写明了工作内容：在会场为人带路。舞蹈是作者观看的，菜是作者吃的，都不是他的工作。",
-        "zh_TW": "第三句寫明瞭工作內容：在會場為人帶路。舞蹈是作者觀看的，菜是作者吃的，都不是他的工作。"
+        "zh_TW": "第三句寫明瞭工作內容：在會場為人帶路。舞蹈是作者觀看的，菜是作者吃的，都不是他的工作。",
+        "ja": "三文目に仕事の内容として、会場を案内することだと書かれています。踊りを見たり、ごちそうを食べたりしたのは訪れた人としてであって、仕事ではありません。"
       }
     },
     {
@@ -1057,7 +1093,8 @@
       "prompt": {
         "en": "What was harder than the writer had expected?",
         "zh": "什么事比作者想象的还要难？",
-        "zh_TW": "什麼事比作者想像的還要難？"
+        "zh_TW": "什麼事比作者想像的還要難？",
+        "ja": "作者にとって思ったより難しかったことは何ですか。"
       },
       "options": [
         "遠くから来た人に道を説明することです。",
@@ -1069,7 +1106,8 @@
       "explanation": {
         "en": "The fourth sentence says explaining the way to people from far away was harder than expected. Working late, learning the dance and carrying food are not part of the writer's account.",
         "zh": "第四句说给远道而来的人指路比想象中难。工作到深夜、学舞蹈、搬运饭菜都不是文中所写的内容。",
-        "zh_TW": "第四句說給遠道而來的人指路比想像中難。工作到深夜、學舞蹈、搬運飯菜都不是文中所寫的內容。"
+        "zh_TW": "第四句說給遠道而來的人指路比想像中難。工作到深夜、學舞蹈、搬運飯菜都不是文中所寫的內容。",
+        "ja": "四文目に、遠くから来た人に道を説明するのは思ったより難しかったと書かれています。夜遅くまで働くこと、踊りを覚えること、ごちそうを運ぶことは文中に書かれていません。"
       }
     },
     {
@@ -1084,7 +1122,8 @@
       "prompt": {
         "en": "What does the writer want to do this year?",
         "zh": "作者今年想做什么？",
-        "zh_TW": "作者今年想做什麼？"
+        "zh_TW": "作者今年想做什麼？",
+        "ja": "作者は今年、何をしたいと思っていますか。"
       },
       "options": [
         "今年もお祭りを手伝いたいと思っています。",
@@ -1096,7 +1135,8 @@
       "explanation": {
         "en": "The last sentence says the writer really wants to help with the festival this year as well. Going elsewhere, staying away or teaching the dance are all things the text does not say.",
         "zh": "最后一句说作者今年也很想帮忙。去别的镇、不去看庙会、教舞蹈，文中都没有提到。",
-        "zh_TW": "最後一句說作者今年也很想幫忙。去別的鎮、不去看廟會、教舞蹈，文中都沒有提到。"
+        "zh_TW": "最後一句說作者今年也很想幫忙。去別的鎮、不去看廟會、教舞蹈，文中都沒有提到。",
+        "ja": "最後の文に、今年もぜひお祭りを手伝いたいと書かれています。他の町へ行くこと、見に行かないこと、踊りを教えることは文中に書かれていません。"
       }
     },
     {
@@ -1112,7 +1152,8 @@
       "prompt": {
         "en": "On the morning of the 5th of next month, what should a person in a hurry do?",
         "zh": "下个月五日早上，赶时间的人应该怎么做？",
-        "zh_TW": "下個月五日早上，趕時間的人應該怎麼做？"
+        "zh_TW": "下個月五日早上，趕時間的人應該怎麼做？",
+        "ja": "来月五日の朝、急いでいる人はどうすればいいですか。"
       },
       "options": [
         "七時十五分の特急を利用します。",
@@ -1124,7 +1165,8 @@
       "explanation": {
         "en": "The 5th falls inside the period when the morning express does not run, and the notice tells people in a hurry to use the 7:15 limited express. The express only returns on the 11th, and nothing is said about returning tickets.",
         "zh": "五日正处于早上快车停运的期间，通知让赶时间的人乘七点十五分的特快。快车要到十一日才恢复，通知也没有提到退票。",
-        "zh_TW": "五日正處於早上快車停運的期間，通知讓趕時間的人乘七點十五分的特快。快車要到十一日才恢復，通知也沒有提到退票。"
+        "zh_TW": "五日正處於早上快車停運的期間，通知讓趕時間的人乘七點十五分的特快。快車要到十一日才恢復，通知也沒有提到退票。",
+        "ja": "五日は朝の急行が動かない期間に入っており、急いでいる人は七時十五分の特急を利用するよう書かれています。急行は十一日から再び動き、切符の払い戻しについては書かれていません。"
       }
     },
     {
@@ -1140,7 +1182,8 @@
       "prompt": {
         "en": "What does a person joining have to bring themselves?",
         "zh": "参加的人必须自己带什么？",
-        "zh_TW": "參加的人必須自己帶什麼？"
+        "zh_TW": "參加的人必須自己帶什麼？",
+        "ja": "参加する人は何を自分で持って来なければなりませんか。"
       },
       "options": [
         "手袋です。",
@@ -1152,7 +1195,8 @@
       "explanation": {
         "en": "The notice says the bags for rubbish are already prepared but asks people to bring gloves. The drink is handed out afterwards, so nobody needs to bring one.",
         "zh": "通知说装垃圾的东西已经备好，但请大家自带手套。饮料是结束后发放的，不需要自己带。",
-        "zh_TW": "通知說裝垃圾的東西已經備好，但請大家自帶手套。飲料是結束後發放的，不需要自己帶。"
+        "zh_TW": "通知說裝垃圾的東西已經備好，但請大家自帶手套。飲料是結束後發放的，不需要自己帶。",
+        "ja": "ごみを入れる物は用意されていますが、手袋は持って来るよう書かれています。飲み物は終わった後に配られるので、自分で持って来る必要はありません。"
       }
     },
     {
@@ -1168,7 +1212,8 @@
       "prompt": {
         "en": "A junior high school student goes to the exhibition on a Saturday. What is true for that student?",
         "zh": "一名初中生在周六去看展览，对他来说下列哪一项是正确的？",
-        "zh_TW": "一名初中生在週六去看展覽，對他來說下列哪一項是正確的？"
+        "zh_TW": "一名初中生在週六去看展覽，對他來說下列哪一項是正確的？",
+        "ja": "中学生が土曜日に展覧会へ行きます。正しいものはどれですか。"
       },
       "options": [
         "お金を払わなくてもいいです。",
@@ -1180,7 +1225,8 @@
       "explanation": {
         "en": "A junior high school student is below high school age, and the notice says such visitors do not have to pay. Mondays are closed, the dolls may not be touched, and five in the afternoon is the closing time.",
         "zh": "初中生属于高中生以下，通知说这些人可以免费入场。周一闭馆，人偶不可触摸，下午五点是闭馆时间而不是入场时间。",
-        "zh_TW": "初中生屬於高中生以下，通知說這些人可以免費入場。週一閉館，人偶不可觸摸，下午五點是閉館時間而不是入場時間。"
+        "zh_TW": "初中生屬於高中生以下，通知說這些人可以免費入場。週一閉館，人偶不可觸摸，下午五點是閉館時間而不是入場時間。",
+        "ja": "中学生は高校生以下にあたり、お金を払わなくてもいいと書かれています。月曜日は休み、人形には触れず、午後五時は閉館の時間です。"
       }
     },
     {
@@ -1196,7 +1242,8 @@
       "prompt": {
         "en": "Someone wants to bring food to a friend who is in hospital. What should that person do?",
         "zh": "有人想给住院的朋友带食物，应该怎么做？",
-        "zh_TW": "有人想給住院的朋友帶食物，應該怎麼做？"
+        "zh_TW": "有人想給住院的朋友帶食物，應該怎麼做？",
+        "ja": "入院している友達に食べ物を持って行きたい人はどうすればいいですか。"
       },
       "options": [
         "受付で相談します。",
@@ -1208,7 +1255,8 @@
       "explanation": {
         "en": "Flowers may be brought freely, but for food the notice asks visitors to consult the reception desk. Visiting hours begin in the afternoon, and coming with an adult is a rule for primary school children.",
         "zh": "花可以自由带来，但食物通知要求先到服务台咨询。探视时间从下午开始，而由成人陪同是针对小学生的规定。",
-        "zh_TW": "花可以自由帶來，但食物通知要求先到服務檯諮詢。探視時間從下午開始，而由成人陪同是針對小學生的規定。"
+        "zh_TW": "花可以自由帶來，但食物通知要求先到服務檯諮詢。探視時間從下午開始，而由成人陪同是針對小學生的規定。",
+        "ja": "花は自由に持って来られますが、食べ物については受付で相談するよう書かれています。面会時間は午後から始まり、大人と一緒に来るのは小学生の決まりです。"
       }
     }
   ]

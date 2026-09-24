@@ -14,6 +14,8 @@
 /// dart run tool/draft_inputs.dart grammar-inventory --level N4
 /// dart run tool/draft_inputs.dart units --level N5
 /// dart run tool/draft_inputs.dart drills --level N5 --section reading
+/// dart run tool/draft_inputs.dart gloss-ja --level N5 --batch 100
+/// dart run tool/draft_inputs.dart ja --kind grammar --level N5 --batch 25
 /// ```
 library;
 
@@ -32,8 +34,8 @@ void main(List<String> args) {
   if (args.isEmpty) {
     stderr.writeln(
       'Usage: draft_inputs.dart <gloss|examples|'
-      'grammar-inventory|units|drills> --level N5 [--section reading] '
-      '[--target 1] [--batch 300]',
+      'grammar-inventory|units|drills|gloss-ja|ja> --level N5 '
+      '[--section reading] [--kind grammar] [--target 1] [--batch 300]',
     );
     exitCode = 1;
     return;
@@ -45,6 +47,7 @@ void main(List<String> args) {
   var out = draftRoot;
   var section = '';
   var target = 1;
+  var jaTarget = '';
   for (var i = 1; i < args.length; i++) {
     final next = i + 1 < args.length ? args[i + 1] : null;
     switch (args[i]) {
@@ -60,6 +63,8 @@ void main(List<String> args) {
         section = next.toLowerCase();
       case '--target' when next != null:
         target = int.tryParse(next) ?? target;
+      case '--kind' when next != null:
+        jaTarget = next.toLowerCase();
     }
   }
 
@@ -81,6 +86,10 @@ void main(List<String> args) {
       _units(out, level, assets, entries);
     case 'drills':
       _drills(out, level, section, assets, entries, target, batch);
+    case 'gloss-ja':
+      _write(out, kind, level, batch, _glossJaRows(entries, level));
+    case 'ja':
+      _ja(out, jaTarget, level, assets, batch);
     default:
       stderr.writeln('Unknown kind "$kind".');
       exitCode = 1;
@@ -475,5 +484,209 @@ void _drills(
       'in ${files.length} batches:',
     )
     ..writeln('  resources: $resources')
+    ..writeln('  ${files.join('\n  ')}');
+}
+
+/// Purpose: List the words at a level that have no Japanese definition yet.
+/// Inputs: `entries`, `level`.
+/// Returns: `List<Map<String, Object?>>` — one row per word to define.
+/// Side effects: None.
+/// Notes: Internal helper used within this file only. The twin of
+/// `_glossRows`, and "missing" means the same thing: the catalog entry has no
+/// `meanings.ja`, which `import_vocab.dart` writes from `vocab_ja.json` in both
+/// of its modes. The English and Chinese glosses are there to pin down which
+/// sense is meant, not to be translated: a definition is written about the
+/// word, in Japanese, from scratch.
+List<Map<String, Object?>> _glossJaRows(
+  List<Map<String, Object?>> entries,
+  String level,
+) => [
+  for (final entry in entries)
+    if ('${entry['level']}' == level &&
+        ((entry['meanings'] as Map?)?['ja'] == null))
+      {
+        'id': entry['id'],
+        if (entry['kanji'] != null) 'kanji': entry['kanji'],
+        'reading': entry['reading'],
+        'pos': entry['pos'],
+        'en': (entry['meanings'] as Map)['en'],
+        if ((entry['meanings'] as Map)['zh'] != null)
+          'zh': (entry['meanings'] as Map)['zh'],
+      },
+];
+
+/// Purpose: Keep only the English and Chinese of a localized field.
+/// Inputs: `field` — a `{en, zh, zh_TW, ...}` map or null.
+/// Returns: `Map<String, Object?>?` — `{en, zh}`, or null when absent.
+/// Side effects: None.
+/// Notes: Internal helper used within this file only. What the agent works
+/// from; the Traditional copy is the same text again and would only cost
+/// tokens.
+Map<String, Object?>? _enZh(Object? field) {
+  if (field is! Map) return null;
+  return {
+    if (field['en'] != null) 'en': field['en'],
+    if (field['zh'] != null) 'zh': field['zh'],
+  };
+}
+
+/// Purpose: Say whether a localized field still needs its Japanese text.
+/// Inputs: `field`.
+/// Returns: `bool` — true when the field exists and has no `ja`.
+/// Side effects: None.
+/// Notes: Internal helper used within this file only.
+bool _needsJa(Object? field) => field is Map && field['ja'] == null;
+
+/// Purpose: Write the input batches for one `ja` target.
+/// Inputs: `out`, the `target` (`grammar`, `function-words`, `units`,
+/// `drills`), `level`, `assets`, `batch`.
+/// Returns: None.
+/// Side effects: Writes files under `<out>/ja/<target>/` and prints them.
+/// Notes: Internal helper used within this file only. The `ja` stream adds a
+/// Japanese version of text the catalog already has in English and Chinese,
+/// so every row carries that text and nothing else. "Missing" is the same
+/// rule everywhere: a field that has no `ja` yet. The envelope names the
+/// target, because the gate and the merge both need to know which file the
+/// rows belong to.
+void _ja(String out, String target, String level, String assets, int batch) {
+  final rows = <Map<String, Object?>>[];
+  switch (target) {
+    case 'grammar':
+      final file = File('$assets/grammar/${level.toLowerCase()}.json');
+      if (!file.existsSync()) break;
+      final json = jsonDecode(file.readAsStringSync()) as Map;
+      for (final point in json['points'] as List) {
+        if (point is! Map) continue;
+        if (!_needsJa(point['meaning']) && !_needsJa(point['explanation'])) {
+          continue;
+        }
+        rows.add({
+          'id': point['id'],
+          'pattern': point['pattern'],
+          if (point['structure'] != null) 'structure': point['structure'],
+          'meaning': _enZh(point['meaning']),
+          'explanation': _enZh(point['explanation']),
+          'examples': [
+            for (final example in (point['examples'] as List? ?? const []))
+              if (example is Map) example['ja'],
+          ].take(2).toList(),
+        });
+      }
+    case 'function-words':
+      final json =
+          jsonDecode(File('$assets/function_words.json').readAsStringSync())
+              as Map;
+      for (final word in json['words'] as List) {
+        if (word is! Map || !_needsJa(word['gloss'])) continue;
+        rows.add({
+          'id': word['id'],
+          'surface': word['surface'],
+          'category': word['category'],
+          'gloss': _enZh(word['gloss']),
+        });
+      }
+    case 'units':
+      final file = File('$assets/lessons/${level.toLowerCase()}.json');
+      if (!file.existsSync()) break;
+      final json = jsonDecode(file.readAsStringSync()) as Map;
+      for (final unit in json['units'] as List) {
+        if (unit is! Map) continue;
+        final scenario = unit['scenario'];
+        final questions = [
+          for (final q in (unit['questions'] as List? ?? const []))
+            if (q is Map &&
+                (_needsJa(q['prompt']) || _needsJa(q['explanation'])))
+              {
+                'id': q['id'],
+                'prompt': _enZh(q['prompt']),
+                'explanation': _enZh(q['explanation']),
+                'options': q['options'],
+                'answer': q['answer'],
+              },
+        ];
+        final needsUnit =
+            _needsJa(unit['title']) ||
+            _needsJa(unit['writingPrompt']) ||
+            (scenario is Map && _needsJa(scenario['title'])) ||
+            questions.isNotEmpty;
+        if (!needsUnit) continue;
+        rows.add({
+          'id': unit['id'],
+          'title': _enZh(unit['title']),
+          if (unit['writingPrompt'] != null)
+            'writingPrompt': _enZh(unit['writingPrompt']),
+          if (scenario is Map && scenario['title'] != null)
+            'scenarioTitle': _enZh(scenario['title']),
+          'questions': questions,
+        });
+      }
+    case 'drills':
+      final dir = Directory('$assets/drills');
+      final prefix = '${level.toLowerCase()}-';
+      final files =
+          dir
+              .listSync()
+              .whereType<File>()
+              .where((f) => f.uri.pathSegments.last.startsWith(prefix))
+              .toList()
+            ..sort((a, b) => a.path.compareTo(b.path));
+      for (final file in files) {
+        final json = jsonDecode(file.readAsStringSync()) as Map;
+        final passages = {
+          for (final p in (json['passages'] as List? ?? const []))
+            if (p is Map)
+              '${p['id']}': [
+                for (final line in (p['lines'] as List? ?? const []))
+                  if (line is Map) '${line['ja']}',
+              ].join(),
+        };
+        for (final q in json['questions'] as List) {
+          if (q is! Map) continue;
+          if (!_needsJa(q['prompt']) && !_needsJa(q['explanation'])) continue;
+          rows.add({
+            'id': q['id'],
+            'section': json['section'],
+            'type': q['type'],
+            if (q['stem'] != null) 'stem': q['stem'],
+            'prompt': _enZh(q['prompt']),
+            'explanation': _enZh(q['explanation']),
+            'options': q['options'],
+            'answer': q['answer'],
+            if (q['passage'] != null)
+              'passage': passages['${q['passage']}'] ?? '',
+          });
+        }
+      }
+    default:
+      stderr.writeln(
+        'Unknown ja target "$target"; use grammar, function-words, units or '
+        'drills.',
+      );
+      exitCode = 1;
+      return;
+  }
+  if (rows.isEmpty) {
+    stdout.writeln('Nothing left to do for ja $target at $level.');
+    return;
+  }
+  final dir = Directory('$out/ja/$target')..createSync(recursive: true);
+  final encoder = const JsonEncoder.withIndent('  ');
+  final files = <String>[];
+  for (var i = 0; i < rows.length; i += batch) {
+    final slice = rows.sublist(i, (i + batch).clamp(0, rows.length));
+    final n = (i ~/ batch) + 1;
+    final name =
+        '${dir.path}/${level.toLowerCase()}-${n.toString().padLeft(2, '0')}'
+        '.input.json';
+    File(name).writeAsStringSync(
+      '${encoder.convert({'kind': 'ja', 'target': target, 'level': level, 'count': slice.length, 'rows': slice})}\n',
+    );
+    files.add(name);
+  }
+  stdout
+    ..writeln(
+      '${rows.length} rows for ja $target at $level '
+      'in ${files.length} batches:',
+    )
     ..writeln('  ${files.join('\n  ')}');
 }

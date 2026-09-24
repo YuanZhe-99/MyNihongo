@@ -41,6 +41,10 @@ gives a readable diff.
 - `meanings` — language code to a list of glosses. `en` is always present; `zh` is present on N5
   and on the seed words, and the UI falls back to English elsewhere. `zh_TW` is generated from
   `zh` and appears wherever `zh` does — see [Traditional Chinese](#traditional-chinese).
+  `ja` is a monolingual Japanese definition, folded in from `vocab_ja.json` by the importer; see
+  [Japanese definition overlay](#japanese-definition-overlay-vocab_jajson).
+- `jaReading` — one hiragana reading per `meanings.ja` definition, in the same order, for
+  furigana. Absent when there is no Japanese definition; always the last key of the entry.
 - `common` — present and true when JMdict marks the chosen written form as common. Used to order
   suggestions, never to hide an entry.
 - `aliases` — ids this entry used to ship under. `vocabById` resolves them to the same entry.
@@ -60,6 +64,28 @@ gives a readable diff.
 
 A build input, bundled only so the catalog test can compare it against what shipped. `reviewed` is
 authoring state and never reaches `vocab.json`.
+
+### Japanese definition overlay (`vocab_ja.json`)
+
+```json
+{
+  "schemaVersion": 1,
+  "source": "model-authored (Claude), unreviewed",
+  "entries": {
+    "vocab:jm1198180": {
+      "ja": ["人と人が同じところで一緒になること"],
+      "jaReading": ["ひととひとがおなじところでいっしょになること"],
+      "reviewed": false
+    }
+  }
+}
+```
+
+The same shape and the same role as the Chinese overlay: the source of truth for `meanings.ja` and
+`jaReading`, folded into `vocab.json` by `tool/import_vocab.dart` in **both** its modes — a full
+JMdict import rebuilds every entry and would otherwise drop them. A row taken out of the overlay
+leaves the catalog too. `reviewed` is authoring state and never reaches `vocab.json`;
+`content_catalog_test` fails when the overlay and the catalog disagree.
 
 ### Grammar (`grammar/n5.json`, one file per level)
 
@@ -87,7 +113,9 @@ authoring state and never reaches `vocab.json`.
   `GrammarPoint.matchForms`. A single-character particle needs one, because a form derived from its
   pattern would match nearly every sentence.
 - `meaning` and `explanation` are language-keyed; a bare string is taken as English. Both carry
-  `zh_TW` beside `zh`, generated.
+  `zh_TW` beside `zh`, generated. A `ja` key, model-authored in plain Japanese, follows `zh_TW`.
+- `meaningJaReading` — the hiragana reading of `meaning.ja`, for furigana. `explanation.ja` has
+  none: long prose is drawn as plain text in every language.
 
 ### Kana
 
@@ -131,7 +159,7 @@ the 2 MB vocabulary would make every page pay for a page that may never be opene
 | `lemma` | the base form of its family, so a whole conjugation lemmatizes to one word |
 | `needs` | the stem shape it attaches to; absent means it attaches to anything |
 | `forms` | the `InflectionForm` values it contributes to the chunk it closes |
-| `gloss` | `en` and `zh`, both required — a function word has no catalog entry, so the chip carries its own meaning; `zh_TW` is generated from `zh` |
+| `gloss` | `en` and `zh`, both required — a function word has no catalog entry, so the chip carries its own meaning; `zh_TW` is generated from `zh`; `ja` is a one-line Japanese gloss |
 
 The file also carries `sets`: named word lists the checks read (`time-past`, `time-future`,
 `path-verbs`, `motion-verbs`) and `transitivity-pairs`, which are two-element arrays rather than an
@@ -497,7 +525,7 @@ Settings shows the resolved path only on desktop; see `platform_capabilities.dar
 | JLPT attempt history | `nihongo_progress.json` | Yes | `exam:` records, timestamped ids, 40 mock and 80 practice; only which questions were asked and what was answered |
 | A mock exam in progress | `exam_in_progress.json` | No | One saved paper per device: question ids, what was chosen, and the time each block has used. Deliberately outside the sync, backup and export registries — the clock belongs to the sitting, and half a paper is not a result |
 | Theme mode | `storage_config.json` | No | Device-specific preference (`themeMode`: `light`/`dark`; absent means system) |
-| Locale | `storage_config.json` | No | Device-specific preference (`locale`: `en`/`zh`/`zh_TW`; absent means system) |
+| Locale | `storage_config.json` | No | Device-specific preference (`locale`: `en`/`zh`/`zh_TW`/`ja`; absent means system) |
 | Storage path override | `storage_config.json` | No | Device-specific path (`storagePath`) |
 | Auto-backup enabled | `storage_config.json` | No | Device-specific config (`autoBackupEnabled`) |
 | Backup retention days | `storage_config.json` | No | Device-specific config (`backupRetentionDays`) |

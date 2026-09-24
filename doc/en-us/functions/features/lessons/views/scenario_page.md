@@ -7,6 +7,10 @@ conversation is over, like a quiz.
 The page holds three pieces of state and no more — how many lines have been shown, which branch is
 waiting for an answer, and what the learner has said. Nothing is written to storage.
 
+The translation under a spoken line or a reply choice is picked with
+`LocalizedStrings.resolveTranslation`: a Japanese reader sees no English line under the Japanese, and
+no empty line in its place either.
+
 Consumers: `router.dart` (`/scenario`), `lesson_path_view.dart` (the button that pushes it).
 
 ## Declarations
@@ -19,9 +23,9 @@ Consumers: `router.dart` (`/scenario`), `lesson_path_view.dart` (the button that
 | `ScenarioPage.new` | constructor | B | Hold the args. |
 | `_ScenarioPageState._advance` | method | B | Show the next line, or the branch before it. |
 | [`_ScenarioPageState._choose`](#choose) | method | A | Record the reply and carry on. |
-| `_ScenarioPageState._saidLine` | method | B | Render the line the learner chose. |
+| `_ScenarioPageState._saidLine` | method | B | Render the line the learner chose, with its translation under it when `resolveTranslation` gives one for this reader. |
 | `_ScenarioPageState.build` | method | B | Build the page. |
-| `_ScenarioPageState._line` | method | B | Render one spoken line. |
+| `_ScenarioPageState._line` | method | B | Render one spoken line, with its translation under it when `resolveTranslation` gives one for this reader. |
 | `_ScenarioPageState._onAiChanged` | method | B | Rebuild when the on-device AI's state changes. |
 | `_ScenarioPageState._canChat` | getter | B | Whether the model can carry the conversation on. |
 | `_ScenarioPageState._partner` | method | B | Who the learner is talking to, named as the script names them. |

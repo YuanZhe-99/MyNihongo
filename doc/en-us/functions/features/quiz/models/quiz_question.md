@@ -17,6 +17,8 @@ three widgets.
 | `vocabQuizModes`, `kanaQuizModes`, `grammarQuizModes` | constants | B | The modes each catalog supports. |
 | `parsedQuizModes` | constant | B | The modes that need the sentence analyser and are dropped without it. |
 | `listeningQuizModes` | constant | B | The modes that speak rather than show. |
+| [`translationQuizModes`](#translation) | constant | A | The modes whose material is a translation of a Japanese sentence, and so are dropped for a Japanese reader. |
+| `quizModeWorksIn` | function | B | Say whether a mode can be asked in this UI language; false only for `translationQuizModes` under a Japanese UI. |
 | [`selectableQuizModes`](#selectable) | constant | A | The modes the learner may switch off, which is what "every mode" means in the preference. |
 | [`QuizQuestion`](#question) | class | A | One question. |
 | `answerText` | getter | B | The correct option's text, for showing after a wrong answer. |
@@ -55,6 +57,25 @@ three widgets.
 - **Notes:** `QuizMode.drill` is deliberately absent. This set — **not** `QuizMode.values` — is what
   "every mode is on" means in the preference, so a learner who has switched nothing off keeps the
   empty-set default and still gets any mode a later build adds.
+
+### `const translationQuizModes` <a id="translation"></a>
+
+- **Kind:** top-level constant
+- **Purpose:** Name the modes whose material is a translation of a Japanese sentence.
+- **Inputs:** None; `grammarOrder`, `grammarSentenceToMeaning` and `grammarMeaningToSentence`.
+- **Returns:** None.
+- **Side effects:** None.
+- **Algorithm:** None; `quizModeWorksIn(mode, locale)` is false exactly for these modes under a
+  locale whose language is `ja`.
+- **Usage:** Through `quizModeWorksIn`: `QuizPage._enabledModes` drops them for a Japanese reader,
+  and `QuizModesPage` shows them switched off with the reason (`quizModeNeedsTranslation`).
+- **Notes:** A catalog example carries an English and a Chinese translation and no Japanese one,
+  because the sentence is already Japanese. Matching a sentence to its English meaning, or ordering
+  fragments against an English gloss, is not an exercise a Japanese UI can offer without showing the
+  language the learner chose not to read. They are shown as unavailable rather than silently missing
+  — the same rule the listening modes follow on a device without a Japanese voice. The stored
+  `quizModes` preference is not changed: switching the UI back out of Japanese brings them back as
+  they were.
 
 ### `class QuizQuestion` <a id="question"></a>
 

@@ -12,6 +12,7 @@ import '../../features/progress/services/nihongo_storage.dart';
 import '../../features/quiz/models/quiz_question.dart';
 import '../../features/speech/services/speech_recognition_service.dart';
 import '../../features/speech/services/tts_service.dart';
+import '../../app/locale_resolution.dart';
 import '../utils/adaptive_layout.dart';
 
 class AppSettingsNotifier extends StateNotifier<AppSettings> {
@@ -77,11 +78,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
       _ => ThemeMode.system,
     };
 
-    Locale? locale;
-    if (localeTag != null) {
-      final parts = localeTag.split('_');
-      locale = parts.length > 1 ? Locale(parts[0], parts[1]) : Locale(parts[0]);
-    }
+    final locale = localeTag == null ? null : localeFromTag(localeTag);
 
     state = AppSettings(
       themeMode: themeMode,

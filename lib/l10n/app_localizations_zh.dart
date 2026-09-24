@@ -362,6 +362,75 @@ class AppLocalizationsZh extends AppLocalizations {
   String get vocabPartOfSpeech => '词性';
 
   @override
+  String get posNoun => '名词';
+
+  @override
+  String get posPronoun => '代词';
+
+  @override
+  String get posProperNoun => '专有名词';
+
+  @override
+  String get posVerbGodan => '五段动词';
+
+  @override
+  String get posVerbIchidan => '一段动词';
+
+  @override
+  String get posVerbIrregular => '不规则动词';
+
+  @override
+  String get posSuruVerb => 'サ变动词';
+
+  @override
+  String get posTransitive => '他动词';
+
+  @override
+  String get posIntransitive => '自动词';
+
+  @override
+  String get posAuxiliary => '助动词';
+
+  @override
+  String get posIAdjective => '形容词（い形）';
+
+  @override
+  String get posNaAdjective => '形容动词（な形）';
+
+  @override
+  String get posNoAdjective => 'の形容词';
+
+  @override
+  String get posAdnominal => '连体词';
+
+  @override
+  String get posAdverb => '副词';
+
+  @override
+  String get posParticle => '助词';
+
+  @override
+  String get posConjunction => '接续词';
+
+  @override
+  String get posInterjection => '感叹词';
+
+  @override
+  String get posExpression => '惯用表达';
+
+  @override
+  String get posCounter => '量词';
+
+  @override
+  String get posNumeric => '数词';
+
+  @override
+  String get posPrefix => '前缀';
+
+  @override
+  String get posSuffix => '后缀';
+
+  @override
   String get grammarTitle => '语法';
 
   @override
@@ -1089,6 +1158,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get quizModesBody => '可以关掉你不想遇到的出题方式。本设备或某个词支持不了的模式，本来就会被跳过。';
+
+  @override
+  String get quizModeNeedsTranslation => '日语界面下不可用：这种模式要用到译文。';
 
   @override
   String get quizModesVocab => '单词';
@@ -2181,6 +2253,75 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get vocabPartOfSpeech => '詞性';
 
   @override
+  String get posNoun => '名詞';
+
+  @override
+  String get posPronoun => '代名詞';
+
+  @override
+  String get posProperNoun => '專有名詞';
+
+  @override
+  String get posVerbGodan => '五段動詞';
+
+  @override
+  String get posVerbIchidan => '一段動詞';
+
+  @override
+  String get posVerbIrregular => '不規則動詞';
+
+  @override
+  String get posSuruVerb => 'サ變動詞';
+
+  @override
+  String get posTransitive => '他動詞';
+
+  @override
+  String get posIntransitive => '自動詞';
+
+  @override
+  String get posAuxiliary => '助動詞';
+
+  @override
+  String get posIAdjective => '形容詞（い形）';
+
+  @override
+  String get posNaAdjective => '形容動詞（な形）';
+
+  @override
+  String get posNoAdjective => 'の形容詞';
+
+  @override
+  String get posAdnominal => '連體詞';
+
+  @override
+  String get posAdverb => '副詞';
+
+  @override
+  String get posParticle => '助詞';
+
+  @override
+  String get posConjunction => '接續詞';
+
+  @override
+  String get posInterjection => '感嘆詞';
+
+  @override
+  String get posExpression => '慣用表達';
+
+  @override
+  String get posCounter => '量詞';
+
+  @override
+  String get posNumeric => '數詞';
+
+  @override
+  String get posPrefix => '字首';
+
+  @override
+  String get posSuffix => '字尾';
+
+  @override
   String get grammarTitle => '文法';
 
   @override
@@ -2908,6 +3049,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get quizModesBody => '可以關掉你不想遇到的出題方式。本裝置或某個單字支援不了的模式，本來就會被跳過。';
+
+  @override
+  String get quizModeNeedsTranslation => '日語介面下無法使用：這種模式要用到譯文。';
 
   @override
   String get quizModesVocab => '單字';

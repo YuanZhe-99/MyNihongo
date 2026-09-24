@@ -12,7 +12,7 @@
 | `_VocabPageState.build` | 方法（widget build） | B | 围绕目录 provider 的三种状态构建单词浏览器。 |
 | [`_VocabPageState._buildList`](#buildlist) | 方法（widget 辅助） | A | 以虚拟化的 `ListView.builder` 构建带页头的、筛选后的自适应列数列表。 |
 | `_VocabPageState._buildHeader` | 方法（widget 辅助） | B | 构建搜索框、级别筹片和结果计数。 |
-| `_VocabPageState._buildTile` | 方法（widget 辅助） | B | 构建一张单词条目卡片：词条、读音/罗马音行、一行释义、级别徽章。 |
+| `_VocabPageState._buildTile` | 方法（widget 辅助） | B | 构建一张单词条目卡片：词条、读音/罗马音行、一行释义（当 `jaReadings` 每个义项都有一个读音时，日语释义以注音绘制，并用同样的 `; ` 分隔符连接）、级别徽章。 |
 | `_VocabPageState._showDetail` | 方法（widget 辅助） | B | 在模态底部面板中显示单词的完整条目。 |
 
 ## 文档

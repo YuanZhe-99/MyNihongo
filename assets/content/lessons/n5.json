@@ -9,7 +9,8 @@
       "title": {
         "en": "Introducing yourself",
         "zh": "自我介绍",
-        "zh_TW": "自我介紹"
+        "zh_TW": "自我介紹",
+        "ja": "自己紹介"
       },
       "grammar": [
         "grammar:desu",
@@ -139,7 +140,8 @@
           "prompt": {
             "en": "Which sentence politely says \"I am a student\"?",
             "zh": "哪一句是敬体的「我是学生」？",
-            "zh_TW": "哪一句是敬體的「我是學生」？"
+            "zh_TW": "哪一句是敬體的「我是學生」？",
+            "ja": "「私は学生です」を丁寧に言っているのはどれですか。"
           },
           "options": [
             "私は学生です。",
@@ -151,7 +153,8 @@
           "explanation": {
             "en": "です follows a noun to make a polite statement; ます attaches only to verbs.",
             "zh": "です接在名词后构成敬体判断句；ます只接在动词后面。",
-            "zh_TW": "です接在名詞後構成敬體判斷句；ます只接在動詞後面。"
+            "zh_TW": "です接在名詞後構成敬體判斷句；ます只接在動詞後面。",
+            "ja": "「です」は名詞の後について丁寧な文を作ります。「ます」は動詞の後にしかつきません。"
           }
         },
         {
@@ -160,7 +163,8 @@
           "prompt": {
             "en": "Which particle marks the topic of a sentence?",
             "zh": "哪个助词用来提示句子的主题？",
-            "zh_TW": "哪個助詞用來提示句子的主題？"
+            "zh_TW": "哪個助詞用來提示句子的主題？",
+            "ja": "文の主題を示す助詞はどれですか。"
           },
           "options": [
             "が",
@@ -172,7 +176,8 @@
           "explanation": {
             "en": "は marks what the sentence is about, and is read \"wa\" when it does.",
             "zh": "は提示句子谈论的主题，此时读作「wa」。",
-            "zh_TW": "は提示句子談論的主題，此時讀作「wa」。"
+            "zh_TW": "は提示句子談論的主題，此時讀作「wa」。",
+            "ja": "「は」は文の話題を示す助詞で、この時は「わ」と読みます。"
           }
         },
         {
@@ -181,7 +186,8 @@
           "prompt": {
             "en": "Which sentence is a question?",
             "zh": "哪一句是疑问句？",
-            "zh_TW": "哪一句是疑問句？"
+            "zh_TW": "哪一句是疑問句？",
+            "ja": "疑問文はどれですか。"
           },
           "options": [
             "あなたは先生ですね。",
@@ -193,7 +199,8 @@
           "explanation": {
             "en": "か at the end turns a polite statement into a question.",
             "zh": "句末加か就把敬体陈述句变成疑问句。",
-            "zh_TW": "句末加か就把敬體陳述句變成疑問句。"
+            "zh_TW": "句末加か就把敬體陳述句變成疑問句。",
+            "ja": "文末の「か」が丁寧な文を疑問文に変えます。"
           }
         },
         {
@@ -202,7 +209,8 @@
           "prompt": {
             "en": "Fill the blank: 私＿友達です。(\"He is my friend.\")",
             "zh": "填空：私＿友達です。（「他是我的朋友。」）",
-            "zh_TW": "填空：私＿友達です。（「他是我的朋友。」）"
+            "zh_TW": "填空：私＿友達です。（「他是我的朋友。」）",
+            "ja": "空欄を埋めましょう。「私＿友達です。」（「彼は私の友達です。」）"
           },
           "options": [
             "は",
@@ -214,7 +222,8 @@
           "explanation": {
             "en": "の links two nouns and shows possession: 私の友達 is \"my friend\".",
             "zh": "の连接两个名词表示所属：私の友達＝我的朋友。",
-            "zh_TW": "の連接兩個名詞表示所屬：私の友達＝我的朋友。"
+            "zh_TW": "の連接兩個名詞表示所屬：私の友達＝我的朋友。",
+            "ja": "「の」は二つの名詞をつなぎ、所有を表します。「私の友達」は「私の友人」という意味です。"
           }
         },
         {
@@ -223,7 +232,8 @@
           "prompt": {
             "en": "Which sentence says \"I am a student too\"?",
             "zh": "哪一句是「我也是学生」？",
-            "zh_TW": "哪一句是「我也是學生」？"
+            "zh_TW": "哪一句是「我也是學生」？",
+            "ja": "「私も学生です」という文はどれですか。"
           },
           "options": [
             "私は学生も。",
@@ -235,7 +245,8 @@
           "explanation": {
             "en": "も replaces は after the topic and adds the meaning \"too\".",
             "zh": "も取代主题后的は，表示「也」。",
-            "zh_TW": "も取代主題後的は，表示「也」。"
+            "zh_TW": "も取代主題後的は，表示「也」。",
+            "ja": "「も」は主題の後の「は」の代わりに使い、「〜も」という意味を加えます。"
           }
         },
         {
@@ -244,7 +255,8 @@
           "prompt": {
             "en": "Which word asks \"who\"?",
             "zh": "哪个词是问「谁」？",
-            "zh_TW": "哪個詞是問「誰」？"
+            "zh_TW": "哪個詞是問「誰」？",
+            "ja": "「誰」を尋ねる言葉はどれですか。"
           },
           "options": [
             "何",
@@ -256,7 +268,8 @@
           "explanation": {
             "en": "誰 asks about a person; 何 asks about a thing, いつ about a time, どこ about a place.",
             "zh": "誰问人；何问事物，いつ问时间，どこ问地点。",
-            "zh_TW": "誰問人；何問事物，いつ問時間，どこ問地點。"
+            "zh_TW": "誰問人；何問事物，いつ問時間，どこ問地點。",
+            "ja": "「誰」は人を尋ねます。「何」は物を、「いつ」は時を、「どこ」は場所を尋ねます。"
           }
         },
         {
@@ -265,7 +278,8 @@
           "prompt": {
             "en": "Fill the blank: 昨日は休み＿。(\"Yesterday was a day off.\")",
             "zh": "填空：昨日は休み＿。（「昨天是休息日。」）",
-            "zh_TW": "填空：昨日は休み＿。（「昨天是休息日。」）"
+            "zh_TW": "填空：昨日は休み＿。（「昨天是休息日。」）",
+            "ja": "空欄を埋めましょう。「昨日は休み＿。」（「昨日は休みでした。」）"
           },
           "options": [
             "です",
@@ -277,7 +291,8 @@
           "explanation": {
             "en": "でした is the polite past of です, so it puts the statement in the past.",
             "zh": "でした是です的敬体过去形，用来表示过去的事。",
-            "zh_TW": "でした是です的敬體過去形，用來表示過去的事。"
+            "zh_TW": "でした是です的敬體過去形，用來表示過去的事。",
+            "ja": "「でした」は「です」の丁寧な過去形で、文を過去のことにします。"
           }
         },
         {
@@ -286,7 +301,8 @@
           "prompt": {
             "en": "Which ending asks the listener to agree?",
             "zh": "哪个句尾是在寻求对方的同意？",
-            "zh_TW": "哪個句尾是在尋求對方的同意？"
+            "zh_TW": "哪個句尾是在尋求對方的同意？",
+            "ja": "相手の同意を求める言い方はどれですか。"
           },
           "options": [
             "ですか",
@@ -298,20 +314,23 @@
           "explanation": {
             "en": "ね seeks agreement (\"right?\"); よ tells the listener something new.",
             "zh": "ね寻求对方认同（「对吧」）；よ则是告知对方新信息。",
-            "zh_TW": "ね尋求對方認同（「對吧」）；よ則是告知對方新信息。"
+            "zh_TW": "ね尋求對方認同（「對吧」）；よ則是告知對方新信息。",
+            "ja": "「ね」は相手の同意を求めます（「〜ですね」）。「よ」は相手に新しい情報を伝えます。"
           }
         }
       ],
       "writingPrompt": {
         "en": "Write two sentences introducing yourself: say your name and what you do.",
         "zh": "写两句自我介绍：说出你的名字和你的身份。",
-        "zh_TW": "寫兩句自我介紹：說出你的名字和你的身份。"
+        "zh_TW": "寫兩句自我介紹：說出你的名字和你的身份。",
+        "ja": "自己紹介を二文で書きましょう。名前と、何をしている人かを言ってください。"
       },
       "scenario": {
         "title": {
           "en": "First day of class",
           "zh": "开学第一天",
-          "zh_TW": "開學第一天"
+          "zh_TW": "開學第一天",
+          "ja": "授業の初日"
         },
         "dialogue": [
           {
@@ -399,7 +418,8 @@
       "title": {
         "en": "Everyday actions",
         "zh": "日常动作",
-        "zh_TW": "日常動作"
+        "zh_TW": "日常動作",
+        "ja": "日常動作"
       },
       "grammar": [
         "grammar:masu",
@@ -534,7 +554,8 @@
           "prompt": {
             "en": "What is the polite non-past form of 読む?",
             "zh": "読む的敬体现在形是哪一个？",
-            "zh_TW": "読む的敬體現在形是哪一個？"
+            "zh_TW": "読む的敬體現在形是哪一個？",
+            "ja": "「読む」の丁寧な現在形はどれですか。"
           },
           "options": [
             "読むます",
@@ -546,7 +567,8 @@
           "explanation": {
             "en": "A godan verb drops the final -u for the -i stem, so 読む becomes 読みます.",
             "zh": "五段动词把词尾う段变成い段再接ます，所以読む变成読みます。",
-            "zh_TW": "五段動詞把詞尾う段變成い段再接ます，所以読む變成読みます。"
+            "zh_TW": "五段動詞把詞尾う段變成い段再接ます，所以読む變成読みます。",
+            "ja": "五段動詞は語尾のう段をい段に変えてから「ます」をつけるので、「読む」は「読みます」になります。"
           }
         },
         {
@@ -555,7 +577,8 @@
           "prompt": {
             "en": "Fill the blank: 本＿読みます。(\"I read a book.\")",
             "zh": "填空：本＿読みます。（「我读书。」）",
-            "zh_TW": "填空：本＿読みます。（「我讀書。」）"
+            "zh_TW": "填空：本＿読みます。（「我讀書。」）",
+            "ja": "空欄を埋めましょう。「本＿読みます。」（「私は本を読みます。」）"
           },
           "options": [
             "が",
@@ -567,7 +590,8 @@
           "explanation": {
             "en": "を marks the direct object — the thing the action is done to.",
             "zh": "を标示动作直接作用的对象，即宾语。",
-            "zh_TW": "を標示動作直接作用的對象，即賓語。"
+            "zh_TW": "を標示動作直接作用的對象，即賓語。",
+            "ja": "「を」は動作の直接の対象、つまり目的語を示します。"
           }
         },
         {
@@ -576,7 +600,8 @@
           "prompt": {
             "en": "Which sentence says \"I go to school\"?",
             "zh": "哪一句是「我去学校」？",
-            "zh_TW": "哪一句是「我去學校」？"
+            "zh_TW": "哪一句是「我去學校」？",
+            "ja": "「私は学校へ行きます」はどれですか。"
           },
           "options": [
             "学校を行きます。",
@@ -588,7 +613,8 @@
           "explanation": {
             "en": "へ (and に) marks the destination of a movement verb like 行きます.",
             "zh": "へ（也可用に）表示移动动词的目的地，如行きます。",
-            "zh_TW": "へ（也可用に）表示移動動詞的目的地，如行きます。"
+            "zh_TW": "へ（也可用に）表示移動動詞的目的地，如行きます。",
+            "ja": "「へ」（「に」も可）は「行きます」のような移動動詞の行き先を示します。"
           }
         },
         {
@@ -597,7 +623,8 @@
           "prompt": {
             "en": "Which sentence says \"I read the newspaper at the library\"?",
             "zh": "哪一句是「我在图书馆看报纸」？",
-            "zh_TW": "哪一句是「我在圖書館看報紙」？"
+            "zh_TW": "哪一句是「我在圖書館看報紙」？",
+            "ja": "「私は図書館で新聞を読みます」はどれですか。"
           },
           "options": [
             "図書館に新聞を読みます。",
@@ -609,7 +636,8 @@
           "explanation": {
             "en": "で marks the place where an action happens; に marks where something exists.",
             "zh": "で表示动作发生的场所；に表示存在的地点。",
-            "zh_TW": "で表示動作發生的場所；に表示存在的地點。"
+            "zh_TW": "で表示動作發生的場所；に表示存在的地點。",
+            "ja": "「で」は動作が行われる場所を示し、「に」は存在する場所を示します。"
           }
         },
         {
@@ -618,7 +646,8 @@
           "prompt": {
             "en": "Which sentence says \"I go by train\"?",
             "zh": "哪一句是「我坐电车去」？",
-            "zh_TW": "哪一句是「我坐電車去」？"
+            "zh_TW": "哪一句是「我坐電車去」？",
+            "ja": "「私は電車で行きます」はどれですか。"
           },
           "options": [
             "電車で行きます。",
@@ -630,7 +659,8 @@
           "explanation": {
             "en": "The same で also marks the means: the tool, vehicle or language used.",
             "zh": "同一个で也可表示手段：使用的工具、交通方式或语言。",
-            "zh_TW": "同一個で也可表示手段：使用的工具、交通方式或語言。"
+            "zh_TW": "同一個で也可表示手段：使用的工具、交通方式或語言。",
+            "ja": "同じ「で」は手段も示します。使う道具や乗り物、言語などです。"
           }
         },
         {
@@ -639,7 +669,8 @@
           "prompt": {
             "en": "Which sentence says \"I write a letter to my friend\"?",
             "zh": "哪一句是「我给朋友写信」？",
-            "zh_TW": "哪一句是「我給朋友寫信」？"
+            "zh_TW": "哪一句是「我給朋友寫信」？",
+            "ja": "「私は友達に手紙を書きます」はどれですか。"
           },
           "options": [
             "友達を手紙を書きます。",
@@ -651,7 +682,8 @@
           "explanation": {
             "en": "に marks the person an action is directed at, the receiver of the letter.",
             "zh": "に标示动作指向的对象，也就是收信的人。",
-            "zh_TW": "に標示動作指向的對象，也就是收信的人。"
+            "zh_TW": "に標示動作指向的對象，也就是收信的人。",
+            "ja": "「に」は動作の向かう相手、つまり手紙を受け取る人を示します。"
           }
         },
         {
@@ -660,7 +692,8 @@
           "prompt": {
             "en": "Which sentence says \"I watch it together with a friend\"?",
             "zh": "哪一句是「我和朋友一起看」？",
-            "zh_TW": "哪一句是「我和朋友一起看」？"
+            "zh_TW": "哪一句是「我和朋友一起看」？",
+            "ja": "「私は友達と一緒に見ます」はどれですか。"
           },
           "options": [
             "友達と一緒に見ます。",
@@ -672,7 +705,8 @@
           "explanation": {
             "en": "The companion takes と, and 一緒に adds \"together\".",
             "zh": "同伴用と标示，一緒に再加上「一起」的意思。",
-            "zh_TW": "同伴用と標示，一緒に再加上「一起」的意思。"
+            "zh_TW": "同伴用と標示，一緒に再加上「一起」的意思。",
+            "ja": "一緒に行う相手には「と」を使い、「一緒に」で「共に」という意味を加えます。"
           }
         },
         {
@@ -681,7 +715,8 @@
           "prompt": {
             "en": "Which sentence says \"I go to the park for a walk\"?",
             "zh": "哪一句是「我去公园散步」？",
-            "zh_TW": "哪一句是「我去公園散步」？"
+            "zh_TW": "哪一句是「我去公園散步」？",
+            "ja": "「私は公園へ散歩に行きます」はどれですか。"
           },
           "options": [
             "公園へ散歩で行きます。",
@@ -693,20 +728,23 @@
           "explanation": {
             "en": "に after a purpose noun or verb stem means \"in order to\" with 行きます.",
             "zh": "表示目的的名词或动词连用形后加に，与行きます合用表示「去做…」。",
-            "zh_TW": "表示目的的名詞或動詞連用形後加に，與行きます合用表示「去做…」。"
+            "zh_TW": "表示目的的名詞或動詞連用形後加に，與行きます合用表示「去做…」。",
+            "ja": "目的を表す名詞や動詞の連用形の後に「に」をつけ、「行きます」と合わせて「〜しに行く」を表します。"
           }
         }
       ],
       "writingPrompt": {
         "en": "Write three sentences about your day: where you go, how you get there, and what you do there.",
         "zh": "写三句关于你一天的事：去哪里、怎么去、在那里做什么。",
-        "zh_TW": "寫三句關於你一天的事：去哪裡、怎麼去、在那裡做什麼。"
+        "zh_TW": "寫三句關於你一天的事：去哪裡、怎麼去、在那裡做什麼。",
+        "ja": "自分の一日について三つの文を書きましょう。どこへ行くか、どうやって行くか、そこで何をするかです。"
       },
       "scenario": {
         "title": {
           "en": "Going to the library",
           "zh": "去图书馆",
-          "zh_TW": "去圖書館"
+          "zh_TW": "去圖書館",
+          "ja": "図書館へ行く"
         },
         "dialogue": [
           {
@@ -821,7 +859,8 @@
       "title": {
         "en": "Things and places",
         "zh": "东西和地方",
-        "zh_TW": "東西和地方"
+        "zh_TW": "東西和地方",
+        "ja": "物と場所"
       },
       "grammar": [
         "grammar:arimasu-imasu",
@@ -954,7 +993,8 @@
           "prompt": {
             "en": "Fill the blank: 部屋に猫が＿。(\"There is a cat in the room.\")",
             "zh": "填空：部屋に猫が＿。（「房间里有一只猫。」）",
-            "zh_TW": "填空：部屋に貓が＿。（「房間裡有一隻貓。」）"
+            "zh_TW": "填空：部屋に貓が＿。（「房間裡有一隻貓。」）",
+            "ja": "空欄を埋めましょう。「部屋に猫が＿。」（「部屋に猫が一匹います。」）"
           },
           "options": [
             "あります",
@@ -966,7 +1006,8 @@
           "explanation": {
             "en": "います is used for living things; あります is for objects.",
             "zh": "います用于有生命的事物；あります用于无生命的物品。",
-            "zh_TW": "います用於有生命的事物；あります用於無生命的物品。"
+            "zh_TW": "います用於有生命的事物；あります用於無生命的物品。",
+            "ja": "「います」は生き物に使い、「あります」は物に使います。"
           }
         },
         {
@@ -975,7 +1016,8 @@
           "prompt": {
             "en": "Fill the blank: 机の上に本＿あります。(\"There is a book on the desk.\")",
             "zh": "填空：机の上に本＿あります。（「桌子上有一本书。」）",
-            "zh_TW": "填空：機の上に本＿あります。（「桌子上有一本書。」）"
+            "zh_TW": "填空：機の上に本＿あります。（「桌子上有一本書。」）",
+            "ja": "空欄を埋めましょう。「机の上に本＿あります。」（「机の上に本があります。」）"
           },
           "options": [
             "を",
@@ -987,7 +1029,8 @@
           "explanation": {
             "en": "The thing that exists is the subject, and あります takes が, not を.",
             "zh": "存在的事物是主语，あります用が而不用を。",
-            "zh_TW": "存在的事物是主語，あります用が而不用を。"
+            "zh_TW": "存在的事物是主語，あります用が而不用を。",
+            "ja": "存在する物が主語になるので、「あります」は「を」ではなく「が」を使います。"
           }
         },
         {
@@ -996,7 +1039,8 @@
           "prompt": {
             "en": "Which phrase lists exactly a dog and a cat, and nothing else?",
             "zh": "哪个短语表示只有狗和猫两样？",
-            "zh_TW": "哪個短語表示只有狗和貓兩樣？"
+            "zh_TW": "哪個短語表示只有狗和貓兩樣？",
+            "ja": "犬と猫だけを表す言い方はどれですか。"
           },
           "options": [
             "犬と猫",
@@ -1008,7 +1052,8 @@
           "explanation": {
             "en": "と joins nouns into a complete list; や leaves the list open.",
             "zh": "と连接名词表示穷尽的列举；や则是部分列举。",
-            "zh_TW": "と連接名詞表示窮盡的列舉；や則是部分列舉。"
+            "zh_TW": "と連接名詞表示窮盡的列舉；や則是部分列舉。",
+            "ja": "「と」は名詞をすべて挙げてつなぎます。「や」は一部だけを挙げます。"
           }
         },
         {
@@ -1017,7 +1062,8 @@
           "prompt": {
             "en": "Which phrase means \"books, notebooks and so on\"?",
             "zh": "哪个短语表示「书、笔记本等等」？",
-            "zh_TW": "哪個短語表示「書、筆記本等等」？"
+            "zh_TW": "哪個短語表示「書、筆記本等等」？",
+            "ja": "「本やノートなど」という意味の言い方はどれですか。"
           },
           "options": [
             "本とノート",
@@ -1029,7 +1075,8 @@
           "explanation": {
             "en": "や lists examples and implies there are more, often with など.",
             "zh": "や用于部分列举，暗示还有其他，常与など连用。",
-            "zh_TW": "や用於部分列舉，暗示還有其他，常與など連用。"
+            "zh_TW": "や用於部分列舉，暗示還有其他，常與など連用。",
+            "ja": "「や」は例を一部だけ挙げ、他にもあることを示し、よく「など」と一緒に使います。"
           }
         },
         {
@@ -1038,7 +1085,8 @@
           "prompt": {
             "en": "Which sentence says \"I drink only water\"?",
             "zh": "哪一句是「我只喝水」？",
-            "zh_TW": "哪一句是「我只喝水」？"
+            "zh_TW": "哪一句是「我只喝水」？",
+            "ja": "「私は水だけ飲みます」はどれですか。"
           },
           "options": [
             "水だけ飲みます。",
@@ -1050,7 +1098,8 @@
           "explanation": {
             "en": "だけ follows the noun it limits and keeps the verb affirmative.",
             "zh": "だけ接在被限定的名词后，动词仍用肯定形。",
-            "zh_TW": "だけ接在被限定的名詞後，動詞仍用肯定形。"
+            "zh_TW": "だけ接在被限定的名詞後，動詞仍用肯定形。",
+            "ja": "「だけ」は限定する名詞の後につき、動詞は肯定形のままです。"
           }
         },
         {
@@ -1059,7 +1108,8 @@
           "prompt": {
             "en": "Which word means \"this one\", near the speaker?",
             "zh": "哪个词表示离说话人近的「这个」？",
-            "zh_TW": "哪個詞表示離說話人近的「這個」？"
+            "zh_TW": "哪個詞表示離說話人近的「這個」？",
+            "ja": "話し手に近い「これ」を表す言葉はどれですか。"
           },
           "options": [
             "これ",
@@ -1071,7 +1121,8 @@
           "explanation": {
             "en": "これ is near the speaker, それ near the listener, あれ away from both.",
             "zh": "これ靠近说话人，それ靠近听话人，あれ离双方都远。",
-            "zh_TW": "これ靠近說話人，それ靠近聽話人，あれ離雙方都遠。"
+            "zh_TW": "これ靠近說話人，それ靠近聽話人，あれ離雙方都遠。",
+            "ja": "「これ」は話し手に近く、「それ」は聞き手に近く、「あれ」はどちらからも遠いです。"
           }
         },
         {
@@ -1080,7 +1131,8 @@
           "prompt": {
             "en": "Fill the blank: ＿本は私のです。(\"This book is mine.\")",
             "zh": "填空：＿本は私のです。（「这本书是我的。」）",
-            "zh_TW": "填空：＿本は私のです。（「這本書是我的。」）"
+            "zh_TW": "填空：＿本は私のです。（「這本書是我的。」）",
+            "ja": "空欄を埋めましょう。「＿本は私のです。」（「この本は私のです。」）"
           },
           "options": [
             "これ",
@@ -1092,7 +1144,8 @@
           "explanation": {
             "en": "この comes before a noun; これ stands alone in place of one.",
             "zh": "この必须接名词；これ则单独使用代替名词。",
-            "zh_TW": "この必須接名詞；これ則單獨使用代替名詞。"
+            "zh_TW": "この必須接名詞；これ則單獨使用代替名詞。",
+            "ja": "「この」は名詞の前につけ、「これ」は名詞の代わりに単独で使います。"
           }
         },
         {
@@ -1101,7 +1154,8 @@
           "prompt": {
             "en": "Which word counts two people?",
             "zh": "哪个词是数「两个人」？",
-            "zh_TW": "哪個詞是數「兩個人」？"
+            "zh_TW": "哪個詞是數「兩個人」？",
+            "ja": "二人を数える言葉はどれですか。"
           },
           "options": [
             "二つ",
@@ -1113,20 +1167,23 @@
           "explanation": {
             "en": "People are counted with 人: 一人, 二人, 三人. 二つ counts objects.",
             "zh": "人用人来数：一人、二人、三人。二つ用来数物品。",
-            "zh_TW": "人用人來數：一人、二人、三人。二つ用來數物品。"
+            "zh_TW": "人用人來數：一人、二人、三人。二つ用來數物品。",
+            "ja": "人は「人」で数えます：一人、二人、三人。「二つ」は物を数える言葉です。"
           }
         }
       ],
       "writingPrompt": {
         "en": "Describe your room: name three things in it and say where they are.",
         "zh": "描述你的房间：说出里面的三样东西以及它们的位置。",
-        "zh_TW": "描述你的房間：說出裡面的三樣東西以及它們的位置。"
+        "zh_TW": "描述你的房間：說出裡面的三樣東西以及它們的位置。",
+        "ja": "自分の部屋について書きましょう。中にある物を三つ挙げ、それぞれどこにあるか言ってください。"
       },
       "scenario": {
         "title": {
           "en": "In the classroom",
           "zh": "在教室里",
-          "zh_TW": "在教室裡"
+          "zh_TW": "在教室裡",
+          "ja": "教室で"
         },
         "dialogue": [
           {
@@ -1214,7 +1271,8 @@
       "title": {
         "en": "Describing things",
         "zh": "描述事物",
-        "zh_TW": "描述事物"
+        "zh_TW": "描述事物",
+        "ja": "物事の描写"
       },
       "grammar": [
         "grammar:i-adjective",
@@ -1348,7 +1406,8 @@
           "prompt": {
             "en": "What is the negative of 高い?",
             "zh": "高い的否定形是哪一个？",
-            "zh_TW": "高い的否定形是哪一個？"
+            "zh_TW": "高い的否定形是哪一個？",
+            "ja": "「高い」の否定形はどれですか。"
           },
           "options": [
             "高いない",
@@ -1360,7 +1419,8 @@
           "explanation": {
             "en": "An i-adjective drops い and takes くない; only nouns use ではない.",
             "zh": "い形容词去掉い加くない；ではない只用于名词。",
-            "zh_TW": "い形容詞去掉い加くない；ではない只用於名詞。"
+            "zh_TW": "い形容詞去掉い加くない；ではない只用於名詞。",
+            "ja": "い形容詞は「い」を取って「くない」をつけます。「ではない」は名詞にしか使いません。"
           }
         },
         {
@@ -1369,7 +1429,8 @@
           "prompt": {
             "en": "Which is \"a quiet room\"?",
             "zh": "哪个是「安静的房间」？",
-            "zh_TW": "哪個是「安靜的房間」？"
+            "zh_TW": "哪個是「安靜的房間」？",
+            "ja": "「静かな部屋」はどれですか。"
           },
           "options": [
             "静か部屋",
@@ -1381,7 +1442,8 @@
           "explanation": {
             "en": "A na-adjective takes な before the noun it describes.",
             "zh": "形容动词修饰名词时要加な。",
-            "zh_TW": "形容動詞修飾名詞時要加な。"
+            "zh_TW": "形容動詞修飾名詞時要加な。",
+            "ja": "形容動詞が名詞を修飾するときは、前に「な」をつけます。"
           }
         },
         {
@@ -1390,7 +1452,8 @@
           "prompt": {
             "en": "Which phrase says \"cheap and delicious\"?",
             "zh": "哪个短语是「又便宜又好吃」？",
-            "zh_TW": "哪個短語是「又便宜又好吃」？"
+            "zh_TW": "哪個短語是「又便宜又好吃」？",
+            "ja": "「安くておいしい」という言い方はどれですか。"
           },
           "options": [
             "安いておいしいです。",
@@ -1402,7 +1465,8 @@
           "explanation": {
             "en": "An i-adjective joins the next one as くて; a na-adjective joins as で.",
             "zh": "い形容词接续时变成くて；形容动词则用で。",
-            "zh_TW": "い形容詞接續時變成くて；形容動詞則用で。"
+            "zh_TW": "い形容詞接續時變成くて；形容動詞則用で。",
+            "ja": "い形容詞は次に続くとき「くて」になり、形容動詞は「で」になります。"
           }
         },
         {
@@ -1411,7 +1475,8 @@
           "prompt": {
             "en": "Which word asks \"what kind of\"?",
             "zh": "哪个词是问「什么样的」？",
-            "zh_TW": "哪個詞是問「什麼樣的」？"
+            "zh_TW": "哪個詞是問「什麼樣的」？",
+            "ja": "「どんな」を尋ねる言葉はどれですか。"
           },
           "options": [
             "どんな",
@@ -1423,7 +1488,8 @@
           "explanation": {
             "en": "どんな asks about the kind of thing; the others point at one already known.",
             "zh": "どんな用来询问种类；其他三个是指已知的事物。",
-            "zh_TW": "どんな用來詢問種類；其他三個是指已知的事物。"
+            "zh_TW": "どんな用來詢問種類；其他三個是指已知的事物。",
+            "ja": "「どんな」は種類を尋ねます。他の三つはすでにわかっている物を指します。"
           }
         },
         {
@@ -1432,7 +1498,8 @@
           "prompt": {
             "en": "Which sentence says \"it is not very big\"?",
             "zh": "哪一句是「不太大」？",
-            "zh_TW": "哪一句是「不太大」？"
+            "zh_TW": "哪一句是「不太大」？",
+            "ja": "「あまり大きくないです」はどれですか。"
           },
           "options": [
             "あまり大きいです。",
@@ -1444,7 +1511,8 @@
           "explanation": {
             "en": "あまり needs a negative ending: あまり…ないです means \"not very\".",
             "zh": "あまり必须与否定呼应：あまり…ないです表示「不太…」。",
-            "zh_TW": "あまり必須與否定呼應：あまり…ないです表示「不太…」。"
+            "zh_TW": "あまり必須與否定呼應：あまり…ないです表示「不太…」。",
+            "ja": "「あまり」は否定形と一緒に使い、「あまり…ないです」で「あまり〜ない」を表します。"
           }
         },
         {
@@ -1453,7 +1521,8 @@
           "prompt": {
             "en": "Which sentence says \"it is very quiet\"?",
             "zh": "哪一句是「非常安静」？",
-            "zh_TW": "哪一句是「非常安靜」？"
+            "zh_TW": "哪一句是「非常安靜」？",
+            "ja": "「とても静かです」はどれですか。"
           },
           "options": [
             "とても静かです。",
@@ -1465,7 +1534,8 @@
           "explanation": {
             "en": "とても strengthens an affirmative statement; あまり belongs with a negative.",
             "zh": "とても用于加强肯定句；あまり则要与否定搭配。",
-            "zh_TW": "とても用於加強肯定句；あまり則要與否定搭配。"
+            "zh_TW": "とても用於加強肯定句；あまり則要與否定搭配。",
+            "ja": "「とても」は肯定文を強め、「あまり」は否定文と一緒に使います。"
           }
         },
         {
@@ -1474,7 +1544,8 @@
           "prompt": {
             "en": "Which sentence says \"it is not convenient\"?",
             "zh": "哪一句是「不方便」？",
-            "zh_TW": "哪一句是「不方便」？"
+            "zh_TW": "哪一句是「不方便」？",
+            "ja": "「便利ではありません」はどれですか。"
           },
           "options": [
             "便利くないです。",
@@ -1486,20 +1557,23 @@
           "explanation": {
             "en": "A na-adjective is negated like a noun: ではありません, not くない.",
             "zh": "形容动词的否定与名词相同，用ではありません，不用くない。",
-            "zh_TW": "形容動詞的否定與名詞相同，用ではありません，不用くない。"
+            "zh_TW": "形容動詞的否定與名詞相同，用ではありません，不用くない。",
+            "ja": "形容動詞の否定は名詞と同じで、「くない」ではなく「ではありません」を使います。"
           }
         }
       ],
       "writingPrompt": {
         "en": "Describe your town in three sentences, using one i-adjective and one na-adjective.",
         "zh": "用三句话描述你所在的城镇，其中要用到一个い形容词和一个形容动词。",
-        "zh_TW": "用三句話描述你所在的城鎮，其中要用到一個い形容詞和一個形容動詞。"
+        "zh_TW": "用三句話描述你所在的城鎮，其中要用到一個い形容詞和一個形容動詞。",
+        "ja": "い形容詞と形容動詞をそれぞれ一つ使って、自分の町について三つの文を書きましょう。"
       },
       "scenario": {
         "title": {
           "en": "Choosing a room",
           "zh": "选房间",
-          "zh_TW": "選房間"
+          "zh_TW": "選房間",
+          "ja": "部屋を選ぶ"
         },
         "dialogue": [
           {
@@ -1614,7 +1688,8 @@
       "title": {
         "en": "Time and comparison",
         "zh": "时间和比较",
-        "zh_TW": "時間和比較"
+        "zh_TW": "時間和比較",
+        "ja": "時間と比較"
       },
       "grammar": [
         "grammar:ni-time",
@@ -1748,7 +1823,8 @@
           "prompt": {
             "en": "Fill the blank: 授業は午前＿始まります。(\"Class starts in the morning.\")",
             "zh": "填空：授業は午前＿始まります。（「课在上午开始。」）",
-            "zh_TW": "填空：授業は午前＿始まります。（「課在上午開始。」）"
+            "zh_TW": "填空：授業は午前＿始まります。（「課在上午開始。」）",
+            "ja": "空欄を埋めましょう。「授業は午前＿始まります。」（「授業は午前に始まります。」）"
           },
           "options": [
             "に",
@@ -1760,7 +1836,8 @@
           "explanation": {
             "en": "に marks a specific point in time at which something happens.",
             "zh": "に用来标示动作发生的具体时间点。",
-            "zh_TW": "に用來標示動作發生的具體時間點。"
+            "zh_TW": "に用來標示動作發生的具體時間點。",
+            "ja": "「に」は物事が起こる具体的な時点を示します。"
           }
         },
         {
@@ -1769,7 +1846,8 @@
           "prompt": {
             "en": "Which phrase says \"from Monday to Friday\"?",
             "zh": "哪个短语是「从星期一到星期五」？",
-            "zh_TW": "哪個短語是「從星期一到星期五」？"
+            "zh_TW": "哪個短語是「從星期一到星期五」？",
+            "ja": "「月曜日から金曜日まで」という言い方はどれですか。"
           },
           "options": [
             "月曜日まで金曜日から",
@@ -1781,7 +1859,8 @@
           "explanation": {
             "en": "から marks the start and まで the end, in that order.",
             "zh": "から表示起点，まで表示终点，顺序不能颠倒。",
-            "zh_TW": "から表示起點，まで表示終點，順序不能顛倒。"
+            "zh_TW": "から表示起點，まで表示終點，順序不能顛倒。",
+            "ja": "「から」は始まり、「まで」は終わりを示し、この順番で使います。"
           }
         },
         {
@@ -1790,7 +1869,8 @@
           "prompt": {
             "en": "Which phrase means \"around noon\"?",
             "zh": "哪个短语是「中午前后」？",
-            "zh_TW": "哪個短語是「中午前後」？"
+            "zh_TW": "哪個短語是「中午前後」？",
+            "ja": "「昼ごろ」という意味の言い方はどれですか。"
           },
           "options": [
             "昼まで",
@@ -1802,7 +1882,8 @@
           "explanation": {
             "en": "ごろ follows a point in time; ぐらい follows an amount.",
             "zh": "ごろ接在时间点后；ぐらい接在数量后。",
-            "zh_TW": "ごろ接在時間點後；ぐらい接在數量後。"
+            "zh_TW": "ごろ接在時間點後；ぐらい接在數量後。",
+            "ja": "「ごろ」は時点の後につき、「ぐらい」は数量の後につきます。"
           }
         },
         {
@@ -1811,7 +1892,8 @@
           "prompt": {
             "en": "Which sentence asks the price of this book?",
             "zh": "哪一句是在问这本书的价钱？",
-            "zh_TW": "哪一句是在問這本書的價錢？"
+            "zh_TW": "哪一句是在問這本書的價錢？",
+            "ja": "この本の値段を尋ねる文はどれですか。"
           },
           "options": [
             "この本はいくらですか。",
@@ -1823,7 +1905,8 @@
           "explanation": {
             "en": "いくら asks how much something costs; いくつ asks how many there are.",
             "zh": "いくら问价钱；いくつ问数量。",
-            "zh_TW": "いくら問價錢；いくつ問數量。"
+            "zh_TW": "いくら問價錢；いくつ問數量。",
+            "ja": "「いくら」は値段を尋ね、「いくつ」は数を尋ねます。"
           }
         },
         {
@@ -1832,7 +1915,8 @@
           "prompt": {
             "en": "Which phrase says \"the cheapest in this shop\"?",
             "zh": "哪个短语是「这家店里最便宜的」？",
-            "zh_TW": "哪個短語是「這家店裡最便宜的」？"
+            "zh_TW": "哪個短語是「這家店裡最便宜的」？",
+            "ja": "「この店でいちばん安い」という言い方はどれですか。"
           },
           "options": [
             "この店でとても安い",
@@ -1844,7 +1928,8 @@
           "explanation": {
             "en": "で names the group, and いちばん before the adjective makes it the superlative.",
             "zh": "で表示比较的范围，形容词前加いちばん构成最高级。",
-            "zh_TW": "で表示比較的範圍，形容詞前加いちばん構成最高級。"
+            "zh_TW": "で表示比較的範圍，形容詞前加いちばん構成最高級。",
+            "ja": "「で」は比べる範囲を示し、形容詞の前の「いちばん」が最上級を作ります。"
           }
         },
         {
@@ -1853,7 +1938,8 @@
           "prompt": {
             "en": "Which sentence says \"the train is faster than the bus\"?",
             "zh": "哪一句是「电车比公共汽车快」？",
-            "zh_TW": "哪一句是「電車比公共汽車快」？"
+            "zh_TW": "哪一句是「電車比公共汽車快」？",
+            "ja": "「電車はバスより速いです」はどれですか。"
           },
           "options": [
             "電車のほうがバスより早いです。",
@@ -1865,7 +1951,8 @@
           "explanation": {
             "en": "The winner takes のほうが and the thing compared against takes より.",
             "zh": "程度更高的一方用のほうが，被比较的一方用より。",
-            "zh_TW": "程度更高的一方用のほうが，被比較的一方用より。"
+            "zh_TW": "程度更高的一方用のほうが，被比較的一方用より。",
+            "ja": "程度が高い方に「のほうが」を使い、比べる相手に「より」を使います。"
           }
         },
         {
@@ -1874,7 +1961,8 @@
           "prompt": {
             "en": "Which word is added to a clock time to mean \"half past\"?",
             "zh": "报时时表示「半」要加哪个词？",
-            "zh_TW": "報時時表示「半」要加哪個詞？"
+            "zh_TW": "報時時表示「半」要加哪個詞？",
+            "ja": "時刻の後につけて「半」を表す言葉はどれですか。"
           },
           "options": [
             "中",
@@ -1886,7 +1974,8 @@
           "explanation": {
             "en": "半 follows the hour to mean thirty minutes past it.",
             "zh": "半接在钟点后面，表示过了三十分钟。",
-            "zh_TW": "半接在鐘點後面，表示過了三十分鐘。"
+            "zh_TW": "半接在鐘點後面，表示過了三十分鐘。",
+            "ja": "「半」は時刻の後につき、三十分過ぎたことを表します。"
           }
         },
         {
@@ -1895,7 +1984,8 @@
           "prompt": {
             "en": "Which word means \"Monday\"?",
             "zh": "哪个词是「星期一」？",
-            "zh_TW": "哪個詞是「星期一」？"
+            "zh_TW": "哪個詞是「星期一」？",
+            "ja": "「月曜日」を表す言葉はどれですか。"
           },
           "options": [
             "火曜日",
@@ -1907,14 +1997,16 @@
           "explanation": {
             "en": "The days of the week are built on 曜日: 月曜日 is Monday.",
             "zh": "星期几都以曜日结尾：月曜日是星期一。",
-            "zh_TW": "星期幾都以曜日結尾：月曜日是星期一。"
+            "zh_TW": "星期幾都以曜日結尾：月曜日是星期一。",
+            "ja": "曜日の名前はすべて「曜日」で終わり、「月曜日」は月曜日を表します。"
           }
         }
       ],
       "writingPrompt": {
         "en": "Write about your week: when something starts, how long it lasts, and which day you like best.",
         "zh": "写一写你的一周：什么时候开始、持续多久、你最喜欢哪一天。",
-        "zh_TW": "寫一寫你的一週：什麼時候開始、持續多久、你最喜歡哪一天。"
+        "zh_TW": "寫一寫你的一週：什麼時候開始、持續多久、你最喜歡哪一天。",
+        "ja": "自分の一週間について書きましょう。何がいつ始まるか、どのくらい続くか、どの曜日が一番好きかです。"
       }
     },
     {
@@ -1922,7 +2014,8 @@
       "title": {
         "en": "The te-form",
         "zh": "て形",
-        "zh_TW": "て形"
+        "zh_TW": "て形",
+        "ja": "て形"
       },
       "grammar": [
         "grammar:dictionary-form",
@@ -2057,7 +2150,8 @@
           "prompt": {
             "en": "Which sentence says \"I am reading the newspaper now\"?",
             "zh": "哪一句是「我现在正在看报纸」？",
-            "zh_TW": "哪一句是「我現在正在看報紙」？"
+            "zh_TW": "哪一句是「我現在正在看報紙」？",
+            "ja": "「私は今新聞を読んでいます」はどれですか。"
           },
           "options": [
             "新聞を読みます。",
@@ -2069,7 +2163,8 @@
           "explanation": {
             "en": "The te-form plus います describes an action in progress.",
             "zh": "て形加います表示动作正在进行。",
-            "zh_TW": "て形加います表示動作正在進行。"
+            "zh_TW": "て形加います表示動作正在進行。",
+            "ja": "て形に「います」をつけると、動作が進行中であることを表します。"
           }
         },
         {
@@ -2078,7 +2173,8 @@
           "prompt": {
             "en": "Which sentence politely says \"please wait\"?",
             "zh": "哪一句是礼貌的「请等一下」？",
-            "zh_TW": "哪一句是禮貌的「請等一下」？"
+            "zh_TW": "哪一句是禮貌的「請等一下」？",
+            "ja": "丁寧に「待ってください」と言う文はどれですか。"
           },
           "options": [
             "待ちてください。",
@@ -2090,7 +2186,8 @@
           "explanation": {
             "en": "ください follows the te-form, and 待つ becomes 待って.",
             "zh": "ください接在て形后，待つ的て形是待って。",
-            "zh_TW": "ください接在て形後，待つ的て形是待って。"
+            "zh_TW": "ください接在て形後，待つ的て形是待って。",
+            "ja": "「ください」はて形の後につき、「待つ」のて形は「待って」です。"
           }
         },
         {
@@ -2099,7 +2196,8 @@
           "prompt": {
             "en": "Which sentence asks \"may I open the window?\"",
             "zh": "哪一句是在问「我可以开窗吗」？",
-            "zh_TW": "哪一句是在問「我可以開窗嗎」？"
+            "zh_TW": "哪一句是在問「我可以開窗嗎」？",
+            "ja": "「窓を開けてもいいですか」はどれですか。"
           },
           "options": [
             "窓を開けてもいいですか。",
@@ -2111,7 +2209,8 @@
           "explanation": {
             "en": "てもいいですか asks for permission.",
             "zh": "てもいいですか用来请求许可。",
-            "zh_TW": "てもいいですか用來請求許可。"
+            "zh_TW": "てもいいですか用來請求許可。",
+            "ja": "「てもいいですか」は許可を求めるときに使います。"
           }
         },
         {
@@ -2120,7 +2219,8 @@
           "prompt": {
             "en": "Which sentence says \"you must not smoke here\"?",
             "zh": "哪一句是「这里不可以吸烟」？",
-            "zh_TW": "哪一句是「這裡不可以吸菸」？"
+            "zh_TW": "哪一句是「這裡不可以吸菸」？",
+            "ja": "「ここでたばこを吸ってはいけません」はどれですか。"
           },
           "options": [
             "ここでたばこを吸ってもいいです。",
@@ -2132,7 +2232,8 @@
           "explanation": {
             "en": "てはいけません forbids an action; てもいいです allows it.",
             "zh": "てはいけません表示禁止；てもいいです表示允许。",
-            "zh_TW": "てはいけません表示禁止；てもいいです表示允許。"
+            "zh_TW": "てはいけません表示禁止；てもいいです表示允許。",
+            "ja": "「てはいけません」は禁止を表し、「てもいいです」は許可を表します。"
           }
         },
         {
@@ -2141,7 +2242,8 @@
           "prompt": {
             "en": "Which phrase means \"after eating dinner\"?",
             "zh": "哪个短语是「吃完晚饭之后」？",
-            "zh_TW": "哪個短語是「吃完晚飯之後」？"
+            "zh_TW": "哪個短語是「吃完晚飯之後」？",
+            "ja": "「晩ご飯を食べてから」という意味の言い方はどれですか。"
           },
           "options": [
             "晩御飯を食べてから",
@@ -2153,7 +2255,8 @@
           "explanation": {
             "en": "てから says the second action happens after the first one is finished.",
             "zh": "てから表示前一个动作完成之后再做后一个动作。",
-            "zh_TW": "てから表示前一個動作完成之後再做後一個動作。"
+            "zh_TW": "てから表示前一個動作完成之後再做後一個動作。",
+            "ja": "「てから」は前の動作が終わった後に次の動作をすることを表します。"
           }
         },
         {
@@ -2162,7 +2265,8 @@
           "prompt": {
             "en": "Which sentence says \"I can swim\"?",
             "zh": "哪一句是「我会游泳」？",
-            "zh_TW": "哪一句是「我會游泳」？"
+            "zh_TW": "哪一句是「我會游泳」？",
+            "ja": "「私は泳ぐことができます」はどれですか。"
           },
           "options": [
             "私は泳ぎことができます。",
@@ -2174,7 +2278,8 @@
           "explanation": {
             "en": "ことができます follows the dictionary form of the verb.",
             "zh": "ことができます要接在动词的辞书形后面。",
-            "zh_TW": "ことができます要接在動詞的辭書形後面。"
+            "zh_TW": "ことができます要接在動詞的辭書形後面。",
+            "ja": "「ことができます」は動詞の辞書形の後につきます。"
           }
         },
         {
@@ -2183,7 +2288,8 @@
           "prompt": {
             "en": "What is the dictionary form of 食べます?",
             "zh": "食べます的辞书形是哪一个？",
-            "zh_TW": "食べます的辭書形是哪一個？"
+            "zh_TW": "食べます的辭書形是哪一個？",
+            "ja": "「食べます」の辞書形はどれですか。"
           },
           "options": [
             "食べる",
@@ -2195,7 +2301,8 @@
           "explanation": {
             "en": "The dictionary form is the plain non-past, the form a dictionary lists.",
             "zh": "辞书形就是简体现在形，也是词典收录的形式。",
-            "zh_TW": "辭書形就是簡體現在形，也是詞典收錄的形式。"
+            "zh_TW": "辭書形就是簡體現在形，也是詞典收錄的形式。",
+            "ja": "辞書形は普通体の現在形で、辞書に載っている形です。"
           }
         },
         {
@@ -2204,7 +2311,8 @@
           "prompt": {
             "en": "Which is the plain (casual) form of 高いです?",
             "zh": "高いです的简体形是哪一个？",
-            "zh_TW": "高いです的簡體形是哪一個？"
+            "zh_TW": "高いです的簡體形是哪一個？",
+            "ja": "「高いです」の普通体（くだけた形）はどれですか。"
           },
           "options": [
             "高いだ",
@@ -2216,14 +2324,16 @@
           "explanation": {
             "en": "An i-adjective is already plain on its own; です only adds politeness.",
             "zh": "い形容词本身就是简体，です只是增加敬体的语气。",
-            "zh_TW": "い形容詞本身就是簡體，です只是增加敬體的語氣。"
+            "zh_TW": "い形容詞本身就是簡體，です只是增加敬體的語氣。",
+            "ja": "い形容詞はそれ自体が普通体で、「です」は丁寧さを加えるだけです。"
           }
         }
       ],
       "writingPrompt": {
         "en": "Write three sentences using the te-form: one request, one thing you are doing now, and one thing you do after another.",
         "zh": "用て形写三句话：一句请求、一句正在做的事、一句做完一件事之后做的事。",
-        "zh_TW": "用て形寫三句話：一句請求、一句正在做的事、一句做完一件事之後做的事。"
+        "zh_TW": "用て形寫三句話：一句請求、一句正在做的事、一句做完一件事之後做的事。",
+        "ja": "て形を使って三つの文を書きましょう。頼むこと、今していること、何かをした後にすることです。"
       }
     },
     {
@@ -2231,7 +2341,8 @@
       "title": {
         "en": "Negatives and the past",
         "zh": "否定和过去",
-        "zh_TW": "否定和過去"
+        "zh_TW": "否定和過去",
+        "ja": "否定と過去"
       },
       "grammar": [
         "grammar:mashita",
@@ -2369,7 +2480,8 @@
           "prompt": {
             "en": "What is the polite past of 会います?",
             "zh": "会います的敬体过去形是哪一个？",
-            "zh_TW": "會います的敬體過去形是哪一個？"
+            "zh_TW": "會います的敬體過去形是哪一個？",
+            "ja": "「会います」の丁寧な過去形はどれですか。"
           },
           "options": [
             "会いました",
@@ -2381,7 +2493,8 @@
           "explanation": {
             "en": "ます becomes ました in the past; the negative past is ませんでした.",
             "zh": "ます的过去形是ました；否定过去形则是ませんでした。",
-            "zh_TW": "ます的過去形是ました；否定過去形則是ませんでした。"
+            "zh_TW": "ます的過去形是ました；否定過去形則是ませんでした。",
+            "ja": "「ます」の過去形は「ました」で、否定過去形は「ませんでした」です。"
           }
         },
         {
@@ -2390,7 +2503,8 @@
           "prompt": {
             "en": "Which says \"was busy\"?",
             "zh": "哪个是「当时很忙」？",
-            "zh_TW": "哪個是「當時很忙」？"
+            "zh_TW": "哪個是「當時很忙」？",
+            "ja": "「忙しかった」を表す言い方はどれですか。"
           },
           "options": [
             "忙しいでした",
@@ -2402,7 +2516,8 @@
           "explanation": {
             "en": "An i-adjective drops い and takes かった; です is added for politeness.",
             "zh": "い形容词去掉い加かった，后面再加です表示敬体。",
-            "zh_TW": "い形容詞去掉い加かった，後面再加です表示敬體。"
+            "zh_TW": "い形容詞去掉い加かった，後面再加です表示敬體。",
+            "ja": "い形容詞は「い」を取って「かった」をつけ、その後に丁寧な「です」をつけます。"
           }
         },
         {
@@ -2411,7 +2526,8 @@
           "prompt": {
             "en": "Which says \"was not clean\"?",
             "zh": "哪个是「当时不干净」？",
-            "zh_TW": "哪個是「當時不乾淨」？"
+            "zh_TW": "哪個是「當時不乾淨」？",
+            "ja": "「きれいではありませんでした」はどれですか。"
           },
           "options": [
             "きれいくなかったです",
@@ -2423,7 +2539,8 @@
           "explanation": {
             "en": "A na-adjective behaves like a noun: ではありませんでした in the past negative.",
             "zh": "形容动词与名词相同，过去否定用ではありませんでした。",
-            "zh_TW": "形容動詞與名詞相同，過去否定用ではありませんでした。"
+            "zh_TW": "形容動詞與名詞相同，過去否定用ではありませんでした。",
+            "ja": "形容動詞は名詞と同じ扱いで、過去否定は「ではありませんでした」を使います。"
           }
         },
         {
@@ -2432,7 +2549,8 @@
           "prompt": {
             "en": "Which sentence says \"please do not take photographs here\"?",
             "zh": "哪一句是「请不要在这里拍照」？",
-            "zh_TW": "哪一句是「請不要在這裡拍照」？"
+            "zh_TW": "哪一句是「請不要在這裡拍照」？",
+            "ja": "「ここで写真を撮らないでください」はどれですか。"
           },
           "options": [
             "ここで写真を撮ってください。",
@@ -2444,7 +2562,8 @@
           "explanation": {
             "en": "The nai-form plus でください asks someone not to do something.",
             "zh": "ない形加でください表示请求对方不要做某事。",
-            "zh_TW": "ない形加でください表示請求對方不要做某事。"
+            "zh_TW": "ない形加でください表示請求對方不要做某事。",
+            "ja": "ない形に「でください」をつけると、相手に何かをしないよう頼む表現になります。"
           }
         },
         {
@@ -2453,7 +2572,8 @@
           "prompt": {
             "en": "Which sentence says \"I have to do my homework\"?",
             "zh": "哪一句是「我必须做作业」？",
-            "zh_TW": "哪一句是「我必須做作業」？"
+            "zh_TW": "哪一句是「我必須做作業」？",
+            "ja": "「私は宿題をしなければなりません」はどれですか。"
           },
           "options": [
             "宿題をしなくてもいいです。",
@@ -2465,7 +2585,8 @@
           "explanation": {
             "en": "なければなりません states an obligation; なくてもいいです says there is none.",
             "zh": "なければなりません表示义务；なくてもいいです表示没有义务。",
-            "zh_TW": "なければなりません表示義務；なくてもいいです表示沒有義務。"
+            "zh_TW": "なければなりません表示義務；なくてもいいです表示沒有義務。",
+            "ja": "「なければなりません」は義務を表し、「なくてもいいです」は義務がないことを表します。"
           }
         },
         {
@@ -2474,7 +2595,8 @@
           "prompt": {
             "en": "Which sentence says \"you do not have to take off your shoes\"?",
             "zh": "哪一句是「你不用脱鞋」？",
-            "zh_TW": "哪一句是「你不用脫鞋」？"
+            "zh_TW": "哪一句是「你不用脫鞋」？",
+            "ja": "「靴を脱がなくてもいいです」はどれですか。"
           },
           "options": [
             "靴を脱がなくてもいいです。",
@@ -2486,7 +2608,8 @@
           "explanation": {
             "en": "なくてもいいです says the action is not required.",
             "zh": "なくてもいいです表示不做也可以。",
-            "zh_TW": "なくてもいいです表示不做也可以。"
+            "zh_TW": "なくてもいいです表示不做也可以。",
+            "ja": "「なくてもいいです」はその動作をする必要がないことを表します。"
           }
         },
         {
@@ -2495,7 +2618,8 @@
           "prompt": {
             "en": "Which sentence says \"I drink only water\"?",
             "zh": "哪一句是「我只喝水」？",
-            "zh_TW": "哪一句是「我只喝水」？"
+            "zh_TW": "哪一句是「我只喝水」？",
+            "ja": "「私は水しか飲みません」はどれですか。"
           },
           "options": [
             "水しか飲みます。",
@@ -2507,7 +2631,8 @@
           "explanation": {
             "en": "しか always takes a negative verb, and the pair together means \"only\".",
             "zh": "しか必须与否定形呼应，两者合起来表示「只有」。",
-            "zh_TW": "しか必須與否定形呼應，兩者合起來表示「只有」。"
+            "zh_TW": "しか必須與否定形呼應，兩者合起來表示「只有」。",
+            "ja": "「しか」は必ず否定形と一緒に使い、合わせて「〜しかない」という意味になります。"
           }
         },
         {
@@ -2516,7 +2641,8 @@
           "prompt": {
             "en": "Which sentence says \"I have not eaten yet\"?",
             "zh": "哪一句是「我还没吃」？",
-            "zh_TW": "哪一句是「我還沒吃」？"
+            "zh_TW": "哪一句是「我還沒吃」？",
+            "ja": "「まだ食べていません」はどれですか。"
           },
           "options": [
             "もう食べました。",
@@ -2528,14 +2654,16 @@
           "explanation": {
             "en": "\"Not yet\" is まだ with ていません; もう…ました means it is already done.",
             "zh": "「还没」用まだ加ていません；もう…ました表示已经做完了。",
-            "zh_TW": "「還沒」用まだ加ていません；もう…ました表示已經做完了。"
+            "zh_TW": "「還沒」用まだ加ていません；もう…ました表示已經做完了。",
+            "ja": "「まだ」は「ていません」と使い、「もう…ました」はすでに終わったことを表します。"
           }
         }
       ],
       "writingPrompt": {
         "en": "Write about yesterday: two things you did and one thing you did not do.",
         "zh": "写一写昨天：两件你做了的事和一件你没做的事。",
-        "zh_TW": "寫一寫昨天：兩件你做了的事和一件你沒做的事。"
+        "zh_TW": "寫一寫昨天：兩件你做了的事和一件你沒做的事。",
+        "ja": "昨日について書きましょう。したことを二つと、しなかったことを一つです。"
       }
     },
     {
@@ -2543,7 +2671,8 @@
       "title": {
         "en": "Wishes and plans",
         "zh": "愿望和计划",
-        "zh_TW": "願望和計劃"
+        "zh_TW": "願望和計劃",
+        "ja": "願望と計画"
       },
       "grammar": [
         "grammar:tai",
@@ -2677,7 +2806,8 @@
           "prompt": {
             "en": "Which sentence says \"I want to go on a trip\"?",
             "zh": "哪一句是「我想去旅行」？",
-            "zh_TW": "哪一句是「我想去旅行」？"
+            "zh_TW": "哪一句是「我想去旅行」？",
+            "ja": "「私は旅行に行きたいです」はどれですか。"
           },
           "options": [
             "旅行に行きたいです。",
@@ -2689,7 +2819,8 @@
           "explanation": {
             "en": "たい attaches to the masu-stem and states the speaker's own wish.",
             "zh": "たい接在ます形词干后，表示说话人自己的愿望。",
-            "zh_TW": "たい接在ます形詞幹後，表示說話人自己的願望。"
+            "zh_TW": "たい接在ます形詞幹後，表示說話人自己的願望。",
+            "ja": "「たい」はます形の語幹につき、話し手自身の願望を表します。"
           }
         },
         {
@@ -2698,7 +2829,8 @@
           "prompt": {
             "en": "Which sentence says \"I want a new camera\"?",
             "zh": "哪一句是「我想要一台新相机」？",
-            "zh_TW": "哪一句是「我想要一臺新相機」？"
+            "zh_TW": "哪一句是「我想要一臺新相機」？",
+            "ja": "「私は新しいカメラが欲しいです」はどれですか。"
           },
           "options": [
             "新しいカメラを欲しいます。",
@@ -2710,7 +2842,8 @@
           "explanation": {
             "en": "欲しい wants a thing, and that thing is marked with が, not を.",
             "zh": "欲しい表示想要某物，该物用が标示，不用を。",
-            "zh_TW": "欲しい表示想要某物，該物用が標示，不用を。"
+            "zh_TW": "欲しい表示想要某物，該物用が標示，不用を。",
+            "ja": "「欲しい」は物を欲しがることを表し、その物には「を」ではなく「が」を使います。"
           }
         },
         {
@@ -2719,7 +2852,8 @@
           "prompt": {
             "en": "Which sentence says \"let's go together\"?",
             "zh": "哪一句是「我们一起去吧」？",
-            "zh_TW": "哪一句是「我們一起去吧」？"
+            "zh_TW": "哪一句是「我們一起去吧」？",
+            "ja": "「一緒に行きましょう」はどれですか。"
           },
           "options": [
             "一緒に行きたいです。",
@@ -2731,7 +2865,8 @@
           "explanation": {
             "en": "ましょう proposes doing something together.",
             "zh": "ましょう用来提议一起做某事。",
-            "zh_TW": "ましょう用來提議一起做某事。"
+            "zh_TW": "ましょう用來提議一起做某事。",
+            "ja": "「ましょう」は一緒に何かをしようと誘うときに使います。"
           }
         },
         {
@@ -2740,7 +2875,8 @@
           "prompt": {
             "en": "Which sentence invites someone: \"would you like to eat with me?\"",
             "zh": "哪一句是邀请对方「要不要一起吃饭」？",
-            "zh_TW": "哪一句是邀請對方「要不要一起吃飯」？"
+            "zh_TW": "哪一句是邀請對方「要不要一起吃飯」？",
+            "ja": "「一緒に食べませんか」はどれですか。"
           },
           "options": [
             "一緒に食べませんか。",
@@ -2752,7 +2888,8 @@
           "explanation": {
             "en": "ませんか is an invitation that leaves the other person free to decline.",
             "zh": "ませんか是邀请的说法，给对方拒绝的余地。",
-            "zh_TW": "ませんか是邀請的說法，給對方拒絕的餘地。"
+            "zh_TW": "ませんか是邀請的說法，給對方拒絕的餘地。",
+            "ja": "「ませんか」は誘う表現で、相手が断る余地を残します。"
           }
         },
         {
@@ -2761,7 +2898,8 @@
           "prompt": {
             "en": "Which sentence says \"I intend to study at university\"?",
             "zh": "哪一句是「我打算在大学学习」？",
-            "zh_TW": "哪一句是「我打算在大學學習」？"
+            "zh_TW": "哪一句是「我打算在大學學習」？",
+            "ja": "「私は大学で勉強するつもりです」はどれですか。"
           },
           "options": [
             "大学で勉強したいです。",
@@ -2773,7 +2911,8 @@
           "explanation": {
             "en": "つもりです follows the dictionary form and states a settled intention.",
             "zh": "つもりです接在辞书形后，表示已经决定的打算。",
-            "zh_TW": "つもりです接在辭書形後，表示已經決定的打算。"
+            "zh_TW": "つもりです接在辭書形後，表示已經決定的打算。",
+            "ja": "「つもりです」は辞書形の後につき、すでに決めた意図を表します。"
           }
         },
         {
@@ -2782,7 +2921,8 @@
           "prompt": {
             "en": "Which sentence says \"it will probably be sunny\"?",
             "zh": "哪一句是「大概会放晴吧」？",
-            "zh_TW": "哪一句是「大概會放晴吧」？"
+            "zh_TW": "哪一句是「大概會放晴吧」？",
+            "ja": "「晴れるでしょう」はどれですか。"
           },
           "options": [
             "晴れています。",
@@ -2794,7 +2934,8 @@
           "explanation": {
             "en": "でしょう states a guess rather than a fact.",
             "zh": "でしょう表示推测，而不是确定的事实。",
-            "zh_TW": "でしょう表示推測，而不是確定的事實。"
+            "zh_TW": "でしょう表示推測，而不是確定的事實。",
+            "ja": "「でしょう」は事実ではなく推測を表します。"
           }
         },
         {
@@ -2803,7 +2944,8 @@
           "prompt": {
             "en": "Which phrase says \"it becomes warm\"?",
             "zh": "哪个短语是「变暖」？",
-            "zh_TW": "哪個短語是「變暖」？"
+            "zh_TW": "哪個短語是「變暖」？",
+            "ja": "「暖かくなります」という言い方はどれですか。"
           },
           "options": [
             "暖かいなります。",
@@ -2815,7 +2957,8 @@
           "explanation": {
             "en": "An i-adjective becomes く before なります; a na-adjective takes に.",
             "zh": "い形容词接なります时变成く；形容动词则用に。",
-            "zh_TW": "い形容詞接なります時變成く；形容動詞則用に。"
+            "zh_TW": "い形容詞接なります時變成く；形容動詞則用に。",
+            "ja": "い形容詞は「なります」の前で「く」になり、形容動詞は「に」になります。"
           }
         },
         {
@@ -2824,7 +2967,8 @@
           "prompt": {
             "en": "Which phrase means \"after class\"?",
             "zh": "哪个短语是「下课之后」？",
-            "zh_TW": "哪個短語是「下課之後」？"
+            "zh_TW": "哪個短語是「下課之後」？",
+            "ja": "「授業の後で」という意味の言い方はどれですか。"
           },
           "options": [
             "授業の前に",
@@ -2836,14 +2980,16 @@
           "explanation": {
             "en": "後で follows a noun with の, or a verb in the ta-form, to mean \"after\".",
             "zh": "後で接在名词加の之后，或动词た形之后，表示「…之后」。",
-            "zh_TW": "後で接在名詞加の之後，或動詞た形之後，表示「…之後」。"
+            "zh_TW": "後で接在名詞加の之後，或動詞た形之後，表示「…之後」。",
+            "ja": "「後で」は名詞に「の」をつけた後、または動詞のた形の後につき、「〜の後」を表します。"
           }
         }
       ],
       "writingPrompt": {
         "en": "Write about next year: one thing you want, one thing you intend to do, and one invitation to a friend.",
         "zh": "写一写明年：一件你想要的东西、一件你打算做的事，以及一句对朋友的邀请。",
-        "zh_TW": "寫一寫明年：一件你想要的東西、一件你打算做的事，以及一句對朋友的邀請。"
+        "zh_TW": "寫一寫明年：一件你想要的東西、一件你打算做的事，以及一句對朋友的邀請。",
+        "ja": "来年について書きましょう。欲しい物、するつもりのこと、友達への誘いをそれぞれ一つです。"
       }
     },
     {
@@ -2851,7 +2997,8 @@
       "title": {
         "en": "Giving and connecting",
         "zh": "授受和连接",
-        "zh_TW": "授受和連接"
+        "zh_TW": "授受和連接",
+        "ja": "授受と接続"
       },
       "grammar": [
         "grammar:ageru-kureru-morau",
@@ -2988,7 +3135,8 @@
           "prompt": {
             "en": "Which sentence says \"I received sweets from a friend\"?",
             "zh": "哪一句是「我从朋友那里收到了点心」？",
-            "zh_TW": "哪一句是「我從朋友那裡收到了點心」？"
+            "zh_TW": "哪一句是「我從朋友那裡收到了點心」？",
+            "ja": "「私は友達からお菓子をもらいました」はどれですか。"
           },
           "options": [
             "友達にお菓子を上げました。",
@@ -3000,7 +3148,8 @@
           "explanation": {
             "en": "もらいます is receiving, and the giver is marked with に; 上げます is giving away.",
             "zh": "もらいます表示得到，给予者用に标示；上げます则是给出去。",
-            "zh_TW": "もらいます表示得到，給予者用に標示；上げます則是給出去。"
+            "zh_TW": "もらいます表示得到，給予者用に標示；上げます則是給出去。",
+            "ja": "「もらいます」はもらうことを表し、くれた人は「に」で示します。「あげます」は逆に与えることです。"
           }
         },
         {
@@ -3009,7 +3158,8 @@
           "prompt": {
             "en": "Which sentence says \"I think this book is good\"?",
             "zh": "哪一句是「我觉得这本书不错」？",
-            "zh_TW": "哪一句是「我覺得這本書不錯」？"
+            "zh_TW": "哪一句是「我覺得這本書不錯」？",
+            "ja": "「私はこの本はいいと思います」はどれですか。"
           },
           "options": [
             "この本はいいと言います。",
@@ -3021,7 +3171,8 @@
           "explanation": {
             "en": "と思います reports an opinion; と言います reports words that were said.",
             "zh": "と思います表示自己的想法；と言います则是转述说过的话。",
-            "zh_TW": "と思います表示自己的想法；と言います則是轉述說過的話。"
+            "zh_TW": "と思います表示自己的想法；と言います則是轉述說過的話。",
+            "ja": "「と思います」は自分の意見を伝え、「と言います」は言われた言葉を伝えます。"
           }
         },
         {
@@ -3030,7 +3181,8 @@
           "prompt": {
             "en": "Which sentence asks what this flower is called?",
             "zh": "哪一句是在问这种花叫什么？",
-            "zh_TW": "哪一句是在問這種花叫什麼？"
+            "zh_TW": "哪一句是在問這種花叫什麼？",
+            "ja": "この花の名前を尋ねる文はどれですか。"
           },
           "options": [
             "この花は何と言いますか。",
@@ -3042,7 +3194,8 @@
           "explanation": {
             "en": "と言います also means \"is called\", so 何と言いますか asks for a name.",
             "zh": "と言います也表示「叫作」，所以何と言いますか是在问名称。",
-            "zh_TW": "と言います也表示「叫作」，所以何と言いますか是在問名稱。"
+            "zh_TW": "と言います也表示「叫作」，所以何と言いますか是在問名稱。",
+            "ja": "「と言います」は「〜と呼ばれる」という意味もあり、「何と言いますか」で名前を尋ねます。"
           }
         },
         {
@@ -3051,7 +3204,8 @@
           "prompt": {
             "en": "Which sentence says \"it is expensive, but I will buy it\"?",
             "zh": "哪一句是「虽然贵，但我要买」？",
-            "zh_TW": "哪一句是「雖然貴，但我要買」？"
+            "zh_TW": "哪一句是「雖然貴，但我要買」？",
+            "ja": "「高いですが買います」はどれですか。"
           },
           "options": [
             "高いですから買います。",
@@ -3063,7 +3217,8 @@
           "explanation": {
             "en": "が between two clauses means \"but\"; から would give a reason instead.",
             "zh": "が连接前后两句表示转折「但是」；から则是表示原因。",
-            "zh_TW": "が連接前後兩句表示轉折「但是」；から則是表示原因。"
+            "zh_TW": "が連接前後兩句表示轉折「但是」；から則是表示原因。",
+            "ja": "二つの文の間の「が」は「しかし」を表し、「から」は理由を表します。"
           }
         },
         {
@@ -3072,7 +3227,8 @@
           "prompt": {
             "en": "Which phrase means \"coffee or black tea\"?",
             "zh": "哪个短语是「咖啡或者红茶」？",
-            "zh_TW": "哪個短語是「咖啡或者紅茶」？"
+            "zh_TW": "哪個短語是「咖啡或者紅茶」？",
+            "ja": "「コーヒーか紅茶」という意味の言い方はどれですか。"
           },
           "options": [
             "コーヒーと紅茶",
@@ -3084,7 +3240,8 @@
           "explanation": {
             "en": "か between two nouns offers a choice between them.",
             "zh": "か放在两个名词之间表示二者选一。",
-            "zh_TW": "か放在兩個名詞之間表示二者選一。"
+            "zh_TW": "か放在兩個名詞之間表示二者選一。",
+            "ja": "二つの名詞の間の「か」はどちらか一つを選ぶことを表します。"
           }
         },
         {
@@ -3093,7 +3250,8 @@
           "prompt": {
             "en": "Which sentence contrasts: \"I drink coffee, but not tea\"?",
             "zh": "哪一句表示对比：「咖啡我喝，红茶不喝」？",
-            "zh_TW": "哪一句表示對比：「咖啡我喝，紅茶不喝」？"
+            "zh_TW": "哪一句表示對比：「咖啡我喝，紅茶不喝」？",
+            "ja": "「コーヒーは飲みますが紅茶は飲みません」という対比の文はどれですか。"
           },
           "options": [
             "コーヒーは飲みますが紅茶は飲みません。",
@@ -3105,7 +3263,8 @@
           "explanation": {
             "en": "Marking both nouns with は sets them against each other.",
             "zh": "两个名词都用は标示，就形成前后对比。",
-            "zh_TW": "兩個名詞都用は標示，就形成前後對比。"
+            "zh_TW": "兩個名詞都用は標示，就形成前後對比。",
+            "ja": "両方の名詞に「は」をつけると、前後が対比されます。"
           }
         },
         {
@@ -3114,7 +3273,8 @@
           "prompt": {
             "en": "Which word starts a new sentence with \"but\"?",
             "zh": "哪个词可以放在句首表示「但是」？",
-            "zh_TW": "哪個詞可以放在句首表示「但是」？"
+            "zh_TW": "哪個詞可以放在句首表示「但是」？",
+            "ja": "文の初めで「でも」の意味を表す言葉はどれですか。"
           },
           "options": [
             "そして",
@@ -3126,7 +3286,8 @@
           "explanation": {
             "en": "でも begins a sentence that contradicts the one before it; そして and それから continue.",
             "zh": "でも用于句首，表示与前句相反；そして、それから则是顺接。",
-            "zh_TW": "でも用於句首，表示與前句相反；そして、それから則是順接。"
+            "zh_TW": "でも用於句首，表示與前句相反；そして、それから則是順接。",
+            "ja": "「でも」は文の初めに置き、前の文と反対の内容を表します。「そして」「それから」は順接です。"
           }
         },
         {
@@ -3135,7 +3296,8 @@
           "prompt": {
             "en": "Which phrase means \"while listening to music\"?",
             "zh": "哪个短语是「一边听音乐」？",
-            "zh_TW": "哪個短語是「一邊聽音樂」？"
+            "zh_TW": "哪個短語是「一邊聽音樂」？",
+            "ja": "「音楽を聞きながら」という意味の言い方はどれですか。"
           },
           "options": [
             "音楽を聞いてから",
@@ -3147,14 +3309,16 @@
           "explanation": {
             "en": "ながら follows the masu-stem and means two actions happen at once.",
             "zh": "ながら接在ます形词干后，表示两个动作同时进行。",
-            "zh_TW": "ながら接在ます形詞幹後，表示兩個動作同時進行。"
+            "zh_TW": "ながら接在ます形詞幹後，表示兩個動作同時進行。",
+            "ja": "「ながら」はます形の語幹につき、二つの動作が同時に行われることを表します。"
           }
         }
       ],
       "writingPrompt": {
         "en": "Write about a present you gave or received, and say why you chose it.",
         "zh": "写一写你送出或收到的一件礼物，并说明你为什么选它。",
-        "zh_TW": "寫一寫你送出或收到的一件禮物，並說明你為什麼選它。"
+        "zh_TW": "寫一寫你送出或收到的一件禮物，並說明你為什麼選它。",
+        "ja": "あげた、またはもらった贈り物について書き、なぜそれを選んだか言いましょう。"
       }
     }
   ]

@@ -67,13 +67,22 @@ message the learner is reading — rather than re-deriving one — is what stops
 question they cannot see.
 
 The prompts live in `assets/content/prompts/sentence_explain.json`, versioned like every other
-content asset, with `en`, `zh` and `zh_TW` instruction blocks and the caps as data. They are
+content asset, with `en`, `zh`, `zh_TW` and `ja` instruction blocks and the caps as data. They are
 deliberately not in the ARB files: nothing there is ever rendered. The block is chosen by the same
 fallback order the content uses, so a Traditional Chinese reader is asked for Traditional Chinese
 and the grammar notes handed to the model are the Traditional ones — asking in one script while
 grounding in the other would be asking the model to translate, which is not what it was told to do.
 **The Traditional Chinese block has not been checked on a device:** if the model ignores it the
 answer comes back in Simplified Chinese, which is what it did before this existed.
+
+**Under a Japanese UI the model answers in Japanese and grounds in Japanese** — the `ja` grammar
+notes, by the same lookup order. Five practice tasks pair Japanese content with a line in the
+reader's language (`examples`, `paraphrase`, `scenarioReply`, and the explanation lines of `quiz`
+and `writing`). For a Japanese reader that line is asked for as **the same thing in easier
+Japanese** — やさしい日本語での言い換え — rather than a translation, and the app files it under `ja`,
+where `resolveTranslation` shows it. Every token a parser reads (`Rewrite:`, `SAME`, `Q:`, the `|`
+separators) is byte-identical to the English block. Like the Traditional Chinese one, **the `ja`
+block has not been checked on a device**.
 
 ## What comes back
 
