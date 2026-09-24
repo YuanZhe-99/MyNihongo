@@ -12,6 +12,71 @@ the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `0.5.0` — 2026-09-24. Every platform builds in CI, and the Apple projects
+  are made right.
+
+  **The first release of Phase 5, and the first one CI builds for every
+  platform.** A release tag now produces six files instead of two: the Android
+  APK and AAB as before, plus a Windows x64 installer, a Windows ARM64 installer,
+  a sideload IPA and a macOS DMG. The four new jobs run only on a tag or a manual
+  dispatch; an ordinary push still runs the one Android job, which is where the
+  tests live. There is no MSIX job, because no sibling has one and packaging
+  needs a certificate the project does not hold.
+
+  **The ARM64 job builds on stable, but not the way the plan said.** `PLAN.md`
+  expected to follow MyAnime onto Flutter master until stable shipped ARM64;
+  stable already does. The obstacle was elsewhere. Flutter publishes no Windows
+  ARM64 SDK archive, so the usual setup action stops on an ARM64 runner, and
+  forcing the x64 archive quietly builds an x64 app, because a Windows build
+  targets whatever architecture the Dart SDK itself runs as. The job clones
+  Flutter at the stable tag instead, which makes the first `flutter` command
+  fetch an ARM64 Dart SDK. A guard fails the job if the build still lands in the
+  x64 folder.
+
+  **Three Apple defects found by reading, fixed without a Mac.** On macOS the
+  ZIP export and import rows did nothing: the file picker needs the
+  user-selected-files entitlement, returned `null` without it, and the app took
+  `null` for a cancelled dialog. On Apple, a pronunciation attempt on a device
+  with no on-device Japanese model showed the generic "unavailable" message
+  instead of the one naming both fixes, because Apple refuses to start rather
+  than reporting the error the way Android does; the refusal is now classified.
+  And the best Japanese voice on Apple was simply the alphabetically first one,
+  because the quality ranking only knew Android's five names; it now knows
+  `default`, `enhanced` and `premium` too.
+
+  **What Apple needed that it did not have.** Both `Info.plist` files now say
+  why the app may reach the local network — only for the WebDAV server the
+  learner configured — and on iPhone and Mac a failed connection test says to
+  allow local network access and try again, because Apple asks before the first
+  connection to a LAN server and that first attempt can fail while the question
+  is on screen. There is deliberately **no** App Transport Security block: ATS
+  governs Apple's own URL loading, which this app's sync never uses. The iOS app
+  delegate now sets the notification-centre delegate, as MyDay does, which only
+  lets a reminder appear while the app is open.
+
+  **None of the Apple work has run.** No Mac available to this project can
+  build it, so the iOS and macOS projects are compiled by CI and nothing more.
+  Every Dart branch is tested at `TargetPlatform.iOS` and `macOS` on the Windows
+  host, including a new test that pins every platform-capability getter at every
+  platform; the behaviour on Apple hardware stays marked unverified. The
+  desktop and Apple artefacts are unsigned, and the docs now say what a user
+  sees because of it.
+
+  Two guards for things that had gone wrong silently. `installer.iss`'s two
+  `VersionInfo` lines stayed at 0.4.7 for four releases while every other
+  version field moved; a test now fails when the five fields disagree, and it
+  is run before every tag. And the Android job now fails when the committed
+  generated localizations do not match the ARB files — checked with
+  `git status`, because the case that matters is a new generated file nobody
+  added.
+
+  Verified here: `flutter analyze` clean, 1072 tests, a Windows ARM64
+  release build, the ARM64 installer, and a launch. Building locally on Visual
+  Studio 18 now needs the same compiler define CI sets, which the build docs
+  record. `genai-prompt` 1.0.0-beta4 and `genai-proofreading` 1.0.0-beta1 are
+  still the newest on Google Maven, so they stay; the shared package stays at
+  `v1.0.2`.
+
 - `0.4.13` — 2026-09-06. A scenario you can keep talking to.
 
   **The scripted conversation was monotonous, and it was the one place a model

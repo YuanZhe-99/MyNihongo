@@ -26,6 +26,33 @@ enum SpeechFailure {
   unavailable,
 }
 
+/// A listening session that could not start, already classified.
+///
+/// The Apple recognizer reports "no on-device model for this language" by
+/// failing the `listen` call itself rather than through the asynchronous error
+/// callback Android uses, so the classification has to travel with the
+/// exception. The service turns it into the same [SpeechFailure] the callback
+/// path produces.
+class SpeechListenException implements Exception {
+  /// Purpose: Wrap a classified failure.
+  /// Inputs: `failure`.
+  /// Returns: A new exception.
+  /// Side effects: None.
+  /// Notes: None.
+  const SpeechListenException(this.failure);
+
+  /// Why the session could not start.
+  final SpeechFailure failure;
+
+  /// Purpose: Describe the exception for logs.
+  /// Inputs: None.
+  /// Returns: `String`.
+  /// Side effects: None.
+  /// Notes: None.
+  @override
+  String toString() => 'SpeechListenException($failure)';
+}
+
 /// The seam between [SpeechRecognitionService] and the platform recognizer.
 ///
 /// It exists for the same reason the text-to-speech seam does: a
@@ -145,27 +172,36 @@ class SpeechToTextBackend implements SpeechBackend {
   /// Side effects: Opens the microphone.
   /// Notes: `listenFor` bounds a session at eight seconds and `pauseFor` ends
   /// it two seconds after the learner stops — a single word or sentence is
-  /// what is being practised, not dictation.
+  /// what is being practised, not dictation. A start the platform refuses is
+  /// rethrown as a [SpeechListenException] carrying its classification,
+  /// because that is how Apple reports a missing on-device model.
   @override
   Future<void> listen({
     required String localeId,
     required bool onDevice,
     required void Function(SpeechHeard) onHeard,
   }) async {
-    await _speech.listen(
-      onResult: (result) => onHeard(
-        SpeechHeard(text: result.recognizedWords, isFinal: result.finalResult),
-      ),
-      listenOptions: SpeechListenOptions(
-        localeId: localeId,
-        onDevice: onDevice,
-        partialResults: true,
-        cancelOnError: true,
-        listenMode: ListenMode.dictation,
-        listenFor: const Duration(seconds: 8),
-        pauseFor: const Duration(seconds: 2),
-      ),
-    );
+    try {
+      await _speech.listen(
+        onResult: (result) => onHeard(
+          SpeechHeard(
+            text: result.recognizedWords,
+            isFinal: result.finalResult,
+          ),
+        ),
+        listenOptions: SpeechListenOptions(
+          localeId: localeId,
+          onDevice: onDevice,
+          partialResults: true,
+          cancelOnError: true,
+          listenMode: ListenMode.dictation,
+          listenFor: const Duration(seconds: 8),
+          pauseFor: const Duration(seconds: 2),
+        ),
+      );
+    } on ListenFailedException catch (e) {
+      throw SpeechListenException(failureForListenError(e.message));
+    }
   }
 
   /// Purpose: Stop listening, keeping the result.
@@ -184,12 +220,32 @@ class SpeechToTextBackend implements SpeechBackend {
   @override
   Future<void> cancel() => _speech.cancel();
 
+  /// Purpose: Classify a `listen` call the platform refused.
+  /// Inputs: `message` — the refusal's message, which is all
+  /// `ListenFailedException` keeps (the platform error code is dropped).
+  /// Returns: `SpeechFailure`.
+  /// Side effects: None.
+  /// Notes: Apple answers an offline-only request on a device without an
+  /// on-device model for the locale with "on device recognition is not
+  /// supported on this device" (`speech_to_text` 7.4.0, `onDeviceError`). That
+  /// is the same situation Android reports as `error_language_unavailable`, so
+  /// it maps to the same failure and the same fix in the UI. Anything else
+  /// goes through the error-id mapping.
+  static SpeechFailure failureForListenError(String? message) {
+    final text = (message ?? '').toLowerCase();
+    if (text.contains('on device') || text.contains('on-device')) {
+      return SpeechFailure.languageUnavailable;
+    }
+    return _mapError(text);
+  }
+
   /// Purpose: Translate a plugin error id into a failure this app handles.
   /// Inputs: `errorMsg`.
   /// Returns: `SpeechFailure`.
   /// Side effects: None.
   /// Notes: Internal helper used within this file only. The ids come from
-  /// Android's `SpeechRecognizer` and are passed through by the plugin;
+  /// Android's `SpeechRecognizer` and are passed through by the plugin
+  /// (Apple's equivalent arrives through [failureForListenError]);
   /// `error_language_unavailable` is the one that matters, because it is what
   /// an offline-only request answers on a device with no Japanese model
   /// downloaded, and the UI turns it into a link to the system settings.

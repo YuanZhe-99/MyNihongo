@@ -5,6 +5,8 @@ says how to work here; `doc/en-us/` says what the code does; this file says **wh
 what order, why, and what is done**. Update the checklists in the same change that lands a
 milestone item.
 
+**Status as of 2026-09-24:** **Phases 1 to 4 are complete**; Phase 4 shipped one milestone per release, `v0.4.0` to `v0.4.13`. **Phase 5 (platforms and languages) is under way** as three releases: M5.0 (every platform builds in CI, and the Apple projects are made right) is `v0.5.0`; M5.1 (keyboard shortcuts for quizzes) and M5.2 (Japanese UI and Japanese content) follow as `v0.5.1` and `v0.5.2`. The iOS and macOS projects are compiled by CI and have never run, because no Mac available to this project can build it. The paragraphs below are earlier status notes, kept as history; `pubspec.yaml` is the current version.
+
 **Status as of 2026-09-04:** **Phase 3 is complete**, released as `v0.3.1` and polished by `v0.3.2` (M3.8 below — the on-device AI fix a Z Fold 8 found, plus history and a foldable layout for the two writing surfaces). Phase 3's milestones: M3.0 (device fixes), M3.1 (spaced repetition core), M3.2 (quiz modes), M3.3 (kana over kanji), M3.4 (the rest of the catalog), M3.5 (lesson path and reminders), M3.6 (AI-assisted practice) and M3.7 (scenario lessons, generated questions, writing practice routed) have all landed. The catalog is complete: grammar, Chinese glosses, example sentences and lesson units at every level from N5 to N1, with the coverage stated in `version-history.md`. What remains from Phase 3 is deliberately deferred rather than missing — the free-response translation mode and the scenario dialogue partner, both listed under M3.6. Phase 1 complete and released as `v0.1.0`. **Phase 2 complete:** M2.1
 (text-to-speech), M2.2 (speech recognition and pronunciation feedback), M2.3 (the sentence lab),
 M2.4 (on-device AI assist) and M2.5 (Traditional Chinese) have landed, along with the Windows and
@@ -1411,9 +1413,47 @@ The third complaint from the Pixel 10 — the scripted conversation is monotonou
       `AVSpeechSynthesizer` / `SFSpeechRecognizer` and the sideload IPA and DMG jobs stay in Phase 5
 - [x] UI language `zh_TW` — **landed early as M2.5**, with the bundled content converted rather
       than deferred
+
+#### M5.0 — Every platform builds in CI, and the Apple projects are made right (`v0.5.0`)
+
+- [x] Workflow: `windows-x64`, `windows-arm64`, `ios` and `macos` jobs copied from MyAnime, gated to
+      tags and `workflow_dispatch`; `release` attaches APK, AAB, two installers, IPA and DMG. **No
+      MSIX job** — a written narrowing of the 2026-09-03 row (decisions log)
+- [x] ~~Windows ARM64 job on Flutter master until stable ships ARM64~~ — stable 3.44.2 already
+      builds ARM64. The job clones Flutter **at the stable tag**, because no Windows ARM64 SDK
+      archive is published and the build target follows the Dart VM's own architecture; a guard
+      fails the job if the build lands in `x64/`
+- [x] `nuget` guaranteed on both Windows runners (`flutter_tts`), `CL` define on both
+- [x] A committed-localizations check in the `android` job, with `git status --porcelain` so an
+      untracked generated file fails it
+- [x] `test/release_versions_test.dart`: the five version fields agree; run locally before a tag
+- [x] macOS: `files.user-selected.read-write` in both entitlement files (the ZIP pickers returned
+      `null` without it); `network.server` stays out of `Release` on purpose
+- [x] iOS and macOS: `NSLocalNetworkUsageDescription`, no `NSAppTransportSecurity`; the WebDAV
+      page names local-network access when a connection test fails on Apple
+- [x] iOS: the notification-centre delegate line, as MyDay — foreground banners only
+- [x] Apple speech: a refused offline-only `listen` is classified as `languageUnavailable`; Apple's
+      `default` / `enhanced` / `premium` voice qualities rank correctly
+- [x] `test/platform_capabilities_test.dart`: every getter at every `TargetPlatform`
+- [x] Local ARM64 release build, ARM64 installer and a launch on this host
+- [ ] A `workflow_dispatch` run on `github` with all five build jobs green — **the only place the
+      iOS and macOS projects have ever compiled**. They have never run: no Mac available to this
+      project can build it, so CI compilation is Phase 5's ceiling for Apple, and every Apple
+      behaviour stays **unverified** in the docs
+
+#### M5.1 — Keyboard shortcuts for quizzes (`v0.5.1`)
+
+- [ ] Shortcuts on `QuizRunner` (digits, Backspace, Enter, R, S), bindings built per question kind
+- [ ] Option numbers and a key hint on desktop only, through `platform_capabilities.dart`
+- [ ] `_DesktopScrollBehavior` removed: the SDK default already scrolls on desktop, and the override
+      dropped stylus and accessibility scrolling on Android
+- [ ] The first key-event tests in the series
+
+#### M5.2 — Japanese UI and Japanese content (`v0.5.2`)
+
 - [ ] UI language `ja`: an `app_ja.arb` and Japanese glosses, which do not exist yet. A Japanese
-      UI over English-only glosses would be the worst of both
-- [ ] Windows ARM64 job on Flutter master until stable ships ARM64, as MyAnime does
+      UI over English-only glosses would be the worst of both, so the content lands first and the
+      ARB last
 
 ---
 
@@ -1446,6 +1486,8 @@ The third complaint from the Pixel 10 — the scripted conversation is monotonou
 - [ ] Compare `genai-prompt` and `genai-proofreading` with the Google Maven group index, and record
       the decision to move or stay. A beta bump here has twice been a device-visible change
 - [ ] Submodule pinned to a tag
+- [ ] `flutter test test/release_versions_test.dart` passes **locally** before the tag is pushed
+- [ ] After a workflow change: one `workflow_dispatch` run on `github` with every build job green
 - [ ] `version-history.md` entry in both languages
 
 ---
@@ -1610,6 +1652,16 @@ The third complaint from the Pixel 10 — the scripted conversation is monotonou
 | 2026-09-06 | The free turns are not stored, though the "only the input is stored" rule would allow it | The scenario page has written nothing to disk since it was built, and a chat line out of its situation is not a piece of writing anybody would re-open. Keeping it storage-free also keeps its test free of a path provider |
 | 2026-09-06 | Proofreading runs before the reply, never beside it | AICore serves one inference to an app at a time, so a proofread fired alongside the reply comes back `busy`. A proofread that fails is swallowed: the conversation is the feature, and a missing correction is not worth interrupting it for |
 | 2026-09-06 | The scenario prompt truncates its script from the oldest end, whole lines at a time | A conversation has no natural length, so something gives as it grows, and what a reply needs is the situation and what was just said. Cutting a line in half would leave the model reading a fragment as if it were speech |
+| 2026-09-24 | Phase 5 ships as three releases, one per milestone: `v0.5.0` (every platform builds in CI), `v0.5.1` (keyboard shortcuts), `v0.5.2` (Japanese UI and content) | Decided with the user. Each milestone is independently useful and independently verifiable, as Phase 4's were |
+| 2026-09-24 | The Windows ARM64 job clones Flutter at the stable tag rather than using `subosito/flutter-action` or Flutter master | No Windows ARM64 SDK archive is published, so the action aborts on an ARM64 runner; forcing x64 keeps an x64 Dart SDK, and the build target follows the Dart VM's own architecture. A tag clone bootstraps the ARM64 Dart SDK, and a tag is immutable, so MyAnime's weekly cache has nothing to stabilise |
+| 2026-09-24 | Desktop and Apple jobs run on tags and `workflow_dispatch` only; the Android job keeps every push and pull request | Decided with the user. Five runners per push buy nothing that the Android job's analyze and test do not already catch; a release, or a deliberate dispatch, builds everything |
+| 2026-09-24 | No MSIX job — a narrowing of the 2026-09-03 row that listed "MSIX and Inno artefacts" for Phase 5 | No sibling builds one, and packaging needs a certificate the repository does not hold. `dart run msix:create` stays manual |
+| 2026-09-24 | The committed-localizations check uses `git status --porcelain`, not `git diff` | The case it exists for is a new locale's generated file that was never added, which `git diff` does not list |
+| 2026-09-24 | A test pins the five version fields together, run locally before every tag | `installer.iss`'s two `VersionInfo*` lines drifted for four releases unnoticed, and the release flow pushes the tag without waiting for CI. MyAnime's "realign MSIX at the next bump" rule is deliberately not adopted: it permits exactly what the test forbids |
+| 2026-09-24 | Apple gets `NSLocalNetworkUsageDescription` and no `NSAppTransportSecurity` block; macOS `Release` stays without `network.server` | ATS governs Apple's URL Loading System, which `dart:io` sockets never use, so a key would read as a policy while doing nothing. Local-network privacy does cover sockets. This app listens on nothing, unlike the siblings with their local API server |
+| 2026-09-24 | The iOS notification-centre delegate line is parity with MyDay, not a fix | Scheduling and delivery never needed it; it only allows a foreground banner, and the app registers no tap handler |
+| 2026-09-24 | Apple's refused offline-only `listen` is classified by its message into `languageUnavailable` | `speech_to_text` drops the platform error code and keeps only the message. Matching a message is fragile, but a reworded message falls back to the old generic failure, never to a crash |
+| 2026-09-24 | No Mac builds this project; CI compilation is Phase 5's ceiling for iOS and macOS | Confirmed with the user. Every Apple behaviour stays marked unverified in the docs, as M2.1 and M2.2 did for audio |
 | 2026-09-04 | No Remove button for a downloaded model | AICore owns the file and shares it with every app that uses the same model, and neither ML Kit client exposes a delete — checked with `javap`. The button could only lie or take away something another app is using |
 | 2026-09-04 | CI `concurrency` is keyed on the commit, so a tag run supersedes the branch run | A release pushes the commit and then the tag, which ran the same analyze/test/build twice on the same tree. The tag run is the one that also creates the Release |
 | 2026-09-04 | The Prompt API client is chosen by probing model variants in preference order, never by device, client version or model name | ML Kit serves four combinations of release stage and size preference, no API says which a device offers, and `getClient()` with no configuration silently asks for one of them. Reporting that one variant's refusal as the device's answer produced two wrong diagnoses in a row on the same phone. A probe also means a model AICore begins serving later is picked up with no code change |

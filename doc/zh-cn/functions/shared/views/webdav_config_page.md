@@ -16,7 +16,7 @@ WebDAV 服务器表单与手动同步控件。移植自 MyAnime!!!!! 的同名�
 | `_WebDAVConfigPageState.dispose` | 方法 | B | 释放监听器与控制器。 |
 | `_WebDAVConfigPageState._currentConfig` | getter | B | 用表单当前内容构建配置。 |
 | `_WebDAVConfigPageState._saveConfig` | 方法 | B | 持久化表单；自动同步开启时立即请求同步。 |
-| `_WebDAVConfigPageState._testConnection` | 方法 | B | 检查服务器是否接受这组凭据。 |
+| `_WebDAVConfigPageState._testConnection` | 方法 | B | 检查服务器是否接受这组凭据；在 iPhone 和 Mac 上，失败时还会提到本地网络访问（`platformAsksForLocalNetwork`）。 |
 | `_WebDAVConfigPageState._syncNow` | 方法 | B | 立即执行双向同步。 |
 | `_WebDAVConfigPageState._showSyncResult` | 方法 | B | 展示非冲突的同步或强制操作结果。 |
 | `_WebDAVConfigPageState._forceUpload` | 方法 | B | 确认并执行强制上传。 |

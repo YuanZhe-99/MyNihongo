@@ -540,6 +540,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsWebDAVConnectionFailed => 'Connection failed';
 
   @override
+  String get settingsWebDAVConnectionFailedLocalNetwork =>
+      'Connection failed. If the server is on your local network, allow local network access for this app in the system settings, then try again.';
+
+  @override
   String get settingsWebDAVSyncSuccess => 'Sync completed';
 
   @override

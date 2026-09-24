@@ -520,6 +520,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settingsWebDAVConnectionFailed => '连接失败';
 
   @override
+  String get settingsWebDAVConnectionFailedLocalNetwork =>
+      '连接失败。如果服务器在本地网络上，请在系统设置中允许本应用访问本地网络，然后重试。';
+
+  @override
   String get settingsWebDAVSyncSuccess => '同步完成';
 
   @override
@@ -2329,6 +2333,10 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get settingsWebDAVConnectionFailed => '連線失敗';
+
+  @override
+  String get settingsWebDAVConnectionFailedLocalNetwork =>
+      '連線失敗。如果伺服器在區域網路上，請在系統設定中允許本應用程式存取區域網路，然後再試一次。';
 
   @override
   String get settingsWebDAVSyncSuccess => '同步完成';

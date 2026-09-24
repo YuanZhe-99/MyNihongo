@@ -72,13 +72,13 @@ dart run flutter_launcher_icons
 
 - The same source produces the Windows `.ico` and the macOS `AppIcon.appiconset`; the
   `flutter_launcher_icons` config enables all four platforms.
-- The `ios/` folder exists so the icon set has a home and `CFBundleDisplayName` is already
-  `MyNihongo!!!!!`; iOS is otherwise still a planned platform and CI does not build it.
+- The `ios/` folder carries the icon set and `CFBundleDisplayName` `MyNihongo!!!!!`; see *iOS*
+  below.
 
 ## Windows
 
-Windows is a **local development and testing target**: the project, the installer script and the
-icons are in the repository, but no CI job builds them (see [`ci-cd.md`](ci-cd.md)).
+Windows is built by CI on release tags and manual dispatches — an x64 and an ARM64 installer (see
+[`ci-cd.md`](ci-cd.md)) — and is this project's local development and testing target.
 
 - `windows/` was generated with `flutter create --platforms=windows,macos .`; `CMakeLists.txt`
   (`BINARY_NAME my_nihongo`) and `Runner.rc` come out of the template already carrying the org and
@@ -94,13 +94,18 @@ icons are in the repository, but no CI job builds them (see [`ci-cd.md`](ci-cd.m
   `icon_size: 256` from the same `assets/icon/app_icon.png` as every other platform.
 - **Installer:** `installer.iss` at the repository root, built with Inno Setup. One script produces
   both architectures — `iscc installer.iss` for x64, `iscc /DARM64 installer.iss` for ARM64 — and
-  writes to `build/installer/`. It has no `[Registry]` block: the app claims no file type.
+  writes to `build/installer/`. It has no `[Registry]` block: the app claims no file type. Its
+  three version fields move with `pubspec.yaml`, and `test/release_versions_test.dart` fails when
+  they do not.
 - **MSIX:** `msix_config` in `pubspec.yaml` exists for parity with the sibling apps' version
   locations. No workflow builds an MSIX; `dart run msix:create` is a manual step.
-- **ARM64:** unlike the sibling apps, this project needs no Flutter master job — stable 3.44.2
-  already lists `windows-arm64` as a device, and the debug and release builds on this host are
-  ARM64 (`build/windows/arm64/`).
-
+- **ARM64:** stable 3.44.2 builds `windows-arm64`, so no job uses Flutter master. The target
+  architecture follows the Dart SDK's own architecture, not a flag: an ARM64 host builds
+  `build/windows/arm64/` and only the ARM64 installer. CI gets an ARM64 Dart SDK by cloning Flutter
+  at the stable tag on the ARM64 runner; `ci-cd.md` has the reason.
+- **Unsigned.** The installers are not code-signed. Windows SmartScreen shows "Windows protected
+  your PC" on first run; *More info → Run anyway* installs it. The same is true of every sibling
+  app's installer.
 
 ## Speech plugins
 
@@ -141,16 +146,82 @@ winget install --id Microsoft.NuGet --exact
 
 It has to be on `PATH` before `flutter build windows`. Nothing else in the project needs it.
 
+With Visual Studio 18 (MSVC 14.51 and later) a build also needs
+`CL=/D_SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS` in the environment:
+`flutter_local_notifications_windows` still includes the deprecated `<experimental/coroutine>`
+header, which that compiler turns into an error. CI sets the same variable.
+
 ## macOS
 
-- `macos/` is generated but **has never been compiled**: the development host is Windows. Treat the
-  configuration below as reviewed, not verified.
+- `macos/` is **compiled by CI and has never run**: no Mac available to this project can build it.
+  Every statement below about runtime behaviour on a Mac is read from the plugin and Apple sources,
+  not observed. The DMG is unsigned and unnotarised: Gatekeeper refuses it on first open, and the
+  user allows it in System Settings → Privacy & Security → *Open Anyway*.
 - `Runner/Configs/AppInfo.xcconfig`: `PRODUCT_NAME = MyNihongo!!!!!`,
   `PRODUCT_BUNDLE_IDENTIFIER = com.yuanzhe.myNihongo` (the same identifier as iOS).
-- `com.apple.security.network.client` is added to **both** `DebugProfile.entitlements` and
-  `Release.entitlements`; without it in Release, WebDAV sync fails only in release builds.
 - `MACOSX_DEPLOYMENT_TARGET = 13.0`, matching the sibling apps.
 - Icons come from `flutter_launcher_icons` into `Runner/Assets.xcassets/AppIcon.appiconset`.
+
+Entitlements, with the reason for each. `Release.entitlements` and `DebugProfile.entitlements`
+carry the same set, except that the debug file keeps the template's `cs.allow-jit` and
+`network.server`, which the debugger's VM service needs.
+
+| Entitlement | Why |
+|---|---|
+| `app-sandbox` | The template's default; every sibling ships sandboxed |
+| `network.client` | WebDAV sync. Without it in `Release`, sync fails only in release builds |
+| `device.audio-input` | The microphone, for pronunciation practice |
+| `files.user-selected.read-write` | The ZIP export and import pickers. Without it `file_picker` 10.3.7 returns `ENTITLEMENT_NOT_FOUND`, the Dart side receives `null`, and the Settings rows silently do nothing |
+
+**`network.server` is deliberately absent from `Release`.** The siblings need it for their local
+API server; this app listens on nothing.
+
+`Info.plist` carries `NSMicrophoneUsageDescription`, `NSSpeechRecognitionUsageDescription` and
+`NSLocalNetworkUsageDescription`. The last one is for WebDAV sync to a server on the local network;
+see *Apple network access* below.
+
+Reminders on macOS go through `local_notifier`, the same path as Windows: `platformSchedulesReminders`
+is mobile-only, so the Darwin branch of `flutter_local_notifications` is never reached on a Mac. See
+[`features/reminders.md`](features/reminders.md).
+
+## iOS
+
+- `ios/` is **compiled by CI with `--no-codesign` and has never run**, for the same reason as
+  macOS. `IPHONEOS_DEPLOYMENT_TARGET = 13.0`.
+- `CFBundleDisplayName` is `MyNihongo!!!!!` in `Info.plist`; icons as in *App icon* above.
+- `Info.plist` carries `NSMicrophoneUsageDescription`, `NSSpeechRecognitionUsageDescription` and
+  `NSLocalNetworkUsageDescription`, with the same text as macOS.
+- `AppDelegate.swift` sets the notification-centre delegate to the app delegate, the line MyDay
+  ships. It is not what makes reminders work — scheduling and delivery need no delegate, and neither
+  the plugin nor the engine sets one. It only lets a reminder banner appear while the app is in the
+  foreground. `FlutterAppDelegate` already conforms to `UNUserNotificationCenterDelegate`.
+- **The IPA is a sideload build**: unsigned, so it installs only through a sideloading tool that
+  re-signs it with the user's own Apple ID. An App Store build needs signing and provisioning, which
+  CI does not do.
+- Speech recognition on Apple can refuse an offline-only request when the device has no on-device
+  model for Japanese; see [`features/pronunciation.md`](features/pronunciation.md).
+
+### Apple network access
+
+- **App Transport Security does not apply to this app's sync**, so `Info.plist` has no
+  `NSAppTransportSecurity` block. ATS governs Apple's URL Loading System. WebDAV traffic here goes
+  `package:http` → `IOClient` → `dart:io` sockets, and Dart's own plist-driven network policy was
+  reverted in Flutter 2.2; this repository's Dart SDK has no insecure-connection check. The iOS
+  engine still parses an `NSAppTransportSecurity` block, but nothing enforces the result, so a key
+  would read as a policy while doing nothing. An `http://` WebDAV server is therefore not blocked,
+  and if plain HTTP to a public host is ever to be refused, that is validation in the WebDAV page.
+- **Local-network privacy does apply.** Per Apple's documentation (TN3179), it covers BSD sockets
+  too — iOS 14 and later, macOS 15 and later — and fires for a local address over HTTPS as much as
+  over HTTP. The first connection to a LAN server shows a system alert; `dart:io` cannot wait for
+  the answer, so that first sync can fail and succeed on retry once access is allowed. This is from
+  Apple's documentation and has not been observed on a device here.
+
+## Distribution: nothing outside Android is signed
+
+Every desktop and Apple artefact the release attaches is **unsigned and unnotarised**. What the
+user sees: Windows SmartScreen's "Windows protected your PC" (*More info → Run anyway*), macOS
+Gatekeeper's refusal (*Open Anyway* in Privacy & Security), and an IPA that only a sideloading tool
+installs. Signing needs certificates this project does not hold; the sibling apps ship the same way.
 
 ## Platform branches in Dart
 
@@ -162,13 +233,17 @@ project whose one development host is Windows.
 | Getter | True when | Used for |
 |---|---|---|
 | `isMobilePlatform` | Android, iOS | the family checks below |
-| `isDesktopPlatform` | Windows, macOS, Linux | — |
+| `isDesktopPlatform` | Windows, macOS, Linux, Fuchsia | — |
 | `showsStorageLocation` | not mobile | Settings → Data hides the storage path on a phone, where it names a sandbox the user can neither browse nor act on. The custom storage path itself still works everywhere; only the display is hidden |
 | `canOpenSystemSpeechSettings` | Android, Windows | offering "install a Japanese voice" as an action instead of as text |
 | `platformMayRecognizeSpeech` | not Linux or Fuchsia | a coarse gate; whether a recognizer is really present is a runtime question |
 | `platformMayHaveOnDeviceModel` | Android | AICore exists nowhere else; Settings omits the On-device AI section elsewhere, and the analyser attaches no enhancer. Whether a given Android device can actually serve a model is a runtime question |
+| `platformSchedulesReminders` | Android, iOS | reminders go through `flutter_local_notifications`, scheduled by the operating system |
+| `platformRemindsFromInsideTheApp` | Windows, macOS, Linux | reminders go through `local_notifier` from a timer while the app runs |
 
-## Other planned platforms
+`test/platform_capabilities_test.dart` pins every getter at every `TargetPlatform`, so a change to
+one cell of this table is a one-line change there.
 
-- **iOS:** `ios/` exists (see *App icon*) and CI does not build it.
+## Other platforms
+
 - **Web** is not targeted.

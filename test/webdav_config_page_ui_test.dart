@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -13,8 +14,10 @@ import 'package:path_provider_platform_interface/path_provider_platform_interfac
 /// Returns: None.
 /// Side effects: Creates and deletes a temporary app storage directory, and
 /// writes a `webdav_config.json` inside it.
-/// Notes: No network is touched: the sync controls are only shown once a
-/// configuration is saved, and these cases stop at that boundary. Driven in
+/// Notes: No remote server is touched: the sync controls are only shown once a
+/// configuration is saved, and the form cases stop at that boundary. The
+/// connection-test cases connect to a closed port on this machine, which is
+/// refused at once. Driven in
 /// Simplified Chinese for the same font reason as the settings tests.
 class _FakePathProvider extends PathProviderPlatform {
   _FakePathProvider(this.documentsPath);
@@ -146,5 +149,60 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('立即同步'), findsNothing);
     expect(find.text('https://example.test/dav'), findsNothing);
+  });
+
+  group('a failed connection test', () {
+    // A closed port on this machine: refused at once, and nothing leaves it.
+    void writeUnreachableConfig() {
+      File(p.join(appDir.path, 'webdav_config.json')).writeAsStringSync('''
+{
+  "serverUrl": "http://127.0.0.1:9/dav",
+  "username": "u",
+  "password": "p",
+  "remotePath": "/MyNihongo",
+  "autoSync": false
+}
+''');
+    }
+
+    Future<void> testConnectionAndWait(WidgetTester tester) async {
+      final zh = lookupAppLocalizations(const Locale('zh'));
+      await tester.tap(find.text(zh.settingsWebDAVTestConnection));
+      await tester.runAsync(() async {
+        for (var i = 0; i < 100; i++) {
+          await Future<void>.delayed(const Duration(milliseconds: 100));
+          await tester.pump();
+          if (find.byType(SnackBar).evaluate().isNotEmpty) break;
+        }
+      });
+      await tester.pump();
+    }
+
+    testWidgets('names local-network access on an iPhone', (tester) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
+      writeUnreachableConfig();
+      await pumpAt(tester, 412, 915);
+      await testConnectionAndWait(tester);
+      final zh = lookupAppLocalizations(const Locale('zh'));
+      expect(
+        find.text(zh.settingsWebDAVConnectionFailedLocalNetwork),
+        findsOneWidget,
+      );
+      debugDefaultTargetPlatformOverride = null;
+    });
+
+    testWidgets('stays short on Android', (tester) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.android;
+      writeUnreachableConfig();
+      await pumpAt(tester, 412, 915);
+      await testConnectionAndWait(tester);
+      final zh = lookupAppLocalizations(const Locale('zh'));
+      expect(find.text(zh.settingsWebDAVConnectionFailed), findsOneWidget);
+      expect(
+        find.text(zh.settingsWebDAVConnectionFailedLocalNetwork),
+        findsNothing,
+      );
+      debugDefaultTargetPlatformOverride = null;
+    });
   });
 }

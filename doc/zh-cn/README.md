@@ -4,7 +4,7 @@
 
 - **作者 / 包 id：** `yuanzhe`、`com.yuanzhe.my_nihongo`
 - **许可证：** GPL-3.0
-- **平台：** Android（Windows、iOS 和 macOS 在计划中；不面向 Web）
+- **平台：** Android 优先；Windows（x64 与 ARM64）、macOS 和 iOS 在每次发布时由 CI 构建，均未签名，且 Apple 构建尚未在真机上运行过。不面向 Web
 - **框架：** Flutter，Dart SDK `^3.11.3`；CI 使用 Flutter `3.44.2`
 
 本树保存**概念**文档——架构、数据格式、布局规则和逐功能行为——为需要理解应用*为什么*这样行为的用户和代理而写。逐函数的 API 文档单独位于 [`functions/`](functions/)，翻译说明在 [`translation-guide.md`](translation-guide.md) 中。
@@ -22,7 +22,8 @@
 - [`adaptive-layout.md`](adaptive-layout.md) — 布局何时可以分栏、导航放在哪里、能放几列，以及每个页面使用哪条规则。
 - [`sync.md`](sync.md) — 共享 WebDAV 引擎在这里的配置方式：唯一的数据模块、它的合并，以及冲突如何呈现给用户。
 - [`backup-restore.md`](backup-restore.md) — 本地备份和 ZIP 导出 / 导入在这里的配置方式。
-- [`platform-notes.md`](platform-notes.md) — Android 构建状态和计划中的平台。
+- [`platform-notes.md`](platform-notes.md) — Android 构建状态，以及 Windows、macOS 和 iOS
+  各自需要什么、如何发布。
 - [`ci-cd.md`](ci-cd.md) — CI 任务、构建 / 校验命令集，以及全新克隆（子模块）步骤。
 - [`version-history.md`](version-history.md) — 逐版本摘要。
 

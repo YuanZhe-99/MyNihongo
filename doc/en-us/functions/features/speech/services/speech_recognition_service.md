@@ -53,9 +53,14 @@ the network-fallback switch), `app_settings.dart` (applies the persisted switch 
 - **Returns:** None; results arrive through `notifyListeners`.
 - **Side effects:** Opens the microphone.
 - **Algorithm:** Ensure availability, clear the previous result, move to `listening`, and ask the
-  backend to listen with `onDevice: !networkFallbackAllowed`.
+  backend to listen with `onDevice: !networkFallbackAllowed`. A `SpeechListenException` from the
+  backend fails the session with the failure it carries; any other exception fails it as
+  `unavailable`.
 - **Usage:** The practice sheet's record button.
 - **Notes:** **This is where the privacy promise is kept.** `onDevice` true means offline-only: on
   Android it maps to `EXTRA_PREFER_OFFLINE`, which fails rather than falling back when no Japanese
   model is installed. That failure is the honest answer and the UI explains it; only a learner who
   explicitly turned the fallback on in Settings ever produces a request that could reach a server.
+  Apple reports a missing on-device model by refusing to start rather than through the error
+  callback; the backend classifies that refusal, so both platforms reach the same
+  `languageUnavailable` message.

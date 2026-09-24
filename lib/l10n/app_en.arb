@@ -189,6 +189,10 @@
   "settingsWebDAVConfigRemoved": "Configuration removed",
   "settingsWebDAVConnectionSuccess": "Connection successful",
   "settingsWebDAVConnectionFailed": "Connection failed",
+  "settingsWebDAVConnectionFailedLocalNetwork": "Connection failed. If the server is on your local network, allow local network access for this app in the system settings, then try again.",
+  "@settingsWebDAVConnectionFailedLocalNetwork": {
+    "description": "Shown on iPhone and Mac instead of settingsWebDAVConnectionFailed. Apple asks the user before an app may reach the local network, and the first connection can fail while that question is on screen."
+  },
   "settingsWebDAVSyncSuccess": "Sync completed",
   "settingsWebDAVSyncFailed": "Sync failed",
   "settingsWebDAVAutoSyncFailed": "Auto-sync failed",

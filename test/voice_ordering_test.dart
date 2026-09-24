@@ -96,4 +96,26 @@ void main() {
     sortJapaneseVoices(original);
     expect(original.first['name'], installedOffline['name']);
   });
+
+  test('Apple quality names rank premium, then enhanced, then default', () {
+    // Apple voices carry no network or install flags, only a quality and a
+    // name; before the three names were known every Apple voice ranked -1 and
+    // the "best" voice was simply the alphabetically first one.
+    const kyoko = {'name': 'Kyoko', 'locale': 'ja-JP', 'quality': 'default'};
+    const kyokoEnhanced = {
+      'name': 'Kyoko (Enhanced)',
+      'locale': 'ja-JP',
+      'quality': 'enhanced',
+    };
+    const otoya = {
+      'name': 'Otoya (Premium)',
+      'locale': 'ja-JP',
+      'quality': 'premium',
+    };
+    expect(voiceQualityRank(kyoko), greaterThanOrEqualTo(0));
+    expect(
+      sortJapaneseVoices([kyoko, kyokoEnhanced, otoya]).map((v) => v['name']),
+      ['Otoya (Premium)', 'Kyoko (Enhanced)', 'Kyoko'],
+    );
+  });
 }

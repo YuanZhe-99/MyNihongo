@@ -10,7 +10,8 @@ repository root.
 
 - **Author / package id:** `yuanzhe`, `com.yuanzhe.my_nihongo`
 - **License:** GPL-3.0
-- **Platforms:** Android (Windows, iOS and macOS are planned; Web is not targeted)
+- **Platforms:** Android first; Windows (x64 and ARM64), macOS and iOS are built by CI on every
+  release, unsigned, and the Apple builds have not been run on hardware. Web is not targeted
 - **Framework:** Flutter, Dart SDK `^3.11.3`; CI uses Flutter `3.44.2`
 
 This tree holds **concept** documentation — architecture, data formats, layout rules and per-feature
@@ -42,7 +43,8 @@ The shared WebDAV sync, backup, and ZIP engines are not in this repository. They
   merge, and how conflicts reach the user.
 - [`backup-restore.md`](backup-restore.md) — local backups and ZIP export/import as configured
   here.
-- [`platform-notes.md`](platform-notes.md) — Android build state and the planned platforms.
+- [`platform-notes.md`](platform-notes.md) — Android build state, and what Windows, macOS and iOS
+  need and how they are shipped.
 - [`ci-cd.md`](ci-cd.md) — CI jobs, the build/verify command set, and fresh-clone (submodule) steps.
 - [`version-history.md`](version-history.md) — release-by-release summary.
 

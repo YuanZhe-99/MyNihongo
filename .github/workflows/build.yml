@@ -1,4 +1,4 @@
-name: Build Android
+name: Build All Platforms
 
 on:
   push:
@@ -26,6 +26,10 @@ env:
 
 jobs:
   # ── Android APK (full) + AAB (store) ──
+  #
+  # The only job that runs on every push and pull request: it is where analyze
+  # and test live. The four desktop and Apple jobs below are gated to tags and
+  # workflow_dispatch, so an ordinary push spends one runner, not five.
   android:
     runs-on: ubuntu-latest
     env:
@@ -51,6 +55,22 @@ jobs:
       - run: flutter pub get
 
       - run: flutter gen-l10n
+
+      # `lib/l10n/app_localizations*.dart` is committed, and nothing in the
+      # toolchain warns when it is stale: `gen-l10n` overwrites unconditionally,
+      # and neither `flutter analyze` nor `flutter test` regenerates. The check is
+      # `git status --porcelain`, not `git diff`, because the failure this guards
+      # against is an *untracked* file — a new locale's generated file that was
+      # never added to the index would pass a diff check here, pass analyze and
+      # test, and then break a fresh clone on a missing import.
+      - name: Generated localizations are committed
+        run: |
+          if [ -n "$(git status --porcelain -- lib/l10n)" ]; then
+            echo "lib/l10n is out of sync with the ARB files."
+            echo "Run 'flutter gen-l10n' and commit the result."
+            git status --porcelain -- lib/l10n
+            exit 1
+          fi
 
       - run: flutter analyze
 
@@ -84,10 +104,211 @@ jobs:
           name: android-aab-store
           path: build/app/outputs/bundle/release/app-release.aab
 
+  # ── Windows x64 installer (full) ──
+  windows-x64:
+    if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch'
+    runs-on: windows-latest
+    env:
+      # VS/MSVC 18 promotes <experimental/coroutine> deprecation to a build error.
+      # flutter_local_notifications_windows still reaches that header through winrt.
+      CL: /D_SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # myapps_data is a path dependency living in a submodule; without it
+          # `flutter pub get` fails. The relative URL resolves to the public
+          # GitHub copy here, so the default GITHUB_TOKEN suffices.
+          submodules: recursive
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+
+      - run: flutter pub get
+
+      # flutter_tts reaches for nuget in its Windows CMake. No sibling app has
+      # that plugin, so no sibling workflow needs this step.
+      - name: Ensure nuget is available
+        shell: pwsh
+        run: |
+          if (-not (Get-Command nuget -ErrorAction SilentlyContinue)) {
+            choco install nuget.commandline -y
+          }
+
+      - name: Build Windows x64 (full)
+        run: flutter build windows --release --dart-define=FLAVOR=full
+
+      - name: Install Inno Setup
+        run: choco install innosetup -y
+
+      - name: Build installer (x64)
+        run: iscc installer.iss
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: windows-installer-x64-full
+          path: build/installer/*.exe
+
+  # ── Windows ARM64 installer (full) ──
+  #
+  # Flutter is cloned at the stable tag rather than installed by
+  # subosito/flutter-action, because no Windows ARM64 SDK archive is published:
+  # releases_windows.json has zero `dart_sdk_arch: arm64` rows, and the action
+  # defaults `architecture` to `runner.arch`, so on windows-11-arm it aborts.
+  # Forcing `architecture: x64` is worse than the abort — the x64 archive ships a
+  # populated bin/cache, so the Dart SDK is never replaced, and `flutter build
+  # windows` takes its target from the Dart VM's own ABI, producing
+  # build/windows/x64 that `iscc /DARM64` cannot find. A clone has no cache, so
+  # the first flutter command runs update_dart_sdk.ps1, which on an ARM64 host
+  # fetches dart-sdk-windows-arm64.zip precisely because the Windows build target
+  # follows the Dart executable's architecture. `--depth 1` at a tag is safe
+  # because bin/internal/engine.version is tracked there. A tag clone is a
+  # detached HEAD, so `flutter doctor` reports channel [user-branch], not stable.
+  windows-arm64:
+    if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch'
+    runs-on: windows-11-arm
+    env:
+      # Keep Windows builds aligned while plugin dependencies still use winrt headers
+      # that include deprecated <experimental/coroutine> on newer MSVC toolchains.
+      CL: /D_SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # myapps_data is a path dependency living in a submodule; without it
+          # `flutter pub get` fails. The relative URL resolves to the public
+          # GitHub copy here, so the default GITHUB_TOKEN suffices.
+          submodules: recursive
+
+      - name: Setup Flutter at the stable tag
+        shell: pwsh
+        run: |
+          $flutterDir = "$env:RUNNER_TOOL_CACHE\flutter"
+          git clone https://github.com/flutter/flutter.git `
+            --branch ${{ env.FLUTTER_VERSION }} --depth 1 `
+            "$flutterDir"
+          Add-Content $env:GITHUB_PATH "$flutterDir\bin"
+
+      # The first flutter command bootstraps the host's own Dart SDK, which is
+      # what makes the build ARM64.
+      - name: Flutter doctor
+        run: flutter doctor
+
+      - run: flutter pub get
+
+      - name: Ensure nuget is available
+        shell: pwsh
+        run: |
+          if (-not (Get-Command nuget -ErrorAction SilentlyContinue)) {
+            choco install nuget.commandline -y
+          }
+
+      - name: Build Windows ARM64 (full)
+        run: flutter build windows --release --dart-define=FLAVOR=full
+
+      # The one silent failure mode: an emulated x64 shell would make
+      # update_dart_sdk.ps1 fetch the x64 Dart SDK, the build would land in
+      # build/windows/x64, and iscc /DARM64 would fail on a missing source
+      # directory rather than on the reason.
+      - name: Confirm the build is ARM64
+        shell: pwsh
+        run: |
+          if (-not (Test-Path "build/windows/arm64/runner/Release")) {
+            throw "Flutter produced an x64 build on the ARM64 runner"
+          }
+
+      - name: Install Inno Setup
+        run: choco install innosetup -y
+
+      - name: Build installer (ARM64)
+        run: iscc /DARM64 installer.iss
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: windows-installer-arm64-full
+          path: build/installer/*.exe
+
+  # ── iOS IPA (full, sideload) ──
+  ios:
+    if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch'
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # myapps_data is a path dependency living in a submodule; without it
+          # `flutter pub get` fails. The relative URL resolves to the public
+          # GitHub copy here, so the default GITHUB_TOKEN suffices.
+          submodules: recursive
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+
+      - run: flutter pub get
+
+      - name: Build iOS (full, no codesign)
+        run: flutter build ios --release --no-codesign --dart-define=FLAVOR=full
+
+      - name: Package sideload IPA
+        run: |
+          mkdir -p build/ios/ipa/Payload
+          cp -r build/ios/iphoneos/Runner.app build/ios/ipa/Payload/
+          cd build/ios/ipa && zip -r MyNihongo_sideload.ipa Payload
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: ios-ipa-full-sideload
+          path: build/ios/ipa/MyNihongo_sideload.ipa
+
+  # ── macOS DMG (full) ──
+  macos:
+    if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch'
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # myapps_data is a path dependency living in a submodule; without it
+          # `flutter pub get` fails. The relative URL resolves to the public
+          # GitHub copy here, so the default GITHUB_TOKEN suffices.
+          submodules: recursive
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+
+      - run: flutter pub get
+
+      - name: Build macOS (full)
+        run: flutter build macos --release --dart-define=FLAVOR=full
+
+      - name: Install create-dmg
+        run: brew install create-dmg
+
+      # create-dmg can exit non-zero after writing a perfectly good DMG (it fails
+      # on unmounting its scratch volume), which is why the siblings swallow its
+      # status. The test that follows turns a genuinely missing DMG back into a
+      # red job instead of a silently absent artifact.
+      - name: Create DMG
+        run: |
+          APP_PATH=$(find build/macos/Build/Products/Release -name "*.app" -maxdepth 1 | head -1)
+          create-dmg \
+            --volname "MyNihongo!!!!!" \
+            --app-drop-link 400 150 \
+            "build/macos/MyNihongo.dmg" \
+            "$APP_PATH" || true
+          test -f build/macos/MyNihongo.dmg
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: macos-dmg-full
+          path: build/macos/MyNihongo.dmg
+
   # ── Create GitHub Release on tag push ──
   release:
     if: startsWith(github.ref, 'refs/tags/')
-    needs: [android]
+    needs: [android, windows-x64, windows-arm64, ios, macos]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v8
@@ -97,7 +318,7 @@ jobs:
       - name: Flatten artifacts
         run: |
           mkdir -p release
-          find artifacts -type f \( -name "*.apk" -o -name "*.aab" \) -exec cp {} release/ \;
+          find artifacts -type f \( -name "*.apk" -o -name "*.aab" -o -name "*.exe" -o -name "*.ipa" -o -name "*.dmg" \) -exec cp {} release/ \;
 
       - uses: softprops/action-gh-release@v3
         with:

@@ -95,3 +95,18 @@ bool get platformRemindsFromInsideTheApp =>
     (defaultTargetPlatform == TargetPlatform.windows ||
         defaultTargetPlatform == TargetPlatform.macOS ||
         defaultTargetPlatform == TargetPlatform.linux);
+
+/// Purpose: Say whether the system asks the user before the app may reach a
+/// server on the local network.
+/// Inputs: None; reads `defaultTargetPlatform`.
+/// Returns: `bool` — true on iOS and macOS.
+/// Side effects: None.
+/// Notes: Apple's local-network privacy (iOS 14+, macOS 15+) covers the BSD
+/// sockets `dart:io` uses, so the first connection to a WebDAV server on the
+/// LAN raises a system alert and can fail while the alert is up. The WebDAV
+/// page uses this to say so when a connection test fails. macOS before 15
+/// does not ask, but naming the setting there costs one sentence and a
+/// version check would need `dart:io`.
+bool get platformAsksForLocalNetwork =>
+    defaultTargetPlatform == TargetPlatform.iOS ||
+    defaultTargetPlatform == TargetPlatform.macOS;

@@ -16,7 +16,7 @@ name so the two apps' sync UI behaves identically. See [../../../sync.md](../../
 | `_WebDAVConfigPageState.dispose` | method | B | Release listeners and controllers. |
 | `_WebDAVConfigPageState._currentConfig` | getter | B | Build a config from what the form holds. |
 | `_WebDAVConfigPageState._saveConfig` | method | B | Persist the form and start a sync when auto-sync is on. |
-| `_WebDAVConfigPageState._testConnection` | method | B | Check that the server answers with these credentials. |
+| `_WebDAVConfigPageState._testConnection` | method | B | Check that the server answers with these credentials; on iPhone and Mac a failure also names local-network access (`platformAsksForLocalNetwork`). |
 | `_WebDAVConfigPageState._syncNow` | method | B | Run a two-way sync now. |
 | `_WebDAVConfigPageState._showSyncResult` | method | B | Present a non-conflict sync or force result. |
 | `_WebDAVConfigPageState._forceUpload` | method | B | Confirm and run a force upload. |

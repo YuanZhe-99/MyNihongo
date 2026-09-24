@@ -28,6 +28,9 @@ class _FakeSpeechBackend implements SpeechBackend {
   int cancels = 0;
   void Function(SpeechHeard)? _onHeard;
 
+  /// Thrown from [listen] when set, the way a platform refuses to start.
+  Object? listenError;
+
   /// Purpose: Deliver a result as the platform recognizer would.
   /// Inputs: `text`, `isFinal`.
   /// Returns: None.
@@ -65,6 +68,8 @@ class _FakeSpeechBackend implements SpeechBackend {
   }) async {
     localeRequests.add(localeId);
     onDeviceRequests.add(onDevice);
+    final error = listenError;
+    if (error != null) throw error;
     _onHeard = onHeard;
   }
 
@@ -201,4 +206,65 @@ void main() {
       debugDefaultTargetPlatformOverride = null;
     },
   );
+
+  // Apple has no asynchronous error for a missing on-device model: the plugin
+  // fails the `listen` call itself. Before this was classified, the sheet
+  // showed the generic "unavailable" message instead of the one that names
+  // both fixes.
+  test(
+    'on Apple a refused start for lack of an on-device model is languageUnavailable',
+    () async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
+      final backend = _FakeSpeechBackend(locales: const ['en-US', 'ja-JP'])
+        ..listenError = const SpeechListenException(
+          SpeechFailure.languageUnavailable,
+        );
+      final service = SpeechRecognitionService(backend);
+      await service.listen();
+      expect(backend.localeRequests, ['ja-JP']);
+      expect(backend.onDeviceRequests, [true]);
+      expect(service.phase, SpeechPhase.failed);
+      expect(service.failure, SpeechFailure.languageUnavailable);
+      debugDefaultTargetPlatformOverride = null;
+    },
+  );
+
+  test('any other exception from listen is still unavailable', () async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.macOS;
+    final backend = _FakeSpeechBackend(locales: const ['ja-JP'])
+      ..listenError = StateError('recognizer busy');
+    final service = SpeechRecognitionService(backend);
+    await service.listen();
+    expect(service.failure, SpeechFailure.unavailable);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
+  group('SpeechToTextBackend.failureForListenError', () {
+    test('Apple\'s on-device refusal is languageUnavailable', () {
+      // The exact text speech_to_text 7.4.0 sends from its Darwin plugin.
+      expect(
+        SpeechToTextBackend.failureForListenError(
+          'on device recognition is not supported on this device',
+        ),
+        SpeechFailure.languageUnavailable,
+      );
+    });
+
+    test('other refusals fall through to the error-id mapping', () {
+      expect(
+        SpeechToTextBackend.failureForListenError(
+          'Failed to create speech recognizer',
+        ),
+        SpeechFailure.unavailable,
+      );
+      expect(
+        SpeechToTextBackend.failureForListenError('error_permission'),
+        SpeechFailure.permissionDenied,
+      );
+      expect(
+        SpeechToTextBackend.failureForListenError(null),
+        SpeechFailure.unavailable,
+      );
+    });
+  });
 }

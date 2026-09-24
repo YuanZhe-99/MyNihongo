@@ -226,6 +226,30 @@ void main() {
     debugDefaultTargetPlatformOverride = null;
   });
 
+  // The Apple rows follow the same getter as their siblings: iOS is a phone,
+  // macOS a desktop. Neither was exercised before Phase 5.
+  testWidgets('an iPhone hides the storage location row', (tester) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
+    await pumpAt(tester, 412, 915);
+    await scrollTo(tester, webdav);
+    expect(find.text(storageLocation), findsNothing);
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
+  testWidgets('a Mac shows the storage location row', (tester) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.macOS;
+    await pumpAt(tester, 1000, 720);
+    await tester.scrollUntilVisible(
+      find.text(storageLocation),
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
+    expect(find.text(storageLocation), findsOneWidget);
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
   group('the eight-tap unlock', () {
     // Android's own gesture, copied exactly on purpose: somebody who needs the
     // diagnostics already knows how to do this, and nobody else finds it by

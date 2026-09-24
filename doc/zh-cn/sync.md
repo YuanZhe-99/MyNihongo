@@ -33,6 +33,14 @@
 
 `forceUpload` 用本地数据覆盖远程；`forceDownload` 用远程覆盖本地数据。两者都在锁下运行，都会丢掉另一侧自上次同步以来的更改，因此 UI 在两者之前都会确认。写入了数据的备份恢复之后，应用禁用自动同步并提供强制上传，使恢复的旧数据不会把删除传播到其他设备（系列不变量 I5）。
 
+## 在 iPhone 和 Mac 上：本地网络访问
+
+Apple 会在应用访问本地网络上的服务器之前询问用户（iOS 14 及以上，macOS 15 及以上）。根据 Apple 的文档（TN3179），这一询问也涵盖 BSD 套接字，而 WebDAV 客户端底层的 `dart:io` 用的正是它；并且对本地地址走 HTTPS 与走 HTTP 同样会询问。`Info.plist` 带有 `NSLocalNetworkUsageDescription`，说明应用只连接学习者配置的那台 WebDAV 服务器。
+
+第一次连接局域网服务器会弹出系统提示，而 `dart:io` 无法等待用户作答，因此提示还在屏幕上时，第一次连接测试或同步可能失败。所以在 iPhone 和 Mac 上，**测试连接**失败时会提示去系统设置中允许本地网络访问后重试（`platformAsksForLocalNetwork`）；在其他平台上仍是「连接失败」。
+
+App Transport Security——Apple 的另一条网络规则——并不适用：它管辖的是 Apple 的 URL Loading System，而这个客户端从不经过它。见 [`platform-notes.md`](platform-notes.md)。以上情况都未曾在设备上观察到；这里描述的 Apple 行为出自 Apple 的文档。
+
 ## 文件
 
 - `webdav_config.json` — 服务器 URL、凭据、远程路径、自动同步标志。永不同步。

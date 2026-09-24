@@ -120,7 +120,9 @@ class SpeechRecognitionService extends ChangeNotifier {
   /// default request is offline-only. On Android that maps to
   /// `EXTRA_PREFER_OFFLINE`, which **fails** rather than falling back when no
   /// offline Japanese model is installed — that failure is the honest answer,
-  /// and the UI turns it into a link to the system settings. Only a user who
+  /// and the UI turns it into a link to the system settings. Apple reports the
+  /// same situation by refusing to start, which arrives here as a
+  /// [SpeechListenException] and becomes the same failure. Only a user who
   /// has explicitly turned the fallback on ever sends audio to a server.
   Future<void> listen() async {
     if (!await ensureAvailable()) {
@@ -137,6 +139,8 @@ class SpeechRecognitionService extends ChangeNotifier {
         onDevice: !networkFallbackAllowed,
         onHeard: _onHeard,
       );
+    } on SpeechListenException catch (e) {
+      _fail(e.failure);
     } catch (_) {
       _fail(SpeechFailure.unavailable);
     }

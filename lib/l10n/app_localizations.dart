@@ -1017,6 +1017,12 @@ abstract class AppLocalizations {
   /// **'Connection failed'**
   String get settingsWebDAVConnectionFailed;
 
+  /// Shown on iPhone and Mac instead of settingsWebDAVConnectionFailed. Apple asks the user before an app may reach the local network, and the first connection can fail while that question is on screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection failed. If the server is on your local network, allow local network access for this app in the system settings, then try again.'**
+  String get settingsWebDAVConnectionFailedLocalNetwork;
+
   /// No description provided for @settingsWebDAVSyncSuccess.
   ///
   /// In en, this message translates to:

@@ -22,6 +22,7 @@ import '../../features/progress/models/study_record.dart';
 import '../../l10n/app_localizations.dart';
 import '../services/auto_sync_service.dart';
 import '../services/webdav_service.dart';
+import '../utils/platform_capabilities.dart';
 import '../widgets/study_conflict_dialog.dart';
 
 class WebDAVConfigPage extends ConsumerStatefulWidget {
@@ -148,7 +149,10 @@ class _WebDAVConfigPageState extends ConsumerState<WebDAVConfigPage> {
   /// Inputs: None.
   /// Returns: None.
   /// Side effects: Performs a network request; shows a snackbar.
-  /// Notes: Internal helper used within this file only.
+  /// Notes: Internal helper used within this file only. On iPhone and Mac a
+  /// failure also names local-network access, because Apple asks the user
+  /// before the first connection to a LAN server and that connection can fail
+  /// while the question is on screen.
   Future<void> _testConnection() async {
     setState(() => _testing = true);
     final ok = await WebDAVService.testConnection(_currentConfig);
@@ -159,6 +163,10 @@ class _WebDAVConfigPageState extends ConsumerState<WebDAVConfigPage> {
           content: Text(
             ok
                 ? AppLocalizations.of(context)!.settingsWebDAVConnectionSuccess
+                : platformAsksForLocalNetwork
+                ? AppLocalizations.of(
+                    context,
+                  )!.settingsWebDAVConnectionFailedLocalNetwork
                 : AppLocalizations.of(context)!.settingsWebDAVConnectionFailed,
           ),
         ),

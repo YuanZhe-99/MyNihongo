@@ -2,7 +2,7 @@
 
 A privacy-first Japanese learning app: a reference you can browse, a study engine that
 schedules what you nearly forgot, and speech and analysis that run on the phone. Android
-first; Windows and macOS build locally, iOS is planned.
+first; Windows, macOS and iOS builds come with every release.
 
 Part of the MyApps series alongside [MyAnime](https://github.com/YuanZhe-99/MyAnime),
 [MyDay](https://github.com/YuanZhe-99/MyDay) and [MyDevice](https://github.com/YuanZhe-99/MyDevice),
@@ -114,11 +114,16 @@ gated on it yet.
 |----------|----------|--------|
 | Android  | APK (`app-release.apk`) | full |
 | Android  | AAB (`app-release.aab`) | store |
-| Windows  | Installer (`MyNihongo_<ver>[_arm64]_Setup.exe`) | full |
-| macOS    | `.app` bundle | full |
+| Windows (x64)   | Inno Setup installer (`MyNihongo_<ver>_Setup.exe`) | full |
+| Windows (ARM64) | Inno Setup installer (`MyNihongo_<ver>_arm64_Setup.exe`) | full |
+| iOS      | Sideload IPA (`MyNihongo_sideload.ipa`) | full |
+| macOS    | DMG (`MyNihongo.dmg`) | full |
 
-Only the Android artifacts are built by CI. Windows and macOS are local build targets for
-development and testing; macOS has not been compiled, because the development host is Windows.
+CI builds all six on a release tag and attaches them to the GitHub Release; ordinary pushes build
+only Android. The Windows, iOS and macOS artefacts are unsigned: Windows SmartScreen and macOS
+Gatekeeper ask before the first launch, and the IPA installs only through a sideloading tool. The
+iOS and macOS builds are compiled by CI and have not been run on Apple hardware. See
+[`doc/en-us/platform-notes.md`](doc/en-us/platform-notes.md).
 
 ## Build
 
@@ -134,14 +139,16 @@ flutter build apk --release --dart-define=FLAVOR=full
 # Android AAB (Google Play)
 flutter build appbundle --release --dart-define=FLAVOR=store
 
-# Windows (local only) — needs nuget.exe on PATH (winget install --id Microsoft.NuGet),
-# and Inno Setup for the installers
+# Windows — needs nuget.exe on PATH (winget install --id Microsoft.NuGet), Inno Setup for the
+# installers, and with MSVC 14.51+ the CL define below. A host builds only its own architecture.
+# PowerShell: $env:CL = "/D_SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS"
 flutter build windows --release --dart-define=FLAVOR=full
-iscc installer.iss
-iscc /DARM64 installer.iss
+iscc installer.iss            # on an x64 host
+iscc /DARM64 installer.iss    # on an ARM64 host
 
-# macOS (local only, needs a Mac)
+# macOS and iOS (need a Mac)
 flutter build macos --release --dart-define=FLAVOR=full
+flutter build ios --release --no-codesign --dart-define=FLAVOR=full
 ```
 
 After a plain clone, fetch the shared engine package with `git submodule update --init`.

@@ -71,7 +71,9 @@ The **Japanese voice** row opens a picker sheet, shown when the engine offers mo
 voice. Engine voice names are identifiers — `ja-jp-x-jab#male_1-local` — that say nothing about how a
 voice sounds and differ between engines, so the sheet numbers them instead: "Japanese voice 1, 2,
 3", ordered installed before missing, offline before network, then by the quality the engine claims,
-then by name so the order is total and the numbers do not move between runs. Each row says what is
+then by name so the order is total and the numbers do not move between runs. The quality ranking knows
+both vocabularies the plugin passes through: Android's five steps from `very low` to `very high`,
+and Apple's `default`, `enhanced` and `premium`. The two never meet in one list. Each row says what is
 different about that voice, shows its raw name in a smaller line for a bug report, and carries a play
 button. **Listening is not choosing:** the sample plays through `TtsService.preview`, which restores
 the learner's own voice in a `finally`.
@@ -121,6 +123,15 @@ which is offline-**only**: on a device with no Japanese model downloaded the att
 than quietly going to a server. That failure is reported as `languageUnavailable`, and the practice
 sheet turns it into a message naming both fixes — install the Japanese speech data, or turn the
 fallback on knowingly.
+
+Apple reports the same situation differently. An offline-only request on an iPhone or Mac with no
+on-device model for Japanese is refused when `listen` is called, not through the recognizer's error
+callback, and `speech_to_text` keeps only the refusal's message ("on device recognition is not
+supported on this device"). `SpeechToTextBackend` classifies that message and rethrows it as a
+`SpeechListenException`, so the service reports the same `languageUnavailable` and the sheet shows
+the same two fixes. Before this, Apple's refusal fell into the service's catch-all and read as the
+generic "unavailable". The Dart side is tested at `TargetPlatform.iOS`; the Apple recognizer itself
+has never run for this project, so the behaviour on a device is **unverified**.
 
 The switch is the only setting in the app besides WebDAV sync that lets anything leave the device,
 and its subtitle says exactly that. It is off by default and stored as an absent key

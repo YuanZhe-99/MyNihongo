@@ -15,7 +15,7 @@ Consumers: `tts_service.dart` (`_loadVoices`), `voice_labels.dart` (numbering an
 | Declaration | Kind | Tier | Purpose |
 |---|---|---|---|
 | library header | library doc | B | Order and describe the Japanese voices an engine offers. |
-| `_qualityOrder` | top-level constant | B | Voice quality names, worst first, as `flutter_tts` spells them. |
+| `_qualityOrder` | top-level constant | B | Voice quality names, worst first, as `flutter_tts` spells them — Android's five, then Apple's `default`, `enhanced`, `premium`. |
 | `voiceIsNotInstalled` | top-level function | B | Report whether the engine says the voice data is not on the device. |
 | `voiceNeedsNetwork` | top-level function | B | Report whether speaking with this voice needs the network. |
 | `voiceQualityRank` | top-level function | B | Rank a voice's quality; -1 when the engine did not say. |

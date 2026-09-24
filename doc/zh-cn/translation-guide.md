@@ -232,6 +232,12 @@
 | composition | 题目构成 | 每种题型各出多少题 |
 | readiness estimate | 备考程度估计 | 由本应用的练习数据推算，不是 JLPT 成绩 |
 | weakness report | 薄弱点报告 | |
+| sideload (build) | 侧载（构建） | 未签名的 IPA，只能通过侧载工具安装 |
+| unsigned / unnotarised | 未签名 / 未公证 | 公证（notarisation）是 Apple 对 macOS 应用的检查 |
+| entitlement | 权利 | macOS 沙盒权利；首次出现附英文 entitlement |
+| local network access | 本地网络访问 | Apple 在首次连接局域网服务器前询问用户 |
+| `workflow_dispatch` | `workflow_dispatch`（手动触发） | GitHub Actions 事件名，不翻译 |
+| keyboard shortcut | 键盘快捷键 | |
 
 ## 6. 复查清单（提交中文页面之前运行）
 

@@ -17,9 +17,10 @@ This is written down because it has already gone wrong once here. M2.4 shipped a
 build that asked for the microphone the moment Settings opened, and a test now
 asserts that `init` makes zero permission requests.
 
-The iOS and macOS initialization settings turn off alert, badge and sound
-requests explicitly rather than by omission, because the plugin's defaults ask
-for all three at initialization.
+The iOS initialization settings turn off alert, badge and sound requests
+explicitly rather than by omission, because the plugin's defaults ask for all
+three at initialization. The plugin's macOS settings are filled in the same way
+but never used: a Mac takes the desktop path below, through `local_notifier`.
 
 ## What it says
 
@@ -60,6 +61,14 @@ implied away.
 
 A platform with neither shows no switch at all. A switch that cannot do
 anything is worse than no switch.
+
+**On iOS**, `AppDelegate.swift` makes the app delegate the notification
+centre's delegate, the line MyDay ships. It is not what makes a reminder fire:
+scheduling and delivery need no delegate. It only lets a banner appear while the
+app is in the foreground, and the app registers no tap handler. Neither iOS nor
+macOS has run this project yet, so both Apple paths are **unverified** on a
+device; the platform choice itself is tested by
+`test/platform_capabilities_test.dart` at every `TargetPlatform`.
 
 ## Android specifics
 

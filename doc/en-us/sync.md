@@ -63,6 +63,24 @@ UI confirms before either. After a backup restore that wrote data, the app disab
 offers a force upload, so restored-old data cannot propagate deletions to other devices (series
 invariant I5).
 
+## On iPhone and Mac: local network access
+
+Apple asks the user before an app may reach a server on the local network (iOS 14 and later,
+macOS 15 and later). According to Apple's documentation (TN3179) the question covers BSD sockets
+too, which is what `dart:io` uses underneath the WebDAV client, and it is asked for a local address
+over HTTPS as much as over HTTP. `Info.plist` carries `NSLocalNetworkUsageDescription`, which says
+that the app connects only to the WebDAV server the learner configured.
+
+The first connection to a LAN server raises the system alert, and `dart:io` cannot wait for the
+answer, so that first connection test or sync can fail while the alert is on screen. On iPhone and
+Mac a failed **Test Connection** therefore says to allow local network access in the system
+settings and try again (`platformAsksForLocalNetwork`); elsewhere it stays "Connection failed".
+
+App Transport Security, Apple's other network rule, does not apply: it governs Apple's URL Loading
+System, and this client never goes through it. See [`platform-notes.md`](platform-notes.md). None
+of this has been observed on a device; the Apple behaviour described here is from Apple's
+documentation.
+
 ## Files
 
 - `webdav_config.json` — server URL, credentials, remote path, auto-sync flag. Never synced.

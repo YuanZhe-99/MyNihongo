@@ -4,8 +4,8 @@ Operating guide for agents working on **MyNihongo!!!!!**. This file holds **only
 to work here. Everything describing what the code *is* or *does* lives in `doc/en-us/` — see
 [Where to read what](#where-to-read-what). The phased roadmap lives in `PLAN.md`.
 
-MyNihongo!!!!! is a privacy-first Japanese learning app (Flutter; Android first, with Windows, iOS
-and macOS planned) covering kana, vocabulary, grammar, pronunciation practice, spaced-repetition
+MyNihongo!!!!! is a privacy-first Japanese learning app (Flutter; Android first, with Windows, macOS
+and iOS built by CI for every release) covering kana, vocabulary, grammar, pronunciation practice, spaced-repetition
 lessons and JLPT drills. Treat the user's message as the change request: plan, implement, verify,
 report.
 
@@ -37,7 +37,7 @@ about to change, verify against the code, then fix the docs in the same commit.
 | Per-feature behavior | `doc/en-us/features/*.md` |
 | A named algorithm, derived rather than described | `doc/en-us/algorithms/*.md` |
 | When the UI splits into panes or columns; foldable rules | `doc/en-us/adaptive-layout.md` |
-| Android specifics, Gradle/AGP state, planned platforms | `doc/en-us/platform-notes.md` |
+| Android, Windows, macOS and iOS specifics, Gradle/AGP state, entitlements, signing | `doc/en-us/platform-notes.md` |
 | Android AICore and the ML Kit GenAI APIs — requirements, versions, limits, how to check a device | `doc/en-us/android-aicore.md` (project-independent; carries a `Last verified` date to refresh) |
 | CI jobs, build commands, fresh-clone steps | `doc/en-us/ci-cd.md` |
 | Why a behavior exists; past releases | `doc/en-us/version-history.md` |
@@ -200,7 +200,10 @@ When the user confirms:
    - `installer.iss` `AppVersion=X.Y.Z`, `VersionInfoVersion=X.Y.Z.0`,
      `VersionInfoProductVersion=X.Y.Z` (the installer file names derive from `AppVersion`)
    - Never hand-edit the settings-page version display; it reads `PackageInfo.fromPlatform()`
-2. Re-run verification.
+2. Re-run verification. This includes `flutter test test/release_versions_test.dart`, which fails when
+   the five version fields above disagree; it must pass **locally** before tagging, because the tag
+   is pushed without waiting for CI. The test is the guard against version drift, so never leave a
+   field to be realigned at a later bump.
 3. Commit all intended changes, and add the `doc/en-us/version-history.md` entry.
 4. Create an annotated tag `vX.Y.Z`.
 5. Push **the commit first**, then the tag, to both `origin` and `github`.
@@ -208,7 +211,10 @@ When the user confirms:
 **This repo's branch is `main`** (MyDay also uses `main`; MyAnime and MyDevice use `master`). Push
 `HEAD` or check `git branch --show-current` first, and verify with `git ls-remote`.
 
-GitHub Actions builds run on every push to `main` (analyze, test, APK + AAB); release builds with a GitHub Release trigger on tag pushes to `github`. Tags must be pushed explicitly.
+GitHub Actions runs the `android` job (analyze, test, APK + AAB) on every push to `main` and every
+pull request. The Windows x64, Windows ARM64, iOS and macOS jobs run only on tag pushes and on
+`workflow_dispatch`; a tag push to `github` also creates the GitHub Release. Tags must be pushed
+explicitly. After changing the workflow, run it once with `workflow_dispatch` before tagging.
 
 Documentation-only maintenance the user says needs no release: commit and push without changing
 versions or creating a tag.

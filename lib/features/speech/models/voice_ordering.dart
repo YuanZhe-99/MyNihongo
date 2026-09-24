@@ -11,12 +11,21 @@
 library;
 
 /// Voice quality names, worst first, as `flutter_tts` spells them.
+///
+/// Android reports five steps from `very low` to `very high`. Apple reports
+/// `AVSpeechSynthesisVoiceQuality` as `default`, `enhanced` or `premium`
+/// (`flutter_tts` 4.2.5, iOS and macOS). The two vocabularies never appear in
+/// one list, so appending Apple's three after Android's five orders each
+/// platform correctly without mapping one onto the other.
 const _qualityOrder = <String>[
   'very low',
   'low',
   'normal',
   'high',
   'very high',
+  'default',
+  'enhanced',
+  'premium',
 ];
 
 /// Purpose: Report whether the engine says this voice's data is not on device.

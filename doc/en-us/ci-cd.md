@@ -4,21 +4,80 @@
 
 `.github/workflows/build.yml` runs on every push to `main`, on `v*` tag pushes, on pull requests targeting `main`, and on `workflow_dispatch`. Only tag pushes create a GitHub Release; branch pushes stop at the uploaded artifacts.
 
+**What runs when.** The `android` job runs on every trigger, because it is where analyze and test
+live. The four desktop and Apple jobs carry
+`if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch'`, so an
+ordinary push or pull request spends one runner rather than five; a release tag, or a deliberate
+dispatch, builds everything. The siblings build only on tags; this app keeps the per-push Android
+job because its content files are data a wrong edit can break silently.
+
 The checkout step passes `submodules: recursive`. Without it `flutter pub get` fails on the missing
 `packages/myapps_data` path dependency. The relative submodule URL resolves to the public GitHub copy
 in CI, so the default `GITHUB_TOKEN` is sufficient.
 
 ## Jobs
 
-- `android` — `flutter pub get`, `flutter gen-l10n`, `flutter analyze`, `flutter test`, then the
-  APK (full flavor) and the AAB (store flavor). Signing is configured only when the
-  `KEYSTORE_BASE64` secret exists.
-- `release` — on a tag push, downloads the artifacts and creates a GitHub Release with generated
-  notes.
+| Job | Runner | Runs on | Produces |
+|---|---|---|---|
+| `android` | `ubuntu-latest` | every trigger | `flutter gen-l10n` and the committed-localizations check, `flutter analyze`, `flutter test`, then the APK (full) and AAB (store) |
+| `windows-x64` | `windows-latest` | tag, dispatch | `MyNihongo_X.Y.Z_Setup.exe` (Inno Setup) |
+| `windows-arm64` | `windows-11-arm` | tag, dispatch | `MyNihongo_X.Y.Z_arm64_Setup.exe` (Inno Setup) |
+| `ios` | `macos-latest` | tag, dispatch | `MyNihongo_sideload.ipa`, built `--no-codesign` |
+| `macos` | `macos-latest` | tag, dispatch | `MyNihongo.dmg` |
+| `release` | `ubuntu-latest` | tag only | a GitHub Release with the six files above and generated notes |
 
-**CI stays Android-only on purpose.** The Windows and macOS projects exist for local development
-and testing (see [`platform-notes.md`](platform-notes.md)); adding jobs for them, and the MSIX and
-Inno Setup release artefacts, is Phase 5 work copied from MyAnime's workflow.
+Android signing is configured only when the `KEYSTORE_BASE64` secret exists. **Every desktop and
+Apple artefact is unsigned and unnotarised** — see [`platform-notes.md`](platform-notes.md) for what
+a user sees when they open one.
+
+**No MSIX job.** No sibling app has one, and packaging a Store MSIX needs a signing certificate this
+repository does not hold (`install_certificate: false` in `msix_config` declines one).
+`dart run msix:create` stays a manual command.
+
+**The Windows ARM64 job clones Flutter at the stable tag** instead of using
+`subosito/flutter-action`. Flutter publishes no Windows ARM64 SDK archive: the release manifest
+`releases_windows.json` has no `dart_sdk_arch: arm64` row (counted 2026-09-06), and the action
+defaults its `architecture` input to the runner's, so on `windows-11-arm` it aborts with "Unable to
+determine Flutter version … architecture: arm64". Forcing `architecture: x64` is worse than the
+abort. The x64 archive ships a populated `bin/cache`, so the Dart SDK is never replaced, and
+`flutter build windows` takes its target from the Dart VM's own ABI — the build lands in
+`build/windows/x64/`, which `iscc /DARM64` cannot find. A clone has no cache, so its first
+`flutter` command runs `bin/internal/update_dart_sdk.ps1`, which on an ARM64 host fetches the ARM64
+Dart SDK because, in that script's own words, Flutter Windows builds depend on the Dart
+executable's architecture. The same script fetched this project's ARM64 development machine its
+ARM64 Dart SDK for the same engine revision, which is the on-host evidence that the archive exists.
+`--depth 1` at a tag is safe because `bin/internal/engine.version` is a tracked file there. A tag
+clone is a detached HEAD, so `flutter doctor` reports the channel as `[user-branch]`, not `stable`.
+A guard step fails the job if the build still lands in `x64/`, which is what an emulated x64 shell
+would cause. No `actions/cache`: MyAnime caches its master clone weekly so the engine DLL's hash
+stays stable for Defender's reputation, and a tag is already immutable.
+
+**Both Windows jobs make sure `nuget` exists** before building, because `flutter_tts`'s Windows
+CMake calls it and no sibling has that plugin. Both set
+`CL: /D_SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS`, because `windows/CMakeLists.txt`
+builds with `/WX` and `flutter_local_notifications_windows` still reaches the deprecated
+`<experimental/coroutine>` header. Both runners have a JDK, so the `jni` package's Windows branch
+builds an inert `dartjni.dll` into the installer (pulled in by `path_provider_android`; nothing on
+Windows loads it). This project's development machine has no JDK and never builds it.
+
+**The iOS job is the first `pod install` in the series.** `flutter_tts` (iOS and macOS) and
+`local_notifier` (macOS) ship only a podspec, so both Apple builds mix Swift Package Manager and
+CocoaPods; the tool generates the Podfile. The macOS mix is what every sibling's `macos` job already
+runs. No sibling's iOS plugin set needed CocoaPods, so an iOS failure after a Flutter upgrade is
+most likely to be there.
+
+**No job repeats `flutter gen-l10n`.** Every `flutter build` regenerates
+`lib/l10n/app_localizations*.dart` from the ARB files before compiling
+(`GenerateLocalizationsTarget` is a dependency of the kernel snapshot), triggered by `l10n.yaml`
+and requiring `generate: true` in `pubspec.yaml`. The `android` job's explicit `gen-l10n` exists
+for its check: **the committed generated files must match the ARB files**, tested with
+`git status --porcelain -- lib/l10n`. Not `git diff`: the case that matters is a new locale's
+generated file that was never added, which `git diff` does not list. It would pass analyze and test
+here and break a fresh clone's `flutter test` on a missing import.
+
+**The Apple projects are compiled by CI and never run.** No Mac available to this project can
+build it, so CI compilation is the ceiling for iOS and macOS; see
+[`platform-notes.md`](platform-notes.md).
 
 **Nothing in CI touches AICore.** The on-device AI runs only on a real, supported phone, so what CI
 verifies is the layer below it: the policy, the prompts and the parsing, all against fakes. The
@@ -27,15 +86,20 @@ model itself is checked by hand on a device — see [`android-aicore.md`](androi
 ## Workflow caveats
 
 - Keep the workflow Flutter version (`3.44.2`) aligned with the Dart SDK constraint in
-  `pubspec.yaml`.
+  `pubspec.yaml`. The Windows ARM64 job clones the tag of that same name, so one bump moves all
+  five build jobs.
 - GitHub `secrets` cannot be used directly in step `if` expressions; they are routed through the
   job-level `HAS_KEYSTORE` env.
 - Action versions: `actions/checkout@v7`, `actions/setup-java@v5`, `actions/upload-artifact@v7`,
-  `actions/download-artifact@v8`, `softprops/action-gh-release@v3`. Validate workflow changes with a
-  `workflow_dispatch` run before the next tag release.
+  `actions/download-artifact@v8`, `softprops/action-gh-release@v3`.
+- **Validate workflow changes with a `workflow_dispatch` run before the next tag.** A dispatch
+  runs the five build jobs; `release` is skipped until a tag, so its artefact filter is first
+  exercised by the tag run itself, and a pushed tag cannot be pushed again.
 - The analyze and test steps run in CI on purpose: the sibling apps run them locally only, but this
   app's content files are data that a wrong edit can break silently, and
   `test/content_catalog_test.dart` is the guard.
+- `test/release_versions_test.dart` fails when the five version fields disagree. The release flow
+  pushes the tag without waiting for CI, so run it locally before tagging; CI is the backstop.
 
 ## Commands
 
@@ -49,13 +113,16 @@ flutter build apk --release --dart-define=FLAVOR=full
 flutter build appbundle --release --dart-define=FLAVOR=store
 ```
 
-Desktop builds are local only; nothing below runs in CI:
+Desktop builds also run locally. **A Windows host builds only its own architecture**, for the
+reason the ARM64 job above explains: this project's ARM64 development machine produces
+`build/windows/arm64/` and the ARM64 installer, and the x64 installer comes from CI.
 
 ```powershell
+$env:CL = "/D_SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS"   # MSVC 14.51+, as in CI
 flutter build windows --release --dart-define=FLAVOR=full   # needs nuget.exe on PATH
-iscc installer.iss          # x64 installer, needs Inno Setup on PATH
-iscc /DARM64 installer.iss  # ARM64 installer
-dart run msix:create        # MSIX package
+iscc installer.iss          # x64 installer (x64 host), needs Inno Setup
+iscc /DARM64 installer.iss  # ARM64 installer (ARM64 host)
+dart run msix:create        # MSIX package, manual only
 flutter build macos --release --dart-define=FLAVOR=full   # needs a Mac
 ```
 

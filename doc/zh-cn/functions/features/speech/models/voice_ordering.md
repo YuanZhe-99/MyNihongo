@@ -11,7 +11,7 @@
 | 声明 | 种类 | 层级 | 用途 |
 |---|---|---|---|
 | 库头 | 库文档 | B | 为引擎提供的日语语音排序并加以描述。 |
-| `_qualityOrder` | 顶层常量 | B | 音质名称，由差到好，与 `flutter_tts` 的写法一致。 |
+| `_qualityOrder` | 顶层常量 | B | 音质名称，由差到好，与 `flutter_tts` 的写法一致——先是 Android 的五档，再是 Apple 的 `default`、`enhanced`、`premium`。 |
 | `voiceIsNotInstalled` | 顶层函数 | B | 报告引擎是否声明该语音的数据不在设备上。 |
 | `voiceNeedsNetwork` | 顶层函数 | B | 报告使用该语音朗读是否需要联网。 |
 | `voiceQualityRank` | 顶层函数 | B | 为语音音质排名；引擎未说明时为 -1。 |

@@ -43,6 +43,6 @@
 - **输入：** 无；读取 `networkFallbackAllowed`。
 - **返回：** 无；结果经由 `notifyListeners` 送达。
 - **副作用：** 打开麦克风。
-- **算法：** 确认可用性、清除上一次结果、进入 `listening`，然后以 `onDevice: !networkFallbackAllowed` 请求后端聆听。
+- **算法：** 确认可用性、清除上一次结果、进入 `listening`，然后以 `onDevice: !networkFallbackAllowed` 请求后端聆听。后端抛出的 `SpeechListenException` 以它携带的失败结束会话；其他任何异常都以 `unavailable` 结束会话。
 - **使用：** 练习表的录音按钮。
-- **说明：** **隐私承诺就落实在这里。** `onDevice` 为真意味着只用离线：在 Android 上它对应 `EXTRA_PREFER_OFFLINE`，没有安装日语模型时会失败而不是回退。该失败是诚实的答案，UI 会加以解释；只有在设置中明确打开回退的学习者，才可能发出会到达服务器的请求。
+- **说明：** **隐私承诺就落实在这里。** `onDevice` 为真意味着只用离线：在 Android 上它对应 `EXTRA_PREFER_OFFLINE`，没有安装日语模型时会失败而不是回退。该失败是诚实的答案，UI 会加以解释；只有在设置中明确打开回退的学习者，才可能发出会到达服务器的请求。Apple 报告缺少端侧模型的方式是拒绝启动，而不是经由错误回调；后端对这种拒绝进行分类，因此两个平台最终得到同一条 `languageUnavailable` 提示。

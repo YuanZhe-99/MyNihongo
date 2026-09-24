@@ -10,6 +10,8 @@
 	<string>Pronunciation practice compares what you say with the reading. Recognition runs on your device and no audio is stored or sent anywhere.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Your speech is transcribed on this device so the app can compare it with the reading.</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>This app connects only to the WebDAV server you configured for sync, which may be on your local network. It connects to nothing else.</string>
 	<key>CFBundleDisplayName</key>
 	<string>MyNihongo!!!!!</string>
 	<key>CFBundleExecutable</key>

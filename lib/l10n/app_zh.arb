@@ -189,6 +189,7 @@
   "settingsWebDAVConfigRemoved": "配置已移除",
   "settingsWebDAVConnectionSuccess": "连接成功",
   "settingsWebDAVConnectionFailed": "连接失败",
+  "settingsWebDAVConnectionFailedLocalNetwork": "连接失败。如果服务器在本地网络上，请在系统设置中允许本应用访问本地网络，然后重试。",
   "settingsWebDAVSyncSuccess": "同步完成",
   "settingsWebDAVSyncFailed": "同步失败",
   "settingsWebDAVAutoSyncFailed": "自动同步失败",
