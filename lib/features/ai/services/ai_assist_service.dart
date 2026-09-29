@@ -236,21 +236,24 @@ class AiAssistService extends ChangeNotifier {
   /// Side effects: Runs a model on the device.
   /// Notes: The gate order matters: off is refused before the status is even
   /// asked, so a device with a model present still does nothing while the
-  /// switch is off. Nothing generated is stored anywhere.
+  /// switch is off. The busy flag is taken before the status is awaited, so a
+  /// second call arriving meanwhile is refused as busy. Nothing generated is
+  /// stored anywhere.
   Future<String> explain(String prompt, {int? maxOutputTokens}) async {
     _requireEnabled();
     if (_busy) throw const GenAiException(GenAiFailure.busy);
-    _status[GenAiFeature.prompt] = await _backend.statusReport(
-      GenAiFeature.prompt,
-      preferFast: _preferFast,
-    );
-    if (statusOf(GenAiFeature.prompt) != GenAiStatus.available) {
-      notifyListeners();
-      throw const GenAiException(GenAiFailure.unavailable);
-    }
+    // Claimed before the status is awaited: two callers arriving together
+    // would otherwise both pass the check above and both run a model.
     _busy = true;
     notifyListeners();
     try {
+      _status[GenAiFeature.prompt] = await _backend.statusReport(
+        GenAiFeature.prompt,
+        preferFast: _preferFast,
+      );
+      if (statusOf(GenAiFeature.prompt) != GenAiStatus.available) {
+        throw const GenAiException(GenAiFailure.unavailable);
+      }
       return await _backend
           .explain(
             prompt,
@@ -281,16 +284,16 @@ class AiAssistService extends ChangeNotifier {
   Future<List<String>> proofread(String sentence) async {
     _requireEnabled();
     if (_busy) throw const GenAiException(GenAiFailure.busy);
-    _status[GenAiFeature.proofread] = await _backend.statusReport(
-      GenAiFeature.proofread,
-    );
-    if (statusOf(GenAiFeature.proofread) != GenAiStatus.available) {
-      notifyListeners();
-      throw const GenAiException(GenAiFailure.unavailable);
-    }
+    // Claimed before the status is awaited; see [explain].
     _busy = true;
     notifyListeners();
     try {
+      _status[GenAiFeature.proofread] = await _backend.statusReport(
+        GenAiFeature.proofread,
+      );
+      if (statusOf(GenAiFeature.proofread) != GenAiStatus.available) {
+        throw const GenAiException(GenAiFailure.unavailable);
+      }
       return await _backend
           .proofread(sentence)
           .timeout(

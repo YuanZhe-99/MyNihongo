@@ -24,7 +24,9 @@ Consumers: `reminder_service.dart`.
 - **Returns:** One reminder per day for a week.
 - **Side effects:** None.
 - **Algorithm:** Counts what is due today, finds the next open unit, then emits seven reminders at
-  the chosen time — starting tomorrow when today's time has already passed.
+  the chosen time — starting tomorrow when today's time has already passed. Days are stepped with
+  `DateTime(y, m, d + i, hour, minute)`, not `Duration`, so the reminder keeps its wall-clock time
+  across a daylight-saving change.
 - **Usage:** `ReminderService.reschedule`.
 - **Notes:** **Only the first day carries a number.** Nothing can know what will be due on
   Thursday, and a count that is quietly wrong is worse than no count, so the later days name the

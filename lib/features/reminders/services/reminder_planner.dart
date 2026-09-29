@@ -50,10 +50,14 @@ List<ScheduledReminder> planReminders({
 
   final out = <ScheduledReminder>[];
   var day = DateTime(now.year, now.month, now.day, hour, minute);
-  if (!day.isAfter(now)) day = day.add(const Duration(days: 1));
+  // Calendar arithmetic, not `Duration`: the reminder must stay at the same
+  // wall-clock time across a daylight-saving change.
+  if (!day.isAfter(now)) {
+    day = DateTime(now.year, now.month, now.day + 1, hour, minute);
+  }
 
   for (var i = 0; i < reminderDays; i++) {
-    final at = day.add(Duration(days: i));
+    final at = DateTime(day.year, day.month, day.day + i, hour, minute);
     final body = i == 0 && due > 0
         ? l10n.reminderDueBody(due)
         : next != null

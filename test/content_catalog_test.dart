@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:ui';
 
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:my_nihongo/features/content/models/content_catalog.dart';
 import 'package:my_nihongo/features/content/models/jlpt_level.dart';
@@ -169,7 +168,9 @@ void main() {
     // Catches a forgotten `--overlay-only` run: the overlay is the source of
     // truth for Chinese, and an edit that never reached the catalog would
     // otherwise pass unnoticed.
-    final raw = await rootBundle.loadString('assets/content/vocab_zh.json');
+    final raw = await File(
+      'tool/content/overlays/vocab_zh.json',
+    ).readAsString();
     final overlay = (jsonDecode(raw) as Map<String, dynamic>)['entries'] as Map;
     expect(overlay, isNotEmpty);
     for (final row in overlay.entries) {
@@ -193,10 +194,10 @@ void main() {
     // The ja twin of the test above, and for the same reason: a batch merged
     // into vocab_ja.json whose `--overlay-only` run was forgotten would
     // otherwise pass every test until the whole stream was finished.
-    final file = File('assets/content/vocab_ja.json');
-    final overlay = file.existsSync()
-        ? (jsonDecode(file.readAsStringSync()) as Map)['entries'] as Map
-        : const {};
+    final file = File('tool/content/overlays/vocab_ja.json');
+    expect(file.existsSync(), isTrue, reason: 'the Japanese overlay moved');
+    final overlay =
+        (jsonDecode(file.readAsStringSync()) as Map)['entries'] as Map;
     final ids = <String>{};
     for (final row in overlay.entries) {
       final id = row.key.toString();
@@ -224,6 +225,24 @@ void main() {
       if (entry.meanings.values.containsKey('ja')) {
         expect(ids, contains(entry.id), reason: '${entry.id} has a stray ja');
       }
+    }
+  });
+
+  test('the vocabulary overlays are build inputs, not bundled assets', () {
+    // ~4.8 MB of authoring input that nothing reads at runtime. They live in
+    // tool/content/overlays/; one dropped back into assets/content/ would be
+    // bundled into every build again.
+    for (final name in ['vocab_zh', 'vocab_ja', 'vocab_examples']) {
+      expect(
+        File('assets/content/$name.json').existsSync(),
+        isFalse,
+        reason: '$name.json belongs in tool/content/overlays/',
+      );
+      expect(
+        File('tool/content/overlays/$name.json').existsSync(),
+        isTrue,
+        reason: '$name.json is missing from tool/content/overlays/',
+      );
     }
   });
 

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ui' show PlatformDispatcher;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -122,6 +123,43 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     // device that was left switched off it does nothing at all.
     unawaited(AiAssistService.instance.setPreferFast(state.preferFastModel));
     unawaited(AiAssistService.instance.setEnabled(state.aiAssistEnabled));
+    // Reminders are re-planned on every start: a desktop plan lives in memory
+    // and a phone's runs out after a week, so a schedule made at last week's
+    // switch-on would otherwise never be made again. Not awaited, and it never
+    // asks for permission.
+    if (state.reminderEnabled) _rescheduleReminders();
+  }
+
+  /// Purpose: Re-plan the reminders in the current UI language, in the
+  /// background.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: Runs `ReminderService.reschedule`; a failure is swallowed.
+  /// Notes: Internal helper used within this file only. Used where no
+  /// `BuildContext` is at hand: startup and a language change.
+  void _rescheduleReminders() {
+    unawaited(
+      ReminderService.instance
+          .reschedule(_reminderL10n(state.locale))
+          .catchError((Object _) {}),
+    );
+  }
+
+  /// Purpose: Look up the wording for a UI language without a `BuildContext`.
+  /// Inputs: `chosen` — the learner's language, or null to follow the device.
+  /// Returns: `AppLocalizations`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only. The device's language
+  /// list is matched the way the app matches it for the UI, so a notification
+  /// is in the language the screens are in.
+  static AppLocalizations _reminderL10n(Locale? chosen) {
+    final locale =
+        chosen ??
+        resolveAppLocale(
+          PlatformDispatcher.instance.locales,
+          AppLocalizations.supportedLocales,
+        );
+    return lookupAppLocalizations(locale);
   }
 
   /// Purpose: Remember the vocabulary page's level filter.
@@ -375,7 +413,8 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
   /// Purpose: Update locale with the provided value.
   /// Inputs: `locale` — null follows the system.
   /// Returns: None.
-  /// Side effects: Persists the selected locale.
+  /// Side effects: Persists the selected locale; re-plans the reminders in the
+  /// new language when they are on.
   /// Notes: Stored as `language` or `language_COUNTRY`, which is what carries
   /// `zh_TW`: Traditional and Simplified Chinese differ only by country here,
   /// so a tag that dropped it would silently move a reader to the other one.
@@ -389,6 +428,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
           : locale.languageCode;
       NihongoStorage.setLocaleTag(tag);
     }
+    if (state.reminderEnabled) _rescheduleReminders();
   }
 }
 

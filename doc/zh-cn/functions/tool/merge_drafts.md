@@ -16,7 +16,7 @@ dart run tool/merge_drafts.dart gloss-ja tool/content/drafts/gloss-ja/n5-*.json
 dart run tool/merge_drafts.dart ja      tool/content/drafts/ja/grammar/n5-*.json
 ```
 
-之后，对三个词汇覆盖层（中文释义、例句、日语释义）：
+三个词汇覆盖层（中文释义、例句、日语释义）在 `tool/content/overlays/` 中读写，而不在 `assets/content/`；`--overlays <dir>` 可指定别的目录，就像 `--assets <dir>` 对已发布文件那样。之后：
 `dart run tool/import_vocab.dart --overlay-only && dart run tool/convert_zh_tw.dart`。
 
 ## 声明
@@ -26,10 +26,10 @@ dart run tool/merge_drafts.dart ja      tool/content/drafts/ja/grammar/n5-*.json
 | library header | library doc | B | 把检查过的草稿批次并入已发布的内容文件。 |
 | `_encoder` | 常量 | B | 按 `AGENTS.md`，每个内容文件都用的那个编码器。 |
 | `_source` | 常量 | B | 模型创作的文件对自己来历的声明。 |
-| `main` | 函数 | B | 解析参数并按种类分派。 |
+| `main` | 函数 | B | 解析参数（`--level`、`--section`、`--assets`、`--overlays`）并按种类分派。 |
 | `_rows` | 函数 | B | 按给出的顺序读取每个草稿文件的行。 |
-| `_mergeGloss` | 函数 | B | 把中文释义并入词汇覆盖层。 |
-| `_mergeExamples` | 函数 | B | 把例句并入例句覆盖层。 |
+| `_mergeGloss` | 函数 | B | 把中文释义并入词汇覆盖层（接收覆盖层目录，而不是 `assets`）。 |
+| `_mergeExamples` | 函数 | B | 把例句并入例句覆盖层（覆盖层目录）。 |
 | `_mergeGrammar` | 函数 | B | 把语法点并入某级别的语法文件。 |
 | `_mergeUnits` | 函数 | B | 替换某级别的单元，因为一个级别是整体规划的。 |
 | [`_mergeDrills`](#drills) | 函数 | A | 把练习题与文章追加到某级别某部分的文件里。 |

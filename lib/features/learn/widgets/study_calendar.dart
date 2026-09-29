@@ -46,9 +46,13 @@ class StudyCalendar extends ConsumerWidget {
     final today = DateTime(now.year, now.month, now.day);
     // Start on the Monday of the week that is `calendarWeeks - 1` weeks back,
     // so the columns are whole weeks and today lands in the last one.
-    final start = today
-        .subtract(Duration(days: today.weekday - 1))
-        .subtract(const Duration(days: 7 * (calendarWeeks - 1)));
+    // Calendar arithmetic (`DateTime(y, m, d + n)`), not `Duration`: a day is
+    // 23 or 25 hours across a daylight-saving change.
+    final start = DateTime(
+      today.year,
+      today.month,
+      today.day - (today.weekday - 1) - 7 * (calendarWeeks - 1),
+    );
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,11 +85,17 @@ class StudyCalendar extends ConsumerWidget {
                       children: [
                         for (var day = 0; day < 7; day++)
                           Padding(
-                            padding: EdgeInsets.only(bottom: day == 6 ? 0 : gap),
+                            padding: EdgeInsets.only(
+                              bottom: day == 6 ? 0 : gap,
+                            ),
                             child: _cell(
                               theme,
                               cell,
-                              start.add(Duration(days: week * 7 + day)),
+                              DateTime(
+                                start.year,
+                                start.month,
+                                start.day + week * 7 + day,
+                              ),
                               today,
                               studied,
                             ),

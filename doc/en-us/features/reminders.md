@@ -52,6 +52,16 @@ The plan is rebuilt whenever the switch, the time, or the progress file changes,
 and it replaces the previous one rather than adding to it — a learner who
 studies twice in a day would otherwise accumulate a week of stale reminders.
 
+**It is also rebuilt at every app start** while reminders are on
+(`AppSettingsNotifier`, after the preferences are read), and again when the
+language changes. A desktop plan lives in memory and a phone's runs out after
+seven days, so a plan made only at switch-on left desktop reminders dead after
+the first restart and mobile ones silent after a week without opening the app.
+The startup reschedule never asks for permission. After a progress write or a
+sync, `ReminderService.refresh()` re-plans with the wording of the last
+reschedule; a burst of answers is coalesced by a flag into at most one further
+run, deliberately without a `Timer`.
+
 ## Two platforms, two promises
 
 | | Android and iOS | Windows, macOS, Linux |

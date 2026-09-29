@@ -29,7 +29,7 @@ draft_inputs.dart  →  代理写草稿  →  content_gate_test  →  merge_draf
 
 | 种类 | 批次大小 | 写入 |
 |---|---|---|
-| `gloss` | 300 个词 | `vocab_zh.json`，中文叠加层 |
+| `gloss` | 300 个词 | `vocab_zh.json`，中文叠加层（三个叠加层都放在 `tool/content/overlays/`；`merge_drafts.dart --overlays <dir>` 可改用别的目录） |
 | `examples` | 150 个词 | `vocab_examples.json`，例句叠加层 |
 | `grammar` | 25 个语法点 | `grammar/<level>.json` |
 | `units` | 整个级别一次 | `lessons/<level>.json` |

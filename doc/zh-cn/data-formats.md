@@ -49,8 +49,7 @@
 }
 ```
 
-这是构建输入，之所以随包发布，只是为了让内容测试能把它与实际发布的目录比对。`reviewed` 属于写作状态，绝不
-进入 `vocab.json`。
+这是构建输入，放在 `tool/content/overlays/` 中，**不随包发布**（运行时无人读取它）；内容测试从磁盘读取它，与实际发布的目录比对。`reviewed` 属于写作状态，绝不进入 `vocab.json`。日语释义覆盖文件与例句覆盖文件放在它旁边。
 
 ### 日语释义覆盖文件（`vocab_ja.json`） <a id="japanese-definition-overlay-vocab_jajson"></a>
 

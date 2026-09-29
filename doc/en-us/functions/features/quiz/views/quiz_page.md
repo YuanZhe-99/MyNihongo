@@ -31,6 +31,14 @@ Entered with `context.push('/quiz', extra: config)`.
 
 ### `Future<void> _build()` <a id="build"></a>
 
+`_build` is a `try`/`catch` around `_buildSession`, which holds the work described below. A catalog,
+lesson or analyser that will not load ends in `_building = false; _session = null`, so the page shows
+its "nothing to ask" text instead of a spinner that never stops.
+
+Two guards use `_finished`: the loop that appends generated questions stops (`if (!mounted ||
+_finished) return`) once the learner has finished, and `onFinished` returns early when it has
+already run, so a late callback records nothing twice.
+
 - **Kind:** method
 - **Purpose:** Assemble the session's questions.
 - **Inputs:** None; reads the config, the catalog and the review queue.

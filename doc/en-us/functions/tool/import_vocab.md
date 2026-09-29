@@ -24,7 +24,9 @@ so they can be unit-tested without the 117 MB dictionary. See
 
 - **Purpose:** Run the import.
 - **Inputs:** `args` — `--data`, `--out`, `--overlay`, `--overlay-ja`, `--examples`, `--seed`,
-  `--overlay-only`. `--overlay-ja` defaults to `assets/content/vocab_ja.json`.
+  `--overlay-only`. `--overlay`, `--overlay-ja` and `--examples` default to
+  `tool/content/overlays/vocab_zh.json`, `vocab_ja.json` and `vocab_examples.json` — build inputs kept
+  out of the bundled assets.
 - **Returns:** None; sets the exit code.
 - **Side effects:** Reads the dictionary, the five lists, the seed and the three overlays (Chinese
   glosses, Japanese definitions, examples); rewrites the vocabulary asset.

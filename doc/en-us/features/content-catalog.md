@@ -11,8 +11,12 @@ this page is about the rules, the pipeline that builds the files, and the UI.
 | `assets/content/vocab.json` | `ContentCatalog.vocab` | `VocabEntry` |
 | `assets/content/grammar/n5.json` (one file per level) | `ContentCatalog.grammar` | `GrammarPoint` |
 | `assets/content/kana_notes.json` | `ContentCatalog.kanaNotes` | `KanaNote` |
-| `assets/content/vocab_zh.json` | nothing at runtime | build input, see below |
 | `assets/content/function_words.json` | `FunctionWordTable`, loaded separately | `FunctionWord` |
+
+The three vocabulary overlays (`vocab_zh.json`, `vocab_ja.json`, `vocab_examples.json`, about 4.8 MB
+between them) are build inputs that nothing reads at runtime. They live in
+`tool/content/overlays/`, **outside** `assets/content/`, so they are not bundled into every build;
+`test/content_catalog_test.dart` fails if one is put back.
 
 `ContentRepository.load()` reads the strings on the calling isolate and hands them to `compute` for
 decoding, so the roughly 2 MB vocabulary file does not drop a frame at launch. The vocabulary is
@@ -42,7 +46,7 @@ case-insensitive parse), `LocalizedStrings` (language-keyed lists with English f
 | JLPT lists keyed by JMdict sequence number | `tool/content/jlpt/n{1..5}.csv` | Yes, byte-identical to upstream |
 | JMdict body (`jmdict-eng-<version>.json`) | `tool/data/` | **No** — git-ignored, downloaded by hand |
 | Hand-written seed words | `tool/content/vocab_seed.json` | Yes |
-| Chinese gloss overlay | `assets/content/vocab_zh.json` | Yes |
+| Chinese gloss overlay | `tool/content/overlays/vocab_zh.json` | Yes |
 | OpenCC conversion dictionaries | `tool/content/opencc/` | Yes, verbatim from upstream |
 
 ```bash
@@ -80,7 +84,7 @@ The rules that decide what a learner sees:
 
 ### Chinese glosses
 
-Chinese is authored level by level in `assets/content/vocab_zh.json`, keyed by catalog id, and
+Chinese is authored level by level in `tool/content/overlays/vocab_zh.json`, keyed by catalog id, and
 folded into the catalog by the tool. Its `reviewed` flag tracks authoring only and never reaches
 `vocab.json`: it is false until a native speaker has checked the entry. **The current N5 glosses
 are machine-authored and unreviewed.** Entries with no row ship English only and the UI falls back
@@ -131,7 +135,7 @@ A learner can set the app to Japanese. What they read under a Japanese UI is dec
 | Unit, drill and scenario text | the same instruction or explanation in Japanese |
 | An example sentence, a passage, a dialogue line | the Japanese, and **no translation** |
 
-The definitions are authored in `assets/content/vocab_ja.json` and folded into the catalog by the
+The definitions are authored in `tool/content/overlays/vocab_ja.json` and folded into the catalog by the
 importer, exactly as the Chinese glosses are; every other `ja` string sits in the shipped file beside
 `en`, `zh` and `zh_TW`. All of it is **model-authored and unreviewed**, and no Japanese source exists
 to check it against: the JMdict edition this app uses is English-only. How it was written is in

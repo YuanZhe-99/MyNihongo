@@ -4,7 +4,7 @@ Keeps one reminder a day pointed at what the learner actually has waiting. A sin
 speech and AI services, and for the same reason: there is one notification schedule on the device,
 and two owners of it would fight.
 
-Consumers: `main.dart`, `app_settings.dart`.
+Consumers: `main.dart`, `app_settings.dart`, `progress_provider.dart`.
 
 ## Declarations
 
@@ -16,8 +16,10 @@ Consumers: `main.dart`, `app_settings.dart`.
 | `ReminderService._backendForPlatform` | method | B | Choose the backend this platform needs. |
 | `desktopTick` | constant | B | How often the desktop path checks the clock. |
 | [`ReminderService.init`](#init) | method | A | Prepare the platform, asking for nothing. |
+| `ReminderService._initOnce` | method | B | Run the backend's initialisation; forget it if it failed. |
 | `ReminderService.requestPermission` | method | B | Ask for notification permission. |
 | [`ReminderService.reschedule`](#reschedule) | method | A | Recompute the plan and hand it over. |
+| [`ReminderService.refresh`](#refresh) | method | A | Re-plan after progress changed, coalescing bursts. |
 | [`ReminderService._startTicking`](#tick) | method | A | Watch the clock where nothing else will. |
 | `ReminderService.isTicking` | getter | B | Whether the desktop timer is running. |
 | `ReminderService.dispose` | method | B | Stop the timer. |
@@ -30,10 +32,11 @@ Consumers: `main.dart`, `app_settings.dart`.
 - **Purpose:** Prepare the platform without asking the learner for anything.
 - **Inputs:** None.
 - **Returns:** A future completing when the backend is ready.
-- **Side effects:** Initializes the plugin and the time-zone database.
-- **Algorithm:** Delegates to the backend, which loads the zone database and initializes the plugin
-  with every permission request turned off.
-- **Usage:** `main.dart`, unawaited, at startup.
+- **Side effects:** Initializes the plugin and the time-zone database, once.
+- **Algorithm:** Memoized (`_init ??=`): delegates to the backend, which loads the zone database and
+  initializes the plugin with every permission request turned off. The one shared future is
+  returned to every caller; a failed attempt clears it so the next call tries again.
+- **Usage:** `main.dart`, unawaited, at startup; `reschedule`, which needs it done.
 - **Notes:** **It must not request permission**, and a test asserts that it makes zero requests. A
   device whose owner has never turned reminders on is never asked for anything; the request lives
   in the Settings switch. M2.4 shipped a build that asked for the microphone the moment Settings
@@ -45,13 +48,34 @@ Consumers: `main.dart`, `app_settings.dart`.
 - **Purpose:** Recompute the plan and hand it to the platform.
 - **Inputs:** `l10n` for the wording; `now` for tests.
 - **Returns:** A future completing when the schedule is replaced.
-- **Side effects:** Reads the preference, the progress file and the path; schedules or cancels.
-- **Algorithm:** Cancels and returns when reminders are off; otherwise reads the time, the profile
-  and the level's path, plans a week, and replaces the schedule.
-- **Usage:** Called from every setter that could change what a reminder should say.
+- **Side effects:** Initializes the backend if needed; reads the preference, the progress file and
+  the path; schedules or cancels; remembers `l10n` for `refresh` (null while reminders are off).
+- **Algorithm:** Awaits `init`; cancels and returns when reminders are off; otherwise reads the
+  time, the profile and the level's path, plans a week, and replaces the schedule.
+- **Usage:** Called from every setter that could change what a reminder should say, and at app
+  start (`AppSettingsNotifier`) when reminders are on: a desktop plan lives in memory and a phone's
+  runs out after a week, so a schedule made at switch-on would otherwise never be made again.
+  Never asks for permission.
 - **Notes:** It reads the preference itself rather than being told, so every caller is the same one
   line. With reminders off it cancels rather than doing nothing, which is what makes turning the
   switch off take effect immediately rather than in a week.
+
+### `Future<void> refresh({DateTime? now})` <a id="refresh"></a>
+
+- **Kind:** method
+- **Purpose:** Re-plan the reminders after the learner's progress changed.
+- **Inputs:** `now` for tests.
+- **Returns:** A future completing when the request has been handled; it does not wait for a run
+  queued behind the current one.
+- **Side effects:** May run `reschedule` with the wording of the last one.
+- **Algorithm:** Does nothing until a `reschedule` has found reminders on (and again once one has
+  found them off). If a run is in progress it sets a queued flag and returns; otherwise it loops
+  `reschedule` until no further request was queued, so a burst costs one run plus at most one more.
+- **Usage:** `ProgressNotifier`, unawaited, after every progress write and every local-data-changed
+  callback, so the due count in the plan stays true.
+- **Notes:** Coalescing is by flag, **not by a `Timer`**: a pending timer would fail every widget
+  test that touched it. Errors are swallowed; a reminder that could not be re-planned is not worth
+  interrupting a lesson for.
 
 ### `void _startTicking(List<ScheduledReminder> plan)` <a id="tick"></a>
 

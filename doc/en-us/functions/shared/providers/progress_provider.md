@@ -16,9 +16,14 @@ not each page — registers. See
 | `ProgressNotifier` | constructor | B | Create the notifier and start the first read. |
 | `ProgressNotifier.reload` | method | B | Re-read the progress file and publish the result. |
 | `ProgressNotifier.recordExam` | method | B | Record one sitting of a JLPT paper, then reload. |
-| `ProgressNotifier._onLocalDataChanged` | method | B | React to a sync, restore, or import writing the file. |
+| `ProgressNotifier._onLocalDataChanged` | method | B | React to a sync, restore, or import writing the file: reload, then ask `ReminderService.refresh` to re-plan. |
 | `ProgressNotifier.dispose` | method | B | Release the service callback. |
 | `progressDataProvider` | top-level `final` | — | The user's progress file, read from disk and kept current. |
+
+Every write method (`recordAnswer`, `recordLessonResult`, `recordExam`, `recordAnswers`,
+`updateProfile`) ends `await reload(); unawaited(ReminderService.instance.refresh());`, and so does
+`_onLocalDataChanged`. `refresh` is a no-op until reminders have been scheduled, so a learner who
+never enabled them pays nothing; when they are on, the due count in the plan follows the progress.
 
 Reload never returns the state to `loading` after the first read, so a background sync does not
 blank a page that is already showing data.

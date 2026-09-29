@@ -135,7 +135,6 @@ void main() {
       expect(prompt, contains(entry.level.label));
     });
 
-
     test('a rubric prompt carries the checklist findings, not a verdict', () {
       final prompt = builder.forRubric(
         text: '毎日日本語を勉強します。',
@@ -276,13 +275,26 @@ void main() {
       expect(feedback.notes, hasLength(PracticeResponseParser.maxNotes));
     });
 
-    test('a full-width colon is still a label', () {
+    test('a full-width colon is still a label, in every reply shape', () {
       expect(
         PracticeResponseParser.writing('Rewrite：毎日走ります。')?.rewrite,
         '毎日走ります。',
       );
+      expect(
+        PracticeResponseParser.paraphrase('Japanese： 本を読みます。')?.japanese,
+        '本を読みます。',
+      );
+      expect(
+        PracticeResponseParser.scenarioReply('Japanese：「はい、どうぞ。」')?.japanese,
+        contains('はい、どうぞ。'),
+      );
+      // And a lower-case rating is read with it.
+      final verdict = PracticeResponseParser.quizCheck(
+        'A\nUNSOUND\nA：fits\nB: no\nC: NO\nD: NO',
+      )!;
+      expect(verdict.sound, isFalse);
+      expect(verdict.fits, [true, false, false, false]);
     });
-
 
     test('a paraphrase is read from its three labelled lines', () {
       final parsed = PracticeResponseParser.paraphrase(
@@ -298,9 +310,7 @@ void main() {
 
     test('a paraphrase with no Japanese line is refused', () {
       expect(
-        PracticeResponseParser.paraphrase(
-          'Reading: ほん\nMeaning: a book',
-        ),
+        PracticeResponseParser.paraphrase('Reading: ほん\nMeaning: a book'),
         isNull,
         reason: 'a paraphrase with no sentence in it has nothing to show',
       );
@@ -313,10 +323,6 @@ void main() {
       expect(parsed.meaning, isNull);
     });
 
-    test('a full-width colon labels a paraphrase too', () {
-      final parsed = PracticeResponseParser.paraphrase('Japanese： 本を読みます。');
-      expect(parsed?.japanese, '本を読みます。');
-    });
     test('a verdict is read from the first line only', () {
       expect(PracticeResponseParser.grade('SAME\nClose enough.')?.same, isTrue);
       expect(
@@ -413,25 +419,20 @@ void main() {
     );
   });
 
-  group('the answer budget', () {
-    test('the prompt asset decides how long an answer may be', () async {
+  test('the prompt asset decides how long an answer may be', () async {
+    // Both the foreground and the background path carry the same budget.
+    for (final run in [
+      (AiPracticeService p) => p.run('ask', maxOutputTokens: 320),
+      (AiPracticeService p) => p.runInBackground('ask', maxOutputTokens: 320),
+    ]) {
       final backend = _FakeBackend();
       final assist = AiAssistService(backend: backend);
       await assist.setEnabled(true);
-      final practice = AiPracticeService(assist: assist);
-      await practice.run('ask', maxOutputTokens: 320);
+      await run(AiPracticeService(assist: assist));
       expect(backend.lastMaxOutputTokens, 320);
-    });
-
-    test('a background job carries the same budget', () async {
-      final backend = _FakeBackend();
-      final assist = AiAssistService(backend: backend);
-      await assist.setEnabled(true);
-      final practice = AiPracticeService(assist: assist);
-      await practice.runInBackground('ask', maxOutputTokens: 320);
-      expect(backend.lastMaxOutputTokens, 320);
-    });
+    }
   });
+
   group('the shipped prompt asset', () {
     // Nothing checked this file for completeness, and that is how `forExamples`
     // came to ask for the labels `sentence` and `expected` — which exist, so
@@ -662,12 +663,6 @@ void main() {
         expect(reply.meaning, 'Welcome.');
       });
 
-      test('a full-width colon and quotation marks are read through', () {
-        final reply = parse('Japanese：「はい、どうぞ。」')!;
-        expect(reply.japanese, contains('はい、どうぞ。'));
-        expect(reply.meaning, isNull);
-      });
-
       test('a reply with no Japanese in it is not a reply', () {
         // The failure this catches is a model answering the instruction
         // instead of the learner, which is a well-formed line and not speech.
@@ -687,12 +682,6 @@ void main() {
       expect(verdict.answerIndex, 1);
       expect(verdict.sound, isTrue);
       expect(verdict.fits, [false, true, false, false]);
-    });
-
-    test('a full-width colon and a lower-case rating are read', () {
-      final verdict = parse('A\nUNSOUND\nA：fits\nB: no\nC: NO\nD: NO')!;
-      expect(verdict.sound, isFalse);
-      expect(verdict.fits, [true, false, false, false]);
     });
 
     test('the two-line reply the old task asked for is now a refusal', () {
@@ -729,9 +718,7 @@ void main() {
     });
 
     test('a code fence contributes nothing', () {
-      final out = parse(
-        '```\n本を読みます。|ほんをよみます。|I read a book.\n```',
-      );
+      final out = parse('```\n本を読みます。|ほんをよみます。|I read a book.\n```');
       expect(out, hasLength(1), reason: 'the fence lines are not examples');
     });
 

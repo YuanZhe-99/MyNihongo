@@ -106,6 +106,28 @@ class _QuizPageState extends ConsumerState<QuizPage> {
   /// entries, and a kana quiz has no use for it. The session is given a
   /// checker holding the same lexicon.
   Future<void> _build() async {
+    try {
+      await _buildSession();
+    } catch (_) {
+      // A catalog, lesson or analyser that will not load must end in the
+      // "nothing to ask" page, not in a spinner that never stops.
+      if (mounted) {
+        setState(() {
+          _building = false;
+          _session = null;
+        });
+      }
+    }
+  }
+
+  /// Purpose: Do the work of [_build]: load what the questions need and start
+  /// the session.
+  /// Inputs: None.
+  /// Returns: None.
+  /// Side effects: As [_build].
+  /// Notes: Internal helper used within this file only. It may throw; [_build]
+  /// is the only caller and turns a failure into the empty page.
+  Future<void> _buildSession() async {
     final catalog = await ref.read(contentCatalogProvider.future);
     final modes = _enabledModes();
     final analyzer =
@@ -415,7 +437,8 @@ class _QuizPageState extends ConsumerState<QuizPage> {
       analyze: analyzer?.analyze,
     );
     await for (final question in generator.generate(avoid: avoid)) {
-      if (!mounted) return;
+      // Nothing is appended to a session the learner has already finished.
+      if (!mounted || _finished) return;
       session.append(question);
     }
   }
@@ -594,6 +617,8 @@ class _QuizPageState extends ConsumerState<QuizPage> {
                     ? drillPassagePaneWidth
                     : quizQuestionPaneWidth,
                 onFinished: () {
+                  // A second finish (a late callback) must not record twice.
+                  if (_finished) return;
                   _recordCheckpoint(s);
                   _recordAttempt(s);
                   setState(() => _finished = true);

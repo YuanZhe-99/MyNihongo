@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:my_nihongo/features/content/models/content_catalog.dart';
 import 'package:my_nihongo/features/content/models/jlpt_level.dart';
 import 'package:my_nihongo/features/content/services/content_repository.dart';
 import 'package:my_nihongo/features/drills/models/drill_file.dart';
@@ -200,6 +201,27 @@ void main() {
     expect(find.textContaining('暂时没有可出的题'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
+
+  testWidgets(
+    'a catalog that will not load ends on the empty page, not a spinner',
+    (tester) async {
+      await pumpAt(
+        tester,
+        412,
+        915,
+        overrides: [
+          contentCatalogProvider.overrideWithProvider(
+            FutureProvider<ContentCatalog>(
+              (ref) => throw StateError('the catalog will not load'),
+            ),
+          ),
+        ],
+      );
+      expect(find.byType(CircularProgressIndicator), findsNothing);
+      expect(find.textContaining('暂时没有可出的题'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    },
+  );
 
   testWidgets('the modes page groups every mode under its catalog', (
     tester,

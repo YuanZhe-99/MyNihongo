@@ -21,7 +21,7 @@
 
 - **Purpose:** 执行导入。
 - **Inputs:** `args` —— `--data`、`--out`、`--overlay`、`--overlay-ja`、`--examples`、`--seed`、
-  `--overlay-only`。`--overlay-ja` 默认为 `assets/content/vocab_ja.json`。
+  `--overlay-only`。`--overlay`、`--overlay-ja` 与 `--examples` 默认分别为 `tool/content/overlays/vocab_zh.json`、`vocab_ja.json` 与 `vocab_examples.json`——这些构建输入放在打包资源之外。
 - **Returns:** 无；设置退出码。
 - **Side effects:** 读取词典、五份词表、种子与三个覆盖文件（中文释义、日语释义、例句）；重写单词资源。
 - **Algorithm:** 先读取覆盖文件，然后要么只重新应用它们，要么执行完整导入：按序号为词典建索引、解析每份词表、

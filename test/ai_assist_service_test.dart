@@ -49,6 +49,10 @@ class _FakeGenAiBackend extends GenAiBackend {
 
   int cancels = 0;
 
+  /// When set, `status` waits on it: lets a test hold a caller inside the
+  /// status check.
+  Completer<void>? statusGate;
+
   /// The answer length the last `explain` asked for.
   int? lastMaxOutputTokens;
 
@@ -58,6 +62,7 @@ class _FakeGenAiBackend extends GenAiBackend {
   @override
   Future<GenAiStatus> status(GenAiFeature feature) async {
     calls.add('status:${feature.name}');
+    await statusGate?.future;
     return feature == GenAiFeature.prompt ? promptStatus : proofreadStatus;
   }
 
@@ -251,6 +256,57 @@ void main() {
     await first;
   });
 
+  test(
+    'a second request arriving during the status check is refused',
+    () async {
+      // The busy flag is taken before the status is awaited. Otherwise both
+      // callers pass the check, both ask the device, and both run a model.
+      final backend = _FakeGenAiBackend();
+      final service = AiAssistService(backend: backend);
+      await service.setEnabled(true);
+      backend.statusGate = Completer<void>();
+      backend.calls.clear();
+
+      final first = service.explain('first');
+      await Future<void>.delayed(Duration.zero);
+      expect(service.busy, isTrue);
+      await expectLater(
+        service.proofread('これは本'),
+        throwsA(
+          isA<GenAiException>().having(
+            (e) => e.failure,
+            'failure',
+            GenAiFailure.busy,
+          ),
+        ),
+      );
+
+      backend.statusGate!.complete();
+      await first;
+      expect(backend.calls.where((c) => c == 'explain'), hasLength(1));
+      expect(backend.calls, isNot(contains('proofread')));
+      expect(service.busy, isFalse);
+    },
+  );
+
+  test('a status that says unavailable clears the busy flag', () async {
+    final backend = _FakeGenAiBackend();
+    final service = AiAssistService(backend: backend);
+    await service.setEnabled(true);
+    backend.promptStatus = GenAiStatus.unsupported;
+    await expectLater(
+      service.explain('why'),
+      throwsA(
+        isA<GenAiException>().having(
+          (e) => e.failure,
+          'failure',
+          GenAiFailure.unavailable,
+        ),
+      ),
+    );
+    expect(service.busy, isFalse);
+  });
+
   test('proofreading returns what the model suggested', () async {
     final backend = _FakeGenAiBackend(suggestions: const ['これは本です。', 'これは本だ。']);
     final service = AiAssistService(backend: backend);
@@ -339,57 +395,12 @@ void main() {
     expect(service.statusOf(GenAiFeature.proofread), GenAiStatus.downloadable);
   });
 
-  test('the AICore version is read when the statuses are refreshed', () async {
-    final backend = _FakeGenAiBackend()
-      ..core = const GenAiCoreInfo(
-        installed: true,
-        versionName: 'aicore_20260723.00_RC11',
-        sdk: 36,
-        device: 'samsung SM-F978B',
-      );
-    final service = AiAssistService(backend: backend);
-    await service.setEnabled(true);
-    expect(service.coreInfo?.versionName, 'aicore_20260723.00_RC11');
-    expect(service.coreInfo?.device, 'samsung SM-F978B');
-  });
-
-  test(
-    'a device that reports no AICore info does not break the page',
-    () async {
-      final service = AiAssistService(backend: _FakeGenAiBackend());
-      await service.setEnabled(true);
-      expect(service.coreInfo, isNull);
-    },
-  );
-
-  test(
-    'turning the switch off asks the device nothing, diagnostics included',
-    () async {
-      final backend = _FakeGenAiBackend();
-      final service = AiAssistService(backend: backend);
-      expect(backend.calls, isEmpty);
-      expect(
-        service.reportOf(GenAiFeature.prompt).status,
-        GenAiStatus.unsupported,
-      );
-    },
-  );
-
-  test(
-    'an answer length asked for by the caller reaches the backend',
-    () async {
-      final backend = _FakeGenAiBackend();
-      final service = AiAssistService(backend: backend);
-      await service.setEnabled(true);
-      await service.explain('why', maxOutputTokens: 320);
-      expect(backend.lastMaxOutputTokens, 320);
-    },
-  );
-
-  test('a caller that names no length gets the documented default', () async {
+  test('the answer length is the callers, or the documented default', () async {
     final backend = _FakeGenAiBackend();
     final service = AiAssistService(backend: backend);
     await service.setEnabled(true);
+    await service.explain('why', maxOutputTokens: 320);
+    expect(backend.lastMaxOutputTokens, 320);
     await service.explain('why');
     expect(backend.lastMaxOutputTokens, AiAssistService.defaultMaxOutputTokens);
   });

@@ -30,7 +30,9 @@ Consumers: `learn_page.dart`.
 - **Side effects:** None beyond building widgets.
 - **Algorithm:** Read the studied days, find the Monday `calendarWeeks - 1` weeks back, then lay out
   one column per week of seven `_cell`s, sizing the cell from the available width clamped to 6–18
-  logical pixels. A summary line reports how many days are filled.
+  logical pixels. A summary line reports how many days are filled. Every date is calendar
+  arithmetic (`DateTime(y, m, d + n)`), never `Duration`, so the grid does not shift by a day across
+  a daylight-saving change.
 - **Usage:** `learn_page.dart`.
 - **Notes:** One column per week, oldest on the left, with today in the last column — so the shape a
   learner recognises is the right-hand edge. A day with nothing on it is drawn, not skipped: the gaps

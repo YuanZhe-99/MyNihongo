@@ -36,12 +36,17 @@ class _FakeBackend extends ReminderBackend {
   int inits = 0;
   int permissionRequests = 0;
   int cancels = 0;
+  int schedules = 0;
+  bool failInit = false;
   bool grant = true;
   List<ScheduledReminder> scheduled = const [];
   final shown = <String>[];
 
   @override
-  Future<void> init() async => inits++;
+  Future<void> init() async {
+    inits++;
+    if (failInit) throw StateError('init failed');
+  }
 
   @override
   Future<bool> requestPermission() async {
@@ -51,6 +56,7 @@ class _FakeBackend extends ReminderBackend {
 
   @override
   Future<void> schedule(List<ScheduledReminder> reminders) async {
+    schedules++;
     scheduled = reminders;
   }
 
@@ -98,6 +104,34 @@ void main() {
       expect(plan.first.fireAt, DateTime(2026, 9, 4, 20));
       expect(plan.last.fireAt, DateTime(2026, 9, 10, 20));
       expect(plan.map((r) => r.id).toSet(), hasLength(reminderDays));
+    });
+
+    test('every reminder keeps its wall-clock time across a clock change', () {
+      // Daylight saving makes a day 23 or 25 hours long; adding 24 hours to
+      // the first reminder would drift the rest by an hour. Only proves itself
+      // in a time zone that changes its clocks.
+      for (final start in [
+        DateTime(2026, 3, 5, 9),
+        DateTime(2026, 10, 28, 9),
+        DateTime(2026, 11, 1, 22),
+      ]) {
+        final plan = planReminders(
+          hour: 0,
+          minute: 30,
+          now: start,
+          progress: const ProgressData(),
+          path: const LessonPath(level: 'N5', units: []),
+          l10n: l10n,
+        );
+        for (final reminder in plan) {
+          expect(reminder.fireAt.hour, 0, reason: '${reminder.fireAt}');
+          expect(reminder.fireAt.minute, 30, reason: '${reminder.fireAt}');
+        }
+        for (var i = 1; i < plan.length; i++) {
+          final before = plan[i - 1].fireAt;
+          expect(plan[i].fireAt.day, isNot(before.day));
+        }
+      }
     });
 
     test('a time that has already passed today starts tomorrow', () {
@@ -195,6 +229,89 @@ void main() {
         0,
         reason: 'permission was granted when the switch was turned on',
       );
+    });
+  });
+
+  group('keeping the plan alive', () {
+    test('init is shared, and a failed one is tried again', () async {
+      final backend = _FakeBackend()..failInit = true;
+      final service = ReminderService(backend: backend);
+      await expectLater(service.init(), throwsA(isA<StateError>()));
+      backend.failInit = false;
+      await service.init();
+      await service.init();
+      expect(backend.inits, 2, reason: 'one failure, then one shared success');
+    });
+
+    test(
+      'a reschedule at startup plans without asking for permission',
+      () async {
+        await NihongoStorage.setReminderEnabled(true);
+        final backend = _FakeBackend();
+        final service = ReminderService(backend: backend);
+        await service.reschedule(l10n);
+        expect(backend.inits, 1, reason: 'reschedule initialises the backend');
+        expect(backend.scheduled, hasLength(reminderDays));
+        expect(backend.permissionRequests, 0);
+        service.dispose();
+      },
+    );
+
+    test('a refresh before any reschedule does nothing', () async {
+      await NihongoStorage.setReminderEnabled(true);
+      final backend = _FakeBackend();
+      await ReminderService(backend: backend).refresh();
+      expect(backend.schedules, 0);
+      expect(backend.inits, 0);
+    });
+
+    test(
+      'a refresh re-plans with the wording of the last reschedule',
+      () async {
+        await NihongoStorage.setReminderEnabled(true);
+        final backend = _FakeBackend();
+        final service = ReminderService(backend: backend);
+        await service.reschedule(l10n);
+        await service.refresh();
+        expect(backend.schedules, 2);
+        service.dispose();
+      },
+    );
+
+    test('five refreshes at once cost at most two plans', () async {
+      await NihongoStorage.setReminderEnabled(true);
+      final backend = _FakeBackend();
+      final service = ReminderService(backend: backend);
+      await service.reschedule(l10n);
+      final before = backend.schedules;
+      await Future.wait([for (var i = 0; i < 5; i++) service.refresh()]);
+      // A run in progress may still be finishing its queued pass; let it.
+      await Future<void>.delayed(const Duration(milliseconds: 200));
+      expect(backend.schedules - before, lessThanOrEqualTo(2));
+      expect(backend.schedules - before, greaterThanOrEqualTo(1));
+      service.dispose();
+    });
+
+    test('once reminders are off a refresh does nothing', () async {
+      final backend = _FakeBackend();
+      final service = ReminderService(backend: backend);
+      await service.reschedule(l10n);
+      final cancels = backend.cancels;
+      await service.refresh();
+      expect(backend.schedules, 0);
+      expect(backend.cancels, cancels);
+    });
+
+    test('a refresh that fails is swallowed', () async {
+      await NihongoStorage.setReminderEnabled(true);
+      final backend = _FakeBackend();
+      final service = ReminderService(backend: backend);
+      await service.reschedule(l10n);
+      await File(
+        p.join(temp.path, 'MyNihongo', 'nihongo_progress.json'),
+      ).writeAsString('{ not json');
+      await service.refresh();
+      service.dispose();
     });
   });
 

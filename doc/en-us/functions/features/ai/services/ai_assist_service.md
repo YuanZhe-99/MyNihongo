@@ -57,10 +57,12 @@ Consumers: `aicore_sentence_enhancer.dart`, `ai_settings_tiles.dart`, `sentence_
 - **Inputs:** The assembled `prompt`.
 - **Returns:** `Future<String>`; throws `GenAiException` rather than returning a failure.
 - **Side effects:** Runs a model on the device.
-- **Algorithm:** Refuse if disabled, refuse if busy, re-ask the status, refuse if not available, then
-  call the backend under a timeout.
+- **Algorithm:** Refuse if disabled, refuse if busy, take the busy flag, then — inside the
+  `try`/`finally` that clears it — re-ask the status, refuse if not available, and call the backend
+  under a timeout. `proofread` is built the same way.
 - **Usage:** `AiCoreSentenceEnhancer.explain`.
-- **Notes:** **The gate order is the point.** Disabled is refused before the status is even asked, so
+- **Notes:** The busy flag is taken **before** the status is awaited: two callers arriving together
+  used to both pass the busy check and both run a model. **The gate order is the point.** Disabled is refused before the status is even asked, so
   a device with a model present still does nothing while the switch is off — the backend is not
   called and ignored, it is not called at all, and `test/ai_assist_service_test.dart` asserts exactly
   that. The status is re-asked every time because the system can remove a model between two requests,

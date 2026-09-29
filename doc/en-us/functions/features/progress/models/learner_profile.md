@@ -21,7 +21,7 @@ settings rows, and the conflict dialog.
 | `localDateKey` | static method | B | Format a local date as `YYYY-MM-DD`. |
 | [`fromRecord`](#fromrecord) | static method | A | Read the profile out of the progress file. |
 | [`toRecord`](#torecord) | method | A | Write the profile back into its record. |
-| `withStreakTouched` | method | B | Advance the streak for a day with an answer in it. |
+| `withStreakTouched` | method | B | Advance the streak for a day with an answer in it. Yesterday is found by calendar arithmetic (`DateTime(y, m, d - 1)`), not by subtracting 24 hours, which lands on the wrong date across a daylight-saving change. |
 | `copyWith` | method | B | Create a copy with selected fields replaced. |
 
 ## Documentation

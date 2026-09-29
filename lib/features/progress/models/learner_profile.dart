@@ -120,8 +120,7 @@ class LearnerProfile {
       ...?existing?.extraJson,
       'profile': payload,
     };
-    final base =
-        existing ?? StudyRecord.create(learnerProfileId, now: now);
+    final base = existing ?? StudyRecord.create(learnerProfileId, now: now);
     return base.copyWith(extraJson: extra, modifiedAt: now.toUtc());
   }
 
@@ -137,8 +136,12 @@ class LearnerProfile {
   /// one field at most.
   LearnerProfile withStreakTouched(String today) {
     if (streakLastDate == today) return this;
+    // Calendar arithmetic, not `Duration(days: 1)`: across a daylight-saving
+    // change a day is 23 or 25 hours, and subtracting 24 from local midnight
+    // can land on the wrong date.
+    final parsed = DateTime.parse(today);
     final yesterday = localDateKey(
-      DateTime.parse(today).subtract(const Duration(days: 1)),
+      DateTime(parsed.year, parsed.month, parsed.day - 1),
     );
     return copyWith(
       streakDays: streakLastDate == yesterday ? streakDays + 1 : 1,

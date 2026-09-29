@@ -414,6 +414,27 @@ void main() {
       expect(session.summary.wrongIds, ['vocab:2']);
     });
 
+    test('replayed answers are not reported to the scheduler again', () {
+      // They were reported when first given; a second report would grade the
+      // same recall twice and write the progress file once per answer.
+      final calls = <(String, bool)>[];
+      final session = QuizSession(
+        questions: [choice('vocab:1'), choice('vocab:2'), choice('vocab:3')],
+        requeue: false,
+        onFirstAnswer: (id, correct) => calls.add((id, correct)),
+      );
+      session.restore(const {
+        'vocab:1': ChoiceAnswer(0),
+        'vocab:2': ChoiceAnswer(0),
+      });
+      expect(calls, isEmpty);
+
+      // The paper carries on as normal: a new answer is reported once, and an
+      // item that was replayed is not reported again if it comes round again.
+      session.answer(const ChoiceAnswer(0));
+      expect(calls, [('vocab:3', true)]);
+    });
+
     test('a save with nothing in it leaves the paper untouched', () {
       final session = QuizSession(questions: [choice('vocab:1')]);
       session.restore(const {});

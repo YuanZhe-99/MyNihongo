@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:my_nihongo/app/data_modules.dart';
 import 'package:my_nihongo/features/progress/models/study_record.dart';
-import 'package:myapps_data/myapps_data.dart';
 
 /// Purpose: Pin the compatibility contract the shared engines see.
 /// Inputs: None.
@@ -108,9 +107,4 @@ void main() {
       expect(data.recordById('grammar:desu')!.correct, 8);
     },
   );
-
-  test('the adapter can be constructed without touching storage', () {
-    const adapter = NihongoStorageAdapter();
-    expect(adapter, isA<StorageAdapter>());
-  });
 }

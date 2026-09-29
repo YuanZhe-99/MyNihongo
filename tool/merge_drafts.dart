@@ -1,7 +1,9 @@
 /// Purpose: Fold checked draft batches into the shipped content files.
 /// Inputs: Command-line flags and the draft paths.
 /// Returns: None; sets the exit code.
-/// Side effects: Rewrites files under `assets/content/`.
+/// Side effects: Rewrites files under `assets/content/`, and the three
+/// vocabulary overlays under `tool/content/overlays/` (they are build inputs,
+/// not shipped, so they live beside the tool and not in the app bundle).
 /// Notes: The last step of the authoring loop, and deliberately the dumbest:
 /// every judgement about a draft was made by `test/content_gate_test.dart`
 /// before this runs. All this does is merge, sort and write, so that a batch
@@ -30,7 +32,8 @@ const _encoder = JsonEncoder.withIndent('  ');
 const _source = 'model-authored (Claude), unreviewed';
 
 /// Purpose: Run the merge.
-/// Inputs: `args` — the kind, `--level`, `--assets`, then the draft paths.
+/// Inputs: `args` — the kind, `--level`, `--assets`, `--overlays`, then the
+/// draft paths.
 /// Returns: None; sets the exit code.
 /// Side effects: File I/O and console output.
 /// Notes: None.
@@ -48,6 +51,7 @@ void main(List<String> args) {
   var level = '';
   var section = '';
   var assets = 'assets/content';
+  var overlays = 'tool/content/overlays';
   final drafts = <String>[];
   for (var i = 1; i < args.length; i++) {
     final next = i + 1 < args.length ? args[i + 1] : null;
@@ -61,6 +65,9 @@ void main(List<String> args) {
       case '--assets' when next != null:
         assets = next;
         i++;
+      case '--overlays' when next != null:
+        overlays = next;
+        i++;
       default:
         drafts.add(args[i]);
     }
@@ -73,9 +80,9 @@ void main(List<String> args) {
 
   switch (kind) {
     case 'gloss':
-      _mergeGloss(assets, drafts);
+      _mergeGloss(overlays, drafts);
     case 'examples':
-      _mergeExamples(assets, drafts);
+      _mergeExamples(overlays, drafts);
     case 'grammar':
       _mergeGrammar(assets, level, drafts);
     case 'units':
@@ -83,7 +90,7 @@ void main(List<String> args) {
     case 'drills':
       _mergeDrills(assets, level, section, drafts);
     case 'gloss-ja':
-      _mergeGlossJa(assets, drafts);
+      _mergeGlossJa(overlays, drafts);
     case 'ja':
       _mergeJa(assets, drafts);
     default:
@@ -120,15 +127,15 @@ List<Map<String, Object?>> _rows(List<String> paths, String key) {
 }
 
 /// Purpose: Fold gloss batches into the Chinese overlay.
-/// Inputs: `assets`, `drafts`.
+/// Inputs: `overlays` — the overlay directory; `drafts`.
 /// Returns: None.
-/// Side effects: Rewrites `vocab_zh.json`.
+/// Side effects: Rewrites `vocab_zh.json` in the overlay directory.
 /// Notes: Internal helper used within this file only. **An existing row is
 /// never overwritten**: the overlay is where a human correction lands, and a
 /// later batch must not undo one. `reviewed` stays false — it tracks whether a
 /// speaker has read the row, and nothing here has read anything.
-void _mergeGloss(String assets, List<String> drafts) {
-  final path = '$assets/vocab_zh.json';
+void _mergeGloss(String overlays, List<String> drafts) {
+  final path = '$overlays/vocab_zh.json';
   final json =
       jsonDecode(File(path).readAsStringSync()) as Map<String, Object?>;
   final entries = (json['entries'] as Map).cast<String, Object?>();
@@ -159,15 +166,16 @@ void _mergeGloss(String assets, List<String> drafts) {
 }
 
 /// Purpose: Fold example batches into the example overlay.
-/// Inputs: `assets`, `drafts`.
+/// Inputs: `overlays` — the overlay directory; `drafts`.
 /// Returns: None.
-/// Side effects: Writes `vocab_examples.json`, creating it if needed.
+/// Side effects: Writes `vocab_examples.json` in the overlay directory,
+/// creating it if needed.
 /// Notes: Internal helper used within this file only. Sentences are appended
 /// and de-duplicated by their Japanese, so re-running a merged batch changes
 /// nothing. The generated `zh_TW` is not written here: `convert_zh_tw.dart`
 /// owns it, and a hand-written one fails `content_zh_tw_test`.
-void _mergeExamples(String assets, List<String> drafts) {
-  final path = '$assets/vocab_examples.json';
+void _mergeExamples(String overlays, List<String> drafts) {
+  final path = '$overlays/vocab_examples.json';
   final file = File(path);
   final json = file.existsSync()
       ? jsonDecode(file.readAsStringSync()) as Map<String, Object?>
@@ -394,15 +402,16 @@ Object? _stripTw(Object? value) {
 const _jaSource = 'hand-written; ja model-authored (Claude), unreviewed';
 
 /// Purpose: Fold Japanese-definition batches into the Japanese overlay.
-/// Inputs: `assets`, `drafts`.
+/// Inputs: `overlays` — the overlay directory; `drafts`.
 /// Returns: None.
-/// Side effects: Writes `vocab_ja.json`, creating it if needed.
+/// Side effects: Writes `vocab_ja.json` in the overlay directory, creating it
+/// if needed.
 /// Notes: Internal helper used within this file only. The twin of
 /// `_mergeGloss`: an existing row is never overwritten, rows are sorted by id,
 /// and `reviewed` starts false. Each row keeps its readings beside the
 /// definitions, one per sense, because the catalog draws them with furigana.
-void _mergeGlossJa(String assets, List<String> drafts) {
-  final path = '$assets/vocab_ja.json';
+void _mergeGlossJa(String overlays, List<String> drafts) {
+  final path = '$overlays/vocab_ja.json';
   final file = File(path);
   final json = file.existsSync()
       ? jsonDecode(file.readAsStringSync()) as Map<String, Object?>

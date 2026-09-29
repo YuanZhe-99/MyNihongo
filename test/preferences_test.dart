@@ -99,28 +99,22 @@ void main() {
     expect(saved['referenceListColumns'], 2);
   });
 
-  test('the speaking rate round trips as a number', () async {
-    expect(await NihongoStorage.getTtsRate(), isNull);
-    await NihongoStorage.setTtsRate(0.8);
-    expect(await NihongoStorage.getTtsRate(), 0.8);
-    expect((await config())['ttsRate'], 0.8);
-  });
-
-  test('a whole-number rate written by hand still reads', () async {
-    await configFile.writeAsString('{"ttsRate": 1}');
-    expect(await NihongoStorage.getTtsRate(), 1.0);
-  });
-
-  test('clearing the rate removes the key', () async {
-    await NihongoStorage.setTtsRate(0.8);
-    await NihongoStorage.setTtsRate(null);
-    expect((await config()).containsKey('ttsRate'), isFalse);
-  });
-
-  test('a rate of the wrong type reads as unset', () async {
-    await configFile.writeAsString('{"ttsRate": "fast"}');
-    expect(await NihongoStorage.getTtsRate(), isNull);
-  });
+  test(
+    'the speaking rate round trips, clears and reads a whole number',
+    () async {
+      expect(await NihongoStorage.getTtsRate(), isNull);
+      await NihongoStorage.setTtsRate(0.8);
+      expect(await NihongoStorage.getTtsRate(), 0.8);
+      expect((await config())['ttsRate'], 0.8);
+      await NihongoStorage.setTtsRate(null);
+      expect((await config()).containsKey('ttsRate'), isFalse);
+      // A whole number written by hand still reads; a string reads as unset.
+      await configFile.writeAsString('{"ttsRate": 1}');
+      expect(await NihongoStorage.getTtsRate(), 1.0);
+      await configFile.writeAsString('{"ttsRate": "fast"}');
+      expect(await NihongoStorage.getTtsRate(), isNull);
+    },
+  );
 
   test('the chosen voice round trips', () async {
     expect(await NihongoStorage.getTtsVoice(), isNull);
@@ -169,65 +163,48 @@ void main() {
     expect(await NihongoStorage.getShowFurigana(), isTrue);
   });
 
-  test('network speech recognition is off unless it was turned on', () async {
-    expect(await NihongoStorage.getSpeechNetworkFallback(), isFalse);
-    await NihongoStorage.setSpeechNetworkFallback(true);
-    expect(await NihongoStorage.getSpeechNetworkFallback(), isTrue);
-    expect((await config())['speechNetworkFallback'], isTrue);
-  });
-
-  test('turning the network fallback off removes the key', () async {
-    await NihongoStorage.setSpeechNetworkFallback(true);
-    await NihongoStorage.setSpeechNetworkFallback(false);
-    expect((await config()).containsKey('speechNetworkFallback'), isFalse);
-    expect(await NihongoStorage.getSpeechNetworkFallback(), isFalse);
-  });
-
-  test('a hand-edited string does not switch the fallback on', () async {
-    await configFile.writeAsString('{"speechNetworkFallback": "true"}');
-    expect(await NihongoStorage.getSpeechNetworkFallback(), isFalse);
-  });
-
-  test('on-device AI is off until it is turned on', () async {
-    expect(await NihongoStorage.getAiAssistEnabled(), isFalse);
-    await NihongoStorage.setAiAssistEnabled(true);
-    expect(await NihongoStorage.getAiAssistEnabled(), isTrue);
-    expect((await config())['aiAssistEnabled'], isTrue);
-  });
-
-  test('turning on-device AI off removes the key', () async {
-    await NihongoStorage.setAiAssistEnabled(true);
-    await NihongoStorage.setAiAssistEnabled(false);
-    expect((await config()).containsKey('aiAssistEnabled'), isFalse);
-    expect(await NihongoStorage.getAiAssistEnabled(), isFalse);
-  });
-
-  test('a hand-edited string does not switch on-device AI on', () async {
-    await configFile.writeAsString('{"aiAssistEnabled": "true"}');
-    expect(await NihongoStorage.getAiAssistEnabled(), isFalse);
-  });
-
-  test(
-    'the faster on-device model is not preferred until it is asked for',
-    () async {
-      expect(await NihongoStorage.getPreferFastModel(), isFalse);
-      await NihongoStorage.setPreferFastModel(true);
-      expect(await NihongoStorage.getPreferFastModel(), isTrue);
-      expect((await config())['preferFastModel'], isTrue);
-    },
-  );
-
-  test('going back to the larger model removes the key', () async {
-    await NihongoStorage.setPreferFastModel(true);
-    await NihongoStorage.setPreferFastModel(false);
-    expect((await config()).containsKey('preferFastModel'), isFalse);
-    expect(await NihongoStorage.getPreferFastModel(), isFalse);
-  });
-
-  test('a hand-edited string does not switch the faster model on', () async {
-    await configFile.writeAsString('{"preferFastModel": "true"}');
-    expect(await NihongoStorage.getPreferFastModel(), isFalse);
-  });
+  // The four preferences that are off until someone turns them on. Each is
+  // stored as a key only while on, and only a real JSON boolean counts.
+  final offByDefault =
+      <
+        String,
+        ({Future<bool> Function() get, Future<void> Function(bool) set})
+      >{
+        'speechNetworkFallback': (
+          get: NihongoStorage.getSpeechNetworkFallback,
+          set: NihongoStorage.setSpeechNetworkFallback,
+        ),
+        'aiAssistEnabled': (
+          get: NihongoStorage.getAiAssistEnabled,
+          set: NihongoStorage.setAiAssistEnabled,
+        ),
+        'preferFastModel': (
+          get: NihongoStorage.getPreferFastModel,
+          set: NihongoStorage.setPreferFastModel,
+        ),
+        'debugMode': (
+          get: NihongoStorage.getDebugMode,
+          set: NihongoStorage.setDebugMode,
+        ),
+      };
+  for (final entry in offByDefault.entries) {
+    test(
+      '${entry.key} is off until turned on, and off removes the key',
+      () async {
+        final key = entry.key;
+        expect(await entry.value.get(), isFalse);
+        await entry.value.set(true);
+        expect(await entry.value.get(), isTrue);
+        expect((await config())[key], isTrue);
+        await entry.value.set(false);
+        expect((await config()).containsKey(key), isFalse);
+        expect(await entry.value.get(), isFalse);
+        // A hand-edited string must not switch it on.
+        await configFile.writeAsString('{"$key": "true"}');
+        expect(await entry.value.get(), isFalse);
+      },
+    );
+  }
 
   test('a locale with a country round trips', () async {
     // Traditional and Simplified Chinese differ only by the country here, so
@@ -257,6 +234,29 @@ void main() {
   test('a hand-edited string does not unlock developer options', () async {
     await configFile.writeAsString('{"debugMode": "true"}');
     expect(await NihongoStorage.getDebugMode(), isFalse);
+  });
+
+  test('a damaged config file reads as unset instead of throwing', () async {
+    // The getters run before the first frame, so a config that is not JSON, or
+    // is JSON but not an object, must not stop the app opening. `readConfig`
+    // itself stays strict: the sync adapter and every setter go through it and
+    // must not write over a file they could not read.
+    for (final damaged in ['{not json', '[1]', '"text"', '  ']) {
+      await configFile.writeAsString(damaged);
+      expect(await NihongoStorage.getLastTab(), isNull, reason: damaged);
+      expect(await NihongoStorage.getThemeMode(), isNull, reason: damaged);
+      expect(await NihongoStorage.getLocaleTag(), isNull, reason: damaged);
+      expect(await NihongoStorage.getTtsRate(), isNull, reason: damaged);
+      expect(await NihongoStorage.getShowFurigana(), isTrue, reason: damaged);
+      expect(await NihongoStorage.getDebugMode(), isFalse, reason: damaged);
+      expect(NihongoStorage.readConfig(), throwsA(anything), reason: damaged);
+    }
+  });
+
+  test('a wrong-typed theme or locale reads as unset', () async {
+    await configFile.writeAsString('{"themeMode": 3, "locale": true}');
+    expect(await NihongoStorage.getThemeMode(), isNull);
+    expect(await NihongoStorage.getLocaleTag(), isNull);
   });
 
   test('two preferences set at once both survive', () async {

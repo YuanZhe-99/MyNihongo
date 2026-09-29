@@ -32,37 +32,44 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  testWidgets('kana page renders in English', (tester) async {
-    await pumpKana(tester, const Locale('en'));
-    expect(find.text('Kana'), findsOneWidget);
-    expect(find.text('あ'), findsOneWidget);
-    expect(tester.takeException(), isNull);
-  });
-
-  testWidgets('kana page renders in Simplified Chinese', (tester) async {
-    await pumpKana(tester, const Locale('zh'));
-    expect(find.text('五十音速查'), findsOneWidget);
-    expect(find.text('清音五十音'), findsOneWidget);
-    expect(tester.takeException(), isNull);
-  });
-
-  testWidgets('kana page renders in Traditional Chinese', (tester) async {
-    await pumpKana(tester, const Locale('zh', 'TW'));
-    expect(find.text('五十音速查'), findsOneWidget);
-    // A heading the two Chinese catalogs write differently, so this fails if
-    // the Traditional locale quietly fell back to the Simplified strings.
-    expect(find.text('發音規則'), findsOneWidget);
-    expect(find.text('发音规则'), findsNothing);
-    expect(tester.takeException(), isNull);
-  });
-
-  testWidgets('kana page renders in Japanese', (tester) async {
-    await pumpKana(tester, const Locale('ja'));
-    final ja = lookupAppLocalizations(const Locale('ja'));
-    expect(find.text(ja.kanaTitle), findsOneWidget);
-    expect(find.text(ja.kanaRulesSection), findsOneWidget);
-    // Not the English catalog wearing a Japanese locale.
-    expect(find.text('Kana'), findsNothing);
-    expect(tester.takeException(), isNull);
-  });
+  // Per locale: text that must be on the page, and text that must not, so a
+  // locale that quietly fell back to another catalog fails.
+  final ja = lookupAppLocalizations(const Locale('ja'));
+  final cases =
+      <String, ({Locale locale, List<String> present, List<String> absent})>{
+        'English': (
+          locale: const Locale('en'),
+          present: ['Kana', 'あ'],
+          absent: [],
+        ),
+        'Simplified Chinese': (
+          locale: const Locale('zh'),
+          present: ['五十音速查', '清音五十音'],
+          absent: [],
+        ),
+        // A heading the two Chinese catalogs write differently.
+        'Traditional Chinese': (
+          locale: const Locale('zh', 'TW'),
+          present: ['五十音速查', '發音規則'],
+          absent: ['发音规则'],
+        ),
+        // Not the English catalog wearing a Japanese locale.
+        'Japanese': (
+          locale: const Locale('ja'),
+          present: [ja.kanaTitle, ja.kanaRulesSection],
+          absent: ['Kana'],
+        ),
+      };
+  for (final entry in cases.entries) {
+    testWidgets('kana page renders in ${entry.key}', (tester) async {
+      await pumpKana(tester, entry.value.locale);
+      for (final text in entry.value.present) {
+        expect(find.text(text), findsOneWidget, reason: text);
+      }
+      for (final text in entry.value.absent) {
+        expect(find.text(text), findsNothing, reason: text);
+      }
+      expect(tester.takeException(), isNull);
+    });
+  }
 }

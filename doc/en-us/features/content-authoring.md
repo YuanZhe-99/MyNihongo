@@ -48,7 +48,7 @@ Nothing else in the app needs touching.
 
 | Kind | Batch | Written into |
 |---|---|---|
-| `gloss` | 300 words | `vocab_zh.json`, the Chinese overlay |
+| `gloss` | 300 words | `vocab_zh.json`, the Chinese overlay (the three overlays live in `tool/content/overlays/`; `merge_drafts.dart --overlays <dir>` overrides the folder) |
 | `examples` | 150 words | `vocab_examples.json`, the example overlay |
 | `grammar` | 25 points | `grammar/<level>.json` |
 | `units` | one level, whole | `lessons/<level>.json` |

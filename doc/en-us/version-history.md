@@ -8,9 +8,49 @@ before changing it.
 The repository's branch is `main`. The `origin` remote existed before the first commit; the
 `github` remote was added at initialization. The `myapps_data` submodule was first pinned to
 `54fa8d7`, two documentation-only commits after the package's `v1.0.1` tag. It is now pinned to
-the `v1.0.2` tag, which carries the UTF-8 download fix this app needed.
+the `v1.0.3` tag (0.5.4), which carries the shared scheduler, WebDAV and backup fixes of that
+release; `v1.0.2` before it carried the UTF-8 download fix this app needed.
 
 ## Releases
+
+- `0.5.4` — 2026-09-28. Maintenance: no new features.
+
+  **Answers are no longer lost when they come quickly.** Every write to the progress file now
+  waits its turn, the way the settings file already did. A quiz records each answer as it is
+  given, without waiting, and two of them arriving together used to load the same file and let the
+  second save drop the first: a review that never happened, as far as the scheduler could tell.
+  A saved mock that is resumed no longer reports its replayed answers to the scheduler a second
+  time either, so it neither grades the same recall twice nor rewrites the progress file once per
+  answer.
+
+  **A damaged settings file no longer stops the app opening.** The setting getters read a file that
+  is not valid JSON as "nothing set"; the writers and the sync adapter still refuse it, so a file
+  that could not be read is never written over. A quiz whose content will not load now ends on the
+  "nothing to ask" page rather than a spinner, and a quiz that has been finished no longer takes
+  late generated questions.
+
+  **Reminders are re-planned.** They are rebuilt at every start while they are on, when the
+  language changes, and after progress changes (coalesced by a flag, with no timer), so desktop
+  reminders survive a restart and phone reminders do not run out after a week without opening the
+  app. The startup re-plan never asks for permission.
+
+  **Days are counted by the calendar.** The streak, the study calendar and the reminder times no
+  longer step by 24 hours, which is 23 or 25 across a daylight-saving change.
+
+  Smaller: the on-device AI refuses a second request while the first is still asking the device
+  for its status; the vocabulary search lowercases each entry once instead of on every keystroke;
+  choosing wrong-answer options scans the catalog once per question.
+
+  **The build is about 4.8 MB smaller**: the three vocabulary overlays
+  (`vocab_zh.json`, `vocab_ja.json`, `vocab_examples.json`) that nothing reads at runtime moved from
+  `assets/content/` to `tool/content/overlays/`, and `import_vocab.dart` and `merge_drafts.dart`
+  (new `--overlays` flag) follow. The catalog is byte-identical.
+
+  Verified here: `flutter analyze` clean and 1108 tests (1102 before, one skipped as
+  before); `import_vocab.dart --overlay-only` and `convert_zh_tw.dart` leave an empty `git diff`;
+  goldens untouched. The DST tests only prove themselves in a time zone that changes its clocks.
+  The shared package moves to `myapps_data` `v1.0.3`; the `genai-prompt` and `genai-proofreading`
+  versions were not re-checked against Google Maven in this maintenance release.
 
 - `0.5.3` — 2026-09-24. A sentence you write yourself, and the end of the plan.
 

@@ -16,7 +16,9 @@ dart run tool/merge_drafts.dart gloss-ja tool/content/drafts/gloss-ja/n5-*.json
 dart run tool/merge_drafts.dart ja      tool/content/drafts/ja/grammar/n5-*.json
 ```
 
-Then, for the three vocabulary overlays (Chinese glosses, examples, Japanese definitions):
+The three vocabulary overlays (Chinese glosses, examples, Japanese definitions) are read and
+written in `tool/content/overlays/`, not in `assets/content/`; `--overlays <dir>` names another
+folder, as `--assets <dir>` does for the shipped files. Then:
 `dart run tool/import_vocab.dart --overlay-only && dart run tool/convert_zh_tw.dart`.
 
 ## Declarations
@@ -26,10 +28,10 @@ Then, for the three vocabulary overlays (Chinese glosses, examples, Japanese def
 | library header | library doc | B | Fold checked draft batches into the shipped content files. |
 | `_encoder` | constant | B | The encoder every content file is written with, per `AGENTS.md`. |
 | `_source` | constant | B | What a model-authored file declares about where it came from. |
-| `main` | function | B | Parse the flags and dispatch on the kind. |
+| `main` | function | B | Parse the flags (`--level`, `--section`, `--assets`, `--overlays`) and dispatch on the kind. |
 | `_rows` | function | B | Read the rows of every draft file given, in order. |
-| `_mergeGloss` | function | B | Fold Chinese glosses into the vocabulary overlay. |
-| `_mergeExamples` | function | B | Fold example sentences into the examples overlay. |
+| `_mergeGloss` | function | B | Fold Chinese glosses into the vocabulary overlay (takes the overlay folder, not `assets`). |
+| `_mergeExamples` | function | B | Fold example sentences into the examples overlay (overlay folder). |
 | `_mergeGrammar` | function | B | Fold grammar points into a level's grammar file. |
 | `_mergeUnits` | function | B | Replace a level's units, because a level is planned whole. |
 | [`_mergeDrills`](#drills) | function | A | Append drill questions and passages to a level's section file. |

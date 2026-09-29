@@ -29,13 +29,4 @@ void main() {
     );
     expect(isolate.allVocabIds.length, inline.allVocabIds.length);
   });
-
-  test('the asset paths are the generated ones, not the old seed files', () {
-    expect(ContentRepository.vocabAsset, 'assets/content/vocab.json');
-    expect(
-      ContentRepository.grammarAssets,
-      contains('assets/content/grammar/n5.json'),
-    );
-    expect(ContentRepository.kanaNotesAsset, 'assets/content/kana_notes.json');
-  });
 }

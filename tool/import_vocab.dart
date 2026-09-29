@@ -1,8 +1,9 @@
 /// Purpose: Regenerate `assets/content/vocab.json` from JMdict and the JLPT
 /// lists.
 /// Inputs: Command-line flags; the JMdict body under `tool/data/`, the lists
-/// under `tool/content/jlpt/`, the seed, the Chinese overlay and the Japanese
-/// definition overlay.
+/// under `tool/content/jlpt/`, the seed, and the Chinese, Japanese-definition
+/// and example overlays under `tool/content/overlays/` (build inputs, kept out
+/// of the bundled assets).
 /// Returns: Process exit code 0 on success, 1 on a fatal input problem.
 /// Side effects: Reads several files and rewrites the vocabulary asset.
 /// Notes: Offline and deterministic: running it twice with unchanged inputs
@@ -162,9 +163,9 @@ typedef _Options = ({
 _Options _parseArgs(List<String> args) {
   var data = 'tool/data';
   var out = 'assets/content/vocab.json';
-  var overlay = 'assets/content/vocab_zh.json';
-  var overlayJa = 'assets/content/vocab_ja.json';
-  var examples = 'assets/content/vocab_examples.json';
+  var overlay = 'tool/content/overlays/vocab_zh.json';
+  var overlayJa = 'tool/content/overlays/vocab_ja.json';
+  var examples = 'tool/content/overlays/vocab_examples.json';
   var seed = 'tool/content/vocab_seed.json';
   var overlayOnly = false;
   for (var i = 0; i < args.length; i++) {

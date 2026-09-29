@@ -92,7 +92,8 @@ void main() {
     expect(
       second.modifiedAt,
       first.modifiedAt,
-      reason: 'a second answer the same day must not rewrite the profile, or '
+      reason:
+          'a second answer the same day must not rewrite the profile, or '
           'two devices studying the same day would conflict over every answer',
     );
   });
@@ -114,34 +115,37 @@ void main() {
     expect(text.startsWith('{\n  "records": [\n    {\n'), isTrue);
   });
 
-  test('a newer build\'s fields survive an answer written by this one', () async {
-    dataFile.writeAsStringSync(
-      const JsonEncoder.withIndent('  ').convert({
-        'records': [
-          {
-            'id': 'kana:あ',
-            'correct': 3,
-            'wrong': 1,
-            'streak': 3,
-            'intervalDays': 6,
-            'ease': 2.5,
-            'createdAt': '2026-08-01T00:00:00.000Z',
-            'modifiedAt': '2026-08-01T00:00:00.000Z',
-            'confidenceFromANewerBuild': 0.8,
-          },
-        ],
-        'aTopLevelFieldFromANewerBuild': true,
-      }),
-    );
+  test(
+    'a newer build\'s fields survive an answer written by this one',
+    () async {
+      dataFile.writeAsStringSync(
+        const JsonEncoder.withIndent('  ').convert({
+          'records': [
+            {
+              'id': 'kana:あ',
+              'correct': 3,
+              'wrong': 1,
+              'streak': 3,
+              'intervalDays': 6,
+              'ease': 2.5,
+              'createdAt': '2026-08-01T00:00:00.000Z',
+              'modifiedAt': '2026-08-01T00:00:00.000Z',
+              'confidenceFromANewerBuild': 0.8,
+            },
+          ],
+          'aTopLevelFieldFromANewerBuild': true,
+        }),
+      );
 
-    await NihongoStorage.recordAnswer('kana:あ', true, now: now);
+      await NihongoStorage.recordAnswer('kana:あ', true, now: now);
 
-    final json = onDisk();
-    final record = (json['records'] as List).first as Map<String, dynamic>;
-    expect(record['confidenceFromANewerBuild'], 0.8);
-    expect(json['aTopLevelFieldFromANewerBuild'], true);
-    expect(record['correct'], 4, reason: 'and the answer was still recorded');
-  });
+      final json = onDisk();
+      final record = (json['records'] as List).first as Map<String, dynamic>;
+      expect(record['confidenceFromANewerBuild'], 0.8);
+      expect(json['aTopLevelFieldFromANewerBuild'], true);
+      expect(record['correct'], 4, reason: 'and the answer was still recorded');
+    },
+  );
 
   test('saving the profile leaves the study records alone', () async {
     await NihongoStorage.recordAnswer('kana:あ', true, now: now);
@@ -160,7 +164,8 @@ void main() {
     expect(
       profile.streakDays,
       1,
-      reason: 'a streak is earned by answering, so a settings write must carry '
+      reason:
+          'a streak is earned by answering, so a settings write must carry '
           'it through rather than reset it',
     );
   });
@@ -168,5 +173,75 @@ void main() {
   test('an empty batch writes nothing at all', () async {
     await NihongoStorage.recordAnswers(const {}, now: now);
     expect(dataFile.existsSync(), isFalse);
+  });
+
+  test('twenty answers recorded at once are all kept', () async {
+    // Quizzes record one answer per tap, without awaiting. Unqueued, each of
+    // these loaded the same file and the last save dropped the others.
+    await Future.wait([
+      for (var i = 0; i < 20; i++)
+        NihongoStorage.recordAnswer('vocab:q$i', i.isEven, now: now),
+    ]);
+
+    final data = await NihongoStorage.load();
+    for (var i = 0; i < 20; i++) {
+      final record = data.recordById('vocab:q$i');
+      expect(record, isNotNull, reason: 'vocab:q$i was lost');
+      expect(record!.correct + record.wrong, 1);
+    }
+  });
+
+  test('saving the profile while answers are recorded keeps both', () async {
+    // saveProfile ends in an upsert; run inside the queue it must not wait on
+    // the queue it is holding.
+    await Future.wait([
+      NihongoStorage.recordAnswers({'kana:あ': true, 'kana:い': false}, now: now),
+      NihongoStorage.saveProfile(
+        const LearnerProfile(targetLevel: JlptLevel.n4, dailyNewLimit: 12),
+        now: now,
+      ),
+      NihongoStorage.recordAnswer('kana:う', true, now: now),
+      NihongoStorage.recordLessonResult('lesson:n5-u1', true, now: now),
+    ]).timeout(const Duration(seconds: 20));
+
+    final data = await NihongoStorage.load();
+    expect(data.recordById('kana:あ'), isNotNull);
+    expect(data.recordById('kana:い'), isNotNull);
+    expect(data.recordById('kana:う'), isNotNull);
+    expect(data.recordById('lesson:n5-u1')!.correct, 1);
+    final profile = LearnerProfile.fromRecord(
+      data.recordById(learnerProfileId),
+    );
+    expect(profile.targetLevel, JlptLevel.n4);
+    expect(profile.dailyNewLimit, 12);
+  });
+
+  test('a failing write does not block the ones after it', () async {
+    dataFile.writeAsStringSync('{ this is not json');
+    final first = NihongoStorage.recordAnswer('kana:あ', true, now: now);
+    final second = NihongoStorage.recordAnswer('kana:い', true, now: now);
+    await expectLater(first, throwsA(anything));
+    await expectLater(second, throwsA(anything));
+
+    dataFile.deleteSync();
+    await NihongoStorage.recordAnswer(
+      'kana:う',
+      true,
+      now: now,
+    ).timeout(const Duration(seconds: 20));
+    expect((await NihongoStorage.load()).recordById('kana:う')!.correct, 1);
+  });
+
+  test('the streak counts across a daylight-saving change', () async {
+    // The night the clocks go forward (2026-03-08 in the US) is 23 hours long;
+    // yesterday must be found by calendar, not by subtracting 24 hours.
+    const start = LearnerProfile(streakDays: 4, streakLastDate: '2026-03-08');
+    final next = start.withStreakTouched('2026-03-09');
+    expect(next.streakDays, 5);
+    // And the night they go back (2026-11-01) is 25 hours long.
+    const fall = LearnerProfile(streakDays: 2, streakLastDate: '2026-11-01');
+    expect(fall.withStreakTouched('2026-11-02').streakDays, 3);
+    // A gap of one whole day still restarts it.
+    expect(start.withStreakTouched('2026-03-10').streakDays, 1);
   });
 }

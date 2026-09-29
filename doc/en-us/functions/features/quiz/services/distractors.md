@@ -41,17 +41,21 @@ The reasoning per catalog is in
   romaji rather than by kana is what stops じ and ぢ appearing together — both are "ji", and a romaji
   question offering both has two correct answers.
 
-### `List<VocabEntry> _widen(List<bool Function(VocabEntry)> filters, int count)` <a id="widen"></a>
+### `List<VocabEntry> _widen(List<bool Function(VocabEntry)> filters, int count, {required bool Function(VocabEntry) usable})` <a id="widen"></a>
 
 - **Kind:** method
 - **Purpose:** Take candidates from progressively looser filters.
-- **Inputs:** The filters, best first, and how many to take.
+- **Inputs:** The filters, best first, how many to take, and `usable` — the test every candidate must
+  pass whichever filter selects it.
 - **Returns:** `List<VocabEntry>`, possibly short.
 - **Side effects:** None.
-- **Algorithm:** Walk the filters in order; shuffle each one's matches and take from them until the
-  count is reached.
+- **Algorithm:** Apply `usable` to the catalog once, in catalog order; then walk the filters in
+  order, shuffle each one's matches from that pool, and take from them until the count is reached.
 - **Usage:** `forMeaning` and `forWriting`.
 - **Notes:** Widening rather than failing on the first filter is a deliberate trade. A same-level,
   same-part-of-speech distractor is the best kind, but a question with two options is worse than one
   with a slightly easy third — so the filters loosen rather than the question being dropped. Each
   filter's matches are shuffled so the same word does not always draw the same three wrong answers.
+  `usable` used to be repeated inside every filter, so the catalog was scanned up to four times per
+  question; pre-filtering once keeps each filter's input in the same order as before, so a seeded
+  generator draws exactly the same options.

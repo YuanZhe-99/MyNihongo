@@ -10,8 +10,9 @@
 | `assets/content/vocab.json` | `ContentCatalog.vocab` | `VocabEntry` |
 | `assets/content/grammar/n5.json`（每级一个文件） | `ContentCatalog.grammar` | `GrammarPoint` |
 | `assets/content/kana_notes.json` | `ContentCatalog.kanaNotes` | `KanaNote` |
-| `assets/content/vocab_zh.json` | 运行时不解析 | 构建输入，见下文 |
 | `assets/content/function_words.json` | `FunctionWordTable`，单独加载 | `FunctionWord` |
+
+三个词汇覆盖文件（`vocab_zh.json`、`vocab_ja.json`、`vocab_examples.json`，合计约 4.8 MB）是运行时无人读取的构建输入。它们放在 `tool/content/overlays/`，即 `assets/content/` **之外**，因此不会被打进每一个构建；如果有人把其中一个放回去，`test/content_catalog_test.dart` 会失败。
 
 `ContentRepository.load()` 在调用方 isolate 上读取字符串，再交给 `compute` 解码，因此约 2 MB 的单词文件
 不会在启动时丢帧。单词文件以 `cache: false` 读取：它只解析一次，若留在资源包的字符串缓存中，会在整个进程
@@ -35,7 +36,7 @@
 | 以 JMdict 序号为键的 JLPT 词表 | `tool/content/jlpt/n{1..5}.csv` | 是，与上游逐字节一致 |
 | JMdict 本体（`jmdict-eng-<版本>.json`） | `tool/data/` | **否** —— 已 git 忽略，需手动下载 |
 | 手写种子词 | `tool/content/vocab_seed.json` | 是 |
-| 中文释义覆盖文件 | `assets/content/vocab_zh.json` | 是 |
+| 中文释义覆盖文件 | `tool/content/overlays/vocab_zh.json` | 是 |
 | OpenCC 转换词典 | `tool/content/opencc/` | 是，与上游逐字节一致 |
 
 ```bash
@@ -65,7 +66,7 @@ dart run tool/convert_zh_tw.dart
 
 ### 中文释义
 
-中文按等级逐级写在 `assets/content/vocab_zh.json` 中，以目录 id 为键，由工具合入目录。其 `reviewed` 标志
+中文按等级逐级写在 `tool/content/overlays/vocab_zh.json` 中，以目录 id 为键，由工具合入目录。其 `reviewed` 标志
 只用于记录写作进度，绝不进入 `vocab.json`：在母语者校对之前一律为 false。**当前的 N5 中文释义由机器撰写、
 尚未校对。** 没有对应条目的词只带英语，界面会回退到英语显示，这也是 N4 及以上目前显示英语的原因。
 
@@ -97,7 +98,7 @@ dart run tool/convert_zh_tw.dart
 | 单元、练习题与情景的文本 | 同一条指令或解释的日语版 |
 | 例句、文章、台词 | 日语本身，**没有译文** |
 
-释义撰写在 `assets/content/vocab_ja.json` 中，由导入器折入目录，与中文释义完全一样；其他每个 `ja` 字符串都放在已发布文件中 `en`、`zh` 与 `zh_TW` 的旁边。它们全部是**模型生成、未经审阅的**，也没有任何日语来源可供对照检查：本应用使用的 JMdict 版本只有英语。它们是如何撰写的，见 [`content-authoring.md`](content-authoring.md)。
+释义撰写在 `tool/content/overlays/vocab_ja.json` 中，由导入器折入目录，与中文释义完全一样；其他每个 `ja` 字符串都放在已发布文件中 `en`、`zh` 与 `zh_TW` 的旁边。它们全部是**模型生成、未经审阅的**，也没有任何日语来源可供对照检查：本应用使用的 JMdict 版本只有英语。它们是如何撰写的，见 [`content-authoring.md`](content-authoring.md)。
 
 **日语的译文绝不显示给日语读者。** `LocalizedStrings.resolve` 会回退到英语，最后再回退到排在第一个的语言——所以若没有一条规则，日语界面会在每个例句下印出一行英文，而模型生成例句下那行简单日语的改写甚至可能解析成中文。显示的地方改为调用 `LocalizedStrings.resolveTranslation`，对日语它返回 `ja` 条目或什么都不返回；没有东西可显示的译文开关也不会提供。题目逻辑另行决定：三种以译文为素材的语法测验模式——对照含义排列片段，以及在句子与含义之间双向匹配——**在日语界面下不可用**，测验模式页会在它们的开关旁说明这一点。
 

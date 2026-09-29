@@ -4,16 +4,20 @@
 /// data changed" callback.
 /// Returns: A `StateNotifierProvider` holding an `AsyncValue<ProgressData>`.
 /// Side effects: Reads the progress file; registers a service callback for the
-/// notifier's lifetime.
+/// notifier's lifetime; after a write, or when a sync changes the file, asks
+/// `ReminderService.refresh` to re-plan the reminders.
 /// Notes: A sync, a restore, or a ZIP import replaces the file behind the
 /// app's back. `AutoSyncService` already reports that, so the provider
 /// subscribes once here instead of every page doing it — the M1.1
 /// wording says "pages register", and this is the deliberate deviation from it.
 library;
 
+import 'dart:async';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../features/progress/models/exam_attempt.dart';
+import '../../features/reminders/services/reminder_service.dart';
 import '../../features/progress/models/learner_profile.dart';
 import '../../features/progress/models/study_record.dart';
 import '../../features/progress/services/nihongo_storage.dart';
@@ -58,6 +62,7 @@ class ProgressNotifier extends StateNotifier<AsyncValue<ProgressData>> {
   Future<void> recordAnswer(String id, bool correct, {DateTime? now}) async {
     await NihongoStorage.recordAnswer(id, correct, now: now);
     await reload();
+    unawaited(ReminderService.instance.refresh());
   }
 
   /// Purpose: Record whether a unit's checkpoint was passed.
@@ -73,6 +78,7 @@ class ProgressNotifier extends StateNotifier<AsyncValue<ProgressData>> {
   }) async {
     await NihongoStorage.recordLessonResult(recordId, passed, now: now);
     await reload();
+    unawaited(ReminderService.instance.refresh());
   }
 
   /// Purpose: Record one sitting of a JLPT paper.
@@ -86,6 +92,7 @@ class ProgressNotifier extends StateNotifier<AsyncValue<ProgressData>> {
   Future<void> recordExam(ExamAttempt attempt, {DateTime? now}) async {
     await NihongoStorage.recordExam(attempt, now: now);
     await reload();
+    unawaited(ReminderService.instance.refresh());
   }
 
   /// Purpose: Record a batch of answers in one write.
@@ -98,6 +105,7 @@ class ProgressNotifier extends StateNotifier<AsyncValue<ProgressData>> {
   Future<void> recordAnswers(Map<String, bool> answers, {DateTime? now}) async {
     await NihongoStorage.recordAnswers(answers, now: now);
     await reload();
+    unawaited(ReminderService.instance.refresh());
   }
 
   /// Purpose: Save the learner profile and refresh.
@@ -109,6 +117,7 @@ class ProgressNotifier extends StateNotifier<AsyncValue<ProgressData>> {
   Future<void> updateProfile(LearnerProfile profile, {DateTime? now}) async {
     await NihongoStorage.saveProfile(profile, now: now);
     await reload();
+    unawaited(ReminderService.instance.refresh());
   }
 
   /// Purpose: React to a sync, restore, or import writing the progress file.
@@ -119,6 +128,7 @@ class ProgressNotifier extends StateNotifier<AsyncValue<ProgressData>> {
   /// service's callback is synchronous.
   void _onLocalDataChanged() {
     reload();
+    unawaited(ReminderService.instance.refresh());
   }
 
   /// Purpose: Release the service callback.

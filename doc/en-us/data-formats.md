@@ -62,8 +62,9 @@ gives a readable diff.
 }
 ```
 
-A build input, bundled only so the catalog test can compare it against what shipped. `reviewed` is
-authoring state and never reaches `vocab.json`.
+A build input, kept in `tool/content/overlays/` and **not bundled** (nothing reads it at runtime);
+the catalog test reads it from disk to compare it against what shipped. `reviewed` is authoring
+state and never reaches `vocab.json`. The Japanese definition and example overlays live beside it.
 
 ### Japanese definition overlay (`vocab_ja.json`)
 

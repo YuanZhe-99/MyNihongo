@@ -26,7 +26,11 @@ because neither a voice name nor an engine package means anything on another dev
 | [`NihongoStorage.setStoragePath`](#setstoragepath) | static method | A | Change the storage directory and migrate the data to it. |
 | [`NihongoStorage.load`](#load) | static method | A | Load the progress data file; empty when absent or blank, throws when corrupt. |
 | [`NihongoStorage.save`](#save) | static method | A | Write the progress data file atomically and notify auto-sync. |
-| `NihongoStorage.upsertRecords` | static method | B | Insert or replace study records by id, carrying the container's `extraJson` through. |
+| `NihongoStorage.upsertRecords` | static method | B | Insert or replace study records by id, carrying the container's `extraJson` through. Queued (see below). |
+| `NihongoStorage.recordAnswers`, `recordAnswer`, `recordLessonResult`, `saveProfile` | static methods | B | The other progress read-modify-write paths; each is queued, and each has an unqueued `_…Now` body. |
+| [`NihongoStorage._queueProgress`](#queueprogress) | static method | A | Run one progress read-modify-write after every one already queued. |
+| `NihongoStorage._progressWrites`, `_progressWriteZone` | static fields | B | The progress queue and the zone it belongs to; the same shape as `_configWrites` / `_configWriteZone`. |
+| `NihongoStorage._upsertRecordsNow`, `_recordAnswersNow`, `_recordLessonResultNow`, `_saveProfileNow`, `_recordHistoryNow`, `_recordExamNow`, `_deleteRecordsNow` | static methods | B | The unqueued bodies of the public writes; call one only from inside `_queueProgress`. |
 | [`NihongoStorage.recordHistory`](#recordhistory) | static method | A | Remember one analysed sentence, and prune the oldest past the cap. |
 | [`NihongoStorage.recordExam`](#recordexam) | static method | A | Remember one sitting of a JLPT paper, and prune the oldest past the cap for that mode. |
 | [`NihongoStorage.deleteRecords`](#deleterecords) | static method | A | Forget records the learner deleted. |
@@ -34,7 +38,8 @@ because neither a voice name nor an engine package means anything on another dev
 | [`NihongoStorage.loadExamInProgress`](#loadexam) | static method | A | Read the paper the learner put down, if there is one. |
 | `NihongoStorage.saveExamInProgress` | static method | B | Atomically write the paper down so it can be picked up later; auto-sync is deliberately not notified. |
 | `NihongoStorage.clearExamInProgress` | static method | B | Throw away the saved paper, when it is finished or discarded. |
-| `NihongoStorage.readConfig` | static method | B | Read `storage_config.json`; empty when absent or blank. |
+| `NihongoStorage.readConfig` | static method | B | Read `storage_config.json`; empty when absent or blank; **strict** — throws on a file that is not a JSON object. |
+| `NihongoStorage._readConfigLenient` | static method | B | The same read for the getters: a damaged file reads as an empty map; a storage failure still throws. |
 | [`NihongoStorage.writeConfig`](#writeconfig) | static method | A | Write `storage_config.json` atomically, behind every write already queued. |
 | `NihongoStorage._configWrites` | static field | B | The queue every config write joins, so only one is ever in flight. |
 | `NihongoStorage._configWriteZone` | static field | B | The zone the queue belongs to; a write waits only for writes started in the same one. |
@@ -89,6 +94,35 @@ because neither a voice name nor an engine package means anything on another dev
 - **Usage:** `upsertRecords`; every future write path.
 - **Notes:** The two-space format is the one the shared sync engine writes, which is what lets an
   unchanged file hit the raw-equality fast path instead of re-uploading.
+
+### `static Future<T> _queueProgress<T>(Future<T> Function() op)` <a id="queueprogress"></a>
+
+- **Kind:** static method
+- **Purpose:** Run one progress read-modify-write after every one already queued.
+- **Inputs:** `op`.
+- **Returns:** `Future<T>` — whatever `op` returns; a failure is the caller's own.
+- **Side effects:** Extends the queue.
+- **Algorithm:** Copied from `_queue`: wait for `_progressWrites` only if it belongs to the current
+  zone, run `op`, remember the zone, and store the chained future with its error swallowed.
+- **Usage:** `upsertRecords`, `recordAnswers`, `recordLessonResult`, `saveProfile`, `recordHistory`,
+  `recordExam`, `deleteRecords`.
+- **Notes:** Answers are recorded fire-and-forget, one per tap. Unqueued, two of them loaded the same
+  file, each added its own record, and the later save dropped the earlier one — a lost SM-2 update.
+  **Never call a queued public method from inside `op`**: it would wait for the slot it is holding.
+  That is why every write has a `_…Now` body, and why `saveProfile` ends in `_upsertRecordsNow`. The
+  zone rule is the config queue's: a write waits only for writes started in the same zone, because
+  a widget test's un-awaited I/O is left suspended in a zone nobody drives any more.
+
+## Config reads
+
+`readConfig` is strict and stays so: the sync adapter and `_updateConfig` must fail on a damaged
+`storage_config.json` rather than write over it. Every typed **getter** (`_getString`, `_getInt`,
+`_getDouble`, `_getBool`, `getThemeMode`, `getLocaleTag`) reads through `_readConfigLenient`, which
+turns a *damaged* file — not JSON, not valid text, not an object (`FormatException`, `TypeError`) —
+into an empty map, so the getters, which run before the first frame, can no longer stop the app
+opening. A storage failure (no documents directory, a locked file) still throws, so
+`AppSettingsNotifier` keeps leaving every default in place rather than configuring the services
+from defaults. `main` also wraps `getLastTab`.
 
 ## Reference preferences (M1.3)
 

@@ -137,15 +137,29 @@ class LocalizedStrings {
   /// Returns: `bool`.
   /// Side effects: None.
   /// Notes: Searches every language, so an English query finds a Chinese UI's
-  /// entries too.
-  bool matches(String query) {
-    for (final list in values.values) {
-      for (final text in list) {
-        if (text.toLowerCase().contains(query)) return true;
-      }
-    }
-    return false;
-  }
+  /// entries too. Matches against a lowercased copy cached per instance, so
+  /// repeated searches do no per-string work.
+  bool matches(String query) => _searchText.contains(query);
+
+  /// Every string of every language, lowercased and joined, built once per
+  /// instance.
+  ///
+  /// Keyed by identity in an [Expando], so the class keeps its `const`
+  /// constructor. A vocabulary search used to lowercase every string of every
+  /// entry on every keystroke; the joined text is the same content, lowercased
+  /// once. Joined with a newline, which no query contains, so a match cannot
+  /// span two strings.
+  static final Expando<String> _searchCache = Expando<String>('search');
+
+  /// Purpose: The lowercased text [matches] searches.
+  /// Inputs: None.
+  /// Returns: `String`.
+  /// Side effects: Fills the cache on first use.
+  /// Notes: Internal helper used within this file only.
+  String get _searchText => _searchCache[this] ??= values.values
+      .expand((list) => list)
+      .map((text) => text.toLowerCase())
+      .join('\n');
 }
 
 /// One example sentence with its translations.

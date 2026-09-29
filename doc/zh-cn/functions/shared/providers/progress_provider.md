@@ -15,9 +15,11 @@
 | `ProgressNotifier` | 构造函数 | B | 创建 notifier 并开始首次读取。 |
 | `ProgressNotifier.reload` | 方法 | B | 重新读取进度文件并发布结果。 |
 | `ProgressNotifier.recordExam` | 方法 | B | 记录一次 JLPT 卷子的作答，然后重新加载。 |
-| `ProgressNotifier._onLocalDataChanged` | 方法 | B | 响应同步、还原或导入写入文件。 |
+| `ProgressNotifier._onLocalDataChanged` | 方法 | B | 响应同步、还原或导入写入文件：重新加载，然后请 `ReminderService.refresh` 重新规划。 |
 | `ProgressNotifier.dispose` | 方法 | B | 释放服务回调。 |
 | `progressDataProvider` | 顶层 `final` | — | 从磁盘读取并保持最新的用户进度文件。 |
+
+每个写入方法（`recordAnswer`、`recordLessonResult`、`recordExam`、`recordAnswers`、`updateProfile`）都以 `await reload(); unawaited(ReminderService.instance.refresh());` 收尾，`_onLocalDataChanged` 也一样。在提醒被排程之前，`refresh` 是空操作，因此从未开启提醒的学习者不付出任何代价；开启后，计划里的到期数会跟着进度走。
 
 首次读取之后，重新加载不会把状态退回 `loading`，因此后台同步不会让已经显示数据的页面变空白。
 

@@ -17,7 +17,7 @@
 | `localDateKey` | 静态方法 | B | 把本地日期格式化为 `YYYY-MM-DD`。 |
 | [`fromRecord`](#fromrecord) | 静态方法 | A | 从进度文件中读出档案。 |
 | [`toRecord`](#torecord) | 方法 | A | 把档案写回它的记录。 |
-| `withStreakTouched` | 方法 | B | 为有作答的一天推进连续天数。 |
+| `withStreakTouched` | 方法 | B | 为有作答的一天推进连续天数。「昨天」用日历算术（`DateTime(y, m, d - 1)`）求得，而不是减去 24 小时——后者在夏令时切换的前后会落到错误的日期。 |
 | `copyWith` | 方法 | B | 创建替换了部分字段的副本。 |
 
 ## 文档

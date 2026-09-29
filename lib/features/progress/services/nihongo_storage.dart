@@ -147,6 +147,38 @@ class NihongoStorage {
     }
   }
 
+  // ── Progress write queue ──
+
+  /// The queue every progress read-modify-write joins, so only one is in flight.
+  ///
+  /// Answers are recorded fire-and-forget, one per tap; two of them used to
+  /// load the same file, each add its own record, and the later save dropped
+  /// the earlier one. Same idea and same zone rule as [_configWrites].
+  static Future<void> _progressWrites = Future<void>.value();
+
+  /// The zone [_progressWrites] belongs to; see [_configWriteZone] for why a
+  /// write waits only for writes started in its own zone.
+  static Zone? _progressWriteZone;
+
+  /// Purpose: Run one progress read-modify-write after every one already queued.
+  /// Inputs: `op`.
+  /// Returns: `Future<T>` — whatever `op` returns; the caller's own failure is
+  /// its own.
+  /// Side effects: Extends the queue.
+  /// Notes: Internal helper used within this file only. It swallows the failure
+  /// it stores so one write that threw does not fail every write after it.
+  /// `op` must not call another queued public method: it would wait for a slot
+  /// it is itself holding. That is why the `_...Now` bodies exist.
+  static Future<T> _queueProgress<T>(Future<T> Function() op) {
+    final ahead = identical(_progressWriteZone, Zone.current)
+        ? _progressWrites
+        : Future<void>.value();
+    final chained = ahead.then((_) => op());
+    _progressWriteZone = Zone.current;
+    _progressWrites = chained.then<void>((_) {}, onError: (_) {});
+    return chained;
+  }
+
   // ── Data persistence ──
 
   /// Purpose: Load the progress data file.
@@ -181,10 +213,20 @@ class NihongoStorage {
   /// Purpose: Insert or replace study records by id.
   /// Inputs: `records`.
   /// Returns: None.
-  /// Side effects: Reads then rewrites the data file.
+  /// Side effects: Queued behind writes in flight; reads then rewrites the data file.
   /// Notes: Carries the container's `extraJson` through, so unknown top-level
   /// fields written by a newer build survive an edit made by this one.
-  static Future<void> upsertRecords(Iterable<StudyRecord> records) async {
+  static Future<void> upsertRecords(Iterable<StudyRecord> records) =>
+      _queueProgress(() => _upsertRecordsNow(records));
+
+  /// Purpose: The unqueued body of the public method of the same name.
+  /// Inputs: As the public method.
+  /// Returns: None.
+  /// Side effects: As the public method.
+  /// Notes: Internal helper used within this file only. Call it only from
+  /// inside [_queueProgress]; calling the public method from there would
+  /// wait on itself and never finish.
+  static Future<void> _upsertRecordsNow(Iterable<StudyRecord> records) async {
     final data = await load();
     final list = List<StudyRecord>.of(data.records);
     for (final record in records) {
@@ -202,7 +244,7 @@ class NihongoStorage {
   /// Inputs: `answers` — item id to whether it was answered correctly; `now`
   /// for tests.
   /// Returns: None.
-  /// Side effects: Reads then rewrites the data file, and notifies auto-sync
+  /// Side effects: Queued behind writes in flight; reads then rewrites the data file, and notifies auto-sync
   /// exactly once.
   /// Notes: The whole batch is one load and one save, so a quiz session costs
   /// one write and one sync debounce rather than one per question. An item with
@@ -211,6 +253,18 @@ class NihongoStorage {
   /// The learner's streak is touched here too, and only when the day changes,
   /// so the profile record is written once a day rather than once an answer.
   static Future<void> recordAnswers(
+    Map<String, bool> answers, {
+    DateTime? now,
+  }) => _queueProgress(() => _recordAnswersNow(answers, now: now));
+
+  /// Purpose: The unqueued body of the public method of the same name.
+  /// Inputs: As the public method.
+  /// Returns: None.
+  /// Side effects: As the public method.
+  /// Notes: Internal helper used within this file only. Call it only from
+  /// inside [_queueProgress]; calling the public method from there would
+  /// wait on itself and never finish.
+  static Future<void> _recordAnswersNow(
     Map<String, bool> answers, {
     DateTime? now,
   }) async {
@@ -225,11 +279,7 @@ class NihongoStorage {
       final before = idx >= 0
           ? list[idx]
           : StudyRecord.create(entry.key, now: stamp);
-      final after = scheduler.apply(
-        before,
-        correct: entry.value,
-        now: stamp,
-      );
+      final after = scheduler.apply(before, correct: entry.value, now: stamp);
       if (idx >= 0) {
         list[idx] = after;
       } else {
@@ -261,16 +311,13 @@ class NihongoStorage {
   /// Notes: Quizzes call this per answer rather than batching a whole session,
   /// so an app killed mid-session keeps what was already answered. The sync
   /// scheduler debounces, so the extra saves do not become extra uploads.
-  static Future<void> recordAnswer(
-    String id,
-    bool correct, {
-    DateTime? now,
-  }) => recordAnswers({id: correct}, now: now);
+  static Future<void> recordAnswer(String id, bool correct, {DateTime? now}) =>
+      recordAnswers({id: correct}, now: now);
 
   /// Purpose: Record whether a unit's checkpoint was passed.
   /// Inputs: The `recordId` — a `lesson:` id; `passed`; `now` for tests.
   /// Returns: None.
-  /// Side effects: Loads, updates and saves the progress file.
+  /// Side effects: Queued behind writes in flight; loads, updates and saves the progress file.
   /// Notes: **Not through the scheduler.** A unit is not an item to be
   /// reviewed on a schedule; it is a gate that is open or shut. So the record
   /// is a plain counter — how many times the checkpoint was passed, how many
@@ -279,6 +326,20 @@ class NihongoStorage {
   /// one at a time, by the ordinary path, while the learner was answering
   /// them.
   static Future<void> recordLessonResult(
+    String recordId,
+    bool passed, {
+    DateTime? now,
+  }) =>
+      _queueProgress(() => _recordLessonResultNow(recordId, passed, now: now));
+
+  /// Purpose: The unqueued body of the public method of the same name.
+  /// Inputs: As the public method.
+  /// Returns: None.
+  /// Side effects: As the public method.
+  /// Notes: Internal helper used within this file only. Call it only from
+  /// inside [_queueProgress]; calling the public method from there would
+  /// wait on itself and never finish.
+  static Future<void> _recordLessonResultNow(
     String recordId,
     bool passed, {
     DateTime? now,
@@ -317,7 +378,7 @@ class NihongoStorage {
   /// Purpose: Save the learner's settings.
   /// Inputs: `profile` — the settings to write; `now` for tests.
   /// Returns: None.
-  /// Side effects: Reads then rewrites the data file; notifies auto-sync.
+  /// Side effects: Queued behind writes in flight; reads then rewrites the data file; notifies auto-sync.
   /// Notes: **The streak is carried over from the stored profile, not taken
   /// from the argument.** A streak is earned by answering, and the only thing
   /// that writes it is [recordAnswers]; a settings screen that built a fresh
@@ -325,7 +386,17 @@ class NihongoStorage {
   /// through a control that says nothing about streaks. Unknown payload keys
   /// survive too, so a field written by a newer build is not dropped by an
   /// edit made by this one.
-  static Future<void> saveProfile(
+  static Future<void> saveProfile(LearnerProfile profile, {DateTime? now}) =>
+      _queueProgress(() => _saveProfileNow(profile, now: now));
+
+  /// Purpose: The unqueued body of the public method of the same name.
+  /// Inputs: As the public method.
+  /// Returns: None.
+  /// Side effects: As the public method.
+  /// Notes: Internal helper used within this file only. Call it only from
+  /// inside [_queueProgress]; calling the public method from there would
+  /// wait on itself and never finish.
+  static Future<void> _saveProfileNow(
     LearnerProfile profile, {
     DateTime? now,
   }) async {
@@ -336,13 +407,13 @@ class NihongoStorage {
       streakDays: stored.streakDays,
       streakLastDate: stored.streakLastDate,
     );
-    await upsertRecords([merged.toRecord(existing, stamp)]);
+    await _upsertRecordsNow([merged.toRecord(existing, stamp)]);
   }
 
   /// Purpose: Remember one analysed sentence or piece of writing.
   /// Inputs: `entry`; `now` for tests.
   /// Returns: None.
-  /// Side effects: Reads then rewrites the data file; notifies auto-sync.
+  /// Side effects: Queued behind writes in flight; reads then rewrites the data file; notifies auto-sync.
   /// Notes: The id is content-addressed, so re-analysing the same sentence
   /// updates the record already there and moves it to the top rather than
   /// adding a second one. Everything past [historyMaxEntries] of that kind is
@@ -350,7 +421,20 @@ class NihongoStorage {
   /// whole on every sync, so an unbounded log would eventually cost more than
   /// the progress it travels with. Pruning by kind rather than overall keeps a
   /// busy sentence lab from emptying the writing history.
-  static Future<void> recordHistory(HistoryEntry entry, {DateTime? now}) async {
+  static Future<void> recordHistory(HistoryEntry entry, {DateTime? now}) =>
+      _queueProgress(() => _recordHistoryNow(entry, now: now));
+
+  /// Purpose: The unqueued body of the public method of the same name.
+  /// Inputs: As the public method.
+  /// Returns: None.
+  /// Side effects: As the public method.
+  /// Notes: Internal helper used within this file only. Call it only from
+  /// inside [_queueProgress]; calling the public method from there would
+  /// wait on itself and never finish.
+  static Future<void> _recordHistoryNow(
+    HistoryEntry entry, {
+    DateTime? now,
+  }) async {
     final stamp = (now ?? DateTime.now()).toUtc();
     final data = await load();
     final list = List<StudyRecord>.of(data.records);
@@ -364,9 +448,7 @@ class NihongoStorage {
 
     final ofKind = historyEntries(list, kind: entry.kind);
     if (ofKind.length > historyMaxEntries) {
-      final doomed = {
-        for (final old in ofKind.skip(historyMaxEntries)) old.id,
-      };
+      final doomed = {for (final old in ofKind.skip(historyMaxEntries)) old.id};
       list.removeWhere((record) => doomed.contains(record.id));
     }
 
@@ -376,7 +458,7 @@ class NihongoStorage {
   /// Purpose: Remember one sitting of a JLPT paper.
   /// Inputs: `attempt`; `now` for tests.
   /// Returns: None.
-  /// Side effects: Reads then rewrites the data file; notifies auto-sync.
+  /// Side effects: Queued behind writes in flight; reads then rewrites the data file; notifies auto-sync.
   /// Notes: Shaped on [recordHistory], with one difference that matters:
   /// **pruning is per mode**. A learner who practises daily and sits a mock
   /// once a month would otherwise lose every mock to the practice runs, and
@@ -385,7 +467,20 @@ class NihongoStorage {
   /// The id is timestamped and salted rather than content-addressed, because
   /// two sittings of the same paper are genuinely two attempts and must not
   /// collapse into one the way two analyses of the same sentence should.
-  static Future<void> recordExam(ExamAttempt attempt, {DateTime? now}) async {
+  static Future<void> recordExam(ExamAttempt attempt, {DateTime? now}) =>
+      _queueProgress(() => _recordExamNow(attempt, now: now));
+
+  /// Purpose: The unqueued body of the public method of the same name.
+  /// Inputs: As the public method.
+  /// Returns: None.
+  /// Side effects: As the public method.
+  /// Notes: Internal helper used within this file only. Call it only from
+  /// inside [_queueProgress]; calling the public method from there would
+  /// wait on itself and never finish.
+  static Future<void> _recordExamNow(
+    ExamAttempt attempt, {
+    DateTime? now,
+  }) async {
     final stamp = (now ?? DateTime.now()).toUtc();
     final data = await load();
     final list = List<StudyRecord>.of(data.records);
@@ -469,13 +564,23 @@ class NihongoStorage {
   /// Purpose: Forget records the learner deleted.
   /// Inputs: `ids`.
   /// Returns: None.
-  /// Side effects: Reads then rewrites the data file; notifies auto-sync.
+  /// Side effects: Queued behind writes in flight; reads then rewrites the data file; notifies auto-sync.
   /// Notes: A real deletion, not a tombstone: the three-way merge treats a
   /// record deleted on one side and untouched on the other as deleted, so a
   /// history entry removed here is removed everywhere on the next sync. That is
   /// the behaviour a delete button has to have; a record that came back would
   /// be worse than no button at all.
-  static Future<void> deleteRecords(Iterable<String> ids) async {
+  static Future<void> deleteRecords(Iterable<String> ids) =>
+      _queueProgress(() => _deleteRecordsNow(ids));
+
+  /// Purpose: The unqueued body of the public method of the same name.
+  /// Inputs: As the public method.
+  /// Returns: None.
+  /// Side effects: As the public method.
+  /// Notes: Internal helper used within this file only. Call it only from
+  /// inside [_queueProgress]; calling the public method from there would
+  /// wait on itself and never finish.
+  static Future<void> _deleteRecordsNow(Iterable<String> ids) async {
     final doomed = ids.toSet();
     if (doomed.isEmpty) return;
     final data = await load();
@@ -498,6 +603,29 @@ class NihongoStorage {
     final raw = await file.readAsString();
     if (raw.trim().isEmpty) return {};
     return jsonDecode(raw) as Map<String, dynamic>;
+  }
+
+  /// Purpose: Read `storage_config.json` for a getter, never throwing.
+  /// Inputs: None.
+  /// Returns: `Future<Map<String, dynamic>>` — empty when the file is absent,
+  /// blank, not valid JSON (or not valid text), or not a JSON object.
+  /// Side effects: Reads the config file.
+  /// Notes: Internal helper used within this file only. The getters run before
+  /// the first frame, so a damaged config must read as "nothing set" rather
+  /// than stop the app opening. [readConfig] stays strict on purpose: the sync
+  /// adapter and [_updateConfig] must fail on a damaged file rather than write
+  /// over it. Only a *damaged* file is forgiven: a storage failure (no
+  /// documents directory, a locked file) still throws, so that
+  /// `AppSettingsNotifier` keeps its documented behaviour of leaving every
+  /// default in place, and does not configure the services from defaults.
+  static Future<Map<String, dynamic>> _readConfigLenient() async {
+    try {
+      return await readConfig();
+    } on FormatException {
+      return {};
+    } on TypeError {
+      return {};
+    }
   }
 
   /// The queue every config write joins, so that only one is ever in flight.
@@ -606,7 +734,7 @@ class NihongoStorage {
   /// below funnels through here so a hand-edited config with a wrong type
   /// reads as "unset" rather than crashing the app on launch.
   static Future<String?> _getString(String key) async {
-    final config = await readConfig();
+    final config = await _readConfigLenient();
     final value = config[key];
     return value is String ? value : null;
   }
@@ -627,7 +755,7 @@ class NihongoStorage {
   /// Side effects: Reads the config file.
   /// Notes: Internal helper used within this file only.
   static Future<int?> _getInt(String key) async {
-    final config = await readConfig();
+    final config = await _readConfigLenient();
     final value = config[key];
     return value is int ? value : null;
   }
@@ -725,8 +853,9 @@ class NihongoStorage {
   /// Side effects: Reads the config file.
   /// Notes: None.
   static Future<String?> getThemeMode() async {
-    final config = await readConfig();
-    return config['themeMode'] as String?;
+    final config = await _readConfigLenient();
+    final value = config['themeMode'];
+    return value is String ? value : null;
   }
 
   /// Purpose: Persist the theme mode.
@@ -734,8 +863,7 @@ class NihongoStorage {
   /// Returns: None.
   /// Side effects: Writes the config file.
   /// Notes: The default is removed from config rather than stored.
-  static Future<void> setThemeMode(String? mode) =>
-      _setKey('themeMode', mode);
+  static Future<void> setThemeMode(String? mode) => _setKey('themeMode', mode);
 
   /// Purpose: Read the persisted locale tag.
   /// Inputs: None.
@@ -743,8 +871,9 @@ class NihongoStorage {
   /// Side effects: Reads the config file.
   /// Notes: None.
   static Future<String?> getLocaleTag() async {
-    final config = await readConfig();
-    return config['locale'] as String?;
+    final config = await _readConfigLenient();
+    final value = config['locale'];
+    return value is String ? value : null;
   }
 
   /// Purpose: Persist the locale tag.
@@ -762,7 +891,7 @@ class NihongoStorage {
   /// by an earlier build (or by hand) arrives as an `int`, so both numeric
   /// shapes are accepted; anything else reads as unset.
   static Future<double?> _getDouble(String key) async {
-    final config = await readConfig();
+    final config = await _readConfigLenient();
     final value = config[key];
     return value is num ? value.toDouble() : null;
   }
@@ -845,6 +974,7 @@ class NihongoStorage {
   /// Notes: None.
   static Future<void> setQuizModes(String? modes) =>
       _setString('quizModes', modes);
+
   /// Purpose: Read whether kana are printed over kanji.
   /// Inputs: None.
   /// Returns: `Future<bool>` — true unless the learner turned it off.
@@ -874,7 +1004,7 @@ class NihongoStorage {
   /// boolean counts; the string `"true"` reads as unset, like every other
   /// wrong-typed value in this file.
   static Future<bool?> _getBool(String key) async {
-    final config = await readConfig();
+    final config = await _readConfigLenient();
     final value = config[key];
     return value is bool ? value : null;
   }
@@ -884,8 +1014,7 @@ class NihongoStorage {
   /// Returns: None.
   /// Side effects: Writes the config file.
   /// Notes: Internal helper used within this file only.
-  static Future<void> _setBool(String key, bool? value) =>
-      _setKey(key, value);
+  static Future<void> _setBool(String key, bool? value) => _setKey(key, value);
 
   /// Purpose: Read whether network speech recognition is allowed.
   /// Inputs: None.

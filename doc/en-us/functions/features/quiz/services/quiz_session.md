@@ -156,12 +156,15 @@ a save: the questions still to come, in order, beside the ones `outcomes` says w
 - **Purpose:** Replay answers saved from an earlier sitting.
 - **Inputs:** `answers`, keyed by `scoreKey`.
 - **Returns:** None.
-- **Side effects:** Marks each replayed question; may call `onFirstAnswer`; notifies listeners once at
-  the end.
+- **Side effects:** Marks each replayed question; notifies listeners once at the end. Does **not**
+  call `onFirstAnswer`.
 - **Algorithm:** Walk the head of the queue, answering and advancing while the save has an answer for
   the question in front; stop at the first one it does not.
 - **Usage:** Resuming a saved mock.
 - **Notes:** The answers are marked again rather than their verdicts restored, so a content update
   that corrected an answer key is applied to the resumed paper too — the alternative is carrying a
   score the shipped file no longer agrees with. Questions the save has no answer for are left in the
-  queue, which is what "resume" means.
+  queue, which is what "resume" means. A private `_replaying` flag is set for the walk (and cleared
+  in a `finally`): `answer` still adds the item to `_recordedItems`, but skips the callback. Those
+  answers were reported to the scheduler when they were first given, so a resume neither grades the
+  same recall twice (a double SM-2 step) nor writes the progress file once per replayed answer.

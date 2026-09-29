@@ -15,7 +15,8 @@
 | [`LocalizedStrings.resolveTranslation`](#resolvetranslation) | 方法 | A | 为读者选择一段日语文本的译文；日语读者只会得到 `ja`，或者什么都没有。 |
 | `LocalizedStrings.resolvedKey` | 方法 | B | 说明 `resolve` 对某个 locale 取自哪个语言键（没有值时为 null），以便显示处用注音绘制日语释义。 |
 | `LocalizedStrings.resolveTranslationJoined` | 方法 | B | 为读者选择译文并拼接用于显示；日语读者没有可显示的内容时为空。 |
-| `LocalizedStrings.matches` | 方法 | B | 测试任一语言的任一字符串是否包含小写查询。 |
+| `LocalizedStrings.matches` | 方法 | B | 测试任一语言的任一字符串是否包含小写查询，对照的是按实例缓存的小写副本。 |
+| `LocalizedStrings._searchCache`、`_searchText` | 静态字段、getter | B | 一个 `Expando<String>`（因此构造函数仍是 `const`），存放各语言全部字符串的小写形式并以换行连接，首次搜索时构建。词汇搜索过去在每次按键时对每个词条的每个字符串各做一次小写转换。 |
 | `ContentExample.new` | 构造函数 | B | 创建内容例句实例。 |
 | `ContentExample.fromJson` | 静态方法 | B | 解析 `{ja, reading?, <lang>: …}`；没有日语句子时为 null。 |
 | `ContentExample.listFromJson` | 静态方法 | B | 解析例句列表，跳过畸形成员。 |

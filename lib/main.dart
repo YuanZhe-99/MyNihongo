@@ -37,7 +37,11 @@ void main() async {
 
   // Read the last tab before the first frame, so the app opens where the user
   // left it rather than showing Learn and jumping.
-  final lastTab = await NihongoStorage.getLastTab();
+  // A damaged config must not stop the app opening: fall back to Learn.
+  String? lastTab;
+  try {
+    lastTab = await NihongoStorage.getLastTab();
+  } catch (_) {}
   final candidate = '/$lastTab';
   final initialLocation = ShellScaffold.routes.contains(candidate)
       ? candidate

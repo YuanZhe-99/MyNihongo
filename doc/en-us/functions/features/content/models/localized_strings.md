@@ -21,7 +21,8 @@ taken as a language. See [../../../../data-formats.md](../../../../data-formats.
 | [`LocalizedStrings.resolveTranslation`](#resolvetranslation) | method | A | Pick the translation of a Japanese text for a reader; a Japanese reader gets only `ja`, or nothing. |
 | `LocalizedStrings.resolvedKey` | method | B | Say which language key `resolve` draws from for a locale (null when there are no values), so a display site can draw a Japanese definition with furigana. |
 | `LocalizedStrings.resolveTranslationJoined` | method | B | Pick a translation for a reader and join it for display; empty when a Japanese reader has nothing to be shown. |
-| `LocalizedStrings.matches` | method | B | Test whether any string in any language contains a lowercased query. |
+| `LocalizedStrings.matches` | method | B | Test whether any string in any language contains a lowercased query, against a lowercased copy cached per instance. |
+| `LocalizedStrings._searchCache`, `_searchText` | static field, getter | B | An `Expando<String>` (so the constructor stays `const`) holding every string of every language, lowercased and joined by newlines, built on first search. A vocabulary search used to lowercase every string of every entry on every keystroke. |
 | `ContentExample.new` | constructor | B | Create a content example instance. |
 | `ContentExample.fromJson` | static method | B | Parse `{ja, reading?, <lang>: …}`; null when there is no Japanese sentence. |
 | `ContentExample.listFromJson` | static method | B | Parse a list of examples, skipping malformed members. |

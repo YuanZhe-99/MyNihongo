@@ -27,7 +27,10 @@ covers how the app uses it today and where it goes.
   loads the file, runs `Sm2Scheduler` over each answered item, bumps the streak once per day, and
   saves once. A batch is a single write and therefore a single auto-sync notification. An item with
   no record yet gets one: **a record is created by its first answer**, which is what makes "new items
-  started today" countable without storing a counter.
+  started today" countable without storing a counter. **Every progress write is queued**
+  (`NihongoStorage._queueProgress`, the config queue's pattern): answers are recorded one per tap
+  without awaiting, and two unqueued read-modify-write cycles used to lose one of the records.
+  Resuming a saved mock replays its answers **without** reporting them to the scheduler again.
 - **The scheduler** is pure and lives in `sm2_scheduler.dart`. Its two departures from textbook SM-2 —
   quality derived from a right-or-wrong answer, and a gentler ease penalty — are derived in
   [`../algorithms/spaced-repetition.md`](../algorithms/spaced-repetition.md).

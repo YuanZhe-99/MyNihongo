@@ -61,6 +61,19 @@ class ReminderService {
   Timer? _tick;
   bool _started = false;
 
+  /// The backend's initialisation, started once and shared by every caller.
+  Future<void>? _init;
+
+  /// The wording the last successful [reschedule] used; null while reminders
+  /// are off or none has run yet. [refresh] re-plans with it.
+  AppLocalizations? _l10n;
+
+  /// Whether a [refresh] is running.
+  bool _refreshing = false;
+
+  /// Whether another [refresh] was asked for while one was running.
+  bool _refreshQueued = false;
+
   /// How often the desktop path checks whether the hour has arrived.
   static const desktopTick = Duration(minutes: 1);
 
@@ -68,11 +81,27 @@ class ReminderService {
   /// Inputs: None.
   /// Returns: A future completing when the backend is ready.
   /// Side effects: Initializes the backend.
-  /// Notes: Called from `main`. It **must not** request permission: a device
-  /// whose owner has never turned reminders on is a device that is never
-  /// asked. The request happens in the Settings switch, once, when they turn
-  /// it on.
-  Future<void> init() => _backend.init();
+  /// Notes: Called from `main`, and by [reschedule], which needs it done.
+  /// Memoized: the backend is initialised once however many callers arrive,
+  /// and a failed attempt is forgotten so the next call tries again. It
+  /// **must not** request permission: a device whose owner has never turned
+  /// reminders on is a device that is never asked. The request happens in the
+  /// Settings switch, once, when they turn it on.
+  Future<void> init() => _init ??= _initOnce();
+
+  /// Purpose: Run the backend's initialisation and forget it if it failed.
+  /// Inputs: None.
+  /// Returns: A future completing when the backend is ready.
+  /// Side effects: Initializes the backend.
+  /// Notes: Internal helper used within this file only.
+  Future<void> _initOnce() async {
+    try {
+      await _backend.init();
+    } catch (_) {
+      _init = null;
+      rethrow;
+    }
+  }
 
   /// Purpose: Ask for permission to post notifications.
   /// Inputs: None.
@@ -84,13 +113,17 @@ class ReminderService {
   /// Purpose: Recompute the plan and hand it to the platform.
   /// Inputs: `l10n`, for the wording; `now` for tests.
   /// Returns: A future completing when the schedule is replaced.
-  /// Side effects: Reads the progress file and the path; schedules or cancels.
+  /// Side effects: Initializes the backend if needed; reads the progress file
+  /// and the path; schedules or cancels; remembers `l10n` for [refresh].
   /// Notes: Reads the preference itself rather than being told, so every
   /// caller — startup, a settings change, a finished session — is the same
   /// one line. With reminders off it cancels, which is what makes turning the
-  /// switch off take effect immediately rather than in a week.
+  /// switch off take effect immediately rather than in a week. Never asks for
+  /// permission: that is [requestPermission], from the Settings switch only.
   Future<void> reschedule(AppLocalizations l10n, {DateTime? now}) async {
+    await init();
     final enabled = await NihongoStorage.getReminderEnabled();
+    _l10n = enabled ? l10n : null;
     if (!enabled) {
       _tick?.cancel();
       _tick = null;
@@ -113,6 +146,39 @@ class ReminderService {
     );
     await _backend.schedule(plan);
     if (platformRemindsFromInsideTheApp) _startTicking(plan);
+  }
+
+  /// Purpose: Re-plan the reminders after the learner's progress changed.
+  /// Inputs: `now` for tests.
+  /// Returns: A future completing when the request has been handled; it does
+  /// not wait for a run queued behind the current one.
+  /// Side effects: May run [reschedule] with the wording of the last one.
+  /// Notes: A no-op until a [reschedule] has found reminders on, and again once
+  /// one has found them off, so a learner who never enabled reminders costs
+  /// nothing. Calls arriving while a run is in progress are coalesced into one
+  /// further run rather than each starting its own — a quiz answers a question
+  /// every few seconds. No timer is involved: coalescing is by a flag, so
+  /// nothing is left pending. Errors are swallowed; a reminder that could not
+  /// be re-planned is not worth interrupting a lesson for.
+  Future<void> refresh({DateTime? now}) async {
+    if (_l10n == null) return;
+    if (_refreshing) {
+      _refreshQueued = true;
+      return;
+    }
+    _refreshing = true;
+    try {
+      do {
+        _refreshQueued = false;
+        final l10n = _l10n;
+        if (l10n == null) break;
+        try {
+          await reschedule(l10n, now: now);
+        } catch (_) {}
+      } while (_refreshQueued);
+    } finally {
+      _refreshing = false;
+    }
   }
 
   /// Purpose: Load the path for a level, tolerating a level with no file.

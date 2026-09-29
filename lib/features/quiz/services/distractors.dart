@@ -62,20 +62,18 @@ class Distractors {
     return _widen([
       if (pos != null)
         (v) =>
-            usable(v) &&
             v.level == entry.level &&
             v.partsOfSpeech.isNotEmpty &&
             v.partsOfSpeech.first == pos &&
             v.common,
       if (pos != null)
         (v) =>
-            usable(v) &&
             v.level == entry.level &&
             v.partsOfSpeech.isNotEmpty &&
             v.partsOfSpeech.first == pos,
-      (v) => usable(v) && v.level == entry.level,
-      usable,
-    ], count);
+      (v) => v.level == entry.level,
+      (_) => true,
+    ], count, usable: usable);
   }
 
   /// Purpose: Find words whose written form could be confused with this one's.
@@ -95,17 +93,11 @@ class Distractors {
         other.reading != entry.reading;
 
     return _widen([
-      (v) =>
-          usable(v) &&
-          v.level == entry.level &&
-          v.headword.split('').any(chars.contains),
-      (v) =>
-          usable(v) &&
-          v.level == entry.level &&
-          v.reading.length == entry.reading.length,
-      (v) => usable(v) && v.level == entry.level,
-      usable,
-    ], count);
+      (v) => v.level == entry.level && v.headword.split('').any(chars.contains),
+      (v) => v.level == entry.level && v.reading.length == entry.reading.length,
+      (v) => v.level == entry.level,
+      (_) => true,
+    ], count, usable: usable);
   }
 
   /// Purpose: Find kana that could be confused with this one.
@@ -173,18 +165,27 @@ class Distractors {
   }
 
   /// Purpose: Take candidates from progressively looser filters.
-  /// Inputs: The `filters`, best first, and how many to take.
+  /// Inputs: The `filters`, best first, how many to take, and `usable` — the
+  /// test every candidate must pass whichever filter selects it.
   /// Returns: `List<VocabEntry>`.
   /// Side effects: None.
   /// Notes: Internal helper used within this file only. Each filter's matches
   /// are shuffled before being taken, so the same question does not always
-  /// offer the same three wrong answers.
-  List<VocabEntry> _widen(List<bool Function(VocabEntry)> filters, int count) {
+  /// offer the same three wrong answers. `usable` is applied to the catalog
+  /// once, in catalog order, rather than once per filter; every filter then
+  /// sees the same candidates in the same order as before, so a seeded
+  /// generator draws exactly the same options.
+  List<VocabEntry> _widen(
+    List<bool Function(VocabEntry)> filters,
+    int count, {
+    required bool Function(VocabEntry) usable,
+  }) {
     final out = <VocabEntry>[];
     final taken = <String>{};
+    final pool = catalog.vocab.where(usable).toList();
     for (final filter in filters) {
       if (out.length >= count) break;
-      final matches = catalog.vocab.where(filter).toList()..shuffle(_random);
+      final matches = pool.where(filter).toList()..shuffle(_random);
       for (final match in matches) {
         if (out.length >= count) break;
         if (!taken.add(match.id)) continue;

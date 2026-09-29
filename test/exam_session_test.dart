@@ -327,4 +327,15 @@ void main() {
     expect(session.outcomes.map((o) => o.correct), [true, false]);
     expect(session.isFinished, isTrue);
   });
+
+  test('replaying a save does not grade the same recalls a second time', () {
+    final calls = <String>[];
+    final session = QuizSession(
+      questions: [question('q:1'), question('q:2', answer: 1)],
+      requeue: false,
+      onFirstAnswer: (id, _) => calls.add(id),
+    );
+    session.restore(const {'q:1': ChoiceAnswer(0), 'q:2': ChoiceAnswer(0)});
+    expect(calls, isEmpty);
+  });
 }

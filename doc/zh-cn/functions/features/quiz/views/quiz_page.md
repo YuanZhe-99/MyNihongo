@@ -29,6 +29,10 @@
 
 ### `Future<void> _build()` <a id="build"></a>
 
+`_build` 是包在 `_buildSession` 外面的 `try`/`catch`，下面描述的工作都在 `_buildSession` 里。加载不出的内容库、课程或分析器会以 `_building = false; _session = null` 收尾，因此页面显示「没有可出的题」的文字，而不是一个永远转下去的加载指示。
+
+有两处用到 `_finished` 作保护：追加生成题的循环在学习者做完之后停止（`if (!mounted || _finished) return`），而 `onFinished` 在已经运行过时提前返回，因此迟到的回调不会重复记录。
+
 - **种类：** 方法
 - **用途：** 组装本次会话的题目。
 - **输入：** 无；读取配置、内容库与复习队列。

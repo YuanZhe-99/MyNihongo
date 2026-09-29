@@ -18,7 +18,11 @@ M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地�
 | [`NihongoStorage.setStoragePath`](#setstoragepath) | 静态方法 | A | 更改存储目录并把数据迁移过去。 |
 | [`NihongoStorage.load`](#load) | 静态方法 | A | 加载进度数据文件；缺失或空白时为空，损坏时抛出。 |
 | [`NihongoStorage.save`](#save) | 静态方法 | A | 原子写入进度数据文件并通知自动同步。 |
-| `NihongoStorage.upsertRecords` | 静态方法 | B | 按 id 插入或替换学习记录，把容器的 `extraJson` 带过去。 |
+| `NihongoStorage.upsertRecords` | 静态方法 | B | 按 id 插入或替换学习记录，把容器的 `extraJson` 带过去。已排队（见下）。 |
+| `NihongoStorage.recordAnswers`、`recordAnswer`、`recordLessonResult`、`saveProfile` | 静态方法 | B | 其余的进度读-改-写路径；每一个都已排队，并各有一个不排队的 `_…Now` 主体。 |
+| [`NihongoStorage._queueProgress`](#queueprogress) | 静态方法 | A | 让一次进度读-改-写排在已经排队的每一次之后运行。 |
+| `NihongoStorage._progressWrites`、`_progressWriteZone` | 静态字段 | B | 进度队列及其所属的 zone；与 `_configWrites` / `_configWriteZone` 同一形状。 |
+| `NihongoStorage._upsertRecordsNow`、`_recordAnswersNow`、`_recordLessonResultNow`、`_saveProfileNow`、`_recordHistoryNow`、`_recordExamNow`、`_deleteRecordsNow` | 静态方法 | B | 公开写入方法不排队的主体；只能在 `_queueProgress` 内部调用。 |
 | [`NihongoStorage.recordHistory`](#recordhistory) | 静态方法 | A | 记住一条分析过的句子，并裁掉超出上限的最旧条目。 |
 | [`NihongoStorage.recordExam`](#recordexam) | 静态方法 | A | 记住一次 JLPT 卷子的作答，并按该模式的上限裁掉最旧的条目。 |
 | [`NihongoStorage.deleteRecords`](#deleterecords) | 静态方法 | A | 忘掉学习者删除的记录。 |
@@ -26,7 +30,8 @@ M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地�
 | [`NihongoStorage.loadExamInProgress`](#loadexam) | 静态方法 | A | 读取学习者放下的那份卷子，如果有的话。 |
 | `NihongoStorage.saveExamInProgress` | 静态方法 | B | 原子地把卷子写下来，好让它之后能被接着做；刻意不通知自动同步。 |
 | `NihongoStorage.clearExamInProgress` | 静态方法 | B | 在卷子做完或被放弃时，扔掉保存的考试。 |
-| `NihongoStorage.readConfig` | 静态方法 | B | 读取 `storage_config.json`；缺失或空白时为空。 |
+| `NihongoStorage.readConfig` | 静态方法 | B | 读取 `storage_config.json`；缺失或空白时为空；**严格**——文件不是 JSON 对象时抛出。 |
+| `NihongoStorage._readConfigLenient` | 静态方法 | B | 供 getter 使用的同一读取：损坏的文件读作空映射；存储故障仍会抛出。 |
 | [`NihongoStorage.writeConfig`](#writeconfig) | 静态方法 | A | 原子写入 `storage_config.json`，排在已经排队的每一次写入之后。 |
 | `NihongoStorage._configWrites` | 静态字段 | B | 每一次配置写入都要排进的那个队列，任何时刻只有一次在进行中。 |
 | `NihongoStorage._configWriteZone` | 静态字段 | B | 队列所属的 zone；一次写入只等待同一个 zone 里发起的写入。 |
@@ -73,6 +78,21 @@ M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地�
 - **Algorithm：** `JsonEncoder.withIndent('  ')`、`atomicWriteString`、通知。
 - **Usage：** `upsertRecords`；未来的每条写入路径。
 - **Notes：** 两空格格式是共享同步引擎写入的格式，正是它让未改动的文件命中原始相等快速路径而不是重新上传。
+
+### `static Future<T> _queueProgress<T>(Future<T> Function() op)` <a id="queueprogress"></a>
+
+- **种类：** 静态方法
+- **用途：** 让一次进度读-改-写排在已经排队的每一次之后运行。
+- **输入：** `op`。
+- **返回：** `Future<T>`——`op` 的返回值；失败由调用方自己承担。
+- **副作用：** 延长队列。
+- **算法：** 照搬 `_queue`：仅当 `_progressWrites` 属于当前 zone 时才等待它，运行 `op`，记住 zone，并把吞掉错误的链式 future 存起来。
+- **使用：** `upsertRecords`、`recordAnswers`、`recordLessonResult`、`saveProfile`、`recordHistory`、`recordExam`、`deleteRecords`。
+- **说明：** 作答是「点一下记一次」、不 await 的。没有队列时，其中两次会加载同一个文件、各自加入自己的记录，而后一次保存丢掉前一次——丢失一次 SM-2 更新。**绝不要在 `op` 内部调用排队的公开方法**：它会等待自己正占着的那个位置。这就是每个写入都有 `_…Now` 主体的原因，也是 `saveProfile` 以 `_upsertRecordsNow` 收尾的原因。zone 规则与配置队列相同：一次写入只等待同一个 zone 里发起的写入，因为组件测试里没有 await 的 I/O 会留在一个再也没人驱动的 zone 里。
+
+## 配置读取
+
+`readConfig` 是严格的，并且保持如此：同步适配器与 `_updateConfig` 遇到损坏的 `storage_config.json` 必须失败，而不是覆盖它。所有带类型的 **getter**（`_getString`、`_getInt`、`_getDouble`、`_getBool`、`getThemeMode`、`getLocaleTag`）都通过 `_readConfigLenient` 读取，它把一个*损坏的*文件——不是 JSON、不是合法文本、不是对象（`FormatException`、`TypeError`）——变成空映射，因此在首帧之前运行的 getter 不会再让应用无法启动。存储故障（没有文档目录、文件被锁）仍会抛出，因此 `AppSettingsNotifier` 依旧是「让所有默认值原样保留」，而不是用默认值去配置各项服务。`main` 也把 `getLastTab` 包了起来。
 
 ## 参考页面偏好（M1.3）
 

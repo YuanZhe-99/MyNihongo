@@ -142,6 +142,10 @@ class QuizSession extends ChangeNotifier {
   final Map<String, int> _requeues = {};
   final List<String> _wrongOrder = [];
   final Set<String> _recordedItems = {};
+
+  /// True while [restore] replays saved answers, so they are marked without
+  /// being reported to the scheduler a second time.
+  bool _replaying = false;
   final List<QuestionOutcome> _outcomes = [];
   final Map<String, QuizAnswer> _answers = {};
 
@@ -275,23 +279,30 @@ class QuizSession extends ChangeNotifier {
   /// Purpose: Replay answers saved from an earlier sitting.
   /// Inputs: `answers`, keyed by [scoreKey].
   /// Returns: None.
-  /// Side effects: Marks each replayed question; may call `onFirstAnswer`;
-  /// notifies listeners once at the end.
+  /// Side effects: Marks each replayed question; notifies listeners once at the
+  /// end. Does **not** call `onFirstAnswer`.
   /// Notes: What resuming a saved mock does. The answers are marked again
   /// rather than their verdicts restored, so a content update that corrected
   /// an answer key is applied to the resumed paper too — the alternative is
   /// carrying a score the shipped file no longer agrees with.
   ///
   /// Questions the save has no answer for are left in the queue, which is what
-  /// "resume" means.
+  /// "resume" means. The replay is silent towards the scheduler: those answers
+  /// were reported when they were first given, so a resume neither grades them
+  /// twice nor writes the progress file once per replayed answer.
   void restore(Map<String, QuizAnswer> answers) {
     if (answers.isEmpty) return;
-    while (_queue.isNotEmpty) {
-      final question = _queue.first;
-      final saved = answers[scoreKey(question)];
-      if (saved == null) break;
-      answer(saved);
-      next();
+    _replaying = true;
+    try {
+      while (_queue.isNotEmpty) {
+        final question = _queue.first;
+        final saved = answers[scoreKey(question)];
+        if (saved == null) break;
+        answer(saved);
+        next();
+      }
+    } finally {
+      _replaying = false;
     }
     notifyListeners();
   }
@@ -354,8 +365,13 @@ class QuizSession extends ChangeNotifier {
       // The scheduler hears about each **item** once, even where a paper asked
       // four questions about it: SM-2 grades one recall, and the first is the
       // one that was not primed by the three before it.
+      //
+      // The item is remembered even while a saved paper is replayed, but the
+      // callback is not called then: those answers were reported when they
+      // were first given, and reporting them again would grade the same recall
+      // twice and write the progress file once per replayed answer.
       if (!question.generated && _recordedItems.add(question.itemId)) {
-        onFirstAnswer?.call(question.itemId, correct);
+        if (!_replaying) onFirstAnswer?.call(question.itemId, correct);
       }
     }
 

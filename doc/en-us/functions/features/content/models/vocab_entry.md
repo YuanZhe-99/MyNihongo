@@ -22,5 +22,5 @@ suggestions and never to hide an entry.
 `jaReadings`, from the JSON key `jaReading`, holds the hiragana readings of the Japanese
 definitions, one per sense, parallel to `meanings['ja']` — which `LocalizedStrings` cannot carry
 readings for. It is empty when there is no Japanese definition, and a sense with no reading here
-is drawn without furigana. `import_vocab.dart` writes both from `assets/content/vocab_ja.json`
+is drawn without furigana. `import_vocab.dart` writes both from `tool/content/overlays/vocab_ja.json`
 (see `applyJapaneseOverlay`); the vocabulary tile and detail sheet draw them with `FuriganaText`.
