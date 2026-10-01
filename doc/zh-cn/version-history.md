@@ -8,6 +8,12 @@ MyNihongo!!!!! 的逐版本摘要。在改动一个行为之前理解它*为什�
 
 ## 版本
 
+- `0.6.2` — 2026-10-01。模态底部面板不再在悬浮导航栏之下打开。0.6.1 的后续修复。
+
+  **面板位于外壳之上。**0.6.1 的条目检查了五个标签页和设置详情页，但没有涵盖模态底部面板，因此其中“内容不会被栏遮挡”的说法并不完整。`showModalBottomSheet` 使用最近的 navigator，而从标签页打开的面板对应的就是外壳的 navigator，所以栏会盖住面板底部。词汇、语法和五十音详情面板、历史面板、语音选择器与发音练习面板现在都传入 `useRootNavigator: true`，在外壳之上打开。重新检查 `navBarAwarePadding` 后没有发现其他问题：`ShellRoute` 之外的所有路由（`/quiz`、`/lab`、`/exam` 等）本来就位于栏之上。`navBarAwarePadding` 的文档注释现在说明，只有五个标签页和设置详情窗格承载的页面需要它。
+
+  这里验证过：`flutter analyze` 无问题，完整的 `flutter test` 通过（数量见报告）。版本 0.6.2+28；安装程序与 MSIX 版本 0.6.2.0。共享包仍为 `v1.0.3`；本次发布没有对照 Google Maven 重新检查 `genai-prompt` 和 `genai-proofreading`。
+
 - `0.6.1` — 2026-10-01。紧凑的悬浮导航栏、宽屏导航选项和头像编辑器。移植自 MyAnime!!!!! 1.7.2。
 
   **紧凑的悬浮栏，内容显示在它后面。**Expressive 底栏不再是包着原生 `NavigationBar` 的通宽浮岛，而是宽度随内容的胶囊，居中，放在 `surfaceContainer` 色、elevation 3 的 stadium 上：选中的目标在 `secondaryContainer` 胶囊内显示图标和文字，其余只显示图标（带 tooltip 和语义标签），宽度和颜色以 250 ms 动画过渡。它浮在页面之上：外壳使用 `extendBody`，`Scaffold` 把栏高作为底部内边距报告，并通过把 `viewPadding.bottom` 抬到同样的值，让页面自己的悬浮按钮保持在栏之上（本应用目前没有悬浮按钮）。新的 `navBarAwarePadding(context, padding)` 把这段内边距加到滚动视图显式设置的 padding 上。五个标签页的检查结果：学习、五十音、单词和语法传入 `navBarAwarePadding(context, EdgeInsets.fromLTRB(16, 8, 16, shellListBottomInset(width)))`；设置的列表没有显式 padding（自己会加上这段内边距），其承载的、显式设置 padding 的滚动详情页——WebDAV、许可、隐私政策——包裹了各自的 padding；备份和测验模式的列表没有。Material 3 保留经典底栏及其布局。
