@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:my_nihongo/shared/widgets/furigana_text.dart';
 import 'package:my_nihongo/app/app.dart';
+import 'package:my_nihongo/features/progress/services/nihongo_storage.dart';
 import 'package:my_nihongo/features/content/services/content_repository.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path/path.dart' as p;
@@ -89,8 +90,11 @@ void main() {
 
   Future<void> openTab(WidgetTester tester, String label) async {
     await tester.runAsync(() async {
-      await tester.tap(find.text(label).last);
-      for (var i = 0; i < 6; i++) {
+      // The Expressive bar labels only the selected destination; the others are
+      // icons with tooltips.
+      final tip = find.byTooltip(label);
+      await tester.tap(tip.evaluate().isNotEmpty ? tip : find.text(label).last);
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }
@@ -132,14 +136,28 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('the shell switches to a rail on an unfolded foldable', (
+  testWidgets('an unfolded foldable keeps the bottom bar by default', (
     tester,
   ) async {
     await launch(tester, 933, 704);
-    expect(find.byType(NavigationRail), findsOneWidget);
-    expect(find.byType(NavigationBar), findsNothing);
+    expect(find.byType(NavigationRail), findsNothing);
+    expect(find.byKey(const ValueKey('floatingNavBarIsland')), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
+
+  testWidgets(
+    'the shell switches to a rail on an unfolded foldable when asked',
+    (tester) async {
+      // The navigation position (0.6.1) defaults to the bottom bar everywhere;
+      // opt into the rail on wide windows through the stored preference.
+      await tester.runAsync(() => NihongoStorage.setNavPlacement('sideOnWide'));
+      addTearDown(() => NihongoStorage.setNavPlacement(null));
+      await launch(tester, 933, 704);
+      expect(find.byType(NavigationRail), findsOneWidget);
+      expect(find.byType(NavigationBar), findsNothing);
+      expect(tester.takeException(), isNull);
+    },
+  );
 
   testWidgets('a word opens its detail sheet with its cross-links', (
     tester,
@@ -148,7 +166,7 @@ void main() {
     await openTab(tester, 'Vocabulary');
     await tester.runAsync(() async {
       await tester.tap(japanese('会う'));
-      for (var i = 0; i < 6; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }

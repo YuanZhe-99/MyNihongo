@@ -410,6 +410,8 @@
 | 主题模式 | `storage_config.json` | 否 | 设备特定偏好（`themeMode`：`light`/`dark`；缺失表示跟随系统） |
 | 语言 | `storage_config.json` | 否 | 设备特定偏好（`locale`：`en`/`zh`/`zh_TW`/`ja`；缺失表示跟随系统） |
 | 界面风格 | `storage_config.json` | 否 | 设备特有的 `uiStyle`（0.6.0）；仅在选择 Material 3 时写入 `"material3"`；缺省表示 Expressive（默认值，同时显示悬浮导航栏） |
+| 导航栏位置 | `storage_config.json` | 否 | 设备特有的 `navPlacement`（0.6.1）；仅写入 `"sideOnWide"`（宽窗口用侧边导航栏）或 `"side"`（任何窗口都用侧边导航栏，不推荐）；缺省表示任何窗口都用底栏；无法识别的值按缺省读取；两种界面风格都适用 |
+| 侧边导航栏位置 | `storage_config.json` | 否 | 设备特有的 `navRailRight`（0.6.1）；仅在导航栏位于右侧时写入 `true`；缺省表示左侧 |
 | 存储路径覆盖 | `storage_config.json` | 否 | 设备特定路径（`storagePath`） |
 | 自动备份启用 | `storage_config.json` | 否 | 设备特定配置（`autoBackupEnabled`） |
 | 备份保留天数 | `storage_config.json` | 否 | 设备特定配置（`backupRetentionDays`） |

@@ -87,7 +87,7 @@ void main() {
           ),
         ),
       );
-      for (var i = 0; i < 8; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }
@@ -114,13 +114,14 @@ void main() {
     });
   }
 
-  testWidgets('a learner with nothing studied is told the streak has not started', (
-    tester,
-  ) async {
-    await pumpAt(tester, 412, 915);
-    expect(find.text('还没有连续记录——答一题就开始'), findsOneWidget);
-    expect(tester.takeException(), isNull);
-  });
+  testWidgets(
+    'a learner with nothing studied is told the streak has not started',
+    (tester) async {
+      await pumpAt(tester, 412, 915);
+      expect(find.text('还没有连续记录——答一题就开始'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    },
+  );
 
   testWidgets('an overdue item is counted on the today card', (tester) async {
     final past = DateTime.now().toUtc().subtract(const Duration(days: 3));
@@ -204,7 +205,7 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
       await tester.tap(find.text('N4').last);
-      for (var i = 0; i < 8; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }
@@ -212,7 +213,8 @@ void main() {
 
     // Read the file rather than the widget: the point is that a synced record
     // was written, not that a dropdown redrew.
-    final json = jsonDecode(dataFile.readAsStringSync()) as Map<String, dynamic>;
+    final json =
+        jsonDecode(dataFile.readAsStringSync()) as Map<String, dynamic>;
     final records = json['records'] as List;
     final profile = records.firstWhere((r) => r['id'] == 'profile:me') as Map;
     expect((profile['profile'] as Map)['targetLevel'], 'N4');

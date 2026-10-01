@@ -2,6 +2,8 @@
 
 `KanaPage` 是第二个标签：覆盖 `features/kana/models/kana.dart` 中目录的纯 UI 平假名/片假名速查。它渲染书写体系切换、搜索框、三张表（查询为空时）、搜索结果网格（查询非空时），以及一组发音规则卡片，按窗口排成一列或两列。该文件还定义了 `_KanaRule`，即一张规则卡的显示数据。见 [../../../../features/kana-reference.md](../../../../features/kana-reference.md) 和 [../../../../adaptive-layout.md](../../../../adaptive-layout.md)。
 
+自 0.6.1 起，列表的 padding 是 `navBarAwarePadding(context, EdgeInsets.fromLTRB(16, 8, 16, shellListBottomInset(width)))`：Expressive 悬浮底栏时页面绘制在栏的后面，这层包装加上栏高，使最后的内容可以滚动到栏的上方。见 [../../../../adaptive-layout.md](../../../../adaptive-layout.md)。
+
 ## 声明
 
 | 声明 | 类型 | Tier | Purpose |

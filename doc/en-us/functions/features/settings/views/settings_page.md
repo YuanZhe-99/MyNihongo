@@ -19,6 +19,8 @@ learner who has not gone looking for them. Turning it off through that switch al
 ([../../../shared/providers/app_settings.md](../../../shared/providers/app_settings.md)) and is read
 by [../../ai/widgets/ai_settings_tiles.md](../../ai/widgets/ai_settings_tiles.md).
 
+Since 0.6.1 the General section holds, below Interface style, the navigation-position controls: a *Navigation position* `SegmentedButton<NavPlacement>` (*Bottom* / *Side on wide* / *Side*; `navPlacement`, default *Bottom*; *Side* is labelled not recommended on phones) and, whenever the placement is not *Bottom*, a *Side navigation position* left/right `SegmentedButton<bool>` (`navRailOnRight`). The list has no explicit padding, so it picks up the floating bar's inset itself. See [../../../../adaptive-layout.md](../../../../adaptive-layout.md).
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |

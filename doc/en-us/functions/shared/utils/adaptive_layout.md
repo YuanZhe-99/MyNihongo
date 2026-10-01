@@ -5,7 +5,7 @@ thresholds that decide whether a layout may split at all; `navRailMinWidth` and 
 the shell; `listTileGap`, `listMaxColumns` and `listColumnsAuto` for multi-column lists;
 `pageMaxContentWidth`, `kanaTableMinWidth`, `ruleCardMinWidth` and `referenceTileMinWidth` — this
 app's own per-content minimums, each with a doc comment saying where the number came from; and
-`settingsRightPaneMinWidth` and `quizAnswerPaneMinWidth`. Eleven pure helpers sit on top of them.
+`settingsRightPaneMinWidth` and `quizAnswerPaneMinWidth`. Eleven pure helpers sit on top of them, and one widget-level helper, `navBarAwarePadding` (0.6.1).
 
 The module deliberately depends on nothing but `dart:core` — no Flutter imports, and `canSplitLayout`
 takes two doubles rather than a `Size` — so every helper is directly unit-testable
@@ -19,7 +19,7 @@ Consumers: `shell_scaffold.dart` (`useNavigationRail`); `kana_page.dart` (`refer
 and `grammar_page.dart` (`referenceColumnCount`, `listRowCount`); `learn_page.dart`
 (`canSplitLayout`, `columnCapacity` at `ruleCardMinWidth`); `settings_page.dart` (`canSplitLayout`,
 `shellContentWidth`, `settingsLeftPaneWidth`); the sentence lab and writing practice
-(`labInputPaneWidth`); every scrolling page (`shellListBottomInset`);
+(`labInputPaneWidth`); every scrolling page (`shellListBottomInset`, wrapped in `navBarAwarePadding` where the page passes an explicit padding);
 `adaptive_tile_grid.dart` (`listRowCount`, `listTileGap`); `quiz_runner.dart` (`canSplitLayout`,
 `referenceContentWidth`, and `quizQuestionPaneWidth` as the default of its `questionPaneWidth`
 parameter, which the exam page overrides with `drillPassagePaneWidth`).
@@ -37,7 +37,7 @@ without letting it crowd the options, and the same final cap keeps the answers a
 | [`canSplitLayout`](#cansplitlayout) | top-level function | A | Report whether a layout may split into panes or columns. |
 | [`useNavigationRail`](#usenavigationrail) | top-level function | A | Report whether the shell should show a navigation rail. |
 | `shellContentWidth` | top-level function | B | Return the width a shell page's content actually receives: the screen less the rail when shown, never negative. |
-| `shellListBottomInset` | top-level function | B | Return the bottom padding a scrolling list needs: 80 under a bottom bar, 16 beside a rail. |
+| `shellListBottomInset` | top-level function | B | Return the bottom breathing room a scrolling list leaves under its last row: 80 under a bottom bar, 16 beside a rail; the floating bar's own height is added on top by `navBarAwarePadding`. |
 | `referenceContentWidth` | top-level function | B | Return a reference page's content width: `shellContentWidth` less the page padding, capped at `pageMaxContentWidth`. |
 | [`columnCapacity`](#columncapacity) | top-level function | A | Return how many columns of a given minimum width fit a content box. |
 | [`referenceColumnCount`](#referencecolumncount) | top-level function | A | Return the number of columns a vocabulary or grammar list renders. |
@@ -48,6 +48,7 @@ without letting it crowd the options, and the same final cap keeps the answers a
 | `settingsLeftPaneWidth` | top-level function | B | Return the settings page's left pane width: 0.44 of the content, clamped 300–440, capped so the right pane keeps 280. |
 | `labResultPaneMinWidth` | top-level constant | B | The narrowest the sentence lab's analysis pane may be: 360. |
 | `labInputPaneWidth` | top-level function | B | Return the lab's and writing practice's input pane width: 0.40 of the content, clamped 320–460, capped so the result pane keeps 360. |
+| `navBarAwarePadding` | top-level function | B | Add the floating navigation bar's height (`MediaQuery.paddingOf(context).bottom`) to a page's padding; the only helper here that needs a `BuildContext`. |
 
 ## Documentation
 

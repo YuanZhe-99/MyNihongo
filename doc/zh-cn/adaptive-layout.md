@@ -1,6 +1,6 @@
 # 自适应布局
 
-这是全应用的规则，决定**布局何时可以分栏**——五十音页面和学习仪表盘分成两列，单词和语法列表分成多列，设置页面分成两个窗格（pane），在折叠屏设备的内屏、平板或桌面窗口上——以及一旦可以，**得到几列**。第二条更窄的规则决定**导航放在哪里**。全部位于 [`lib/shared/utils/adaptive_layout.dart`](functions/shared/utils/adaptive_layout.md)，该模块刻意除 `dart:core` 外不导入任何东西，使每个决策都可以在没有组件（widget）树的情况下直接单元测试。
+这是全应用的规则，决定**布局何时可以分栏**——五十音页面和学习仪表盘分成两列，单词和语法列表分成多列，设置页面分成两个窗格（pane），在折叠屏设备的内屏、平板或桌面窗口上——以及一旦可以，**得到几列**。第二条更窄的规则决定**导航放在哪里**。全部位于 [`lib/shared/utils/adaptive_layout.dart`](functions/shared/utils/adaptive_layout.md)，该模块的各个决策函数刻意除 `dart:core` 外不导入任何东西，使每个决策都可以在没有组件（widget）树的情况下直接单元测试（唯一的例外是需要 `BuildContext` 的内边距辅助函数 `navBarAwarePadding`，它导入 `flutter/widgets.dart`）。
 
 这些约定是 MyAnime!!!!! 在其 1.5.2 – 1.5.7 版本中总结、并写成本系列自适应布局指南的那一套，从第一次提交起就在这里采用，使同一设备在本系列每个应用中得到相同的答案。数字离开推理就毫无价值，因此推理被写了下来。**如果组件文件里出现数值宽度比较，那就是 bug**——数字属于策略模块，页面调用具名断言。
 
@@ -75,7 +75,25 @@ double shellListBottomInset(double screenWidth) =>
     useNavigationRail(screenWidth) ? 16.0 : 80.0;
 ```
 
-自 0.6.0 起，低于导航栏阈值时的底栏，在界面风格为 **Expressive**（默认）时是一个*悬浮岛*（`_FloatingNavBar`：带边距、胶囊形、有高度的表面，最宽 480 dp），在**设置 › 通用 › 界面风格**为 **Material 3** 时是经典通栏 `NavigationBar`。浮岛位于 `Scaffold` 的底栏槽位而不是盖在内容之上，因此不改变任何页面布局，底部预留量也不变；侧边导航栏忽略该设置。侧边导航栏和底栏在 `shell_scaffold.dart` 中由**同一份目标列表**构建，导航栏设置 `groupAlignment: 0`，使五个目标居中而不是钉在高导航栏的顶部。
+自 0.6.1 起，低于导航栏阈值时的底栏，在界面风格为 **Expressive**（默认）时是一个紧凑的悬浮胶囊（`_ExpressiveNavBar`：宽度随内容、居中、`surfaceContainer` 色 stadium、elevation 3；选中的目标在 `secondaryContainer` 胶囊内显示图标和文字，其余只显示图标并带 tooltip），在**设置 › 通用 › 界面风格**为 **Material 3** 时是经典通栏 `NavigationBar`。（0.6.0 把 Expressive 底栏画成包着原生 `NavigationBar` 的通宽浮岛。）侧边导航栏忽略界面风格。侧边导航栏和底栏在 `shell_scaffold.dart` 中由**同一份目标列表**构建，导航栏设置 `groupAlignment: 0`，使五个目标居中而不是钉在高导航栏的顶部。
+
+### 内容显示在悬浮栏后面
+
+Expressive 底栏时，外壳使用 `Scaffold(extendBody: true)`，因此每个标签页都绘制在栏的*后面*，`Scaffold` 把栏高作为 `MediaQuery.padding.bottom` 报告（外壳同时把 `viewPadding.bottom` 抬到同样的值，使页面自己的悬浮按钮摆在栏的上方）。没有显式 `padding` 的 `ListView`/`GridView` 会自己加上这段内边距；显式传入 padding 的滚动视图——以及任何贴底的布局——必须自己加上：`padding: navBarAwarePadding(context, <页面自己的 padding>)`，即页面的 padding 加 `MediaQuery.paddingOf(context).bottom`。`shellListBottomInset` 仍是页面自己在最后一行下面的留白，放在 `navBarAwarePadding` *里面*。其他情况（Material 3 底栏、导航栏、被压栈的路由）里这段内边距只是系统的，因此包一层无害。0.6.1 逐个检查了外壳的每个标签页：学习、五十音、单词和语法包裹了列表的 padding；设置的列表没有显式 padding，其承载的详情页中显式设置 padding 的滚动页（WebDAV、许可、隐私政策）也包了一层。
+
+### 导航放在哪里（0.6.1）
+
+**设置 › 通用**中、界面风格下方的一个仅限本设备的设置决定导航放在哪里，对**两种**风格都适用（`lib/app/theme.dart` 中的 `enum NavPlacement`，存为 `navPlacement`，仅在不是默认值时写入）：
+
+| 选项 | 存储 | 效果 |
+|---|---|---|
+| **全部底部**（默认） | 键缺省 | 任何窗口（包括宽窗口）都用底栏——Expressive 是悬浮胶囊，Material 3 是经典 `NavigationBar`。 |
+| **宽屏侧边** | `navPlacement: "sideOnWide"` | `useNavigationRail(width)` 成立（600 dp 及以上）时用导航栏，否则用底栏——即 0.6.0 的行为。 |
+| **全部侧边** | `navPlacement: "side"` | 任何窗口（包括手机）都用导航栏。不推荐：导航栏会占用内容的宽度。该设置的说明文字里注明了这一点。 |
+
+第二个控件*侧边导航栏位置*（右侧时为 `navRailOnRight: true`；默认左）在放置方式不是*全部底部*时显示：导航栏在右侧时，外壳排成 `Row([Expanded(页面), VerticalDivider, rail])`。两个键都不同步。外壳的判定是 `showRail = switch (placement) { bottom => false, sideOnWide => wide, side => true }`。无法识别的存储值按默认值读取。
+
+已知近似：纯宽度函数（`shellContentWidth`、`shellListBottomInset`）仍遵循 `useNavigationRail(width)`，因此默认的*全部底部*在宽窗口上时，`shellContentWidth` 会扣除并不存在的导航栏，少算 81 dp（偏保守）；手机上选*全部侧边*时则多算；两者都不会破坏布局。
 
 ## 能放几列
 

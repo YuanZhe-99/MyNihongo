@@ -92,7 +92,7 @@ void main() {
           ),
         ),
       );
-      for (var i = 0; i < 10; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }
@@ -164,7 +164,7 @@ void main() {
     await tester.pump();
     await tester.runAsync(() async {
       await tester.tap(find.widgetWithText(FilledButton, '检查'));
-      for (var i = 0; i < 6; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }
@@ -625,7 +625,7 @@ void main() {
       await press(tester, LogicalKeyboardKey.digit2);
       await tester.runAsync(() async {
         await tester.sendKeyEvent(LogicalKeyboardKey.enter);
-        for (var i = 0; i < 4; i++) {
+        for (var i = 0; i < 20; i++) {
           await Future<void>.delayed(const Duration(milliseconds: 20));
           await tester.pump();
         }

@@ -199,9 +199,9 @@ assets/icon/                     app_icon.png + generated iOS sources (not bundl
 
 - `test/adaptive_layout_test.dart` — 每个布局阈值和钳制，在具名设备几何尺寸上。
 - `test/kana_layout_ui_test.dart` — 在这些几何尺寸上渲染的五十音页面：规则允许时两列，否则一列。
-- `test/shell_nav_ui_test.dart` — 底栏（悬浮岛或经典）与侧边导航栏、五个目标、导航。
-- `test/theme_style_test.dart` — 两种界面风格共用颜色、Expressive 的形状与字重、`uiStyle` 的存储语义。
-- `test/profile_test.dart` — 个人资料模型、逐字段合并、模块注册与引用图片、存储和头像裁剪。
+- `test/shell_nav_ui_test.dart` — 底栏（紧凑悬浮胶囊或经典）与侧边导航栏、五个目标、导航、悬浮栏后面的内容、导航栏位置设置（全部底部、宽屏侧边、全部侧边）和导航栏所在一侧。
+- `test/theme_style_test.dart` — 两种界面风格共用颜色、Expressive 的形状与字重、`uiStyle`、`navPlacement` 和 `navRailRight` 的存储语义。
+- `test/profile_test.dart` — 个人资料模型、逐字段合并、模块注册与引用图片、存储、头像裁剪，以及头像编辑器的图像函数（旋转、限制尺寸、取景裁剪、后台包装函数）。
 - `test/progress_json_test.dart` — 未知 JSON 保留、推导的类别与阶段、UTC 归一化，以及包含冲突的三方合并。
 - `test/data_modules_test.dart` — 模块注册表的名称、校验、美化输出的合并结果，以及应用中立的冲突解决。
 - `test/content_catalog_test.dart` — 生成的目录可解析、id 与别名唯一且带前缀、每个退役的种子 id 仍能解析、N5 带中文。

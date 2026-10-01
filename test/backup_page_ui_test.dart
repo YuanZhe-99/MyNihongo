@@ -81,7 +81,7 @@ void main() {
           home: BackupPage(),
         ),
       );
-      for (var i = 0; i < 3; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }
@@ -92,7 +92,7 @@ void main() {
   Future<void> tapAsync(WidgetTester tester, Finder finder) async {
     await tester.runAsync(() async {
       await tester.tap(finder);
-      for (var i = 0; i < 4; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }

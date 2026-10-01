@@ -10,4 +10,4 @@
 | `MyNihongoApp.build` | 方法（`ConsumerWidget` build） | B | 用设置 provider 中的主题、语言和路由构建 `MaterialApp.router`。 |
 
 动态取色仅限 Android（`!kIsWeb && defaultTargetPlatform == TargetPlatform.android`）：桌面端插件会返回系统强调色，会盖掉应用自己的种子色。
-$1 [locale_resolution.md](locale_resolution.md) 中的 `resolveAppLocale`，它决定一台没有被指定语言的设备使用两种中文中的哪一种。
+`localeListResolutionCallback` 是 [locale_resolution.md](locale_resolution.md) 中的 `resolveAppLocale`，它决定一台没有被指定语言的设备使用两种中文中的哪一种。

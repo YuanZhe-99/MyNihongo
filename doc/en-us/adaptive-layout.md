@@ -5,8 +5,9 @@ the Learn dashboard, into multiple columns in the vocabulary and grammar lists, 
 the settings page, on a foldable's inner panel, a tablet or a desktop window — and, once it may,
 **how many columns** it gets. A second, narrower rule decides **where navigation lives**. All of it
 lives in [`lib/shared/utils/adaptive_layout.dart`](functions/shared/utils/adaptive_layout.md), a
-module that deliberately imports nothing but `dart:core` so every decision is directly unit-testable
-without a widget tree.
+module whose decisions deliberately import nothing but `dart:core`, so every one is directly unit-testable
+without a widget tree (the one exception is the padding helper `navBarAwarePadding`, which needs
+`BuildContext` and imports `flutter/widgets.dart`).
 
 The conventions are the ones MyAnime!!!!! worked out across its 1.5.2 – 1.5.7 releases and wrote
 up as the series' adaptive-layout guide, adopted here from the first commit so one device answers
@@ -103,14 +104,53 @@ double shellListBottomInset(double screenWidth) =>
     useNavigationRail(screenWidth) ? 16.0 : 80.0;
 ```
 
-Below the rail threshold the bottom bar is, since 0.6.0, a *floating island* (`_FloatingNavBar`: a
-pill-shaped, elevated surface with side and bottom margins, capped at 480 dp wide) when the interface
-style is **Expressive** (the default), or the classic full-width `NavigationBar` when **Settings ›
-General › Interface style** is **Material 3**. The island sits in the `Scaffold`'s bottom-bar slot
-rather than over the body, so it changes no page layout and the bottom reservation is unchanged; the
-rail ignores the setting. The rail and the bottom bar are built from **one list of destinations** in `shell_scaffold.dart`,
+Below the rail threshold the bottom bar is, since 0.6.1, a compact floating pill (`_ExpressiveNavBar`:
+as wide as its items, centred, a `surfaceContainer` stadium with elevation 3; the selected
+destination shows icon and label in a `secondaryContainer` pill, the others only an icon with a
+tooltip) when the interface style is **Expressive** (the default), or the classic full-width
+`NavigationBar` when **Settings › General › Interface style** is **Material 3**. (0.6.0 drew the
+Expressive bar as a full-width island around a stock `NavigationBar`.) The rail ignores the style.
+The rail and the bottom bar are built from **one list of destinations** in `shell_scaffold.dart`,
 with `groupAlignment: 0` on the rail so five destinations sit centred rather than pinned to the top
 of a tall rail.
+
+### Content behind the floating bar
+
+With the Expressive bottom bar the shell uses `Scaffold(extendBody: true)`, so every tab page draws
+*behind* the bar and the `Scaffold` reports the bar's height as `MediaQuery.padding.bottom` (the shell
+also raises `viewPadding.bottom` to match, so a page's own floating action button is placed above the
+bar). A `ListView`/`GridView` with no explicit `padding` adds that inset itself. A scroll view that
+passes an explicit padding — and any bottom-anchored layout — must add it:
+`padding: navBarAwarePadding(context, <the page's own padding>)`, which is the page's padding plus
+`MediaQuery.paddingOf(context).bottom`. `shellListBottomInset` stays as the page's own breathing
+room under the last row and goes *inside* `navBarAwarePadding`. Elsewhere (the Material 3 bar, the
+rail, a pushed route) the inset is only the system's, so wrapping is harmless. Every shell tab page
+was audited in 0.6.1: Learn, Kana, Vocabulary and Grammar wrap their list padding; Settings' list has
+no explicit padding, and its hosted detail pages that scroll with an explicit padding (WebDAV, license,
+privacy policy) wrap theirs.
+
+### Where the navigation lives (0.6.1)
+
+One device-local setting under **Settings › General**, below Interface style, chooses where the
+navigation sits, for **both** styles (`enum NavPlacement` in `lib/app/theme.dart`, stored as
+`navPlacement`, written only when it is not the default):
+
+| Option | Stored | Effect |
+|---|---|---|
+| **Bottom** (default) | key absent | The bottom bar on every window, wide ones included — the floating pill for Expressive, the classic `NavigationBar` for Material 3. |
+| **Side on wide** | `navPlacement: "sideOnWide"` | The rail when `useNavigationRail(width)` holds (600 dp and up), the bottom bar otherwise — the behaviour of 0.6.0. |
+| **Side** | `navPlacement: "side"` | The rail on every window, phones included. Not recommended: the rail takes width from the content. The setting's description says so. |
+
+A second control, *Side navigation position* (`navRailOnRight: true` when right; default left), is
+shown whenever the placement is not *Bottom*: with a rail on the right the shell lays out
+`Row([Expanded(page), VerticalDivider, rail])`. Neither key is synced. The shell decides with
+`showRail = switch (placement) { bottom => false, sideOnWide => wide, side => true }`. An unknown stored
+value reads as the default.
+
+Known approximation: the pure width helpers (`shellContentWidth`, `shellListBottomInset`) still follow
+`useNavigationRail(width)`, so with the default *Bottom* on a wide window `shellContentWidth` subtracts a
+rail that is not there and under-counts by 81 dp (conservative), and with *Side* on a phone it
+over-counts; neither breaks a layout.
 
 ## How many fit
 

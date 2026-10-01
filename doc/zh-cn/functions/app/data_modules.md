@@ -15,7 +15,7 @@
 | `validateProgressJson` | 顶层函数 | B | 在写入前校验 `nihongo_progress.json` 负载；无法解析时抛出。 |
 | `encodeProgressData` | 顶层函数 | B | 以存储中枢使用的两空格缩进编码合并后的数据集。 |
 | [`mergeProgressModule`](#mergeprogressmodule) | 顶层函数 | A | 为共享同步引擎合并本地/远程/基线进度 JSON，把有类型的结果作为不透明状态携带。 |
-$1| `validateProfileJson` | 顶层函数 | B | 在写入前校验 `profile.json` 内容；不是 JSON 对象时抛出。 |
+| `validateProfileJson` | 顶层函数 | B | 在写入前校验 `profile.json` 内容；不是 JSON 对象时抛出。 |
 | `profileReferencedImages` | 顶层函数 | B | 提取个人资料引用的头像图片基名，使引擎的图片阶段传输它。 |
 | `buildProfileModule` | 顶层函数 | B | 以无冲突的 `DataModule`（带 `referencedImages`）向共享引擎描述 `profile.json`。 |
 | `profileFileName`、`profileModuleId` | 顶层常量 | B | `profile.json` 与 `profile`，一经发布即冻结。 |

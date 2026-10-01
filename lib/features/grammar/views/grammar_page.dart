@@ -136,11 +136,9 @@ class _GrammarPageState extends ConsumerState<GrammarPage> {
       // the arrows reach a list with nothing in it focused only through the
       // route's primary scroll controller. See platform-notes.md, Input.
       primary: true,
-      padding: EdgeInsets.fromLTRB(
-        16,
-        8,
-        16,
-        shellListBottomInset(screen.width),
+      padding: navBarAwarePadding(
+        context,
+        EdgeInsets.fromLTRB(16, 8, 16, shellListBottomInset(screen.width)),
       ),
       itemCount: 1 + (filtered.isEmpty ? 1 : rowCount),
       itemBuilder: (context, index) {

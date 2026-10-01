@@ -3,6 +3,8 @@
 WebDAV 服务器表单与手动同步控件。移植自 MyAnime!!!!! 的同名页面，使两个应用的同步界面行为一致。见
 [../../../sync.md](../../../sync.md)。
 
+自 0.6.1 起，该页面的滚动 padding 被 `navBarAwarePadding(context, const EdgeInsets.all(16))` 包裹，因为该页面承载在设置的详情窗格中，Expressive 悬浮栏可能盖住它的底边（`SingleChildScrollView` 加显式 `padding` 不会自己加上这段内边距）。见 [../../../adaptive-layout.md](../../../adaptive-layout.md)。
+
 ## 声明
 
 | 声明 | 类型 | Tier | Purpose |

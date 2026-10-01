@@ -2,6 +2,8 @@
 
 `VocabPage` 是第三个标签：覆盖 `ContentCatalog.vocab` 的可搜索、可按级别筛选的浏览器。它监视 `contentCatalogProvider`，在目录不可用时显示加载指示或错误行，否则在自适应列数的条目卡片列表上方渲染页头（搜索框、级别筹片、计数）；点击卡片打开带完整条目的底部面板。它通过 `reference_widgets.dart` 与语法页面共享筹片、徽章和例句渲染。见 [../../../../features/content-catalog.md](../../../../features/content-catalog.md) 和 [../../../../adaptive-layout.md](../../../../adaptive-layout.md)。
 
+自 0.6.1 起，列表的 padding 是 `navBarAwarePadding(context, EdgeInsets.fromLTRB(16, 8, 16, shellListBottomInset(width)))`：Expressive 悬浮底栏时页面绘制在栏的后面，这层包装加上栏高，使最后的内容可以滚动到栏的上方。见 [../../../../adaptive-layout.md](../../../../adaptive-layout.md)。
+
 ## 声明
 
 | 声明 | 类型 | Tier | Purpose |

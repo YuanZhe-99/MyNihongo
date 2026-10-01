@@ -1,10 +1,10 @@
 # lib/shared/utils/adaptive_layout.dart
 
-全应用的自适应布局策略：决定布局是否可以分栏的 `splitMinWidth`、`splitMinHeight` 和 `splitMinAspect` 阈值；外壳用的 `navRailMinWidth` 和 `navRailWidth`；多列列表用的 `listTileGap`、`listMaxColumns` 和 `listColumnsAuto`；`pageMaxContentWidth`、`kanaTableMinWidth`、`ruleCardMinWidth` 和 `referenceTileMinWidth`——本应用自己的按内容最小值，每个都有文档注释说明数字的来源；以及 `settingsRightPaneMinWidth` 和 `quizAnswerPaneMinWidth`。十一个纯函数辅助建立在它们之上。
+全应用的自适应布局策略：决定布局是否可以分栏的 `splitMinWidth`、`splitMinHeight` 和 `splitMinAspect` 阈值；外壳用的 `navRailMinWidth` 和 `navRailWidth`；多列列表用的 `listTileGap`、`listMaxColumns` 和 `listColumnsAuto`；`pageMaxContentWidth`、`kanaTableMinWidth`、`ruleCardMinWidth` 和 `referenceTileMinWidth`——本应用自己的按内容最小值，每个都有文档注释说明数字的来源；以及 `settingsRightPaneMinWidth` 和 `quizAnswerPaneMinWidth`。十一个纯函数辅助建立在它们之上，另有一个组件层面的辅助 `navBarAwarePadding`（0.6.1）。
 
-该模块刻意只依赖 `dart:core`——没有 Flutter 导入，`canSplitLayout` 接受两个 double 而不是 `Size`——因此每个辅助都可以直接单元测试（`test/adaptive_layout_test.dart`），而渲染结果由 `test/kana_layout_ui_test.dart`、`test/shell_nav_ui_test.dart` 和 `test/widget_test.dart` 在真实设备几何下单独覆盖。数字的推导在 [../../../adaptive-layout.md](../../../adaptive-layout.md)；本页记录声明。
+所有决策类辅助都刻意只依赖 `dart:core`——`canSplitLayout` 接受两个 double 而不是 `Size`——因此每个都可以直接单元测试（`test/adaptive_layout_test.dart`），而渲染结果由 `test/kana_layout_ui_test.dart`、`test/shell_nav_ui_test.dart` 和 `test/widget_test.dart` 在真实设备几何下单独覆盖。数字的推导在 [../../../adaptive-layout.md](../../../adaptive-layout.md)；本页记录声明。
 
-使用方：`shell_scaffold.dart`（`useNavigationRail`）；`kana_page.dart`（`referenceContentWidth`、`canSplitLayout`、以 `kanaTableMinWidth` 和 `ruleCardMinWidth` 调用的 `columnCapacity`）；`vocab_page.dart` 和 `grammar_page.dart`（`referenceColumnCount`、`listRowCount`）；`learn_page.dart`（`canSplitLayout`、以 `ruleCardMinWidth` 调用的 `columnCapacity`）；`settings_page.dart`（`canSplitLayout`、`shellContentWidth`、`settingsLeftPaneWidth`）；句子实验室与写作练习（`labInputPaneWidth`）；每个滚动页面（`shellListBottomInset`）；`adaptive_tile_grid.dart`（`listRowCount`、`listTileGap`）；`quiz_runner.dart`（`canSplitLayout`、`referenceContentWidth`，以及作为其 `questionPaneWidth` 参数默认值的 `quizQuestionPaneWidth`，考试页用 `drillPassagePaneWidth` 覆盖它）。
+使用方：`shell_scaffold.dart`（`useNavigationRail`）；`kana_page.dart`（`referenceContentWidth`、`canSplitLayout`、以 `kanaTableMinWidth` 和 `ruleCardMinWidth` 调用的 `columnCapacity`）；`vocab_page.dart` 和 `grammar_page.dart`（`referenceColumnCount`、`listRowCount`）；`learn_page.dart`（`canSplitLayout`、以 `ruleCardMinWidth` 调用的 `columnCapacity`）；`settings_page.dart`（`canSplitLayout`、`shellContentWidth`、`settingsLeftPaneWidth`）；句子实验室与写作练习（`labInputPaneWidth`）；每个滚动页面（`shellListBottomInset`，页面显式传 padding 时外面套 `navBarAwarePadding`）；`adaptive_tile_grid.dart`（`listRowCount`、`listTileGap`）；`quiz_runner.dart`（`canSplitLayout`、`referenceContentWidth`，以及作为其 `questionPaneWidth` 参数默认值的 `quizQuestionPaneWidth`，考试页用 `drillPassagePaneWidth` 覆盖它）。
 
 `drillPassagePaneWidth` 把 `quizQuestionPaneWidth` 所用的比例反了过来。在那边题目是较小的一半，因为它放的是一个词；在这边题目是较大的一半，因为它放的是学习者一边作答一边反复读的一篇文章。取 0.55 而不是 0.5，既给了文本更长的行，又不至于挤压选项，而同样的最终封顶让作答区在最窄的可分栏窗口上仍保有 `quizAnswerPaneMinWidth`。
 
@@ -15,7 +15,7 @@
 | [`canSplitLayout`](#cansplitlayout) | 顶层函数 | A | 报告布局是否可以分成窗格或多列。 |
 | [`useNavigationRail`](#usenavigationrail) | 顶层函数 | A | 报告外壳是否应显示导航栏（NavigationRail）。 |
 | `shellContentWidth` | 顶层函数 | B | 返回外壳页面内容实际获得的宽度：屏幕减去显示时的导航栏，永不为负。 |
-| `shellListBottomInset` | 顶层函数 | B | 返回滚动列表需要的底部内边距：底部栏下为 80，导航栏旁为 16。 |
+| `shellListBottomInset` | 顶层函数 | B | 返回滚动列表在最后一行下面留的底部空白：底部栏下为 80，导航栏旁为 16；悬浮栏自身的高度由 `navBarAwarePadding` 另外加上。 |
 | `referenceContentWidth` | 顶层函数 | B | 返回参考页面的内容宽度：`shellContentWidth` 减去页面内边距，上限为 `pageMaxContentWidth`。 |
 | [`columnCapacity`](#columncapacity) | 顶层函数 | A | 返回给定最小宽度的列在内容盒中能放多少列。 |
 | [`referenceColumnCount`](#referencecolumncount) | 顶层函数 | A | 返回单词或语法列表渲染的列数。 |
@@ -26,6 +26,7 @@
 | `settingsLeftPaneWidth` | 顶层函数 | B | 返回设置页左窗格宽度：内容的 0.44，夹在 300–440，并封顶以让右窗格保留 280。 |
 | `labResultPaneMinWidth` | 顶层常量 | B | 句子实验室分析窗格的最小宽度：360。 |
 | `labInputPaneWidth` | 顶层函数 | B | 返回实验室与写作练习输入窗格的宽度：内容宽度的 0.40，夹在 320–460，再封顶以保证结果窗格至少 360。 |
+| `navBarAwarePadding` | 顶层函数 | B | 把悬浮导航栏的高度（`MediaQuery.paddingOf(context).bottom`）加到页面的 padding 上；本文件中唯一需要 `BuildContext` 的辅助。 |
 
 ## 文档
 

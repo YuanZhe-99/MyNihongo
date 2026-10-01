@@ -6,6 +6,8 @@ detail pane on a wide one (see [settings_page.md](settings_page.md)). Third-part
 attributions are added here as they ship (M1.2): JMdict/EDICT, the JLPT lists, and the
 OpenCC dictionaries the Traditional Chinese text is generated with.
 
+Since 0.6.1 the page's scroll padding is wrapped in `navBarAwarePadding(context, const EdgeInsets.all(16))`, because this page is hosted in the Settings detail pane, where the Expressive floating bar can sit over its bottom edge (`SingleChildScrollView` and an explicit `padding` do not pick up the inset themselves). See [../../../../adaptive-layout.md](../../../../adaptive-layout.md).
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |

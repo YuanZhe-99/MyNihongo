@@ -14,6 +14,7 @@ colors; Expressive changes shape, type weight and component details only, never 
 | Declaration | Kind | Tier | Purpose |
 |---|---|---|---|
 | `AppUiStyle` | enum | B | The two interface styles, `material3` and `expressive`. |
+| `NavPlacement` | enum | B | Where the shell puts its navigation (0.6.1): `bottom` (the default), `sideOnWide` or `side`; both interface styles. |
 | `AppTheme._` | private constructor | B | Prevent direct instantiation and expose only static members. |
 | `AppTheme.seedColor` | static constant | B | The app's brand color and the only per-app knob of the visual system. |
 | `AppTheme.scheme` | static method | B | Resolve the color scheme for one brightness: the dynamic scheme when given, else `fromSeed`. |

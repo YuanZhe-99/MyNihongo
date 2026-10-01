@@ -204,7 +204,7 @@ void main() {
       );
       // The settings notifier reads the config file on construction, so the
       // first frame is drawn before the preference has arrived.
-      for (var i = 0; i < 6; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 20));
         await tester.pump();
       }
@@ -231,7 +231,7 @@ void main() {
           ),
         ),
       );
-      for (var i = 0; i < 10; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }
@@ -357,7 +357,7 @@ void main() {
 
     await tester.runAsync(() async {
       await tester.tap(find.text('Explain').first);
-      for (var i = 0; i < 6; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }
@@ -455,7 +455,7 @@ void main() {
     await pumpLab(tester, 'これは本です。');
     await tester.runAsync(() async {
       await tester.tap(find.text('Suggest a correction'));
-      for (var i = 0; i < 6; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }

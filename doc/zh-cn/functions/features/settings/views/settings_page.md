@@ -4,6 +4,8 @@
 
 从 `v0.4.6` 起，关于节里的版本号那一行可以点击。连点八次解锁开发者选项——顶层常量 `_debugUnlockTaps`，取八是因为 Android 自己就是这么要求的。完全照搬这个手势正是重点：需要这些诊断信息的人本来就知道怎么做，而其他人不会偶然发现它。`_versionTaps` 记录这一连串点击；它存在 state 对象里，因此页面被重新构建时就会归零，这个计数是一连串有意为之的点击，而不是学习者在几周里慢慢攒出来的东西。解锁之后，关于节里会在版本号行下方出现一个**开发者选项** `SwitchListTile`——而且只有在它已经打开时才出现，因为那里放一个「关闭」的行等于一份邀请，而隐藏诊断信息的意义就在于它们不是给没去找过它们的学习者看的。通过那个开关把它关掉也会重置 `_versionTaps`。标志本身位于 `AppSettings.debugMode`（[../../../shared/providers/app_settings.md](../../../shared/providers/app_settings.md)），由 [../../ai/widgets/ai_settings_tiles.md](../../ai/widgets/ai_settings_tiles.md) 读取。
 
+自 0.6.1 起，“通用”分区在界面风格下方加入了导航位置控件：一个“导航栏位置”`SegmentedButton<NavPlacement>`（“全部底部”/“宽屏侧边”/“全部侧边”；`navPlacement`，默认“全部底部”；“全部侧边”标注手机上不推荐），以及在放置方式不是“全部底部”时显示的、左/右的“侧边导航栏位置”`SegmentedButton<bool>`（`navRailOnRight`）。列表没有显式 padding，因此会自己加上悬浮栏的内边距。见 [../../../../adaptive-layout.md](../../../../adaptive-layout.md)。
+
 ## 声明
 
 | 声明 | 类型 | Tier | Purpose |

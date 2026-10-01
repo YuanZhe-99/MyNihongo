@@ -1,3 +1,5 @@
+import 'package:flutter/widgets.dart';
+
 /// Minimum viewport width, in logical pixels, before a layout may split.
 ///
 /// Material's *medium* width class and Android's `sw600dp` tablet threshold.
@@ -122,10 +124,12 @@ double shellContentWidth(double screenWidth) {
 /// Inputs: `screenWidth` — the whole screen width in logical pixels.
 /// Returns: `double`.
 /// Side effects: None.
-/// Notes: The shell's bottom navigation bar overlaps the last rows of a list,
-/// so pages reserve room for it. A navigation rail takes width instead, and the
-/// reservation becomes dead space at the very moment vertical room is scarcest
-/// — a Fold 8 in landscape is only 704 logical pixels tall.
+/// Notes: Pages reserve breathing room below a list's last rows. A navigation
+/// rail takes width instead of height, and the reservation becomes dead space
+/// at the very moment vertical room is scarcest — a Fold 8 in landscape is only
+/// 704 logical pixels tall. Since 0.6.1 the Expressive bottom bar floats over the
+/// page; its height is added on top of this value by [navBarAwarePadding],
+/// which every caller wraps around it.
 double shellListBottomInset(double screenWidth) =>
     useNavigationRail(screenWidth) ? 16.0 : 80.0;
 
@@ -294,3 +298,19 @@ double labInputPaneWidth(double contentWidth) {
   final capped = contentWidth - labResultPaneMinWidth;
   return capped < preferred ? capped : preferred;
 }
+
+/// Purpose: Add the floating navigation bar's height to a page's padding.
+/// Inputs: `context` — inside a shell page; `padding` — the page's own padding.
+/// Returns: `EdgeInsets` — [padding] with the bottom inset reported by the
+/// enclosing Scaffold added to its bottom.
+/// Side effects: None.
+/// Notes: With the Expressive bottom bar the shell uses `extendBody`, so pages
+/// draw behind the bar and the Scaffold reports the bar's height as
+/// `MediaQuery.padding.bottom`. Scroll views with an explicit padding do not
+/// apply that inset themselves; passing their padding through here leaves room
+/// to scroll the last content above the bar. Elsewhere (classic bar, rail,
+/// pushed routes) the inset is just the system's, so this is harmless.
+EdgeInsets navBarAwarePadding(BuildContext context, EdgeInsets padding) =>
+    padding.copyWith(
+      bottom: padding.bottom + MediaQuery.paddingOf(context).bottom,
+    );

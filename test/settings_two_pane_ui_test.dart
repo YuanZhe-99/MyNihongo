@@ -81,7 +81,7 @@ void main() {
           ),
         ),
       );
-      for (var i = 0; i < 3; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }
@@ -121,7 +121,7 @@ void main() {
     final row = find.widgetWithText(ListTile, title).first;
     await tester.runAsync(() async {
       await tester.tap(row);
-      for (var i = 0; i < 3; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }
@@ -202,6 +202,14 @@ void main() {
     tester,
   ) async {
     await pumpAt(tester, 933, 704);
+    // Below the interface-style and navigation rows, so scroll to it first.
+    await tester.scrollUntilVisible(
+      find.byType(DropdownButton<Locale?>),
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.ensureVisible(find.byType(DropdownButton<Locale?>));
+    await tester.pumpAndSettle();
     await tester.tap(find.byType(DropdownButton<Locale?>));
     await tester.pumpAndSettle();
 

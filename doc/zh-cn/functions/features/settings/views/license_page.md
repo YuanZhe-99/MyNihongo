@@ -2,6 +2,8 @@
 
 `LicensePage` 在应用栏下以可选择文本显示 MyNihongo!!!!! 的 GPLv3 声明。它是两个二级设置页面之一，在窄窗口上全屏压栈，在宽窗口上承载在详情窗格（pane）中（见 [settings_page.md](settings_page.md)）。第三方内容的署名随其发布添加到这里（M1.2）：JMdict/EDICT、JLPT 词表，以及用于生成繁体中文文本的 OpenCC 词典。
 
+自 0.6.1 起，该页面的滚动 padding 被 `navBarAwarePadding(context, const EdgeInsets.all(16))` 包裹，因为该页面承载在设置的详情窗格中，Expressive 悬浮栏可能盖住它的底边（`SingleChildScrollView` 加显式 `padding` 不会自己加上这段内边距）。见 [../../../../adaptive-layout.md](../../../../adaptive-layout.md)。
+
 ## 声明
 
 | 声明 | 类型 | Tier | Purpose |

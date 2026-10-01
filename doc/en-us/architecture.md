@@ -241,9 +241,9 @@ Primary tests:
 - `test/adaptive_layout_test.dart` — every layout threshold and clamp, at named device geometries.
 - `test/kana_layout_ui_test.dart` — the kana page rendered at those geometries: two columns where
   the rules allow it, one where they do not.
-- `test/shell_nav_ui_test.dart` — bottom bar (floating island or classic) versus rail, five destinations, navigation.
-- `test/theme_style_test.dart` — both interface styles share colors, the Expressive shapes and weights, and the `uiStyle` storage semantics.
-- `test/profile_test.dart` — the profile model, per-field merge, module registration and referenced images, the store, and the avatar crop.
+- `test/shell_nav_ui_test.dart` — bottom bar (compact floating pill or classic) versus rail, five destinations, navigation, content behind the floating bar, the navigation-position setting (bottom, side on wide, side) and the rail side.
+- `test/theme_style_test.dart` — both interface styles share colors, the Expressive shapes and weights, and the `uiStyle`, `navPlacement` and `navRailRight` storage semantics.
+- `test/profile_test.dart` — the profile model, per-field merge, module registration and referenced images, the store, the avatar crop and the avatar editor's image functions (rotate, size limit, framed crop, the background helpers).
 - `test/progress_json_test.dart` — unknown JSON preservation, derived kind and stage, UTC
   normalization, and the three-way merge including conflicts.
 - `test/data_modules_test.dart` — the module registry's names, validation, pretty-printed merge

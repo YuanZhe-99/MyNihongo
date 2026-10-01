@@ -71,7 +71,7 @@ void main() {
       );
       // The catalog is read from the bundle, so the first frames need real
       // async time rather than `pumpAndSettle`'s fake clock.
-      for (var i = 0; i < 8; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }
@@ -120,7 +120,7 @@ void main() {
     await tester.pump();
     await tester.runAsync(() async {
       await tester.tap(find.text('分析'));
-      for (var i = 0; i < 6; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }
@@ -167,7 +167,7 @@ void main() {
       await pumpAt(tester, 412, 915, sentence: 'これは本です。');
       await tester.runAsync(() async {
         await tester.tap(find.text('分析'));
-        for (var i = 0; i < 6; i++) {
+        for (var i = 0; i < 20; i++) {
           await Future<void>.delayed(const Duration(milliseconds: 50));
           await tester.pump();
         }
@@ -231,7 +231,7 @@ void main() {
 
       await tester.runAsync(() async {
         await tester.tap(find.byIcon(Icons.delete_outline));
-        for (var i = 0; i < 6; i++) {
+        for (var i = 0; i < 20; i++) {
           await Future<void>.delayed(const Duration(milliseconds: 50));
           await tester.pump();
         }
@@ -257,7 +257,7 @@ void main() {
 
       await tester.runAsync(() async {
         await tester.tap(find.text('これは本です。').last);
-        for (var i = 0; i < 8; i++) {
+        for (var i = 0; i < 20; i++) {
           await Future<void>.delayed(const Duration(milliseconds: 50));
           await tester.pump();
         }

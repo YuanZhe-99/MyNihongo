@@ -7,6 +7,7 @@
 | 声明 | 类型 | Tier | Purpose |
 |---|---|---|---|
 | `AppUiStyle` | 枚举 | B | 两种界面风格：`material3` 与 `expressive`。 |
+| `NavPlacement` | 枚举 | B | 外壳把导航放在哪里（0.6.1）：`bottom`（默认）、`sideOnWide` 或 `side`；两种界面风格都适用。 |
 | `AppTheme._` | 私有构造函数 | B | 阻止直接实例化，只暴露静态成员。 |
 | `AppTheme.seedColor` | 静态常量 | B | 应用的品牌色，也是视觉体系中唯一的每应用旋钮。 |
 | `AppTheme.scheme` | 静态方法 | B | 解析某个亮度的配色方案：有动态方案则用之，否则用 `fromSeed`。 |

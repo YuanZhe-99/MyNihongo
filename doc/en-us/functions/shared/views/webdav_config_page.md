@@ -3,6 +3,8 @@
 The WebDAV server form and the manual sync controls. Ported from MyAnime!!!!!'s page of the same
 name so the two apps' sync UI behaves identically. See [../../../sync.md](../../../sync.md).
 
+Since 0.6.1 the page's scroll padding is wrapped in `navBarAwarePadding(context, const EdgeInsets.all(16))`, because this page is hosted in the Settings detail pane, where the Expressive floating bar can sit over its bottom edge (`SingleChildScrollView` and an explicit `padding` do not pick up the inset themselves). See [../../../adaptive-layout.md](../../../adaptive-layout.md).
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |

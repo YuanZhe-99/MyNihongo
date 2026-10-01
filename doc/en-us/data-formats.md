@@ -562,6 +562,8 @@ Settings shows the resolved path only on desktop; see `platform_capabilities.dar
 | Theme mode | `storage_config.json` | No | Device-specific preference (`themeMode`: `light`/`dark`; absent means system) |
 | Locale | `storage_config.json` | No | Device-specific preference (`locale`: `en`/`zh`/`zh_TW`/`ja`; absent means system) |
 | Interface style | `storage_config.json` | No | Device-specific `uiStyle` (0.6.0); written only as `"material3"` when Material 3 is chosen; absent means Expressive (the default, which also shows the floating navigation bar) |
+| Navigation position | `storage_config.json` | No | Device-specific `navPlacement` (0.6.1); written only as `"sideOnWide"` (side rail on wide windows) or `"side"` (side rail everywhere, not recommended); absent means the bottom bar everywhere; unknown values read as absent; both interface styles |
+| Side navigation position | `storage_config.json` | No | Device-specific `navRailRight` (0.6.1); written only as `true` when the navigation rail sits on the right; absent means left |
 | Storage path override | `storage_config.json` | No | Device-specific path (`storagePath`) |
 | Auto-backup enabled | `storage_config.json` | No | Device-specific config (`autoBackupEnabled`) |
 | Backup retention days | `storage_config.json` | No | Device-specific config (`backupRetentionDays`) |

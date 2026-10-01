@@ -88,7 +88,7 @@ void main() {
   Future<void> expand(WidgetTester tester) async {
     await tester.runAsync(() async {
       await tester.tap(find.byType(ExpansionTile));
-      for (var i = 0; i < 12; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }
@@ -113,7 +113,7 @@ void main() {
           ),
         ),
       );
-      for (var i = 0; i < 10; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }

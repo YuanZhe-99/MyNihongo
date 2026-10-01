@@ -196,11 +196,9 @@ class LearnPage extends ConsumerWidget {
         title: Text(l10n.learnTitle),
       ),
       body: ListView(
-        padding: EdgeInsets.fromLTRB(
-          16,
-          8,
-          16,
-          shellListBottomInset(screen.width),
+        padding: navBarAwarePadding(
+          context,
+          EdgeInsets.fromLTRB(16, 8, 16, shellListBottomInset(screen.width)),
         ),
         children: [
           Center(

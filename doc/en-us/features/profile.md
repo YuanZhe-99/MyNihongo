@@ -18,22 +18,28 @@ the file format is in [`../data-formats.md`](../data-formats.md#profilejson) and
 
 ## Editing
 
-The edit dialog (*Profile*) holds the large avatar, a *Choose avatar* button, a *Remove* button that
-appears only while an avatar is set, and a *Name* field (at most 40 characters).
+The edit dialog (*Profile*) holds the large avatar, a *Choose avatar* button, an *Adjust avatar* button and a
+*Remove* button that appear only while an avatar is set, and a *Name* field (at most 40 characters).
+Tapping the large avatar adjusts it, or picks one when there is none.
 
-- **Avatar changes save immediately.** *Choose avatar* opens the platform file picker for an image;
-  *Remove* clears the avatar. If the chosen file cannot be used as an image, a snack bar says *This
+- **Avatar changes save immediately.** *Choose avatar* opens the platform file picker for an image and then
+  the **avatar editor** (0.6.1); *Adjust avatar* opens the editor on the current avatar; *Remove* clears the
+  avatar. If the chosen file cannot be used as an image, a snack bar says *This
   image could not be used* and nothing changes.
 - **The name saves on Save.** Cancel discards it. The name is trimmed; an empty name clears it, and
   saving an unchanged name writes nothing.
 
-## Avatar processing
+## Avatar editor and processing
 
-The picked image is decoded, rotated upright according to its EXIF orientation, cropped to a centred
-**square**, scaled to **512 x 512** pixels and stored as a **JPEG** (quality 88) at
-`images/avatar_<uuid>.jpg`. The work runs in a separate isolate so the UI does not stall. A fresh
-file name is used for every avatar. Replacing or removing the avatar deletes the previous avatar file
-on that device only.
+The editor (0.6.1) is a full-screen page: the image sits under a circular mask, and the user drags to
+move it, pinches or scrolls to zoom (1x to 8x, never leaving a gap inside the circle), rotates in
+quarter turns, resets, and taps **Save**. Backing out saves nothing. The framed square is cropped from
+the picked image (decoded, EXIF-upright, longest edge limited to 2048 pixels), scaled to **512 x 512**
+pixels and stored as a **JPEG** (quality 88) at `images/avatar_<uuid>.jpg`. The work runs in a separate
+isolate so the UI does not stall. A fresh file name is used for every avatar. Replacing or removing the
+avatar deletes the previous avatar file on that device only. Adjusting an existing avatar re-frames the
+stored 512-pixel image, so it can zoom in, rotate or re-centre but cannot recover detail that was already
+cropped away.
 
 ## Sync
 

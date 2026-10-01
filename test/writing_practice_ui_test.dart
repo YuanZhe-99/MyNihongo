@@ -67,7 +67,7 @@ void main() {
       );
       // The catalog is read from the bundle, so the first frames need real
       // async time rather than `pumpAndSettle`'s fake clock.
-      for (var i = 0; i < 8; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }
@@ -80,7 +80,7 @@ void main() {
     await tester.pump();
     await tester.runAsync(() async {
       await tester.tap(find.text('检查我的句子'));
-      for (var i = 0; i < 8; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }
@@ -162,7 +162,7 @@ void main() {
 
     await tester.runAsync(() async {
       await tester.tap(find.text('これは本です。').last);
-      for (var i = 0; i < 8; i++) {
+      for (var i = 0; i < 20; i++) {
         await Future<void>.delayed(const Duration(milliseconds: 50));
         await tester.pump();
       }
@@ -256,14 +256,13 @@ void main() {
     [1024.0, 768.0], // tablet landscape
     [768.0, 1024.0], // tablet portrait
   ]) {
-    testWidgets(
-      'renders at ${geometry[0].toInt()}x${geometry[1].toInt()}',
-      (tester) async {
-        await pumpAt(tester, geometry[0], geometry[1]);
-        expect(find.text('写作练习'), findsOneWidget);
-        expect(find.byType(TextField), findsOneWidget);
-        expect(tester.takeException(), isNull);
-      },
-    );
+    testWidgets('renders at ${geometry[0].toInt()}x${geometry[1].toInt()}', (
+      tester,
+    ) async {
+      await pumpAt(tester, geometry[0], geometry[1]);
+      expect(find.text('写作练习'), findsOneWidget);
+      expect(find.byType(TextField), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
   }
 }

@@ -885,6 +885,49 @@ class NihongoStorage {
   static Future<void> setUiStyle(String? name) =>
       _setKey('uiStyle', name == 'material3' ? 'material3' : null);
 
+  /// Purpose: Read the stored navigation placement (0.6.1).
+  /// Inputs: None.
+  /// Returns: `Future<String?>` — `'sideOnWide'`, `'side'`, or null for the
+  /// default (bottom everywhere).
+  /// Side effects: Reads the config file.
+  /// Notes: Device-local; never synced; applies to both interface styles.
+  /// Unknown values read as the default.
+  static Future<String?> getNavPlacement() async {
+    final config = await _readConfigLenient();
+    final value = config['navPlacement'];
+    return value == 'sideOnWide' || value == 'side' ? value as String : null;
+  }
+
+  /// Purpose: Persist the navigation placement (0.6.1).
+  /// Inputs: `name` — `'sideOnWide'`, `'side'`, or null for bottom.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: Only the non-default values are stored, as `navPlacement`; the
+  /// default (bottom) removes the key.
+  static Future<void> setNavPlacement(String? name) => _setKey(
+    'navPlacement',
+    name == 'sideOnWide' || name == 'side' ? name : null,
+  );
+
+  /// Purpose: Read whether the navigation rail sits on the right (0.6.1).
+  /// Inputs: None.
+  /// Returns: `Future<bool>` — false (left) by default.
+  /// Side effects: Reads the config file.
+  /// Notes: Device-local; never synced. Applies to both interface styles.
+  static Future<bool> getNavRailRight() async {
+    final config = await _readConfigLenient();
+    return config['navRailRight'] == true;
+  }
+
+  /// Purpose: Persist which side the navigation rail sits on (0.6.1).
+  /// Inputs: `right`.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: Only the right side is stored, as `navRailRight: true`; left
+  /// removes the key.
+  static Future<void> setNavRailRight(bool right) =>
+      _setKey('navRailRight', right ? true : null);
+
   /// Purpose: Read the persisted locale tag.
   /// Inputs: None.
   /// Returns: `Future<String?>` — `en`, `zh`, `zh_TW`, or null for system.

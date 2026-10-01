@@ -166,11 +166,9 @@ class _KanaPageState extends ConsumerState<KanaPage> {
         // the arrows reach a list with nothing in it focused only through the
         // route's primary scroll controller. See platform-notes.md, Input.
         primary: true,
-        padding: EdgeInsets.fromLTRB(
-          16,
-          8,
-          16,
-          shellListBottomInset(screen.width),
+        padding: navBarAwarePadding(
+          context,
+          EdgeInsets.fromLTRB(16, 8, 16, shellListBottomInset(screen.width)),
         ),
         children: [
           Center(

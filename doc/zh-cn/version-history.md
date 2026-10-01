@@ -8,6 +8,16 @@ MyNihongo!!!!! 的逐版本摘要。在改动一个行为之前理解它*为什�
 
 ## 版本
 
+- `0.6.1` — 2026-10-01。紧凑的悬浮导航栏、宽屏导航选项和头像编辑器。移植自 MyAnime!!!!! 1.7.2。
+
+  **紧凑的悬浮栏，内容显示在它后面。**Expressive 底栏不再是包着原生 `NavigationBar` 的通宽浮岛，而是宽度随内容的胶囊，居中，放在 `surfaceContainer` 色、elevation 3 的 stadium 上：选中的目标在 `secondaryContainer` 胶囊内显示图标和文字，其余只显示图标（带 tooltip 和语义标签），宽度和颜色以 250 ms 动画过渡。它浮在页面之上：外壳使用 `extendBody`，`Scaffold` 把栏高作为底部内边距报告，并通过把 `viewPadding.bottom` 抬到同样的值，让页面自己的悬浮按钮保持在栏之上（本应用目前没有悬浮按钮）。新的 `navBarAwarePadding(context, padding)` 把这段内边距加到滚动视图显式设置的 padding 上。五个标签页的检查结果：学习、五十音、单词和语法传入 `navBarAwarePadding(context, EdgeInsets.fromLTRB(16, 8, 16, shellListBottomInset(width)))`；设置的列表没有显式 padding（自己会加上这段内边距），其承载的、显式设置 padding 的滚动详情页——WebDAV、许可、隐私政策——包裹了各自的 padding；备份和测验模式的列表没有。Material 3 保留经典底栏及其布局。
+
+  **导航位置。**设置 › 通用中、界面风格下方有一个仅限本设备的设置，对两种风格都适用：*全部底部*（默认：任何窗口（包括宽窗口）都用底栏，因此展开的折叠屏上的 Material 3 现在也保留底栏）、*宽屏侧边*（从 600 dp 起用导航栏，即 0.6.0 的默认行为）或*全部侧边*（手机也用导航栏，标注不推荐）。它存为 `navPlacement`（`"sideOnWide"` 或 `"side"`；默认值会移除该键；无法识别的值按默认值读取）。第二个控件*侧边导航栏位置*（左或右，`navRailOnRight`/`navRailRight`）在可能出现导航栏时显示。两者都不同步。纯宽度函数仍遵循 `useNavigationRail(width)`，因此*全部底部*在宽窗口上时 `shellContentWidth` 会少算 81 dp（偏保守）。**升级说明：**由于默认值现在是*全部底部*，原先依赖 0.6.0 行为（宽窗口用导航栏）的现有设备会看到底栏，直到选择*宽屏侧边*。
+
+  **头像编辑器。**“选择头像”现在会打开全屏编辑器：图片位于圆形遮罩之下；拖动移动，双指缩放或滚轮缩放 1 倍到 8 倍（始终铺满圆形），按四分之一圈旋转，重置，保存。“调整头像”（以及点击大号头像）会对已存储的头像重新取景。选图、解码和裁剪从 `ProfileStore` 迁到 `avatar_image.dart`，通过顶层辅助函数在 isolate 中运行（在编辑器 `State` 里构造的闭包会捕获该 `State`，无法发送）。存储的文件不变：512 x 512 的 JPEG，使用全新的文件名，因此同步和备份都不受影响。
+
+  这里验证过：`flutter analyze` 无问题，完整的 `flutter test` 通过（数量见报告）。外壳、冒烟和设置测试已适配新的栏和放置方式（未选中的目标是 tooltip 而不是文字；应用冒烟测试在需要导航栏的地方选择*宽屏侧边*；语言行在设置列表更靠下的位置），UI 测试中的真实时间等待循环也放宽到 20 次，以免在并行负载下失败。版本 0.6.1+27；安装程序与 MSIX 版本 0.6.1.0。共享包仍为 `v1.0.3`；本次发布没有重新对照 Google Maven 检查 `genai-prompt` 和 `genai-proofreading`。
+
 - `0.6.0` — 2026-10-01。Material 3 或 Expressive、悬浮导航栏，以及同步的个人资料。移植自 MyAnime!!!!! 1.7.1。
 
   **全新的外观，源自一个种子色。** `flex_color_scheme` 已移除：主题是原生 Material 3，由 `ColorScheme.fromSeed` 从樱花粉（`0xFFCE5B78`）生成；在 Android 12 及更新版本上改用壁纸派生的动态颜色（`dynamic_color`；桌面端被排除，因为该插件返回的是系统强调色，会抹掉应用的辨识度）。卡片和脚手架不再带主色染色，导航栏始终显示标签，分割线更细。此前没有任何屏幕硬编码颜色，因此无需改动其他地方。

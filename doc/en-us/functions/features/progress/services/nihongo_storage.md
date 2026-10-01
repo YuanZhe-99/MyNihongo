@@ -50,8 +50,10 @@ because neither a voice name nor an engine package means anything on another dev
 | `NihongoStorage.getThemeMode` | static method | B | Read the persisted theme mode (`light`, `dark`, or null for system). |
 | `NihongoStorage.setThemeMode` | static method | B | Persist the theme mode; the default is removed rather than stored. |
 | `NihongoStorage.getLocaleTag` | static method | B | Read the persisted locale tag (`en`, `zh`, `zh_TW`). |
-$1| `NihongoStorage.getUiStyle` | static method | B | Read the persisted interface style name (`material3`, or null for the default Expressive). |
+| `NihongoStorage.getUiStyle` | static method | B | Read the persisted interface style name (`material3`, or null for the default Expressive). |
 | `NihongoStorage.setUiStyle` | static method | B | Persist the interface style; only `material3` is stored, as `uiStyle`, and the default removes the key. |
+| `NihongoStorage.getNavPlacement` / `setNavPlacement` | static method | B | Read and persist where the navigation sits (0.6.1): `sideOnWide`, `side`, or null for the bottom-everywhere default; unknown values read as null and the default removes the key. |
+| `NihongoStorage.getNavRailRight` / `setNavRailRight` | static method | B | Read and persist whether the navigation rail sits on the right (0.6.1); only `true` is stored, as `navRailRight`. |
 
 ## Documentation
 

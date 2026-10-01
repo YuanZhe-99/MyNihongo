@@ -8,6 +8,8 @@ display data of one rule card. See
 [../../../../features/kana-reference.md](../../../../features/kana-reference.md) and
 [../../../../adaptive-layout.md](../../../../adaptive-layout.md).
 
+Since 0.6.1 the list's padding is `navBarAwarePadding(context, EdgeInsets.fromLTRB(16, 8, 16, shellListBottomInset(width)))`: with the Expressive floating bottom bar the page draws behind the bar, and the wrapper adds the bar's height so the last content can scroll above it. See [../../../../adaptive-layout.md](../../../../adaptive-layout.md).
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |

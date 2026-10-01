@@ -10,16 +10,20 @@ Device-local UI preferences as Riverpod state: `AppSettings` (theme mode, locale
 
 | Declaration | Kind | Tier | Purpose |
 |---|---|---|---|
-$1| `AppSettingsNotifier.fixed` | constructor | B | Create a notifier holding fixed settings and doing no I/O, for tests that override `appSettingsProvider`. |
+| `AppSettingsNotifier.fixed` | constructor | B | Create a notifier holding fixed settings and doing no I/O, for tests that override `appSettingsProvider`. |
 | `AppSettingsNotifier._loadPersisted` | method | B | Load the persisted theme mode and locale from disk and replace the state; the stored locale tag is parsed with `localeFromTag`. When reminders are on, it ends by re-planning them in the background (`_rescheduleReminders`), so the schedule is rebuilt at every start; this never asks for permission. |
 | `AppSettingsNotifier._rescheduleReminders`, `_reminderL10n` | method | B | Re-plan the reminders without a `BuildContext`: the wording comes from `lookupAppLocalizations` for the chosen language, or for the device's list resolved with `resolveAppLocale`. Failures are swallowed. |
 | `AppSettingsNotifier.setThemeMode` | method | B | Update and persist the theme mode; `system` is stored as an absent key. |
-$1| `AppSettingsNotifier.setUiStyle` | method | B | Choose the interface style (0.6.0); persists it, and the app rebuilds its theme and the shell its bottom bar. |
+| `AppSettingsNotifier.setUiStyle` | method | B | Choose the interface style (0.6.0); persists it, and the app rebuilds its theme and the shell its bottom bar. |
+| `AppSettingsNotifier.setNavPlacement` | method | B | Choose where navigation sits (0.6.1): bottom everywhere (default), side on wide windows, or side everywhere; persists `navPlacement` (the default removes the key). |
+| `AppSettingsNotifier.setNavRailOnRight` | method | B | Choose which side of the window the navigation rail sits on (0.6.1); persists `navRailRight` (only `true` is stored). |
 | `AppSettingsNotifier.setAiAssistEnabled` | method | B | Turn on-device AI on or off; applies it to `AiAssistService` and persists it, off as an absent key. |
 | `AppSettingsNotifier.setPreferFastModel` | method | B | Choose the larger or the faster on-device model; re-probes and persists it. |
 | `AppSettingsNotifier.setDebugMode` | method | B | Unlock or re-hide developer options; persists the choice on this device only. |
-| `AppSettings.uiStyle` | field | B | The interface style (0.6.0): Expressive (default, floating island bottom bar) or Material 3 (classic bar). Device-local; never synced. |
-$1 | field | B | Whether the user turned on-device AI on. False unless they did. |
+| `AppSettings.uiStyle` | field | B | The interface style (0.6.0): Expressive (default, compact floating bottom bar) or Material 3 (classic bar). Device-local; never synced. |
+| `AppSettings.navPlacement` | field | B | Where the shell puts its navigation (0.6.1): a `NavPlacement` (`bottom`, `sideOnWide`, `side`); bottom by default; both styles. |
+| `AppSettings.navRailOnRight` | field | B | Whether the navigation rail sits on the right of the window (0.6.1). Off (left) by default; applies to both styles. |
+| `AppSettings.aiAssistEnabled` | field | B | Whether the user turned on-device AI on. False unless they did. |
 | `AppSettings.preferFastModel` | field | B | Whether the faster on-device model is preferred where a device serves both sizes. |
 | `AppSettings.debugMode` | field | B | Whether developer options are unlocked on this device. False until somebody taps the version row eight times. |
 | `AppSettings.new` | constructor | B | Create an app settings instance. |

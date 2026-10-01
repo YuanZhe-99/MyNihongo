@@ -66,6 +66,12 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     final uiStyle = (await NihongoStorage.getUiStyle()) == 'material3'
         ? AppUiStyle.material3
         : AppUiStyle.expressive;
+    final navPlacement = switch (await NihongoStorage.getNavPlacement()) {
+      'sideOnWide' => NavPlacement.sideOnWide,
+      'side' => NavPlacement.side,
+      _ => NavPlacement.bottom,
+    };
+    final navRailOnRight = await NihongoStorage.getNavRailRight();
     final vocabLevel = await NihongoStorage.getVocabLevel();
     final grammarLevel = await NihongoStorage.getGrammarLevel();
     final kanaScript = await NihongoStorage.getKanaScript();
@@ -97,6 +103,8 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
       themeMode: themeMode,
       locale: locale,
       uiStyle: uiStyle,
+      navPlacement: navPlacement,
+      navRailOnRight: navRailOnRight,
       vocabLevel: JlptLevel.parse(vocabLevel),
       grammarLevel: JlptLevel.parse(grammarLevel),
       kanaScript: kanaScript == 'katakana'
@@ -438,6 +446,30 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     );
   }
 
+  /// Purpose: Choose where navigation sits (0.6.1).
+  /// Inputs: `placement`.
+  /// Returns: None.
+  /// Side effects: Persists the preference; the shell rebuilds.
+  /// Notes: Bottom by default, for both styles. [NavPlacement.side] puts the
+  /// rail on phones too, which is not recommended.
+  void setNavPlacement(NavPlacement placement) {
+    state = state.copyWith(navPlacement: placement);
+    NihongoStorage.setNavPlacement(
+      placement == NavPlacement.bottom ? null : placement.name,
+    );
+  }
+
+  /// Purpose: Choose which side of the window the navigation rail sits on
+  /// (0.6.1).
+  /// Inputs: `right`.
+  /// Returns: None.
+  /// Side effects: Persists the preference; the shell rebuilds.
+  /// Notes: Left by default; applies to both styles whenever the rail shows.
+  void setNavRailOnRight(bool right) {
+    state = state.copyWith(navRailOnRight: right);
+    NihongoStorage.setNavRailRight(right);
+  }
+
   /// Purpose: Update locale with the provided value.
   /// Inputs: `locale` — null follows the system.
   /// Returns: None.
@@ -467,6 +499,13 @@ class AppSettings {
   /// The interface style (0.6.0): Expressive (default, with the floating
   /// island bottom bar) or stock Material 3 (classic bottom bar).
   final AppUiStyle uiStyle;
+
+  /// Whether the navigation rail sits on the right of the window (0.6.1).
+  /// Off (left) by default; applies to both styles.
+  final bool navRailOnRight;
+
+  /// Where the shell puts its navigation (0.6.1). Bottom by default.
+  final NavPlacement navPlacement;
 
   /// The vocabulary page's level filter; null shows every level.
   final JlptLevel? vocabLevel;
@@ -540,6 +579,8 @@ class AppSettings {
     this.themeMode = ThemeMode.system,
     this.locale,
     this.uiStyle = AppUiStyle.expressive,
+    this.navRailOnRight = false,
+    this.navPlacement = NavPlacement.bottom,
     this.vocabLevel,
     this.grammarLevel,
     this.kanaScript = KanaScript.hiragana,
@@ -569,6 +610,8 @@ class AppSettings {
     Locale? locale,
     bool clearLocale = false,
     AppUiStyle? uiStyle,
+    bool? navRailOnRight,
+    NavPlacement? navPlacement,
     JlptLevel? vocabLevel,
     bool clearVocabLevel = false,
     JlptLevel? grammarLevel,
@@ -595,6 +638,8 @@ class AppSettings {
       themeMode: themeMode ?? this.themeMode,
       locale: clearLocale ? null : (locale ?? this.locale),
       uiStyle: uiStyle ?? this.uiStyle,
+      navRailOnRight: navRailOnRight ?? this.navRailOnRight,
+      navPlacement: navPlacement ?? this.navPlacement,
       vocabLevel: clearVocabLevel ? null : (vocabLevel ?? this.vocabLevel),
       grammarLevel: clearGrammarLevel
           ? null

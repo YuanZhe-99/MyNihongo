@@ -94,5 +94,28 @@ void main() {
       expect(jsonDecode(config.readAsStringSync()), isEmpty);
       expect(await NihongoStorage.getUiStyle(), isNull);
     });
+
+    test('navigation keys store only the non-default value', () async {
+      expect(await NihongoStorage.getNavPlacement(), isNull);
+      expect(await NihongoStorage.getNavRailRight(), isFalse);
+      await NihongoStorage.setNavPlacement('sideOnWide');
+      await NihongoStorage.setNavRailRight(true);
+      expect(jsonDecode(config.readAsStringSync()), {
+        'navPlacement': 'sideOnWide',
+        'navRailRight': true,
+      });
+      expect(await NihongoStorage.getNavPlacement(), 'sideOnWide');
+      expect(await NihongoStorage.getNavRailRight(), isTrue);
+      await NihongoStorage.setNavPlacement('side');
+      expect(await NihongoStorage.getNavPlacement(), 'side');
+      await NihongoStorage.setNavPlacement(null);
+      await NihongoStorage.setNavRailRight(false);
+      expect(jsonDecode(config.readAsStringSync()), isEmpty);
+    });
+
+    test('an unknown navPlacement value reads as the default', () async {
+      config.writeAsStringSync('{"navPlacement": "floating"}');
+      expect(await NihongoStorage.getNavPlacement(), isNull);
+    });
   });
 }
