@@ -79,7 +79,7 @@ double shellListBottomInset(double screenWidth) =>
 
 ### 内容显示在悬浮栏后面
 
-Expressive 底栏时，外壳使用 `Scaffold(extendBody: true)`，因此每个标签页都绘制在栏的*后面*，`Scaffold` 把栏高作为 `MediaQuery.padding.bottom` 报告（外壳同时把 `viewPadding.bottom` 抬到同样的值，使页面自己的悬浮按钮摆在栏的上方）。没有显式 `padding` 的 `ListView`/`GridView` 会自己加上这段内边距；显式传入 padding 的滚动视图——以及任何贴底的布局——必须自己加上：`padding: navBarAwarePadding(context, <页面自己的 padding>)`，即页面的 padding 加 `MediaQuery.paddingOf(context).bottom`。`shellListBottomInset` 仍是页面自己在最后一行下面的留白，放在 `navBarAwarePadding` *里面*。其他情况（Material 3 底栏、导航栏、被压栈的路由）里这段内边距只是系统的，因此包一层无害。0.6.1 逐个检查了外壳的每个标签页：学习、五十音、单词和语法包裹了列表的 padding；设置的列表没有显式 padding，其承载的详情页中显式设置 padding 的滚动页（WebDAV、许可、隐私政策）也包了一层。
+Expressive 底栏时，外壳使用 `Scaffold(extendBody: true)`，因此每个标签页都绘制在栏的*后面*，`Scaffold` 把栏高作为 `MediaQuery.padding.bottom` 报告（外壳同时把 `viewPadding.bottom` 抬到同样的值，使页面自己的悬浮按钮摆在栏的上方）。没有显式 `padding` 的 `ListView`/`GridView` 会自己加上这段内边距；显式传入 padding 的滚动视图——以及任何贴底的布局——必须自己加上：`padding: navBarAwarePadding(context, <页面自己的 padding>)`，即页面的 padding 加 `MediaQuery.paddingOf(context).bottom`。`shellListBottomInset` 仍是页面自己在最后一行下面的留白，放在 `navBarAwarePadding` *里面*。只有位于外壳导航器（shell navigator）里的页面需要这样做：五个标签页，以及设置详情窗格在其嵌套 `Navigator` 中承载的页面。路由器的其他路由（`/quiz`、`/scenario`、`/writing`、`/exam`、`/exam-history`、`/weakness`、`/lab`）注册在 `ShellRoute` 之外，单栏设置详情页则压在根导航器上，因此它们都位于栏的上方。从标签页打开的模态底部面板会落在外壳导航器里，被绘制在栏的*后面*，所以每个 `showModalBottomSheet` 都传入 `useRootNavigator: true`。其他情况（Material 3 底栏、导航栏）里这段内边距只是系统的，因此包一层无害。0.6.1 逐个检查了外壳的每个标签页：学习、五十音、单词和语法包裹了列表的 padding；设置的列表没有显式 padding，其承载的详情页中显式设置 padding 的滚动页（WebDAV、许可、隐私政策）也包了一层。
 
 ### 导航放在哪里（0.6.1）
 

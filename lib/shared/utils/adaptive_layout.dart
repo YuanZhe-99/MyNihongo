@@ -308,8 +308,12 @@ double labInputPaneWidth(double contentWidth) {
 /// draw behind the bar and the Scaffold reports the bar's height as
 /// `MediaQuery.padding.bottom`. Scroll views with an explicit padding do not
 /// apply that inset themselves; passing their padding through here leaves room
-/// to scroll the last content above the bar. Elsewhere (classic bar, rail,
-/// pushed routes) the inset is just the system's, so this is harmless.
+/// to scroll the last content above the bar. A page needs it only when it
+/// lives in the shell navigator: the five tabs and the pages the Settings
+/// detail pane hosts. Router routes registered outside the `ShellRoute`
+/// (`/quiz`, `/lab`, `/exam` ...) sit above the bar and never see its inset.
+/// Elsewhere (classic bar, rail) the inset is just the system's, so wrapping is
+/// harmless.
 EdgeInsets navBarAwarePadding(BuildContext context, EdgeInsets padding) =>
     padding.copyWith(
       bottom: padding.bottom + MediaQuery.paddingOf(context).bottom,

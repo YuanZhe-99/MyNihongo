@@ -94,6 +94,8 @@ Future<void> showVocabDetailSheet(
     context: context,
     showDragHandle: true,
     isScrollControlled: true,
+    // Above the shell, so the floating navigation bar cannot cover the sheet.
+    useRootNavigator: true,
     builder: (context) {
       final theme = Theme.of(context);
       final grammar = <GrammarPoint>[];
@@ -199,6 +201,8 @@ Future<void> showGrammarDetailSheet(
     context: context,
     showDragHandle: true,
     isScrollControlled: true,
+    // Above the shell, so the floating navigation bar cannot cover the sheet.
+    useRootNavigator: true,
     builder: (context) {
       final theme = Theme.of(context);
       final explanation = point.explanation.resolveJoined(
@@ -283,6 +287,8 @@ Future<void> showKanaDetailSheet(
     context: context,
     showDragHandle: true,
     isScrollControlled: true,
+    // Above the shell, so the floating navigation bar cannot cover the sheet.
+    useRootNavigator: true,
     builder: (context) {
       final theme = Theme.of(context);
       final note = catalog.kanaNotes[entry.progressId];

@@ -37,6 +37,8 @@ Future<void> showPronunciationPracticeSheet(
     context: context,
     showDragHandle: true,
     isScrollControlled: true,
+    // Above the shell, so the floating navigation bar cannot cover the sheet.
+    useRootNavigator: true,
     builder: (context) => _PracticeSheet(target: target),
   );
 }

@@ -133,6 +133,8 @@ Future<void> showHistorySheet(
     context: context,
     showDragHandle: true,
     isScrollControlled: true,
+    // Above the shell, so the floating navigation bar cannot cover the sheet.
+    useRootNavigator: true,
     builder: (sheetContext) {
       final l10n = AppLocalizations.of(sheetContext)!;
       return SafeArea(

@@ -123,8 +123,14 @@ bar). A `ListView`/`GridView` with no explicit `padding` adds that inset itself.
 passes an explicit padding — and any bottom-anchored layout — must add it:
 `padding: navBarAwarePadding(context, <the page's own padding>)`, which is the page's padding plus
 `MediaQuery.paddingOf(context).bottom`. `shellListBottomInset` stays as the page's own breathing
-room under the last row and goes *inside* `navBarAwarePadding`. Elsewhere (the Material 3 bar, the
-rail, a pushed route) the inset is only the system's, so wrapping is harmless. Every shell tab page
+room under the last row and goes *inside* `navBarAwarePadding`. Only pages in the shell navigator
+need it: the five tabs and the pages the Settings detail pane hosts in its nested `Navigator`. The
+router's other routes (`/quiz`, `/scenario`, `/writing`, `/exam`, `/exam-history`, `/weakness`,
+`/lab`) are registered outside the `ShellRoute`, and the single-column Settings detail pages are
+pushed on the root navigator, so all of those sit above the bar. Modal bottom sheets opened from a
+tab would land in the shell navigator and be drawn *behind* the bar, so every `showModalBottomSheet`
+passes `useRootNavigator: true`. Elsewhere (the Material 3 bar, the rail) the inset is only the
+system's, so wrapping is harmless. Every shell tab page
 was audited in 0.6.1: Learn, Kana, Vocabulary and Grammar wrap their list padding; Settings' list has
 no explicit padding, and its hosted detail pages that scroll with an explicit padding (WebDAV, license,
 privacy policy) wrap theirs.
