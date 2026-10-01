@@ -9,6 +9,7 @@ import '../../../shared/utils/adaptive_layout.dart';
 import '../../content/services/content_repository.dart';
 import '../../kana/models/kana.dart';
 import '../../progress/models/study_record.dart';
+import '../../profile/views/profile_avatar.dart';
 import '../../lessons/widgets/lesson_path_view.dart';
 import '../widgets/jlpt_practice_card.dart';
 import '../widgets/study_calendar.dart';
@@ -85,7 +86,8 @@ class LearnPage extends ConsumerWidget {
               for (final point in catalog.grammar)
                 if (point.level == profile.targetLevel) point.id,
             };
-            final started = progress.value?.studyRecords
+            final started =
+                progress.value?.studyRecords
                     .where((r) => ids.contains(r.id))
                     .length ??
                 0;
@@ -180,7 +182,19 @@ class LearnPage extends ConsumerWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.learnTitle)),
+      appBar: AppBar(
+        // The profile avatar sits left of the title (0.6.0); it opens
+        // Settings, whose header edits the name and avatar.
+        leading: Padding(
+          padding: const EdgeInsetsDirectional.only(start: 8),
+          child: IconButton(
+            tooltip: l10n.profileOpenSettings,
+            onPressed: () => context.go('/settings'),
+            icon: const ProfileAvatar(radius: 16),
+          ),
+        ),
+        title: Text(l10n.learnTitle),
+      ),
       body: ListView(
         padding: EdgeInsets.fromLTRB(
           16,

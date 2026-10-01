@@ -2,7 +2,7 @@
 /// to the shared `myapps_data` engines.
 /// Inputs: `NihongoStorage` for storage paths/settings, `mergeProgressData`
 /// for the app's record merge, and the `ProgressData`/`StudyRecord` models
-/// for parsing.
+/// for parsing, and the profile model and merge for `profile.json`.
 /// Returns: A `StorageAdapter` implementation and the app's `ModuleRegistry`.
 /// Side effects: None at import time; callbacks perform parsing and storage I/O.
 /// Notes: File names and module IDs are persisted compatibility contracts
@@ -13,7 +13,10 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:myapps_data/myapps_data.dart';
+import 'package:path/path.dart' as p;
 
+import '../features/profile/models/profile_data.dart';
+import '../features/profile/services/profile_merge.dart';
 import '../features/progress/models/study_record.dart';
 import '../features/progress/services/nihongo_storage.dart';
 import '../shared/services/sync_merge.dart';
@@ -74,6 +77,12 @@ const progressDataFileName = 'nihongo_progress.json';
 
 /// Backup bundle module key for that file (I2).
 const progressModuleId = 'progress';
+
+/// Local and remote name of the profile file (0.6.0; I1/I2).
+const profileFileName = 'profile.json';
+
+/// Backup bundle module key for that file (0.6.0; I2).
+const profileModuleId = 'profile';
 
 /// Default remote WebDAV directory for MyNihongo.
 const nihongoDefaultRemotePath = '/MyNihongo';
@@ -148,7 +157,7 @@ ModuleMergeOutcome mergeProgressModule({
 
 /// Purpose: Describe `nihongo_progress.json` to the shared engines.
 /// Inputs: None.
-/// Returns: The app's single [DataModule].
+/// Returns: The progress [DataModule].
 /// Side effects: None.
 /// Notes: No `postMergeTransform` (no migration yet), no
 /// `preUploadTransform` (unknown-field preservation is baked into the models
@@ -172,12 +181,61 @@ DataModule buildProgressModule() => DataModule(
       ),
 );
 
+/// Purpose: Validate a `profile.json` payload before it is written.
+/// Inputs: [json] raw module content.
+/// Returns: None; throws when the payload is not a JSON object.
+/// Side effects: None.
+/// Notes: The model is tolerant inside the object.
+void validateProfileJson(String json) {
+  ProfileData.fromJson(jsonDecode(json));
+}
+
+/// Purpose: Extract the avatar image basename referenced by the profile.
+/// Inputs: [json] raw or merged module JSON.
+/// Returns: A set holding the avatar's basename, or empty.
+/// Side effects: None.
+/// Notes: This is what makes the avatar file travel through the engine's
+/// image phase. Malformed input yields an empty set.
+Set<String> profileReferencedImages(String json) {
+  try {
+    final avatar = ProfileData.fromJson(jsonDecode(json)).avatar;
+    return avatar == null ? {} : {p.basename(avatar)};
+  } catch (_) {
+    return {};
+  }
+}
+
+/// Purpose: Describe `profile.json` to the shared engines (0.6.0).
+/// Inputs: None.
+/// Returns: The profile [DataModule].
+/// Side effects: None.
+/// Notes: Conflict-free (each field is last-writer-wins by its own
+/// timestamp), so `baseJson` and `autoResolve` are unused. Builds older than
+/// 0.6.0 never request this file, so adding it leaves them unaffected.
+DataModule buildProfileModule() => DataModule(
+  fileName: profileFileName,
+  moduleId: profileModuleId,
+  validate: validateProfileJson,
+  referencedImages: profileReferencedImages,
+  merge:
+      ({
+        required String localJson,
+        required String remoteJson,
+        required String? baseJson,
+        required bool autoResolve,
+      }) => ModuleMergeOutcome(
+        mergedJson: mergeProfileJson(localJson, remoteJson),
+      ),
+);
+
 /// Purpose: Provide MyNihongo's ordered module registry.
 /// Inputs: None.
-/// Returns: A registry holding the single progress module.
+/// Returns: A registry holding the progress module, then the profile module
+/// (0.6.0).
 /// Side effects: None.
 /// Notes: Built once; the shared engines treat registry order as significant,
-/// so a second module must be appended, never inserted before this one.
+/// so a module must be appended, never inserted before progress.
 final ModuleRegistry nihongoModuleRegistry = ModuleRegistry([
   buildProgressModule(),
+  buildProfileModule(),
 ]);

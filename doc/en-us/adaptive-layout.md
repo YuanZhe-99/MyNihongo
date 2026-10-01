@@ -103,7 +103,12 @@ double shellListBottomInset(double screenWidth) =>
     useNavigationRail(screenWidth) ? 16.0 : 80.0;
 ```
 
-The rail and the bottom bar are built from **one list of destinations** in `shell_scaffold.dart`,
+Below the rail threshold the bottom bar is, since 0.6.0, a *floating island* (`_FloatingNavBar`: a
+pill-shaped, elevated surface with side and bottom margins, capped at 480 dp wide) when the interface
+style is **Expressive** (the default), or the classic full-width `NavigationBar` when **Settings ›
+General › Interface style** is **Material 3**. The island sits in the `Scaffold`'s bottom-bar slot
+rather than over the body, so it changes no page layout and the bottom reservation is unchanged; the
+rail ignores the setting. The rail and the bottom bar are built from **one list of destinations** in `shell_scaffold.dart`,
 with `groupAlignment: 0` on the rail so five destinations sit centred rather than pinned to the top
 of a tall rail.
 

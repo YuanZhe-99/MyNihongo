@@ -5,7 +5,7 @@ for the persisted compatibility contract: the data-file name `nihongo_progress.j
 module id `progress`, the default remote path `/MyNihongo`, and the ZIP archive prefix
 `mynihongo_export_`. It declares `NihongoStorageAdapter` (a `StorageAdapter` over
 `NihongoStorage`), the validation, encoding and merge callbacks for the progress module, and
-`nihongoModuleRegistry`, the ordered registry every facade is built on. See
+`nihongoModuleRegistry`, the ordered registry every facade is built on. Since 0.6.0 the registry also holds the profile module (`profile.json`, module id `profile`, appended last), with `validateProfileJson`, `profileReferencedImages` and `buildProfileModule`. See
 [../../architecture.md](../../architecture.md) and [../../sync.md](../../sync.md).
 
 ## Declarations
@@ -22,7 +22,11 @@ module id `progress`, the default remote path `/MyNihongo`, and the ZIP archive 
 | `encodeProgressData` | top-level function | B | Encode a merged dataset with the two-space indentation the storage hub uses. |
 | [`mergeProgressModule`](#mergeprogressmodule) | top-level function | A | Merge local/remote/base progress JSON for the shared sync engine, carrying the typed result as opaque state. |
 | `buildProgressModule` | top-level function | B | Describe `nihongo_progress.json` to the shared engines as a `DataModule`. |
-| `nihongoModuleRegistry` | top-level `final` | B | Provide MyNihongo's ordered module registry, holding the single progress module. |
+| `validateProfileJson` | top-level function | B | Validate a `profile.json` payload before it is written; throws when it is not a JSON object. |
+| `profileReferencedImages` | top-level function | B | Extract the avatar image basename the profile references, so the engine's image phase carries it. |
+| `buildProfileModule` | top-level function | B | Describe `profile.json` to the shared engines as a conflict-free `DataModule` with `referencedImages`. |
+| `profileFileName`, `profileModuleId` | top-level constants | B | `profile.json` and `profile`, frozen once published. |
+| `nihongoModuleRegistry` | top-level `final` | B | Provide MyNihongo's ordered module registry, holding the progress module, then the profile module. |
 
 ## Documentation
 

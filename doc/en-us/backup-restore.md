@@ -9,10 +9,13 @@ at `packages/myapps_data/doc/en-us/`. This page records how MyNihongo!!!!! confi
 the app's module registry.
 
 - **Format:** the shared v2 bundle, `backups/backup_<stamp>.json`, holding each module's raw JSON
-  string plus an `_imageRefs` map. MyNihongo has no images, so `_imageRefs` is always empty and the
-  content-addressed blob store under `backups/blobs/` is never populated. The format is kept as-is
-  so a bundle looks the same to every app in the series.
-- **Modules:** one, `progress` → `nihongo_progress.json`, derived from the registry (`BackupService.modules`).
+  string plus an `_imageRefs` map. Since 0.6.0 the only image is the profile avatar: a bundle of a
+  profile with an avatar records it in `_imageRefs` and stores the file in the content-addressed
+  blob store under `backups/blobs/`; without an avatar both stay empty. The format is the same one
+  every app in the series writes.
+- **Modules:** two, `progress` → `nihongo_progress.json` and (0.6.0) `profile` → `profile.json`, derived
+  from the registry (`BackupService.modules`). The restore dialog labels the profile module *Profile*
+  (`backupModuleProfile`, person icon). A bundle from before 0.6.0 has no `profile` module and never touches `profile.json`.
 - **Settings:** `autoBackupEnabled` and `backupRetentionDays` in `storage_config.json`, the
   series-wide keys. Auto-backup takes one bundle per day, decided by scanning bundle file names, and
   runs from `main()`, from the auto-sync periodic tick, and on resume. Retention deletes bundles
@@ -21,7 +24,7 @@ the app's module registry.
 - **Restore:** every selected module payload is validated (`validateProgressJson`) **before**
   anything is written, writes are atomic, and WebDAV auto-sync is disabled before the first write
   and re-enabled only when the restore failed without writing anything. The restore result reports
-  `ok`, `wroteAnything` and `missingImages` (always 0 here). After a restore that wrote data, the
+  `ok`, `wroteAnything` and `missingImages` (non-zero only when a backed-up avatar's blob is gone). After a restore that wrote data, the
   backup page offers a force upload so the restored state propagates deliberately rather than
   through a merge that would look like mass deletion elsewhere.
 
@@ -34,10 +37,10 @@ implementation would fight it over the same config file.
 `ImportExportService` (`lib/shared/services/import_export_service.dart`) is a facade over
 `ZipTransfer`.
 
-- **Export:** `mynihongo_export_<yyyyMMdd_HHmmss>.zip` containing the registry's data files.
+- **Export:** `mynihongo_export_<yyyyMMdd_HHmmss>.zip` containing the registry's data files (`nihongo_progress.json`, and `profile.json` once it exists) and every file in `images/` (at most the avatar).
   `storage_config.json`, `webdav_config.json`, `.sync_base/` and `backups/` are never included.
 - **Import:** strict, because this app has no lenient installed base to protect:
-  `rejectUnknownEntries: true` (an archive with anything but the registry's files is refused),
+  `rejectUnknownEntries: true` (an archive with anything but the registry's files and flat `images/<name>` entries is refused),
   `strictUtf8: true`, `validateBeforeWrite: true` (the payload must parse as `ProgressData` before
   the file is touched), `atomicWrites: true`. Path traversal is refused outright by the engine
   regardless of these knobs. A rejected archive writes nothing.

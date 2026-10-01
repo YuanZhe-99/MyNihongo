@@ -1,4 +1,6 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:dynamic_color/dynamic_color.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -47,31 +49,44 @@ class _MyNihongoAppState extends ConsumerState<MyNihongoApp> {
   Widget build(BuildContext context) {
     final settings = ref.watch(appSettingsProvider);
 
-    return MaterialApp.router(
-      title: 'MyNihongo!!!!!',
-      debugShowCheckedModeBanner: false,
+    // Dynamic color is Android-only: the desktop plugin returns the system
+    // accent, which would override the app's own seed color.
+    final allowDynamic =
+        !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
 
-      // No scrollBehavior: the SDK default already scrolls with the wheel and
-      // draws scrollbars on desktop, and it keeps stylus and accessibility
-      // (`unknown`) drags working on Android, which a custom dragDevices set
-      // silently dropped. See doc/en-us/platform-notes.md.
+    return DynamicColorBuilder(
+      builder: (lightDynamic, darkDynamic) => MaterialApp.router(
+        title: 'MyNihongo!!!!!',
+        debugShowCheckedModeBanner: false,
 
-      // Theme
-      theme: AppTheme.light,
-      darkTheme: AppTheme.dark,
-      themeMode: settings.themeMode,
+        // No scrollBehavior: the SDK default already scrolls with the wheel and
+        // draws scrollbars on desktop, and it keeps stylus and accessibility
+        // (`unknown`) drags working on Android, which a custom dragDevices set
+        // silently dropped. See doc/en-us/platform-notes.md.
 
-      // Localization
-      locale: settings.locale,
-      supportedLocales: AppLocalizations.supportedLocales,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      localeListResolutionCallback: resolveAppLocale,
+        // Theme
+        theme: AppTheme.light(
+          allowDynamic ? lightDynamic : null,
+          settings.uiStyle,
+        ),
+        darkTheme: AppTheme.dark(
+          allowDynamic ? darkDynamic : null,
+          settings.uiStyle,
+        ),
+        themeMode: settings.themeMode,
 
-      // DevicePreview
-      builder: DevicePreview.appBuilder,
+        // Localization
+        locale: settings.locale,
+        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localeListResolutionCallback: resolveAppLocale,
 
-      // Routing
-      routerConfig: _router,
+        // DevicePreview
+        builder: DevicePreview.appBuilder,
+
+        // Routing
+        routerConfig: _router,
+      ),
     );
   }
 }

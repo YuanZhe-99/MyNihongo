@@ -39,7 +39,7 @@ The shared WebDAV sync, backup, and ZIP engines are not in this repository. They
   device-local).
 - [`adaptive-layout.md`](adaptive-layout.md) — when a layout may split, where navigation lives, how
   many columns fit, and which rule each page uses.
-- [`sync.md`](sync.md) — how the shared WebDAV engine is configured here: the one data module, its
+- [`sync.md`](sync.md) — how the shared WebDAV engine is configured here: the two data modules, their
   merge, and how conflicts reach the user.
 - [`backup-restore.md`](backup-restore.md) — local backups and ZIP export/import as configured
   here.
@@ -58,6 +58,8 @@ The shared WebDAV sync, backup, and ZIP engines are not in this repository. They
   the Learn dashboard.
 - [`features/sync-and-backup.md`](features/sync-and-backup.md) — the sync, backup and ZIP screens
   under Settings › Data.
+- [`features/profile.md`](features/profile.md) — the synced display name and avatar: where they
+  appear, how they are edited, how they sync.
 - [`features/reference-preferences.md`](features/reference-preferences.md) — the five per-device
   choices the reference pages remember.
 - [`features/pronunciation.md`](features/pronunciation.md) — everything that makes or hears sound:

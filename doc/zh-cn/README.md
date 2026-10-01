@@ -20,7 +20,7 @@
 - [`architecture.md`](architecture.md) — 应用外壳、状态管理、导航、l10n、仓库布局，以及整个代码库遵循的核心架构规则。
 - [`data-formats.md`](data-formats.md) — 内容目录的 schema、`StudyRecord` 进度模型、磁盘 JSON 格式，以及完整持久化数据清单（哪些同步、哪些仅设备本地）。
 - [`adaptive-layout.md`](adaptive-layout.md) — 布局何时可以分栏、导航放在哪里、能放几列，以及每个页面使用哪条规则。
-- [`sync.md`](sync.md) — 共享 WebDAV 引擎在这里的配置方式：唯一的数据模块、它的合并，以及冲突如何呈现给用户。
+- [`sync.md`](sync.md) — 共享 WebDAV 引擎在这里的配置方式：两个数据模块、它们的合并，以及冲突如何呈现给用户。
 - [`backup-restore.md`](backup-restore.md) — 本地备份和 ZIP 导出 / 导入在这里的配置方式。
 - [`platform-notes.md`](platform-notes.md) — Android 构建状态，以及 Windows、macOS 和 iOS
   各自需要什么、如何发布。
@@ -33,6 +33,7 @@
 - [`features/content-catalog.md`](features/content-catalog.md) — 内置的单词和语法内容：schema、id、语言、许可，以及浏览页面。
 - [`features/learning-progress.md`](features/learning-progress.md) — 同步的学习进度记录和学习仪表盘。
 - [`features/sync-and-backup.md`](features/sync-and-backup.md) — “设置 › 数据”下的同步、备份与 ZIP 界面。
+- [`features/profile.md`](features/profile.md) — 同步的名称和头像：出现在哪里、如何编辑、如何同步。
 - [`features/reference-preferences.md`](features/reference-preferences.md) — 参考页面按设备记住的五个选择。
 - [`features/pronunciation.md`](features/pronunciation.md) — 一切发声与听声的部分：哪些内容会被朗读、速度与语音偏好，以及未安装日语语音时的表现。
 - [`features/sentence-lab.md`](features/sentence-lab.md) — 句子实验室页面：它显示什么、从哪里进入，以及它写明的限制。

@@ -8,14 +8,17 @@ engine and what the user sees.
 
 ## What syncs
 
-One data module, declared once in `lib/app/data_modules.dart`:
+Two data modules, declared once in `lib/app/data_modules.dart`. The order is significant: progress first, profile (0.6.0) appended last.
 
 | Local and remote file | Backup module id | Default remote path |
 |---|---|---|
 | `nihongo_progress.json` | `progress` | `/MyNihongo` |
+| `profile.json` (0.6.0) | `profile` | `/MyNihongo` |
 
-Nothing else. The content catalog ships with the app, device preferences stay in
-`storage_config.json`, and there are no images, so the engine's image sync has nothing to do here.
+Nothing else. The content catalog ships with the app and device preferences stay in
+`storage_config.json`. The only images are profile avatars: the profile module's `referencedImages`
+hook returns the avatar's basename, so the engine's image phase (additive, by file name, under
+`images/`) uploads and downloads it. See [The profile file](#the-profile-file).
 
 ## How a sync runs
 
@@ -81,10 +84,41 @@ System, and this client never goes through it. See [`platform-notes.md`](platfor
 of this has been observed on a device; the Apple behaviour described here is from Apple's
 documentation.
 
+## The profile file
+
+Since 0.6.0 the registry holds a second module, `profile.json` — the user's display name and avatar
+(schema in [`data-formats.md`](data-formats.md#profilejson), feature in
+[`features/profile.md`](features/profile.md)). It goes through the same engine steps, after the
+progress module, under the same `.lock`, with its own `.sync_base/profile.json`.
+
+- **The merge never produces a conflict, and needs no base.** Each field merges independently by last
+  writer wins on its own timestamp: the name by `displayNameUpdatedAt`, the avatar by
+  `avatarUpdatedAt`. A strictly later remote timestamp wins, a tie keeps local, and a side that never
+  set the field always loses to one that did. A name changed on one device and an avatar changed on
+  another therefore both survive. Unknown keys are unioned with local winning, and the higher
+  `version` is kept. No conflict dialog is ever shown for it.
+- **Removal is explicit.** Clearing the avatar writes `"avatar": null` with a new timestamp (and
+  clearing the name writes `"displayName": null`), so the removal wins the merge like any other edit
+  instead of being mistaken for a field that was never set.
+- **Avatar names are unique.** The avatar is an ordinary file in `images/` and travels through the
+  engine's additive image phase (the module's `referencedImages` returns its basename). Image sync
+  never overwrites a file that already exists on the other side and never deletes, so every new
+  avatar gets a fresh `images/avatar_<uuid>.jpg` name; re-using one name would leave other devices
+  showing the old picture. The replaced avatar is deleted on the device that changed it only: **old
+  avatars remain on the WebDAV server and on other devices** (a known limitation).
+- **Older builds ignore it.** The engine only requests the file names it has registered and never
+  lists the remote root, so a build older than 0.6.0 never fetches `profile.json`; the avatar file
+  sits harmlessly in `images/`.
+- **Cost.** One extra `GET profile.json` per sync (a 404 for a library that never set a profile); the
+  recorded WebDAV transcripts were re-recorded and gained only that request.
+- Every profile save calls `AutoSyncService.notifySaved`, so the debounced sync runs shortly after an
+  edit; after a sync or restore rewrites local data the profile provider reloads.
+
 ## Files
 
 - `webdav_config.json` — server URL, credentials, remote path, auto-sync flag. Never synced.
 - `.sync_base/nihongo_progress.json` — the base snapshot. Leaving it behind on a storage-path change
   would make the next sync resurrect records other devices deleted, which is why
   `NihongoStorage.setStoragePath` migrates the whole folder.
+- `.sync_base/profile.json` — the base snapshot of the profile module (0.6.0).
 - `.sync_base/upload_lock.json` — detects an upload interrupted mid-flight.

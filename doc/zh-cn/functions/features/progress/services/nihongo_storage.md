@@ -42,7 +42,8 @@ M3.0 在 `ttsVoice` 旁增加了 `ttsEngine` 偏好；两者都是设备本地�
 | `NihongoStorage.getThemeMode` | 静态方法 | B | 读取持久化的主题模式（`light`、`dark`，或表示跟随系统的 null）。 |
 | `NihongoStorage.setThemeMode` | 静态方法 | B | 持久化主题模式；默认值被移除而不是存储。 |
 | `NihongoStorage.getLocaleTag` | 静态方法 | B | 读取持久化的语言标签（`en`、`zh`、`zh_TW`）。 |
-| `NihongoStorage.setLocaleTag` | 静态方法 | B | 持久化语言标签；null 移除它。 |
+$1| `NihongoStorage.getUiStyle` | 静态方法 | B | 读取持久化的界面风格名称（`material3`，或 null 表示默认的 Expressive）。 |
+| `NihongoStorage.setUiStyle` | 静态方法 | B | 持久化界面风格；只存储 `material3`（键为 `uiStyle`），默认值则移除该键。 |
 
 ## 文档
 

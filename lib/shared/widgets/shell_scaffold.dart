@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../app/theme.dart';
 import '../../features/progress/services/nihongo_storage.dart';
 import '../../l10n/app_localizations.dart';
+import '../providers/app_settings.dart';
 import '../utils/adaptive_layout.dart';
 
-class ShellScaffold extends StatelessWidget {
+class ShellScaffold extends ConsumerWidget {
   final Widget child;
 
   /// Purpose: Create a shell scaffold instance.
@@ -66,7 +69,7 @@ class ShellScaffold extends StatelessWidget {
   }
 
   /// Purpose: Build the shell around the current tab's page.
-  /// Inputs: `context`.
+  /// Inputs: `context`, `ref`.
   /// Returns: The widget tree for the current state.
   /// Side effects: Creates UI widgets from the current state.
   /// Notes: Keep this method cheap because Flutter may call it often. The rail
@@ -75,8 +78,13 @@ class ShellScaffold extends StatelessWidget {
   /// the app-wide split rule. Nothing here is stateful, so folding a device
   /// swaps one for the other on the next frame with no route change.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
+    // Expressive (the default style) floats the bottom bar; Material 3 keeps
+    // the classic full-width bar.
+    final floatingNavBar = ref.watch(
+      appSettingsProvider.select((s) => s.uiStyle == AppUiStyle.expressive),
+    );
     final destinations = _destinations(l10n);
     final index = _currentIndex(context);
 
@@ -89,20 +97,27 @@ class ShellScaffold extends StatelessWidget {
     }
 
     if (!useNavigationRail(MediaQuery.sizeOf(context).width)) {
+      final navDestinations = [
+        for (final d in destinations)
+          NavigationDestination(
+            icon: Icon(d.icon),
+            selectedIcon: Icon(d.selectedIcon),
+            label: d.label,
+          ),
+      ];
       return Scaffold(
         body: child,
-        bottomNavigationBar: NavigationBar(
-          selectedIndex: index,
-          onDestinationSelected: select,
-          destinations: [
-            for (final d in destinations)
-              NavigationDestination(
-                icon: Icon(d.icon),
-                selectedIcon: Icon(d.selectedIcon),
-                label: d.label,
+        bottomNavigationBar: floatingNavBar
+            ? _FloatingNavBar(
+                selectedIndex: index,
+                onDestinationSelected: select,
+                destinations: navDestinations,
+              )
+            : NavigationBar(
+                selectedIndex: index,
+                onDestinationSelected: select,
+                destinations: navDestinations,
               ),
-          ],
-        ),
       );
     }
 
@@ -144,6 +159,84 @@ class ShellScaffold extends StatelessWidget {
           const VerticalDivider(width: 1),
           Expanded(child: child),
         ],
+      ),
+    );
+  }
+}
+
+/// The bottom navigation bar drawn as a floating, pill-shaped island (1.7.0,
+/// the default). Flutter ships no floating navigation bar, so this wraps the
+/// stock [NavigationBar] in a stadium-shaped [Material] with side and bottom
+/// margins. It sits in the Scaffold's `bottomNavigationBar` slot rather than
+/// over the body, so pages never draw underneath it and keep their layout and
+/// FAB positions.
+class _FloatingNavBar extends StatelessWidget {
+  final int selectedIndex;
+  final ValueChanged<int> onDestinationSelected;
+  final List<Widget> destinations;
+
+  /// Key on the island's surface, so tests can tell the floating bar from the
+  /// classic one.
+  static const islandKey = ValueKey('floatingNavBarIsland');
+
+  /// Purpose: Create a floating navigation bar instance.
+  /// Inputs: `selectedIndex`, `onDestinationSelected`, `destinations` — passed
+  /// through unchanged to the inner [NavigationBar].
+  /// Returns: A new `_FloatingNavBar` instance.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only.
+  const _FloatingNavBar({
+    required this.selectedIndex,
+    required this.onDestinationSelected,
+    required this.destinations,
+  });
+
+  /// Purpose: Build the island: margins, rounded surface, inner bar.
+  /// Inputs: `context`.
+  /// Returns: The widget tree for the floating bar.
+  /// Side effects: None.
+  /// Notes: The bottom system inset (gesture bar) is applied once, outside
+  /// the island, and removed for the inner [NavigationBar] so it does not pad
+  /// itself a second time. The island is capped in width so it stays a
+  /// compact pill on wider phones and small tablets in portrait.
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    return SafeArea(
+      top: false,
+      minimum: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 8),
+        child: Center(
+          heightFactor: 1,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 480),
+            child: Material(
+              key: islandKey,
+              color: colorScheme.surfaceContainer,
+              surfaceTintColor: Colors.transparent,
+              shadowColor: colorScheme.shadow,
+              elevation: 3,
+              shape: const StadiumBorder(),
+              clipBehavior: Clip.antiAlias,
+              child: MediaQuery.removePadding(
+                context: context,
+                removeLeft: true,
+                removeRight: true,
+                removeBottom: true,
+                child: NavigationBar(
+                  height: 68,
+                  backgroundColor: Colors.transparent,
+                  surfaceTintColor: Colors.transparent,
+                  elevation: 0,
+                  selectedIndex: selectedIndex,
+                  onDestinationSelected: onDestinationSelected,
+                  destinations: destinations,
+                ),
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

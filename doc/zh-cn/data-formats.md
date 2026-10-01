@@ -361,6 +361,28 @@
 
 **裁剪按模式进行**：40 次模拟考试和 80 次练习。一个每天练习、每月模拟考试一次的学习者，否则会把每一次模拟考试都输给练习，而值得回头看的正是那些模拟考试。
 
+### `profile.json`
+
+`profile.json`（0.6.0）是第二个已注册的模块，因此它同样会同步、会备份、包含在 ZIP 导出中，并有自己的
+`.sync_base/profile.json`。它保存用户的名称和头像（见 [`features/profile.md`](features/profile.md)）：
+
+```json
+{
+  "version": 1,
+  "displayName": "Yuan",
+  "displayNameUpdatedAt": "2026-10-01T14:06:42.530801Z",
+  "avatar": "images/avatar_2953ac52-337e-4271-a8e1-bcd97ee416ba.jpg",
+  "avatarUpdatedAt": "2026-10-01T14:08:59.163627Z"
+}
+```
+
+- `displayName` / `displayNameUpdatedAt`——名称及其最近一次更改的时间（UTC）。保存时会去除首尾空白；清除它会写入 `"displayName": null` 和新的时间戳。
+- `avatar` / `avatarUpdatedAt`——头像相对于数据目录的路径（`images/avatar_<uuid>.jpg`，512 x 512 的 JPEG）及其最近一次更改的时间（UTC）。已移除的头像写成带时间戳的显式 `"avatar": null`，使移除操作得以同步。
+- 字段只有在有时间戳后才会写出；没有时间戳的字段表示“从未设置”，在合并中总是输给已设置的一方。每个字段按后写者胜独立合并，互不影响——见 [`sync.md`](sync.md#个人资料文件)。未知键会保留。`version` 为 `1`。
+- 头像图片是 `images/` 中的普通文件，因此它通过引擎的仅引用添加式图像阶段同步（该模块通过 `profileReferencedImages` 报告它），并与其他图片一起备份和导出。每个新头像都使用全新的文件名，因为图像同步从不覆盖已存在的文件；被替换的头像只在本地删除，所以旧头像会留在 WebDAV 服务器和其他设备上。
+- 0.6.0 之前的构建从不请求 `profile.json`，因此它不会影响它们。
+- 这里的*个人资料*指名称和头像，不是上文的学习者档案（`profile:me`，`nihongo_progress.json` 内的一条记录）；两者毫无关联。
+
 ### 兼容性：未知 JSON 字段保留（`extraJson`）
 
 `StudyRecord` 和 `ProgressData`（顶层 `{records: [...]}` 容器）各带一个 `extraJson` 映射，保存当前应用版本不认识的任何 JSON 键。模式如下：
@@ -387,6 +409,7 @@
 | 进行中的模拟考试 | `exam_in_progress.json` | 否 | 每台设备一份保存的考试：题目 id、当时选了什么，以及每个计时部分已经用掉的时间。刻意置于同步、备份与导出注册表之外——计时属于这一次作答，而半份卷子不是一个结果 |
 | 主题模式 | `storage_config.json` | 否 | 设备特定偏好（`themeMode`：`light`/`dark`；缺失表示跟随系统） |
 | 语言 | `storage_config.json` | 否 | 设备特定偏好（`locale`：`en`/`zh`/`zh_TW`/`ja`；缺失表示跟随系统） |
+| 界面风格 | `storage_config.json` | 否 | 设备特有的 `uiStyle`（0.6.0）；仅在选择 Material 3 时写入 `"material3"`；缺省表示 Expressive（默认值，同时显示悬浮导航栏） |
 | 存储路径覆盖 | `storage_config.json` | 否 | 设备特定路径（`storagePath`） |
 | 自动备份启用 | `storage_config.json` | 否 | 设备特定配置（`autoBackupEnabled`） |
 | 备份保留天数 | `storage_config.json` | 否 | 设备特定配置（`backupRetentionDays`） |
@@ -406,9 +429,10 @@
 | 汉字上方显示假名 | `storage_config.json` | 否 | 仅在关闭时为 `false`；缺失表示开启——全应用唯一一个反向存储的偏好（`furigana`） |
 | WebDAV 配置 | `webdav_config.json` | 否 | 仅本地密钥 / 配置 |
 | 同步基线快照 | `.sync_base/nihongo_progress.json` | 否 | 本地合并跟踪 |
+| 个人资料同步基线 | `.sync_base/profile.json` | 否 | 个人资料模块的本地合并跟踪 |
 | 上传锁记录 | `.sync_base/upload_lock.json` | 否 | 检测中途中断的上传 |
 | 本地备份 | `backups/backup_*.json` | 否 | 本地恢复；v2 bundle |
-| 备份图像 blob | `backups/blobs/` | 否 | 共享格式中存在；此处始终为空——没有图像 |
+| 备份图像 blob | `backups/blobs/` | 否 | 已备份个人资料所引用头像图片的内容寻址副本；设置头像之前为空 |
 
 ### `storage_config.json`
 
@@ -422,7 +446,7 @@ WebDAV 连接细节和同步偏好（服务器 URL、凭据、远程路径、自
 
 ### `.sync_base/`
 
-保存 `.sync_base/nihongo_progress.json`——下次同步时用作三方合并基线的上次已合并快照——以及 `.sync_base/upload_lock.json`，让下次启动能检测到中途中断的上传。
+保存 `.sync_base/nihongo_progress.json`（以及自 0.6.0 起的 `.sync_base/profile.json`）——下次同步时用作三方合并基线的上次已合并快照——以及 `.sync_base/upload_lock.json`，让下次启动能检测到中途中断的上传。
 
 ### `backups/`
 

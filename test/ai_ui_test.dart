@@ -140,7 +140,14 @@ void main() {
 
   tearDown(() async {
     if (temp != null && temp!.existsSync()) {
-      await temp!.delete(recursive: true);
+      // A Windows file handle that outlives the test (the notifier's last
+      // config write) can make the delete fail; the directory is in the
+      // system temp folder, so leaving it behind is harmless.
+      try {
+        await temp!.delete(recursive: true);
+      } on FileSystemException {
+        // Left for the OS to clean up.
+      }
     }
     temp = null;
   });

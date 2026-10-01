@@ -60,7 +60,12 @@ void main() {
 
   tearDown(() {
     BackupService.appDirProvider = null;
-    if (tempDir.existsSync()) tempDir.deleteSync(recursive: true);
+    try {
+      if (tempDir.existsSync()) tempDir.deleteSync(recursive: true);
+    } on FileSystemException {
+      // A Windows handle that outlives the test; the directory is in the
+      // system temp folder, so leaving it behind is harmless.
+    }
   });
 
   Future<void> pumpAt(WidgetTester tester, double width, double height) async {

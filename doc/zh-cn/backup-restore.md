@@ -6,11 +6,11 @@
 
 `BackupService`（`lib/shared/services/backup_service.dart`）是基于应用模块注册表构建的 `BackupEngine` 门面（facade）。
 
-- **格式：** 共享的 v2 bundle，`backups/backup_<stamp>.json`，保存每个模块的原始 JSON 字符串外加一个 `_imageRefs` 映射。MyNihongo 没有图像，因此 `_imageRefs` 始终为空，`backups/blobs/` 下的内容寻址 blob 存储永不填充。格式原样保留，使一个 bundle 在本系列每个应用看来都一样。
-- **模块：** 一个，`progress` → `nihongo_progress.json`，从注册表推导（`BackupService.modules`）。
+- **格式：** 共享的 v2 bundle，`backups/backup_<stamp>.json`，保存每个模块的原始 JSON 字符串外加一个 `_imageRefs` 映射。自 0.6.0 起，唯一的图像是个人资料头像：带头像的个人资料所在的 bundle 会把它记入 `_imageRefs`，并把文件存入 `backups/blobs/` 下的内容寻址 blob 存储；没有头像时两者都为空。格式与本系列每个应用写出的相同。
+- **模块：** 两个，`progress` → `nihongo_progress.json` 和（0.6.0）`profile` → `profile.json`，从注册表推导（`BackupService.modules`）。恢复对话框把个人资料模块标为*个人资料*（`backupModuleProfile`，人像图标）。0.6.0 之前的 bundle 没有 `profile` 模块，也从不触碰 `profile.json`。
 - **设置：** `storage_config.json` 中的 `autoBackupEnabled` 和 `backupRetentionDays`，系列通用的键。自动备份每天取一个 bundle，通过扫描 bundle 文件名判定，并从 `main()`、自动同步的周期性 tick 和恢复时运行。保留策略删除早于配置天数的 bundle；`0` 表示永久保留。
 - **列表：** 最新在前；无法解析的 bundle 标记为 `corrupt` 而不是隐藏。
-- **恢复：** 每个选中模块的负载在写入任何东西**之前**都经过校验（`validateProgressJson`），写入是原子的，且 WebDAV 自动同步在第一次写入前被禁用，只有当恢复未写入任何东西就失败时才重新启用。恢复结果报告 `ok`、`wroteAnything` 和 `missingImages`（此处始终为 0）。写入了数据的恢复之后，备份页面提供强制上传，使恢复后的状态刻意传播，而不是通过一次在别处看起来像大规模删除的合并。
+- **恢复：** 每个选中模块的负载在写入任何东西**之前**都经过校验（`validateProgressJson`），写入是原子的，且 WebDAV 自动同步在第一次写入前被禁用，只有当恢复未写入任何东西就失败时才重新启用。恢复结果报告 `ok`、`wroteAnything` 和 `missingImages`（仅当已备份头像的 blob 丢失时才非 0）。写入了数据的恢复之后，备份页面提供强制上传，使恢复后的状态刻意传播，而不是通过一次在别处看起来像大规模删除的合并。
 
 备份页面是 `lib/features/settings/views/backup_page.dart`，从“设置 › 数据”进入。它不在应用侧重复自动同步保护：不变式 I5 归引擎所有，第二份实现会与它争抢同一个配置文件。
 
@@ -18,8 +18,8 @@
 
 `ImportExportService`（`lib/shared/services/import_export_service.dart`）是 `ZipTransfer` 的门面。
 
-- **导出：** `mynihongo_export_<yyyyMMdd_HHmmss>.zip`，包含注册表的数据文件。`storage_config.json`、`webdav_config.json`、`.sync_base/` 和 `backups/` 永不包含。
-- **导入：** 严格，因为本应用没有需要保护的宽松老用户基础：`rejectUnknownEntries: true`（含有注册表文件以外任何内容的归档被拒绝）、`strictUtf8: true`、`validateBeforeWrite: true`（负载必须在触碰文件之前解析为 `ProgressData`）、`atomicWrites: true`。无论这些开关如何，路径穿越都被引擎直接拒绝。被拒绝的归档不写入任何东西。
+- **导出：** `mynihongo_export_<yyyyMMdd_HHmmss>.zip`，包含注册表的数据文件（`nihongo_progress.json`，以及 `profile.json` 一旦存在）和 `images/` 中的每个文件（至多是头像）。`storage_config.json`、`webdav_config.json`、`.sync_base/` 和 `backups/` 永不包含。
+- **导入：** 严格，因为本应用没有需要保护的宽松老用户基础：`rejectUnknownEntries: true`（含有注册表文件和扁平 `images/<name>` 条目以外任何内容的归档被拒绝）、`strictUtf8: true`、`validateBeforeWrite: true`（负载必须在触碰文件之前解析为 `ProgressData`）、`atomicWrites: true`。无论这些开关如何，路径穿越都被引擎直接拒绝。被拒绝的归档不写入任何东西。
 - 写入了数据的导入之后，通过 `AutoSyncService.notifyLocalDataChangedNow()` 通知页面重新加载。
 
 ## 存储路径

@@ -4,7 +4,7 @@
 words, grammar points), progress counts (items tracked and mastered, or an honest "nothing tracked
 yet"), quick links to the three reference tabs, and the roadmap. It watches
 `contentCatalogProvider` and `progressDataProvider`; the cards flow one or two across by
-`ruleCardMinWidth`, gated on `canSplitLayout`. In Phase 3 this page becomes the lesson path. See
+$1 Since 0.6.0 its app bar carries the profile avatar (`ProfileAvatar`, radius 16) as `leading`, to the left of the title; tapping it runs `context.go('/settings')`. It is the only page with that avatar. In Phase 3 this page becomes the lesson path. See
 [../../../../features/learning-progress.md](../../../../features/learning-progress.md).
 
 ## Declarations

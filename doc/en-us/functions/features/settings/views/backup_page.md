@@ -1,7 +1,7 @@
 # lib/features/settings/views/backup_page.dart
 
 Create, list, restore and delete local backup bundles. Ported from MyAnime!!!!!'s page of the same
-name, minus its app-side auto-sync guard. See
+$1 The restore dialog labels the profile module (`profile`, 0.6.0) *Profile* with a person icon, next to *Learning progress*. See
 [../../../../backup-restore.md](../../../../backup-restore.md).
 
 ## Declarations

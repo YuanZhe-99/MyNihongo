@@ -1,6 +1,6 @@
 # lib/app/data_modules.dart
 
-本应用与共享 `myapps_data` 引擎之间的接缝，也是持久化兼容性契约的**唯一事实来源**：数据文件名 `nihongo_progress.json`、备份模块 id `progress`、默认远程路径 `/MyNihongo`，以及 ZIP 归档前缀 `mynihongo_export_`。它声明 `NihongoStorageAdapter`（覆盖 `NihongoStorage` 的 `StorageAdapter`）、进度模块的校验、编码与合并回调，以及 `nihongoModuleRegistry`——每个门面（facade）都建立在其上的有序注册表。见 [../../architecture.md](../../architecture.md) 和 [../../sync.md](../../sync.md)。
+本应用与共享 `myapps_data` 引擎之间的接缝，也是持久化兼容性契约的**唯一事实来源**：数据文件名 `nihongo_progress.json`、备份模块 id `progress`、默认远程路径 `/MyNihongo`，以及 ZIP 归档前缀 `mynihongo_export_`。它声明 `NihongoStorageAdapter`（覆盖 `NihongoStorage` 的 `StorageAdapter`）、进度模块的校验、编码与合并回调，以及 `nihongoModuleRegistry`——每个门面（facade）都建立在其上的有序注册表。自 0.6.0 起注册表还持有个人资料模块（`profile.json`，模块 id `profile`，追加在最后），以及 `validateProfileJson`、`profileReferencedImages` 与 `buildProfileModule`。见 [../../architecture.md](../../architecture.md) 和 [../../sync.md](../../sync.md)。
 
 ## 声明
 
@@ -15,8 +15,11 @@
 | `validateProgressJson` | 顶层函数 | B | 在写入前校验 `nihongo_progress.json` 负载；无法解析时抛出。 |
 | `encodeProgressData` | 顶层函数 | B | 以存储中枢使用的两空格缩进编码合并后的数据集。 |
 | [`mergeProgressModule`](#mergeprogressmodule) | 顶层函数 | A | 为共享同步引擎合并本地/远程/基线进度 JSON，把有类型的结果作为不透明状态携带。 |
-| `buildProgressModule` | 顶层函数 | B | 以 `DataModule` 向共享引擎描述 `nihongo_progress.json`。 |
-| `nihongoModuleRegistry` | 顶层 `final` | B | 提供 MyNihongo 的有序模块注册表，持有唯一的进度模块。 |
+$1| `validateProfileJson` | 顶层函数 | B | 在写入前校验 `profile.json` 内容；不是 JSON 对象时抛出。 |
+| `profileReferencedImages` | 顶层函数 | B | 提取个人资料引用的头像图片基名，使引擎的图片阶段传输它。 |
+| `buildProfileModule` | 顶层函数 | B | 以无冲突的 `DataModule`（带 `referencedImages`）向共享引擎描述 `profile.json`。 |
+| `profileFileName`、`profileModuleId` | 顶层常量 | B | `profile.json` 与 `profile`，一经发布即冻结。 |
+| `nihongoModuleRegistry` | 顶层 `final` | B | 提供 MyNihongo 的有序模块注册表，依次持有进度模块和个人资料模块。 |
 
 ## 文档
 

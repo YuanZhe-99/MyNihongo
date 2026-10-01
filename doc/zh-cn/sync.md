@@ -4,13 +4,14 @@
 
 ## 同步什么
 
-一个数据模块，在 `lib/app/data_modules.dart` 中声明一次：
+两个数据模块，在 `lib/app/data_modules.dart` 中声明一次。顺序有意义：进度在前，个人资料（0.6.0）追加在最后。
 
 | 本地与远程文件 | 备份模块 id | 默认远程路径 |
 |---|---|---|
 | `nihongo_progress.json` | `progress` | `/MyNihongo` |
+| `profile.json`（0.6.0） | `profile` | `/MyNihongo` |
 
-别无其他。内容目录随应用发布，设备偏好留在 `storage_config.json`，也没有图像，因此引擎的图像同步在这里无事可做。
+别无其他。内容目录随应用发布，设备偏好留在 `storage_config.json`。仅有的图像是个人资料头像：个人资料模块的 `referencedImages` 钩子返回头像的基名，因此引擎的图像阶段（添加式，按文件名，位于 `images/` 下）会上传和下载它。见[个人资料文件](#个人资料文件)。
 
 ## 一次同步如何运行
 
@@ -41,8 +42,20 @@ Apple 会在应用访问本地网络上的服务器之前询问用户（iOS 14 �
 
 App Transport Security——Apple 的另一条网络规则——并不适用：它管辖的是 Apple 的 URL Loading System，而这个客户端从不经过它。见 [`platform-notes.md`](platform-notes.md)。以上情况都未曾在设备上观察到；这里描述的 Apple 行为出自 Apple 的文档。
 
+## 个人资料文件
+
+自 0.6.0 起，注册表包含第二个模块 `profile.json`——用户的名称和头像（schema 见 [`data-formats.md`](data-formats.md#profilejson)，功能见 [`features/profile.md`](features/profile.md)）。它在进度模块之后走同一套引擎步骤，处在同一个 `.lock` 之下，并有自己的 `.sync_base/profile.json`。
+
+- **合并从不产生冲突，也不需要基线。**每个字段按各自的时间戳独立地后写者胜：名称看 `displayNameUpdatedAt`，头像看 `avatarUpdatedAt`。远程时间戳严格更晚才胜出，相同时保留本地，从未设置该字段的一侧总是输给设置过的一侧。因此一台设备改了名称、另一台设备改了头像，两者都会保留。未知键取并集，本地优先，并保留较高的 `version`。它从不显示冲突对话框。
+- **移除是显式的。**清除头像会写入带新时间戳的 `"avatar": null`（清除名称则写入 `"displayName": null`），因此移除与其他编辑一样赢得合并，而不会被误认为从未设置的字段。
+- **头像文件名唯一。**头像是 `images/` 中的普通文件，经由引擎的添加式图像阶段传输（该模块的 `referencedImages` 返回它的基名）。图像同步从不覆盖另一侧已存在的文件，也从不删除，因此每个新头像都使用全新的 `images/avatar_<uuid>.jpg` 名称；复用同一个名称会让其他设备一直显示旧图。被替换的头像只在做出更改的那台设备上删除：**旧头像会留在 WebDAV 服务器和其他设备上**（已知限制）。
+- **旧版本忽略它。**引擎只请求它已注册的文件名，也从不列出远程根目录，因此 0.6.0 之前的构建从不获取 `profile.json`；头像文件无害地躺在 `images/` 中。
+- **开销。**每次同步多一次 `GET profile.json`（从未设置个人资料的片库会得到 404）；已录制的 WebDAV 记录已重新录制，只多了这一个请求。
+- 每次保存个人资料都会调用 `AutoSyncService.notifySaved`，因此防抖同步会在编辑后不久运行；同步或恢复重写本地数据后，个人资料 provider 会重新加载。
+
 ## 文件
 
 - `webdav_config.json` — 服务器 URL、凭据、远程路径、自动同步标志。永不同步。
 - `.sync_base/nihongo_progress.json` — 基线快照。更改存储路径时把它留在原地，会让下次同步复活其他设备已删除的记录，这正是 `NihongoStorage.setStoragePath` 迁移整个文件夹的原因。
+- `.sync_base/profile.json` — 个人资料模块的基线快照（0.6.0）。
 - `.sync_base/upload_lock.json` — 检测中途中断的上传。

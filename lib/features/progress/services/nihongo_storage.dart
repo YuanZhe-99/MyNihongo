@@ -865,6 +865,26 @@ class NihongoStorage {
   /// Notes: The default is removed from config rather than stored.
   static Future<void> setThemeMode(String? mode) => _setKey('themeMode', mode);
 
+  /// Purpose: Read the persisted interface style name (0.6.0).
+  /// Inputs: None.
+  /// Returns: `Future<String?>` — `'material3'`, or null for the default
+  /// Expressive style.
+  /// Side effects: Reads the config file.
+  /// Notes: Device-local; never synced.
+  static Future<String?> getUiStyle() async {
+    final config = await _readConfigLenient();
+    return config['uiStyle'] == 'material3' ? 'material3' : null;
+  }
+
+  /// Purpose: Persist the interface style (0.6.0).
+  /// Inputs: `name` — `'material3'`, or null for the default Expressive style.
+  /// Returns: None.
+  /// Side effects: Writes the config file.
+  /// Notes: Only the non-default Material 3 style is stored, as
+  /// `uiStyle: "material3"`; the default is removed rather than stored.
+  static Future<void> setUiStyle(String? name) =>
+      _setKey('uiStyle', name == 'material3' ? 'material3' : null);
+
   /// Purpose: Read the persisted locale tag.
   /// Inputs: None.
   /// Returns: `Future<String?>` — `en`, `zh`, `zh_TW`, or null for system.

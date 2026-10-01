@@ -4,6 +4,7 @@ import 'dart:ui' show PlatformDispatcher;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../app/theme.dart';
 import '../../features/ai/services/ai_assist_service.dart';
 import '../../features/reminders/services/reminder_service.dart';
 import '../../l10n/app_localizations.dart';
@@ -25,6 +26,14 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
   AppSettingsNotifier() : super(const AppSettings()) {
     _loadPersisted();
   }
+
+  /// Purpose: Create a notifier holding fixed settings and doing no I/O.
+  /// Inputs: `settings`.
+  /// Returns: A new `AppSettingsNotifier` instance.
+  /// Side effects: None.
+  /// Notes: For tests that override [appSettingsProvider]; nothing is read
+  /// from or written to disk until a setter is called.
+  AppSettingsNotifier.fixed(super.settings);
 
   /// Purpose: Load the persisted preferences from disk.
   /// Inputs: None.
@@ -54,6 +63,9 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
   Future<void> _readPersisted() async {
     final modeStr = await NihongoStorage.getThemeMode();
     final localeTag = await NihongoStorage.getLocaleTag();
+    final uiStyle = (await NihongoStorage.getUiStyle()) == 'material3'
+        ? AppUiStyle.material3
+        : AppUiStyle.expressive;
     final vocabLevel = await NihongoStorage.getVocabLevel();
     final grammarLevel = await NihongoStorage.getGrammarLevel();
     final kanaScript = await NihongoStorage.getKanaScript();
@@ -84,6 +96,7 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     state = AppSettings(
       themeMode: themeMode,
       locale: locale,
+      uiStyle: uiStyle,
       vocabLevel: JlptLevel.parse(vocabLevel),
       grammarLevel: JlptLevel.parse(grammarLevel),
       kanaScript: kanaScript == 'katakana'
@@ -410,6 +423,21 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
     NihongoStorage.setThemeMode(str);
   }
 
+  /// Purpose: Choose the interface style (0.6.0).
+  /// Inputs: `style`.
+  /// Returns: None.
+  /// Side effects: Persists the preference; the app rebuilds its theme and
+  /// the shell its bottom bar.
+  /// Notes: Expressive by default and stored as an absent key. Expressive also
+  /// selects the floating island bottom bar, Material 3 the classic full-width
+  /// bar; the wide-window rail is the same in both.
+  void setUiStyle(AppUiStyle style) {
+    state = state.copyWith(uiStyle: style);
+    NihongoStorage.setUiStyle(
+      style == AppUiStyle.material3 ? 'material3' : null,
+    );
+  }
+
   /// Purpose: Update locale with the provided value.
   /// Inputs: `locale` — null follows the system.
   /// Returns: None.
@@ -435,6 +463,10 @@ class AppSettingsNotifier extends StateNotifier<AppSettings> {
 class AppSettings {
   final ThemeMode themeMode;
   final Locale? locale;
+
+  /// The interface style (0.6.0): Expressive (default, with the floating
+  /// island bottom bar) or stock Material 3 (classic bottom bar).
+  final AppUiStyle uiStyle;
 
   /// The vocabulary page's level filter; null shows every level.
   final JlptLevel? vocabLevel;
@@ -507,6 +539,7 @@ class AppSettings {
   const AppSettings({
     this.themeMode = ThemeMode.system,
     this.locale,
+    this.uiStyle = AppUiStyle.expressive,
     this.vocabLevel,
     this.grammarLevel,
     this.kanaScript = KanaScript.hiragana,
@@ -535,6 +568,7 @@ class AppSettings {
     ThemeMode? themeMode,
     Locale? locale,
     bool clearLocale = false,
+    AppUiStyle? uiStyle,
     JlptLevel? vocabLevel,
     bool clearVocabLevel = false,
     JlptLevel? grammarLevel,
@@ -560,6 +594,7 @@ class AppSettings {
     return AppSettings(
       themeMode: themeMode ?? this.themeMode,
       locale: clearLocale ? null : (locale ?? this.locale),
+      uiStyle: uiStyle ?? this.uiStyle,
       vocabLevel: clearVocabLevel ? null : (vocabLevel ?? this.vocabLevel),
       grammarLevel: clearGrammarLevel
           ? null

@@ -75,7 +75,7 @@ double shellListBottomInset(double screenWidth) =>
     useNavigationRail(screenWidth) ? 16.0 : 80.0;
 ```
 
-侧边导航栏和底部导航栏在 `shell_scaffold.dart` 中由**同一份目标列表**构建，导航栏设置 `groupAlignment: 0`，使五个目标居中而不是钉在高导航栏的顶部。
+自 0.6.0 起，低于导航栏阈值时的底栏，在界面风格为 **Expressive**（默认）时是一个*悬浮岛*（`_FloatingNavBar`：带边距、胶囊形、有高度的表面，最宽 480 dp），在**设置 › 通用 › 界面风格**为 **Material 3** 时是经典通栏 `NavigationBar`。浮岛位于 `Scaffold` 的底栏槽位而不是盖在内容之上，因此不改变任何页面布局，底部预留量也不变；侧边导航栏忽略该设置。侧边导航栏和底栏在 `shell_scaffold.dart` 中由**同一份目标列表**构建，导航栏设置 `groupAlignment: 0`，使五个目标居中而不是钉在高导航栏的顶部。
 
 ## 能放几列
 

@@ -493,6 +493,7 @@ class _RestoreModuleDialogState extends State<_RestoreModuleDialog> {
     final l10n = AppLocalizations.of(context)!;
     final moduleLabels = {
       progressModuleId: (l10n.backupModuleProgress, Icons.school_outlined),
+      profileModuleId: (l10n.backupModuleProfile, Icons.person_outline),
     };
     return AlertDialog(
       title: Text(l10n.backupRestoreModules),

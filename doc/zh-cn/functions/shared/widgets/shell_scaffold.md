@@ -1,6 +1,6 @@
 # lib/shared/widgets/shell_scaffold.dart
 
-`ShellScaffold` 用应用的导航包裹每个标签页：窄窗口时沿底部的 `NavigationBar`，600 逻辑像素起沿左侧的 `NavigationRail`。两者都从同一个五目的地列表构建，顺序为 `ShellScaffold.routes`。文件还定义了私有的 `_ShellDestination` 值类型。见 [../../../adaptive-layout.md](../../../adaptive-layout.md)。
+`ShellScaffold` 用应用的导航包裹每个标签页：窄窗口时的底栏（界面风格为 Expressive 时是悬浮岛 `_FloatingNavBar`，Material 3 时是经典通栏 `NavigationBar`），600 逻辑像素起沿左侧的 `NavigationRail`。两者都从同一个五目的地列表构建，顺序为 `ShellScaffold.routes`。文件还定义了私有的 `_ShellDestination` 值类型和（0.6.0）`_FloatingNavBar`。见 [../../../adaptive-layout.md](../../../adaptive-layout.md)。
 
 ## 声明
 
@@ -10,11 +10,13 @@
 | `ShellScaffold._currentIndex` | 方法 | B | 找出当前 `GoRouterState` 位置属于哪个标签；无匹配时为 0。 |
 | `ShellScaffold._destinations` | 方法 | B | 一次性描述五个目的地的图标和标签，按路由顺序。 |
 | [`ShellScaffold.build`](#build) | 方法（widget build） | A | 围绕当前标签的页面构建外壳：按 `useNavigationRail` 选择底部栏或 rail。 |
-| `_ShellDestination.new` | 构造函数 | B | 创建外壳目的地（图标、选中图标、标签）。 |
+| `_FloatingNavBar` | 私有类 | B | 绘制为悬浮胶囊岛的底栏：在原生 `NavigationBar` 外包一层 stadium 形 `Material`，键为 `floatingNavBarIsland`。 |
+| `_FloatingNavBar.build` | 方法（组件构建） | B | 构建浮岛：边距、圆角表面、内部导航栏；底部系统内边距只在岛外应用一次。 |
+$1 | 构造函数 | B | 创建外壳目的地（图标、选中图标、标签）。 |
 
 ## 文档
 
-### `Widget build(BuildContext context)` <a id="build"></a>
+### `Widget build(BuildContext context, WidgetRef ref)` <a id="build"></a>
 
 - **类型：** `ShellScaffold` 的方法（widget build）
 - **Purpose：** 以宽度要求的形式渲染导航。

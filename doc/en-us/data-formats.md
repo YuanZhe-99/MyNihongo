@@ -484,6 +484,38 @@ one at a time, as they were answered.
 and sits a mock once a month would otherwise lose every mock to the practice runs, and the mocks are
 the ones worth looking back at.
 
+### `profile.json`
+
+`profile.json` (0.6.0) is the second registered module, so it also syncs, is backed up, is included in
+ZIP export, and has its own `.sync_base/profile.json`. It holds the user's display name and avatar
+(see [`features/profile.md`](features/profile.md)):
+
+```json
+{
+  "version": 1,
+  "displayName": "Yuan",
+  "displayNameUpdatedAt": "2026-10-01T14:06:42.530801Z",
+  "avatar": "images/avatar_2953ac52-337e-4271-a8e1-bcd97ee416ba.jpg",
+  "avatarUpdatedAt": "2026-10-01T14:08:59.163627Z"
+}
+```
+
+- `displayName` / `displayNameUpdatedAt` — the name and when it last changed (UTC). Trimmed on save;
+  clearing it writes `"displayName": null` with a new timestamp.
+- `avatar` / `avatarUpdatedAt` — the avatar as a path relative to the data directory
+  (`images/avatar_<uuid>.jpg`, a 512 x 512 JPEG) and when it last changed (UTC). A removed avatar is
+  written as an explicit `"avatar": null` with its timestamp, so the removal syncs.
+- A field is written only once it has a timestamp; a field with no timestamp means "never set" and
+  always loses a merge to one that was set. Each field merges by last writer wins, independently of
+  the other — see [`sync.md`](sync.md#the-profile-file). Unknown keys survive. `version` is `1`.
+- The avatar image is an ordinary file in `images/`, so it syncs through the engine's referenced-only
+  additive image phase (the module reports it through `profileReferencedImages`), and is backed up and
+  exported with the other images. Each new avatar gets a fresh file name, because image sync never
+  overwrites an existing file; replaced avatars are deleted locally only, so old ones remain on the
+  WebDAV server and other devices.
+- Builds older than 0.6.0 never request `profile.json`, so it does not affect them.
+- This is the user's *profile* in the sense of a name and picture. It is not the learner profile (`profile:me`) described above, which is a record inside `nihongo_progress.json`; the two share nothing.
+
 ### Compatibility: unknown-JSON-field preservation (`extraJson`)
 
 `StudyRecord` and `ProgressData` (the top-level `{records: [...]}` container) each carry an
@@ -522,11 +554,14 @@ Settings shows the resolved path only on desktop; see `platform_capabilities.dar
 | Data | File | Synced | Notes |
 | --- | --- | --- | --- |
 | Learning progress | `nihongo_progress.json` | Yes | Per-record by `id` and `modifiedAt`; unknown fields preserved |
+| Profile (display name and avatar) | `profile.json` | Yes | Since 0.6.0: the display name and avatar path, each with its own timestamp; last writer wins per field; conflict-free; created only when first set |
+| Avatar image | `images/avatar_<uuid>.jpg` | Yes | Since 0.6.0: a 512 x 512 JPEG; referenced-only additive image sync by file name |
 | Sentence lab and writing history | `nihongo_progress.json` | Yes | `lab:`/`writing:` records, content-addressed ids, 100 per kind; only the input text is stored |
 | JLPT attempt history | `nihongo_progress.json` | Yes | `exam:` records, timestamped ids, 40 mock and 80 practice; only which questions were asked and what was answered |
 | A mock exam in progress | `exam_in_progress.json` | No | One saved paper per device: question ids, what was chosen, and the time each block has used. Deliberately outside the sync, backup and export registries — the clock belongs to the sitting, and half a paper is not a result |
 | Theme mode | `storage_config.json` | No | Device-specific preference (`themeMode`: `light`/`dark`; absent means system) |
 | Locale | `storage_config.json` | No | Device-specific preference (`locale`: `en`/`zh`/`zh_TW`/`ja`; absent means system) |
+| Interface style | `storage_config.json` | No | Device-specific `uiStyle` (0.6.0); written only as `"material3"` when Material 3 is chosen; absent means Expressive (the default, which also shows the floating navigation bar) |
 | Storage path override | `storage_config.json` | No | Device-specific path (`storagePath`) |
 | Auto-backup enabled | `storage_config.json` | No | Device-specific config (`autoBackupEnabled`) |
 | Backup retention days | `storage_config.json` | No | Device-specific config (`backupRetentionDays`) |
@@ -546,9 +581,10 @@ Settings shows the resolved path only on desktop; see `platform_capabilities.dar
 | Kana over kanji | `storage_config.json` | No | `false` only if turned off; absent means on — the one inverted preference (`furigana`) |
 | WebDAV configuration | `webdav_config.json` | No | Local secret/config only |
 | Sync base snapshot | `.sync_base/nihongo_progress.json` | No | Local merge tracking |
+| Profile sync base | `.sync_base/profile.json` | No | Local merge tracking for the profile module |
 | Upload lock record | `.sync_base/upload_lock.json` | No | Detects an upload interrupted mid-flight |
 | Local backups | `backups/backup_*.json` | No | Local recovery; v2 bundles |
-| Backup image blobs | `backups/blobs/` | No | Present in the shared format; always empty here — no images |
+| Backup image blobs | `backups/blobs/` | No | Content-addressed copies of the avatar image referenced by a backed-up profile; empty until an avatar is set |
 
 ### `storage_config.json`
 
@@ -569,7 +605,7 @@ toggle). Never synced itself. The default remote path is `/MyNihongo`. See [`syn
 
 ### `.sync_base/`
 
-Holds `.sync_base/nihongo_progress.json`, the last-known-merged snapshot used as the three-way merge
+Holds `.sync_base/nihongo_progress.json` (and, since 0.6.0, `.sync_base/profile.json`), the last-known-merged snapshot used as the three-way merge
 base on the next sync, and `.sync_base/upload_lock.json`, which lets the next launch detect an
 upload that was interrupted mid-flight.
 

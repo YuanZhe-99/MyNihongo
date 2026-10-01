@@ -6,15 +6,16 @@
 
 | 声明 | 类型 | Tier | Purpose |
 |---|---|---|---|
-| `AppSettingsNotifier.new` | 构造函数 | B | 创建 notifier 并开始加载持久化的设置。 |
+$1| `AppSettingsNotifier.fixed` | 构造函数 | B | 创建持有固定设置且不做 I/O 的 notifier，供覆盖 `appSettingsProvider` 的测试使用。 |
 | `AppSettingsNotifier._loadPersisted` | 方法 | B | 从磁盘加载持久化的主题模式和语言并替换状态；存储的 locale 标签用 `localeFromTag` 解析。提醒开启时，它最后会在后台重新规划提醒（`_rescheduleReminders`），因此每次启动都会重建排程；这从不请求权限。 |
 | `AppSettingsNotifier._rescheduleReminders`、`_reminderL10n` | 方法 | B | 在没有 `BuildContext` 的情况下重新规划提醒：措辞取自所选语言的 `lookupAppLocalizations`，或取自用 `resolveAppLocale` 解析出的设备语言列表。失败被吞掉。 |
 | `AppSettingsNotifier.setThemeMode` | 方法 | B | 更新并持久化主题模式；`system` 存为缺失的键。 |
-| `AppSettingsNotifier.setLocale` | 方法 | B | 以 `language` 或 `language_COUNTRY` 更新并持久化语言；null 跟随系统。承载 `zh_TW` 的正是国家代码。提醒开启时它会重新规划提醒，使通知的语言也随之改变。 |
+$1| `AppSettingsNotifier.setUiStyle` | 方法 | B | 选择界面风格（0.6.0）；持久化，应用据此重建主题，外壳据此重建底栏。 |
 | `AppSettingsNotifier.setAiAssistEnabled` | 方法 | B | 打开或关闭端侧 AI；应用到 `AiAssistService` 并持久化，关闭存为缺失键。 |
 | `AppSettingsNotifier.setPreferFastModel` | 方法 | B | 选择较大或较快的端侧模型；重新探测并持久化。 |
 | `AppSettingsNotifier.setDebugMode` | 方法 | B | 解锁或重新隐藏开发者选项；只在本设备上持久化该选择。 |
-| `AppSettings.aiAssistEnabled` | 字段 | B | 用户是否打开了端侧 AI。未打开则为 false。 |
+| `AppSettings.uiStyle` | 字段 | B | 界面风格（0.6.0）：Expressive（默认，悬浮岛底栏）或 Material 3（经典底栏）。设备本地，不同步。 |
+$1 | 字段 | B | 用户是否打开了端侧 AI。未打开则为 false。 |
 | `AppSettings.preferFastModel` | 字段 | B | 设备同时提供两种规格时，是否优先使用较快的端侧模型。 |
 | `AppSettings.debugMode` | 字段 | B | 本设备上是否已解锁开发者选项。在有人连点版本号那一行八次之前为 false。 |
 | `AppSettings.new` | 构造函数 | B | 创建应用设置实例。 |

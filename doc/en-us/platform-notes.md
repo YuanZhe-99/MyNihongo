@@ -3,6 +3,22 @@
 Android is the only shipped platform in Phase 1. The code is platform-neutral; the other targets are
 listed at the end with what adding each involves.
 
+## Dynamic color (0.6.0)
+
+The app uses stock Material 3 colors generated from one seed color (sakura pink,
+`AppTheme.seedColor`). Both interface styles (Material 3 and the default Expressive) share these colors.
+On **Android 12 and newer** the `dynamic_color` plugin supplies the wallpaper-derived (Material You)
+scheme and the app uses it instead of the seed, in light and dark. On **Android 11 and older**,
+**iOS**, **Windows**, **macOS** and any other platform the seed scheme applies.
+
+Desktop is excluded on purpose. On Windows and macOS the plugin does not return a wallpaper palette; it
+returns the system **accent color**, and using that would replace the app's own seed color, so each app
+in the series would look like whatever accent the user picked instead of keeping its identity.
+`MyNihongoApp.build` therefore passes the plugin's schemes to `AppTheme` only when
+`!kIsWeb && defaultTargetPlatform == TargetPlatform.android` (see
+[`functions/app/app.md`](functions/app/app.md) and [`functions/app/theme.md`](functions/app/theme.md)).
+Android dynamic color has not been verified on a device yet.
+
 ## Android
 
 - Package `com.yuanzhe.my_nihongo`, launcher label `MyNihongo!!!!!`, `MainActivity` is a plain

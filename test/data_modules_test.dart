@@ -12,9 +12,9 @@ import 'package:my_nihongo/features/progress/models/study_record.dart';
 /// second device and an old backup depend on. Changing any of them strands
 /// installs in the field, so they are asserted literally here.
 void main() {
-  test('the registry describes exactly one module with stable names', () {
-    expect(nihongoModuleRegistry.modules, hasLength(1));
-    final module = nihongoModuleRegistry.modules.single;
+  test('the registry describes the modules with stable names', () {
+    expect(nihongoModuleRegistry.modules, hasLength(2));
+    final module = nihongoModuleRegistry.modules.first;
     expect(module.fileName, 'nihongo_progress.json');
     expect(module.moduleId, 'progress');
     expect(nihongoModuleRegistry.byFileName['nihongo_progress.json'], module);
@@ -48,7 +48,7 @@ void main() {
         },
       ],
     });
-    final outcome = await nihongoModuleRegistry.modules.single.merge(
+    final outcome = await nihongoModuleRegistry.modules.first.merge(
       localJson: local,
       remoteJson: base,
       baseJson: base,
@@ -85,7 +85,7 @@ void main() {
         'records': [record(8, '2026-01-03T00:00:00.000Z')],
       });
 
-      final outcome = await nihongoModuleRegistry.modules.single.merge(
+      final outcome = await nihongoModuleRegistry.modules.first.merge(
         localJson: local,
         remoteJson: remote,
         baseJson: base,

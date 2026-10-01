@@ -1,6 +1,6 @@
 # lib/features/settings/views/backup_page.dart
 
-创建、列出、还原与删除本机备份包。移植自 MyAnime!!!!! 的同名页面，但去掉了它在应用侧的自动同步保护。见
+创建、列出、还原与删除本机备份包。移植自 MyAnime!!!!! 的同名页面，但$1还原对话框把个人资料模块（`profile`，0.6.0）标为*个人资料*并配人像图标，位于*学习进度*旁。见
 [../../../../backup-restore.md](../../../../backup-restore.md)。
 
 ## 声明
