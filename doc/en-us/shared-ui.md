@@ -1,5 +1,8 @@
 # Shared UI foundations
 
+MyApps-UI v0.1.7 keeps compact settings choices horizontal using centered wrapped
+labels; vertical fallback is reserved for labels exceeding two lines.
+
 DATA v1.0.5 owns WebDAV controls. AI v0.4.3 owns enablement/model preferences,
 capability status and model explanations; independent feature policies stay here.
 

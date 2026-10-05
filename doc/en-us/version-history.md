@@ -1,5 +1,10 @@
 # Version history
 
+## 0.7.10 — Compact horizontal settings choices
+
+Pin MyApps-UI v0.1.7 for centered wrapped labels and horizontal fold-pane choices.
+Retain genai-prompt beta4 and genai-proofreading beta1 as checked on 2026-10-05.
+
 ## 0.7.9 — Complete common settings ownership
 
 Adopt DATA v1.0.5 WebDAV controls and AI v0.4.3 preference/model explanation
