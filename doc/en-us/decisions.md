@@ -1,5 +1,9 @@
 # Decisions
 
+2026-10-05: Complete settings presentation ownership using DATA WebDAV controls
+and AI preference/model-note widgets. Keep independent feature availability and
+download gating in the application adapters; shared widgets perform no I/O.
+
 2026-10-05: Common appearance settings belong to UI, data actions and backup
 preferences to DATA, and capability status presentation to AI. Application values,
 domain policy and callbacks stay local so shared presentation does not share data.

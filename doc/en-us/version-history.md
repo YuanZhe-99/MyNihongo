@@ -1,5 +1,11 @@
 # Version history
 
+## 0.7.9 — Complete common settings ownership
+
+Adopt DATA v1.0.5 WebDAV controls and AI v0.4.3 preference/model explanation
+widgets. Independent downloads, debug visibility and teaching policy stay local.
+Retain genai-prompt beta4 and genai-proofreading beta1, checked on 2026-10-05.
+
 ## 0.7.8 — Await preference corruption assertions
 
 Await the asynchronous strict-read assertion before writing the next damaged

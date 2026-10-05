@@ -1,5 +1,9 @@
 # lib/shared/views/webdav_config_page.dart
 
+MyApps-DATA renders connection fields and save/test, manual/force sync, automatic
+sync and disconnect controls. Controllers, validation, confirmations, conflict
+resolution and operation callbacks stay here. No credential or wire format changes.
+
 The WebDAV server form and the manual sync controls. Ported from MyAnime!!!!!'s page of the same
 name so the two apps' sync UI behaves identically. See [../../../sync.md](../../../sync.md).
 

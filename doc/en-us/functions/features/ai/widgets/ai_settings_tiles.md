@@ -1,5 +1,9 @@
 # lib/features/ai/widgets/ai_settings_tiles.dart
 
+MyAppsAiPreference and MyAppsAiModelNotes own common enablement, model-size and
+download/storage explanation presentation. Busy gates and debug visibility remain
+application-owned, as do independent Prompt/proofreading service adapters.
+
 Capability status presentation delegates to MyAppsAiCapabilityTile in myapps_ai_ui.
 Independent feature downloads, debug visibility, service listening and labels stay here.
 

@@ -1,5 +1,8 @@
 # MyNihongo `lib/` 函数索引
 
+WebDAVConfigPage.build 将控件委托给 myapps_data，AiSettingsTiles.build 将通用
+偏好和说明委托给 myapps_ai_ui。声明数量不变。
+
 设置显示委托 myapps_ui，见 [shared-ui.md](../shared-ui.md)。
 
 资料条目现在描述公共导出和应用适配，实现归属见 [shared-ui.md](../shared-ui.md)。

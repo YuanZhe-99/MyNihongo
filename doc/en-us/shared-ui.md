@@ -1,5 +1,8 @@
 # Shared UI foundations
 
+DATA v1.0.5 owns WebDAV controls. AI v0.4.3 owns enablement/model preferences,
+capability status and model explanations; independent feature policies stay here.
+
 MyApps-UI v0.1.6 owns appearance/navigation row layout and full-width choices.
 MyApps-DATA v1.0.4 owns data action tiles and backup preferences. MyApps-AI v0.4.2
 owns capability status tiles through myapps_ai_ui; per-feature availability,

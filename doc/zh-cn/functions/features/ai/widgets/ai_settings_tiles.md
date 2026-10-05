@@ -1,5 +1,8 @@
 # lib/features/ai/widgets/ai_settings_tiles.dart
 
+MyAppsAiPreference 和 MyAppsAiModelNotes 管理通用启用、模型大小偏好和下载与存储
+说明呈现。执行中守卫、调试显示及独立 Prompt／校对服务适配器由应用负责。
+
 能力状态呈现委托给 myapps_ai_ui 的 MyAppsAiCapabilityTile。逐能力独立下载、
 调试显示、服务监听和文案留在应用。
 

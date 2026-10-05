@@ -1,5 +1,8 @@
 # lib/shared/views/webdav_config_page.dart
 
+MyApps-DATA 呈现连接字段、保存与测试、手动与强制同步、自动同步和断开控件。
+控制器、校验、确认、冲突解决和操作回调留在应用。凭据和线上格式不变。
+
 WebDAV 服务器表单与手动同步控件。移植自 MyAnime!!!!! 的同名页面，使两个应用的同步界面行为一致。见
 [../../../sync.md](../../../sync.md)。
 

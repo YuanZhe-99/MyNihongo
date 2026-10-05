@@ -1,5 +1,8 @@
 # MyNihongo `lib/` Function Index
 
+WebDAVConfigPage.build delegates controls to myapps_data; AiSettingsTiles.build
+delegates common preferences/notes to myapps_ai_ui. Declaration counts are unchanged.
+
 Settings rendering delegates to myapps_ui; see [shared-ui.md](../shared-ui.md).
 
 Profile rows now document shared exports and app adapters; implementation ownership is in [shared-ui.md](../shared-ui.md).

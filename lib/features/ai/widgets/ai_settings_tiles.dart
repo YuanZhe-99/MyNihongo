@@ -101,15 +101,9 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
 
     return Column(
       children: [
-        SwitchListTile(
-          secondary: const Icon(Icons.auto_awesome_outlined),
-          title: Text(l10n.aiEnable),
-          subtitle: Text(
-            l10n.aiEnableBody,
-            style: theme.textTheme.bodySmall?.copyWith(
-              color: theme.colorScheme.onSurfaceVariant,
-            ),
-          ),
+        MyAppsAiPreference(
+          title: l10n.aiEnable,
+          description: l10n.aiEnableBody,
           isThreeLine: true,
           value: settings.aiAssistEnabled,
           onChanged: notifier.setAiAssistEnabled,
@@ -137,65 +131,20 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
           if (MethodChannelGenAiBackend.hasSizeChoice(
             service.reportOf(GenAiFeature.prompt).served,
           ))
-            SwitchListTile(
-              secondary: const Icon(Icons.speed_outlined),
-              title: Text(l10n.aiPreferFast),
-              subtitle: Text(
-                l10n.aiPreferFastBody,
-                style: theme.textTheme.bodySmall?.copyWith(
-                  color: theme.colorScheme.onSurfaceVariant,
-                ),
-              ),
+            MyAppsAiPreference(
+              icon: Icons.speed_outlined,
+              title: l10n.aiPreferFast,
+              description: l10n.aiPreferFastBody,
               isThreeLine: true,
               value: settings.preferFastModel,
               onChanged: service.busy ? null : notifier.setPreferFastModel,
             ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  l10n.aiDownloadNote,
-                  style: theme.textTheme.bodySmall?.copyWith(
-                    color: theme.colorScheme.onSurfaceVariant,
-                  ),
-                ),
-                // Said here because the obvious next question, once a model
-                // has been downloaded, is how to remove it — and the honest
-                // answer is that this app cannot. AICore owns the file and
-                // shares it with every app that asks for the same model;
-                // neither ML Kit client exposes any way to delete one. A
-                // Remove button here would either do nothing or delete
-                // something another app is using.
-                Padding(
-                  padding: const EdgeInsets.only(top: 8),
-                  child: Text(
-                    l10n.aiModelStorageNote,
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      color: theme.colorScheme.onSurfaceVariant,
-                    ),
-                  ),
-                ),
-                // Which AICore build is installed is the other half of the
-                // diagnosis: the feature APIs and the Prompt API are served by
-                // the same package at different versions. It is diagnosis
-                // rather than information, though — a learner told their
-                // AICore version has learnt nothing they can use — so it waits
-                // behind developer options with the rest.
-                if (settings.debugMode)
-                  if (_coreLine(l10n, service.coreInfo) case final line?)
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8),
-                      child: Text(
-                        line,
-                        style: theme.textTheme.labelSmall?.copyWith(
-                          color: theme.colorScheme.onSurfaceVariant,
-                        ),
-                      ),
-                    ),
-              ],
-            ),
+          MyAppsAiModelNotes(
+            downloadNote: l10n.aiDownloadNote,
+            storageNote: l10n.aiModelStorageNote,
+            diagnostic: settings.debugMode
+                ? _coreLine(l10n, service.coreInfo)
+                : null,
           ),
         ],
       ],
