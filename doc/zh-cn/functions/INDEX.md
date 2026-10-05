@@ -33,7 +33,7 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `lib/app/flavor.dart` | [app/flavor.md](app/flavor.md) | 1 | 0 |
 | `lib/app/locale_resolution.dart` | [app/locale_resolution.md](app/locale_resolution.md) | 5 | 3 |
 | `lib/app/router.dart` | [app/router.md](app/router.md) | 1 | 0 |
-| `lib/app/theme.dart` | [app/theme.md](app/theme.md) | 11 | 0 |
+| `lib/app/theme.dart` | [app/theme.md](app/theme.md) | 8 | 0 |
 
 ## features/
 

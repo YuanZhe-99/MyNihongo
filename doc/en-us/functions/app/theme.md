@@ -1,5 +1,11 @@
 # lib/app/theme.dart
 
+This file is now a brand facade over MyApps-UI `v0.1.0`. `AppUiStyle` and
+`NavPlacement` are re-exports. `AppTheme` retains its constructor, seed, `scheme`,
+`build`, `light` and `dark`; morphing-button, emphasized-text and Expressive
+helpers described below now live exclusively in the shared package, not this file.
+See [../../shared-ui.md](../../shared-ui.md).
+
 `AppTheme` builds the light and dark themes from one seed color, `AppTheme.seedColor` (`0xFFCE5B78`,
 sakura pink, so this app is told apart from its siblings at a glance), with
 `ColorScheme.fromSeed`, or from the platform's dynamic scheme when the caller passes one (Android
@@ -19,9 +25,6 @@ colors; Expressive changes shape, type weight and component details only, never 
 | `AppTheme.seedColor` | static constant | B | The app's brand color and the only per-app knob of the visual system. |
 | `AppTheme.scheme` | static method | B | Resolve the color scheme for one brightness: the dynamic scheme when given, else `fromSeed`. |
 | `AppTheme.build` | static method | B | Build the theme for one brightness and style (stock Material 3, plus `_expressive` for Expressive). |
-| `AppTheme._morphingButtonStyle` | static method | B | A button style that is a pill at rest and a 12-radius rounded square while pressed (200 ms). |
-| `AppTheme._emphasized` | static method | B | Make display, headline and title styles heavier by weight only. |
-| `AppTheme._expressive` | static method | B | Layer the Expressive approximation onto a theme: larger radii, morphing buttons, emphasized titles, 2024 indicators, fade-forward transitions. |
 | `AppTheme.light` | static method | B | Return the light theme for an optional dynamic scheme and a style (default Expressive). |
 | `AppTheme.dark` | static method | B | Return the dark theme for an optional dynamic scheme and a style (default Expressive). |
 

@@ -1,5 +1,10 @@
 # lib/shared/utils/adaptive_layout.dart
 
+Common thresholds and `canSplitLayout`, `useNavigationRail`, `columnCapacity`,
+`listRowCount` below are now re-exports from `myapps_adaptive`, not locally
+implemented declarations. Business constraints and Flutter padding remain here.
+See [../../../shared-ui.md](../../../shared-ui.md).
+
 The app-wide adaptive-layout policy: the `splitMinWidth`, `splitMinHeight` and `splitMinAspect`
 thresholds that decide whether a layout may split at all; `navRailMinWidth` and `navRailWidth` for
 the shell; `listTileGap`, `listMaxColumns` and `listColumnsAuto` for multi-column lists;
@@ -7,8 +12,9 @@ the shell; `listTileGap`, `listMaxColumns` and `listColumnsAuto` for multi-colum
 app's own per-content minimums, each with a doc comment saying where the number came from; and
 `settingsRightPaneMinWidth` and `quizAnswerPaneMinWidth`. Eleven pure helpers sit on top of them, and one widget-level helper, `navBarAwarePadding` (0.6.1).
 
-The module deliberately depends on nothing but `dart:core` — no Flutter imports, and `canSplitLayout`
-takes two doubles rather than a `Size` — so every helper is directly unit-testable
+The shared policy deliberately depends on nothing but `dart:core`; this app file also
+imports Flutter for padding. `canSplitLayout` takes two doubles rather than a `Size`,
+so every policy helper is directly unit-testable
 (`test/adaptive_layout_test.dart`), and the rendered result is covered separately at real device
 geometries by `test/kana_layout_ui_test.dart`, `test/shell_nav_ui_test.dart` and
 `test/widget_test.dart`. The derivation of the numbers lives in

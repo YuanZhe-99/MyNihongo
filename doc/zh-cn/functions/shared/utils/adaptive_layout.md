@@ -1,5 +1,10 @@
 # lib/shared/utils/adaptive_layout.dart
 
+下文的公共阈值和 `canSplitLayout`、`useNavigationRail`、`columnCapacity`、
+`listRowCount` 现在重新导出自 `myapps_adaptive`，不再是本地实现的声明。
+业务约束和 Flutter 避让仍保留在此文件。
+见 [../../../shared-ui.md](../../../shared-ui.md)。
+
 全应用的自适应布局策略：决定布局是否可以分栏的 `splitMinWidth`、`splitMinHeight` 和 `splitMinAspect` 阈值；外壳用的 `navRailMinWidth` 和 `navRailWidth`；多列列表用的 `listTileGap`、`listMaxColumns` 和 `listColumnsAuto`；`pageMaxContentWidth`、`kanaTableMinWidth`、`ruleCardMinWidth` 和 `referenceTileMinWidth`——本应用自己的按内容最小值，每个都有文档注释说明数字的来源；以及 `settingsRightPaneMinWidth` 和 `quizAnswerPaneMinWidth`。十一个纯函数辅助建立在它们之上，另有一个组件层面的辅助 `navBarAwarePadding`（0.6.1）。
 
 所有决策类辅助都刻意只依赖 `dart:core`——`canSplitLayout` 接受两个 double 而不是 `Size`——因此每个都可以直接单元测试（`test/adaptive_layout_test.dart`），而渲染结果由 `test/kana_layout_ui_test.dart`、`test/shell_nav_ui_test.dart` 和 `test/widget_test.dart` 在真实设备几何下单独覆盖。数字的推导在 [../../../adaptive-layout.md](../../../adaptive-layout.md)；本页记录声明。

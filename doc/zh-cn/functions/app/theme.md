@@ -1,5 +1,10 @@
 # lib/app/theme.dart
 
+本文件现在是 MyApps-UI `v0.1.0` 的品牌包装。`AppUiStyle` 和 `NavPlacement`
+来自重新导出。`AppTheme` 保留构造器、品牌色及 `scheme`、`build`、`light`、`dark`；
+下文的按钮变化、字体强调和 Expressive 内部实现现已只存在于共享包中。
+见 [../../shared-ui.md](../../shared-ui.md)。
+
 `AppTheme` 用同一个种子色 `AppTheme.seedColor`（`0xFFCE5B78`，樱花粉，使本应用一眼就能与兄弟应用区分开）通过 `ColorScheme.fromSeed` 构建亮色和暗色主题；调用方传入平台动态方案时则使用动态方案（仅 Android，见 `MyNihongoApp.build`）。`AppUiStyle` 是用户在设置中选择的界面风格：`expressive`（默认）在原生 Material 3 之上叠加主题层面的 Material 3 Expressive 近似，`material3` 是原生 Material 3 加轮廓输入框。两种风格共用同一套颜色；Expressive 只改变形状、字重和组件细节，绝不改变布局或颜色。见 [../../architecture.md](../../architecture.md)。
 
 ## 声明
@@ -12,9 +17,6 @@
 | `AppTheme.seedColor` | 静态常量 | B | 应用的品牌色，也是视觉体系中唯一的每应用旋钮。 |
 | `AppTheme.scheme` | 静态方法 | B | 解析某个亮度的配色方案：有动态方案则用之，否则用 `fromSeed`。 |
 | `AppTheme.build` | 静态方法 | B | 构建某个亮度和风格的主题（原生 Material 3；Expressive 再叠加 `_expressive`）。 |
-| `AppTheme._morphingButtonStyle` | 静态方法 | B | 静止为胶囊、按下变为 12 圆角方形（200 ms）的按钮样式。 |
-| `AppTheme._emphasized` | 静态方法 | B | 仅通过字重让 display、headline 与 title 样式更粗。 |
-| `AppTheme._expressive` | 静态方法 | B | 在主题上叠加 Expressive 近似：更大圆角、变形按钮、加粗标题、2024 版指示器、渐进淡入转场。 |
 | `AppTheme.light` | 静态方法 | B | 返回亮色主题，参数为可选动态方案和风格（默认 Expressive）。 |
 | `AppTheme.dark` | 静态方法 | B | 返回暗色主题，参数为可选动态方案和风格（默认 Expressive）。 |
 

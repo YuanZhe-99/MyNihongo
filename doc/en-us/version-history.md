@@ -13,6 +13,9 @@ release; `v1.0.2` before it carried the UTF-8 download fix this app needed.
 
 ## Releases
 
+- `v0.7.0` — 2026-10-04. Adopt MyApps-UI `v0.1.0` after publishing the shared commit and tag to both remotes. Shared Material 3 / Expressive construction replaces duplicated theme code; common split and packing rules are re-exported through the existing layout entry point. Brand colors, public APIs, navigation and data formats remain compatible. Local full Flutter suite: 1154 passed, 1 skipped. Version `0.7.0+29`. Google Maven was checked: genai-prompt beta4 and genai-proofreading beta1 remain the latest listed versions and are retained.
+
+
 - `0.6.2` — 2026-10-01. Modal bottom sheets no longer open under the floating navigation bar. Follow-up to 0.6.1.
 
   **Sheets above the shell.** The 0.6.1 entry audited the five tabs and the Settings detail pages, but it did not cover modal bottom sheets, so its claim that the content was clear of the bar was incomplete. `showModalBottomSheet` used the nearest navigator, which for a sheet opened from a tab is the shell's, so the bar covered the bottom of the sheet. The vocabulary, grammar and kana detail sheets, the history sheet, the voice picker and the pronunciation practice sheet now pass `useRootNavigator: true` and open above the shell. The re-run of the `navBarAwarePadding` audit found nothing else: every router route outside the `ShellRoute` (`/quiz`, `/lab`, `/exam` ...) already sits above the bar. The `navBarAwarePadding` doc comment now says it is needed only by the five tabs and the pages the Settings detail pane hosts.

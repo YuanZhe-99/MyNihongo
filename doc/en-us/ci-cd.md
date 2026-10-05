@@ -1,5 +1,7 @@
 # CI/CD and build commands
 
+Shared implementation ownership and fresh-clone instructions: [shared-ui.md](shared-ui.md).
+
 ## Workflow
 
 `.github/workflows/build.yml` runs on every push to `main`, on `v*` tag pushes, on pull requests targeting `main`, and on `workflow_dispatch`. Only tag pushes create a GitHub Release; branch pushes stop at the uploaded artifacts.

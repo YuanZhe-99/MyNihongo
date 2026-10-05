@@ -13,6 +13,10 @@ below records is added to it in the same change, with its date.
 
 ## Principles
 
+2026-10-04: Theme and common adaptive calculations now come from MyApps-UI
+`v0.1.0`. Existing facades preserve caller APIs and brand identity. Library
+publication precedes app pointer updates; business layout and profiles stay app-owned.
+
 1. **Series conventions first.** If MyAnime/MyDay/MyDevice already answered a question (layout
    rule, sync invariant, doc structure, release flow), reuse the answer. Divergences are written
    down, with the reason.

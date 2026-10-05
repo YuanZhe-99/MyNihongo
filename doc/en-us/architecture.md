@@ -1,5 +1,8 @@
 # Architecture
 
+Shared theme and adaptive foundations now come from MyApps-UI; see
+[shared-ui.md](shared-ui.md) for ownership, integration and update order.
+
 This page describes the app shell, state management approach, navigation, localization, and the
 repository layout, plus the cross-cutting architectural rules. See
 [`data-formats.md`](data-formats.md) for the data model, [`sync.md`](sync.md) for the sync

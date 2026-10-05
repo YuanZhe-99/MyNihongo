@@ -1,5 +1,7 @@
 # Adaptive layout
 
+Shared implementation ownership and fresh-clone instructions: [shared-ui.md](shared-ui.md).
+
 This is the app-wide rule for **when a layout may split** — into two columns on the kana page and
 the Learn dashboard, into multiple columns in the vocabulary and grammar lists, and into two panes on
 the settings page, on a foldable's inner panel, a tablet or a desktop window — and, once it may,

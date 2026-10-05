@@ -1,5 +1,7 @@
 # CI/CD 与构建命令
 
+公共实现归属及全新克隆的接入说明见 [shared-ui.md](shared-ui.md)。
+
 ## 工作流
 
 `.github/workflows/build.yml` 在每次推送到 `main`、`v*` 标签推送、面向 `main` 的 pull request 以及 `workflow_dispatch` 时运行。只有标签推送会创建 GitHub Release；分支推送止于上传的工件。
