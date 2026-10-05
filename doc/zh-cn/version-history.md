@@ -1,5 +1,12 @@
 # 版本历史
 
+## 0.7.7 — 统一设置呈现
+
+使用 MyApps-UI v0.1.6 全宽外观和导航设置行、MyApps-DATA v1.0.4 备份和数据
+控件及 MyApps-AI v0.4.2 能力状态行。教学策略、独立下载和设置持久化由应用负责。
+2026-10-05 检查 Google Maven：保留最新列出的 genai-prompt 1.0.0-beta4 和
+genai-proofreading 1.0.0-beta1。
+
 ## 0.7.6 — 共享能力执行
 
 Prompt 和校对使用 MyApps-AI v0.2.1 执行门控，超时取消，取消或偏好变更后拒绝

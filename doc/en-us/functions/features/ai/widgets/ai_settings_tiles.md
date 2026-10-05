@@ -1,5 +1,8 @@
 # lib/features/ai/widgets/ai_settings_tiles.dart
 
+Capability status presentation delegates to MyAppsAiCapabilityTile in myapps_ai_ui.
+Independent feature downloads, debug visibility, service listening and labels stay here.
+
 The Settings rows that configure on-device AI assistance: the master switch, one status row per
 feature, and the note saying who performs the model download.
 

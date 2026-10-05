@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapps_ai_ui/myapps_ai_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../l10n/app_localizations.dart';
@@ -217,7 +218,6 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
     required bool debug,
   }) {
     final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
     final status = service.statusOf(feature);
     final downloadingThis = service.downloadingFeature == feature;
     final progress = service.downloadProgress;
@@ -230,37 +230,14 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
         ? _diagnostic(status, service.reportOf(feature))
         : null;
 
-    return ListTile(
-      leading: Icon(_iconFor(status)),
-      title: Text(label, style: theme.textTheme.bodyMedium),
-      subtitle: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            downloadingThis
-                ? _progressLabel(l10n, progress)
-                : _statusLabel(l10n, status, debug: debug),
-            style: theme.textTheme.bodySmall?.copyWith(
-              color: theme.colorScheme.onSurfaceVariant,
-            ),
-          ),
-          // Untranslated on purpose: this is an identifier to quote in a bug
-          // report, not prose. Without it "not available on this device" is
-          // the same sentence whether the device is off a published support
-          // list, one model variant was refused and three were never tried,
-          // or the call threw — and those have different fixes.
-          if (detail != null)
-            Text(
-              detail,
-              style: theme.textTheme.labelSmall?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-                fontFamily: 'monospace',
-              ),
-            ),
-        ],
-      ),
-      isThreeLine: detail != null,
-      trailing: switch (status) {
+    return MyAppsAiCapabilityTile(
+      icon: _iconFor(status),
+      title: label,
+      statusText: downloadingThis
+          ? _progressLabel(l10n, progress)
+          : _statusLabel(l10n, status, debug: debug),
+      diagnostic: detail,
+      action: switch (status) {
         GenAiStatus.downloadable => FilledButton.tonal(
           onPressed: service.busy ? null : () => service.download(feature),
           child: Text(l10n.aiDownload),

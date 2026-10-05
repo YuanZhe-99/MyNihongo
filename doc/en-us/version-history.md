@@ -1,5 +1,13 @@
 # Version history
 
+## 0.7.7 — Unified settings presentation
+
+Use MyApps-UI v0.1.6 full-width appearance/navigation rows, MyApps-DATA v1.0.4
+backup and data controls, and MyApps-AI v0.4.2 capability status tiles. Keep
+teaching policy, independent downloads and settings persistence app-owned.
+Google Maven checked on 2026-10-05: retain genai-prompt 1.0.0-beta4 and
+genai-proofreading 1.0.0-beta1, the latest listed versions.
+
 ## 0.7.6 — Shared capability execution
 
 Use MyApps-AI v0.2.1's execution gate for Prompt and proofreading. Cancel on

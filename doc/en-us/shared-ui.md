@@ -1,5 +1,10 @@
 # Shared UI foundations
 
+MyApps-UI v0.1.6 owns appearance/navigation row layout and full-width choices.
+MyApps-DATA v1.0.4 owns data action tiles and backup preferences. MyApps-AI v0.4.2
+owns capability status tiles through myapps_ai_ui; per-feature availability,
+download serialization and debug visibility remain application policies.
+
 ## P5 region policies and attribution
 
 MyApps-UI v0.1.5 provides automatic/selected reference columns and designed panes.

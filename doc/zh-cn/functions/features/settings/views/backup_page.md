@@ -1,5 +1,8 @@
 # lib/features/settings/views/backup_page.dart
 
+DATA 的 MyAppsBackupSettings 管理每日备份和保留期呈现。页面保留偏好持久化、
+备份操作和恢复守卫。
+
 创建、列出、还原与删除本机备份包。移植自 MyAnime!!!!! 的同名页面，但$1还原对话框把个人资料模块（`profile`，0.6.0）标为*个人资料*并配人像图标，位于*学习进度*旁。见
 [../../../../backup-restore.md](../../../../backup-restore.md)。
 

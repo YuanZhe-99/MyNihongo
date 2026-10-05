@@ -1,5 +1,8 @@
 # lib/features/ai/widgets/ai_settings_tiles.dart
 
+能力状态呈现委托给 myapps_ai_ui 的 MyAppsAiCapabilityTile。逐能力独立下载、
+调试显示、服务监听和文案留在应用。
+
 设置中配置端侧 AI 辅助的那几行：主开关、每项功能一行状态，以及说明由谁执行模型下载的那句话。
 
 构建方式与「语音」分节相同，出于同样的理由没有放进 `settings_page.dart`。
