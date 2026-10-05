@@ -1,5 +1,9 @@
 # Decisions
 
+2026-10-04 P3: profile implementation is shared through storage/image callbacks and
+localized editor labels. App providers, picker and data modules remain adapters;
+profiles remain independent across apps and existing file formats are unchanged.
+
 What the roadmap knew that nothing else in the repository records. MyNihongo!!!!! was built from a
 phased plan, `PLAN.md`, in five phases from 2026-09-02 to 2026-09-24. When the last phase shipped
 the plan was retired and deleted, and this page kept the parts that are still useful: the

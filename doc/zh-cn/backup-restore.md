@@ -1,5 +1,7 @@
 # 备份、恢复与 ZIP 传输
 
+P3 公共资料实现与适配见 [shared-ui.md](shared-ui.md)，格式和模块顺序保持不变。
+
 两个引擎都是共享包的——`myapps_data` 中的 `BackupEngine` 和 `ZipTransfer`，文档在 `packages/myapps_data/doc/en-us/`。本页记录 MyNihongo!!!!! 如何配置它们。
 
 ## 本地备份

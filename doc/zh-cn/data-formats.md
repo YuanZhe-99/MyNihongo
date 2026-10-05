@@ -1,5 +1,7 @@
 # 数据格式
 
+P3 公共资料实现与适配见 [shared-ui.md](shared-ui.md)，格式和模块顺序保持不变。
+
 本页描述内置内容的 schema、`StudyRecord` 进度模型（`lib/features/progress/models/study_record.dart`）、凡遇到未知 JSON 时使用的向前兼容模式，以及应用持久化到磁盘的完整文件清单。进度记录如何跨设备合并见 [`sync.md`](sync.md)。
 
 ## 内容目录（只读，内置）

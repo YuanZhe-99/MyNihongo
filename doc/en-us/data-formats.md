@@ -1,5 +1,7 @@
 # Data Formats
 
+P3 shared profile ownership and adapters: [shared-ui.md](shared-ui.md). Existing formats and module order are retained.
+
 This page describes the bundled content schema, the `StudyRecord` progress model
 (`lib/features/progress/models/study_record.dart`), the forward-compatibility pattern used
 everywhere unknown JSON is encountered, and the full inventory of files the app persists to disk.

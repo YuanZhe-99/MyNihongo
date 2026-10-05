@@ -1,5 +1,7 @@
 # Backup, restore, and ZIP transfer
 
+P3 shared profile ownership and adapters: [shared-ui.md](shared-ui.md). Existing formats and module order are retained.
+
 Both engines are the shared package's — `BackupEngine` and `ZipTransfer` in `myapps_data`, documented
 at `packages/myapps_data/doc/en-us/`. This page records how MyNihongo!!!!! configures them.
 

@@ -1,5 +1,7 @@
 # WebDAV 同步
 
+P3 公共资料实现与适配见 [shared-ui.md](shared-ui.md)，格式和模块顺序保持不变。
+
 同步引擎不在此仓库。`WebDavSyncEngine`、WebDAV 客户端、上传锁、三方合并和自动同步调度器位于 `packages/myapps_data` 下的共享 `myapps_data` 包中，文档在 `packages/myapps_data/doc/en-us/`——从它的 `architecture.md` 和 `invariants.md` 开始。本页只记录 MyNihongo!!!!! 接入该引擎的部分，以及用户看到的东西。
 
 ## 同步什么

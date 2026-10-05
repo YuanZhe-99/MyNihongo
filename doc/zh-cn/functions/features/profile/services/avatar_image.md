@@ -1,5 +1,9 @@
 # lib/features/profile/services/avatar_image.dart
 
+P3：下文公共声明位于 `myapps_profile`；应用文件为重新导出或适配，
+保留公开导入路径和构造器形式。
+见 [../../../../shared-ui.md](../../../../shared-ui.md)。
+
 头像编辑器背后的纯图像操作（0.6.1）。每个函数都是同步且只做内存分配，因此调用方在另一个 isolate 中运行它们；两个 `…InBackground` 包装函数正是这样做的。该模块只导入 `dart:isolate`、`dart:typed_data` 和 `package:image`。`ProfileStore` 不再解码图片——它只存储编辑器产出的 JPEG。见 [`../views/avatar_editor.md`](../views/avatar_editor.md)、[`profile_store.md`](profile_store.md) 和 [`../../../../features/profile.md`](../../../../features/profile.md)。
 
 ## 声明

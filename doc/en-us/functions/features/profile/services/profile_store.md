@@ -1,5 +1,9 @@
 # lib/features/profile/services/profile_store.dart
 
+P3: shared declarations described below live in `myapps_profile`; this app
+file is a re-export or adapter preserving its public import and constructor shape.
+See [../../../../shared-ui.md](../../../../shared-ui.md).
+
 `ProfileStore` (0.6.0) owns `profile.json` under `NihongoStorage.getAppDir()`: the user's display name
 and avatar. It follows the same pattern as the playback progress store: a read-modify-write queue,
 atomic writes, no write when the bytes are unchanged, and `AutoSyncService.notifySaved` after each
@@ -12,16 +16,14 @@ other devices. See [`../../../app/data_modules.md`](../../../app/data_modules.md
 | Declaration | Kind | Tier | Purpose |
 |---|---|---|---|
 | `ProfileStore._` | constructor | B | Prevent instantiation. |
-| `_file` | static method | B | Resolve the file under the app directory. |
+| `resolveImage` | static method | A | Resolve an image through the app adapter. |
 | [`load`](#load) | static method | A | Load the profile; empty when absent or unreadable. |
 | [`update`](#update) | static method | A | Apply one queued change and save it. |
-| `_apply` | static method | B | Run one queued update. |
 | [`setName`](#setname) | static method | A | Set or clear the display name. |
 | [`pickAvatarSource`](#pickavatarsource) | static method | A | Let the user pick an image to edit into an avatar (0.6.1); returns its bytes. |
 | [`readAvatarBytes`](#readavatarbytes) | static method | A | Read the current avatar image so it can be adjusted again (0.6.1). |
 | [`setAvatarJpeg`](#setavatarjpeg) | static method | A | Store an edited avatar as a new file and delete the previous one (0.6.1). |
 | [`removeAvatar`](#removeavatar) | static method | A | Remove the avatar with a timestamped removal. |
-| `_deleteQuietly` | static method | B | Delete a replaced avatar file, ignoring failures. |
 
 `fileName` (`profile.json`, which must match `profileFileName` in `data_modules.dart`), `avatarSize`
 (`512`) and the queue `_tail` carry no `/// Purpose:` comment.

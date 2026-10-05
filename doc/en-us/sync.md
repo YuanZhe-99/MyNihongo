@@ -1,5 +1,7 @@
 # WebDAV sync
 
+P3 shared profile ownership and adapters: [shared-ui.md](shared-ui.md). Existing formats and module order are retained.
+
 The sync engine is not in this repository. `WebDavSyncEngine`, the WebDAV client, the upload lock,
 the three-way merge and the auto-sync scheduler live in the shared `myapps_data` package at
 `packages/myapps_data`, documented in `packages/myapps_data/doc/en-us/` — start at its
