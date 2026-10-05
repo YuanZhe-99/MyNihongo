@@ -1,5 +1,8 @@
 # Decisions
 
+2026-10-05: Share the native AI bridge through MyApps-AI v0.2.0, retaining the
+Android-only teaching interface and app-owned practice scheduling during migration.
+
 2026-10-05: P5 shares reference column resolution and settings pane geometry.
 Keep learning-specific pane designs and saved preferences in the application.
 

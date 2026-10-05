@@ -83,7 +83,7 @@ void main() {
 
   test('the AICore package version is read back', () async {
     mock(
-      (call) => call.method == 'aicore'
+      (call) => call.method == 'info'
           ? {
               'installed': true,
               'versionName': 'aicore_20260723.00_RC11',
@@ -201,7 +201,7 @@ void main() {
 
   test('whether AICore can serve models here is read back', () async {
     mock(
-      (call) => call.method == 'aicore'
+      (call) => call.method == 'info'
           ? {
               'installed': true,
               'versionName': 'aicore_20260723.00_RC11',
@@ -227,7 +227,7 @@ void main() {
   test('the answer length asked for travels to the platform', () async {
     int? sent;
     mock((call) {
-      if (call.method == 'explain') {
+      if (call.method == 'generate') {
         sent = (call.arguments as Map)['maxOutputTokens'] as int?;
         return 'ok';
       }

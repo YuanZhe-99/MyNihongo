@@ -1,5 +1,14 @@
 # Version history
 
+## 0.7.5 — Shared native system AI
+
+Adopt MyApps-AI v0.2.0 native plugins through the existing app backend contract.
+Keep independent Prompt/proofreading states, sampling, Android-only feature gate,
+practice scheduling and teaching validation. Add shared license attribution.
+Retain genai-prompt 1.0.0-beta4 and genai-proofreading 1.0.0-beta1 as checked
+against Google Maven on 2026-10-05; dependency ownership moves to the shared plugin.
+Final analysis, release-version check and 1156 tests passed (1 skipped).
+
 ## 0.7.4 — P5 regions and shared-license attribution
 
 Shared automatic/selected columns and feature-aware designed settings panes use

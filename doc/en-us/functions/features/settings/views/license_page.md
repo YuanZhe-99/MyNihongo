@@ -1,5 +1,7 @@
 # lib/features/settings/views/license_page.dart
 
+The notice includes myapps_ai and myapps_ai_platform, their source and GPL v3.
+
 The notice includes MyApps-UI, all three consumed packages, source and GPL v3 URLs.
 
 `LicensePage` shows the GPLv3 notice for MyNihongo!!!!! as selectable text under an app bar. It is

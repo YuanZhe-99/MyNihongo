@@ -1,5 +1,9 @@
 # lib/features/ai/services/genai_backend.dart
 
+通道实现委托 MyApps-AI v0.2.0，保留应用类型与签名。Explain 使用 generate，
+coreInfo 使用 info，原生桥接及下载事件处理由共享包负责。
+见 [shared-ai](../../../../shared-ai.md)。
+
 应用与平台生成式模型之间的接缝，以及基于 `com.yuanzhe.my_nihongo/genai` 方法通道的真实实现。
 
 它存在的理由与语音识别、语音合成的接缝相同：`flutter_test` 运行时没有 AICore，而值得测试的一切——开关闸门、状态处理、提示词、解析——都在服务这一侧。
@@ -40,7 +44,6 @@ M4.0a 又加上了 `served`，以及两个反方向传过去的参数。探测�
 | `MethodChannelGenAiBackend.statusReport` | 方法 | B | 解码平台的状态回复，容忍缺失字段。 |
 | `MethodChannelGenAiBackend.coreInfo` | 方法 | B | 读取 AICore 的安装情况。 |
 | `MethodChannelGenAiBackend.hasSizeChoice` | 静态方法 | B | 已服务的变体中是否同时有较大和较快的模型。 |
-| `_handlePlatformCall` | 方法 | B | 接收来自平台的下载进度。 |
 | `_failureFor` | 静态方法 | B | 把平台错误码映射为失败原因。 |
 
 ## 文档

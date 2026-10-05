@@ -1,5 +1,9 @@
 # lib/features/ai/services/genai_backend.dart
 
+The channel implementation delegates to MyApps-AI v0.2.0 while retaining app
+types and signatures. Explain uses generate; coreInfo uses info. Native bridge
+and download event handling are shared. See [shared-ai](../../../../shared-ai.md).
+
 The seam between the app and the platform's generative models, and the real implementation over the
 `com.yuanzhe.my_nihongo/genai` method channel.
 
@@ -60,7 +64,6 @@ about the platform's reply.
 | `MethodChannelGenAiBackend.statusReport` | method | B | Decode the platform's status reply, tolerating missing fields. |
 | `MethodChannelGenAiBackend.coreInfo` | method | B | Read the AICore installation. |
 | `MethodChannelGenAiBackend.hasSizeChoice` | static method | B | Whether the served variants include both a larger and a faster model. |
-| `_handlePlatformCall` | method | B | Receive download progress from the platform. |
 | `_failureFor` | static method | B | Map a platform error code to a failure. |
 
 ## Documentation

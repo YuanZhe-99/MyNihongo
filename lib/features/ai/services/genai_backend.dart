@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart';
+import 'package:myapps_ai/myapps_ai.dart' as shared;
 
 import '../../../shared/utils/platform_capabilities.dart';
 
@@ -280,10 +281,12 @@ abstract class GenAiBackend {
 /// exist and every call would throw `MissingPluginException`.
 class MethodChannelGenAiBackend implements GenAiBackend {
   MethodChannelGenAiBackend([MethodChannel? channel])
-    : _channel = channel ?? const MethodChannel(channelName);
+    : _shared = shared.MethodChannelGenAiBackend(
+        channel ?? const MethodChannel(channelName),
+      );
 
   /// The channel name, matched by `GenAiChannel.CHANNEL` in Kotlin.
-  static const channelName = 'com.yuanzhe.my_nihongo/genai';
+  static const channelName = shared.MethodChannelGenAiBackend.channelName;
 
   /// Purpose: Say whether the served variants include both model sizes.
   /// Inputs: `served` — the platform's list, or null.
@@ -296,10 +299,7 @@ class MethodChannelGenAiBackend implements GenAiBackend {
   static bool hasSizeChoice(String? served) =>
       served != null && served.contains('/full') && served.contains('/fast');
 
-  final MethodChannel _channel;
-
-  void Function(int bytes, int total)? _onProgress;
-  bool _listening = false;
+  final shared.MethodChannelGenAiBackend _shared;
 
   /// Purpose: Ask the platform for a feature's status.
   /// Inputs: `feature`.
@@ -326,12 +326,22 @@ class MethodChannelGenAiBackend implements GenAiBackend {
   }) async {
     if (!platformMayHaveOnDeviceModel) return GenAiStatusReport.unsupported;
     try {
-      final answer = await _channel.invokeMapMethod<String, Object?>('status', {
-        'feature': feature.name,
-        'force': force,
-        'preferFast': preferFast,
-      });
-      final name = answer?['status']?.toString();
+      final report = await _shared.capabilityReport(
+        shared.GenAiFeature.values.byName(feature.name),
+        force: force,
+        preferFast: preferFast,
+      );
+      final answer = <String, Object?>{
+        'status': report.status.name,
+        'code': report.code,
+        'detail': report.detail,
+        'variant': report.variant,
+        'served': report.served,
+        'refused': report.refused,
+        'baseModelName': report.baseModelName,
+        'tokenLimit': report.tokenLimit,
+      };
+      final name = answer['status']?.toString();
       final status = switch (name) {
         'available' => GenAiStatus.available,
         'downloadable' => GenAiStatus.downloadable,
@@ -342,16 +352,16 @@ class MethodChannelGenAiBackend implements GenAiBackend {
       };
       return GenAiStatusReport(
         status,
-        code: answer?['code'] is int ? answer!['code'] as int : -1,
-        detail: answer?['detail']?.toString(),
+        code: answer['code'] is int ? answer['code'] as int : -1,
+        detail: answer['detail']?.toString(),
         // Absent rather than wrong: an older platform side, or the
         // proofreading feature, simply sends none of these.
-        variant: answer?['variant']?.toString(),
-        served: answer?['served']?.toString(),
-        refused: answer?['refused']?.toString(),
-        baseModelName: answer?['baseModelName']?.toString(),
-        tokenLimit: answer?['tokenLimit'] is int
-            ? answer!['tokenLimit'] as int
+        variant: answer['variant']?.toString(),
+        served: answer['served']?.toString(),
+        refused: answer['refused']?.toString(),
+        baseModelName: answer['baseModelName']?.toString(),
+        tokenLimit: answer['tokenLimit'] is int
+            ? answer['tokenLimit'] as int
             : null,
       );
     } on PlatformException catch (error) {
@@ -378,8 +388,14 @@ class MethodChannelGenAiBackend implements GenAiBackend {
   Future<GenAiCoreInfo?> coreInfo() async {
     if (!platformMayHaveOnDeviceModel) return null;
     try {
-      return GenAiCoreInfo.fromJson(
-        await _channel.invokeMapMethod<String, Object?>('aicore'),
+      final info = await _shared.coreInfo();
+      if (info == null) return null;
+      return GenAiCoreInfo(
+        installed: info.installed,
+        versionName: info.versionName,
+        sdk: info.sdk,
+        device: info.device,
+        compatible: info.compatible,
       );
     } catch (_) {
       return null;
@@ -401,20 +417,13 @@ class MethodChannelGenAiBackend implements GenAiBackend {
     if (!platformMayHaveOnDeviceModel) {
       throw const GenAiException(GenAiFailure.unavailable);
     }
-    _onProgress = onProgress;
-    if (!_listening) {
-      _channel.setMethodCallHandler(_handlePlatformCall);
-      _listening = true;
-    }
     try {
-      final done = await _channel.invokeMethod<bool>('download', {
-        'feature': feature.name,
-      });
-      return done ?? false;
-    } on PlatformException catch (e) {
-      throw GenAiException(_failureFor(e.code), e.message);
-    } finally {
-      _onProgress = null;
+      return await _shared.downloadCapability(
+        shared.GenAiFeature.values.byName(feature.name),
+        onProgress: onProgress,
+      );
+    } on shared.GenAiException catch (e) {
+      throw GenAiException(_failureFor(e.failure.name), e.message);
     }
   }
 
@@ -431,15 +440,15 @@ class MethodChannelGenAiBackend implements GenAiBackend {
       throw const GenAiException(GenAiFailure.unavailable);
     }
     try {
-      final text = await _channel.invokeMethod<String>('explain', {
-        'prompt': prompt,
-        'maxOutputTokens': maxOutputTokens,
-        'temperature': 0.2,
-        'topK': 16,
-      });
-      return text ?? '';
-    } on PlatformException catch (e) {
-      throw GenAiException(_failureFor(e.code), e.message);
+      return await _shared.generate(
+        instructions: '',
+        prompt: prompt,
+        maxOutputTokens: maxOutputTokens,
+        temperature: 0.2,
+        topK: 16,
+      );
+    } on shared.GenAiException catch (e) {
+      throw GenAiException(_failureFor(e.failure.name), e.message);
     }
   }
 
@@ -454,12 +463,9 @@ class MethodChannelGenAiBackend implements GenAiBackend {
       throw const GenAiException(GenAiFailure.unavailable);
     }
     try {
-      final results = await _channel.invokeListMethod<String>('proofread', {
-        'text': text,
-      });
-      return results ?? const [];
-    } on PlatformException catch (e) {
-      throw GenAiException(_failureFor(e.code), e.message);
+      return await _shared.proofread(text);
+    } on shared.GenAiException catch (e) {
+      throw GenAiException(_failureFor(e.failure.name), e.message);
     }
   }
 
@@ -473,25 +479,10 @@ class MethodChannelGenAiBackend implements GenAiBackend {
   Future<void> cancel() async {
     if (!platformMayHaveOnDeviceModel) return;
     try {
-      await _channel.invokeMethod<void>('cancel');
+      await _shared.cancel();
     } catch (_) {
       // Nothing to do: the request either finished or will be discarded.
     }
-  }
-
-  /// Purpose: Receive download progress from the platform.
-  /// Inputs: `call`.
-  /// Returns: None.
-  /// Side effects: Calls the current progress callback.
-  /// Notes: Internal helper used within this file only.
-  Future<void> _handlePlatformCall(MethodCall call) async {
-    if (call.method != 'downloadProgress') return;
-    final args = call.arguments;
-    if (args is! Map) return;
-    _onProgress?.call(
-      (args['bytes'] as num?)?.toInt() ?? 0,
-      (args['total'] as num?)?.toInt() ?? -1,
-    );
   }
 
   /// Purpose: Map a platform error code to a failure.

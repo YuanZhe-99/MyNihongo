@@ -91,11 +91,8 @@ dependencies {
     //
     // Compared against the Google Maven group index at every release; see
     // PLAN.md's release checklist and doc/en-us/android-aicore.md.
-    implementation("com.google.mlkit:genai-prompt:1.0.0-beta4")
-    implementation("com.google.mlkit:genai-proofreading:1.0.0-beta1")
     // The Prompt API suspends and returns a Flow; the coroutine runtime is not
     // pulled in by the Flutter Android embedding, so it is declared here.
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
 }
 
 // Built-in Kotlin migration: align the Kotlin jvmTarget with the Java 17

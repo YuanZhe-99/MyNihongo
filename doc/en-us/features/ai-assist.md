@@ -1,5 +1,8 @@
 # On-device AI assistance
 
+Native implementation now uses MyApps-AI v0.2.0; see [shared-ai](../shared-ai.md).
+Application practice scheduling and teaching policy remain here.
+
 An optional layer over the sentence lab: the app can explain one of its own findings in more words,
 explain a whole sentence, and suggest a rewrite. It runs on the phone through Android AICore, it is
 **off until the learner turns it on**, and it never changes the analysis it comments on.
