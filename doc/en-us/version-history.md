@@ -1,5 +1,11 @@
 # Version history
 
+## 0.7.8 — Await preference corruption assertions
+
+Await the asynchronous strict-read assertion before writing the next damaged
+configuration fixture. This removes a CI test race; application behavior is unchanged.
+Retain genai-prompt beta4 and genai-proofreading beta1, checked on 2026-10-05.
+
 ## 0.7.7 — Unified settings presentation
 
 Use MyApps-UI v0.1.6 full-width appearance/navigation rows, MyApps-DATA v1.0.4

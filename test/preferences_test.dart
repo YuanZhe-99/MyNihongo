@@ -249,7 +249,11 @@ void main() {
       expect(await NihongoStorage.getTtsRate(), isNull, reason: damaged);
       expect(await NihongoStorage.getShowFurigana(), isTrue, reason: damaged);
       expect(await NihongoStorage.getDebugMode(), isFalse, reason: damaged);
-      expect(NihongoStorage.readConfig(), throwsA(anything), reason: damaged);
+      await expectLater(
+        NihongoStorage.readConfig(),
+        throwsA(anything),
+        reason: damaged,
+      );
     }
   });
 
