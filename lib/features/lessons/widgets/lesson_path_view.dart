@@ -60,7 +60,10 @@ class LessonPathView extends ConsumerWidget {
     final states = progress == null
         ? <String, UnitState>{}
         : unitStates(path.value!, progress);
-    final width = referenceContentWidth(MediaQuery.sizeOf(context).width);
+    final width = referenceContentWidth(
+      MediaQuery.sizeOf(context).width,
+      context: context,
+    );
     final columns = columnCapacity(
       width,
       minItemWidth: ruleCardMinWidth,
@@ -200,10 +203,7 @@ class _UnitCard extends ConsumerWidget {
                         ? null
                         : () => context.push(
                             '/scenario',
-                            extra: ScenarioArgs(
-                              scenario: scenario,
-                              unit: unit,
-                            ),
+                            extra: ScenarioArgs(scenario: scenario, unit: unit),
                           ),
                     child: Text(l10n.pathScenario),
                   ),

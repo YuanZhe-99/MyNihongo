@@ -333,3 +333,9 @@ Never write the underlying Tailscale host or port anywhere in the repo, includin
 `*.jks`), a user's learning progress or recordings, generated app data, or local-only machine
 addresses. Third-party content (dictionary data, word lists) is committed only with its license and
 attribution recorded in `doc/en-us/features/content-catalog.md` and the in-app license page.
+
+## MyApps milestone releases
+
+For each completed P milestone, increment the application patch version by 0.0.1.
+Publish the shared dependency first. Add accurate co-author trailers for materially
+participating agents; do not invent participation or an agent identity.

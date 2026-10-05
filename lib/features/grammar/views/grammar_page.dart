@@ -115,7 +115,7 @@ class _GrammarPageState extends ConsumerState<GrammarPage> {
     ];
 
     final screen = MediaQuery.sizeOf(context);
-    final contentWidth = referenceContentWidth(screen.width);
+    final contentWidth = referenceContentWidth(screen.width, context: context);
     final columns = referenceColumnCount(
       screenWidth: screen.width,
       screenHeight: screen.height,
@@ -138,7 +138,12 @@ class _GrammarPageState extends ConsumerState<GrammarPage> {
       primary: true,
       padding: navBarAwarePadding(
         context,
-        EdgeInsets.fromLTRB(16, 8, 16, shellListBottomInset(screen.width)),
+        EdgeInsets.fromLTRB(
+          16,
+          8,
+          16,
+          shellListBottomInset(screen.width, context: context),
+        ),
       ),
       itemCount: 1 + (filtered.isEmpty ? 1 : rowCount),
       itemBuilder: (context, index) {

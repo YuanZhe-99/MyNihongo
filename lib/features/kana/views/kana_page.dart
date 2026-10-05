@@ -69,7 +69,7 @@ class _KanaPageState extends ConsumerState<KanaPage> {
     final searching = _query.trim().isNotEmpty;
 
     final screen = MediaQuery.sizeOf(context);
-    final contentWidth = referenceContentWidth(screen.width);
+    final contentWidth = referenceContentWidth(screen.width, context: context);
     final twoColumn =
         canSplitLayout(screen.width, screen.height) &&
         columnCapacity(
@@ -168,7 +168,12 @@ class _KanaPageState extends ConsumerState<KanaPage> {
         primary: true,
         padding: navBarAwarePadding(
           context,
-          EdgeInsets.fromLTRB(16, 8, 16, shellListBottomInset(screen.width)),
+          EdgeInsets.fromLTRB(
+            16,
+            8,
+            16,
+            shellListBottomInset(screen.width, context: context),
+          ),
         ),
         children: [
           Center(

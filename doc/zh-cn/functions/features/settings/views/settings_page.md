@@ -1,5 +1,8 @@
 # lib/features/settings/views/settings_page.dart
 
+P2：布局函数传入页面上下文并使用实际导航内容约束；
+全窗口路由不扣除不存在的导航。
+
 `SettingsPage` 是第五个标签。它显示若干节——个人资料（0.6.0：同步的头像与名称，`const ProfileHeader()` 是列表第一项）、通用（主题分段按钮、界面风格分段按钮——Material 3 / Expressive，0.6.0——语言下拉：跟随系统、English、简体中文、繁體中文）、数据、关于（版本、隐私政策、许可证、开源许可证）——并按 `canSplitLayout` 以一个或两个窗格（pane）布局自身。数据节现在包含 WebDAV 同步行（带实时状态副标题）、备份行、ZIP 导出与导入，以及存储位置。私有的 `_SettingsDetail` 枚举命名通向二级页面的四行：`webdav`、`backup`、`privacy`、`license`；导出与导入就地执行。见 [../../../../adaptive-layout.md](../../../../adaptive-layout.md)。
 
 从 `v0.4.6` 起，关于节里的版本号那一行可以点击。连点八次解锁开发者选项——顶层常量 `_debugUnlockTaps`，取八是因为 Android 自己就是这么要求的。完全照搬这个手势正是重点：需要这些诊断信息的人本来就知道怎么做，而其他人不会偶然发现它。`_versionTaps` 记录这一连串点击；它存在 state 对象里，因此页面被重新构建时就会归零，这个计数是一连串有意为之的点击，而不是学习者在几周里慢慢攒出来的东西。解锁之后，关于节里会在版本号行下方出现一个**开发者选项** `SwitchListTile`——而且只有在它已经打开时才出现，因为那里放一个「关闭」的行等于一份邀请，而隐藏诊断信息的意义就在于它们不是给没去找过它们的学习者看的。通过那个开关把它关掉也会重置 `_versionTaps`。标志本身位于 `AppSettings.debugMode`（[../../../shared/providers/app_settings.md](../../../shared/providers/app_settings.md)），由 [../../ai/widgets/ai_settings_tiles.md](../../ai/widgets/ai_settings_tiles.md) 读取。

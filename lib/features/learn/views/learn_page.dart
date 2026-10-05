@@ -42,7 +42,7 @@ class LearnPage extends ConsumerWidget {
     final profile = ref.watch(learnerProfileProvider);
 
     final screen = MediaQuery.sizeOf(context);
-    final contentWidth = referenceContentWidth(screen.width);
+    final contentWidth = referenceContentWidth(screen.width, context: context);
     final cardColumns = canSplitLayout(screen.width, screen.height)
         ? columnCapacity(
             contentWidth,
@@ -198,7 +198,12 @@ class LearnPage extends ConsumerWidget {
       body: ListView(
         padding: navBarAwarePadding(
           context,
-          EdgeInsets.fromLTRB(16, 8, 16, shellListBottomInset(screen.width)),
+          EdgeInsets.fromLTRB(
+            16,
+            8,
+            16,
+            shellListBottomInset(screen.width, context: context),
+          ),
         ),
         children: [
           Center(

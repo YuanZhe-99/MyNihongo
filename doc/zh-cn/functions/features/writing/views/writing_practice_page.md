@@ -1,5 +1,8 @@
 # lib/features/writing/views/writing_practice_page.dart
 
+P2：布局函数传入页面上下文并使用实际导航内容约束；
+全窗口路由不扣除不存在的导航。
+
 写作练习：来自课程单元的题目、一个输入框，以及一次对每句运行句子实验室自身分析的检查。功能本身在
 [`../../../../features/writing-practice.md`](../../../../features/writing-practice.md) 中描述。
 

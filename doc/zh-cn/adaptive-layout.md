@@ -1,5 +1,7 @@
 # 自适应布局
 
+P2 使用公共导航和实际内容约束，见 [shared-ui.md](shared-ui.md)。
+
 公共实现归属及全新克隆的接入说明见 [shared-ui.md](shared-ui.md)。
 
 这是全应用的规则，决定**布局何时可以分栏**——五十音页面和学习仪表盘分成两列，单词和语法列表分成多列，设置页面分成两个窗格（pane），在折叠屏设备的内屏、平板或桌面窗口上——以及一旦可以，**得到几列**。第二条更窄的规则决定**导航放在哪里**。全部位于 [`lib/shared/utils/adaptive_layout.dart`](functions/shared/utils/adaptive_layout.md)，该模块的各个决策函数刻意除 `dart:core` 外不导入任何东西，使每个决策都可以在没有组件（widget）树的情况下直接单元测试（唯一的例外是需要 `BuildContext` 的内边距辅助函数 `navBarAwarePadding`，它导入 `flutter/widgets.dart`）。

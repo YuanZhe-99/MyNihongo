@@ -381,7 +381,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
       );
     }
 
-    final contentWidth = shellContentWidth(screen.width);
+    final contentWidth = shellContentWidth(screen.width, context: context);
     return Scaffold(
       appBar: AppBar(title: Text(l10n.settingsTitle)),
       body: Row(

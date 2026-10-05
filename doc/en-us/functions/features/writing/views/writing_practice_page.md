@@ -1,5 +1,8 @@
 # lib/features/writing/views/writing_practice_page.dart
 
+P2: layout helpers now receive this page context and use actual shell constraints;
+full-window routes do not subtract navigation they do not contain.
+
 Writing practice: a prompt from a lesson unit, a field, and a check that runs the sentence lab's own
 analysis over each sentence. The feature is described in
 [`../../../../features/writing-practice.md`](../../../../features/writing-practice.md).

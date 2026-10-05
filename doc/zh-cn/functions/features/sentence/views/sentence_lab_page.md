@@ -1,5 +1,8 @@
 # lib/features/sentence/views/sentence_lab_page.dart
 
+P2：布局函数传入页面上下文并使用实际导航内容约束；
+全窗口路由不扣除不存在的导航。
+
 句子实验室：输入一个句子，看看它由什么组成。位于 `/lab` 的全屏路由，在导航外壳之外。
 
 功能描述见 [../../../../features/sentence-lab.md](../../../../features/sentence-lab.md)；本页记录各项声明。

@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:myapps_ui/myapps_ui.dart' show MyAppsShellLayout;
 import 'package:myapps_adaptive/myapps_adaptive.dart';
 
 export 'package:myapps_adaptive/myapps_adaptive.dart';
@@ -36,14 +37,18 @@ const referenceTileMinWidth = 320.0;
 const settingsRightPaneMinWidth = 280.0;
 
 /// Purpose: Return the width a shell page's content actually receives.
-/// Inputs: `screenWidth` — the whole screen width in logical pixels.
+/// Inputs: `screenWidth` — full window width; `context` — actual page context.
 /// Returns: `double`, never negative.
 /// Side effects: None.
-/// Notes: Subtracts the navigation rail when the shell is showing one. Pass the
+/// Notes: Context reads measured shell width; outside a shell uses full width.
+/// The context-free form retains the legacy width rule for compatibility. Pass the
 /// result wherever a capacity is being computed; keep passing the untouched
 /// screen size to [canSplitLayout], which asks about the window's shape rather
 /// than about the room left over inside it.
-double shellContentWidth(double screenWidth) {
+double shellContentWidth(double screenWidth, {BuildContext? context}) {
+  if (context != null) {
+    return MyAppsShellLayout.maybeOf(context)?.contentWidth ?? screenWidth;
+  }
   final width = useNavigationRail(screenWidth)
       ? screenWidth - navRailWidth
       : screenWidth;
@@ -51,7 +56,7 @@ double shellContentWidth(double screenWidth) {
 }
 
 /// Purpose: Return the bottom padding a shell page's scrolling list needs.
-/// Inputs: `screenWidth` — the whole screen width in logical pixels.
+/// Inputs: `screenWidth` — full window width; optional page `context`.
 /// Returns: `double`.
 /// Side effects: None.
 /// Notes: Pages reserve breathing room below a list's last rows. A navigation
@@ -60,8 +65,12 @@ double shellContentWidth(double screenWidth) {
 /// 704 logical pixels tall. Since 0.6.1 the Expressive bottom bar floats over the
 /// page; its height is added on top of this value by [navBarAwarePadding],
 /// which every caller wraps around it.
-double shellListBottomInset(double screenWidth) =>
-    useNavigationRail(screenWidth) ? 16.0 : 80.0;
+double shellListBottomInset(double screenWidth, {BuildContext? context}) =>
+    (context == null
+        ? useNavigationRail(screenWidth)
+        : MyAppsShellLayout.maybeOf(context)?.hasRail ?? false)
+    ? 16.0
+    : 80.0;
 
 /// Purpose: Return the width a reference page's content column gets.
 /// Inputs: `screenWidth` — the whole screen width in logical pixels;
@@ -74,8 +83,10 @@ double shellListBottomInset(double screenWidth) =>
 double referenceContentWidth(
   double screenWidth, {
   double horizontalPadding = 32.0,
+  BuildContext? context,
 }) {
-  final available = shellContentWidth(screenWidth) - horizontalPadding;
+  final available =
+      shellContentWidth(screenWidth, context: context) - horizontalPadding;
   if (available <= 0) return 0;
   return available > pageMaxContentWidth ? pageMaxContentWidth : available;
 }

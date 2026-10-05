@@ -85,7 +85,12 @@ class QuizModesPage extends ConsumerWidget {
                   onChanged: null,
                 ),
           ],
-          SizedBox(height: shellListBottomInset(MediaQuery.sizeOf(context).width)),
+          SizedBox(
+            height: shellListBottomInset(
+              MediaQuery.sizeOf(context).width,
+              context: context,
+            ),
+          ),
         ],
       ),
     );

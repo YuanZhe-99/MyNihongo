@@ -1,7 +1,13 @@
 # Version history
 
+## 0.7.1 — P2 navigation
+
+P2 adopts MyApps-UI `v0.1.1`, published to both remotes before app pointer updates. Shared navigation preserves app routes, optional destinations, badges and callbacks. Pages read actual shell content constraints; full-window routes subtract no rail. A stable content slot retains page state during resize, style and left/right rail changes. Split thresholds and data formats remain unchanged. Version `0.7.1+30`.
+
 Release-by-release summary of MyNihongo!!!!!. Useful for understanding *why* a behavior exists
 before changing it.
+
+Local verification: analysis passed; full Flutter suite 1154 passed, 1 skipped.
 
 ## Repository caveat
 

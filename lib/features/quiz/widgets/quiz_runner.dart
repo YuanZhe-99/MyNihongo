@@ -429,7 +429,7 @@ class _QuizRunnerState extends ConsumerState<QuizRunner> {
         children: [prompt, const SizedBox(height: 20), answers],
       );
     } else {
-      final content = referenceContentWidth(screen.width);
+      final content = referenceContentWidth(screen.width, context: context);
       layout = Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

@@ -1,5 +1,8 @@
 # lib/features/grammar/views/grammar_page.dart
 
+P2: layout helpers now receive this page context and use actual shell constraints;
+full-window routes do not subtract navigation they do not contain.
+
 `GrammarPage` is the fourth tab: a searchable, level-filterable browser over
 `ContentCatalog.grammar`. It watches `contentCatalogProvider`, shows a spinner or an error line while
 the catalog is unavailable, and otherwise renders a header (search field, level chips, count) above

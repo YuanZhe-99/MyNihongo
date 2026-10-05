@@ -1,5 +1,8 @@
 # lib/features/quiz/widgets/quiz_runner.dart
 
+P2: layout helpers now receive this page context and use actual shell constraints;
+full-window routes do not subtract navigation they do not contain.
+
 Runs one session on screen: the question, the answer controls, and the feedback
 between them. Splits into two panes when the window is the right shape and stacks
 otherwise; the gate is `canSplitLayout`, the same one every other split uses.

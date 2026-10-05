@@ -1,5 +1,8 @@
 # lib/features/quiz/views/quiz_modes_page.dart
 
+P2：布局函数传入页面上下文并使用实际导航内容约束；
+全窗口路由不扣除不存在的导航。
+
 设置中按内容库分组、开关各种提问方式的页面。
 
 与 WebDAV 页和备份页一样是二级页面：窄窗口全屏压栈，宽窗口承载于详情窗格，走的是同一套 `_SettingsDetail` 机制。

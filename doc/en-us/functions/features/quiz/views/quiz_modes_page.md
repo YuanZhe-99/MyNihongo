@@ -1,5 +1,8 @@
 # lib/features/quiz/views/quiz_modes_page.dart
 
+P2: layout helpers now receive this page context and use actual shell constraints;
+full-window routes do not subtract navigation they do not contain.
+
 The Settings page that switches ways of asking on and off, grouped by catalog.
 
 A second-level page like the WebDAV and backup pages: pushed full-screen on a

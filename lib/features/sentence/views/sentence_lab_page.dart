@@ -321,7 +321,9 @@ class _SentenceLabPageState extends ConsumerState<SentenceLabPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            width: labInputPaneWidth(shellContentWidth(screen.width)),
+            width: labInputPaneWidth(
+              shellContentWidth(screen.width, context: context),
+            ),
             child: ListView(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
               children: [

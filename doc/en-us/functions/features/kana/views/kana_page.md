@@ -1,5 +1,8 @@
 # lib/features/kana/views/kana_page.dart
 
+P2: layout helpers now receive this page context and use actual shell constraints;
+full-window routes do not subtract navigation they do not contain.
+
 `KanaPage` is the second tab: a UI-only hiragana/katakana quick reference over the catalog in
 `features/kana/models/kana.dart`. It renders the script switch, the search field, the three tables
 (when the query is empty), the search-results grid (when it isn't), and a set of pronunciation-rule

@@ -1,5 +1,8 @@
 # lib/features/learn/views/learn_page.dart
 
+P2: layout helpers now receive this page context and use actual shell constraints;
+full-window routes do not subtract navigation they do not contain.
+
 `LearnPage` is the first tab and the app's home: a dashboard of four cards — catalog counts (kana,
 words, grammar points), progress counts (items tracked and mastered, or an honest "nothing tracked
 yet"), quick links to the three reference tabs, and the roadmap. It watches

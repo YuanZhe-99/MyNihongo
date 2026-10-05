@@ -13,6 +13,10 @@ below records is added to it in the same change, with its date.
 
 ## Principles
 
+2026-10-04 P2: navigation rendering is app-independent and content width is measured
+inside the shell. Pages outside the shell use the full window; the old context-free
+helper stays for compatibility. All later P milestones increment patch versions.
+
 2026-10-04: Theme and common adaptive calculations now come from MyApps-UI
 `v0.1.0`. Existing facades preserve caller APIs and brand identity. Library
 publication precedes app pointer updates; business layout and profiles stay app-owned.

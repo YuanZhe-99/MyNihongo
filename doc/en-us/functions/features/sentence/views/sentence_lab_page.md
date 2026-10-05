@@ -1,5 +1,8 @@
 # lib/features/sentence/views/sentence_lab_page.dart
 
+P2: layout helpers now receive this page context and use actual shell constraints;
+full-window routes do not subtract navigation they do not contain.
+
 The sentence lab: type a sentence, see what it is made of. A full-screen route at `/lab`, outside
 the navigation shell.
 
