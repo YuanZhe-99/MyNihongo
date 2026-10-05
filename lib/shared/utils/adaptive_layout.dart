@@ -111,13 +111,12 @@ int referenceColumnCount({
   required double contentWidth,
   int preference = listColumnsAuto,
 }) {
-  if (!canSplitLayout(screenWidth, screenHeight)) return 1;
-  final capacity = columnCapacity(
-    contentWidth,
+  return resolveLayoutColumns(
+    allowSplit: canSplitLayout(screenWidth, screenHeight),
+    contentWidth: contentWidth,
     minItemWidth: referenceTileMinWidth,
+    preference: preference,
   );
-  if (preference == listColumnsAuto) return capacity;
-  return preference.clamp(1, capacity);
 }
 
 /// The narrowest a quiz answer pane may be before splitting stops paying.

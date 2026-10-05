@@ -1,5 +1,7 @@
 # lib/features/settings/views/license_page.dart
 
+The notice includes MyApps-UI, all three consumed packages, source and GPL v3 URLs.
+
 `LicensePage` shows the GPLv3 notice for MyNihongo!!!!! as selectable text under an app bar. It is
 one of the two second-level settings pages, pushed full-screen on a narrow window and hosted in the
 detail pane on a wide one (see [settings_page.md](settings_page.md)). Third-party content

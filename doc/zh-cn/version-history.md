@@ -1,5 +1,11 @@
 # 版本历史
 
+## 0.7.4 — P5 分区与共享授权署名
+
+自动或用户选择列数及显示特征感知的设置设计分栏使用 MyApps-UI v0.1.5。
+补充源码和 GPL v3 授权署名。2026-10-05 核对 Google Maven，保留
+genai-prompt 1.0.0-beta4 及 genai-proofreading 1.0.0-beta1。
+
 ## 0.7.3 — 公共设置与目录
 
 - 接入 MyApps-UI v0.1.4 设置组件和公共 ARB 检查。

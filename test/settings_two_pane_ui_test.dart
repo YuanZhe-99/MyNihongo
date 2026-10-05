@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:ui' show DisplayFeature, DisplayFeatureType, DisplayFeatureState;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -64,7 +65,7 @@ void main() {
     if (tempDir.existsSync()) tempDir.deleteSync(recursive: true);
   });
 
-  Future<void> pumpAt(WidgetTester tester, double width, double height) async {
+  Future<void> pumpAt(WidgetTester tester, double width, double height, {DisplayFeature? feature}) async {
     tester.view.devicePixelRatio = 1.0;
     tester.view.physicalSize = Size(width, height);
     addTearDown(tester.view.reset);
@@ -72,12 +73,16 @@ void main() {
     // frames have to run outside the binding's fake-async zone.
     await tester.runAsync(() async {
       await tester.pumpWidget(
-        const ProviderScope(
+        ProviderScope(
           child: MaterialApp(
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            locale: Locale('zh'),
-            home: SettingsPage(),
+            locale: const Locale('zh'),
+            builder: (context, child) => MediaQuery(
+              data: MediaQuery.of(context).copyWith(displayFeatures: [if (feature != null) feature]),
+              child: child!,
+            ),
+            home: const SettingsPage(),
           ),
         ),
       );
@@ -88,6 +93,20 @@ void main() {
     });
     await tester.pumpAndSettle();
   }
+
+  testWidgets('settings avoids a vertical hinge and uses one pane when capacity fails', (tester) async {
+    await pumpAt(tester, 1000, 720, feature: const DisplayFeature(
+      bounds: Rect.fromLTWH(480, 0, 20, 720), type: DisplayFeatureType.hinge,
+      state: DisplayFeatureState.postureHalfOpened));
+    expect(find.text(placeholder), findsOneWidget);
+    expect(tester.getTopLeft(find.text(placeholder)).dx, greaterThanOrEqualTo(500));
+    expect(tester.takeException(), isNull);
+    await pumpAt(tester, 659, 791, feature: const DisplayFeature(
+      bounds: Rect.fromLTWH(450, 0, 20, 791), type: DisplayFeatureType.hinge,
+      state: DisplayFeatureState.postureHalfOpened));
+    expect(find.text(placeholder), findsNothing);
+    expect(tester.takeException(), isNull);
+  });
 
   /// Purpose: Bring a settings row into view before asserting on it.
   /// Inputs: `tester`, the row `title`.

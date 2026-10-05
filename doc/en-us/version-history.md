@@ -1,5 +1,11 @@
 # Version history
 
+## 0.7.4 — P5 regions and shared-license attribution
+
+Shared automatic/selected columns and feature-aware designed settings panes use
+MyApps-UI v0.1.5. Add explicit source and GPL v3 attribution. Google Maven checked
+on 2026-10-05: retain genai-prompt 1.0.0-beta4 and genai-proofreading 1.0.0-beta1.
+
 ## 0.7.3 — Shared settings and catalogs
 
 - Adopt MyApps-UI v0.1.4 settings components and common ARB checks.

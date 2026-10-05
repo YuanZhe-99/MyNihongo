@@ -1,5 +1,8 @@
 # Decisions
 
+2026-10-05: P5 shares reference column resolution and settings pane geometry.
+Keep learning-specific pane designs and saved preferences in the application.
+
 2026-10-04 P3: profile implementation is shared through storage/image callbacks and
 localized editor labels. App providers, picker and data modules remain adapters;
 profiles remain independent across apps and existing file formats are unchanged.
