@@ -1,5 +1,8 @@
 # lib/features/settings/views/settings_page.dart
 
+分组显示及单选分段委托 myapps_ui，应用保留文案、状态回调、路由和存储。
+shared_l10n_test 验证公共 ARB 值，见 [../../../../shared-ui.md](../../../../shared-ui.md)。
+
 P2：布局函数传入页面上下文并使用实际导航内容约束；
 全窗口路由不扣除不存在的导航。
 

@@ -1,5 +1,9 @@
 # lib/features/settings/views/settings_page.dart
 
+Group rendering and single-choice segments delegate to myapps_ui. The app
+retains labels, state callbacks, routes and storage. Common ARB values are validated
+by shared_l10n_test; see [../../../../shared-ui.md](../../../../shared-ui.md).
+
 P2: layout helpers now receive this page context and use actual shell constraints;
 full-window routes do not subtract navigation they do not contain.
 

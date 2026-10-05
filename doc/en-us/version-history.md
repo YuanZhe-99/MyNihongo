@@ -1,5 +1,11 @@
 # Version history
 
+## 0.7.3 — Shared settings and catalogs
+
+- Adopt MyApps-UI v0.1.4 settings components and common ARB checks.
+- Complete the extraction and remove the library's completed roadmap.
+- Google Maven checked on 2026-10-05: retain genai-prompt 1.0.0-beta4 and genai-proofreading 1.0.0-beta1, the latest published versions.
+
 ## 0.7.2 — P3 shared profile and avatar
 
 - Adopt MyApps-UI v0.1.2 through app storage, sync and localization adapters.
