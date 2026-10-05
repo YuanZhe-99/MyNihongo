@@ -1,5 +1,9 @@
 # lib/features/ai/services/ai_assist_service.dart
 
+Prompt and proofreading use MyApps-AI AiExecutionGate for single-flight execution,
+timeout cancellation and result invalidation. Refresh is disabled-gated; late status
+and download replies are dropped after disable or model preference changes.
+
 Owns the on-device AI policy: whether it may run at all, what each feature can do right now, and the
 one-at-a-time rule.
 
@@ -32,6 +36,7 @@ Consumers: `aicore_sentence_enhancer.dart`, `ai_settings_tiles.dart`, `sentence_
 | `proofread` | method | B | Ask for corrected versions of one sentence. |
 | `cancel` | method | B | Stop whatever is running. |
 | `_requireEnabled` | method | B | Refuse every generating call while the feature is off. |
+| `_run` | method | B | Delegate capability status and execution to the shared gate. |
 | [`aiAssistServiceProvider`](#provider) | provider | A | The service, read by Settings and the lab. |
 
 ## Documentation

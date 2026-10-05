@@ -119,11 +119,49 @@ class _FakeGenAiBackend extends GenAiBackend {
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
+  test(
+    'disable during refresh stops before querying the other capability',
+    () async {
+      final backend = _FakeGenAiBackend()..statusGate = Completer<void>();
+      final service = AiAssistService(backend: backend);
+      final enabling = service.setEnabled(true);
+      await service.setEnabled(false);
+      backend.statusGate!.complete();
+      await enabling;
+      expect(backend.calls, ['status:prompt']);
+      expect(service.canExplain, isFalse);
+    },
+  );
+
+  test('cancelled explanation cannot publish a late answer', () async {
+    final backend = _FakeGenAiBackend(hang: true);
+    final service = AiAssistService(backend: backend);
+    await service.setEnabled(true);
+    final answer = service.explain('sentence');
+    final rejected = expectLater(
+      answer,
+      throwsA(
+        isA<GenAiException>().having(
+          (e) => e.failure,
+          'failure',
+          GenAiFailure.cancelled,
+        ),
+      ),
+    );
+    await pumpEventQueue();
+    await service.cancel();
+    backend.release.complete('obsolete');
+    await rejected;
+    expect(backend.cancels, 1);
+    expect(service.busy, isFalse);
+  });
+
   test('a service that was never switched on calls nothing', () async {
     final backend = _FakeGenAiBackend();
     final service = AiAssistService(backend: backend);
 
     expect(service.enabled, isFalse);
+    await service.refreshStatus();
     expect(service.canExplain, isFalse);
     await expectLater(
       service.explain('anything'),

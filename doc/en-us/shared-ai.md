@@ -2,7 +2,7 @@
 
 ## Ownership
 
-MyApps-AI v0.2.0 is pinned at `packages/myapps_ai`. Fresh checkouts run
+MyApps-AI v0.2.1 is pinned at `packages/myapps_ai`. Fresh checkouts run
 `git submodule update --init --recursive` before `flutter pub get`.
 The shared plugin registers com.yuanzhe.myapps_ai/genai; it owns Android Prompt,
 Japanese keyboard proofreading and native cancellation. The app backend adapter
@@ -20,6 +20,10 @@ failures retain their existing meaning. The native bridge now checks cancellatio
 before publishing success and retains the busy slot until a cancelled job exits.
 
 ## Verification
+
+The shared gate claims occupancy before status awaits, cancels on timeout and
+rejects obsolete replies. Refresh and download stop querying after disable.
+Practice-level interactive ordering and bounded background retries remain app-owned.
 
 Shared CI verifies Android release and Apple builds/weak linking. The consumer
 backend tests exercise the updated generate/info protocol and capability reports;

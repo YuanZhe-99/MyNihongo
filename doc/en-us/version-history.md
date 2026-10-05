@@ -1,5 +1,15 @@
 # Version history
 
+## 0.7.6 — Shared capability execution
+
+Use MyApps-AI v0.2.1's execution gate for Prompt and proofreading. Cancel on
+timeout, reject stale results after cancellation or preference changes, and stop
+status/download queries after disable. Keep practice ordering and teaching rules.
+Retain the Google Maven versions checked on 2026-10-05: genai-prompt beta4 and
+genai-proofreading beta1.
+Final analysis and release-version checks passed. The serial full suite passed
+1158 tests (1 skipped); concurrent runs encountered intermittent shader/layout failures.
+
 ## 0.7.5 — Shared native system AI
 
 Adopt MyApps-AI v0.2.0 native plugins through the existing app backend contract.

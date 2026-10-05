@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:myapps_ai/myapps_ai.dart' show AiExecutionGate;
 
 import '../../../shared/utils/platform_capabilities.dart';
 import 'genai_backend.dart';
@@ -59,13 +60,13 @@ class AiAssistService extends ChangeNotifier {
   bool _preferFast = false;
   GenAiDownload? _download;
   GenAiFeature? _downloading;
-  bool _busy = false;
+  final _execution = AiExecutionGate();
 
   /// Whether the learner turned on-device AI on. Off until they do.
   bool get enabled => _enabled;
 
   /// Whether a generation or a download is running.
-  bool get busy => _busy;
+  bool get busy => _execution.busy || _downloading != null;
 
   /// The feature currently downloading, if any.
   GenAiFeature? get downloadingFeature => _downloading;
@@ -107,6 +108,8 @@ class AiAssistService extends ChangeNotifier {
   /// every other preference.
   Future<void> setPreferFast(bool value) async {
     if (_preferFast == value) return;
+    _execution.invalidate();
+    if (busy) await _backend.cancel();
     _preferFast = value;
     if (_enabled) {
       await refreshStatus();
@@ -147,6 +150,7 @@ class AiAssistService extends ChangeNotifier {
   /// every other preference.
   Future<void> setEnabled(bool value) async {
     if (_enabled == value) return;
+    _execution.invalidate();
     _enabled = value;
     notifyListeners();
     if (value) {
@@ -154,6 +158,7 @@ class AiAssistService extends ChangeNotifier {
     } else {
       await _backend.cancel();
       _status.clear();
+      _coreInfo = null;
       notifyListeners();
     }
   }
@@ -167,6 +172,8 @@ class AiAssistService extends ChangeNotifier {
   /// remembered "available" would turn that into an error the learner cannot
   /// interpret.
   Future<void> refreshStatus() async {
+    if (!_enabled) return;
+    final epoch = _execution.generation;
     if (!platformMayHaveOnDeviceModel) {
       _status
         ..clear()
@@ -181,13 +188,17 @@ class AiAssistService extends ChangeNotifier {
       // Forced: this is the deliberate refresh — Settings opening, the switch
       // going on, the Check again button — and it is the only path that probes
       // every model variant rather than trusting the one already serving.
-      _status[feature] = await _backend.statusReport(
+      final report = await _backend.statusReport(
         feature,
         force: true,
         preferFast: _preferFast,
       );
+      if (!_enabled || epoch != _execution.generation) return;
+      _status[feature] = report;
     }
-    _coreInfo = await _backend.coreInfo();
+    final info = await _backend.coreInfo();
+    if (!_enabled || epoch != _execution.generation) return;
+    _coreInfo = info;
     notifyListeners();
   }
 
@@ -199,8 +210,8 @@ class AiAssistService extends ChangeNotifier {
   /// the one action here that uses the network. Started only from the button
   /// in Settings, never on the learner's behalf.
   Future<bool> download(GenAiFeature feature) async {
-    if (!_enabled || _busy) return false;
-    _busy = true;
+    if (!_enabled || busy) return false;
+    final epoch = _execution.generation;
     _downloading = feature;
     _download = const GenAiDownload(bytes: 0, total: -1);
     notifyListeners();
@@ -208,6 +219,7 @@ class AiAssistService extends ChangeNotifier {
       await _backend.download(
         feature,
         onProgress: (bytes, total) {
+          if (!_enabled || epoch != _execution.generation) return;
           _download = GenAiDownload(
             bytes: bytes,
             total: total > 0 ? total : (_download?.total ?? -1),
@@ -215,13 +227,20 @@ class AiAssistService extends ChangeNotifier {
           notifyListeners();
         },
       );
-      _status[feature] = await _backend.statusReport(feature);
+      if (!_enabled || epoch != _execution.generation) return false;
+      final report = await _backend.statusReport(feature);
+      if (!_enabled || epoch != _execution.generation) return false;
+      _status[feature] = report;
       return statusOf(feature) == GenAiStatus.available;
     } on GenAiException {
-      _status[feature] = await _backend.statusReport(feature);
+      if (_enabled && epoch == _execution.generation) {
+        final report = await _backend.statusReport(feature);
+        if (_enabled && epoch == _execution.generation) {
+          _status[feature] = report;
+        }
+      }
       return false;
     } finally {
-      _busy = false;
       _downloading = null;
       _download = null;
       notifyListeners();
@@ -240,33 +259,42 @@ class AiAssistService extends ChangeNotifier {
   /// second call arriving meanwhile is refused as busy. Nothing generated is
   /// stored anywhere.
   Future<String> explain(String prompt, {int? maxOutputTokens}) async {
+    return _run(
+      GenAiFeature.prompt,
+      () => _backend.explain(
+        prompt,
+        maxOutputTokens: maxOutputTokens ?? defaultMaxOutputTokens,
+      ),
+    );
+  }
+
+  /// Purpose: Execute one capability through shared gate. Inputs: feature, operation.
+  /// Returns: Result. Side effects: Queries and invokes backend. Notes: No persistence.
+  Future<T> _run<T>(GenAiFeature feature, Future<T> Function() operation) {
     _requireEnabled();
-    if (_busy) throw const GenAiException(GenAiFailure.busy);
-    // Claimed before the status is awaited: two callers arriving together
-    // would otherwise both pass the check above and both run a model.
-    _busy = true;
-    notifyListeners();
-    try {
-      _status[GenAiFeature.prompt] = await _backend.statusReport(
-        GenAiFeature.prompt,
-        preferFast: _preferFast,
-      );
-      if (statusOf(GenAiFeature.prompt) != GenAiStatus.available) {
-        throw const GenAiException(GenAiFailure.unavailable);
-      }
-      return await _backend
-          .explain(
-            prompt,
-            maxOutputTokens: maxOutputTokens ?? defaultMaxOutputTokens,
-          )
-          .timeout(
-            timeout,
-            onTimeout: () => throw const GenAiException(GenAiFailure.timeout),
-          );
-    } finally {
-      _busy = false;
-      notifyListeners();
-    }
+    if (_downloading != null) throw const GenAiException(GenAiFailure.busy);
+    return _execution.run<T>(
+      enabled: () => _enabled,
+      unavailable: () => const GenAiException(GenAiFailure.unavailable),
+      occupied: () => const GenAiException(GenAiFailure.busy),
+      cancelled: () => const GenAiException(GenAiFailure.cancelled),
+      timedOut: () => const GenAiException(GenAiFailure.timeout),
+      cancel: _backend.cancel,
+      timeout: timeout,
+      changed: notifyListeners,
+      body: (current) async {
+        final report = await _backend.statusReport(
+          feature,
+          preferFast: _preferFast,
+        );
+        if (!current()) throw const GenAiException(GenAiFailure.cancelled);
+        _status[feature] = report;
+        if (report.status != GenAiStatus.available) {
+          throw const GenAiException(GenAiFailure.unavailable);
+        }
+        return operation();
+      },
+    );
   }
 
   /// How long an answer may be when the caller names no limit.
@@ -282,28 +310,7 @@ class AiAssistService extends ChangeNotifier {
   /// Side effects: Runs a model on the device.
   /// Notes: Same gate order as [explain].
   Future<List<String>> proofread(String sentence) async {
-    _requireEnabled();
-    if (_busy) throw const GenAiException(GenAiFailure.busy);
-    // Claimed before the status is awaited; see [explain].
-    _busy = true;
-    notifyListeners();
-    try {
-      _status[GenAiFeature.proofread] = await _backend.statusReport(
-        GenAiFeature.proofread,
-      );
-      if (statusOf(GenAiFeature.proofread) != GenAiStatus.available) {
-        throw const GenAiException(GenAiFailure.unavailable);
-      }
-      return await _backend
-          .proofread(sentence)
-          .timeout(
-            timeout,
-            onTimeout: () => throw const GenAiException(GenAiFailure.timeout),
-          );
-    } finally {
-      _busy = false;
-      notifyListeners();
-    }
+    return _run(GenAiFeature.proofread, () => _backend.proofread(sentence));
   }
 
   /// Purpose: Stop whatever is running.
@@ -313,7 +320,8 @@ class AiAssistService extends ChangeNotifier {
   /// Notes: Called when a page holding a pending result is disposed, so a
   /// model is not left running for an answer nobody will read.
   Future<void> cancel() async {
-    if (!_busy) return;
+    if (!busy) return;
+    _execution.invalidate();
     await _backend.cancel();
   }
 

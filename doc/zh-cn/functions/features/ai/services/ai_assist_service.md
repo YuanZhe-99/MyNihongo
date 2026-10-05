@@ -1,5 +1,9 @@
 # lib/features/ai/services/ai_assist_service.dart
 
+
+Prompt 和校对使用 MyApps-AI AiExecutionGate 处理单请求执行、超时取消和结果失效。
+刷新受关闭门控限制，关闭或模型偏好变更后丢弃晚到状态和下载回复。
+
 持有端侧 AI 的策略：它是否可以运行、每项功能此刻能做什么，以及同时只跑一个的规则。
 
 与 `TtsService` 和 `SpeechRecognitionService` 一样，是一个可注入后端的单例，因此 widget 测试无需设备就能驱动每一条分支。
@@ -29,6 +33,7 @@
 | `proofread` | 方法 | B | 为一个句子索取修改后的写法。 |
 | `cancel` | 方法 | B | 停止正在进行的操作。 |
 | `_requireEnabled` | 方法 | B | 功能关闭时拒绝每一个生成调用。 |
+| `_run` | 方法 | B | 将能力状态及执行委托给共享门控。 |
 | [`aiAssistServiceProvider`](#provider) | provider | A | 该服务，供设置页与实验室读取。 |
 
 ## 文档
