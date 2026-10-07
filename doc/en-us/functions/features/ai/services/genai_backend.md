@@ -100,3 +100,6 @@ about the platform's reply.
   answers `unknown` for the same reason. The `unsupported` short-circuit is what keeps the channel
   untouched on Windows, macOS and iOS, where it does not exist and every call would raise
   `MissingPluginException`.
+
+
+Current integration uses MyApps-AI v0.5.2, explicit platform injection, app-owned source routing and the unified settings skeleton. WebDAV entry points require device-local notice acknowledgement before any network request; see [sync.md](../../../sync.md).

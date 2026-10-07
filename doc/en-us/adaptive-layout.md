@@ -281,3 +281,7 @@ one point: the aspect test.** Width alone cannot give the Fold 8 two different a
 orientations, and that behaviour is the requirement the rule exists to satisfy. Everything else
 follows Google: the width and height floors are its breakpoints, the column capacity is its feed
 guidance, and the navigation rail at medium width and up is its recommendation verbatim.
+
+## Model management
+
+Local model management is a pushed, scrollable route without a split breakpoint. Shared model tiles use the available content width; the parent settings pane retains its existing geometry. Online source management in MyAnime uses the shared scrollable editor.

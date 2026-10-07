@@ -275,3 +275,5 @@ WebDAV 同步引擎、备份引擎、ZIP 传输引擎和自动同步调度器**�
 - **未知 JSON 字段：** 通过 `extraJson` 模式保留（见 [`data-formats.md`](data-formats.md)），使旧版应用在正常保存、导入或同步合并时不会删除新字段。
 - **内容 id 是稳定的。** 已发布的 `kana:`、`vocab:` 或 `grammar:` id 绝不重命名；进度以它为键。
 - **除了向用户自己的服务器做 WebDAV 同步，没有任何东西离开设备。** 计划中的语音与分析功能在设备上运行。
+
+AI 来源路由与 WebDAV 设备确认：见 [shared-ai.md](shared-ai.md) 与 [sync.md](sync.md)。

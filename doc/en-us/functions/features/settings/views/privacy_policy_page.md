@@ -16,3 +16,6 @@ Since 0.6.1 the page's scroll padding is wrapped in `navBarAwarePadding(context,
 | `PrivacyPolicyPage.new` | constructor | B | Create a privacy policy page instance. |
 | `PrivacyPolicyPage.build` | method (widget build) | B | Build the privacy policy page in the active language. |
 | `PrivacyPolicyPage._getText` | method | B | Pick the policy text for a locale with one switch on the language (`ja`, then `zh` split by country into `zh` and `zh_TW`); English is the fallback. |
+
+
+Current integration uses MyApps-AI v0.5.2, explicit platform injection, app-owned source routing and the unified settings skeleton. WebDAV entry points require device-local notice acknowledgement before any network request; see [sync.md](../../../sync.md).

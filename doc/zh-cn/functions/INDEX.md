@@ -1,5 +1,6 @@
 # MyNihongo `lib/` 函数索引
 
+
 WebDAVConfigPage.build 将控件委托给 myapps_data，AiSettingsTiles.build 将通用
 偏好和说明委托给 myapps_ai_ui。声明数量不变。
 
@@ -9,7 +10,7 @@ WebDAVConfigPage.build 将控件委托给 myapps_data，AiSettingsTiles.build �
 
 这是 MyNihongo 仓库中 `lib/` 手写函数解释层文档的顶层索引。每行链接到 `doc/zh-cn/functions/` 下镜像 `lib/` 树的逐源文件页面（`.dart` 换成 `.md`）。
 
-**总计：** 仓库的 `/// Purpose:` 注释数为 **1250**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **1381** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
+**历史提取总计：** 仓库的 `/// Purpose:` 注释数为 **1250**（按 `AGENTS.md` 中的函数解释层约定，排除生成的 `lib/l10n/` 代码——见 [l10n/INDEX.md](l10n/INDEX.md)）。下方各行合计 **1381** 个已记录声明。两个数字分别测量，并不要求完全相等：匿名回调可能带有 `/// Purpose:` 行却没有索引行，而库级文档头有索引行却不带该注释。
 
 | Tier | 计数 |
 |---|---|
@@ -29,6 +30,9 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 
 | 源文件 | 页面 | 声明数 | Tier A 计数 |
 |---|---|---|---|
+| `lib/features/ai/services/ai_source_backend.dart` | [features/ai/services/ai_source_backend.md](features/ai/services/ai_source_backend.md) | 21 | 0 |
+| `lib/features/ai/widgets/ai_source_controls.dart` | [features/ai/widgets/ai_source_controls.md](features/ai/widgets/ai_source_controls.md) | 4 | 0 |
+| `lib/shared/services/webdav_privacy.dart` | [shared/services/webdav_privacy.md](shared/services/webdav_privacy.md) | 3 | 0 |
 | `lib/main.dart` | [main.md](main.md) | 1 | 0 |
 
 ## app/
@@ -232,3 +236,4 @@ find lib -name "*.dart" -not -path "lib/l10n/*" | xargs grep -h '/// Purpose:' |
 | `tool/draft_inputs.dart` | [tool/draft_inputs.md](tool/draft_inputs.md) | 15 | 2 |
 | `tool/merge_drafts.dart` | [tool/merge_drafts.md](tool/merge_drafts.md) | 16 | 2 |
 | `tool/generate_ios_icons.dart` | 未编写文档 | — | — |
+当前逐文件表合计：152 个文件、1400 个声明（Tier A 297，Tier B 1103）。

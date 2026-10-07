@@ -174,7 +174,8 @@ class AiAssistService extends ChangeNotifier {
   Future<void> refreshStatus() async {
     if (!_enabled) return;
     final epoch = _execution.generation;
-    if (!platformMayHaveOnDeviceModel) {
+    if (!platformMayHaveOnDeviceModel &&
+        _backend is! MethodChannelGenAiBackend) {
       _status
         ..clear()
         ..addAll({

@@ -1,5 +1,9 @@
 # Decisions
 
+2026-10-07: Add explicitly downloaded local CPU LLMs through shared model management,
+available on supported native platforms. Keep system proofreading independent;
+no online AI provider is registered. Source/model choices and files stay device-local.
+
 2026-10-05: Complete settings presentation ownership using DATA WebDAV controls
 and AI preference/model-note widgets. Keep independent feature availability and
 download gating in the application adapters; shared widgets perform no I/O.
@@ -283,7 +287,7 @@ them is needed is treated as a new request.
 | 2026-09-06 | The free turns are not stored, though the "only the input is stored" rule would allow it | The scenario page has written nothing to disk since it was built, and a chat line out of its situation is not a piece of writing anybody would re-open. Keeping it storage-free also keeps its test free of a path provider |
 | 2026-09-06 | Proofreading runs before the reply, never beside it | AICore serves one inference to an app at a time, so a proofread fired alongside the reply comes back `busy`. A proofread that fails is swallowed: the conversation is the feature, and a missing correction is not worth interrupting it for |
 | 2026-09-06 | The scenario prompt truncates its script from the oldest end, whole lines at a time | A conversation has no natural length, so something gives as it grows, and what a reply needs is the situation and what was just said. Cutting a line in half would leave the model reading a fragment as if it were speech |
-| 2026-09-24 | Phase 5 ships as three releases, one per milestone: `v0.5.0` (every platform builds in CI), `v0.5.1` (keyboard shortcuts), `v0.5.2` (Japanese UI and content) | Decided with the user. Each milestone is independently useful and independently verifiable, as Phase 4's were |
+| 2026-09-24 | Phase 5 ships as three releases, one per milestone: `v0.5.0` (every platform builds in CI), `v0.5.2` (keyboard shortcuts), `v0.5.2` (Japanese UI and content) | Decided with the user. Each milestone is independently useful and independently verifiable, as Phase 4's were |
 | 2026-09-24 | The Windows ARM64 job clones Flutter at the stable tag rather than using `subosito/flutter-action` or Flutter master | No Windows ARM64 SDK archive is published, so the action aborts on an ARM64 runner; forcing x64 keeps an x64 Dart SDK, and the build target follows the Dart VM's own architecture. A tag clone bootstraps the ARM64 Dart SDK, and a tag is immutable, so MyAnime's weekly cache has nothing to stabilise |
 | 2026-09-24 | Desktop and Apple jobs run on tags and `workflow_dispatch` only; the Android job keeps every push and pull request | Decided with the user. Five runners per push buy nothing that the Android job's analyze and test do not already catch; a release, or a deliberate dispatch, builds everything |
 | 2026-09-24 | No MSIX job — a narrowing of the 2026-09-03 row that listed "MSIX and Inno artefacts" for Phase 5 | No sibling builds one, and packaging needs a certificate the repository does not hold. `dart run msix:create` stays manual |

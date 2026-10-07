@@ -29,3 +29,6 @@ so its pages port unchanged. See [../../../sync.md](../../../sync.md).
 | `AutoSyncService.stop` | method | B | Stop the timers and stop observing the lifecycle. |
 | `AutoSyncService.notifySaved` | method | B | Schedule a debounced sync after a storage save; ignored before `start()`. |
 | `AutoSyncService.requestSyncNow` | method | B | Trigger a sync as soon as possible, skipping the debounce. |
+
+
+Current integration uses MyApps-AI v0.5.2, explicit platform injection, app-owned source routing and the unified settings skeleton. WebDAV entry points require device-local notice acknowledgement before any network request; see [sync.md](../../../sync.md).

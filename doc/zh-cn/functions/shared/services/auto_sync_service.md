@@ -24,3 +24,6 @@
 | `AutoSyncService.stop` | 方法 | B | 停止定时器并停止观察生命周期。 |
 | `AutoSyncService.notifySaved` | 方法 | B | 存储保存后安排防抖的同步；`start()` 之前忽略。 |
 | `AutoSyncService.requestSyncNow` | 方法 | B | 尽快触发同步，跳过防抖。 |
+
+
+当前接入 MyApps-AI v0.5.2，显式注入平台后端，使用应用所属来源路由与统一设置骨架。WebDAV 入口在任何网络请求前要求设备本地提醒确认；具体见同步概念文档。

@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:my_nihongo/l10n/app_localizations.dart';
 import 'package:my_nihongo/shared/views/webdav_config_page.dart';
+import 'package:my_nihongo/shared/services/webdav_privacy.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
 
@@ -37,6 +38,7 @@ void main() {
     appDir = Directory(p.join(tempDir.path, 'MyNihongo'))
       ..createSync(recursive: true);
     PathProviderPlatform.instance = _FakePathProvider(tempDir.path);
+    await WebDavPrivacy.store.acknowledge(WebDavPrivacy.noticeVersion);
   });
 
   tearDown(() {

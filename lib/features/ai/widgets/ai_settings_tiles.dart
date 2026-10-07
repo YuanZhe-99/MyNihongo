@@ -4,9 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../l10n/app_localizations.dart';
 import '../../../shared/providers/app_settings.dart';
-import '../../../shared/utils/platform_capabilities.dart';
 import '../services/ai_assist_service.dart';
 import '../services/genai_backend.dart';
+import 'ai_source_controls.dart';
 
 /// The Settings rows that configure on-device AI assistance.
 ///
@@ -80,74 +80,83 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
     final settings = ref.watch(appSettingsProvider);
     final notifier = ref.read(appSettingsProvider.notifier);
     final service = ref.watch(aiAssistServiceProvider);
 
-    if (!platformMayHaveOnDeviceModel) {
-      return ListTile(
-        leading: const Icon(Icons.auto_awesome_outlined),
-        title: Text(l10n.aiUnsupportedPlatform),
-        subtitle: Text(
-          l10n.aiEnableBody,
-          style: theme.textTheme.bodySmall?.copyWith(
-            color: theme.colorScheme.onSurfaceVariant,
-          ),
-        ),
+    return MyAppsAiSettingsSkeleton(
+      enabled: settings.aiAssistEnabled,
+      master: MyAppsAiPreference(
+        title: l10n.aiEnable,
+        description: l10n.aiEnableBody,
         isThreeLine: true,
-      );
-    }
-
-    return Column(
-      children: [
-        MyAppsAiPreference(
-          title: l10n.aiEnable,
-          description: l10n.aiEnableBody,
-          isThreeLine: true,
-          value: settings.aiAssistEnabled,
-          onChanged: notifier.setAiAssistEnabled,
+        value: settings.aiAssistEnabled,
+        onChanged: notifier.setAiAssistEnabled,
+      ),
+      source: [
+        AiSourceControls(
+          backend: MethodChannelGenAiBackend.sourceBackend,
+          onSelected: (id) async {
+            final backend = MethodChannelGenAiBackend.sourceBackend;
+            if (id == backend.selection.global) return;
+            await service.setEnabled(false);
+            await backend.select(id);
+            await service.setEnabled(settings.aiAssistEnabled);
+          },
         ),
-        if (settings.aiAssistEnabled) ...[
-          _featureRow(
-            context,
-            service,
-            GenAiFeature.prompt,
-            l10n.aiStatusPrompt,
-            debug: settings.debugMode,
+        if (MethodChannelGenAiBackend.hasSizeChoice(
+          service.reportOf(GenAiFeature.prompt).served,
+        ))
+          MyAppsAiPreference(
+            icon: Icons.speed_outlined,
+            title: l10n.aiPreferFast,
+            description: l10n.aiPreferFastBody,
+            value: settings.preferFastModel,
+            onChanged: service.busy ? null : notifier.setPreferFastModel,
           ),
-          _featureRow(
-            context,
-            service,
-            GenAiFeature.proofread,
-            l10n.aiStatusProofread,
-            debug: settings.debugMode,
-          ),
-          // Only where the device actually served both sizes. A device that
-          // serves one — the Galaxy Z Fold 8 serves the faster model and
-          // refuses the larger one — gets no control, because a switch that
-          // cannot change what is serving teaches the learner to distrust the
-          // page.
-          if (MethodChannelGenAiBackend.hasSizeChoice(
-            service.reportOf(GenAiFeature.prompt).served,
-          ))
-            MyAppsAiPreference(
-              icon: Icons.speed_outlined,
-              title: l10n.aiPreferFast,
-              description: l10n.aiPreferFastBody,
-              isThreeLine: true,
-              value: settings.preferFastModel,
-              onChanged: service.busy ? null : notifier.setPreferFastModel,
-            ),
-          MyAppsAiModelNotes(
-            downloadNote: l10n.aiDownloadNote,
-            storageNote: l10n.aiModelStorageNote,
-            diagnostic: settings.debugMode
-                ? _coreLine(l10n, service.coreInfo)
-                : null,
-          ),
-        ],
       ],
+      features: [
+        _featureRow(
+          context,
+          service,
+          GenAiFeature.prompt,
+          l10n.aiStatusPrompt,
+          debug: settings.debugMode,
+        ),
+        _featureRow(
+          context,
+          service,
+          GenAiFeature.proofread,
+          l10n.aiStatusProofread,
+          debug: settings.debugMode,
+        ),
+        // Only where the device actually served both sizes. A device that
+        // serves one — the Galaxy Z Fold 8 serves the faster model and
+        // refuses the larger one — gets no control, because a switch that
+        // cannot change what is serving teaches the learner to distrust the
+        // page.
+        MyAppsAiModelNotes(
+          downloadNote: l10n.aiDownloadNote,
+          storageNote: l10n.aiModelStorageNote,
+          diagnostic: settings.debugMode
+              ? _coreLine(l10n, service.coreInfo)
+              : null,
+        ),
+      ],
+      diagnostics: settings.debugMode
+          ? MyAppsAiDiagnostics(
+              title: l10n.aiSourceTitle,
+              groups: [
+                AiDiagnosticGroup(
+                  MethodChannelGenAiBackend.sourceBackend.selection.global,
+                  [
+                    for (final f in GenAiFeature.values)
+                      '${f.name}: ${service.statusOf(f).name} ${service.reportOf(f).detail ?? ''}',
+                  ],
+                ),
+              ],
+            )
+          : null,
     );
   }
 

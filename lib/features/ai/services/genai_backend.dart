@@ -1,7 +1,9 @@
 import 'package:flutter/services.dart';
 import 'package:myapps_ai/myapps_ai.dart' as shared;
+import 'package:myapps_ai_platform/myapps_ai_platform.dart' as platform;
 
 import '../../../shared/utils/platform_capabilities.dart';
+import 'ai_source_backend.dart';
 
 /// Which on-device model a call is about.
 ///
@@ -281,12 +283,12 @@ abstract class GenAiBackend {
 /// exist and every call would throw `MissingPluginException`.
 class MethodChannelGenAiBackend implements GenAiBackend {
   MethodChannelGenAiBackend([MethodChannel? channel])
-    : _shared = shared.MethodChannelGenAiBackend(
-        channel ?? const MethodChannel(channelName),
-      );
+    : _shared = channel == null
+          ? sourceBackend
+          : platform.MethodChannelGenAiBackend(channel);
 
   /// The channel name, matched by `GenAiChannel.CHANNEL` in Kotlin.
-  static const channelName = shared.MethodChannelGenAiBackend.channelName;
+  static const channelName = platform.MethodChannelGenAiBackend.channelName;
 
   /// Purpose: Say whether the served variants include both model sizes.
   /// Inputs: `served` — the platform's list, or null.
@@ -299,7 +301,8 @@ class MethodChannelGenAiBackend implements GenAiBackend {
   static bool hasSizeChoice(String? served) =>
       served != null && served.contains('/full') && served.contains('/fast');
 
-  final shared.MethodChannelGenAiBackend _shared;
+  static final sourceBackend = AiSourceBackend();
+  final shared.CapabilityGenAiBackend _shared;
 
   /// Purpose: Ask the platform for a feature's status.
   /// Inputs: `feature`.
@@ -324,7 +327,9 @@ class MethodChannelGenAiBackend implements GenAiBackend {
     bool force = false,
     bool preferFast = false,
   }) async {
-    if (!platformMayHaveOnDeviceModel) return GenAiStatusReport.unsupported;
+    if (!platformMayHaveOnDeviceModel && _shared is! AiSourceBackend) {
+      return GenAiStatusReport.unsupported;
+    }
     try {
       final report = await _shared.capabilityReport(
         shared.GenAiFeature.values.byName(feature.name),
@@ -386,7 +391,9 @@ class MethodChannelGenAiBackend implements GenAiBackend {
   /// it.
   @override
   Future<GenAiCoreInfo?> coreInfo() async {
-    if (!platformMayHaveOnDeviceModel) return null;
+    if (!platformMayHaveOnDeviceModel && _shared is! AiSourceBackend) {
+      return null;
+    }
     try {
       final info = await _shared.coreInfo();
       if (info == null) return null;
@@ -414,7 +421,7 @@ class MethodChannelGenAiBackend implements GenAiBackend {
     GenAiFeature feature, {
     void Function(int bytes, int total)? onProgress,
   }) async {
-    if (!platformMayHaveOnDeviceModel) {
+    if (!platformMayHaveOnDeviceModel && _shared is! AiSourceBackend) {
       throw const GenAiException(GenAiFailure.unavailable);
     }
     try {
@@ -436,7 +443,7 @@ class MethodChannelGenAiBackend implements GenAiBackend {
   /// variety in that answer is not a feature.
   @override
   Future<String> explain(String prompt, {int maxOutputTokens = 256}) async {
-    if (!platformMayHaveOnDeviceModel) {
+    if (!platformMayHaveOnDeviceModel && _shared is! AiSourceBackend) {
       throw const GenAiException(GenAiFailure.unavailable);
     }
     try {
@@ -477,7 +484,7 @@ class MethodChannelGenAiBackend implements GenAiBackend {
   /// there is nothing a caller could do about a failed cancel.
   @override
   Future<void> cancel() async {
-    if (!platformMayHaveOnDeviceModel) return;
+    if (!platformMayHaveOnDeviceModel && _shared is! AiSourceBackend) return;
     try {
       await _shared.cancel();
     } catch (_) {

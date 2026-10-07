@@ -69,3 +69,6 @@ M4.0a 又加上了 `served`，以及两个反方向传过去的参数。探测�
 - **算法：** 委托给 `statusReport` 并丢掉诊断信息。后者在不可能有端侧模型的平台上直接短路为 `unsupported`；否则把平台的状态字符串、以及任何错误，映射到枚举上。
 - **使用：** `AiAssistService.refreshStatus`，以及每次生成之前。
 - **说明：** 平台错误回答 `unreachable`，既不抛出，也不说成 `unavailable`：问不出来和被拒绝不是同一件事，而在这里抛异常只会迫使每个调用方捕获后说其中一句。本次构建不认识的状态字符串回答 `unknown`，理由相同。`unsupported` 短路则保证了在 Windows、macOS 和 iOS 上根本不触碰通道——那里没有这个通道，任何调用都会抛 `MissingPluginException`。
+
+
+当前接入 MyApps-AI v0.5.2，显式注入平台后端，使用应用所属来源路由与统一设置骨架。WebDAV 入口在任何网络请求前要求设备本地提醒确认；具体见同步概念文档。

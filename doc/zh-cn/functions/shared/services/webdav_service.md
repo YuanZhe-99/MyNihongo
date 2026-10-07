@@ -47,3 +47,6 @@
 - **Algorithm：** 复制 `success`、`error`、`warnings`；当 `pending` 非 null 时，读取 `pending.forModuleId(progressModuleId)?.state as ProgressMergeResult?` 并把引擎的待处理状态一并保留。
 - **Usage：** `sync`、`forceUpload`、`forceDownload`。
 - **Notes：** 引擎把应用的 `ProgressMergeResult` 作为不透明的 `state` 原样传递，这正是让冲突对话框在包不知道类型的情况下收到真正的 `StudyRecord` 的原因。
+
+
+当前接入 MyApps-AI v0.5.2，显式注入平台后端，使用应用所属来源路由与统一设置骨架。WebDAV 入口在任何网络请求前要求设备本地提醒确认；具体见同步概念文档。

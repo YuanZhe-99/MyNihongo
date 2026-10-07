@@ -75,3 +75,6 @@ P2：布局函数传入页面上下文并使用实际导航内容约束；
 - **Algorithm：** 选择为 null → 居中的图标和提示；否则 `Navigator(key: ValueKey(detail), onGenerateRoute: …)`。
 - **Usage：** 双栏 `build` 中右侧的 `Expanded` 子组件。
 - **Notes：** 嵌套 `Navigator` 给承载页面一条真实路由，因此调用 `Navigator.pop` 的页面仍能工作，而只有一条路由的导航器报告 `canPop == false`，因此承载页面的应用栏不会长出返回箭头。以选择为键使每次变化都销毁并重建。窗口收窄回单窗格时选择被保留，因此把设备合上再打开会恢复它。
+
+
+当前接入 MyApps-AI v0.5.2，显式注入平台后端，使用应用所属来源路由与统一设置骨架。WebDAV 入口在任何网络请求前要求设备本地提醒确认；具体见同步概念文档。

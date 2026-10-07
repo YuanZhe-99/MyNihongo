@@ -108,3 +108,6 @@ Since 0.6.1 the General section holds, below Interface style, the navigation-pos
   page's app bar grows no back arrow. Keying on the selection disposes and rebuilds on every change.
   The selection is kept when the window narrows back to one pane, so folding a device shut and
   opening it again restores it.
+
+
+Current integration uses MyApps-AI v0.5.2, explicit platform injection, app-owned source routing and the unified settings skeleton. WebDAV entry points require device-local notice acknowledgement before any network request; see [sync.md](../../../sync.md).

@@ -2,7 +2,7 @@ name: my_nihongo
 description: "MyNihongo!!!!! — Your Japanese learning companion"
 publish_to: 'none'
 
-version: 0.7.10+39
+version: 0.7.12+41
 
 environment:
   sdk: ^3.11.3
@@ -12,6 +12,16 @@ dependencies:
     path: packages/myapps_ai/packages/myapps_ai_ui
   myapps_ai:
     path: packages/myapps_ai/packages/myapps_ai
+  myapps_ai_platform:
+    path: packages/myapps_ai/packages/myapps_ai_platform
+  myapps_ai_llm:
+    path: packages/myapps_ai/packages/myapps_ai_llm
+  myapps_ai_llm_llama:
+    path: packages/myapps_ai/packages/myapps_ai_llm_llama
+  myapps_ai_models:
+    path: packages/myapps_ai/packages/myapps_ai_models
+  myapps_ai_local_ui:
+    path: packages/myapps_ai/packages/myapps_ai_local_ui
   myapps_profile:
     path: packages/myapps_ui/packages/myapps_profile
   # Shared theme and adaptive foundation, pinned by the MyApps-UI submodule.
@@ -78,6 +88,7 @@ dependencies:
   path_provider: ^2.1.5
   package_info_plus: ^9.0.0
   device_preview: ^1.2.0
+  http: ^1.6.0
 
 dev_dependencies:
   flutter_test:
@@ -89,7 +100,6 @@ dev_dependencies:
   msix: ^3.16.8
   # Used by the golden sync transcript harness and the backup/ZIP tests, which
   # drive the shared engines directly rather than through the UI.
-  http: ^1.6.0
   archive: ^4.0.0
   path_provider_platform_interface: ^2.1.3
 
@@ -110,7 +120,7 @@ msix_config:
   display_name: MyNihongo!!!!!
   publisher_display_name: yuanzhe
   identity_name: com.yuanzhe.mynihongo
-  msix_version: 0.7.10.0
+  msix_version: 0.7.12.0
   logo_path: assets/icon/app_icon.png
   capabilities: internetClient,microphone
   install_certificate: false

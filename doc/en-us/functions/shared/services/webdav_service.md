@@ -59,3 +59,6 @@ counted.
 - **Usage:** `sync`, `forceUpload`, `forceDownload`.
 - **Notes:** The engine carries the app's `ProgressMergeResult` through as opaque `state`, which is
   what lets the conflict dialog receive real `StudyRecord`s without the package knowing the type.
+
+
+Current integration uses MyApps-AI v0.5.2, explicit platform injection, app-owned source routing and the unified settings skeleton. WebDAV entry points require device-local notice acknowledgement before any network request; see [sync.md](../../../sync.md).

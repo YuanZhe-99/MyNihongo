@@ -379,3 +379,5 @@ feature area:
   is keyed by it.
 - **Nothing leaves the device** except WebDAV sync to the user's own server. Planned speech and
   analysis features run on-device.
+
+AI source routing and WebDAV device consent: see [shared-ai.md](shared-ai.md) and [sync.md](sync.md).

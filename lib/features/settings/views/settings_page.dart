@@ -562,8 +562,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
         // ── On-device AI ──
         // Android only: AICore exists nowhere else, and a section whose every
         // row reads "not available" is noise on a desktop.
-        if (platformMayHaveOnDeviceModel)
-          _buildSection(l10n.aiSection, const [AiSettingsTiles()]),
+        _buildSection(l10n.aiSection, const [AiSettingsTiles()]),
 
         // ── Data ──
         _buildSection(l10n.settingsData, [

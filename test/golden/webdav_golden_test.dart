@@ -23,6 +23,7 @@ import 'package:my_nihongo/app/data_modules.dart';
 import 'package:my_nihongo/shared/services/backup_service.dart';
 import 'package:my_nihongo/shared/services/import_export_service.dart';
 import 'package:my_nihongo/shared/services/webdav_service.dart';
+import 'package:my_nihongo/shared/services/webdav_privacy.dart';
 
 import 'fake_webdav_server.dart';
 import 'request_recorder.dart';
@@ -104,6 +105,7 @@ void main() {
   Future<_Sandbox> newSandbox() async {
     final dir = await Directory.systemTemp.createTemp('mynihongo_golden_');
     PathProviderPlatform.instance = _FakePathProvider(dir.path);
+    await WebDavPrivacy.store.acknowledge(WebDavPrivacy.noticeVersion);
     final server = FakeWebDAVServer();
     final recorder = RequestRecorder(server);
     return _Sandbox(dir, server, recorder);

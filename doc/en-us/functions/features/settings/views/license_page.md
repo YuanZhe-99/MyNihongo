@@ -23,3 +23,5 @@ Since M1.2 the page also carries a **Content licenses** section. JMdict and the 
 lists are CC BY-SA, which requires the attribution to travel with the app rather than sitting only
 in a repository file. The attribution block itself is a `const` string and is deliberately not
 translated: EDRDG's licence asks for the project to be named and linked as it words it.
+
+Includes llama.cpp MIT attribution and Apache-2.0 model provenance for explicitly downloaded Qwen3.5/Gemma 4 artifacts.

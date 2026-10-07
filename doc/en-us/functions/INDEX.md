@@ -1,5 +1,6 @@
 # MyNihongo `lib/` Function Index
 
+
 WebDAVConfigPage.build delegates controls to myapps_data; AiSettingsTiles.build
 delegates common preferences/notes to myapps_ai_ui. Declaration counts are unchanged.
 
@@ -11,7 +12,7 @@ This is the top-level index of the hand-written Function Explanation Layer docum
 `lib/` in the MyNihongo repo. Each row links to a per-source-file page under `doc/en-us/functions/`
 mirroring the `lib/` tree (with `.dart` replaced by `.md`).
 
-**Totals:** the repo's `/// Purpose:` comment count is **1250** (per the Function Explanation Layer
+**Historical extraction totals:** the repo's `/// Purpose:` comment count is **1250** (per the Function Explanation Layer
 convention in `AGENTS.md`, excluding generated `lib/l10n/` code — see [l10n/INDEX.md](l10n/INDEX.md)).
 The rows below sum to **1381** documented declarations. The two counts are measured separately and
 are not expected to match exactly: an anonymous callback can carry a `/// Purpose:` line without
@@ -21,7 +22,7 @@ earning an index row, and a library-level doc header earns a row without carryin
 |---|---|
 | Tier A (full entry: Purpose/Inputs/Returns/Side effects/Algorithm/Usage/Notes) | 297 |
 | Tier B (index row only) | 1084 |
-| **Total** | **1381** |
+| **Total** | **152** | **1400** | **297** | **1103** |
 
 These totals were last measured against the source tree at v0.6.1. If you change these numbers, measure them rather than adjusting them by hand:
 
@@ -36,6 +37,9 @@ in the sibling repos, so a file's count can exceed its function count by one or 
 
 | Source file | Page | Declarations | Tier A count |
 |---|---|---|---|
+| `lib/features/ai/services/ai_source_backend.dart` | [features/ai/services/ai_source_backend.md](features/ai/services/ai_source_backend.md) | 21 | 0 |
+| `lib/features/ai/widgets/ai_source_controls.dart` | [features/ai/widgets/ai_source_controls.md](features/ai/widgets/ai_source_controls.md) | 4 | 0 |
+| `lib/shared/services/webdav_privacy.dart` | [shared/services/webdav_privacy.md](shared/services/webdav_privacy.md) | 3 | 0 |
 | `lib/main.dart` | [main.md](main.md) | 1 | 0 |
 
 ## app/
@@ -239,3 +243,4 @@ Offline build scripts, outside `lib/` and outside the totals above.
 | `tool/draft_inputs.dart` | [tool/draft_inputs.md](tool/draft_inputs.md) | 15 | 2 |
 | `tool/merge_drafts.dart` | [tool/merge_drafts.md](tool/merge_drafts.md) | 16 | 2 |
 | `tool/generate_ios_icons.dart` | not documented | — | — |
+Current per-file table sum: 152 files, 1400 declarations (297 Tier A, 1103 Tier B).

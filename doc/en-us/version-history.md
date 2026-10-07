@@ -1,5 +1,11 @@
 # Version history
 
+## 0.7.12 — AI sources and WebDAV consent (2026-10-07)
+
+Complete P0/P1 (+0.0.2): explicit platform backend dependency, unified settings, local CPU models (Qwen3.5 0.8B/2B, Gemma 4 E2B, 4-bit), explicit downloads and device-local source persistence. D1 requires privacy acknowledgement before all WebDAV requests and visibly pauses existing configurations. Pin AI v0.5.2, UI v0.1.8, DATA v1.1.0.
+
+Google Maven index checked 2026-10-07: retain genai-prompt 1.0.0-beta4 and genai-proofreading 1.0.0-beta1, still the latest listed versions. System proofreading stays separate from local prompt generation.
+
 ## 0.7.10 — Compact horizontal settings choices
 
 Pin MyApps-UI v0.1.7 for centered wrapped labels and horizontal fold-pane choices.

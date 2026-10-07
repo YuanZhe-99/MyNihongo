@@ -305,7 +305,7 @@ void main() {
     debugDefaultTargetPlatformOverride = null;
   });
 
-  testWidgets('a platform with no on-device model shows no switch', (
+  testWidgets('Windows offers local models without probing while disabled', (
     tester,
   ) async {
     debugDefaultTargetPlatformOverride = TargetPlatform.windows;
@@ -313,8 +313,7 @@ void main() {
 
     await pumpSettings(tester);
 
-    expect(find.byType(SwitchListTile), findsNothing);
-    expect(find.text('This platform has no on-device model.'), findsOneWidget);
+    expect(find.byType(SwitchListTile), findsOneWidget);
     expect(tester.takeException(), isNull);
     debugDefaultTargetPlatformOverride = null;
   });
