@@ -68,6 +68,18 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
     if (mounted) setState(() {});
   }
 
+  /// Purpose: Return the app's current locale as a tag such as `zh_TW`.
+  /// Inputs: None.
+  /// Returns: `String`.
+  /// Side effects: None.
+  /// Notes: Internal helper used within this file only.
+  String _localeTag() {
+    final l = Localizations.localeOf(context);
+    return l.countryCode == null
+        ? l.languageCode
+        : '${l.languageCode}_${l.countryCode}';
+  }
+
   /// Purpose: Build the AI settings rows.
   /// Inputs: The build `context`.
   /// Returns: `Widget` — the switch, then one row per feature.
@@ -144,17 +156,16 @@ class _AiSettingsTilesState extends ConsumerState<AiSettingsTiles> {
         ),
       ],
       diagnostics: settings.debugMode
-          ? MyAppsAiDiagnostics(
-              title: l10n.aiSourceTitle,
-              groups: [
-                AiDiagnosticGroup(
-                  MethodChannelGenAiBackend.sourceBackend.selection.global,
-                  [
-                    for (final f in GenAiFeature.values)
-                      '${f.name}: ${service.statusOf(f).name} ${service.reportOf(f).detail ?? ''}',
-                  ],
-                ),
-              ],
+          ? MyAppsAiDiagnosticsView(
+              load: () => MethodChannelGenAiBackend.sourceBackend.diagnostics(
+                localeTag: _localeTag(),
+              ),
+              labels: AiDiagnosticsLabels(
+                title: l10n.aiTechnicalDetails,
+                copy: l10n.aiDiagnosticsCopy,
+                copied: l10n.aiDiagnosticsCopied,
+                notIncluded: l10n.aiDiagnosticsNotIncluded,
+              ),
             )
           : null,
     );

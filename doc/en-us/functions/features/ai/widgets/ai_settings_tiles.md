@@ -31,6 +31,8 @@ is `AppSettings.debugMode`, unlocked by tapping the version row eight times — 
 [`../../../shared/providers/app_settings.md`](../../../shared/providers/app_settings.md) and
 [`../../settings/views/settings_page.md`](../../settings/views/settings_page.md).
 
+Since v0.8.0 the debug-mode technical details are `MyAppsAiDiagnosticsView` over `MethodChannelGenAiBackend.sourceBackend.diagnostics(localeTag: ...)`: every included backend (app, selection, system AI, llama.cpp library and devices, each local model), copyable, still shown only when `settings.debugMode` is set. The `aiTechnicalDetails` string titles it.
+
 ## Declarations
 
 | Declaration | Kind | Tier | Purpose |
@@ -46,6 +48,7 @@ is `AppSettings.debugMode`, unlocked by tapping the version row eight times — 
 | `_coreLine` | static method | B | Name the AICore installation behind these features — version, device, whether it can serve models. |
 | `_progressLabel` | static method | B | Say how far a download has got. |
 | `_iconFor` | static method | B | Pick the icon for a status. |
+| `_localeTag` | method | B | Return the app's locale as a tag such as `zh_TW` for the technical details. |
 
 ## Documentation
 
@@ -108,4 +111,4 @@ is `AppSettings.debugMode`, unlocked by tapping the version row eight times — 
   total, and a percentage that has to vanish halfway through is worse than a number that only grows.
 
 
-Current integration uses MyApps-AI v0.5.3, explicit platform injection, app-owned source routing and the unified settings skeleton. WebDAV entry points require device-local notice acknowledgement before any network request; see [sync.md](../../../sync.md).
+Current integration uses MyApps-AI v0.6.0, explicit platform injection, the shared source router and the unified settings skeleton. WebDAV entry points require device-local notice acknowledgement before any network request; see [sync.md](../../../sync.md).

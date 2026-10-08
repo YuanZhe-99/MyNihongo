@@ -1,5 +1,9 @@
 # Version history
 
+## 0.8.0 — Friendly local models, GPU option, custom models (2026-10-08)
+
+Pin MyApps-AI v0.6.0. Local models show friendly names (`Qwen: Qwen3.5 0.8B (Q4_K_M)`) and can be renamed. A GPU switch for local models appears where GPU support is verified; it is off by default, and a GPU failure falls back to the CPU and is remembered. The technical details (still behind the debug-mode setting) are now complete and copyable: app, selection, system AI, llama.cpp library and devices, and every local model. You can add a custom GGUF model from a Hugging Face repository after a mandatory warning; listing, reading and downloading reveal your IP address to Hugging Face, and the local-model privacy text says so. New device-local keys `aiComputePreference`, `aiGpuFailures`, `aiCustomModels`, `aiModelAliases` are never synced or backed up. MyNihongo still has no online sources, and Japanese proofreading still always uses system AI.
+
 ## 0.7.13 — Local models on Android (2026-10-07)
 
 Pin MyApps-AI v0.5.3: local models were never found on Android because the app keeps its native

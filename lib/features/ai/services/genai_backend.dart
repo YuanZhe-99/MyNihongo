@@ -301,7 +301,7 @@ class MethodChannelGenAiBackend implements GenAiBackend {
   static bool hasSizeChoice(String? served) =>
       served != null && served.contains('/full') && served.contains('/fast');
 
-  static final sourceBackend = AiSourceBackend();
+  static final sourceBackend = createAiSourceRouter();
   final shared.CapabilityGenAiBackend _shared;
 
   /// Purpose: Ask the platform for a feature's status.
@@ -327,7 +327,7 @@ class MethodChannelGenAiBackend implements GenAiBackend {
     bool force = false,
     bool preferFast = false,
   }) async {
-    if (!platformMayHaveOnDeviceModel && _shared is! AiSourceBackend) {
+    if (!platformMayHaveOnDeviceModel && _shared is! AiSourceRouter) {
       return GenAiStatusReport.unsupported;
     }
     try {
@@ -391,7 +391,7 @@ class MethodChannelGenAiBackend implements GenAiBackend {
   /// it.
   @override
   Future<GenAiCoreInfo?> coreInfo() async {
-    if (!platformMayHaveOnDeviceModel && _shared is! AiSourceBackend) {
+    if (!platformMayHaveOnDeviceModel && _shared is! AiSourceRouter) {
       return null;
     }
     try {
@@ -421,7 +421,7 @@ class MethodChannelGenAiBackend implements GenAiBackend {
     GenAiFeature feature, {
     void Function(int bytes, int total)? onProgress,
   }) async {
-    if (!platformMayHaveOnDeviceModel && _shared is! AiSourceBackend) {
+    if (!platformMayHaveOnDeviceModel && _shared is! AiSourceRouter) {
       throw const GenAiException(GenAiFailure.unavailable);
     }
     try {
@@ -443,7 +443,7 @@ class MethodChannelGenAiBackend implements GenAiBackend {
   /// variety in that answer is not a feature.
   @override
   Future<String> explain(String prompt, {int maxOutputTokens = 256}) async {
-    if (!platformMayHaveOnDeviceModel && _shared is! AiSourceBackend) {
+    if (!platformMayHaveOnDeviceModel && _shared is! AiSourceRouter) {
       throw const GenAiException(GenAiFailure.unavailable);
     }
     try {
@@ -484,7 +484,7 @@ class MethodChannelGenAiBackend implements GenAiBackend {
   /// there is nothing a caller could do about a failed cancel.
   @override
   Future<void> cancel() async {
-    if (!platformMayHaveOnDeviceModel && _shared is! AiSourceBackend) return;
+    if (!platformMayHaveOnDeviceModel && _shared is! AiSourceRouter) return;
     try {
       await _shared.cancel();
     } catch (_) {

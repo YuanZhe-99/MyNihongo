@@ -1,7 +1,7 @@
 # lib/features/ai/services/genai_backend.dart
 
 通道实现委托 MyApps-AI v0.2.0，保留应用类型与签名。Explain 使用 generate，
-coreInfo 使用 info，原生桥接及下载事件处理由共享包负责。
+coreInfo 使用 info，原生桥接及下载事件处理由共享包负责。自 v0.8.0 起，共享的 `sourceBackend` 由 `createAiSourceRouter()`（一个 `AiSourceRouter`）创建；`_shared is! AiSourceRouter` 检查使本地模型不受系统 AI 平台限制。MyNihongo 没有 `on_device_ai_service.dart`，日语校对仍始终使用系统 AI。
 见 [shared-ai](../../../../shared-ai.md)。
 
 应用与平台生成式模型之间的接缝，以及基于 `com.yuanzhe.my_nihongo/genai` 方法通道的真实实现。
@@ -71,4 +71,4 @@ M4.0a 又加上了 `served`，以及两个反方向传过去的参数。探测�
 - **说明：** 平台错误回答 `unreachable`，既不抛出，也不说成 `unavailable`：问不出来和被拒绝不是同一件事，而在这里抛异常只会迫使每个调用方捕获后说其中一句。本次构建不认识的状态字符串回答 `unknown`，理由相同。`unsupported` 短路则保证了在 Windows、macOS 和 iOS 上根本不触碰通道——那里没有这个通道，任何调用都会抛 `MissingPluginException`。
 
 
-当前接入 MyApps-AI v0.5.3，显式注入平台后端，使用应用所属来源路由与统一设置骨架。WebDAV 入口在任何网络请求前要求设备本地提醒确认；具体见同步概念文档。
+当前接入 MyApps-AI v0.6.0，显式注入平台后端，使用共享来源路由与统一设置骨架。WebDAV 入口在任何网络请求前要求设备本地提醒确认；具体见同步概念文档。

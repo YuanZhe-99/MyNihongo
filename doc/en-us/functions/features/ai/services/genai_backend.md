@@ -1,7 +1,7 @@
 # lib/features/ai/services/genai_backend.dart
 
 The channel implementation delegates to MyApps-AI v0.2.0 while retaining app
-types and signatures. Explain uses generate; coreInfo uses info. Native bridge
+types and signatures. Explain uses generate; coreInfo uses info. Since v0.8.0 the shared `sourceBackend` is created by `createAiSourceRouter()` (an `AiSourceRouter`); the `_shared is! AiSourceRouter` checks let local models run beyond the system-AI platform gate. MyNihongo has no `on_device_ai_service.dart`, and Japanese proofreading still always uses system AI. Native bridge
 and download event handling are shared. See [shared-ai](../../../../shared-ai.md).
 
 The seam between the app and the platform's generative models, and the real implementation over the
@@ -102,4 +102,4 @@ about the platform's reply.
   `MissingPluginException`.
 
 
-Current integration uses MyApps-AI v0.5.3, explicit platform injection, app-owned source routing and the unified settings skeleton. WebDAV entry points require device-local notice acknowledgement before any network request; see [sync.md](../../../sync.md).
+Current integration uses MyApps-AI v0.6.0, explicit platform injection, the shared source router and the unified settings skeleton. WebDAV entry points require device-local notice acknowledgement before any network request; see [sync.md](../../../sync.md).

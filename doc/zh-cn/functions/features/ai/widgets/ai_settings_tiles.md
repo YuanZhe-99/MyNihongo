@@ -16,6 +16,8 @@ MyAppsAiPreference 和 MyAppsAiModelNotes 管理通用启用、模型大小偏�
 
 自 v0.4.6 起，上述每一行诊断信息都藏在开发者选项之后。学习者看到的只有那句状态说明，别的什么都没有：不翻译的 `_diagnostic` 行写的是模型变体与 token 上限，AICore 那一行写的是一个包版本号，而学习者对其中任何一项都无从下手——「就绪」就是他们需要知道的全部。在标志之后，这些行仍然是一份缺陷反馈最先需要的东西，所以它们一行都没有删。`_featureRow` 把这个标志作为必填参数 `debug` 接收，`_statusLabel` 作为可选参数接收，于是调用方不会因为忘记传而漏出一行诊断信息；AICore 那一行则在调用处由 `settings.debugMode` 把关。标志是 `AppSettings.debugMode`，通过连点版本号那一行八次解锁——见 [`../../../shared/providers/app_settings.md`](../../../shared/providers/app_settings.md) 与 [`../../settings/views/settings_page.md`](../../settings/views/settings_page.md)。
 
+自 v0.8.0 起，调试模式下的技术详情是基于 `MethodChannelGenAiBackend.sourceBackend.diagnostics(localeTag: ...)` 的 `MyAppsAiDiagnosticsView`：列出每个包含的后端（应用、选择、系统 AI、llama.cpp 库与设备、每个本地模型），可复制，仍只在设置了 `settings.debugMode` 时显示。标题使用 `aiTechnicalDetails` 字符串。
+
 ## 声明
 
 | 声明 | 种类 | 层级 | 用途 |
@@ -31,6 +33,7 @@ MyAppsAiPreference 和 MyAppsAiModelNotes 管理通用启用、模型大小偏�
 | `_coreLine` | 静态方法 | B | 命名这些功能背后的 AICore 安装——版本、设备，以及它能否提供模型。 |
 | `_progressLabel` | 静态方法 | B | 说明一次下载进行到哪里。 |
 | `_iconFor` | 静态方法 | B | 为一种状态挑选图标。 |
+| `_localeTag` | 方法 | B | 以 `zh_TW` 这样的标签返回应用语言区域，供技术详情使用。 |
 
 ## 文档
 
@@ -68,4 +71,4 @@ MyAppsAiPreference 和 MyAppsAiModelNotes 管理通用启用、模型大小偏�
 - **说明：** 仅在本文件内使用的辅助函数。`debug` 是必填而不是带默认值，因为忘记传它应当是一个编译错误，而不是给学习者看的一行诊断信息。它把关的那一行刻意不翻译：它是用来在缺陷反馈中引用的标识符，不是给人读的说明。没有它，「本设备不支持」这一句在下面三种情况下都一模一样：设备不在公布的支持列表上、一个模型变体被拒绝而另外三个从未尝试、或者调用抛了异常——而这三者的修法各不相同。用两行而不是一行，是因为这两项功能有各自的模型和各自的下载——一台设备可能有解释而没有校对，此时单独一行「AI：就绪」就是谎话。任何下载进行期间按钮都被禁用，因为 AICore 同时只服务一个，两个加载指示会暗示相反的事。进度用 MB 而非百分比：系统并不总会报告总量，而一个中途必须消失的百分比比一个只增不减的数字更糟。
 
 
-当前接入 MyApps-AI v0.5.3，显式注入平台后端，使用应用所属来源路由与统一设置骨架。WebDAV 入口在任何网络请求前要求设备本地提醒确认；具体见同步概念文档。
+当前接入 MyApps-AI v0.6.0，显式注入平台后端，使用共享来源路由与统一设置骨架。WebDAV 入口在任何网络请求前要求设备本地提醒确认；具体见同步概念文档。
